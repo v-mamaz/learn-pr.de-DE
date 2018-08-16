@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.automate-azure-tasks-with-powershell.1-introduction
+title: Einführung
+metadata:
+  title: Einführung
+  description: Einführung
+  ms.openlocfilehash: 7f4db96e9b7d16a0ce93c70bb89c151201824b82
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135758"
+durationInMinutes: 3
+content: '[!include[](includes/1-introduction.md)]'

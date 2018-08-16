@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.build-a-serverless-web-app.4-store-image-metadata-with-cosmos
+title: Store Bildmetadaten mit Cosmos DB
+metadata:
+  title: Store Bildmetadaten mit Cosmos DB
+  description: Store Bildmetadaten mit Cosmos DB
+  ms.openlocfilehash: 1329c795903ad648211bc6761dee977244493ee2
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135683"
+durationInMinutes: 12
+content: '[!include[](includes/4-store-image-metadata-with-cosmos.md)]'

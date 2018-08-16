@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-secrets-with-azure-key-vault.1-what-is-key-vault
+title: Was ist Key Vault?
+metadata:
+  title: Was ist Key Vault?
+  description: Was ist Key Vault?
+  ms.openlocfilehash: 29a1581d94a80c061916732bb437edf922d65b8c
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135755"
+durationInMinutes: 5
+content: '[!include[](includes/1-what-is-key-vault.md)]'

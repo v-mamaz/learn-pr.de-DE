@@ -1,0 +1,42 @@
+### YamlMime:ModuleUnit
+uid: learn.create-cosmos-db-for-scale.6-knowledge-check-how-to-choose-a-partition-key
+metadata:
+  title: 'Wissenstest - Gewusst wie: Auswählen eines partitionsschlüssels'
+  description: 'Wissenstest - Gewusst wie: Auswählen eines partitionsschlüssels'
+  displayType: one-column
+  ms.openlocfilehash: f53578233acd1a4c01b5f056392ac13d938aa71a
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135828"
+title: 'Wissenstest - Gewusst wie: Auswählen eines partitionsschlüssels'
+durationInMinutes: 2
+content: Wissenstest – was eine Anforderungseinheit ist
+quiz:
+  title: 'Wissenstest - Gewusst wie: Auswählen eines partitionsschlüssels'
+  questions:
+  - content: Können Sie einen Partitionsschlüssel für ein Azure Cosmos DB-Sammlung nach hinzufügen es erstellt wurde?
+    choices:
+    - content: Ja
+      isCorrect: false
+      incorrectExplanation: Partitionsschlüssel können nur festgelegt werden, wenn eine Sammlung erstellt wird.
+    - content: Nein
+      isCorrect: true
+      correctExplanation: Richtig! Den Partitionsschlüssel kann nur festgelegt werden, wenn die Auflistung erstellt wird.
+  - content: Können Sie den Partitionsschlüssel ändern, nachdem die Azure Cosmos DB-Sammlung erstellt wurde?
+    choices:
+    - content: Ja
+      isCorrect: false
+      incorrectExplanation: Partitionsschlüssel können nicht geändert werden, nachdem die Sammlung erstellt wurde.
+    - content: Nein
+      isCorrect: true
+      correctExplanation: Richtig! Partitionsschlüssel können nicht geändert werden, nachdem die Sammlung erstellt wurde.
+  - content: Was die beste Partitionsschlüssel für die Speicherung von Bestellverlauf wäre?
+    choices:
+    - content: UserID
+      isCorrect: true
+      incorrectExplanation: Richtig! Reihenfolge, Verlauf in der Regel abgerufen werden sollen, basierend auf der Benutzer, der der Auftrag erstellt.
+    - content: OrderTime
+      isCorrect: false
+      correctExplanation: Obwohl Auftragszeit als Partitionsschlüssel verwendet werden kann, kann sie beliebte Einkaufswagen Tage hot-Partitionen erstellen. Und Reihenfolge, in der Regel Verlauf abgerufen wird auf Grundlage der Benutzer, die Reihenfolge und nicht die Zeit erstellt, die sie abgelegt wurde.

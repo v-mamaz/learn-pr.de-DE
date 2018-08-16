@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.build-a-serverless-web-app.6-add-authentication
+title: Hinzufügen von Authentifizierung
+metadata:
+  title: Hinzufügen von Authentifizierung
+  description: Hinzufügen von Authentifizierung
+  ms.openlocfilehash: 2820f6729083eb9a1f12dd00f3615865c2d6ad23
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135712"
+durationInMinutes: 12
+content: '[!include[](includes/6-add-authentication.md)]'

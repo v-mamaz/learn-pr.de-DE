@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.automate-azure-tasks-with-powershell.6-exercise-create-resource-interactively
+title: 'Übung: Erstellen einer Azure-Ressource, die mithilfe von Skripts in Azure PowerShell'
+metadata:
+  title: 'Übung: Erstellen einer Azure-Ressource, die mithilfe von Skripts in Azure PowerShell'
+  description: 'Übung: Erstellen einer Azure-Ressource, die mithilfe von Skripts in Azure PowerShell'
+  ms.openlocfilehash: 73e828dcc7a1c979b79cb2a81fddb89645f748e0
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135749"
+durationInMinutes: 5
+content: '[!include[](includes/6-exercise-create-resource-interactively.md)]'

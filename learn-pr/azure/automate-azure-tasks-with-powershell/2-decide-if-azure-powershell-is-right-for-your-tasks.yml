@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.automate-azure-tasks-with-powershell.2-decide-if-azure-powershell-is-right-for-your-tasks
+title: Entscheiden Sie, ob Azure PowerShell für Ihre Aufgaben geeignet ist.
+metadata:
+  title: Entscheiden Sie, ob Azure PowerShell für Ihre Aufgaben geeignet ist.
+  description: Entscheiden Sie, ob Azure PowerShell für Ihre Aufgaben geeignet ist.
+  ms.openlocfilehash: 5da4873ff15f12fdfffed1e80343f783b585b4af
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135756"
+durationInMinutes: 5
+content: '[!include[](includes/2-decide-if-azure-powershell-is-right-for-your-tasks.md)]'

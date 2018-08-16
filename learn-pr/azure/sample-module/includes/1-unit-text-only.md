@@ -1,0 +1,14 @@
+Wenn Sie eine Azure-VM-Skalierungsgruppe erstellen, geben Sie ein Bild verwendet werden, wenn die Instanzen virtueller Computer (VM) bereitgestellt werden. Jeder virtuelle Computer in Azure wird aus einem Image erstellt, die das Linux-Distribution und-Betriebssystemversion bestimmt. Im Azure Marketplace enthält viele Images von erst- und Drittanbietern für die gängigsten Distributionen und anwendungsumgebungen.
+
+Sie können ein benutzerdefiniertes VM-Image verwenden, um die Anzahl von Aufgaben zu reduzieren, nachdem VM-Instanzen bereitgestellt wurden. Dieses benutzerdefinierte VM-Image enthält alle erforderlichen Anwendungsinstallationen oder -konfigurationen. Für alle VM-Instanzen, die in der Skalierungsgruppe erstellt werden, wird das benutzerdefinierte VM-Image verwendet, und die VM-Instanzen sind für die Bereitstellung Ihres Anwendungsdatenverkehrs bereit.
+
+[Packer](https://www.packer.io/) open Source-Tool, mit dem Sie definieren und erstellen benutzerdefinierte Images, Skripts und konsistent ist. Die Konfiguration für ein Bild wird definiert, in einer Vorlage für JSON (JavaSCript Object Notation), die zusätzlichen Konfigurationen enthält, und Anwendungsinstallationen, die Sie benötigen. Diese Vorlage Ansatz reduziert das Risiko menschlicher Fehler durch manuelle Builds und ermöglicht Ihnen das Erstellen von reproduzierbaren Images für Ihre Anwendungen.
+
+## <a name="packer-components"></a>Packer-Komponenten
+
+Es gibt zwei wesentlichen Komponenten bei der Packer-Vorlagen, mit denen Sie erstellen diese konsistenter und reproduzierbarer Images auf einem lokalen oder cloud-Anbieter wie Azure:
+
+- **Generatoren** -definieren, wie die Basis-VM selbst konfiguriert und bereitgestellt werden soll. In Azure definiert der Generator die Anmeldeinformationen bei der Erstellung des virtuellen Computers der Basis, das der Zielort für das endgültige Bild, das Größe und Position des die Basis-VM und alle Tags in der Abbildung angewendet.
+- **Provisioners (Bereitstellungsmethoden)** -führen Sie alle tatsächlichen Konfigurationsaufgaben auf der Basis-VM, wie das Image vorbereitet wird. Dazu können die Softwareinstallation, Betriebssystem oder Kernel-Updates oder Anwenden von Konfigurationseinstellungen enthalten. Integrierte provisioners (Bereitstellungsmethoden) für eine native Linux-Bash-Shell vorhanden sind, und Sie können auch mit Ansible, Chef, Puppet oder Salt-Wert integrieren.
+
+Die *Provisioner* , in denen die tatsächliche Konfiguration geschieht. Dieser Abschnitt der Packer-Vorlage wird auf allen Plattformen konsistent sein. Die *Builder* kann aus einer lokalen Umgebung oder Azure variieren, wie Sie definieren, wie zum Erstellen und Bereitstellen von VM-Basisimage. Am Ende der Packer-Prozess werden die Basis-VM und Ressourcen gelöscht. Übrig bleibt das plattformspezifische Image gemäß den Generator. Das Abbild kann anschließend zum Bereitstellen von virtuellen Computern in einer Skalierungsgruppe verwendet werden.

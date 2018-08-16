@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-vms-with-azure-cli-data.2-logins-and-subscriptions
+title: Anmeldungen und Abonnements
+metadata:
+  title: Anmeldungen und Abonnements
+  description: Melden Sie sich zum Arbeiten mit Azure CLI und wählen Sie ein Abonnement
+  ms.openlocfilehash: 1f221e49b97c96764c78a19374284c8305a4016d
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135760"
+interactive: cloudshell
+durationInMinutes: 5
+content: '[!include[](includes/2-logins-and-subscriptions.md)]'

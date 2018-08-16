@@ -1,0 +1,26 @@
+### YamlMime:ModuleUnit
+uid: learn.sample-module-cloudshell.3-unit-knowledge-check-only
+metadata:
+  title: Beispiel-Einheit 3 - nur Überprüfung der Kenntnisse
+  description: Dies ist ein Beispiel für eine Einheit, die nur eine Wissenstest enthält.
+  displayType: one-column
+  ms.openlocfilehash: c3c07e3badd8bdc8f9abe03fe33883b78acd75c4
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135701"
+title: Beispiel-Einheit 3 - nur Überprüfung der Kenntnisse
+durationInMinutes: 11
+content: Ist Inhalt erforderlich
+quiz:
+  title: Titel des Quiz
+  questions:
+  - content: 'Welche dieser markdowndatei im Gespräch:'
+    choices:
+    - content: Ein Brainstorming zur Markdown-Dateiformat für Quiz.
+      correctExplanation: Warum diese Antwort richtig ist.
+      incorrectExplanation: Warum diese Antwort falsch ist.
+      isCorrect: true
+    - content: Ein Brainstorming zur Markdown-Dateiformat für Quiz. Teil 2
+      isCorrect: false

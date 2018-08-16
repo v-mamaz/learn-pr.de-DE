@@ -1,0 +1,41 @@
+### YamlMime:Module
+uid: learn.manage-vms-with-azure-cli
+metadata:
+  title: Verwalten von virtuellen Computern mit dem Azure-CLI-tool
+  description: Erfahren Sie, wie Sie mit der plattformübergreifenden Azure-Befehlszeilenschnittstelle zu erstellen, starten, beenden und andere Verwaltungsaufgaben im Zusammenhang mit virtuellen Computern in Azure ausführen.
+  ms.openlocfilehash: b374f2877dbb7994acd281aeabdfa9506a0f0777
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135792"
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+- administrator
+products:
+- Azure
+title: Verwalten von virtuellen Computern mit dem Azure-CLI-tool
+summary: Erfahren Sie, wie Sie mit der plattformübergreifenden Azure-Befehlszeilenschnittstelle zu erstellen, starten, beenden und andere Verwaltungsaufgaben im Zusammenhang mit virtuellen Computern in Azure ausführen.
+cardDescription: Erfahren Sie, wie Sie mit der plattformübergreifenden Azure-Befehlszeilenschnittstelle zu erstellen, starten, beenden und andere Verwaltungsaufgaben im Zusammenhang mit virtuellen Computern in Azure ausführen.
+abstract: >
+  * Erstellen eines virtuellen Computers mit der CLI
+
+  * Durchführen Sie grundlegender Verwaltungsaufgaben, die mithilfe der Befehlszeilenschnittstelle
+
+  * Verbinden Sie mit einem ausgeführten virtuellen Computer mit SSH und der Befehlszeilenschnittstelle
+units:
+- learn.manage-vms-with-azure-cli-data.1-what-is-the-cli
+- learn.manage-vms-with-azure-cli-data.2-logins-and-subscriptions
+- learn.manage-vms-with-azure-cli-data.3-create-a-resource-group
+- learn.manage-vms-with-azure-cli-data.4-create-a-vm
+- learn.manage-vms-with-azure-cli-data.5-testing-the-vm
+- learn.manage-vms-with-azure-cli-data.6-other-vm-images
+- learn.manage-vms-with-azure-cli-data.7-sizing-vms
+- learn.manage-vms-with-azure-cli-data.8-querying-vms
+- learn.manage-vms-with-azure-cli-data.9-managing-vms
+- learn.manage-vms-with-azure-cli-data.10-installing-software
+- learn.manage-vms-with-azure-cli-data.11-cleanup
+achievement: learn.manage-vms-with-azure-cli-data.badge

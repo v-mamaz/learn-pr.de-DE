@@ -1,0 +1,46 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-secrets-with-azure-key-vault.3-authentication-with-managed-service-identity
+title: Tresor-Authentifizierung mit verwalteter Dienstidentität
+metadata:
+  title: Tresor-Authentifizierung mit verwalteter Dienstidentität
+  description: Tresor-Authentifizierung mit verwalteter Dienstidentität
+  ms.openlocfilehash: 6f26524f087fc2e397bc8027afab17a300b01717
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135669"
+durationInMinutes: 2
+content: >
+  [!include[](includes/3-authentication-with-managed-service-identity.md)]
+quiz:
+  title: 'Wissenstest: Verwaltete Dienstidentität'
+  questions:
+  - content: Wie ändert mit der verwalteten Dienstidentität (MSI) sich die Möglichkeit, die eine app authentifiziert, sich in Key Vault?
+    choices:
+    - content: Die app verwendet ein Zertifikat zur Authentifizierung anstelle eines geheimen Schlüssels
+      isCorrect: false
+      incorrectExplanation: Apps *können* Geheimnisse oder Zertifikate verwenden, um aus Azure Active Directory-Authentifizierungstoken zu erhalten, aber mit MSI-Datei sind keine zu.
+    - content: Jeder Benutzer der app muss ein Kennwort eingeben.
+      isCorrect: false
+      incorrectExplanation: Es ist die *app* , um Key Vault nicht für einzelne Benutzer der app authentifiziert. Verwendung des MSI-Datei hat keine Auswirkungen, unabhängig davon, ob Ihre app-Authentifizierung von Benutzern benötigt.
+    - content: Die app erhält Token aus einem Tokendienst, unterstützt von MSI-Datei nicht aus Azure Active Directory
+      isCorrect: true
+      correctExplanation: Die MSI-token-Dienst ruft Token aus Azure Active Directory im Namen Ihrer app, und ermöglicht Ihrer app zur Authentifizierung mit einem geheimen Schlüssel in der Variablen Envirionment eingefügt.
+    - content: MSI-Identitäten werden von Key Vault verwaltet werden und erkannt und authentifiziert wurden, automatisch.
+      isCorrect: false
+      incorrectExplanation: Key Vault ist kein Steuerelement oder verwaltete Identitäten. Identitäten, die in Azure Active Directory vorhanden sein.
+  - content: Welche dieser Anweisungen beschreibt einen wesentlicher Vorteil der Verwendung von (MSI) zum Authentifizieren einer app in Key Vault?
+    choices:
+    - content: MSI verbessert die Leistung der Anwendung
+      isCorrect: false
+      incorrectExplanation: MSI-Datei hat keine Auswirkungen auf die Leistung Ihrer Anwendung.
+    - content: MSI entfällt die Notwendigkeit, die Geheimnisse in der Konfiguration zu verarbeiten
+      isCorrect: true
+      correctExplanation: Mit dem MSI-token-Dienst Authentifizierung Ihrer app mit einem geheimen Schlüssel in der Umgebungsvariablen zur Laufzeit, und Sie müssen geheime Schlüssel in der Konfiguration speichern eingefügt.
+    - content: MSI-Identitäten werden automatisch mit Key Vault-Berechtigungen gewährt.
+      isCorrect: false
+      incorrectExplanation: Alle Identitäten, einschließlich der MSI-Identitäten müssen explizit Berechtigungen innerhalb eines Tresors erteilt werden.
+    - content: MSI-Datei vereinfacht das Kennwort für RAS-Dienste auswählen
+      isCorrect: false
+      incorrectExplanation: MSI-Datei hat keine Auswirkungen auf Ihre Geheimnisse oder der authentifizierungsworkflows, die mit Remotediensten. MSI-Datei wirkt sich nur auf wie Ihre app in Key Vault authentifiziert.
