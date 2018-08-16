@@ -1,0 +1,24 @@
+### YamlMime:Achievements
+achievements:
+- uid: learn.sample-path.trophy
+  type: trophy
+  title: <span data-ttu-id="108ac-101">Beispiel Learning Pfad Jagdtrophäe</span><span class="sxs-lookup"><span data-stu-id="108ac-101">Sample Learning Path Trophy</span></span>
+  summary: <span data-ttu-id="108ac-102">Beispiel-Learning Pfad Jagdtrophäe-Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="108ac-102">Sample Learning Path Trophy Summary</span></span>
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.sample-module-cloudshell.badge
+  type: badge
+  title: <span data-ttu-id="108ac-103">Beispiel-Modul mit der Cloud Shell-Badge</span><span class="sxs-lookup"><span data-stu-id="108ac-103">Sample Module with CloudShell Badge</span></span>
+  summary: <span data-ttu-id="108ac-104">Sample-Modul mit Cloud Shell-Badge-Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="108ac-104">Sample Module with CloudShell Badge Summary</span></span>
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.build-a-serverless-web-app.badge
+  type: badge
+  title: <span data-ttu-id="108ac-105">Erstellen einer serverlosen Webanwendung Badge</span><span class="sxs-lookup"><span data-stu-id="108ac-105">Build a serverless web app Badge</span></span>
+  summary: <span data-ttu-id="108ac-106">Erstellen einer serverlosen Webanwendung Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="108ac-106">Build a serverless web app Summary</span></span>
+  iconUrl: /learn/modules/build-a-serverless-web-app/achievement/build-a-serverless-web-app.svg
+metadata:
+  ms.openlocfilehash: 28a1d9d1a19f274ea9db5216e7598755631abcd8
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135851"

@@ -1,0 +1,42 @@
+### YamlMime:ModuleUnit
+uid: learn.create-cosmos-db-for-scale.6-knowledge-check-how-to-choose-a-partition-key
+metadata:
+  title: '<span data-ttu-id="4cd2a-101">Wissenstest - Gewusst wie: Auswählen eines partitionsschlüssels</span><span class="sxs-lookup"><span data-stu-id="4cd2a-101">Knowledge check - how to choose a partition key</span></span>'
+  description: '<span data-ttu-id="4cd2a-102">Wissenstest - Gewusst wie: Auswählen eines partitionsschlüssels</span><span class="sxs-lookup"><span data-stu-id="4cd2a-102">Knowledge check - how to choose a partition key</span></span>'
+  displayType: one-column
+  ms.openlocfilehash: f53578233acd1a4c01b5f056392ac13d938aa71a
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135828"
+title: '<span data-ttu-id="4cd2a-103">Wissenstest - Gewusst wie: Auswählen eines partitionsschlüssels</span><span class="sxs-lookup"><span data-stu-id="4cd2a-103">Knowledge check - how to choose a partition key</span></span>'
+durationInMinutes: 2
+content: <span data-ttu-id="4cd2a-104">Wissenstest – was eine Anforderungseinheit ist</span><span class="sxs-lookup"><span data-stu-id="4cd2a-104">Knowledge check - what is a request unit</span></span>
+quiz:
+  title: '<span data-ttu-id="4cd2a-105">Wissenstest - Gewusst wie: Auswählen eines partitionsschlüssels</span><span class="sxs-lookup"><span data-stu-id="4cd2a-105">Knowledge check - how to choose a partition key</span></span>'
+  questions:
+  - content: <span data-ttu-id="4cd2a-106">Können Sie einen Partitionsschlüssel für ein Azure Cosmos DB-Sammlung nach hinzufügen es erstellt wurde?</span><span class="sxs-lookup"><span data-stu-id="4cd2a-106">Can you add a partition key to an Azure Cosmos DB collection after it has been created?</span></span>
+    choices:
+    - content: <span data-ttu-id="4cd2a-107">Ja</span><span class="sxs-lookup"><span data-stu-id="4cd2a-107">Yes</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="4cd2a-108">Partitionsschlüssel können nur festgelegt werden, wenn eine Sammlung erstellt wird.</span><span class="sxs-lookup"><span data-stu-id="4cd2a-108">Partition keys can only be set when a collection is created.</span></span>
+    - content: <span data-ttu-id="4cd2a-109">Nein</span><span class="sxs-lookup"><span data-stu-id="4cd2a-109">No</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="4cd2a-110">Richtig!</span><span class="sxs-lookup"><span data-stu-id="4cd2a-110">Correct!</span></span> <span data-ttu-id="4cd2a-111">Den Partitionsschlüssel kann nur festgelegt werden, wenn die Auflistung erstellt wird.</span><span class="sxs-lookup"><span data-stu-id="4cd2a-111">You can only set the partition key when the collection is created.</span></span>
+  - content: <span data-ttu-id="4cd2a-112">Können Sie den Partitionsschlüssel ändern, nachdem die Azure Cosmos DB-Sammlung erstellt wurde?</span><span class="sxs-lookup"><span data-stu-id="4cd2a-112">Can you change the partition key after the Azure Cosmos DB collection has been created?</span></span>
+    choices:
+    - content: <span data-ttu-id="4cd2a-113">Ja</span><span class="sxs-lookup"><span data-stu-id="4cd2a-113">Yes</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="4cd2a-114">Partitionsschlüssel können nicht geändert werden, nachdem die Sammlung erstellt wurde.</span><span class="sxs-lookup"><span data-stu-id="4cd2a-114">Partition keys cannot be modified after the collection is created.</span></span>
+    - content: <span data-ttu-id="4cd2a-115">Nein</span><span class="sxs-lookup"><span data-stu-id="4cd2a-115">No</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="4cd2a-116">Richtig!</span><span class="sxs-lookup"><span data-stu-id="4cd2a-116">Correct!</span></span> <span data-ttu-id="4cd2a-117">Partitionsschlüssel können nicht geändert werden, nachdem die Sammlung erstellt wurde.</span><span class="sxs-lookup"><span data-stu-id="4cd2a-117">Partition keys cannot be modified after the collection is created.</span></span>
+  - content: <span data-ttu-id="4cd2a-118">Was die beste Partitionsschlüssel für die Speicherung von Bestellverlauf wäre?</span><span class="sxs-lookup"><span data-stu-id="4cd2a-118">What would be the best partition key for storing order history?</span></span>
+    choices:
+    - content: <span data-ttu-id="4cd2a-119">UserID</span><span class="sxs-lookup"><span data-stu-id="4cd2a-119">UserID</span></span>
+      isCorrect: true
+      incorrectExplanation: <span data-ttu-id="4cd2a-120">Richtig!</span><span class="sxs-lookup"><span data-stu-id="4cd2a-120">Correct!</span></span> <span data-ttu-id="4cd2a-121">Reihenfolge, Verlauf in der Regel abgerufen werden sollen, basierend auf der Benutzer, der der Auftrag erstellt.</span><span class="sxs-lookup"><span data-stu-id="4cd2a-121">Order history would typically be retrieved based on the user that created the order.</span></span>
+    - content: <span data-ttu-id="4cd2a-122">OrderTime</span><span class="sxs-lookup"><span data-stu-id="4cd2a-122">OrderTime</span></span>
+      isCorrect: false
+      correctExplanation: <span data-ttu-id="4cd2a-123">Obwohl Auftragszeit als Partitionsschlüssel verwendet werden kann, kann sie beliebte Einkaufswagen Tage hot-Partitionen erstellen.</span><span class="sxs-lookup"><span data-stu-id="4cd2a-123">Although order time could be used as a partition key, it might create hot partitions on popular shopping days.</span></span> <span data-ttu-id="4cd2a-124">Und Reihenfolge, in der Regel Verlauf abgerufen wird auf Grundlage der Benutzer, die Reihenfolge und nicht die Zeit erstellt, die sie abgelegt wurde.</span><span class="sxs-lookup"><span data-stu-id="4cd2a-124">And order history is typically retrieved based on the user that created the order, not the time it was placed.</span></span>

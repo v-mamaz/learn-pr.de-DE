@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.build-a-serverless-web-app.2-upload-images-to-blob-storage
+title: <span data-ttu-id="dfda9-101">Hochladen von Bildern in Blob Storage mit Azure Functions</span><span class="sxs-lookup"><span data-stu-id="dfda9-101">Upload images to Blob storage with Azure Functions</span></span>
+metadata:
+  title: <span data-ttu-id="dfda9-102">Hochladen von Bildern in Blob Storage mit Azure Functions</span><span class="sxs-lookup"><span data-stu-id="dfda9-102">Upload images to Blob storage with Azure Functions</span></span>
+  description: <span data-ttu-id="dfda9-103">Hochladen von Bildern in Blob Storage mit Azure Functions.</span><span class="sxs-lookup"><span data-stu-id="dfda9-103">Upload images to Blob storage with Azure Functions.</span></span>
+  ms.openlocfilehash: 9de7ba090586a8fe79b46c3d9944c5164b391d04
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135750"
+durationInMinutes: 12
+content: '[!include[](includes/2-upload-images-to-blob-storage.md)]'

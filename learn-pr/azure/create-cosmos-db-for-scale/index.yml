@@ -1,0 +1,32 @@
+### YamlMime:Module
+uid: learn.create-cosmos-db-for-scale
+metadata:
+  title: Erstellen einer Skalierungsgruppe erstellten Azure Cosmos DB-Datenbank
+  description: Informationen Sie zum Erstellen einer Azure Cosmos DB-Konto, Datenbank und einer Sammlung, die Skalierungsgruppe erstellt werden, wenn Ihre Anwendung wächst.
+  ms.openlocfilehash: ce0665c4ad7359b323ac24f347c09a0f04d7257e
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135689"
+title: Erstellen einer Skalierungsgruppe erstellten Azure Cosmos DB-Datenbank
+summary: Erfahren Sie, wie Sie eine skalierbare Azure Cosmos DB-Konto, Datenbank und Sammlung zu erstellen.
+abstract: In diesem Modul erstellen Sie eine NoSQL-Datenbank, die Skalierungsgruppe mit Azure Cosmos DB erstellt. Außerdem erfahren Sie, zu messen, und legen Sie den Datenbankdurchsatz Ihrer und Partitionierung werden grundlegende Konzepte in globalen Datenbankentwurf. Zu diesen Konzepten vertraut, bevor Sie Ihre Datenbank erstellen und frühzeitig im Entwicklungsprozess, stellen Sie sicher, dass Sie für die erfolgreiche Verwendung später festlegen, sind beim hochskalieren, um wachsende datenbankanforderungen erfüllen müssen.
+cardDescription: Erfahren Sie, wie Sie ein Azure Cosmos DB-Konto, Datenbank und Sammlung zu erstellen.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+units:
+- learn.create-cosmos-db-for-scale.1-introduction
+- learn.create-cosmos-db-for-scale.2-create-an-account
+- learn.create-cosmos-db-for-scale.3-what-is-a-request-unit
+- learn.create-cosmos-db-for-scale.4-knowledge-check-what-is-a-request-unit
+- learn.create-cosmos-db-for-scale.5-how-to-choose-a-partition-key
+- learn.create-cosmos-db-for-scale.6-knowledge-check-how-to-choose-a-partition-key
+- learn.create-cosmos-db-for-scale.7-create-a-database-and-collection
+- learn.create-cosmos-db-for-scale.8-summary-cleanup
+achievement: learn.placeholder.badge

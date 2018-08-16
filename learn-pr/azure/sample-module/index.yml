@@ -1,0 +1,28 @@
+### YamlMime:Module
+uid: learn.sample-module-cloudshell
+metadata:
+  title: Beispiel-Modul mit der Cloud Shell
+  description: Beispiel-Titel modulbeschreibung
+  ms.openlocfilehash: 908a37b418d3f1d782c4b0a291ea38809f256fb2
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135777"
+title: Beispiel-Modul mit der Cloud Shell
+summary: Dies ist die Zusammenfassung der Sample-Modul
+abstract: Dies ist die abstrakte des Beispiel-Moduls
+cardDescription: Dies ist die Smartcard-Beschreibung des Beispiel-Moduls
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- developer
+products:
+- Azure
+units:
+- learn.sample-module-cloudshell.1-unit-text-only
+- learn.sample-module-cloudshell.2-unit-text-and-knowledge-check
+- learn.sample-module-cloudshell.3-unit-knowledge-check-only
+- learn.sample-module-cloudshell.4-unit-cloudshell-lab
+achievement: learn.sample-module-cloudshell.badge

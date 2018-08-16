@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.automate-azure-tasks-with-powershell.5-create-resource-interactively
+title: <span data-ttu-id="4aa43-101">Erstellen einer Azure-Ressource, die mithilfe von Skripts in Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="4aa43-101">Create an Azure Resource using scripts in Azure PowerShell</span></span>
+metadata:
+  title: <span data-ttu-id="4aa43-102">Erstellen einer Azure-Ressource, die mithilfe von Skripts in Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="4aa43-102">Create an Azure Resource using scripts in Azure PowerShell</span></span>
+  description: <span data-ttu-id="4aa43-103">Erstellen einer Azure-Ressource, die mithilfe von Skripts in Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="4aa43-103">Create an Azure Resource using scripts in Azure PowerShell</span></span>
+  ms.openlocfilehash: 3392a6cc2f8389254ab747d4f927fac96676c280
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135681"
+durationInMinutes: 5
+content: '[!include[](includes/5-create-resource-interactively.md)]'

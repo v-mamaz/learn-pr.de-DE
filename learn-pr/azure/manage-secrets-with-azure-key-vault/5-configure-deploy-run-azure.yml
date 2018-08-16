@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-secrets-with-azure-key-vault.5-configure-deploy-run-azure
+title: <span data-ttu-id="408d1-101">Konfigurieren, bereitstellen und Ausführen in Azure</span><span class="sxs-lookup"><span data-stu-id="408d1-101">Configure, deploy and run in Azure</span></span>
+metadata:
+  title: <span data-ttu-id="408d1-102">Konfigurieren, bereitstellen und Ausführen in Azure</span><span class="sxs-lookup"><span data-stu-id="408d1-102">Configure, deploy and run in Azure</span></span>
+  description: <span data-ttu-id="408d1-103">Konfigurieren, bereitstellen und Ausführen in Azure</span><span class="sxs-lookup"><span data-stu-id="408d1-103">Configure, deploy and run in Azure</span></span>
+  ms.openlocfilehash: 3dbcee65a0a86ae35f2df15c9e054c2e84ce439a
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135800"
+durationInMinutes: 10
+interactive: cloudshell
+content: '[!include[](includes/5-configure-deploy-run-azure.md)]'

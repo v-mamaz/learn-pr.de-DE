@@ -1,0 +1,13 @@
+## <a name="motivation"></a><span data-ttu-id="1a420-101">Motivation</span><span class="sxs-lookup"><span data-stu-id="1a420-101">Motivation</span></span>
+<span data-ttu-id="1a420-102">Datenbanken müssen sowohl die Daten Geschwindigkeit und Volume Anforderungen durch globales Publikum erstellt skaliert.</span><span class="sxs-lookup"><span data-stu-id="1a420-102">Databases need to scale to meet both the data velocity and volume demands created by global audiences.</span></span>
+
+<span data-ttu-id="1a420-103">Angenommen Sie, Sie arbeiten für ein Onlinehändler und Ihrer Datenbank benötigt, skalieren, um einen wachsenden Produktkatalog zu berücksichtigen.</span><span class="sxs-lookup"><span data-stu-id="1a420-103">Suppose you work for an online retailer and your database needs to scale to accommodate a growing product catalog.</span></span> <span data-ttu-id="1a420-104">Haben Sie auch eine wachsende globale Kundenbasis und Ihre Kunden erwarten schnelle Antworten auf ihre Abfragen und sofortige Updates für produktverfügbarkeit.</span><span class="sxs-lookup"><span data-stu-id="1a420-104">You also have a growing global customer base, and your customers expect quick responses to their queries and immediate updates to product availability.</span></span>
+
+<span data-ttu-id="1a420-105">Sie-Datenbank sollte automatisch skalieren, neue Produkte und Benutzer berücksichtigt, haben einen hohen Durchsatz und geringe Latenz, die Ihren Erwartungen Kunden Schritt zu halten.</span><span class="sxs-lookup"><span data-stu-id="1a420-105">You database should scale automatically to account for new products and users, have high throughput, and low latency to keep pace with your customers expectations.</span></span>
+
+## <a name="learning-objective"></a><span data-ttu-id="1a420-106">Lernziel</span><span class="sxs-lookup"><span data-stu-id="1a420-106">Learning objective</span></span>
+
+- <span data-ttu-id="1a420-107">Erstellen Sie eine NoSQL-Datenbank mit Azure Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="1a420-107">Create an NoSQL database with Azure Cosmos DB</span></span>
+- <span data-ttu-id="1a420-108">Legen Sie das Volume der anfängliche Durchsatz für Ihre Datenbank mithilfe von anforderungseinheiten</span><span class="sxs-lookup"><span data-stu-id="1a420-108">Set the initial throughput volume for your database using request units</span></span>
+- <span data-ttu-id="1a420-109">Wählen Sie einen Partitionsschlüssel</span><span class="sxs-lookup"><span data-stu-id="1a420-109">Choose a partition key</span></span>
+- <span data-ttu-id="1a420-110">Erstellen einer Datenbank und Sammlung in Azure Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="1a420-110">Create a database and collection in Azure Cosmos DB</span></span>

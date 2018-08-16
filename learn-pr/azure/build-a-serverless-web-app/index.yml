@@ -1,0 +1,31 @@
+### YamlMime:Module
+uid: learn.build-a-serverless-web-app
+title: Erstellen einer serverlosen Webanwendung
+summary: In diesem Modul können Sie eine Webanwendung bereitstellen, in dem eine HTML-basierte Benutzeroberfläche dargestellt. Ein serverloses Back-End kann es sich um die Anwendung zum Hochladen von Bildern und erhalten automatisch Untertitel Beschreibung.
+cardDescription: In diesem Modul können Sie eine einfache Webanwendung bereitstellen, in dem eine HTML-basierte Benutzeroberfläche dargestellt. Ein serverloses Back-End kann es sich um die Anwendung zum Hochladen von Bildern und erhalten automatisch Untertitel Beschreibung.
+iconUrl: /learn/modules/build-a-serverless-web-app/achievement/build-a-serverless-web-app.svg
+levels:
+- intermediate
+roles:
+- developer
+products:
+- Azure
+metadata:
+  title: Erstellen einer serverlosen Webanwendung
+  description: In diesem Modul können Sie eine einfache Webanwendung bereitstellen, in dem eine HTML-basierte Benutzeroberfläche dargestellt. Ein serverloses Back-End kann es sich um die Anwendung zum Hochladen von Bildern und erhalten automatisch Untertitel Beschreibung.
+  ms.openlocfilehash: 30723d86e1c34821ffea3530ced27524b015b2cb
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135665"
+abstract: In diesem Modul können Sie eine einfache Webanwendung bereitstellen, in dem eine HTML-basierte Benutzeroberfläche dargestellt. Ein serverloses Back-End kann es sich um die Anwendung zum Hochladen von Bildern und erhalten automatisch Untertitel Beschreibung.
+units:
+- learn.build-a-serverless-web-app.1-create-web-app-in-blob-storage
+- learn.build-a-serverless-web-app.2-upload-images-to-blob-storage
+- learn.build-a-serverless-web-app.3-resize-images-with-functions
+- learn.build-a-serverless-web-app.4-store-image-metadata-with-cosmos
+- learn.build-a-serverless-web-app.5-add-captions-with-computer-vision
+- learn.build-a-serverless-web-app.6-add-authentication
+- learn.build-a-serverless-web-app.7-test-and-cleanup
+achievement: learn.build-a-serverless-web-app.badge

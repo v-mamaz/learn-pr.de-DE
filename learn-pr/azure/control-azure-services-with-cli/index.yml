@@ -1,0 +1,30 @@
+### YamlMime:Module
+uid: learn.control-azure-services-with-cli
+metadata:
+  title: Steuern des Azure-Dienste mit der Befehlszeilenschnittstelle
+  description: Die Azure CLI bietet plattformübergreifende Befehlszeilentools zum Verwalten von Azure-Ressourcen. Sie können lokal auf Ihrem Administratorcomputer installieren und führen interaktive Befehle und Skripts. Der Azure-Befehlszeilenschnittstelle leitet die Befehle mit Azure-Rechenzentren, in dem sie im Kontext des Azure-Abonnements ausgeführt werden. Dieses Modul erfahren Sie, wie Sie Azure-Befehlszeilenschnittstelle unter Linux, MacOS oder Windows installieren und dann verwenden, um eine Verbindung mit Azure herstellen und Verwalten von Ressourcen.
+  ms.openlocfilehash: f2b749866db5e686abfe61f0026b9a33ef1537c1
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135666"
+title: Steuern des Azure-Dienste mit der Befehlszeilenschnittstelle
+summary: Installieren Sie Azure-Befehlszeilenschnittstelle lokal und verwenden Sie, um die Azure-Ressourcen verwalten.
+abstract: Die Azure CLI bietet plattformübergreifende Befehlszeilentools zum Verwalten von Azure-Ressourcen. Sie können lokal auf Ihrem Administratorcomputer installieren und führen interaktive Befehle und Skripts. Der Azure-Befehlszeilenschnittstelle leitet die Befehle mit Azure-Rechenzentren, in dem sie im Kontext des Azure-Abonnements ausgeführt werden. Dieses Modul erfahren Sie, wie Sie Azure-Befehlszeilenschnittstelle unter Linux, MacOS oder Windows installieren und dann verwenden, um eine Verbindung mit Azure herstellen und Verwalten von Ressourcen.
+cardDescription: Installieren Sie Azure-Befehlszeilenschnittstelle lokal und verwenden Sie, um die Azure-Ressourcen verwalten.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+units:
+- learn.control-azure-services-with-cli.1-introduction
+- learn.control-azure-services-with-cli.2-install-and-run-the-azure-cli
+- learn.control-azure-services-with-cli.3-exercise-install-and-run-the-azure-cli
+- learn.control-azure-services-with-cli.4-create-query-and-delete-azure-resources-using-the-cli
+- learn.control-azure-services-with-cli.5-exercise-create-query-and-delete-azure-resources-using-the-cli
+- learn.control-azure-services-with-cli.6-summary
+achievement: learn.control-azure-services-with-cli.badge

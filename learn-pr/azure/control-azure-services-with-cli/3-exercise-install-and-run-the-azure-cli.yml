@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.control-azure-services-with-cli.3-exercise-install-and-run-the-azure-cli
+title: '<span data-ttu-id="95cb0-101">Übung: Installieren und Ausführen der Azure-Befehlszeilenschnittstelle</span><span class="sxs-lookup"><span data-stu-id="95cb0-101">Exercise - Install and run the Azure CLI</span></span>'
+metadata:
+  title: '<span data-ttu-id="95cb0-102">Übung: Installieren und Ausführen der Azure-Befehlszeilenschnittstelle</span><span class="sxs-lookup"><span data-stu-id="95cb0-102">Exercise - Install and run the Azure CLI</span></span>'
+  description: '<span data-ttu-id="95cb0-103">Übung: Installieren und Ausführen der Azure-Befehlszeilenschnittstelle</span><span class="sxs-lookup"><span data-stu-id="95cb0-103">Exercise - Install and run the Azure CLI</span></span>'
+  ms.openlocfilehash: 50ae752fef500865ac2fbdef2d749c0f5d767eb8
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135779"
+durationInMinutes: 10
+content: '[!include[](includes/3-exercise-install-and-run-the-azure-cli.md)]'

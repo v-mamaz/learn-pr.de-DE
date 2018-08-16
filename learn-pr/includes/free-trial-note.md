@@ -1,0 +1,1 @@
+<span data-ttu-id="255a4-101">Wenn Sie kein Azure-Abonnement besitzen, können Sie ein [kostenloses Konto](https://azure.microsoft.com/free/) erstellen, bevor Sie beginnen.</span><span class="sxs-lookup"><span data-stu-id="255a4-101">If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.</span></span>

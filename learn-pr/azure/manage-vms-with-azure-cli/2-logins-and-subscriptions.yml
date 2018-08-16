@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-vms-with-azure-cli-data.2-logins-and-subscriptions
+title: <span data-ttu-id="89994-101">Anmeldungen und Abonnements</span><span class="sxs-lookup"><span data-stu-id="89994-101">Logins and Subscriptions</span></span>
+metadata:
+  title: <span data-ttu-id="89994-102">Anmeldungen und Abonnements</span><span class="sxs-lookup"><span data-stu-id="89994-102">Logins and Subscriptions</span></span>
+  description: <span data-ttu-id="89994-103">Melden Sie sich zum Arbeiten mit Azure CLI und wählen Sie ein Abonnement</span><span class="sxs-lookup"><span data-stu-id="89994-103">Login to the Azure CLI and select a subscription to work with</span></span>
+  ms.openlocfilehash: 1f221e49b97c96764c78a19374284c8305a4016d
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135760"
+interactive: cloudshell
+durationInMinutes: 5
+content: '[!include[](includes/2-logins-and-subscriptions.md)]'

@@ -1,0 +1,35 @@
+### YamlMime:Module
+uid: learn.manage-secrets-with-azure-key-vault
+title: Verwalten von Geheimnissen in Ihrer Web-apps mit Azure Key Vault
+summary: Die Anwendung erfordert Service-Kennwörter, Verbindungszeichenfolgen und andere geheime Konfigurationswerte für ihre Arbeit. Speichern und verarbeiten geheime Werte ist riskant, und jede Nutzung wird die Wahrscheinlichkeit von Datenlecks eingeführt. Azure Key Vault in Kombination mit App Service Feature "verwaltete Dienstidentität", ermöglicht Azure Web-App für den geheimen Konfigurationswerte einfach und sicher zugreifen, ohne vertrauliche Daten in Ihrer quellcodeverwaltung oder die Konfiguration zu speichern.
+cardDescription: Sicher geheimen Konfigurationswerte in Key Vault speichern und darauf aus Ihrer Azure-Web-app mit verwalteter Dienstidentität zugreifen.
+iconUrl: /learn/modules/manage-secrets-with-azure-key-vault/achievement/manage-secrets-with-azure-key-vault.svg
+achievement: learn.manage-secrets-with-azure-key-vault.badge
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+metadata:
+  title: Verwalten von Geheimnissen in Ihrer Web-apps mit Azure Key Vault
+  description: In diesem Modul erfahren Sie, wie Sie einen schlüsseltresor erstellen und speichern sie einen geheimen Schlüssel. Sie sehen, konfigurieren die Web-Apps verwaltete Dienstidentitäten verwenden, zum Aktivieren des sicheren Zugriffs des Tresors ohne Konfiguration und zum Schluss implementieren Sie eine ASP.NET Core-Webanwendung, die Geheimnisse aus dem Tresor abruft.
+  ms.openlocfilehash: 268627f2c463cf6614aa9a14c9630b2afe05bbe4
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135702"
+abstract: >
+  * Erstellen Sie einer Key Vault und zum Speichern von geheimen Konfigurationswerten verwenden.
+
+  * Aktivieren Sie sicheren Zugriff auf den Tresor aus einer Azure App Service-Web-app mit verwalteter Dienstidentität
+
+  * Implementieren Sie eine ASP.NET Core-Webanwendung, die Geheimnisse aus dem Tresor abruft.
+units:
+- learn.manage-secrets-with-azure-key-vault.1-what-is-key-vault
+- learn.manage-secrets-with-azure-key-vault.2-creating-vaults-storing-secrets
+- learn.manage-secrets-with-azure-key-vault.3-authentication-with-managed-service-identity
+- learn.manage-secrets-with-azure-key-vault.4-access-secrets-from-web-app
+- learn.manage-secrets-with-azure-key-vault.5-configure-deploy-run-azure
+- learn.manage-secrets-with-azure-key-vault.6-cleanup-next-steps-knowledge-check

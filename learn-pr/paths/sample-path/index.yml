@@ -1,0 +1,26 @@
+### YamlMime:LearningPath
+uid: learn.sample-path
+title: Beispiel-Lernpfad
+summary: Dies ist die Zusammenfassung der Beispiel-Lernpfad
+cardDescription: Dies ist die Smartcard-Beschreibung der Beispiel-Lernpfad
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- developer
+products:
+- Azure
+prerequisites: Dies ist der Text der Voraussetzungen für die Beispiel-Lernpfad
+metadata:
+  title: Beispiel-Learning-Pfad-Seitentitel
+  description: Beschreibung zu Beispiel Learning Pfad Seite
+  ms.openlocfilehash: 1c7db9f7b9d41133aadb12cfcc0e65e8f87c82b8
+  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.translationtype: MT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/15/2018
+  ms.locfileid: "40135698"
+modules:
+- learn.sample-module-cloudshell
+- learn.build-a-serverless-web-app
+achievement: learn.sample-path.trophy
