@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-vms-with-azure-cli-data.9-managing-vms
-title: <span data-ttu-id="23f7c-101">Starten Sie und beenden Sie den virtuellen Computer mit der Azure-Befehlszeilenschnittstelle</span><span class="sxs-lookup"><span data-stu-id="23f7c-101">Start and Stop your VM with the Azure CLI</span></span>
+title: <span data-ttu-id="a9124-101">Starten Sie und beenden Sie den virtuellen Computer mit der Azure-Befehlszeilenschnittstelle</span><span class="sxs-lookup"><span data-stu-id="a9124-101">Start and Stop your VM with the Azure CLI</span></span>
 metadata:
-  title: <span data-ttu-id="23f7c-102">Starten Sie und beenden Sie den virtuellen Computer mit der Azure-Befehlszeilenschnittstelle</span><span class="sxs-lookup"><span data-stu-id="23f7c-102">Start and Stop your VM with the Azure CLI</span></span>
-  description: <span data-ttu-id="23f7c-103">Erfahren Sie, wie Sie mit der Azure-Befehlszeilenschnittstelle starten und Beenden eines virtuellen Computers</span><span class="sxs-lookup"><span data-stu-id="23f7c-103">Learn how to use the Azure CLI to start and stop a virtual machine</span></span>
-  ms.openlocfilehash: d61dbe466b02fa3dfe024fb042b06e26c73de3af
-  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  title: <span data-ttu-id="a9124-102">Starten Sie und beenden Sie den virtuellen Computer mit der Azure-Befehlszeilenschnittstelle</span><span class="sxs-lookup"><span data-stu-id="a9124-102">Start and Stop your VM with the Azure CLI</span></span>
+  description: <span data-ttu-id="a9124-103">Erfahren Sie, wie Sie mit der Azure-Befehlszeilenschnittstelle starten und Beenden eines virtuellen Computers</span><span class="sxs-lookup"><span data-stu-id="a9124-103">Learn how to use the Azure CLI to start and stop a virtual machine</span></span>
+  ms.openlocfilehash: 6bd1098468f8f72a9759730e3cf89b651ebffd5e
+  ms.sourcegitcommit: 1a80693c9c86d6246bf80d6b703fe846bb61dbfe
   ms.translationtype: MT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/15/2018
-  ms.locfileid: "40135761"
-interactive: cloudshell
+  ms.lasthandoff: 08/17/2018
+  ms.locfileid: "40184653"
+interactive: bash
 durationInMinutes: 4
 content: '[!include[](includes/9-managing-vms.md)]'

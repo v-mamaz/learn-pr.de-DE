@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-vms-with-azure-cli-data.11-cleanup
-title: <span data-ttu-id="1a258-101">Zusammenfassung und-Bereinigung</span><span class="sxs-lookup"><span data-stu-id="1a258-101">Summary and Cleanup</span></span>
+title: <span data-ttu-id="62d3a-101">Zusammenfassung und-Bereinigung</span><span class="sxs-lookup"><span data-stu-id="62d3a-101">Summary and Cleanup</span></span>
 metadata:
-  title: <span data-ttu-id="1a258-102">Zusammenfassung und-Bereinigung</span><span class="sxs-lookup"><span data-stu-id="1a258-102">Summary and Cleanup</span></span>
-  description: <span data-ttu-id="1a258-103">Die Bereinigung der Ressourcen, die wir in diesem Modul verwendete</span><span class="sxs-lookup"><span data-stu-id="1a258-103">Cleanup the resources we used in this module</span></span>
-  ms.openlocfilehash: 966e9a37dff239422b3676504a4a768465c56177
-  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  title: <span data-ttu-id="62d3a-102">Zusammenfassung und-Bereinigung</span><span class="sxs-lookup"><span data-stu-id="62d3a-102">Summary and Cleanup</span></span>
+  description: <span data-ttu-id="62d3a-103">Die Bereinigung der Ressourcen, die wir in diesem Modul verwendete</span><span class="sxs-lookup"><span data-stu-id="62d3a-103">Cleanup the resources we used in this module</span></span>
+  ms.openlocfilehash: 92c2498cd0c46a9c49766de1c54ef70b79ba05b0
+  ms.sourcegitcommit: 1a80693c9c86d6246bf80d6b703fe846bb61dbfe
   ms.translationtype: MT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/15/2018
-  ms.locfileid: "40135699"
-interactive: cloudshell
+  ms.lasthandoff: 08/17/2018
+  ms.locfileid: "40184652"
+interactive: bash
 durationInMinutes: 2
 content: '[!include[](includes/11-cleanup.md)]'

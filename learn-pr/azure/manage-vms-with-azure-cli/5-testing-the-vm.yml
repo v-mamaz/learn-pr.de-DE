@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-vms-with-azure-cli-data.5-testing-the-vm
-title: <span data-ttu-id="7bdf6-101">Testen Sie Ihres neuen virtuellen Computers</span><span class="sxs-lookup"><span data-stu-id="7bdf6-101">Test your new virtual machine</span></span>
+title: <span data-ttu-id="f8ba1-101">Testen Sie Ihres neuen virtuellen Computers</span><span class="sxs-lookup"><span data-stu-id="f8ba1-101">Test your new virtual machine</span></span>
 metadata:
-  title: <span data-ttu-id="7bdf6-102">Testen Sie Ihres neuen virtuellen Computers</span><span class="sxs-lookup"><span data-stu-id="7bdf6-102">Test your new virtual machine</span></span>
-  description: <span data-ttu-id="7bdf6-103">Verwenden von SSH eine Verbindung mit dem neu erstellten virtuellen Computer herstellen</span><span class="sxs-lookup"><span data-stu-id="7bdf6-103">Use SSH to connect to the newly created virtual machine</span></span>
-  ms.openlocfilehash: b72b85d874db01ad44d813921864ff8fcac439c1
-  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  title: <span data-ttu-id="f8ba1-102">Testen Sie Ihres neuen virtuellen Computers</span><span class="sxs-lookup"><span data-stu-id="f8ba1-102">Test your new virtual machine</span></span>
+  description: <span data-ttu-id="f8ba1-103">Verwenden von SSH eine Verbindung mit dem neu erstellten virtuellen Computer herstellen</span><span class="sxs-lookup"><span data-stu-id="f8ba1-103">Use SSH to connect to the newly created virtual machine</span></span>
+  ms.openlocfilehash: c30684b3f695a13029c0a3ffd809be6444be7154
+  ms.sourcegitcommit: 1a80693c9c86d6246bf80d6b703fe846bb61dbfe
   ms.translationtype: MT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/15/2018
-  ms.locfileid: "40135794"
-interactive: cloudshell
+  ms.lasthandoff: 08/17/2018
+  ms.locfileid: "40184658"
+interactive: bash
 durationInMinutes: 3
 content: '[!include[](includes/5-testing-the-vm.md)]'
