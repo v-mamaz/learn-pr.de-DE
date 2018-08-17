@@ -4,12 +4,12 @@ title: Starten Sie und beenden Sie den virtuellen Computer mit der Azure-Befehls
 metadata:
   title: Starten Sie und beenden Sie den virtuellen Computer mit der Azure-Befehlszeilenschnittstelle
   description: Erfahren Sie, wie Sie mit der Azure-Befehlszeilenschnittstelle starten und Beenden eines virtuellen Computers
-  ms.openlocfilehash: d61dbe466b02fa3dfe024fb042b06e26c73de3af
-  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.openlocfilehash: 6bd1098468f8f72a9759730e3cf89b651ebffd5e
+  ms.sourcegitcommit: 1a80693c9c86d6246bf80d6b703fe846bb61dbfe
   ms.translationtype: MT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/15/2018
-  ms.locfileid: "40135761"
-interactive: cloudshell
+  ms.lasthandoff: 08/17/2018
+  ms.locfileid: "40184653"
+interactive: bash
 durationInMinutes: 4
 content: '[!include[](includes/9-managing-vms.md)]'

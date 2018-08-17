@@ -4,12 +4,12 @@ title: Fragen Sie und Runtime-Informationen zur VM ab
 metadata:
   title: Fragen Sie und Runtime-Informationen zur VM ab
   description: Erfahren Sie, wie Sie mit der Azure-Befehlszeilenschnittstelle zur Abfrage von Informationen über Ihren virtuellen Computer
-  ms.openlocfilehash: 88e9fc7ea1366cee414eeaa30c6053665c9d5753
-  ms.sourcegitcommit: 3cf418b3e4016332dc4bc652cc5c3c26c1aceba3
+  ms.openlocfilehash: 4e20b6540bdd898415dfe0a862bdecaca913e00d
+  ms.sourcegitcommit: 1a80693c9c86d6246bf80d6b703fe846bb61dbfe
   ms.translationtype: MT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/15/2018
-  ms.locfileid: "40135679"
-interactive: cloudshell
+  ms.lasthandoff: 08/17/2018
+  ms.locfileid: "40184656"
+interactive: bash
 durationInMinutes: 10
 content: '[!include[](includes/8-querying-vms.md)]'
