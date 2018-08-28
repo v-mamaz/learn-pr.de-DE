@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.predict-costs-and-optimize-spending.3-predict-and-optimize-with-cost-management-and-advisor
+title: Vorhersagen und Optimieren mit Cost Management und dem Azure Advisor
+metadata:
+  title: Vorhersagen und Optimieren mit Cost Management und dem Azure Advisor
+  description: In dieser Einheit besprechen wir, wie Sie mit Cost Management und dem Azure Advisor Vorhersagen treffen und Optimierungen vornehmen können.
+  ms.openlocfilehash: 88e546cd9c7f44f147406d8d0e4f895b491f7818
+  ms.sourcegitcommit: d40bff88f60d5ddb3d875f788cafdd0c40069f23
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "42615869"
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-predict-and-optimize-with-cost-management-and-advisor.md)]
+quiz:
+  title: Vorhersagen und Optimieren mit Cost Management und dem Azure Advisor
+  questions:
+  - content: Der Azure Advisor gibt ausschließlich Empfehlungen zu Kosten.
+    choices:
+    - content: "True"
+      incorrectExplanation: Der Azure Advisor gibt Empfehlungen zu Hochverfügbarkeit, Sicherheit, Leistung und Kosten.
+      isCorrect: false
+    - content: "False"
+      correctExplanation: Der Azure Advisor gibt Empfehlungen zu Hochverfügbarkeit, Sicherheit, Leistung und Kosten.
+      isCorrect: true
+  - content: 'Mit Azure Cost Management können Sie folgende Aktionen durchführen:'
+    choices:
+    - content: Anzeigen von Verlaufsdaten zu den Kosten von Diensten.
+      correctExplanation: Cost Management analysiert, wofür Sie in der Vergangenheit Ihr Geld ausgegeben haben, und gleicht diese Kosten mit einem festgelegten Budget ab.
+      isCorrect: true
+    - content: Anzeigen von Kostenschätzungen bei Änderungen am Dienst.
+      incorrectExplanation: Verwenden Sie zum Anzeigen von Kostenschätzungen den Azure-Preisrechner. Cost Management analysiert, wofür Sie in der Vergangenheit Ihr Geld ausgegeben haben, und gleicht diese Kosten mit einem festgelegten Budget ab.
+      isCorrect: false
