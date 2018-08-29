@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-data-in-azure.5-knowledge-check
+metadata:
+  title: Wissenstest
+  description: Wissenstest.
+  displayType: one-column
+  ms.openlocfilehash: 8e63c9e7886d767824571f78eda178b9bdfd65f3
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40446212"
+title: Wissenstest
+durationInMinutes: 11
+content: Wissenstest
+quiz:
+  title: Wissenstest
+  questions:
+  - content: Ihr Onlinelernportal muss die Anschrift und E-Mail-Adresse jedes Benutzers speichern. Mit welchen Azure-Features können Sie diese Informationen gut verwalten?
+    choices:
+    - content: Azure Archive
+      isCorrect: false
+      incorrectExplanation: Azure Archive eignet sich ideal zum Speichern älterer Versionen Ihrer Daten, sodass Sie die Daten abrufen können, wenn diese für Prüfungen oder andere unregelmäßige Aktivitäten benötigt werden.
+    - content: Azure SQL
+      isCorrect: true
+      correctExplanation: Richtig! Mit Azure SQL können Sie relationale Daten speichern und mit leistungsstarken Abfragen schnell abrufen.
+    - content: Azure Files
+      isCorrect: false
+      incorrectExplanation: Azure Files wird für Dateifreigaben in der Cloud verwendet. Die Dateien können gleichzeitig durch die Cloud oder lokale Bereitstellungen von Windows, Linux und macOS eingebunden werden.
+  - content: Die in den Vertriebsschulungsportalen verwendeten Simulationsdateien können zu einer erheblichen Größe anwachsen. Wie unterstützt Azure diese Dateien?
+    choices:
+    - content: Azure Blob Storage kann Dateien bis zu einer Größe von 8 TB unterstützen.
+      isCorrect: true
+      correctExplanation: Richtig! Azure Blob Storage bietet die Möglichkeit, große Video- und Audiodateien zu speichern und von jedem Standort der Welt aus direkt in Browsern zu streamen.
+    - content: Azure Files kann das Speichern und Streamen großer Dateien unterstützen.
+      isCorrect: false
+      incorrectExplanation: Azure Files wird für Dateifreigaben in der Cloud verwendet. Die Dateien können gleichzeitig durch die Cloud oder lokale Bereitstellungen von Windows, Linux und macOS eingebunden werden.
+    - content: Azure unterstützt das Speichern und Streamen großer Dateien nicht.
+      isCorrect: false
+      incorrectExplanation: Azure bietet die Möglichkeit, große Video- und Audiodateien zu speichern und von jedem Standort der Welt aus direkt in Browsern zu streamen.
+  - content: Wie unterstützt Azure die Stabilität und Zuverlässigkeit von Daten?
+    choices:
+    - content: Mithilfe von Azure-Replikationsfeatures.
+      isCorrect: true
+      correctExplanation: Richtig! Azure bietet Replikationsfeatures, um Daten vor Naturkatastrophen zu schützen, und unterstützt die Verschlüsselung, um die Daten vor Angriffen zu schützen.
+    - content: Sie benötigen zusätzlichen Premium-Support, um Ihre Daten zu verschlüsseln und zu entschlüsseln, die Zuverlässigkeit wird durch Sicherungsfeatures von Drittanbietern unterstützt.
+      isCorrect: false
+      incorrectExplanation: Sie benötigen keinen weiteren Support. Azure bietet alle Funktionen, die zum Schutz Ihrer Daten vor unvorhergesehenen Risiken und Bedrohungen erforderlich sind.
+    - content: Azure bietet keine integrierten Redundanz- und Verschlüsselungsfunktionen.
+      isCorrect: false
+      incorrectExplanation: Azure enthält integrierte Funktionen zum Schutz Ihrer Daten von Risiken und Bedrohungen.

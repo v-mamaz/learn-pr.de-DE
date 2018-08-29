@@ -1,0 +1,56 @@
+### YamlMime:ModuleUnit
+uid: principles-cloud-computing.6-knowledge-check
+metadata:
+  title: Überprüfen Sie Ihre Kenntnisse
+  description: Überprüfen Sie Ihre Kenntnisse
+  displayType: one-column
+  ms.openlocfilehash: d578a28cd23b3be60038cabb5fb899c0344219ad
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40441269"
+title: Überprüfen Sie Ihre Kenntnisse
+durationInMinutes: 10
+content: Inhalt ist erforderlich
+quiz:
+  title: Wissenstest
+  questions:
+  - content: 'Wahr oder falsch: Wenn Sie einen öffentlichen Clouddienstanbieter wie Azure verwenden, müssen Sie die gesamten Kosten für die physische Hardware im Voraus bezahlen.'
+    choices:
+    - content: "True"
+      incorrectExplanation: Azure unterstützt ein Preismodell mit nutzungsbasierter Bezahlung. Dies bedeutet, dass Sie die Hardware mieten und nur für die Ressourcen zahlen, die Sie verwenden.
+      isCorrect: false
+    - content: "False"
+      correctExplanation: Azure unterstützt ein Preismodell mit nutzungsbasierter Bezahlung. Dies bedeutet, dass Sie die Hardware mieten und nur für die Ressourcen zahlen, die Sie verwenden.
+      isCorrect: true
+  - content: Nehmen wir an, dass über Nacht auf Ihrer Website eine Datenverkehrsspitze aufgetreten ist. Mit einem öffentlichen Cloudanbieter wie Azure ist es möglich, dass auf Ihrer Website keine Ausfallzeit aufgetreten ist, weil die Ressourcen automatisch skaliert wurden.
+    choices:
+    - content: "True"
+      correctExplanation: Cloud Computing gilt als flexibel. Dies bedeutet, dass die Ressourcen nachfrageorientiert automatisch zugeordnet oder freigegeben werden können.
+      isCorrect: true
+    - content: "False"
+      incorrectExplanation: Cloud Computing gilt als flexibel. Dies bedeutet, dass die Ressourcen nachfrageorientiert automatisch zugeordnet oder freigegeben werden können.
+      isCorrect: false
+  - content: Nehmen wir an, Sie wechseln zur Cloud und wünschen hohe Skalierbarkeit, möchten Hardware mieten, und Sicherheit ist kein großes Thema. Welches Cloudbereitstellungsmodell ist für Sie am besten geeignet?
+    choices:
+    - content: Öffentliche Cloud
+      correctExplanation: Eine öffentliche Cloud ist im Besitz eines Drittanbieter-Cloudanbieters, der sie auch betreibt, was die Vorteile bietet, dass Sie die Skalierbarkeit nutzen und Hardware mieten können. Da die Hardware sich nicht in Ihrem Besitz befindet, können Sie nicht steuern, wer physischen Zugriff darauf hat.
+      isCorrect: true
+    - content: Private Cloud
+      incorrectExplanation: Ein primärer Grund für die private Cloud ist die Sicherheit. Bei einer privaten Cloud befindet sich die Hardware in der Regel im lokalen Besitz und wird dort betrieben.
+      isCorrect: false
+    - content: Hybrid Cloud
+      incorrectExplanation: Eine Hybrid Cloud ist die Kombination von öffentlicher und privater Cloud. Da Sicherheit für Sie kein Problem ist, besteht keine Notwendigkeit, etwas in die private Cloud zu verschieben.
+      isCorrect: false
+  - content: Nehmen wir an, Sie erstellen eine Anwendung, und sie soll Ihren Benutzern so schnell wie möglich zur Verfügung stehen. Sie möchten sich nicht über die Verwaltung der zugrunde liegenden Hardware oder Software kümmern, sondern sich nur auf Erstellen, Testen und Bereitstellen konzentrieren. Welche Art von Clouddienst ist für Sie am besten geeignet?
+    choices:
+    - content: Infrastructure-as-a-Service (IaaS)
+      incorrectExplanation: Mit Infrastruktur als Dienst sind Sie verantwortlich für die Verwaltung von Hardware und Software. Dies umfasst Aufgaben wie das Ausführen von Systemupdates für virtuelle Computer.
+      isCorrect: false
+    - content: Platform-as-a-Service (PaaS)
+      correctExplanation: Das Ziel der Plattform als Dienst ist, Sie dabei zu unterstützen, eine Anwendung so schnell wie möglich zu erstellen. Der IT-Verwaltungsaufgaben werden für Sie ausgeführt, damit Sie sich auf das Schreiben von Code konzentrieren können.
+      isCorrect: true
+    - content: Software-as-a-Service (SaaS)
+      incorrectExplanation: Mit Software als Dienst verwenden Sie eine vorhandene Anwendung über einen Webbrowser oder eine Softwareanwendung.
+      isCorrect: false

@@ -1,0 +1,25 @@
+### YamlMime:LearningPath
+uid: learn.work-with-relational-data-in-azure
+title: Arbeiten mit relationalen Daten in Azure
+summary: Azure unterstützt mehrere beliebte SQL-basierte Datenbanklösungen, darunter SQL Server, PostgreSQL und MySQL. Erfahren Sie, wie Sie diese Unternehmensdatenlösungen in Azure verwenden, um die Daten Ihrer Anwendung in der Cloud zu speichern und abzurufen.
+cardDescription: Azure unterstützt mehrere beliebte SQL-basierte Datenbanklösungen, darunter SQL Server, PostgreSQL und MySQL. Erfahren Sie, wie Sie diese Unternehmensdatenlösungen in Azure verwenden, um die Daten Ihrer Anwendung in der Cloud zu speichern und abzurufen.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- developer
+products:
+- Azure
+prerequisites: Keine
+metadata:
+  title: Arbeiten mit relationalen Daten in Azure
+  description: Azure unterstützt mehrere beliebte SQL-basierte Datenbanklösungen, darunter SQL Server, PostgreSQL und MySQL. Erfahren Sie, wie Sie diese Unternehmensdatenlösungen in Azure verwenden, um die Daten Ihrer Anwendung in der Cloud zu speichern und abzurufen.
+  ms.openlocfilehash: 6141b4692e32f9a7adc606b8d5ca6ddf39900628
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40440043"
+modules:
+- learn.sample-module-cloudshell
+achievement: learn.work-with-relational-data-in-azure.trophy

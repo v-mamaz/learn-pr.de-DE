@@ -1,0 +1,12 @@
+Sie können nun damit beginnen, den Temperaturdienst zu implementieren. In der vorherigen Einheit haben Sie festgestellt, dass eine serverlose Lösung Ihren Anforderungen am besten entsprechen würde. Damit eine serverlose Azure-Funktion implementiert werden kann, benötigt sie ein „Zuhause“. Dieses „Zuhause“ ist eine Azure-Funktions-App.
+
+## <a name="azure-function-app-overview"></a>Übersicht zur Azure-Funktions-App
+Azure-Funktionen werden in einem Container gehostet, der als Funktions-App bezeichnet wird. Sie definieren Funktions-Apps in Azure, um Ihre Funktionen logisch zu gruppieren und zu strukturieren. Funktions-Apps sind eine Computeressource in Azure. In unserem Aufzugsbeispiel würden Sie eine Funktions-App zum Hosten des Temperaturdiensts der Aufzugsantriebseinheit erstellen. Vor dem Erstellen der Funktions-App müssen einige Entscheidungen getroffen werden: Sie müssen einen Dienstplan und ein kompatibles Speicherkonto auswählen.
+
+### <a name="choosing-a-service-plan"></a>Auswählen eines Dienstplans
+Funktions-Apps können eine von zwei Arten von Dienstplänen nutzen. Der erste Dienstplan ist der verbrauchsbasierte Dienstplan. Dies ist der Plan, den Sie auswählen, wenn Sie die serverlose Azure-Anwendungsplattform verwenden. Der verbrauchsbasierte Dienstplan bietet automatische Skalierung und stellt Ihnen die Ausführung der Funktionen in Rechnung. Der verbrauchsbasierte Dienstplan ermöglicht die Konfiguration eines Zeitlimits für die Ausführung einer Funktion. Standardmäßig beträgt dessen Dauer 5 Minuten, Sie können jedoch ein Timeout von bis zu 10 Minuten konfigurieren. 
+
+Der zweite Plan wird als Azure App Service-Plan bezeichnet. Mit diesem Plan kann Ihre Funktion fortlaufend auf einem virtuellen Computer ausgeführt werden. Wählen Sie diese Option aus, wenn Ihre Funktionen kontinuierlich verwendet werden, oder mehr Verarbeitungsleistung bzw. Ausführungszeit erfordern, als der verbrauchsbasierte Dienstplan bereitstellen kann. 
+
+### <a name="storage-account-requirements"></a>Anforderungen an das Speicherkonto
+Wenn Sie eine Funktions-App erstellen, ist sie in der Regel mit einem Speicherkonto verknüpft, das Azure-Blobspeicher, -Warteschlangenspeicher und Table Storage unterstützt. Die Funktions-App verwendet dieses Speicherkonto für interne Vorgänge wie z.B. das Protokollieren von Funktionsausführungen und Verwalten von Ausführungstriggern. Hier werden auch im verbrauchsbasierten Dienstplan der Azure-Funktionscode und Konfigurationsdateien gespeichert. 

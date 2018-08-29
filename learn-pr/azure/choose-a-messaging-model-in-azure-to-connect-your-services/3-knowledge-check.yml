@@ -1,0 +1,23 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-messaging-model.3-knowledge-check
+title: Knowledge check - Gründe für die Verwendung von Ereignisnachrichten
+metadata:
+  title: Knowledge check - Gründe für die Verwendung von Ereignisnachrichten
+  description: Knowledge check - Gründe für die Verwendung von Ereignisnachrichten
+  ms.openlocfilehash: 5ab19c8075ef9037d4258ecd4d0c1da0348fff08
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40444866"
+durationInMinutes: 3
+quiz:
+  title: Messagingmodelle
+  questions:
+  - content: 'In Ihrer verteilten Anwendung haben Sie einen Webdienst, der Benutzer authentifiziert. Wenn sich ein Benutzer anmeldet, muss der Webdienst mit einer Desktopanwendung kommunizieren, die auf den Computern aller Benutzer ausgeführt wird, um den „Online“-Status des Benutzers anzuzeigen. Wahr oder falsch: Dies ist ein Beispiel einer Nachricht in einer verteilten Anwendung.'
+    choices:
+    - content: "True"
+      incorrectExplanation: 'Wahr oder falsch: Dies ist ein Beispiel eines Ereignisses in einer verteilten Anwendung. Die Kommunikation wird an alle Abonnenten und Herausgeber weitergeleitet, und der Herausgeber hat weder Kenntnisse oder Präferenzen der Kommunikationsabwicklung durch einen Abonnenten, noch Kenntnisse über die Anzahl der ggf. vorhandenen Abonnenten.'
+      isCorrect: false
+    - content: "False"
+      isCorrect: true

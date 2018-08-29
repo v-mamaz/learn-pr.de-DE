@@ -1,0 +1,25 @@
+### YamlMime:LearningPath
+uid: learn.store-data-in-azure
+title: Speichern von Daten in Azure
+summary: Azure bietet eine Vielzahl von Datenspeichermodellen für jede Art von Daten, die Sie in der Cloud speichern möchten oder müssen. Finden Sie heraus, welches Verfahren sich für Ihre Daten am besten eignet, und lernen Sie die Anforderungen für die Verwendung dieser unterschiedlichen Speicherfunktionen kennen.
+cardDescription: Azure bietet eine Vielzahl von Datenspeichermodellen für jede Art von Daten, die Sie in der Cloud speichern möchten oder müssen. Finden Sie heraus, welches Verfahren sich für Ihre Daten am besten eignet, und lernen Sie die Anforderungen für die Verwendung dieser unterschiedlichen Speicherfunktionen kennen.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+prerequisites: Keine
+metadata:
+  title: Speichern von Daten in Azure
+  description: Azure bietet eine Vielzahl von Datenspeichermodellen für jede Art von Daten, die Sie in der Cloud speichern möchten oder müssen. Finden Sie heraus, welches Verfahren sich für Ihre Daten am besten eignet, und lernen Sie die Anforderungen für die Verwendung dieser unterschiedlichen Speicherfunktionen kennen.
+  ms.openlocfilehash: 172b3cf1051cd4455639dbfa3bba43b53bae2f91
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40446216"
+modules:
+- learn.store-app-data-with-azure-blob-storage
+achievement: learn.store-data-in-azure.trophy
