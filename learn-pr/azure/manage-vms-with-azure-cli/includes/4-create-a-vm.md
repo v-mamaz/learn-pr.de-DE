@@ -1,0 +1,71 @@
+<span data-ttu-id="7d1ff-101">Die Azure CLI enthält den Befehl „`vm`“ für die Arbeit mit virtuellen Computern in Azure.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-101">The Azure CLI includes the `vm` command to work with virtual machines in Azure.</span></span> <span data-ttu-id="7d1ff-102">Wir können verschiedene Unterbefehle bereitstellen, um bestimmte Aufgaben auszuführen.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-102">We can supply several subcommands to do specific tasks.</span></span> <span data-ttu-id="7d1ff-103">Dies sind die am häufigsten verwendeten:</span><span class="sxs-lookup"><span data-stu-id="7d1ff-103">The most common include:</span></span>
+
+| <span data-ttu-id="7d1ff-104">Unterbefehl</span><span class="sxs-lookup"><span data-stu-id="7d1ff-104">Sub-command</span></span> | <span data-ttu-id="7d1ff-105">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="7d1ff-105">Description</span></span> |
+|-------------|-------------|
+| `create`    | <span data-ttu-id="7d1ff-106">Erstellen eines neuen virtuellen Computers</span><span class="sxs-lookup"><span data-stu-id="7d1ff-106">Create a new virtual machine</span></span> |
+| `deallocate` | <span data-ttu-id="7d1ff-107">Aufheben der Zuordnung eines virtuellen Computers</span><span class="sxs-lookup"><span data-stu-id="7d1ff-107">Deallocate a virtual machine</span></span> |
+| `delete` | <span data-ttu-id="7d1ff-108">Löschen eines virtuellen Computers</span><span class="sxs-lookup"><span data-stu-id="7d1ff-108">Delete a virtual machine</span></span> |
+| `list` | <span data-ttu-id="7d1ff-109">Auflisten der erstellten virtuellen Computer in Ihrem Abonnement</span><span class="sxs-lookup"><span data-stu-id="7d1ff-109">List the created virtual machines in your subscription</span></span> |
+| `open-port` | <span data-ttu-id="7d1ff-110">Öffnen eines bestimmten Netzwerkports für eingehenden Datenverkehr</span><span class="sxs-lookup"><span data-stu-id="7d1ff-110">Open a specific network port for inbound traffic</span></span> |
+| `restart` | <span data-ttu-id="7d1ff-111">Neustarten eines virtuellen Computers</span><span class="sxs-lookup"><span data-stu-id="7d1ff-111">Restart a virtual machine</span></span> |
+| `show` | <span data-ttu-id="7d1ff-112">Abrufen der Details für einen virtuellen Computer</span><span class="sxs-lookup"><span data-stu-id="7d1ff-112">Get the details for a virtual machine</span></span> |
+| `start` | <span data-ttu-id="7d1ff-113">Starten eines angehaltenen virtuellen Computers</span><span class="sxs-lookup"><span data-stu-id="7d1ff-113">Start a stopped virtual machine</span></span> |
+| `stop` | <span data-ttu-id="7d1ff-114">Anhalten eines ausgeführten virtuellen Computers</span><span class="sxs-lookup"><span data-stu-id="7d1ff-114">Stop a running virtual machine</span></span> |
+| `update` | <span data-ttu-id="7d1ff-115">Aktualisieren der Eigenschaft eines virtuellen Computers</span><span class="sxs-lookup"><span data-stu-id="7d1ff-115">Update a property of a virtual machine</span></span> |
+
+> [!NOTE]
+> <span data-ttu-id="7d1ff-116">Eine vollständige Liste der Befehle finden Sie in der [Dokumentation der Azure CLI-Referenz](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest).</span><span class="sxs-lookup"><span data-stu-id="7d1ff-116">For a complete list of commands, you can check the [Azure CLI reference documentation](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest).</span></span>
+
+<span data-ttu-id="7d1ff-117">Beginnen wir mit dem ersten: `az vm create`.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-117">Let's start with the first one: `az vm create`.</span></span> <span data-ttu-id="7d1ff-118">Mit diesem Befehl wird ein virtueller Computer in einer Ressourcengruppe erstellt.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-118">This command is used to create a virtual machine in a resource group.</span></span> <span data-ttu-id="7d1ff-119">Es gibt verschiedene Parameter, die Sie übergeben können, um alle Aspekte des neuen virtuellen Computers zu konfigurieren.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-119">There are several parameters you can pass to configure all the aspects of the new VM.</span></span> <span data-ttu-id="7d1ff-120">Diese drei Parameter müssen angegeben werden:</span><span class="sxs-lookup"><span data-stu-id="7d1ff-120">The three parameters that must be supplied are:</span></span>
+
+| <span data-ttu-id="7d1ff-121">Parameter</span><span class="sxs-lookup"><span data-stu-id="7d1ff-121">Parameter</span></span> | <span data-ttu-id="7d1ff-122">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="7d1ff-122">Description</span></span> |
+|-----------|-------------|
+| `resource-group` | <span data-ttu-id="7d1ff-123">Die Ressourcengruppe, die Besitzer des virtuellen Computers sein soll.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-123">The resource group that will own the virtual machine</span></span> |
+| `name` | <span data-ttu-id="7d1ff-124">Der Name des virtuellen Computers – muss innerhalb der Ressourcengruppe eindeutig sein.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-124">The name of the virtual machine - must be unique within the resource group</span></span> |
+| `image` | <span data-ttu-id="7d1ff-125">Das Betriebssystemimage, das zum Erstellen des virtuellen Computers verwendet werden soll.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-125">The operating system image to use to create the VM</span></span> |
+
+<span data-ttu-id="7d1ff-126">Darüber hinaus ist es hilfreich, das `--verbose`-Flag hinzuzufügen, um den Fortschritt der Erstellung des virtuellen Computers zu beobachten.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-126">In addition, it's helpful to add the `--verbose` flag to see progress while the VM is being created.</span></span> 
+
+## <a name="create-a-linux-virtual-machine"></a><span data-ttu-id="7d1ff-127">Erstellen einer virtuellen Linux-Maschine</span><span class="sxs-lookup"><span data-stu-id="7d1ff-127">Create a Linux virtual machine</span></span>
+
+<span data-ttu-id="7d1ff-128">Erstellen wir jetzt einen neuen virtuellen Linux-Computer.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-128">Let's create a new Linux virtual machine.</span></span> <span data-ttu-id="7d1ff-129">Führen Sie in Azure Cloud Shell folgenden Befehl aus:</span><span class="sxs-lookup"><span data-stu-id="7d1ff-129">Execute the following command in Azure Cloud Shell:</span></span>
+
+```azurecli
+az vm create --resource-group ExerciseResources --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --verbose 
+```
+
+<span data-ttu-id="7d1ff-130">Dieser Befehl erstellt einen neuen virtuellen Linux-Computer unter **Debian** mit dem Namen „`SampleVM`“.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-130">This command will create a new **Debian** Linux virtual machine with the name `SampleVM`.</span></span> <span data-ttu-id="7d1ff-131">Beachten Sie, dass das Azure CLI-Tool während der Erstellung des virtuellen Computers gesperrt ist.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-131">Notice that the Azure CLI tool is blocked while the VM is being created.</span></span> <span data-ttu-id="7d1ff-132">Wenn Sie nicht warten möchten, können Sie die Option „`--no-wait`“ verwenden, damit das Azure CLI-Tool sofort wieder verfügbar ist, wenn Sie den Befehl beispielsweise in einem Skript ausführen.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-132">If you would prefer not to wait, you can use the `--no-wait` option to tell the Azure CLI tool to return immediately, for example if you're executing the command in a script.</span></span> <span data-ttu-id="7d1ff-133">Verwenden Sie später im Skript den Befehl „`azure vm wait --name [vm-name]`“, um zu warten, bis der virtuelle Computer vollständig erstellt wurde.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-133">Later in the script, use the `azure vm wait --name [vm-name]` command to wait for the VM to finish being created.</span></span>
+
+<span data-ttu-id="7d1ff-134">Wenn Sie sich die ausführlichen Antworten ansehen, werden Sie auch feststellen, dass der Name „`SampleVM`“ in verschiedenen Abhängigkeiten für den virtuellen Computer verwendet wird.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-134">If you look at the verbose responses, you will also see that the `SampleVM` name is used to name various dependencies for the VM.</span></span>
+
+```
+Succeeded: SampleVMNSG (Microsoft.Network/networkSecurityGroups)
+Accepted: SampleVMVNET (Microsoft.Network/virtualNetworks)
+Succeeded: SampleVMPublicIP (Microsoft.Network/publicIPAddresses)
+Accepted: SampleVMVNET (Microsoft.Network/virtualNetworks)
+Succeeded: SampleVMVNET (Microsoft.Network/virtualNetworks)
+Accepted: vm_deploy_vzKnQDyyq48yPUO4VrSDfFIi81vHKZ9g (Microsoft.Resources/deployments)
+```
+
+<span data-ttu-id="7d1ff-135">Sie können diese automatisch generierten Ressourcennamen mithilfe von optionalen Parametern für „`vm create`“ überschreiben, z.B.: `--vnet-name` und `--public-ip-address-dns-name`.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-135">You can override these auto-generated resource names using optional parameters to `vm create`, such as `--vnet-name` and `--public-ip-address-dns-name`.</span></span>
+
+<span data-ttu-id="7d1ff-136">Beachten Sie, dass wir den Namen des Administratorkontos mit dem `admin-username`-Flag zu „aldis“ ändern.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-136">Notice that we are specifying the admin account name through the `admin-username` flag to be "aldis".</span></span> <span data-ttu-id="7d1ff-137">Wenn Sie dies auslassen, verwendet der `vm create`-Befehl Ihren _aktuellen Benutzernamen_.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-137">If you omit this, the `vm create` command will use your _current user name_.</span></span> <span data-ttu-id="7d1ff-138">Da die Regeln für Kontonamen in jedem Betriebssystem anders sind, ist es sicherer, einen bestimmten Namen anzugeben.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-138">Since the rules for account names are different for each OS, it's safer to specify a specific name.</span></span> <span data-ttu-id="7d1ff-139">Allgemeine Namen wie „root“ und „admin“ sind für die meisten Images nicht zulässig.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-139">Common names such as "root" and "admin" are not allowed for most images.</span></span>
+
+<span data-ttu-id="7d1ff-140">Wir verwenden auch das `generate-ssh-keys`-Flag.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-140">We are also using the `generate-ssh-keys` flag.</span></span> <span data-ttu-id="7d1ff-141">Dieser Parameter wird für Linux-Distributionen verwendet und erstellt ein Sicherheitsschlüsselpaar, sodass wir das `ssh`-Tool verwenden können, um remote auf den virtuellen Computer zuzugreifen.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-141">This parameter is used for Linux distributions and creates a pair of security keys so we can use the `ssh` tool to access the virtual machine remotely.</span></span> <span data-ttu-id="7d1ff-142">Die beiden Dateien werden in den Ordner „`.ssh`“ auf Ihrem Computer und auf dem virtuellen Computer platziert.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-142">The two files are placed into the `.ssh` folder on your machine and in the VM.</span></span> <span data-ttu-id="7d1ff-143">Wenn Sie bereits über einen SSH-Schlüssel namens „`id_rsa`“ im Zielordner verfügen, wird dieser verwendet, anstatt einen neuen Schlüssel zu generieren.</span><span class="sxs-lookup"><span data-stu-id="7d1ff-143">If you already have an SSH key named `id_rsa` in the target folder, then it will be used rather than having a new key generated.</span></span>
+
+<span data-ttu-id="7d1ff-144">Sobald der virtuelle Computer erstellt wurde, erhalten Sie eine JSON-Antwort, die den aktuellen Zustand des virtuellen Computers und seine von Azure zugewiesenen öffentlichen und privaten IP-Adressen enthält:</span><span class="sxs-lookup"><span data-stu-id="7d1ff-144">Once it finishes creating the VM, you will get a JSON response which includes the current state of the virtual machine and its public and private IP addresses assigned by Azure:</span></span>
+
+```json
+{
+  "fqdns": "",
+  "id": "/subscriptions/abc13b0c-d2c4-64b2-9ac5-2f4cb819b752/resourceGroups/ExerciseResources/providers/Microsoft.Compute/virtualMachines/SampleVM",
+  "location": "eastus",
+  "macAddress": "00-0D-3A-1A-D9-74",
+  "powerState": "VM running",
+  "privateIpAddress": "10.0.0.4",
+  "publicIpAddress": "168.61.54.62",
+  "resourceGroup": "ExerciseResources",
+  "zones": ""
+}
+```
+
