@@ -3,7 +3,7 @@ uid: learn.manage-secrets-with-azure-key-vault
 title: Verwalten von Geheimnissen in Ihren Web-Apps mit Azure Key Vault
 summary: Ihre Anwendung benötigt Dienstkennwörter, Verbindungszeichenfolgen und andere Konfigurationswerte von Geheimnissen, um ihre Aufgabe zu erfüllen. Das Speichern und Verwalten der Werte von Geheimnissen ist risikoreich, und jede Verwendung birgt die Möglichkeit der Preisgabe. Azure Key Vault ermöglicht in Kombination mit der Funktion „Verwaltete Dienstidentität“ (Managed Service Identity, MSI) von Azure App Service den einfachen und sicheren Zugriff auf Konfigurationswerte von Geheimnissen, ohne dass Geheimnisse in Ihrer Versionsverwaltung oder Konfiguration gespeichert werden müssen.
 cardDescription: Speichern Sie Konfigurationswerte von Geheimnissen geschützt in Azure Key Vault, und greifen Sie über „Verwaltete Dienstidentität“ sicher in Ihrer Azure-Webanwendung darauf zu.
-iconUrl: /learn/modules/manage-secrets-with-azure-key-vault/achievement/manage-secrets-with-azure-key-vault.svg
+iconUrl: /learn/achievements/manage-secrets-with-azure-key-vault.svg
 achievement: learn.manage-secrets-with-azure-key-vault.badge
 levels:
 - beginner
@@ -14,12 +14,12 @@ products:
 metadata:
   title: Verwalten von Geheimnissen in Ihren Web-Apps mit Azure Key Vault
   description: In diesem Modul lernen Sie, wie Sie eine Key Vault-Instanz erstellen und ein Geheimnis darin speichern. Sie erfahren, wie Sie eine Webanwendung für die Verwendung von „Verwaltete Dienstidentität“ konfigurieren, um einen sicheren Zugriff auf den Tresor ohne jegliche Konfiguration zu ermöglichen. Außerdem implementieren Sie eine ASP.NET Core-Webanwendung, die Geheimnisse aus dem Tresor abruft.
-  ms.openlocfilehash: ba109c56ec8d43e40ac534c1b28317542dd5e938
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: 0780a6a23836c53ea0f01379ce712c7916075b6d
+  ms.sourcegitcommit: d51dceaa3772e8083b3f0b6460f8a616b3139d25
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40440472"
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "43053948"
 abstract: >
   * Erstellen Sie einen Azure Key Vault, den Sie zum Speichern der Konfigurationswerte von Geheimnissen verwenden.
 
