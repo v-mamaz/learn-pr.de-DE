@@ -1,31 +1,29 @@
 ### YamlMime:ModuleUnit
 uid: learn.cosmos-db-app-with-vscode.2-setup
 metadata:
-  title: <span data-ttu-id="d400e-101">Einrichten Ihrer App in Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="d400e-101">Set up your app in Visual Studio Code</span></span>
-  description: <span data-ttu-id="d400e-102">Erfahren Sie, wie Sie eine Azure Cosmos DB-App in Visual Studio Code erstellen.</span><span class="sxs-lookup"><span data-stu-id="d400e-102">Learn how to create an Azure Cosmos DB app in Visual Studio Code.</span></span>
+  title: <span data-ttu-id="e0909-101">Einrichten Ihrer App in Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="e0909-101">Set up your app in Visual Studio Code</span></span>
+  description: <span data-ttu-id="e0909-102">Erfahren Sie, wie Sie eine Azure Cosmos DB-App in Visual Studio Code erstellen.</span><span class="sxs-lookup"><span data-stu-id="e0909-102">Learn how to create an Azure Cosmos DB app in Visual Studio Code.</span></span>
   displayType: one-column
   interactive: azureportal
-  ms.openlocfilehash: 91ebe0df5dd3fcbd880efe0f3699202da648ebe4
-  ms.sourcegitcommit: d40bff88f60d5ddb3d875f788cafdd0c40069f23
+  ms.openlocfilehash: 55aa05b093973249b8b40d71162eb61338f6948a
+  ms.sourcegitcommit: 92580185df76595daa4cf68a5311019c85fe7bf3
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "42614840"
-title: <span data-ttu-id="d400e-103">Einrichten Ihrer App in Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="d400e-103">Set up your app in Visual Studio Code</span></span>
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42873330"
+title: <span data-ttu-id="e0909-103">Einrichten Ihrer App in Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="e0909-103">Set up your app in Visual Studio Code</span></span>
 durationInMinutes: 10
 content: >
   [!include[](includes/2-setup.md)]
 tasks:
 - action: exists
   environment: azure
-  hint: <span data-ttu-id="d400e-104">Stellen Sie sicher, dass eine Datenbank namens „Users“ und eine Sammlung namens „WebCustomers“ vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="d400e-104">Ensure there is a database named Users and a collection named WebCustomers.</span></span>
+  hint: <span data-ttu-id="e0909-104">Stellen Sie sicher, dass eine Datenbank namens „Users“ und eine Sammlung namens „WebCustomers“ vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="e0909-104">Ensure there is a database named Users and a collection named WebCustomers.</span></span>
   azure:
-    resourceGroup: myResourceGroup
     location: eastus
 - action: exists
   environment: azure
   azure:
-    resourceGroup: groupA
     resource:
       type: Microsoft.Storage/storageAccounts
       name: docsproxyppea427
