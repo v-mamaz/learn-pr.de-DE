@@ -1,14 +1,10 @@
-In dieser Übung erstellen Sie einen virtuellen Windows-Computer in Azure.
+Betrachten wir ein alternatives Szenario. Angenommen, Ihre Organisation ist eine Schule, in der mithilfe von Windows-VMs Testumgebungen bereitgestellt werden. Schüler können in diesen Testumgebungen Web-Apps installieren, Domänen konfigurieren und Windows-Dienste und -Features ausprobieren, ohne die Funktionalität der Schulcomputer zu beeinflussen. Lehrer können mithilfe von RDP eine Verbindung mit diesen VMs herstellen und den Arbeitsfortschritt der Schüler überprüfen. Sehen wir uns an, wie ein solches Szenario mit Azure umgesetzt werden kann.
 
-## <a name="motivation"></a>Motivation
-
-Gehen wir für diese Übung von einem alternativen Szenario aus. In diesem ist Ihre Organisation eine Schule, in der auf virtuellen Windows-Computern Testumgebungen bereitgestellt werden. In diesen haben Schüler die Möglichkeit, Web-Apps zu installieren, Domänen zu konfigurieren und Windows-Dienste und -Features auszuprobieren, ohne die Funktionalität der Schulcomputer zu beeinflussen. Lehrer können mithilfe von RDP eine Verbindung mit diesen virtuellen Computern herstellen und den Bearbeitungsfortschritt der Schüleraufgaben überprüfen.
-
-## <a name="create-a-windows-vm"></a>Erstellen eines virtuellen Windows-Computers
+## <a name="create-a-windows-vm"></a>Erstellen einer Windows-VM
 
 Gehen Sie zum Erstellen eines virtuellen Windows-Computers wie folgt vor:
 
-1. Melden Sie sich über das [Azure-Portal](https://portal.azure.com) bei Azure an.
+1. Melden Sie sich über das [Azure-Portal](https://portal.azure.com?azure-portal=true) bei Azure an.
 
 1. Klicken Sie im Azure-Portal oben links auf **Ressource erstellen**.
 
