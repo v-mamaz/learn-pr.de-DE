@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-compute.2-essential-azure-compute-concepts
-title: Wichtige Azure Compute-Konzepte
+title: Wichtige Azure-Computekonzepte
 metadata:
-  title: Wichtige Azure Compute-Konzepte
-  description: Wichtige Azure Compute-Konzepte
-  ms.openlocfilehash: dbb07c04e8affac61bcc6adf4fa19a8fb467d548
-  ms.sourcegitcommit: 0e0cc41b7669e7149541f34f3f24ba0e864ed07d
+  title: Wichtige Azure-Computekonzepte
+  description: Wichtige Azure-Computekonzepte
+  ms.openlocfilehash: 5a2f4916fb536fe35b070c570f31fbd6437ae8e0
+  ms.sourcegitcommit: bcd9fd78122da4fc1545c7923a5fc0cd0a8abe96
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/23/2018
-  ms.locfileid: "42702770"
-durationInMinutes: 11
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43152059"
+durationInMinutes: 5
 content: '[!include[](includes/2-essential-azure-compute-concepts.md)]'

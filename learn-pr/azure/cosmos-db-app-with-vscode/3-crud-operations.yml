@@ -4,12 +4,12 @@ metadata:
   title: Erstellen, Lesen, Aktualisieren und Löschen von Azure Cosmos DB-Dokumenten
   description: Erfahren Sie, wie Sie Elemente in Azure Cosmos DB mithilfe von .NET Core erstellen, lesen, aktualisieren und löschen.
   displayType: one-column
-  ms.openlocfilehash: 7cbd3d5c258594627c7bddad922c3543d7deba40
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: 5b659d23668a130ec24c885ffb1edadb6259da3b
+  ms.sourcegitcommit: 92580185df76595daa4cf68a5311019c85fe7bf3
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40448814"
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42873500"
 title: Programmgesteuertes Erstellen, Lesen, Aktualisieren und Löschen von Dokumenten
 durationInMinutes: 10
 content: >
@@ -19,12 +19,10 @@ tasks:
   environment: azure
   hint: Stellen Sie sicher, dass ein Dokument mit dem ID-Wert 2 vorhanden ist.
   azure:
-    resourceGroup: myResourceGroup
     location: eastus
 - action: exists
   environment: azure
   azure:
-    resourceGroup: groupA
     resource:
       type: Microsoft.Storage/storageAccounts
       name: docsproxyppea427
