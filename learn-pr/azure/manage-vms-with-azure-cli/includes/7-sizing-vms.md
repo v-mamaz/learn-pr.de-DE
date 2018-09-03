@@ -7,11 +7,11 @@ Azure enthält eine Reihe von [vordefinierten VM-Größen](https://docs.microsof
 | Typ | Größen | Beschreibung |
 |------|-------|-------------|
 | Allgemeiner Zweck   | Dsv3, Dv3, DSv2, Dv2, DS, D, Av2, A0-7 | Ausgewogenes Verhältnis von CPU zu Arbeitsspeicher. Ideal für Entwicklung und Tests, kleine bis mittlere Anwendungen und Datenlösungen. |
-| Computeoptimiert | Fs, F | Hohes Verhältnis von CPU zu Arbeitsspeicher. Geeignet für Anwendungen, Network Appliances und Stapelverarbeitungsvorgänge mit mittlerer Auslastung. |
-| Arbeitsspeicheroptimiert  | Esv3, Ev3, M, GS, G, DSv2, DS, Dv2, D   | Hohes Verhältnis von Speicher zu Kern. Hervorragend geeignet für relationale Datenbanken, mittlere bis große Caches und In-Memory-Analysen. |
+| Computeoptimiert | Fs, F | Mehr CPU als Arbeitsspeicher. Geeignet für Anwendungen, Network Appliances und Stapelverarbeitungsvorgänge mit mittlerer Auslastung. |
+| Arbeitsspeicheroptimiert  | Esv3, Ev3, M, GS, G, DSv2, DS, Dv2, D   | Mehr Arbeitsspeicher als Kerne. Hervorragend geeignet für relationale Datenbanken, mittlere bis große Caches und In-Memory-Analysen. |
 | Speicheroptimiert | Ls | Datenträgerdurchsatz und -E/A auf hohem Niveau. Ideal für Big Data sowie SQL- und NoSQL-Datenbanken. |
-| GPU-optimiert | NV, NC | Spezialisierte virtuelle Computer für intensives Grafikrendering und intensive Videobearbeitung. |
-| Hohe Leistung | H, A8-11 | Unsere virtuellen Computer mit den leistungsfähigsten CPUs, die optional über Netzwerkschnittstellen mit hohem Durchsatz (RDMA) verfügen. | 
+| GPU-optimiert | NV, NC | Spezialisierte virtuelle Computer für ressourcenintensives Grafikrendering und ressourcenintensive Videobearbeitung. |
+| Hohe Leistung | H, A8-11 | Unsere leistungsfähigsten CPU-VMs, die optional über Netzwerkschnittstellen mit hohem Durchsatz (RDMA) verfügen. | 
 
 Die verfügbaren Größen hängen von der Region ab, in der Sie den virtuellen Computer erstellen. Mit dem Befehl „`vm list-sizes`“ können Sie eine Liste der verfügbaren Größen abrufen. Geben Sie Folgendes in Azure Cloud Shell ein:
 
@@ -46,13 +46,16 @@ Hier finden Sie eine gekürzte Antwort für „`eastus`:
                 64       3891200  Standard_M128m                      128           1047552                16384000
 ```
 
-Wir haben beim Erstellen des virtuellen Computers keine Größe angegeben, daher hat Azure eine allgemeine Standardgröße von „`Standard_DS1_v2`“ für uns ausgewählt. Wir können jedoch die Größe mithilfe des `--size`-Parameters im `vm create`-Befehl angeben.
+Wir haben beim Erstellen des virtuellen Computers keine Größe angegeben, daher hat Azure eine allgemeine Standardgröße von „`Standard_DS1_v2`“ für uns ausgewählt. Wir können jedoch die Größe mithilfe des `--size`-Parameters im `vm create`-Befehl angeben. Sie können z.B. mit dem folgenden Befehl eine VM mit 16 Kernen erstellen:
 
 ```azurecli
 az vm create --resource-group ExerciseResources --name SampleVM \
   --image Debian --admin-username aldis --generate-ssh-keys --verbose \
   --size "Standard_DS5_v2"
 ```
+
+> [!WARNING]
+> Je nach Abonnement können Sie [unterschiedlich viele und unterschiedlich große](https://docs.microsoft.com/en-us/azure/azure-subscription-service-limits) Ressourcen erstellen. Im Pay-as-you-go-Abonnement können Sie beispielsweise bis zu **20 virtuelle CPUs** erstellen und in einem kostenlosen Abonnement nur **4 CPUs**. Die Azure CLI meldet Ihnen, wenn Sie das Kontingent überschritten haben und gibt einen **Kontingent überschritten**-Fehler aus. Wenn dieser Fehler beim Erstellen einer Architektur ausgegeben wird, können Sie eine [kostenlose Onlineanforderung](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-quota-errors) übermitteln, um das Kontingent Ihres bezahlten Abonnements auf bis zu 10.000 vCPUs zu erhöhen. 
 
 ## <a name="resizing-an-existing-vm"></a>Ändern der Größe eines vorhandenen virtuellen Computers
 Wir können die Größe eines vorhandenen virtuellen Computers auch ändern, wenn sich die Workload ändert oder die Größe während der Erstellung falsch festgelegt wurde. Bevor eine Größenänderung angefordert wird, müssen wir überprüfen, ob die gewünschte Größe in dem Cluster vorhanden ist, zu dem unser virtueller Computer gehört. Hierfür können wir den Befehl „`vm list-vm-resize-options`“ verwenden:

@@ -26,7 +26,7 @@ Beginnen wir mit dem ersten: `az vm create`. Mit diesem Befehl wird ein virtuell
 
 Darüber hinaus ist es hilfreich, das `--verbose`-Flag hinzuzufügen, um den Fortschritt der Erstellung des virtuellen Computers zu beobachten. 
 
-## <a name="create-a-linux-virtual-machine"></a>Erstellen einer virtuellen Linux-Maschine
+## <a name="create-a-linux-virtual-machine"></a>Erstellen eines virtuellen Linux-Computers
 
 Erstellen wir jetzt einen neuen virtuellen Linux-Computer. Führen Sie in Azure Cloud Shell folgenden Befehl aus:
 
@@ -69,3 +69,5 @@ Sobald der virtuelle Computer erstellt wurde, erhalten Sie eine JSON-Antwort, di
 }
 ```
 
+> [!NOTE]
+> Beachten Sie, dass der virtuelle Computer am Speicherort **eastus** erstellt wurde. Standardmäßig wird der virtuelle Computer am von der besitzenden Region identifizierten Speicherort erstellt. Wenn Sie den virtuellen Computer einer vorhandenen Region zuordnen möchten, kann es allerdings vorkommen, dass dieser einer beliebigen Region irgendwo anders zugeordnet wird. Dies ist möglich, indem Sie den `--location`-Parameter als Teil des `az vm create`-Befehls angeben.

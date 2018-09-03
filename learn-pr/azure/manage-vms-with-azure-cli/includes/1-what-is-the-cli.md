@@ -8,18 +8,19 @@ Mit der Azure CLI kann Jim Skripts zum Überprüfen des Status seiner Server sch
 
 Vielleicht geht es Ihnen wie Jim, und Sie suchen nach einem Tool, das Ihnen dabei hilft, Aufgaben in Ihrer Cloudumgebung zu automatisieren. Wir zeigen Ihnen jetzt, wie Sie die Azure CLI verwenden, um in Azure gehostete virtuelle Computer zu erstellen und zu verwalten. 
 
-## <a name="azure-cli"></a>Azure-Befehlszeilenschnittstelle
+## <a name="azure-cli"></a>Azure CLI
 
 Die Azure CLI ist das plattformübergreifende Befehlszeilentool von Microsoft zum Verwalten von Azure-Ressourcen. Sie steht für macOS, Linux und Windows sowie unter Verwendung von [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) im Browser zur Verfügung.
 
 > [!IMPORTANT]
-> Es gibt heute zwei Versionen der Azure CLI: Azure CLI 1.0 und Azure CLI 2.0. Wir verwenden hier die neueste Version, Azure CLI 2.0, die empfohlen wird, außer wenn Sie ältere Skripts ausführen, die für 1.0 geschrieben wurden. Azure CLI 1.0 wird mit dem Befehl „`azure`“ gestartet, Azure CLI 2.0 mit dem Befehl „`az`“. 
+> Es gibt aktuell zwei Versionen der Azure CLI: Azure CLI 1.0 und Azure CLI 2.0. Wir verwenden hier die neueste Version, Azure CLI 2.0, die empfohlen wird, außer wenn Sie ältere Skripts ausführen. Die Azure CLI 1.0 wird mit dem Befehl „`azure`“ gestartet, die Azure CLI 2.0 mit dem Befehl „`az`“. 
 
 Die Azure CLI kann Sie dabei unterstützen, Azure-Ressourcen wie z.B. virtuelle Computer und Datenträger über die Befehlszeile oder mithilfe von Skripts zu verwalten. Fangen wir einfach an und finden heraus, was Sie mit dem Tool tun können.
 
 ## <a name="learning-objectives"></a>Lernziele
-> [!div class="checklist"]
-> * Erstellen eines virtuellen Azure-Computers mit der CLI
-> * Ändern der Größe von virtuellen Computern mit der CLI
-> * Verwalten und Abfragen eines virtuellen Computers über die Befehlszeile
-> * Installieren von Software auf einem virtuellen Computer
+In diesem Modul lernen Sie Folgendes:
+
+- Erstellen eines virtuellen Azure-Computers mit der CLI
+- Ändern der Größe von virtuellen Computern mit der CLI
+- Verwalten und Abfragen eines virtuellen Computers über die Befehlszeile
+- Installieren von Software auf einem virtuellen Computer

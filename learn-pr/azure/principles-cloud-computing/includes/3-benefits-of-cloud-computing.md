@@ -1,4 +1,4 @@
-Jedes Unternehmen muss entscheiden, wo es seine Daten speichern und die Geschäftslogik ausführen möchte. Je nach Ihren Geschäftsanforderungen ist Cloud Computing für Sie geeignet oder auch nicht.
+Jedes Unternehmen muss entscheiden, wo es seine Daten speichern und die Geschäftslogik ausführen möchte. Je nach Ihren Geschäftsanforderungen ist Cloud Computing für Sie geeignet.
 
 Hier erfahren Sie mehr über einige der wichtigsten Vorteile des Cloud Computing.
 
@@ -22,9 +22,9 @@ Wenn sich Ihre Workload aufgrund einer plötzlich steigenden oder sinkenden Nach
 
 Nehmen Sie beispielsweise an, Ihre Website wird in einem Nachrichtenartikel erwähnt, was über Nacht zu einer Datenverkehrsspitze führt. Da die Cloud elastisch ist, kann sie automatisch weitere Computeressourcen zuordnen, um den erhöhten Datenverkehr zu verarbeiten. Wenn der Datenverkehr wieder sinkt, und die Cloud feststellt, dass zu viele Ressourcen zugewiesen sind, werden diese wieder entfernen, sodass keine unnötigen Kosten für Sie anfallen.
 
-### <a name="cloud-computing-is-current"></a>Cloud Computing ist aktuell
+### <a name="cloud-computing-is-current"></a>Cloud Computing ist modern
 
-Wenn Sie die Cloud verwenden, können Sie sich auf das konzentrieren, was wirklich zählt: das Erstellen und Bereitstellen von Anwendungen. Sie müssen sich nicht um das Aufspielen von Softwarepatches, das Einrichten von Hardware, das Durchführen von Upgrades oder andere IT-Verwaltungsaufgaben kümmern. All diese Aufgaben werden automatisch und im Hintergrund für Sie ausgeführt, um sicherzustellen, dass Sie das neueste und beste Tool für Ihr Business verwenden.
+Wenn Sie die Cloud verwenden, können Sie sich auf das konzentrieren, was wirklich zählt: das Erstellen und Bereitstellen von Anwendungen. Sie müssen sich nicht um Verwaltungsaufgaben wie Softwarepatches, das Einrichten von Hardware, das Durchführen von Upgrades oder andere IT-Verwaltungsaufgaben kümmern. All diese Aufgaben werden automatisch und im Hintergrund für Sie ausgeführt, um sicherzustellen, dass Sie das neueste und beste Tool für Ihr Business verwenden.
 
 ### <a name="cloud-computing-is-reliable"></a>Cloud Computing ist zuverlässig
 

@@ -25,7 +25,7 @@ Eine andere nützlicher Befehl ist `vm list-ip-addresses`, mit dem die öffentli
 az vm list-ip-addresses -n SampleVM -o table
 ```
 
-Gibt Folgendes zurück:
+Dadurch wird Folgendes zurückgegeben:
 
 ```
 VirtualMachine    PublicIPAddresses    PrivateIPAddresses
@@ -80,7 +80,7 @@ Wir können die Abfrage `people` verwenden, um das Array der Werte für das Arra
 }
 ```
 
-Wir können auch spezifische Qualifizierer hinzufügen, die nur die Objekte `Fred` und `Wilma` zurückgeben würden. 
+Wir können auch bestimmte Qualifizierer hinzufügen, die auf der Grundlage einiger Kriterien eine Teilmenge der Objekte zurückgeben würden. Das Hinzufügen des `people[?age > '25']`-Qualifizierers würde beispielsweise Folgendes zurückgeben:
 
 ```json
 [
@@ -95,7 +95,7 @@ Wir können auch spezifische Qualifizierer hinzufügen, die nur die Objekte `Fre
 ]
 ```
 
-Schließlich können wir die Ergebnisse durch Hinzufügen einer Auswahl (`people[?age > '25'].[name]`) einschränken, die nur die Namen zurückgibt:
+Zum Schluss können wir die Ergebnisse durch Hinzufügen einer Auswahl (`people[?age > '25'].[name]`) einschränken, die nur die Namen zurückgibt:
 
 ```json
 [

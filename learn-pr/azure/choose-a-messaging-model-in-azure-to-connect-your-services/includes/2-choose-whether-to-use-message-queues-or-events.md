@@ -2,10 +2,9 @@ Angenommen, Sie planen die Architektur einer verteilten Anwendung zum Austausche
 
 Bevor Sie die richtige Azure-Technologie auswählen können, müssen Sie die gesamte Kommunikation verstehen, die die Komponenten der Anwendung austauschen. Für jeden Kommunikationsschritt können Sie eine andere Azure-Technologie auswählen.
 
-Zunächst müssen Sie wissen, ob für die Kommunikation Nachrichten oder Ereignissen gesendet werden. Einige Azure-Technologien sind für Ereignisse und andere für Nachrichten vorgesehenen. Dies ist also eine grundlegende Entscheidung.
+Zunächst müssen Sie wissen, ob für die Kommunikation **Nachrichten** oder **Ereignisse** gesendet werden. Das ist eine wichtige Entscheidung, die Ihnen dabei hilft, einen entsprechenden Azure-Dienst zu finden.
 
 ## <a name="what-is-a-message"></a>Was ist eine Nachricht?
-
 In der Terminologie von verteilten Anwendungen weisen **Nachrichten** folgende Merkmale auf:
 
 - Eine Nachricht enthält Rohdaten, die von einer Komponente erzeugt wurden und von einer anderen Komponente verwendet werden.
@@ -18,13 +17,13 @@ Stellen Sie sich beispielsweise vor, dass ein Benutzer einen neuen Song mit der 
 
 **Ereignisse** sind einfacher als Nachrichten und werden am häufigsten für die Broadcastkommunikation verwendet. Die Komponenten, die das Ereignis senden, werden als **Herausgeber** bezeichnet, und die Empfänger werden als **Abonnenten** bezeichnet.
 
-Bei Ereignissen entscheiden die empfangenden Komponenten im Allgemeinen, an welcher Kommunikation sie interessiert sind, und „abonnieren“ sie. Das Abonnement wird in der Regel von einem Vermittler wie Azure Event Grid oder Azure Event Hub verwaltet. Wenn Herausgeber ein Ereignis senden, leitet der Vermittler dieses Ereignis an interessierte Abonnenten weiter. Dies wird als „Veröffentlichen/Abonnieren-Architektur“ bezeichnet. Es ist nicht die einzige Möglichkeit für den Umgang mit Ereignissen, aber sie wird am häufigsten verwendet.
+Bei Ereignissen entscheiden die empfangenden Komponenten im Allgemeinen, an welcher Kommunikation sie interessiert sind, und „abonnieren“ sie. Das Abonnement wird in der Regel von einem Vermittler wie Azure Event Grid oder Azure Event Hubs verwaltet. Wenn Herausgeber ein Ereignis senden, leitet der Vermittler dieses Ereignis an interessierte Abonnenten weiter. Das wird auch als „Herausgeben-Abonnieren-Architektur“ bezeichnet. Dies ist nicht die einzige Möglichkeit zum Behandeln von Ereignissen, aber die am häufigsten genutzte.
 
 Ereignisse weisen folgende Merkmale auf:
 
 - Ein Ereignis ist eine einfache Benachrichtigung, die angibt, dass etwas passiert ist.
 - Das Ereignis kann an mehrere Empfänger oder an gar keine Empfänger gesendet werden.
-- Ereignisse dienen häufig zum „Auffächern“ oder haben eine große Anzahl von Abonnenten für jeden Herausgeber.
+- Ereignisse sollen sich meist „weit verbreiten“ oder haben eine große Anzahl von Abonnenten für jeden Herausgeber.
 - Der Herausgeber des Ereignisses hat keine Erwartungen hinsichtlich der Aktion, die eine empfangende Komponente ausführt.
 - Einige Ereignisse sind diskrete Einheiten und stehen nicht mit anderen Ereignissen im Zusammenhang. 
 - Einige Ereignisse sind Teil einer verknüpften und geordneten Reihe.  
@@ -39,12 +38,8 @@ Eine einzelne Anwendung wird wahrscheinlich Ereignisse für einige Funktionen un
 
 Ereignisse werden eher für Broadcasts verwendet und sind oft kurzlebig. Dies bedeutet, dass die Kommunikation möglicherweise von keinem Empfänger verarbeitet wird, wenn keiner sie gerade abonniert hat. Nachrichten werden eher verwendet, wenn die verteilte Anwendung eine Garantie benötigt, dass die Kommunikation verarbeitet wird.
 
-Stellen Sie sich für jede Kommunikation folgende Frage: Erwartet die sendende Komponente, dass die Kommunikation von der Zielkomponente auf eine bestimmte Weise verarbeitet wird?
+Stellen Sie sich für jede Kommunikation folgende Frage: **Erwartet die sendende Komponente, dass die Kommunikation von der Zielkomponente auf eine bestimmte Weise verarbeitet wird?**
 
-Wenn die Antwort „Ja“ lautet, verwenden Sie eine Nachricht. Wenn die Antwort „Nein“ lautet, können Sie möglicherweise Ereignisse verwenden.
+Wenn die Antwort _Ja_ lautet, verwenden Sie eine Nachricht. Wenn die Antwort _Nein_ lautet, können Sie möglicherweise Ereignisse verwenden.
 
-## <a name="summary"></a>Zusammenfassung
-
-Die Komponenten einer verteilten Anwendung kommunizieren für viele verschiedene Funktionen miteinander. Für jede dieser Funktionen müssen Sie entscheiden, ob Ereignisse oder Nachrichten verwendet werden sollen, damit Sie eine Azure-Technologie auswählen können, die für diese Funktion entwickelt wurde. 
-
-Wenn Sie wissen, warum Ihre Komponenten kommunizieren und ob sie Ereignisse oder Nachrichten verwenden, können Sie für den Informationsaustausch Azure Storage-Warteschlangen, Event Hubs, Event Grid oder Service Bus auswählen.
+Wenn Sie verstehen, wie Ihre Komponenten miteinander kommunizieren, können Sie besser entscheiden, wie sie miteinander kommunizieren sollen. Beginnen wir mit Nachrichten.
