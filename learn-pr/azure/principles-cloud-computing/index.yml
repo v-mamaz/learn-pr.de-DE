@@ -2,16 +2,16 @@
 uid: principles-cloud-computing
 metadata:
   title: Prinzipien des Cloud Computings
-  description: Erfahren Sie, was Cloud Computing ist, und untersuchen Sie die Vorteile des Wechsels zur Cloud. Sie erhalten eine Einführung zu grundlegenden Begriffen, verschiedenen Bereitstellungsmodellen und gemeinsamen Diensten, die alle Cloudanbieter bieten.
-  ms.openlocfilehash: 95082414c1ad805682aa6f7edf6a768ba4dd0d6a
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  description: Erfahren Sie, was Cloud Computing ist und welche Vorteile der Wechsel in die Cloud mit sich bringt. Sie erhalten eine Einführung in grundlegende Begriffe, verschiedene Bereitstellungsmodelle und geläufige Dienste aller Cloudanbieter.
+  ms.openlocfilehash: 981fc33be83e9ca81b6f1378adb97fcbba60c430
+  ms.sourcegitcommit: 5b967802ae01d5e5985a3e6bcbdba1163ec2f6c9
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40442775"
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "42982118"
 title: Prinzipien des Cloud Computings
-summary: Untersuchen Sie die grundlegenden Konzepte des Cloud Computings, und warum Ihr Unternehmen davon profitieren kann.
-abstract: Erfahren Sie, was Cloud Computing ist, und untersuchen Sie die Vorteile des Wechsels zur Cloud. Sie erhalten eine Einführung zu grundlegenden Begriffen, verschiedenen Bereitstellungsmodellen und gemeinsamen Diensten, die alle Cloudanbieter bieten.
+summary: Lernen Sie die grundlegenden Konzepte des Cloud Computings kennen und warum Ihr Unternehmen davon profitieren kann.
+abstract: Erfahren Sie, was Cloud Computing ist und welche Vorteile der Wechsel in die Cloud mit sich bringt. Sie erhalten eine Einführung in grundlegende Begriffe, verschiedene Bereitstellungsmodelle und geläufige Dienste aller Cloudanbieter.
 cardDescription: Untersuchen Sie die grundlegenden Konzepte des Cloud Computings, und warum Ihr Unternehmen davon profitieren kann.
 iconUrl: http://via.placeholder.com/120x120
 levels:
