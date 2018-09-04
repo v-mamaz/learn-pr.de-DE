@@ -1,15 +1,5 @@
 ### YamlMime:Achievements
 achievements:
-- uid: learn.sample-path.trophy
-  type: trophy
-  title: Beispiellernpfad-Trophäe
-  summary: Trophäe für den Lernpfad „Beispiellernpfad-Trophäe“
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.placeholder.trophy
-  type: trophy
-  iconUrl: http://via.placeholder.com/120x120
-  title: Lernpfad-Platzhaltertrophäe
-  summary: Zusammenfassung zur Beispiellernpfad-Trophäe
 - uid: learn.placeholder.badge
   type: badge
   iconUrl: http://via.placeholder.com/120x120
@@ -45,50 +35,55 @@ achievements:
   title: Erstellen von serverloser Logik mit Azure Functions
   summary: Erstellen von serverloser Logik mit Azure Functions
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.host-web-app-with-azure-web-apps.badge
+- uid: learn.host-a-web-application-with-azure-web-apps.badge
   type: badge
   title: Abzeichen für das Hosten einer Webanwendung mit Azure-Web-Apps
   summary: Zusammenfassung zum Abzeichen für das Hosten einer Webanwendung mit Azure-Web-Apps
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.publish-azure-web-app-with-visual-studio.badge
   type: badge
-  title: Abzeichen für das Veröffentlichen einer Azure-Web-App mit Visual Studio für Windows oder Mac
-  summary: Zusammenfassung zum Abzeichen für das Veröffentlichen einer Azure-Web-App mit Visual Studio für Windows oder Mac
+  title: Veröffentlichen einer Azure-Web-App mit Visual Studio für Windows oder Mac
+  summary: Veröffentlichen einer Azure-Web-App mit Visual Studio für Windows oder Mac
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.administer-containers-in-azure.trophy
   type: trophy
   title: Trophäe für das Verwalten von Containern in Azure
   summary: Trophäe für den Lernpfad „Verwalten von Containern in Azure“
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.cloud-fundamentals.trophy
+- uid: learn.create-serverless-applications.trophy
+  type: trophy
+  title: Trophäe für das Erstellen von serverlosen Anwendungen
+  summary: Trophäe für den Lernpfad „Erstellen von serverlosen Anwendungen“
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.administer-infrastructure-resources-in-azure.trophy
+  type: trophy
+  title: Trophäe für das Verwalten von Infrastrukturressourcen in Azure
+  summary: Trophäe für den Lernpfad „Verwalten von Infrastrukturressourcen in Azure“
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.cloud-foundations.trophy
   type: trophy
   title: Trophäe für Cloudgrundlagen
   summary: Trophäe für den Lernpfad „Cloudgrundlagen“
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.azure-architecture-foundations.trophy
+- uid: learn.connect-your-services-together.trophy
   type: trophy
-  title: Trophäe für die Grundlagen der Azure-Architektur
-  summary: Trophäe für den Lernpfad „Grundlagen der Azure-Architektur“
+  title: Trophäe für das Verbinden Ihrer Dienste
+  summary: Trophäe für den Lernpfad „Verbinden Ihrer Dienste“
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.architect-great-solutions-in-azure.trophy
   type: trophy
   title: Trophäe für das Entwerfen hervorragender Lösungen in Azure
   summary: Trophäe für den Lernpfad „Entwerfen hervorragender Lösungen in Azure“
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-backend-services-in-azure.trophy
+- uid: learn.prepare-to-develop-apps-on-azure.trophy
   type: trophy
-  title: Trophäe für das Erstellen von Back-End-Diensten in Azure
-  summary: Trophäe für den Lernpfad „Erstellen von Back-End-Diensten in Azure“
+  title: Trophäe für das „Vorbereiten zum Entwickeln in Azure“
+  summary: Trophäe für den Lernpfad „Vorbereiten zum Entwickeln von Apps in Azure“
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.prepare-to-use-azure.trophy
+- uid: learn.deploy-a-website-with-azure-app-service.trophy
   type: trophy
-  title: Trophäe für das Vorbereiten der Verwendung von Azure
-  summary: Trophäe für den Lernpfad „Vorbereiten der Verwendung von Azure“
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.deploy-a-website-to-azure-with-managed-hosting.trophy
-  type: trophy
-  title: Trophäe für das Bereitstellen einer Website in Azure mithilfe von verwaltetem Hosting
-  summary: Trophäe für den Lernpfad „Bereitstellen einer Website in Azure mithilfe von verwaltetem Hosting“
+  title: Trophäe für das Bereitstellen einer Website mit Azure App Service
+  summary: Trophäe für den Lernpfad „Bereitstellen einer Website mit Azure App Service“
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.work-with-nosql-data-in-azure-cosmos-db.trophy
   type: trophy
@@ -100,10 +95,10 @@ achievements:
   title: Trophäe für das Arbeiten mit relationalen Daten in Azure
   summary: Trophäe für den Lernpfad „Arbeiten mit relationalen Daten in Azure“
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.secure-your-web-data-in-azure.trophy
+- uid: learn.secure-your-cloud-data.trophy
   type: trophy
-  title: Trophäe für das Sichern von Webdaten in Azure
-  summary: Trophäe für den Lernpfad „Sichern von Webdaten in Azure“
+  title: Trophäe für das Sichern Ihrer Clouddaten
+  summary: Trophäe für den Lernpfad „Sichern Ihrer Clouddaten“
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.store-data-in-azure.trophy
   type: trophy
@@ -128,7 +123,12 @@ achievements:
 - uid: learn.choose-messaging-model.badge
   type: badge
   title: Abzeichen für das Auswählen eines Nachrichtenmodells
-  summary: Zusammen zum Auswählen eines Nachrichtenmodells
+  summary: Zusammenfassung zum Abzeichen für das Auswählen eines Nachrichtenmodells
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.badge
+  type: badge
+  title: Erstellen und Ausführen einer Webanwendung mit dem MEAN-Stapel auf einem virtuellen Azure-Computer mit Linux
+  summary: Erstellen und Ausführen einer Webanwendung mit dem MEAN-Stapel auf einem virtuellen Azure-Computer mit Linux
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.prepare-azure-dev-environment.badge
   type: badge
@@ -160,10 +160,10 @@ achievements:
   title: Migrieren von relationalen SQL Server-Daten in Azure SQL
   summary: Migrieren von relationalen SQL Server-Daten in Azure SQL
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.communicate-between-apps-with-storage-queues.badge
+- uid: learn.communicate-between-applications-with-azure-queue-storage.badge
   type: badge
-  title: Abzeichen für die Kommunikation zwischen Anwendungen mit einer Azure Storage-Warteschlange
-  summary: Zusammenfassung zur Kommunikation zwischen Anwendungen mit einer Azure Storage-Warteschlange
+  title: Kommunikation zwischen Anwendungen mit Azure Queue Storage
+  summary: Kommunikation zwischen Anwendungen mit Azure Queue Storage
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.create-a-windows-vm-in-azure.badge
   type: badge
@@ -199,7 +199,7 @@ achievements:
   type: badge
   title: Verwalten von Geheimnissen in Ihren Web-Apps mit Azure Key Vault
   summary: Verwalten von Geheimnissen in Ihren Web-Apps mit Azure Key Vault
-  iconUrl: /learn/modules/manage-secrets-with-azure-key-vault/achievement/manage-secrets-with-azure-key-vault.svg
+  iconUrl: /learn/achievements/manage-secrets-with-azure-key-vault.svg
 - uid: learn.secure-azure-resources-with-rbac.badge
   type: badge
   title: Sichern Ihrer Azure-Ressourcen mit rollenbasierter Zugriffssteuerung (RBAC)
@@ -215,10 +215,10 @@ achievements:
   title: Verwalten von virtuellen Computern mit der Azure CLI
   summary: Verwalten von virtuellen Computern mit der Azure CLI
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.deploy-a-website-to-azure-with-vm-hosting.trophy
+- uid: learn.deploy-a-website-with-azure-virtual-machines.trophy
   type: trophy
-  title: Trophäe für das Bereitstellen einer Website in Azure mithilfe von VM-Hosting
-  summary: Trophäe für den Lernpfad „Bereitstellen einer Website in Azure mithilfe von VM-Hosting“
+  title: Trophäe für das „Bereitstellen einer Website mit virtuellen Azure-Computern“
+  summary: Trophäe für den Lernpfad „Bereitstellen einer Website mit virtuellen Azure-Computern“
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.store-app-data-with-azure-blob-storage.badge
   type: badge
@@ -245,10 +245,15 @@ achievements:
   title: Erstellen einer Azure Cosmos DB-App in Visual Studio Code
   summary: Trophäe für das Modul „Erstellen einer Azure Cosmos DB-App in Visual Studio Code“
   iconUrl: http://via.placeholder.com/120x120
+- uid: learn.manage-resources-in-azure.trophy
+  type: trophy
+  title: Trophäe für das Verwalten von Ressourcen in Azure
+  summary: Trophäe für den Lernpfad „Verwalten von Ressourcen in Azure“
+  iconUrl: http://via.placeholder.com/120x120
 metadata:
-  ms.openlocfilehash: f7775c5f422578b4f98ef8b6fcf2c8213e5e9bb4
-  ms.sourcegitcommit: 0e0cc41b7669e7149541f34f3f24ba0e864ed07d
+  ms.openlocfilehash: 4dc465d762264757b61a4000ad999e39ee339d64
+  ms.sourcegitcommit: d51dceaa3772e8083b3f0b6460f8a616b3139d25
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/23/2018
-  ms.locfileid: "42702337"
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "43053929"
