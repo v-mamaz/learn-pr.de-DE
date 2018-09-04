@@ -33,7 +33,7 @@ VirtualMachine    PublicIPAddresses    PrivateIPAddresses
 SampleVM          168.61.54.62         10.0.0.4
 ```
 
-> [!NOTE]
+> [!TIP]
 > Beachten Sie, dass wir eine Kurzsyntax für das Flag `--output` als `-o` verwenden. Die meisten Parameter von Azure CLI-Befehlen können auf einen einzigen Bindestrich und Buchstaben verkürzt werden. `--name` kann beispielsweise zu `-n` und `--resource-group` zu `-g` verkürzt werden. Dies ist praktisch für die Eingabe, aber wir empfehlen aus Gründen der Übersichtlichkeit, in Skripts den vollständigen Namen der Option zu verwenden. Weitere Informationen zu den einzelnen Befehlen finden Sie in der Dokumentation.
 
 ## <a name="getting-vm-details"></a>Abrufen von VM-Details

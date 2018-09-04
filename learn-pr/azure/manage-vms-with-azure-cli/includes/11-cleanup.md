@@ -17,5 +17,5 @@ Dieser Befehl löscht alle der Ressourcengruppe zugeordneten Ressourcen und hebt
 
 ## <a name="further-reading"></a>Weitere nützliche Informationen
 
-* [Übersicht über die Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)
-* [Azure CLI-Befehlsreferenz](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest)
+- [Übersicht über die Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)
+- [Azure CLI-Befehlsreferenz](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest)

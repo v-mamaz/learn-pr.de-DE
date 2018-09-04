@@ -51,4 +51,3 @@ Ein Zeitgebertrigger kann vollständig im Azure-Portal erstellt werden. Wählen 
 ## <a name="summary"></a>Zusammenfassung
 
 Ein Zeitgebertrigger ruft eine Azure-Funktion nach einem einheitlichen Zeitplan auf. Um den Zeitplan für einen Zeitgebertrigger zu definieren, erstellen Sie einen *CRON-Ausdruck*. Dabei handelt es sich um eine Zeichenfolge, die eine Zeitangabe darstellt.
-

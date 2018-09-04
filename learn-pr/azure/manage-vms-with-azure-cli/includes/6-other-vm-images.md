@@ -11,5 +11,5 @@ Einige Images sind nur in bestimmten Regionen verfügbar. Fügen Sie das `--loca
 az vm image list --location eastus --output table
 ```
 
-> [!NOTE]
+> [!TIP]
 > Dies sind die Standardimages, die von Azure bereitgestellt werden. Denken Sie daran, dass Sie auch [eigene benutzerdefinierte Images erstellen und hochladen](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-custom-images) können, um virtuelle Computer basierend auf eindeutigen Konfigurationen oder weniger häufigen Versionen oder Distributionen eines Betriebssystems zu erstellen.
