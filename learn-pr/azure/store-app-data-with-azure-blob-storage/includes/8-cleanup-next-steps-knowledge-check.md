@@ -2,19 +2,17 @@ In diesem Modul haben Sie erfahren, wie Azure Blob Storage zum Speichern von Web
 
 ## <a name="cleanup"></a>Bereinigen
 
-Um Ihr Azure-Abonnement zu bereinigen, führen Sie die folgenden Schritte in Azure Cloud Shell aus, um die Ressourcengruppe zu löschen, die alle Ressourcen enthält, die wir in diesem Modul erstellt haben.
+Um Ihr Azure-Abonnement zu bereinigen, führen Sie die folgenden Schritte in Azure Cloud Shell aus, um die Ressourcengruppe zu löschen, die alle in diesem Modul erstellten Ressourcen enthält.
 
 ```console
-az group delete --name blob-exercise-group
+az group delete --name blob-exercise-group --yes --no-wait
 ```
 
-Um Ihren Cloud Shell-Speicher zu bereinigen, löschen Sie das Verzeichnis `TODO` mit `rm -rf TODO`.
+Löschen Sie zum Bereinigen Ihres Cloud Shell-Speichers das Verzeichnis `FileUploader`.
 
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
-**TODO cross-docset links?**
-
-* **Sicheres Speichern von Speicherkontoschlüsseln**: Die zuverlässigste Komplettlösung zur Speicherung von Konfigurationswerten für Geheimnisse ist Azure Key Vault. [Hier](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1&tabs=aspnetcore2x) finden Sie Informationen zur Verwendung von Key Vault in einer ASP.NET Core-Anwendung. Alternativ können Sie Verbindungszeichenfolgen sicher in App Service-Anwendungseinstellungen speichern und das Tool [ASP.NET Core Secret Manager ](https://docs.microsoft.com/aspnet/core/security/app-secrets?view=aspnetcore-2.1&tabs=windows) zur Unterstützung von Entwicklungsumgebungen verwenden.
+* **Sicheres Speichern von Geheimnissen wie z.B. Verbindungszeichenfolgen**: Die zuverlässigste Komplettlösung zur Speicherung von Konfigurationswerten für Geheimnisse ist Azure Key Vault. [Hier](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1&tabs=aspnetcore2x) finden Sie Informationen zur Verwendung von Key Vault in einer ASP.NET Core-Anwendung. Alternativ können Sie Verbindungszeichenfolgen sicher in App Service-Anwendungseinstellungen speichern und das Tool [ASP.NET Core Secret Manager ](https://docs.microsoft.com/aspnet/core/security/app-secrets?view=aspnetcore-2.1&tabs=windows) zur Unterstützung von Entwicklungsumgebungen verwenden.
 * [Hochladen großer Dateien per Streaming in ASP.NET Core](https://docs.microsoft.com/aspnet/core/mvc/models/file-uploads?view=aspnetcore-2.1#uploading-large-files-with-streaming)
 * [Parallelität von Blobs: AccessConditions und Leases von Blobs](https://azure.microsoft.com/blog/managing-concurrency-in-microsoft-azure-storage-2/)
 * [Gewähren eines eingeschränkten Zugriffs auf ein Azure Storage-Objekt mit Shared Access Signatures](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)

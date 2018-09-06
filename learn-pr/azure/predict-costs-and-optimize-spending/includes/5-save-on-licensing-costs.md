@@ -6,9 +6,9 @@ Viele Kunden haben in Windows Server-Lizenzen investiert und möchten diese in A
 
 Ihre Windows-Lizenzen müssen ebenfalls durch Software Assurance abgedeckt sein, um diesen Vorteil nutzen zu können. Es gelten ebenfalls folgende Richtlinien:
 
-- Jede Lizenz für zwei Prozessoren oder alle Lizenzen für je 16 Kerne kann für zwei Instanzen mit bis zu acht Kernen oder für eine Instanz mit bis zu 16 Kernen eingesetzt werden. 
+- Jede Lizenz für zwei Prozessoren oder alle Lizenzen für je 16 Kerne kann für zwei Instanzen mit bis zu acht Kernen oder für eine Instanz mit bis zu 16 Kernen eingesetzt werden.
 - Standard Edition-Lizenzen können nur einmalig entweder lokal oder in Azure verwendet werden. Das bedeutet, dass Sie dieselbe Lizenz nicht für einen virtuellen Azure-Computer und einen lokalen Computer verwenden können.
-- Mit der Datacenter Edition ist die gleichzeitige Nutzung sowohl lokal als auch in Azure möglich. Diese Lizenz umfasst also zwei ausgeführte Windows-Computer. 
+- Mit der Datacenter Edition ist die gleichzeitige Nutzung sowohl lokal als auch in Azure möglich. Diese Lizenz umfasst also zwei ausgeführte Windows-Computer.
 
 > [!NOTE]
 > Die meisten Kunden verwenden eine Lizenzierung pro Kern, deshalb wird dieses Modell für die Berechnung verwendet. Wenn Sie Fragen zu Ihren Lizenzen haben, wenden Sie sich an Ihren Lizenzanbieter oder an Ihr Microsoft-Kontoteam.
@@ -23,13 +23,15 @@ Sie können diesen Vorteil auch in Anspruch nehmen, wenn die Azure-Ressource akt
 
 ### <a name="azure-sql-database-vcore-based-options"></a>Auf virtuellen Kernen basierende Optionen für Azure SQL-Datenbank
 
-![Eintausch von SQL Server-Lizenzen](../images/sql-tradein-value.jpg)
-
 Für Azure SQL-Datenbank funktioniert der Azure-Hybridvorteil folgendermaßen:
 
 - Wenn Sie die Standard Edition mit Lizenzen pro Kern mit aktiver Software Assurance besitzen, erhalten Sie einen virtuellen Kern in der universellen Dienstebene für jeden Kern, den Sie durch eine Lizenz lokal besitzen.
 - Wenn Sie die Enterprise Edition mit Lizenzen pro Kern mit aktiver Software Assurance besitzen, erhalten Sie einen virtuellen Kern in der unternehmenskritischen Dienstebene für jeden Kern, den Sie durch eine Lizenz lokal besitzen. Beachten Sie, dass der Azure-Hybridvorteil für SQL Server für die unternehmenskritische Dienstebene nur für Kunden verfügbar ist, die Enterprise Edition-Lizenzen besitzen.
 - Wenn Sie die hochgradig virtualisierte Enterprise Edition mit Lizenzen pro Kern mit aktiver Software Assurance besitzen, erhalten Sie vier virtuelle Kerne in der universellen Dienstebene für jeden Kern, den Sie durch eine Lizenz lokal besitzen. Dies ist ein einzigartiger Virtualisierungsvorteil, der nur für Azure SQL-Datenbank verfügbar ist.
+
+Die folgende Abbildung zeigt die auf virtuellen Kernen basierenden Optionen, die in jeder Dienstebene mit Azure-Hybridvorteil für SQL Server-Lizenzen verfügbar sind.
+
+![Eine Abbildung mit einem Beispiel, das verdeutlicht, wie Sie den Wert Ihrer vorhandenen SQL-Serverlizenz mithilfe des Azure-Hybridvorteils maximieren können.](../media-drafts/5-sql-tradein-value.png)
 
 Für SQL Server auf virtuellen Azure-Computern funktioniert der Azure-Hybridvorteil folgendermaßen:
 
@@ -47,7 +49,7 @@ Im Folgenden finden Sie die vollständigen Informationen zu jedem Angebot. Wenn 
 
 Wenn Sie einen Kunden im Rahmen eines Enterprise Agreements und bereits über eine Investition in SQL Server-Lizenzen verfügen und diese durch die Verschiebung von Ressourcen in Azure frei geworden sind, können Sie **Bring Your Own License**-Images (BYOL) über den Azure Marketplace bereitstellen, um diese nicht verwendeten Lizenzen zu nutzen und Ihre Kosten für virtuelle Azure-Computer zu reduzieren. Dies war zuvor bereits möglich, indem ein virtueller Windows-Computer bereitgestellt und SQL Server manuell auf diesem installiert wurde. Dieses Verfahren erleichtert jedoch den Erstellungsprozess durch die Verwendung von durch Microsoft zertifizierten Images. Suchen Sie im Marketplace nach **BYOL**, um diese Images zu finden.
 
-![BYOL für SQL Server in Azure](../images/byol-sql-server.png)
+![BYOL für SQL Server in Azure](../media-drafts/5-byol-sql-server.png)
 
 > [!IMPORTANT]
 > Ein Enterprise Agreement-Abonnement ist erforderlich, um diese zertifizierten BYOL-Images zu verwenden.

@@ -1,0 +1,3 @@
+### <a name="summary"></a>Zusammenfassung
+
+Die Bildklassifizierung nimmt innerhalb der Branche eine immer wichtigere Rolle zur Automatisierung von Aufgaben ein. Hierbei werden etwa Bilder vor dem Upload auf Websites auf anstößige Inhalte oder Bauteile am Ende von Montagelinien auf Mängel geprüft. Die manuelle Neuerstellung eines Bildklassifizierungsmodells mithilfe von Python, R oder einer anderen Sprache erfordert einiges an Fachwissen. Mit Custom Vision Service können Sie jedoch auch nahezu ohne Vorkenntnisse anspruchsvolle Bildklassifizierungsmodelle erstellen. Nach dem Erstellen und Trainieren des Modells sind nur wenige Zeilen erforderlich, damit es von Ihrer App genutzt werden kann.

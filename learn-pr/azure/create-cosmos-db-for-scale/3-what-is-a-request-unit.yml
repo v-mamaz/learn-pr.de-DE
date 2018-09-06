@@ -4,12 +4,43 @@ metadata:
   title: Was ist eine Azure Cosmos DB-Anforderungseinheit?
   description: Erfahren Sie, wie Durchsatz in Azure Cosmos DB mithilfe von Anforderungseinheiten zugeordnet wird.
   displayType: one-column
-  ms.openlocfilehash: 59395acde91a8986089a5480efc51f8a02dbd518
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: d5c9095b41cce8f33e85d3ac184726298f2ff852
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40438237"
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43252042"
 title: Was ist eine Anforderungseinheit?
 durationInMinutes: 8
-content: '[!include[](includes/3-what-is-a-request-unit.md)]'
+content: "[!include[](includes/3-what-is-a-request-unit.md)] \n"
+quiz:
+  title: Wissenstest
+  questions:
+  - content: Welchen Mindestwert sollten Sie für den Durchsatz festlegen, wenn Sie ein Azure Cosmos DB-Konto erstellen und sicherstellen möchten, dass es mit den Anforderungen Ihrer Anwendung wächst?
+    choices:
+    - content: 400 RU/s
+      isCorrect: false
+      incorrectExplanation: 400 RU/s (Request Unit, Anforderungseinheit) ist der minimale Durchsatz, den Sie für eine Azure Cosmos DB festgelegen können. Mit einem ursprünglichen Durchsatz von 400 RU/s erstellte Datenbanken werden jedoch nicht automatisch skaliert.
+    - content: 1.000 RU/s
+      isCorrect: true
+      correctExplanation: Richtig! Ein Durchsatz von 1.000 RU/s ist der Mindestwert, um die automatische Skalierung für Ihre Datenbank zu aktivieren.
+    - content: 1.400 RU/s
+      isCorrect: false
+      incorrectExplanation: Wenn Sie den Durchsatz auf 1.400 RU/s festlegen, kann Ihre Datenbank automatisch skaliert werden; es ist jedoch nicht der Mindestwert, den Sie festlegen können, um die automatische Skalierung zu aktivieren.
+    - content: 250.000 RU/s
+      isCorrect: false
+      incorrectExplanation: Wenn Sie den Durchsatz auf 1.400 RU/s festlegen, kann Ihre Datenbank automatisch skaliert werden; es ist jedoch nicht der Mindestwert, den Sie festlegen können, um die automatische Skalierung zu aktivieren.
+  - content: Wie viele Anforderungseinheiten sollten Sie bereitstellen, um sicherzustellen, dass keine Ratenbegrenzung auf Ihr Konto angewandt wird, wenn Sie ein 4-KB-Dokument 100-mal pro Sekunde in eine Azure Cosmos DB-Datenbank schreiben und 500-mal pro Sekunde lesen möchten?
+    choices:
+    - content: 400 RU/s
+      isCorrect: false
+      incorrectExplanation: Wenn Sie für dieses Szenario nur 400 RU/s bereitstellen würden, würde leider eine Ratenbegrenzung angewandt. Werfen Sie einen Blick in die Tabelle, und suchen Sie nach einem 4-KB-Dokument, das 500 Lesevorgänge und 100 Schreibvorgänge pro Sekunde erfordert.
+    - content: 1.000 RU/s
+      isCorrect: false
+      incorrectExplanation: Wenn Sie für dieses Szenario nur 1.000 RU/s bereitstellen würden, würde leider eine Ratenbegrenzung angewandt. Werfen Sie einen Blick in die Tabelle, und suchen Sie nach einem 4-KB-Dokument, das 500 Lesevorgänge und 100 Schreibvorgänge pro Sekunde erfordert.
+    - content: 1.300 RU/s
+      isCorrect: false
+      incorrectExplanation: Wenn Sie für dieses Szenario nur 1.300 RU/s bereitstellen würden, würde leider eine Ratenbegrenzung angewandt. Werfen Sie einen Blick in die Tabelle, und suchen Sie nach einem 4-KB-Dokument, das 500 Lesevorgänge und 100 Schreibvorgänge pro Sekunde erfordert.
+    - content: 1.400 RU/s
+      isCorrect: true
+      correctExplanation: Richtig! Die Tabelle gibt an, dass Sie ein Minimum von 1.350 RU/s zur Unterstützung dieses Szenarios benötigen. Um sicherzustellen, dass keine Ratenbegrenzung angewandt wird, sollten Sie 1.400 RU/s bereitstellen, da Sie mehr als 1.350 RU/s benötigen und Anforderungseinheiten in Einheiten von 100 (1.300, 1.400, 1.500 usw.) bereitgestellt werden.

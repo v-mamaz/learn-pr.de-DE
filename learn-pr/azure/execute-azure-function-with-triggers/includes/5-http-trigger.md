@@ -20,9 +20,9 @@ Eine HTTP-Triggerautorisierungsstufe ist ein Flag, das angibt, ob eine eingehend
 
 Es gibt drei Autorisierungsstufen:
 
-- Funktion
-- Anonym
-- Administrator
+1. Funktion
+2. Anonym
+3. Administrator
 
 Die Stufen **Funktion** und **Administrator** sind schlüsselbasiert. Um eine HTTP-Anforderung senden zu können, müssen Sie einen Schlüssel für die Authentifizierung angeben. Es gibt zwei Arten von Schlüsseln: *Funktion* und *Host*. Der Unterschied zwischen den beiden Schlüsseln ist ihr Bereich. Schlüssel mit dem Typ *Funktion* gelten für eine Funktion. Schlüssel mit dem Typ *Host* gelten für alle Funktionen innerhalb der vollständigen Azure Functions-Anwendung. Wenn Ihre Autorisierungsstufe auf **Funktion** festgelegt ist, können Sie einen Schlüssel mit dem Typ *Funktion* oder *Host* verwenden. Wenn Ihre Autorisierungsstufe auf **Administrator** festgelegt ist, geben Sie einen Schlüssel mit dem Typ *Host* an.
 
@@ -30,7 +30,7 @@ Die Stufe **Anonym** bedeutet, dass keine Authentifizierung erforderlich ist. In
 
 ## <a name="how-to-create-an-http-trigger"></a>Erstellen eines HTTP-Triggers
 
-Sie können einen HTTP-Trigger wie einen Zeitgebertrigger über das Azure-Portal erstellen. Wählen Sie in Ihrer Azure-Funktion **HTTP-Trigger** aus der Liste der vordefinierten Triggertypen aus. Geben Sie dann die Logik an, die Sie ausführen möchten, und nehmen Sie Anpassungen vor, schränken Sie z.B. die Verwendung von bestimmten HTTP-Verben ein. 
+Sie können einen HTTP-Trigger wie einen Zeitgebertrigger über das Azure-Portal erstellen. Wählen Sie in Ihrer Azure-Funktion die Option **HTTP-Trigger** aus der Liste der vordefinierten Triggertypen aus. Geben Sie dann die Logik ein, die Sie ausführen möchten, und nehmen Sie Anpassungen vor, wie z.B. die Verwendung bestimmter HTTP-Verben einzuschränken. 
 
 Eine Einstellung, die Sie kennen sollten, ist **Anforderungsparametername**. Diese Einstellung ist eine Zeichenfolge, die den Namen des Parameters darstellt, der die Informationen über eine eingehende HTTP-Anforderung enthält. Standardmäßig ist der Name des Parameters *req*.
 
@@ -38,7 +38,7 @@ Eine Einstellung, die Sie kennen sollten, ist **Anforderungsparametername**. Die
 
 Um einen HTTP-Trigger aufzurufen, senden Sie eine HTTP-Anforderung an die URL für Ihre Funktion. Wechseln Sie zum Abrufen dieser URL zur Codepage für Ihre Funktion, und wählen Sie den Link **Funktions-URL abrufen** aus.
 
-![Suchen der URL für Ihre Funktion](../media/5-function-url.png)
+![Suchen der URL für Ihre Funktion](../media-drafts/5-function-url.png)
 
 Sobald Sie über die URL für Ihre Funktion verfügen, können Sie HTTP-Anforderungen senden. Wenn Ihre Funktion Daten empfängt, denken Sie daran, dass Sie entweder Abfragezeichenfolgen-Parameter verwenden oder die Daten über den Anforderungstext bereitstellen können.
 

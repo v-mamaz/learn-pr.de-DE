@@ -3,8 +3,9 @@ Stellen Sie sich folgendes Szenario vor: In einem ausgelasteten Friseursalon tri
 Als Azure-Entwickler entscheiden Sie sich, zur Lösung dieses Problems eine Azure-Funktion zu verwenden. Sie wissen bereits, wie Sie die Logik zum Senden einer Textnachricht implementieren. Nun müssen Sie lernen, die Nachricht zu einem bestimmten Zeitpunkt zu senden. Glücklicherweise unterstützt Azure Functions eine Funktion namens _triggers_. Mit Triggern wird bestimmt, wie eine Azure-Funktion ausgeführt wird.
 
 ## <a name="learning-objectives"></a>Lernziele
-> [!div class="checklist"]
-> * Bestimmen Sie, welcher Trigger sich am besten für Ihre geschäftlichen Anforderungen eignet.
-> * Erstellen Sie einen Trigger mit Timer, um eine Funktion nach einem konsistenten Zeitplan aufzurufen.
-> * Erstellen Sie einen HTTP-Trigger, um eine Funktion bei Empfang einer HTTP-Anforderung aufzurufen.
-> * Erstellen Sie einen Blobtrigger, um eine Funktion aufzurufen, wenn ein Blob in Azure Storage erstellt oder aktualisiert wird.
+In diesem Modul lernen Sie Folgendes:
+
+- Bestimmen des Triggers, der sich am besten für Ihre geschäftlichen Anforderungen eignet
+- Erstellen Sie einen Trigger mit Timer, um eine Funktion nach einem konsistenten Zeitplan aufzurufen.
+- Erstellen Sie einen HTTP-Trigger, um eine Funktion bei Empfang einer HTTP-Anforderung aufzurufen.
+- Erstellen Sie einen Blobtrigger, um eine Funktion aufzurufen, wenn ein Blob in Azure Storage erstellt oder aktualisiert wird.

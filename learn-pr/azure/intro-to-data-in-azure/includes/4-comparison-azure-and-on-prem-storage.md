@@ -1,5 +1,5 @@
-Nun, da Sie die Vorteile und Features von Azure-Speicher kennengelernt haben, betrachten wir die Unterschiede zwischen Azure-Speicher und lokalem Speicher.
+Da Sie jetzt die Vorteile und Funktionen von Azure Storage kennengelernt haben, betrachten Sie nun die Unterschiede zwischen Azure Storage und einem lokalen Speicher.
 
-## <a name="azure-storage-vs-on-premises-storage"></a>Azure-Speicher und lokaler Speicher im Vergleich
+## <a name="azure-storage-versus-on-premises-storage"></a>Azure Storage vs. lokaler Speicher
 
-![Vergleich](../images/Comparison.png)
+![Vergleich](../media-draft/Comparison.png)

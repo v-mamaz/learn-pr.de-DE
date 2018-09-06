@@ -1,10 +1,10 @@
-Wir haben über den Azure-Preisrechner gesprochen und wie Sie damit Ihre Kosten in Azure abschätzen und Preise verschiedener Dienstangebote vergleichen können. Wir haben uns angeschaut, wie Sie Schätzungen speichern und teilen können, und wir haben über Azure-Tools gesprochen, mit denen Sie Ihre Ausgaben für die Cloud im Auge behalten können. 
+Wir haben über den Azure-Preisrechner gesprochen und wie Sie damit Ihre Kosten in Azure abschätzen und Preise verschiedener Dienstangebote vergleichen können. Wir haben uns angeschaut, welche Optionen zur Kostenersparnis existieren, wie Preisschätzungen exportiert werden und welche anderen Tools es gibt, die Azure Ihnen für die Kontrolle Ihrer Cloudausgaben bereitstellt.
 
 - Der Azure Advisor gibt Empfehlungen zu unterschiedlichen Bereichen, unter anderem auch zu Kosten.
 - Azure Cost Management bietet Berichts- und Rechnungsinformationen, sodass Sie einen Überblick über Ihre Ausgaben erhalten. 
-- Cloudyn geht sogar noch weiter und stellt ausführliche Informationen zu verbrauchsbasierter Kostenzuteilung bereit und bestimmt Bereiche, in denen die Effizient optimiert werden kann.
+- Cloudyn geht sogar noch weiter und stellt ausführliche Informationen zu verbrauchsbasierter Kostenzuteilung und bestimmten Bereichen bereit, in denen die Effizienz optimiert werden kann.
 
-Anschließend haben wir über bewährte Methoden gesprochen, durch die Sie Kosten bei der Infrastruktur und der Lizenzierung einsparen können.
+Anschließend wurden bewährte Methoden erörtert, durch die Sie Kosten bei der Infrastruktur und der Lizenzierung einsparen können.
 
 ## <a name="learn-more"></a>Weitere Informationen
 

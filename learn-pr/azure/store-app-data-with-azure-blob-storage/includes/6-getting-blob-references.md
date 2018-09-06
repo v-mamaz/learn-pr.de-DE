@@ -4,9 +4,9 @@ Sie erhalten ein `ICloudBlob`, wenn Sie es mit den Namen des Blobs anfordern ode
 
 ## <a name="getting-blobs-by-name"></a>Abrufen von Blobs anhand des Namens
 
-Rufen Sie eine der `GetXXXReference`-Methoden auf einem `CloudBlobContainer` auf, um ein `ICloudBlob` anhand des Namens abzurufen. Wenn Sie den Typ des Blobs kennen, das Sie abrufen, verwenden Sie vorzugsweise eine der spezifischeren Methoden (`GetBlockBlobReference`, `GetAppendBlobReference` oder `GetPageBlobReference`).
+Rufen Sie eine der `GetXXXReference`-Methoden auf einem `CloudBlobContainer` auf, um ein `ICloudBlob` anhand des Namens abzurufen. Wenn Sie den Typ des Blobs kennen, das Sie abrufen, verwenden Sie eine der spezifischen Methoden (`GetBlockBlobReference`, `GetAppendBlobReference` oder `GetPageBlobReference`) zum Abrufen eines Objekts, das für diesen Blobtyp zugeschnittene Methoden und Eigenschaften enthält.
 
-Keine dieser Methoden führt einen Netzwerkaufruf durch, noch bestätigen sie, ob das Blob tatsächlich vorhanden ist oder nicht. Eine separate Methode, `GetBlobReferenceFromServerAsync`, ruft die Blobspeicher-API auf und löst eine Ausnahme aus, wenn das Blob noch nicht vorhanden ist.
+Keine dieser Methoden führt Netzwerkaufrufe durch oder bestätigt, ob das Zielblob tatsächlich vorhanden ist oder nicht. Sie erstellen nur ein lokales Blobverweisobjekt, das anschließend zum Aufrufen von Methoden verwendet werden kann, die *tatsächlich* über das Netzwerk ausgeführt werden und mit Blobs im Speicher interagieren. Die separate Methode `GetBlobReferenceFromServerAsync` ruft die Blobspeicher-API auf und löst eine Ausnahme aus, wenn das Blob noch nicht vorhanden ist.
 
 ## <a name="listing-blobs-in-a-container"></a>Auflisten von Blobs in einem Container
 
@@ -14,7 +14,7 @@ Sie erhalten eine Liste der Blobs in einem Container mit `CloudBlobContainer` de
 
 ```csharp
 BlobContinuationToken continuationToken = null;
-BlobResultSegment resultSegment = null; 
+BlobResultSegment resultSegment = null;
 
 do
 {
@@ -26,13 +26,16 @@ do
 } while (continuationToken != null);
 ```
 
-Dies ruft `ListBlobsSegmentedAsync` solange wiederholt auf, bis `continuationToken` den Wert `null` hat, was das Ende der Ergebnisse signalisiert.
+Dies wiederholt den Aufruf von `ListBlobsSegmentedAsync` so lange, bis `continuationToken` den Wert `null` hat, wodurch das Ende der Ergebnisse signalisiert wird.
+
+> [!IMPORTANT]
+> Gehen Sie nicht davon aus, dass `ListBlobsSegmentedAsync`-Ergebnisse auf einer einzelnen Seite zurückgegeben werden. Überprüfen Sie stattdessen immer, ob ein Fortsetzungstoken vorhanden ist, und verwenden Sie es gegebenenfalls.
 
 ### <a name="processing-list-results"></a>Verarbeiten von Listenergebnissen
 
-Das Objekt, das `ListBlobsSegmentedAsync` zurückgibt, enthält eine `Results`-Eigenschaft vom Typ `IEnumerable<IListBlobItem>`. `IListBlobItem`s enthalten eine Reihe von Eigenschaften von Container und URL des Blobs, aber keine Methoden zum Hoch- oder Herunterladen. Der Grund hierfür ist, dass einige der Ergebnisobjekte möglicherweise `CloudBlobDirectory`-Objekte sind, die eher virtuelle Verzeichnisse anstatt einzelner Blobs darstellen.
+Das von `ListBlobsSegmentedAsync` zurückgegebene Objekt enthält eine `Results`-Eigenschaft vom Typ `IEnumerable<IListBlobItem>`. Die `IListBlobItem`-Schnittstelle enthält nur wenige Eigenschaften zum Container und der URL des Blobs und ist daher für sich genommen nicht sehr nützlich.
 
-Wenn Sie nur an einzelnen Blobs interessiert sind, können Sie die Ergebnisse mithilfe der `OfType<>`-Methode filtern. Hier sind einige Beispiele:
+Für nützliche Blobs aus `Results` können Sie die `OfType<>`-Methode zum Filtern und Umwandeln der Ergebnisse in spezifischere Typen von Blobs verwenden. Hier sind einige Beispiele:
 
 ```csharp
 // Get all blobs
@@ -42,13 +45,14 @@ var allBlobs = resultSegment.Results.OfType<ICloudBlob>();
 var blockBlobs = resultSegment.Results.OfType<CloudBlockBlob();
 ```
 
-Die Verwendung von `OfType<>` erfordert einen Verweis auf den `System.Linq`-Namespace (`using System.Linq;`).
+> [!NOTE]
+> Die Verwendung von `OfType<>` erfordert einen Verweis auf den `System.Linq`-Namespace (`using System.Linq;`).
 
 ## <a name="exercise"></a>Übung
 
-Eines der Features in unserer App erfordert das Abrufen einer Liste von Blobs aus der API. Wir verwenden das oben gezeigte Muster, um alle Blobs in unserem Container aufzulisten. Bei Verarbeitung der Liste erhalten wir die Namen der einzelnen Blobs.
+Eines der Features in unserer App erfordert das Abrufen einer Liste von Blobs aus der API. Wir verwenden das oben gezeigte Muster, um alle Blobs in unserem Container aufzulisten. Bei der Verarbeitung der Liste erhalten Sie die Namen der einzelnen Blobs.
 
-Öffnen Sie `BlobStorage.cs` im Editor, und geben Sie in `GetNames` folgenden Code ein:
+Öffnen Sie `BlobStorage.cs` im Editor, ersetzen Sie `GetNames` durch den folgenden Code, und speichern Sie die Änderungen.
 
 ```csharp
 public async Task<IEnumerable<string>> GetNames()
@@ -75,5 +79,8 @@ public async Task<IEnumerable<string>> GetNames()
     return names;
 }
 ```
+
+> [!TIP]
+> Beachten Sie, dass in der Signatur der Methode nun `async` angegeben sein muss.
 
 Die von dieser Methode zurückgegebenen Namen werden von `FilesController` verarbeitet, um sie in URLs umzuwandeln. Wenn sie an den Client zurückgegeben werden, werden sie als Hyperlinks auf der Seite gerendert.

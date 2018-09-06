@@ -2,7 +2,7 @@ Stellen Sie sich vor, Sie sollen ein System in Azure erstellen und eine Schätzu
 
 ## <a name="introducing-the-azure-pricing-calculator"></a>Einführung in den Azure-Preisrechner
 
-Um Kunden eine einfache Erstellung von Schätzungen zu ermöglichen, hat Microsoft den **Azure-Preisrechner** entwickelt. Der Azure-Preisrechner ist ein kostenloses, webbasiertes Tool, in das Sie die Details von Azure-Diensten eingeben und Eigenschaften und mit dem Sie Eigenschaften und Optionen der Dienste ändern können. Als Ergebnis erhalten Sie die Kosten pro Dienst und die Gesamtkosten für die vollständige Schätzung.
+Um Kunden eine einfache Erstellung von Schätzungen zu ermöglichen, hat Microsoft den **Azure-Preisrechner** entwickelt. Der Azure-Preisrechner ist ein kostenloses, webbasiertes Tool, in das Sie die Details von Azure-Diensten eingeben und Eigenschaften und mit dem Sie Eigenschaften und Optionen der Dienste ändern können. Als Ergebnis erhalten Sie die Kosten pro Dienst und die Gesamtkosten für die Gesamtschätzung.
 
 Wechseln Sie in einem anderen Browserfenster oder in einer anderen Browserregisterkarte zum [Azure-Preisrechner](https://azure.microsoft.com/pricing/calculator/). Auf der Seite des Preisrechners werden drei Registerkarten angezeigt:
 
@@ -16,22 +16,22 @@ Nachdem Sie die Dienste hinzugefügt haben, sollten Sie die Preise ermitteln. We
 
 ## <a name="estimate-a-solution"></a>Kostenschätzung für eine Lösung
 
-Nehmen wir ausgehend von unserem ursprünglichen Szenario an, dass dieses System auf zwei Azure-VMs ausgeführt wird und eine Verbindung mit einer Azure SQL-Datenbank-Instanz hergestellt wird. Es soll außerdem eine Layer 7-Firewall eingerichtet werden, um sicherzustellen, dass die folgenden erweiterten Lastenausgleichsfunktionen zur Verfügung stehen:
+Ausgehend vom ursprünglichen Szenario wird nun angenommen, dass dieses System auf zwei Azure-VMs ausgeführt wird und eine Verbindung mit einer Azure SQL-Datenbankinstanz hergestellt wird. Es soll außerdem eine Layer-7-Firewall eingerichtet werden, um sicherzustellen, dass die folgenden erweiterten Lastenausgleichsfunktionen zur Verfügung stehen. Die folgende Abbildung zeigt ein Anwendungsgateway, das mit zwei virtuellen Computern verbunden ist. Diese sind wiederum mit einer einzelnen Azure SQL-Datenbankinstanz verbunden.
 
-![Abbildung der Systemarchitektur](../images/estimate-costs-architecture.png)
+![Illustration mit einer Architektur, die zur beispielhaften Kostenschätzung verwendet wird.](../media-drafts/2-estimate-costs-architecture.png)
 
-Mithilfe des Azure-Preisrechners können wir die Höhe der Kosten für eine Lösung ermitteln und unsere Schätzung zur Freigabe für das Team exportieren.
+Mithilfe des Azure-Preisrechners können Sie die Höhe der Kosten für eine Lösung ermitteln und die Schätzung zur Freigabe für das Team exportieren.
 
 > [!NOTE]
-> Stellen Sie sicher, dass der Rechner bereinigt ist und keine Einstellungen aufweist. Klicken Sie anderenfalls auf das Papierkorbsymbol für die einzelnen Elemente, um die Schätzung zurückzusetzen.
+> Stellen Sie sicher, dass der Preisrechner keine Einstellungen aufweist und die Schätzung keine Angaben enthält. Klicken Sie anderenfalls auf das Papierkorbsymbol für die einzelnen Elemente, um die Schätzung zurückzusetzen.
 
 Fügen Sie im Azure-Preisrechner auf der Registerkarte **Produkte** die folgenden Dienste zur Schätzung hinzu, indem Sie auf diese klicken:
 
-- Virtual Machines
-- Azure SQL-Datenbank
-- Application Gateway
+- Microsoft Azure Virtual Machines in der Kategorie „Compute“
+- Azure SQL-Datenbank in der Kategorie „Datenbank“
+- Application Gateway in der die Kategorie „Netzwerk“
 
-Die Details der einzelnen Elemente können auf der Registerkarte **Schätzungen** konfiguriert werden, um eine solide Schätzung unserer Kosten zu erhalten. Verwenden Sie für alle Ressourcen die Region **USA, Westen**.
+Die Details der einzelnen Elemente können auf der Registerkarte **Schätzungen** konfiguriert werden. Dadurch erhalten Sie eine solide Schätzung der Kosten. Verwenden Sie für alle Ressourcen die Region **USA, Westen**.
 
 * **Virtuelle Computer**: Da es sich um eine ASP.NET-Anwendung handelt, muss eine VM mit **Windows-Betriebssystem** eingesetzt werden. Diese Anwendung erfordert keine enorme Rechenleistung, weshalb Sie als Instanzgröße **D2v3** auswählen können. Es werden zwei virtuelle Computer benötigt, die durchgehend ausgeführt werden (730 Stunden pro Monat). Für diese VMs wird Storage Premium (SSD) verwendet, und für insgesamt zwei Datenträger ist nur ein Datenträger pro VM der Größe **E10** erforderlich. 
 

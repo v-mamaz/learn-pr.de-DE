@@ -6,9 +6,10 @@ Die drei Hauptkategorien von Clouddiensten lauten wie folgt:
 - Platform-as-a-Service (PaaS)
 - Software-as-a-Service (SaaS)
 
-Dabei ist zu beachten, dass diese Kategorien Ebenen darstellen, die aufeinander aufbauen. PaaS ist beispielsweise IaaS aufgrund einer zusätzlichen Abstraktionsebene übergeordnet. Diese Abstraktion hat den Vorteil, dass unwichtige Details verborgen werden, sodass Sie schneller mit der Programmierung beginnen können. Ein Nachteil besteht jedoch darin, dass Sie weniger Kontrolle über die zugrunde liegende Hardware besitzen.
+Dabei ist zu beachten, dass diese Kategorien Ebenen darstellen, die aufeinander aufbauen. PaaS ist beispielsweise IaaS aufgrund einer zusätzlichen Abstraktionsebene übergeordnet. Diese Abstraktion hat den Vorteil, dass unwichtige Details verborgen werden, sodass Sie schneller mit der Programmierung beginnen können. Ein Nachteil besteht jedoch darin, dass Sie weniger Kontrolle über die zugrunde liegende Hardware besitzen. Die folgende Abbildung zeigt eine Liste der Ressourcen, die Sie verwalten und die von Ihrem Dienstanbieter in jeder Clouddienstkategorie verwaltet werden.
 
-![Ebenendiagramm](../media-drafts/5-layer-diagram.jpg) Abbildung sollte neu erstellt werden
+![Eine Abbildung zeigt die Abstraktionsebene in jeder Clouddienstkategorie.](../media/5-layer-diagram.png)
+
 
 ### <a name="infrastructure-as-a-service-iaas"></a>Infrastructure-as-a-Service (IaaS)
 

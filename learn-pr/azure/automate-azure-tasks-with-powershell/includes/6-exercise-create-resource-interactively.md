@@ -31,7 +31,9 @@ Damit diese VMs für interne Tests separat von den VMs Ihres Unternehmen verwalt
     ```
 Eine weitere Möglichkeit zur Überprüfung, ob die Ressourcengruppe erfolgreich erstellt wurde, ist das Azure-Portal. Melden Sie sich hierfür beim Portal an, und navigieren zum Abschnitt **Ressourcengruppen** (siehe unten). Die neue Ressourcengruppe sollte in der Liste angezeigt werden.
 
-![Auflisten von Ressourcengruppen über das Portal](../media-drafts/6-listing-resource-groups.png)
+Der folgende Screenshot zeigt den Speicherort der Kategorie „Ressourcengruppen“ im Azure-Portal an.
+
+![Screenshot des Blatts "Azure-Portal-Favoriten" mit der hervorgehobenen Ressourcengruppenkategorie.](../media/6-listing-resource-groups.png)
 
 ## <a name="summary"></a>Zusammenfassung
 In dieser Übung wird ein allgemeines Muster für eine interaktive PowerShell-Sitzung veranschaulicht. Sie haben ein Standard-Cmdlet verwendet, um für die Durchführung einer bestimmten Aufgabe das AzureRM-Modul und dann die Azure PowerShell-Cmdlets zu importieren. Nun haben Sie eine Ressourcengruppe in Ihrem Abonnement erstellt und können nun VMs erstellen.

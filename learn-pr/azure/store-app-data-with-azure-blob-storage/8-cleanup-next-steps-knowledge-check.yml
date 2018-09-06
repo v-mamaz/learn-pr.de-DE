@@ -4,12 +4,58 @@ title: Bereinigung, nächste Schritte und Wissenstest
 metadata:
   title: Bereinigung, nächste Schritte und Wissenstest
   description: Bereinigung, nächste Schritte und Wissenstest
-  ms.openlocfilehash: e5d80bbc2d4cb335828dea6b82e0fc24d6287002
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: 7c554c0f755764aa9231c4d783b81697c2502c68
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40440071"
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43225675"
 durationInMinutes: 2
 interactive: bash
-content: '[!include[](includes/8-cleanup-next-steps-knowledge-check.md)]'
+content: >
+  [!include[](includes/8-cleanup-next-steps-knowledge-check.md)]
+quiz:
+  title: 'Wissenstest: Blob Storage'
+  questions:
+  - content: Welche der folgenden Aussagen beschreibt eine gute Strategie zum Erstellen von Speicherkonten und Blobcontainern für Ihre App am besten?
+    choices:
+    - content: Speicherkonten und Container müssen manuell im Azure-Portal oder mit Skripts erstellt werden, bevor Ihre App bereitgestellt wird.
+      isCorrect: false
+      incorrectExplanation: Speicherkonten sollten vor der App-Bereitstellung erstellt werden, aber das Erstellen von Containern erfolgt meist spontan durch Anwendungen.
+    - content: Ihre App sollte Speicherkonten nach Bedarf erstellen, aber Ihr Bereitstellungsprozess sollte alle Container, die von Ihrer App benötigt werden, im Voraus erstellen.
+      isCorrect: false
+      incorrectExplanation: Die Erstellung von Speicherkonten ist eine Verwaltungsaktivität, die in der Regel nicht von Anwendungen ausgeführt werden sollte.
+    - content: Sie sollten die Speicherkonten Ihrer App vor der Bereitstellung der App erstellen, und Ihre App sollte dann die Container nach Bedarf erstellen.
+      isCorrect: true
+      correctExplanation: Das Erstellen von Containern ist eine allgemeine App-Aktivität. Anwendungen können die benötigten Container spontan erstellen.
+    - content: Eine ordnungsgemäß konfigurierte App sollte alle benötigten Speicherkonten und Container selbst erstellen.
+      isCorrect: false
+      incorrectExplanation: Die Erstellung von Speicherkonten ist eine Verwaltungsaktivität, die in der Regel nicht von Anwendungen ausgeführt werden sollte.
+  - content: Welche Art von Konfiguration wird in der Regel verwendet, um die Blob Storage-Clientbibliothek in einer App zu initialisieren?
+    choices:
+    - content: Ein Azure-Benutzername und ein Kennwort.
+      isCorrect: false
+      incorrectExplanation: Benutzernamen und Kennwörter sind kein Authentifizierungsmechanismus für Azure Storage.
+    - content: Die Verbindungszeichenfolge für das Speicherkonto.
+      isCorrect: true
+      correctExplanation: Die Verbindungszeichenfolge für ein Speicherkonto enthält alle Informationen, die von einer Anwendung benötigt werden, um die Verbindung mit Blob Storage herzustellen, vor allem den Kontonamen und den Kontoschlüssel.
+    - content: Ein Globally Unique Identifier (GUID), der die Anwendung darstellt.
+      isCorrect: false
+      incorrectExplanation: GUIDS sind kein Authentifizierungsmechanismus für Azure Storage.
+    - content: Die Bezeichner für das Rechenzentrum und den Speicherort des Speicherkontos.
+      isCorrect: false
+      incorrectExplanation: Für den Zugriff muss Ihre Anwendung die Informationen zum Rechenzentrum und zum Speicherort eines Speicherkontos nicht kennen.
+  - content: Was geschieht, wenn Sie `GetBlockBlobReference` mit dem Namen eines Blobs aufrufen?
+    choices:
+    - content: Ein neues Blockblob wird im Speicher erstellt.
+      isCorrect: false
+      incorrectExplanation: Durch das Abrufen eines Blobverweises selbst wird kein Blob erstellt. Allerdings wird dadurch ein Blob erstellt, wenn Sie den Verweis zum Hochladen von Daten verwenden und das Zielblob noch nicht vorhanden ist.
+    - content: Ein `CloudBlockBlob`-Objekt wird lokal erstellt. Keine Netzwerkaufrufe werden ausgeführt.
+      isCorrect: true
+      correctExplanation: Durch das Abrufen eines Blobverweises werden keine Aufrufe an Azure Storage ausgeführt. Damit wird einfach ein Objekt lokal erstellt, das zum Arbeiten mit einem gespeicherten Blob verwendet werden kann.
+    - content: Eine Ausnahme wird ausgelöst, wenn das Blob nicht im Speicher vorhanden ist.
+      isCorrect: false
+      incorrectExplanation: Beim Abrufen eines Blobverweises wird nicht überprüft, ob das Blob im Speicher bereits vorhanden ist.
+    - content: Der Inhalt des benannten Blobs wird heruntergeladen.
+      isCorrect: false
+      incorrectExplanation: Durch das Abrufen eines Blobverweises selbst werden keine Daten heruntergeladen. Wenn Sie jedoch über einen Verweis verfügen, können Sie ihn zum Herunterladen von Daten aus dem Zielblob verwenden.

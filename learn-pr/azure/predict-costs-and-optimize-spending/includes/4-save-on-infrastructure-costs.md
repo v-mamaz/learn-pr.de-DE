@@ -1,23 +1,23 @@
 Es wurde gezeigt, wie Sie Kostenschätzungen für geplante Umgebungen erstellen können, wir haben einige Tools untersucht, um genauere Informationen darüber zu erhalten, wo Kosten entstehen, und es wurden zukünftige Ausgaben geplant. Die nächste Herausforderung besteht darin, zu ermitteln, wie diese Infrastrukturkosten gesenkt werden können.
 
-## <a name="use-reserved-instances"></a>Verwendung reservierter Instanzen
+## <a name="use-reserved-instances"></a>Verwenden reservierter Instanzen
 
-Wenn Ihre VM-Workloads – insbesondere diejenigen, die rund um die Uhr und das ganze Jahr ausgeführt werden – statisch und vorhersagbar sind, ist die Verwendung reservierter Instanzen eine fantastische Möglichkeit, je nach VM-Größe Einsparungen von bis zu 70 Prozent zu erzielen.
+Wenn Ihre VM-Workloads – insbesondere diejenigen, die rund um die Uhr und das ganze Jahr ausgeführt werden – statisch und vorhersagbar sind, ist die Verwendung reservierter Instanzen eine gute Möglichkeit, je nach VM-Größe Einsparungen zwischen 70 und 80 % Prozent zu erzielen. Die folgende Abbildung zeigt, dass Sie mithilfe von reservierten Azure-Instanzen bis zu 72 % und mithilfe von reservierten Instanzen inklusive des Azure-Hybridvorteils bis zu 80 % Ihrer Kosten einsparen können.
 
-![Einsparungen durch reservierte Instanzen](../images/savings-coins.png)
+![Illustration mit Kostenvorteilen bei der Verwendung von reservierten Azure-Instanzen und der Azure-Hybridvorteile im Vergleich zur nutzungsbasierten Zahlung.](../media-drafts/4-savings-coins.png)
 
-Reservierte Instanzen werden für eine Laufzeit von 1 Jahr oder 3 Jahren erworben, hierbei müssen die Gebühren für die gesamte Laufzeit vorab entrichtet werden. Nach dem Erwerb gleicht Microsoft die Reservierung mit den ausgeführten Instanzen ab und zieht die Betriebsstunden von Ihrer Reservierung ab. Reservierungen können über das Azure-Portal erworben werden. Da reservierte Instanzen einen Rabatt auf Computeressourcen bieten, sind sie sowohl für Windows- als auch für Linux-VMs verfügbar.
+Reservierte Instanzen werden für eine Laufzeit von ein oder drei Jahren erworben. Hierbei müssen die Gebühren für die gesamte Laufzeit vorab entrichtet werden. Nach dem Erwerb gleicht Microsoft die Reservierung mit den ausgeführten Instanzen ab und zieht die Betriebsstunden von Ihrer Reservierung ab. Reservierungen können über das Azure-Portal erworben werden. Da reservierte Instanzen einen Rabatt auf Computeressourcen bieten, sind sie sowohl für Windows- als auch für Linux-VMs verfügbar.
 
 ## <a name="right-size-underutilized-virtual-machines"></a>Ändern der Größe von wenig genutzten virtuellen Computern
 
-Zuvor wurde besprochen, dass Azure Cost Management und Azure Advisor möglicherweise empfehlen, die Größe von VMs zu ändern oder VMs herunterzufahren. Die richtige Dimensionierung einer VM ist der Prozess, die richtige Größe für die VM festzulegen. Angenommen, Sie führen einen Server als Domänencontroller aus, der auf die Größe **Standard_D4sv3** festgelegt ist, aber Ihre VM befindet sich fast immer zu 90 Prozent im Leerlauf. Indem Sie die Größe dieser VM in **Standard_D2s_v3** ändern, verringern Sie Ihre Computekosten um 50 Prozent. Die Kosten sind linear und verdoppeln sich für jede nächsthöhere Größe innerhalb derselben Serie. In diesem Fall ist es möglicherweise sogar vorteilhaft, die Instanzserie zu ändern und auf eine kostengünstigere VM-Serie umzustellen.
+Zuvor wurde besprochen, dass Azure Cost Management und Azure Advisor möglicherweise empfehlen, die Größe von VMs zu ändern oder VMs herunterzufahren. Bei der richtigen Dimensionierung einer VM wird deren Größe entsprechend angepasst. Angenommen, Sie führen einen Server als Domänencontroller aus, der auf die Größe **Standard_D4sv3** festgelegt ist, aber Ihre VM befindet sich fast immer zu 90 % im Leerlauf. Indem Sie die Größe dieser VM in **Standard_D2sv3** ändern, verringern Sie Ihre Computekosten um 50 %. Die Kosten sind linear und verdoppeln sich für jede nächsthöhere Größe innerhalb derselben Serie. In diesem Fall ist es möglicherweise sogar vorteilhaft, die Instanzserie zu ändern und auf eine kostengünstigere VM-Serie umzustellen. Die folgende Abbildung zeigt Einsparungen in Höhe von 50 %, die durch die Umstellung auf die nächstniedrigere Größe innerhalb der Serie erzielt wurden.
 
-![Ändern der VM-Größe](../images/vm-resize.png)
+![Illustration zur Veranschaulichung der Einsparungen, die für eine unterdurchschnittlich ausgelastete VM durch die Umstellung auf die nächstniedrigere Größe erzielt wurden.](../media-drafts/4-vm-resize.png)
 
 Überdimensionierte VMs sind eine häufige Ursache für unnötige Kosten in Azure, die aber schnell behoben werden kann. Sie können die Größe einer VM über das Azure-Portal, Azure PowerShell oder die Azure CLI ändern.
 
 > [!NOTE]
-> Um die Größe einer VM zu ändern, müssen Sie sie beenden, ihre Größe ändern und die VM dann neu starten. Dieser Vorgang kann abhängig davon, wie umfangreich die Größenänderung ist, einige Minuten in Anspruch nehmen. Planen Sie eine Downtime, oder leiten Sie Ihren Datenverkehr auf eine andere Instanz um, während Sie diese Aufgabe ausführen.
+> Um die Größe einer VM zu ändern, müssen Sie sie beenden, ihre Größe ändern und die VM dann neu starten. Dieser Vorgang kann abhängig davon, wie umfassend die Größenänderung ist, einige Minuten in Anspruch nehmen. Planen Sie eine Downtime, oder leiten Sie Ihren Datenverkehr auf eine andere Instanz um, während Sie diese Aufgabe ausführen.
 
 ## <a name="deallocate-virtual-machines-in-off-hours"></a>Aufheben der Zuordnung virtueller Computer außerhalb der Geschäftszeiten
 
@@ -27,7 +27,7 @@ Dieser Ansatz ist besonders für Entwicklungsumgebungen geeignet. Häufig erfolg
 
 Sie können auch das Feature zum automatischen Herunterfahren einer VM verwenden, um eine automatisierte Abschaltung zu planen.
 
-![Automatisches Herunterfahren](../images/vm-auto-shutdown.png)
+![Automatisches Herunterfahren](../media-drafts/4-vm-auto-shutdown.png)
 
 ## <a name="delete-unused-virtual-machines"></a>Löschen nicht verwendeter virtueller Computer 
 

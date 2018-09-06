@@ -4,13 +4,13 @@ title: Kostenschätzung mit dem Azure-Preisrechner
 metadata:
   title: Kostenschätzung mit dem Azure-Preisrechner
   description: In dieser Einheit wird erläutert, wie Sie mit dem Azure-Preisrechner eine Kostenschätzung durchführen.
-  ms.openlocfilehash: 8667c62411c9155d1bb116dd36da0014f038e15b
-  ms.sourcegitcommit: d40bff88f60d5ddb3d875f788cafdd0c40069f23
+  ms.openlocfilehash: 93d01958a958e008fac17214db8496b8f9dded03
+  ms.sourcegitcommit: 81cb0c300be030565fb0b7c5b57413c4a2aa5410
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "42614514"
-durationInMinutes: 15
+  ms.lasthandoff: 08/28/2018
+  ms.locfileid: "43141735"
+durationInMinutes: 20
 content: >
   [!include[](includes/2-estimate-costs-with-the-azure-pricing-calculator.md)]
 quiz:
@@ -26,9 +26,9 @@ quiz:
       correctExplanation: Diese Registerkarte zeigt alle Azure-Dienste an. Sie können hier Dienste hinzufügen oder entfernen, um Ihre Schätzung zu erstellen.
   - content: Sie können Ihre Schätzung über ein Excel-Arbeitsblatt oder eine URL teilen.
     choices:
-    - content: "True"
+    - content: "TRUE"
       isCorrect: true
       correctExplanation: Wenn Sie unten in der Schätzung auf <b>Exportieren</b> klicken, wird ein Excel-Arbeitsblatt exportiert, das Sie teilen können. Alternativ können Sie auf <b>Teilen</b> klicken, um einen URL-Link abzurufen, den Sie mit Ihrem Team teilen können.
-    - content: "False"
+    - content: "FALSE"
       isCorrect: false
       incorrectExplanation: Wenn Sie unten in der Schätzung auf <b>Exportieren</b> klicken, wird ein Excel-Arbeitsblatt exportiert, das Sie teilen können. Alternativ können Sie auf <b>Teilen</b> klicken, um einen URL-Link abzurufen, den Sie mit Ihrem Team teilen können.

@@ -11,8 +11,9 @@ Steve hatte vergessen, dass mehrere Instanzen der App auf verschiedenen Servern 
 Das Preisgeben von Datenbank-Verbindungszeichenfolgen, API-Schlüsseln oder Dienstkennwörtern kann katastrophale Folgen haben. Gestohlene oder gelöschte Daten, finanzielle Schäden, Ausfallzeiten von Anwendungen und irreparable Schäden an Betriebsvermögen und Ruf sind mögliche Folgen. Leider müssen Werte von Geheimnissen oft an mehreren Stellen gleichzeitig bereitgestellt und zu ungünstigen Zeiten geändert werden. Und Sie müssen sie ja irgendwo *speichern*! Schauen wir mal, wie wir das alles mit Azure Key Vault sicherer gestalten können.
 
 ## <a name="learning-objectives"></a>Lernziele
-> [!div class="checklist"]
-> * Verstehen, welche Arten von Informationen in Azure Key Vault gespeichert werden können
-> * Erstellen eines Azure Key Vault-Speichers
-> * Authentifizieren bei Azure Key Vault
-> * Zugreifen auf Geheimnisse in einem Azure Key Vault
+In diesem Modul lernen Sie Folgendes:
+
+- Verstehen, welche Arten von Informationen in Azure Key Vault gespeichert werden können
+- Erstellen eines Azure Key Vault-Stores
+- Authentifizieren bei Azure Key Vault
+- Zugreifen auf Geheimnisse in Azure Key Vault

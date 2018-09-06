@@ -1,6 +1,6 @@
-Sie haben jetzt erfahren, wie Sie ein kostenloses Konto für Microsoft Azure erstellen und sich mit diesem Konto anmelden. Danach haben Sie die Funktionen des Azure-Portals und die zugehörigen Anpassungsoptionen erkundet. Zum Schluss haben Sie ein Dashboard erstellt, angepasst und freigegeben.
+Sie haben jetzt erfahren, wie Sie ein kostenloses Konto für Microsoft Azure erstellen und sich mit diesem Konto anmelden. Danach haben Sie die Features des Azure-Portals und die zugehörigen Anpassungsoptionen erkundet. Zum Schluss haben Sie ein Dashboard erstellt, angepasst und freigegeben.
 
-## <a name="further-learning"></a>Weiterführende Informationen
+## <a name="additional-resources"></a>Weitere Ressourcen
 
 Weitere Informationen zu den Angeboten von Azure finden Sie unter [Azure-Lösungen](https://azure.microsoft.com/solutions/).
 
@@ -16,4 +16,4 @@ Hilfe bei der Entscheidung, welche Computedienste Sie verwenden sollten, erhalte
 
 Informationen zum Verknüpfen eines Azure-Abonnements mit Active Directory finden Sie unter [Zuweisen oder Hinzufügen eines Azure-Abonnements zu Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory).
 
-Weitere Informationen zum Arbeiten mit Azure-Dashboards finden Sie unter [Programmgesteuertes Erstellen von Azure-Dashboards](https://docs.microsoft.com/azure/azure-portal/azure-portal-dashboards-create-programmatically).
+Weitere Informationen zum Arbeiten mit Azure-Dashboards finden Sie unter [Programmgesteuertes Erstellen von Azure-Dashboards](https://docs.microsoft.com/en-us/azure/azure-portal/azure-portal-dashboards-create-programmatically).

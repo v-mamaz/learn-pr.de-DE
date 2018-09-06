@@ -1,9 +1,9 @@
-## <a name="creating-key-vaults-for-your-applications"></a>Erstellen von Key Vault-Instanzen für Ihre Anwendungen
+## <a name="creating-key-vaults-for-your-applications"></a>Erstellen von Key Vaults für Ihre Anwendungen
 
-Es empfiehlt sich, jeder Anwendung für jede von Ihnen verwendete Bereitstellungsumgebung, wie z.B. Entwicklung, Test und Produktion, einen eigenen Tresor zur Verfügung zu stellen. Es mag bequem sein, Geheimnisse anwendungsübergreifend gemeinsam zu nutzen, aber die Auswirkungen eines Angriffs, der sich Lesezugriff auf einen Tresor verschafft, nehmen mit der Anzahl der Geheimnisse im Tresor zu.
+Es empfiehlt sich, für jede Bereitstellungsumgebung (Entwicklung, Test und Produktion) Ihrer verschiedenen Anwendungen einen separaten Tresor bereitzustellen. Es ist zwar möglich, Tresore zum plattformübergreifenden Freigeben von Geheimnissen zu verwenden, allerdings nehmen die Auswirkungen eines Angriffs, bei dem Lesezugriff auf einen Tresor erlangt wurde, mit der Anzahl der Geheimnisse im Tresor zu.
 
 > [!TIP]
-> Wenn Sie in verschiedenen Umgebungen dieselben Namen für Geheimnisse verwenden, ist die Tresor-URL die einzige umgebungsspezifische Konfiguration, die in Ihrer Anwendung geändert werden muss.
+> Wenn Sie in verschiedenen Umgebungen einer Anwendung dieselben Namen für Geheimnisse verwenden, ist die Tresor-URL die einzige umgebungsspezifische Konfiguration, die in Ihrer Anwendung geändert werden muss.
 
 Das Erstellen eines Tresors erfordert keine anfängliche Konfiguration. Ihrer Benutzeridentität werden automatisch alle Berechtigungen für die Verwaltung von Geheimnissen erteilt, und Sie können sofort mit dem Hinzufügen von Geheimnissen beginnen. Sobald Sie einen Tresor haben, können Sie Geheimnisse über jede Azure-Verwaltungsschnittstelle hinzufügen und verwalten, einschließlich Azure-Portal, Azure CLI und Azure PowerShell. Wenn Sie Ihre Anwendung für die Verwendung des Tresors einrichten, müssen Sie ihr die ordnungsgemäßen Berechtigungen zuweisen, womit wir uns in der nächsten Einheit beschäftigen.
 
@@ -51,7 +51,7 @@ Nach Abschluss des Vorgangs sehen Sie die JSON-Ausgabe mit einer Beschreibung de
 Fügen Sie nun das Geheimnis hinzu. Unser Geheimnis erhält den Namen **SecretPassword** mit dem Wert **Reindeer_flotilla**.
 
 ```azurecli
-az keyvault secret set --name SecretPassword --value open_sesame --vault-name <your-unique-vault-name>
+az keyvault secret set --name SecretPassword --value reindeer_flotilla --vault-name <your-unique-vault-name>
 ```
 
 Notieren Sie sich den Tresornamen, da Sie ihn bald wieder benötigen.

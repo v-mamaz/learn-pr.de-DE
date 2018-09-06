@@ -1,14 +1,21 @@
+---
+zone_pivot_groups: platform
+ms.openlocfilehash: 5e0a236b9cf0c3c0b23beb1324f35a34dade2e92
+ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "43179827"
+---
+Installieren Sie die Azure CLI auf Ihrem lokalen Computer, und führen Sie dann einen einfachen Befehl aus, um die Installation zu überprüfen. Mit welcher Methode Sie die Azure CLI installieren, hängt vom Betriebssystem Ihres Computers ab. Wählen Sie die entsprechenden Schritte für Ihr Betriebssystem aus.
 
-In dieser Übung installieren Sie die Azure CLI auf Ihrem lokalen Computer und führen dann einen einfachen Befehl aus, um die Installation zu überprüfen. 
-
-## <a name="installing-the-azure-cli"></a>Installieren der Azure CLI
-Mit welcher Methode Sie die Azure CLI installieren, hängt vom Betriebssystem Ihres Computers ab. Wählen Sie die entsprechenden Schritte für Ihr Betriebssystem aus.
+::: zone pivot="linux"
 
 ### <a name="linux"></a>Linux
-Hier installieren Sie die Azure CLI unter Ubuntu Linux mit dem Advanced Packaging Tool (**apt**) und der Bash-Befehlszeile.
+Hier installieren Sie die Azure CLI unter **Ubuntu Linux** mit dem Advanced Packaging Tool (**apt**) und der Bash-Befehlszeile.
 
-> [!NOTE]
-> Die unten aufgeführten Befehle gelten für Ubuntu, Version 18.04. Wenn Sie eine andere Ubuntu-Version verwenden, müssen Sie ein anderes Repository hinzufügen. Details finden Sie unter [Installieren der Azure CLI 2.0 mit apt](https://docs.microsoft.com/cli/azure/install-azure-cli-apt).
+> [!WARNING]
+> Die unten aufgeführten Befehle gelten für Ubuntu-Version 18.04. Wenn Sie eine andere Ubuntu-Version verwenden, müssen Sie ein anderes Repository hinzufügen. Details finden Sie unter [Installieren der Azure CLI 2.0 mit apt](https://docs.microsoft.com/cli/azure/install-azure-cli-apt).
 
 1. Bearbeiten Sie Ihre Quellenliste, sodass das Microsoft-Repository registriert wird und der Paket-Manager das Azure CLI-Paket ermitteln kann.
 
@@ -17,17 +24,23 @@ Hier installieren Sie die Azure CLI unter Ubuntu Linux mit dem Advanced Packagin
     echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
     sudo tee /etc/apt/sources.list.d/azure-cli.list
     ```
+
 1. Importieren Sie den Verschlüsselungsschlüssel für das Microsoft Ubuntu-Repository. So kann der Paket-Manager sicherstellen, dass das Azure CLI-Paket, das Sie installieren, wirklich von Microsoft stammt.
 
     ```bash
     curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
     ```
+
 1. Installieren Sie die Azure CLI.
 
     ```bash
     sudo apt-get install apt-transport-https
     sudo apt-get update && sudo apt-get install azure-cli
     ```
+
+::: zone-end
+
+::: zone pivot="macos"
 
 ### <a name="macos"></a>macOS
 Hier installieren Sie die Azure CLI mit dem Homebrew-Paket-Manager unter macOS.
@@ -40,11 +53,16 @@ Hier installieren Sie die Azure CLI mit dem Homebrew-Paket-Manager unter macOS.
     ```bash
     brew update
     ```
+
 1. Installieren Sie die Azure CLI.
 
     ```bash
     brew install azure-cli
     ```
+
+::: zone-end
+
+::: zone pivot="windows"
 
 ### <a name="windows"></a>Windows
 Hier installieren Sie die Azure CLI mit dem Microsoft Installer (MSI) unter Windows.
@@ -52,6 +70,8 @@ Hier installieren Sie die Azure CLI mit dem Microsoft Installer (MSI) unter Wind
 1. Wechseln Sie zu „[https://aka.ms/installazurecliwindows](https://aka.ms/installazurecliwindows)“, und klicken Sie im Sicherheitsdialogfeld des Browsers auf **Ausführen**.
 1. Akzeptieren Sie die Lizenzbedingungen im Installer, und klicken Sie dann auf **Installieren**.
 1. Klicken Sie im Dialogfeld **Benutzerkontensteuerung** auf **Ja**.
+
+::: zone-end
 
 ## <a name="running-the-azure-cli"></a>Ausführen der Azure CLI
 Unter Linux und macOS führen Sie die Azure CLI aus, indem Sie eine Bash-Shell öffnen. Unter Windows führen Sie die CLI von der Eingabeaufforderung oder über PowerShell aus.
@@ -62,8 +82,12 @@ Unter Linux und macOS führen Sie die Azure CLI aus, indem Sie eine Bash-Shell �
     az --version
     ```
 
+::: zone pivot="windows"
+
 > [!NOTE]
-> Unter Windows bietet die Ausführung der Azure CLI von PowerShell einige Vorteile gegenüber der Ausführung von der Eingabeaufforderung: PowerShell bietet beispielsweise mehr Features zum Vervollständigen per TABULATORTASTE als die Eingabeaufforderung. 
+> Die Ausführung der Azure CLI über PowerShell bietet im Vergleich zur Ausführung der Azure CLI über die Windows-Eingabeaufforderung einige Vorteile. Zusätzlich zu den in der Eingabeaufforderung verfügbaren Features stellt PowerShell weitere Features zur Vervollständigung mit der TAB-Taste zur Verfügung. 
+
+::: zone-end
 
 ## <a name="summary"></a>Zusammenfassung
 Sie richten Ihre lokalen Computer für die Verwaltung von Azure-Ressourcen mithilfe der Azure CLI ein. Sie können die Azure CLI jetzt lokal verwenden, um Befehle einzugeben oder Skripts auszuführen. Die Azure CLI leitet Ihre Befehle an die Azure-Rechenzentren weiter, wo sie in Ihren Azure-Abonnements ausgeführt werden.

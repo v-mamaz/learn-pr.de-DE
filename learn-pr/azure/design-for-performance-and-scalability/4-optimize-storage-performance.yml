@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.4-optimize-storage-performance
+title: Optimieren der Speicherleistung
+metadata:
+  title: Optimieren der Speicherleistung
+  description: In dieser Einheit wird beschrieben, wie Sie die Speicherleistung Ihrer Architektur optimieren.
+  ms.openlocfilehash: 9b7e1d9ea0e90b95045f26845875a81211f83ea4
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43180053"
+durationInMinutes: 5
+content: >
+  [!include[](includes/4-optimize-storage-performance.md)]
+quiz:
+  title: 'Wissenstest: Optimieren der Speicherleistung'
+  questions:
+  - content: Was ist mehrsprachige Persistenz?
+    choices:
+    - content: die Nutzung von Azure SQL-Datenbank zur Speicherung all Ihrer Daten
+      isCorrect: false
+    - content: eine Möglichkeit, Verbindungen für Datenübertragungen aufrechtzuerhalten
+      isCorrect: false
+    - content: die Verwendung unterschiedlicher Speichertechnologien für unterschiedliche Zwecke innerhalb Ihrer Anwendung
+      isCorrect: true
+    - content: ein Ansatz zur Behandlung von Fehlern bei transienten Daten
+      isCorrect: false
+  - content: Mit Redis Cache kann die Leistung Ihrer Anwendung verbessert werden, indem eine Momentaufnahme der Daten im Arbeitsspeicher gespeichert wird.
+    choices:
+    - content: Richtig
+      isCorrect: true
+    - content: Falsch
+      isCorrect: false

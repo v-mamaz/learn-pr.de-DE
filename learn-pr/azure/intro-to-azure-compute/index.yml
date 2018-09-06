@@ -7,20 +7,26 @@ levels:
 - beginner
 roles:
 - developer
-- solution-architect
+- solutions-architect
 - administrator
 products:
 - Azure
 metadata:
   title: Einführung in Azure Compute
-  description: Azure Compute bietet Computingressourcen, die von einem Benutzer flexibel verwendet werden können, um große Datenmengen für Tasks wie das Modellieren von Auswirkungen von Drogen auf der molekularen Ebene, das Gewinnen von Marketingdaten, das Rendern von Videos in hoher Qualität und das Analysieren von astronomischen Daten, die von Teleskopen erfasst wurden. Dieses Modul soll eine allgemeine Beschreibung des Azure Compute-Diensts und dessen Optionen und Empfehlungen zu deren Verwendung beim Lösen von alltäglichen Problemen eines Studierenden bereitstellen.
-  ms.openlocfilehash: 1f8987e808eaa7f2d906147faf17fe2a8edf76e4
-  ms.sourcegitcommit: 0e0cc41b7669e7149541f34f3f24ba0e864ed07d
+  description: Azure Compute bietet Computingressourcen, mit denen Benutzer flexibel große Datenmengen verarbeiten können. Dies gilt beispielsweise für Aufgaben wie das Modellieren von Arzneimittelwirkungen auf molekularer Ebene, das Gewinnen von Marketingdaten, das Rendern von Videos in hoher Qualität und das Analysieren von astronomischen Daten aus Teleskopen. Dieses Modul beschreibt umfassend den Azure Compute-Dienst, die verfügbaren Optionen und Anwendungsvorschläge, damit Teilnehmer ihre alltäglichen Probleme lösen können.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 691a9c92ac9192efabc3c045a9c89a5f1c68e6ad
+  ms.sourcegitcommit: bcd9fd78122da4fc1545c7923a5fc0cd0a8abe96
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/23/2018
-  ms.locfileid: "42702701"
-abstract: 'Mit Abschluss dieses Moduls haben Studierende das Folgende gelernt: Bestimmen von Computingoptionen in Azure; Auswählen von einer oder mehreren Computingoptionen, mit denen sie die Probleme ihres Unternehmens lösen können.'
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43152076"
+abstract: >
+  In diesem Modul lernen Sie Folgendes:
+
+  - Identifizieren von Optionen in Azure Compute
+
+  - Auswählen von mindestens einer geeigneten Compute-Option zum Lösen Ihrer Geschäftsprobleme
 units:
 - learn.intro-to-compute.1-introduction
 - learn.intro-to-compute.2-essential-azure-compute-concepts

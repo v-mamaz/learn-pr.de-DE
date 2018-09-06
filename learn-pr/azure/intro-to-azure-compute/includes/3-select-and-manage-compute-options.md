@@ -22,7 +22,7 @@ In Azure sind außerdem erweiterte Dienste für virtuelle Computer verfügbar:
 
 Container sind eine gute Wahl, wenn Sie mehrere Instanzen einer Anwendung auf einem einzelnen virtuellen Computer ausführen möchten. Der Containerorchestrator kann Anwendungsinstanzen nach Bedarf starten, beenden oder hochskalieren.
 
-Container werden jedoch üblicherweise dazu verwendet, Lösungen mithilfe einer Microservicearchitektur zu erstellen. Container werden häufig verwendet, um Lösungen in kleinere Bestandteile aufzuteilen. Sie können eine Website beispielsweise in einen Container aufteilen, der Ihr Front-End hostet, einen weiteren, der Ihr Back-End hostet, und einen dritten für den Speicher. Dadurch können Sie einzelne Bestandteile Ihrer App in logische Abschnitte aufteilen, die unabhängig voneinander verwaltet, skaliert oder aktualisiert werden können.
+Container dienen jedoch üblicherweise dazu, mithilfe einer Microservicesarchitektur Lösungen zu erstellen. Container werden häufig verwendet, um Lösungen in kleinere Bestandteile aufzuteilen. Sie können eine Website beispielsweise in einen Container aufteilen, der Ihr Front-End hostet, einen weiteren, der Ihr Back-End hostet, und einen dritten für den Speicher. Dadurch können Sie einzelne Bestandteile Ihrer App in logische Abschnitte aufteilen, die unabhängig voneinander verwaltet, skaliert oder aktualisiert werden können.
 
 Angenommen, das Back-End Ihrer Website hat die maximale Kapazität erreicht, aber das Front-End und der Speicher werden nicht beansprucht. Sie könnten das Back-End einzeln skalieren, um die Leistung zu verbessern. Alternativ könnten Sie einen anderen Speicherdienst verwenden. Eine weitere Möglichkeit wäre das Ersetzen des Speichercontainers ohne die restliche Anwendung zu beeinträchtigen.
 

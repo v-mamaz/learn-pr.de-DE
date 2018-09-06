@@ -20,7 +20,7 @@ Ein kostenloses Azure-Konto enthält ein **Guthaben in Höhe von 200 USD**, das 
 
 ### <a name="azure-pay-as-you-go-account"></a>Azure-Konto mit nutzungsbasierter Bezahlung
 
-Bei einem Konto mit nutzungsbasierter Bezahlung werden Ihnen monatlich die Dienste in Rechnung gestellt, die Sie genutzt haben. Dieser Kontotyp eignet sich für eine Vielzahl von Benutzern – von Einzelpersonen über kleine Unternehmen bis hin zu großen Organisationen.
+Bei einem Konto mit nutzungsbasierter Bezahlung (PAYG) werden Ihnen monatlich die Dienste in Rechnung gestellt, die Sie genutzt haben. Dieser Kontotyp eignet sich für eine Vielzahl von Benutzern – von Einzelpersonen über kleine Unternehmen bis hin zu großen Organisationen.
 
 ### <a name="azure-enterprise-agreement"></a>Azure Enterprise Agreement
 

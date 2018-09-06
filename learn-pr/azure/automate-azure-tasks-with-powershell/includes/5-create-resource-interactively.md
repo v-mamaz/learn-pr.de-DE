@@ -21,15 +21,15 @@ Get-Help <cmdlet-name> -detailed
 **AzureRM** ist der formelle Name des Azure PowerShell-Moduls, das die Cmdlets enthält, die mit den Azure-Features zusammenarbeiten sollen (das **RM** im Namen steht für **Resource Manager**). Es enthält hunderte Cmdlets, mit denen Sie nahezu jeden Aspekt jeder Azure-Ressource regulieren können. Sie können mit Ressourcengruppen, Speicher, virtuellen Computern, Azure Active Directory, Containern, Machine Learning usw. arbeiten.
 
 ## <a name="how-to-create-a-resource-group"></a>Erstellen einer Ressourcengruppe
-Als Nächstes erstellen wir eine Ressourcengruppe mit einer lokalen Installation von Azure PowerShell. 
+Als Nächstes erstellen Sie eine Ressourcengruppe mit einer lokalen Installation von Azure PowerShell. 
 
-Es sind vier Schritte notwendig: 
+Dazu sind vier Schritte notwendig: 
 1. Importieren Sie die Azure-Cmdlets.
 1. Stellen Sie eine Verbindung mit Ihrem Azure-Abonnement her.
 1. Erstellen Sie die Ressourcengruppe.
 1. Stellen Sie sicher, dass das Erstellen erfolgreich war.
 
-![Schritte zum Erstellen einer Ressource in Azure mit Azure PowerShell](../media-drafts/5-create-resource-overview.png)
+![Schritte zum Erstellen einer Ressource in Azure mit Azure PowerShell](../media/5-create-resource-overview.png)
 
 Jeder Schritt entspricht einem anderen Cmdlet.
 

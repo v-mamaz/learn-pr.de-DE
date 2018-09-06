@@ -1,6 +1,4 @@
-## <a name="what-are-blobs-and-how-are-they-used"></a>Was sind Blobs, und wie werden sie verwendet?
-
-Blobs sind „Dateien für die Cloud“. Apps funktionieren mit Blobs im Wesentlichen auf die gleiche Weise, wie sie mit Dateien auf einem Datenträger funktionieren würden (Daten lesen und schreiben). Im Gegensatz zu einer lokalen Datei kann mit einer Internetverbindung von überall auf Blobs zugegriffen werden. 
+Blobs sind „Dateien für die Cloud“. Apps funktionieren mit Blobs im Wesentlichen auf die gleiche Weise, wie sie mit Dateien auf einem Datenträger funktionieren würden (Daten lesen und schreiben). Im Gegensatz zu einer lokalen Datei kann mit einer Internetverbindung von überall auf Blobs zugegriffen werden.
 
 Azure Blob Storage ist *unstrukturiert*, d.h. es gibt für die so gespeicherten Daten keine Einschränkungen. Ein Blob enthält beispielsweise ein PDF-Dokument, ein JPG-Bild, eine JSON-Datei, Videoinhalte usw. Blobs sind nicht auf gebräuchliche Dateiformate beschränkt. Ein Blob kann mehrere Gigabyte binärer Daten von einem wissenschaftlichen Gerät, eine verschlüsselte Nachricht für eine andere Anwendung oder Daten in benutzerdefiniertem Format für eine App, die Sie entwickeln, enthalten.
 
@@ -19,14 +17,10 @@ Einige Apps erstellen, aktualisieren und löschen Blobs ständig als Teil ihrer 
 
 In Blob Storage befindet sich jedes Blob in einem *Blobcontainer*. Sie können eine unbegrenzte Anzahl von Blobs in einem Container und eine unbegrenzte Anzahl von Containern in einem Speicherkonto speichern. Container sind „flach“ und können nur Blobs, aber keine anderen Container speichern.
 
-**Ersetzen Sie dieses Bild durch ein besseres.**
-
-![Konten, Container und Blobs](../media-drafts/2-storage-container-blob.png)
-
 Blobs und Container unterstützen Metadaten in Form von Name/Wert-Zeichenfolgenpaaren. Ihre Apps können Metadaten für alles verwenden, was Sie möchten: eine lesbare Beschreibung der Inhalte eines Blobs, die von der Anwendung angezeigt werden, eine Zeichenfolge, die Ihre App verwendet, um festzulegen, wie die Daten des Blobs verarbeitet werden sollen usw.
 
 > [!TIP]
-> Blob Storage bietet keinen Mechanismus für die Suche oder Sortierung von Blobs nach Metadaten an. Weitere Informationen zur Verwendung von Azure Search finden Sie im Abschnitt „Weitere Ressourcen“ am Ende dieses Moduls.
+> Blob Storage bietet keinen Mechanismus für die Suche oder Sortierung von Blobs nach Metadaten an. Weitere Informationen zur Verwendung von Azure Search finden Sie im Abschnitt „Weitere Informationen“ am Ende dieses Moduls.
 
 ## <a name="the-blob-storage-api-and-client-libraries"></a>Blob Storage-API und Clientbibliotheken
 

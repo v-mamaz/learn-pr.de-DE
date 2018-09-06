@@ -1,4 +1,4 @@
-Cloud Computing ist die Bereitstellung von Computingdiensten über das Internet mit einem nutzungsbasierten Bezahlungsmodell. Die Computingdienste unterscheiden sich je nach Cloudanbieter. Allerdings umfassen Sie in der Regel:
+Cloud Computing ist die Bereitstellung von Computingdiensten über das Internet mit einem nutzungsbasierten Preismodell. Die Computingdienste unterscheiden sich je nach Cloudanbieter. Allerdings umfassen Sie in der Regel:
 
 - Computeleistung
 - Speicher

@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.build-a-serverless-web-app.4-store-image-metadata-with-cosmos
+title: Speichern von Bildmetadaten mit Azure Cosmos DB
+metadata:
+  title: Speichern von Bildmetadaten mit Azure Cosmos DB
+  description: Speichern Sie Bildmetadaten mit Azure Cosmos DB.
+  ms.openlocfilehash: 46528197a33d53436870a85469d1763e75acfa6f
+  ms.sourcegitcommit: bf091e3a389138b59573865ca54775e38a4ffa1f
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43155407"
+durationInMinutes: 11
+interactive: bash-editor
+content: '[!include[](includes/4-store-image-metadata-with-cosmos.md)]'

@@ -1,7 +1,7 @@
 Ihr Forschungsteam muss rechnerisch aufwändige Datenverarbeitung durchführen und verfügt nicht über die erforderlichen Mittel. Sie haben sich dazu entschieden, Azure für die Datenanalyse zu verwenden.
 
 ## <a name="what-is-azure-compute"></a>Was ist Azure Compute?
-Azure Compute ist ein bei Bedarf abrufbarer Dienst für Rechenressourcen zum Ausführen von cloudbasierten Anwendungen. Er stellt Rechenressourcen wie Multicore-Prozessoren und Supercomputer über virtuelle Computer und Container bereit. Darüber hinaus bietet der Dienst serverloses Computing, damit Apps ausgeführt werden können, ohne dass Infrastruktur eingerichtet oder konfiguriert werden muss. Die Ressourcen sind bei Bedarf verfügbar und können in der Regel innerhalb von Minuten oder sogar Sekunden erstellt werden. Sie zahlen nur für die Ressourcen, die Sie verwenden, und nur solange Sie sie verwenden.
+Azure Compute ist ein bei Bedarf abrufbarer Dienst für Rechenressourcen zum Ausführen von cloudbasierten Anwendungen. Er stellt Rechenressourcen wie Multi-Core-Prozessoren und Supercomputer über virtuelle Computer und Container bereit. Darüber hinaus bietet der Dienst serverloses Computing, damit Apps ausgeführt werden können, ohne dass Infrastruktur eingerichtet oder konfiguriert werden muss. Die Ressourcen sind bei Bedarf verfügbar und können in der Regel innerhalb von Minuten oder sogar Sekunden erstellt werden. Sie zahlen nur für die Ressourcen, die Sie verwenden, und nur solange Sie sie verwenden.
 
 Es gibt drei gängige Vorgehensweise zum Ausführen von Compute in Azure:
 1. Virtuelle Computer
@@ -20,11 +20,15 @@ Das Auswählen eines Images ist eine der wichtigsten Entscheidungen, die Sie bei
 
 ## <a name="what-are-containers"></a>Was sind Container?
 
-Container sind eine Virtualisierungsumgebung, die im Gegensatz zu VMs kein Betriebssystem beinhalten. Stattdessen verweisen sie auf das Betriebssystem der Hostumgebung, in der der Container ausführt wird. Wenn zum Beispiel fünf Container auf einem Server mit einem spezifischen Linux-Kernel ausgeführt werden, werden alle fünf Container auf demselben Kernel ausgeführt. 
+Container sind eine Virtualisierungsumgebung, die im Gegensatz zu VMs kein Betriebssystem beinhaltet. Stattdessen verweisen sie auf das Betriebssystem der Hostumgebung, in der der Container ausführt wird. Wenn zum Beispiel fünf Container auf einem Server mit einem spezifischen Linux-Kernel ausgeführt werden, werden alle fünf Container auf demselben Kernel ausgeführt. 
+
+Im folgenden Diagramm werden Anwendungen bei Ausführung in einer VM und als Container verglichen.
+
+![Vergleich von Apps, die in einer VM und als Container ausgeführt werden](../media/vm-versus-containers.png)
 
 Container enthalten in der Regel eine von Ihnen geschriebene Anwendung sowie alle Bibliotheken, die für die Ausführung Ihrer Anwendung auf dem Kernel der Hostumgebung erforderlich sind. 
 
-Container sind kompakt und dafür konzipiert, dynamisch erstellt, hochskaliert und beendet zu werden, damit jede Änderung der Umgebung oder des Bedarfs abgedeckt werden kann.
+Container sind kompakt und dafür konzipiert, dynamisch erstellt, horizontal hochskaliert und beendet zu werden, damit jede Änderung der Umgebung oder des Bedarfs abgedeckt werden kann.
 
 Die Verwendung von Containern hat den Vorteil, dass mehrere isolierte Anwendungen auf einem virtuellen Computer ausgeführt werden können. Da Container selbst gesichert und isoliert sind, benötigen Sie nicht unbedingt separate VMs für separate Workloads.
 
@@ -32,10 +36,13 @@ Azure unterstützt Docker-Container und mehrere Methoden zum Verwalten dieser Co
 
 ### <a name="what-is-serverless-computing"></a>Was ist serverloses Computing?
 
-Serverloses Computing ist eine in der Cloud gehostete Ausführungsumgebung, die Ihren Code ausführt, die zugrunde liegende Hostumgebung jedoch vollständig abstrahiert. Sie erstellen eine Instanz des Diensts und fügen Ihren Code hinzu. Die Konfiguration oder Wartung der Infrastruktur ist weder erforderlich noch zulässig.
+Serverloses Computing ist eine in der Cloud gehostete Ausführungsumgebung, die Ihren Code ausführt, die zugrunde liegende Hostumgebung jedoch vollständig abstrahiert. Sie erstellen eine Instanz des Diensts und fügen Ihren Code hinzu. Eine Konfiguration oder Wartung der Infrastruktur ist weder erforderlich noch zulässig.
 
-Sie konfigurieren Ihre serverlosen Apps, um auf Ereignisse zu reagieren. Dabei kann es sich um einen REST-Endpunkt, einen Timer oder eine von einem anderen Azure-Dienst empfangene Nachricht handeln. Die serverlose App wird nur ausgeführt, wenn sie durch ein Ereignis ausgelöst wird. 
+Sie konfigurieren Ihre serverlosen Apps, um auf _Ereignisse_ zu reagieren. Dabei kann es sich um einen REST-Endpunkt, einen Timer oder eine von einem anderen Azure-Dienst empfangene Nachricht handeln. Die serverlose App wird nur ausgeführt, wenn sie durch ein Ereignis ausgelöst wird.
 
-Für die Infrastruktur sind Sie nicht verantwortlich. Die Skalierung und Leistung wird automatisch verarbeitet. Es werden nur die genauen Ressourcen in Rechnung gestellt, die Sie verwenden. Das Reservieren von Kapazität ist nicht notwendig.
+Für die Infrastruktur sind Sie nicht verantwortlich. Die Skalierung und Leistungsanpassung erfolgt automatisch. Es werden nur die Ressourcen in Rechnung gestellt, die Sie verwenden. Das Reservieren von Kapazität ist nicht notwendig.
 
-Azure verfügt über zwei Implementierungen von serverlosem Computing: **Azure Functions**, was Code in den meisten modernen Programmiersprachen ausführen kann, und **Azure Logic Apps**, womit Sie von Azure-Diensten ausgelöste Logik ausführen können, ohne Code schreiben zu müssen.
+Azure verfügt über zwei Implementierungen von serverlosem Computing: 
+
+1. **Azure Functions** ist in der Lage, Code in fast jeder modernen Programmiersprache auszuführen.
+2. Mit **Azure Logic Apps** erstellte Apps werden in einem webbasierten Designer erstellt und können Logik ausführen, die von Azure-Diensten ausgelöst wird – und zwar ganz ohne Schreiben von Code.

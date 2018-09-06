@@ -9,11 +9,12 @@ Deshalb müssen wir mehrere Fragen sicher beantworten können:
 In diesem Modul sehen wir uns Tools an, mit denen Sie diese und andere Fragen beantworten können.
 
 ## <a name="learning-objectives"></a>Lernziele
-> [!div class="checklist"]
-> * Kostenschätzung mit dem Azure-Preisrechner
-> * Vorhersagen und Optimieren von Kosten mit Azure Cost Management und dem Azure Advisor
-> * Bewährte Methoden, um Infrastrukturkosten einzusparen
-> * Bewährte Methoden, um Lizenzierungskosten einzusparen
+In diesem Modul lernen Sie Folgendes:
+
+- Schätzen von Kosten mit dem Azure-Preisrechner
+- Vorhersagen und Optimieren von Kosten mit Azure Cost Management und dem Azure Advisor
+- Bewährte Methoden, um Infrastrukturkosten einzusparen
+- Bewährte Methoden, um Lizenzierungskosten einzusparen
 
 ## <a name="prerequisite"></a>Voraussetzung 
 - Ein grundlegendes Verständnis Ihrer Optionen bei Azure-Infrastrukturkomponenten 

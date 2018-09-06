@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-vms-with-azure-cli-data.9-managing-vms
+title: Starten und Beenden Ihrer virtuellen Computer mit der Azure-Befehlszeilenschnittstelle
+metadata:
+  title: Starten und Beenden Ihrer virtuellen Computer mit der Azure-Befehlszeilenschnittstelle
+  description: Erfahren Sie, wie Sie mit der Azure-Befehlszeilenschnittstelle einen virtuellen Computer starten und beenden.
+  ms.openlocfilehash: dcceabd66f496850d3f6b35db5ef12774908027a
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43835669"
+interactive: bash
+durationInMinutes: 4
+content: '[!include[](includes/9-managing-vms.md)]'

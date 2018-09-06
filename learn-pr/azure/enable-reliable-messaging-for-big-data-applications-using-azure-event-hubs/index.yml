@@ -1,0 +1,32 @@
+### YamlMime:Module
+uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs
+metadata:
+  title: Aktivieren von zuverlässigem Messaging für Big Data-Anwendungen mithilfe von Azure Event Hubs
+  description: Durch die Verarbeitung von Big Data können Sie unschätzbare Erkenntnisse gewinnen. Beispielsweise haben Sie die Möglichkeit, finanzielle Transaktionen unter Missbrauchsumständen zu erkennen oder durch Gerätetelemetriedaten ausgelöste Warnungen in Echtzeit zu erhalten. Um möglicherweise Millionen von Datennachrichten pro Sekunden verarbeiten zu können, benötigen Sie jedoch eine zuverlässige Lösung, da andernfalls der Nutzen dieser Anwendungen stark eingeschränkt ist. In diesem Modul wird gezeigt, wie Sie mit Azure Event Hubs große Datenströme zuverlässig verarbeiten. Sie erstellen und konfigurieren einen neuen Hub und entwickeln anschließend Anwendungen, um Nachrichten an den Hub zu senden und von diesem zu empfangen.
+  ms.openlocfilehash: b55196fb1c7f962126627bdb70ef96f43c262565
+  ms.sourcegitcommit: 1131013f5b019c82e7d004cdcdb8184fca1c66ed
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42923717"
+title: Aktivieren von zuverlässigem Messaging für Big Data-Anwendungen mithilfe von Azure Event Hubs
+summary: Indem Sie Anwendungen zum Empfangen und Senden von Nachrichten mit Event Hubs verbinden, können Sie auch extrem hohe Lasten verarbeiten, ohne dabei Daten zu verlieren.
+abstract: Durch die Verarbeitung von Big Data können Sie unschätzbare Erkenntnisse gewinnen. Beispielsweise haben Sie die Möglichkeit, finanzielle Transaktionen unter Missbrauchsumständen zu erkennen oder durch Gerätetelemetriedaten ausgelöste Warnungen in Echtzeit zu erhalten. Um möglicherweise Millionen von Datennachrichten pro Sekunden verarbeiten zu können, benötigen Sie jedoch eine zuverlässige Lösung, da andernfalls der Nutzen dieser Anwendungen stark eingeschränkt ist. In diesem Modul wird gezeigt, wie Sie mit Azure Event Hubs große Datenströme zuverlässig verarbeiten. Sie erstellen und konfigurieren einen neuen Hub und entwickeln anschließend Anwendungen, um Nachrichten an den Hub zu senden und von diesem zu empfangen.
+cardDescription: Indem Sie Anwendungen zum Empfangen und Senden von Nachrichten mit Event Hubs verbinden, können Sie auch extrem hohe Lasten verarbeiten, ohne dabei Daten zu verlieren.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+units:
+- learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.1-introduction
+- learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.2-create-an-event-hub-using-azure-cli
+- learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.3-exercise-create-an-event-hub-using-azure-cli
+- learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.4-configure-applications-to-send-or-receive-messages-through-an-event-hub
+- learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.5-exercise-configure-applications-to-send-or-receive-messages-through-an-event-hub
+- learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.6-evaluate-the-performance-of-the-deployed-event-hub-using-the-azure-portal
+- learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.7-exercise-evaluate-the-performance-of-the-deployed-event-hub-using-the-azure-portal
+- learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.8-summary
+achievement: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.badge

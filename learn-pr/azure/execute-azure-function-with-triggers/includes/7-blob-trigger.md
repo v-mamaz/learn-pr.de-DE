@@ -7,7 +7,7 @@ Hier erfahren Sie, wie Sie einen Blobtrigger erstellen, und ihn anweisen, einen 
 Azure Storage ist die Cloudspeicherlösung von Microsoft, die alle Arten von Daten einschließlich Blobs, Warteschlangen und NoSQL unterstützt. Das Ziel von Azure Storage ist, Datenspeicher mit folgenden Eigenschaften bereitzustellen:
 
 - Hoch verfügbar
-- Schützen
+- Sicher
 - Skalierbar
 - Verwaltet
 
@@ -21,7 +21,7 @@ Azure-Blobspeicher eignet sich z.B. hervorragend für folgende Aufgaben:
 
 - Speichern von Dateien.
 - Bereitstellen von Dateien.
-- Video- und Audio-Streaming
+- Streamen von Video und Audio
 - Protokollieren von Daten.
 
 Es gibt drei Arten von Blobs: **Blockblobs**, **Anfügeblobs** und **Seitenblobs**. Blockblobs sind der gängigste Typ. Dort können Sie Text- oder Binärdaten effizient speichern. Anfügeblobs sind wie Blockblobs, aber sie eignen sich eher für Anfügevorgänge wie das Erstellen einer Protokolldatei, die ständig aktualisiert wird. Seitenblobs bestehen aus Seiten und sind für häufige wahlfreie Lese-/Schreibzugriffe vorgesehen.
@@ -36,9 +36,9 @@ Genau wie die anderen Trigger, die wir bisher kennengelernt haben, erstellen wir
 
 Eine Einstellung, die Sie beachten sollten, ist der **Pfad**. Der **Pfad** weist den Blobtrigger an, wo er überwachen soll, ob ein Blob hochgeladen oder aktualisiert wird. Standardmäßig ist der Wert **Pfad** festgelegt auf: 
 
-> samples-workitems/{name}
+> samples-workitems/{Name}
 
-Wir unterteilen dieses Konzept in zwei Teile: *samples-workitems* und *{Name}*. Der erste Teil, *samples-workitems*, stellt den Blobcontainer dar, den der Trigger überwacht. Der zweite Teil, *{Name}*, bedeutet, dass jede Art von Datei den Trigger veranlasst, die Funktion aufzurufen. Die Funktion wird aufgerufen, da kein Filter vorhanden ist. Beispielsweise lässt sich mithilfe der folgenden Syntax einstellen, dass der Trigger die Funktion nur aufruft, wenn eine PNG-Datei hinzugefügt wird:
+Wir unterteilen dieses Konzept in zwei Teile: *samples-workitems* und *{Name}*. Der erste Teil, *samples-workitems*, stellt den Blobcontainer dar, den der Trigger überwacht. Der zweite Teil, *{Name}, bedeutet, dass jeder Dateityp den Trigger veranlasst, die Funktion aufzurufen. Die Funktion wird aufgerufen, da kein Filter vorhanden ist. Beispielsweise lässt sich mithilfe der folgenden Syntax einstellen, dass der Trigger die Funktion nur aufruft, wenn eine PNG-Datei hinzugefügt wird:
 
 > samples-workitems/{Name}.png
 

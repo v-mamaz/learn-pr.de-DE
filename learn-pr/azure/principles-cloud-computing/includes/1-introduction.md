@@ -5,7 +5,8 @@ Der Prozess des Lichteinschaltens ist hinter der simplen Schalterbetätigung ver
 Computerexperten würden sich im Zusammenhang mit dem Entwickeln und Bereitstellen von Anwendungen über diese Vorteile freuen. Datenspeicherung, Videostreaming oder sogar das Hosten einer Website setzen die Verwaltung von Hardware und Software voraus. Diese Verwaltung ist ein unnötiges Hindernis, wenn Sie Ihre Anwendung Benutzern zur Verfügung stellen. Glücklicherweise gibt es eine Lösung für dieses Problem: **Cloud Computing**.
 
 ## <a name="learning-objectives"></a>Lernziele
-> [!div class="checklist"]
-> * Kennenlernen gängiger Cloud Computing-Dienste
-> * Kennenlernen der Vorteile des Cloud Computings
-> * Bestimmen des für Sie am besten geeigneten Modells zur Cloudbereitstellung
+In diesem Modul lernen Sie Folgendes:
+
+- Kennenlernen gängiger Cloud Computing-Dienste
+- Kennenlernen der Vorteile des Cloud Computings
+- Bestimmen des für Sie am besten geeigneten Modells zur Cloudbereitstellung
