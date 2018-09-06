@@ -21,7 +21,7 @@ roles:
 - business-analyst
 - business-user
 - developer
-- solutions-architect
+- solution-architect
 products:
 - Azure
 units:
