@@ -18,7 +18,7 @@ levels:
 roles:
 - developer
 products:
-- Azure
+- azure
 units:
 - learn.communicate-between-applications-with-azure-queue-storage.1-introduction
 - learn.communicate-between-applications-with-azure-queue-storage.2-create-the-azure-storage-infrastructure

@@ -10,7 +10,7 @@ levels:
 roles:
 - developer
 products:
-- Azure
+- azure
 metadata:
   title: Verwalten von Geheimnissen in Ihren Web-Apps mit Azure Key Vault
   description: In diesem Modul lernen Sie, wie Sie eine Key Vault-Instanz erstellen und ein Geheimnis darin speichern. Sie erfahren, wie Sie eine Webanwendung für die Verwendung von „Verwaltete Dienstidentität“ konfigurieren, um einen sicheren Zugriff auf den Tresor ohne jegliche Konfiguration zu ermöglichen. Außerdem implementieren Sie eine ASP.NET Core-Webanwendung, die Geheimnisse aus dem Tresor abruft.

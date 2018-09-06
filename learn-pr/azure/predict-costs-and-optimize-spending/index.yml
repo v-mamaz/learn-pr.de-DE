@@ -28,7 +28,7 @@ roles:
 - administrator
 achievement: learn.placeholder.badge
 products:
-- Azure
+- azure
 units:
 - learn.predict-costs-and-optimize-spending.1-introduction
 - learn.predict-costs-and-optimize-spending.2-estimate-costs-with-the-azure-pricing-calculator

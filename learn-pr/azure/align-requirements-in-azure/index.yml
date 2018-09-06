@@ -26,9 +26,9 @@ iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
 roles:
-- solutions-architect
+- solution-architect
 products:
-- Azure
+- azure
 achievement: learn.align-requirements-in-azure.badge
 units:
 - learn.align-requirements-in-azure.1-introduction

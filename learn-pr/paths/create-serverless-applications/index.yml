@@ -9,7 +9,7 @@ levels:
 roles:
 - developer
 products:
-- Azure
+- azure
 metadata:
   title: Erstellen von serverlosen Anwendungen
   description: Mit Azure Functions können Sie ereignisgesteuerte Systeme erstellen, die Computeleistung nach Bedarf bieten und durch verschiedene externe Ereignisse ausgelöst werden können. Erfahren Sie, wie Sie mit Funktionen serverseitige Logik ausführen und serverlose Architekturen erstellen.

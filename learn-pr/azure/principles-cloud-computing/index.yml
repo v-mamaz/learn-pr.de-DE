@@ -23,7 +23,7 @@ roles:
 - developer
 - solution-architect
 products:
-- Azure
+- azure
 units:
 - principles-cloud-computing.1-motivation
 - principles-cloud-computing.2-what-is-cloud-computing

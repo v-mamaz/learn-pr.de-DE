@@ -10,8 +10,7 @@ levels:
 roles:
 - administrator
 products:
-- Docker
-- Azure Container Registry
+- azure-container-registry
 metadata:
   title: Erstellen und Speichern von Containerimages mit Azure Container Registry
   ms.openlocfilehash: f95d4867e6fe46e398976d7c62ba4e6502beb9f4

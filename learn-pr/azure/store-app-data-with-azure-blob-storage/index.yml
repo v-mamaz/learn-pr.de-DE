@@ -10,7 +10,7 @@ levels:
 roles:
 - developer
 products:
-- Azure
+- azure
 metadata:
   title: Speichern von Webanwendungsdaten mit Azure Blob Storage
   description: Erstellen Sie eine Web-App, die Benutzerdateien mit Azure Blob Storage speichert.

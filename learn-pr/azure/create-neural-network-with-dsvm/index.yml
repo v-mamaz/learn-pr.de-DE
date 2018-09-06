@@ -19,7 +19,7 @@ levels:
 roles:
 - developer
 products:
-- Azure
+- azure
 units:
 - learn.create-neural-network-with-dsvm.0-overview
 - learn.create-neural-network-with-dsvm.1-create-dsvm

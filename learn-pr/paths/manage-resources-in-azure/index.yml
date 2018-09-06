@@ -8,10 +8,10 @@ levels:
 - beginner
 roles:
 - developer
-- solutions-architect
+- solution-architect
 - administrator
 products:
-- Azure
+- azure
 metadata:
   title: Verwalten von Ressourcen in Azure
   description: Erfahren Sie mehr zum Arbeiten mit Azure-Befehlszeilen und dem Webportal zum Erstellen, Verwalten und Steuern von cloudbasierten Ressourcen.

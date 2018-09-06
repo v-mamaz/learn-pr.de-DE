@@ -7,10 +7,10 @@ levels:
 - beginner
 roles:
 - developer
-- solutions-architect
+- solution-architect
 - administrator
 products:
-- Azure
+- azure
 metadata:
   title: Einführung in Azure Compute
   description: Azure Compute bietet Computingressourcen, mit denen Benutzer flexibel große Datenmengen verarbeiten können. Dies gilt beispielsweise für Aufgaben wie das Modellieren von Arzneimittelwirkungen auf molekularer Ebene, das Gewinnen von Marketingdaten, das Rendern von Videos in hoher Qualität und das Analysieren von astronomischen Daten aus Teleskopen. Dieses Modul beschreibt umfassend den Azure Compute-Dienst, die verfügbaren Optionen und Anwendungsvorschläge, damit Teilnehmer ihre alltäglichen Probleme lösen können.

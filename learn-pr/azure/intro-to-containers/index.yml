@@ -10,7 +10,7 @@ levels:
 roles:
 - developer
 products:
-- Docker
+- azure
 metadata:
   title: Einführung in Container in Azure
   ms.openlocfilehash: cfb3f1bc0e2667a0c5059912db63c60de0d1c329

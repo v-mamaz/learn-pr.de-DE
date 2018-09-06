@@ -8,10 +8,10 @@ levels:
 - beginner
 roles:
 - developer
-- solutions-architect
+- solution-architect
 - administrator
 products:
-- Azure
+- azure
 metadata:
   title: Grundlagen zur Cloud
   description: Sie interessieren sich für die Cloud, wissen jedoch nicht, welche Vorteile sie Ihnen bietet? Dieser Lernpfad ist der Ausgangspunkt. Lernen Sie die Vorteile von Cloud Computing, Funktionen in Azure, mit denen Sie Zeit und Geld sparen, sowie grundlegende Strategien beim Wechsel in die Cloud kennen – und vieles mehr.
