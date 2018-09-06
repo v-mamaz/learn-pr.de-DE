@@ -1,0 +1,49 @@
+<span data-ttu-id="5a65d-101">In dieser Übung installieren Sie Visual Studio auf Ihrem Windows- oder macOS-Computer.</span><span class="sxs-lookup"><span data-stu-id="5a65d-101">In this exercise, you will install Visual Studio on either your Windows or your macOS computer.</span></span> <span data-ttu-id="5a65d-102">Unter Windows muss die Workload „Azure-Entwicklung“ installiert werden.</span><span class="sxs-lookup"><span data-stu-id="5a65d-102">On Windows, the Azure development workload will need to be installed.</span></span> <span data-ttu-id="5a65d-103">In Visual Studio für Mac können Sie durch den integrierten Workflow „Verbundene Dienste“ Apps für Azure App Service erstellen.</span><span class="sxs-lookup"><span data-stu-id="5a65d-103">And on Visual Studio for Mac, the built-in Connected Services workflow will enable you to build apps for Azure App Service.</span></span> <span data-ttu-id="5a65d-104">Am Ende der Einheit können Sie mit dem Erstellen von Anwendungen und deren Veröffentlichung in Azure beginnen.</span><span class="sxs-lookup"><span data-stu-id="5a65d-104">At the end, you will be ready to start creating applications and publishing them to Azure.</span></span>
+
+## <a name="exercise-steps"></a><span data-ttu-id="5a65d-105">Schritte</span><span class="sxs-lookup"><span data-stu-id="5a65d-105">Exercise steps</span></span>
+
+<span data-ttu-id="5a65d-106">Bei der Installation von Visual Studio unter Windows und macOS gibt es geringfügige Unterschiede.</span><span class="sxs-lookup"><span data-stu-id="5a65d-106">There are slight differences in installing Visual Studio between Windows and macOS.</span></span> <span data-ttu-id="5a65d-107">Diese werden in den folgenden Abschnitten behandelt.</span><span class="sxs-lookup"><span data-stu-id="5a65d-107">The following sections outline these differences.</span></span>
+
+### <a name="windows"></a><span data-ttu-id="5a65d-108">Windows</span><span class="sxs-lookup"><span data-stu-id="5a65d-108">Windows</span></span>
+
+1. <span data-ttu-id="5a65d-109">Laden Sie den Visual Studio-Installer von https://visualstudio.microsoft.com/downloads/ herunter.</span><span class="sxs-lookup"><span data-stu-id="5a65d-109">Download the Visual Studio installer from https://visualstudio.microsoft.com/downloads/.</span></span>
+
+1. <span data-ttu-id="5a65d-110">Führen Sie den Installer aus. Dadurch wird das Fenster „Workloads“ geöffnet.</span><span class="sxs-lookup"><span data-stu-id="5a65d-110">Run the installer and it will open the Workloads window.</span></span>
+
+1. <span data-ttu-id="5a65d-111">Wählen Sie die Workload **Azure-Entwicklung** aus.</span><span class="sxs-lookup"><span data-stu-id="5a65d-111">Choose the **Azure development** workload.</span></span>
+
+    <span data-ttu-id="5a65d-112">Der folgende Screenshot stellt den Visual Studio-Installer mit der ausgewählten Workload dar, durch die die Azure-Entwicklung in Visual Studio ermöglicht wird.</span><span class="sxs-lookup"><span data-stu-id="5a65d-112">The following screenshot shows the Visual Studio Installer workload selected to allow Azure development within Visual Studio.</span></span>
+
+    ![Screenshot des Visual Studio-Installers mit der hervorgehobenen Workload „Azure-Entwicklung“](../media/5-select-azure-workload.png)
+
+1. <span data-ttu-id="5a65d-114">(Optional) Installieren Sie die Workload „ASP.NET und Webentwicklung“, damit Sie Webanwendungen für Azure erstellen können.</span><span class="sxs-lookup"><span data-stu-id="5a65d-114">(Optional) Install the ASP.NET and web development workload to be ready to create web applications for Azure.</span></span>
+
+1. <span data-ttu-id="5a65d-115">Klicken Sie auf **Installieren**, und warten Sie, bis Visual Studio installiert ist.</span><span class="sxs-lookup"><span data-stu-id="5a65d-115">Click **Install**, and wait for Visual Studio to install.</span></span>
+
+1. <span data-ttu-id="5a65d-116">Öffnen Sie Visual Studio nach der Installation.</span><span class="sxs-lookup"><span data-stu-id="5a65d-116">When the installation is complete, open Visual Studio.</span></span>
+
+1. <span data-ttu-id="5a65d-117">Navigieren Sie zum Menü „Ansicht“ in Visual Studio, und stellen Sie sicher, dass die Option **Cloud-Explorer** vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="5a65d-117">Go to the View menu in Visual Studio and make sure you have the **Cloud Explorer** option.</span></span>
+
+    <span data-ttu-id="5a65d-118">Auf dem folgenden Screenshot wird die Menüoption „Cloud-Explorer“ dargestellt, die vorhanden ist, wenn die Workload „Azure-Entwicklung“ installiert ist.</span><span class="sxs-lookup"><span data-stu-id="5a65d-118">The following screenshot shows the Cloud Explorer menu option that will be present if you have the Azure development workload installed.</span></span>
+
+    ![Screenshot des Visual Studio-Menüs „Ansicht“ mit der hervorgehobenen Menüoption „Cloud-Explorer“](../media/5-verify-cloud-explorer.png)
+
+### <a name="macos"></a><span data-ttu-id="5a65d-120">macOS</span><span class="sxs-lookup"><span data-stu-id="5a65d-120">macOS</span></span>
+
+1. <span data-ttu-id="5a65d-121">Navigieren Sie zu https://visualstudio.microsoft.com/, und laden Sie den Installer für Visual Studio für Mac herunter.</span><span class="sxs-lookup"><span data-stu-id="5a65d-121">Go to https://visualstudio.microsoft.com/ and download the Visual Studio for Mac installer.</span></span>
+
+1. <span data-ttu-id="5a65d-122">Klicken Sie auf die Datei „VisualStudioInstaller.dmg“, um den Installer einzubinden, und führen Sie diesen anschließend aus, indem Sie auf das Logo doppelklicken.</span><span class="sxs-lookup"><span data-stu-id="5a65d-122">Click the VisualStudioInstaller.dmg file to mount the installer and then run it by double-clicking the logo.</span></span>
+
+1. <span data-ttu-id="5a65d-123">Stimmen Sie den Datenschutzbestimmungen und Lizenzbedingungen zu, wenn diese angezeigt werden.</span><span class="sxs-lookup"><span data-stu-id="5a65d-123">Acknowledge the Privacy and License terms when presented.</span></span>
+
+1. <span data-ttu-id="5a65d-124">Wählen Sie im Installer die Komponenten aus, die installiert werden sollen.</span><span class="sxs-lookup"><span data-stu-id="5a65d-124">The installer will ask which components you wish to install.</span></span> <span data-ttu-id="5a65d-125">Azure-Komponenten sind in Visual Studio für Mac bereits enthalten, es wird jedoch empfohlen, die Plattform **.NET Core** zu installieren, um Webinhalte für Azure entwickeln zu können.</span><span class="sxs-lookup"><span data-stu-id="5a65d-125">Azure components are already part of Visual Studio for Mac, but it is recommended to install the **.NET Core** platform to develop web experiences for Azure.</span></span>
+
+    <span data-ttu-id="5a65d-126">Der folgende Screenshot zeigt die .NET Core-Plattform an, die zum Hinzufügen von Azure-Entwicklungsfunktionen zu Visual Studio für Mac erforderlich ist.</span><span class="sxs-lookup"><span data-stu-id="5a65d-126">The following screenshot shows the .NET Core platform required to add Azure development capabilities to Visual Studio for Mac.</span></span>
+
+    ![Screenshot des Visual Studio für Mac-Installers mit der hervorgehoben Option für die Plattform „.NET Core“](../media/5-vsmac-install-net-core.png)
+
+1. <span data-ttu-id="5a65d-128">Klicken Sie auf **Installieren und aktualisieren**, sobald Sie mit der Auswahl zufrieden sind, und warten Sie, bis die Installation abgeschlossen ist.</span><span class="sxs-lookup"><span data-stu-id="5a65d-128">Click **Install and Update** once you are happy with the selections, and wait for the installer to complete.</span></span>
+
+1. <span data-ttu-id="5a65d-129">Wenn Sie dazu aufgefordert werden, die Berechtigungen zu erhöhen, verwenden Sie Ihre Administratoranmeldeinformationen.</span><span class="sxs-lookup"><span data-stu-id="5a65d-129">If you are prompted to elevate the permissions needed, use your administrator credentials to do so.</span></span>
+
+1. <span data-ttu-id="5a65d-130">Starten Sie Visual Studio für Mac nach der Installation.</span><span class="sxs-lookup"><span data-stu-id="5a65d-130">Once the installer is complete, start Visual Studio for Mac.</span></span>
