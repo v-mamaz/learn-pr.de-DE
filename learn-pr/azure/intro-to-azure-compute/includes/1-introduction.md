@@ -7,6 +7,7 @@ Im Idealfall sollten Sie die Ressourcen nach Bedarf und ohne viel Verwaltung ber
 Und genau das können wir in Azure erreichen. Sie können Computingressourcen erstellen, so konfigurieren, dass sie die Arbeit erledigen, und nur das bezahlen, was Sie auch verwenden.
 
 ## <a name="learning-objectives"></a>Lernziele
+
 In diesem Modul lernen Sie Folgendes:
 
 - Identifizieren von Compute-Optionen in Azure

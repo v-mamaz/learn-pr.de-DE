@@ -9,10 +9,10 @@ Der Advisor stellt Empfehlungen zu Kosten in den folgenden Bereichen bereit:
 1. **Kostensenkung durch die Beseitigung von nicht bereitgestellten ExpressRoute-Verbindungen.** 
     Der Advisor identifiziert ExpressRoute-Verbindungen , die sich für mehr als einen Monat im Anbieterstatus *Nicht bereitgestellt* befunden haben, und empfiehlt, die Verbindung zu löschen, wenn Sie nicht beabsichtigen, die Verbindung durch Ihren Konnektivitätsanbieter bereitzustellen.
 
-2. **Erwerb von reservierten VM-Instanzen, um gegenüber dem Modell mit nutzungsbasierter Bezahlung Kosten einzusparen.** 
+1. **Erwerb von reservierten VM-Instanzen, um gegenüber dem Modell mit nutzungsbasierter Bezahlung Kosten einzusparen.** 
     Der Advisor überprüft Ihre VM-Nutzung der letzten 30 Tage und ermittelt, ob der Erwerb reservierter Instanzen für Sie in Zukunft günstiger wäre. Der Advisor zeigt die Regionen und Größen mit dem größten Einsparpotenzial sowie die voraussichtlichen Einsparungen an, die sich durch den Erwerb reservierter Instanzen erzielen lassen könnten.
     
-3. **Ändern der Größe oder Herunterfahren von wenig genutzten virtuellen Computern.** 
+1. **Ändern der Größe oder Herunterfahren von wenig genutzten virtuellen Computern.** 
     Damit wird die Verwendung Ihres virtuellen Computers 14 Tage lang überwacht, und es werden virtuelle Computer mit geringer Auslastung ermittelt. Virtuelle Computer, deren durchschnittliche CPU-Auslastung höchstens 5 Prozent und deren durchschnittliche Netzwerkauslastung höchstens 7 MB über einen Zeitraum von mindestens vier Tagen beträgt, gelten als virtuelle Computer mit unterdurchschnittlicher Auslastung. Der Schwellenwert für die durchschnittliche CPU-Auslastung ist um bis zu 20 Prozent anpassbar. Durch die Ermittlung dieser virtuellen Computer können Sie deren Größe an einen kleineren Instanztyp anpassen, wodurch Sie Ihre Kosten reduzieren.
 
 Azure Advisor ist über das Azure-Portal zugänglich. Melden Sie sich zuerst unter [https://portal.azure.com](https://portal.azure.com?azure-portal=true) beim Azure-Portal an. Klicken Sie auf **Alle Dienste**. In der Kategorie **Verwaltungstools** wird daraufhin **Advisor** angezeigt. Sie können auch **Advisor** im Filterfeld eingeben, um nur nach diesem Dienst zu filtern. 

@@ -3,6 +3,7 @@ Stellen Sie sich folgendes Szenario vor: In einem ausgelasteten Friseursalon tri
 Als Azure-Entwickler entscheiden Sie sich, zur Lösung dieses Problems eine Azure-Funktion zu verwenden. Sie wissen bereits, wie Sie die Logik zum Senden einer Textnachricht implementieren. Nun müssen Sie lernen, die Nachricht zu einem bestimmten Zeitpunkt zu senden. Glücklicherweise unterstützt Azure Functions eine Funktion namens _triggers_. Mit Triggern wird bestimmt, wie eine Azure-Funktion ausgeführt wird.
 
 ## <a name="learning-objectives"></a>Lernziele
+
 In diesem Modul lernen Sie Folgendes:
 
 - Bestimmen des Triggers, der sich am besten für Ihre geschäftlichen Anforderungen eignet

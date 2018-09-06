@@ -4,7 +4,7 @@ Sie erhalten ein `ICloudBlob`, wenn Sie es mit den Namen des Blobs anfordern ode
 
 ## <a name="getting-blobs-by-name"></a>Abrufen von Blobs anhand des Namens
 
-Rufen Sie eine der `GetXXXReference`-Methoden auf einem `CloudBlobContainer` auf, um ein `ICloudBlob` anhand des Namens abzurufen. Wenn Sie den Typ des Blobs kennen, das Sie abrufen, verwenden Sie eine der spezifischen Methoden (`GetBlockBlobReference`, `GetAppendBlobReference` oder `GetPageBlobReference`) zum Abrufen eines Objekts, das für diesen Blobtyp zugeschnittene Methoden und Eigenschaften enthält.
+Rufen Sie eine der `GetXXXReference`-Methoden auf einem `CloudBlobContainer` auf, um ein `ICloudBlob` anhand des Namens abzurufen. Wenn Sie den Typ des Blobs kennen, den Sie abrufen, verwenden Sie eine der spezifischen Methoden (`GetBlockBlobReference`, `GetAppendBlobReference` oder `GetPageBlobReference`) zum Abrufen eines Objekts, das für diesen Blobtyp zugeschnittene Methoden und Eigenschaften enthält.
 
 Keine dieser Methoden führt Netzwerkaufrufe durch oder bestätigt, ob das Zielblob tatsächlich vorhanden ist oder nicht. Sie erstellen nur ein lokales Blobverweisobjekt, das anschließend zum Aufrufen von Methoden verwendet werden kann, die *tatsächlich* über das Netzwerk ausgeführt werden und mit Blobs im Speicher interagieren. Die separate Methode `GetBlobReferenceFromServerAsync` ruft die Blobspeicher-API auf und löst eine Ausnahme aus, wenn das Blob noch nicht vorhanden ist.
 
@@ -45,7 +45,7 @@ var allBlobs = resultSegment.Results.OfType<ICloudBlob>();
 var blockBlobs = resultSegment.Results.OfType<CloudBlockBlob();
 ```
 
-> [!NOTE]
+> [!TIP]
 > Die Verwendung von `OfType<>` erfordert einen Verweis auf den `System.Linq`-Namespace (`using System.Linq;`).
 
 ## <a name="exercise"></a>Übung

@@ -2,10 +2,10 @@ Azure Key Vault ist ein *Geheimnisspeicher*: ein zentraler Clouddienst zum Speic
 
 Folgende Hauptvorteile ergeben sich aus der Nutzung von Key Vault:
 
-* geringeres Risiko für versehentliche Veröffentlichung von Geheimnissen durch sichere Speicherung außerhalb der Konfiguration und der Quellcodeverwaltung sowie durch Vermeiden von Szenarios, in denen Geheimnisse aus bzw. in Dateien kopiert werden oder in E-Mails oder Chats eingefügt werden
-* eingeschränkter Zugriff auf Geheimnisse durch individuelle Zugriffsrichtlinien für Anwendungen und deren Benutzer
-* zentrale Speicherung von Geheimnissen, wodurch mehrere Benutzer und Anwendungsinstanzen auf Geheimniswerte zugreifen können, die nur an einer Stelle aktualisiert werden müssen
-* Zugriffsprotokollierung und -überwachung, mit der Sie nachvollziehen können, wie und wann auf Geheimnisse zugegriffen wurde
+- geringeres Risiko für versehentliche Veröffentlichung von Geheimnissen durch sichere Speicherung außerhalb der Konfiguration und der Quellcodeverwaltung sowie durch Vermeiden von Szenarios, in denen Geheimnisse aus bzw. in Dateien kopiert werden oder in E-Mails oder Chats eingefügt werden
+- eingeschränkter Zugriff auf Geheimnisse durch individuelle Zugriffsrichtlinien für Anwendungen und deren Benutzer
+- zentrale Speicherung von Geheimnissen, wodurch mehrere Benutzer und Anwendungsinstanzen auf Geheimniswerte zugreifen können, die nur an einer Stelle aktualisiert werden müssen
+- Zugriffsprotokollierung und -überwachung, mit der Sie nachvollziehen können, wie und wann auf Geheimnisse zugegriffen wurde
 
 Geheimnisse werden in einzelnen *Tresoren* gespeichert. Hierbei handelt es sich um Azure-Ressourcen mit eigenen Konfigurations- und Sicherheitsrichtlinien, die Sie mit den Azure-Standardverwaltungstools wie dem Azure-Portal oder der Azure CLI erstellen können. Der Zugriff auf Geheimnisse und die Verwaltung des Tresors erfolgen über eine REST-API, die auch von allen Azure-Verwaltungstools und Clientbibliotheken für häufig verwendete Programmiersprachen unterstützt wird. Jeder Tresor verfügt über eine eindeutige URL, unter der seine API gehostet wird.
 

@@ -22,7 +22,7 @@ Ausgehend vom ursprünglichen Szenario wird nun angenommen, dass dieses System a
 
 Mithilfe des Azure-Preisrechners können Sie die Höhe der Kosten für eine Lösung ermitteln und die Schätzung zur Freigabe für das Team exportieren.
 
-> [!NOTE]
+> [!TIP]
 > Stellen Sie sicher, dass der Preisrechner keine Einstellungen aufweist und die Schätzung keine Angaben enthält. Klicken Sie anderenfalls auf das Papierkorbsymbol für die einzelnen Elemente, um die Schätzung zurückzusetzen.
 
 Fügen Sie im Azure-Preisrechner auf der Registerkarte **Produkte** die folgenden Dienste zur Schätzung hinzu, indem Sie auf diese klicken:

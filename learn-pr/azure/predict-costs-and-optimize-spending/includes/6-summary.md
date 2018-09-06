@@ -13,6 +13,3 @@ Hier können Sie mehr zu den heute besprochenen Themen erfahren:
 - [Dokumentation zur Azure-Abrechnung](https://docs.microsoft.com/azure/billing/)
 - [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/)
 - [Azure-Budgets](https://docs.microsoft.com/azure/billing/billing-cost-management-budget-scenario)
-
-
-

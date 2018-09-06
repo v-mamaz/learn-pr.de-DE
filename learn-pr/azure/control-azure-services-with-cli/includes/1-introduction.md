@@ -7,13 +7,16 @@ Im Rahmen der Tests möchten Sie die App-Leistung für verschiedene Datenquellen
 In diesem Modul sehen Sie, wie die Azure-Ressourcen mithilfe der Azure CLI verwaltet werden. 
 
 ## <a name="learning-objectives"></a>Lernziele
+
 In diesem Modul lernen Sie Folgendes:
 
 - Installieren von Azure CLI auf Linux, MacOS und/oder Windows
 - Herstellen einer Verbindung mit einem Azure-Abonnement mithilfe von Azure CLI
 - Erstellen Sie Azure-Ressourcen mit der Azure CLI.
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen  
+
 - Erfahrung mit einer Befehlszeilenschnittstelle wie PowerShell oder Bash
 - Kenntnisse der grundlegenden Azure-Konzepte, z.B. Ressourcengruppen
 - Erfahrung beim Verwalten von Azure-Ressourcen über das Azure-Portal
+- 

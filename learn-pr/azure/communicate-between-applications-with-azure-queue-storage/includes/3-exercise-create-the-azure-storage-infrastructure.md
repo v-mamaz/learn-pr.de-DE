@@ -8,14 +8,14 @@ Erstellen Sie zunächst eine Azure-Ressourcengruppe, die das Speicherkonto entha
 
 1. Wenn Ihnen rechts in Cloud Shell eine Auswahl angezeigt wird, wählen Sie Bash aus.
 
-2. Verwenden Sie den Azure CLI-Befehl `az group create`, um eine neue Ressourcengruppe zu erstellen. Geben Sie ihr den Namen **ExerciseResources**, und platzieren Sie sie an einem Standort in Ihrer Nähe. 
+1. Verwenden Sie den Azure CLI-Befehl `az group create`, um eine neue Ressourcengruppe zu erstellen. Geben Sie ihr den Namen **ExerciseResources**, und platzieren Sie sie an einem Standort in Ihrer Nähe. 
     - Im folgenden Beispiel wird „eastus“ (USA, Osten) als Standort verwendet.
 
     ```azurecli
     az group create -n ExerciseResources --location eastus
     ```
         
-2. Führen Sie als Nächstes den Befehl `az storage account create` aus, um das Speicherkonto zu erstellen. Sie müssen mehrere Parameter angeben:
+1. Führen Sie als Nächstes den Befehl `az storage account create` aus, um das Speicherkonto zu erstellen. Sie müssen mehrere Parameter angeben:
 
 | Parameter | Wert |
 |-----------|-------|

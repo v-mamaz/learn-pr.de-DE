@@ -5,6 +5,7 @@ Ihr Unternehmen erhält Sensordaten von mehreren Standorten und verschiedenen Ro
 Wenn Sie einen solchen Dienst entwerfen und dafür traditionelle Strategien für Unternehmensarchitekturen verwenden, müssen Sie sich im Voraus Gedanken zur Serverinfrastruktur und Verwaltung machen: Sie müssen u.a. planen, welche Hardware benötigt wird, wie die Installation durchgeführt werden soll sowie diese mit der IT-Abteilung koordinieren. Sie können stattdessen aber auch eine einfachere Methode wählen und mit **serverlosem Computing** arbeiten. Mithilfe von serverlosem Computing verwaltet Ihr Cloudanbieter die Bereitstellung und Verwaltung der Infrastruktur. Dadurch können Sie sich ganz auf das Erstellen der App-Logik konzentrieren. Bei Azure Functions handelt es sich um eine wichtige Azure-Komponente des serverlosen Computings, die es Ihnen ermöglicht, Codeelemente oder *Funktionen* auszuführen, die in der von Ihnen bevorzugten Programmiersprache in der Cloud geschrieben sind.
 
 ## <a name="learning-objectives"></a>Lernziele
+
 In diesem Modul wird Folgendes thematisiert:
 
 - Beurteilen, ob sich serverloses Computing für Ihr Unternehmen eignet

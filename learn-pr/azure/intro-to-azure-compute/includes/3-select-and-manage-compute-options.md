@@ -14,9 +14,9 @@ Angenommen, Sie betreiben eine Website, die eine Website für den Einzelhandel h
 
 In Azure sind außerdem erweiterte Dienste für virtuelle Computer verfügbar:
 
-* Verwenden Sie die Option **Virtual Machine Scale Sets**, um durchgängig verfügbare Instanzen derselben App(s) auf ähnlich konfigurierten virtuellen Computern auszuführen. Diese Option generiert automatisch Tausende von identischen virtuellen Computern, die in Minuten mit Ihrer Anwendung zusammen geladen werden, damit Ihre Benutzer nicht warten müssen. Da für virtuelle Computer keine Vorabbereitstellung erforderlich ist, verwenden Sie immer nur die Computeressourcen, die Ihre Anwendung benötigt.
+- Verwenden Sie die Option **Virtual Machine Scale Sets**, um durchgängig verfügbare Instanzen derselben App(s) auf ähnlich konfigurierten virtuellen Computern auszuführen. Diese Option generiert automatisch Tausende von identischen virtuellen Computern, die in Minuten mit Ihrer Anwendung zusammen geladen werden, damit Ihre Benutzer nicht warten müssen. Da für virtuelle Computer keine Vorabbereitstellung erforderlich ist, verwenden Sie immer nur die Computeressourcen, die Ihre Anwendung benötigt.
 
-* Es können sich Situationen ergeben, in denen Sie sehr viel Computeleistung bzw. die Computeleistung eines Supercomputers benötigen. Die **Batch**-Option stellt die Skalierung der Auftragsplanung und Computeverwaltung in der Cloud mit der Möglichkeit bereit, sogar Tausende von virtuellen Computern zu skalieren. Sie können sogar virtuelle Computer mit den Funktionen von Supercomputern angeben.
+- Es können sich Situationen ergeben, in denen Sie sehr viel Computeleistung bzw. die Computeleistung eines Supercomputers benötigen. Die **Batch**-Option stellt die Skalierung der Auftragsplanung und Computeverwaltung in der Cloud mit der Möglichkeit bereit, sogar Tausende von virtuellen Computern zu skalieren. Sie können sogar virtuelle Computer mit den Funktionen von Supercomputern angeben.
 
 ## <a name="azure-containers"></a>Azure-Container
 

@@ -81,14 +81,14 @@ namespace KeyVaultDemoApp
 }
 ```
 
-> [!NOTE]
+> [!TIP]
 > Speichern Sie Dateien unbedingt mit `Ctrl+S`, wenn Sie diese fertig bearbeitet haben.
 
 Die einzige Änderung gegenüber dem Startercode ist das Hinzufügen von `ConfigureAppConfiguration`. Hier laden Sie den Tresornamen aus der Konfiguration und rufen `AddAzureKeyVault` damit auf.
 
 Nun kommen wir zum Controller: Erstellen Sie im Ordner `Controllers` die neue Datei `SecretTestController.cs`, und fügen Sie den folgenden Code darin ein.
 
-> [!NOTE]
+> [!TIP]
 > Verwenden Sie den Befehl `touch` in der Shell, um eine neue Datei zu erstellen. Verwenden Sie in diesem Fall `touch Controllers/SecretTestController.cs`. Klicken Sie im Editor im Bereich „Dateien“ auf die Schaltfläche „Aktualisieren“, damit es dort angezeigt wird.
 
 ```csharp
