@@ -1,0 +1,55 @@
+### YamlMime:ModuleUnit
+uid: learn.run-docker-containers-aci.7-knowledge-check
+title: <span data-ttu-id="23a41-101">Wissenstest</span><span class="sxs-lookup"><span data-stu-id="23a41-101">Kowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="23a41-102">Wissenstest</span><span class="sxs-lookup"><span data-stu-id="23a41-102">Kowledge check</span></span>
+  description: <span data-ttu-id="23a41-103">Diese Einheit ist ein Beispiel für Text (keine Lab-Komponenten) mit einem Wissenstest.</span><span class="sxs-lookup"><span data-stu-id="23a41-103">This unit is an example of text (no lab components) with a knowledge check.</span></span>
+  ms.openlocfilehash: 8aeccc2a10ce08644279ae24386cf530d0ccee97
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43180264"
+durationInMinutes: 5
+quiz:
+  title: <span data-ttu-id="23a41-104">Titel des Quiz</span><span class="sxs-lookup"><span data-stu-id="23a41-104">Quiz title</span></span>
+  questions:
+  - content: <span data-ttu-id="23a41-105">Wenn für eine Containerinstanz die Neustartrichtlinie nicht konfiguriert wird, wie lautet dann die festgelegte Standardrichtlinie?</span><span class="sxs-lookup"><span data-stu-id="23a41-105">If a restart policy is not configured for a container instance, what policy is set by default.?</span></span>
+    choices:
+    - content: <span data-ttu-id="23a41-106">Always</span><span class="sxs-lookup"><span data-stu-id="23a41-106">Always.</span></span>
+      correctExplanation: <span data-ttu-id="23a41-107">Die Standardeinstellung für die Neustartrichtlinie lautet „Always“.</span><span class="sxs-lookup"><span data-stu-id="23a41-107">The restart policy Always is set by default.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="23a41-108">Never</span><span class="sxs-lookup"><span data-stu-id="23a41-108">Never</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="23a41-109">Die Standardeinstellung für die Neustartrichtlinie lautet „Always“.</span><span class="sxs-lookup"><span data-stu-id="23a41-109">The restart policy Always is set by default.</span></span>
+    - content: <span data-ttu-id="23a41-110">OnFailure</span><span class="sxs-lookup"><span data-stu-id="23a41-110">OnFailure</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="23a41-111">Die Standardeinstellung für die Neustartrichtlinie lautet „Always“.</span><span class="sxs-lookup"><span data-stu-id="23a41-111">The restart policy Always is set by default.</span></span>
+  - content: <span data-ttu-id="23a41-112">Welche der folgenden Aussagen trifft nicht zu?</span><span class="sxs-lookup"><span data-stu-id="23a41-112">Which of the following is not correct?</span></span>
+    choices:
+    - content: <span data-ttu-id="23a41-113">Die Werte einer Umgebungsvariable werden standardmäßig im Azure-Portal und in der CLI-Ausgabe angezeigt.</span><span class="sxs-lookup"><span data-stu-id="23a41-113">By default, the values of an environment variable can be seen in the Azure portal and CLI output.</span></span>
+      incorrectExplanation: <span data-ttu-id="23a41-114">Die Werte von Umgebungsvariablen werden im Azure-Portal und in der CLI-Ausgabe angezeigt.</span><span class="sxs-lookup"><span data-stu-id="23a41-114">Environment variable values can be seen in the Azure portal and CLI output.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="23a41-115">Umgebungsvariablen können in sichere Umgebungsvariablen konvertiert werden.</span><span class="sxs-lookup"><span data-stu-id="23a41-115">Environment variables can be converted to secured environment variables.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="23a41-116">Umgebungsvariablen können nicht in sichere Umgebungsvariablen konvertiert werden.</span><span class="sxs-lookup"><span data-stu-id="23a41-116">Environment variables cannot be converted to secured environment variables.</span></span> <span data-ttu-id="23a41-117">Zu diesem Zweck muss die Containerinstanz neu erstellt werden.</span><span class="sxs-lookup"><span data-stu-id="23a41-117">In order to do so, the container instance needs to be recreated.</span></span>
+    - content: <span data-ttu-id="23a41-118">Mit sicheren Umgebungsvariablen werden Werte aus dem Azure-Portal und aus der CLI-Ausgabe ausgeblendet.</span><span class="sxs-lookup"><span data-stu-id="23a41-118">Secured environment variables hide values from the Azure portal and CLI output.</span></span>
+      incorrectExplanation: <span data-ttu-id="23a41-119">Mit sicheren Umgebungsvariablen werden Werte tatsächlich aus dem Azure-Portal und aus der CLI-Ausgabe ausgeblendet.</span><span class="sxs-lookup"><span data-stu-id="23a41-119">Secured environment variables do hide values from the Azure portal and CLI output.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="23a41-120">Mit Umgebungsvariablen können Verbindungszeichenfolgen und andere Anwendungsinformationen an Azure Container Instances übergeben werden.</span><span class="sxs-lookup"><span data-stu-id="23a41-120">Environment variables can be used to pass connection strings and other application information to an Azure Container Instance.</span></span>
+      incorrectExplanation: <span data-ttu-id="23a41-121">Mit Umgebungsvariablen können Verbindungszeichenfolgen und andere Anwendungsinformationen an Azure Container Instances übergeben werden.</span><span class="sxs-lookup"><span data-stu-id="23a41-121">Environment variables can be used to pass connection strings and other application information to an Azure Container Instance.</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="23a41-122">Mit welchem Befehl zur Problembehandlung können Containerstartereignisse angezeigt werden?</span><span class="sxs-lookup"><span data-stu-id="23a41-122">Which troubleshooting command can be used to see container startup events?</span></span>
+    choices:
+    - content: <span data-ttu-id="23a41-123">az container logs</span><span class="sxs-lookup"><span data-stu-id="23a41-123">az container logs.</span></span>
+      incorrectExplanation: <span data-ttu-id="23a41-124">Beim Abrufen von Protokollen werden nur die Protokolle angezeigt.</span><span class="sxs-lookup"><span data-stu-id="23a41-124">Pulling logs only shows the logs.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="23a41-125">az container attach</span><span class="sxs-lookup"><span data-stu-id="23a41-125">az container attach.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="23a41-126">Mit dem Befehl „az container attach“ werden Containerereignisse und -protokolle angezeigt.</span><span class="sxs-lookup"><span data-stu-id="23a41-126">az container attach shows container events and logs.</span></span>
+    - content: <span data-ttu-id="23a41-127">az container events</span><span class="sxs-lookup"><span data-stu-id="23a41-127">az container events.</span></span>
+      incorrectExplanation: <span data-ttu-id="23a41-128">Dies ist kein gültiger Azure CLI-Befehl.</span><span class="sxs-lookup"><span data-stu-id="23a41-128">This is not a valid Azure CLI command.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="23a41-129">az container exec</span><span class="sxs-lookup"><span data-stu-id="23a41-129">az container exec.</span></span>
+      incorrectExplanation: <span data-ttu-id="23a41-130">Der Befehl „az container exec“ wird verwendet, um einen Befehl in einer Containerinstanz auszuführen.</span><span class="sxs-lookup"><span data-stu-id="23a41-130">az container exec is used to run a command on a container instance.</span></span>
+      isCorrect: false

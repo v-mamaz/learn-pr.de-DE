@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.7-exercise-evaluate-the-performance-of-the-deployed-event-hub-using-the-azure-portal
+title: '<span data-ttu-id="13793-101">Übung: Auswerten der Leistung des bereitgestellten Event Hubs mithilfe des Azure-Portals</span><span class="sxs-lookup"><span data-stu-id="13793-101">Exercise - Evaluate the performance of the deployed Event Hub using the Azure portal</span></span>'
+metadata:
+  title: '<span data-ttu-id="13793-102">Übung: Auswerten der Leistung des bereitgestellten Event Hubs mithilfe des Azure-Portals</span><span class="sxs-lookup"><span data-stu-id="13793-102">Exercise - Evaluate the performance of the deployed Event Hub using the Azure portal</span></span>'
+  description: '<span data-ttu-id="13793-103">Übung: Auswerten der Leistung des bereitgestellten Event Hubs mithilfe des Azure-Portals</span><span class="sxs-lookup"><span data-stu-id="13793-103">Exercise - Evaluate the performance of the deployed Event Hub using the Azure portal</span></span>'
+  ms.openlocfilehash: 92ef7db790b64652e8e3e85c903fbcc0af630416
+  ms.sourcegitcommit: e364b61d89b547c49e271e6d168801011f7f4733
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/26/2018
+  ms.locfileid: "42936844"
+durationInMinutes: 10
+content: '[!include[](includes/7-exercise-evaluate-the-performance-of-the-deployed-event-hub-using-the-azure-portal.md)]'

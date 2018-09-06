@@ -1,0 +1,25 @@
+<!DOCTYPE html />
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Kunstwerke</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+    <script src="predict.js"></script>
+</head>
+
+<body>
+    <form><img src="assets/images/header.png"/><h1>Willkommen bei <strong>Kunstwerke</strong></h1>
+        <div>Verwenden der <a target="_new" href="https://southcentralus.dev.cognitive.microsoft.com/docs/services/eb68250e4e954d9bae0c2650db79c653/operations/58acd3c1ef062f0344a42814">Microsoft Custom Vision Service Vorhersage-API</a> zum Analysieren und Vorhersagen des ursprünglichen Künstlers berühmter Gemälde.</div>
+
+        <div class="stepLabel">Schritt 1</div>
+        <div><strong>Durchsuchen (...)</strong>, um ein Bild in Ihrem lokalen Dateisystem zu finden.</div><input type="button" id="select_button" value="..." /><div id="previewImage"></div>
+        <div id="analysisResults"></div>
+        <div class="stepLabel">Schritt 2</div>
+        <div>Klicken Sie auf <strong>Vorhersagen</strong>, um Vorhersagen bezüglich des Künstlers anzuzeigen.</div><input disabled=true type="button" id="analyze_button" value="Vorhersagen" /></form>
+</body>
+
+</html>
