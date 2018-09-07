@@ -10,7 +10,7 @@ Azure unterstützt Trigger für die folgenden Dienste.
 
 | Dienst                 | Beschreibung des Triggers  |
 |-------------------------|---------|
-| Blob Storage            | Startet eine Funktion, wenn ein neues oder aktualisiertes Blob erkannt wird.       |
+| Blob-Speicher            | Startet eine Funktion, wenn ein neues oder aktualisiertes Blob erkannt wird.       |
 | Cosmos DB               | Startet eine Funktion, wenn Einfügungen und Aktualisierungen erkannt werden.      |
 | Event Grid              | Startet eine Funktion, wenn ein Ereignis von Event Grid empfangen wird.       |
 | HTTP                    | Startet eine Funktion mit einer HTTP-Anforderung.      |
@@ -125,4 +125,3 @@ In C# ist dasselbe mit der `log.Info`-Methode möglich. In diesem Fall wird das 
 ### <a name="errors-and-warnings-window"></a>Fenster „Fehlern und Warnungen“
 
 Sie finden die Registerkarte für das Fenster mit Fehlern und Warnungen im gleichen Flyoutmenü wie das Protokollfenster. Dieses Fenster zeigt Kompilierungsfehler und -warnungen innerhalb Ihres Codes.
-

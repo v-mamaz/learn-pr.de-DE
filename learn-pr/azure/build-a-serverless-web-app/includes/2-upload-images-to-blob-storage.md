@@ -1,12 +1,3 @@
----
-zone_pivot_groups: dev-lang-csharp-javascript
-ms.openlocfilehash: 69bc512c02a30bc74ae82a3a43a083af635d89ba
-ms.sourcegitcommit: bf091e3a389138b59573865ca54775e38a4ffa1f
-ms.translationtype: HT
-ms.contentlocale: de-DE
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43154574"
----
 Bei der von Ihnen erstellten Anwendung handelt es sich um eine Fotogalerie. Es wird clientseitiger JavaScript-Code verwendet, um APIs zum Hochladen und Anzeigen von Bildern aufzurufen. In diesem Modul erstellen Sie eine API, indem Sie eine serverlose Funktion verwenden, mit der eine URL mit zeitlicher Beschränkung zum Hochladen eines Bilds generiert wird. Die Webanwendung nutzt die generierte URL zum Hochladen eines Bilds in Blob Storage mit der [Blob Storage-REST-API](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api).
 
 ## <a name="create-a-blob-storage-container-for-images"></a>Erstellen eines Blob Storage-Containers für Bilder

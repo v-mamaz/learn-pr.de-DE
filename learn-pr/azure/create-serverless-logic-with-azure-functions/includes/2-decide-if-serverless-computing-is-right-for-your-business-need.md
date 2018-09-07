@@ -41,5 +41,3 @@ Standardmäßig beträgt das Zeitlimit von Funktionen 5 Minuten. Dieser Wert kan
 Das zweite Merkmal ist die Ausführungshäufigkeit. Wenn Sie erwarten, dass Ihre Funktion fortlaufend von mehreren Clients ausgeführt wird, ist es ratsam, die Nutzung zu schätzen und die Kosten für das Verwenden von Funktionen entsprechend zu berechnen. Es kann kostengünstiger sein, Ihren Dienst auf einem virtuellen Computer zu hosten.
 
 Hinsichtlich Skalierung kann bei bis zu maximal 200 Instanzen insgesamt nur alle 10 Sekunden eine Funktions-App-Instanz erstellt werden. Denken Sie daran, dass jede Instanz mehrere gleichzeitige Ausführungen unterstützt. Es gibt also keine Beschränkung für den Datenverkehr, den eine einzelne Instanz verarbeiten kann. Weil verschiedene Arten von Triggern unterschiedliche Anforderungen an die Skalierung haben, ermitteln Sie den Trigger Ihrer Wahl, und machen Sie seine Grenzen ausfindig.
-
-
