@@ -10,4 +10,14 @@ Zusätzlich zum schnellen Starten können Sie mit Containern „extreme Kompakth
 
 ## <a name="use-cases"></a>Anwendungsfälle
 
-Während Container eine hervorragende Plattform für die Ausführung von herkömmlicher Arbeitsauslastung (z.B. Webservern) sind, öffnen diese auch Möglichkeiten, wie z.B. burstfähige Batchverarbeitung, Anwendungen, die mit einer modernen und verteilten Architektur erstellt werden, und alles, was bedarfsgesteuertes Skalieren erfordert.
+Container sind eine hervorragende Plattform für herkömmliche Workloads (z.B. Webserver) und bieten darüber hinaus noch weitere Möglichkeiten wie etwa burstfähige Batchverarbeitung, Anwendungen mit moderner und verteilter Architektur und alles andere, was eine bedarfsgesteuerte Skalierung erfordert.
+
+## <a name="learning-objectives"></a>Lernziele
+
+In diesem Modul lernen Sie Folgendes:
+
+- Vorbereiten einer lokalen Containerentwicklungsumgebung
+- Grundlegende Docker-Vorgänge
+- Ausführen, Auflisten und Löschen von Containern
+- Erstellen eines benutzerdefinierten Containerimages
+- Übertragen Sie Containerimages per Push an eine öffentliche Containerregistrierung, und führen Sie Container über diese Images aus.

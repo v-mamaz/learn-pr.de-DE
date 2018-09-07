@@ -1,8 +1,8 @@
-In diesem Modul wurden vier verschiedene Azure-Dienste vorgestellt, die es Ihnen ermöglichen, zuverlässige und resiliente verteilte Anwendungen zu erstellen. Die Wahl des richtigen Diensts hängt in erster Linie von dem Typ der Daten ab, die an die einzelnen Komponenten (Nachrichten und Ereignisse) übergeben werden sollen. Zudem spielt es eine Rolle, welche Features zugestellt und welche Daten verarbeitet werden müssen.
+In diesem Modul wurden vier verschiedene Azure-Dienste vorgestellt, die es Ihnen ermöglichen, zuverlässige und resiliente verteilte Anwendungen zu erstellen. Die Wahl des richtigen Diensts hängt in erster Linie vom Typ der Daten (Nachrichten oder Ereignisse) ab, die an die einzelnen Komponenten übergeben werden sollen. Zudem spielt es eine Rolle, welche Features Sie zum Bereitstellen und Verarbeiten der Daten benötigen.
 
-## <a name="clean-up-the-azure-subscription"></a>Bereinigen des Azure-Abonnements
+## <a name="clean-up"></a>Bereinigen
 
-Wenn ein Speicherkonto Daten enthält, verursacht dieses Kosten im Zusammenhang mit Ihrem Azure-Abonnement. Allerdings sind die Kosten bei kurzen Warteschlangen mit wenigen Nachrichten nur gering. Wenn Sie die Warteschlange nicht mehr verwenden, sollten Sie diese entfernen, damit keine unnötigen Änderungen an ihr vorgenommen werden können. Da Sie sämtliche Ressourcen in nur einer Ressourcengruppe erstellt haben, können Sie Ihr Azure-Abonnement am einfachsten bereinigen, indem Sie die Ressourcengruppe entfernen, die wiederum all ihre Inhalte entfernt:
+Wenn ein Speicherkonto Daten enthält, verursacht dieses Kosten im Zusammenhang mit Ihrem Azure-Abonnement. Allerdings sind die Kosten bei kurzen Warteschlangen mit wenigen Nachrichten nur gering. Wenn Sie die Warteschlange nicht mehr verwenden, sollten Sie sie entfernen, um unnötige Kosten zu vermeiden. Da Sie sämtliche Ressourcen in der gleichen Ressourcengruppe erstellt haben, können Sie Ihr Azure-Abonnement am einfachsten bereinigen, indem Sie die Ressourcengruppe entfernen. Dadurch werden alle ihre Inhalte entfernt:
 
 ```powershell
 Remove-AzureRmResourceGroup -Name "MusicSharingResourceGroup" -Force

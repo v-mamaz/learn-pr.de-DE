@@ -6,11 +6,11 @@ Ein Unterschied zwischen einer öffentlichen Cloud und der lokalen Infrastruktur
 
 Wenn Sie zur Cloud wechseln, zahlen Sie nur für das, was Sie tatsächlich verwenden. Sie müssen keine langfristigen Investitionen mehr in Hardware tätigen, und wenn sich Ihre Anforderungen an Ressourcen ändern, können Sie darauf reagieren, indem Sie Ressourcen hinzufügen, verschieben oder entfernen. Workloads in Diensten unterscheiden sich voneinander (nicht nur innerhalb eines Diensts, sondern auch im Bezug auf andere Dienste), der Bedarf ist unter Umständen nicht vorhersehbar und Ihre Wachstumsmuster ändern sich mit der Zeit. Da Sie in der Cloud nur für das zahlen, was Sie verwenden, ändert sich Ihre Kostenstruktur im Einklang mit Ihren Ressourcen.
 
-Im folgenden Diagramm werden gebräuchliche Muster zur Ressourcenverwendung dargestellt, die mithilfe von Cloudinfrastruktur einfacher berücksichtigt werden können. Ressourcen, die für längere Zeit nicht verwendet werden, können abgeschaltet werden und verursachen so keine Kosten. Weitere Ressourcen können hinzugefügt und entfernt werden, um auf vorhersagbare und nicht vorhersagbare Bedarfsschwankungen zu reagieren. Wenn ein erfolgreicher Dienst wächst, können auch die Ressourcen mitwachsen. Es muss nicht auf den nächsten Beschaffungszyklus gewartet werden.
+Die Cloudinfrastruktur ist für Szenarien mit fluktuierender Ressourcennutzung geeignet. Ressourcen, die für längere Zeit nicht verwendet werden, können heruntergefahren werden und verursachen so keine Kosten. Wenn ein erfolgreicher Dienst wächst, können auch die Ressourcen mitwachsen. Es muss nicht auf den nächsten Beschaffungszyklus gewartet werden. Weitere Ressourcen können hinzugefügt und entfernt werden, um auf vorhersagbare und nicht vorhersagbare Bedarfsschwankungen zu reagieren. Die folgende Abbildung zeigt, warum die lokale Infrastruktur nicht für all diese Schwankungen geeignet ist.
 
-![Bedarfskurven](../media-draft/cloudcomputingpatterns.png)
+![Abbildung, die die Nachteile der Verwendung einer lokalen Infrastruktur zeigt.](../media/cloudcomputingpatterns.png)
 
-In einer effizienten Architektur entsprechen bereitgestellte Ressourcen dem jeweiligen Bedarf. Wenn ein virtueller Computer weniger als 10 % ausgelastet ist, verschwenden Sie Ressourcen – sowohl im Hinblick auf Computeressourcen als auch auf Kosten. Wenn im Gegensatz dazu ein virtueller Computer 90 % ausgelastet ist und die meisten der verfügbaren Ressourcen verwendet, ist er effizient. Wenn ein System zu 100 % ausgelastet ist, kann dies die Leistung beeinträchtigen. Es ist wichtig, dass Sie sicherstellen, dass die Leistung des Systems nicht beeinflusst wird, wenn Sie die Effizienz steigern. Sie können nur selten von konstantem Bedarf ausgehen. Daher ist es wichtig, dass Sie Ihre Ressourcen so konstruieren, dass sie stets an den tatsächlichen Bedarf angepasst werden können, um Effizienz zu gewährleisten.
+In einer effizienten Architektur sind die bereitgestellten Ressourcen auf den jeweiligen Bedarf abgestimmt. Wenn ein virtueller Computer weniger als 10 % ausgelastet ist, verschwenden Sie Ressourcen – sowohl im Hinblick auf Computeressourcen als auch auf Kosten. Wenn im Gegensatz dazu ein virtueller Computer 90 % ausgelastet ist und die meisten der verfügbaren Ressourcen verwendet, ist er effizient. Wenn ein System zu 100 % ausgelastet ist, kann dies die Leistung beeinträchtigen. Es ist wichtig, dass Sie sicherstellen, dass die Leistung des Systems nicht beeinflusst wird, wenn Sie die Effizienz steigern. Sie können nur selten von konstantem Bedarf ausgehen. Daher ist es wichtig, dass Sie Ihre Ressourcen so konstruieren, dass sie stets an den tatsächlichen Bedarf angepasst werden können, um Effizienz zu gewährleisten.
 
 ## <a name="track-your-cloud-spend"></a>Nachverfolgen von Cloudausgaben
 
@@ -28,13 +28,13 @@ Dabei ist es wichtig, dass Sie sich die Zeit nehmen, Ihre Ausgaben zu prüfen. F
 
 Wenn Sie Ihre Ressourcen besser organisieren, hilft Ihnen das dabei, Ihre Ausgaben einfacher nachzuverfolgen. Sie können Ihre Ressourcen dafür in Gruppen zusammenfassen und in Beziehung zueinander stellen, um zu prüfen, inwieweit die jeweiligen Kosten miteinander verknüpft sind. Sie können Ressourcen im Hinblick auf die jeweiligen Ausgaben wie folgt gruppieren:
 
-* Sie können Ressourcen verschiedenen Abonnements zuweisen.
-* Sie können Ressourcen verschiedenen Ressourcengruppen zuweisen.
-* Sie können Ressourcen Tags zuordnen.
+- Sie können Ressourcen verschiedenen Abonnements zuweisen.
+- Sie können Ressourcen verschiedenen Ressourcengruppen zuweisen.
+- Sie können Ressourcen Tags zuordnen.
 
-Wenn Sie Abonnements und Ressourcengruppen verwenden, um Ressourcen zu organisieren, stellt dies eine einfache Möglichkeit dar, Ressourcen auf logische Weise zu gruppieren. Sie müssen dafür nur Ihre Abrechnungsdaten prüfen. Tags eignen sich, wenn Ressourcenbeziehungen die Grenzen zwischen Abonnements und Ressourcengruppen umfassen. Tags sind Schlüssel-Wert-Paare, die zu jeder beliebigen Ressource hinzugefügt werden können. Sie sind in dem Abrechnungsdaten enthalten. So können Sie jede Ressource einer Abteilung oder Kostenstelle zuordnen. Mithilfe von Tags können Sie Berichte zu Kosten verbessern und jeder Abteilung innerhalb Ihrer Organisation die Kosten zuordnen, die diese verursacht.
+Wenn Sie Abonnements und Ressourcengruppen verwenden, um Ressourcen zu organisieren, stellt dies eine einfache Möglichkeit dar, Ressourcen auf logische Weise zu gruppieren. Sie müssen dafür nur Ihre Abrechnungsdaten prüfen. Tags eignen sich, wenn Ressourcenbeziehungen die Grenzen zwischen Abonnements und Ressourcengruppen umfassen. Tags sind Schlüssel-Wert-Paare, die zu jeder beliebigen Ressource hinzugefügt werden können. Sie sind in dem Abrechnungsdaten enthalten. So können Sie jede Ressource einer Abteilung oder Kostenstelle zuordnen. Mithilfe von Tags können Sie Berichte zu Kosten verbessern und jeder Abteilung innerhalb Ihrer Organisation die Kosten zuordnen, die diese verursacht. Die folgende Abbildung zeigt, wie Sie das gleiche Tag auf Ressourcen in verschiedenen Ressourcengruppen und sogar in verschiedenen Abonnements anwenden können.
 
-![Markieren von Ressourcen](../media-draft/tagging.png)
+![Abbildung mit Ressourcen, die mithilfe von Tags, Ressourcengruppen und Abonnements organisiert wurden.](../media/tagging.png)
 
 Wenn Sie Ihre Ressourcen organisieren, hilft Ihnen das in vielerlei Hinsicht, und Sie können Ihre Ausgaben besser nachverfolgen. Nachfolgend wird erläutert, wie Sie Ihre Kosten optimieren können.
 
@@ -48,15 +48,15 @@ Im Folgenden werden einige Best Practices zum Senken der Compute- und Speicherko
 
 Es gibt verschiedene Möglichkeiten, Kosten für virtuelle Computer zu sparen.
 
-* Sie können die Größe der VM-Instanz reduzieren.
-* Sie können die Anzahl der Stunden reduzieren, in denen ein virtueller Computer ausgeführt wird.
-* Sie können Rabatte für die Computekosten nutzen.
+- Sie können die Größe der VM-Instanz reduzieren.
+- Sie können die Anzahl der Stunden reduzieren, in denen ein virtueller Computer ausgeführt wird.
+- Sie können Rabatte für die Computekosten nutzen.
 
 #### <a name="right-size-virtual-machines"></a>Bestimmen der richtigen Größe von virtuellen Computern
 
-Eine VM hat die richtige Größe, wenn diese an den jeweiligen Ressourcenbedarf angepasst ist. Wenn sich eine VM 25 % der Zeit im Leerlauf befindet, werden Ihre Kosten automatisch verringert, sobald Sie deren Größe verringern. Innerhalb einer Instanzenfamilie sind die Kosten eines virtuellen Computers linear. Durch die Verwendung einer höheren Instanz werden die Kosten jeweils verdoppelt. Wenn Sie im Gegensatz dazu eine VM um eine einzelne Instanz verringern, werden Ihre Kosten jeweils halbiert.
+Eine VM hat die richtige Größe, wenn diese an den jeweiligen Ressourcenbedarf angepasst ist. Wenn sich eine VM 25 % der Zeit im Leerlauf befindet, werden Ihre Kosten automatisch verringert, sobald Sie deren Größe verringern. Innerhalb einer Instanzenfamilie sind die Kosten eines virtuellen Computers linear. Durch die Verwendung einer höheren Instanz werden die Kosten jeweils verdoppelt. Wenn Sie im Gegensatz dazu einen virtuellen Computer um eine einzelne Instanz verringern, halbieren sich Ihre Kosten. Die folgende Abbildung zeigt Einsparungen in Höhe von 50 Prozent, die durch die Umstellung auf die nächstniedrigere Größe innerhalb der Serie erzielt wurden.
 
-![Ändern der Größe von virtuellen Computern](../media-draft/vm-resize.png)
+![Abbildung zur Veranschaulichung der Einsparungen, die für einen nicht ausgelasteten virtuellen Computer durch die Umstellung auf die nächstniedrigere Größe erzielt wurden.](../media/vm-resize.png)
 
 Der Azure Advisor ermittelt, welche virtuellen Computer zu wenig ausgelastet sind. Der Advisor überwacht die Verwendung Ihrer virtuellen Computer 14 Tage lang und ermittelt virtuelle Computer mit geringer Auslastung. Virtuelle Computer, bei denen an mindestens vier Tagen die CPU-Auslastung unter 5 % und die Netzwerklast unter 7 MB lag, gelten als virtuelle Computer mit geringer Auslastung.
 
@@ -72,9 +72,9 @@ Sie können auch das Feature zum automatischen Herunterfahren einer VM verwenden
 
 Mithilfe des Azure-Hybridvorteils können Sie Ihre Kosten für Windows Server und SQL Server optimieren, da Sie Ihre lokalen Lizenzen für Windows Server oder SQL Server zusammen mit Software Assurance verwenden können. Dadurch erhalten Sie einen Rabatt auf die Computekosten für diese VMs, da so keine Kosten für Windows Server und SQL Server auf aktivierten Instanzen entstehen.
 
-Einige virtuelle Computer müssen permanent ausgeführt werden. Dies ist z.B. bei einer Serverfarm für eine Webanwendung, die von einer Produktionsworkload benötigt wird, oder einen Domänencontroller der Fall, der verschiedene Server auf einem virtuellen Netzwerk unterstützt. Wenn Sie sicher sind, dass diese virtuellen Computer mindestens ein Jahr lang ausgeführt werden, können Sie die Kosten weiter reduzieren, indem Sie auf reservierte Instanzen zurückgreifen. Azure Reserved Virtual Machine Instances können entweder für ein Jahr oder für drei Jahre an Computekapazität verwendet werden. Dabei reduzieren sich die Kosten im Vergleich zu Computeressourcen mit nutzungsbasierter Bezahlung Azure Reserved Virtual Machine Instances können die Kosten für virtuelle Computer mit einer Vorauszahlung für ein Jahr oder für drei Jahre erheblich reduzieren – im Vergleich zu den Preisen bei nutzungsbasierter Bezahlung um bis zu 72 Prozent.
+Einige virtuelle Computer müssen permanent ausgeführt werden. Dies ist z.B. bei einer Serverfarm für eine Webanwendung, die von einer Produktionsworkload benötigt wird, oder einen Domänencontroller der Fall, der verschiedene Server auf einem virtuellen Netzwerk unterstützt. Wenn Sie sicher sind, dass diese virtuellen Computer mindestens ein Jahr lang ausgeführt werden, können Sie die Kosten weiter reduzieren, indem Sie auf reservierte Instanzen zurückgreifen. Azure Reserved Virtual Machine Instances können entweder für ein Jahr oder für drei Jahre an Computekapazität verwendet werden. Dabei reduzieren sich die Kosten im Vergleich zu Computeressourcen mit nutzungsbasierter Bezahlung Azure Reserved Virtual Machine Instances können die Kosten für virtuelle Computer mit einer Vorauszahlung für ein Jahr oder für drei Jahre erheblich reduzieren – im Vergleich zu den Preisen bei nutzungsbasierter Bezahlung um bis zu 72 Prozent. Die folgende Abbildung zeigt die Einsparungen, die erzielt werden, wenn Sie Ihre lokale Lizenz mit dem Azure-Hybridvorteil kombinieren und wenn Sie Ihre lokale Lizenz sowohl mit Azure-RI als auch mit dem Azure-Hybridvorteil kombinieren.
 
-![Azure-Hybridvorteil](../media-draft/ahub-save.png)
+![Abbildung mit den Einsparungen für Azure-Produkte, wenn Sie über lokale Lizenzen mit Software Assurance verfügen.](../media/ahub-save.png)
 
 ### <a name="virtual-machine-disk-storage-cost-optimization"></a>Optimieren der Kosten für VM-Datenträgerspeicher
 
@@ -93,9 +93,9 @@ PaaS-Dienste werden in der Regel anhand der Kosten für IaaS-Dienste optimiert. 
 Wenn Sie eine Datenbank mit Azure SQL-Datenbank erstellen, müssen Sie einen Server mit Azure SQL Server und eine Leistungsstufe auswählen. Jede Stufe steht für eine Leistungsebene in Datenbanktransaktionseinheiten oder virtuellen Kernen. Bei stabiler Datenbankauslastung können Sie die Kosten ganz einfach optimieren, indem Sie eine Stufe auswählen, die der benötigten Leistung entspricht. Sie fragen sich sicher, was geschieht, wenn die Aktivität für Ihre Datenbank unerwartete Schwankungen verzeichnet. Sie können mithilfe von Pools für elastische Datenbanken Kosten für unvorhersehbare Workloads reduzieren.
 
 Pools für elastische Datenbanken mit SQL-Datenbank stellen eine einfache, kostengünstige Lösung zum Verwalten und Skalieren mehrerer Datenbanken mit variierenden und unvorhersehbaren Anforderungen dar. Die Datenbanken in einem Pool für elastische Datenbanken befinden sich auf einem einzelnen Server in Azure SQL-Datenbank und nutzen gemeinsam mehrere Ressourcen zu einem festen Preis. Pools eignen sich hervorragend für eine große Anzahl an Datenbanken mit spezifischen Nutzungsmustern. Im Hinblick auf eine einzelne Datenbank wird dieses Muster durch eine geringe durchschnittliche Auslastung mit relativ wenigen Nutzungslastspitzen gekennzeichnet.
-Je mehr Datenbanken Sie einem Pool hinzufügen können, desto mehr sparen Sie.
+Je mehr Datenbanken Sie einem Pool hinzufügen können, desto mehr sparen Sie. Die folgende Abbildung zeigt die Funktionen von drei Arten von Pools für elastische Datenbanken: Basic, Standard und Premium.  Basic bietet eine automatische Hochskalierung auf bis zu 5 eDTUs pro Datenbank, Standard bietet eine automatische Hochskalierung auf bis zu 100 eDTUs pro Datenbank, und Premium bietet eine automatische Hochskalierung auf bis zu 1.000 eDTUs pro Datenbank.
 
-![Pools für elastische Datenbanken](../media-draft/sqldb-elastic-pools.png)
+![Abbildung der Kapazität der automatischen Skalierung für verschiedene Arten von Pools für elastische Datenbanken.](../media/sqldb-elastic-pools.png)
 
 Pools für elastische Datenbanken sind eine gute Möglichkeit, um Kosten auf mehrere Datenbanken aufzuteilen. Sie können dazu beitragen, Ihre Kosten für Azure SQL-Datenbank zu reduzieren.
 
@@ -107,9 +107,9 @@ Im Folgenden wird nochmal auf Lamna Healthcare eingegangen. Es geht um eine Anwe
 
 Azure Storage bietet drei Speicherebenen für Blob-Objektspeicher. Die heiße Speicherebene von Azure ist für das Speichern von Daten optimiert, auf die häufig zugegriffen wird. Die kalte Speicherebene von Azure ist für das Speichern von Daten optimiert, auf die selten zugegriffen wird, und die mindestens 30 Tage lang gespeichert werden. Die Archivzugriffsebene von Azure ist für das Speichern von Daten optimiert, auf die selten zugegriffen wird und die bei flexiblen Latenzanforderungen mindestens 180 Tage lang gespeichert werden.
 
-* **Heiße Speicherebene:** die höchsten Speicherkosten, aber die geringsten Zugriffskosten.
-* **Kalte Speicherebene:** niedrigere Speicherkosten, aber höhere Zugriffskosten im Vergleich zur heißen Speicherebene. Diese Ebene ist für Daten bestimmt, die mindestens 30 Tage lang auf der kalten Ebene verbleiben.
-* **Archivspeicherebene:** die niedrigsten Speicherkosten, aber die höchsten Datenabrufkosten im Vergleich zur kalten und heißen Speicherebene. Diese Ebene ist für Daten bestimmt, die mehrere Stunden Abrufwartezeit tolerieren und mindestens 180 Tage lang auf der Archivebene verbleiben.
+- **Heiße Speicherebene:** die höchsten Speicherkosten, aber die geringsten Zugriffskosten.
+- **Kalte Speicherebene:** niedrigere Speicherkosten, aber höhere Zugriffskosten im Vergleich zur heißen Speicherebene. Diese Ebene ist für Daten bestimmt, die mindestens 30 Tage lang auf der kalten Ebene verbleiben.
+- **Archivspeicherebene:** die niedrigsten Speicherkosten, aber die höchsten Datenabrufkosten im Vergleich zur kalten und heißen Speicherebene. Diese Ebene ist für Daten bestimmt, die mehrere Stunden Abrufwartezeit tolerieren und mindestens 180 Tage lang auf der Archivebene verbleiben.
 
 Für Lamna Healthcare bietet es sich also an, neue Bilder einen Monat lang der heißen Speicherebene zuzuordnen, damit die neusten Bilder schnellstmöglich abgerufen werden können. Bilder, die älter als ein Jahr sind, könnten auf die Archivspeicherebene verschoben werden, da es wahrscheinlich ist, dass diese Bilder nicht abgerufen werden. Dadurch fallen weniger Kosten für das Speichern dieser Bilder an.
 

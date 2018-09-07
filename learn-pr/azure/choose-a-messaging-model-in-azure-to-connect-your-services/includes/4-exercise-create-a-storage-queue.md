@@ -8,15 +8,16 @@ Da Azure Storage-Warteschlangen ein Bestandteil von universellen Azure-Speicherk
 
 1. Navigieren Sie in einem Browser zum [Azure-Portal](https://portal.azure.com?azure-portal=true), und melden Sie sich mit Ihren regulären Anmeldeinformationen an.
 
-2. Klicken Sie oben links auf **Alle Dienste**.
+1. Klicken Sie oben links auf **Alle Dienste**.
 
-3. Scrollen Sie nach unten zum Abschnitt **Speicher**, und klicken Sie dann auf **Speicherkonten**.
+1. Scrollen Sie nach unten zum Abschnitt **Speicher**, und klicken Sie dann auf **Speicherkonten**.
 
-4. Klicken Sie oben links auf dem Blatt **Speicherkonten** auf **Hinzufügen**.
+1. Klicken Sie oben links auf dem Blatt **Speicherkonten** auf **Hinzufügen**.
 
-  ![Screenshot: Blatt „Speicherkonten“ mit Hervorhebung der Option „Hinzufügen“](../images/5-create-a-storage-account-1.png)
+  ![Screenshot: Blatt „Speicherkonten“ mit Hervorhebung der Option „Hinzufügen“](../media-draft/4-create-a-storage-account-1.png)
 
-5. Geben Sie in das daraufhin angezeigte Dialogfeld die folgenden Informationen ein. Alle Optionen verfügen über ein `(i)`-Symbol im Portal, das Sie verwenden können, um mehr Informationen zur Funktionsweise dieser Option abzurufen.
+1. Geben Sie in das daraufhin angezeigte Dialogfeld die folgenden Informationen ein. Alle Optionen verfügen über ein `(i)`-Symbol im Portal, das Sie verwenden können, um mehr Informationen zur Funktionsweise dieser Option abzurufen.
+
     - Geben Sie in das Textfeld **Name** einen eindeutigen Namen für das Speicherkonto ein.
     - Stellen Sie unter **Bereitstellungsmodell** sicher, dass **Resource Manager** ausgewählt ist.
     - Wählen Sie in der Dropdownliste **Kontoart** die Option **StorageV2 (universell, Version 2)** aus.
@@ -29,37 +30,37 @@ Da Azure Storage-Warteschlangen ein Bestandteil von universellen Azure-Speicherk
     - Klicken Sie unter **Ressourcengruppe** auf die Option **Neu erstellen**. Geben Sie **MusicSharingResourceGroup** in das Textfeld ein.
     - Klicken Sie unter **Virtuelle Netzwerke** auf die Option **Deaktiviert**. 
 
-    ![Screenshot: Dialogfeld „Speicherkonto erstellen“](../images/5-create-a-storage-account-2.png)
+    ![Screenshot: Dialogfeld „Speicherkonto erstellen“](../media-draft/4-create-a-storage-account-2.png)
 
-6. Klicken Sie auf **Erstellen**. Dann erstellt Azure eine neue Ressourcengruppe und ein neues Speicherkonto, das diesem zugeordnet ist.
+1. Klicken Sie auf **Erstellen**. Dann erstellt Azure eine neue Ressourcengruppe und ein neues Speicherkonto, das diesem zugeordnet ist.
 
-    ![Screenshot: Dialogfeld „Speicherkonto erstellen“ mit Hervorhebung der Option „Erstellen“](../images/5-create-a-storage-account-3.png)
+    ![Screenshot: Dialogfeld „Speicherkonto erstellen“ mit Hervorhebung der Option „Erstellen“](../media-draft/4-create-a-storage-account-3.png)
 
 ## <a name="create-a-queue"></a>Erstellen einer Warteschlange
 
 Nun ist das Speicherkonto erstellt, und Sie können eine neue Warteschlange hinzufügen. Sie müssen die Warteschlange mit PowerShell-Befehlen erstellen:
 
-1. Klicken Sie in der oberen rechten Ecke des Portals auf den Link **Cloud Shell** `(>)`.
+1. Klicken Sie in der oberen rechten Ecke des Portals auf den **Cloud Shell**-Link `(>_)`.
 
-    ![Screenshot: Azure-Portal mit Hervorhebung des Symbols „Cloud Shell“](../images/5-create-a-storage-queue-1.png)
+    ![Screenshot: Azure-Portal mit Hervorhebung des Symbols „Cloud Shell“](../media-draft/4-create-a-storage-queue-1.png)
 
-2. Klicken Sie im Bildschirm **Welcome to Azure Cloud Shell** (Willkommen bei Azure Cloud Shell) auf **PowerShell (Linux)**.
+1. Klicken Sie im Bildschirm **Welcome to Azure Cloud Shell** (Willkommen bei Azure Cloud Shell) auf **PowerShell (Linux)**.
 
-3. Klicken Sie auf dem Bildschirm **You have no storage mounted** (Sie haben keinen Speicher bereitgestellt) auf **Speicher erstellen**.
+1. Klicken Sie auf dem Bildschirm **You have no storage mounted** (Sie haben keinen Speicher bereitgestellt) auf **Speicher erstellen**.
 
-4. Wenn die `PS Azure`-Eingabeaufforderung angezeigt wird, das Speicherkonto aufzurufen, geben Sie den folgenden Befehl ein. Ersetzen Sie den `<storageaccountname>` durch den eindeutigen Namen des Speicherkontos, das Sie zuvor erstellt haben, und drücken Sie auf **Enter**. Das entstandene Objekt soll einer Variablen mit dem Namen `$storageaccount` zugewiesen werden.
+1. Wenn die `PS Azure`-Eingabeaufforderung angezeigt wird, das Speicherkonto aufzurufen, geben Sie den folgenden Befehl ein. Ersetzen Sie den `<storageaccountname>` durch den eindeutigen Namen des Speicherkontos, das Sie zuvor erstellt haben, und drücken Sie auf **Enter**. Das entstandene Objekt soll einer Variablen mit dem Namen `$storageaccount` zugewiesen werden.
 
     ```powershell
     $storageaccount = Get-AzureRmStorageAccount -Name <storageaccountname> -ResourceGroup  MusicSharingResourceGroup
     ```
 
-5. Als nächstes wird der _Kontext_ des Speicherkontos benötigt. Dabei handelt es sich um eine Eigenschaft das zurückgegebenen Objekts. Dieses soll einer anderen Variablen mit dem Namen `$context` zugewiesen werden.
+1. Als nächstes wird der _Kontext_ des Speicherkontos benötigt. Dabei handelt es sich um eine Eigenschaft das zurückgegebenen Objekts. Dieses soll einer anderen Variablen mit dem Namen `$context` zugewiesen werden.
 
     ```powershell
     $context = $storageaccount.Context
     ```
 
-6. Danach kann die Warteschlange erstellt werden. Verwenden Sie den `New-AzureStorageQueue`-Befehl, und weisen Sie ihn einer `$messageQueue`-Variablen zu.
+1. Danach kann die Warteschlange erstellt werden. Verwenden Sie den `New-AzureStorageQueue`-Befehl, und weisen Sie ihn einer `$messageQueue`-Variablen zu.
     - Übergeben Sie einen `-Name`-Parameter mit dem Wert `musicsharingmessages`.
     - Übergeben Sie einen `-Context`-Parameter mit dem Wert, den Sie im Schritt zuvor abgerufen haben.
 
@@ -77,7 +78,7 @@ Da Sie nun eine Warteschlange im Speicherkonto erstellt haben, können Sie ihr e
     $newSongMessage = New-Object -TypeName Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage -ArgumentList "A new song has been added."
     ```
 
-2. Übergeben Sie die erstellte `CloudQueueMessage` an die `AddMessageAsync`-Methode in Ihrer `$messageQueue`-Warteschlange, um die neue Meldung an die neue Warteschlange zu übergeben.
+1. Übergeben Sie die erstellte `CloudQueueMessage` an die `AddMessageAsync`-Methode in Ihrer `$messageQueue`-Warteschlange, um die neue Meldung an die neue Warteschlange zu übergeben.
 
     ```powershell
     $messageQueue.CloudQueue.AddMessageAsync($newSongMessage)
@@ -85,18 +86,18 @@ Da Sie nun eine Warteschlange im Speicherkonto erstellt haben, können Sie ihr e
 
 ## <a name="verify-the-message-was-queued"></a>Überprüfen, ob die Meldung in die Warteschlange aufgenommen wurde
 
-Sie können den **Storage-Explorer** verwenden, um mit der Warteschlange zu arbeiten. Drei Variationen sind verfügbar:
+Sie können den **Storage-Explorer** verwenden, um mit der Warteschlange zu arbeiten. Zwei Variationen sind verfügbar:
 
-- Eine plattformübergreifende Desktop-App für Linux, macOS und Windows, die Sie herunterladen können.
+- Eine plattformübergreifende Desktop-App für Linux, macOS und Windows, die Sie herunterladen können
 - Eine Webvorschauversion für das Azure-Portal. Im Folgenden wird die Webversion verwendet, aber Sie können auch die Desktopversion installieren. Die Anweisungen sind ähnlich.
 
 1. Klicken Sie im Azure-Portal in der Navigation auf der linken Seite auf **Alle Ressourcen**.
 
-2. Klicken Sie in der Liste der Ressourcen auf das Speicherkonto, das Sie zuvor erstellt haben.
+1. Klicken Sie in der Liste der Ressourcen auf das Speicherkonto, das Sie zuvor erstellt haben.
 
-3. Klicken Sie im Speicherkontoblatt auf **Storage-Explorer (Vorschau)**.
+1. Klicken Sie im Speicherkontoblatt auf **Storage-Explorer (Vorschau)**.
 
-4. Klicken Sie im Storage-Explorer unter **WARTESCHLANGEN** auf **musicsharingmessages**. Der Storage-Explorer sollte die Meldung anzeigen, die Sie gerade hinzugefügt haben.
+1. Klicken Sie im Storage-Explorer unter **WARTESCHLANGEN** auf **musicsharingmessages**. Der Storage-Explorer sollte die Meldung anzeigen, die Sie gerade hinzugefügt haben.
 
 ## <a name="retrieve-and-remove-the-message"></a>Abrufen und Entfernen der Meldung
 
@@ -108,25 +109,25 @@ Zielkomponenten für eine Meldung in einer Speicherwarteschlange müssen die Mel
     $retrievedMessage = $messageQueue.CloudQueue.GetMessageAsync().Result
     ```
 
-2. Diese Meldung wird in Text dargestellt, wenn Sie `AsString` aufrufen. Dadurch wird der Wert auf der Konsole zurückgegeben.
+1. Diese Meldung wird in Text dargestellt, wenn Sie `AsString` aufrufen. Dadurch wird der Wert auf der Konsole zurückgegeben.
 
     ```powershell
     $retrievedMessage.AsString
     ```
 
-3. Stattdessen können Sie auch alle Eigenschaften der Meldung anzeigen, indem Sie nur den Variablennamen eingeben und die **EINGABETASTE** drücken.
+1. Stattdessen können Sie auch alle Eigenschaften der Meldung anzeigen, indem Sie nur den Variablennamen eingeben und die **EINGABETASTE** drücken.
 
     ```powershell
     $retrievedMessage
     ```
 
-4. `GetMessageAsync` entfernt die Meldung *nicht*, sondern gibt sie nur zurück. Dadurch kann der Prozess fortgesetzt werden. Wenn Sie diese Meldung aus der Warteschlange entfernen möchten, können Sie die `DeleteMessageAsync`-Methode für die Warteschlange verwenden. Dafür muss die Meldung übergeben werden, die entfernt werden soll.
+1. `GetMessageAsync` entfernt die Meldung *nicht*, sondern gibt sie nur zurück. Dadurch kann der Prozess fortgesetzt werden. Wenn Sie diese Meldung aus der Warteschlange entfernen möchten, können Sie die `DeleteMessageAsync`-Methode für die Warteschlange verwenden. Dafür muss die Meldung übergeben werden, die entfernt werden soll.
 
     ```powershell
     $messageQueue.CloudQueue.DeleteMessageAsync($retrievedMessage)
     ```
 
-5. Wenn Sie prüfen möchten, ob die Meldung entfernt wurde, aktualisieren Sie die Warteschlangenanzeige im Azure-Portal, indem Sie zum Blatt „Speicherkonto“ navigieren und auf **Übersicht > Storage-Explorer** klicken. Klicken Sie unter **WARTESCHLANGEN** auf **musicsharingmessages**. Der Storage-Explorer sollte jetzt anzeigen, dass die Warteschlange leer ist, da Sie die einzige Meldung entfernt haben.
+1. Wenn Sie prüfen möchten, ob die Meldung entfernt wurde, aktualisieren Sie die Warteschlangenanzeige im Azure-Portal, indem Sie zum Blatt „Speicherkonto“ navigieren und auf **Übersicht > Storage-Explorer** klicken. Klicken Sie unter **WARTESCHLANGEN** auf **musicsharingmessages**. Der Storage-Explorer sollte jetzt anzeigen, dass die Warteschlange leer ist, da Sie die einzige Meldung entfernt haben.
 
 
 ## <a name="summary"></a>Zusammenfassung

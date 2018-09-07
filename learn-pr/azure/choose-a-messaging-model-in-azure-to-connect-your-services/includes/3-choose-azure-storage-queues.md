@@ -1,4 +1,4 @@
-Angenommen, Sie planen die Architektur einer Anwendung für den Austausch von Musik. Dabei möchten Sie sicherstellen, dass Musikdateien in die zuverlässige Web-API der mobilen App hochgeladen wird. Anschließend sollen die Details zu neuen Liedern der Musiker direkt an die App weitergegeben werden. In einem solchen Szenario eignet sich ein nachrichtenbasiertes System besonders gut. Azure bietet dafür zwei Lösungen:
+Angenommen, Sie planen die Architektur einer Anwendung für den Austausch von Musik. Dabei möchten Sie sicherstellen, dass Musikdateien zuverlässig aus der mobilen App an die Web-API hochgeladen werden. Anschließend sollen die Details zu neuen Liedern der Musiker direkt an die App weitergegeben werden. In einem solchen Szenario eignet sich ein nachrichtenbasiertes System besonders gut. Azure bietet dafür zwei Lösungen:
 
 - Azure Queue Storage
 - Azure Service Bus
@@ -11,17 +11,17 @@ Bei Azure Service Bus handelt es sich um ein Brokersystem für Nachrichten, das 
 
 Beide Dienste basieren auf der Idee einer „Warteschlange“, die solange mehrere gesendete Nachrichten enthält, bis der Empfänger bereit ist, diese zu empfangen. Wenn Sie noch nie mit einem Warteschlangensystem für Nachrichten gearbeitet haben, sollten Sie sich über deren zahlreichen Vorteile informieren. Diese werden im Folgenden erläutert.
 
-## <a name="increased-reliability"></a>Erhöhte Zuverlässigkeit
-Warteschlangen werden von verteilten Anwendungen als temporäre Speicherorte für Nachrichten verwendet, deren Zustellung an eine Zielkomponente noch aussteht. Die Quellkomponente kann eine Nachrichten zu der Warteschlange hinzufügen, und die Zielkomponenten können die Nachrichten vorne in der Warteschlange abrufen, um diese zu verarbeiten. Warteschlangen erhöhen die Zuverlässigkeit des Nachrichtenaustauschs, da in Zeiten hoher Nachfrage Nachrichten einfach warten können, bis eine Zielkomponente bereit ist, diese zu verarbeiten.
+## <a name="increased-reliability"></a>Höhere Zuverlässigkeit
+Warteschlangen werden von verteilten Anwendungen als temporärer Speicherort für Nachrichten verwendet, deren Zustellung an eine Zielkomponente noch aussteht. Die Quellkomponente kann eine Nachrichten zu der Warteschlange hinzufügen, und die Zielkomponenten können die Nachrichten nacheinander aus der Warteschlange abrufen, um sie zu verarbeiten. Warteschlangen erhöhen die Zuverlässigkeit des Nachrichtenaustauschs, da in Zeiten hoher Nachfrage Nachrichten einfach warten können, bis eine Zielkomponente bereit ist, diese zu verarbeiten.
 
 ## <a name="message-delivery-guarantees"></a>Übermittlungsgarantien für Nachrichten
 Warteschlangensysteme garantieren in der Regel die Zustellung jeder Nachricht in der Warteschlange an eine Zielkomponente. Allerdings können dabei unterschiedliche Ansätze verfolgt werden:
 
 - **At-Least-Once-Übermittlung** Bei diesem Ansatz wird jede Nachricht an mindestens eine der Komponenten übermittelt, die Nachrichten aus der Warteschlange abrufen. Unter Umständen ist es jedoch möglich, dass dieselbe Nachricht mehrfach übermittelt wird. Wenn beispielsweise zwei Instanzen einer Webanwendung Nachrichten aus einer Warteschlange abrufen, geht jede Nachricht in der Regel nur an eine dieser Instanzen. Wenn eine Instanz jedoch lange zum Verarbeiten der Nachrichten braucht, und ein Timeout abläuft, wird die Nachricht ggf. an die andere Instanz gesendet. Behalten Sie diese Möglichkeit im Hinterkopf, wenn Sie Ihren Web-App-Code entwickeln.
 
-- **At-Most-Once-Zustellung.** Bei diesem Ansatz wird nicht garantiert, dass jede Nachricht übermittelt wird. Es besteht daher die sehr geringe Wahrscheinlichkeit, dass eine Nachricht nicht ankommt. Allerdings kann es anders als bei der „At-Least-Once-Übermittlung“ nicht vorkommen, dass Nachrichten mehrmals übermittelt werden. Dies wird teilweise auch als „automatische Duplikaterkennung“ bezeichnet.
+- **At-Most-Once-Übermittlung** Bei diesem Ansatz wird nicht garantiert, dass jede Nachricht übermittelt wird. Es besteht daher die sehr geringe Wahrscheinlichkeit, dass eine Nachricht nicht ankommt. Allerdings kann es anders als bei der „At-Least-Once-Übermittlung“ nicht vorkommen, dass Nachrichten mehrmals übermittelt werden. Dies wird teilweise auch als „automatische Duplikaterkennung“ bezeichnet.
 
-- **First In, First Out (FIFO).** In den meisten Messaging-Systemen verlassen Nachrichten die Warteschlange in der Regel in der Reihenfolge, in der sie hinzugefügt wurden. Allerdings sollten Sie überprüfen, ob diese Reihenfolge eingehalten wird. Wenn Ihre verteilte Anwendung verlangt, dass Nachrichten genau in der richtigen Reihenfolge verarbeitet werden, müssen Sie ein Warteschlangensystem mit FIFO-Garantie verwenden.
+- **First In, First Out (FIFO).** In den meisten Messagingsystemen verlassen Nachrichten die Warteschlange in der Reihenfolge, in der sie hinzugefügt wurden. Allerdings sollten Sie überprüfen, ob diese Reihenfolge eingehalten wird. Wenn Ihre verteilte Anwendung verlangt, dass Nachrichten genau in der richtigen Reihenfolge verarbeitet werden, müssen Sie ein Warteschlangensystem mit FIFO-Garantie verwenden.
 
 ## <a name="transactional-support"></a>Transaktionsunterstützung
 Einige eng verwandte Nachrichtengruppen können Probleme verursachen, wenn die Übermittlung einer Nachricht in der Gruppe fehlschlägt.
@@ -38,6 +38,7 @@ In diesem Fall soll sichergestellt werden, dass entweder _alle_ Nachrichten oder
 Ihnen sollte klar sein, dass die Kommunikationsstrategie für diese Art von Architektur auf Nachrichten aufbauen sollte. Wenn dem so ist, können Sie entscheiden, ob Sie Azure Storage Queues oder Azure Service Bus verwenden möchten. Beide Dienste können verwendet werden, um Nachrichten zu speichern und an Ihre Komponenten zuzustellen. Beide weisen geringfügig unterschiedliche Funktionsmerkmale auf. Das heißt, Sie können sich für einen entscheiden oder beide verwenden. Welche Sie auswählen, hängt von dem zu lösenden Problem ab.
 
 #### <a name="choose-service-bus-queues-if"></a>Verwenden Sie Service Bus-Warteschlangen, wenn Folgendes zutrifft:
+
 - Sie benötigen eine At-Most-Once-Zustellungsgarantie.
 - Sie benötigen eine FIFO-Garantie.
 - Sie müssen Nachrichten in Transaktionen gruppieren.
@@ -45,11 +46,12 @@ Ihnen sollte klar sein, dass die Kommunikationsstrategie für diese Art von Arch
 - Sie müssen ein rollenbasiertes Zugriffsmodell für die Warteschlange bereitstellen.
 - Sie müssen Nachrichten mit einer Größe von 64 bis 256 KB verarbeiten.
 - Die Warteschlangengröße liegt unter 80 GB.
-- Sie möchten in der Lage sein, Nachrichtenbatches zu veröffentlichen und zu verarbeiten.
+- Sie möchten Nachrichtenbatches veröffentlichen und nutzen können.
 
-Queue Storage verfügt über weniger Features. Wenn dies aber für Ihre Anforderungen ausreichend, ist es deutlich einfacher für Sie, wenn Sie diesen Dienst wählen. Außerdem stellt er die bessere Lösung dar, wenn Ihre App die folgenden Anforderungen stellt:
+Queue Storage bietet etwas weniger Features. Sofern dies allerdings für Ihre Anforderungen ausreicht, ist es deutlich einfacher für Sie, wenn Sie diesen Dienst wählen. Er stellt außerdem die bessere Lösung dar, wenn Ihre App eine der folgenden Anforderungen hat.
 
 #### <a name="choose-queue-storage-if"></a>Verwenden Sie Queue Storage, wenn Folgendes zutrifft:
+
 - Sie benötigen serverseitige Protokolle aller Nachrichten, die die Warteschlange passieren.
 - Sie gehen davon aus, dass die Größe der Warteschlange 80 GB überschreitet.
 - Sie möchten den Verarbeitungsfortschritt einer Nachricht von der Anwendung innerhalb der Warteschlange nachverfolgen lassen.
@@ -58,4 +60,4 @@ Queue Storage verfügt über weniger Features. Wenn dies aber für Ihre Anforder
 
 Eine Warteschlange ist ein einfacher temporärer Speicherort für Nachrichten, die zwischen Komponenten einer verteilten Anwendung gesendet werden. Mit Warteschlangen können Sie Nachrichten organisieren und unvorhersehbare Nachfragespitzen bewältigen.
 
-Verwenden Sie Azure Storage-Warteschlangen, wenn Sie ein einfaches und leicht zu codierendes Warteschlangensystem wünschen. Nutzen Sie für anspruchsvollere Anforderungen Service Bus-Warteschlangen.
+Verwenden Sie Azure Storage-Warteschlangen, wenn Sie ein einfaches und leicht zu programmierendes Warteschlangensystem wünschen. Nutzen Sie für anspruchsvollere Anforderungen Service Bus-Warteschlangen.

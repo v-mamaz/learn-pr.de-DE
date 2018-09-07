@@ -98,8 +98,8 @@ Häufig reicht es nicht, wenn der Computer ausgeführt wird. Für die Bereitstel
 
 Es werden in der Regel zwei Konfigurationsstrategien angewendet, die als Bestandteil der eigentlichen Konfiguration der VM selbst angesehen werden. Beide haben sowohl Vor- als auch Nachteile:
 
-* Benutzerdefinierte Images
-* Skripterstellung nach der Bereitstellung
+- Benutzerdefinierte Images
+- Skripterstellung nach der Bereitstellung
 
 Benutzerdefinierte Images werden erstellt, indem erst ein virtueller Computer bereitgestellt und dann eine Software auf der ausgeführten Instanz konfiguriert oder installiert wird. Wenn die Konfigurationen ohne Fehler durchgeführt wurde, kann der Computer heruntergefahren werden, und es wird über die VM ein Image erstellt. Das Image kann als Basis für andere neue virtuelle Computer verwendet werden. Wenn Sie mit benutzerdefinierten Images arbeiten, kann die Bereitstellung schneller abgeschlossen werden. Dies liegt daran, dass keine zusätzliche Konfiguration mehr nötig ist, sobald ein virtueller Computer einmal bereitgestellt wurde und ausgeführt wird. Wenn es Ihnen wichtig ist, dass Bereitstellungen schnell abgeschlossen werden, sollten Sie sich näher mit benutzerdefinierten Images auseinandersetzen.
 
@@ -114,12 +114,15 @@ Das Automatisieren der Bereitstellung von Ressourcen kann einen großen Vorteil 
 Auch wenn Ihre Lösungen einmal funktionieren und ausgeführt werden, gibt es trotzdem noch weitere Vorgänge, die automatisiert werden können. Wenn Sie diese mit Azure Automation ausführen, gibt es weniger manuelle Workloads und Konfigurationen und Updates für Computeressourcen können verwaltet werden. Freigegebene Ressourcen wie Zeitpläne, Anmeldeinformationen und Zertifikate werden zentralisiert, und es wird ein Framework zum Ausführen jeder beliebigen Azure-Aufgabe bereitgestellt.
 
 Für Ihre Arbeit mit Lamna Healthcare umfasst dies möglicherweise Folgendes:
+
 - Regelmäßiges Suchen nach Datenträgern für Datenträger, die nicht mehr verwendet werden
 - Installieren der neusten Sicherheitspatches auf VMs
 - Suchen nach und Herunterfahren von virtuellen Computern außerhalb der offiziellen Geschäftszeiten
 - Tägliches Ausführen von Berichten und Erstellen eines Dashboards für die Geschäftsleitung
 
-![Automatisieren des VM-Betriebszustands](../media-draft/automation-vm-power-state.png)
+Nehmen Sie beispielsweise an, Sie möchten einen virtuellen Computer nur während der Geschäftszeiten ausführen. Sie können ein Skript schreiben, das den virtuellen Computer am Morgen startet und am Abend wieder herunterfährt. Sie können Azure Automation so konfigurieren, dass das Skript zu bestimmten Zeiten ausgeführt wird. Die folgende Abbildung zeigt die Rolle von Azure Automation in diesem Prozess.
+
+![Abbildung, die die Rolle von Azure Automation bei der Verwaltung eines sich wiederholenden Geschäftsprozesses zeigt.](../media/automation-vm-power-state.png)
 
 ## <a name="automating-development-environments"></a>Automatisieren von Entwicklungsumgebungen
 

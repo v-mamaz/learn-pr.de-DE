@@ -1,8 +1,8 @@
 Unter Überwachung versteht man das Erfassen und Analysieren von Daten, um die Leistung, Integrität und Verfügbarkeit Ihrer Geschäftsanwendung und der Ressourcen, von denen diese abhängt, zu bestimmen. Angenommen, Sie leiten ein Team, das für Ressourcen verantwortlich ist, die in Azure ausgeführt werden. Wie würden Sie gewährleisten, dass Sie Einblick in die Integrität Ihrer Systeme haben? Wer soll zuerst informiert werden, wenn ein Problem auftritt? Ihr Team oder Ihre Endbenutzer? Mithilfe einer effektiven Überwachungsstrategie können Sie sich auf die Integrität Ihrer Anwendung konzentrieren. Sie hilft Ihnen auch, die Betriebszeit zu erhöhen, da Sie proaktiv über kritische Probleme benachrichtigt werden und diese beheben können, bevor sie auftreten. 
 
-Im Hinblick auf Überwachung und Analyse in Azure können Dienste in die folgenden drei Hauptbereiche gebündelt werden: umfassende Anwendungsüberwachung, umfassende Infrastrukturüberwachung und Kernüberwachung. In dieser Einheit werden diese Bundles einzeln betrachtet und erläutert, wie Azure-Dienste diese Funktionen für Ihre Architektur aktivieren. Obwohl diese Dienste zusammengefasst wurden, gibt es dazwischen noch viele Integrationspunkte, die es ermöglichen, wichtige Datenpunkte für die Überwachung freizugeben.
+Im Hinblick auf Überwachung und Analyse in Azure können Dienste in die folgenden drei Hauptbereiche gebündelt werden: umfassende Anwendungsüberwachung, umfassende Infrastrukturüberwachung und Kernüberwachung. In dieser Einheit werden diese Bundles einzeln betrachtet und erläutert, wie Azure-Dienste diese Funktionen für Ihre Architektur aktivieren. Obwohl diese Dienste zusammengefasst wurden, gibt es dazwischen noch viele Integrationspunkte, die es ermöglichen, wichtige Datenpunkte für die Überwachung freizugeben. Die folgende Abbildung zeigt die verfügbaren Überwachungsdienste (zusammengefasst in logischen Gruppen).
 
-![Übersicht zur Überwachung](../media-draft/monitoring-products-overview.png)
+![Abbildung einer Liste der Überwachungs- und Analysedienste von Azure.](../media/monitoring-products-overview.png)
 
 ## <a name="core-monitoring"></a>Kernüberwachung
 
@@ -39,9 +39,9 @@ Wenn es um das Thema Überwachung geht, denkt man in erster Linie an die aktuell
 
 Die zuvor behandelten Überwachungskomponenten bieten zwar wichtige Einblicke, sie sind jedoch nur auf die Azure-Fabric-Ebene beschränkt. Für häufig verwendete IaaS-Workloads können mehr Metrik- und Diagnoseinformationen vom Netzwerk oder den tatsächlichen Betriebssystemen gesammelt werden. Wenn Sie Informationen aus SQL Server entnehmen, um eine fehlerfreie Konfiguration sicherzustellen, freien Speicherplatz auf allen Servern in Ihrer Umgebung analysieren oder Netzwerkabhängigkeiten zwischen Ihren Systemen und Diensten visualisieren möchten, kann Ihnen Log Analytics helfen.
 
-Wenn Sie eine Überwachungsstrategie entwerfen, ist es wichtig, sämtliche Komponenten zur Anwendungskette hinzuzufügen, damit Ereignisse auf verschiedenen Servern und Ressourcen korrelieren können. Dienste, die Azure Monitor unterstützen, können ganz leicht so konfiguriert werden, dass sie ihre Daten an einen Log Analytics-Arbeitsbereich zu senden. Virtuelle Computer (sowohl in der Cloud als auch lokal) können über einen Agent verfügen, der installiert ist, um Daten an Log Analytics zu senden. Sie können benutzerdefinierte Daten über die Log Analytics-API an Log Analytics übermitteln.  
+Wenn Sie eine Überwachungsstrategie entwerfen, ist es wichtig, sämtliche Komponenten zur Anwendungskette hinzuzufügen, damit Ereignisse auf verschiedenen Servern und Ressourcen korrelieren können. Dienste, die Azure Monitor unterstützen, können ganz leicht so konfiguriert werden, dass sie ihre Daten an einen Log Analytics-Arbeitsbereich zu senden. Virtuelle Computer (sowohl in der Cloud als auch lokal) können über einen Agent verfügen, der installiert ist, um Daten an Log Analytics zu senden. Sie können benutzerdefinierte Daten über die Log Analytics-API an Log Analytics übermitteln. Die folgende Abbildung zeigt, wie Log Analytics als zentraler Hub für die Datenüberwachung fungiert. Log Analytics empfängt Überwachungsdaten von Ihren Azure-Ressourcen und stellt sie Consumern zur Analyse oder Visualisierung zur Verfügung.
 
-![Sammeln von Daten](../media-draft/collecting-data.png)
+![Abbildung der Rolle von Log Analytics bei der Ressourcenüberwachung.](../media/collecting-data.png)
 
 Mit diesen Daten in Log Analytics können Sie die Rohdaten zur Problembehandlung, Ermittlung der Grundursache und Überprüfung abfragen. Für einige bekannte Dienste (SQL Server, Azure Active Directory) gibt es Verwaltungslösungen, die Überwachungsdaten visualisieren und mithilfe von bewährten Methoden Konformität gewährleisten.
 
@@ -53,9 +53,9 @@ Es ist wichtig, dass Sie nachvollziehen können, was die Kerndienste und die Inf
 
 Dabei unterstützt Sie Azure Application Insights. Application Insights umfasst Funktionen zur Sammlung von Telemetriedaten, zu Abfragen und Visualisierungen. Es sind beinahe keine Codeänderungen erforderlich. Sie müssen nur ein kleines Instrumentierungspaket in Ihrer Anwendung installieren. Application Insights arbeitet plattformübergreifend und unterstützt .NET, Node.js oder Java.
 
-Sogar die vermeintlich einfache Überprüfung des Zustands der Antwortzeit einer Anwendung kann Schwierigkeiten darstellen, wenn währenddessen Probleme behoben werden sollen. Ist der Webserver überladen? Handelt es sich um eine bestimmte SQL-Abfrage, die nicht optimiert wurde? Arbeitet die API, die Sie aufrufen, langsamer als sonst? Lösungen zur Verwaltung der Anwendungsleistung können Ihnen dabei helfen, die tatsächlichen Probleme zu ermitteln, die mithilfe einer einfachen Überwachungsmetrik nicht erkannt werden würden.
+Sogar die vermeintlich einfache Überprüfung des Zustands der Antwortzeit einer Anwendung kann Schwierigkeiten darstellen, wenn währenddessen Probleme behoben werden sollen. Ist der Webserver überladen? Handelt es sich um eine bestimmte SQL-Abfrage, die nicht optimiert wurde? Arbeitet die API, die Sie aufrufen, langsamer als sonst? Lösungen zur Verwaltung der Anwendungsleistung können Ihnen dabei helfen, die tatsächlichen Probleme zu ermitteln, die mithilfe einer einfachen Überwachungsmetrik nicht erkannt werden würden. Der folgende Screenshot zeigt eine grafische Darstellung der Leistungsdetails einer Anwendung aus Azure Application Insights.
 
-![Leistung von Application Insights](../media-draft/perfmetrics.png)
+![Screenshot der Benutzeroberfläche von Azure Application Insights.](../media/perfmetrics.png)
 
 Mithilfe einer Lösung zur Überwachung der Anwendungsleistung können Sie die Auslastung, die Leistung und die Verfügbarkeit von Anwendungen überwachen und so schneller reagieren, wenn Probleme auftreten. Diese Lösungen sollten Teil jeder Überwachungsstrategie sein.
 
