@@ -1,0 +1,11 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.2-create-web-app-bot
+title: Create an Azure web app bot
+metadata:
+  title: Create an Azure web app bot
+  description: Create an Azure web app bot
+# TODO: Consider Azure Portal Interactivity
+# interactive: azure-portal
+durationInMinutes: 10
+content: |
+  [!include[](includes/2-create-web-app-bot.md)]
