@@ -1,0 +1,10 @@
+### YamlMime:ModuleUnit
+uid: learn.create-linux-vm-in-azure.4-exercise-create-a-vm
+title: Create a Linux virtual machine with the Azure portal
+metadata:
+  title: Create a Linux virtual machine with the Azure portal
+  description: Create a Linux virtual machine with the Azure portal
+durationInMinutes: 20
+# TODO: interactive: azure-portal
+content: |
+  [!include[](includes/4-exercise-create-a-vm.md)]

@@ -1,0 +1,9 @@
+### YamlMime:ModuleUnit
+uid: learn.create-linux-vm-in-azure.2-create-a-linux-virtual-machine
+title: Create a Linux virtual Machine in Azure
+metadata:
+  title: Create a Linux virtual machine in Azure
+  description: Create a Linux virtual machine in Azure
+durationInMinutes: 10
+content: |
+  [!include[](includes/2-create-a-linux-virtual-machine.md)]

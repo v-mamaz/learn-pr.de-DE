@@ -1,0 +1,9 @@
+### YamlMime:ModuleUnit
+uid: learn.create-linux-vm-in-azure.7-manage-vm
+title: Networking and security settings
+metadata:
+  title: Networking and security settings
+  description: Networking and security settings
+durationInMinutes: 10
+content: |
+  [!include[](includes/7-manage-vm.md)]

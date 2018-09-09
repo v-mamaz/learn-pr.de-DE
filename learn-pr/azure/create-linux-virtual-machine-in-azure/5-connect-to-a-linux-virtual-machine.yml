@@ -1,0 +1,9 @@
+### YamlMime:ModuleUnit
+uid: learn.create-linux-vm-in-azure.5-connect-to-a-linux-virtual-machine
+title: Azure virtual machines IP addresses and SSH options
+metadata:
+  title: Azure virtual machines IP addresses and SSH options
+  description: Azure virtual machines IP addresses and SSH options
+durationInMinutes: 10
+content: |
+  [!include[](includes/5-connect-to-a-linux-virtual-machine.md)]
