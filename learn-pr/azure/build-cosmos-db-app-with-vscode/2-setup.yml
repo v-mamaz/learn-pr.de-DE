@@ -1,0 +1,9 @@
+### YamlMime:ModuleUnit
+uid: learn.cosmos-db-app-with-vscode.2-setup
+metadata:
+  title: Set up your app in Visual Studio Code
+  description: Set up your app in Visual Studio Code
+title: Set up your app in Visual Studio Code
+durationInMinutes: 15
+content: |
+  [!include[](includes/2-setup.md)]

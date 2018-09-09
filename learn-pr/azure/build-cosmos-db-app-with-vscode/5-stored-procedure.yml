@@ -1,0 +1,11 @@
+### YamlMime:ModuleUnit
+uid: learn.cosmos-db-app-with-vscode.5-stored-procedure
+metadata:
+  title: Create and run stored procedures from your app
+  description: Create and run stored procedures from your app
+# TODO:Add Azure Portal Interactivity
+# interactive: azure-portal
+title: Create and run stored procedures from your app
+durationInMinutes: 7
+content: |
+  [!include[](includes/5-stored-procedure.md)]
