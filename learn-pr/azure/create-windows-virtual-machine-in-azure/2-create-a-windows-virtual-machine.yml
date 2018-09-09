@@ -1,0 +1,9 @@
+### YamlMime:ModuleUnit
+uid: learn.create-a-windows-vm-in-azure.2-create-a-windows-virtual-machine
+title: Windows virtual machines in Azure
+metadata:
+  title: Windows virtual machines in Azure
+  description: Windows virtual machines in Azure
+durationInMinutes: 5
+content: |
+  [!include[](includes/2-create-a-windows-virtual-machine.md)]
