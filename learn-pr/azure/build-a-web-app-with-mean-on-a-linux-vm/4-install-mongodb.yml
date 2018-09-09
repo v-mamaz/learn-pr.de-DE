@@ -1,0 +1,9 @@
+### YamlMime:ModuleUnit
+uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.4-install-mongodb
+title: Install MongoDB
+metadata:
+  title: Install MongoDB
+  description: Install MongoDB
+durationInMinutes: 5
+content: |
+  [!include[](includes/4-install-mongodb.md)]

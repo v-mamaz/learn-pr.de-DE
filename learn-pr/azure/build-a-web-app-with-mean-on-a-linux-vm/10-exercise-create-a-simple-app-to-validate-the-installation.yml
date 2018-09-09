@@ -1,0 +1,9 @@
+### YamlMime:ModuleUnit
+uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.10-exercise-create-a-simple-app-to-validate-the-installation
+title: Exercise - Create a simple app to validate the installation
+metadata:
+  title: Exercise - Create a simple app to validate the installation
+  description: Exercise - Create a simple app to validate the installation
+durationInMinutes: 10
+content: |
+  [!include[](includes/10-exercise-create-a-simple-app-to-validate-the-installation.md)]
