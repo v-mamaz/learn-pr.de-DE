@@ -1,0 +1,9 @@
+### YamlMime:ModuleUnit
+uid: learn.host-a-web-application-with-azure-web-apps.6-upload-your-code-to-azure
+title: Using deployment slots
+metadata:
+  title: Using deployment slots
+  description: Using deployment slots
+durationInMinutes: 10
+content: |
+  [!include[](includes/6-upload-your-code-to-azure.md)]

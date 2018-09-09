@@ -1,0 +1,9 @@
+### YamlMime:ModuleUnit
+uid: learn.host-a-web-application-with-azure-web-apps.4-using-asp.net-core-on-linux
+title: Using ASP.NET Core on Linux
+metadata:
+  title: Using ASP.NET Core on Linux
+  description: Using ASP.NET Core on Linux
+durationInMinutes: 10
+content: |
+  [!include[](includes/4-using-asp.net-core-on-linux.md)]
