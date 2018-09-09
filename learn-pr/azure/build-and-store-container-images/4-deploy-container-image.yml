@@ -1,0 +1,10 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-container-registry.deploy-image
+interactive: bash
+metadata:
+  title: Deploy images from Azure Container Registry
+  description: Deploy images from Azure Container Registry
+title: Deploy images from Azure Container Registry
+durationInMinutes: 20
+content: |
+  [!include[](includes/4-deploy-image.md)]
