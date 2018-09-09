@@ -1,0 +1,9 @@
+### YamlMime:ModuleUnit
+uid: learn.create-azure-storage-account.3-choose-your-account-settings
+title: Choose your account settings
+metadata:
+  title: Choose your account settings
+  description: Choose your account settings
+durationInMinutes: 7
+content: |
+  [!include[](includes/3-choose-your-account-settings.md)]
