@@ -1,0 +1,10 @@
+### YamlMime:ModuleUnit
+uid: learn.communicate-between-applications-with-azure-queue-storage.3-exercise-create-the-azure-storage-infrastructure
+title: Create a storage account
+metadata:
+  title: Create a storage account
+  description: Create a storage account
+interactive: bash-editor
+durationInMinutes: 10
+content: |
+  [!include[](includes/3-exercise-create-the-azure-storage-infrastructure.md)]
