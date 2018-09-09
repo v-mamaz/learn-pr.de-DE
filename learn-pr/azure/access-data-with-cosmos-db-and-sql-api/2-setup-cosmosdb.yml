@@ -1,0 +1,11 @@
+### YamlMime:ModuleUnit
+# Unit UIDs are manually created by the content author and should follow the format (repo).(module-short-name).(unit-short-name). Keep it easy on yourself and keep the unit-short-name the same as the unit YAML file name.
+uid: learn.access-data-with-cosmos-db-and-sql-api.2-setup-cosmosdb
+metadata:
+  title: Setup your Cosmos DB database and collection
+  description: Setup your Cosmos DB database and collection
+title: Setup your Cosmos DB database and collection
+durationInMinutes: 5
+interactive: bash
+content: |
+  [!include[](includes/2-setup-cosmosdb.md)]
