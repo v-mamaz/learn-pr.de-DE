@@ -1,0 +1,9 @@
+### YamlMime:ModuleUnit
+uid: learn.configure-the-network-for-your-virtual-machines.2-describe-azure-virtual-networking
+title: Describe Azure virtual networking
+metadata:
+  title: Describe Azure virtual networking
+  description: Describe Azure virtual networking
+durationInMinutes: 10
+content: |
+  [!include[](includes/2-describe-azure-virtual-networking.md)]
