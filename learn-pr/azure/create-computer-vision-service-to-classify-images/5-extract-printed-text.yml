@@ -1,0 +1,10 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.5-extract-printed-text
+interactive: bash
+title: Extracting printed text from images
+metadata:
+  title: Extracting printed text from images
+  description: Extracting printed text from images
+durationInMinutes: 10
+content: |
+  [!include[](includes/5-extract-printed-text.md)]

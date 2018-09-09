@@ -1,0 +1,10 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.4-generate-thumbnail
+interactive: bash
+title: Generating thumbnails
+metadata:
+  title: Generating thumbnails
+  description: Generating thumbnails
+durationInMinutes: 10
+content: |
+  [!include[](includes/4-generate-thumbnail.md)]

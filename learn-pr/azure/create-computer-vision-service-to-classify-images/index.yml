@@ -1,0 +1,24 @@
+### YamlMime:Module
+uid: learn.create-computer-vision-service
+metadata:
+  title: Create a Computer Vision service to identify images
+  description: Learn how to create a Computer Vision service to help identify and tag images
+title: Create a Computer Vision service to identify images
+summary: Learn how to create a Computer Vision service to help identify and tag images
+abstract: In this module, you will create a Computer Vision service. You will learn to leverage that service to help you identify, tag, and perform OCR on pictures sent by users. By learning about these concepts, you'll be able to build AI-enabled services within your own projects.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+units: 
+- learn.create-computer-vision-service.1-intro
+- learn.create-computer-vision-service.2-create-service
+- learn.create-computer-vision-service.3-analyze-images
+- learn.create-computer-vision-service.4-generate-thumbnail
+- learn.create-computer-vision-service.5-extract-printed-text
+- learn.create-computer-vision-service.6-extract-handwritten-text
+- learn.create-computer-vision-service.7-summary
+achievement: learn.create-computer-vision-service.badge

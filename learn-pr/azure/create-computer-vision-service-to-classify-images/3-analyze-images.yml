@@ -1,0 +1,10 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.3-analyze-images
+interactive: bash
+title: Analyzing images with Computer Vision
+metadata:
+  title: Analyzing images with Computer Vision
+  description: Analyzing images with Computer Vision
+durationInMinutes: 10
+content: |
+  [!include[](includes/3-analyze-images.md)]

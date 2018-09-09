@@ -1,0 +1,10 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.6-extract-handwritten-text
+interactive: bash
+title: Extracting handwritten text from images
+metadata:
+  title: Extracting handwritten text from images
+  description: Extracting handwritten text from images
+durationInMinutes: 10
+content: |
+  [!include[](includes/6-extract-handwritten-text.md)]
