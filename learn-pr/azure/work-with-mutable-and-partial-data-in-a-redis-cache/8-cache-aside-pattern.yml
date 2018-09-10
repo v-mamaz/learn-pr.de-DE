@@ -1,0 +1,9 @@
+### YamlMime:ModuleUnit
+uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.8-cache-aside-pattern
+title: Cache-aside pattern
+metadata:
+  title: Cache-aside pattern
+  description: Cache-aside pattern
+durationInMinutes: 10
+content: |
+  [!include[](includes/8-cache-aside-pattern.md)]

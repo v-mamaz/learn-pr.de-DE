@@ -1,0 +1,9 @@
+### YamlMime:ModuleUnit
+uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.4-data-expiration
+title: Data expiration
+metadata:
+  title: Data expiration
+  description: Data expiration
+durationInMinutes: 10
+content: |
+  [!include[](includes/4-data-expiration.md)]
