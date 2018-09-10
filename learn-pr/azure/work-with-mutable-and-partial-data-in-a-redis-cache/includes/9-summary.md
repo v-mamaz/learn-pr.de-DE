@@ -1,0 +1,5 @@
+In the module, we saw how Redis can help improve our application's performance in many ways. We first saw how transactions can be used to ensure that multiple operations are invoked together without being interrupted. We then saw how to use data expiration to help clear out data that is no longer being used. However, you can still sometimes have memory issues when using a cache and we talked about how eviction policies can be used to make room for new data. Finally, we looked at the cache-aside pattern to make sure your most common data is stored in a cache to help speed up the time required to retrieve it.
+
+# Cleanup
+
+Leaving your Redis cache running in Azure will incur costs against your subscription. You should remove it to avoid those charges. The easiest way to remove it is to delete the resource group it was created in. Remember though, when you delete a resource group it will delete everything inside of it. If you don't want to delete everything inside your resource group, you can delete the cache directly.
