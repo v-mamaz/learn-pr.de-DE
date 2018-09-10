@@ -1,0 +1,26 @@
+### YamlMime:ModuleUnit
+# Unit uids are manually created by the content author and should follow the format (repo).(module-short-name).(unit-short-name). Keep it easy on yourself and keep the unit-short-name the same as the unit YAML file name.
+uid: learn.chain-azure-functions-data-using-input-output-bindings.6-write-data-with-output-bindings-portal-lesson
+metadata:
+  title: Write data with output bindings
+  description: In this hands-on unit, we'll write data from our Azure Function to Cosmos DB with the help of an output binding. 
+  displayType: two-column
+  interactive: azure-portal
+title: Write data with output bindings
+durationInMinutes: 10
+content: |
+  [!include[](includes/6-write-data-with-output-bindings-portal-lesson.md)]
+tasks:
+- action: exists
+  environment: azure
+  hint: 'Please make sure that you have named the resource group "myResourceGroup" and it was added to the "eastus" location'
+  azure:
+    location: eastus
+- action: exists
+  environment: azure
+  azure:
+    resource:
+      type: Microsoft.Storage/storageAccounts
+      name: docsproxyppea427
+      tags:
+        triplecrown: true
