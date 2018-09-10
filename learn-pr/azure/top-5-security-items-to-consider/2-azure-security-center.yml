@@ -1,0 +1,9 @@
+### YamlMime:ModuleUnit
+uid: learn.top-5-security-items-to-consider.2-azure-security-center
+title: Azure Security Center
+metadata:
+  title: Azure Security Center
+  description: Azure Security Center
+durationInMinutes: 10
+content: |
+  [!include[](includes/2-azure-security-center.md)]

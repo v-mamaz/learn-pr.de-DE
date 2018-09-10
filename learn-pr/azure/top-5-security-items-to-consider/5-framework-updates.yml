@@ -1,0 +1,9 @@
+### YamlMime:ModuleUnit
+uid: learn.top-5-security-items-to-consider.5-framework-updates
+title: Framework Updates
+metadata:
+  title: Framework Updates
+  description: Framework Updates
+durationInMinutes: 10
+content: |
+  [!include[](includes/5-framework-updates.md)]
