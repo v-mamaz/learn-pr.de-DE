@@ -12,7 +12,7 @@ roles:
 - administrator
 - solution-architect
 products:
-- Azure
+- azure
 metadata:
   title: Einführung in Azure-Netzwerke
   description: Erfahren Sie mehr über die Grundlagen der Azure-Netzwerke und wie Azure-Netzwerke dabei helfen, die Resilienz zu verbessern und die Latenz zu verringern.

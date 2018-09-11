@@ -27,8 +27,6 @@ roles:
 - developer
 products:
 - azure
-- keyVault
-- appServiceWeb
 units:
 - learn.manage-secrets-with-azure-key-vault.1-introduction
 - learn.manage-secrets-with-azure-key-vault.2-what-is-key-vault

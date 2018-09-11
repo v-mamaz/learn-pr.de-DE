@@ -32,8 +32,6 @@ roles:
 - solution-architect
 products:
 - azure
-- azurePortal
-- resourceManager
 units:
 - principles-cloud-computing.1-motivation
 - principles-cloud-computing.2-what-is-cloud-computing

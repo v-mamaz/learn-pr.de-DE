@@ -19,7 +19,7 @@ levels:
 roles:
 - developer
 products:
-- Azure
+- azure
 units:
 - learn.intro-to-data-in-azure.1-introduction
 - learn.intro-to-data-in-azure.2-benefits-of-using-azure-to-store-data

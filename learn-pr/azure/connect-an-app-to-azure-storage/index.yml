@@ -19,7 +19,7 @@ levels:
 roles:
 - developer
 products:
-- Azure
+- azure
 units:
 - learn.connect-app-to-azure-storage.1-introduction
 - learn.connect-app-to-azure-storage.2-prepare-your-app-and-azure-storage-account

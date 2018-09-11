@@ -29,10 +29,8 @@ roles:
 - developer
 products:
 - azure
-- azureFunctions
-- azurePortal
-- storageQueue
-- storageExplorer
+- azure-functions
+- azure-prtal
 units:
 - execute-azure-function-with-triggers.1-introduction
 - execute-azure-function-with-triggers.2-determine-best-trigger

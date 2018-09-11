@@ -28,7 +28,7 @@ levels:
 roles:
 - solution-architect
 products:
-- Azure
+- azure
 achievement: learn.align-requirements-in-azure.badge
 units:
 - learn.align-requirements-in-azure.1-introduction

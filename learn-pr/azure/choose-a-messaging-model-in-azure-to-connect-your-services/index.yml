@@ -31,10 +31,6 @@ roles:
 - developer
 products:
 - azure
-- storageQueue
-- serviceBus
-- eventGrid
-- eventHubs
 units:
 - learn.choose-messaging-model.1-introduction
 - learn.choose-messaging-model.2-choose-whether-to-use-message-queues-or-events
