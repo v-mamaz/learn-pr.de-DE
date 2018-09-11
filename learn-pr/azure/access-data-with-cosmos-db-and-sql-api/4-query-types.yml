@@ -1,0 +1,29 @@
+### YamlMime:ModuleUnit
+uid: learn.access-data-with-cosmos-db-and-sql-api.4-query-types
+metadata:
+  title: <span data-ttu-id="46588-101">Abfragetypen</span><span class="sxs-lookup"><span data-stu-id="46588-101">Query types</span></span>
+  description: <span data-ttu-id="46588-102">Erfahren Sie, welche Arten von Abfragen Sie in Azure Cosmos DB zum Abrufen Ihrer Daten verwenden können.</span><span class="sxs-lookup"><span data-stu-id="46588-102">Learn what kinds of queries you can use in Azure Cosmos DB to retrieve your data.</span></span>
+  ms.openlocfilehash: ac566e569a81adeaf5e6b973f52b944f52682ade
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43795392"
+title: <span data-ttu-id="46588-103">Abfragetypen</span><span class="sxs-lookup"><span data-stu-id="46588-103">Query types</span></span>
+durationInMinutes: 10
+content: >
+  [!include[](includes/4-query-types.md)]
+quiz:
+  title: <span data-ttu-id="46588-104">Titel des Quiz</span><span class="sxs-lookup"><span data-stu-id="46588-104">Quiz Title</span></span>
+  questions:
+  - content: <span data-ttu-id="46588-105">Was ist die einzige erforderliche Klausel in einer SQL-Abfrage?</span><span class="sxs-lookup"><span data-stu-id="46588-105">What is the only required clause in a SQL query?</span></span>
+    choices:
+    - content: <span data-ttu-id="46588-106">SELECT p.productId FROM Products p ORDER BY p.productId ASC</span><span class="sxs-lookup"><span data-stu-id="46588-106">SELECT p.productId FROM Products p ORDER BY p.productId ASC</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="46588-107">Falsch, diese Klausel würde nur die Produkt-IDs in aufsteigender Reihenfolge zurückgeben.</span><span class="sxs-lookup"><span data-stu-id="46588-107">No, this would only return the product IDs in ascending order.</span></span>
+    - content: <span data-ttu-id="46588-108">SELECT p.id FROM Products p ORDER BY p.productId DESC</span><span class="sxs-lookup"><span data-stu-id="46588-108">SELECT p.id FROM Products p ORDER BY p.productId DESC</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="46588-109">Falsch, diese Klausel würde nur die ID in absteigender Reihenfolge zurückgeben.</span><span class="sxs-lookup"><span data-stu-id="46588-109">No, this would only return the ID in descending order</span></span>
+    - content: <span data-ttu-id="46588-110">SELECT p.productId, p.description FROM Products p ORDER BY p.productId DESC</span><span class="sxs-lookup"><span data-stu-id="46588-110">SELECT p.productId, p.description FROM Products p ORDER BY p.productId DESC</span></span>
+      isCorrect: true
+      incorrectExplanation: <span data-ttu-id="46588-111">Richtig, diese Klausel würde sowohl die Produkt-ID, als auch die Produktbeschreibung in aufsteigender Reihenfolge zurückgeben.</span><span class="sxs-lookup"><span data-stu-id="46588-111">Correct, this would return both the product ID and product description in ascending order.</span></span>
