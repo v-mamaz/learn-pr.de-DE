@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.migrate-sql-server-relational-data.1-introduction
+title: <span data-ttu-id="42177-101">Migrieren von relationalen Daten zu einer Azure SQL-Datenbank</span><span class="sxs-lookup"><span data-stu-id="42177-101">Migrate your relational data to an Azure SQL database</span></span>
+metadata:
+  title: <span data-ttu-id="42177-102">Migrieren von relationalen Daten zu einer Azure SQL-Datenbank</span><span class="sxs-lookup"><span data-stu-id="42177-102">Migrate your relational data to an Azure SQL database</span></span>
+  description: <span data-ttu-id="42177-103">Migrieren von relationalen Daten zu einer Azure SQL-Datenbank</span><span class="sxs-lookup"><span data-stu-id="42177-103">Migrate your relational data to an Azure SQL database</span></span>
+  ms.openlocfilehash: 361a655b9b42bf157b61bc6caebf044e77c1768b
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43835040"
+durationInMinutes: 3
+content: '[!include[](includes/1-introduction.md)]'

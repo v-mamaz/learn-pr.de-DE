@@ -1,0 +1,40 @@
+### YamlMime:Module
+uid: learn.cosmos-db-app-with-vscode
+metadata:
+  title: Erstellen einer .NET Core-App für Azure Cosmos DB in Visual Studio Code
+  description: Erfahren Sie, wie Sie eine .NET Core-Anwendung zum Speichern und Abfragen von Daten in Azure Cosmos DB mithilfe von Visual Studio Code erstellen.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 3ab3f36b260d45addb159c1faf0543842a7aca8e
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43847604"
+title: Erstellen einer .NET Core-App für Azure Cosmos DB in Visual Studio Code
+summary: Erfahren Sie, wie Sie eine Datenbank-App zum Speichern und Abfragen von Daten in Azure Cosmos DB mithilfe von Visual Studio Code erstellen.
+abstract: >
+  In diesem Modul wird Folgendes thematisiert:
+
+  - Erstellen einer Anwendung zum Speichern und Abfragen von Daten in Azure Cosmos DB
+
+  - Verwenden Sie das integrierte Terminal in Visual Studio Code, um schnell eine Konsolenanwendung zu erstellen.
+
+  - Fügen Sie mithilfe der Azure Cosmos DB-Erweiterung für Visual Studio Code die Azure Cosmos DB-Funktionalität hinzu.
+prerequisites: >
+  - [Visual Studio Code](https://code.visualstudio.com/) muss installiert sein.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- azure-cosmos-db
+- vs-code
+units:
+- learn.cosmos-db-app-with-vscode.1-introduction
+- learn.cosmos-db-app-with-vscode.2-setup
+- learn.cosmos-db-app-with-vscode.3-crud-operations
+- learn.cosmos-db-app-with-vscode.4-query
+- learn.cosmos-db-app-with-vscode.5-stored-procedure
+achievement: learn.cosmos-db-app-with-vscode.badge

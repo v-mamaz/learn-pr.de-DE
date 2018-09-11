@@ -1,0 +1,46 @@
+### YamlMime:ModuleUnit
+uid: learn.design-a-great-azure-architecture.3-design-for-security
+title: <span data-ttu-id="32b1f-101">Sicherheitsorientierter Entwurf</span><span class="sxs-lookup"><span data-stu-id="32b1f-101">Design for security</span></span>
+metadata:
+  title: <span data-ttu-id="32b1f-102">Sicherheitsorientierter Entwurf</span><span class="sxs-lookup"><span data-stu-id="32b1f-102">Design for security</span></span>
+  description: <span data-ttu-id="32b1f-103">Sicherheitsorientierter Entwurf</span><span class="sxs-lookup"><span data-stu-id="32b1f-103">Design for security</span></span>
+  ms.openlocfilehash: 394af78966bfde3b2c82e2af17a10bb8680fc659
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43847247"
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-design-for-security.md)]
+quiz:
+  title: '<span data-ttu-id="32b1f-104">Wissenstest: Sicherheitsorientierter Entwurf</span><span class="sxs-lookup"><span data-stu-id="32b1f-104">Knowledge check - Design for security</span></span>'
+  questions:
+  - content: <span data-ttu-id="32b1f-105">Für welche der folgenden Datentypen sollten möglicherweise Sicherheitsmaßnahmen vorgesehen werden?</span><span class="sxs-lookup"><span data-stu-id="32b1f-105">Which of the following types of data may need to have security protections?</span></span>
+    choices:
+    - content: <span data-ttu-id="32b1f-106">Kundendaten, die persönliche Informationen enthalten.</span><span class="sxs-lookup"><span data-stu-id="32b1f-106">Customer data that contains personal information</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="32b1f-107">Es ist wichtig, entsprechende Schutzmaßnahmen für diese Daten bereitzustellen. Dies ist aber nicht die einzige richtige Wahl.</span><span class="sxs-lookup"><span data-stu-id="32b1f-107">It is important to provide proper security protections for this data, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="32b1f-108">Finanzdaten, die Geschäftsvorgänge unterstützen.</span><span class="sxs-lookup"><span data-stu-id="32b1f-108">Financial data supporting business operations</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="32b1f-109">Es ist wichtig, entsprechende Schutzmaßnahmen für diese Daten bereitzustellen. Dies ist aber nicht die einzige richtige Wahl.</span><span class="sxs-lookup"><span data-stu-id="32b1f-109">It is important to provide proper security protections for this data, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="32b1f-110">Daten, die geistiges Eigentum enthalten.</span><span class="sxs-lookup"><span data-stu-id="32b1f-110">Data containing intellectual property</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="32b1f-111">Es ist wichtig, entsprechende Schutzmaßnahmen für diese Daten bereitzustellen. Dies ist aber nicht die einzige richtige Wahl.</span><span class="sxs-lookup"><span data-stu-id="32b1f-111">It is important to provide proper security protections for this data, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="32b1f-112">Für alle oben genannten Datentypen sind möglicherweise Sicherheitsmaßnahmen erforderlich.</span><span class="sxs-lookup"><span data-stu-id="32b1f-112">All of the above may need security protections</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="32b1f-113">Alle oben genannten Datentypen können möglicherweise zusätzliche Sicherheitsvorkehrungen erfordern.</span><span class="sxs-lookup"><span data-stu-id="32b1f-113">All of the above may merit additional security protections.</span></span>
+  - content: <span data-ttu-id="32b1f-114">Welches der folgenden Szenarien ist ein Beispiel für einen Angriff, der in der Umkreisebene auftreten kann?</span><span class="sxs-lookup"><span data-stu-id="32b1f-114">Which of the following is an example of an attack you might see at the perimeter layer?</span></span>
+    choices:
+    - content: <span data-ttu-id="32b1f-115">Offengelegte Anmeldeinformationen, die online gepostet werden.</span><span class="sxs-lookup"><span data-stu-id="32b1f-115">Exposed credentials posted online</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="32b1f-116">Offengelegte Anmeldeinformationen stellen ein großes Risiko für eine Organisation dar, sie sind aber kein Umkreisangriff.</span><span class="sxs-lookup"><span data-stu-id="32b1f-116">Exposed credentials are a huge risk to an organization, but are not a permiter attack.</span></span>
+    - content: <span data-ttu-id="32b1f-117">Ein SYN Flood-Angriff.</span><span class="sxs-lookup"><span data-stu-id="32b1f-117">A SYN flood attack</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="32b1f-118">SYN Flood-Angriffe sind Denial-of-Service-Angriffe, die häufig im Umkreisnetzwerk auftreten.</span><span class="sxs-lookup"><span data-stu-id="32b1f-118">SYN flood attacks are a type of denial-of-service attack that are commonly seen on the network perimeter.</span></span>
+    - content: <span data-ttu-id="32b1f-119">Die nicht autorisierte Verwendung von Zugangscodes, um Einlass in ein Datencenter zu erlangen.</span><span class="sxs-lookup"><span data-stu-id="32b1f-119">Door drafting to get into a datacenter</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="32b1f-120">Die nicht autorisierte Verwendung von Zugangscodes ist ein Angriff der physischen Ebene.</span><span class="sxs-lookup"><span data-stu-id="32b1f-120">Door drafting is a physical layer attack.</span></span>
+    - content: <span data-ttu-id="32b1f-121">Ransomware, die die Datenträger eines virtuellen Computers verschlüsselt</span><span class="sxs-lookup"><span data-stu-id="32b1f-121">Ransomware that encrypts the disks of a virtual machine</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="32b1f-122">Ransomwareangriffe sind Angriffe der VM-/Computeebene.</span><span class="sxs-lookup"><span data-stu-id="32b1f-122">Ransomware attacks are a VM/compute layer attack.</span></span>
