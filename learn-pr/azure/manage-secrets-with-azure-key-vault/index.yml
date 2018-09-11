@@ -27,11 +27,12 @@ roles:
 - developer
 products:
 - azure
+- azure-key-vault
 units:
 - learn.manage-secrets-with-azure-key-vault.1-introduction
 - learn.manage-secrets-with-azure-key-vault.2-what-is-key-vault
 - learn.manage-secrets-with-azure-key-vault.3-creating-vaults-storing-secrets
-- learn.manage-secrets-with-azure-key-vault.4-authentication-with-managed-service-identity
+- learn.manage-secrets-with-azure-key-vault.4-authentication-with-managed-identities-for-azure-resources
 - learn.manage-secrets-with-azure-key-vault.5-access-secrets-from-web-app
 - learn.manage-secrets-with-azure-key-vault.6-configure-deploy-run-azure
 - learn.manage-secrets-with-azure-key-vault.7-summary
