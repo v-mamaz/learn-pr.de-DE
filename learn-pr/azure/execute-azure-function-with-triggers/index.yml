@@ -30,7 +30,7 @@ roles:
 products:
 - azure
 - azure-functions
-- azure-prtal
+- azure-portal
 units:
 - execute-azure-function-with-triggers.1-introduction
 - execute-azure-function-with-triggers.2-determine-best-trigger
