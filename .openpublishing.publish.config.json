@@ -46,9 +46,10 @@
     {
       "path_to_root": "_repo.en-us",
       "url": "https://github.com/MicrosoftDocs/learn-pr",
-      "branch": "release-ignite18-loc",
+      "branch": "live",
       "branch_mapping": {
-        "master": "release-ignite18-loc"
+        "live": "live",
+        "master": "master"
       }
     }
   ],
