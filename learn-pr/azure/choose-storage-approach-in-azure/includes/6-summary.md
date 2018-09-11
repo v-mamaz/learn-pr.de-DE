@@ -1,2 +1,0 @@
-In diesem Modul haben Sie gelernt, wie Sie Daten klassifizieren, wie Sie überprüfen, was mit den Daten und Leistungsanforderungen geschieht, und wie Sie bestimmen, ob Ihre Daten Transaktionen erfordern. Dank des im Onlinehändlerszenario angeeigneten Wissens über bestimmte Datensätze wissen Sie nun, weshalb sich einige Azure-Dienste besser eignen als andere. Sie können das Gelernte nun auf zukünftige Projekte bei der Wahl des gewünschten Diensts für die Datenspeicherung anwenden.
-

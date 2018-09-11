@@ -1,9 +1,0 @@
-### YamlMime:ModuleUnit
-uid: learn.top-5-security-items-to-consider.6-safe-dependencies
-title: Safe Dependencies
-metadata:
-  title: Safe Dependencies
-  description: Safe Dependencies
-durationInMinutes: 10
-content: |
-  [!include[](includes/6-safe-dependencies.md)]

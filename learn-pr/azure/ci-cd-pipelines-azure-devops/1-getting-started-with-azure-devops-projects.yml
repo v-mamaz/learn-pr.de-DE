@@ -1,9 +1,0 @@
-### YamlMime:ModuleUnit
-uid: learn.ci-cd-pipelines-azure-devops.1-getting-started-with-azure-devops-projects
-title: Create an Azure DevOps project
-metadata:
-  title: Create an Azure DevOps project
-  description: Create an Azure DevOps project in the language of your choice
-durationInMinutes: 20
-content: |
-  [!include[](includes/1-getting-started-with-azure-devops-projects.md)]

@@ -1,9 +1,0 @@
-### YamlMime:ModuleUnit
-uid: learn.the-mojifier.7-create-the-mojifyimage-azure-function
-metadata:
-  title: Create the MojifyImage Azure Function
-  description: Create a web app which will return a mojified image.
-title: Create the MojifyImage Azure Function
-durationInMinutes: 10
-content: |
-  [!include[](includes/7-create-the-mojifyimage-azure-function.md)]

@@ -1,9 +1,0 @@
-### YamlMime:ModuleUnit
-uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.2-transactions-in-redis
-title: Transactions in Redis
-metadata:
-  title: Transactions in Redis
-  description: Transactions in Redis
-durationInMinutes: 10
-content: |
-  [!include[](includes/2-transactions-in-redis.md)]
