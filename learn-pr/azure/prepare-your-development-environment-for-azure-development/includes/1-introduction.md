@@ -5,6 +5,7 @@ Azure bietet Ihnen die Freiheit, Ihre bevorzugte IDE zu nutzen, aus einer große
 In diesem Modul erfahren Sie, wie Sie Ihre Entwicklungsumgebung in häufig verwendeten IDEs einrichten.
 
 ## <a name="learning-objectives"></a>Lernziele
+
 In diesem Modul
 
 - richten Sie Visual Studio Code ein,

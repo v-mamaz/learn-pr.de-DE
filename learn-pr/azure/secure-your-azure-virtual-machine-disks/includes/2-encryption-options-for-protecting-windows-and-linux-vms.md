@@ -1,51 +1,51 @@
-Suppose your company's trading partners have security policies who require their trading data is protected with strong encryption. You use a B2B application that runs on your Windows servers, and stores data on the server data disk. Now that you're transitioning to the cloud, you need to demonstrate to your trading partners that data stored on your Azure VMs cannot be accessed by unauthorized users, devices, or applications. You need to decide on a strategy for implementing encryption of your B2B data.
+Angenommen, die Handelspartner Ihres Unternehmens haben Sicherheitsrichtlinien, die verlangen, dass ihre Handelsdaten durch eine starke Verschlüsselung geschützt sind. Sie verwenden eine B2B-Anwendung, die auf Ihren Windows-Servern ausgeführt wird, und Daten auf dem Serverdatenträger speichert. Jetzt, da Sie in die Cloud wechseln, müssen Sie Ihren Handelspartnern nachweisen, dass auf die auf Ihren Azure-VMs gespeicherten Daten nicht von unbefugten Benutzern, Geräten oder Anwendungen zugegriffen werden kann. Sie müssen sich für eine Strategie für die Implementierung der Verschlüsselung Ihrer B2B-Daten entscheiden.
 
-Your audit requirements dictate that your encryption keys be managed in-house, and not by any third party. you're also concerned that the performance and manageability of your Azure-based servers is maintained. So before you implement encryption, you want to be sure that there won't be a performance hit.
+Ihre Anforderungen an die Überprüfung schreiben dabei vor, dass Ihre Verschlüsselungsschlüssel im Hause verwaltet werden, nicht von einem Drittanbieter. Es ist Ihnen außerdem wichtig, dass die Leistung und Verwaltbarkeit Ihrer Azure-basierten Server erhalten bleibt. Bevor Sie also Verschlüsselung implementieren, möchten Sie sicherstellen, dass es nicht zu einem Leistungseinbruch kommt.
 
-## What is encryption?
+## <a name="what-is-encryption"></a>Was ist Verschlüsselung?
 
-Encryption is about converting meaningful information into something that appears meaningless, such as a random sequence of letters and numbers. The process of encryption uses some form of **key** as part of the algorithm that creates the encrypted data. A key is also needed to perform the decryption. Keys may be **_symmetric_**, where the same key is used for encryption and decryption, or **_asymmetric_**, where different keys are used. An example of the latter is the **public-private** key pairs used in digital certificates.
+Bei Verschlüsselung geht es um die Konvertierung bedeutungshaltiger Informationen in etwas, das bedeutungslos erscheint, wie eine zufällige Abfolge von Buchstaben und Ziffern. Der Vorgang der Verschlüsselung verwendet eine bestimmte Form von **Schlüssel** als Teil des Algorithmus, der die verschlüsselten Daten erstellt, und zum Durchführen der Entschlüsselung wird ebenfalls ein Schlüssel benötigt. Schlüssel können **_symmetrisch_** sein, dann wird für die Verschlüsselung und die Entschlüsselung der gleiche Schlüssel verwendet, oder **_asymmetrisch_**, dann werden verschiedene Schlüssel verwendet, wie etwa bei den **öffentlich-privaten** Schlüsselpaaren, die in digitalen Zertifikaten verwendet werden.
 
-### Symmetric encryption
+### <a name="symmetric-encryption"></a>Symmetrische Verschlüsselung
 
-Algorithms that use symmetric keys, such as Advanced Encryption Standard (AES), are typically faster than public key algorithms, and are often used for protecting large data stores. Because there's only one key, procedures must be in place to prevent the key from becoming publicly known.
+Algorithmen, die symmetrische Schlüssel verwenden, wie etwa der Advanced Encryption Standard (AES), sind normalerweise schneller als Algorithmen mit einem öffentlichen Schlüssel und werden häufig für den Schutz großer Datenspeicher verwendet. Da es nur einen Schlüssel gibt, müssen Verfahren wirksam sein, die ein öffentliches Bekanntwerden des Schlüssels verhindern.
 
-### Asymmetric encryption
+### <a name="asymmetric-encryption"></a>Asymmetrische Verschlüsselung
 
-With asymmetric algorithms, only the private key member of the pair must be kept private and secure; as its name suggests, the public key can be made available to anyone without compromising the encrypted data. The downside of public key algorithms, however, is that they're much slower than symmetric algorithms, and cannot be used to encrypt large amounts of data.
+Bei asymmetrischen Algorithmen muss nur das private Schlüsselelement des Paars privat und sicher verwahrt werden; wie es der Name suggeriert, kann der öffentliche Schlüssel jedermann zur Verfügung gestellt werden, ohne dass die verschlüsselten Daten dadurch gefährdet würden. Der Nachteil öffentlicher Schlüsselalgorithmen besteht jedoch darin, dass sie viel langsamer als die symmetrischen Algorithmen sind und nicht zur Verschlüsselung großer Datenmengen verwendet werden können.
 
-## Key management
+## <a name="key-management"></a>Schlüsselverwaltung
 
-In Azure, your encryption keys can either be managed by either Microsoft or the customer. Often the demand for customer-managed keys comes from organizations that need to demonstrate compliance with HIPAA, or other regulations. Such compliance may require that access to keys is logged, and that regular key changes are made and recorded.
+In Azure können Ihre Verschlüsselungsschlüssel entweder von Microsoft oder vom Kunden verwaltet werden. Häufig kommt die Nachfrage nach vom Kunden verwalteten Schlüsseln von Organisationen, die ihre Konformität mit HIPAA oder anderen Bestimmungen nachweisen müssen. Diese Konformität kann es erforderlich machen, dass der Zugriff auf Schlüssel protokolliert wird und dass regelmäßige Änderungen des Schlüssels erfolgen, die ihrerseits erfasst werden.
 
-## Azure disk encryption technologies
+## <a name="azure-disk-encryption-technologies"></a>Azure-Technologien zur Datenträgerverschlüsselung
 
-The main encryption-based disk protection technologies for Azure VMs are:
+Die wichtigsten verschlüsselungsbasierten Technologien zum Schutz von Datenträgern für Azure-VMs sind:
 
-- Storage Service Encryption (SSE)
+- Speicherdienstverschlüsselung (Storage Service Encryption, SSE)
 - Azure Disk Encryption (ADE)
 
-### Storage Service Encryption
+### <a name="storage-service-encryption"></a>Speicherdienstverschlüsselung
 
-Azure Storage Service Encryption (SSE) is an encryption service built into Azure that it used to protect data at rest. The Azure storage platform automatically encrypts data before it's stored to several storage services, including Azure Managed Disks. Encryption is enabled by default using 256-bit AES encryption, and is managed by the storage account administrator.
+Azure-Speicherdienstverschlüsselung (SSE) ist ein in Azure integrierter Verschlüsselungsdienst, der zum Schutz von ruhenden Daten verwendet wird. Die Azure-Speicherplattform verschlüsselt Daten automatisch, bevor sie auf verschiedenen Speicherdiensten gespeichert werden, darunter Azure Managed Disks. Verschlüsselung mit 256-Bit-AES-Verschlüsselung ist standardmäßig aktiviert und wird vom Administrator des Speicherkontos verwaltet.
 
-### Azure Disk Encryption
+### <a name="azure-disk-encryption"></a>Azure Disk Encryption
 
-Azure Disk Encryption (ADE) is managed by the VM owner. It controls the encryption of Windows and Linux VM-controlled disks, using **BitLocker** on Windows VMs and **DM-Crypt** on Linux VMs. BitLocker Drive Encryption is a data protection feature that integrates with the operating system, and addresses the threats of data theft or exposure from lost, stolen, or inappropriately decommissioned computers. Similarly, DM-Crypt encrypts data at rest for Linux before writing to storage.
+Azure Disk Encryption (ADE) wird vom Besitzer der VM verwaltet und steuert die Verschlüsselung von Datenträgern, die der Steuerung durch virtuelle Windows- oder Linux-VMs unterliegen, und verwendet dazu **BitLocker** auf Windows-VMs und **DM-Crypt** auf Linux-VMs. Die BitLocker-Laufwerkverschlüsselung ist eine Datenschutzfunktion, die in das Betriebssystem integriert ist und der Bedrohung durch Datendiebstahl oder der Offenlegung durch verlorene, gestohlene oder unsachgemäß außer Betrieb gesetzte Computer entgegenwirkt. In ähnlicher Weise verschlüsselt DM-Crypt ruhende Daten für Linux vor dem Schreiben in den Speicher.
 
-ADE ensures that all data on VM disks are encrypted at rest in Azure storage, and ADE is required for VMs backed up to the Recovery Vault.
+ADE stellt sicher, dass alle Daten auf VM-Datenträgern verschlüsselt im Azure-Speicher ruhen, und ADE ist für VMs erforderlich, die im Recovery-Tresor gesichert werden.
 
-With ADE, VMs boot under customer-controlled keys and policies. ADE is integrated with Azure Key Vault for the management of these disk-encryption keys and secrets.
+Bei der Verwendung von ADE erfolgt der Start von VMs unter vom Kunden gesteuerten Schlüsseln und Richtlinien. ADE ist zum Zweck der Verwaltung dieser Datenträger-Verschlüsselungsschlüssel und -Geheimnisse in den Azure Key Vault integriert.
 
 > [!NOTE] 
-> ADE does not support the encryption of Basic tier VMs, and you cannot use an on-premises Key Management Service (KMS) with ADE.
+> ADE unterstützt nicht die Verschlüsselung von VMs im Basic-Tarif, und Sie können keinen lokalen Schlüsselverwaltungsdienst (Key Management Service, KMS) zusammen mit ADE verwenden.
 
-## When to use encryption?
+## <a name="when-to-use-encryption"></a>Wann soll Verschlüsselung verwendet werden?
 
-Computer data is at risk when it's in transit (transmitted across the internet or other network), and when it's at rest (saved to a storage device). The at-rest scenario is the primary concern when protecting data on Azure VM disks. For example, someone might download the Virtual Hard Disk (VHD) file associated with an Azure VM, and save it on their laptop. If the VHD is not encrypted, the contents of the VHD are potentially accessible to anyone who can mount the VHD file on their computer.
+Computerdaten sind bei der Übermittlung (Übermittlung über das Internet oder andere Netzwerke) und in Ruhe (auf einem Speichergerät gespeichert) gefährdet. Dem Szenario der ruhenden Daten gilt beim Schutz von Daten auf Azure VM-Datenträgern das Hauptaugenmerk. Beispielsweise kann jemand die einer Azure-VM zugeordnete VHD-Datei (Virtual Hard Disk) herunterladen und sie auf seinem Laptop speichern. Wenn die VHD nicht verschlüsselt ist, kann im Prinzip jeder, der die VHD-Datei auf seinem Computer einbinden kann, auf die Inhalte der VHD zugreifen.
 
-For operating system (OS) disks, data such as passwords are encrypted automatically, so even if the VHD is not itself encrypted, it's not easy for such information to be accessed. Applications may also automatically encrypt their own data. However, even with such protections, if someone with malicious intent were to gain access to a data disk, and the disk itself was not encrypted, they might then be in a position to exploit any known weaknesses in that application's data protection. With disk encryption in place, such exploits are not possible.
+Für Betriebssystem-Datenträger werden Daten wie Kennwörter automatisch verschlüsselt, so dass selbst bei nicht verschlüsselten VHDs der Zugriff auf diese Informationen nicht einfach ist. Darüber hinaus verschlüsseln Anwendungen möglicherweise ihre eigenen Daten. Wenn eine Person mit böswilligen Absichten jedoch Zugriff auf einen seinerseits nicht verschlüsselten Datenträger erhält, kann sie sich trotz solcher Schutzmaßnahmen in der Lage sehen, alle bekannten Schwachstellen beim Datenschutz der betreffenden Anwendung auszunutzen. Bei vorhandener Datenträgerverschlüsselung sind solche Exploits nicht möglich.
 
-Storage Service Encryption (SSE) is part of Azure itself, and there should be no noticeable performance impact on the VM disk IO when using SSE. Managed disks with SSE are now the default, and there should be no reason to change it. Azure Disk Encryption (ADE) makes use of VM operating system tools (BitLocker and DM-Crypt), so the VM itself has to do some work when encryption or decryption on VM disks is being performed. The impact of this additional VM CPU activity is typically negligible, except in certain situations. For instance, if you have a CPU-intensive application, there may be a case for leaving the OS disk unencrypted to maximize performance. In a situation such as this, you can store application data on a separate encrypted data disk, getting you the performance you need without compromising security.
+Die Speicherdienstverschlüsselung (SSE) ist ein Teil von Azure selbst, und der Einsatz von SSE sollte keinen spürbaren Einfluss auf die EA-Leistung des VM-Datenträgers haben. Verwaltete Datenträger mit SSE stellen mittlerweile den Standard dar, und es sollte keinen Grund geben, daran etwas zu ändern. Azure Disk Encryption (ADE) nutzt Betriebssystemtools der VM (BitLocker und DM-Crypt), daher muss die VM bei der Verschlüsselung oder Entschlüsselung von VM-Datenträgern selbst ein gewisses Maß an Arbeit erbringen. Die Auswirkungen dieser zusätzlichen CPU-Aktivität der VM sind normalerweise unerheblich, außer in bestimmten Situationen. Wenn Sie beispielsweise über eine CPU-intensive Anwendung verfügen, kann es sinnvoll sein, den Betriebssystem-Datenträger unverschlüsselt zu lassen, um die Leistung zu maximieren. In einer derartigen Situation können Sie die Anwendungsdaten auf einem separaten, verschlüsselten Datenträger speichern, wodurch Sie die erforderliche Leistung ohne Beeinträchtigung der Sicherheit erhalten.
 
-Azure provides two complementary encryption technologies that are used to secure Azure VM disks. These technologies, SSE and ADE, encrypt at different layers, and serve different purposes. Both use AES 256-bit encryption. Using both technologies provides a defence-in-depth protection against unauthorized access to your Azure storage, and to specific VHDs.
+Azure stellt zwei sich ergänzende Verschlüsselungstechnologien zur Verfügung, die zum Schützen von Azure-VM-Datenträgern verwendet werden. Diese Technologien, SSE und ADE, verschlüsseln auf verschiedenen Ebenen und dienen verschiedenen Zwecken; beide verwenden AES-256-Bit-Verschlüsselung. Der Einsatz beider Technologien bietet einen tiefgreifenden Schutz vor unberechtigtem Zugriff auf Ihren Azure-Speicher und auf bestimmte VHDs.

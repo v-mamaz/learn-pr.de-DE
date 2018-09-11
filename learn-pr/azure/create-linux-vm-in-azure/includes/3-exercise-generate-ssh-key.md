@@ -22,10 +22,10 @@ Sie können das gleiche Paar aus einem öffentlichen und privaten Schlüssel ver
 Unter Linux, Windows 10 und macOS können Sie den integrierten Befehl `ssh-keygen` verwenden, um die Dateien mit den öffentlichen und privaten SSH-Schlüsseln zu generieren. 
 
 > [!TIP]
-> Windows 10 bietet ab dem Fall Creators Update einen SSH-Client. Für frühere Windows-Versionen ist zusätzliche Software erforderlich. Wenn Sie SSH zusammen mit Windows nutzen möchten, finden Sie in der [Dokumentation](https://docs.microsoft.com/azure/virtual-machines/linux/ssh-from-windows) weitere Informationen. Alternativ können Sie SSH auch dann nutzen, wenn Sie das Linux-Subsystem für Windows installieren.
+> Windows 10 bietet mit dem **Fall Creators Update** einen SSH-Client. Frühere Versionen von Windows erfordern zusätzliche Software für die Verwendung von SSH. [Die vollständigen Details finde Sie in der Dokumentation](https://docs.microsoft.com/azure/virtual-machines/linux/ssh-from-windows). Alternativ können Sie auch das Linux-Subsystem für Windows installieren und die gleiche Funktionalität erhalten.
 
 > [!NOTE]
-> Wir verwenden die Lösung Azure Cloud Shell, die die generierten Schlüssel in Azure in Ihrem privaten Speicherkonto speichert. Sie können diese Befehle auch direkt in Ihre lokale Shell eingeben, wenn Sie möchten. Sie müssen die Anweisungen in diesem Modul so anpassen, dass sie einer lokalen Sitzung entsprechen, wenn Sie diesen Ansatz verfolgen.
+> Wir werden Azure Cloud Shell verwenden, die die generierten Schlüssel in Azure in Ihrem privaten Speicherkonto speichert. Sie können diese Befehle auch direkt in Ihre lokale Shell eingeben, wenn Sie möchten. Sie müssen die Anweisungen in diesem Modul so anpassen, dass sie einer lokalen Sitzung entsprechen, wenn Sie diesen Ansatz verfolgen.
 
 Bei dem folgenden Befehl handelt es sich um die kürzeste Anweisung, um das Schlüsselpaar für einen virtuellen Azure-Computer zu generieren. Dadurch wird ein RSA-Schlüsselpaar mit einem öffentlichen und privaten Schlüssel mit einer Länge von 2.048 Bit (der Mindestlänge) erstellt, wobei das SSH-Protokoll 2 (SSH-2) genutzt wird. 
 

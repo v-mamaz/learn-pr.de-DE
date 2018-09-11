@@ -1,9 +1,9 @@
-Using the two documents you added to the database as the target of our queries, let's walk through some query basics. Azure Cosmos DB uses SQL queries, just like SQL Server, to perform query operations. All properties are automatically indexed by default, so all data in the database is instantly available to query.
+Nachfolgend werden einige Grundlagen zu Abfragen erläutert. Die beiden Dokumente, die Sie der Datenbank hinzugefügt haben, sollen als Ziel für die Beispielabfragen dienen. Genauso wie SQL Server verwendet Azure Cosmos DB SQL-Abfragen, um Abfragevorgänge durchzuführen. Sämtliche Eigenschaften werden standardmäßig automatisch indiziert, sodass alle Daten in der Datenbank unmittelbar zur Abfrage zur Verfügung stehen.
 
-## SQL query basics
-Every SQL query consists of a SELECT clause and optional FROM and WHERE clauses. In addition, you can add other clauses like ORDER BY and JOIN to get the information you need.
+## <a name="sql-query-basics"></a>Grundlagen zu SQL-Abfragen
+Jede SQL-Abfrage besteht aus einer SELECT-Klausel und optionalen FROM- und WHERE-Klauseln. Außerdem können Sie andere Klauseln wie ORDER BY und JOIN hinzufügen, um die erforderlichen Informationen abzufragen.
 
-A SQL query has the following format:
+SQL-Abfragen haben das folgende Format:
 
     SELECT <select_list>
     [FROM <optional_from_specification>]
@@ -11,18 +11,18 @@ A SQL query has the following format:
     [ORDER BY <optional_sort_specification>]
     [JOIN <optional_join_specification>]
 
-## SELECT clause
+## <a name="select-clause"></a>SELECT-Klausel
 
-The SELECT clause determines the type of values that will be produced when the query is executed. A value of `SELECT *` indicates that the entire JSON document is returned.
+Die SELECT-Klausel bestimmt den Typ der Werte, die erstellt werden, wenn die Abfrage ausgeführt wird. Bei einem Wert vom Typ `SELECT *` wird das gesamte JSON-Dokument zurückgegeben.
 
-**Query**
+**Abfrage**
 ```
 SELECT *
 FROM Products p
 WHERE p.id ="1"
 ```
 
-**Returns**
+**Rückgaben**
 ```
 [
     {
@@ -48,19 +48,19 @@ WHERE p.id ="1"
 ]
 ```
 
-Or, you can limit the output to include only certain properties by including a list of properties in the SELECT clause. In the following query, only the ID, manufacturer, and product description are returned.
+Stattdessen können Sie auch die Ausgabe einschränken, sodass nur bestimmte Eigenschaften angezeigt werden, indem Sie der SELECT-Klausel eine Liste mit Eigenschaften hinzufügen. In der folgenden Abfrage werden nur die ID, der Hersteller und die Produktbeschreibung hinzugefügt.
 
-**Query**
+**Abfrage**
 ```
 SELECT 
     p.id, 
-	p.manufacturer, 
-	p.description
+    p.manufacturer, 
+    p.description
 FROM Products p
 WHERE p.id ="1"
 ```
 
-**Returns**
+**Rückgaben**
 ```
 [
     {
@@ -71,28 +71,28 @@ WHERE p.id ="1"
 ]
 ```
 
-## FROM clause
+## <a name="from-clause"></a>FROM-Klausel
 
-The FROM clause specifies the data source upon which the query operates. You can make the whole collection the source of the query or you can specify a subset of the collection instead. The FROM clause is optional unless the source is filtered or projected later in the query.
+Die FROM-Klausel bestimmt die Datenquelle der Abfrage. Sie können sowohl die ganze Sammlung als auch ein Subnetz der Sammlung als Abfragequelle festlegen. Die FROM-Klausel ist optional, sofern die Quelle in der Abfrage später nicht gefiltert oder projiziert wird.
 
-A query such as `SELECT * FROM Products` indicates that the entire Products collection is the source over which to enumerate the query.
+Bei einer Abfrage wie `SELECT * FROM Products` ist die gesamte Products-Sammlung die Quelle der Abfrage.
 
-A collection can be aliased, such as `SELECT p.id FROM Products AS p` or simply `SELECT p.id FROM Products p`, where `p` is the equivalent of `Products`. `AS` is an optional keyword to alias the identifier.
+Eine Sammlung kann Aliase enthalten, z.B. `SELECT p.id FROM Products AS p` oder einfach `SELECT p.id FROM Products p`, wobei `p` `Products` entspricht. `AS` ist ein optionales Schlüsselwort, das als Alias für den Bezeichner fungiert.
 
-Once aliased, the original source cannot be bound. For example, `SELECT Products.id FROM Products p` is syntactically invalid because the identifier "Products" cannot be resolved anymore.
+Sobald ein Alias verwendet wird, kann die Originalquelle nicht mehr gebunden werden. `SELECT Products.id FROM Products p` ist beispielsweise syntaktisch ungültig, da der Bezeichner „Products“ nicht mehr aufgelöst werden kann.
 
-All properties that need to be referenced must be fully qualified. In the absence of strict schema adherence, this is enforced to avoid any ambiguous bindings. Therefore, `SELECT id FROM Products p` is syntactically invalid because the property `id` is not bound.
+Alle Eigenschaften, auf die verwiesen wird, müssen vollqualifiziert sein. Dies ist ohne strikte Schemaverwendung notwendig, um mehrdeutige Bindungen zu vermeiden. Daher ist `SELECT id FROM Products p` syntaktisch ungültig, weil die `id`-Eigenschaft nicht gebunden ist.
 
-### Subdocuments in a FROM clause
-The source can also be reduced to a smaller subset. For instance, to enumerate only a subtree in each document, the subroot could then become the source, as shown in the following example:
+### <a name="subdocuments-in-a-from-clause"></a>Unterdokumente in einer FROM-Klausel
+Die Quelle kann auch auf eine kleinere Teilmenge reduziert werden. Wenn Sie beispielsweise nur eine Unterstruktur in jedem Dokument auflisten möchten, kann deren Unterstamm wie im folgenden Beispiel gezeigt als Quelle fungieren:
 
-**Query**
+**Abfrage**
 ```
 SELECT * 
 FROM Products.shipping
 ```
 
-**Results**  
+**Ergebnisse**  
 
 ```
 [
@@ -115,32 +115,32 @@ FROM Products.shipping
 ]
 ```
 
-Although the above example used an array as the source, an object could also be used as the source, which is what's shown in the following example. Any valid JSON value (that's not undefined) that can be found in the source is considered for inclusion in the result of the query. If some products don’t have a `shipping.weight` value, they are excluded in the query result.
+Im obigen Beispiel wird zwar ein Array als Quelle verwendet, aber Sie können dafür auch wie im folgenden Beispiel ein Objekt verwenden: Jeder gültige JSON-Wert (mit Ausnahme von „Undefined“), der in der Quelle gefunden werden kann, wird für die Integration in das Abfrageergebnis herangezogen. Produkte ohne `shipping.weight`-Wert werden aus dem Abfrageergebnis ausgeschlossen.
 
-**Query**
+**Abfrage**
 
     SELECT * 
     FROM Products.shipping.weight
 
-**Results**
+**Ergebnisse**
 
     [
         1,
         2
     ]
 
-## WHERE clause
-The WHERE clause specifies the conditions that the JSON documents provided by the source must satisfy in order to be included as part of the result. Any JSON document must evaluate the specified conditions to **true** to be considered for the result. The WHERE clause is optional.
+## <a name="where-clause"></a>WHERE-Klausel
+Die WHERE-Klausel gibt die Bedingungen an, die die in der Quelle angegebenen JSON-Dokumente erfüllen müssen, um als Teil des Ergebnisses zurückgegeben zu werden. Jedes JSON-Dokument muss die angegebenen Bedingungen erfüllen (**true**), um in das Ergebnis einbezogen zu werden. Die WHERE-Klausel ist optional.
 
-The following query requests documents that contain an ID whose value is 1:
+Mit der folgenden Abfrage werden Dokumente angefordert, die eine ID mit dem Wert „1“ enthalten:
 
-**Query**
+**Abfrage**
 
     SELECT p.description
     FROM Products p 
     WHERE p.id = "1"
 
-**Results**
+**Ergebnisse**
 
     [
         {
@@ -148,19 +148,19 @@ The following query requests documents that contain an ID whose value is 1:
         }
     ]
 
-## ORDER BY clause
+## <a name="order-by-clause"></a>ORDER BY-Klausel
 
-The ORDER BY clause enables you to order the results in ascending or descending order.
+Mit der ORDER BY-Klausel können Sie die Ergebnisse in aufsteigender oder absteigender Reihenfolge sortieren.
 
-The following ORDER BY query returns the price, description, and product ID for all products, ordered by price, in ascending order:
+Die folgende ORDER BY-Abfrage gibt in aufsteigender Reihenfolge der Preise den Preis, die Beschreibung und die Produkt-ID für alle Produkte zurück:
 
-**Query**
+**Abfrage**
 
     SELECT p.price, p.description, p.productId
     FROM Products p
     ORDER BY p.price ASC
 
-**Results**
+**Ergebnisse**
 
 ```
 [
@@ -177,19 +177,19 @@ The following ORDER BY query returns the price, description, and product ID for 
 ]
 ```
 
-## JOIN clause
+## <a name="join-clause"></a>JOIN-Klausel
 
-The JOIN clause enables you to perform inner joins with the document and the document subroots. So in the product database, for example, you can join the documents with the shipping data.  
+Mit der JOIN-Klausel können Sie innere Joins für das Dokument und dessen Unterstämme ausführen. Sie können also beispielsweise in der Produktdatenbank Dokumente mit den Versanddaten verknüpfen.  
 
-In the following query, the product IDs are returned for each product that has a shipping method. If you added a third product that didn't have a shipping property, the result would be the same because the third item would be excluded for not having a shipping property.
+In der folgenden Abfrage werden die Produkt-IDs der einzelnen Produkte zurückgegeben, für die eine Versandmethode angegeben ist. Wenn Sie ein drittes Produkt ohne Versandeigenschaft hinzufügen, wird dasselbe Ergebnis zurückgegeben, da es aufgrund fehlender Versandeigenschaften ausgeschlossen wird.
 
-**Query**
+**Abfrage**
 
     SELECT p.productId
     FROM Products p
     JOIN p.shipping
 
-**Results**
+**Ergebnisse**
 
     [
         {
@@ -200,12 +200,12 @@ In the following query, the product IDs are returned for each product that has a
         }
     ]
 
-## Geospatial queries
+## <a name="geospatial-queries"></a>Räumliche Abfragen
 
-Geospatial queries enable you to perform spatial queries using GeoJSON points. Using the coordinates in the database, you can calculate the distance between two points and determine whether a point, polygon, or linestring is within another point, polygon, or linestring.
+Sie können räumliche Abfragen mithilfe von GeoJSON-Punkten durchführen. Wenn Sie die Koordinaten in der Datenbank verwenden, können Sie die Entfernung zwischen zwei Punkten berechnen und ermitteln, ob sich ein Punkt, ein Polygon oder ein LineString-Element innerhalb eines anderen Punkts, Polygons oder LineString-Elements befindet.
 
-For product catalog data, this would enable your users to enter their location information and determine whether there were any stores within a 50-mile radius that have the item they're looking for. 
+Hierdurch kann der Benutzer für Produktkatalogdaten seine Standortinformationen eingeben und prüfen, ob es innerhalb eines Radius von 80 Kilometern ein Geschäft gibt, in dem der gesuchte Artikel verfügbar ist. 
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-Being able to quickly query all your data after adding it to Azure Cosmos DB and using familiar SQL query techniques can help you and your customers to explore and gain insights into your stored data.
+Wenn Sie in der Lage sind, Ihre gesamten Daten schnell abzufragen, nachdem Sie sie Azure Cosmos DB hinzugefügt haben, und bekannte SQL-Abfragetechniken zu verwenden, können Sie und Ihre Kunden Einblicke in gespeicherte Daten gewinnen.

@@ -1,19 +1,19 @@
-Imagine you're a software developer for a ski resort. You are launching a new application which will let users view trail maps and purchase lift tickets on your website or their mobile phones. You want to create an ASP.NET web application to complement and advertise the app. Being a Visual Studio developer, you want to use it to create, deploy, and manage your new site.
+Angenommen, Sie arbeiten als Softwareentwickler für ein Unternehmen, das ein Skigebiet verwaltet. Sie möchten eine neue Anwendung einführen, mit der Benutzer auf Ihrer Website oder über Mobiltelefone Skipisten aufrufen und Tickets für den Skilift kaufen können. Eine ASP.NET-Webanwendung soll ergänzend zum Einsatz kommen und Werbung für die neue App enthalten. Als Visual Studio-Entwickler möchten Sie diese Entwicklungsumgebung nutzen, um Ihre neue Website zu erstellen, bereitzustellen und zu verwalten.
 
-Visual Studio and Azure App Service provide a powerful mechanism for creating, publishing, and maintaining web apps in Azure. Here, you will learn how to use the publishing features built in to Visual Studio to deploy and manage ASP.NET web applications hosted on Azure.
+Visual Studio und Azure App Service bieten einen leistungsstarken Mechanismus zum Erstellen, Veröffentlichen und Verwalten von Web-Apps in Azure. Im Folgenden erfahren Sie, wie Sie die in Visual Studio integrierten Veröffentlichungsfeatures nutzen, um in Azure gehostete ASP.NET-Webanwendungen bereitzustellen und zu verwalten.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul
 
-- Create an ASP.NET web app in Visual Studio 2017 for PC or Mac
-- Publish an ASP.NET web app to Azure with Visual Studio 2017
-- Update an ASP.NET application in Azure using Visual Studio for PC or Mac
+- erstellen Sie eine ASP.NET-Web-App in Visual Studio 2017 für PC oder Mac,
+- veröffentlichen eine ASP.NET-Web-App in Azure mit Visual Studio 2017
+- und aktualisieren eine ASP.NET-Anwendung in Azure mit Visual Studio für PC oder Mac.
 
-## Prerequisites
+## <a name="prerequisites"></a>Voraussetzungen
 
-- Knowledge of the Azure cloud environment
-- Familiarity with the Visual Studio user interface
-- Familiarity with web app concepts
-- Basic programming knowledge
-- Basic HTML knowledge
+- Kenntnisse im Umgang mit der Azure-Cloudumgebung
+- Kenntnisse im Umgang mit der Visual Studio-Benutzeroberfläche
+- Erfahrung mit Web-App-Konzepten
+- Grundlegende Programmierkenntnisse
+- Grundlegende HTML-Kenntnisse

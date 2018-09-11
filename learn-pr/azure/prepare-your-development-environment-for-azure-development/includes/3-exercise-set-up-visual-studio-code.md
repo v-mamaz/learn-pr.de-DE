@@ -7,15 +7,20 @@ Finden Sie zunächst heraus, welches Betriebssystem Sie verwenden, und befolgen 
 ### <a name="windows"></a>Windows
 
 1. Laden Sie den Visual Studio Code-Installer für Windows herunter.
-2. Führen Sie das Installationsprogramm aus. Die Ausführung wird nicht lange dauern.
-3. Öffnen Sie Visual Studio Code, indem Sie zum Installationsordner navigieren (Standardpfad auf einem 64-Bit-Computer: C:\Programme\Microsoft VS Code).
+
+1. Führen Sie das Installationsprogramm aus. Die Ausführung wird nicht lange dauern.
+
+1. Öffnen Sie Visual Studio Code, indem Sie zum Installationsordner navigieren (Standardpfad auf einem 64-Bit-Computer: C:\Programme\Microsoft VS Code).
 
 ### <a name="macos"></a>macOS
 
 1. Laden Sie Visual Studio Code für macOS herunter.
-2. Doppelklicken Sie auf das heruntergeladene Archiv, um den Inhalt zu erweitern.
-3. Ziehen Sie „Visual Studio Code.app“ in den Ordner „Programme“. Dadurch wird die Datei im Launchpad verfügbar.
-4. Fügen Sie Visual Studio Code zu Ihrem Dock hinzu, indem Sie mit der rechten Maustaste auf das Symbol und dann auf „Optionen > Im Dock belassen“.
+
+1. Doppelklicken Sie auf das heruntergeladene Archiv, um den Inhalt zu erweitern.
+
+1. Ziehen Sie „Visual Studio Code.app“ in den Ordner „Programme“. Dadurch wird die Datei im Launchpad verfügbar.
+
+1. Fügen Sie Visual Studio Code zu Ihrem Dock hinzu, indem Sie mit der rechten Maustaste auf das Symbol und dann auf „Optionen > Im Dock belassen“.
 
 ### <a name="linux--debian-and-ubuntu"></a>Linux – Debian und Ubuntu
 
@@ -66,8 +71,10 @@ Finden Sie zunächst heraus, welches Betriebssystem Sie verwenden, und befolgen 
 Öffnen Sie Visual Studio Code, sobald die Installation abgeschlossen ist.
 
 1. Navigieren Sie zur Registerkarte „Extensions“ (Erweiterungen)
-2. Suchen Sie nach „Azure App Service“.
-3. Klicken Sie auf „Installieren“.
+
+1. Suchen Sie nach „Azure App Service“.
+
+1. Klicken Sie auf „Installieren“.
 
     Der folgende Screenshot stellt die Azure App Service-Erweiterung dar, die in den Suchergebnissen für Visual Studio Code-Erweiterungen ausgewählt ist.
 

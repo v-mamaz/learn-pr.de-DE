@@ -1,29 +1,29 @@
-Suppose your company is deploying several servers as part of their cloud transition. VM disks must be encrypted during the deployment, so there's no time when the disks are vulnerable. You want to automate this process, and have to modify the Azure Resource Manager templates to automatically enable encryption.
+Angenommen, Ihr Unternehmen stellt im Rahmen ihrer Cloudmigration mehrere Server bereit. VM-Datenträger müssen bei der Bereitstellung verschlüsselt werden, damit sie zu keinem Zeitpunkt angreifbar sind. Sie möchten diesen Prozess automatisieren und müssen die ARM-Vorlagen (Azure Resource Manager) ändern, damit die Verschlüsselung automatisch aktiviert wird.
 
-Here, we'll look at how to use an Azure Resource Manager template to automatically enable encryption for new Windows VMs.
+Hier erfahren Sie, wie Sie die Verschlüsselung für neue virtuelle Windows-Computer mithilfe einer ARM-Vorlage automatisch aktivieren.
 
-## What are Azure Resource Manager templates?
+## <a name="what-are-arm-templates"></a>Was sind ARM-Vorlagen?
 
-These templates are JSON files used to define a resource to deploy to Azure, such as a virtual machine. You can write them from scratch, and for some Azure resources, including VMs, you can use the Azure portal to generate them. You'll need to complete the required information for a manual VM deployment, but instead of deploying the VM to Azure, you save the template.
+ARM-Vorlagen sind JSON-Dateien zum Definieren einer Ressource, die in Azure bereitgestellt werden soll (beispielsweise ein virtueller Computer). Sie können von Grund auf neu erstellt werden. Bei einigen Ressourcen (unter anderem bei virtuellen Computern) besteht allerdings auch die Möglichkeit, sie über das Azure-Portal zu generieren. Sie geben die erforderlichen Informationen für die manuelle Bereitstellung eines virtuellen Computers an, stellen den virtuellen Computer aber nicht in Azure bereit, sondern speichern die Vorlage.
 
-There are example templates available in GitHub.
+Beispielvorlagen finden Sie auf GitHub.
 
-## Using GitHub templates
+## <a name="using-github-templates"></a>Verwenden von GitHub-Vorlagen
 
-GitHub has a template for enabling encryption called the **Enable encryption on a running Windows VM ARM**. You can find it in the [Azure Quickstart Templates](https://github.com/Azure/azure-quickstart-templates) repository. The readme page for the template provides a **Deploy to Azure** button that then opens the template in the Azure portal.
+Auf GitHub steht die Vorlage **Enable encryption on a running Windows VM ARM** (Aktivieren der Verschlüsselung für einen ausgeführten virtuellen Windows-Computer (ARM)) zum Aktivieren der Verschlüsselung zur Verfügung. Sie befindet sich im Repository [Azure Quickstart Templates](https://github.com/Azure/azure-quickstart-templates) (Azure-Schnellstartvorlagen). Auf der Infoseite der Vorlage befindet sich eine Schaltfläche für die Bereitstellung in Azure, mit der Sie die Vorlage im Azure-Portal öffnen können.
 
-The template enables you to deploy a Windows Server VM, with encryption pre-enabled. Before using the template, you must make sure that all of the encryption prerequisites are in place. You'll also need the configuration information that is provided by the prerequisites script, such as Azure Active Directory Client ID and Azure Active Directory Client Secret.
+Die Vorlage ermöglicht die Bereitstellung eines virtuellen Windows Server-Computers mit bereits aktivierter Verschlüsselung. Vergewissern Sie sich vor der Verwendung der Vorlage, dass alle Voraussetzungen für die Verschlüsselung erfüllt sind. Darüber hinaus benötigen Sie die Konfigurationsinformationen, die durch das Skript zur Überprüfung der Voraussetzungen bereitgestellt werden (etwa die AAD-Client-ID und das AAD-Clientgeheimnis).
 
-You create a new VM by entering the required information on the template. You then initiate deployment by clicking **Purchase** (the cost is typically the normal Azure compute charge).
+Sie erstellen einen neuen virtuellen Computer, indem Sie die erforderlichen Informationen in die Vorlage eingeben. Anschließend initiieren Sie die Bereitstellung, indem Sie auf **Kaufen** klicken. (Dabei fallen in der Regel die normalen Azure-Computegebühren an.)
 
-## Deploy an encrypted VM by using a template
+## <a name="deploy-an-encrypted-vm-by-using-a-template"></a>Bereitstellen eines verschlüsselten virtuellen Computers mit einer Vorlage
 
-The main steps involved in deploying an encrypted VM using a template are:
+Die Bereitstellung eines verschlüsselten virtuellen Computers mit einer Vorlage umfasst folgende Hauptschritte:
 
-1. Access and run the **Enable encryption on a running Windows VM ARM** template from GitHub.
+1. Greifen Sie auf die Vorlage **Enable encryption on a running Windows VM ARM** (Aktivieren der Verschlüsselung für einen ausgeführten virtuellen Windows-Computer (ARM)) von GitHub zu, und führen Sie sie aus.
 
-1. Add the required details in the script configuration page.
+1. Fügen Sie auf der Skriptkonfigurationsseite die erforderlichen Informationen hinzu.
 
-1. Deploy a new VM using the script by clicking **Purchase**.
+1. Stellen Sie mithilfe des Skripts einen neuen virtuellen Computer bereit, indem Sie auf **Kaufen** klicken.
 
-1. Use the Azure portal to verify disk encryption status.
+1. Überprüfen Sie den Status der Datenträgerverschlüsselung über das Azure-Portal.

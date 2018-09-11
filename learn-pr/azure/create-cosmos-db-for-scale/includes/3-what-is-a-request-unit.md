@@ -2,7 +2,7 @@ Als Nächstes betrachten wir den Datendurchsatz in unserer Datenbank. Dies ist w
 
 ## <a name="what-is-database-throughput"></a>Was ist der Datenbankdurchsatz? 
 
-Der Datenbankdurchsatz ist die Anzahl der Lese- und Schreibvorgänge, die Ihre Datenbank in einer einzigen Sekunde durchführen kann. 
+Der Datenbankdurchsatz ist die Anzahl der Lese- und Schreibvorgänge, die Ihre Datenbank in einer einzigen Sekunde durchführen kann.
 
 Um den Durchsatz strategisch zu skalieren, müssen Sie die Durchsatzanforderungen in Form der Lese- und Schreibvorgänge schätzen, die Sie zu unterschiedlichen Zeiten und für unterschiedliche Dokumentgrößen unterstützen müssen. Wenn Sie richtig schätzen, halten Sie Ihre Benutzer bei Bedarfsspitzen bei Laune. Wenn Sie falsch schätzen, können Ratenbegrenzungen auf Ihre Anforderungen angewandt werden, sodass Vorgänge von Wartezeiten und Wiederholungsversuchen betroffen sind, was zu hoher Latenz führt und zu Lasten der Kundenzufriedenheit geht.
 

@@ -4,17 +4,17 @@ Der virtuelle Linux-Computer wurde bereitgestellt und wird ausgeführt, aber noc
 
 Zum Herstellen der Verbindung eines virtuellen Azure-Computers mit einem SSH-Client benötigen Sie Folgendes:
 
-- SSH-Clientsoftware (in den meisten modernen Betriebssystemen vorhanden).
-- Die öffentliche IP-Adresse des virtuellen Computers (oder die private, wenn der virtuelle Computer konfiguriert ist, eine Verbindung mit Ihrem Netzwerk herzustellen).
+- SSH-Clientsoftware (in den meisten modernen Betriebssystemen vorhanden)
+- Die öffentliche IP-Adresse des virtuellen Computers (oder die private, wenn der virtuelle Computer dafür konfiguriert ist, eine Verbindung mit Ihrem Netzwerk herzustellen)
 
 ### <a name="get-the-public-ip-address"></a>Abrufen der öffentlichen IP-Adresse
 
-1. Stellen Sie im [Azure-Portal](https://portal.azure.com?azure-portal=true) sicher, dass der Bereich **Übersicht** für den zuvor erstellten virtuellen Computer geöffnet ist. Sie finden den virtuellen Computer unter **Alle Ressourcen**, falls Sie diesen öffnen müssen. Im Bereich „Übersicht“ finden Sie viele Informationen über den virtuellen Computer.
+1. Stellen Sie im [Azure-Portal](https://portal.azure.com?azure-portal=true) sicher, dass der Bereich **Übersicht** für den zuvor erstellten virtuellen Computer geöffnet ist. Sie finden den virtuellen Computer unter **Alle Ressourcen**, falls Sie diesen öffnen müssen. Im Bereich „Übersicht“ finden Sie zahlreiche Informationen zum virtuellen Computer.
 
-    - Sie können sehen, ob er ausgeführt wird.
-    - Sie können ihn beenden oder neu starten.
-    - Sie können die öffentliche IP-Adresse abrufen, um eine Verbindung mit dem virtuellen Computer herzustellen.
-    - Sie können die Aktivität von CPU, Festplatte und Netzwerk anzeigen lassen.
+    - Sie können sehen, ob er ausgeführt wird
+    - Sie können ihn beenden oder neu starten
+    - Sie können die öffentliche IP-Adresse abrufen, um eine Verbindung mit dem virtuellen Computer herzustellen
+    - Sie können die Aktivität von CPU, Festplatte und Netzwerk anzeigen
 
 1. Klicken Sie oben im Bereich auf die Schaltfläche **Verbinden**.
 
@@ -40,7 +40,7 @@ Let's use the Cloud Shell in the Azure Portal. If you generated the SSH key loca
 
 ## <a name="connect-with-ssh"></a>Verbinden mit SSH
 
-1. Fügen Sie die Befehlszeile, die Sie auf der Registerkarte „SSH“ abgerufen haben, in die Cloud Shell ein. Das Ergebnis sollte in etwa wie folgt aussehen. Es wird jedoch eine andere IP-Adresse verwendet (und möglicherweise ein anderer Benutzername, wenn Sie nicht **jim** angegeben haben).
+1. Fügen Sie die Befehlszeile, die Sie auf der Registerkarte „SSH“ abgerufen haben, in die Cloud Shell ein. Das Ergebnis sollte in etwa wie folgt aussehen. Es wird jedoch eine andere IP-Adresse verwendet (und möglicherweise ein anderer Benutzername, wenn Sie nicht **jim** angegeben haben)
 
     ```bash
     ssh jim@137.117.101.249
@@ -48,11 +48,11 @@ Let's use the Cloud Shell in the Azure Portal. If you generated the SSH key loca
 
 1. Mit diesem Befehl wird eine Secure Shell-Verbindung geöffnet, und es wird eine herkömmliche Shell-Eingabeaufforderung für Linux angezeigt.
 
-1. Führen Sie einige Linux-Befehle aus:
-    - `ls -la /`, um den Stamm des Datenträgers anzuzeigen.
-    - `ps -l`, um alle ausgeführten Prozesse anzuzeigen.
-    - `dmesg`, um alle Kernelnachrichten aufzulisten.
-    - `lsblk`, um alle Blockgeräte aufzulisten. Hier werden Ihre Laufwerke angezeigt.
+1. Führen Sie einige Linux-Befehle aus
+    - `ls -la /`, um den Stamm des Datenträgers anzuzeigen
+    - `ps -l`, um alle ausgeführten Prozesse anzuzeigen
+    - `dmesg`, um alle Kernelnachrichten aufzulisten
+    - `lsblk`, um alle Blockgeräte aufzulisten. Hier werden Ihre Laufwerke angezeigt
 
 Interessanter ist das, was in der Liste der Laufwerke _fehlt_. Beachten Sie, dass unser **Daten**laufwerk (`sdc`) zwar vorhanden, nicht aber im Dateisystem bereitgestellt ist. Azure hat eine VHD hinzugefügt, aber nicht initialisiert.
 

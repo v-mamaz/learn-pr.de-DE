@@ -4,27 +4,27 @@ Die zu erstellende Anwendung ist eine plattformübergreifende mobile App, die mi
 
 1. Wählen Sie in Visual Studio *Datei > Neu > Projekt* aus.
 
-2. Wählen Sie in der Struktur links *Visual C# > Plattformübergreifend* aus, und klicken Sie dann im Arbeitsbereich in der Mitte auf *Mobile App (Xamarin.Forms)*.
+1. Wählen Sie in der Struktur links *Visual C# > Plattformübergreifend* aus, und klicken Sie dann im Arbeitsbereich in der Mitte auf *Mobile App (Xamarin.Forms)*.
 
-3. Geben Sie der Projektmappe den Namen „ImHere“.
+1. Geben Sie der Projektmappe den Namen „ImHere“.
 
-4. Wählen Sie einen geeigneten Speicherort für die Projektmappe.
+1. Wählen Sie einen geeigneten Speicherort für die Projektmappe.
 
     > Wenn Sie dieses Modul lokal unter Windows ausführen und eine Entwicklung für Android planen, sollte der Pfad so kurz wie möglich gehalten werden. Für das Android SDK gelten Längenbeschränkungen, deshalb sollte ein möglichst kurzer Stammpfad gewählt werden.
 
-5. Klicken Sie auf **OK**.
+1. Klicken Sie auf **OK**.
 
     ![Dialogfeld „Neue Projektmappe“](../media-drafts/2-new-solution-dialog.png)
 
-6. Wählen Sie im Dialogfeld **Neue plattformübergreifende App** die Vorlage *Leere App* aus.
+1. Wählen Sie im Dialogfeld **Neue plattformübergreifende App** die Vorlage *Leere App* aus.
 
-7. Für dieses Modul erstellen Sie eine UWP-App. Deaktivieren Sie deshalb iOS und Android, und lassen Sie UWP aktiviert.
+1. Für dieses Modul erstellen Sie eine UWP-App. Deaktivieren Sie deshalb iOS und Android, und lassen Sie UWP aktiviert.
 
     > Wenn Sie eine lokale Ausführung planen, können Sie Android aktiviert lassen, weil das Android SDK als Teil der Workload *Mobile-Entwicklung mit .NET* in Visual Studio installiert wird. Wenn Sie auch für iOS entwickeln möchten, ist eine Kopplung mit einem macOS-Build-Agent erforderlich. Weitere Informationen hierzu finden Sie in der [Xamarin iOS-Dokumentation](https://docs.microsoft.com/xamarin/ios/get-started/installation/windows/connecting-to-mac/).
 
-8. Wählen Sie für *Codefreigabestrategie* die Option **.NET Standard** aus.
+1. Wählen Sie für *Codefreigabestrategie* die Option **.NET Standard** aus.
 
-9. Klicken Sie auf **OK**.
+1. Klicken Sie auf **OK**.
 
     ![Dialogfeld zum Konfigurieren der neuen Projektmappe](../media-drafts/2-configure-solution-dialog.png)
 
@@ -36,13 +36,13 @@ Die UWP-, Android- und iOS-Plattformen bieten zahlreiche ähnliche Funktionen, d
 
 1. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf die `ImHere`-Lösung, und wählen Sie *NuGet-Pakete für Projektmappe verwalten* aus.
 
-2. Wählen Sie die Registerkarte **Durchsuchen** aus, und suchen Sie nach „Xamarin.Essentials“. Dieses Paket ist zurzeit als Vorabrelease-NuGet-Paket verfügbar, aktivieren Sie deshalb die Option *Vorabversion einbeziehen*.
+1. Wählen Sie die Registerkarte **Durchsuchen** aus, und suchen Sie nach „Xamarin.Essentials“. Dieses Paket ist zurzeit als Vorabrelease-NuGet-Paket verfügbar, aktivieren Sie deshalb die Option *Vorabversion einbeziehen*.
 
-3. Wählen Sie das NuGet-Paket **Xamarin.Essentials** aus.
+1. Wählen Sie das NuGet-Paket **Xamarin.Essentials** aus.
 
-4. Aktivieren Sie in der Projektliste auf der rechten Seite sämtliche Ihrer Projekte.
+1. Aktivieren Sie in der Projektliste auf der rechten Seite sämtliche Ihrer Projekte.
 
-5. Klicken Sie auf die Schaltfläche **Installieren**, um das NuGet-Paket zu installieren. Sie müssen die Lizenz akzeptieren, um den Vorgang fortzusetzen.
+1. Klicken Sie auf die Schaltfläche **Installieren**, um das NuGet-Paket zu installieren. Sie müssen die Lizenz akzeptieren, um den Vorgang fortzusetzen.
 
     ![Hinzufügen des NuGet-Pakets „Xamarin.Essentials“ zu allen Projekten in der Projektmappe](../media-drafts/2-add-essentials-nuget.png)
 
@@ -52,11 +52,11 @@ Die UWP-, Android- und iOS-Plattformen bieten zahlreiche ähnliche Funktionen, d
 
 1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das `ImHere.UWP`-Projekt, und wählen Sie *Als Startprojekt festlegen* aus.
 
-2. Legen Sie die Buildkonfiguration auf **Debuggen**, die Plattform auf **x86** und das Gerät für die Ausführung auf **Lokaler Computer** fest.
+1. Legen Sie die Buildkonfiguration auf **Debuggen**, die Plattform auf **x86** und das Gerät für die Ausführung auf **Lokaler Computer** fest.
 
     ![Festlegen der x86-Debugkonfiguration zur Ausführung auf dem lokalen Gerät](../media-drafts/2-debug-configuration.png)
 
-3. Beginnen Sie mit dem Debuggen der App.
+1. Beginnen Sie mit dem Debuggen der App.
 
     ![App bei der Ausführung](../media-drafts/2-debuging-app.png)
 

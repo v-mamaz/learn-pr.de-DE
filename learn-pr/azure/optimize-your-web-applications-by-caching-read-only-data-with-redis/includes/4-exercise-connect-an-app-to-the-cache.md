@@ -11,10 +11,15 @@ In dieser Übung erstellen Sie eine Azure Redis Cache-Instanz zum Speichern und 
 ## <a name="configure-your-cache"></a>Konfigurieren Ihres Caches
 
 1. **DNS-Name**: Erstellen Sie einen global eindeutigen Namen, z.B. **ContosoSportsApp1028**.
+
 1. **Abonnement**: Wählen Sie Ihr Abonnement aus.
+
 1. **Ressourcengruppe**: Erstellen Sie eine neue Ressourcengruppe, und geben Sie ihr einen Namen.
+
 1. **Speicherort**: Da die meisten Ihrer Kunden sich im Bereich New York befinden, wählen Sie **USA, Osten** aus.
+
 1. **Tarif**: Wählen Sie **Basic C0** aus.
+
 1. Klicken Sie auf **Erstellen**.
 
     Der folgende Screenshot zeigt eine repräsentative Konfiguration, die zum Erstellen einer neuen Redis Cache-Ressource verwendet wird.
@@ -31,6 +36,7 @@ In dieser Übung erstellen Sie eine Azure Redis Cache-Instanz zum Speichern und 
     Dieser Schlüssel enthält Ihren Primärschlüssel und Hostnamen in einer vollständigen Verbindungszeichenfolge für die Verwendung in Ihren Anwendungseinstellungen für das StackExchange.Redis-Paket, das wir verwenden.
 
 1. Starten Sie den Editor oder einen anderen Texteditor auf Ihrem Computer.
+
 1. Fügen Sie folgenden Inhalt hinzu:
 
     Ersetzen Sie `<connection-string>` durch die primäre Verbindungszeichenfolge Ihres Caches von oben.
@@ -46,7 +52,9 @@ In dieser Übung erstellen Sie eine Azure Redis Cache-Instanz zum Speichern und 
 ## <a name="create-a-console-app"></a>Erstellen einer Konsolen-App
 
 1. Starten Sie Visual Studio, und klicken Sie auf das Menüelement **Datei** > **Neu** > **Projekt...**.
+
 1. Wählen Sie die Vorlage **Visual C#** > **Windows Desktop** > **Konsolen-App** aus.
+
 1. Geben Sie Ihrer App einen Namen, und klicken Sie auf **OK**, um eine neue Konsolenanwendung zu erstellen.
 
 ## <a name="configure-the-cache-client"></a>Konfigurieren des Cacheclients

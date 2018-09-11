@@ -75,6 +75,7 @@ Um die Ausgabe einer Codeanweisung zu rendern, wird `@` vor einem C#-Ausdruck ve
 Nachdem Sie die Änderungen an Ihrer Website vorgenommen haben, sollten Sie sie in Azure veröffentlichen. Dieser Prozess ist mit dem der ursprünglichen Veröffentlichung vergleichbar.
 
 1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt.
+
 1. Der Name Ihrer Website sollte nun gefolgt von „Web Deploy“ angezeigt werden. Beispiel: Wenn Sie Ihre Website „AlpineSkiHouse42“ benannt haben, würde unter den verfügbaren Optionen **AlpineSkiHouse42 – Web Deploy** angezeigt werden. Wählen Sie diese Option aus. Ihre Website wird dann in Azure aktualisiert.
 
 ## <a name="summary"></a>Zusammenfassung

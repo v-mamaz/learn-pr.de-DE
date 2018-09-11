@@ -29,6 +29,7 @@ Damit diese VMs für interne Tests separat von den VMs Ihres Unternehmen verwalt
     ```powershell
     Get-AzureRmResource | Format-Table
     ```
+
 Eine weitere Möglichkeit zur Überprüfung, ob die Ressourcengruppe erfolgreich erstellt wurde, ist das Azure-Portal. Melden Sie sich hierfür beim Portal an, und navigieren zum Abschnitt **Ressourcengruppen** (siehe unten). Die neue Ressourcengruppe sollte in der Liste angezeigt werden.
 
 Der folgende Screenshot zeigt den Speicherort der Kategorie „Ressourcengruppen“ im Azure-Portal an.

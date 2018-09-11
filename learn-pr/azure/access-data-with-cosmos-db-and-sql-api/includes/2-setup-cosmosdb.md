@@ -1,32 +1,32 @@
 > [!NOTE]
-> If you are continuing on from **Create an Azure Cosmos DB database built to scale** and you did not delete the Cosmos DB database + collection that you created, then you can skip this unit and move on to adding data with the Data Explorer.
+> Falls Sie zuvor **Erstellen einer skalierbaren Azure Cosmos DB-Datenbank** absolviert und die erstellte Cosmos DB-Datenbank sowie die Sammlung nicht gelöscht haben, können Sie diese Einheit überspringen und mit dem Hinzufügen von Daten mit dem Daten-Explorer fortfahren.
 
-The first thing we need to do is create an empty Cosmos DB database and collection to work with. We want it to match the one you created in the last module in this Learning Path: a database named **"Products"** and a collection named **"Clothing"**. Use the following instructions and the Azure Cloud Shell on the right side of the screen to recreate the database.
+Als Erstes müssen wir eine leere Cosmos DB-Datenbank und eine Sammlung erstellen. Diese sollen der Datenbank und der Sammlung entsprechen, die Sie im letzten Modul dieses Lernpfads erstellt haben. Wir benötigen also eine Datenbank namens **Products** und eine Sammlung namens **Clothing**. Verwenden Sie die folgenden Anweisungen sowie Azure Cloud Shell auf der rechten Bildschirmseite, um die Datenbank neu zu erstellen.
 
-# Create a Cosmos DB account + database with the Azure CLI
+# <a name="create-a-cosmos-db-account--database-with-the-azure-cli"></a>Erstellen eines Cosmos DB-Kontos und einer Datenbank mithilfe der Azure-Befehlszeilenschnittstelle
 
-1. Start by selecting the correct subscription - you want to select the subscription ID associated with your free education access subscription.
+1. Wählen Sie zunächst das richtige Abonnement aus: Verwenden Sie die Abonnement-ID Ihres Abonnements für kostenlosen Education-Zugriff.
 
     ```azurecli
     az account list --output table
     ```
 
-1. Make sure you see "sandbox" in the subscription list and set it as the current one to use: <!-- TODO: get official name here -->
+1. Vergewissern Sie sich, dass die Abonnementliste „sandbox“ enthält, und legen Sie dieses Element als die zu verwendende Option fest: <!-- TODO: get official name here -->
 
     ```azurecli
     az account set --subscription "sandbox"
     ```
     
-1. Get the Resource Group that has been created for you. If you are using your own subscription, skip this step and just supply a unique name you want to use in the `RESOURCE_GROUP` environment variable below. Take note of the Resource Group name. This is where we will create our database. <!-- Do we get a token for this? -->
+1. Rufen Sie die Ressourcengruppe ab, die für Sie erstellt wurde. Falls Sie Ihr eigenes Abonnement verwenden, überspringen Sie diesen Schritt, und geben Sie in der Umgebungsvariablen `RESOURCE_GROUP` weiter unten lediglich einen eindeutigen Namen an, den Sie verwenden möchten. Notieren Sie sich den Namen der Ressourcengruppe. Dort erstellen wir unsere Datenbank. <!-- Do we get a token for this? -->
 
     ```azurecli
     az group list --out table
     ```
 
-1. To make this a bit easier, set a few environment variables so you don't have to type the common values each time. 
+1. Legen Sie der Einfachheit halber einige Umgebungsvariablen fest, um nicht immer wieder die gleichen Werte eingeben zu müssen. 
 
     > [!IMPORTANT]
-    > Make sure to change these values to ones appropriate for your session. For example, replace the `<resource group>` value with the Resource Group name you identified above.
+    > Diese Werte müssen auf die entsprechenden Werte für Ihre Sitzung festgelegt werden. Ersetzen Sie also beispielsweise den Wert `<resource group>` durch den Ressourcengruppennamen, den Sie weiter oben angegeben haben.
 
     ```azurecli
     export RESOURCE_GROUP="<resource group>"
@@ -34,34 +34,34 @@ The first thing we need to do is create an empty Cosmos DB database and collecti
     export LOCATION="<location>"
     ```
     
-1. Next, set a variable for the database name. Name it "Users" so it matches the database we created in the last module.
+1. Legen Sie als Nächstes eine Variable für den Datenbanknamen fest. Nennen Sie sie „Users“, um der Datenbank aus dem letzten Modul zu entsprechen.
 
     ```azurecli
     export DB_NAME="Products"
     ```
     
-1. If you are doing this on your own subscription, and you are using a _new_ Resource Group (recommended), then use the following command to create the Resource Group. **Important:** If you are using the free education resources provided by Microsoft Learn, then you do not need to execute this step. Instead, make sure the `RESOURCE_GROUP` variable above is set to your assigned resource group.
+1. Falls Sie hierbei Ihr eigenes Abonnement und eine _neue_ Ressourcengruppe verwenden (empfohlen), erstellen Sie die Ressourcengruppe mithilfe des folgenden Befehls. **Wichtig:** Bei Verwendung der kostenlosen Lernressourcen von Microsoft Learn ist dieser Schritt nicht erforderlich. Vergewissern Sie sich stattdessen, dass die obige Variable `RESOURCE_GROUP` auf Ihre zugewiesene Ressourcengruppe festgelegt ist.
 
     ```azurecli
     az group create --name $RESOURCE_GROUP --location $LOCATION
     ```
     
-1. Next, create the Cosmos DB account. This will take a few minutes to complete.
+1. Erstellen Sie als Nächstes ein Azure Cosmos DB-Konto. Der Erstellungsvorgang dauert ein paar Minuten.
 
     ```azurecli
     az cosmosdb create --name $NAME --kind GlobalDocumentDB --resource-group $RESOURCE_GROUP
     ```
     
-1. Create the `Products` database in the account.
+1. Erstellen Sie unter dem Konto die Datenbank `Products`.
 
     ```azurecli
     az cosmosdb database create --name $NAME --db-name $DB_NAME --resource-group $RESOURCE_GROUP
     ```
     
-1. Finally, create the `Clothing` collection.
+1. Erstellen Sie abschließend die Sammlung `Clothing`.
 
     ```azurecli
     az cosmosdb collection create --collection-name "Clothing" --partition-key-path "/productId" --throughput 1000 --name $NAME --db-name $DB_NAME --resource-group $RESOURCE_GROUP
     ```
 
-Now that we have our Cosmos DB account, database, and collection, let's go add some data!
+Nachdem wir nun über ein Cosmos DB-Konto, eine Datenbank und eine Sammlung verfügen, können wir damit beginnen, Daten hinzuzufügen.

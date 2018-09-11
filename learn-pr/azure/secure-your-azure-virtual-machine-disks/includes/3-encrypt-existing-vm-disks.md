@@ -1,60 +1,60 @@
-Suppose your company has decided to implement Azure Disk Encryption (ADE) across all VMs. You need to evaluate how to roll out encryption to existing VM volumes.
+Angenommen, Ihr Unternehmen hat sich entschieden, Azure Disk Encryption (ADE) auf allen VMs zu implementieren. In diesem Fall müssen Sie evaluieren, wie Sie den Rollout für die Verschlüsselung auf allen vorhandenen VM-Volumes durchführen.
 
-Here, we'll look at the requirements for ADE, and the steps involved in encrypting disks on existing Windows VMs.
+Hier werden die Anforderungen für ADE und die Schritte zum Verschlüsseln von Datenträgern auf vorhandenen Windows-VMs beschrieben.
 
-## Azure Disk Encryption prerequisites
+## <a name="azure-disk-encryption-prerequisites"></a>Azure Disk Encryption – Voraussetzungen
 
-Before you can encrypt your first VM disk, you need to:
+Bevor Sie Ihren ersten VM-Datenträger verschlüsseln können, müssen Sie Folgendes durchführen:
 
-1. Create a key vault.
-1. Set up an Azure Active Directory (Azure AD) application and service principal.
-1. Set the key vault access policy for the Azure AD app.
-1. Set key vault advanced access policies.
+1. Erstellen eines Schlüsseltresors
+1. Einrichten einer Azure AD-Anwendung und eines Dienstprinzipals
+1. Festlegen der Zugriffsrichtlinie für den Schlüsseltresor für die Azure AD-App
+1. Festlegen der erweiterten Zugriffsrichtlinien für den Schlüsseltresor
 
-### Azure Key Vault
+### <a name="azure-key-vault"></a>Azure Key Vault
 
-The encryption keys used by ADE can be stored in Azure Key Vault. Azure Key Vault is a tool for securely storing and accessing secrets. A secret is anything that you want to tightly control access to, such as API keys, passwords, or certificates. This provides highly available and scalable secure storage, in Federal Information Processing Standards (FIPS) 140-2 Level 2 validated Hardware Security Modules (HSMs). Using Key Vault, you keep full control of the keys used to encrypt your data, and you can manage and audit your key usage. You can configure and manage your key vault using the Azure portal, Azure PowerShell, and the Azure CLI.
+Die von ADE verwendeten Verschlüsselungsschlüssel können auf einer Azure Key Vault-Instanz gespeichert werden. Azure Key Vault ist ein Tool zum sicheren Speichern und Zugreifen auf Geheimnisse. Als Geheimnis wird alles bezeichnet, für das Sie den Zugriff streng kontrollieren möchten, z.B. API-Schlüssel, Kennwörter oder Zertifikate. Hiermit wird die hoch verfügbare und skalierbare sichere Speicherung in Hardwaresicherheitsmodulen (HSMs) mit Überprüfung gemäß Federal Information Processing Standards (FIPS) 140-2 Level 2 ermöglicht. Mit Key Vault erhalten Sie die vollständige Kontrolle über die Schlüssel, die zum Verschlüsseln Ihrer Daten verwendet werden, und Sie können Ihre Schlüsselnutzung verwalten und überwachen. Sie können Ihren Schlüsseltresor über das Azure-Portal, Azure PowerShell und Azure CLI konfigurieren und verwalten.
 
 >[!NOTE]
-> Azure Disk Encryption requires that your key vault and your VMs are in the same Azure region; this ensures that encryption secrets do not cross regional boundaries.
+> Für Azure Disk Encryption ist es erforderlich, dass sich Ihre Key Vault-Instanz und Ihre VMs in derselben Azure-Region befinden. So wird sichergestellt, dass Verschlüsselungsgeheimnisse nicht über Grenzen von Regionen hinweg verwendet werden.
 
-### Azure AD application and service principal
+### <a name="azure-ad-application-and-service-principal"></a>Azure AD-Anwendung und -Dienstprinzipal
 
-To access or modify resources, such as the encryption configuration for a VM with scripts or code, you must first set up an **Azure Active Directory (AD) application**. Azure AD is a multi-tenant, cloud-based directory, and identity management service. It combines core directory services, application access management, and identity protection into a single solution.
+Zum Zugreifen auf oder Ändern von Ressourcen, z.B. die Verschlüsselungskonfiguration für eine VM mit Skripts oder Code, müssen Sie zuerst eine **Azure Active Directory-Anwendung** einrichten. Azure Active Directory (Azure AD) ist ein mehrinstanzenfähiger, cloudbasierter Verzeichnis- und Identitätsverwaltungsdienst, in dem Kernverzeichnisdienste, Anwendungszugriffsverwaltung und Identitätsschutz in nur einer Lösung vereint sind.
 
-You'll also need an Azure **service principal**. Service principals are the service accounts you use to run the script or code. They allow you to assign the specific permissions and scope that are needed to run the task against a particular Azure resource.
+Außerdem benötigen Sie einen Azure-**Dienstprinzipal**. Dienstprinzipale sind die Dienstkonten, die Sie zum Ausführen des Skripts oder Codes verwenden. Sie ermöglichen Ihnen das Zuweisen der spezifischen Berechtigungen und des Bereichs, die zum Ausführen der Aufgabe für eine bestimmte Azure-Ressource erforderlich sind.
 
-There are two elements in Azure AD: the application object is the **_definition_** of the application (what it does), and the service principal is the **_specific instance_** of the application.
+In Azure AD sind zwei Elemente vorhanden: Das Anwendungsobjekt steht für die **_Definition_** der Anwendung (Zweck der Anwendung), und der Dienstprinzipal steht für die **_spezifische Instanz_** der Anwendung.
 
-This approach aligns with the principle of **least privilege**, where the permissions assigned to the app are restricted to the bare minimum required to enable the app to perform its tasks.
+Dieser Ansatz beruht auf dem Prinzip der **geringsten Rechte**. Hierbei werden die Berechtigungen, die der App zugewiesen werden, auf das Minimum beschränkt, das die App zum Durchführen ihrer jeweiligen Aufgaben benötigt.
 
-You can configure and manage Azure AD applications and service principals using the Azure portal, Azure PowerShell, and the Azure CLI.
+Sie können Azure AD-Anwendungen und -Dienstprinzipale mit dem Azure-Portal, Azure PowerShell und Azure CLI konfigurieren und verwalten.
 
-### Key vault access policies
+### <a name="key-vault-access-policies"></a>Key Vault-Zugriffsrichtlinien
 
-Before you can store encryption keys in a key vault, ADE requires details on the **Client ID** and the **Client Secret** of the Azure AD application that is permitted to write to the key vault.
+Bevor Sie Verschlüsselungsschlüssel in einer Key Vault-Instanz speichern können, benötigt ADE die Details zur **Client-ID** und zum **Clientgeheimnis** der Azure Active Directory-Anwendung, die über die Berechtigung zum Schreiben in die Key Vault-Instanz verfügt.
 
-You'll also need to provide Azure access to the encryption keys in your key vault, so they are made available to the VM for booting and decrypting the volumes.
+Außerdem müssen Sie den Azure-Zugriff auf die Verschlüsselungsschlüssel in Ihrem Schlüsseltresor angeben, damit sie für die VM zum Starten und Entschlüsseln der Volumes bereitgestellt werden.
 
-## Set key vault advanced access policies
+## <a name="set-key-vault-advanced-access-policies"></a>Festlegen der erweiterten Zugriffsrichtlinien für den Schlüsseltresor
 
-**Advanced access policies** enable disk encryption on the key vault, and without them, encryption deployments will fail. 
+Mit **erweiterten Zugriffsrichtlinien** wird die Datenträgerverschlüsselung im Schlüsseltresor ermöglicht. Für die Verschlüsselungsbereitstellungen tritt ein Fehler auf, wenn sie nicht vorhanden sind. 
 
-There are three policies that need to be enabled:
+Es gibt drei Richtlinien, die aktiviert werden müssen:
 
-- **Key Vault for disk encryption**. Required for Azure Disk Encryption.
-- **Key Vault for deployment**. Enables the Microsoft.Compute resource provider to retrieve secrets from the key vault. This policy is needed when you are creating a VM.
-- **Key Vault for template deployment, if needed**. Enables Azure Resource Manager to get secrets from the key vault. This policy is required when you are using Azure Resource Manager templates for VM deployment.
+- **Key Vault für die Datenträgerverschlüsselung** Ist für die Azure Disk-Verschlüsselung erforderlich.
+- **Key Vault für die Bereitstellung** Ermöglicht dem Microsoft.Compute-Ressourcenanbieter das Abrufen von Geheimnissen aus dem Schlüsseltresor. Diese Richtlinie wird beim Erstellen einer VM benötigt.
+- **Key Vault für die Vorlagenbereitstellung (falls erforderlich)** Ermöglicht Azure Resource Manager das Abrufen von Geheimnissen aus dem Schlüsseltresor. Diese Richtlinie ist erforderlich, wenn ARM-Vorlagen für die VM-Bereitstellung verwendet werden.
 
-Key vault access policies can be configured and managed using the Azure portal, Azure PowerShell, or the Azure CLI.
+Zugriffsrichtlinien für den Schlüsseltresor können mit dem Azure-Portal, Azure PowerShell oder der Azure CLI konfiguriert und verwaltet werden.
 
-### What is the Azure Disk Encryption prerequisites configuration script
+### <a name="what-is-the-azure-disk-encryption-prerequisites-configuration-script"></a>Was ist das Konfigurationsskript für die Azure Disk Encryption-Voraussetzungen?
 
-The **Azure Disk Encryption prerequisites configuration script** sets up all (or as many as you want) of the encryption prerequisites. The script also ensures that your key vault is in the same region as the VM you are going to encrypt. It will create a resource group and key vault, and set the key vault access policy. The script also creates a resource lock on the key vault to help protect it from accidental deletion.
+Mit dem **Konfigurationsskript für die Azure Disk Encryption-Voraussetzungen** werden alle Verschlüsselungsvoraussetzungen (bzw. so viele wie gewünscht) eingerichtet. Mit dem Skript wird auch sichergestellt, dass sich Ihre Key Vault-Instanz in derselben Region wie die zu verschlüsselnde VM befindet. Es erstellt eine Ressourcengruppe und einen Schlüsseltresor und legt die Zugriffsrichtlinie für den Schlüsseltresor fest. Das Skript erstellt darüber hinaus eine Ressourcensperre für den Schlüsseltresor, um zu verhindern, dass er versehentlich gelöscht wird.
 
-## Encrypting an existing VM disk
+## <a name="encrypting-an-existing-vm-disk"></a>Verschlüsseln eines vorhandenen VM-Datenträgers
 
-There are two steps for encrypting an existing VM disk, when you are using the Azure Disk Encryption prerequisites configuration script:
+Die Verschlüsselung eines vorhandenen VM-Datenträgers umfasst zwei Schritte, wenn das **Konfigurationsskript für die Azure Disk Encryption-Voraussetzungen** verwendet wird:
 
-1. Run the Azure Disk Encryption prerequisites configuration script.
-1. Encrypt the Azure virtual machine in PowerShell.
+1. Führen Sie das Konfigurationsskript für die Azure Disk Encryption-Voraussetzungen aus.
+1. Verschlüsseln des virtuellen Azure-Computers in PowerShell

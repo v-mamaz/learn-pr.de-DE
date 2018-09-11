@@ -13,6 +13,7 @@ Sie installieren PowerShell Core unter Ubuntu Linux mit dem Advanced Packaging T
     ```bash
     curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
     ```
+
 1. Registrieren Sie das **Microsoft Ubuntu-Repository**, sodass der Paket-Manager das PowerShell Core-Paket finden kann.
 
     ```bash
@@ -48,6 +49,7 @@ Installieren Sie als Nächstes **PowerShell Core** mit dem Homebrew-Paket-Manage
     ```bash
     brew tap caskroom/cask
     ```
+
 1. Installieren von PowerShell Core:
 
     ```bash
@@ -74,16 +76,20 @@ Installieren Sie Azure PowerShell unter Windows mit dem PowerShell-Befehl „`In
 >Wenn die Versionsnummer niedriger ist als 5.0, befolgen Sie die Anweisungen zum [Durchführen eines Upgrades einer vorhandenen Windows PowerShell-Version](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
 
 1. Öffnen Sie das **Startmenü**, und geben Sie **Windows PowerShell** ein.
-2. Klicken Sie mit der rechten Maustaste auf das Symbol **Windows PowerShell**, und wählen Sie **Als Administrator ausführen** aus.
-3. Klicken Sie im Dialogfeld **Benutzerkontensteuerung** auf **Ja**.
-4. Geben Sie den folgenden Befehl ein, und drücken Sie die Eingabetaste:
+
+1. Klicken Sie mit der rechten Maustaste auf das Symbol **Windows PowerShell**, und wählen Sie **Als Administrator ausführen** aus.
+
+1. Klicken Sie im Dialogfeld **Benutzerkontensteuerung** auf **Ja**.
+
+1. Geben Sie den folgenden Befehl ein, und drücken Sie die Eingabetaste:
 
     ```powershell
     Install-Module -Name AzureRM
     ```
-5. Wenn Sie gefragt werden, ob Sie Modulen von PSGallery vertrauen, antworten Sie **Ja** oder **Ja, allen**.
 
-> [!NOTE]
+1. Wenn Sie gefragt werden, ob Sie Modulen von PSGallery vertrauen, antworten Sie **Ja** oder **Ja, allen**.
+
+> [!TIP]
 > Wenn Sie in einer Fehlermeldung darauf hingewiesen werden, dass bereits eine Version des Azure PowerShell-Moduls installiert ist, können Sie diese mit dem folgenden Befehl auf die _neueste_ Version aktualisieren:
 > 
 > `Update-Module -Name AzureRM`

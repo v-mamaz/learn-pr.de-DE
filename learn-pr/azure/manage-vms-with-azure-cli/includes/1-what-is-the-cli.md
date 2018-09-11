@@ -18,9 +18,10 @@ Die Azure CLI ist das plattformübergreifende Befehlszeilentool von Microsoft zu
 Die Azure CLI kann Sie dabei unterstützen, Azure-Ressourcen wie z.B. virtuelle Computer und Datenträger über die Befehlszeile oder mithilfe von Skripts zu verwalten. Fangen wir einfach an und finden heraus, was Sie mit dem Tool tun können.
 
 ## <a name="learning-objectives"></a>Lernziele
+
 In diesem Modul lernen Sie Folgendes:
 
-- Erstellen eines virtuellen Azure-Computers mit der CLI
-- Ändern der Größe von virtuellen Computern mit der CLI
-- Verwalten und Abfragen eines virtuellen Computers über die Befehlszeile
-- Installieren von Software auf einem virtuellen Computer
+- Erstellen einer VM mit der Azure CLI
+- Ändern der Größe von VMs mit der Azure CLI
+- Ausführen grundlegender Verwaltungsaufgaben mit der Azure CLI
+- Herstellen einer Verbindung mit einer aktiven VM über SSH und die Azure CLI

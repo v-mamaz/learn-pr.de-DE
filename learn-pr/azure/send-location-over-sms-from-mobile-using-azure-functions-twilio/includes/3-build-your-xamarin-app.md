@@ -2,9 +2,9 @@ An diesem Punkt ist die mobile App eine einfache „Hallo Welt“-App. In dieser
 
 Die Benutzeroberfläche der App besteht aus Folgendem:
 
-* Ein Steuerelement für Texteingaben, um Telefonnummern einzugeben.
-* Eine Schaltfläche, um Ihren Standort mithilfe einer Azure-Funktion an diese Nummern zu senden.
-* Eine Bezeichnung, die eine Meldung an den Benutzer des aktuellen Status sendet, z.B., dass der Standort gesendet wurde und dass der Standort erfolgreich gesendet wird.
+- Ein Steuerelement für Texteingaben, um Telefonnummern einzugeben.
+- Eine Schaltfläche, um Ihren Standort mithilfe einer Azure-Funktion an diese Nummern zu senden.
+- Eine Bezeichnung, die eine Meldung an den Benutzer des aktuellen Status sendet, z.B., dass der Standort gesendet wurde und dass der Standort erfolgreich gesendet wird.
 
 Xamarin.Forms unterstützt ein Entwurfsmuster, das als „Model-View-ViewModel“ (MVVM) bezeichnet wird. Weitere Informationen zu MVVM finden Sie in der [Xamarin-Dokumentation zu MVVM](https://docs.microsoft.com/xamarin/xamarin-forms/enterprise-application-patterns/mvvm). Das Wesentliche bei MVVM ist jedoch, dass jede Seite (Ansicht) über ein ViewModel verfügt, das Eigenschaften und Verhaltensweisen verfügbar macht.
 
@@ -18,15 +18,15 @@ Alle ViewModels implementieren die `INotifyPropertyChanged`-Schnittstelle. Diese
 
 1. Erstellen Sie eine neue Klasse im `ImHere`.NET Standard-Projekt namens `BaseViewModel`, indem Sie mit der rechten Maustaste auf das Projekt und anschließend auf *Hinzufügen > Klasse* klicken. Nennen Sie die neue Klasse „BaseViewModel“, und klicken Sie auf **Hinzufügen**.
 
-2. Legen Sie die Klasse auf `public` fest, und führen Sie eine Ableitung von `INotifyPropertyChanged` durch. Sie müssen eine using-Anweisung für `System.ComponentModel` hinzufügen.
+1. Legen Sie die Klasse auf `public` fest, und führen Sie eine Ableitung von `INotifyPropertyChanged` durch. Sie müssen eine using-Anweisung für `System.ComponentModel` hinzufügen.
 
-3. Implementieren Sie die `INotifyPropertyChanged`-Schnittstelle, indem Sie das `PropertyChanged`-Ereignis hinzufügen:
+1. Implementieren Sie die `INotifyPropertyChanged`-Schnittstelle, indem Sie das `PropertyChanged`-Ereignis hinzufügen:
 
     ```cs
     public event PropertyChangedEventHandler PropertyChanged;
     ```
 
-4. Das allgemeine Muster für ViewModel-Eigenschaften besteht darin, eine öffentliche Eigenschaft (public) mit einem privaten Unterstützungsfeld (private) zu enthalten. Im Eigenschaftensetter wird das Unterstützungsfeld mit dem neuen Wert verglichen. Wenn der neue Wert sich von dem des Unterstützungsfelds unterscheidet, wird dieses aktualisiert, und das `PropertyChanged`-Ereignis wird ausgelöst. Diese Logik kann in einer Methode auf einfache Weise berücksichtigt werden. Fügen Sie deshalb die `Set`-Methode hinzu. Sie müssen eine using-Anweisung für den `System.Runtime.CompilerServices`-Namespace hinzufügen.
+1. Das allgemeine Muster für ViewModel-Eigenschaften besteht darin, eine öffentliche Eigenschaft (public) mit einem privaten Unterstützungsfeld (private) zu enthalten. Im Eigenschaftensetter wird das Unterstützungsfeld mit dem neuen Wert verglichen. Wenn der neue Wert sich von dem des Unterstützungsfelds unterscheidet, wird dieses aktualisiert, und das `PropertyChanged`-Ereignis wird ausgelöst. Diese Logik kann in einer Methode auf einfache Weise berücksichtigt werden. Fügen Sie deshalb die `Set`-Methode hinzu. Sie müssen eine using-Anweisung für den `System.Runtime.CompilerServices`-Namespace hinzufügen.
 
     ```cs
     protected void Set<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
@@ -67,9 +67,9 @@ Das `MainPage`-Objekt enthält ein Steuerelement für die Texteingabe, in das Te
 
 1. Erstellen Sie eine Klasse namens `MainViewModel` im .NET Standard-Projekt `ImHere`.
 
-2. Legen Sie diese Klasse auf „public“ fest, und führen Sie eine Ableitung von `BaseViewModel` durch.
+1. Legen Sie diese Klasse auf „public“ fest, und führen Sie eine Ableitung von `BaseViewModel` durch.
 
-3. Fügen Sie zwei `string`-Eigenschaften (`PhoneNumbers` und `Message`) hinzu, die jeweils ein Unterstützungsfeld enthalten. Verwenden Sie im Eigenschaftensetter die Methode `Set` der Basisklasse, um den Wert zu aktualisieren und das `PropertyChanged`-Ereignis auszulösen.
+1. Fügen Sie zwei `string`-Eigenschaften (`PhoneNumbers` und `Message`) hinzu, die jeweils ein Unterstützungsfeld enthalten. Verwenden Sie im Eigenschaftensetter die Methode `Set` der Basisklasse, um den Wert zu aktualisieren und das `PropertyChanged`-Ereignis auszulösen.
 
    ```cs
     string message = "";
@@ -87,13 +87,13 @@ Das `MainPage`-Objekt enthält ein Steuerelement für die Texteingabe, in das Te
     }
    ```
 
-4. Fügen Sie eine schreibgeschützte Befehlseigenschaft namens `SendLocationCommand` hinzu. Dieser Befehl weist den Typ `ICommand` des `System.Windows.Input`-Namespace auf.
+1. Fügen Sie eine schreibgeschützte Befehlseigenschaft namens `SendLocationCommand` hinzu. Dieser Befehl weist den Typ `ICommand` des `System.Windows.Input`-Namespace auf.
 
     ```cs
     public ICommand SendLocationCommand { get; }
     ```
 
-5. Fügen Sie der Klasse einen Konstruktor hinzu, und initialisieren Sie in diesem Konstruktor den `SendLocationCommand`-Befehl als neuen Befehl (`Command`) aus dem `Xamarin.Forms`-Namespace. Der Konstruktor für diesen Befehl (`Action`) akzeptiert eine Aktion, die ausgeführt werden soll, wenn der Befehl aufgerufen wird. Erstellen Sie deshalb eine `async`-Methode namens `SendLocation`, und übergeben Sie eine Lambda-Funktion (`await`), die auf diesen Aufruf des Konstruktors wartet. Der Körper der `SendLocation`-Methode wird in späteren Einheiten in diesem Modul implementiert. Sie müssen eine using-Anweisung für den `System.Threading.Tasks`-Namespace hinzufügen, die einen Task (`Task`) zurückgeben kann.
+1. Fügen Sie der Klasse einen Konstruktor hinzu, und initialisieren Sie in diesem Konstruktor den `SendLocationCommand`-Befehl als neuen Befehl (`Command`) aus dem `Xamarin.Forms`-Namespace. Der Konstruktor für diesen Befehl (`Action`) akzeptiert eine Aktion, die ausgeführt werden soll, wenn der Befehl aufgerufen wird. Erstellen Sie deshalb eine `async`-Methode namens `SendLocation`, und übergeben Sie eine Lambda-Funktion (`await`), die auf diesen Aufruf des Konstruktors wartet. Der Körper der `SendLocation`-Methode wird in späteren Einheiten in diesem Modul implementiert. Sie müssen eine using-Anweisung für den `System.Threading.Tasks`-Namespace hinzufügen, die einen Task (`Task`) zurückgeben kann.
 
     ```cs
     public MainViewModel()
@@ -153,7 +153,7 @@ Xamarin.Forms-Benutzeroberflächen können mithilfe von XAML erstellt werden.
 
     Hinweis: Das `ImHere.UWP`-Projekt enthält ebenfalls eine Datei namens `MainPage.xaml`. Versichern Sie sich, dass Sie die Datei in der .NET Standard-Bibliothek bearbeiten.
 
-2. Bevor Sie Steuerelemente in einem ViewModel an Eigenschaften binden können, müssen Sie eine Instanz von ViewModel als Bindungskontext der Seite festlegen. Fügen Sie folgenden XAML-Code innerhalb der `ContentPage` auf oberster Ebene hinzu.
+1. Bevor Sie Steuerelemente in einem ViewModel an Eigenschaften binden können, müssen Sie eine Instanz von ViewModel als Bindungskontext der Seite festlegen. Fügen Sie folgenden XAML-Code innerhalb der `ContentPage` auf oberster Ebene hinzu.
 
     ```xml
     <ContentPage.BindingContext>
@@ -161,14 +161,14 @@ Xamarin.Forms-Benutzeroberflächen können mithilfe von XAML erstellt werden.
     </ContentPage.BindingContext>
     ```
 
-3. Löschen Sie die Inhalte von `StackLayout`, und fügen Sie Auffüllungen hinzu, damit die Benutzeroberfläche besser aussieht.
+1. Löschen Sie die Inhalte von `StackLayout`, und fügen Sie Auffüllungen hinzu, damit die Benutzeroberfläche besser aussieht.
 
     ```xml
     <StackLayout Padding="20">
     </StackLayout>
     ```
 
-4. Fügen Sie ein `Editor`-Steuerelement hinzu, das der Benutzer dafür verwenden kann, Telefonnummern zu `StackLayout` hinzuzufügen. Diese werden mit einer Bezeichnung versehen, die beschreibt, wofür das Steuerelement vorgesehen ist. Die untergeordneten Steuerelemente des Stapels von `StackLayout` werden horizontal oder vertikal in der Reihenfolge angeordnet, in der sie hinzugefügt werden. Wenn `Label` also zuerst hinzugefügt wird, wird es über `Editor` platziert. Bei `Editor`-Steuerelementen handelt es sich um mehrzeilige Steuerelemente für Eingaben, über die der Benutzer mehrere Telefonnummern (eine pro Zeile) eingeben kann.
+1. Fügen Sie ein `Editor`-Steuerelement hinzu, das der Benutzer dafür verwenden kann, Telefonnummern zu `StackLayout` hinzuzufügen. Diese werden mit einer Bezeichnung `Label` versehen, die beschreibt, wofür das Steuerelement vorgesehen ist. Die untergeordneten Steuerelemente des Stapels von `StackLayout` werden horizontal oder vertikal in der Reihenfolge angeordnet, in der sie hinzugefügt werden. Wenn `Label` also zuerst hinzugefügt wird, wird es über `Editor` platziert. Bei `Editor`-Steuerelementen handelt es sich um mehrzeilige Steuerelemente für Eingaben, über die der Benutzer mehrere Telefonnummern (eine pro Zeile) eingeben kann.
 
     ```xml
     <StackLayout Padding="20">
@@ -179,7 +179,7 @@ Xamarin.Forms-Benutzeroberflächen können mithilfe von XAML erstellt werden.
 
     Die `Text`-Eigenschaft von `Editor` ist an die `PhoneNumbers`-Eigenschaft von `MainViewModel` gebunden. Die Syntax für die Bindung soll den Eigenschaftenwert auf `"{Binding <property name>}"` festlegen. Durch die geschweiften Klammern wird der XAML-Compiler darüber informiert, dass dieser Wert ein Sonderfall ist und nicht wie eine einfache Zeichenfolge behandelt werden soll `string`.
 
-5. Fügen Sie eine Schaltfläche hinzu, `Button`zum den Standort des Benutzers unter `Editor` zu senden.
+1. Fügen Sie eine Schaltfläche hinzu, `Button`zum den Standort des Benutzers unter `Editor` zu senden.
 
     ```xml
     <Button Text="Send Location" BackgroundColor="Blue" TextColor="White"
@@ -188,7 +188,7 @@ Xamarin.Forms-Benutzeroberflächen können mithilfe von XAML erstellt werden.
 
     Die `Command`-Eigenschaft wird an den `SendLocationCommand`-Befehl von ViewModel gebunden. Wenn auf die Schaltfläche getippt wird, wird der Befehl ausgeführt.
 
-6. Fügen Sie eine Bezeichnung hinzu, um die Statusmeldung unter der Schaltfläche anzuzeigen.
+1. Fügen Sie eine Bezeichnung `Label` hinzu, um die Statusmeldung unter der Schaltfläche `Button` anzuzeigen.
 
     ```xml
     <Label Text="{Binding Message}"

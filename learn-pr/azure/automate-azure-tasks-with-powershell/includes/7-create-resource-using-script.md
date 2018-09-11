@@ -89,6 +89,7 @@ param([int]$size, [string]$location)
 
 ## <a name="how-to-create-a-linux-virtual-machine"></a>Erstellen eines benutzerdefinierten virtuellen Linux-Computers
 Azure PowerShell stellt das Cmdlet **New-AzureRmVm** bereit, um einen virtuellen Computer zu erstellen. Das Cmdlet hat viele Parameter, um die große Anzahl von Konfigurationseinstellungen für virtuelle Computer zu verarbeiten. Die meisten Parameter haben sinnvolle Standardwerte, deshalb müssen Sie nur fünf Werte angeben:
+
 - **ResourceGroupName:** Die Ressourcengruppe, in der der neue virtuelle Computer platziert wird.
 - **Name:** Der Name des virtuellen Computers in Azure.
 - **Location:** Der geografische Standort, in dem der virtuelle Computer bereitgestellt wird.

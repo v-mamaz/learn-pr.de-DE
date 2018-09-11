@@ -81,7 +81,7 @@ az webapp deployment source config-zip --src ../site.zip --name <your-unique-app
 
 Öffnen Sie `https://<your-unique-app-name>.azurewebsites.net` in einem Browser, um die ausgeführte App anzuzeigen. Es sollte etwa wie im folgenden Bild aussehen.
 
-![Screenshot der FileUploader-Web-App](../media-drafts/fileuploader-empty.PNG)
+![Screenshot der FileUploader-Web-App](../media/7-fileuploader-empty.PNG)
 
 Versuchen Sie, einige Dateien hochzuladen und herunterzuladen, um die App zu testen. Nachdem Sie einige Dateien hochgeladen haben, führen Sie Folgendes in der Shell aus, um die Blobs anzuzeigen, die in den Container hochgeladen wurden:
 
