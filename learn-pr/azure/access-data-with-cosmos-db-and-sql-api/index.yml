@@ -24,7 +24,7 @@ levels:
 roles:
 - developer
 products:
-- Azure
+- azure
 units:
 - learn.access-data-with-cosmos-db-and-sql-api.1-introduction
 - learn.access-data-with-cosmos-db-and-sql-api.2-add-data
