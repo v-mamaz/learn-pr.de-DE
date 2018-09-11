@@ -1,5 +1,5 @@
 ### YamlMime:ModuleUnit
-uid: execute-azure-function-with-triggers.6-create-http-trigger
+uid: learn.execute-azure-function-with-triggers.6-create-http-trigger
 title: Erstellen eines HTTP-Triggers
 metadata:
   title: Erstellen eines HTTP-Triggers und Ausführen einer Azure-Funktion mit einer HTTP-Anforderung
