@@ -1,7 +1,0 @@
-## <a name="summary"></a><span data-ttu-id="9e64a-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="9e64a-101">Summary</span></span>
-
-<span data-ttu-id="9e64a-102">In diesem Modul haben Sie gelernt, wie Bilder mit dem Maschinelles Sehen-API-Dienst analysiert werden.</span><span class="sxs-lookup"><span data-stu-id="9e64a-102">In this module, you have learned how to analyze images with the Computer Vision API service.</span></span>
-
-<span data-ttu-id="9e64a-103">Sie haben Bilder analysiert, um zu wissen, was sie darstellen, und Sie haben Miniaturansichten generiert.</span><span class="sxs-lookup"><span data-stu-id="9e64a-103">You analyzed images to know what they are as well as generated thumbnails.</span></span> <span data-ttu-id="9e64a-104">Anschließend haben Sie die optische Zeichenerkennung (OCR) für gedruckten Text ausgeführt und Handschrift in gedruckte Zeichen umgewandelt.</span><span class="sxs-lookup"><span data-stu-id="9e64a-104">Then, you performed Optical Character Recognition (OCR) on printed text and converted handwriting into printed characters.</span></span>
-
-<span data-ttu-id="9e64a-105">Dieses Modul bildet die Grundlage für die Integration visueller Cognitive Services in eine in beliebigen Sprachen geschriebene Anwendung.</span><span class="sxs-lookup"><span data-stu-id="9e64a-105">This module provides the basis for integrating visual Cognitive Services within an application written in any languages.</span></span>
