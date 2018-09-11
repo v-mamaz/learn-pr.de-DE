@@ -1,0 +1,43 @@
+### YamlMime:Module
+uid: learn.predict-costs-and-optimize-spending
+metadata:
+  title: Voraussagen von Kosten und Optimieren der Ausgaben für Azure
+  description: Die Kosten sind einer der wichtigsten Faktoren der Cloud und können sich erheblich auf Ihr Unternehmen auswirken. Azure bietet mehrere Tools, mit denen Sie Ihre Cloudausgaben besser einschätzen können. Diese Tools umfassen zudem einige bewährte Methoden, um Ihre Kosten zu senken.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 0381bfdeb3669e4453e10bd4bde3b0281cfaa14a
+  ms.sourcegitcommit: d6a4ffb95924e4af3bd445aaf263f34253735861
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43458695"
+title: Voraussagen von Kosten und Optimieren der Ausgaben für Azure
+summary: Die Kosten sind einer der wichtigsten Faktoren der Cloud und können sich erheblich auf Ihr Unternehmen auswirken. Azure bietet mehrere Tools, mit denen Sie Ihre Cloudausgaben besser einschätzen können. Diese Tools umfassen zudem einige bewährte Methoden, um Ihre Kosten zu senken.
+prerequisites: "- Überblick über Ihre Optionen bei Azure-Infrastrukturkomponenten \n"
+abstract: >
+  In diesem Modul lernen Sie Folgendes:
+
+  - Verwenden des Azure-Preisrechners zur Kostenschätzung
+
+  - Verwenden von Tools, um Kosten in Azure vorherzusagen und zu optimieren
+
+  - Verwenden bewährter Methoden zum Senken der Infrastrukturkosten
+
+  - Verwenden bewährter Methoden zum Senken der Lizenzierungskosten
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- solution-architect
+- administrator
+products:
+- azure
+- azurePortal
+- costManagement
+units:
+- learn.predict-costs-and-optimize-spending.1-introduction
+- learn.predict-costs-and-optimize-spending.2-estimate-costs-with-the-azure-pricing-calculator
+- learn.predict-costs-and-optimize-spending.3-predict-and-optimize-with-cost-management-and-advisor
+- learn.predict-costs-and-optimize-spending.4-save-on-infrastructure-costs
+- learn.predict-costs-and-optimize-spending.5-save-on-licensing-costs
+- learn.predict-costs-and-optimize-spending.6-summary
+achievement: learn.predict-costs-and-optimize-spending.badge

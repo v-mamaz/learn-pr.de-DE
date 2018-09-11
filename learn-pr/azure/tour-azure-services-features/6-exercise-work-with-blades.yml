@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-services-features.6-exercise-work-with-blades
-title: '<span data-ttu-id="f3756-101">Übung: Arbeiten mit Blättern</span><span class="sxs-lookup"><span data-stu-id="f3756-101">Exercise - Work with blades</span></span>'
+title: <span data-ttu-id="8e570-101">Arbeiten mit Blättern</span><span class="sxs-lookup"><span data-stu-id="8e570-101">Work with blades</span></span>
 metadata:
-  title: '<span data-ttu-id="f3756-102">Übung: Arbeiten mit Blättern</span><span class="sxs-lookup"><span data-stu-id="f3756-102">Exercise - Work with blades</span></span>'
-  description: '<span data-ttu-id="f3756-103">Übung: Arbeiten mit Blättern</span><span class="sxs-lookup"><span data-stu-id="f3756-103">Exercise - Work with blades</span></span>'
-  ms.openlocfilehash: 65ff8f634e623a4a27b488644ee5ad149b4a3896
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  title: <span data-ttu-id="8e570-102">Arbeiten mit Blättern</span><span class="sxs-lookup"><span data-stu-id="8e570-102">Work with blades</span></span>
+  description: <span data-ttu-id="8e570-103">Arbeiten mit Blättern</span><span class="sxs-lookup"><span data-stu-id="8e570-103">Work with blades</span></span>
+  ms.openlocfilehash: 1b99e92c2640d94368cd67a6b5f35e7886c0d651
+  ms.sourcegitcommit: d6a4ffb95924e4af3bd445aaf263f34253735861
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40447491"
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43459049"
 durationInMinutes: 10
 content: '[!include[](includes/6-exercise-work-with-blades.md)]'

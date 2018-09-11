@@ -1,25 +1,23 @@
-<span data-ttu-id="43c75-101"><!--TODO: Explain how to do ExecuteNext (pages closer to SDK imp) vs ToList (continuation token)--> Nun, da Sie Dokumente in Ihrer Anwendung erstellt haben, werden wir diese aus Ihrer Anwendung abrufen.</span><span class="sxs-lookup"><span data-stu-id="43c75-101"><!--TODO: Explain how to do ExecuteNext (pages closer to SDK imp) vs ToList (continuation token)--> Now that you've created documents in your application, let's query them from your application.</span></span> <span data-ttu-id="43c75-102">Azure Cosmos DB verwendet SQL- und LINQ-Abfragen.</span><span class="sxs-lookup"><span data-stu-id="43c75-102">Azure Cosmos DB uses SQL queries and LINQ queries.</span></span> <span data-ttu-id="43c75-103">SQL-Abfragen und ihre Ausführung im Portal werden im Modul **Hinzufügen und Abfragen von Daten in Ihrer Datenbank** besprochen.</span><span class="sxs-lookup"><span data-stu-id="43c75-103">SQL queries and how to run them in the portal is discussed in the **Add data and query data in your database** module.</span></span> 
+<span data-ttu-id="ded47-101"><!--TODO: Explain how to do ExecuteNext (pages closer to SDK imp) vs ToList (continuation token)--> Nun, da Sie Dokumente in Ihrer Anwendung erstellt haben, werden wir diese aus Ihrer Anwendung abrufen.</span><span class="sxs-lookup"><span data-stu-id="ded47-101"><!--TODO: Explain how to do ExecuteNext (pages closer to SDK imp) vs ToList (continuation token)--> Now that you've created documents in your application, let's query them from your application.</span></span> <span data-ttu-id="ded47-102">Azure Cosmos DB verwendet SQL- und LINQ-Abfragen.</span><span class="sxs-lookup"><span data-stu-id="ded47-102">Azure Cosmos DB uses SQL queries and LINQ queries.</span></span> <span data-ttu-id="ded47-103">Allgemeine Informationen zu den von Azure Cosmos DB unterstützten SQL-Abfragen finden Sie im Modul **Hinzufügen von Daten und Abfragedaten in Ihrer Datenbank**. Diese Einheit konzentriert sich im Gegensatz zum Portal auf die Ausführung von SQL-Abfragen und LINQ-Abfragen Ihrer Anwendung.</span><span class="sxs-lookup"><span data-stu-id="ded47-103">General information about the SQL queries Azure Cosmos DB supports is in **Add data and query data in your database** module; this unit focuses on running SQL queries and LINQ queries from your application, as opposed to the portal.</span></span>
 
-<span data-ttu-id="43c75-104">Diese Einheit konzentriert sich auf die Ausführung von SQL- und LINQ-Abfragen aus Ihrer Anwendung.</span><span class="sxs-lookup"><span data-stu-id="43c75-104">So this unit focuses on running SQL queries and LINQ queries from your application.</span></span>
+<span data-ttu-id="ded47-104">Hierbei werden die für Ihre Anwendung für Onlinehändler erstellten Benutzerdokumente verwendet, um diese Abfragen zu testen.</span><span class="sxs-lookup"><span data-stu-id="ded47-104">We'll use the user documents you've created for your online retailer application to test these queries.</span></span>
 
-<span data-ttu-id="43c75-105">Hierbei werden die für Ihre Anwendung für Onlinehändler erstellten Benutzerdokumente verwendet, um diese Abfragen zu testen.</span><span class="sxs-lookup"><span data-stu-id="43c75-105">We'll use the user documents you've created for your online retailer application to test these queries.</span></span>
+## <a name="linq-query-basics"></a><span data-ttu-id="ded47-105">Grundlegendes zu LINQ-Abfragen</span><span class="sxs-lookup"><span data-stu-id="ded47-105">LINQ query basics</span></span>
 
-## <a name="linq-query-basics"></a><span data-ttu-id="43c75-106">Grundlegendes zu LINQ-Abfragen</span><span class="sxs-lookup"><span data-stu-id="43c75-106">LINQ query basics</span></span>
+<span data-ttu-id="ded47-106">LINQ ist ein .NET-Programmiermodell, das Berechnungen als Abfragen für Streams von Objekten darstellt.</span><span class="sxs-lookup"><span data-stu-id="ded47-106">LINQ is a .NET programming model that expresses computations as queries on streams of objects.</span></span> <span data-ttu-id="ded47-107">Sie können ein **IQueryable**-Objekt für die direkte Abfrage von Azure Cosmos DB erstellen, das die LINQ-Abfrage in eine Cosmos DB-Abfrage übersetzt.</span><span class="sxs-lookup"><span data-stu-id="ded47-107">You can create an **IQueryable** object that directly queries Azure Cosmos DB, which translates the LINQ query into a Cosmos DB query.</span></span> <span data-ttu-id="ded47-108">Anschließend wird die Abfrage an den Azure Cosmos DB-Server übergeben, um einen Ergebnissatz im JSON-Format abzurufen.</span><span class="sxs-lookup"><span data-stu-id="ded47-108">The query is then passed to the Azure Cosmos DB server to retrieve a set of results in JSON format.</span></span> <span data-ttu-id="ded47-109">Die zurückgegebenen Ergebnisse werden clientseitig in einen Stream von .NET-Objekten deserialisiert.</span><span class="sxs-lookup"><span data-stu-id="ded47-109">The returned results are deserialized into a stream of .NET objects on the client side.</span></span> <span data-ttu-id="ded47-110">Viele Entwickler bevorzugen LINQ-Abfragen, weil sie ein einziges, konsistentes Programmiermodell für die Arbeit mit Objekten im Anwendungscode und für die Abfragelogik in der Datenbank bieten.</span><span class="sxs-lookup"><span data-stu-id="ded47-110">Many developers prefer LINQ queries, as they provide a single consistent programming model across how they work with objects in application code and how they express query logic running in the database.</span></span>
 
-<span data-ttu-id="43c75-107">LINQ ist ein .NET-Programmiermodell, das Berechnungen als Abfragen für Streams von Objekten darstellt.</span><span class="sxs-lookup"><span data-stu-id="43c75-107">LINQ is a .NET programming model that expresses computations as queries on streams of objects.</span></span> <span data-ttu-id="43c75-108">Sie können ein **IQueryable**-Objekt für die direkte Abfrage von Azure Cosmos DB erstellen, das die LINQ-Abfrage in eine Cosmos DB-Abfrage übersetzt.</span><span class="sxs-lookup"><span data-stu-id="43c75-108">You can create an **IQueryable** object that directly queries Azure Cosmos DB, which translates the LINQ query into a Cosmos DB query.</span></span> <span data-ttu-id="43c75-109">Anschließend wird die Abfrage an den Azure Cosmos DB-Server übergeben, um einen Ergebnissatz im JSON-Format abzurufen.</span><span class="sxs-lookup"><span data-stu-id="43c75-109">The query is then passed to the Azure Cosmos DB server to retrieve a set of results in JSON format.</span></span> <span data-ttu-id="43c75-110">Die zurückgegebenen Ergebnisse werden clientseitig in einen Stream von .NET-Objekten deserialisiert.</span><span class="sxs-lookup"><span data-stu-id="43c75-110">The returned results are deserialized into a stream of .NET objects on the client side.</span></span> <span data-ttu-id="43c75-111">Viele Entwickler bevorzugen LINQ-Abfragen, weil sie ein einziges, konsistentes Programmiermodell für die Arbeit mit Objekten im Anwendungscode und für die Abfragelogik in der Datenbank bieten.</span><span class="sxs-lookup"><span data-stu-id="43c75-111">Many developers prefer LINQ queries, as they provide a single consistent programming model across how they work with objects in application code and how they express query logic running in the database.</span></span>
+<span data-ttu-id="ded47-111">Die folgende Tabelle zeigt, wie LINQ-Abfragen in SQL übersetzt werden.</span><span class="sxs-lookup"><span data-stu-id="ded47-111">The following table shows how LINQ queries are translated into SQL.</span></span>
 
-<span data-ttu-id="43c75-112">Die folgende Tabelle zeigt, wie LINQ-Abfragen in SQL übersetzt werden.</span><span class="sxs-lookup"><span data-stu-id="43c75-112">The following table shows how LINQ queries are translated into SQL.</span></span>
-
-| <span data-ttu-id="43c75-113">LINQ-Ausdruck</span><span class="sxs-lookup"><span data-stu-id="43c75-113">LINQ expression</span></span> | <span data-ttu-id="43c75-114">SQL-Übersetzung</span><span class="sxs-lookup"><span data-stu-id="43c75-114">SQL translation</span></span> |
+| <span data-ttu-id="ded47-112">LINQ-Ausdruck</span><span class="sxs-lookup"><span data-stu-id="ded47-112">LINQ expression</span></span> | <span data-ttu-id="ded47-113">SQL-Übersetzung</span><span class="sxs-lookup"><span data-stu-id="ded47-113">SQL translation</span></span> |
 |---|---|
 | `input.Select(family => family.parents[0].familyName);`| `SELECT VALUE f.parents[0].familyName FROM Families f` |
 |`input.Select(family => family.children[0].grade + c); // c is an int variable` | `SELECT VALUE f.children[0].grade + c FROM Families f` |
 |`input.Select(family => new { name = family.children[0].familyName, grade = family.children[0].grade + 3});`| `SELECT VALUE {"name":f.children[0].familyName, "grade": f.children[0].grade + 3 } FROM Families f`|
 |`input.Where(family=> family.parents[0].familyName == "Smith");`|`SELECT * FROM Families f WHERE f.parents[0].familyName = "Smith"`|
 
-## <a name="run-sql-and-linq-queries"></a><span data-ttu-id="43c75-115">Ausführen von SQL- und LINQ-Abfragen</span><span class="sxs-lookup"><span data-stu-id="43c75-115">Run SQL and LINQ queries</span></span>
+## <a name="run-sql-and-linq-queries"></a><span data-ttu-id="ded47-114">Ausführen von SQL- und LINQ-Abfragen</span><span class="sxs-lookup"><span data-stu-id="ded47-114">Run SQL and LINQ queries</span></span>
 
-1. <span data-ttu-id="43c75-116">Das folgende Beispiel zeigt, wie eine Abfrage aus Ihrem .NET-Code in SQL, LINQ oder LINQ Lambda ausgeführt werden kann.</span><span class="sxs-lookup"><span data-stu-id="43c75-116">The following sample shows how a query could be performed in SQL, LINQ, or LINQ lambda from your .NET code.</span></span> <span data-ttu-id="43c75-117">Kopieren Sie den Code, und fügen Sie ihn nach Ihrer **DeleteUserDocument**-Methode ein.</span><span class="sxs-lookup"><span data-stu-id="43c75-117">Copy the code and add it after your **DeleteUserDocument** method.</span></span>
+1. <span data-ttu-id="ded47-115">Im folgenden Beispiel wird gezeigt, wie eine Abfrage aus Ihrem .NET-Code in SQL, LINQ oder LINQ Lambda ausgeführt werden kann.</span><span class="sxs-lookup"><span data-stu-id="ded47-115">The following sample shows how a query could be performed in SQL, LINQ, or LINQ lambda from your .NET code.</span></span> <span data-ttu-id="ded47-116">Kopieren Sie den Code, und fügen Sie ihn ans Ende der „Program.cs“-Datei ein.</span><span class="sxs-lookup"><span data-stu-id="ded47-116">Copy the code and add it to the end of the Program.cs file.</span></span>
 
     ```csharp
     private void ExecuteSimpleQuery(string databaseName, string collectionName)
@@ -27,10 +25,10 @@
         // Set some common query options
         FeedOptions queryOptions = new FeedOptions { MaxItemCount = -1 };
     
-            // Here we find the Andersen family via its LastName
-            IQueryable<USer> userQuery = this.client.CreateDocumentQuery<Family>(
+            // Here we find nelapin via their LastName
+            IQueryable<User> userQuery = this.client.CreateDocumentQuery<User>(
                     UriFactory.CreateDocumentCollectionUri(databaseName, collectionName), queryOptions)
-                    .Where(u => u.LastName == "Sun");
+                    .Where(u => u.LastName == "Pindakova");
     
             // The query is executed synchronously here, but can also be executed asynchronously via the IDocumentQuery<T> interface
             Console.WriteLine("Running LINQ query...");
@@ -42,7 +40,7 @@
             // Now execute the same query via direct SQL
             IQueryable<User> userQueryInSql = this.client.CreateDocumentQuery<User>(
                     UriFactory.CreateDocumentCollectionUri(databaseName, collectionName),
-                    "SELECT * FROM User WHERE User.LastName = 'Sun'",
+                    "SELECT * FROM User WHERE User.LastName = 'Pindakova'",
                     queryOptions);
     
             Console.WriteLine("Running direct SQL query...");
@@ -56,19 +54,19 @@
     }
     ```
 
-2. <span data-ttu-id="43c75-118">Kopieren Sie den folgenden Code, und fügen Sie ihn vor der Zeile **in Ihre**BasicOperations`await this.DeleteUserDocument("Users", "WebCustomers", "1");`-Methode ein.</span><span class="sxs-lookup"><span data-stu-id="43c75-118">Copy and paste the following code to your **BasicOperations** method, before the `await this.DeleteUserDocument("Users", "WebCustomers", "1");` line.</span></span>
+2. <span data-ttu-id="ded47-117">Kopieren Sie den folgenden Code, und fügen Sie ihn vor der `await this.DeleteUserDocument("Users", "WebCustomers", "1");`-Zeile in Ihre **BasicOperations**-Methode ein.</span><span class="sxs-lookup"><span data-stu-id="ded47-117">Copy and paste the following code to your **BasicOperations** method, before the `await this.DeleteUserDocument("Users", "WebCustomers", "1");` line.</span></span>
 
     ```csharp
     this.ExecuteSimpleQuery("Users", "WebCustomers");
     ```
 
-3. <span data-ttu-id="43c75-119">Speichern Sie die Datei „Program.cs“, und führen Sie dann im integrierten Terminal den folgenden Befehl aus.</span><span class="sxs-lookup"><span data-stu-id="43c75-119">Save the Program.cs file and then, in the integrated terminal, run the following command.</span></span>
+3. <span data-ttu-id="ded47-118">Speichern Sie die Datei „Program.cs“, und führen Sie dann im integrierten Terminal den folgenden Befehl aus.</span><span class="sxs-lookup"><span data-stu-id="ded47-118">Save the Program.cs file and then, in the integrated terminal, run the following command.</span></span>
     
     ```
     dotnet run
     ```
 
-    <span data-ttu-id="43c75-120">Auf der Konsole wird nun Folgendes ausgegeben:</span><span class="sxs-lookup"><span data-stu-id="43c75-120">The console displays the following output.</span></span>
+    <span data-ttu-id="ded47-119">Auf der Konsole wird nun Folgendes ausgegeben:</span><span class="sxs-lookup"><span data-stu-id="ded47-119">The console displays the following output.</span></span>
 
     ```
     Running LINQ query...
@@ -76,8 +74,8 @@
     Press any key to continue ...
     ```
 
-    <span data-ttu-id="43c75-121">Glückwunsch!</span><span class="sxs-lookup"><span data-stu-id="43c75-121">Congratulations!</span></span> <span data-ttu-id="43c75-122">Sie haben Ihre mithilfe von SQL- und LINQ-Abfragen erfolgreich Ihre Azure Cosmos DB-Benutzersammlung abgerufen.</span><span class="sxs-lookup"><span data-stu-id="43c75-122">You have successfully your Azure Cosmos DB collection of users by using SQL and LINQ queries.</span></span>
+    <span data-ttu-id="ded47-120">Herzlichen Glückwunsch!</span><span class="sxs-lookup"><span data-stu-id="ded47-120">Congratulations!</span></span> <span data-ttu-id="ded47-121">Sie haben Ihre mithilfe von SQL- und LINQ-Abfragen erfolgreich Ihre Azure Cosmos DB-Benutzersammlung abgerufen.</span><span class="sxs-lookup"><span data-stu-id="ded47-121">You have successfully your Azure Cosmos DB collection of users by using SQL and LINQ queries.</span></span>
 
-## <a name="summary"></a><span data-ttu-id="43c75-123">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="43c75-123">Summary</span></span>
+## <a name="summary"></a><span data-ttu-id="ded47-122">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="ded47-122">Summary</span></span>
 
-<span data-ttu-id="43c75-124">In dieser Einheit haben Sie Informationen zu LINQ-Abfragen erhalten und Ihrer Anwendung eine LINQ- und eine SQL-Abfrage hinzugefügt, um Benutzerdatensätze abzurufen.</span><span class="sxs-lookup"><span data-stu-id="43c75-124">In this unit you learned about LINQ queries, and then added a LINQ and SQL query to your application to retrieve user records.</span></span>
+<span data-ttu-id="ded47-123">In dieser Einheit haben Sie Informationen zu LINQ-Abfragen erhalten und Ihrer Anwendung eine LINQ- und eine SQL-Abfrage hinzugefügt, um Benutzerdatensätze abzurufen.</span><span class="sxs-lookup"><span data-stu-id="ded47-123">In this unit you learned about LINQ queries, and then added a LINQ and SQL query to your application to retrieve user records.</span></span>
