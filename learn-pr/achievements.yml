@@ -14,7 +14,7 @@ achievements:
   type: badge
   title: Abzeichen für das Erstellen einer serverlosen Web-App
   summary: Abzeichen für das Modul „Erstellen einer serverlosen Web-App“
-  iconUrl: /learn/azure/build-a-serverless-web-app/achievement/build-a-serverless-web-app.svg
+  iconUrl: http://via.placeholder.com/120x120
 - uid: learn.cd-pipeline-github-to-azure-web-app.badge
   type: badge
   title: Abzeichen für das Erstellen einer Continuous Deployment-Pipeline für Ihre Azure-Web-App über GitHub
@@ -199,7 +199,7 @@ achievements:
   type: badge
   title: Verwalten von Geheimnissen in Ihren Web-Apps mit Azure Key Vault
   summary: Verwalten von Geheimnissen in Ihren Web-Apps mit Azure Key Vault
-  iconUrl: /learn/achievements/manage-secrets-with-azure-key-vault.svg
+  iconUrl: http://via.placeholder.com/120x120
 - uid: learn.secure-azure-resources-with-rbac.badge
   type: badge
   title: Sichern Ihrer Azure-Ressourcen mit rollenbasierter Zugriffssteuerung (RBAC)
@@ -210,7 +210,7 @@ achievements:
   title: Schützen des Zugriffs auf Ressourcen mit Azure AD, bedingtem Zugriff und Azure Multi-Factor Authentication
   summary: Schützen des Zugriffs auf Ressourcen mit Azure AD, bedingtem Zugriff und Azure Multi-Factor Authentication
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.badge
+- uid: learn.share-location-over-sms-from-mobile-using-azure-functions-twilio.badge
   type: badge
   title: Abzeichen für das Senden von Standortinformationen per SMS von Ihrem Smartphone mithilfe von Azure-Funktionen und Twilio
   summary: Abzeichen für das Modul „Senden von Standortinformationen per SMS von Ihrem Smartphone mithilfe von Azure-Funktionen und Twilio“
@@ -229,7 +229,7 @@ achievements:
   type: badge
   title: Speichern von Webanwendungsdaten mit Azure Blob Storage
   summary: Speichern von Webanwendungsdaten mit Azure Blob Storage
-  iconUrl: /learn/modules/store-app-data-with-azure-blob-storage/achievement/store-app-data-with-azure-blob-storage.svg
+  iconUrl: http://via.placeholder.com/120x120
 - uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.badge
   type: badge
   title: Aktivieren von zuverlässigem Messaging für Big Data-Anwendungen mithilfe von Azure Event Hubs
@@ -265,9 +265,24 @@ achievements:
   title: Trophäe für das Verwalten von Ressourcen in Azure
   summary: Trophäe für den Lernpfad „Verwalten von Ressourcen in Azure“
   iconUrl: http://via.placeholder.com/120x120
+- uid: learn.interactive-deep-learning.badge
+  type: badge
+  title: Abzeichen „Fünf Schritte für interaktives Deep Learning“
+  summary: Abzeichen für das Modul „Fünf Schritte für interaktives Deep Learning“.
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.create-computer-vision-service.badge
+  type: badge
+  title: Erstellen eines Maschinelles Sehen-Diensts
+  summary: Abzeichen für das Modul „Erstellen eines Maschinelles Sehen-Diensts“.
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.monitor-manage-device-with-iotcentral.badge
+  type: badge
+  title: Abzeichen „Überwachen und Verwalten Ihrer Kaffeemaschine mit Azure IoT Central“
+  summary: Abzeichen für das Modul „Überwachen und Verwalten Ihrer Kaffeemaschine mit Azure IoT Central“
+  iconUrl: http://via.placeholder.com/120x120
 - uid: learn.align-requirements-in-azure.badge
   type: badge
-  title: Abzeichen für das Auswählen von Cloudtypen und Dienstmodellen in Azure auf Grundlage Ihrer Anforderungen
+  title: Abzeichen „Auswählen von Cloudtypen und Dienstmodellen in Azure auf Grundlage Ihrer Anforderungen“
   summary: Abzeichen für das Modul „Auswählen von Cloudtypen und Dienstmodellen in Azure auf Grundlage Ihrer Anforderungen“
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.choose-storage-approach-in-azure.badge
@@ -350,10 +365,45 @@ achievements:
   title: Konfigurieren des Netzwerks für Ihre virtuellen Computer
   summary: Konfigurieren des Netzwerks für Ihre virtuellen Computer
   iconUrl: http://via.placeholder.com/120x120
+- uid: learn.introduction-to-security.badge
+  type: badge
+  title: Einführung in Azure-Sicherheit
+  summary: Einführung in Azure-Sicherheit
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.secure-your-azure-virtual-machine-disks.badge
+  type: badge
+  title: Schützen Ihrer Azure-VM-Datenträger
+  summary: Schützen Ihrer Azure-VM-Datenträger
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.protect-your-resources-with-azure-security-center.badge
+  type: badge
+  title: Schützen Ihrer Ressourcen mit Azure Security Center
+  summary: Schützen Ihrer Ressourcen mit Azure Security Center
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.implement-message-workflows-with-service-bus.badge
+  type: badge
+  title: Implementieren von nachrichtenbasierten Kommunikationsworkflows mit Azure Service Bus
+  summary: Implementieren von nachrichtenbasierten Kommunikationsworkflows mit Azure Service Bus
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.intro-to-azure-networking.badge
+  type: badge
+  title: Abzeichen „Einführung in Azure-Netzwerke“
+  summary: Einführung in Azure-Netzwerke
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.design-a-great-azure-architecture.badge
+  type: badge
+  title: Abzeichen „Entwerfen einer großartigen Azure-Architektur“
+  summary: Abzeichen „Entwerfen einer großartigen Azure-Architektur“
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.badge
+  type: badge
+  title: Abzeichen „Senden des Standorts per SMS mithilfe von Azure Functions und Twilio“
+  summary: Abzeichen „Senden des Standorts per SMS mithilfe von Azure Functions und Twilio“
+  iconUrl: http://via.placeholder.com/120x120
 metadata:
-  ms.openlocfilehash: bc13ddc40cf318c52dae8838dad617970f4cb01a
-  ms.sourcegitcommit: 8d5c75ba3026e29b302d962ace4a29fa1b47a6d2
+  ms.openlocfilehash: 7491ac3827bf3f06ccf5974f7a18e31952f03a36
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/04/2018
-  ms.locfileid: "43543696"
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43825446"

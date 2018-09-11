@@ -64,7 +64,7 @@ var discountUdf = {
 
 ## <a name="create-a-stored-procedure-in-the-portal"></a>Erstellen einer gespeicherten Prozedur im Portal
 
-Nachfolgend wird erläutert, wie Sie eine gespeicherte Prozedur im Portal erstellen. Das Portal füllt automatisch eine einfache gespeicherte Prozedur mit Daten auf, die das erste Element in der Sammlung abruft: Wir führen diese gespeicherte Prozedur daher zuerst aus.
+Nachfolgend wird erläutert, wie Sie eine neue gespeicherte Prozedur im Portal erstellen. Das Portal füllt automatisch eine einfache gespeicherte Prozedur auf, die das erste Element in der Sammlung aufruft, damit diese als erstes ausgeführt wird.
 
 1. Klicken Sie im Daten-Explorer auf **Neue gespeicherte Prozedur**.
 
@@ -77,7 +77,7 @@ Nachfolgend wird erläutert, wie Sie eine gespeicherte Prozedur im Portal erstel
 
 3. Geben Sie in das Feld **Eingabeparameter** den Namen eines Partitionsschlüssels (*33218896*) ein, und klicken Sie dann auf **Ausführen**. Beachten Sie, dass gespeicherte Prozeduren innerhalb einer Partition ausgeführt werden.
 
-    ![Ausführen einer gespeicherten Prozedur im Portal](../media-draft/6-stored-procedure.gif)
+    ![Ausführen einer gespeicherten Prozedur im Portal](../media/6-stored-procedure.gif)
 
     Im Bereich **Ergebnis** wird der Feed aus dem ersten Dokument in der Sammlung angezeigt.
 
@@ -116,7 +116,7 @@ Nachfolgend wird erläutert, wie Sie eine gespeicherte Prozedur erstellen, die D
 
 Nun erstellen wir eine benutzerdefinierte Funktion im Daten-Explorer.
 
-Klicken Sie im Daten-Explorer auf **Neue benutzerdefinierte Funktion**. Kopieren Sie den folgenden Code in das Fenster, nennen Sie die benutzerdefinierte Funktion *tax*, und klicken Sie dann auf **Speichern**. Die benutzerdefinierte Funktion kann zwar nicht über das Portal ausgeführt werden, aber sie wird in einem späteren Modul verwendet.
+Klicken Sie im Daten-Explorer auf **Neue benutzerdefinierte Funktion**. Kopieren Sie den folgenden Code in das Fenster, geben Sie der benutzerdefinierten Funktion den Namen *Steuer*, und klicken Sie auf **Speichern**. Die benutzerdefinierte Funktion kann zwar nicht über das Portal ausgeführt werden, aber sie wird in einem späteren Modul verwendet.
 
 ```java
 function userDefinedFunction(){
