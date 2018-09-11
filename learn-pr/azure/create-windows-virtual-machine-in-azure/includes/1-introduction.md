@@ -1,14 +1,14 @@
-Imagine you work for a company that does data processing and storage for traffic cameras. The video streams are analyzed, categorized, and processed to identify faces and license plates at particular times. The information is uploaded to Azure Data Lake and a searchable index is generated for law enforcement.
+Stellen Sie sich vor, Sie arbeiten für ein Unternehmen, das Datenverarbeitung und -speicherung für Verkehrsüberwachungskameras betreibt. Die Videodatenströme werden analysiert, kategorisiert und verarbeitet, um Gesichter und Kfz-Kennzeichen zu bestimmten Zeiten zu identifizieren. Die Informationen werden in Azure Data Lake hochgeladen, und es wird ein durchsuchbarer Index für die Strafverfolgung generiert.
 
-These video streams use a range of different codecs and resolutions. You need to run several Windows-based proprietary software packages to carry out the initial processing and encode them into a common video format. Since new formats are regularly released, it's beneficial to do the video processing on virtual machines (VMs). The proprietary packages can then be added and updated without stopping the entire system.
+Diese Videodatenströme verwenden verschiedene Codecs und Auflösungen. Für die anfängliche Verarbeitung und die Codierung in einem gängigen Videoformat müssen Sie verschiedene Windows-basierte proprietäre Softwarepakete ausführen. Weil regelmäßig neue Formate veröffentlicht werden, ist es vorteilhaft, die Videoverarbeitung auf virtuellen Computern (VMs) durchzuführen. Die proprietären Pakete können so hinzugefügt und aktualisiert werden, ohne das gesamte System anzuhalten.
 
-Azure provides a robust virtual machine hosting solution that can meet your needs. Let's explore how to create and work with Windows virtual machines in Azure.
+Azure bietet eine robuste Hostinglösung für virtuelle Computer, die Ihren Anforderungen gerecht wird. Sehen wir uns an, wie Sie virtuelle Windows-Computer in Azure erstellen und mit ihnen arbeiten.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul lernen Sie Folgendes:
 
-- Understand the options that are available for virtual machines in Azure.
-- Create a Windows virtual machine using the Azure portal.
-- Connect to a running Windows virtual machine using Remote Desktop.
-- Install software and change the network configuration on a VM using the Azure portal.
+- Kenntnis der Optionen, die für virtuelle Computer in Azure zur Verfügung stehen
+- Erstellen eines virtuellen Windows-Computers über das Azure-Portal
+- Stellen Sie mithilfe von Remotedesktop eine Verbindung zu einem ausgeführten virtuellen Computer her.
+- Installieren Sie die Software, und ändern Sie mithilfe des Azure-Portals die Netzwerkkonfiguration auf einem virtuellen Computer.

@@ -1,12 +1,12 @@
-You have been hired by a global auto racing company to modernize their entire monitoring and web platform. They have decided to replace existing Linux servers with a variety of cloud-based infrastructure that leverages the latest in architectural trends. Part of the system will run on the Azure serverless platform using Azure Functions to process real-time race data, pushing statistics, race data, and other relevant bits of analyzed information into clusters of databases. They want to keep their existing website, which was just rewritten last year, but have it connect into this modern data stream.
+Sie wurden von einem globalen Unternehmen für Automobilrennsport beauftragt, seine gesamte Überwachung und die Webplattform zu modernisieren. Das Unternehmen hat sich dazu entschieden, vorhandene Linux-Server durch eine Vielzahl von cloudbasierter Infrastruktur zu ersetzen, die die neuesten Trends in der Architektur nutzt. Ein Teil des Systems wird mithilfe von Azure Functions auf der serverlosen Plattform von Azure ausgeführt, um Echtzeitdaten, Positionsstatistiken, Daten des Rennens und andere relevante Teile der analysierten Informationen in Datenbankclustern zu verarbeiten. Das Unternehmen möchte seine vorhandene Website behalten, die zwar letztes Jahr erst überarbeitet wurde, jetzt aber auf diesen modernen Datenstrom zugreifen können soll.
 
-The website is running on Apache with Linux, and since it's already up and running, you decide to move it directly into Azure by leveraging an Azure virtual machine. That will give it access to the data with a minimal amount of work on your part.
+Da die Website bereits unter Apache mit Linux ausgeführt wird, entscheiden Sie sich, diese mithilfe eines virtuellen Azure-Computers direkt in Azure zu verschieben. Dies gewährt mit nur minimalem Aufwand Ihrerseits Zugriff auf die Daten.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul lernen Sie Folgendes:
 
-- Understand the options that are available for virtual machines in Azure.
-- Create a Linux virtual machine using the Azure portal.
-- Connect to a running Linux virtual machine using SSH.
-- Install software and change the network configuration on a VM using the Azure portal.
+- Kenntnis der Optionen, die für virtuelle Computer in Azure zur Verfügung stehen
+- Erstellen eines virtuellen Linux-Computers im Azure Stack-Portal
+- Herstellen einer Verbindung mit einem ausgeführten virtuellen Linux-Computer mithilfe von SSH
+- Installieren Sie die Software, und ändern Sie mithilfe des Azure-Portals die Netzwerkkonfiguration auf einem virtuellen Computer.

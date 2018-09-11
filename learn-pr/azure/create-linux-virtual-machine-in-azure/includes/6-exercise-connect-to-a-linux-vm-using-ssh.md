@@ -1,76 +1,78 @@
-We have our Linux VM deployed and running, but it's not configured to do any work. Let's connect to it with SSH and configure Apache, so we have a running web server.
+Der virtuelle Linux-Computer wurde bereitgestellt und wird ausgeführt, aber noch nicht für die Arbeit konfiguriert. Stellen wir eine Verbindung mit SSH her, und konfigurieren wir Apache, damit wir über einen Webserver verfügen, der ausgeführt wird.
 
-## Connect to the VM with SSH
+## <a name="connect-to-the-vm-with-ssh"></a>Herstellen einer Verbindung mit dem virtuellen Computer mit SSH
 
-To connect to an Azure VM with an SSH client, you will need:
+Zum Herstellen der Verbindung eines virtuellen Azure-Computers mit einem SSH-Client benötigen Sie Folgendes:
 
-- SSH client software (present on most modern operating systems)
-- The public IP address of the VM (or private if the VM is configured to connect to your network)
+- SSH-Clientsoftware (in den meisten modernen Betriebssystemen vorhanden).
+- Die öffentliche IP-Adresse des virtuellen Computers (oder die private, wenn der virtuelle Computer dafür konfiguriert ist, eine Verbindung mit Ihrem Netzwerk herzustellen).
 
-### Get the public IP address
+### <a name="get-the-public-ip-address"></a>Abrufen der öffentlichen IP-Adresse
 
-1. In the [Azure portal](https://portal.azure.com?azure-portal=true), ensure the **Overview** panel for the virtual machine that you created earlier is open. You can find the VM under **All Resources** if you need to open it. The overview panel has a lot of information about the VM.
+1. Stellen Sie im [Azure-Portal](https://portal.azure.com?azure-portal=true) sicher, dass der Bereich **Übersicht** für den zuvor erstellten virtuellen Computer geöffnet ist. Sie finden den virtuellen Computer unter **Alle Ressourcen**, falls Sie diesen öffnen müssen. Im Bereich „Übersicht“ finden Sie zahlreiche Informationen zum virtuellen Computer.
 
-    - You can see whether the VM is running
-    - Stop or restart it
-    - Get the public IP address to connect to the VM
-    - See the activity of the CPU, disk, and network
+    - Sie können sehen, ob er ausgeführt wird.
+    - Sie können ihn beenden oder neu starten.
+    - Sie können die öffentliche IP-Adresse abrufen, um eine Verbindung mit dem virtuellen Computer herzustellen.
+    - Sie können die Aktivität von CPU, Festplatte und Netzwerk anzeigen.
 
-1. Click the **Connect** button at the top of the pane.
+1. Klicken Sie oben im Bereich auf die Schaltfläche **Verbinden**.
 
-1. In the **Connect to virtual machine** blade, note the **IP address** and **Port number** settings. On the **SSH** tab, you will also find the command you need to execute locally to connect to the VM. Copy this to the clipboard.
+1. Notieren Sie sich die Einstellungen für die **IP-Adresse** und die **Portnummer** auf dem Blatt **Verbindung mit virtuellem Computer herstellen**. Auf der Registerkarte **SSH** finden Sie auch den Befehl, den Sie lokal ausführen müssen, um eine Verbindung mit dem virtuellen Computer herzustellen. Kopieren Sie diesen in die Zwischenablage.
 
-<!-- TODO: This will be necessary if we ever have inline portal integration. 
+<!-- TODO: this will be necessary if we ever have inline portal integration 
 
-### Open Azure Cloud Shell
+### Open the Azure Cloud Shell
 
-Let's use Cloud Shell in the Azure portal. If you generated the SSH key locally, you need to use your local session since the private key won't be in your storage account:
+Let's use the Cloud Shell in the Azure Portal. If you generated the SSH key locally, you need to use your local session since the private key won't be in your storage account.
 
-1. Switch back to the **Dashboard** by clicking the **Dashboard** button in the Azure sidebar.
+1. Switch back to the **Dashboard** by clicking the Dashboard button in the Azure sidebar.
 
-1. Open Cloud Shell by clicking the **shell** button in the top toolbar.
+1. Open the Cloud Shell by clicking the shell button in the top toolbar.
 
-    ![Screenshot of the Azure portal top navigation bar with the Azure Cloud Shell button highlighted.](../media/6-cloud-shell.png)
+    ![Open the Azure Cloud Shell](../media-drafts/6-cloud-shell.png)
 
 1. Select **Bash** as the shell type. PowerShell is also available if you are a Windows administrator.
 
+    ![Select bash shell in the portal](../media-drafts/6-use-bash-shell.png)
+
 -->
 
-## Connect with SSH
+## <a name="connect-with-ssh"></a>Verbinden mit SSH
 
-1. Paste the command line you got from the SSH tab into Azure Cloud Shell. It should look something like this; however, it will have a different IP address (and perhaps a different username if you didn't use **jim**!):
+1. Fügen Sie die Befehlszeile, die Sie auf der Registerkarte „SSH“ abgerufen haben, in die Cloud Shell ein. Das Ergebnis sollte in etwa wie folgt aussehen. Es wird jedoch eine andere IP-Adresse verwendet (und möglicherweise ein anderer Benutzername, wenn Sie nicht **jim** angegebene haben).
 
     ```bash
     ssh jim@137.117.101.249
     ```
 
-1. This command will open a Secure Shell connection and place you at a traditional shell command prompt for Linux.
+1. Mit diesem Befehl wird eine Secure Shell-Verbindung geöffnet, und es wird eine herkömmliche Shell-Eingabeaufforderung für Linux angezeigt.
 
-1. Try executing a few Linux commands
-    - `ls -la /` to show the root of the disk
-    - `ps -l` to show all the running processes
-    - `dmesg` to list all the kernel messages
-    - `lsblk` to list all the block devices - here you will see your drives
+1. Führen Sie einige Linux-Befehle aus:
+    - `ls -la /`, um den Stamm des Datenträgers anzuzeigen.
+    - `ps -l`, um alle ausgeführten Prozesse anzuzeigen.
+    - `dmesg`, um alle Kernelnachrichten aufzulisten.
+    - `lsblk`, um alle Blockgeräte aufzulisten. Hier werden Ihre Laufwerke angezeigt.
 
-The more interesting thing to observe in the list of drives is what is _missing_. Notice that our **Data** drive (`sdc`) is present but not mounted into the file system. Azure added a VHD but didn't initialize it.
+Interessanter ist das, was in der Liste der Laufwerke _fehlt_. Beachten Sie, dass unser **Daten**laufwerk (`sdc`) zwar vorhanden, nicht aber im Dateisystem bereitgestellt ist. Azure hat eine VHD hinzugefügt, aber nicht initialisiert.
 
-## Initialize data disks
+## <a name="initialize-data-disks"></a>Initialisieren von Datenträgern
 
-Any additional drives you create from scratch will need to be initialized and formatted. The process for doing this is identical to a physical disk:
+Alle zusätzlichen Laufwerke, die Sie neu erstellen, müssen initialisiert und formatiert werden. Der Prozess ist der gleiche wie bei einem physischen Datenträger.
 
-1. First, identify the disk. We did that above. You could also use `dmesg | grep SCSI`, which will list all the messages from the kernel for SCSI devices.
+1. Identifizieren Sie zuerst den Datenträger. Dies ist weiter oben erfolgt. Sie können auch `dmesg | grep SCSI` verwenden, um alle Nachrichten aus dem Kernel für SCSI-Geräte aufzulisten.
 
-1. Once you know the drive (`sdc`) you need to initialize, you can use `fdisk` to do that. You will need to run the command with `sudo` and supply the disk you want to partition:
+1. Sobald Sie das Laufwerk (`sdc`) kennen, das initialisiert werden muss, können Sie `fdisk` zu diesem Zweck verwenden. Sie müssen den Befehl mit `sudo` ausführen und den Datenträger angeben, der partitioniert werden soll.
 
     ```bash
     sudo fdisk /dev/sdc
     ```
-1. Use the `n` command to add a new partition. In this example, we also choose **p** for a primary partition and accept the rest of the default values. The output will be similar to the following example:   
+1. Verwenden Sie den Befehl `n`, um eine neue Partition hinzuzufügen.  In diesem Beispiel haben wir auch „p“ als primäre Partition ausgewählt und akzeptieren den Rest der Standardwerte. Die Ausgabe entspricht etwa folgendem Beispiel:   
 
     ```output
     Device does not contain a recognized partition table.
     Created a new DOS disklabel with disk identifier 0x1f2d0c46.
-
+    
     Command (m for help): n
     Partition type
        p   primary (0 primary, 0 extended, 4 free)
@@ -79,11 +81,11 @@ Any additional drives you create from scratch will need to be initialized and fo
     Partition number (1-4, default 1): 1
     First sector (2048-2145386495, default 2048):
     Last sector, +sectors or +size{K,M,G,T,P} (2048-2145386495, default 2145386495):
-
+    
     Created a new partition 1 of type 'Linux' and of size 1023 GiB.
-    ```
+    ```    
 
-1. Print the partition table with the `p` command. It should look something like this:
+1. Geben Sie die Partitionstabelle mit dem Befehl `p` aus. Das sollte in etwa so aussehen:
 
     ```output
     Disk /dev/sdc: 1023 GiB, 1098437885952 bytes, 2145386496 sectors
@@ -92,22 +94,22 @@ Any additional drives you create from scratch will need to be initialized and fo
     I/O size (minimum/optimal): 4096 bytes / 4096 bytes
     Disklabel type: dos
     Disk identifier: 0x1f2d0c46
-
+    
     Device     Boot Start        End    Sectors  Size Id Type
     /dev/sdc1        2048 2145386495 2145384448 1023G 83 Linux
     ```
+    
+1. Schreiben Sie die Änderungen mit dem Befehl `w`. Dadurch wird das Tool beendet.
 
-1. Write the changes with the `w` command. This will exit the tool.
-
-1. Next, we need to write a file system to the partition with the `mkfs` command. We will need to specify the file system type and device name that we got from the `fdisk` output:
-    - Pass `-t ext4` to create an _ext4_ filesystem.
-    - The device name is `/dev/sdc`.
+1. Im nächsten Schritt schreiben Sie jetzt mit dem Befehl `mkfs` ein Dateisystem auf die Partition. Wir müssen den Dateisystemtyp und den Gerätenamen angeben, den wir aus der Ausgabe `fdisk` erhalten haben.
+    - Übergeben Sie `-t ext4`, um ein _ext4_-Dateisystem zu erstellen.
+    - Der Gerätename ist `/dev/sdc`.
 
     ```bash
     sudo mkfs -t ext4 /dev/sdc1
     ```
     
-    This command will take a few minutes to complete.
+    Die Ausführung dieses Befehls kann einige Minuten dauern.
 
     ```output
     mke2fs 1.44.1 (24-Mar-2018)
@@ -118,24 +120,24 @@ Any additional drives you create from scratch will need to be initialized and fo
             32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
             4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
             102400000, 214990848
-
+    
     Allocating group tables: done
     Writing inode tables: done
     Creating journal (262144 blocks): done
     Writing superblocks and filesystem accounting information: done
     ```
 
-1. Next, create a directory we will use as our mount point. Let's assume we will have a `data` folder:
+1. Erstellen Sie im nächsten Schritt ein Verzeichnis, das als Bereitstellungspunkt verwendet wird. Angenommen, es ist ein Ordner `data` vorhanden.
 
     ```bash
     sudo mkdir /data
     ```
-1. Finally, use `mount` to attach the disk to the mount point:
+1. Verwenden Sie abschließend `mount` zum Anfügen des Datenträgers an den Bereitstellungspunkt.
 
     ```bash
     sudo mount /dev/sdc1 /data
     ```
-    You should be able to use `lsblk` to see the mounted drive now:
+    Sie sollten `lsblk` verwenden können, um das bereitgestellte Laufwerk jetzt anzuzeigen.
     
     ```output
     NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -150,15 +152,15 @@ Any additional drives you create from scratch will need to be initialized and fo
     sr0      11:0    1  628K  0 rom
     ```
 
-### Mounting the drive automatically
+### <a name="mounting-the-drive-automatically"></a>Automatisches Bereitstellen des Laufwerks
 
-To ensure that the drive is mounted automatically after a reboot, it must be added to the `/etc/fstab` file. It is also highly recommended that the UUID (universally unique identifier) is used in `/etc/fstab` to refer to the drive rather than just the device name (such as `/dev/sdc1`). If the OS detects a disk error during boot, using the UUID avoids the incorrect disk being mounted to a given location. Remaining data disks would then be assigned those same device IDs. To find the UUID of the new drive, use the `blkid` utility:
+Um sicherzustellen, dass das Laufwerk nach einem Neustart automatisch bereitgestellt wird, muss es der Datei `/etc/fstab` hinzugefügt werden. Außerdem wird dringend empfohlen, den UUID (Universally Unique Identifier) in `/etc/fstab` zu verwenden, um auf das Laufwerk und nicht auf den Gerätenamen (z.B. `/dev/sdc1`) zu verweisen. Wenn das Betriebssystem während des Starts einen Datenträgerfehler erkennt, wird durch den UUID verhindert, dass an einem angegebenen Ort der falsche Datenträger bereitgestellt wird. Den verbleibenden Datenträger würden dann diese gleichen Geräte-IDs zugewiesen. Verwenden Sie das Hilfsprogramm `blkid`, um den UUID des neuen Laufwerks zu ermitteln:
 
 ```bash
 sudo -i blkid
 ```
 
-It will return something like:
+Die Rückgabe ähnelt dem folgenden Beispiel:
 
 ```output
 /dev/sda1: UUID="36a59c42-c04c-4632-b83f-7015abd10358" TYPE="ext4"
@@ -166,68 +168,68 @@ It will return something like:
 /dev/sdc1: UUID="e311c905-e0d9-43ab-af63-7f4ee4ef108e" TYPE="ext4"
 ```
 
-1. Copy the UUID for the `/dev/sdc1` drive and open the `/etc/fstab` file in a text editor:
+1. Kopieren Sie den UUID für das `/dev/sdc1`-Laufwerk, und öffnen Sie die Datei `/etc/fstab` in einem Text-Editor.
 
     ```bash
     sudo vi /etc/fstab
     ```
 
 > [!WARNING]
-> Improperly editing the `/etc/fstab` file could result in an unbootable system. If unsure, refer to the distribution's documentation for information on how to properly edit this file. It is also recommended that a backup of the file is created before editing when you are working with production systems.
+> Eine nicht ordnungsgemäße Bearbeitung der Datei `/etc/fstab` kann zu einem nicht startfähigen System führen. Wenn Sie sich nicht sicher sind, helfen Ihnen die Informationen zur ordnungsgemäßen Bearbeitung dieser Datei in der Dokumentation weiter. Außerdem wird empfohlen, eine Sicherung der Datei zu erstellen, bevor Sie sie bearbeiten, wenn Sie mit Produktionssystemen arbeiten.
 
-1. Press **G** to move to the last line in the file.
+1. Drücken Sie **G**, um zur letzten Zeile in der Datei zu gelangen.
 
-1. Press **I** to enter INSERT mode. It should indicate the mode at the bottom of the screen.
+1. Drücken Sie **I**, um in den Einfügemodus zu wechseln. Der Modus sollte am unteren Rand des Bildschirms angegeben werden.
 
-1. Press the **END** key to move to the end of the line. Alternatively, you can use the arrow keys. Press **ENTER** to move to a new line.
+1. Drücken Sie die **ENDE**-TASTE, um an das Ende der Zeile zu gelangen. Alternativ können Sie auch die Pfeiltasten verwenden. Drücken Sie die **EINGABETASTE**, um in eine neue Zeile zu wechseln.
 
-1. Type the following line into the editor. The values can be space or tab separated. Check the documentation for more information on each of the columns:
+1. Geben Sie die folgende Zeile in den Editor ein. Die Werte können durch Leerzeichen oder Tabstopps getrennt werden. Weitere Informationen zu jeder der Spalten finden Sie in der Dokumentation.
 
     ```output
     UUID=<uuid-goes-here>    /data    ext4    defaults,nofail    1    2
     ```
-1. Press **ESC**, then type **:w!** to write the file and **:q** to quit the editor.
+1. Drücken Sie **ESC**, und geben Sie dann **:w!** ein, um die Datei zu schreiben, und **:q** zum Beenden des Editors.
 
-1. Finally, let's check to make sure the entry is correct by asking the OS to refresh the mount points:
+1. Abschließend überprüfen wir, ob der Eintrag richtig ist, indem wir das Betriebssystem auffordern, die Bereitstellungspunkte zu aktualisieren.
 
     ```bash
     sudo mount -a
     ```
-
-    If it returns an error, edit the file to find the problem.
+    
+    Wenn ein Fehler zurückgegeben wird, bearbeiten Sie die Datei, um das Problem zu ermitteln.
 
 > [!TIP]
-> Some Linux kernels support TRIM to discard unused blocks on disks. This feature is available on Azure disks and can save you money if you create large files and then delete them. Learn how to [turn this feature on](https://docs.microsoft.com/azure/virtual-machines/linux/attach-disk-portal#trimunmap-support-for-linux-in-azure) in our documentation.
+> Einige Linux-Kernel unterstützen TRIM zum Verwerfen ungenutzter Blöcke auf dem Datenträger. Dieses Feature ist für Azure-Datenträger verfügbar und kann Ihnen Geld sparen, wenn Sie große Dateien erstellen und diese dann löschen. Erfahren Sie in unserer Dokumentation, wie [dieses Feature aktiviert wird](https://docs.microsoft.com/azure/virtual-machines/linux/attach-disk-portal#trimunmap-support-for-linux-in-azure).
 
-## Install software onto the VM
+## <a name="install-software-onto-the-vm"></a>Installieren von Software auf dem virtuellen Computer
 
-You have several options to install software onto the VM. First, as mentioned, you can use `scp` to copy local files from your machine to the VM. This lets you copy over data or custom applications you want to run.
+Es gibt mehrere Optionen zum Installieren von Software auf dem virtuellen Computer. Zunächst können Sie (wie bereits erwähnt) `scp` zum Kopieren lokaler Dateien von Ihrem Computer auf den virtuellen Computer verwenden. Damit können Sie Daten oder benutzerdefinierte Anwendungen kopieren, die Sie ausführen möchten.
 
-You can also install software through Secure Shell. Azure machines are, by default, internet connected. You can use standard commands to install popular software packages directly from standard repositories. Let's use this approach to install Apache.
+Sie können auch Software über Secure Shell installieren. Azure-Computer sind standardmäßig mit dem Internet verbunden. Sie können die Standardbefehle verwenden, um beliebte Softwarepakete direkt aus den Standardrepositorys zu installieren. Wir verwenden diesen Ansatz hier zum Installieren von Apache.
 
-### Install the Apache web server
+### <a name="install-apache-web-server"></a>Installieren des Apache-Webservers
 
-Apache is available within Ubuntu's default software repositories, so we will install it using conventional package management tools:
+Apache ist in den Standardsoftwarerepositorys von Ubuntu verfügbar. Daher erfolgt die Installation mit herkömmlichen Paketverwaltungstools.
 
-1. Start by updating the local package index to reflect the latest upstream changes:
+1. Starten Sie, indem Sie den lokalen Paketindex aktualisieren, um die neuesten Upstreamänderungen widerzuspiegeln.
 
     ```bash
     sudo apt-get update
     ```
     
-1. Next, install Apache:
+1. Installieren Sie im nächsten Schritt Apache.
 
     ```bash
     sudo apt-get install apache2
     ```
-
-1. It should start automatically - we can check the status using `systemctl`:
+    
+1. Der Start sollte automatisch erfolgen. Sie können den Status mit `systemctl` überprüfen:
 
     ```bash
     sudo systemctl status apache2
     ```
 
-    This should return something like:
+    Die Rückgabe sollte dem folgenden Beispiel ähneln:
 
     ```output
     apache2.service - The Apache HTTP Server
@@ -241,14 +243,14 @@ Apache is available within Ubuntu's default software repositories, so we will in
                ├─11156 /usr/sbin/apache2 -k start
                ├─11158 /usr/sbin/apache2 -k start
                └─11159 /usr/sbin/apache2 -k start
-
+    
     test-web-eus-vm1 systemd[1]: Starting The Apache HTTP Server...
     test-web-eus-vm1 apachectl[11129]: AH00558: apache2: Could not reliably determine the server's fully qua
     test-web-eus-vm1 systemd[1]: Started The Apache HTTP Server.
     ```
 
-1. Finally, we can try retrieving the default page through the public IP address. It should return a default page.
+1. Schließlich können wir versuchen, die Standardseite über die öffentliche IP-Adresse abzurufen. Es sollte eine Standardseite zurückgegeben werden.
 
-    ![Screenshot of a web browser showing the Apache default web page hosted at the IP of the new Linux VM.](../media/6-apache-works.png)
+    ![Apache-Standardwebseite](../media-drafts/6-apache-works.png)
 
-As you can see, SSH allows you to work with the Linux VM just like a local computer. You can administer this VM as you would any other Linux computer: installing software, configuring roles, adjusting features, and other everyday tasks. However, it's a manual process - if we always need to install some software, you might consider automating the process using scripting.
+Wie Sie sehen können, erlaubt SSH Ihnen die Arbeit mit dem virtuellen Linux-Computer wie mit einem lokalen Computer. Sie können diesen virtuellen Computer wie jeden anderen Linux-Computer verwalten: Sie können Software installieren, Rollen konfigurieren, Features anpassen und andere alltägliche Aufgaben ausführen. Allerdings handelt es sich um einen manuellen Prozess. Wenn Sie häufig Software installieren müssen, sollten Sie die Automatisierung des Prozesses mithilfe von Skripts in Betracht ziehen.

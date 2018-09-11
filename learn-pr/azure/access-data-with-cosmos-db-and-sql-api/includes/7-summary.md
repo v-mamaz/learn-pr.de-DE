@@ -1,21 +1,21 @@
-In this module, you've created multiple documents, each representing a product in your product catalog. You've learned about the types of queries you can perform on your data and performed those queries, and you've learned how to perform complex operations and store them on the database engine by using stored procedures and UDFs. 
+In diesem Modul haben Sie mehrere Dokumente erstellt, die jeweils ein Produkt in Ihrem Produktkatalog darstellen. Sie haben die verschiedenen für Ihre Daten ausführbaren Abfragetypen kennengelernt und diese anschließend ausgeführt. Außerdem haben Sie gelernt, wie Sie komplexe Vorgänge ausführen und diese mithilfe von gespeicherten Prozeduren und benutzerdefinierten Funktionen auf der Datenbank-Engine speichern. 
 
-These fundamentals give you insight into how Azure Cosmos DB works and how you can use it as the foundation for large database projects like e-commerce applications, which require the ability to quickly query and display data in a catalog, and perform operations and transactions on data in the database.
+Diese Grundlagen bieten Ihnen einen Einblick in die Funktionsweise von Azure Cosmos DB und erläutern, wie Sie diesen Dienst als Basis für umfangreiche Datenbankprojekte (z.B. E-Commerce-Anwendungen) verwenden können, die schnelle Abfragen und das Anzeigen von Daten in einem Katalog erfordern bzw. Vorgänge und Transaktionen für Daten in der Datenbank ausführen.
 
-## Clean up
+## <a name="clean-up"></a>Bereinigen
 
-If you plan to continue working on the modules in this learning path, you'll likely want to leave your resources in place.
+Wenn Sie weiterhin an den Modulen in diesem Lernpfad arbeiten möchten, sollten Sie die Ressourcen nicht löschen.
 
-If you do not plan on completing additional modules in this learning path, use the following steps to delete your resources to avoid incurring charges for use of the service.:
+Wenn Sie keine weiteren Module in diesem Lernpfad abschließen möchten, sollten Sie die folgenden Schritte verwenden, um Ihre Ressourcen zu löschen und Gebühren für die Verwendung des Diensts zu verhindern:
 
-1. In the Azure portal, select **Resource groups** on the far left, and then select the resource group you created.  
+1. Klicken Sie im Azure-Portal ganz links auf **Ressourcengruppen** und anschließend auf die erstellte Ressourcengruppe.  
 
-    If the left menu is collapsed, click ![Expand button](../media/7-expand.png) to expand it.
+    Sollte das linke Menü reduziert sein, klicken Sie auf ![Schaltfläche „Erweitern“](../media-draft/7-expand.png) , um es zu erweitern.
 
-   ![Metrics in the Azure portal](../media/7-delete-resources-select.png)
+   ![Metriken im Azure-Portal](../media-draft/7-delete-resources-select.png)
 
-2. In the new window, select the resource group, and then click **Delete resource group**.
+2. Wählen Sie in dem neuen Fenster die Ressourcengruppe aus, und klicken Sie auf **Ressourcengruppe löschen**.
 
-   ![Metrics in the Azure portal](../media/7-delete-resources.png)
+   ![Metriken im Azure-Portal](../media-draft/7-delete-resources.png)
 
-3. In the new window, type the name of the resource group to delete, and then click **Delete**.
+3. Geben Sie im neuen Fenster den Namen der zu löschenden Ressourcengruppe ein, und klicken Sie dann auf **Löschen**.
