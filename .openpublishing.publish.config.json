@@ -48,8 +48,7 @@
       "url": "https://github.com/MicrosoftDocs/learn-pr",
       "branch": "release-ignite18-loc",
       "branch_mapping": {
-        "live": "release-ignite18-loc",
-        "master": "release-ignite18-loc"
+        "release-ignite18-loc": "master"
       }
     }
   ],
