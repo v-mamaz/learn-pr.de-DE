@@ -1,0 +1,38 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.3-identity-management
+title: Identitätsverwaltung
+metadata:
+  title: Identitätsverwaltung
+  description: In dieser Einheit wird erörtert, wie Sie Ihre Identitäten schützen.
+  ms.openlocfilehash: 1e3cd562e2ce99c59c47a23f789c0ab95a755d6f
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43366582"
+durationInMinutes: 5
+content: >
+  [!include[](includes/3-identity-management.md)]
+quiz:
+  title: 'Wissenstest: Identitätsverwaltung'
+  questions:
+  - content: Welcher der folgenden ist kein Faktor der mehrstufigen Authentifizierung?
+    choices:
+    - content: Ein Fingerabdruck-Scanner auf einem mobilen Gerät
+      isCorrect: false
+    - content: Ein von der Azure Authenticator-Anwendung generiertes Token
+      isCorrect: false
+    - content: Ein Kennwort
+      isCorrect: false
+    - content: Ihre Schuhgröße
+      isCorrect: true
+  - content: Welche der folgenden Aussagen beschreibt keinen Vorteil, den SSO bietet?
+    choices:
+    - content: Erhöhte Komplexität beim Zuweisen von Berechtigungen für Benutzer
+      isCorrect: true
+    - content: Weniger IDs und Kennwörter, die sich Benutzer merken müssen
+      isCorrect: false
+    - content: Niedrigerer administrativer Aufwand, wenn Benutzer Rollen ändern oder eine Organisation verlassen
+      isCorrect: false
+    - content: Gewährleistung einer anwendungsübergreifenden konsistenten Kennwortrichtlinie
+      isCorrect: false

@@ -1,94 +1,39 @@
-Every business must decide how they want to store their data and execute their logic. Depending on your business requirements, cloud computing may or may not be right for you.
+Jedes Unternehmen muss entscheiden, wo es seine Daten speichern und die Geschäftslogik ausführen möchte. Je nach Ihren Geschäftsanforderungen ist Cloud Computing für Sie geeignet.
 
-Let's learn some of the top benefits of cloud computing.
+Hier erfahren Sie mehr über einige der wichtigsten Vorteile des Cloud Computing.
 
-:::row:::
-    :::column:::
-        ![fpo image](../media/3-cost-effective.png)
-    :::column-end:::
-    :::column span="3":::
-        **It’s cost effective**
+### <a name="cloud-computing-is-cost-effective"></a>Cloud Computing ist kostengünstig
 
-Cloud computing provides a **pay-as-you-go** pricing model. Rather than paying for a pre-defined amount of computing resources or hardware up-front, you rent hardware and pay for the resources that you use.
+Cloud Computing bietet ein Preismodell mit **nutzungsbasierter Bezahlung**. Sie zahlen nicht im Voraus für eine vorab definierte Menge an Computeressourcen oder Hardware – Sie mieten die Hardware und bezahlen nur für die Ressourcen, die Sie tatsächlich nutzen.
 
-For example, imagine you have a blog, and when you create a new post you want to notify your subscribers via text message. Using the correct cloud computing service, you'll only spend money when you're sending texts to your subscribers. When you're not posting, it won’t cost you anything.
+Wenn Sie z.B. einen Blog betreiben und einen neuen Beitrag schreiben, möchten Sie Ihre Abonnenten per SMS darüber benachrichtigen. Verwenden Sie den richtigen Cloud Computing-Dienst dafür, und Sie bezahlen nur für das Senden der SMS an Ihre Abonnenten. In dem Zeitraum, in dem Sie keine Beiträge schreiben, ist der Dienst völlig kostenlos.
 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        ![fpo image](../media/3-scalable.png)
-    :::column-end:::
-    :::column span="3":::
-        **It's scalable**
+### <a name="cloud-computing-is-scalable"></a>Cloud Computing ist skalierbar
 
-Cloud computing supports both _vertical_ and _horizontal_ scaling depending on your needs.
+Cloud Computing unterstützt sowohl die _vertikale_ als auch die _horizontale_ Skalierung, je nach Anforderungen.
 
-**Vertical scaling** is the process of adding resources to increase the power of an existing server. Some examples of vertical scaling are: adding a faster CPU, additional CPUs, or adding more memory.
+Bei der **vertikalen Hochskalierung** werden Ressourcen hinzugefügt, um die Leistung eines vorhandenen Servers zu erhöhen. Zum vertikalen Hochskalieren können Sie auch eine schnellere CPU verwenden oder weitere CPUs oder mehr Arbeitsspeicher hinzufügen.
 
-**Horizontal scaling** is the process of adding more servers that function together as one unit. For example, instead of having one server processing incoming requests, you have two.
+Bei der **horizontalen Hochskalierung** werden weitere Server hinzugefügt, die zusammen als eine Einheit funktionieren. Sie können also beispielsweise zwei statt nur einen Server einsetzen, um eingehende Anforderungen zu verarbeiten.
 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        ![fpo image](../media/3-elastic.png)
-    :::column-end:::
-    :::column span="3":::
-        **It's elastic**
+### <a name="cloud-computing-is-elastic"></a>Cloud Computing ist elastisch
 
-As your workload changes due to a spike or drop in demand, a cloud computing system can compensate by automatically adding or removing resources.
+Wenn sich Ihre Workload aufgrund von steigendem oder sinkendem Datenverkehr ändert, kann ein Cloud Computing-System automatisch Ressourcen hinzufügen oder entfernen, um diese Änderung zu kompensieren.
 
-For example, imagine your website is featured in a news article, which leads to a spike in traffic overnight. Since the cloud is elastic, it automatically allocates more computing resources to handle the increased traffic. When the traffic begins to settle, the cloud notices it has too many resources allocated and begins to remove them so you don’t waste any money.
+Nehmen Sie beispielsweise an, Ihre Website wird in einem Nachrichtenartikel erwähnt, was über Nacht zu einer Datenverkehrsspitze führt. Da die Cloud elastisch ist, kann sie automatisch weitere Computeressourcen zuordnen, um den erhöhten Datenverkehr zu verarbeiten. Wenn der Datenverkehr wieder normal ist, kann die Cloud die zusätzlich hinzugefügten Ressourcen automatisch entfernen, sodass Sie kein Geld verschwenden.
 
-Another example is if you are running an application used by employees, you can have the cloud automatically add resources for the core hours during which most people access the application, and remove the resources at the usual end of the day.
+Ein weiteres Beispiel: Wenn Sie eine von Benutzern verwendete Anwendung ausführen, kann die Cloud für die Kernstunden automatisch Ressourcen hinzufügen, da in diesem Zeitraum die meisten Benutzer auf die Anwendung zugreifen. Am Ende des Tages können Sie diese Ressourcen entfernen.  
 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        ![fpo image](../media/3-current.png)
-    :::column-end:::
-    :::column span="3":::
-        **It's current**
+### <a name="cloud-computing-is-current"></a>Cloud Computing ist modern
 
-When you use the cloud, you’re able to focus on what matters: building and deploying applications. You don't have to be caught up in the maintenance work of software patching, hardware setup, upgrades, and other IT management tasks. All of this is automatically done for you to ensure you're using the latest and greatest tools to run your business.
+Wenn Sie die Cloud verwenden, können Sie sich auf das konzentrieren, was wirklich zählt: das Erstellen und Bereitstellen von Anwendungen. Sie müssen sich nicht um Verwaltungsaufgaben wie Softwarepatches, das Einrichten von Hardware, das Durchführen von Upgrades oder andere IT-Verwaltungsaufgaben kümmern. All diese Aufgaben werden automatisch und im Hintergrund für Sie ausgeführt, um sicherzustellen, dass Sie das neueste und beste Tool für Ihr Business verwenden.
 
-Additionally, the computer hardware is maintained and upgraded by the cloud provider. For example, if a disk goes out, the disk will be replaced. If new hardware comes out, you don’t have to go through the process of replacing your hardware. You also don’t have to bear the cost for having up-to-date hardware all the time.
+Darüber hinaus wird die Hardware des Computers vom Cloudanbieter verwaltet und aktualisiert. Wenn beispielsweise ein Datenträger ausfällt, wird dieser ersetzt. Wenn neue Hardware veröffentlicht wird, müssen Sie den Prozess des Ersetzens Ihrer Hardware nicht durchlaufen. Sie müssen außerdem nicht die Kosten dafür tragen, dass Ihre Hardware immer auf dem neuesten Stand ist.
 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        ![fpo image](../media/3-reliable.png)
-    :::column-end:::
-    :::column span="3":::
-        **It's reliable**
+### <a name="cloud-computing-is-reliable"></a>Cloud Computing ist zuverlässig
 
-When you're running a business, you want to be confident your data is always going to be there. Cloud computing providers offer data backup, disaster recovery, and data replication services to make sure your data is always safe.
+Als Unternehmen müssen Sie sicher sein, dass Ihre Daten nicht verloren gehen können. Cloud Computing-Provider bieten Dienste für Datensicherung, Notfallwiederherstellung und Datenreplikation, mit denen sichergestellt wird, dass Ihre Daten jederzeit sicher sind.
 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        ![fpo image](../media/3-reliable.png)
-    :::column-end:::
-    :::column span="3":::
-        **It's secure**
+## <a name="summary"></a>Zusammenfassung
 
-Think about how you secure your data center. You have physical security &ndash; who can access the building, who can touch server racks, and so on. You also have digital security &ndash; who can connect to your systems and data over the network.
-
-The cloud is essentially a network of large data centers distributed throughout the globe. So cloud providers need to deal with many of these same issues, just at a larger scale.
-
-When it comes to physical security &ndash; threats to cloud infrastructure, cloud providers invest heavily in walls, cameras, gates, security personnel, and so on to protect physical assets. They also have strict procedures in place to ensure employees have access only to those resources that they’ve been authorized to manage.
-
-Then there’s digital security. One thing that makes the cloud unique is that you rent compute and storage resources from a shared pool. Plus, data can travel in many different ways &ndash; within a data center, between data centers, and over the internet.
-
-For example, you want only authorized users to be able to log into virtual machines or storage systems running in the cloud. The responsibility for securing these resources is shared between you and the cloud provider. Cloud providers offer tools that help you mitigate security threats but you must use these tools to protect the resources you use.
-
-    :::column-end:::
-:::row-end:::
-
-## Summary
-
-Cloud computing makes running a business easier. It’s cost effective, scalable, elastic, current, reliable, and secure. This means you’re able to spend more time on what matters and less time on managing the underlying details.
+Das Verwenden von Cloud Computing vereinfacht die Geschäftstätigkeit. Es ist kostengünstig, skalierbar, elastisch, aktuell und zuverlässig. Sie verbringen weniger Zeit damit, die Details Ihrer Computinginfrastruktur zu verwalten, sodass Sie mehr Zeit haben, sich auf Ihr Unternehmen zu konzentrieren.

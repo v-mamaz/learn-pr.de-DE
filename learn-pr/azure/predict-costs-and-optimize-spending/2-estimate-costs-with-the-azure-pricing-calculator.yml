@@ -1,34 +1,34 @@
 ### YamlMime:ModuleUnit
 uid: learn.predict-costs-and-optimize-spending.2-estimate-costs-with-the-azure-pricing-calculator
-title: Estimate costs with the Azure pricing calculator
+title: Kostenschätzung mit dem Azure-Preisrechner
 metadata:
-  title: Estimate costs with the Azure pricing calculator
-  description: In this unit, we'll discuss how to estimate costs with the Azure pricing calculator 
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: Kostenschätzung mit dem Azure-Preisrechner
+  description: In dieser Einheit wird erläutert, wie Sie mit dem Azure-Preisrechner eine Kostenschätzung durchführen.
+  ms.openlocfilehash: 93d01958a958e008fac17214db8496b8f9dded03
+  ms.sourcegitcommit: 81cb0c300be030565fb0b7c5b57413c4a2aa5410
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/28/2018
+  ms.locfileid: "43141735"
 durationInMinutes: 20
-content: |
+content: >
   [!include[](includes/2-estimate-costs-with-the-azure-pricing-calculator.md)]
 quiz:
-  title: Estimate costs with the Azure pricing calculator 
+  title: Kostenschätzung mit dem Azure-Preisrechner
   questions:
-  - content: "In which tab of the Azure pricing calculator will you formulate your estimate?"
+  - content: Auf welcher Registerkarte des Azure-Preisrechners erstellen Sie Ihre Schätzung?
     choices:
-    - content: "Estimate"
+    - content: Schätzung
       isCorrect: false
-      incorrectExplanation: "This tab has all of your previously saved estimates."
-    - content: "Products"
+      incorrectExplanation: Diese Registerkarte enthält alle zuvor gespeicherten Schätzungen.
+    - content: Produkte
       isCorrect: true
-      correctExplanation: "This tab has all the Azure services listed and is where you'll add or remove services to formulate your estimate."
-  - content: "You can share your estimate through an Excel spreadsheet or through a URL."
+      correctExplanation: Diese Registerkarte zeigt alle Azure-Dienste an. Sie können hier Dienste hinzufügen oder entfernen, um Ihre Schätzung zu erstellen.
+  - content: Sie können Ihre Schätzung über ein Excel-Arbeitsblatt oder eine URL teilen.
     choices:
-    - content: "True"
+    - content: "TRUE"
       isCorrect: true
-      correctExplanation: "Clicking <b>Export</b> at the bottom of the estimate will export an Excel spreadsheet that you can share, or you can click <b>Share</b> to get a URL link that you can share with your team."
-    - content: "False"
+      correctExplanation: Wenn Sie unten in der Schätzung auf <b>Exportieren</b> klicken, wird ein Excel-Arbeitsblatt exportiert, das Sie teilen können. Alternativ können Sie auf <b>Teilen</b> klicken, um einen URL-Link abzurufen, den Sie mit Ihrem Team teilen können.
+    - content: "FALSE"
       isCorrect: false
-      incorrectExplanation: "Clicking <b>Export</b> at the bottom of the estimate will export an Excel spreadsheet that you can share, or you can click <b>Share</b> to get a URL link that you can share with your team."
+      incorrectExplanation: Wenn Sie unten in der Schätzung auf <b>Exportieren</b> klicken, wird ein Excel-Arbeitsblatt exportiert, das Sie teilen können. Alternativ können Sie auf <b>Teilen</b> klicken, um einen URL-Link abzurufen, den Sie mit Ihrem Team teilen können.

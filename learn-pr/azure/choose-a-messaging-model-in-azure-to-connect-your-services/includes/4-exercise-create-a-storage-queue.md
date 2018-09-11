@@ -1,137 +1,136 @@
-In this unit, you will create a new storage account in your Azure subscription. You will then use Azure Cloud Shell to create a new queue, add a message to it, and then read that message and remove it from the queue.
+In dieser Übung erstellen Sie ein neues Speicherkonto für Ihr Azure-Abonnement. Verwenden Sie anschließend Azure Cloud Shell, um eine neue Warteschlange zu erstellen, eine Meldung hinzuzufügen und dann diese Meldung zu lesen und aus der Warteschlange zu entfernen.
 
-These are the same actions taken by components in a distributed application. For example, a mobile app may add a message to a queue, where it waits for a web service to retrieve it and process it.
+Hierbei handelt es sich um die gleichen Aktionen, die von Komponenten in einer verteilten Anwendung durchgeführt werden. Beispielsweise kann eine mobile App einer Warteschlange eine Meldung hinzufügen, die dann darauf wartet, dass ein Webdienst sie abruft und verarbeitet.
 
-## Create a storage account
-<!---TODO: Update for sandbox.--->
+## <a name="create-a-storage-account"></a>Erstellen eines Speicherkontos
 
-Since Azure Storage queues are part of Azure general-purpose storage accounts, you must start by creating a storage account:
+Da Azure Storage-Warteschlangen ein Bestandteil von universellen Azure-Speicherkonten ist, müssen Sie zunächst ein Speicherkonto erstellen:
 
-1. In a browser, navigate to the [Azure portal](https://portal.azure.com?azure-portal=true), and sign in with your normal credentials.
+1. Navigieren Sie in einem Browser zum [Azure-Portal](https://portal.azure.com?azure-portal=true), und melden Sie sich mit Ihren regulären Anmeldeinformationen an.
 
-1. In the top left, click **All services**.
+1. Klicken Sie oben links auf **Alle Dienste**.
 
-1. Scroll down to the **Storage** section, and then click **Storage accounts**.
+1. Scrollen Sie nach unten zum Abschnitt **Speicher**, und klicken Sie dann auf **Speicherkonten**.
 
-1. At the top left of the **Storage accounts** blade, click **Add**.
+1. Klicken Sie oben links auf dem Blatt **Speicherkonten** auf **Hinzufügen**.
 
-  ![Screenshot of Storage accounts blade, with Add highlighted](../media-draft/4-create-a-storage-account-1.png)
+  ![Screenshot: Blatt „Speicherkonten“ mit Hervorhebung der Option „Hinzufügen“](../media-draft/4-create-a-storage-account-1.png)
 
-1. In the resulting dialog, enter the following information, each of these options has a `(i)` icon in the portal which you can use to get more information about what the option does.
+1. Geben Sie in das daraufhin angezeigte Dialogfeld die folgenden Informationen ein. Alle Optionen verfügen über ein `(i)`-Symbol im Portal, das Sie verwenden können, um mehr Informationen zur Funktionsweise dieser Option abzurufen.
 
-    - In the **Name** text box, type a unique name for the storage account.
-    - Under **Deployment model**, ensure that **Resource Manager** is selected.
-    - In the **Account kind** drop-down list, select **Storage (general purpose v2)**.
-    - In the **Location** drop-down list, select a region near you.
-    - In the **Replication** drop-down list, select **Locally-redundant storage (LRS)**.
-    - Under **Performance**, select **Standard**.
-    - Under **Access tier**, select **Cool**.
-    - Under **Secure transfer required**, select **Disabled**.
-    - Under **Subscription**, select your subscription.
-    - Under **Resource group**, select **Create new**. In the text box, type **MusicSharingResourceGroup**.
-    - Under **Virtual networks**, select **Disabled**. 
+    - Geben Sie in das Textfeld **Name** einen eindeutigen Namen für das Speicherkonto ein.
+    - Stellen Sie unter **Bereitstellungsmodell** sicher, dass **Resource Manager** ausgewählt ist.
+    - Wählen Sie in der Dropdownliste **Kontoart** die Option **StorageV2 (universell, Version 2)** aus.
+    - Wählen Sie in der Dropdownliste **Standort** eine Region in Ihrer Nähe aus.
+    - Wählen Sie in der Dropdownliste **Replikation** den Wert **Lokal redundanter Speicher** aus.
+    - Wählen Sie unter **Leistung** die Option **Standard** aus.
+    - Klicken Sie unter **Zugriffsebene** auf die Option **Kalt**.
+    - Klicken Sie unter **Sichere Übertragung erforderlich** auf die Option **Deaktiviert**.
+    - Wählen Sie unter **Abonnement** Ihr Abonnement aus.
+    - Klicken Sie unter **Ressourcengruppe** auf die Option **Neu erstellen**. Geben Sie **MusicSharingResourceGroup** in das Textfeld ein.
+    - Klicken Sie unter **Virtuelle Netzwerke** auf die Option **Deaktiviert**. 
 
-    ![Screenshot of Create storage account dialog box](../media-draft/4-create-a-storage-account-2.png)
+    ![Screenshot: Dialogfeld „Speicherkonto erstellen“](../media-draft/4-create-a-storage-account-2.png)
 
-1. Click **Create** - Azure will create a new resource group and a new storage account associated with it.
+1. Klicken Sie auf **Erstellen**. Dann erstellt Azure eine neue Ressourcengruppe und ein neues Speicherkonto, das diesem zugeordnet ist.
 
-    ![Screenshot of Create storage account dialog box, with Create highlighted](../media-draft/4-create-a-storage-account-3.png)
+    ![Screenshot: Dialogfeld „Speicherkonto erstellen“ mit Hervorhebung der Option „Erstellen“](../media-draft/4-create-a-storage-account-3.png)
 
-## Create a queue
+## <a name="create-a-queue"></a>Erstellen einer Warteschlange
 
-Now that the storage account has been created, you can add a new queue to it. You must create the queue by using PowerShell commands:
+Nun ist das Speicherkonto erstellt, und Sie können eine neue Warteschlange hinzufügen. Sie müssen die Warteschlange mit PowerShell-Befehlen erstellen:
 
-1. In the top right of the portal, click the **Cloud Shell** link `(>_)`.
+1. Klicken Sie in der oberen rechten Ecke des Portals auf den **Cloud Shell**-Link `(>_)`.
 
-    ![Screenshot of Azure portal, with Cloud Shell icon highlighted](../media-draft/4-create-a-storage-queue-1.png)
+    ![Screenshot: Azure-Portal mit Hervorhebung des Symbols „Cloud Shell“](../media-draft/4-create-a-storage-queue-1.png)
 
-1. In the **Welcome to Azure Cloud Shell** screen, click **PowerShell (Linux)**.
+1. Klicken Sie im Bildschirm **Welcome to Azure Cloud Shell** (Willkommen bei Azure Cloud Shell) auf **PowerShell (Linux)**.
 
-1. If the **You have no storage mounted** screen appears, click **Create storage**.
+1. Klicken Sie auf dem Bildschirm **You have no storage mounted** (Sie haben keinen Speicher bereitgestellt) auf **Speicher erstellen**.
 
-1. When the `PS Azure` prompt appears, to obtain the storage account, type the following command. Substitute `<storageaccountname>` with the unique name of your storage account you created above, and then press **Enter**. We want to assign the resulting object to a variable named `$storageaccount`.
+1. Wenn die `PS Azure`-Eingabeaufforderung angezeigt wird, das Speicherkonto aufzurufen, geben Sie den folgenden Befehl ein. Ersetzen Sie den `<storageaccountname>` durch den eindeutigen Namen des Speicherkontos, das Sie zuvor erstellt haben, und drücken Sie auf **Enter**. Das entstandene Objekt soll einer Variablen mit dem Namen `$storageaccount` zugewiesen werden.
 
     ```powershell
     $storageaccount = Get-AzureRmStorageAccount -Name <storageaccountname> -ResourceGroup  MusicSharingResourceGroup
     ```
 
-1. Next, we need to get the storage account _context_ - this is a property on the returned object. Let's assign it to another variable named `$context`.
+1. Als nächstes wird der _Kontext_ des Speicherkontos benötigt. Dabei handelt es sich um eine Eigenschaft das zurückgegebenen Objekts. Dieses soll einer anderen Variablen mit dem Namen `$context` zugewiesen werden.
 
     ```powershell
     $context = $storageaccount.Context
     ```
 
-1. Now we are ready to create the queue. Use the `New-AzureStorageQueue` command and assign it to a `$messageQueue` variable.
-    - Pass a `-Name` parameter with the value `musicsharingmessages`
-    - Pass a `-Context` parameter with the value you retrieved in the previous step.
+1. Danach kann die Warteschlange erstellt werden. Verwenden Sie den `New-AzureStorageQueue`-Befehl, und weisen Sie ihn einer `$messageQueue`-Variablen zu.
+    - Übergeben Sie einen `-Name`-Parameter mit dem Wert `musicsharingmessages`.
+    - Übergeben Sie einen `-Context`-Parameter mit dem Wert, den Sie im Schritt zuvor abgerufen haben.
 
     ```powershell
     $messageQueue = New-AzureStorageQueue -Name musicsharingmessages -Context $context
     ```
 
-## Add a message to the queue
+## <a name="add-a-message-to-the-queue"></a>Hinzufügen einer Meldung zu einer Warteschlange
 
-Now that you have created a queue in the storage account, you can add a message to it.
+Da Sie nun eine Warteschlange im Speicherkonto erstellt haben, können Sie ihr eine Meldung hinzufügen.
 
-1. To create a new message, use the `New-Object` method to create a .NET `CloudQueueMessage` with a string-based argument:
+1. Verwenden Sie die `New-Object`-Methode, um eine .NET-`CloudQueueMessage` mit einem zeichenfolgenbasierten Argument zu erstellen:
 
     ```powershell
     $newSongMessage = New-Object -TypeName Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage -ArgumentList "A new song has been added."
     ```
 
-1. To add the new message to the new queue, pass the created `CloudQueueMessage` to the `AddMessageAsync` method on your `$messageQueue` queue.
+1. Übergeben Sie die erstellte `CloudQueueMessage` an die `AddMessageAsync`-Methode in Ihrer `$messageQueue`-Warteschlange, um die neue Meldung an die neue Warteschlange zu übergeben.
 
     ```powershell
     $messageQueue.CloudQueue.AddMessageAsync($newSongMessage)
     ```
 
-## Verify the message was queued
+## <a name="verify-the-message-was-queued"></a>Überprüfen, ob die Meldung in die Warteschlange aufgenommen wurde
 
-We can use the **Storage Explorer** to work with our queue. There are two variations available:
+Sie können den **Storage-Explorer** verwenden, um mit der Warteschlange zu arbeiten. Zwei Variationen sind verfügbar:
 
-- A cross-platform desktop app for Linux, macOS, and Windows that you can download.
-- A preview web version in the Azure portal. This is the one we will use here, but you can install the desktop version if you prefer - the instructions are very similar.
+- Eine plattformübergreifende Desktop-App für Linux, macOS und Windows, die Sie herunterladen können
+- Eine Webvorschauversion für das Azure-Portal. Im Folgenden wird die Webversion verwendet, aber Sie können auch die Desktopversion installieren. Die Anweisungen sind ähnlich.
 
-1. In the Azure portal, in the navigation on the left, click **All resources**.
+1. Klicken Sie im Azure-Portal in der Navigation auf der linken Seite auf **Alle Ressourcen**.
 
-1. In the list of resources, click the storage account you created earlier.
+1. Klicken Sie in der Liste der Ressourcen auf das Speicherkonto, das Sie zuvor erstellt haben.
 
-1. In the storage account blade, click **Storage Explorer (Preview)**.
+1. Klicken Sie im Speicherkontoblatt auf **Storage-Explorer (Vorschau)**.
 
-1. In the Storage Explorer, under **QUEUES**, click **musicsharingmessages**. The Storage Explorer should display the message you just added.
+1. Klicken Sie im Storage-Explorer unter **WARTESCHLANGEN** auf **musicsharingmessages**. Der Storage-Explorer sollte die Meldung anzeigen, die Sie gerade hinzugefügt haben.
 
-## Retrieve and remove the message
+## <a name="retrieve-and-remove-the-message"></a>Abrufen und Entfernen der Meldung
 
-A destination component for a message in a Storage queue must retrieve the message at the front of the queue. Then the destination component must process the message and delete it from the queue so that other components do not retrieve it.
+Zielkomponenten für eine Meldung in einer Speicherwarteschlange müssen die Meldung abrufen, die sich am Anfang der Warteschlange befindet. Anschließend muss die Zielkomponente die Meldung verarbeiten und aus der Warteschlange löschen, damit andere Komponenten diese nicht abrufen.
 
-1. We can retrieve the first available message in PowerShell using the `GetMessageAsync` method on our queue. This is an asynchronous .NET method, since we want to wait for it we can just use the `Result` property to get the return value. This returns an object representing the message which we can assign to a parameter.
+1. Sie können die erste in PowerShell verfügbare Meldung mithilfe der `GetMessageAsync`-Methode in der Warteschlange abrufen. Es handelt sich dabei um eine asynchrone .NET-Methode. Da dies an dieser Stelle zu lange dauern würde, können Sie einfach die `Result`-Eigenschaft verwenden, um den Rückgabewert abzurufen. Dadurch wird ein Objekt zurückgegeben, das für die Meldung steht, die einem Parameter zugewiesen werden kann.
 
     ```powershell
     $retrievedMessage = $messageQueue.CloudQueue.GetMessageAsync().Result
     ```
 
-1. We can get a textual version of the message by calling `AsString` - this will output the value on the console.
+1. Diese Meldung wird in Text dargestellt, wenn Sie `AsString` aufrufen. Dadurch wird der Wert auf der Konsole zurückgegeben.
 
     ```powershell
     $retrievedMessage.AsString
     ```
 
-1. Or, we can display all the properties of the message by just typing the variable name and pressing **Enter**.
+1. Stattdessen können Sie auch alle Eigenschaften der Meldung anzeigen, indem Sie nur den Variablennamen eingeben und die **EINGABETASTE** drücken.
 
     ```powershell
     $retrievedMessage
     ```
 
-1. `GetMessageAsync` does *not* remove the message - it simply returns it, which means we could process it again. To remove the message from the queue, we can use the `DeleteMessageAsync` method on the queue - this requires that we pass in the message we want to remove.
+1. `GetMessageAsync` entfernt die Meldung *nicht*, sondern gibt sie nur zurück. Dadurch kann der Prozess fortgesetzt werden. Wenn Sie diese Meldung aus der Warteschlange entfernen möchten, können Sie die `DeleteMessageAsync`-Methode für die Warteschlange verwenden. Dafür muss die Meldung übergeben werden, die entfernt werden soll.
 
     ```powershell
     $messageQueue.CloudQueue.DeleteMessageAsync($retrievedMessage)
     ```
 
-1. To verify that the message is gone, refresh the queue display in the Azure portal by navigating to the Storage Account blade and selecting **Overview > Storage Explorer**. Under **QUEUES**, click **musicsharingmessages**. The Storage Explorer should now show that the queue is empty because you removed the only message.
+1. Wenn Sie prüfen möchten, ob die Meldung entfernt wurde, aktualisieren Sie die Warteschlangenanzeige im Azure-Portal, indem Sie zum Blatt „Speicherkonto“ navigieren und auf **Übersicht > Storage-Explorer** klicken. Klicken Sie unter **WARTESCHLANGEN** auf **musicsharingmessages**. Der Storage-Explorer sollte jetzt anzeigen, dass die Warteschlange leer ist, da Sie die einzige Meldung entfernt haben.
 
 
-## Summary
-Storage account queues are a good solution when you want to pass _messages_ between the components of a distributed application. This is a great choice if you want to guarantee delivery or to ensure that messages are delivered in the same order you sent them. However, queues imply that the sender and receiver understand the format of the data being passed - there's an implied data contract between them which adds a bit of "coupling" between the two communicating services.
+## <a name="summary"></a>Zusammenfassung
+Warteschlangen für Speicherkonten sind eine gute Lösung, wenn _Meldungen_ zwischen den Komponenten einer verteilten Anwendung übergeben werden sollen. Sie eignen sich besonders, wenn Sie sicherstellen wollen, dass die Meldungen in der Reihenfolge zugestellt werden, in der Sie sie senden. Allerdings wird bei der Verwendung von Warteschlangen vorausgesetzt, dass Sender und Empfänger das Format der Daten kennen, die übergeben werden. Es besteht automatisch ein Datenvertrag, durch den die beiden miteinander kommunizierenden Dienste aneinander gekoppelt sind.
 
-Not all architectures need to pass formatted blocks of data, some really just need simple messages which we want to fire-and-forget without any knowledge of what will handle the message. In these scenarios, a queue isn't a great choice. Let's look at another messaging strategy which is more suited to this style of communication.
+Nicht alle Architekturen müssen formatierte Datenblöcke übergeben. Einige Architekturen benötigen nur einfache Meldungen, die gesendet werden sollen, ohne zu wissen, wie die Meldung verarbeitet wird. In solchen Szenarios eignen sich Warteschlangen nicht. Daher sollten Sie sich in der nächsten Einheit über eine Meldungsstrategie informieren, die sich besser für diesen Kommunikationsstil eignet.

@@ -1,44 +1,44 @@
-Next we'll consider the data throughout for our database. This is important to ensure we can handle the volume of transactions for our business needs. Throughput requirements aren't always consistent. For example, you may be building a shopping website that needs to scale during sales or holidays. We'll start estimating your database throughput requirements.
+Als Nächstes betrachten wir den Datendurchsatz in unserer Datenbank. Dies ist wichtig, um sicherzustellen, dass wir die Anzahl von Transaktionen für unsere Geschäftsanforderungen verarbeiten können. Anforderungen an den Durchsatz sind nicht immer konsistent. Beispielsweise können Sie eine Einkaufswebsite erstellen, die während der Verkäufe oder Ferien skaliert werden muss. Zu Beginn schätzen wir die Anforderungen an den Datenbankdurchsatz.
 
-## What is database throughput? 
+## <a name="what-is-database-throughput"></a>Was ist der Datenbankdurchsatz? 
 
-Database throughput is the number of reads and writes that your database can perform in a single second.
+Der Datenbankdurchsatz ist die Anzahl der Lese- und Schreibvorgänge, die Ihre Datenbank in einer einzigen Sekunde durchführen kann. 
 
-To scale throughput strategically, you need to estimate your throughput needs by estimating the number of reads and writes you'll have to support at different times and for different document sizes. If you estimate correctly, you'll keep your users happy when demand spikes. If you estimate incorrectly, your requests can get rate-limited and operations will have to wait and retry, likely causing high latency and unhappy customers.
+Um den Durchsatz strategisch zu skalieren, müssen Sie die Durchsatzanforderungen in Form der Lese- und Schreibvorgänge schätzen, die Sie zu unterschiedlichen Zeiten und für unterschiedliche Dokumentgrößen unterstützen müssen. Wenn Sie richtig schätzen, halten Sie Ihre Benutzer bei Bedarfsspitzen bei Laune. Wenn Sie falsch schätzen, können Ratenbegrenzungen auf Ihre Anforderungen angewandt werden, sodass Vorgänge von Wartezeiten und Wiederholungsversuchen betroffen sind, was zu hoher Latenz führt und zu Lasten der Kundenzufriedenheit geht.
 
-## What is a request unit?
+## <a name="what-is-a-request-unit"></a>Was ist eine Anforderungseinheit?
 
-Azure Cosmos DB measures throughput using something called a **request unit (RU)**. Request unit usage is measured per second, so the unit of measure is **request units per second (RU/s)**. You must reserve the number of RU/s you want Azure Cosmos DB to provision in advance, so it can handle the load you've estimated, and you can scale your RU/s up or down at any time to meet current demand.
+Azure Cosmos DB misst den Durchsatz in **Anforderungseinheiten (Request Unit, RU)**. Die Nutzung von Anforderungseinheiten pro Sekunde wird gemessen, also ist die Maßeinheit **Anforderungseinheiten pro Sekunde (RU/s)**. Sie müssen die RU/s reservieren, die Azure Cosmos DB im Voraus für Sie bereitstellen soll, damit die von Ihnen geschätzte Last verarbeitet werden kann, und Sie können Ihre RU/s jederzeit nach oben oder unten skalieren, um die aktuellen Anforderungen zu erfüllen.
 
-## Request unit basics
+## <a name="request-unit-basics"></a>Grundlegendes zu Anforderungseinheiten
 
-A single request unit, 1 RU, is equal to the approximate cost of performing a single GET request on a 1-KB document using a document's ID. Performing a GET by using a document's ID is an efficient means for retrieving a document, and thus the cost is small. Creating, replacing, or deleting the same item requires additional processing by the service, and therefore requires more request units.
+Eine einzelne Anforderungseinheit, 1 RU, entspricht den ungefähren Kosten der Ausführung einer einzelnen GET-Anforderung in einem 1-KB-Dokument mithilfe einer Dokument-ID. Das Ausführen einer GET mithilfe einer Dokument-ID ist eine effiziente Möglichkeit zum Abrufen eines Dokuments, und somit sind die Kosten niedrig. Erstellen, Ersetzen oder Löschen des gleichen Elements erfordern eine zusätzliche Verarbeitung durch den Dienst und daher mehr Anforderungseinheiten.
 
-The number of request units used for an operation changes depending on the document size, the number of properties in the document, the operation being performed, and some additional complex concepts such as consistency and indexing policy.
+Die Anzahl der für einen Vorgang verwendeten Anforderungseinheiten ist abhängig von der Dokumentgröße, der Anzahl der Eigenschaften im Dokument, dem ausgeführten Vorgang und einiger zusätzlicher komplexer Konzepte wie Konsistenz und Indizierungsrichtlinie.
 
-The following table shows the number of request units required for items of three different sizes (1 KB, 4 KB, and 64 KB) and at two different performance levels (500 reads/second + 100 writes/second and 500 reads/second + 500 writes/second). In this example, the data consistency is set to **Session**, and the indexing policy is set to **None**.
+In der Tabelle unten ist die Anzahl der Anforderungseinheiten für Elemente drei unterschiedlicher Größen (1 KB, 4 KB und 64 KB) und bei zwei unterschiedlichen Leistungsebenen (500 Lesevorgänge/Sekunde + 100 Schreibvorgänge/Sekunde und 500 Lesevorgänge/Sekunde + 500 Schreibvorgänge/Sekunde) angegeben. In diesem Beispiel wurde die Datenkonsistenz auf **Sitzung** und die Indizierungsrichtlinie auf **Keine** festgelegt.
 
-| Item size | Reads/second | Writes/second | Request units
+| Elementgröße | Lesevorgänge/Sekunde | Schreibvorgänge/Sekunde | Anforderungseinheiten
 | --- | --- | --- | --- |
-| 1 KB | 500 | 100 | (500 * 1) + (100 * 5) = 1,000 RU/s
-| 1 KB | 500 | 500 | (500 * 1) + (500 * 5) = 3,000 RU/s
-| 4 KB | 500 | 100 | (500 * 1.3) + (100 * 7) = 1,350 RU/s
-| 4 KB | 500 | 500 | (500 * 1.3) + (500 * 7) = 4,150 RU/s
-| 64 KB | 500 | 100 | (500 * 10) + (100 * 48) = 9,800 RU/s
-| 64 KB | 500 | 500 | (500 * 10) + (500 * 48) = 29,000 RU/s
+| 1 KB | 500 | 100 | (500 * 1) + (100 * 5) = 1.000 RU/s
+| 1 KB | 500 | 500 | (500 * 1) + (500 * 5) = 3.000 RU/s
+| 4 KB | 500 | 100 | (500 * 1,3) + (100 * 7) = 1.350 RU/s
+| 4 KB | 500 | 500 | (500 * 1,3) + (500 * 7) = 4.150 RU/s
+| 64 KB | 500 | 100 | (500 * 10) + (100 * 48) = 9.800 RU/s
+| 64 KB | 500 | 500 | (500 * 10) + (500 * 48) = 29.000 RU/s
  
-As you can see, the larger the item is, and the more reads and writes are required, the more request units you need to reserve. If you need to estimate the throughput needs of an application, the Azure Cosmos DB [Capacity Planner](https://www.documentdb.com/capacityplanner) is an online tool that enables you to upload a sample JSON document and set the number of operations you need to complete per second. It then provides an estimated total to reserve.
+Wie Sie sehen: Je größer das Element ist, und je mehr Lese- und Schreibvorgänge erforderlich sind, desto mehr Anforderungseinheiten müssen Sie reservieren. Wenn Sie die Durchsatzanforderungen einer Anwendung schätzen müssen, nutzen Sie den [Capacity Planner](https://www.documentdb.com/capacityplanner) von Azure Cosmos DB, ein Onlinetool, das Ihnen ermöglicht, ein JSON-Beispieldokument hochzuladen und die Anzahl der Vorgänge festzulegen, die Sie pro Sekunde ausführen müssen. Dann wird Ihnen eine geschätzte zu reservierende Gesamtsumme mitgeteilt.
 
-## Exceeding throughput limits
+## <a name="exceeding-throughput-limits"></a>Überschreiten von Durchsatzlimits
 
-If you don’t reserve enough request units, and you attempt to read or write more data than your provisioned throughput allows, your request will be rate-limited. When a request is rate-limited, the request has to be retried again after a specified interval. If you use the .NET SDK, the request will be retried automatically after waiting the amount of time specified in the retry-after header.
+Wenn Sie nicht genügend Anforderungseinheiten reservieren und versuchen, mehr Daten zu lesen oder zu schreiben, als der bereitgestellte Durchsatz ermöglicht, wird eine Ratenbegrenzung auf Ihre Anforderung angewandt. Wenn eine Ratenbegrenzung auf eine Anforderung angewandt wird, muss die Anforderung nach einem angegebenen Intervall wiederholt werden. Wenn Sie das .NET SDK verwenden, wird die Anforderung automatisch nach Verstreichen der im Retry-After-Header angegebenen Zeitspanne wiederholt.
 
-## Creating an account built to scale
+## <a name="creating-an-account-built-to-scale"></a>Erstellen eines skalierbaren Kontos
 
-You can change the number of request units provisioned to a database at any time. So, during heavy volume periods, you can scale up to accommodate those high demands, and then reduce provisioned throughput during off peak times to reduce costs.
+Sie können die Anzahl der für eine Datenbank bereitgestellten Anforderungseinheiten jederzeit ändern. In Zeiten mit hohem Volumen können Sie also zentral hochskalieren, um diese hohen Anforderungen zu berücksichtigen, und außerhalb der Spitzenzeiten den bereitgestellten Durchsatz verringern, um Kosten zu senken.
 
-When you create an account, you can provision a minimum of 400 RU/s, or a maximum of 250,000 RU/s in the portal. If you need even more throughput, fill out a ticket in the Azure portal. Setting the initial throughput to 1000 RU/s is recommended for almost all accounts, as it is the minimum value in which your database will autoscale should you need more than 10 GB of storage. If you set the initial throughput to any value less than 1000 RU/s, your database will not be able to scale to larger than 10 GB unless you reprovision the database and provide a partition key. Partition keys enable quick lookup of data in Azure Cosmos DB and enable it to autoscale your database when needed. Partition keys are discussed a bit later in the module.
+Wenn Sie ein Konto erstellen, können Sie ein Minimum von 400 RU/s oder ein Maximum von 250.000 400 RU/s im Portal bereitstellen. Wenn Sie noch mehr Durchsatz benötigen, füllen Sie ein Ticket im Azure-Portal aus. Für fast alle Konten sollte ein anfänglicher Durchsatz von 1.000 RU/s festgelegt werden, da dies der kleinste Wert ist, bei dem Ihre Datenbank automatisch skaliert, wenn Sie mehr als 10 GB Speicher benötigen sollten. Wenn Sie den anfänglichen Durchsatz auf einen beliebigen Wert unter 1.000 RU/s festlegen, kann Ihre Datenbank nicht auf mehr als 10 GB skalieren, es sei denn, Sie stellen die Datenbank erneut bereit und geben einen Partitionsschlüssel aus. Partitionsschlüssel ermöglichen die schnelle Suche nach Daten in Azure Cosmos DB und ermöglichen Azure Cosmos DB, Ihre Datenbank bei Bedarf automatisch zu skalieren. Partitionsschlüssel werden etwas später in diesem Modul erläutert.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-You now understand how to estimate and scope throughput for an Azure Cosmos DB using request units. Request units can be modified at any time, and setting them to 1000 RU/s when you create an account helps ensure your database is ready to scale later.
+Sie wissen nun, wie Sie den Durchsatz für Azure Cosmos DB mithilfe von Anforderungseinheiten einschätzen und festlegen. Anforderungseinheiten können jederzeit geändert werden, und die Einstellung auf 1.000 RU/s bei der Erstellung eines Kontos stellt sicher, dass Ihre Datenbank später skaliert werden kann.

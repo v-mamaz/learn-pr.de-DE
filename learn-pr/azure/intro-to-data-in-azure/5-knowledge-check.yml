@@ -1,49 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-data-in-azure.5-knowledge-check
 metadata:
-  title: Knowledge check
-  description: Knowledge check
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Knowledge check
+  title: Wissenstest
+  description: Wissenstest.
+  displayType: one-column
+  ms.openlocfilehash: 17bf564f5105a01d15d0fd205c7d70e21d3a8082
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43251975"
+title: Wissenstest
 durationInMinutes: 5
+content: Wissenstest
 quiz:
-  title: Knowledge check
+  title: Wissenstest
   questions:
-  - content: Your online learning portal needs to keep a record of each user's physical address and their email address. Which Azure features will let you manage this information well?
+  - content: Ihr Onlinelernportal muss die Anschrift und E-Mail-Adresse jedes Benutzers speichern. Mit welchen Azure-Features können Sie diese Informationen gut verwalten?
     choices:
-    - content: Azure Archive 
+    - content: Azure-Archivspeicher
       isCorrect: false
-      incorrectExplanation: Azure Archive is ideal for storing older versions of your data so that you can retrieve it when it's required for auditing or other infrequent activities. 
-    - content: Azure SQL Database
+      incorrectExplanation: Der Azure-Archivspeicher eignet sich zum Speichern älterer Versionen Ihrer Daten, sodass Sie die Daten abrufen können, wenn diese für Überprüfungen oder andere unregelmäßig durchgeführte Aktivitäten benötigt werden.
+    - content: Azure SQL-Datenbank
       isCorrect: true
-      correctExplanation: Correct! Azure SQL Database helps store relational data and retrieves the data quickly with powerful queries.
+      correctExplanation: Richtig! Mit Azure SQL-Datenbank können Sie relationale Daten speichern und mit leistungsstarken Abfragen schnell abrufen.
     - content: Azure Files
       isCorrect: false
-      incorrectExplanation: Azure Files is used for file shares in the cloud. It can be mounted concurrently by cloud or on-premises deployments of Windows, Linux, and macOS.
-  - content: The simulation files used by the sales learning portals can grow to significantly large sizes. How will Azure support these files?
+      incorrectExplanation: Azure Files wird für Dateifreigaben in der Cloud verwendet. Diese können gleichzeitig durch die Cloud oder lokale Bereitstellungen von Windows, Linux und macOS eingebunden werden.
+  - content: Die in den Vertriebsschulungsportalen verwendeten Simulationsdateien können sehr groß werden. Wie unterstützt Azure diese Dateien?
     choices:
-    - content: Azure Blob storage can support files up to 8 TB in size
+    - content: Azure Blob Storage kann Dateien bis zu einer Größe von 8 TB unterstützen.
       isCorrect: true
-      correctExplanation: Correct! Azure Blob storage provides the ability to store and stream large video or audio files directly to the browser from anywhere in the world.
-    - content:  Azure Files can support storing and streaming of large files.
+      correctExplanation: Richtig! Azure Blob Storage bietet die Möglichkeit, große Video- und Audiodateien zu speichern und von jedem Standort der Welt aus direkt in Browsern zu streamen.
+    - content: Azure Files kann das Speichern und Streamen großer Dateien unterstützen.
       isCorrect: false
-      incorrectExplanation: Azure Files is used for file shares in the cloud. It can be mounted concurrently by cloud or on-premises deployments of Windows, Linux, and macOS.
-    - content: Azure does not support storing and streaming of large files.
+      incorrectExplanation: Azure Files wird für Dateifreigaben in der Cloud verwendet. Diese können gleichzeitig durch die Cloud oder lokale Bereitstellungen von Windows, Linux und macOS eingebunden werden.
+    - content: Azure unterstützt das Speichern und Streamen großer Dateien nicht.
       isCorrect: false
-      incorrectExplanation: Azure does have the ability to store and stream large video and audio files directly to the browser from anywhere in the world.
-  - content: How does Azure support durability and reliability of data?
+      incorrectExplanation: Azure bietet die Möglichkeit, große Video- und Audiodateien zu speichern und von jedem Standort der Welt aus direkt in Browsern zu streamen.
+  - content: Wie unterstützt Azure die Stabilität und Zuverlässigkeit von Daten?
     choices:
-    - content: Through Azure replication capabilities.
+    - content: Mithilfe von Azure-Replikationsfeatures.
       isCorrect: true
-      correctExplanation: Correct! Azure provides replication capabilities to protect the data against natural disasters and supports encryption to protect the data against malicious attacks.
-    - content:  You need additional premium support to encrypt and decrypt your data, and reliability is supported by third-party backup features.
+      correctExplanation: Richtig! Azure bietet Replikationsfeatures, um Daten vor Naturkatastrophen zu schützen, und unterstützt Verschlüsselung, um die Daten vor Angriffen zu schützen.
+    - content: Sie benötigen zusätzlichen Premiumsupport, um Ihre Daten zu verschlüsseln und zu entschlüsseln. Die Zuverlässigkeit wird durch Sicherungsfeatures von Drittanbietern unterstützt.
       isCorrect: false
-      incorrectExplanation: You don't need any additional support; Azure has the capability to protect your data against unforeseen risks and threats.
-    - content: Azure does not have in-built redundancy and encryption features.
+      incorrectExplanation: Sie benötigen keinen weiteren Support. Azure bietet alle Funktionen, die zum Schutz Ihrer Daten vor unvorhergesehenen Risiken und Bedrohungen erforderlich sind.
+    - content: Azure bietet keine integrierten Redundanz- und Verschlüsselungsfunktionen.
       isCorrect: false
-      incorrectExplanation: Azure comes with in-built capabilities for protecting your data against risks and threats.
+      incorrectExplanation: Azure enthält integrierte Funktionen zum Schutz Ihrer Daten vor Risiken und Bedrohungen.

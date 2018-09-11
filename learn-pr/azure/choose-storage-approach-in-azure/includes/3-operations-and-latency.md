@@ -1,36 +1,32 @@
-Once you've identified the kind of data you're dealing with (structured, semi-structured, or unstructured), the other important step is to determine how you'll use the data. For example, as an online retailer you know customers need quick access to product data, and business users need to run complex analytical queries. As you start to work through these requirements, and take your data classification into account, you can start to put together your data storage approach.
+Wenn Sie die Art der Daten, mit denen Sie arbeiten (strukturiert, teilweise strukturiert oder unstrukturiert), ermittelt haben, besteht der nächste wichtige Schritt darin, festzustellen, wie die Daten verwendet werden. Ein Onlinehändler würde z.B. wollen, dass Kunden einen schnellen Zugriff auf Produktdaten haben, während Geschäftsbenutzer komplexe Analyseabfragen ausführen können sollen. Arbeiten Sie sich durch diese Anforderungen durch, und berücksichtigen Sie dabei Ihre Datenklassifizierung, um Ihren Datenspeicheransatz zu konzipieren.
 
-Here, you'll go through some of the questions you should ask when determining what you'll do with your data.
+Im Folgenden werden einige Fragen vorgestellt, die Sie sich bei der Bestimmung, wie Sie Ihre Daten behandeln, stellen sollten.
 
-## Operations and latency
+## <a name="operations-and-latency"></a>Vorgänge und Latenzen
 
-What are the main operations you'll be completing on each data type, and what are performance requirements?
+Welche sind die wichtigsten Vorgänge, die Sie für die einzelnen Datentypen durchführen, und welche Leistungsanforderungen gilt es zu erfüllen?
 
-Ask yourself these questions:
-* Will you be doing simple lookups by an ID? 
-* Do you need to query the database for one or more fields? 
-* How many create, update, and delete operations do you expect? 
-* Do you need to run complex analytical queries? 
-* How fast do these operations need to complete?
+Führen Sie insbesondere einfache Suchvorgänge anhand einer ID durch? Müssen Sie ein oder mehrere Felder der Datenbank abfragen? Wie viele Erstellungs-, Aktualisierungs- und Löschvorgänge werden Sie aller Voraussicht nach durchführen? Müssen Sie außerdem komplexe Analyseabfragen ausführen? Wie schnell müssen diese Vorgänge ausgeführt werden?
 
-Let’s walk through each of the data sets with these questions in mind and discuss the requirements.
+Sehen wir uns die einzelnen Datasets und Anforderungen genauer an.
 
-## Product catalog data
+### <a name="product-catalog-data"></a>Produktkatalogdaten
 
-For product catalog data in an online retail scenario, customers will have the highest priority needs. Customers will want to query the product catalog to find, for example, all men's shoes, then men's shoes on sale, and then men's shoes on sale in a particular size. So, you could categorize customer's needs as requiring lots of read operations, with the ability to query on certain fields.
+In dem Szenario eines Onlinehändlers liegt die oberste Priorität für Benutzer bei den Produktkatalogdaten. Beispielsweise möchten Benutzer den Produktkatalog abfragen, um sämtliche Herrenschuhe, Herrenschuhe im Angebot und dann Herrenschuhe im Angebot mit einer bestimmten Größe zu durchsuchen. Sie könnten Kundenanforderungen also nach der Notwendigkeit für eine Vielzahl von erforderlichen Lesevorgängen kategorisieren, mit der Möglichkeit, bestimmte Felder abzufragen.
 
-In addition, when customers place orders, the product data quantities need to be updated by the application. Those update operations need to happen as fast as the read operations so that users don't end up placing items in their shopping baskets when that product has just sold out. So not only do you need lots of read operations, you also require lots of write operations for product catalog data. Be sure to determine the priorities for all the users of the database, not just the primary ones.
+Wenn Kunden Bestellungen aufgeben, müssen darüber hinaus auch die Mengen an Produktdaten von der Anwendung aktualisiert werden. Diese Aktualisierungsvorgänge müssen genau so schnell wie die Lesevorgänge erfolgen, um zu verhindern, dass Benutzer Artikel in ihren Einkaufskorb legen, die kurz vorher schon ausverkauft sind. Es sind also nicht nur viele Lesevorgänge für Produktkatalogdaten erforderlich, sondern auch viele Schreibvorgänge. Ermitteln Sie in jedem Fall die Prioritäten aller Datenbankbenutzer, nicht nur die der primären Benutzer.
 
-## Photos and videos
+### <a name="photos-and-videos"></a>Fotos und Videos
 
-The photos and videos that are displayed on product pages have different requirements though. They do need fast retrieval times to display on the site at the same time as the product catalog data, but they don't need to be queried independently. Instead, you can rely on the results of the product query, and just have the video ID or URL as a property on the product data. So, photos and videos don't need to be queried by anything other than their ID.
+Für die Fotos und Videos, die auf den Produktseiten angezeigt werden, gelten wiederum andere Anforderungen. Auch hier sind kurze Abrufzeiten für die Anzeige auf der Website vonnöten, separate Abfragen allerdings nicht. Stattdessen können Sie sich auf die Produktabfrage konzentrieren und nur die Video-ID oder -URL als Eigenschaft für die Produktdaten verwenden. Fotos und Videos müssen demnach nur anhand ihrer ID abgefragt werden.
 
-In addition, users will not be making updates to existing photos or videos. They may, however, add new photos for product reviews. So, they might upload an image of themselves showing off their new shoes. As an employee, you also upload and delete product photos from your vendor, but that update doesn't need to happen as fast as your other product data updates. So, in summary, photos and videos just need to be queried by ID to return the whole file, but creates and updates will be less frequent and are less of a priority.  
+Darüber hinaus nehmen Benutzer keine Aktualisierungen an vorhandenen Fotos oder Videos vor, können jedoch neue Fotos für Produktprüfungen hinzufügen. Beispielsweise könnten sie ein Bild von sich mit ihren neuen Schuhen hochladen. Zudem laden Sie Produktfotos von Ihrem Hersteller hoch und löschen solche, diese Aktualisierungsvorgänge müssen jedoch nicht so schnell wie andere Aktualisierungsvorgänge für Ihre Produktdaten durchgeführt werden. Zusammenfassend lässt sich folgern, dass Fotos und Videos nur nach ID abgefragt werden müssen, um die gesamte Datei zurückzugeben, Erstellungs- und Aktualisierungsvorgänge kommen jedoch seltener vor und weisen eine geringere Priorität auf.  
 
-## Business data
+### <a name="business-data"></a>Geschäftsdaten
 
-For business data, all the analysis is happening on historical data. None of the original data would be updated based on the analysis. So, the business data is read-only, and users don't expect their complex analytics to run instantly, so having some latency in the results is okay. In addition, business data will be stored in multiple data sets, as users will have different access to write to each data set. However, the business analysts will be able to read from all databases.
+Bei Geschäftsdaten bezieht sich die gesamte Analyse auf historische Daten. Keine der ursprünglichen Daten werden basierend auf der Analyse aktualisiert. Die Geschäftsdaten sind damit schreibgeschützt und Benutzer erwarten nicht, dass ihre komplexen Analysevorgänge sofort ausgeführt werden. Latenzen, die bei der Ausgabe der Ergebnisse eventuell auftreten können, sind daher bis zu einem gewissen Grad akzeptabel. Darüber hinaus werden Geschäftsdaten in mehreren Datasets gespeichert, da Benutzer unterschiedliche Zugriffsrechte zum Schreiben von Daten in den einzelnen Datasets besitzen. Business Analysten können jedoch Daten aus allen Datenbanken lesen.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-When deciding what storage solution to use, you should think about how your data will be used. How often will your data be accessed? Is your data read-only? Does query time matter? The answers to these questions will help you decide on the best storage solution for your data.
+Bei der Entscheidung, welche Speicherlösung am besten für Sie geeignet ist, sollten Sie sich auf die Frage konzentrieren, wie Ihre Daten verwendet werden. Wie oft wird auf Ihre Daten zugegriffen? Sind Ihre Daten schreibgeschützt? Ist die Abfragezeit von Relevanz? All diese Fragen spielen für Ihre Entscheidung, welche Speicherlösung am besten für Ihre Daten geeignet ist, eine wichtige Rolle.
+

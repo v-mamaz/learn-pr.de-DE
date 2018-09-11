@@ -1,80 +1,81 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-neural-network-with-dsvm.5-knowledge-check
-title: Check your knowledge
+title: Überprüfen Sie Ihre Kenntnisse
 metadata:
-  title: Check your knowledge
-  description: Confirm that you understood the steps required to build neural networks with Tensorflow and the Azure Data Science Virtual Machine.
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: Überprüfen Sie Ihre Kenntnisse
+  description: Vergewissern Sie sich, dass Sie die erforderlichen Schritte zum Erstellen neuronaler Netzwerke mit TensorFlow und Azure Data Science Virtual Machine verstanden haben.
+  ms.openlocfilehash: 50c8562c19b838f0b7414434c8d6ac4296969c00
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43251648"
 durationInMinutes: 10
+content: erforderlich
 quiz:
-  title: Building Neural Networks with TensorFlow and the Azure Data Science Virtual Machine
+  title: Erstellen von neuronalen Netzwerken mit TensorFlow und Data Science Virtual Machine von Azure
   questions:
-  - content: "Can you create a Data Science VM with an operating system other than Linux?"
+  - content: Kann eine Data Science-VM auf einem anderen Betriebssystem als Linux erstellt werden?
     choices:
-    - content: "No"
+    - content: Nein
       isCorrect: false
-      incorrectExplanation: "There are other options for operating systems for the Data Science VM."
-    - content: "Yes"
+      incorrectExplanation: Für die Data Science-VM gibt es andere Optionen für das Betriebssystem.
+    - content: Ja
       isCorrect: true
-      correctExplanation: "Great! Proceed to the next part of the lab."
-  - content: "What should be copied in the Azure Portal to use to connect to the Data Science VM with client?"
+      correctExplanation: Prima Fahren Sie mit dem nächsten Teil der Aufgabe fort.
+  - content: Was sollte zum Herstellen einer Verbindung zwischen der Data Science-VM und dem Client aus dem Azure-Portal kopiert werden?
     choices:
-    - content: "IP Address"
+    - content: IP-Adresse
       isCorrect: true
-      correctExplanation: "Great! Proceed to the next part of the lab."
-    - content: "Subscription name"
+      correctExplanation: Prima Fahren Sie mit dem nächsten Teil der Aufgabe fort.
+    - content: Abonnementname
       isCorrect: false
-      incorrectExplanation: "The subscription name isn't needed to connect to the VM."
-    - content: "DNS name"
+      incorrectExplanation: Der Abonnementname ist für das Herstellen einer Verbindung mit der VM nicht erforderlich.
+    - content: DNS-Name
       isCorrect: false
-      incorrectExplanation: "The DNS name isn't needed to connect to the VM."
-    - content: "Virtual network/subnet"
+      incorrectExplanation: Der DNS-Name ist für das Herstellen einer Verbindung mit der VM nicht erforderlich.
+    - content: Virtuelles Netzwerk/Subnetz
       isCorrect: false
-      incorrectExplanation: "The Virtual network or subnet isn't needed to connect to the VM."
-  - content: "What do you need to perform transfer learning on the Data Science VM?"
+      incorrectExplanation: Das virtuelle Netzwerk oder Subnetz ist für das Herstellen einer Verbindung mit der VM nicht erforderlich.
+  - content: Was ist erforderlich, um den Lerntransfer auf der Data Science-VM auszuführen?
     choices:
-    - content: "Access to a large GPU"
+    - content: Zugriff auf eine große GPU
       isCorrect: false
-      incorrectExplanation: "While a GPU is great for retraining on images, it doesn't need to be large or required."
-    - content: "Tensorflow installed"
+      incorrectExplanation: Eine GPU ist zwar hilfreich beim erneuten Trainieren mit Bildern, jedoch muss diese nicht groß sein und ist auch nicht erforderlich.
+    - content: TensorFlow installiert
       isCorrect: false
-      incorrectExplanation: "Tensorflow is already installed in the Data Science VM so there's no need to install it again."
-    - content: "Pre-trained model"
+      incorrectExplanation: TensorFlow ist bereits auf der Data Science-VM installiert, es ist also keine Installation erforderlich.
+    - content: Vortrainiertes Modell
       isCorrect: true
-      correctExplanation: "Great! Proceed to the next part of the lab."
-    - content: "A very large set of data"
+      correctExplanation: Prima Fahren Sie mit dem nächsten Teil der Aufgabe fort.
+    - content: Eine sehr große Datenmenge
       isCorrect: false
-      incorrectExplanation: "You don't need a large data set to use pre-trained models."
-  - content: "What is the name of the tool to visualize Tensorflow models?"
+      incorrectExplanation: Sie benötigen keine große Datenmenge, um vortrainierte Modelle zu verwenden.
+  - content: Wie heißt das Tool zum Visualisieren von TensorFlow-Modellen?
     choices:
-    - content: "Tensorview"
+    - content: TensorView
       isCorrect: false
-      incorrectExplanation: ""
-    - content: "Tensorvision"
+      incorrectExplanation: ''
+    - content: TensorVision
       isCorrect: false
-      incorrectExplanation: ""
-    - content: "Tensorpanel"
+      incorrectExplanation: ''
+    - content: TensorPanel
       isCorrect: true
-      incorrectExplanation: "Great! Proceed to the next part of the lab."
-    - content: "Tensorboard"
+      incorrectExplanation: Prima Fahren Sie mit dem nächsten Teil der Aufgabe fort.
+    - content: TensorBoard
       isCorrect: false
-      correctExplanation: ""
-  - content: "When executing the TkInter code for a GUI to test the model, what is the name of the Python script it calls to get results from the model?"
+      correctExplanation: ''
+  - content: Wie heißt das Python-Skript, das beim Ausführen des TkInter-Codes für eine grafische Benutzeroberfläche zum Testen des Modells aufgerufen wird, um die Ergebnisse des Modells abzurufen?
     choices:
-    - content: "retrain.py"
+    - content: retrain.py
       isCorrect: false
-      incorrectExplanation: "This script was used earlier to retrain the model with our own images."
-    - content: "classify.py"
+      incorrectExplanation: Dieses Skript wurde zuvor zum Trainieren des Modells mit unseren eigenen Bildern verwendet.
+    - content: classify.py
       isCorrect: false
-      incorrectExplanation: "This script was used to put the TkInter code into and run from."
-    - content: "label_image.py"
+      incorrectExplanation: Dieses Skript wurde verwendet, um den TkInter-Code einzufügen und auszuführen.
+    - content: label_image.py
       isCorrect: true
-      correctExplanation: "ThGreat! Proceed to the next part of the lab."
-    - content: "results.py"
+      correctExplanation: Prima. Fahren Sie mit dem nächsten Teil der Aufgabe fort.
+    - content: results.py
       isCorrect: false
-      incorrectExplanation: "This script wouldn't exist and would result in an error."
+      incorrectExplanation: Dieses Skript existiert nicht und würde zu einem Fehler führen.

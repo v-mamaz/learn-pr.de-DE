@@ -1,11 +1,17 @@
-In this unit, you will train the model using the images uploaded and tagged in the previous exercise. Training can be accomplished with a simple button click in the portal, or by calling the [TrainProject](https://southcentralus.dev.cognitive.microsoft.com/docs/services/d9a10a4a5f8549599f1ecafc435119fa/operations/58d5835bc8cb231380095bed) method in the [Custom Vision Training API](https://southcentralus.dev.cognitive.microsoft.com/docs/services/d9a10a4a5f8549599f1ecafc435119fa/operations/58d5835bc8cb231380095be3). After you train a model, you can refine it by uploading additional tagged images and retraining it.
+### <a name="exercise-3-train-the-model"></a>Übung 3: Trainieren des Modells
 
-1. Click the **Train** button at the top of the page to train the model. Each time you train the model, a new iteration is created. The Custom Vision Service maintains several iterations, allowing you to compare your progress over time.
+In dieser Übung trainieren Sie das Modell mithilfe der Bilder, die Sie in der vorherigen Übung hochgeladen und markiert haben. Das Training kann durch einen einfachen Klick auf eine Schaltfläche im Portal durchgeführt werden oder indem Sie die Methode [TrainProject](https://southcentralus.dev.cognitive.microsoft.com/docs/services/d9a10a4a5f8549599f1ecafc435119fa/operations/58d5835bc8cb231380095bed) in der [Custom Vision-Schulungs-API](https://southcentralus.dev.cognitive.microsoft.com/docs/services/d9a10a4a5f8549599f1ecafc435119fa/operations/58d5835bc8cb231380095be3) aufrufen. Nach dem Training können Sie ein Modell optimieren, indem Sie weitere markierte Bilder hochladen und das Training erneut durchführen.
+ 
+1. Klicken Sie oben auf der Seite auf die Schaltfläche **Trainieren**, um das Modell zu trainieren. Jedes Mal, wenn Sie das Modell trainieren, wird eine neue Iteration erstellt. Custom Vision Service verwaltet mehrere Iterationen, was Ihnen ermöglicht, Ihren Fortschritt im Laufe der Zeit zu vergleichen.
 
-    ![Training the model](../media/2-portal-click-train.png)
+    ![Trainieren des Modells](../images/portal-click-train.png)
 
-1. Wait for the training process to finish. (It should take only a few seconds.) Then review the training statistics presented to you for iteration 1. **Precision** and **recall** are separate but related  measures of the model's accuracy. Suppose the model was presented with three Picassos and three Van Goghs, and that it correctly identified two of the Picassos as "Picasso" images, but incorrectly identified two of the Van Goghs as Picassos. In this case, the precision would be 50% (two of the four images it classified as Picassos are actually Picassos), while its recall would be 67% (it correctly identified two of the three Picasso images as Picassos).
+    _Trainieren des Modells_
 
-    ![Results of training the model](../media/2-portal-train-complete.png)
+1. Warten Sie darauf, dass der Trainingsprozess abgeschlossen wird. (Dies sollte nur wenige Sekunden in Anspruch nehmen.) Überprüfen Sie anschließend die angezeigten Trainingsstatistiken für die erste Iteration. **Genauigkeit** und **Trefferquote** werden zwar separat aufgeführt, jedoch stellen sie zusammenhängende Messwerte für die Genauigkeit des Modells dar. Angenommen, dem Modell werden jeweils drei Werke von Picasso und Van Gogh vorgeführt, und das Modell identifiziert zwei Bilder von Picasso als „Picasso-Bilder“, aber identifiziert zwei der Bilder von Van Gogh fälschlicherweise als Bilder von Picasso. Dann würde die Genauigkeit 50 % betragen (zwei der vier Bilder, die als Bilder von Picasso identifiziert wurden, sind tatsächlich Picasso-Bilder), während die Trefferquote 67 % beträgt (zwei der drei Bilder von Picasso wurden richtig identifiziert). Weitere Informationen zur Genauigkeit und Trefferquote finden Sie unter https://en.wikipedia.org/wiki/Precision_and_recall.
 
-Now let's test the model using the portal's Quick Test feature, which allows you to submit images to the model and see how it classifies them using the knowledge gained from the training images.
+    ![Ergebnisse des Trainings des Modells](../images/portal-train-complete.png)
+
+    _Ergebnisse des Trainings des Modells_ 
+
+Jetzt testen Sie das Modell mithilfe des Features „Quick Test“ (Schnelltest), mit dem Sie Bilder an das Modell übermitteln und sehen können, wie diese aufgrund der durch die Trainingsbilder gesammelten Daten klassifiziert werden.

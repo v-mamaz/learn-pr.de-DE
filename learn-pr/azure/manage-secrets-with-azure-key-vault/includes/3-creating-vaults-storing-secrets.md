@@ -1,60 +1,59 @@
-## Creating Key Vaults for your applications
+## <a name="creating-key-vaults-for-your-applications"></a>Erstellen von Key Vaults für Ihre Anwendungen
 
-Good practice is to create a separate vault for each deployment environment of each of your applications, such as development, test, and production. It's possible to use vaults to share secrets across multiple apps, but the impact of an attacker gaining read access to a vault increases with the number of secrets in the vault.
-
-> [!TIP]
-> If you use the same names for secrets across different environments for an application, the only environment-specific configuration that has to change in your app is the vault URL.
-
-Creating a vault requires no initial configuration. Your user identity is automatically granted the full set of secret management permissions and you can start adding secrets immediately. Once you have a vault, adding and managing secrets can be done from any Azure administrative interface, including the Azure portal, the Azure CLI, and Azure PowerShell. When you set up your application to use the vault, you'll need to assign the correct permissions to it; we'll see that in the next unit.
-
-## Vault authentication and permissions
-
-Azure Key Vault's API uses Azure Active Directory to authenticate users and applications. Vault access policies are based on *actions*, and are applied across an entire vault. For example, an application with **Get** (read secret values), **List** (list names of all secrets), and **Set** (create or update secret values) permissions to a vault is able to create secrets, list all secret names, and get and set all secret values in that vault.
-
-*All* actions performed on a vault require authentication and authorization &mdash; there is no way to grant any kind of anonymous access.
+Es empfiehlt sich, für jede Bereitstellungsumgebung (Entwicklung, Test und Produktion) Ihrer verschiedenen Anwendungen einen separaten Tresor bereitzustellen. Es ist zwar möglich, Tresore zum plattformübergreifenden Freigeben von Geheimnissen zu verwenden, allerdings nehmen die Auswirkungen eines Angriffs, bei dem Lesezugriff auf einen Tresor erlangt wurde, mit der Anzahl der Geheimnisse im Tresor zu.
 
 > [!TIP]
-> When granting vault access to developers and apps, grant only the minimum set of permissions needed. Permissions restrictions help avoid accidents caused by code bugs and reduce the impact of stolen credentials or malicious code injected into your app.
+> Wenn Sie in verschiedenen Umgebungen einer Anwendung dieselben Namen für Geheimnisse verwenden, ist die Tresor-URL die einzige umgebungsspezifische Konfiguration, die in Ihrer Anwendung geändert werden muss.
 
-Developers will usually only need **Get** and **List** permissions to a development-environment vault. A lead or senior developer will need full permissions to the vault to change and add secrets when necessary. Full permissions to production-environment vaults are typically reserved for senior operations staff.
+Das Erstellen eines Tresors erfordert keine anfängliche Konfiguration. Ihrer Benutzeridentität werden automatisch alle Berechtigungen für die Verwaltung von Geheimnissen erteilt, und Sie können sofort mit dem Hinzufügen von Geheimnissen beginnen. Sobald Sie einen Tresor haben, können Sie Geheimnisse über jede Azure-Verwaltungsschnittstelle hinzufügen und verwalten, einschließlich Azure-Portal, Azure CLI und Azure PowerShell. Wenn Sie Ihre Anwendung für die Verwendung des Tresors einrichten, müssen Sie ihr die ordnungsgemäßen Berechtigungen zuweisen, womit wir uns in der nächsten Einheit beschäftigen.
 
-For apps, typically only **Get** permissions are required. Some apps may require **List** depending on the way the app is implemented. The app we'll implement in this module's exercise requires the **List** permission because of the technique it uses to read secrets from the vault.
+## <a name="vault-authentication-and-permissions"></a>Tresorauthentifizierung und -berechtigungen
 
-## Exercise
+Die Azure Key Vault-API verwendet Azure Active Directory zum Authentifizieren von Benutzern und Anwendungen. Tresorzugriffsrichtlinien basieren auf *Aktionen* und gelten für einen gesamten Tresor. Beispiel: Eine Anwendung mit den Berechtigungen **Get (Abrufen)** (Werte von Geheimnissen lesen), **List (Auflisten)** (Namen aller Geheimnisse auflisten) und **Set (Festlegen)** (Werte von Geheimnissen erstellen oder aktualisieren) kann Geheimnisse erstellen, alle Namen von Geheimnissen auflisten und alle Werte von Geheimnissen in diesem Tresor abrufen und festlegen.
 
-Given all the trouble the company's been having with application secrets, management has asked you to create a small starter app to set the other developers on the right path. The app needs to demonstrate best practices for managing secrets as simply and securely as possible.
+*Alle* Aktionen, die für einen Tresor erfolgen, erfordern eine Authentifizierung und Autorisierung. Ein anonymer Zugriff ist nicht möglich.
 
-To start, you'll create a vault and store one secret.
+> [!TIP]
+> Wenn Sie Entwicklern und Anwendungen Zugriff auf den Tresor gewähren, sollten Sie nur die erforderlichen Mindestberechtigungen gewähren. Berechtigungsbeschränkungen helfen, Unregelmäßigkeiten durch Codefehler zu vermeiden und die Auswirkungen von gestohlenen Anmeldeinformationen oder bösartigem Code in Ihrer Anwendung zu reduzieren.
 
-### Create a resource group
-<!---TODO: Update for sandbox?--->
+Entwickler benötigen für einen Entwicklungsumgebungstresor normalerweise nur die Berechtigungen **Get** und **List**. Ein Chef- oder leitender Entwickler benötigt Vollzugriff auf den Tresor, um bei Bedarf Geheimnisse zu ändern und hinzuzufügen. Vollzugriffsberechtigungen für Tresore in Produktionsumgebungen sind in der Regel für leitende Mitarbeiter reserviert.
 
-Create a resource group called `keyvault-exercise-group` for all of the resources In this unit. At the end of this module, we'll be deleting this resource group to cleanup everything at once. We'll use `eastus` as the location for everything In this unit.
+Für Apps sind in der Regel nur **Get**-Berechtigungen erforderlich. Einige Anwendungen können **List** erfordern, je nachdem, wie die App implementiert ist. Die App, die wir in der Übung dieses Moduls implementieren werden, benötigt die Berechtigung **List** aufgrund der Technik, mit der sie Geheimnisse aus dem Tresor liest.
 
-Use the Azure Cloud Shell terminal on the right to run the following Azure CLI command. This will create the resource group in your subscription.
+## <a name="exercise"></a>Übung
+
+Angesichts der ganzen Schwierigkeiten, die das Unternehmen mit Anwendungsgeheimnissen hatte, hat die Geschäftsleitung Sie gebeten, eine kleine Einstiegs-App zu erstellen, um die anderen Entwickler auf den richtigen Weg zu bringen. Die App muss bewährte Methoden veranschaulichen, wie Geheimnisse so einfach und sicher wie möglich verwaltet werden können.
+
+Als Erstes erstellen Sie einen Tresor, in dem Sie ein Geheimnis speichern.
+
+### <a name="create-a-resource-group"></a>Erstellen einer Ressourcengruppe
+
+Erstellen Sie für alle Ressourcen in dieser Übung eine Ressourcengruppe namens `keyvault-exercise-group`. Am Ende dieses Moduls löschen wir diese Ressourcengruppe, um alles auf einmal zu bereinigen. Wir verwenden `eastus` als Speicherort für alles in dieser Übung.
+
+Verwenden Sie das Azure Cloud Shell-Terminalfenster auf der rechten Seite, um den folgenden Azure CLI-Befehl auszuführen. Dadurch wird die Ressourcengruppe in Ihrem Abonnement erstellt.
 
 ```azurecli
 az group create --name keyvault-exercise-group --location eastus
 ```
 
-### Create the vault and store the secret in it
+### <a name="create-the-vault-and-store-the-secret-in-it"></a>Erstellen Sie den Tresor, und speichern sie das Geheimnis darin.
 
-Next, we'll create the vault and store our secret in it.
+Als Nächstes erstellen wir den Tresor und speichern unser Geheimnis darin.
 
-**Key Vault names must be globally unique, so you'll need to pick a unique name**. Vault names must be 3-24 characters long and contain only alphanumeric characters and dashes.
+**Key Vault-Namen müssen global eindeutig sein. Daher Sie müssen einen eindeutigen Namen auswählen**. Tresornamen müssen 3-24 Zeichen lang sein und dürfen nur alphanumerische Zeichen und Bindestriche enthalten.
 
 ```azurecli
 az keyvault create --name <your-unique-vault-name> --resource-group keyvault-exercise-group --location eastus
 ```
 
-When it finishes, you'll see JSON output describing the new vault.
+Nach Abschluss des Vorgangs sehen Sie die JSON-Ausgabe mit einer Beschreibung des neuen Tresors.
 
-Now add the secret: our secret will be named **SecretPassword** with a value of **reindeer_flotilla**.
+Fügen Sie nun das Geheimnis hinzu. Unser Geheimnis erhält den Namen **SecretPassword** mit dem Wert **Reindeer_flotilla**.
 
 ```azurecli
 az keyvault secret set --name SecretPassword --value reindeer_flotilla --vault-name <your-unique-vault-name>
 ```
 
-Make a note of the vault name &mdash; you'll be needing it again soon.
+Notieren Sie sich den Tresornamen, da Sie ihn bald wieder benötigen.
 
-We'll write the code for our application shortly, but first we need to learn a little bit about how our app is going to authenticate to a vault.
+Wir schreiben in Kürze den Code für unsere Anwendung. Aber zuerst müssen wir ein wenig darüber lernen, wie sich unsere App bei einem Tresor authentifiziert.

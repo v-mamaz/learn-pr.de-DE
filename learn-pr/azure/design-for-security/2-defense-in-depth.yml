@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.2-defense-in-depth
+title: Tiefgehende Verteidigung
+metadata:
+  title: Tiefgehende Verteidigung
+  description: In dieser Einheit wird erörtert, wie Sie die tiefgehende Verteidigung verwenden.
+  ms.openlocfilehash: 5a38b6b3200442e32bf80ae8c45f1209b2ec9000
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43367087"
+durationInMinutes: 5
+content: >
+  [!include[](includes/2-defense-in-depth.md)]
+quiz:
+  title: 'Wissenstest: Mehrstufige Verteidigung'
+  questions:
+  - content: Welche der folgenden wäre eine geeignete Taktik, um eine Sicherheitsstrategie mit tiefgehender Verteidigung anzuwenden?
+    choices:
+    - content: Aufheben der Zuordnung nicht verwendeter virtueller Computer, um Kosten zu senken
+      isCorrect: false
+    - content: Einrichten von Benachrichtigungen für CPU-Prozentsatz über 90 %
+      isCorrect: false
+    - content: Speichern von Verbindungszeichenfolgen in einer Konfigurationsdatei
+      isCorrect: false
+    - content: Verwenden von Azure App Service zum Hosten von Webanwendungen
+      isCorrect: true
+  - content: Durch den Wechsel in die Cloud ist meine Architektur vollständig sicher und ich kann meinem Cloudanbieter alle Sicherheitsaufgaben übergeben.
+    choices:
+    - content: Richtig
+      isCorrect: false
+    - content: Falsch
+      isCorrect: true

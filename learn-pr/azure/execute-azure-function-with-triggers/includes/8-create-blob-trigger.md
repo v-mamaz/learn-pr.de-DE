@@ -1,65 +1,69 @@
-In this unit, we're going to create an Azure function that displays the name and size of a blob when it's created or updated.
+In dieser Übung erstellen Sie eine Azure-Funktion, die den Namen und die Größe eines Blobs beim Erstellen oder Aktualisieren anzeigt. 
 
-## Create a blob trigger
+## <a name="create-a-blob-trigger"></a>Erstellen eines Blobtriggers
 
-Again, let's continue using our existing Azure Functions application and add a blob trigger.
+Verwenden Sie wieder Ihre vorhandene Azure Functions-Anwendung und fügen Sie einen Blobtrigger hinzu.
 
-1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. Melden Sie sich im [Azure-Portal](https://portal.azure.com?azure-portal=true) an.
 
-1. Point to **Functions** and select the plus (+) icon.
+1. Zeigen Sie auf **Funktionen**, und wählen Sie das Pluszeichen (+) aus.
 
-1. Select **Custom Function** and then **Blob trigger**.
+    ![Auf „Funktionen“ zeigen und Pluszeichen auswählen](../media-drafts/4-hover-function.png)
 
-1. Select **C#** as the language.
+1. Klicken Sie auf **Benutzerdefinierte Funktion** und anschließend auf **Blobtrigger**.
 
-1. Leave the **Name** set to the default value.
+1. Wählen Sie **C#** als Sprache aus. 
 
-1. Leave the **Path** set to the default value.
+1. Behalten Sie für **Name** den Standardwert bei.
 
-1. Select an existing Azure Storage account, or select **Create** if you want Azure to create a new account for you.
+1. Behalten Sie für **Pfad** den Standardwert bei.
 
-## Create a blob container
+1. Wählen Sie ein vorhandenes Azure Storage-Konto aus, oder klicken Sie auf **Erstellen**, wenn Azure ein neues Konto für Sie erstellen soll.
 
-Now that we've created a blob trigger, let's use the Storage Explorer to create a blob and trigger the function.
+## <a name="create-a-blob-container"></a>Erstellen eines Blobcontainers
 
-1. Open the storage account you used (or created) in a new tab. An easy way to do this is to open a new Azure Portal tab and click on **Storage accounts** in the sidebar, or to use **All services** in the sidebar and then filter by the name. We want to use a new tab so we can switch between the two services we are working with.
+Nun, da wir einen Blobtrigger erstellt haben, verwenden wir den Storage-Explorer, um ein Blob zu erstellen und die Funktion auszulösen.
 
-1. Click on the **Storage Explorer (preview)** section - this will open a new blade where you can work with blobs and files.
+1. Öffnen Sie das verwendete (oder erstellte) Speicherkonto auf einer neuen Registerkarte. Eine einfache Möglichkeit hierzu besteht darin, eine neue Registerkarte im Azure-Portal zu öffnen und auf der Seitenleiste auf **Speicherkonten** zu klicken. Alternativ können Sie in der Seitenleiste auf **Alle Dienste** klicken und dann nach Namen filtern. Wir verwenden in diesem Fall eine neue Registerkarte, damit wir während der Arbeit zwischen den zwei Diensten wechseln können.
 
-Remember that our blob trigger is monitoring only the location described in the **Path** field. By default, our path should be:
+1. Klicken Sie auf den Abschnitt **Storage-Explorer (Vorschau)**, um ein neues Blatt zu öffnen, in dem Sie mit Blobs und Dateien arbeiten können.
+
+Beachten Sie, dass der Blobtrigger nur den Speicherort überwacht, der im Feld **Pfad** angegeben ist. Standardmäßig sollte der Pfad so aussehen:
 
 > samples-workitems/{name}
 
-We need to create a container called **samples-workitems**.
+Wir müssen einen Container mit dem Namen **samples-workitems** erstellen.
 
-1. Right-click **BLOB CONTAINERS** and select **Create blob container**.
+1. Klicken Sie mit der rechten Maustaste auf **BLOBCONTAINER**, und wählen Sie **Blobcontainer erstellen** aus.
 
-1. Enter **samples-workitems** as the name, leave the access level at the default **Private** setting.
+1. Geben Sie als Name **samples-workitems** ein, und behalten Sie für die Zugriffsebene die Standardeinstellung **Privat** bei.
 
-## Turn on your blob trigger
+## <a name="turn-on-your-blob-trigger"></a>Aktivieren Ihres Blobtriggers
 
-Now that we've created our container to monitor, let's run our function so we can see output when a blob is created.
+Nachdem wir einen Container zum Überwachen erstellt haben, führen wir jetzt Ihre Funktion aus, um beim Erstellen eines Blobs eine Ausgabe anzuzeigen.
 
-1. Switch back to the Azure Function tab (or reopen it).
+1. Wechseln Sie zurück zur Registerkarte der Azure-Funktion (um sie erneut zu öffnen).
 
-1. Select your blob trigger to open the code screen.
+1. Wählen Sie Ihren Blobtrigger aus, um den Codebildschirm zu öffnen.
 
-1. Select **Run** - this will open the output window.
+1. Klicken Sie auf **Ausführen** – dadurch wird das Ausgabefenster angezeigt.
 
-## Create a blob
+## <a name="create-a-blob"></a>Erstellen eines Blobs
 
-Our blob trigger is now up and listening for activity. Let's create a blob to see if we get a log message.
+Der Blobtrigger ist nun aktiviert und wartet auf Aktivität. Erstellen Sie ein Blob, um zu überprüfen, ob Sie eine Protokollmeldung erhalten.
 
-1. In Storage explorer, select the **samples-workitems** container.
+1. Wählen Sie im Storage-Explorer den Container **samples-workitems** aus.
 
-1. Select **Upload** from the toolbar.
+1. Klicken Sie auf der Symbolleiste auf **Hochladen**.
 
-1. Select any file from your computer.
+1. Wählen Sie eine beliebige Datei auf Ihrem Computer aus.
 
-1. Select **Upload**.
+1. Klicken Sie auf **Hochladen**.
 
-1. Switch back to the Azure Function tab and check the output logs for a message that displays what file was uploaded.
+1. Wechseln Sie zurück zur Registerkarte der Azure-Funktion, und suchen Sie in den Ausgabeprotokollen nach einer Meldung, die anzeigt, dass die Datei hochgeladen wurde.
 
-## Pause the Function
+## <a name="pause-the-function"></a>Anhalten der Funktion
 
-To ensure that you aren't charged for additional requests, you can click **Pause** above the log window.
+Um sicherzustellen, dass keine Gebühren für zusätzliche Anforderungen anfallen, können Sie über dem Protokollfenster auf **Anhalten** klicken.
+
+![Anhalten der Funktion](../media-drafts/4-pause-timer.png)

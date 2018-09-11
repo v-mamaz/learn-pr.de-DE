@@ -1,79 +1,79 @@
-Organizations often have multiple storage accounts to let them implement different sets of requirements. In the chocolate-manufacturer example, there would be one storage account for the private business data and one for the consumer-facing files. Here, you will learn the policy factors that are controlled by a storage account, which will help you decide how many accounts you need.
+Organisationen verfügen häufig über mehrere Speicherkonten, um unterschiedliche Anforderungskataloge implementieren zu können. In dem Beispiel eines Schokoladenherstellers würde es ein Speicherkonto für die private Geschäftsdaten und eines für Consumerdateien geben. In diesem Artikel lernen Sie die Richtlinienfaktoren kennen, die von einem Speicherkonto gesteuert werden und Ihnen bei der Entscheidung helfen, wie viele Konten Sie benötigen.
 
-## What is Azure Storage?
+## <a name="what-is-azure-storage"></a>Was ist Azure Storage?
 
-Azure provides many ways to store your data. There are multiple database options like Azure SQL, Cosmos DB, Azure Tables, etc. Azure offers multiple ways to store messages, such as Azure Queues and Event Hubs. You can even store loose files using options like Azure Files and Azure Blobs.
+Azure bietet viele Möglichkeiten zum Speichern Ihrer Daten. Zur Verfügung stehen mehrere Datenbankoptionen wie Azure SQL-Datenbank, Azure Cosmos DB, Azure-Tabellen etc. Zudem bietet Azure diverse Möglichkeiten, um Nachrichten wie Azure Queue Storage- und Event Hubs-Nachrichten zu speichern. Sie können sogar lose Dateien mithilfe von Optionen wie Azure Files und der Azure Blob Storage speichern.
 
-Azure selected four of these data services and placed them together under the name _Azure Storage_. The four services are: Azure Blobs, Azure Files, Azure Queues, and Azure Tables. The following illustration shows the elements of Azure Storage.
+Vier dieser Datendienste wurden unter dem Namen _Azure Storage_ zusammengefasst. Zu diesen vier Diensten zählen Azure Blob Storage, Azure Files, Azure Queue Storage und Azure Table Storage. Die folgende Abbildung zeigt die Elemente von Azure Storage.
 
-![Illustration listing the Azure data services that are part of Azure Storage.](../media-drafts/2-azure-storage.png)
+![Abbildung zur Auflistung von Azure-Datendiensten, die Teil von Azure Storage sind](../media-drafts/2-azure-storage.png)
 
-These four were given special treatment because they are all primitive, cloud-based storage services and are often used together in the same application.
+Diesen vier Diensten wurde besondere Aufmerksamkeit geschenkt, da sie alle primitive, cloudbasierte Speicherdienste darstellen und häufig zusammen in derselben Anwendung verwendet werden.
 
-## What is a storage account?
+## <a name="what-is-a-storage-account"></a>Was ist ein Speicherkonto?
 
-A _storage account_ is a container that groups a set of Azure Storage services together. Only data services from Azure Storage can be included in a storage account (Azure Blobs, Azure Files, Azure Queues, and Azure Tables). The following illustration shows a storage account containing several data services.
+Ein _Speicherkonto_ ist ein Container, der eine Reihe von Azure Storage-Diensten zusammen gruppiert. Nur Datendienste von Azure Storage können in einem Speicherkonto enthalten sein (Azure Blob Storage, Azure Files, Azure Queue Storage und Azure Table Storage). Die folgende Abbildung zeigt ein Speicherkonto mit mehreren Datendiensten.
 
-![Illustration of an Azure storage account containing a mixed collection of data services.](../media-drafts/2-what-is-a-storage-account.png)
+![Abbildung eines Azure Storage-Kontos mit einer gemischten Sammlung von Datendiensten](../media-drafts/2-what-is-a-storage-account.png)
 
-Combining data services into a storage account lets you manage them as a group. The settings you specify when you create the account, or any that you change after creation, are applied to everything in the account. Deleting the storage account deletes all of the data stored inside it.
+Durch die Kombination von Datendiensten in einem Speicherkonto können Sie diese als Gruppe verwalten. Die Einstellungen, die Sie bei der Erstellung des Kontos angeben, oder die Sie nach der Erstellung ändern, werden auf sämtliche Bereiche im Konto angewendet. Beim Löschen des Speicherkontos werden alle darin gespeicherten Daten gelöscht.
 
-A storage account is an Azure resource and is included in a resource group. The following illustration shows an Azure subscription containing multiple resource groups, where each group contains one or more storage accounts.
+Ein Speicherkonto ist eine Azure-Ressource und ist in einer Ressourcengruppe enthalten. Die folgende Abbildung zeigt ein Azure-Abonnement, das mehrere Ressourcengruppen enthält, wobei jede Gruppe ein oder mehrere Speicherkonten enthält.
 
-![Illustration of an Azure subscription containing multiple resource groups and storage accounts.](../media-drafts/2-resource-groups-and-storage-accounts.png)
+![Abbildung eines Azure-Abonnements mit mehreren Ressourcengruppen und Speicherkonten](../media-drafts/2-resource-groups-and-storage-accounts.png)
 
-Other Azure data services like Azure SQL and Cosmos DB are managed as independent Azure resources and cannot be included in a storage account. The following illustration shows a typical arrangement: Blobs, Files, Queues, and Tables are inside storage accounts, while other services are not.
+Andere Azure-Datendienste wie Azure SQL-Datenbank und Azure Cosmos DB werden als unabhängige Azure-Ressourcen verwaltet und können nicht in einem Speicherkonto enthalten sein. Die folgende Abbildung zeigt eine typische Anordnung: In Speicherkonten sind der Azure Blob Storage, Azure Files, Azure Queue Storage und Azure Table Storage enthalten, nicht jedoch andere Dienste.
 
-![Illustration of an Azure subscription showing some data services that cannot be placed in a storage account.](../media-drafts/2-typical-subscription-organization.png)
+![Abbildung eines Azure-Abonnements mit Datendiensten, die nicht in einem Speicherkonto platziert werden können](../media-drafts/2-typical-subscription-organization.png)
 
-## Storage account settings
+## <a name="storage-account-settings"></a>Speicherkontoeinstellungen
 
-A storage account defines a policy that applies to all the storage services in the account. For example, you could specify that all the contained services will be stored in the West US datacenter, accessible only over https, and billed to the sales department's subscription.
+Ein Speicherkonto definiert eine Richtlinie, die auf alle Speicherdienste im Konto angewendet wird. Beispielsweise können Sie angeben, dass alle enthaltenen Dienste im Rechenzentrum in „USA, Westen“ gespeichert werden, auf die nur über HTTPS zugegriffen werden kann und die im Rahmen des Abonnements der Vertriebsabteilung abgerechnet werden.
 
-The settings that are controlled by a storage account are:
+Zu den von einem Speicherkonto gesteuerten Einstellungen zählen Folgende:
 
-- **Subscription**: The Azure subscription that will be billed for the services in the account.
+- **Abonnement**: Das Azure-Abonnement, das für die Dienste im Konto abgerechnet wird.
 
-- **Location**: The datacenter that will store the services in the account.
+- **Standort**: Das Rechenzentrum, in dem die Dienste im Konto gespeichert werden.
 
-- **Performance**: Determines the data services you can have in your storage account and the type of the underlying hardware disk. **Standard** allows you to have any data service (Blob, File, Queue, Table) and uses magnetic disk drives. **Premium** limits you to one specific type of blob called a _page blob_ and uses solid-state drives for storage.
+- **Leistung**: Bestimmt die Datendienste, die in Ihrem Speicherkonto enthalten sein können, und den Typ des zugrunde liegenden Hardwaredatenträgers. Mit **Standard** können Sie beliebige Datendienste (Blob Storage, Files, Queue Storage und Table Storage) sowie magnetische Laufwerke verwenden. Bei **Premium** sind Sie auf einen bestimmten Typ von Blob, nämlich _Seitenblobs_, beschränkt. Zudem werden bei diesem Angebot Solid State Drives für die Speicherung verwendet.
 
-- **Replication**: Determines the strategy used to make copies of your data to protect against hardware failure or natural disaster. At a minimum, Azure will automatically maintain a copy of your data within the datacenter associated with the storage account. This is called locally-redundant storage (LRS), and guards against hardware failure but does not protect you from an event that incapacitates the entire datacenter. You can upgrade to one of the other options such as geo-redundant storage (GRS) to get replication at other datacenters across the world.
+- **Replikation**: Bestimmt die zum Kopieren Ihrer Daten verwendete Strategie, um vor Hardwareausfällen oder Naturkatastrophen zu schützen. Azure behält automatisch mindestens eine Kopie Ihrer Daten innerhalb des Rechenzentrums bei, das dem Speicherkonto zugeordnet ist. Dies wird als lokal redundanter Speicher (LRS) bezeichnet und schützt vor Hardwareausfällen, schützt jedoch nicht vor einem Ereignis, das das gesamte Rechenzentrum lahmlegt. Sie können ein Upgrade auf eine der anderen Optionen wie georedundanten Speicher (GRS) durchführen, um Replikationen in anderen Rechenzentren auf der ganzen Welt durchführen zu können.
 
-- **Access tier**: Controls how quickly you will be able to access the blobs in this storage account. Hot gives quicker access than Cool, but at increased cost. This applies only to blobs, and serves as the default value for new blobs.
+- **Zugriffsebene**: Steuert, wie schnell Sie auf die Blobs in diesem Speicherkonto zugreifen können. Die heiße Speicherebene bietet zwar schnelleren Zugriff als die kalte Speicherebene, verursacht jedoch auch höhere Kosten. Dies gilt nur für Blobs und dient als Standardwert für neue Blobs.
 
-- **Secure transfer required**: A security feature that determines the supported protocols for access: enabled requires https, while disabled allows http.
+- **Sichere Übertragung erforderlich**: Ein Sicherheitsfeature, das die unterstützten Protokolle für den Zugriff bestimmt. Wenn diese Option aktiviert ist, ist HTTPS erforderlich, wohingegen bei Deaktivierung der Option HTTP zulässig ist.
 
-- **Virtual networks**: A security feature that allows inbound access requests only from the virtual network(s) you specify.
+- **Virtuelle Netzwerke**: Ein Sicherheitsfeature, das eingehende Zugriffsanforderungen nur von den virtuellen Netzwerken, die Sie angeben, zulässt.
 
-## How many storage accounts do you need?
+## <a name="how-many-storage-accounts-do-you-need"></a>Wie viele Speicherkonten benötigen Sie?
 
-A storage account represents a collection of settings like location, replication strategy, subscription, etc. You need one storage account for every group of settings that you want to apply to your data. The following illustration shows two storage accounts that differ in one setting; that one difference is enough to require separate storage accounts.
+Ein Speicherkonto stellt eine Sammlung von Einstellungen wie Standort, Replikationsstrategie und Abonnements dar. Sie benötigen ein Speicherkonto für sämtliche Gruppen von Einstellungen, die auf Ihre Daten angewendet werden sollen. Die folgende Abbildung zeigt zwei Speicherkonten, die sich hinsichtlich einer Einstellung unterscheiden. Bereits ein Unterschied macht separate Speicherkonten erforderlich.
 
-![Illustration showing two storage accounts with different settings.](../media-drafts/2-multiple-storage-accounts.png)
+![Abbildung zu zwei Speicherkonten mit unterschiedlichen Einstellungen](../media-drafts/2-multiple-storage-accounts.png)
 
-The number of storage accounts you need is typically determined by your data diversity, cost sensitivity, and tolerance for management overhead.
+Die Anzahl von Speicherkonten, die Sie benötigen, wird in der Regel durch die Vielfalt Ihrer Daten, Kostensensitivität und Toleranz hinsichtlich des Verwaltungsaufwands bestimmt.
 
-### Data diversity
+### <a name="data-diversity"></a>Datenvielfalt
 
-Organizations often generate data that differs in where it is consumed, how sensitive it is, which group pays the bills, etc. Diversity along any of these vectors can lead to multiple storage accounts. Let's consider two examples:
+Organisationen generieren oftmals Daten, die sich darin unterscheiden, wo sie genutzt werden, wie sensibel diese sind, welche Gruppe die Rechnungen begleicht etc. Bestehen bei diesen Vektoren Abweichungen, kann dies zu mehreren Speicherkonten führen. Sehen wir uns hierzu zwei Beispiele an:
 
-1. Do you have data that is specific to a country or region? If so, you might want to locate it in a datacenter in that country for performance or compliance reasons. You will need one storage account for each location.
+1. Verfügen Sie über Daten, die speziell für ein Land oder eine Region gelten? In diesem Fall empfiehlt es sich aus Leistungs- bzw. Compliancegründen, diese Daten in einem Rechenzentrum im jeweiligen Land zu speichern. Sie benötigen ein Speicherkonto für jeden Standort.
 
-1. Do you have some data that is proprietary and some that is for public consumption? If so, you could enable virtual networks for the proprietary data and not for the public data. This will also require separate storage accounts.
+1. Besitzen Sie Daten, die einerseits proprietär und andererseits für die öffentliche Nutzung bestimmt sind? Wenn dies der Fall ist, könnten Sie virtuelle Netzwerke für die proprietären Daten implementieren und bei öffentlichen Daten andere Netzwerke verwenden. Hierfür sind zudem separate Speicherkonten erforderlich.
 
-In general, increased diversity means an increased number of storage accounts.
+Eine höhere Diversität bedeutet im Allgemeinen eine höhere Anzahl von Speicherkonten.
 
-### Cost sensitivity
+### <a name="cost-sensitivity"></a>Kostensensitivität
 
-A storage account by itself has no financial cost; however, the settings you choose for the account do influence the cost of services in the account. Geo-redundant storage costs more than locally-redundant storage. Premium performance and the Hot access tier increase the cost of blobs.
+Ein Speicherkonto selbst bringt keine Kosten mit sich, allerdings wirken sich die Einstellungen, die Sie für das Konto festlegen, sehr wohl auf die Kosten für Dienste des Kontos aus. Georedundante Speicher sind kostspieliger als lokal redundante Speicher. Leistung auf Premium-Niveau und die heiße Zugriffsebene treiben die Kosten für Blobs in die Höhe.
 
-You can use multiple storage accounts to reduce costs. For example, you could partition your data into critical and non-critical categories. You could place your critical data into a storage account with geo-redundant storage and put your non-critical data in a different storage account with locally-redundant storage.
+Sie können mehrere Speicherkonten verwenden, um die Kosten zu reduzieren. Beispielsweise können Sie Ihre Daten in die Kategorien „Kritisch“ und „Nicht kritisch“ unterteilen. Sie könnten Ihre kritischen Daten in ein Speicherkonto mit georedundantem Speicher und nicht kritische Daten in ein anderes Speicherkonto mit lokal redundantem Speicher platzieren.
 
-### Tolerance for management overhead
+### <a name="tolerance-for-management-overhead"></a>Toleranz hinsichtlich des Verwaltungsaufwands
 
-Each storage account requires some time and attention from an administrator to create and maintain. It also increases complexity for anyone who adds data to your cloud storage; everyone in this role needs to understand the purpose of each storage account so they add new data to the correct account.
+Für die Erstellung und Verwaltung der einzelnen Speicherkonten muss ein Administrator ein gewisses Maß an Zeit und Aufmerksamkeit aufwenden. Zudem wird die Komplexität für alle Benutzer erhöht, die Daten zu Ihrem Cloudspeicher hinzufügen. Alle Benutzer in dieser Rolle müssen sich über den Zweck der einzelnen Speicherkonten im Klaren sein, um neue Dienste dem richtigen Konto hinzuzufügen.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-Storage accounts are a powerful tool to help you get the performance and security you need while minimizing costs. A typical strategy is to start with an analysis of your data and create partitions that share characteristics like location, billing, replication strategy, etc., and then create one storage account for each partition.
+Speicherkonten stellen ein leistungsstarkes Tool dar, mit dem Sie die erforderliche Leistung und Sicherheit erhalten und gleichzeitig die Kosten senken können. Eine typische Strategie besteht darin, mit einer Analyse Ihrer Daten zu beginnen und Partitionen zu erstellen, die Eigenschaften wie Standort, Abrechnung und Replikationsstrategie aufweisen und dann ein Speicherkonto für jede Partition zu erstellen.

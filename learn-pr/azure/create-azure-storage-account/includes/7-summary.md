@@ -1,5 +1,5 @@
-Storage accounts let you create a group of data management rules and apply them all at once to a group of Azure Blobs, Azure Files, Azure Queues, and Azure Tables. 
+Speicherkonten können eine Gruppe von Datenverwaltungsregeln erstellen und alle gleichzeitig auf eine Gruppe von Azure-Blobs, Azure Files, Azure-Warteschlangen und Azure-Tabellen anwenden. 
 
-If you tried to achieve the same thing without storage accounts, it would be tedious and error-prone. For example, what are the chances that you could successfully apply the exact same ruleset to thousands of blobs?
+Es wäre mühsam und fehleranfällig, dies ohne Speicherkonten zu erreichen. Wie hoch ist beispielsweise die Wahrscheinlichkeit, dass Sie den exakt gleichen Regelsatz auf Tausende von Blobs erfolgreich anwenden können?
 
-Instead, you capture the rules in the settings for a storage account, and those rules are automatically applied to every data service in the account.
+Stattdessen erfassen Sie die Regeln in den Einstellungen für ein Speicherkonto, und diese gelten automatisch für alle Datendienste im Konto.

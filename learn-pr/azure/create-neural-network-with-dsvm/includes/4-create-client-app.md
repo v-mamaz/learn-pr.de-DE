@@ -1,10 +1,10 @@
-### Create a NotHotDog app
+### <a name="exercise-4-create-a-nothotdog-app"></a>Übung 4: Erstellen einer NotHotDog-App
 
-In this unit, you will use [Visual Studio Code](https://code.visualstudio.com/), Microsoft's free, cross-platform source-code editor which is preinstalled in the Data Science VM, to write a NotHotDog app in Python. The app will use [Tkinter](https://wiki.python.org/moin/TkInter), which is a popular GUI framework for Python, to implement its user interface, and it will allow you to select images from your local file system. Then, it will pass those images to the model you trained in the previous exercise and tell you whether they contain a hot dog.
+In dieser Übung verwenden Sie [Visual Studio Code](https://code.visualstudio.com/), Microsofts kostenlosen, plattformübergreifenden Quellcode-Editor, der in der Data Science Virtual Machine vorinstalliert ist, um eine NotHotDog-App in Python zu schreiben. Die App verwendet [Tkinter](https://wiki.python.org/moin/TkInter), ein beliebtes GUI-Framework für Python, um die Benutzeroberfläche zu implementieren, und lässt Sie Bilder aus Ihrem lokalen Dateisystem auswählen. Dann übergibt sie diese Bilder dem Modell, das Sie in der vorherigen Übung trainiert haben, und teilt Ihnen mit, ob sie einen Hotdog enthalten.
 
-1. Click **Applications** in the upper-left corner of the desktop and select **Accessories > Visual Studio Code** to start Visual Studio Code. Use Visual Studio Code's **File > Open Folder...** command to open the "notebooks/tensorflow-for-poets-2/tf_files" folder containing the **retrained_graph_hotdog.pb** file created when you trained the model.
+1. Klicken Sie in der oberen linken Ecke des Desktops auf **Anwendungen**, und wählen Sie **Zubehör > Visual Studio Code** aus, um Visual Studio Code zu starten. Öffnen Sie mit dem Visual Studio Code-Befehl **Datei > Ordner öffnen...** den Ordner „notebooks/tensorflow-for-Poets-2/Tf_files“ mit der Datei **retrained_graph_hotdog.pb**, die Sie beim Trainieren des Modells erstellt haben.
 
-1. Create a new file named **classify.py** in the current folder. If Visual Studio Code offers to install the Python extension, click **Install** to install it. Copy the code below to the clipboard and use **Shift+Ins** to paste it into **classify.py**. Then, save the file:
+1. Erstellen Sie eine neue Datei namens **classify.py** im aktuellen Ordner. Wenn Visual Studio Code anbietet, die Python-Erweiterung zu installieren, klicken Sie auf **Installieren**. Kopieren Sie den folgenden Code in die Zwischenablage, und fügen Sie ihn mit **UMSCHALT + EINFG** in **classify.py** ein. Speichern Sie dann die Datei:
 
     ```python
     import tkinter as tk
@@ -75,22 +75,24 @@ In this unit, you will use [Visual Studio Code](https://code.visualstudio.com/),
         run()
     ```
 
-    The key code here is the call to ```subprocess.check_output```, which invokes the trained model by executing a Python script named **label_image.py** found in the "scripts" folder, passing in the image that the user selected. This script came from the repo that you cloned in the previous exercise.
+    Der Schlüsselcode ist hier der Aufruf von ```subprocess.check_output```, wodurch das trainierte Modell durch Ausführung eines Python-Skripts mit dem Namen **label_image.py** aus dem Ordner „scripts“ mit Übergabe des vom Benutzer ausgewählten Bilds aufgerufen wird. Dieses Skript stammt aus dem Repository, das Sie in der vorherigen Übung geklont haben.
 
-1. Use your favorite search engine to find a few food images — some containing hot dogs and some not. Download these images and store them in the location of your choice in the VM's file system.
+1. Suchen Sie mit Ihrer bevorzugten Suchmaschine einige Lebensmittelbilder – einige mit Hotdogs, andere ohne. Laden Sie diese Bilder herunter, und speichern Sie sie im Dateisystem des virtuellen Computers am Speicherort Ihrer Wahl.
 
-1. Use Visual Studio Code's **View > Integrated Terminal** command to open an integrated terminal. Then, execute the following command in the integrated terminal to run the app:
+1. Öffnen Sie mit dem Visual Studio Code-Befehl **Ansicht > Integriertes Terminal** ein integriertes Terminal. Führen Sie dann den folgenden Befehl in dem integrierten Terminal aus, um die App auszuführen:
 
      ```bash
      python classify.py
      ```
 
-1. Click the app's **Select** button and pick one of the hot-dog images you downloaded in Step 3. Wait for a message box to appear, indicating whether the image contains a hot dog. Did the model get it correct?
+1. Klicken Sie auf die **Auswählen**-Schaltfläche der App, und wählen Sie eines der Hotdogbilder aus, die Sie in Schritt 3 heruntergeladen haben. Warten Sie, bis ein Meldungsfeld angezeigt wird, das angibt, ob das Bild einen Hotdog enthält. Hat das Modell funktioniert?
 
-	> If you see error messages regarding a missing kernel driver in the terminal window when you process an image, you can safely ignore them. They result from the fact that the Data Science VM does not contain a virtual GPU.
+    > Fehlermeldungen bezüglich eines fehlenden Kerneltreibers, die im Terminalfenster angezeigt werden, wenn Sie ein Bild verarbeiten, können Sie getrost ignorieren. Sie ergeben sich aus der Tatsache, dass die Data Science Virtual Machine keine virtuelle GPU enthält.
 
-    ![Selecting an image](../media-draft/4-select-image.png)
+    ![Auswahl eines Bildes](../images/select-image.png)
 
-1. Repeat the previous step using an image that doesn't contain a hot dog. Was the model right this time?
+    _Auswahl eines Bildes_
 
-Continue feeding food images into the app until you're satisfied that it can identify images containing hot dogs. Don't expect it to be right 100% of the time, but do expect it to be right *most* of the time.
+1. Wiederholen Sie den vorherigen Schritt, mit einem Bild, das keinen Hotdog zeigt. Hat das Modell diesmal funktioniert?
+
+Speisen Sie weiterhin Lebensmittelbilder in die App ein, bis Sie damit zufrieden sind, dass sie Bilder identifizieren kann, die Hotdogs zeigen. Erwarten Sie keine Erfolgsquote von 100%, aber erwarten Sie, dass es *meistens* funktioniert.

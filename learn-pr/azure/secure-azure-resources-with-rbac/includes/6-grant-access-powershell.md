@@ -1,28 +1,28 @@
-Using the **Access control (IAM)** blade in the Azure portal has been working fine, but you are getting several permission requests each day. To keep up with the access management tasks, you decide to use PowerShell to help automate some of the steps.
+Sie verwenden immer das Blatt **Zugriffssteuerung (IAM)** im Azure-Portal. Das Vorgehen funktioniert einwandfrei, Sie erhalten jedoch täglich mehrere Berechtigungsanforderungen. Damit Sie Verwaltungsaufgaben zeitnah bearbeiten können, möchten Sie einige Schritte mit PowerShell automatisieren.
 
-## Open Cloud Shell PowerShell
+## <a name="open-cloud-shell-powershell"></a>Öffnen von Cloud Shell PowerShell
 
-1. Make sure you are still signed in to the Azure portal as **LabAdmin-_XXXXXXX_@_xxxxxxxxxxxx_.onmicrosoft.com**. You can find the username and password on the **Resources** tab at the top of this window.
+1. Stellen Sie sicher, dass Sie immer noch als **LabAdmin-_XXXXXXX_@_xxxxxxxxxxxx_.onmicrosoft.com** im Azure-Portal angemeldet sind. Den Benutzernamen und das Kennwort finden Sie oben im Fenster auf der Registerkarte **Ressourcen**.
 
-1. At the top of the portal, click **Cloud Shell** to open the Cloud Shell pane.
+1. Klicken Sie oben im Portal auf **Cloud Shell**, um den Bereich „Cloud Shell“ zu öffnen.
 
-    ![Cloud Shell button](../media-draft/6-cloud-shell-button.png)
+    ![Schaltfläche „Cloud Shell“](../media-draft/6-cloud-shell-button.png)
 
-1. In the upper left of the Cloud Shell pane, make sure it is set to **PowerShell**. If it is set to **Bash**, change it to **PowerShell**.
+1. Stellen Sie oben links im Cloud Shell-Bereich sicher, dass **PowerShell** festgelegt ist. Wenn **Bash** festgelegt ist, ändern Sie die Einstellung zu **PowerShell**.
 
-    It might take a few moments to load. When finished, it will look similar to the following:
+    Das Laden kann einige Minuten in Anspruch nehmen. Die anschließende Ausgabe sieht etwa so aus:
 
     ![Cloud Shell PowerShell](../media-draft/6-cloud-shell-powershell.png)
 
-## Grant access
+## <a name="grant-access"></a>Gewähren von Zugriff
 
-To grant access to a user using Azure PowerShell, you use the [New-AzureRmRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment) command. You must specify the security principal, role definition, and scope.
+Wenn Sie einem Benutzer mit Azure PowerShell Zugriff gewähren möchten, verwenden Sie den Befehl [New-AzureRmRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment). Sie müssen den Sicherheitsprinzipal, die Rollendefinition und den Bereich angeben.
 
-Follow these steps to assign the Virtual Machine Contributor role to the **LabUser-_XXXXXXX_** user at the resource group scope.
+Führen Sie diese Schritte aus, um dem Benutzer **LabUser-_XXXXXXX_** die Rolle „Mitwirkender für virtuelle Computer“ im Ressourcengruppenbereich zuzuweisen.
 
-1. On the **Resources** tab at the top of this window, copy the **Grant access PowerShell** command.
+1. Kopieren Sie oben im Fenster auf der Registerkarte **Ressourcen** den Befehl **Grant access PowerShell** (Zugriff erteilen PowerShell).
 
-1. Paste the command into the PowerShell pane and press the Enter key to run it. The following shows an example command and the output:
+1. Fügen Sie den Befehl in den PowerShell-Bereich ein, und drücken Sie die EINGABETASTE, um ihn auszuführen. Nachfolgend sehen Sie einen Beispielbefehl und dessen Ausgabe:
 
     ```Example
     PS Azure:\> New-AzureRmRoleAssignment -SignInName LabUser-XXXXXXX@xxxxxxxxxxxx.onmicrosoft.com `
@@ -40,17 +40,17 @@ Follow these steps to assign the Virtual Machine Contributor role to the **LabUs
     CanDelegate        : False
     ```
 
-    The output shows that the Virtual Machine Contributor role has been assigned to LabUser-_XXXXXXX_ at the FirstUpConsultantsRG1-_XXXXXXX_ scope.
+    Die Ausgabe zeigt, dass die Rolle „Mitwirkender für virtuelle Computer“ dem Benutzer „LabUser-_XXXXXXX_“ im Bereich „FirstUpConsultantsRG1-_XXXXXXX_“ zugewiesen wurde.
 
-## List access
+## <a name="list-access"></a>Auflisten des Zugriffs
 
-To verify the access for the resource group, you use the [Get-AzureRmRoleAssignment](/powershell/module/azurerm.resources/get-azurermroleassignment) command to list the role assignments.
+Wenn Sie den Zugriff für die Ressourcengruppe überprüfen möchten, listen Sie mit dem Befehl [Get-AzureRmRoleAssignment](/powershell/module/azurerm.resources/get-azurermroleassignment) die Rollenzuweisungen auf.
 
-Follow these steps to list all the role assignments for the **LabUser-XXXXXXX** user at the resource group scope.
+Führen Sie diese Schritte aus, um alle Rollenzuweisungen für den Benutzer **LabUser-XXXXXXX** im Ressourcengruppenbereich aufzulisten.
 
-1. On the **Resources** tab at the top of this window, copy the **List access PowerShell** command.
+1. Kopieren Sie oben im Fenster auf der Registerkarte **Ressourcen** den Befehl **List access PowerShell** (Zugriff auflisten PowerShell).
 
-1. Paste the command into the PowerShell pane and press the Enter key to run it. The following shows an example command and the output.
+1. Fügen Sie den Befehl in den PowerShell-Bereich ein, und drücken Sie die EINGABETASTE, um ihn auszuführen. Nachfolgend sehen Sie einen Beispielbefehl und dessen Ausgabe.
 
     ```Example
     PS Azure:\> Get-AzureRmRoleAssignment -SignInName LabUser-XXXXXXX@xxxxxxxxxxxx.onmicrosoft.com `
@@ -67,21 +67,21 @@ Follow these steps to list all the role assignments for the **LabUser-XXXXXXX** 
     CanDelegate        : False
     ```
 
-    The output shows that the Virtual Machine Contributor role has been assigned to LabUser-_XXXXXXX_ at the FirstUpConsultantsRG1-_XXXXXXX_ scope.
+    Die Ausgabe zeigt, dass die Rolle „Mitwirkender für virtuelle Computer“ dem Benutzer „LabUser-_XXXXXXX_“ im Bereich „FirstUpConsultantsRG1-_XXXXXXX_“ zugewiesen wurde.
 
-    If you refresh the **Access control (IAM)** blade for the resource group in the Azure portal, this is how the role assignment looks:
+    Wenn Sie das Blatt **Zugriffssteuerung (IAM)** für die Ressourcengruppe im Azure-Portal aktualisieren, sieht die Rollenzuweisung wie folgt aus:
 
-    ![Role assignments for a user at resource group scope](../media-draft/6-cloud-shell-access-control.png)
+    ![Rollenzuweisungen für einen Benutzer im Ressourcengruppenbereich](../media-draft/6-cloud-shell-access-control.png)
 
-## Remove access
+## <a name="remove-access"></a>Entfernen des Zugriffs
 
-To remove access for users, groups, and applications, you use [Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment) to remove a role assignment.
+Verwenden Sie zum Entfernen des Zugriffs für Benutzer, Gruppen und Anwendungen den Befehl [Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment), um eine Rollenzuweisung zu entfernen.
 
-Follow these steps to remove the Virtual Machine Contributor role assignment for the **LabUser-_XXXXXX_** user at the resource group scope.
+Führen Sie diese Schritte aus, um dem Benutzer **LabUser-_XXXXXXX_** die Rollenzuweisung „Mitwirkender für virtuelle Computer“ im Ressourcengruppenbereich zu entziehen.
 
-1. On the **Resources** tab at the top of this window, copy the **Remove access PowerShell** command.
+1. Kopieren Sie oben im Fenster auf der Registerkarte **Ressourcen** den Befehl **Remove access PowerShell** (Zugriff entfernen PowerShell).
 
-1. Paste the command into the PowerShell pane and press the Enter key to run it. The following shows an example command.
+1. Fügen Sie den Befehl in den PowerShell-Bereich ein, und drücken Sie die EINGABETASTE, um ihn auszuführen. Nachfolgend ist ein Beispielbefehl dargestellt.
 
     ```Example
     PS Azure:\> Remove-AzureRmRoleAssignment -SignInName LabUser-XXXXXXX@xxxxxxxxxxxx.onmicrosoft.com `
@@ -89,11 +89,11 @@ Follow these steps to remove the Virtual Machine Contributor role assignment for
       -ResourceGroupName "FirstUpConsultantsRG1-XXXXXXX"
     ```
 
-1. In the PowerShell pane, click the close (**X**) button to close the pane.
+1. Klicken Sie im PowerShell-Bereich auf die Schließen-Schaltfläche (**X**), um den Bereich zu schließen.
 
-    ![Cloud Shell close button](../media-draft/6-cloud-shell-close.png)
+    ![Cloud Shell – Schaltfläche „Schließen“](../media-draft/6-cloud-shell-close.png)
 
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this unit, you learned how to grant a user access to create and manage virtual machines in a resource group using Azure PowerShell. In the next unit, you learn how to view the RBAC changes over time.
+In dieser Einheit haben Sie gelernt, wie Sie einem Benutzer mit Azure PowerShell Zugriff erteilen, damit dieser virtuelle Computer in einer Ressourcengruppe erstellen und verwalten kann. In der nächsten Einheit erfahren Sie, wie Sie RBAC-Änderungen im Zeitverlauf anzeigen.

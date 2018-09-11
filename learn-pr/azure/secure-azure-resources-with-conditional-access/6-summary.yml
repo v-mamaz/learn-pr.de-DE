@@ -1,45 +1,46 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-access-azure-ad-multi-factor-authentication.6-summary
 metadata:
-  title: Summary
-  description: Summary
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Summary
+  title: Zusammenfassung
+  description: Zusammenfassung
+  displayType: one-column
+  ms.openlocfilehash: 254fbb2d71f03aa6048c4fab026724c2bb8c2077
+  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43477174"
+title: Zusammenfassung
 durationInMinutes: 10
-content: |
+content: >
   [!include[](includes/6-summary.md)]
 quiz:
-  title: 'Knowledge Check: Azure Active Directory and conditional access'
+  title: 'Quiz: Azure Active Directory und bedingter Zugriff'
   questions:
-  - content: 'Azure AD is just an AD DS domain controller running in Azure.'
-    choices: 
-    - content: 'True'
+  - content: Azure AD ist nur ein AD DS-Domänencontroller, der in Azure ausgeführt wird.
+    choices:
+    - content: Richtig
       isCorrect: false
-      incorrectExplanation: While Azure AD performs many of the same functions as traditional AD DS, it's a cloud-based multi-tenant, directory, and identity management service.
-    - content: 'False'
+      incorrectExplanation: Azure AD führt viele Funktionen aus, die mit dem herkömmlichen AD DS identisch sind. Es handelt sich um einen mehrinstanzenfähigen, cloudbasierten Verzeichnis- und Identitätsverwaltungsdienst.
+    - content: Falsch
       isCorrect: true
-      correctExplanation: Correct! AD DS is a server role on Windows Server. Azure AD is a cloud-based multi-customer public directory service.
-  - content: 'What three items should exist in a successful conditional access policy?'
-    choices: 
-    - content: 'User or group, application, time of day'
+      correctExplanation: Richtig! AD DS ist eine Serverrolle unter Windows Server. Azure AD ist ein cloudbasierter, öffentlicher Verzeichnisdienst für mehrere Kunden.
+  - content: Welche drei Elemente sollten in einer erfolgreichen Richtlinie für bedingten Zugriff enthalten sein?
+    choices:
+    - content: Benutzer oder Gruppe, Anwendung, Uhrzeit
       isCorrect: false
-      correctExplanation: Time of day is not an option that's available in conditional access rules.
-    - content: 'User or group, application, control to be enforced'
+      correctExplanation: Die Uhrzeit ist in Regeln für bedingten Zugriff nicht als Option verfügbar.
+    - content: Benutzer oder Gruppe, Anwendung, zu erzwingendes Steuerelement
       isCorrect: true
-      incorrectExplanation: Correct! Selecting these three items will create self-contained functional conditional access rules.
-    - content: 'User or group, Linux OS, control to be enforced'
+      incorrectExplanation: Richtig! Durch die Auswahl dieser drei Elemente werden eigenständige und funktionale Regeln für bedingten Zugriff erstellt.
+    - content: Benutzer oder Gruppe, Betriebssystem Linux, zu erzwingendes Steuerelement
       isCorrect: false
-      correctExplanation: While you can target some device platforms, Linux isn't currently supported.
-  - content: 'How would you modify the conditional access rule that we created to require Multi-Factor Authentication for all users?'
-    choices: 
-    - content: 'Under **Access Controls** > **Session**, select **Use application-enforced restrictions**.'
+      correctExplanation: Es können einige Geräteplattformen anvisiert werden, Linux wird derzeit jedoch nicht unterstützt.
+  - content: Wie würden Sie die Regel für bedingten Zugriff ändern, die wir zur Anforderung von Multi-Factor Authentication für alle Benutzer erstellt haben?
+    choices:
+    - content: Wählen Sie unter **Zugriffssteuerungen** > **Sitzung** die Option **Use application-enforced restrictions** (Durch Anwendung erzwungene Einschränkungen verwenden) aus.
       isCorrect: false
-      correctExplanation: Sorry, that option won't modify the rule appropriately.
-    - content: 'Change the user and group assignment from **Select users and groups** to **All users**.'
+      correctExplanation: Leider wird die Regel mit dieser Option nicht entsprechend geändert.
+    - content: Ändern Sie die Benutzer- und Gruppenzuweisung von **Benutzer und Gruppen auswählen** in **Alle Benutzer**.
       isCorrect: true
-      incorrectExplanation: Correct! Selecting all users will make this policy apply to any user who triggers this conditional access rule. It's suggested that you create a group and add it to the exclude list for instances where users may need to bypass Multi-Factor Authentication due to lost or forgotten methods.
+      incorrectExplanation: Richtig! Durch die Auswahl aller Benutzer findet diese Richtlinie auf alle Benutzer Anwendung, die diese Regel für bedingten Zugriff auslösen. Es wird empfohlen, dass Sie eine Gruppe erstellen und diese für Instanzen zur Ausschlussliste hinzufügen, in denen Benutzer Multi-Factor Authentication möglicherweise aufgrund von verloren gegangenen oder vergessenen Methoden umgehen müssen.

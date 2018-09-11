@@ -1,90 +1,84 @@
-Looking at the benefits of Azure Storage, you understand that it offers the best options for storing your learning portal. Now let's explore the benefits and options available in Azure Storage in detail to see how it fits your business needs.
+Wenn Sie sich die Vorteile von Azure Storage ansehen, werden Sie schnell verstehen, dass dieser Dienst die besten Optionen für die Speicherung Ihres Schulungsportals bietet. Erkunden Sie die Vorteile und Optionen im Einzelnen, um herauszufinden, wie Azure Storage Ihre Geschäftsanforderungen erfüllt.
 
-## How Azure Storage can meet your business storage needs
+## <a name="how-azure-storage-can-meet-your-business-storage-needs"></a>So erfüllt Azure Storage die Speicheranforderungen Ihres Unternehmens
 
-Azure Storage provides several options that accommodate specific types of data storage needs.
+Azure Storage bietet verschiedene Optionen für verschiedene Arten von Anforderungen an Datenspeicher.
 
-### Azure SQL Database
+### <a name="azure-sql-database"></a>Azure SQL-Datenbank
 
-**Azure SQL Database** is a robust, fully managed, relational cloud database that stores all your data. You can use this feature to store data that you frequently access and update, such as personal and training-related information for your staff. You can also migrate your existing SQL Server databases without changing your applications. The following illustration shows the types of data from the online learning portal scenario that would be stored in an Azure SQL database.
+**Azure SQL-Datenbank** ist eine stabile, vollständig verwaltete relationale Clouddatenbank, in der Sie all Ihre Daten speichern können. Sie können dieses Feature verwenden, um Daten zu speichern, auf die Sie häufig zugreifen und die Sie häufig aktualisieren, z.B. Informationen zu Schulungen für Ihre Mitarbeiter. Sie können auch Ihre vorhandenen SQL Server-Datenbanken migrieren, ohne Ihre Anwendungen ändern zu müssen.
 
-![An illustration showing Azure SQL used to store student information such as transcripts, certifications, and study materials.](../media/3-Azure_SQL.png)
+![Azure SQL](../media-draft/Azure_SQL.png)
 
-### Azure Cosmos DB
+### <a name="azure-cosmos-db"></a>Azure Cosmos DB
 
-Azure Cosmos DB is a globally distributed database service. It supports schema-less data that offers the capability to build highly responsive and *Always On* applications to support constantly changing data. You can use this feature to store data that is updated and maintained based on inputs from users around the world. The following illustration shows a sample Azure Cosmos DB database used to store data that is accessed by multiple people located around the world.
+Azure Cosmos DB ist ein global verteilter Datenbankdienst. Der Dienst unterstützt schemalose Daten, mit denen sich extrem reaktionsschnelle *Always On*-Anwendungen erstellen lassen, um sich ständig ändernde Daten zu unterstützen. Sie können dieses Feature verwenden, um Daten zu speichern, die basierend auf Eingaben von Benutzern auf der ganzen Welt aktualisiert und verwaltet werden.
 
-![An illustration showing usage of Azure Cosmos DB in the online training scenario to store the course catalog. Azure Cosmos DB is a good choice here because the catalog is updated by administrators and accessed by students all over the world.](../media/3-Azure_cosmos_db.png)
+![Cosmos DB](../media-draft/Azure_cosmos_db.png)
 
-### Azure Blob storage
+### <a name="azure-blob-storage"></a>Azure Blob-Speicher
 
-Azure Blob storage provides the ability to stream large video or audio files directly to the user browser from anywhere in the world. Blob storage is also used to store data for backup and restore, disaster recovery, and archiving. Azure Blob storage can store up to 8 TB of data to store files for virtual machines. The following illustration shows an example usage of Azure blob storage.
+Azure Blob Storage bietet die Möglichkeit, große Video- und Audiodateien von jedem Standort der Welt aus direkt in Browser von Benutzern zu streamen. Blob-Speicher werden auch zum Speichern von Daten für die Sicherung und Wiederherstellung, die Notfallwiederherstellung sowie die Archivierung verwendet. Azure Blob Storage kann bis zu 8 TB Daten für Dateien auf virtuellen Computern speichern.
 
-![An illustration showing Azure blob storage used to store and stream video or audio files.](../media/3-Azure_blob.png)
+![Azure Blob](../media-draft/Azure_blob.png)
 
-### Azure Data Lake Storage Gen2
+### <a name="azure-data-lake-storage-gen2"></a>Azure Data Lake Storage Gen2
 
-The Data Lake feature of Azure storage allows you to perform analytics on your data usage and prepare reports accordingly. Data Lake is a large repository that stores both structured and unstructured data.
+Das Data Lake-Feature von Azure Storage ermöglicht es Ihnen, Ihre Datennutzung zu analysieren und entsprechende Berichte zu erstellen. Data Lake ist ein umfangreiches Repository, in dem sowohl strukturierte als auch unstrukturierte Daten gespeichert werden können.
 
-**Azure Data Lake Storage Gen2** combines the scalability and cost benefits of object storage with the reliability and performance of the Big Data file system capabilities. The following illustration shows how Azure Data Lake stores all your business data  and makes it available for analysis.
+**Azure Data Lake Storage Gen2** kombiniert die Skalierbarkeit und Kostenvorteile eines Objektspeichers mit der Zuverlässigkeit und Leistung eines Big Data-Dateisystems.
 
-![An illustration showing the role of Azure Data Lake in preparing and storing your data for use by analysis tools. Azure Data Lake can handle a variety of input types such as  relational, video, or sensor data.](../media/3-Data_lake_store_concept.png)
+![Data_lake_Store_concept](../media-draft/Data_lake_store_concept.png)
 
-### Azure Files
+### <a name="azure-files"></a>Azure Files
 
-Azure Files offers fully managed file shares in the cloud. Applications running in Azure can easily share files between VMs. You can use Azure file shares at the same time for cloud or on-premises deployments of Windows, Linux, and macOS. The following illustration shows Azure Files being used to share data between two geographical locations. Azure Files uses the Server Message Block (SMB) protocol which ensures the data is encrypted at rest and in transit.
+Azure Files bietet vollständig verwaltete Dateifreigaben in der Cloud. Anwendungen, die in Azure ausgeführt werden, können problemlos Dateien zwischen virtuellen Computern freigeben. Sie können Azure-Dateifreigaben gleichzeitig für Cloud- und lokale Bereitstellungen von Windows, Linux und macOS verwenden.
 
-![An illustration showing the file sharing capabilities of Azure Files. ](../media/3-Azure_Files.png)
+![Azure_Files](../media-draft/Azure_Files.png)
 
-### Azure Queue
+### <a name="azure-queue"></a>Azure Queue
 
-Azure Queue storage is a service for storing large numbers of messages that can be accessed from anywhere in the world. A single queue message is up to 64 KB in size, and a queue can contain millions of messages.
+Azure Queue ist ein Dienst zur Speicherung einer großen Anzahl von Nachrichten, auf die von überall auf der Welt aus zugegriffen werden kann. Eine einzelne Warteschlangennachricht kann bis zu 64 KB groß sein, und eine Warteschlange kann Millionen von Nachrichten enthalten.
 
-Typically, there are one or more sender components and one or more receiver components. Sender components add message to the queue. Receiver components retrieve messages from the front of the queue for processing. The following illustration shows multiple sender applications adding messages to the Azure Queue and one receiver application retrieving the messages.
+Warteschlangenspeicher werden hauptsächlich für Folgendes verwendet:
 
-![An illustration showing a high-level architecture of Azure Queue storage](../media/3-Azure_Queue.png)
+- Erstellen eines Arbeitsbacklogs und Übermitteln von Nachrichten zwischen Azure-Webservern.
+- Lastenausgleiche zwischen verschiedenen Webservern und Infrastrukturen und Verwalten von Bursts in der Datenverkehrsübertragung.
+- Aufbauen eines robusten Schutzes vor Komponentenfehlern, wenn mehrere Benutzer gleichzeitig auf Ihre Daten zugreifen.
 
-Queue storage is primarily used for the following:
+![Azure_Queue](../media-draft/Azure_Queue.png)
 
-- To create a backlog of work and to pass messages between different Azure web servers.
-- For load balancing between different web servers/infrastructure and for managing bursts of traffic.
-- To build resilience against component failure when multiple users access your data at the same time.
+### <a name="azure-standard-storage"></a>Azure-Standardspeicher
 
-### Azure Standard Storage
+Virtuelle Computer in Azure verwenden Datenträger zum Speichern von Betriebssystemen, Anwendungen und Daten. Azure-Standardspeicher bieten zuverlässige, kostengünstige Datenträgerunterstützung für virtuelle Computer mit nicht geschäftskritischen Workloads. Bei Verwendung von Storage Standard werden die Daten auf Festplattenlaufwerken (Hard Disk Drives, HDDs) gespeichert.
 
-Virtual machines in Azure use disks to store operating systems, applications, and data. Azure Standard Storage delivers reliable, low-cost disk support for VMs running workloads that are not mission critical. With Standard Storage, the data is stored on hard disk drives (HDDs).
+Wenn Sie mit virtuellen Computern arbeiten, können Sie standardmäßige SSD- und HDD-Datenträger für weniger kritische Workloads und Premium-SSD-Datenträger für unternehmenskritische Produktionsanwendungen verwenden. Azure-Datenträger stellen durchgängig eine Dauerhaftigkeit auf Unternehmensniveau bereit, mit einer branchenweit führenden auf das Jahr umgerechneten Fehlerrate von NULL%.
 
-When working with VMs, you can use standard SSD and HDD disks for less critical workloads, and premium SSD disks for mission-critical production applications. Azure Disks have consistently delivered enterprise-grade durability, with an industry-leading ZERO% Annualized Failure Rate. The following illustration shows an Azure virtual machine using separate disks to store different data.
+![Azure_Disk](../media-draft/Azure_disks.png)
 
-![An illustration showing two disks inside a virtual machine, one that stores the operating system and one that stores data.](../media/3-Azure_disks.png)
+### <a name="storage-tiers"></a>Speicherebenen
 
-### Storage tiers
+Azure Storage bietet drei Speicherebenen für Blobspeicher:
 
-Azure Storage offers three storage tiers for blob object storage:
+1. **Speicherebene „Heiß“:** Diese Azure-Speicherebene ist für die Speicherung von Daten optimiert, auf die häufig zugegriffen wird. 
+1. **Speicherebene „Kalt“**: Diese Azure-Speicherebene ist für die Speicherung von Daten optimiert, auf die weniger häufig zugegriffen wird und die mindestens 30 Tage lang gespeichert werden.
+1. **Speicherebene „Archiv“:** Diese Azure-Speicherebene ist für die Speicherung von Daten optimiert, auf die selten zugegriffen wird und die bei flexiblen Latenzanforderungen mindestens 180 Tage lang gespeichert werden. Der Archivspeicher in Azure eignet sich ideal zum Speichern älterer Versionen Ihrer Daten, sodass Sie die Daten abrufen können, wenn diese für Überprüfungen oder andere unregelmäßige Aktivitäten benötigt werden.
 
-1. **Hot storage tier** - The Azure hot storage tier is optimized for storing data that is accessed frequently. 
+![Archive_Tier](../media-draft/Archive_Storage_Tier.png)
 
-1. **Cool storage tier** - The Azure cool storage tier is optimized for storing data that is infrequently accessed and stored for at least 30 days.
+### <a name="azure-storage-encryptionreplication"></a>Azure Storage-Verschlüsselung/-Replikation
 
-1. **Archive storage tier** - The Azure archive storage tier is optimized for storing data that is rarely accessed and stored for at least 180 days with flexible latency requirements. The archive storage in Azure is ideal for storing older versions of your data so that you can retrieve it when required for auditing or other infrequent activities.
+Azure Storage bietet Verschlüsselungs- und Replikationsfeatures, um für die Sicherheit und Hochverfügbarkeit Ihrer Daten zu sorgen.
 
-The following illustration shows the Azure Blob Storage tiers.
+#### <a name="encryption-for-storage-services"></a>Verschlüsselung für Speicherdienste
 
-![An illustration showing the three different storage tiers of Azure Blob Storage: hot, cold, and archive.](../media/3-Archive_Storage_Tier.png)
+Ihnen stehen folgende Verschlüsselungstypen für Ihre Ressourcen zur Verfügung:
 
-### Azure Storage encryption/replication
+1. Die **Azure-Speicherdienstverschlüsselung (SSE)** für ruhende Daten unterstützt Sie dabei, Ihre Daten zu sichern, um die Anforderungen Ihrer Organisation an die Sicherheit und Einhaltung von gesetzlichen Bestimmungen zu erfüllen. Azure SSE verschlüsselt die Daten vor dem Speichern und entschlüsselt sie vor dem Abrufen wieder. Die Verschlüsselung und Entschlüsselung sind für den Benutzer transparent.
+1. Bei der **clientseitigen Verschlüsselung** werden die Daten bereits von den Clientbibliotheken verschlüsselt. Azure speichert die Daten verschlüsselt im Ruhezustand, und die Daten werden während des Abrufs entschlüsselt.
 
-Azure Storage provides security and high availability to your data through encryption and replication features.
+    Dieses Verschlüsselungsfeature stellt sicher, dass Ihre Daten die globalen Schutzstandards erfüllen. Es eignet sich zum Speichern vertraulicher Informationen, z.B. personenbezogene und finanzielle Daten.
 
-#### Encryption for storage services
+#### <a name="replication-for-storage-availability"></a>Replikation für Speicherverfügbarkeit
 
-The following encryption types are available for your resources:
-
-1. **Azure Storage Service Encryption (SSE)** for data at rest helps you secure your data to meet the organization's security and regulatory compliance. The Azure SSE encrypts the data before storing it and decrypts the data before retrieving it. The encryption and decryption are transparent to the user.
-1. **Client-side encryption** is where the data is already encrypted by the client libraries. Azure stores the data in the encrypted state at rest, which is then decrypted during retrieval.
-
-    This encryption feature ensures your data meets global protection standards. It is appropriate for storing sensitive information like personal and financial data.
-
-#### Replication for storage availability
-
-A replication type is set up when you create a storage account. The replication feature ensures that your data is durable and always available. Azure Storage enables regional and geographic replications to protect your data against natural disasters and other local disasters like fire or flooding.
+Wenn Sie ein Speicherkonto erstellen, wird ein Replikationstyp festgelegt. Das Replikationsfeature stellt sicher, dass Ihre Daten stabil und jederzeit verfügbar sind. Azure Storage ermöglicht regionale und geografische Replikationen, um Ihre Daten bei Naturkatastrophen und anderen lokalen Ereignissen wie Bränden oder Überflutungen zu schützen.

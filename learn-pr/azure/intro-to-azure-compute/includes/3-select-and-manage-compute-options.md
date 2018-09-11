@@ -1,37 +1,37 @@
-Now that you've been introduced to the Azure compute services available, let's look at each in turn to help you decide when to use each service.
+Nachdem Sie nun in die verfügbaren Azure-Computedienste eingeführt wurden, sollen diese einzeln erläutert werden, damit Sie entscheiden können, wann welcher Dienst verwendet werden soll.
 
-## Azure virtual machines
+## <a name="azure-virtual-machines"></a>Azure Virtual Machines
 
-When full control over the operating system and environment is required, virtual machines are an ideal choice. You're able to customize all of the software running on the VM, just like a physical computer. This is ideal when running custom software or custom hosting configurations.
+Wenn die vollständige Kontrolle über das Betriebssystem und die Umgebung erforderlich ist, sind virtuelle Computer eine optimale Wahl. Sie können die Software auf dem virtuellen Computer genau wie bei einem physischen Computer anpassen. Diese Methode ist optimal, wenn Sie benutzerdefinierte Software oder benutzerdefinierte Hostingkonfigurationen ausführen.
 
-VMs are also an excellent choice when moving from a physical server to the cloud. You can often create an image of the physical server and host it within a virtual machine. This gives you complete freedom to choose operating systems and application execution environments, meaning you can develop in almost any language that uses the tools of your choice.
+Virtuelle Computer sind ebenfalls eine gute Wahl, wenn Sie Verschiebungen von einem physischen Server in die Cloud vornehmen. Häufig können Sie ein Image des physischen Servers erstellen und dieses auf einem virtuellen Computer hosten. Dadurch können Sie die Betriebssysteme und die Ausführungsumgebungen von Anwendungen frei wählen. Das bedeutet, dass Sie in fast jeder Sprache entwickeln können, die in den Tools Ihrer Wahl verwendet werden kann.
 
-However, you'll be required to maintain the virtual machine. This means updating the operating system and the software it runs. 
+Sie müssen den virtuellen Computer jedoch verwalten. Das bedeutet, dass sie das Betriebssystem und die ausgeführte Software aktualisieren müssen. 
 
-It also requires more consideration when scaling. You can scale up the virtual machine, meaning you can add more compute and memory resources. But if you need to run multiple instances in parallel, you may need to add additional services, such as load balancers.
+Für die Skalierung müssen außerdem weitere Überlegungen angestellt werden. Sie können den virtuellen Computer hochskalieren. Das bedeutet, dass Sie weitere Compute- und Arbeitsspeicherressourcen hinzufügen können. Wenn Sie jedoch mehrere Instanzen parallel ausführen müssen, müssen Sie ggf. weitere Dienste wie Load Balancer hinzufügen.
 
-Imagine you're running a website that hosts a retail website. If you duplicated the VM, you'd need an additional service to route requests between multiple instances of the website VM.
+Angenommen, Sie betreiben eine Website, die eine Website für den Einzelhandel hostet. Wenn Sie den virtuellen Computer duplizieren würden, wäre ein zusätzlicher Dienst erforderlich, um Anforderungen zwischen mehreren Instanzen des virtuellen Computers für die Website weiterzuleiten.
 
-There are also advanced virtual machine services available in Azure:
+In Azure sind außerdem erweiterte Dienste für virtuelle Computer verfügbar:
 
-- For running consistently available instances of the same app, or sets of apps, on similarly configured VMs, use the **Virtual Machine Scale Sets** option. It automatically generates thousands of identical VMs loaded with your application in minutes, so your users never have to wait. And, since you don't have to pre-provision virtual machines, you use only the compute resources your application needs at any time.
+* Verwenden Sie die Option **Virtual Machine Scale Sets**, um durchgängig verfügbare Instanzen derselben App(s) auf ähnlich konfigurierten virtuellen Computern auszuführen. Diese Option generiert automatisch Tausende von identischen virtuellen Computern, die in Minuten mit Ihrer Anwendung zusammen geladen werden, damit Ihre Benutzer nicht warten müssen. Da für virtuelle Computer keine Vorabbereitstellung erforderlich ist, verwenden Sie immer nur die Computeressourcen, die Ihre Anwendung benötigt.
 
-- There may be situations in which you need raw computing power or supercomputer level compute power. The **Batch** option provides cloud-scale job scheduling and compute management with the ability to scale to tens, hundreds, or thousands of VMs. You can even specify VMs with supercomputer capabilities.
+* Es können sich Situationen ergeben, in denen Sie sehr viel Computeleistung bzw. die Computeleistung eines Supercomputers benötigen. Die **Batch**-Option stellt die Skalierung der Auftragsplanung und Computeverwaltung in der Cloud mit der Möglichkeit bereit, sogar Tausende von virtuellen Computern zu skalieren. Sie können sogar virtuelle Computer mit den Funktionen von Supercomputern angeben.
 
-## Azure containers
+## <a name="azure-containers"></a>Azure-Container
 
-Containers are an excellent choice if you wish to run multiple instances of an application on a single virtual machine. The container orchestrator can start, stop, and scale out application instances as needed.
+Container sind eine gute Wahl, wenn Sie mehrere Instanzen einer Anwendung auf einem einzelnen virtuellen Computer ausführen möchten. Der Containerorchestrator kann Anwendungsinstanzen nach Bedarf starten, beenden oder hochskalieren.
 
-However, containers are commonly used to create solutions using a microservice architecture. Containers are often used to break solutions into smaller pieces. For example, you may split a website into a container hosting your front end, another hosting your back end, and a third for storage. This allows you to separate portions of your app into logical sections that can be maintained, scaled, or updated independently.
+Container dienen jedoch üblicherweise dazu, mithilfe einer Microservicesarchitektur Lösungen zu erstellen. Container werden häufig verwendet, um Lösungen in kleinere Bestandteile aufzuteilen. Sie können eine Website beispielsweise in einen Container aufteilen, der Ihr Front-End hostet, einen weiteren, der Ihr Back-End hostet, und einen dritten für den Speicher. Dadurch können Sie einzelne Bestandteile Ihrer App in logische Abschnitte aufteilen, die unabhängig voneinander verwaltet, skaliert oder aktualisiert werden können.
 
-Imagine your website back end has reached capacity but the front end and storage aren't being stressed. You could scale the back end separately to improve performance. Or you could decide to use a different storage service. Or you could replace the storage container without affecting the rest of the application.
+Angenommen, das Back-End Ihrer Website hat die maximale Kapazität erreicht, aber das Front-End und der Speicher werden nicht beansprucht. Sie könnten das Back-End einzeln skalieren, um die Leistung zu verbessern. Alternativ könnten Sie einen anderen Speicherdienst verwenden. Eine weitere Möglichkeit wäre das Ersetzen des Speichercontainers ohne die restliche Anwendung zu beeinträchtigen.
 
- If your team is comfortable with using Kubernetes container orchestration, consider the **Azure Kubernetes Service (AKS)** option. It simplifies and automates the management, deployment, and operations of Kubernetes orchestration.
+ Wenn Ihr Team mit der Verwendung der Kubernetes-Containerorchestrierung vertraut ist, können Sie die Option **Azure Kubernetes Service (AKS)** verwenden. Diese Option vereinfacht und automatisiert die Verwaltung, Bereitstellung und Vorgänge der Kubernetes-Orchestrierung.
 
-## Azure functions
+## <a name="azure-functions"></a>Azure-Funktionen
 
-Azure functions are ideal when you're concerned only about the code running your service, and not the underlying platform or infrastructure. They're commonly used when you need to perform work in response to an event, often via a REST request, timer, or message from another Azure service and when that work can be completed quickly, within seconds or less.
+Azure-Funktionen sind optimal geeignet, wenn Sie nur den Code berücksichtigen müssen, der Ihren Dienst ausführt, nicht aber die zugrunde liegende Plattform oder Infrastruktur. Sie werden üblicherweise verwendet, wenn Sie Aufgaben als Reaktion auf ein Ereignis durchführen müssen, das häufig über eine REST-Anforderung, einen Timer oder eine Meldung von einem anderen Azure-Dienst ausgelöst wird, und wenn diese Aufgaben schnell (innerhalb von Sekunden oder noch schneller) ausgeführt werden können.
 
-Azure functions scale automatically, so they're an excellent choice when demand is variable, and you're charged only when a function is triggered. For example, you may be receiving messages from an IoT solution used to monitor a fleet of delivery vehicles. You'll likely have more data arriving during business hours.
+Azure-Funktionen werden automatisch skaliert und sind deshalb eine gute Wahl, wenn der Bedarf variiert. Es werden nur Gebühren berechnet, wenn eine Funktion ausgelöst wird. Sie können beispielsweise Meldungen von einer IoT-Lösung erhalten, die verwendet wird, um mehrere Lieferfahrzeuge zu überwachen. Während der Geschäftszeiten gehen wahrscheinlich mehr Daten ein.
 
-Azure functions are stateless; they behave as if they're restarted every time they respond to an event. This is ideal for processing incoming data. And if state is required, they can be connected to an Azure storage service.
+Azure-Funktionen sind zustandslos. Sie verhalten Sich bei jeder Reaktion auf ein Ereignis so, als wären sie neu gestartet worden. Für das Verarbeiten von eingehenden Daten ist dieses Verhalten optimal. Wenn ein Zustand erforderlich ist, können die Funktionen mit einem Azure-Speicherdienst verbunden werden.

@@ -1,42 +1,42 @@
-We have seen how to create cost estimates for environments you'd like to build, walked through some tools to get details on where we're spending money, and projected future expenses. Our next challenge is to look at how to reduce those infrastructure costs.
+Es wurde gezeigt, wie Sie Kostenschätzungen für geplante Umgebungen erstellen können, wir haben einige Tools untersucht, um genauere Informationen darüber zu erhalten, wo Kosten entstehen, und es wurden zukünftige Ausgaben geplant. Die nächste Herausforderung besteht darin, zu ermitteln, wie diese Infrastrukturkosten gesenkt werden können.
 
-## Use reserved instances
+## <a name="use-reserved-instances"></a>Verwenden reservierter Instanzen
 
-If you have VM workloads that are static and predictable in nature, particularly ones that run 24x7x365, using reserved instances is a fantastic way to potentially save up to 70-80%, depending on the VM size. The following illustration shows that using Azure reserved instances saves you up to 72% and using reserved instance plus Azure Hybrid Benefit saves up to 80% in costs.
+Wenn Ihre VM-Workloads – insbesondere diejenigen, die rund um die Uhr und das ganze Jahr ausgeführt werden – statisch und vorhersagbar sind, ist die Verwendung reservierter Instanzen eine gute Möglichkeit, je nach VM-Größe Einsparungen zwischen 70 und 80 % Prozent zu erzielen. Die folgende Abbildung zeigt, dass Sie mithilfe von reservierten Azure-Instanzen bis zu 72 % und mithilfe von reservierten Instanzen inklusive des Azure-Hybridvorteils bis zu 80 % Ihrer Kosten einsparen können.
 
-![An illustration showing cost benefits of using Azure reserved instances and Azure Hybrid Benefits compared to pay-as-you go.](../media/4-savings-coins.png)
+![Illustration mit Kostenvorteilen bei der Verwendung von reservierten Azure-Instanzen und der Azure-Hybridvorteile im Vergleich zur nutzungsbasierten Zahlung.](../media-drafts/4-savings-coins.png)
 
-Reserved instances are purchased in one-year or three-year terms, with payment required for the full term up front. After it's purchased, Microsoft matches up the reservation to running instances and decrements the hours from your reservation. Reservations can be purchased through the Azure portal. And because reserved instances are a compute discount, they are available for both Windows and Linux VMs.
+Reservierte Instanzen werden für eine Laufzeit von ein oder drei Jahren erworben. Hierbei müssen die Gebühren für die gesamte Laufzeit vorab entrichtet werden. Nach dem Erwerb gleicht Microsoft die Reservierung mit den ausgeführten Instanzen ab und zieht die Betriebsstunden von Ihrer Reservierung ab. Reservierungen können über das Azure-Portal erworben werden. Da reservierte Instanzen einen Rabatt auf Computeressourcen bieten, sind sie sowohl für Windows- als auch für Linux-VMs verfügbar.
 
-## Right-size underutilized virtual machines
+## <a name="right-size-underutilized-virtual-machines"></a>Ändern der Größe von wenig genutzten virtuellen Computern
 
-Recall from our previous discussion that Azure Cost Management and Azure Advisor might recommend right-sizing or shutting down VMs. Right-sizing a virtual machine is the process of resizing it to a proper size. Let's imagine you have a server running as a domain controller that is sized as a **Standard_D4sv3**, but your VM is sitting at 90% idle the vast majority of the time. By resizing this VM to a **Standard_D2sv3**, you reduce your compute cost by 50%. Costs are linear and double for each size larger in the same series. In this case, you might even benefit from changing the instance series to go to a less expensive VM series. The following illustration shows a 50% savings achieved by moving one size down within the same series.
+Zuvor wurde besprochen, dass Azure Cost Management und Azure Advisor möglicherweise empfehlen, die Größe von VMs zu ändern oder VMs herunterzufahren. Bei der richtigen Dimensionierung einer VM wird deren Größe entsprechend angepasst. Angenommen, Sie führen einen Server als Domänencontroller aus, der auf die Größe **Standard_D4sv3** festgelegt ist, aber Ihre VM befindet sich fast immer zu 90 % im Leerlauf. Indem Sie die Größe dieser VM in **Standard_D2sv3** ändern, verringern Sie Ihre Computekosten um 50 %. Die Kosten sind linear und verdoppeln sich für jede nächsthöhere Größe innerhalb derselben Serie. In diesem Fall ist es möglicherweise sogar vorteilhaft, die Instanzserie zu ändern und auf eine kostengünstigere VM-Serie umzustellen. Die folgende Abbildung zeigt Einsparungen in Höhe von 50 %, die durch die Umstellung auf die nächstniedrigere Größe innerhalb der Serie erzielt wurden.
 
-![An illustration to demonstrate savings achieved by downsizing an under-utilized virtual machine.](../media/4-vm-resize.png)
+![Illustration zur Veranschaulichung der Einsparungen, die für eine unterdurchschnittlich ausgelastete VM durch die Umstellung auf die nächstniedrigere Größe erzielt wurden.](../media-drafts/4-vm-resize.png)
 
-Over-sized virtual machines are a common unnecessary expense on Azure and one that can be easily fixed. You can change the size of a VM through the Azure portal, Azure PowerShell, or the Azure CLI.
+Überdimensionierte VMs sind eine häufige Ursache für unnötige Kosten in Azure, die aber schnell behoben werden kann. Sie können die Größe einer VM über das Azure-Portal, Azure PowerShell oder die Azure CLI ändern.
 
-> [!TIP]
-> Resizing a VM requires it to be stopped, resized, and then restarted. This may take a few minutes depending on how significant the size change is. Plan for an outage, or shift your traffic to another instance while you perform this task.
+> [!NOTE]
+> Um die Größe einer VM zu ändern, müssen Sie sie beenden, ihre Größe ändern und die VM dann neu starten. Dieser Vorgang kann abhängig davon, wie umfassend die Größenänderung ist, einige Minuten in Anspruch nehmen. Planen Sie eine Downtime, oder leiten Sie Ihren Datenverkehr auf eine andere Instanz um, während Sie diese Aufgabe ausführen.
 
-## Deallocate virtual machines in off hours
+## <a name="deallocate-virtual-machines-in-off-hours"></a>Aufheben der Zuordnung virtueller Computer außerhalb der Geschäftszeiten
 
-If you have virtual machine workloads that are only used during certain periods of time, but you're running them every hour of every day, you're wasting money. These VMs are great candidates to shut down when not in use and start back up on a schedule, saving you compute costs while the VM is deallocated.
+Wenn Sie über VM-Workloads verfügen, die nur zu bestimmten Zeiten verwendet werden, aber den ganzen Tag ausgeführt werden, erzeugt dies unnötig Kosten. Diese VMs sind hervorragende Kandidaten für das Herunterfahren bei Nichtbenutzung und das Wiedereinschalten nach einem Zeitplan. So sparen Sie Computekosten, während die Zuordnung der VMs aufgehoben ist.
 
-This approach is a great strategy for development environments. It's often the case that development may happen only during business hours, giving you the flexibility to deallocate these systems in the off hours and stopping your compute costs from accruing. Azure now has an [automation solution](https://docs.microsoft.com/azure/automation/automation-solution-vm-management) fully available for you to leverage in your environment.
+Dieser Ansatz ist besonders für Entwicklungsumgebungen geeignet. Häufig erfolgt die Entwicklung nur während der Geschäftszeiten, sodass Sie die Zuordnung dieser Systeme außerhalb der Geschäftszeiten aufheben können, um unnötige Computekosten zu vermeiden. Azure bietet ab sofort eine [Automatisierungslösung](https://docs.microsoft.com/azure/automation/automation-solution-vm-management), die Sie in Ihrer Umgebung nutzen können.
 
-You can also use the auto-shutdown feature on a virtual machine to schedule automated shutdowns.
+Sie können auch das Feature zum automatischen Herunterfahren einer VM verwenden, um eine automatisierte Abschaltung zu planen.
 
-![Screenshot of the Azure portal showing the Auto-shutdown section of a virtual machine blade with a shutdown time enabled.](../media/4-vm-auto-shutdown.png)
+![Automatisches Herunterfahren](../media-drafts/4-vm-auto-shutdown.png)
 
-## Delete unused virtual machines
+## <a name="delete-unused-virtual-machines"></a>Löschen nicht verwendeter virtueller Computer 
 
- This advice may sound obvious, but if you aren't using a service, you should shut it down. It's not uncommon to find non-production or proof-of-concept systems left around following a project that is no longer needed. Regularly review your environment and work to identify these systems. Shutting down these systems can have a multifaceted benefit by saving you not only on infrastructure costs but also potential savings on licensing and operations.
+ Diese Empfehlung mag offensichtlich klingen, aber wenn Sie einen Dienst nicht verwenden, sollten Sie ihn ausschalten. Es ist nicht ungewöhnlich, dass im Anschluss an ein Projekt Nicht-Produktionssysteme oder Proof of Concept-Systeme beibehalten werden, obwohl diese nicht mehr benötigt werden. Überprüfen Sie Ihre Umgebung regelmäßig, und identifizieren Sie diese Systeme. Das Herunterfahren dieser Systeme kann in vielfältiger Weise zu Einsparungen beitragen – nicht nur in Bezug auf die Infrastrukturkosten, sondern auch bei den Kosten für Lizenzierung und Betrieb.
 
-## Migrate to PaaS or SaaS services
+## <a name="migrate-to-paas-or-saas-services"></a>Migration zu PaaS- oder SaaS-Diensten 
 
-Lastly, as you move workloads to the cloud, a natural evolution is to start with infrastructure-as-a-service (IaaS) services and then move them to platform-as-a-service (PaaS) as appropriate, in an iterative process.
+Wenn Sie schließlich Ihre Workloads in die Cloud verlagern, beginnen Sie üblicherweise mit IaaS-Diensten (Infrastructure-as-a-Service) und wechseln in einem iterativen Prozess zu PaaS (Platform-as-a-Service).
 
-PaaS services typically provide substantial savings in both resource and operational costs. The challenge is that depending on the type of service, varying levels of effort will be required to move to these services from both a time and resource perspective. You might be able to easily move a SQL Server database to Azure SQL Database, but it might take substantially more effort to move your multitier application to a container or serverless-based architecture. It's a good practice to continuously evaluate the architecture of your applications to determine if there are efficiencies to be gained through PaaS services.
+PaaS-Dienste bieten typischerweise erhebliche Einsparungen im Hinblick auf die Ressourcen- und die Betriebskosten. Die Herausforderung besteht darin, dass die Umstellung auf diese Dienste je nach Diensttyp mit einem unterschiedlichen Zeit- und Ressourcenaufwand einhergeht. Die Umstellung einer SQL Server-Datenbank auf Azure SQL-Datenbank ist möglicherweise einfach, der Aufwand für das Verlagern einer mehrstufigen Anwendung in eine Container- oder serverlose Architektur kann hingegen erheblich sein. Es hat sich bewährt, durch eine fortlaufende Auswertung der Architektur Ihrer Anwendungen zu ermitteln, ob über PaaS-Dienste eine positive Wirkung erzielt werden kann.  
 
-Azure makes it easy to test these services with little risk, giving you the ability to try out new architecture patterns relatively easily. That said, it's typically a longer journey and might not be of immediate help if you're looking for quick wins from a cost-savings perspective. The Azure Architecture Center is a great place to get ideas for transforming your application, as well as best practices across a wide array of architectures and Azure services.
+Dank Azure ist es einfach, diese Dienste mit geringem Risiko zu testen, sodass Sie neue Architekturmuster relativ einfach ausprobieren können. Gleichwohl ist dies in der Regel ein längerer Prozess, der möglicherweise keine sofortigen Vorteile bietet, wenn Sie schnelle Kosteneinsparungen erzielen möchten. Das Azure Architecture Center ist der ideale Ort, um Ideen für die Transformation Ihrer Anwendung sowie Best Practices für eine große Auswahl von Architekturen und Azure-Diensten zu erhalten. 

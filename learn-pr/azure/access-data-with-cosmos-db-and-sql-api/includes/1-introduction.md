@@ -1,17 +1,17 @@
-Adding data and querying data in your database should be straightforward. 
+Das Hinzufügen und Abfragen von Daten in der Datenbank sollte einfach sein. 
 
-Imagine you work for an online clothing retailer and you need to add inventory data to your e-commerce database in Azure Cosmos DB. Once the data is in the database, you can query it by using familiar SQL queries (yes, just like the ones you use in SQL Server) and perform complex operations by using stored procedures and user-defined functions (UDFs).
+Angenommen, Sie arbeiten für einen Onlinehändler für Autoteile, und Sie müssen in der E-Commerce-Datenbank in Azure Cosmos DB Daten von Autoteilen hinzufügen. Sobald sich die Daten in der Datenbank befinden, können Sie diese mithilfe vertrauter SQL-Abfragen abfragen (genau wie die, die Sie in SQL Server verwenden). Außerdem können Sie komplexe Vorgänge ausführen, indem Sie gespeicherte Prozeduren und benutzerdefinierte Funktionen verwenden.
 
-Azure Cosmos DB provides a Data Explorer in the Azure portal that you can use to perform all these operations: adding data, modifying data, and creating and running stored procedures. The Data Explorer can be used in the Azure portal or it can be undocked and used in a standalone web browser, providing additional space to work with your data.
+Azure Cosmos DB bietet einen Daten-Explorer im Azure-Portal, den Sie zum Ausführen von Vorgängen wie beispielsweise dem Hinzufügen und Ändern von Daten und dem Erstellen und Ausführen von gespeicherten Prozeduren verwenden können. Der Daten-Explorer kann im Azure-Portal oder abgedockt und in einem eigenständigen Webbrowser verwendet werden, wodurch zusätzlicher Speicherplatz für die Arbeit mit Ihren Daten bereitgestellt wird.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul lernen Sie Folgendes:
+- Erstellen von Produktkatalogdokumenten im Daten-Explorer
+- Durchführen von Azure Cosmos DB-Abfragen
+- Erstellen und Ausführen von Vorgängen für Ihre Dokumente mithilfe von gespeicherten Prozeduren
 
-- Create product catalog documents in the Data Explorer
-- Perform Azure Cosmos DB queries
-- Create and run operations on your documents by using stored procedures
+## <a name="prerequisites"></a>Voraussetzungen
 
-## Prerequisites
-
-- Have an understanding of databases and queries
+- Grundkenntnisse im Umgang mit Datenbanken und Abfragen
+- Ein Azure Cosmos DB-Konto, eine Datenbank und eine wie im Modul „Erstellen einer skalierbaren Azure Cosmos DB-Datenbank“ erstellte Sammlung

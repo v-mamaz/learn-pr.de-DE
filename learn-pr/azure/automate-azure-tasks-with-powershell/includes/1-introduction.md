@@ -1,21 +1,19 @@
-Creating administration scripts is a powerful way to optimize your work flow. You can automate common, repetitive tasks, and once a script has been verified, it will run consistently, likely reducing errors.
+Das Erstellen von Verwaltungsskripts ist eine leistungsstarke Möglichkeit, Ihren Workflow zu optimieren. Sie können allgemeine, sich wiederholende Aufgaben automatisieren, und nachdem ein Skript überprüft wurde, wird es konsistent ausgeführt, sodass wahrscheinlich weniger Fehler auftreten.
 
-Suppose you work at a company that uses Azure Virtual Machines (VMs) to test your Customer Relationship Management (CRM) software. The VMs are built from images that include a web front-end, a web service that implements business logic, and a SQL database.
+Angenommen, Sie arbeiten in einem Unternehmen, das mit Azure Virtual Machines (VMs) die CRM-Software (Customer Relationship Management) testet. Die VMs werden aus Images erstellt, die ein Web-Front-End, einen Webdienst, der die Geschäftslogik implementiert, und eine SQL-Datenbank enthalten.
 
-You have been executing multiple rounds of tests on a single VM but noticed that changes in the database and configuration files can cause inconsistent results. In one case, a bug created a phone call record with no corresponding customer in the database. The orphaned record caused subsequent integration tests to fail even after the bug was fixed. You plan to solve this problem by using a fresh VM deployment for each testing cycle. You want to automate the VM creation setup because it will be executed many times per week. 
+Sie haben mehrere Testrunden auf einer VM ausgeführt, jedoch festgestellt, dass Änderungen an Datenbank- und Konfigurationsdateien zu inkonsistenten Ergebnissen führen können. In einem Fall wurde durch einen Fehler ein Datensatz für einen Telefonanruf ohne entsprechenden Kunden in der Datenbank erstellt. Durch den verwaisten Datensatz sind nachfolgende Integrationstests fehlgeschlagen, auch nachdem der Fehler behoben wurde. Sie planen, dieses Problem mit einer neuen VM-Bereitstellung für jeden Testzyklus zu lösen. Sie möchten das Setup der VM-Erstellung automatisieren, da es viele Male pro Woche ausgeführt wird. 
 
-Here, you will see how to manage Azure resources using Azure PowerShell. You will use Azure PowerShell interactively for one-off tasks and write scripts to automate repeated tasks. 
+Hier sehen Sie, wie die Azure-Ressourcen mithilfe von Azure PowerShell verwaltet werden. Sie verwenden Azure PowerShell interaktiv für einmalige Aufgaben und schreiben Skripts, um sich wiederholende Aufgaben zu automatisieren. 
 
-## Learning objectives
-In this module, you will:
+## <a name="learning-objectives"></a>Lernziele
+In diesem Modul lernen Sie Folgendes:
+- Entscheiden, ob Azure PowerShell das richtige Tool für Ihre Azure-Verwaltungsaufgaben ist
+- Installieren von Azure PowerShell unter Linux, macOS und/oder Windows
+- Verbinden mit einem Azure-Abonnement über Azure PowerShell
+- Erstellen von Azure-Ressourcen mit Azure PowerShell
 
-- Decide if Azure PowerShell is the right tool for your Azure administration tasks
-- Install Azure PowerShell on Linux, macOS, and/or Windows
-- Connect to an Azure subscription using Azure PowerShell
-- Create Azure resources using Azure PowerShell
-
-## Prerequisites
-
-- Experience with a command-line interface such as PowerShell or Bash
-- Knowledge of basic Azure concepts such as resource groups and Virtual Machines
-- Experience administering Azure resources using the Azure portal
+## <a name="prerequisites"></a>Voraussetzungen
+- Erfahrung mit einer Befehlszeilenschnittstelle wie PowerShell oder Bash
+- Kenntnisse der grundlegenden Azure-Konzepte wie Ressourcengruppen und virtuelle Computer
+- Erfahrung beim Verwalten von Azure-Ressourcen über das Azure-Portal

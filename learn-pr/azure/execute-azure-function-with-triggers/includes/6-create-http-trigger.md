@@ -1,50 +1,53 @@
-In this unit, we're going to create an Azure function that accepts an HTTP request with a single string. The function returns a string back to the caller to represent success or failure.
+In dieser Übung erstellen wir eine Azure-Funktion, die eine HTTP-Anforderung mit einer einzelnen Zeichenfolge akzeptiert. Die Funktion gibt eine Zeichenfolge an den Aufrufer zurück, die angibt, ob der Vorgang erfolgreich war.
 
-## Create an HTTP trigger
+## <a name="create-an-http-trigger"></a>Erstellen eines HTTP-Triggers
 
-Let's continue using our existing Azure Functions application and add an HTTP trigger.
+Verwenden Sie Ihre vorhandene Azure Functions-Anwendung, und fügen Sie einen HTTP-Trigger hinzu.
 
-1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. Melden Sie sich im [Azure-Portal](https://portal.azure.com?azure-portal=true) an.
 
-1. Point to **Functions** and select the plus (+) icon.
+1. Zeigen Sie auf **Funktionen**, und wählen Sie das Pluszeichen (+) aus.
 
-1. Select **HTTP trigger**.
+    ![Zeigen auf „Funktionen“ und Auswählen des Pluszeichens](../media-drafts/4-hover-function.png)
 
-1. Select **C#** as the language.
+1. Wählen Sie **HTTP-Trigger** aus.
 
-1. Leave the **Name** set to the default value.
+1. Wählen Sie **C#** als Sprache aus. 
 
-1. Set the **Authorization level** to **Anonymous**.
+1. Behalten Sie für **Name** den Standardwert bei.
 
-1. Select **Create**.
+1. Legen Sie die **Autorisierungsstufe** auf **Anonym** fest.
 
-1. Take a quick look at the auto-generated code to get an idea about what's going on. The *req* parameter represents the incoming request and contains a *name* parameter. We check to see if *name* has a value. If it does, we return a greeting. Otherwise, we return an error message.
+1. Klicken Sie auf **Erstellen**.
 
-## Get your function URL
+1. Werfen Sie einen kurzen Blick auf den automatisch generierten Code, um sich ein Bild von den Abläufen zu verschaffen. Der *req*-Parameter stellt die eingehende Anforderung dar und enthält einen *name*-Parameter. Wir überprüfen, ob *name* einen Wert hat. Wenn dies der Fall ist, geben wir einen Gruß zurück. Andernfalls geben wir eine Fehlermeldung zurück.
 
-Now that we've created the HTTP trigger, let's get the function URL so we can begin to make a request.
+## <a name="get-your-function-url"></a>Abrufen Ihrer Funktions-URL
 
-1. Select your HTTP trigger to open the code screen.
+Da wir nun den HTTP-Trigger erstellt haben, rufen wir die Funktions-URL ab, damit wir beginnen können, eine Anforderung zu stellen.
 
-1. To the right of **Run**, select **Get function URL**.
+1. Wählen Sie Ihren HTTP-Trigger aus, um den Codebildschirm zu öffnen.
 
-1. Select **Copy**.
+1. Wählen Sie rechts von **Ausführen** die Option **Funktions-URL abrufen** aus.
 
-1. Select **Run** to start your function.
+1. Wählen Sie **Kopieren** aus.
 
-## Issue a GET request to your HTTP trigger
+1. Wählen Sie **Ausführen** aus, um Ihre Funktion zu starten.
 
-We now have our function URL copied to our clipboard. Let's issue a GET request to see if we get a response.
+## <a name="issue-a-get-request-to-your-http-trigger"></a>Ausgeben einer GET-Anforderung an Ihren HTTP-Trigger
 
-1. Open a new tab in your web browser.
+Wir haben jetzt unsere Funktions-URL in unsere Zwischenablage kopiert. Nun geben wir eine GET-Anforderung aus, um festzustellen, ob wir eine Antwort erhalten.
 
-1. Paste the URL into the address bar.
+1. Öffnen Sie eine neue Registerkarte in Ihrem Webbrowser.
 
-1. Add a query string parameter called *name* with your name for example `.../api/HttpTriggerCSharp1?name=Jesse`
+1. Fügen Sie die URL in die Adressleiste ein.
 
-1. Select ENTER to submit the request.
+1. Fügen Sie einen Abfragezeichenfolgen-Parameter namens *name* mit Ihrem Namen hinzu, z.B. `.../api/HttpTriggerCSharp1?name=Jesse`.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+1. Drücken Sie die EINGABETASTE, um die Anforderung zu senden.
 
-To ensure that you aren't charged for this function, select **Pause** above the log window.
+## <a name="clean-up"></a>Bereinigen
+
+Um sicherzustellen, dass für diese Funktion keine Gebühren anfallen, wählen Sie über dem Protokollfenster **Anhalten** aus.
+
+![Anhalten](../media-drafts/4-pause-timer.png)

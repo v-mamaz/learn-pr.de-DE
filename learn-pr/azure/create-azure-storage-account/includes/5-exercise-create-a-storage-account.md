@@ -1,102 +1,107 @@
-In this unit, you will use the Azure portal to create a storage account that is appropriate for a fictitious southern California surf report web app.
+In dieser Übung erstellen Sie über das Azure-Portal ein Speicherkonto für eine Web-App, mit der fiktive Surfberichte für Südkalifornien bereitgestellt werden.
 
-The surf report site lets users upload photos and videos of their local beach conditions. Viewers will use the content to help them choose the beach with the best surfing conditions. Your list of design and feature goals is:
+## <a name="design-goals"></a>Entwurfsziele
 
-- Video content must load quickly
-- The site must handle unexpected spikes in upload volume
-- Outdated content will be removed as surf conditions change so the site always shows current conditions
+Auf einer Website mit Surfberichten können Benutzer Fotos und Videos von den Surfbedingungen an Stränden hochladen. Andere Personen können sich diese Inhalte ansehen und sich dann für einen geeigneten Strand zum Surfen entscheiden. Sie verfolgen die folgenden Ziele im Hinblick auf die Features und das Design:
 
-You decide on an implementation that buffers uploaded content in an Azure Queue for processing and then moves it into an Azure Blob for storage. You need a storage account that can hold both queues and blobs while delivering low-latency access to your content.
+- Videoinhalte müssen schnell geladen werden.
+- Die Website muss mit unerwarteten Lastspitzen beim Upload umgehen können.
+- Veraltete Inhalte werden entfernt, wenn sich die Surfbedingungen ändern. Damit wird sichergestellt, dass immer die aktuellen Bedingungen auf der Website angezeigt werden.
 
-## Use the Azure portal to create a storage account
+Sie entscheiden sich für eine Implementierung, die hochgeladene Inhalte in einer Azure Queue Storage-Warteschlange für die Verarbeitung puffert und diese anschließend zur Speicherung in Azure Blob Storage verschiebt. Sie benötigen nun ein Speicherkonto, das sowohl Warteschlangen als auch Blobs aufnehmen kann, während Inhalte mit niedriger Latenz übertragen werden.
 
-1. Sign in to the [Azure Portal](https://portal.azure.com/?azure-portal=true).
+## <a name="exercise-steps"></a>Schritte in dieser Übung
 
-1. In the top left of the Azure Portal, select **Create a resource**.
+### <a name="launch-the-blade"></a>Aufrufen des Blatts
 
-1. In the selection panel that appears, select **Storage**.
+1. Rufen Sie in Ihrem Webbrowser das [Azure-Portal](https://portal.azure.com?azure-portal=true) auf, und melden Sie sich bei Ihrem Konto an.
 
-1. On the right side of that pane, select **Storage account - blob, file, table, queue**.
+1. Klicken Sie in der linken Randleiste auf **Ressource erstellen**.
 
-    ![Screenshot of the Azure portal showing the Create a resource blade with the Storage category and Storage account option highlighted.](..\media\5-portal-storage-select.png)
+1. Klicken Sie auf die Überschrift **Storage** im Azure Marketplace.
 
-### Configure the basic options
+1. Klicken Sie auf **Speicherkonto**. Im Portal wird das Blatt **Speicherkonto erstellen** angezeigt.
 
-Under **PROJECT DETAILS**:
+### <a name="configure-the-basic-options"></a>Konfigurieren der grundlegenden Optionen
 
-1. Select the appropriate **Subscription**.
+1. Klicken Sie oben auf dem Blatt auf die Registerkarte **Basics** (Grundeinstellungen).
 
-1. Select the existing Resource Group <rgn>[Sandbox resource group name]</rgn> from the drop-down list.
+1. **Abonnement:** Wählen Sie eines Ihrer Abonnements aus.
 
-    > [!NOTE]
-    > This free Resource Group has been provided by Microsoft as part of the learning experience. When you create an account for a real application, you will want to create a new Resource Group in your subscription to hold all the resources for the app.
+1. **Ressourcengruppe:** Erstellen Sie eine neue Ressourcengruppe mit dem Namen **SurfReportResourceGroup**.
 
-Under **INSTANCE DETAILS**:
+1. **Speicherkontoname:** Geben Sie einen global eindeutigen Wert ein, der sich beispielsweise aus `surfreport`, Ihren Initialen und einer Zahl zusammensetzt.
 
-1. Enter a **Storage account name**. The name will be used to generate the public URL used to access the data in the account. It must be unique across all existing storage account names in Azure. It must be 3 to 24 characters long and can contain only lowercase letters and numbers.
+ 1. **Speicherort:** Wählen Sie **USA, Westen** aus.
 
-1. Select a **Location** near to you. 
+    Begründung: Die Anwendung ist für Benutzer in Südkalifornien vorgesehen. Zur Minimierung der Latenz beim Laden von Videos sollten die Blobs in der Nähe dieser Benutzer gehostet werden. Daher ist **USA, Westen** in diesem Fall eine gute Wahl.
 
-1. Leave the **Deployment model** as _Resource manager_. This is the preferred model for all resource deployments in Azure and allows you to group all the related resources for your app into a _resource group_ for easier management.
+1. **Bereitstellungsmodell:** Wählen Sie **Resource Manager** aus.
+    
+    Begründung: **Resource Manager** ist geeignet, da Sie damit eine Ressourcengruppe verwenden können, um beispielsweise die Web-App und das Speicherkonto für die Anwendung zu verwalten.
 
-1. Select _Standard_ for the **Performance** option. This decides the type of disk storage used to hold the data in the Storage account. Standard uses traditional hard disks, and Premium uses solid-state drives (SSD) for faster access. However, remember that Premium only supports _page blobs_ and you will need block blobs for your videos, and a queue for buffering - both of which are only available with the _Standard_ option.
+1. **Leistung:** Wählen Sie **Standard** aus.
 
-1. Select _StorageV2 (general purpose v2)_ for the **Account kind**. This provides access to the latest features and pricing. In particular, Blob storage accounts have more options available with this account type. You need a mix of blobs and a queue, so the _Blob storage_ option will not work. For this application, there would be no benefit to choosing a _Storage (general purpose v1)_ account, since that would limit the features you could access and would be unlikely to reduce the cost of your expected workload.
+    Begründung: Sie können die Option **Premium** nicht auswählen, da hierdurch nur Seitenblobs für das Speicherkonto verwendet werden können. Sie benötigen für Ihre Videos jedoch Blockblobs und zur Pufferung Warteschlangen. Beides ist nur verfügbar, wenn Sie die Option **Standard** auswählen.
 
-1. Leave the **Replication** as _Locally-redundant storage (LRS)_. Data in Azure storage accounts are always replicated to ensure high availability - this option lets you choose how far away the replication occurs to match your durability requirements. In our case, the images and videos quickly become out-of-date and are removed from the site. This means there is little value to paying extra for global redundancy. If a catastrophic event results in data loss, you can restart the site with fresh content from your users.
+1. **Kontoart:** Wählen Sie **StorageV2 (general purpose v2)** (StorageV2 (allgemein, Version 2)) aus.
 
-1. Set the **Access tier** to _Hot_. This setting is only used for Blob storage. The **Hot Access Tier** is ideal for frequently accessed data, and the **Cool Access Tier** is better for infrequently accessed data. Note that this only sets the _default_ value - when you create a Blob, you can set a different value for the data. In our case, we want the videos to load quickly, so you will use the high-performance option for your blobs.
+    Begründung: **StorageV2 (general purpose v2)** (StorageV2 (allgemein, Version 2)) ist hier die richtige Wahl. Sie benötigen sowohl Blobs als auch eine Warteschlange. Die Option **Blob-Speicher** kann daher nicht verwendet werden. Für diese Anwendung ergäben sich beim Auswählen des Kontotyps **Speicher (Allgemein v1)** keine Vorteile, da hierdurch die Anzahl der verfügbaren Features beschränkt würde. Außerdem wäre es unwahrscheinlich, dass Sie so die Kosten für die erwartete Arbeitsauslastung reduzieren können.
+
+1. **Replikation:** Wählen Sie **Lokal redundanter Speicher (LRS)** aus.
+
+    Begründung: Die Bilder und Videos veralten schnell und werden dann von der Website entfernt. Die Zusatzkosten globaler Redundanz würden hier zu keinem Mehrwert führen. Wenn es durch einen Notfall zu einem Datenverlust käme, könnten Sie die Website mit neuen Benutzerinhalten neu starten.
+
+1. **Zugriffsebene (Standard)**: Wählen Sie **Hot** (Heiße Ebene) aus.
    
-The following screenshot shows the completed settings for the **Basics** tab. Note that the resource group, subscription, and name will have different values.
+    Begründung: Videos sollen schnell geladen werden. Daher muss die Hochleistungsoption für Blobs ausgewählt werden.
+   
+Auf dem folgenden Screenshot werden alle vorgenommenen Einstellungen für die Registerkarte **Basics** (Grundeinstellungen) angezeigt.
 
-![Screenshot of a Create a storage account blade with the **Basics** tab selected.](../media-drafts/5-create-storage-account-basics.png)
+![Screenshot des Blatts „Speicherkonto erstellen“ mit ausgewählter Registerkarte **Basics** (Grundlagen)](../media-drafts/5-create-storage-account-basics.png)
 
-### Configure the advanced options
+### <a name="configure-the-advanced-options"></a>Konfigurieren der erweiterten Optionen
 
-1. Click the **Next: Advanced >** button to move to the **Advanced** tab, or select the **Advanced** tab at the top of the screen.
+1. Klicken Sie oben auf dem Blatt auf die Registerkarte **Erweitert**.
 
-1. The **Secure transfer required** setting controls whether **HTTP** can be used for the REST APIs used to access data in the Storage account. Setting this option to _Enabled_ will force all clients to use SSL (**HTTPS**). Most of the time you will want to set this to _Enabled_ as using HTTPS over the network is considered a best practice.
+1. **Sichere Übertragung erforderlich:** Wählen Sie **Aktiviert** aus.
 
-    > [!WARNING]
-    > If this option is enabled, it will enforce some additional restrictions. Azure files service connections without encryption will fail, including scenarios using SMB 2.1 or 3.0 on Linux. Because Azure storage doesn’t support SSL for custom domain names, this option cannot be used with a custom domain name.
+    Begründung: HTTPS-Übertragungen gehören in der Regel zu den Best Practices.
 
-1. Set the **Virtual networks** option to _None_. This option allows you to isolate the storage account on an Azure virtual network. We want to use public Internet access. Our content is public facing and you need to allow access from public clients.
+1. **Virtuelle Netzwerke:** Wählen Sie **Deaktiviert** aus.
 
-1. Leave the **Data Lake Storage Gen2** option as _Disabled_. This is for big-data applications that aren't relevant to this module.
+    Begründung: Der Inhalt ist öffentlich verfügbar. Sie müssen daher den Zugriff über öffentliche Clients zulassen.
 
-The following screenshot shows the completed settings for the **Advanced** tab.
+Auf dem folgenden Screenshot werden alle vorgenommenen Einstellungen für die Registerkarte **Erweitert** angezeigt.
 
-![Screenshot of an Create a storage account blade with the **Advanced** tab selected.](../media-drafts/5-create-storage-account-advanced.png)
+![Screenshot des Blatts „Speicherkonto erstellen“ mit ausgewählter Registerkarte **Erweitert**](../media-drafts/5-create-storage-account-advanced.png)
 
-### Create
+### <a name="create"></a>Erstellen
 
-1. You can explore the **Tags** settings if you like. This lets you associate key/value pairs to the account for your categorization and is a feature available to any Azure resource.
+1. Klicken Sie unten auf dem Blatt auf **Überprüfen + erstellen**.
 
-1. Click **Review + create** to review the settings. This will do a quick validation of your options to make sure all the required fields are selected. If there are issues, they'll be reported here. Once you've reviewed the settings, click **Create** to provision the storage account.
+1. Klicken Sie auf dem nächsten Bildschirm unten auf dem Blatt auf **Erstellen**.
 
-It will take a few minutes to deploy the account. While Azure is working on that, let's explore the APIs we'll use with this account.
+1. Warten Sie, bis die Ressource erstellt wurde.
 
-### Verify
+### <a name="verify"></a>Überprüfen
 
-1. Select the **Storage accounts** link in the left sidebar.
+1. Klicken Sie in der linken Randleiste auf den Link **Speicherkonten**.
 
-1. Locate the new storage account in the list to verify that creation succeeded.
+1. Suchen Sie das neue Speicherkonto in der Liste, um zu überprüfen, ob die Erstellung erfolgreich war.
 
-<!-- Cleanup sandbox -->
-[!include[](../../../includes/azure-sandbox-cleanup.md)]
+### <a name="clean-up"></a>Bereinigen
 
-When you are working in your own subscription, you can the following steps in the Azure portal to delete the resource group and all associated resources.
+1. Klicken Sie in der linken Randleiste auf den Link **Ressourcengruppen**.
 
-1. Select the **Resource groups** link in the left sidebar.
+1. Suchen Sie **SurfReportResourceGroup** in der Liste.
 
-1. Locate the resource group you created in the list.
+1. Klicken Sie mit der rechten Maustaste auf den Eintrag **SurfReportResourceGroup**, und wählen Sie aus dem Kontextmenü **Ressourcengruppe löschen** aus.
 
-1. Right-click on the resource group entry and select **Delete resource group** from the context menu. You can also click the "..." menu element on the right side of the entry to get to the same context menu.
+1. Geben Sie den Namen der Ressourcengruppe in das Bestätigungsfeld ein.
 
-1. Type the resource group name into the confirmation field.
+1. Klicken Sie auf die Schaltfläche **Löschen**.
 
-1. Click the **Delete** button.
+## <a name="summary"></a>Zusammenfassung
 
-## Summary
-
-You created a storage account with settings driven by your business requirements. For example, you might have selected a West US datacenter because your customers were primarily located in southern California. This is a typical flow: first analyze your data and goals, and then configure the storage account options to match.
+Sie haben ein Speicherkonto erstellt und die zugehörigen Einstellungen an Ihre geschäftlichen Anforderungen angepasst. Beispielsweise haben Sie für das Rechenzentrum die Region „USA, Westen“ ausgewählt, weil Ihre Kunden sich in erster Linie in Südkalifornien befinden. Dieser Ablauf ist typisch: Zunächst analysieren Sie Ihre Daten und Ziele, und anschließend konfigurieren Sie die entsprechenden Optionen für das Speicherkonto.

@@ -1,28 +1,39 @@
-When talking about cloud computing, there are three major categories. It's important to understand them because they are used in conversation, documentation, and training.
+Cloud Computing lässt sich in drei Hauptkategorien untergliedern. Diese müssen verstanden werden, da sie in Unterhaltungen, Dokumentationen und Schulungen verwendet werden.
 
-## Explore the three categories of cloud computing
+Die drei Hauptkategorien von Clouddiensten lauten wie folgt:
 
-<!-- TODO: Verify video -->
-> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEbs]
+- Infrastructure-as-a-Service (IaaS)
+- Platform-as-a-Service (PaaS)
+- Software-as-a-Service (SaaS)
 
-### Infrastructure as a service (IaaS)
+Dabei ist zu beachten, dass diese Kategorien Ebenen darstellen, die aufeinander aufbauen. PaaS ist beispielsweise IaaS aufgrund einer zusätzlichen Abstraktionsebene übergeordnet. Diese Abstraktion hat den Vorteil, dass unwichtige Details verborgen werden, sodass Sie schneller mit der Programmierung beginnen können. Ein Nachteil besteht jedoch darin, dass Sie weniger Kontrolle über die zugrunde liegende Hardware besitzen. Die folgende Abbildung zeigt eine Liste der Ressourcen, die Sie verwalten und die von Ihrem Dienstanbieter in jeder Clouddienstkategorie verwaltet werden.
 
-Infrastructure as a Service is the most flexible category of cloud services. It aims to give you complete control over the hardware that runs your application. Instead of buying hardware, with IaaS, you rent it.
+![Eine Abbildung zeigt die Abstraktionsebene in jeder Clouddienstkategorie.](../media/5-layer-diagram.png)
 
-### Platform as a service (PaaS)
 
-PaaS provides an environment for building, testing, and deploying software applications. The goal of PaaS is to help you create an application as quickly as possible without having to worry about managing the underlying infrastructure. For example, when deploying a web application using PaaS, you don't have to install an operating system, web server, or even system updates.
+### <a name="infrastructure-as-a-service-iaas"></a>Infrastructure-as-a-Service (IaaS)
 
-### Software as a service (SaaS)
+Infrastructure-as-a-Service ist unter den Clouddiensten die flexibelste Kategorie. Mit dieser haben Sie die vollständige Kontrolle über die Hardware, auf der Ihre Anwendung ausgeführt wird. Mit IaaS mieten Sie die Hardware, anstatt sie zu kaufen.
 
-SaaS is software that is centrally hosted and managed for the end customer. It is usually based on an architecture where one version of the application is used for all customers, and licensed through a monthly or annual subscription. Office 365 is a perfect example of SaaS software.
+Die folgende Liste enthält einige Beispiele für IaaS:
 
-## Think about service categories as layers
+- Virtuelle Computer
+- Firewalls
+- Festplatten
+- Load Balancer
 
-One thing to understand is that these categories are layers on top of each other. For example, PaaS adds a layer on top of IaaS by providing a level of abstraction. The abstraction has the benefit of hiding the details that you may not care about so that you can get to coding quicker. However, one cost of that is that you have less control over the underlying hardware. The following illustration shows a list of resources that you manage and that your service provider manages in each cloud service category.
+### <a name="platform-as-a-service-paas"></a>Platform-as-a-Service (PaaS)
 
-![An illustration showing the level of abstraction in each category of cloud service.](../media/5-layer-diagram.png)
+Platform-as-a-Service bietet eine Umgebung zum Erstellen, Testen und Bereitstellen von Softwareanwendungen. Mit PaaS erstellen Sie Anwendungen in kurzer Zeit, ohne sich um die Verwaltung der zugrunde liegenden Infrastruktur kümmern zu müssen. Beim Bereitstellen einer Webanwendung mithilfe von PaaS müssen Sie beispielsweise kein Betriebssystem, keinen Webserver und auch keine Systemupdates installieren. 
 
-## Summary
+Ein Beispiel für PaaS ist Azure App Service.
 
-IaaS, PaaS, and SaaS each contain different levels of managed services. You may easily use a combination of these types of infrastructure. You could use Office 365 on your company’s computers (SaaS), and in Azure you could host your VMs (IaaS) and use Azure SQL Database (PaaS) to store your data. With the cloud’s flexibility, you can use any combination that provides you with the maximum result.
+### <a name="software-as-a-service-saas"></a>Software-as-a-Service (SaaS)
+
+Mit Software-as-a-Service können Sie Anwendungen über das Internet bereitstellen. Eine SaaS-Anwendung wird häufig als webbasierte Anwendung bezeichnet. Charakteristisch für eine solche Anwendung ist jedoch, dass sie auf dem Server eines SaaS-Anbieters gehostet wird. Mit SaaS müssen Sie sich nicht um die Installation oder Einrichtung einer Anwendung kümmern. Stattdessen nutzen Sie diese ganz einfach über einen Webbrowser oder mithilfe einer anderen Softwareanwendung. 
+
+Ein Beispiel für eine SaaS-Anwendung ist Microsoft Office 365.
+
+## <a name="summary"></a>Zusammenfassung
+
+IaaS, PaaS und SaaS sind Ebenen, die aufeinander aufbauen. Welche Dienstkategorie sich am besten eignet, ist abhängig von der gewünschten Kontrolle über die zugrunde liegende Hardware.

@@ -1,13 +1,13 @@
-Cloud computing resources are delivered using three different service models.
+Cloud Computing-Ressourcen werden mithilfe drei verschiedener Modelle bereitgestellt.
 
-- **Infrastructure-as-a-service (IaaS)** provides instant computing infrastructure that you can provision and manage over the Internet.
-- **Platform as a service (PaaS)** provides ready-made development and deployment environments that you can use to deliver your own cloud services.
-- **Software as a service (SaaS)** delivers applications over the Internet as a web-based service.
+- **Infrastructure-as-a-Service (IaaS)** bietet eine sofort nutzbare Computinginfrastruktur, die Sie über das Internet bereitstellen und verwalten können.
+- **Platform-as-a-Service (PaaS)** bietet vordefinierte Entwicklungs- und Bereitstellungsumgebungen, die Sie verwenden können, um Ihre eigenen Clouddienste zu übermitteln.
+- Bei **Software-as-a-Service (SaaS)** werden Anwendungen über das Internet als webbasierter Dienst bereitgestellt.
 
-!!! Video TC-007 placeholder !!!
+!!! Video TC-007-Platzhalter !!!
 
 > [!VIDEO https://channel9.msdn.com/Series/History/The-History-of-Microsoft-1995/player]
 
-When choosing a service model, consider which party should be responsible for the computing resource. Based on your scenario, you can decide how much shared management responsibility you want. The following illustration shows a list of resources that you manage and that your service provider manages in each cloud service category.
+Berücksichtigen Sie bei der Auswahl eines Dienstmodells, welche Partei für die Computingressource verantwortlich sein soll. Auf der Basis Ihres Szenarios können Sie entscheiden, wie viel gemeinsame Verantwortung für die Verwaltung Sie wünschen. Die folgende Abbildung zeigt eine Liste der Ressourcen, die Sie verwalten und die von Ihrem Dienstanbieter in jeder Clouddienstkategorie verwaltet werden.
 
-![An illustration showing the level of shared management responsibility in each category of cloud service.](../media/3-shared-responsibility.png)
+![Eine Abbildung zeigt die Verteilung der gemeinsamen Verantwortung für die Verwaltung in jeder Clouddienstkategorie.](../media/3-shared-responsibility.png)

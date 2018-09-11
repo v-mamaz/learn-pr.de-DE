@@ -1,15 +1,17 @@
-### Delete the Data Science VM
+### <a name="exercise-6-delete-the-data-science-vm"></a>Übung 6: Löschen der Data Science-VM
 
-In this unit, you will delete the resource group created in Exercise 1 when you created the Data Science VM. Deleting the resource group deletes everything in it and prevents any further charges from being incurred for it. Resource groups that are deleted can't be recovered, so be certain you're finished using it before deleting it. However, it is **important not to leave this resource group deployed any longer than necessary** because a Data Science VM is moderately expensive.
+In dieser Übung löschen Sie die Ressourcengruppe, die Sie in Übung 1 bei der Erstellung der Data Science-VM erstellt haben. Wenn Sie die Ressourcengruppe löschen, werden auch alle darin enthaltenen Elemente gelöscht. Dadurch wird sichergestellt, dass keine weiteren Kosten mehr anfallen. Gelöschte Ressourcengruppen können nicht wiederhergestellt werden. Achten Sie daher darauf, diese erst zu löschen, wenn Sie sie nicht mehr benötigen. Es ist jedoch **wichtig, diese Ressourcengruppe nicht länger als erforderlich bereitzustellen**, da Kosten für eine Data Science-VM anfallen.
 
-1. Return to the blade for the resource group you created in Exercise 1. Then, click the **Delete resource group** button at the top of the blade.
+1. Kehren Sie zum Blatt für die Ressourcengruppe zurück, die Sie in Übung 1 erstellt haben. Klicken Sie anschließend ganz oben auf dem Blatt auf **Ressourcengruppe löschen**.
 
-    ![Deleting the resource group](../media-draft/6-delete-resource-group.png)
+    ![Löschen der Ressourcengruppe](../images/delete-resource-group.png)
 
-1. For safety, you are required to type in the resource group's name. (Once deleted, a resource group cannot be recovered.) Type the name of the resource group. Then, click the **Delete** button to remove all traces of this module from your Azure subscription.
+    _Löschen der Ressourcengruppe_
 
-After a few minutes, the resource group and all of its resources will be deleted. Billing stops when you click **Delete**, so you're not charged for the time required to delete the resources. Similarly, billing doesn't start until the resources are fully and successfully deployed.
+1. Aus Sicherheitsgründen müssen Sie den Namen der Ressourcengruppe eingeben. Nach dem Löschen kann eine Ressourcengruppe nicht wiederhergestellt werden. Geben Sie den Namen der Ressourcengruppe ein. Klicken Sie anschließend auf **Löschen**, um alle Komponenten dieser Aufgabe aus dem Azure-Abonnement zu entfernen.
 
-### Summary
+Nach einigen Minuten werden die Ressourcengruppe und alle zugehörigen Ressourcen gelöscht. Die Abrechnung endet mit dem Klick auf **Löschen**, sodass die erforderliche Zeit zum Löschen der Ressourcen nicht in Rechnung gestellt wird. Analog dazu beginnt die Abrechnung erst, nachdem die Ressourcen vollständig bereitgestellt wurden.
 
-The steps in this module may be generalized to perform other types of image-classification tasks. For example, you could train the same TensorFlow model to recognize cat images or identify defective parts produced on an assembly line. Image classification is one of the most prevalent uses of machine learning today, and its usefulness will only increase over time. Now that you have a basis to work from, try creating some image-classification models of your own. You never know what might come of it!
+### <a name="summary"></a>Zusammenfassung
+
+Die Schritte in dieser Aufgabe sind möglicherweise für das Ausführen anderer Arten von Bildklassifizierungsaufgaben generalisiert. Beispielsweise können Sie das gleiche TensorFlow-Modell zum Erkennen von Katzenbildern oder zum Identifizieren von defekten auf einem Fließband produzierten Einzelteilen trainieren. Die Bildklassifizierung gehört heute zu den häufigsten Verwendungszwecken des maschinellen Lernens, und ihre Zweckmäßigkeit wird sich im Laufe der Zeit nur erhöhen. Da Sie nun über eine Grundlage verfügen, auf der Sie aufbauen können, versuchen Sie, Ihre eigenen Modelle für die Bildklassifizierung zu erstellen. Man weiß nie, wie man davon profitieren kann.

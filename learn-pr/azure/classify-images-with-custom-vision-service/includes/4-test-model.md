@@ -1,25 +1,35 @@
-Later in this module, you will create a Node.js app that uses the model to identify the artist of paintings presented to it. But you don't have to write an app to test the model; you can do your testing in the portal, and you can further refine the model using the images that you test with. In this unit, you will test the model's ability to identify the artist of a painting using test images provided for you.
+### <a name="exercise-4-test-the-model"></a>Übung 4: Testen des Modells
 
-1. Click **Quick Test** at the top of the page.
+In [Übung 5](../5-build-app.yml) erstellen Sie eine Node.js-App, die das Modell verwendet, um den Künstler von Bildern zu identifizieren, die ihr vorgeführt werden. Sie müssen jedoch keine App schreiben, um das Modell zu testen. Sie können Ihre Tests im Portal ausführen und das Modell mithilfe der Bilder, die Sie zum Testen verwenden, weiter optimieren. In dieser Übung testen Sie mithilfe für Sie bereitgestellter Bilder die Fähigkeit des Modells, den Künstler eines Gemäldes zu identifizieren.
 
-    ![Testing the model](../media/4-portal-click-quick-test.png)
+1. Klicken Sie ganz oben auf der Seite auf **Quick Test** (Schnelltest).
+ 
+    ![Testen des Modells](../images/portal-click-quick-test.png)
 
-1. Click **Browse local files**, and then browse to the "Quick Tests" folder in the module resources. Select **PicassoTest_01.jpg**, and click **Open**.
+    _Testen des Modells_ 
 
-    ![Selecting a Picasso test image](../media/4-portal-select-test-01.png)
+1. Klicken Sie auf **Lokale Dateien durchsuchen**, und navigieren Sie dann in den Ressourcen für die Aufgaben zum Ordner „Quick Tests“. Wählen Sie **PicassoTest_01.jpg** aus, und klicken Sie auf **Öffnen**.
 
-1. Examine the results of the test in the "Quick Test" dialog. What is the probability that the painting is a Picasso? What is the probability that it is a Rembrandt or Pollock?
+    ![Auswählen eines Picasso-Testbilds](../images/portal-select-test-01.png)
 
-1. Close the "Quick Test" dialog. Then click **Predictions** at the top of the page.
+    _Auswählen eines Picasso-Testbilds_ 
 
-    ![Viewing the tests that have been performed](../media/4-portal-select-predictions.png)
+1. Überprüfen Sie die Ergebnisse des Tests im Dialogfeld „Quick Test“. Mit welcher Wahrscheinlichkeit ist das Gemälde von Picasso? Mit welcher Wahrscheinlichkeit ist es von Rembrandt oder Pollock?
 
-1. Click the test image that you uploaded to show a detail of it. Then tag the image as a "Picasso" by selecting **Picasso** from the drop-down list and clicking **Save and close**.
+1. Schließen Sie das Dialogfeld „Quick Test“. Klicken Sie dann am oberen Rand der Seite auf **Vorhersagen**.
+ 
+    ![Anzeigen der Tests, die durchgeführt wurden](../images/portal-select-predictions.png)
 
-    > By tagging test images this way, you can refine the model without uploading additional training images.
+    _Anzeigen der Tests, die durchgeführt wurden_ 
 
-    ![Tagging the test image](../media/4-tag-test-image.png)
+1. Klicken Sie auf das Testbild, das Sie hochgeladen haben, um eine Detailansicht anzuzeigen. Markieren Sie das Bild dann als ein „Picasso“, indem Sie in der Dropdownliste **Picasso** auswählen und auf **Speichern und schließen** klicken.
 
-1. Perform another quick test using the file named **FlowersTest.jpg** in the "Quick Test" folder. Confirm that this image is assigned a low probability of being a Picasso, a Rembrandt, or a Pollock.
+    > Indem Sie die Testbilder auf diese Weise markieren, können Sie das Modell optimieren, ohne zusätzliche Trainingsbilder hochzuladen.
+ 
+    ![Markieren des Testbilds](../images/tag-test-image.png)
 
-The model is trained and ready to go and appears to be adept at identifying paintings by certain artists. Now let's go a step further and incorporate the model's intelligence into an app.
+    _Markieren des Testbilds_ 
+
+1. Führen Sie einen weiteren Schnelltest mit der Datei **FlowersTest.jpg** im Ordner „Quick Test“ durch. Vergewissern Sie sich, dass diesem Bild eine niedrige Wahrscheinlichkeit zugeordnet ist, von Picasso, Rembrandt oder Pollock zu stammen.
+
+Das Modell wurde trainiert und ist einsatzbereit, es scheint erfahren im Identifizieren von Gemälden gewisser Künstler zu sein. Gehen Sie nun einen Schritt weiter, und integrieren Sie die Intelligenz des Modells in eine App.

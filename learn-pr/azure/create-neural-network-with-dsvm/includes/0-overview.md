@@ -1,26 +1,23 @@
-The **Data Science Virtual Machine** for Linux is a virtual-machine image that simplifies getting started with data science.Multiple tools are already built, installed, and configured to get you up and running quickly. The NVIDIA GPU driver, NVIDIA CUDA, and NVIDIA CUDA Deep Neural Network (cuDNN) library are also included, as are Jupyter and TensorFlow. All pre-installed frameworks are GPU-enabled but work on CPUs as well.
+Die **Data Science Virtual Machine** für Linux ist das Image eines virtuellen Computers, das Ihnen den Einstieg in Data Science erleichtert. Dabei sind zahlreiche Tools bereits erstellt, installiert und konfiguriert, damit Sie so schnell wie möglich beginnen können. Der NVIDIA-GPU-Treiber, NVIDIA CUDA und die NVIDIA CUDA Deep Neural Network-Bibliothek (cuDNN) sind ebenso enthalten wie Jupyter und TensorFlow. Alle vorinstallierten Frameworks sind sowohl GPU- als auch CPU-fähig.
 
-## Learning objectives
+## <a name="what-is-covered-in-this-lab"></a>Welche Themen werden in dieser Übungseinheit behandelt?
 
-In this module, you will:
+ Diese Übungseinheit deckt Folgendes ab:
+* Erstellen einer Data Science Virtual Machine für Linux in Azure
+* Herstellen einer Verbindung mit der DSVM über Remotedesktop
+* Trainieren eines TensorFlow-Modells zum Klassifizieren von Bildern in solche, die Hotdogs enthalten und solche, die keine Hotdogs enthalten
+* Verwenden des Modells in einer Python-App
 
-- Create a Linux Data Science Virtual Machine in Azure.
-- Connect to the DSVM via remote desktop.
-- Train a TensorFlow model to classify images as ones containing hot dogs and ones NOT containing hot dogs.
-- Use the model in a Python app.
+Für diese Übung benötigen Sie ein Azure-Abonnement und einen Xfce-Remotedesktopclient. Ausführlichere Informationen hierzu finden Sie im Abschnitt „Voraussetzungen“. Wenn Sie kein Azure-Abonnement besitzen, können Sie ein [kostenloses Konto](https://azure.microsoft.com/en-us/free/?WT.mc_id=A261C142F) erstellen, bevor Sie beginnen.
 
-### Prerequisites
-<!---TODO: This is really long, need to make more concise and also add to index.yml--->
-<!---TODO: Update for free sandbox.--->
+### <a name="prerequisites-for-the-lab"></a>Voraussetzungen für diese Übungseinheit
 
-To complete this module, you will need an Azure subscription and a Xfce remote-desktop client.
+ 1. Ein **Microsoft Azure-Konto**: Für diese Übung benötigen Sie ein gültiges und aktives Azure-Konto. Wenn Sie kein Konto haben, können Sie sich für eine [kostenlose Testversion](https://azure.microsoft.com/en-us/free/) registrieren.
 
- 1. **Microsoft Azure Account**: You will need a valid and active Azure account for this module. If you do not have one, you can sign up for a [free trial](https://azure.microsoft.com/free/)
+    * Wenn Sie ein Visual Studio Active-Abonnement besitzen, können Sie eine monatliche Gutschrift von 50–150 US-Dollar in Anspruch nehmen. Weitere Informationen finden Sie unter diesem [Link](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/). Hier erfahren Sie auch, wie Sie Ihre monatliche Azure-Gutschrift aktivieren und nutzen können.
 
-    * If you are a Visual Studio Active Subscriber, you are entitled to a $50-$150 credit per month. You can refer to this [link](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) to find out more, including how to activate and start using your monthly Azure credit.
+    * Wenn Sie kein Visual Studio-Abonnement besitzen, können Sie sich für ein KOSTENLOSES [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/)-Programm registrieren, um ein **kostenloses Azure-Konto** zu erstellen (einschließlich kostenlose Dienste für 1 Jahr, 200 US-Dollar im 1. Monat).
 
-    * If you are not a Visual Studio Subscriber, you can sign up for the FREE [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/) program to create **Azure free account** (includes one year of free services, $200 for the first month).
+    * Schüler und Studenten können sich für ein [kostenloses Azure for Students-Konto](https://aka.ms/azure4students) registrieren, mit dem Sie eine kostenlose Azure-Gutschrift von 100 US-Dollar und ein Jahr kostenlose Dienste erhalten (keine Kreditkarte erforderlich). 
 
-    * If you are a student, you can sign up for a free [Azure for Students](https://aka.ms/azure4students) account to get $100 in free Azure credits, plus a year of free services, with no credit card required. 
-
-1. An [Xfce](https://xfce.org/) remote-desktop client such as [X2Go](https://wiki.x2go.org/doku.php/download:start)
+1. Einen [Xfce](https://xfce.org/)-Remotedesktopclient, z.B. [X2Go](https://wiki.x2go.org/doku.php/download:start)

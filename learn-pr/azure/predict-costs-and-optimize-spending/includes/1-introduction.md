@@ -1,22 +1,22 @@
-When planning a solution in the cloud, there's always the challenge of balancing cost against performance. It can feel like a guessing game whether the selected options will stay within budget, or if we'll have a surprise on our next bill!
+Wenn Sie eine Lösung in der Cloud planen, ist das Abwägen von Leistung und Kosten immer eine Herausforderung. Es ist oft nicht absehbar, ob eine ausgewählte Option innerhalb des Budgets liegt, oder es kann sein, dass die nächste Rechnung höher als erwartet ausfällt.
 
-We need to be able to confidently answer several questions:
+Deshalb müssen wir mehrere Fragen sicher beantworten können:
 
-- What will this solution cost this fiscal year?
-- Is there a configuration we could use to save money?
-- Is there a way to estimate how a change would impact your cost and performance _without_ putting it into a production system?
+- Wie viel Kosten fallen für diese Lösung in diesem Finanzjahr an? 
+- Gibt es eine Konfiguration, mit der wir Geld sparen können? 
+- Gibt es eine Möglichkeit abzuschätzen, wie eine Änderung sich auf die Kosten und die Leistung auswirken wird, _ohne_ die Änderung in einem Produktionssystem vornehmen zu müssen?
 
-In this module, we'll explore the tools you can use to answer these questions and more.
+In diesem Modul sehen wir uns Tools an, mit denen Sie diese und andere Fragen beantworten können.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul lernen Sie Folgendes:
 
-- Estimate costs with the Azure pricing calculator.
-- Predict and optimize costs with Azure Cost Management and Azure Advisor.
-- Best practices for saving on infrastructure costs.
-- Best practices for saving on licensing costs.
+- Schätzen von Kosten mit dem Azure-Preisrechner
+- Vorhersagen und Optimieren von Kosten mit Azure Cost Management und dem Azure Advisor
+- Bewährte Methoden, um Infrastrukturkosten einzusparen
+- Bewährte Methoden, um Lizenzierungskosten einzusparen
 
-## Prerequisite
+## <a name="prerequisite"></a>Voraussetzung 
 
-- An understanding of your options within Azure infrastructure components.
+- Ein grundlegendes Verständnis Ihrer Optionen bei Azure-Infrastrukturkomponenten 

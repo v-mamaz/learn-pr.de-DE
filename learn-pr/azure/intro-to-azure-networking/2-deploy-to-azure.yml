@@ -1,40 +1,40 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-azure-networking.2-deploy-to-azure
-title: Deploy your site to Azure
+title: Bereitstellen Ihrer Website in Azure
 metadata:
-  title: Deploy your site to Azure
-  description: See what a basic three-tier application might look like on Azure.
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: Bereitstellen Ihrer Website in Azure
+  description: Hier erfahren Sie, wie eine dreischichtige Anwendung in Azure aussehen könnte.
+  ms.openlocfilehash: 3bbacd16929ffb05448a2d3e60cd37c637275229
+  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43477841"
 durationInMinutes: 7
-content: |
+content: >
   [!include[](includes/2-deploy-to-azure.md)]
 quiz:
-  title: 'Knowledge Check: Deploy your site to Azure'
+  title: 'Wissenstest: Bereitstellen Ihrer Website in Azure'
   questions:
-  - content: 'What is an Azure _region_?'
+  - content: Was ist eine Azure-_Region_?
     choices:
-    - content: 'An Azure data center within a specific geographic location.'
+    - content: Ein Azure-Rechenzentrum an einem bestimmten geografischen Standort
       isCorrect: true
-      correctExplanation: 'Azure regions help you deliver your apps and services closest to your users. West US and North Europe are examples.'
-    - content: 'A way of breaking networks into smaller networks.'
+      correctExplanation: Azure-Regionen unterstützen Sie beim Bereitstellen der Apps und Dienste, die den Benutzern am nächsten sind. „USA, Westen“ und „Europa, Norden“ sind Beispiele.
+    - content: Eine Möglichkeit, wichtige Netzwerke in kleinere Netzwerke zu unterteilen.
       isCorrect: false
-      incorrectExplanation: 'Azure networks are broken into _subnets_.'
-    - content: 'Firewall rules which define what traffic can flow in and out of Azure.'
+      incorrectExplanation: Azure-Netzwerke sind in _Subnetze_ unterteilt.
+    - content: Firewallregeln, die definieren, welcher Datenverkehr in und aus Azure fließen kann.
       isCorrect: false
-      incorrectExplanation: 'You use _network security groups_ to define firewall rules.'
-  - content: 'Which of the following is true about virtual networks?'
+      incorrectExplanation: Sie verwenden _Netzwerksicherheitsgruppen_, um Firewallregeln zu definieren.
+  - content: Welche der folgenden Aussagen über virtuelle Netzwerke ist richtig?
     choices:
-    - content: 'You configure virtual networks through software.'
+    - content: Sie konfigurieren virtuelle Netzwerke mithilfe von Software.
       isCorrect: true
-      correctExplanation: 'Software enables you to treat a virtual network just like your own network. Azure maintains the physical hardware for you.'
-    - content: 'A virtual network accepts network traffic on all ports. You configure the firewall through virtual machines.'
+      correctExplanation: Software ermöglich es Ihnen, virtuelle Netzwerke wie Ihre eigenen Netzwerke zu behandeln. Azure verwaltet die physische Hardware für Sie.
+    - content: Ein virtuelles Netzwerk akzeptiert Netzwerkdatenverkehr an allen Ports. Sie konfigurieren die Firewall durch virtuelle Computer.
       isCorrect: false
-      incorrectExplanation: 'You can associate your virtual network with a network security group, which acts as a cloud-level firewall.'
-    - content: 'Virtual networks are always reachable from the internet.'
+      incorrectExplanation: Sie können Ihr virtuelles Netzwerk einer Netzwerksicherheitsgruppe zuordnen, die als Firewall auf Cloudebene fungiert.
+    - content: Virtuelle Netzwerke sind über das Internet immer erreichbar.
       isCorrect: false
-      incorrectExplanation: 'Although a virtual network is reachable from the internet by default, you configure which networks, including private networks, can reach yours.'
+      incorrectExplanation: Obwohl ein virtuelles Netzwerk standardmäßig über das Internet erreichbar ist, konfigurieren Sie, welche Netzwerke (einschließlich privater Netzwerke) Ihr Netzwerk erreichen können.

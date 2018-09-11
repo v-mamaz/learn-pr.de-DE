@@ -1,61 +1,49 @@
-You decide to deploy Azure AD and use conditional access policies that Azure require Multi-Factor Authentication when anyone accesses the Azure portal. You need to create a directory and get temporary licenses in place.
+Angenommen, Sie möchten Azure Active Directory bereitstellen und verwenden Richtlinien für bedingten Zugriff, sodass für den Zugriff auf das Azure-Portal Multi-Factor Authentication erforderlich ist. Sie müssen ein Verzeichnis erstellen und temporäre Lizenzen zuweisen.
 
-## Create a directory
-We will create a new directory for First Up Consultants where we can test without fear of impacting production users.
+## <a name="create-a-directory"></a>Erstellen eines Verzeichnisses
+Zuerst wird ein neues Verzeichnis für First Up Consultants, in dem ohne Auswirkungen auf die Produktionsbenutzer getestet werden kann.
 
-1. Sign in to the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an.
+1. Klicken Sie im linken Navigationsbereich auf **Ressource erstellen** > **Identität** > **Azure Active Directory**.
+1. Geben Sie auf dem Blatt **Verzeichnis erstellen** die folgenden Werte für **Organisationsname** und **Name der Anfangsdomäne** ein:
 
-1. In the left navigation pane, click **Create a resource** > **Identity** > **Azure Active Directory**.
+   1. ORGANISATIONSNAME: `First Up Consultants`
+   1. NAME DER ANFANGSDOMÄNE: `firstupconsultants<XXXX>.onmicrosoft.com`
 
-1. In the **Create directory** blade, provide the following values for the **Organization name** and **Initial domain name**:
+1. Warten Sie, bis das Verzeichnis erstellt wurde. Klicken Sie auf den Link, um in das neue Verzeichnis zu wechseln, oder klicken Sie oben im Fenster auf **Directory and subscription filter** (Verzeichnis- und Abonnementfilter), und wählen Sie das neu erstellte Verzeichnis aus.
 
-   1. ORGANIZATION NAME: `First Up Consultants`.
-   1. INITIAL DOMAIN NAME: `firstupconsultants<XXXX>.onmicrosoft.com`.
+## <a name="get-trial-licenses"></a>Erhalten von Testlizenzen
 
-1. Wait for the directory to be created. Click the link to switch to the new directory, or click the **Directory and subscription filter** at the top of the window and then choose the newly created directory.
+Damit Sie Features wie den bedingten Zugriff und Multi-Factor Authentication verwenden können, benötigen Sie mindestens eine Testlizenz. Im Anschluss finden Sie eine Anleitung für das Aktivieren einer Testlizenz:
 
-## Get trial licenses
+1. Klicken Sie im Azure AD-Bereich **Übersicht** auf den Link **Kostenlose Testversion starten**.
+1. Klicken Sie unter dem Element **Azure AD Premium P2** auf **Kostenlose Testversion**, und klicken Sie dann auf **Aktivieren**.
 
-In order for you to use features like conditional access and Multi-Factor Authentication, you will need at least a trial license. The following steps walk you through how to enable a trial license:
+## <a name="create-a-test-user"></a>Erstellen eines Testbenutzers
 
-1. In the Azure AD **Overview** pane, click the **Start a free trial** link.
+Die Lizenz muss mit einem Benutzer getestet werden. Isabella Simonsen, ein Mitglied Ihres Teams, hilft Ihnen dabei. Sie benötigt dazu ein Konto für das Verzeichnis. Wie Sie eines erstellen, erfahren Sie in den folgenden Schritten.
 
-1. Under the item **Azure AD Premium P2**, click **Free trial**, and then click **Activate**.
-
-## Create a test user
-
-We're going to need to test this out with a user. Isabella Simonsen (another member of your team) has volunteered to help you out. She will need an account in the directory, so we will go through the steps to create her account.
-
-1. Browse to **Azure Active Directory** > **Users** > **All users**.
-
-1. Click **New user**.
-
-1. Create a user named **Isabella Simonsen** with a user name of:
+1. Navigieren Sie zu **Azure Active Directory** > **Benutzer** > **Alle Benutzer**.
+1. Klicken Sie auf **Neuer Benutzer**.
+1. Erstellen Sie einen Benutzer namens **Isabella Simonsen** mit dem folgenden Benutzernamen:
 
    * `Isabella@firstupconsultants<XXXX>.onmicrosoft.com`
 
-1. Check the box to **Show Password** for the user. Make a note of the password so you can use it later when testing.
+1. Aktivieren Sie das Kontrollkästchen **Kennwort anzeigen** für den Benutzer. Notieren Sie sich das Kennwort, damit Sie es später beim Testen verwenden können.
+1. Klicken Sie auf **Erstellen**.
 
-1. Click **Create**.
+## <a name="create-a-pilot-group"></a>Erstellen einer Pilotgruppe
 
-## Create a pilot group
+Die Richtlinie, die erstellt wird, soll einer Benutzergruppe zugewiesen werden. Dazu muss zunächst eine Gruppe für diese Richtlinie erstellt werden. Anhand der folgenden Schritte können Sie eine Sicherheitsgruppe für die Pilotbereitstellung erstellen.
 
-We will be assigning the policy that we create to a group of users, but we need to create a group for this policy. The following steps help you create a security group for the pilot deployment.
+1. Navigieren Sie zu **Azure Active Directory** > **Gruppen** > **Alle Gruppen**.
+1. Klicken Sie auf **Neue Gruppe**.
+1. Legen Sie als Gruppentyp **Sicherheit** fest.
+1. Legen Sie als Gruppenname **CA-MFA-AzurePortal** fest.
+1. Legen Sie als Mitgliedschaftstyp **Zugewiesen** fest.
+1. Wählen Sie den Benutzer aus, der im vorherigen Schritt erstellt wurde, und klicken Sie auf **Auswählen**.
+1. Klicken Sie auf **Erstellen**.
 
-1. Browse to **Azure Active Directory** > **Groups** > **All groups**.
+## <a name="summary"></a>Zusammenfassung
 
-1. Click **New group**.
-
-1. Group type **Security**.
-
-1. Group name **CA-MFA-AzurePortal**.
-
-1. Membership type **Assigned**.
-
-1. Select the user that we created in the previous step, and choose **Select**.
-
-1. Click **Create**.
-
-## Summary
-
-In this unit, you learned how to create a trial licensed directory, a test user, and a pilot group in the Azure portal.
+In dieser Einheit haben Sie erfahren, wie Sie ein Verzeichnis mit einer Testlizenz, einen Testbenutzer und eine Pilotgruppe im Azure-Portal erstellen.

@@ -1,8 +1,8 @@
-In this module, you explored the benefits of using Azure Storage. Azure Storage provides the following features:
+In diesem Modul haben Sie die Vorteile von Azure Storage erkundet. Azure Storage bietet folgende Features:
 
-- Azure supports storing both structured and unstructured data.
-- The data that's stored in Azure is secured and supports the global compliance standards.
-- There are load balancing, high availability, and redundancy capabilities available within Azure Storage options.
-- Large volumes of data can be stored and streamed directly to the browser using features such as Azure Blob storage.
+* Azure unterstützt das Speichern von strukturierten und unstrukturierten Daten.
+* Die in Azure gespeicherten Daten sind gesichert und unterstützen globale Compliancestandards.
+* Die Azure Storage-Optionen umfassen Funktionen für Lastausgleich, Hochverfügbarkeit und Redundanz.
+* Mithilfe von Features wie Azure Blob Storage können große Datenmengen gespeichert und direkt an den Browser übertragen werden.
 
-The capabilities of Azure Storage make it an ideal platform for hosting any large global application or portal.
+Durch seine Funktionen ist Azure Storage eine ideale Plattform zum Hosten umfangreicher globaler Anwendungen oder Portale.

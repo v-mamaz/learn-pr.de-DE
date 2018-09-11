@@ -1,60 +1,60 @@
 ### YamlMime:ModuleUnit
 uid: learn.align-requirements-in-azure.7-knowledge-check
-title: Knowledge check - IaaS, PaaS & SaaS
+title: Wissenstest – IaaS, PaaS und SaaS
 metadata:
-  title: Knowledge check - IaaS, PaaS & SaaS
-  description: Knowledge check - IaaS, PaaS & SaaS
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-durationInMinutes: 2
+  title: Wissenstest – IaaS, PaaS und SaaS
+  description: Wissenstest – IaaS, PaaS und SaaS
+  ms.openlocfilehash: 89b732ce3ec1a229e057799df1ab24e4f8cee520
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43252545"
+durationInMinutes: 5
 quiz:
-  title: 'Knowledge check - IaaS, PaaS & SaaS'
+  title: Wissenstest – IaaS, PaaS und SaaS
   questions:
-  - content: 'Given the following scenario, what the best the cloud service model to use? A SQL Server database is needed for a short-term project. The IT department does not have available hardware that meets the performance requirements or resources to deploy it. The project starts next week. Once the project is over, the database is no longer needed.'
+  - content: Welches Clouddienstmodell eignet sich am besten im folgenden Szenario? Eine SQL Server-Datenbank ist für ein kurzfristiges Projekt erforderlich. Die IT-Abteilung verfügt nicht über Hardware, die die Leistungsanforderungen erfüllt, oder die Ressourcen, um sie bereitzustellen. Das Projekt startet nächste Woche. Nachdem das Projekt abgeschlossen ist, wird die Datenbank nicht mehr benötigt.
     choices:
     - content: IaaS
-      incorrectExplanation: You could create a virtual machine and install SQL Server. However, the database is needed quickly. Someone would need to install and maintain the SQL database for the project.
+      incorrectExplanation: Sie könnten einen virtuellen Computer erstellen und SQL Server installieren. Die Datenbank wird jedoch schnell benötigt. Jemand müsste die SQL-Datenbank für das Projekt installieren und verwalten.
       isCorrect: false
     - content: PaaS
-      correctExplanation: Because of the immediate need, no available hardware, and short lifetime, PaaS is the best option. For example, you could use Azure SQL Database for the solution.
+      correctExplanation: Da sofortiger Bedarf besteht, keine Hardware verfügbar und die Lebensdauer kurz ist, ist PaaS die beste Option. Beispielsweise könnten Sie Azure SQL-Datenbank für die Lösung verwenden.
       isCorrect: true
     - content: SaaS
-      incorrectExplanation: The requirement is a SQL database delivered as a service. SaaS would not apply for this scenario.
+      incorrectExplanation: Die Anforderung ist eine als Dienst bereitgestellte SQL-Datenbank. SaaS würde sich nicht für dieses Szenario eignen.
       isCorrect: false
-  - content: 'Given the following scenario, what is the cloud service model? You create several virtual machines in the cloud. The VMs are networked together using a virtual network. The VMs have access to x-ray image files in cloud storage. One virtual machine is a web server that hosts a website exposed to the internet for customers to access their records. There is a VPN that connects the solution to your on-premises datacenter for customer information to display with the image files.'
+  - content: Welches Clouddienstmodell eignet sich am besten im folgenden Szenario? Sie erstellen mehrere virtuelle Computer in der Cloud. Die virtuellen Computer sind in einem virtuellen Netzwerk miteinander verbunden. Die VMs haben Zugriff auf Röntgenbilddateien im Cloudspeicher. Ein virtueller Computer ist ein Webserver, der eine Website hostet, die im Internet verfügbar gemacht wird, damit Kunden auf ihre Datensätze zugreifen können. Ein VPN verbindet die Lösung mit Ihrem lokalen Rechenzentrum, damit Kundeninformationen mit den Bilddateien angezeigt werden können.
     choices:
     - content: IaaS
-      correctExplanation: All the resources used in this scenario can be implemented using IaaS. 
+      correctExplanation: Alle in diesem Szenario verwendeten Ressourcen können mithilfe von IaaS implementiert werden.
       isCorrect: true
     - content: PaaS
-      incorrectExplanation: Only part of the solution could be implemented using PaaS.
+      incorrectExplanation: Nur ein Teil der Lösung könnte mit PaaS implementiert werden.
       isCorrect: false
     - content: SaaS
-      incorrectExplanation: Since this is a custom solution, we can assume there isn't a SaaS offering that delivers this functionality.
+      incorrectExplanation: Da es sich um eine benutzerdefinierte Lösung handelt, können wir davon ausgehen, dass kein SaaS-Angebot diese Funktionalität bereitstellt.
       isCorrect: false
-  - content: 'Given the following scenario, what is the best cloud service model? You create a small start-up company. You have a handful of employees who need to collaborate. They need email, calendar scheduling, and somewhere to store documents. The team is technical but do not have the time or hardware to implement and manage a solution.'
+  - content: Welches Clouddienstmodell eignet sich am besten im folgenden Szenario? Sie erstellen ein kleines Startupunternehmen. Eine Handvoll Mitarbeiter müssen zusammenarbeiten. Sie benötigen E-Mail, Kalenderplanung und einen Speicherort für Dokumente. Das Team ist technisch versiert, hat aber nicht die Zeit oder Hardware zur Implementierung und Verwaltung einer Lösung.
     choices:
     - content: IaaS
-      incorrectExplanation: While you could achieve the functionality using virtual machines and installing collaboration software, this would take time to install and manage. The team does not have time to use this option.
+      incorrectExplanation: Sie könnten die Funktionalität zwar mithilfe von virtuellen Computern und Installieren von Software für die Zusammenarbeit erreichen, doch würde dies Zeit für Installation und Verwaltung in Anspruch nehmen. Dazu hat das Team keine Zeit.
       isCorrect: false
     - content: PaaS
-      incorrectExplanation: The team does not have time to create a PaaS solution to meet the requirements.
+      incorrectExplanation: Das Team keine Zeit, um eine die Anforderungen erfüllende PaaS-Lösung zu erstellen.
       isCorrect: false
     - content: SaaS
-      correctExplanation: A SaaS solution such as Office 365 would be a good solution for the collaboration requirements.
+      correctExplanation: Eine SaaS-Lösung wie Office 365 wäre eine gute Alternative für die Zusammenarbeitsanforderungen.
       isCorrect: true
-  - content: 'Given the following scenario, what is the cloud service model? You have two datacenters in your organization. One datacenter has a database that can only reside in one of the datacenters because of a regulatory requirement. You want to access the database from the other datacenter. You create a VPN using a cloud provider to connect the two datacenters.'
+  - content: Welches Clouddienstmodell eignet sich am besten im folgenden Szenario? Sie verfügen in Ihrer Organisation über zwei Rechenzentren. Ein Rechenzentrum verfügt über eine Datenbank, die sich aufgrund gesetzlicher Vorgaben nur in einem der Rechenzentren befinden darf. Sie möchten von dem anderen Rechenzentrum aus auf die Datenbank zugreifen. Sie erstellen ein VPN mit einem Cloudanbieter, um die zwei Rechenzentren zu verbinden.
     choices:
     - content: IaaS
-      correctExplanation: You can use an IaaS VPN to implement this solution.
+      correctExplanation: Sie können ein IaaS-VPN zur Implementierung dieser Lösung verwenden.
       isCorrect: true
     - content: PaaS
-      incorrectExplanation: VPN is an infrastructure resource. VPN is not a PaaS solution.
+      incorrectExplanation: VPN ist eine Infrastrukturressource. VPN ist keine PaaS-Lösung.
       isCorrect: false
     - content: SaaS
-      incorrectExplanation: VPN is an infrastructure resource. VPN is not a SaaS solution.
+      incorrectExplanation: VPN ist eine Infrastrukturressource. VPN ist keine PaaS-Lösung.
       isCorrect: false

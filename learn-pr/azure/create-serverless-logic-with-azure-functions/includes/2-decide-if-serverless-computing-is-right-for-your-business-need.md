@@ -1,43 +1,43 @@
-To help decide whether serverless computing is right for you, let's first learn what serverless is all about.
+Um Ihnen die Entscheidung zu erleichtern, ob serverloses Computing das Richtige für Sie ist, möchten wir zunächst erläutern, worum es bei serverlosem Computing eigentlich geht.
 
-## What is serverless compute?
+## <a name="what-is-serverless-compute"></a>Was ist serverloses Computing?
 
-Serverless compute can be thought of as a function as a service (FaaS), or a microservice that is hosted on a cloud platform. Your business logic runs as functions and you don't have to manually provision or scale infrastructure. The cloud provider manages infrastructure. Your app is automatically scaled out or down depending on load. Azure has several ways to build this sort of architecture. The two most common approaches are Azure Logic Apps and Azure Functions, which we focus on in this module.
+Serverloses Computing kann als Function-as-a-Service (FaaS) oder Microservice aufgefasst werden, der auf einer Cloudplattform gehostet wird. Ihre Geschäftslogik wird in Form von Funktionen ausgeführt, sodass Sie die Infrastruktur nicht manuell bereitstellen oder skalieren müssen. Der Cloudanbieter verwaltet die Infrastruktur. Ihre App wird automatisch je nach Last horizontal hoch- oder herunterskaliert. Azure bietet mehrere Möglichkeiten, diese Art von Architektur zu erstellen. Die beiden gängigsten sind Azure Logic Apps und Azure Functions, auf die wir uns in diesem Modul konzentrieren.
 
-## What is Azure Functions?
+## <a name="what-is-azure-functions"></a>Was ist Azure Functions?
 
-Azure Functions is a serverless application platform. It allows developers to host business logic that can be executed without provisioning infrastructure. Functions provides intrinsic scalability and you are charged only for the resources used. You can write your function code in the language of your choice, including C#, F#, and JavaScript. Support for NuGet and NPM is also included, so you can use popular libraries in your business logic.
+Azure Functions ist eine serverlose Anwendungsplattform. Sie ermöglicht Entwicklern, Geschäftslogik zu hosten, die ohne Bereitstellung von Infrastruktur ausgeführt werden kann. Azure Functions bietet systeminterne Skalierbarkeit, und Ihnen werden nur die verwendeten Ressourcen in Rechnung gestellt. Sie können Ihren Funktionscode in der Sprache Ihrer Wahl schreiben, so z.B. in C#, F# und JavaScript. Unterstützung für NuGet und NPM wird ebenfalls geboten, sodass Sie beliebte Bibliotheken in Ihrer Geschäftslogik verwenden können.
 
-## Benefits of a serverless compute solution
+## <a name="benefits-of-a-serverless-compute-solution"></a>Vorteile einer serverlosen Computinglösung
 
-Serverless compute is a great option for hosting business logic code in the cloud. With serverless offerings such as Azure Functions, you can write your business logic in the language of your choice. You get automatic scaling, you have no servers to manage, and you are charged based on what is used — not on reserved time. Here are some additional characteristics of a serverless solution for you to consider.
+Serverloses Computing ist eine hervorragende Möglichkeit zum Hosten von Geschäftslogikcode in der Cloud. Mit serverlosen Lösungen wie Azure Functions können Sie Ihre Geschäftslogik in der Sprache Ihrer Wahl gestalten. Sie erhalten eine automatische Skalierung, müssen keine Server verwalten, und die Abrechnung erfolgt nach Verbrauch und nicht nach reservierter Zeit. Es folgen einige zusätzliche Merkmale einer serverlosen Lösung, die Sie beachten sollten.
 
-### Avoids over-allocation of infrastructure
+### <a name="avoids-over-allocation-of-infrastructure"></a>Vermeiden von übermäßiger Zuteilung von Infrastruktur
 
-Suppose you've provisioned VM servers and configured them with enough resources to handle your peak load times. When the load is light, you are potentially paying for infrastructure you're not using. Serverless computing helps solve the allocation problem by scaling up or down automatically, and you're only billed when your function is processing work.
+Nehmen wir an, Sie haben VM-Server bereitgestellt und mit genügend Ressourcen zur Bewältigung Ihrer Spitzenlastzeiten konfiguriert. Bei geringer Last zahlen Sie möglicherweise für Infrastruktur, die Sie gar nicht nutzen. Serverloses Computing löst das Problem der übermäßigen Zuteilung durch automatisches zentrales Hochskalieren oder Herunterskalieren, und Ihnen wird nur die Nutzung in Rechnung gestellt, wenn Ihre Funktion Aufgaben verarbeitet.
 
-### Stateless logic
+### <a name="stateless-logic"></a>Zustandslose Logik
 
-Stateless functions are great candidates for serverless compute; function instances are created and destroyed on demand. If state is required, it can be stored in an associated storage service.
+Zustandslose Funktionen sind gute Kandidaten für serverloses Computing. Funktionsinstanzen werden bei Bedarf erstellt und zerstört. Wenn der Zustand erforderlich ist, kann er in einem zugeordneten Speicherdienst gespeichert werden.
 
-### Event driven
+### <a name="event-driven"></a>Ereignisgesteuert
 
-Functions are _event driven_. This means they run only in response to an event (called a "trigger"), such as receiving an HTTP request, or a message being added to a queue. You configure a trigger as part of the function definition. This approach simplifies your code by allowing you to declare where the data comes from (trigger/input binding) and where it goes (output binding). You don't need to write code to watch queues, blobs, hubs, etc. You can focus purely on the business logic.
+Funktionen sind _ereignisgesteuert_. Das heißt, dass sie nur als Reaktion auf ein (Trigger genanntes) Ereignis ausgeführt werden, z.B. beim Empfang einer HTTP-Anforderung oder Hinzufügen einer Nachricht zu einer Warteschlange. Sie konfigurieren einen Trigger im Rahmen der Funktionsdefinition. Dieser Ansatz vereinfacht Ihren Code, weil Sie die Quelle der Daten (Trigger/Eingabebindung) und das Ziel (Ausgabebindung) deklarieren können. Sie müssen keinen Code zur Überwachung von Warteschlangen, Blobs, Hubs usw. schreiben. Sie können sich ausschließlich auf die Geschäftslogik konzentrieren.
 
-### Functions can be used in traditional compute environments
+### <a name="functions-can-be-used-in-traditional-compute-environments"></a>Funktionen können in herkömmlichen Compute-Umgebungen verwendet werden.
 
-Functions are a key component of serverless computing, but they are also a general compute platform for executing any type of code. Should the needs of your app change, you can take your project and deploy it in a non-serverless environment, which gives you the flexibility to manage scaling, run on virtual networks, and even completely isolate your functions.
+Funktionen sind eine zentrale Komponente des serverlosen Computings, aber auch eine allgemeine Computeplattform für die Ausführung jeglicher Art von Code. Sollten sich die Anforderungen Ihrer App ändern, können Sie Ihr Projekt in einer nicht serverlosen Umgebung implementieren. Dies gibt Ihnen die nötige Flexibilität, um die Skalierung zu verwalten, für die Ausführung in virtuellen Netzwerken zu sorgen und sogar Ihre Funktionen vollständig zu isolieren.
 
-## Drawbacks of a serverless compute solution
+## <a name="drawbacks-of-a-serverless-compute-solution"></a>Nachteile einer serverlosen Computinglösung
 
-Serverless compute will not always be the appropriate solution to hosting your business logic. Here are a few characteristics of functions that may affect your decision to host your services in serverless compute.
+Serverloses Computing ist nicht immer die geeignete Lösung für das Hosten Ihrer Geschäftslogik. Nachstehend sind einige Merkmale von Funktionen aufgeführt, die Ihre Entscheidung zum Hosten Ihrer Dienste mit serverlosem Computing beeinflussen könnten. 
 
-### Execution time
+### <a name="execution-time"></a>Ausführungszeit
 
-By default, functions have a timeout of 5 minutes. This timeout is configurable to a maximum of 10 minutes. If your function requires more than 10 minutes to execute, you can host it on a VM. Additionally, if your service is initiated through an HTTP request and you expect that value as an HTTP response, the timeout is further restricted to 2.5 minutes. Finally, there's also an option called **Durable Functions** that allows you to orchestrate the executions of multiple functions without any timeout.
+Standardmäßig beträgt das Zeitlimit von Funktionen 5 Minuten. Dieser Wert kann mit maximal 10 Minuten konfiguriert werden. Wenn die Ausführung der Funktion mehr als 10 Minuten benötigt, können Sie sie auf einem virtuellen Computer hosten. Wenn Ihr Dienst darüber hinaus über eine HTTP-Anforderung ausgelöst wird, und Sie diesen Wert als HTTP-Antwort erwarten, wird das Timeout noch weiter auf 2,5 Minuten beschränkt. Schließlich gibt es auch eine Option mit dem Namen **Durable Functions**, mit der Sie die Ausführung mehrerer Funktionen ohne Zeitlimit koordinieren können.
 
-### Execution frequency
+### <a name="execution-frequency"></a>Ausführungshäufigkeit
 
-The second characteristic is execution frequency. If you expect your function to be executed continuously by multiple clients, it would be prudent to estimate the usage and calculate the cost of using functions accordingly. It might be cheaper to host your service on a VM.
+Das zweite Merkmal ist die Ausführungshäufigkeit. Wenn Sie erwarten, dass Ihre Funktion fortlaufend von mehreren Clients ausgeführt wird, ist es ratsam, die Nutzung zu schätzen und die Kosten für das Verwenden von Funktionen entsprechend zu berechnen. Es kann kostengünstiger sein, Ihren Dienst auf einem virtuellen Computer zu hosten.
 
-While scaling, only one function app instance can be created every 10 seconds, for up to 200 total instances. Keep in mind, each instance can service multiple concurrent executions, so there is no set limit on how much traffic a single instance can handle. Different types of triggers have different scaling requirements, so research your choice of trigger and investigate its limits.
+Hinsichtlich Skalierung kann bei bis zu maximal 200 Instanzen insgesamt nur alle 10 Sekunden eine Funktions-App-Instanz erstellt werden. Denken Sie daran, dass jede Instanz mehrere gleichzeitige Ausführungen unterstützt. Es gibt also keine Beschränkung für den Datenverkehr, den eine einzelne Instanz verarbeiten kann. Weil verschiedene Arten von Triggern unterschiedliche Anforderungen an die Skalierung haben, ermitteln Sie den Trigger Ihrer Wahl, und machen Sie seine Grenzen ausfindig.

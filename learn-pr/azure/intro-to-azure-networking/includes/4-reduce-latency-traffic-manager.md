@@ -1,49 +1,49 @@
-Previously, you saw how **Azure Load Balancer** helps you achieve high availability and minimize downtime.
+Es wurde bereits erläutert, wie Sie mithilfe von **Azure Load Balancer** Hochverfügbarkeit erreichen und die Downtime minimieren.
 
-Although your e-commerce site is more highly available, it doesn't solve the issue of latency or create resiliency across geographic regions.
+Aber auch wenn Ihre E-Commerce-Website über Hochverfügbarkeit verfügt, wird dadurch die Latenz nicht reduziert, und es wird nicht automatisch Resilienz für verschiedene Regionen hergestellt.
 
-How can you make your site, which is located in the United States, load faster for users located in Europe or Asia?
+Nachfolgend wird erläutert, wie Sie dafür sorgen können, dass eine US-amerikanische Website für Benutzer in Europa oder Asien schneller laden kann.
 
-## What is network latency?
+## <a name="what-is-network-latency"></a>Was ist Netzwerklatenz?
 
-_Latency_ refers to the time it takes for data to travel over the network. Latency is typically measured in milliseconds.
+Der Begriff _Latenz_ bezieht sich auf die Zeit, die Daten benötigen, um das Netzwerk zu passieren. Die Latenz wird in der Regel in Millisekunden gemessen.
 
-Compare latency to bandwidth. Bandwidth refers to the amount of data that can fit on the connection. Latency refers to the time it takes for that data to reach its destination.
+In welchem Zusammenhang steht die Latenz mit der Bandbreite? Der Begriff „Bandbreite“ bezieht sich auf die Menge an Daten, die innerhalb einer Verbindung verarbeitet werden kann. Der Begriff „Latenz“ bezieht sich hingegen auf die Zeit, die Daten benötigen, um ihr Ziel zu erreichen.
 
-Factors such as the type of connection you use and how your application is designed can affect latency. But perhaps the biggest factor is distance.
+Faktoren wie der von Ihnen verwendete Verbindungstyp und der Aufbau Ihrer Anwendung können Auswirkungen auf die Latenz haben. Den wichtigsten Faktor stellt allerdings die Distanz dar.
 
-Think about your e-commerce site on Azure, which is in the East US region. It would typically take less time to transfer data to Atlanta (a distance of around 400 miles) than to transfer data to London (a distance of around 4,000 miles).
+Als Beispiel soll Ihre E-Commerce-Website in Azure dienen. Diese befindet sich in der Region „USA, Osten“. In der Regel werden Daten schneller nach Atlanta (Distanz von 400 Meilen) als nach London gesendet (Distanz von 4000 Meilen).
 
-Your e-commerce site delivers standard HTML, CSS, JavaScript, and images. The network latency for many files can add up. How can you reduce latency for users located far away geographically?
+Ihre E-Commerce-Website sendet Standardcode in HTML, CSS und JavaScript sowie Bilder. Wenn mehrere Dateien gesendet werden, ist die Netzwerklatenz entsprechend höher. Wie können Sie also die Latenz für Benutzer reduzieren, die sich weit entfernt befinden?
 
-## Scale out to different regions
+## <a name="scale-out-to-different-regions"></a>Horizontales Hochskalieren auf verschiedene Regionen
 
-Recall that Azure provides data centers in regions across the globe.
+Azure stellt überall auf der Welt in verschiedenen Regionen Rechenzentren zur Verfügung.
 
-Think about the cost of building a data center. Equipment costs aren't the only factor. You need to provide the power, cooling, and personnel to keep your systems running at each location. It might be prohibitively expensive to replicate your entire data center. But doing so with Azure can cost much less, because Azure already has the equipment and personnel in place.
+Der Bau eines Rechenzentrums ist sehr teuer. Dabei müssen nicht nur die Geräte angeschafft werden, sondern es muss auch dafür gesorgt werden, dass das Rechenzentrum mit Strom versorgt wird und ein ausreichendes Kühlsystem vorhanden ist. Außerdem muss für jeden Standort Personal eingestellt werden, das dafür sorgt, dass die Systeme gewartet werden. Daher wäre es viel zu teuer, ein Replikat eines Rechenzentrums an einem anderen Standort zu errichten. Wenn Sie also Azure verwenden, sind die Kosten viel geringer, da die nötigen Geräte und das Personal bereits vorhanden sind.
 
-One way to reduce latency is to provide exact copies of your service in more than one region. HThe following illustration shows an example of global deployment.
+Wenn Sie identische Replikate Ihres Diensts in mehreren Regionen erstellen, ist dies eine Möglichkeit, um die Latenz zu reduzieren. Nachfolgend sehen Sie ein Diagramm.
 
-![An illustration showing a world map with three Azure data centers highlighted. Each data center is labelled with a unique domain name.](../media/4-global-deployment.png)
+![Die E-Commerce-Website, die in den Regionen „USA, Osten“, „Europa, Norden“ und „Asien, Osten“ ausgeführt wird.](../media-draft/global-deployment.png)
 
-The diagram shows your e-commerce site running in three Azure regions: East US, North Europe, and East Asia. Notice the DNS name for each. How can you connect users to the service that's closest geographically, but under the contoso.com domain?
+Auf dem Diagramm sehen Sie Ihre E-Commerce-Website, die in drei Azure-Regionen ausgeführt wird: „USA, Osten“, „Europa, Norden“ und „Asien, Osten“. Beachten Sie die einzelnen DNS-Namen. Nachfolgend wird erläutert, wie Sie Benutzer unter der contoso.com-Domäne mit dem Dienst verbinden können, der diesem am nächsten gelegen ist.
 
-## Use Traffic Manager to route users to the closest endpoint
+## <a name="use-traffic-manager-to-route-users-to-the-closest-endpoint"></a>Verwenden des Traffic Managers zum Weiterleiten von Benutzern an den nächstgelegenen Endpunkt
 
-One answer is **Azure Traffic Manager**. Traffic Manager uses the DNS server that's closest to the user to direct user traffic to a globally distributed endpoint. The following illustration shows the role of the Traffic Manager.
+Sie können beispielsweise den **Traffic Manager** verwenden. Der Traffic Manager verwendet den DNS-Server, der dem Benutzer am nächsten gelegen ist, um Benutzerdatenverkehr an einen global verteilten Endpunkt weiterzuleiten. Nachfolgend sehen Sie ein Diagramm.
 
-![An illustration showing Azure Traffic Manager routing a user request to the nearest data center. ](../media/4-traffic-manager.png)
+![Verwenden des Traffic Managers zum Weiterleiten eines Benutzers in Italien an den nächstgelegenen Endpunkt](../media-draft/traffic-manager.png)
 
-Traffic Manager doesn't see the traffic that's passed between the client and server. Rather, it directs the client web browser to a preferred endpoint. Traffic Manager can route traffic in a few different ways, such as to the endpoint with the lowest latency.
+Der Traffic Manager kann den zwischen Client und Server übergebenen Datenverkehr nicht sehen. Stattdessen leitet der Clientwebbrowser diesen an einen bevorzugten Endpunkt weiter. Der Traffic Manager hat verschiedene Möglichkeiten, Datenverkehr weiterzuleiten, z.B. an den Endpunkt mit der niedrigsten Latenz.
 
-Although not shown here, this setup could also include your on-premises deployment running in California. You can connect Traffic Manager to your own on-premises networks, enabling you to maintain your existing data center investments. Or you can move your application entirely to the cloud. The choice is yours.
+Dieses Setup kann auch Ihre lokale Bereitstellung in Kalifornien umfassen. Darauf wird an dieser Stelle allerdings nicht genauer eingegangen. Sie können den Traffic Manager mit Ihren lokalen Netzwerken verbinden. D.h., Sie können Ihre bereits vorhandenen Rechenzentren weiter verwenden. Alternativ können Sie Ihre Anwendung auch vollständig in die Cloud verschieben. Die Entscheidung liegt bei Ihnen.
 
-## Compare Load Balancer to Traffic Manager
+## <a name="compare-azure-load-balancer-to-traffic-manager"></a>Azure Load Balancer und der Traffic Manager im Vergleich
 
-Azure Load Balancer distributes traffic within the same region to make your services more highly available and resilient. Traffic Manager works at the DNS level, and directs the client to a preferred endpoint. This endpoint can be to the region that's closest to your user.
+Azure Load Balancer verteilt den Datenverkehr auf die gesamte Region, damit Ihre Dienste hochverfügbarer und resilienter sind. Der Traffic Manager agiert auf DNS-Ebene und leitet den Client an einen bevorzugten Endpunkt weiter. Dieser Endpunkt kann sich in der Region befinden, die dem Benutzer am nächsten gelegen ist.
 
-Load Balancer and Traffic Manager both help make your services more resilient, but in slightly different ways. When Load Balancer detects an unresponsive VM, it directs traffic to other VMs in the pool. Traffic Manager monitors the health of your endpoints. In contrast, when Traffic Manager finds an unresponsive endpoint, it directs traffic to the next closest endpoint that is responsive.
+Sowohl der Azure Load Balancer als auch der Traffic Manager tragen auf unterschiedliche Weise zur Resilienz Ihres Diensts bei. Wenn Azure Load Balancer eine VM erkennt, die nicht reagiert, wird der Datenverkehr an andere VMs im Pool weitergeleitet. Der Traffic Manager überwacht die Integrität der Endpunkte. Wenn der Traffic Manager im Gegensatz dazu einen Endpunkt erkennt, der nicht reagiert, leitet er Datenverkehr an den Endpunkt weiter, der am nächsten gelegen ist und reagiert.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-Geographic distance is one of the biggest factors that contributes to latency. With Traffic Manager in place, you can host exact copies of your service in multiple geographic regions. That way, users in the United States, Europe, and Asia will all have a good experience using your e-commerce site.
+Die geografische Distanz ist einer der Hauptfaktoren, die die Latenz beeinflussen. Mithilfe des Traffic Managers können Sie Kopien Ihres Dienst in mehreren geografischen Regionen hosten. Auf diese Weise können Benutzer in den USA sowie in Europa und Asien Ihre E-Commerce-Website ohne Probleme nutzen.

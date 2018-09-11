@@ -1,22 +1,22 @@
-The Azure portal is great for performing single tasks, and to see a quick overview of the state of your resources. But for tasks that need to be repeated daily, or even hourly, using the command line and a set of tested commands or scripts can help get your work done more quickly and avoid errors. 
+Das Azure-Portal eignet sich hervorragend für die Ausführung einzelner Aufgaben und um eine schnelle Übersicht über den Zustand Ihrer Ressourcen zu erhalten. Aber in Verbindung mit Aufgaben, die täglich oder sogar stündlich wiederholt werden müssen, können Sie mithilfe der Befehlszeile und eines Satzes getesteter Befehle oder Skripts Ihre Arbeit unter Umständen noch schneller erledigen und Fehler vermeiden. 
 
-Suppose you work at a company that develops Azure Web Apps. These are applications hosted in Azure, with all the benefits of automatically configured security, load balancing, management, and so on. You're currently testing a web app that generates sales forecasts, based on a range of inputs from different databases and other data sources. Your developers use Windows, Linux, and Mac computers, and use a GitHub repository for daily builds of the applications. 
+Nehmen wir an, Sie arbeiten in einem Unternehmen, das Azure-Web-Apps entwickelt. Dabei handelt es sich um Anwendungen, die in Azure gehostet werden, mit allen Vorteilen der automatischen Konfiguration von Sicherheit, Lastenausgleich, Verwaltung usw. Derzeit testen Sie eine Web-App, die Umsatzprognosen basierend auf einer Reihe von Eingaben aus verschiedenen Datenbanken und anderen Datenquellen generiert. Ihre Entwickler verwenden Windows-, Linux- und Mac-Computer und setzen ein GitHub-Repository für tägliche Builds der Anwendungen ein. 
 
-As part of the testing, you want to compare app performance for different data sources, and for different types of data connections. You've noticed that when your development team uses the Azure portal to create a new test instance of the app, they don't always use exactly the same parameters. You plan to solve this problem by using a set of standard deployment commands for each app test, which can be automated if required, and which will work in the same way across all the computers used by your software team.
+Im Rahmen der Tests möchten Sie die App-Leistung für verschiedene Datenquellen und verschiedene Arten von Datenverbindungen vergleichen. Sie haben bemerkt: Wenn Ihr Entwicklungsteam eine neue Testinstanz der App im Azure-Portal erstellt, verwendet es nicht immer genau dieselben Parameter. Sie möchten dieses Problem lösen, indem Sie für jeden App-Test eine Reihe von Standardbereitstellungsbefehlen verwenden, die bei Bedarf automatisiert werden können und auf allen Computern, die Ihr Softwareteam verwendet, auf dieselbe Weise funktionieren.
 
-In this module, you'll see how to manage Azure resources using the Azure CLI. 
+In diesem Modul sehen Sie, wie die Azure-Ressourcen mithilfe der Azure CLI verwaltet werden. 
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul lernen Sie Folgendes:
 
-- Install the Azure CLI on Linux, macOS, and/or Windows.
-- Connect to an Azure subscription using the Azure CLI.
-- Create Azure resources using the Azure CLI.
+- Installieren von Azure CLI auf Linux, MacOS und/oder Windows
+- Herstellen einer Verbindung mit einem Azure-Abonnement mithilfe von Azure CLI
+- Erstellen Sie Azure-Ressourcen mit der Azure CLI.
 
-## Prerequisites  
+## <a name="prerequisites"></a>Voraussetzungen  
 
-- Experience with a command-line interface, such as PowerShell or Bash
-- Knowledge of basic Azure concepts, such as resource groups
-- Experience administering Azure resources using the Azure portal
+- Erfahrung mit einer Befehlszeilenschnittstelle wie PowerShell oder Bash
+- Kenntnisse der grundlegenden Azure-Konzepte, z.B. Ressourcengruppen
+- Erfahrung beim Verwalten von Azure-Ressourcen über das Azure-Portal
 - 

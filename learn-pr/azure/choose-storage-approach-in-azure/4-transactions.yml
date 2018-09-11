@@ -1,38 +1,38 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-storage-approach-in-azure.4-transactions
 metadata:
-  title: Group multiple operations in a transaction
-  description: Group multiple operations in a transaction
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Group multiple operations in a transaction
+  title: Gruppieren mehrerer Vorgänge in einer Transaktion
+  description: Gruppieren mehrerer Vorgänge in einer Transaktion
+  displayType: one-column
+  ms.openlocfilehash: deca0e972e897760f2179b8176dfdd079790a423
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43252343"
+title: Gruppieren mehrerer Vorgänge in einer Transaktion
 durationInMinutes: 10
-content: |
+content: >
   [!include[](includes/4-transactions.md)]
 quiz:
-  title: 'Transactions'
+  title: Transaktionen
   questions:
-  - content: "What kind of system does the product data need?"
+  - content: Welche Art von System ist für die Produktdaten erforderlich?
     choices:
-    - content: "OLAP"
+    - content: OLAP
       isCorrect: false
-      incorrectExplanation: "No, an OLAP system is best for data that requires complex queries or transactions, and doesn't require low latency. The product data needs to be modified quickly, and needs a low-latency, high-throughput system."
-    - content: "OLTP"
+      incorrectExplanation: Nein, ein OLAP-System eignet sich am besten für Daten, die komplexe Abfragen oder Transaktionen erfordern und keine niedrige Latenz benötigen. Die Produktdaten müssen schnell geändert werden und erfordern eine niedrige Latenz und ein System mit hohem Durchsatz.
+    - content: OLTP
       isCorrect: true
-      correctExplanation: "Yes, OLTP systems support lots of users, have quick response times, handle large volumes of data, are highly available, and typically handle small or relatively simple transactions, which is perfect for the product data set."
-  - content: "If the operations to update inventory and process payments were in the same transaction, and a user was attemtping to apply a store credit for the full amount and submitted the exact same order via phone and by laptop to an ACID-compliant database, what would happen?" 
+      correctExplanation: Ja, OLTP-Systeme unterstützen eine große Anzahl von Benutzern, verfügen über schnelle Reaktionszeiten, verarbeiten große Datenvolumen, sind hochverfügbar und verarbeiten in der Regel kleine oder relativ einfache Transaktionen, was sich bestens für die Produktdatenmenge eignet.
+  - content: Was geschieht, wenn die Vorgänge zum Aktualisieren des Bestands und Verarbeiten von Zahlungen sich in der gleichen Transaktion befinden und ein Benutzer den gleichen Auftrag über ein Mobilgerät und einen Laptop an eine ACID-konforme Datenbank übermittelt?
     choices:
-    - content: "The first order would complete, the remaining credit account would change to zero, and the second order would be updated to show that the user had no in-store credit remaining."
+    - content: Der erste Auftrag würde ausgeführt werden, das verbleibende Guthaben des Kontos würde auf 0 (null) geändert werden, und der zweite Auftrag würde aktualisiert werden, um anzuzeigen, dass der Benutzer über kein Guthaben verfügt.
       isCorrect: false
-      incorrectExplanation: "No, due to the Isolation in transactional databases, the two transactions are handled independently, and the first transaction would not modify the second in-process transaction until the second transaction completed and failed."
-    - content: "One order would be processed and would use the in-store credit, and the other order would update the remaining inventory for the items in the basket, but would not complete the order."
+      incorrectExplanation: Nein, aufgrund der Isolation in Transaktionsdatenbanken werden die zwei Transaktionen unabhängig voneinander verarbeitet, und die erste Transaktion beeinflusst die zweite Transaktion, die sich in Verarbeitung befindet, nicht, bis diese zweite Transaktion abgeschlossen und fehlgeschlagen ist.
+    - content: Ein Auftrag würde verarbeitet werden und das Guthaben verwenden, der andere Auftrag würde den Bestand der Artikel im Einkaufswagen aktualisieren, aber nicht den Auftrag abschließen.
       isCorrect: false
-      incorrectExplanation: "No, due to the Atomicity in transactional databases, the second order would not update the remaining inventory for the failed order."
-    - content: "One order would be processed and would use the in-store credit, and the other order would not be processed."
+      incorrectExplanation: Nein, aufgrund der Atomarität in Transaktionsdatenbanken würde der zweite Auftrag den verbleibenden Bestand für den fehlgeschlagenen Auftrag nicht aktualisieren.
+    - content: Ein Auftrag würde verarbeitet werden und das Guthaben verwenden, der andere Auftrag würde nicht verarbeitet werden.
       isCorrect: true
-      correctExplanation: "Yes, once the second order determined the in-store credit had already been used, it would roll back the transaction."
-
+      correctExplanation: Ja, sobald der zweite Auftrag ermittelt, dass das Guthaben bereits verwendet wurde, würde ein Rollback für die Transaktion ausgeführt werden.

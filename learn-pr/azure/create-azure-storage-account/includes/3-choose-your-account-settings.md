@@ -1,40 +1,40 @@
-The storage account settings we've already covered apply to the data services in the account. Here, we will discuss the three settings that apply to the account itself, rather than to the data stored in the account:
+Die bereits thematisierten Speicherkontoeinstellungen gelten für die Datendienste in dem jeweiligen Konto. Nachfolgend werden die drei Einstellungen thematisiert, die für das Konto an sich und nicht für die darin gespeicherten Daten gelten:
 
 - Name
-- Deployment model
-- Account kind
+- Bereitstellungsmodell
+- Kontoart
 
-These settings impact how you manage your account and the cost of the services within it.
+Diese Einstellungen haben Einfluss darauf, wie Sie Ihr Konto und die Kosten für die darin enthaltenen Dienste verwalten.
 
-## Name
+## <a name="name"></a>Name
 
-Each storage account has a name. The name must be globally unique, use only lowercase letters and digits and be between 3 and 24 characters.
+Jedes Speicherkonto verfügt über einen Namen. Der Name muss global eindeutig sein. Er muss zwischen 3 und 24 Zeichen lang sein und darf nur Zahlen und Kleinbuchstaben enthalten.
 
-## Deployment model
+## <a name="deployment-model"></a>Bereitstellungsmodell
 
-A _deployment model_ is the system Azure uses to organize your resources. It defines the API that you use to create, configure, and manage those resources. Azure provides two deployment models:
+Azure verwendet _Bereitstellungsmodelle_, um Ihre Ressourcen zu organisieren. Sie definieren die API, die Sie verwenden, um diese Ressourcen zu erstellen, zu konfigurieren und zu verwalten. Azure stellt zwei Bereitstellungsmodelle bereit:
 
-- **Resource Manager**: the current model that uses the Azure Resource Manager API
-- **Classic**: a legacy offering that uses the Azure Service Management API
+- **Ressourcen-Manager:** das aktuelle Modell, das die API des Azure Resource Managers (ARM) verwendet
+- **Klassisch:** ein älteres Modell, das die API von Azure Service Management (ASM) verwendet
 
-The decision on which one to choose is usually easy, because most Azure resources only work with Resource Manager. However, storage accounts, virtual machines, and virtual networks support both, so you must choose one or the other when you create your storage account.
+Die Entscheidung für eins der beiden Modelle fällt in der Regel leicht, da die meisten Azure-Ressourcen nur mit dem Ressourcen-Manager funktionieren. Allerdings unterstützen virtuelle Computer, Speicherkonten und virtuelle Netzwerke beide Modelle. Aus diesem Grund müssen Sie sich für eins entscheiden, wenn Sie Ihr Speicherkonto erstellen.
 
-The key feature difference between the two models is their support for grouping. The Resource Manager model adds the concept of a _resource group_, which is not available in the classic model. A resource group lets you deploy and manage a collection of resources as a single unit.
+Ein wichtiger Unterschied besteht in der Unterstützung von Gruppierungen. Das Ressourcen-Manager-Modell fügt das Konzept einer _Ressourcengruppe_ hinzu, die im klassischen Modell nicht verfügbar ist. Mithilfe einer Ressourcengruppe können Sie eine Sammlung von Ressourcen als einzelne Einheit bereitstellen und verwalten.
 
-Microsoft recommends that you use **Resource Manager** for all new resources.
+Microsoft empfiehlt die Verwendung des Ressourcen-Managers für alle neuen Ressourcen.
 
-## Account kind
+## <a name="account-kind"></a>Kontoart
 
-Storage account _kind_ is a set of policies that determine which data services you can include in the account and the pricing of those services. There are three kinds of storage accounts:
+Die _Art_ des Speicherkontos stellt eine Reihe von Richtlinien dar, die bestimmen, welche Datendienste Sie zu dem Konto hinzufügen können und wie hoch die Preise für diese Dienste sind. Es gibt drei Arten von Speicherkonten:
 
-- **StorageV2 (general purpose v2)**: the current offering that supports all storage types and all of the latest features
-- **Storage (general purpose v1)**: a legacy kind that supports all storage types but may not support all features
-- **Blob storage**: a legacy kind that allows only block blobs and append blobs
+- **StorageV2 (universelle Version 2):** das aktuelle Speicherkonto, das sämtliche Speichertypen und die neusten Features unterstützt
+- **Storage (universelle Version 1):** ein veraltetes Speicherkonto, das zwar alle Speichertypen, aber ggf. nicht alle Features unterstützt
+- **Blob Storage:** ein veraltetes Speicherkonto, das nur Blockblobs und Anfügeblobs zulässt
 
-Microsoft recommends that you use the **General-purpose v2** option for new storage accounts.
+Microsoft empfiehlt bei neuen Speicherkonten die Verwendung der universellen Version 2.
 
-There are a few special cases that can be exceptions to this rule. For example, pricing for transactions is lower in general purpose v1, which would allow you to slightly reduce costs if that matches your typical workload.
+In Einzelfällen bietet sich allerdings die Verwendung der anderen Speicherkonten an. Beispielsweise sind die Preise für Transaktionen mit der universellen Version 1 geringer, wodurch Sie Kosten sparen können, wenn Ihre Workload mit dieser Version kompatibel ist.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-The core advice here is to choose the **Resource Manager** deployment model and the **StorageV2 (general purpose v2)** account kind for all your storage accounts. The other options still exist primarily to allow existing resources to continue operation. For new resources, there are few reasons to consider the other choices.
+Generell wird empfohlen, das Bereitstellungsmodell **Ressourcen-Manager** und die Kontoart **StorageV2 (universelle Version 2)** für sämtliche Speicherkonten zu verwenden. Die anderen Optionen sind allerdings in erster Linie weiter verfügbar, damit bereits vorhandene Ressourcen weiter verwendet werden können. Für neue Ressourcen gibt es nur wenige Gründe, die für die Verwendung der älteren Optionen sprechen.

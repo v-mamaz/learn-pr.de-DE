@@ -1,85 +1,84 @@
-In this unit, we create an Azure function that's invoked every 20 seconds using a timer trigger.
+In dieser Übung erstellen wir eine Azure-Funktion, die alle 20 Sekunden mithilfe eines Zeitgebertriggers aufgerufen wird.
 
-## Create an Azure function
+## <a name="create-an-azure-function"></a>Erstellen einer Azure-Funktion
 
-Let’s start by creating an Azure Function in the portal.
+Erstellen Sie zuerst eine Azure-Funktion im Portal.
 
-1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. Melden Sie sich im [Azure-Portal](https://portal.azure.com?azure-portal=true) an.
 
-1. In the left navigation, select **Create a resource**.
+1. Klicken Sie im linken Navigationsbereich auf **Ressource erstellen**.
 
-1. Select **Compute**.
+1. Wählen Sie **Compute** aus.
 
-1. Locate and select **Function App**. You can also optionally use the search bar to locate the template.
+1. Wechseln Sie zu **Funktionen-App**. Sie können optional auch die Suchleiste verwenden, um die Vorlage zu finden.
 
-    ![Screenshot of the Azure portal showing the Create a resource blade with the Function App highlighted.](../media/4-click-function-app.png)
+    ![Auswählen von „Funktionen-App“](../media-drafts/4-click-function-app.png)
 
-1. Enter a unique **App name**.
+1. Geben Sie einen eindeutigen **App-Namen** ein.
 
-1. Select a **Subscription**.
+1. Wählen Sie ein **Abonnement** aus.
 
-1. Create a new **Resource Group**.
+1. Erstellen Sie eine neue **Ressourcengruppe**.
 
-1. Choose **Windows** as your **OS**.
+1. Wählen Sie **Windows** als Ihr **Betriebssystem** aus.
 
-1. Choose **Consumption Plan** for your **Hosting Plan**. You're charged for each execution of your function. Resources are automatically allocated based on your application workload.
+1. Wählen Sie als **Hostingplan** die Option **Verbrauchstarif**. Jede Ausführung der Funktion wird Ihnen in Rechnung gestellt. Ressourcen werden basierend auf dem Workload Ihrer Anwendung automatisch zugeordnet.
 
-1. Select a **Location**.
+1. Wählen Sie einen **Standort** aus.
 
-1. Create a new **Storage** account, you can change the name if you like - it will default to a variation of the App name
+1. Erstellen Sie ein neues **Speicherkonto**. Sie können den Namen des Kontos ändern, wenn Sie möchten. Standardmäßig wird eine Variation des App-Namens ausgewählt.
 
-1. Turn off **Application Insights**.
+1. Deaktivieren Sie **Application Insights**.
 
-1. Select **Create**. This will take a few minutes to complete, you can watch the **Notifications** icon in the toolbar area - once it has finished creating the resource it will have a button there to open it in the Azure Portal.
+1. Klicken Sie auf **Erstellen**. Der Erstellungsvorgang nimmt einige Minuten in Anspruch. Sie können den Fortschritt über das Symbol **Benachrichtigungen** im Symbolleistenbereich nachverfolgen. Sobald die Ressource erstellt wurde, wird eine Schaltfläche zum Öffnen der Ressource im Azure-Portal angezeigt.
 
-## Create a timer trigger
+## <a name="create-a-timer-trigger"></a>Erstellen eines Zeitgebertriggers
 
-Now we're going to create a timer trigger inside our Azure function.
+Wir erstellen nun in unserer Azure-Funktion einen Zeitgebertrigger.
 
-1. After the Azure function is created, select **All resources** from the left navigation.
+1. Nachdem die Azure-Funktion erstellt wurde, wählen Sie im linken Navigationsbereich **Alle Ressourcen** aus.
 
-1. Locate and select your Azure function.
+1. Wählen Sie Ihre Azure-Funktion aus.
 
-1. On the new blade, point to **Functions** and select the plus (+) icon.
+1. Zeigen Sie auf dem neuen Blatt auf **Funktionen**, und wählen Sie das Pluszeichen (+) aus.
 
-    ![Screenshot of the Azure portal showing a Functions App blade with the add (+) button of the Functions sub-menu highlighted.](../media/4-hover-function.png)
+    ![Auf „Funktionen“ zeigen und Pluszeichen auswählen](../media-drafts/4-hover-function.png)
 
-1. Select **Timer**.
+1. Wählen Sie **Zeitgeber** aus.
 
-1. Select **CSharp** as the language.
+1. Wählen Sie **CSharp** als Sprache aus.
 
-1. Select **Create this function**.
+1. Wählen Sie **Diese Funktion erstellen** aus.
 
-## Configure the timer trigger
+## <a name="configure-the-timer-trigger"></a>Konfigurieren des Zeitgebertriggers
 
-We have an Azure function with logic to print a message to the log window. We're going to set the schedule of the timer to execute every 20 seconds.
+Wir haben eine Azure-Funktion mit Logik zum Ausgeben einer Meldung im Protokollfenster. Wir stellen den Zeitplan des Zeitgebers so ein, dass er alle 20 Sekunden ausgeführt wird.
 
-1. Select **Integrate**.
+1. Wählen Sie **Integrieren** aus.
 
-1. Enter the following value into the **Schedule** box:
+1. Geben Sie den folgenden Wert in das Feld **Zeitplan** ein:
 
-    ```log
+    ```
     */20 * * * * *
     ```
 
-1. Select **Save**.
+1. Wählen Sie **Speichern** aus.
 
-## Start the timer
+## <a name="start-the-timer"></a>Starten des Zeitgebers
 
-Now that we've configured the timer, we're ready to start it.
+Nachdem wir den Zeitgeber konfiguriert haben, können wir ihn starten.
 
-1. Select **TimerTriggerCSharp1**.
+1. Wählen Sie **TimerTriggerCSharp1** aus. 
 
     > [!NOTE]
-    > **TimerTriggerCSharp1** is a default name. It's automatically selected when you create the trigger.
+    > **TimerTriggerCSharp1** ist ein Standardname. Er wird beim Erstellen des Zeitgebers automatisch generiert.
 
-1. Select **Run**.
+1. Klicken Sie auf **Ausführen**. 
 
-At this point, you should see a message every 20 seconds in the log window.
+An diesem Punkt sollte im Protokollfenster alle 20 Sekunden eine Meldung angezeigt werden.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up"></a>Bereinigen
 
-To ensure that you aren't charged for this function, above the log window, select **Pause** to stop the timer.
+Um sicherzustellen, dass Sie für diese Funktion keine Gebühren anfallen, wählen Sie über das Protokollfenster **Anhalten** aus, um den Zeitgeber anzuhalten.
 
-![Screenshot of the Azure portal showing a Functions App's Logs output panel with the Pause button highlighted.](../media/4-pause-timer.png)
+![Anhalten](../media-drafts/4-pause-timer.png)

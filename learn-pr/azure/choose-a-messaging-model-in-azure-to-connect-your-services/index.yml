@@ -1,25 +1,29 @@
 ### YamlMime:Module
 uid: learn.choose-messaging-model
 metadata:
-  title: Choose a messaging model in Azure to loosely connect your services
-  description: When you have an application that consists of components running on different computers, servers, and mobile devices, reliable communications between those components can be difficult and unreliable. Azure provides several technologies that you can use to communicate more reliably, including Storage queues, Event Hubs, Event Grid, and Service Bus. This module shows you how to choose the best technology for your communication task.
+  title: Auswahl eines Messagingmodells in Azure zum Herstellen loser Verbindungen mit Ihren Diensten
+  description: Wenn Sie eine Anwendung haben, deren Komponenten auf verschiedenen Computern, Servern und mobilen Geräten ausgeführt werden, kann die zuverlässige Kommunikation zwischen diesen Komponenten schwierig sein. Azure bietet verschiedene Technologien, die Sie verwenden können, um zuverlässiger zu kommunizieren, einschließlich Speicherwarteschlangen, Event Hubs, Event Grid und Service Bus. Dieses Modul zeigt Ihnen, wie Sie die besten Technologie für Ihre Kommunikation auswählen.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Choose a messaging model in Azure to loosely connect your services
-summary: When you have an application that consists of components running on different computers, servers, and mobile devices, reliable communications between those components can be difficult and unreliable. Azure provides several technologies that you can use to communicate more reliably, including Storage queues, Event Hubs, Event Grid, and Service Bus. This module shows you how to choose the best technology for your communication task.
-abstract: |
-  In this module, you will:
-  - Describe events and messages, and the challenges you can use them to solve in a distributed application
-  - Identify scenarios in which Storage queue is the best messaging technology for an application
-  - Identify scenarios in which Event Grid is the best messaging technology for an application
-  - Identify scenarios in which Event Hubs is the best messaging technology for an application
-  - Identify scenarios in which Service Bus is the best messaging technology for an application
-prerequisites: None
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: 62dfef8d5bcf1873b064500ee3080744fdf90335
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43363518"
+title: Auswahl eines Messagingmodells in Azure zum Herstellen loser Verbindungen mit Ihren Diensten
+summary: Wenn Sie eine Anwendung haben, deren Komponenten auf verschiedenen Computern, Servern und mobilen Geräten ausgeführt werden, kann die zuverlässige Kommunikation zwischen diesen Komponenten schwierig sein. Azure bietet verschiedene Technologien, die Sie verwenden können, um zuverlässiger zu kommunizieren, einschließlich Speicherwarteschlangen, Event Hubs, Event Grid und Service Bus. Dieses Modul zeigt Ihnen, wie Sie die besten Technologie für Ihre Kommunikation auswählen.
+abstract: >
+  In diesem Modul lernen Sie Folgendes:
+
+  - Beschreiben von Ereignissen und Nachrichten sowie der Herausforderungen, die Sie damit in einer verteilten Anwendung bewältigen können
+
+  - Bestimmen von Szenarios, in denen eine Azure Storage-Warteschlange die beste Messagingtechnologie für eine Anwendung ist
+
+  - Bestimmen von Szenarios, in denen eine Event Grid-Warteschlange die beste Messagingtechnologie für eine Anwendung ist
+
+  - Bestimmen von Szenarios, in denen eine Event Grid-Warteschlange die beste Messagingtechnologie für eine Anwendung ist
+
+  - Bestimmen von Szenarien, in denen Azure Service Bus die beste Messagingtechnologie für eine Anwendung ist
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
@@ -27,9 +31,10 @@ roles:
 - developer
 products:
 - azure
-- azure-service-bus
-- azure-event-grid
-- azure-event-hubs
+- storageQueue
+- serviceBus
+- eventGrid
+- eventHubs
 units:
 - learn.choose-messaging-model.1-introduction
 - learn.choose-messaging-model.2-choose-whether-to-use-message-queues-or-events

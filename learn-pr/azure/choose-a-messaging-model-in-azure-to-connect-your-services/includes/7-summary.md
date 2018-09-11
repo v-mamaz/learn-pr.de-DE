@@ -1,14 +1,13 @@
-In this module, you have explored four different Azure services that allow you to create reliable and resilient distributed applications. Choosing between them is a matter of deciding the type of data that needs to be passed between components (messages or events), and then what features you need to deliver and process the data.
+In diesem Modul wurden vier verschiedene Azure-Dienste vorgestellt, die es Ihnen ermöglichen, zuverlässige und resiliente verteilte Anwendungen zu erstellen. Die Wahl des richtigen Diensts hängt in erster Linie vom Typ der Daten (Nachrichten oder Ereignisse) ab, die an die einzelnen Komponenten übergeben werden sollen. Zudem spielt es eine Rolle, welche Features Sie zum Bereitstellen und Verarbeiten der Daten benötigen.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up"></a>Bereinigen
 
-While a Storage Account contains data, it incurs a cost against your Azure subscription, although these are likely to be low for small queue with few messages. When you have finished with the queue, remember to remove it in order to avoid unnecessary charges. Because you created all the resources in the same resource group, the easiest way to cleanup your Azure subscription is to remove the resource group which will remove all its contents:
+Wenn ein Speicherkonto Daten enthält, verursacht dieses Kosten im Zusammenhang mit Ihrem Azure-Abonnement. Allerdings sind die Kosten bei kurzen Warteschlangen mit wenigen Nachrichten nur gering. Wenn Sie die Warteschlange nicht mehr verwenden, sollten Sie sie entfernen, um unnötige Kosten zu vermeiden. Da Sie sämtliche Ressourcen in der gleichen Ressourcengruppe erstellt haben, können Sie Ihr Azure-Abonnement am einfachsten bereinigen, indem Sie die Ressourcengruppe entfernen. Dadurch werden alle ihre Inhalte entfernt:
 
 ```powershell
 Remove-AzureRmResourceGroup -Name "MusicSharingResourceGroup" -Force
 ```
 
-When you are asked to confirm the delete, answer **Yes**.
+Wenn Sie aufgefordert werden, den Löschvorgang zu bestätigen, klicken Sie auf **Ja**.
 
-The command may take several minutes to complete as resources are deleted.
+Der Befehl zum Löschen der Ressourcen kann mehrere Minuten in Anspruch nehmen.

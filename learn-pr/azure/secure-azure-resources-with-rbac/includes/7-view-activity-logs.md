@@ -1,44 +1,44 @@
-First Up Consultants reviews role-based access control (RBAC) changes quarterly for auditing and troubleshooting purposes. You know that changes get logged in [Azure Activity Log](/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs). Your manager has asked if you can generate a report of the role assignment and custom role changes for the last month.
+Aus Gründen der Überwachung und Problembehandlung bewertet First Up Consultants vierteljährlich Änderungen der rollenbasierten Zugriffssteuerung (RBAC). Sie wissen, dass Änderungen im [Azure-Aktivitätsprotokoll](/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs) protokolliert werden. Ihr Vorgesetzter hat Sie gebeten, einen Bericht über die Rollenzuweisung und Änderungen der benutzerdefinierten Rollen des letzten Monats zu generieren.
 
-## View activity logs
+## <a name="view-activity-logs"></a>Anzeigen von Aktivitätsprotokollen
 
-The easiest way to get started is to view the activity logs with the Azure portal.
+Der einfachste Einstieg besteht im Anzeigen der Aktivitätsprotokolle im Azure-Portal.
 
-1. Click **All services** and then find **Activity log**.
+1. Klicken Sie auf **Alle Dienste**, und suchen Sie dann **Aktivitätsprotokoll**.
 
-    ![Activity logs using the portal](../media-draft/7-all-services-activity-log.png)
+    ![Aktivitätsprotokolle im Portal](../media-draft/7-all-services-activity-log.png)
 
-1. Click **Activity log**.
+1. Klicken Sie auf **Aktivitätsprotokoll**.
 
-    ![Activity logs using the portal](../media-draft/7-activity-log-portal.png)
+    ![Aktivitätsprotokolle im Portal](../media-draft/7-activity-log-portal.png)
 
-1. Set the **Timespan** filter to **Last month**.
+1. Legen Sie den Filter **TimeSpan** (Zeitraum) auf **Letzten Monat** fest.
 
-1. Set the **Event category** filter to **Administrative**.
+1. Legen Sie den Filter **Ereigniskategorie** auf **Administrativ** fest.
 
-1. In the **Operation** filter, type **role** to filter the list.
+1. Geben Sie **Rolle** im Filter **Vorgang** ein, um die Liste zu filtern.
 
-1. Select the following RBAC operations:
+1. Wählen Sie die folgenden RBAC-Vorgänge aus:
 
-    - Create role assignment (roleAssignments)
-    - Delete role assignment (roleAssignments)
-    - Create or update custom role definition (roleDefinitions)
-    - Delete custom role definition (roleDefinitions)
+    - Rollenzuweisung erstellen (roleAssignments)
+    - Rollenzuweisung löschen (roleAssignments)
+    - Benutzerdefinierte Rollendefinition erstellen oder aktualisieren (roleDefinitions)
+    - Benutzerdefinierte Rollendefinition löschen (roleDefinitions)
 
-    ![Operation filter](../media-draft/7-operation-filter.png)
+    ![Filter „Vorgang“](../media-draft/7-operation-filter.png)
 
-1. Click **Apply** to apply your filters.
+1. Klicken Sie auf **Anwenden**, um Ihre Filter anzuwenden.
 
-    You'll see all the role assignment and role definition operations for the last month. It also includes a link to download the activity log as a CSV file.
+    Alle Vorgänge für Rollenzuweisung und Rollendefinition des letzten Monats werden angezeigt. Außerdem ist ein Link enthalten, um das Aktivitätsprotokoll als CSV-Datei herunterzuladen.
 
-    ![RBAC activity logs](../media-draft/7-activity-log-portal-filter.png)
+    ![RBAC-Aktivitätsprotokolle](../media-draft/7-activity-log-portal-filter.png)
 
-## End lab
+## <a name="end-lab"></a>Aufgabe beenden
 
-1. To end the lab, click the hamburger menu in the upper-right corner of this window and then click **End**.
+1. Um die Aufgabe zu beenden, klicken Sie auf das Hamburger-Menü in der oberen rechten Ecke dieses Fensters, und klicken Sie dann auf **Beenden**.
 
-1. Click **Yes, end my lab**.
+1. Klicken Sie auf **Ja, Aufgabe beenden**.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this unit, you learned how to use Azure Activity Log to list RBAC changes in the portal and generate a simple report.
+In dieser Einheit haben Sie gelernt, wie Sie Azure-Aktivitätsprotokoll zum Auflisten von RBAC-Änderungen im Portal verwenden können und wie Sie einen einfachen Bericht generieren.

@@ -1,29 +1,29 @@
-In the previous exercise, we enabled trial licenses, created a directory, created a user, and created a group to test our solution. In this unit, we will create our conditional access rule to require Azure Multi-Factor Authentication for the Azure portal.
+In der vorherigen Übung haben wir zum Testen unserer Lösung Testlizenzen aktiviert bzw. ein Verzeichnis, einen Benutzer und eine Gruppe erstellt. In dieser Übung erstellen wir die Regel für bedingten Zugriff, sodass für den Zugriff auf das Azure-Portal Multi-Factor Authentication erforderlich ist.
 
-## Enable conditional access-based Multi-Factor Authentication
+## <a name="enable-conditional-access-based-multi-factor-authentication"></a>Aktivieren von Multi-Factor Authentication mit bedingtem Zugriff
 
-Conditional access allows administrators to configure when they do or do not want something to happen. They can use multiple rules in parallel to grant or deny access to resources. Here's the rule that we need to create:
+Durch den bedingten Zugriff können Administratoren konfigurieren, was sie zulassen und was nicht. Sie können gleichzeitig mehrere Regeln verwenden, um den Zugriff auf Ressourcen zu gewähren oder zu verweigern. Hier ist die Regel, die wir erstellen müssen:
 
-**When accessing the Azure portal - Require multi-factor authentication**
+**Beim Zugriff auf das Azure-Portal: mehrstufige Authentifizierung anfordern**
 
-The steps that follow will walk you through the process to create a conditional access rule to require users to perform multi-factor authentication when they access the Azure portal.
+Die folgenden Schritte führen Sie durch den Prozess zum Erstellen einer Regel für den bedingten Zugriff, damit Benutzer eine mehrstufige Authentifizierung durchführen müssen, wenn sie auf das Azure-Portal zugreifen.
 
-1. Browse to **Azure Active Directory** > **Conditional access**.
+1. Navigieren Sie zu **Azure Active Directory** > **Bedingter Zugriff**.
 
-1. Click **New policy**.
+1. Klicken Sie auf **Neue Richtlinie**.
 
-1. Name the policy **Require MFA for Azure portal**.
+1. Benennen Sie die Richtlinie **Mehrstufige Authentifizierung für Zugriff auf Azure-Portal erforderlich**.
 
-1. Under **Assignments** > **Users and groups**, select **Users and groups**. Select the group that we created **CA-MFA-AzurePortal**. and click **Done**.
+1. Klicken Sie unter **Zuweisungen** > **Benutzer und Gruppen** auf **Benutzer und Gruppen**. Wählen Sie die erstellte Gruppe **CA-MFA-AzurePortal** aus. Klicken Sie dann auf **Fertig**.
 
-1. Under **Cloud apps** > **Select apps**, select **Microsoft Azure Management**.
+1. Klicken Sie unter **Cloud-Apps** > **Apps auswählen** auf **Microsoft Azure Management**.
 
-1. Under **Access controls** > **Grant**, select **Require multi-factor authentication**.
+1. Klicken Sie unter **Zugriffssteuerung** > **Gewähren** auf **Mehrstufige Authentifizierung anfordern**.
 
-1. Set **Enable policy** to **On**.
+1. Legen Sie **Richtlinie aktivieren** auf **Ein** fest.
 
-1. Click **Create**.
+1. Klicken Sie auf **Erstellen**.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this unit, you learned how to create a conditional access rule. The rule requires Multi-Factor Authentication when accessing the Azure portal.
+In dieser Einheit haben Sie gelernt, wie Sie eine Regel mit bedingtem Zugriff erstellen. Die Regel erfordert Multi-Factor Authentication beim Zugriff auf das Azure-Portal.

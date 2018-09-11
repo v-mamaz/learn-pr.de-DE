@@ -1,0 +1,211 @@
+Nachfolgend werden einige Grundlagen zu Abfragen erläutert. Die beiden Dokumente, die Sie zu der Datenbank hinzugefügt haben, sollen als Ziel für die Beispielfabfragen dienen. Genauso wie SQL Server verwendet Azure Cosmos DB SQL-Abfragen, um Abfragevorgänge durchzuführen. Sämtliche Eigenschaften werden standardmäßig automatisch indiziert, sodass alle Daten in der Datenbank unmittelbar zur Abfrage zur Verfügung stehen.
+
+## <a name="sql-query-basics"></a>Grundlagen zu SQL-Abfragen
+Jede SQL-Abfrage besteht aus einer SELECT-Klausel und optionalen FROM- und WHERE-Klauseln. Außerdem können Sie andere Klauseln wie ORDER BY und JOIN hinzufügen, um die nötigen Informationen abzufragen.
+
+SQL-Abfragen weisen das folgende Format auf.
+
+    SELECT <select_list>
+    [FROM <optional_from_specification>]
+    [WHERE <optional_filter_condition>]
+    [ORDER BY <optional_sort_specification>]
+    [JOIN <optional_join_specification>]
+
+## <a name="select-clause"></a>SELECT-Klausel
+
+Die SELECT-Klausel bestimmt den Typ der Werte, die erstellt werden, wenn die Abfrage ausgeführt wird. Bei einem Wert vom Typ `SELECT *` wird das gesamte JSON-Dokument zurückgegeben.
+
+**Abfrage**
+```
+SELECT *
+FROM Products p
+WHERE p.id ="1"
+```
+
+**Rückgaben**
+```
+[
+    {
+        "id": "1",
+        "productId": "33218896",
+        "category": "Women's Clothing",
+        "manufacturer": "Contoso Sport",
+        "description": "Quick dry crew neck t-shirt",
+        "shipping": {
+            "weight": 1,
+            "dimensions": {
+                "width": 6,
+                "height": 8,
+                "depth": 1
+            }
+        },
+        "_rid": "glAZAJFm0VsBAAAAAAAAAA==",
+        "_self": "dbs/glAZAA==/colls/glAZAJFm0Vs=/docs/glAZAJFm0VsBAAAAAAAAAA==/",
+        "_etag": "\"00006000-0000-0000-0000-5b71be760000\"",
+        "_attachments": "attachments/",
+        "_ts": 1534180982
+    }
+]
+```
+
+Stattdessen können Sie auch die Ausgabe einschränken, sodass nur bestimmte Eigenschaften angezeigt werden, indem Sie eine Liste mit Eigenschaften zu der SELECT-Klausel hinzufügen. In der folgenden Abfrage werden nur die ID, der Hersteller und die Produktbeschreibung hinzugefügt.
+
+**Abfrage**
+```
+SELECT 
+    p.id, 
+    p.manufacturer, 
+    p.description
+FROM Products p
+WHERE p.id ="1"
+```
+
+**Rückgaben**
+```
+[
+    {
+        "id": "1",
+        "manufacturer": "Contoso Sport",
+        "description": "Quick dry crew neck t-shirt"
+    }
+]
+```
+
+## <a name="from-clause"></a>FROM-Klausel
+
+Die FROM-Klausel bestimmt die Datenquelle der Abfrage. Sie können sowohl die ganze Sammlung als auch ein Subnetz der Sammlung als Abfragequelle festlegen. Die FROM-Klausel ist optional, es sei denn, die Quelle wird später in der Abfrage gefiltert oder projiziert.
+
+Bei einer Abfrage wie `SELECT * FROM Products` ist die gesamte Products-Sammlung die Quelle der Abfrage.
+
+Eine Sammlung kann Aliase enthalten, z.B. `SELECT p.id FROM Products AS p` oder einfach `SELECT p.id FROM Products p`, wobei `p` `Products` entspricht. `AS` ist ein optionales Schlüsselwort, das als Alias für den Bezeichner fungiert.
+
+Sobald ein Alias verwendet wird, kann die Originalquelle nicht mehr gebunden werden. `SELECT Products.id FROM Products p` ist beispielsweise syntaktisch ungültig, da der Bezeichner „Products“ nicht mehr aufgelöst werden kann.
+
+Alle Eigenschaften, auf die verwiesen wird, müssen vollqualifiziert sein. Dies ist ohne strikte Schemaverwendung notwendig, um mehrdeutige Bindungen zu vermeiden. Daher ist `SELECT id FROM Products p` syntaktisch ungültig, weil die `id`-Eigenschaft nicht gebunden ist.
+
+### <a name="subdocuments-in-a-from-clause"></a>Unterdokumente in einer FROM-Klausel
+Die Quelle kann auch auf eine kleinere Teilmenge reduziert werden. Wenn Sie z.B. nur eine Unterstruktur in jedem Dokument auflisten möchten, kann deren Unterstamm wie im folgenden Beispiel gezeigt als Quelle fungieren:
+
+**Abfrage**
+```
+SELECT * 
+FROM Products.shipping
+```
+
+**Ergebnisse**  
+
+```
+[
+{
+    "weight": 1,
+    "dimensions": {
+        "width": 6,
+        "height": 8,
+        "depth": 1
+    }
+},
+{
+    "weight": 1,
+    "dimensions": {
+        "width": 6,
+        "height": 8,
+        "depth": 1
+    }
+}
+]
+```
+
+Im obigen Beispiel wird zwar ein Array als Quelle verwendet, Sie können dafür jedoch auch wie im folgenden Beispiel gezeigt ein Objekt verwenden. Jeder gültige JSON-Wert (mit Ausnahme von „Undefined“), der in der Quelle gefunden werden kann, wird für die Integration in das Abfrageergebnis herangezogen. Produkte ohne `shipping.weight`-Wert werden aus dem Abfrageergebnis ausgeschlossen.
+
+**Abfrage**
+
+    SELECT * 
+    FROM Products.shipping.weight
+
+**Ergebnisse**
+
+    [
+        1,
+        2
+    ]
+
+## <a name="where-clause"></a>WHERE-Klausel
+Die WHERE-Klausel gibt die Bedingungen an, die die in der Quelle angegebenen JSON-Dokumente erfüllen müssen, damit sie als Teil des Ergebnisses zurückgegeben werden. Jedes JSON-Dokument muss die angegebenen Bedingungen erfüllen, um in das Ergebnis einbezogen zu werden. Die WHERE-Klausel ist optional.
+
+Die folgende Abfrage fordert Dokumente an, die eine ID mit dem Wert „1“ enthalten.
+
+**Abfrage**
+
+    SELECT p.description
+    FROM Products p 
+    WHERE p.id = "1"
+
+**Ergebnisse**
+
+    [
+        {
+            "description": "Quick dry crew neck t-shirt"
+        }
+    ]
+
+## <a name="order-by-clause"></a>ORDER BY-Klausel
+
+Mithilfe der ORDER BY-Klausel können Sie die Ergebnisse in aufsteigender oder absteigender Reihenfolge sortieren.
+
+Die folgende ORDER BY-Abfrage gibt in aufsteigender Reihenfolge der Preise den Preis, die Beschreibung und die Produkt-ID für alle Produkte zurück.
+
+**Abfrage**
+
+    SELECT p.price, p.description, p.productId
+    FROM Products p
+    ORDER BY p.price ASC
+
+**Ergebnisse**
+
+```
+[
+    {
+        "price": "14.99",
+        "description": "Quick dry crew neck t-shirt",
+        "productId": "33218896"
+    },
+    {
+        "price": "49.99",
+        "description": "Black wool pea-coat",
+        "productId": "33218897"
+    }
+]
+```
+
+## <a name="join-clause"></a>JOIN-Klausel
+
+Mithilfe der JOIN-Klausel können Sie innere Joins für das Dokument und dessen Unterstämme ausführen. Sie können also beispielsweise in der Produktdatenbank Dokumente mit den Versanddaten verknüpfen.  
+
+In der folgenden Abfrage werden die Produkt-IDs der einzelnen Produkte zurückgegeben, für die eine Versandmethode angegeben ist. Wenn Sie ein drittes Produkt ohne Versandeigenschaft hinzufügen, wird dasselbe Ergebnis zurückgegeben, da dieses aufgrund fehlender Versandeigenschaften ausgeschlossen wird.
+
+**Abfrage**
+
+    SELECT p.productId
+    FROM Products p
+    JOIN p.shipping
+
+**Ergebnisse**
+
+    [
+        {
+            "productId": "33218896"
+        },
+        {
+            "productId": "33218897"
+        }
+    ]
+
+## <a name="geospatial-queries"></a>Räumliche Abfragen
+
+Sie können räumliche Abfragen mithilfe von GeoJSON-Punkten durchführen. Wenn Sie die Koordinaten in der Datenbank verwenden, können Sie die Distanz zwischen zwei Punkten berechnen, und Sie können bestimmen, ob sich ein Punkt, ein Polygon oder ein LineString innerhalb eines anderen Punkts, Polygons oder LineString befindet.
+
+Dadurch kann der Benutzer für Produktkatalogdaten seine Standortinformationen eingeben und prüfen, ob es innerhalb eines Radius von 50 Meilen ein Geschäft gibt, in dem der gesuchte Artikel verfügbar ist. 
+
+## <a name="summary"></a>Zusammenfassung
+
+Wenn Sie in der Lage sind, schnell alle Ihre Daten abzufragen, nachdem Sie sie zu Azure Cosmos DB hinzugefügt haben, und in der Lage sind, bekannte SQL-Abfragetechniken zu verwenden, können Sie und Ihre Kunden Einblicke in gespeicherte Daten gewinnen und wichtige Erkenntnisse daraus ziehen.

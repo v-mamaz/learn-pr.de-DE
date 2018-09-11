@@ -1,14 +1,14 @@
-Databases need to scale to meet both the data velocity and volume demands created by global audiences.
+Datenbanken müssen skaliert werden, um die Anforderungen globaler Zielgruppen an Datengeschwindigkeit und -volumen zu erfüllen.
 
-Suppose you work for an online retailer and your database needs to scale to accommodate an expanding product catalog. You also have a growing global customer base, and your customers expect quick responses to their queries and immediate updates to product availability.
+Angenommen, Sie arbeiten für einen Onlinehändler und Ihre Datenbank muss skaliert werden, um einen größer werdenden Produktkatalog zu ermöglichen. Auch Ihr Kundenstamm wächst, und Ihre Kunden erwarten schnelle Antworten auf ihre Anfragen sowie sofortige Updates der Produktverfügbarkeit.
 
-Your database should scale automatically to account for new products, and it should have high throughput and low latency to keep pace with your customers' expectations.
+Ihre Datenbank sollte automatisch skaliert werden, um neue Produkte und Benutzer zu berücksichtigen. Zudem sollte sie einen hohen Durchsatz und eine geringe Latenz aufweisen, um mit den Erwartungen Ihrer Kunden Schritt zu halten.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul lernen Sie Folgendes:
 
-- Create a NoSQL database with Azure Cosmos DB
-- Set the initial throughput volume for your database using request units
-- Choose a partition key
-- Create a database and collection in Azure Cosmos DB
+- Erstellen einer NoSQL-Datenbank mit Azure Cosmos DB
+- Festlegen des anfänglichen Durchsatzvolumens für Ihre Datenbank mithilfe von Anforderungseinheiten
+- Auswählen eines Partitionsschlüssels
+- Erstellen einer Datenbank und einer Sammlung in Azure Cosmos DB

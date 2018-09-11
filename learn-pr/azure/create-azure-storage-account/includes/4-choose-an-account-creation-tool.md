@@ -1,20 +1,20 @@
-There are several tools that create a storage account. You typically choose based on if you want a GUI and whether you need automation.
+Es gibt mehrere Tools, die ein Speicherkonto erstellen. In der Regel hängt Ihre Entscheidung davon ab, ob Sie eine grafische Benutzeroberfläche (GUI) möchten und Automatisierung benötigen.
 
-## Available tools
+## <a name="available-tools"></a>Verfügbare Tools
 
-The available tools are:
+Zu den verfügbaren Tools zählen:
 
-- Azure Portal
-- Azure CLI (Command-line interface)
+- Portal
+- Befehlszeilenschnittstelle (CLI)
 - Azure PowerShell
-- Management client libraries
+- Verwaltung einer Clientbibliothek
 
-The portal provides a GUI with explanations for each setting. This makes it easy to use and helpful for learning about the options.
+Das Portal bietet eine GUI mit QuickInfos für jede Einstellung. Dadurch ist es einfach zu bedienen und bietet hilfreiche Informationen zu den Optionen.
 
-The other tools all support automation. The Azure CLI and Azure PowerShell let you write scripts, while the management libraries allow you to incorporate the creation into a client app.
+Die anderen Tools unterstützen alle die Automatisierung. Mit der CLI und Azure PowerShell können Sie Skripts schreiben, während die Verwaltungsbibliotheken das Integrieren einer Erstellung in eine Client-App ermöglichen.
 
-## How to choose a tool
+## <a name="how-to-choose-a-tool"></a>Auswählen eines Tools
 
-Storage accounts are typically based on an analysis of your data, so they tend to be relatively stable. This means that storage-account creation is usually a one-time operation done at the start of a project. For one-time activities, the portal is the most common choice.
+Speicherkonten basieren normalerweise auf einer Analyse Ihrer Daten, sodass sie tendenziell relativ stabil sind. Dies bedeutet, dass die Erstellung von Speicherkonten in der Regel am Anfang eines Projekts in einem einmaligen Vorgang erfolgt. Das Portal ist für einmalige Aktivitäten die gängigste Wahl.
 
-In the rare cases where you need automation, the decision is between a programmatic API or a scripting solution. Scripts are typically faster to create and less work to maintain because there is no need for an IDE, NuGet packages, or build steps. If you have an existing client application, the management libraries might be an attractive choice; otherwise, scripts will likely be a better option.
+In den seltenen Fällen, in denen Sie Automatisierung benötigen, müssen Sie sich zwischen einer programmgesteuerten API und einer Skriptlösung entscheiden. In der Regel sind Skripts für das Erstellen schneller und in Sachen Verwaltung weniger arbeitsaufwendig, da keine integrierte Entwicklungsumgebung (IDE), NuGet-Pakete oder Buildschritte erforderlich sind. Wenn Sie eine vorhandene Clientanwendung haben, können die Verwaltungsbibliotheken eine attraktive Möglichkeit sein. Andernfalls sind Skripts wahrscheinlich die bessere Option.

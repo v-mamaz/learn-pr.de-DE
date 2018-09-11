@@ -1,33 +1,32 @@
-Once we have an idea of how we're going to store data across storage accounts, containers and blobs, we can think about the Azure resources we need to create to support the app.
+Sobald wir wissen, wie wir die Daten in Speicherkonten, Containern und Blobs speichern möchten, können wir uns überlegen, welche Azure-Ressourcen wir zur Unterstützung der App erstellen müssen.
 
-### Storage accounts
+### <a name="storage-accounts"></a>Speicherkonten
 
-Storage account creation is an administrative/management activity that takes place prior to deploying and running your app. Accounts are usually created by a deployment or environment setup script, an Azure Resource Manager template, or manually by an administrator. Applications other than administrative tools generally should not have permissions to create storage accounts.
+Die Erstellung eines Speicherkontos ist eine Verwaltungsaktivität, die vor der Bereitstellung und Ausführung Ihrer App stattfindet. Konten werden in der Regel durch ein Skript für die Einrichtung einer Bereitstellung oder Umgebung, eine Azure Resource Manager-Vorlage oder manuell durch einen Administrator erstellt. Anwendungen, bei denen es sich nicht um Verwaltungstools handelt, sollten grundsätzlich nicht über die Berechtigungen zum Erstellen von Speicherkonten verfügen.
 
-### Containers
+### <a name="containers"></a>Container
 
-Unlike storage account creation, container creation is a lightweight activity that makes sense to perform from within an app. It's not uncommon for apps to create and delete containers as part of their work.
+Im Gegensatz zum Erstellen eines Speicherkontos ist das Erstellen eines Containers eine relativ einfache Aktivität, die problemlos in einer App ausgeführt werden kann. Es ist nicht ungewöhnlich, dass Apps im Rahmen ihrer Funktionalität Container erstellen und löschen.
 
-For apps that rely on a known set of containers with hard-coded or preconfigured names, typical practice is to let the app create the containers it needs on startup or first usage if they don't already exist. Letting your app create containers instead of doing it as part of your app's deployment eliminates the need for both your application and your deployment process to know the names of the containers the app uses.
+Bei Apps, die einen bekannten Satz an Containern mit hartcodierten oder vorkonfigurierten Namen benötigen, ist es gang und gäbe, dass diese Apps die benötigten Container beim Starten oder bei der ersten Verwendung erstellen, falls diese noch nicht vorhanden sind. Wenn Sie die Containererstellung nicht im Rahmen der App-Bereitstellung durchführen, sondern Ihrer App überlassen, entfällt sowohl für Ihre Anwendung als auch für Ihren Bereitstellungsprozess die Notwendigkeit, die Namen der Container kennen zu müssen, die von der App verwendet werden.
 
-## Exercise
+## <a name="exercise"></a>Übung
 
-We're going to complete an unfinished ASP.NET Core app by adding code to use Azure Blob storage. This exercise is more about exploring the Blob storage API than it is about designing an organization and naming scheme, but here's a quick overview of the app and how it stores data.
+Die Bereitstellung einer ASP.NET Core-App wird abgeschlossen, indem Sie Code zum Verwenden von Azure Blob Storage hinzufügen. Bei dieser Übung geht es nicht um das Entwerfen einer Organisation und eines Benennungsschemas, sondern um das Kennenlernen der Blob Storage-API. Dennoch finden Sie hier einen kurzen Überblick über die App und die Art der Datenspeicherung:
 
-![Screenshot of the FileUploader web app](../media/4-fileuploader-with-files.PNG)
+![Screenshot der FileUploader-Web-App](../media-drafts/fileuploader-with-files.PNG)
 
-Our app works like a shared folder that accepts file uploads and makes them available for download. It doesn't use a database for organizing blobs &mdash; instead, it sanitizes the names of uploaded files and uses them as blob names directly. All uploaded files are stored in a single container.
+Unsere App funktioniert wie ein freigegebener Ordner, der Dateiuploads akzeptiert und diese zum Download zur Verfügung stellt. Sie verwendet keine Datenbank zum Organisieren von Blobs, sondern bereinigt die Namen von hochgeladenen Dateien und verwendet diese direkt als Blobnamen. Alle hochgeladenen Dateien werden in einem einzigen Container gespeichert.
 
-The code we'll start with compiles and runs, but the parts responsible for storing and loading data are empty. After we complete the code, we'll deploy the app to Azure App Service and test it.
+Der Code, mit dem wir beginnen, lässt sich kompilieren und ausführen, aber die für das Speichern und Laden von Daten zuständigen Teile sind leer. Nachdem wir den Code fertig gestellt haben, stellen wir die App in Azure App Service bereit und testen sie.
 
-Let's set up the storage infrastructure for our app.
+Nun richten wir die Speicherinfrastruktur für unsere App ein.
 
-### Resource group and storage account
-<!---TODO: Update for sandbox?--->
+### <a name="resource-group-and-storage-account"></a>Ressourcengruppe und Speicherkonto
 
-First, we'll create a resource group to contain all the resources In this unit. We'll delete it at the end to cleanup everything we create. We'll also create the storage account our app will use to store blobs.
+Zuerst erstellen wir eine Ressourcengruppe, die alle Ressourcen in dieser Übung enthalten soll. Diese Gruppe werden wir am Ende löschen, um alle erstellten Elemente zu bereinigen. Wir erstellen auch das Speicherkonto, in dem unsere App Blobs speichern soll.
 
-Use the Azure Cloud Shell terminal to create the resource group and storage account by running the following Azure CLI commands. You'll need to provide a unique name for the storage account &mdash; make a note of it for later. The choice of `eastus` for the location is arbitrary.
+Verwenden Sie das Azure Cloud Shell-Terminal, um die Ressourcengruppe und das Speicherkonto zu erstellen, indem Sie die folgenden Azure CLI-Befehle ausführen. Sie müssen einen eindeutigen Namen für das Speicherkonto angeben. Notieren Sie sich diesen Namen, da Sie in später benötigen. Die Auswahl von „`eastus`“ für den Standort ist beliebig.
 
 ```console
 az group create --name blob-exercise-group --location eastus
@@ -35,8 +34,8 @@ az storage account create --name <your-unique-storage-account-name> --resource-g
 ```
 
 > [!NOTE]
-> Why `--kind StorageV2`? There are a few different kinds of storage accounts. For most scenarios, you should use general-purpose v2 accounts. The only reason you need to explicitly specify `--kind StorageV2` is that general-purpose v2 accounts are still fairly new and have not yet been made the default in the Azure Portal or the Azure CLI.
+> Warum „`--kind StorageV2`“? Es gibt verschiedene Arten von Speicherkonten. Für die meisten Szenarios sollten Sie Konten vom Typ „Allgemein v2“ verwenden. Der einzige Grund, aus dem hier `--kind StorageV2` explizit angegeben werden sollten, besteht darin, dass Konten vom Typ „Allgemein v2“ noch recht neu sind und im Azure-Portal oder der in der Azure CLI noch nicht als Standardkonten festgelegt wurden.
 
-### Container
+### <a name="container"></a>Container
 
-The app we'll be working with in this module uses a single container. We're going to follow the best practice of letting the app create the container at startup. However, container creation can be done from the Azure CLI: run `az storage container create -h` in the Cloud Shell terminal if you'd like to see the documentation.
+Die App, mit der wir in diesem Modul arbeiten, verwendet einen einzelnen Container. Wir wenden eine bewährte Methode an und überlassen der App die Erstellung des Containers beim Start. Die Containererstellung kann aber auch über die Azure CLI erfolgen: Führen Sie „`az storage container create -h`“ im Cloud Shell-Terminal aus, wenn Sie sich die Dokumentation ansehen möchten.

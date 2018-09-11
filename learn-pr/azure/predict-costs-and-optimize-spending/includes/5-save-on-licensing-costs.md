@@ -1,77 +1,77 @@
-Licensing is another area that can dramatically impact your cloud spending. Let's look at some ways you can reduce your licensing costs.
+Die Lizenzierung ist ein weiterer Bereich, der Ihre Cloudkosten erheblich erhöhen kann. Im Folgenden werden einige Möglichkeiten erläutert, um Ihre Lizenzierungskosten zu reduzieren.
 
-## Azure Hybrid Benefit for Windows Server
+## <a name="azure-hybrid-benefit-for-windows-server"></a>Azure-Hybridvorteil für Windows Server
 
-Many customers have made an investment in Windows Server licenses and would like to repurpose this investment on Azure. The Azure Hybrid Benefit gives customers the right to use these licenses for virtual machines on Azure. That means you won't be charged for the Windows Server license and will instead be billed at the Linux rate.
+Viele Kunden haben in Windows Server-Lizenzen investiert und möchten diese in Azure wiederverwenden. Mit dem Azure-Hybridvorteil können Kunden diese Lizenzen für virtuelle Computer in Azure verwenden. Das bedeutet, dass keine Kosten für die Windows Server-Lizenz entstehen und stattdessen die Linux-Gebühr abgerechnet wird. 
 
-To be eligible for this benefit, your Windows licenses must be covered by Software Assurance. The following guidelines will also apply:
+Ihre Windows-Lizenzen müssen ebenfalls durch Software Assurance abgedeckt sein, um diesen Vorteil nutzen zu können. Es gelten ebenfalls folgende Richtlinien:
 
-- Each two-processor license or each set of 16-core licenses is entitled to two instances of up to 8 cores or one instance of up to 16 cores.
-- Standard Edition licenses can only be used once either on-premises or in Azure. That means you can't use the same license for an Azure VM and a local computer.
-- Datacenter Edition benefits allow for simultaneous usage both on-premises and in Azure, so the license will cover two running Windows machines.
+- Jede Lizenz für zwei Prozessoren oder alle Lizenzen für je 16 Kerne kann für zwei Instanzen mit bis zu acht Kernen oder für eine Instanz mit bis zu 16 Kernen eingesetzt werden.
+- Standard Edition-Lizenzen können nur einmalig entweder lokal oder in Azure verwendet werden. Das bedeutet, dass Sie dieselbe Lizenz nicht für einen virtuellen Azure-Computer und einen lokalen Computer verwenden können.
+- Mit der Datacenter Edition ist die gleichzeitige Nutzung sowohl lokal als auch in Azure möglich. Diese Lizenz umfasst also zwei ausgeführte Windows-Computer.
 
 > [!NOTE]
-> Most customers are typically licensed by core, so you'll use that model for your calculation. If you have questions about what licenses you have, reach out to your license reseller or your Microsoft account team.
+> Die meisten Kunden verwenden eine Lizenzierung pro Kern, deshalb wird dieses Modell für die Berechnung verwendet. Wenn Sie Fragen zu Ihren Lizenzen haben, wenden Sie sich an Ihren Lizenzanbieter oder an Ihr Microsoft-Kontoteam.
 
-Applying the benefit is easy. It can be turned on and off at any time with existing VMs or applied at deployment time for new VMs. The Hybrid Benefit (especially when combined with reserved instances) can provide substantial license savings.
+Das Anwenden des Vorteils ist einfach. Er kann für vorhandene virtuelle Computer jederzeit aktiviert oder deaktiviert werden oder zum Zeitpunkt der Bereitstellung auf neue virtuelle Computer angewendet werden. Der Hybridvorteil (insbesondere in Kombination mit reservierten Instanzen) kann erheblich zur Einsparung von Lizenzkosten beitragen.
 
-## Azure Hybrid Benefit for SQL Server
+## <a name="azure-hybrid-benefit-for-sql-server"></a>Azure-Hybridvorteil für SQL Server
 
-The Azure Hybrid Benefit for SQL Server helps you maximize the value from your current licensing investments and accelerate your migration to the cloud. Azure Hybrid Benefit for SQL Server is an Azure-based benefit that enables you to use your SQL Server licenses with active Software Assurance to pay a reduced rate.
+Der Azure-Hybridvorteil für SQL Server ermöglicht eine maximale Nutzung Ihrer aktuellen Lizenzinvestitionen sowie eine schnellere Migration in die Cloud. Mit dem Azure-Hybridvorteil für SQL Server können Sie Ihre SQL Server-Lizenzen mit aktiver Software Assurance verwenden und zahlen so einen geringeren Preis.
 
-You can apply this benefit even if the Azure resource is active, but the reduced rate will be applied from the time you select it in the portal. No credit will be issued retroactively.
+Sie können diesen Vorteil auch in Anspruch nehmen, wenn die Azure-Ressource aktiv ist. Die reduzierte Gebühr wird jedoch von dem Zeitpunkt an angewendet, zu dem dieser im Portal ausgewählt wird. Guthaben werden nicht rückwirkend gewährt.
 
-### Azure SQL Database vCore-based options
+### <a name="azure-sql-database-vcore-based-options"></a>Auf virtuellen Kernen basierende Optionen für Azure SQL-Datenbank
 
-For Azure SQL Database, the Azure Hybrid Benefit works as follows:
+Für Azure SQL-Datenbank funktioniert der Azure-Hybridvorteil folgendermaßen:
 
-- If you have Standard Edition per core licenses with active Software Assurance, you can get one vCore in the General Purpose service tier for every one license core you own on-premises.
-- If you have Enterprise Edition per core licenses with active Software Assurance, you can get one vCore in the Business Critical service tier for every one license core you own on-premises. Note that the Azure Hybrid Benefit for SQL Server for the Business Critical service tier is available only to customers who have Enterprise Edition licenses.
-- If you have highly virtualized Enterprise Edition per core licenses with active Software Assurance, you can get four vCores in the General Purpose service tier for every one license core you own on-premises. This is a unique virtualization benefit available only on Azure SQL Database.
+- Wenn Sie die Standard Edition mit Lizenzen pro Kern mit aktiver Software Assurance besitzen, erhalten Sie einen virtuellen Kern in der universellen Dienstebene für jeden Kern, den Sie durch eine Lizenz lokal besitzen.
+- Wenn Sie die Enterprise Edition mit Lizenzen pro Kern mit aktiver Software Assurance besitzen, erhalten Sie einen virtuellen Kern in der unternehmenskritischen Dienstebene für jeden Kern, den Sie durch eine Lizenz lokal besitzen. Beachten Sie, dass der Azure-Hybridvorteil für SQL Server für die unternehmenskritische Dienstebene nur für Kunden verfügbar ist, die Enterprise Edition-Lizenzen besitzen.
+- Wenn Sie die hochgradig virtualisierte Enterprise Edition mit Lizenzen pro Kern mit aktiver Software Assurance besitzen, erhalten Sie vier virtuelle Kerne in der universellen Dienstebene für jeden Kern, den Sie durch eine Lizenz lokal besitzen. Dies ist ein einzigartiger Virtualisierungsvorteil, der nur für Azure SQL-Datenbank verfügbar ist.
 
-The following illustration shows the vCore-based options available in each service tier with Azure Hybrid Benefit for SQL Server licenses.
+Die folgende Abbildung zeigt die auf virtuellen Kernen basierenden Optionen, die in jeder Dienstebene mit Azure-Hybridvorteil für SQL Server-Lizenzen verfügbar sind.
 
-![An illustration showing an example of how to maximize your existing SQL server license value using the Azure Hybrid Benefit.](../media/5-sql-tradein-value.png)
+![Eine Abbildung mit einem Beispiel, das verdeutlicht, wie Sie den Wert Ihrer vorhandenen SQL-Serverlizenz mithilfe des Azure-Hybridvorteils maximieren können.](../media-drafts/5-sql-tradein-value.png)
 
-For SQL Server in Azure Virtual Machines, the Azure Hybrid Benefit works as follows:
+Für SQL Server auf virtuellen Azure-Computern funktioniert der Azure-Hybridvorteil folgendermaßen:
 
-- If you have Enterprise Edition per core licenses with active Software Assurance, you can get one core of SQL Server Enterprise Edition in Azure Virtual Machines for every one license core you own on-premises.
-- If you have Standard Edition per core licenses with active Software Assurance, you can get one core of SQL Server Standard Edition in Azure Virtual Machines for every one license core you own on-premises.
+- Wenn Sie die Enterprise Edition mit Lizenzen pro Kern mit aktiver Software Assurance besitzen, erhalten Sie einen Kern für SQL Server Enterprise Edition auf virtuellen Azure-Computern für jeden Kern, den Sie durch eine Lizenz lokal besitzen.
+- Wenn Sie die Standard Edition mit Lizenzen pro Kern mit aktiver Software Assurance besitzen, erhalten Sie einen Kern für SQL Server Standard Edition auf virtuellen Azure-Computern für jeden Kern, den Sie durch eine Lizenz lokal besitzen.
 
-This can make a dramatic impact on your Azure spending with SQL Server workloads.
+Dies kann sich erheblich auf Ihre Ausgaben in Azure durch SQL Server-Workloads auswirken.
 
-## Use Dev/Test subscription offers
+## <a name="use-devtest-subscription-offers"></a>Verwenden von Dev/Test-Abonnementangeboten
 
-The [Enterprise Dev/Test](https://azure.microsoft.com/offers/ms-azr-0148p/) and [Pay-As-You-Go Dev/Test](https://azure.microsoft.com/offers/ms-azr-0023p/) offers are a benefit you can take advantage of to save costs on your non-production environments. This benefit gives you several discounts, most notably for Windows workloads, eliminating license charges and only billing you at the Linux rate for virtual machines. This also applies to SQL Server and any other Microsoft software that is covered under a Visual Studio subscription (formerly known as MSDN). There are a few requirements for this benefit, one being that it's only for non-production workloads, and another being that any users of these environments (excluding testers) must be covered under a Visual Studio subscription. In short, for non-production workloads, this allows you to save money on your Windows, SQL Server, and other Microsoft virtual machine workloads.
-Below are the full details of each offer. If you are a customer on an Enterprise Agreement, you'd leverage the Enterprise Dev/Test offer, and if you are a customer without an Enterprise Agreement and are instead using PAYG accounts, you'd leverage the Pay-As-You-Go Dev/Test offer.
+Die Angebote [Enterprise Dev/Test](https://azure.microsoft.com/offers/ms-azr-0148p/) und [Pay-As-You-Go Dev/Test](https://azure.microsoft.com/offers/ms-azr-0023p/) sind Vorteile, die Sie nutzen können, um Kosten in Ihren Nicht-Produktionsumgebungen zu sparen. Durch diesen Vorteil erhalten Sie verschiedene Rabatte, insbesondere für Windows-Workloads, sodass Lizenzgebühren und Kosten nur auf Basis der Linux-Rate für virtuelle Computer entstehen. Dies gilt ebenfalls für SQL Server und andere Microsoft-Software, die in Visual Studio-Abonnements (früher MSDN) enthalten ist. Für diesen Vorteil müssen einige Voraussetzungen erfüllt werden. Eine Voraussetzung ist, dass der Vorteil nur für Nicht-Produktionsworkloads gilt, und eine weitere ist, dass alle Benutzer dieser Umgebungen (mit Ausnahme von Testern) im Visual Studio-Abonnement abgedeckt sein müssen. Kurz gesagt können Sie für Nicht-Produktionsworkloads Kosten für Ihre Windows-, SQL-Server und sonstige Microsoft-Workloads für virtuelle Computer sparen.
+Im Folgenden finden Sie die vollständigen Informationen zu jedem Angebot. Wenn Sie Kunde im Rahmen eines Enterprise Agreement sind, können Sie das Enterprise Dev/Test-Angebot nutzen. Wenn kein Enterprise Agreement vorliegt und Sie Pay-As-You-Go-Konten verwenden, können Sie das Pay-As-You-Go Dev/Test-Angebot nutzen.
 
-## Bring your own SQL Server license
+## <a name="bring-your-own-sql-server-license"></a>Bring Your Own License (SQL Server)
 
-If you are a customer on an Enterprise Agreement and already have an investment in SQL Server licenses, and they have freed up as part of moving resources to Azure, you can provision **bring your own license** (BYOL) images off the Azure Marketplace, giving you the ability to take advantage of these unused licenses and reduce your Azure VM cost. You've always been able to do this by provisioning a Windows VM and manually installing SQL Server, but this simplifies the creation process by leveraging Microsoft certified images. Search for **BYOL** in the Marketplace to find these images.
+Wenn Sie einen Kunden im Rahmen eines Enterprise Agreements und bereits über eine Investition in SQL Server-Lizenzen verfügen und diese durch die Verschiebung von Ressourcen in Azure frei geworden sind, können Sie **Bring Your Own License**-Images (BYOL) über den Azure Marketplace bereitstellen, um diese nicht verwendeten Lizenzen zu nutzen und Ihre Kosten für virtuelle Azure-Computer zu reduzieren. Dies war zuvor bereits möglich, indem ein virtueller Windows-Computer bereitgestellt und SQL Server manuell auf diesem installiert wurde. Dieses Verfahren erleichtert jedoch den Erstellungsprozess durch die Verwendung von durch Microsoft zertifizierten Images. Suchen Sie im Marketplace nach **BYOL**, um diese Images zu finden.
 
-![Screenshot of the Azure portal showing BYOL options for SQL Server.](../media/5-byol-sql-server.png)
+![BYOL für SQL Server in Azure](../media-drafts/5-byol-sql-server.png)
 
 > [!IMPORTANT]
-> An Enterprise Agreement subscription is required to use these certified BYOL images.
+> Ein Enterprise Agreement-Abonnement ist erforderlich, um diese zertifizierten BYOL-Images zu verwenden.
 
-## Use SQL Server Developer Edition
+## <a name="use-sql-server-developer-edition"></a>Verwenden von SQL Server Developer Edition
 
-A lot of people are unaware that SQL Server Developer Edition is a free product for **nonproduction use**. Developer Edition has all the same features that Enterprise Edition has, but for nonproduction workloads, you can save dramatically on your licensing costs.
+Vielen Benutzern ist nicht bekannt, dass SQL Server Developer Edition ein kostenloses Produkt ist, das jedoch **nicht für Produktionszwecke** gedacht ist. Developer Edition enthält die gleichen Features wie Enterprise Edition, für Nicht-Produktionsworkloads können Sie jedoch erheblich an Lizenzierungskosten einsparen.
 
-Look for SQL Server images for Developer Edition on the Azure Marketplace and use them for development or testing purposes to eliminate the additional cost for SQL Server in these cases.
+Suchen Sie im Azure Marketplace nach SQL Server-Images für Developer Edition, und verwenden Sie diese für Entwicklungs- oder Testzwecke, um in diesen Fällen zusätzliche Kosten für SQL Server zu vermeiden. 
 
-> [!TIP]
-> For full licensing information, take a look at the [documented pricing guidance](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance).
+> [!NOTE]
+> Vollständige Informationen zur Lizenzierung finden Sie in den [Preisinformationen](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance).
 
-## Use constrained instance sizes for database workloads
+## <a name="use-constrained-instance-sizes-for-database-workloads"></a>Verwenden von eingeschränkten Instanzgrößen für Datenbankworkloads 
 
-Many customers have high requirements for memory, storage, or I/O bandwidth but low CPU core counts. Based on this popular request, Microsoft has made available the most popular VM sizes (DS, ES, GS, and MS) in new sizes that constrain the vCPU count to one half or one quarter of the original VM size, while maintaining the same memory, storage, and I/O bandwidth.
+Viele Kunden haben hohe Anforderungen an Arbeitsspeicher, Speicherplatz oder E/A-Bandbreite, besitzen jedoch wenige CPU-Kerne. Auf Grundlage dieser Anforderungen hat Microsoft die beliebtesten Größen für virtuelle Computer (DS, ES, GS und MS) in neuen Größen zur Verfügung gestellt, durch die die Anzahl der virtuellen CPUs auf die Hälfte oder sogar ein Viertel der ursprünglichen Größe des virtuellen Computers eingeschränkt wird, während gleich viel Arbeitsspeicher, Speicherplatz und E/A-Bandbreite beibehalten bleibt.
 
-| VM Size | vCPUs | Memory | Max disks | Max I/O throughput | SQL Server Enterprise licensing cost per year | Total cost per year (compute + licensing) |
+| Größe des virtuellen Computers | vCPUs | Arbeitsspeicher | Max. Anzahl Datenträger | Maximaler E/A-Durchsatz | SQL Server Enterprise-Lizenzierungskosten pro Jahr | Gesamtkosten pro Jahr (Compute und Lizenzierung) |
 |---------|-------|--------|-----------|--------------------|-----------------------------------------------|---------------------------|
-| Standard_DS14v2   | 16 | 112 GB | 32 | 51,200 IOPS or 768 MB/s |           |           |
-| Standard_DS14-4v2 | **4**  | 112 GB | 32 | 51,200 IOPS or 768 MB/s | 75% lower | 57% lower |
-| Standard_GS5      | 32 | 448    | 64 | 80,000 IOPS or 2 GB/s   |           |           |
-| Standard_GS5-8    | **8**  | 448    | 64 | 80,000 IOPS or 2 GB/s   | 75% lower | 42% lower |
+| Standard_DS14v2   | 16 | 112 GB | 32 | 51.200 IOPS oder 768 MB/s |           |           |
+| Standard_DS14-4v2 | **4**  | 112 GB | 32 | 51.200 IOPS oder 768 MB/s | 75 % niedriger | 57 % niedriger |
+| Standard_GS5      | 32 | 448    | 64 | 80.000 IOPS oder 2 GB/s   |           |           |
+| Standard_GS5-8    | **8**  | 448    | 64 | 80.000 IOPS oder 2 GB/s   | 75 % niedriger | 42 % niedriger |
 
-Because database products like SQL Server and Oracle are licensed per CPU, this allows customers to reduce licensing cost by up to 75 percent but still maintain the high performance their database requires.
+Da Datenbankprodukte wie SQL Server und Oracle pro CPU lizenziert werden, können Kunden die Lizenzierungskosten um bis zu 75 % senken und dennoch weiterhin die hohe Leistung nutzen, die ihre Datenbanken benötigen. 

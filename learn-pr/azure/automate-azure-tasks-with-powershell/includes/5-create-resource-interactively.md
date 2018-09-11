@@ -1,82 +1,76 @@
-Azure PowerShell lets you write commands and execute them immediately. This is known as **interactive mode**.
+Mit Azure PowerShell können Sie Befehle schreiben und diese sofort ausführen. Wird als **interaktiver Modus** bezeichnet.
 
-Recall that the overall goal in the Customer Relationship Management (CRM) example is to create three test environments containing VMs. You will use resource groups to ensure the VMs are organized into separate environments: one for unit testing, one for integration testing, and one for acceptance testing. You only need to create the resource groups once, which means using the interactive mode of PowerShell is a good choice.
+Denken Sie daran, dass das Ziel im CRM-Beispiel (Customer Relationship Management) darin besteht, drei Testumgebungen zu erstellen, die virtuelle Computer enthalten. Sie verwenden Ressourcengruppen, um sicherzustellen, dass die virtuellen Computer in separaten Umgebungen organisiert sind: einer für Komponententests, einer für Integrationstests und einer für Benutzerakzeptanztests. Sie müssen die Ressourcengruppen nur einmal erstellen, der interaktive Modus von PowerShell ist daher eine gute Wahl.
 
-This section shows some examples of using PowerShell interactively to log on to your Azure subscription and create resource groups.
+In diesem Abschnitt werden einige Beispiele dargestellt, wie PowerShell interaktiv verwendet wird, um sich bei einem Azure-Abonnement anzumelden und Ressourcengruppen zu erstellen.
 
-## What are PowerShell cmdlets?
-A PowerShell command is called a **cmdlet** (pronounced "command-let"). A cmdlet is a command that manipulates a single feature. The term **cmdlet** is intended to imply "small command". By convention, cmdlet authors are encouraged to keep cmdlets simple and single-purpose.
+## <a name="what-are-powershell-cmdlets"></a>Was sind PowerShell-Cmdlets?
+Ein PowerShell-Befehl wird als **Cmdlet** (ausgesprochen: „Command-let“) bezeichnet. Ein Cmdlet ist ein Befehl, der ein einzelnes Feature bearbeitet. Der Begriff **Cmdlet** soll „kleiner Befehl“ heißen. Gemäß der Konvention wird Cmdlet-Autoren empfohlen, Cmdlets einfach zu halten und nur für einen einzigen Zweck zu erstellen.
 
-The base PowerShell product ships with cmdlets that work with features such as sessions and background jobs. You add modules to your PowerShell installation to get cmdlets that manipulate other features. For example, there are third-party modules to work with ftp, administer your operating system, access the file system, and so on.
+Im PowerShell-Basisprodukt sind Cmdlets enthalten, die mit Features wie Sitzungen und Hintergrundaufträgen funktionieren. Fügen Sie Module zu Ihrer PowerShell-Installation hinzu, damit Cmdlets andere Features ändern können. Es gibt z.B. Drittanbietermodule für die Arbeit mit FTP, das Verwalten Ihres Betriebssystems oder das Zugreifen auf das Dateisystem.
 
-Cmdlets follow a verb-noun naming convention; for example, **Get-Process**, **Format-Table**, and **Start-Service**. There is also a convention for verb choice: "get" to retrieve data, "set" to insert or update data, "format" to format data, "out" to direct output to a destination, and so on.
+Die Namenskonvention bei Cmdlets ist „Verb-Substantiv“, z.B. **Get-Process**, **Format-Table**, and **Start-Service**. Es gibt ebenfalls eine Konvention für die Auswahl des Verbs, z.B. „get“ zum Abrufen von Daten, „set“ zum Einfügen oder Aktualisieren von Daten, „format“ zum Formatieren von Daten oder „out“, um die Ausgabe einem Ziel zuzuweisen.
 
-Cmdlet authors are encouraged to include a help file for each cmdlet. The **Get-Help** cmdlet displays the help file for any cmdlet:
+Cmdlet-Autoren wird empfohlen, eine Hilfedatei für jedes Cmdlet beizufügen. Das Cmdlet **Get-Help** zeigt die Hilfedatei für ein Cmdlet an:
 
 ```powershell
 Get-Help <cmdlet-name> -detailed
 ```
 
-## What is AzureRM?
-**AzureRM** is the formal name for the Azure PowerShell module containing cmdlets to work with Azure features (the **RM** in the name stands for **Resource Manager**). It contains hundreds of cmdlets that let you control nearly every aspect of every Azure resource. You can work with resource groups, storage, virtual machines, Azure Active Directory, containers, machine learning, and so on.
+## <a name="what-is-azurerm"></a>Was ist AzureRM?
+**AzureRM** ist der formelle Name des Azure PowerShell-Moduls, das die Cmdlets enthält, die mit den Azure-Features zusammenarbeiten sollen (das **RM** im Namen steht für **Resource Manager**). Es enthält hunderte Cmdlets, mit denen Sie nahezu jeden Aspekt jeder Azure-Ressource regulieren können. Sie können mit Ressourcengruppen, Speicher, virtuellen Computern, Azure Active Directory, Containern, Machine Learning usw. arbeiten.
 
-## How to create a resource group
-Next, we'll create a resource group using a local installation of Azure PowerShell. 
+## <a name="how-to-create-a-resource-group"></a>Erstellen einer Ressourcengruppe
+Als Nächstes erstellen Sie eine Ressourcengruppe mit einer lokalen Installation von Azure PowerShell. 
 
-There are four steps: 
+Dazu sind vier Schritte notwendig: 
+1. Importieren Sie die Azure-Cmdlets.
+1. Stellen Sie eine Verbindung mit Ihrem Azure-Abonnement her.
+1. Erstellen Sie die Ressourcengruppe.
+1. Stellen Sie sicher, dass das Erstellen erfolgreich war.
 
-1. Import the Azure cmdlets.
+![Schritte zum Erstellen einer Ressource in Azure mit Azure PowerShell](../media/5-create-resource-overview.png)
 
-1. Connect to your Azure subscription.
+Jeder Schritt entspricht einem anderen Cmdlet.
 
-1. Create the resource group.
+### <a name="import"></a>Importieren
+PowerShell lädt beim Start standardmäßig nur die wichtigsten Cmdlets. Das bedeutet, dass das Cmdlet, dass mit Azure arbeiten muss, nicht geladen wird. Die zuverlässigste Option zum Laden der benötigten Cmdlets besteht darin, diese manuell zu Beginn der PowerShell-Sitzung zu importieren.
 
-1. Verify that creation was successful (see below).
-
-The following illustration shows an overview of these steps.
-
-![An illustration showing the steps to create a resource group.](../media/5-create-resource-overview.png)
-
-Each step corresponds to a different cmdlet.
-
-### Import
-At startup, PowerShell loads only the core cmdlets by default. This means the cmdlets you need to work with Azure won't be loaded. The most reliable way to load the cmdlets you need is to import them manually at the start of your PowerShell session.
-
-You use the **Import-Module** cmdlet to load modules. This cmdlet has many parameters to handle a variety of situations. For example, it can load multiple modules, a specific module version, part of a module, and so on. To load the entirety of one module, the syntax is simply:
+Sie verwenden das Cmdlet **Import-Module** zum Laden von Modulen. Dieses Cmdlet verfügt über viele Parameter, die für unterschiedliche Situationen geeignet sind. Beispielsweise kann es mehrere Module, eine bestimmte Modulversion, Teile eines Moduls usw. laden. Die Syntax ist einfach, wenn Sie ein gesamtes Modul laden möchten:
 
 ```powershell
 Import-Module <module-name>
 ```
 
 > [!TIP]
-> If you find that you work with Azure PowerShell frequently, there are two ways you can automate the module-loading process. You can add an entry to your PowerShell profile to import the Azure module at startup or use the latest versions of PowerShell, which loads the containing module automatically when you use a cmdlet.
+> Wenn Sie häufig mit Azure PowerShell arbeiten, gibt es zwei Möglichkeiten, den Modulladeprozess zu automatisieren. Sie können Ihrem PowerShell-Profil einen Eintrag hinzufügen, um das Azure-Modul beim Start zu importieren, oder die aktuellste Versionen von PowerShell verwenden, die das enthaltende Modul automatisch lädt, wenn Sie das Cmdlet verwenden.
 
-### Connect
-Since you are working with a local install of Azure PowerShell, you will need to authenticate before you can execute Azure commands. The **Connect-AzureRmAccount** cmdlet prompts for your Azure credentials and then connects to your Azure subscription. It has many optional parameters, but if all you need is an interactive prompt, no parameters are needed:
+### <a name="connect"></a>Verbinden
+Da Sie mit einer lokalen Installation von Azure PowerShell arbeiten, müssen Sie sich zunächst authentifizieren, um Azure-Befehle ausführen zu können. Das Cmdlet **Connect-AzureRmAccount** ruft Ihre Azure-Anmeldeinformationen ab und stellt dann eine Verbindung mit Ihrem Azure-Abonnement her. Es hat viele optionale Parameter. Wenn Sie jedoch nur eine interaktive Eingabeaufforderung benötigen, sind keine Parameter erforderlich:
 
 ```powershell
 Connect-AzureRmAccount
 ```
 
-### Create
-The **New-AzureRmResourceGroup** cmdlet creates a resource group. You must specify a name and location. The name must be unique within your subscription. The location determines where the metadata for your resource group will be stored (which may be important to you for compliance reasons). You use strings like "West US", "North Europe", or "West India" to specify the location. As with most of the Azure cmdlets, **New-AzureRmResourceGroup** has many optional parameters; however, the core syntax is:
+### <a name="create"></a>Erstellen
+Verwenden Sie das Cmdlet **New-AzureRmResourceGroup**, um eine Ressourcengruppe zu erstellen. Sie müssen einen Namen und einen Standort angeben. Der Name muss innerhalb Ihres Abonnements eindeutig sein. Der Standort bestimmt, wo die Metadaten für Ihre Ressourcengruppe gespeichert werden (was für Sie aus Konformitätsgründen wichtig sein kann). Verwenden Sie Zeichenfolgen wie „USA, Westen“, „Europa, Norden“ oder „Indien, Westen“, um den Standort anzugeben. Wie die meisten Azure-Cmdlets hat auch **New-AzureRmResourceGroup** viele optionale Parameter. Die grundlegende Syntax ist die folgende:
 
 ```powershell
 New-AzureRmResourceGroup -Name <name> -Location <location>
 ```
 
-### Verify
-The **Get-AzureRmResource** lists your Azure resources. This is useful here to verify whether creation of the resource group was successful.
+### <a name="verify"></a>Überprüfen
+Das Cmdlet **Get-AzureRmResource** listet Ihre Azure-Ressourcen auf. So können wir hier überprüfen, ob die Ressourcengruppe erfolgreich erstellt wurde.
 
 ```powershell
 Get-AzureRmResource
 ```
 
-To get a more concise view, you can send the output from the **Get-AzureRmResource** to the **Format-Table** cmdlet using a pipe '|'.
+Senden Sie die Ausgabe des Cmdlets **Get-AzureRmResource** an das Cmdlet **Format-Table** mit dem senkrechten Strich „|“.
 
 ```powershell
 Get-AzureRmResource | Format-Table
 ```
 
-## Summary
-PowerShell's interactive mode is appropriate for one-off tasks. In our example, we'll use the same resource group for the lifetime of the project, which means creating it interactively is reasonable. Interactive mode is often quicker and easier for this task than writing a script and executing that script exactly once.
+## <a name="summary"></a>Zusammenfassung
+Der interaktive Modus von PowerShell eignet sich für einmalige Aufgaben. In unserem Beispiel verwenden wir die gleiche Ressourcengruppe für das gesamte Projekt, weshalb es sinnvoll ist, sie als interaktive Ressourcengruppe zu erstellen. Der interaktive Modus erweist sich für diesen Task oft als schneller und einfacher als das Schreiben eines Skripts, das Sie dann nur einmal ausführen.

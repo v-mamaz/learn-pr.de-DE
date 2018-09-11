@@ -1,22 +1,22 @@
-Managing data is a critical component of any business. Relational databases, and specifically Microsoft SQL Server, have been among the most common tools for handling that data for decades. 
+Das Verwalten von Daten ist eine wichtige Komponente eines jeden Unternehmens. Relationale Datenbanken und insbesondere Microsoft SQL Server gehören seit Jahrzehnten zu den am häufigsten verwendeten Tools für die Verarbeitung dieser Daten. 
 
-If we want to manage our data using the cloud, we _can_ just use Azure virtual machines to host our own Microsoft SQL Server instances. Sometimes that's the right solution, but Azure offers another way that is often much easier and more cost effective. Azure SQL databases are a Platform-as-a-Service (PaaS) offering, meaning much less infrastructure and maintenance to manage yourself.
+Wenn Sie Ihre Daten mit der Cloud verwalten möchten, _können_ Sie einfach Azure-VMs verwenden, um Ihre eigenen Microsoft SQL Server-Instanzen zu hosten. Manchmal ist dies die richtige Lösung, jedoch bietet Azure auch eine andere Möglichkeit, die häufig viel einfacher und kosteneffektiver ist. Azure SQL-Datenbanken sind ein PaaS-Angebot (Platform-as-a-Service), d.h. Sie müssen sich um viel weniger Infrastruktur und Wartung kümmern.
 
-To understand better, let's consider a scenario: You're a software development lead at a transportation logistics company, Contoso Transport.
+Stellen Sie sich folgendes Szenario vor, um dies besser zu verstehen: Sie sind leitender Softwareentwickler bei dem Unternehmen für Transportlogistik, Contoso Transport.
 
-The transportation industry requires tight coordination among everyone involved: schedulers, dispatchers, drivers, and even customers.
+Die Transportindustrie erfordert enge Koordination aller Beteiligten: Disponenten, Dispatcher, Fahrer und sogar Kunden.
 
-Your current process involves piles of paper forms and hours on the phone to coordinate shipments. You find that paperwork is often missing signatures and dispatchers are frequently unavailable. These holdups leave drivers sitting idle, which causes important shipments to arrive late. Customer satisfaction and repeat business are crucial to your bottom line.
+Ihr aktueller Prozess umfasst stapelweise Papierformulare und Stunden am Telefon, um Lieferungen zu koordinieren. Sie stellen fest, dass Unterschriften bei den Unterlagen oft fehlen und Dispatcher häufig nicht verfügbar sind. Aufgrund dieser Verzögerungen müssen Fahrer oft warten, wodurch wichtige Lieferungen später ankommen. Die Kundenzufriedenheit und das Wiederholungsgeschäft sind entscheidend für den Saldo Ihres Unternehmens.
 
-Your team decides to move from paper forms and phone calls to digital documents and online communication. Going digital will enable everyone to coordinate and track shipment times through their web browser or mobile app.
+Ihr Team entscheidet sich dazu, von Papierformularen und Telefonanrufen auf digitale Dokumente und Onlinekommunikation umzusteigen. Mit dem Umstieg auf digitale Prozesse kann das Team Lieferzeiten im Webbrowser oder in einer mobilen App koordinieren und nachverfolgen.
 
-You want to quickly prototype something to share with your team. Your prototype will include a database to hold driver, customer, and order information. Your prototype will be the basis for your production app. So the technology choices you make now should carry to what your team delivers.
+Gestalten Sie in kurzer Zeit einen Prototyp für Ihr Team. Dieser Prototyp soll eine Datenbank für die Informationen zum Fahrer, Kunden und zur Bestellung enthalten. Ihr Prototyp wird die Grundlage Ihrer Produktions-App bilden. Die Auswahl der Technologie, die Sie nun treffen, sollte den Anforderungen Ihres Teams entsprechen.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you'll learn:
+Hier lernen Sie Folgendes:
 
-- Why Azure SQL Database is a good choice for running your relational database
-- What configuration and pricing options are available for your Azure SQL database
-- How to create an Azure SQL database from the portal
-- How to use Azure Cloud Shell to connect to your Azure SQL database, add a table, and work with data
+- Die Vorteile von Azure SQL-Datenbank zum Ausführen einer relationalen Datenbank
+- Welche Optionen für die Konfiguration und Preise Ihnen für Azure SQL-Datenbank zur Verfügung stehen
+- Das Erstellen einer Azure SQL-Datenbank über das Portal
+- Die Verwendung von Cloud Shell zum Herstellen einer Verbindung mit Ihrer Azure SQL-Datenbank, das Hinzufügen einer Tabelle und das Arbeiten mit Daten

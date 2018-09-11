@@ -1,55 +1,51 @@
-Before you connect the database to your app, you want to check that you can connect to it, add a basic table, and work with sample data.
+Bevor Sie eine Verbindung der Datenbank mit Ihrer App herstellen, sollten Sie überprüfen, ob Sie eine Verbindung zu ihr herstellen, ihr eine einfache Tabelle hinzufügen und mit Beispieldaten arbeiten können.
 
-We maintain the infrastructure, software updates, and patches for your Azure SQL database. Beyond that, you can treat your Azure SQL database like you would any other SQL Server installation. For example, you can use Visual Studio, SQL Server Management Studio, or other tools to manage your Azure SQL database.
+Wir verwalten die Infrastruktur, Softwareupdates und Patches für Ihre Azure SQL-Datenbank. Darüber hinaus können Sie Ihre Azure SQL-Datenbank wie jede andere SQL Server-Installation behandeln. Sie können z.B. Visual Studio, SQL Server Management Studio oder andere Tools zum Verwalten von Azure SQL-Datenbank verwenden.
 
-How you access your database and connect it to your app is up to you. But to get some experience working with your database, here you'll connect to it directly from the portal, create a table, and run a few basic CRUD operations. You'll learn:
+Wie Sie auf die Datenbank zugreifen und die Verbindung zwischen ihr und Ihrer App herstellen, bleibt Ihnen überlassen. Aber um ein wenig Erfahrung in der Arbeit mit Ihrer Datenbank zu sammeln, stellen Sie hier direkt aus dem Portal eine Verbindung mit ihr her, erstellen eine Tabelle und führen einige grundlegende CRUD-Vorgänge aus. Sie lernen Folgendes:
 
-- What Cloud Shell is and how to access it from the portal.
-- How to access information about your database from the Azure CLI, including connection strings.
-- How to connect to your database using `sqlcmd`.
-- How to initialize your database with a basic table and some sample data.
+* Was Cloud Shell ist und wie Sie über das Portal darauf zugreifen.
+* Wie Sie über Azure CLI auf Informationen zu Ihrer Datenbank zugreifen, einschließlich der Verbindungszeichenfolgen.
+* Wie Sie mittels `sqlcmd` eine Verbindung mit Ihrer Datenbank herstellen.
+* Wie Sie die Datenbank mit einer grundlegenden Tabelle und einigen Beispieldaten initialisieren.
 
-## What is Azure Cloud Shell?
+## <a name="what-is-azure-cloud-shell"></a>Was ist Azure Cloud Shell?
 
-Azure Cloud Shell is a browser-based shell experience to manage and develop Azure resources. Think of Cloud Shell as an interactive console that runs in the cloud.
+Azure Cloud Shell ist eine browserbasierte Shell zum Verwalten und Entwickeln von Azure-Ressourcen. Stellen Sie sich Cloud Shell als eine interaktive Konsole vor, die in der Cloud ausgeführt wird.
 
-Behind the scenes, Cloud Shell runs on Linux. But depending on whether you prefer a Linux or Windows environment, you have two experiences to choose from: Bash and PowerShell.
+Hinter den Kulissen wird Cloud Shell unter Linux ausgeführt. Aber abhängig davon, ob Sie eine Linux- oder Windows-Umgebung bevorzugen, haben Sie zwei Oberflächen zur Auswahl: Bash und PowerShell.
 
-Cloud Shell is accessible from anywhere. Besides the portal, you can also access Cloud Shell from [shell.azure.com](https://shell.azure.com/), the Azure mobile app, or from Visual Studio Code.
+Auf Cloud Shell können Sie von überall zugreifen. Außer vom Portal können Sie auch von [shell.azure.com](https://shell.azure.com/), der mobilen Azure-App oder Visual Studio Code aus auf Cloud Shell zugreifen.
 
-Cloud Shell includes popular tools and text editors. Here's a brief look at `az`, `jq`, and `sqlcmd`, three tools you'll use for our current task.
+Cloud Shell umfasst beliebte Tools und Text-Editoren. Hier lernen Sie kurz `az`, `jq` und `sqlcmd` kennen, drei Tools, die Sie für unsere aktuelle Aufgabe verwenden.
 
-- `az` is also known as the Azure CLI. It's the command-line interface for working with Azure resources. You'll use this to get information about your database, including the connection string.
-- `jq` is a command-line JSON parser. You'll pipe output from `az` commands to this tool to extract important fields from JSON output.
-- `sqlcmd` enables you to execute statements on SQL Server. You'll use `sqlcmd` to create an interactive session with your Azure SQL database.
+* `az` wird auch als Azure CLI bezeichnet. Dies ist die Befehlszeilenschnittstelle für die Arbeit mit Azure-Ressourcen. Sie verwenden sie, um Informationen zu Ihrer Datenbank einschließlich der Verbindungszeichenfolge zu erhalten.
+* `jq` ist ein Befehlszeilen-JSON-Parser. Sie reichen die Ausgabe von `az`-Befehlen an dieses Tool weiter, um wichtige Felder aus der JSON-Ausgabe zu extrahieren.
+* Mit `sqlcmd` können Sie Anweisungen auf einer SQL Server-Instanz ausführen. Mit `sqlcmd` erstellen Sie eine interaktive Sitzung mit Ihrer Azure SQL-Datenbankinstanz.
 
-## Get information about your Azure SQL database
+## <a name="get-information-about-your-azure-sql-database"></a>Abrufen von Informationen zu Ihrer Azure SQL-Datenbankinstanz
 
-Before you connect to your database, it's a good idea to verify it exists and is online.
+Bevor Sie eine Verbindung mit Ihrer Datenbank herstellen, sollten Sie überprüfen, ob sie vorhanden und online ist.
 
-Here, you bring up Cloud Shell and use the `az` utility to list your databases and show some information about the **Logistics** database, including its maximum size and status.
+Hierzu öffnen Sie Cloud Shell, und verwenden Sie das `az`-Hilfsprogramm zum Auflisten Ihrer Datenbanken und Anzeigen von Informationen zur **Logistics**-Datenbank einschließlich maximaler Größe und Status.
 
-1. From the portal, at the top, click **Cloud Shell**.
-
-1. The `az` commands you'll run require the name of your resource group and the name of your Azure SQL logical server. To save typing, run this `azure configure` command to specify them as default values.
-    Replace `contoso-logistics` with the name of your Azure SQL logical server.
-
+1. Klicken Sie im Portal im oberen Bereich auf **Cloud Shell**. 
+    ![Öffnen von Cloud Shell](../media-draft/open-cloud-shell.png)
+1. Die von Ihnen ausgeführten `az`-Befehle erfordern den Namen Ihrer Ressourcengruppe und den Namen Ihrer logischen Azure SQL-Server. Um sich das Eintippen zu ersparen, führen Sie diesen `azure configure`-Befehl aus, um sie als Standardwerte anzugeben.
+    Ersetzen Sie `contoso-logistics` durch den Namen Ihres logischen Azure SQL-Servers.
     ```azurecli
     az configure --defaults group=logistics-db-rg sql-server=contoso-logistics
     ```
-
-1. Run `az sql db list` to list all databases on your Azure SQL logical server.
-
+1. Führen Sie `az sql db list` zum Auflisten aller Datenbanken auf dem logischen Azure SQL-Server aus.
     ```azurecli
     az sql db list
     ```
-    You see a large block of JSON as output.
-
-1. Since we want just the database names, run the command a second time. This time, pipe the output to `jq` to print out only the name fields.
+    Sie sehen einen großen JSON-Block als Ausgabe. 
+1. Da wir nur die Datenbanknamen benötigen, führen Sie den Befehl ein zweites Mal aus. Reichen Sie die Ausgabe diesmal an `jq` weiter, um nur die Namensfelder auszugeben.
     ```azurecli
     az sql db list | jq '[.[] | {name: .name}]'
     ```
-    You see this.
+    Sie sehen Folgendes.
     ```console
     [
       {
@@ -60,21 +56,17 @@ Here, you bring up Cloud Shell and use the `az` utility to list your databases a
       }
     ]
     ```
-    **Logistics** is your database. Like SQL Server, **master** includes server metadata, such as sign-in accounts and system configuration settings.
-
-1. Run this `az sql db show` command to get details about the **Logistics** database.
-
+    **Logistics** ist Ihre Datenbank. Wie SQL Server enthält **master** Servermetadaten wie Anmeldekonten und Systemkonfigurationseinstellungen.
+1. Führen Sie diesen `az sql db show`-Befehl aus, um Details über die **Logistics**-Datenbank zu erhalten. 
     ```azurecli
     az sql db show --name Logistics
     ```
-    As before, you see a large block of JSON as output.
-
-1. Run the command a second time. This time, pipe the output to `jq` to limit output to only the name, maximum size, and status of the **Logistics** database.
-
+    Wie bereits zuvor sehen Sie einen großen JSON-Block als Ausgabe.
+1. Führen Sie den Befehl ein zweites Mal aus. Reichen Sie die Ausgabe diesmal an `jq` weiter, um die Ausgabe auf den Namen, die maximale Größe und den Status der **Logistics**-Datenbank zu beschränken.
     ```azurecli
     az sql db show --name Logistics | jq '{name: .name, maxSizeBytes: .maxSizeBytes, status: .status}'
     ```
-    You see that the database is online and can hold around 2 GB of data.
+    Sie sehen, dass die Datenbank online ist und ca. 2 GB Daten enthalten kann.
     ```console
     {
       "name": "Logistics",
@@ -83,137 +75,107 @@ Here, you bring up Cloud Shell and use the `az` utility to list your databases a
     }
     ```
 
-## Connect to your database
+## <a name="connect-to-your-database"></a>Herstellen einer Verbindung mit Ihrer Datenbank
 
-Now that you understand a bit about your database, let's connect to it using `sqlcmd`, create a table that holds information about transportation drivers, and perform a few basic CRUD operations.
+Da Sie nun etwas mit Ihrer Datenbank vertraut sind, lassen Sie uns eine Verbindung mit ihr unter Verwendung von `sqlcmd` herstellen, eine Tabelle erstellen, die Informationen über Transportfahrer enthält, und einige grundlegende CRUD-Vorgänge ausführen.
 
-Remember that CRUD stands for **create**, **read**, **update**, and **delete**. These terms refer to operations you perform on table data and are the four basic operations you need for your app. Now's a good time to verify you can perform each of them.
+Beachten Sie, dass CRUD für **Create (Erstellen)**, **Read (Lesen)**, **Update (Aktualisieren)** und **Delete (Löschen)** steht. Dies bezieht sich auf Vorgänge, die Sie an Tabellendaten ausführen, und diese vier grundlegenden Vorgänge benötigen Sie für Ihre App. Jetzt ist ein guter Zeitpunkt, um zu überprüfen, ob Sie sie jeweils ausführen können.
 
-1. Run this `az sql db show-connection-string` command to get the connection string to the **Logistics** database in a format that `sqlcmd` can use.
-
+1. Führen Sie diesen `az sql db show-connection-string`-Befehl aus, um die Verbindungszeichenfolge zum Herstellen der Verbindung mit der **Logistics**-Datenbank in einem Format abzurufen, das `sqlcmd` verwenden kann.
     ```azurecli
     az sql db show-connection-string --client sqlcmd --name Logistics
     ```
-    Your output resembles this.
+    Die Ausgabe sieht ungefähr so aus.
     ```console
     "sqlcmd -S tcp:contoso-1.database.windows.net,1433 -d Logistics -U <username> -P <password> -N -l 30"
     ```
-
-1. Run the `sqlcmd` statement from the previous step to create an interactive session.
-    Remove the surrounding quotes and replace `<username>` and `<password>` with the username and password you specified when you created your database. Here's an example.
-
+1. Führen Sie die `sqlcmd`-Anweisung aus dem vorherigen Schritt aus, um eine interaktive Sitzung zu erstellen.
+    Entfernen Sie die umgebenden Anführungszeichen, und ersetzen Sie `<username>` und `<password>` durch den Benutzernamen und das Kennwort, die Sie beim Erstellen der Datenbank angegeben haben. Hier sehen Sie ein Beispiel.
     ```console
     sqlcmd -S tcp:contoso-1.database.windows.net,1433 -d Logistics -U martina -P "password1234$" -N -l 30
     ```
-
     > [!TIP]
-    > Place your password in quotes so that "&" and other special characters aren't interpreted as processing instructions.
-
-1. From your `sqlcmd` session, create a table named `Drivers`.
-
+    > Setzen Sie Ihr Kennwort in Anführungszeichen, damit „&“ und andere Sonderzeichen nicht als Verarbeitungsanweisungen interpretiert werden.
+1. Erstellen Sie von Ihrer `sqlcmd`-Sitzung aus eine Tabelle mit dem Namen `Drivers`.
     ```sql
     CREATE TABLE Drivers (DriverID int, LastName varchar(255), FirstName varchar(255), OriginCity varchar(255) );
     GO
     ```
-
-    The table contains four columns: a unique identifier, the driver's last and first name, and the driver's city of origin.
-
+    Die Tabelle enthält vier Spalten: einen eindeutigen Bezeichner, Nach- und Vorname des Fahrers und den Herkunftsort des Fahrers.
     > [!NOTE]
-    > The language you see here is Transact-SQL, or T-SQL.
-
-1. Verify that the `Drivers` table exists.
-
+    > Die hier gezeigte Sprache ist Transact-SQL, auch als T-SQL bezeichnet.
+1. Überprüfen Sie, ob die `Drivers`-Tabelle vorhanden ist.
     ```sql
     SELECT name FROM sys.tables;
     GO
     ```
-
-    You see this.
-
+    Sie sehen Folgendes.
     ```console
     name
     --------------------------------------------------------------------------------------------------------------------------------
     Drivers
-
+    
     (1 rows affected)
     ```
-
-1. Run this `INSERT` T-SQL statement to add a sample row to the table. This is the **create** operation.
-
+1. Führen Sie diese `INSERT`-T-SQL-Anweisung aus, um der Tabelle eine Beispielzeile hinzuzufügen. Dies ist der **Create**-Vorgang.
     ```sql
     INSERT INTO Drivers (DriverID, LastName, FirstName, OriginCity) VALUES (123, 'Orton', 'Erick', 'Springfield');
     GO
     ```
-
-    You see this to indicate the operation succeeded.
-
+    Dies zeigt Ihnen an, dass der Vorgang erfolgreich war.
     ```console
     (1 rows affected)
     ```
-
-1. Run this `SELECT` T-SQL statement list in the `DriverID` column from all rows in the table. This is the **read** operation.
-
+1. Führen Sie diese `SELECT`-T-SQL-Anweisungsliste für die `DriverID`-Spalte aller Zeilen in der Tabelle aus. Dies ist der **Read**-Vorgang.
     ```sql
     SELECT DriverID FROM Drivers;
     GO
     ```
-
-    You see one result, the `DriverID` for the row you created in the previous step.
-
+    Daraufhin wird ein Ergebnis angezeigt, die `DriverID` für die Zeile, die Sie im vorherigen Schritt erstellt haben.
     ```console
     DriverID
     -----------
             123
-
+    
     (1 rows affected)
     ```
-
-1. Run this `UPDATE` T-SQL statement to change the city of origin from "Springfield" to "Springfield, OR" for the driver with a `DriverID` of 123. This is the **update** operation.
-
+1. Führen Sie diese `UPDATE`-T-SQL-Anweisung aus, um den Herkunftsort für den Fahrer mit der `DriverID` „123“ von „Springfield“ in „Springfield, OR“ zu ändern. Dies ist der **Update**-Vorgang.
     ```sql
     UPDATE Drivers SET OriginCity='Springfield, OR' WHERE DriverID=123;
     GO
     ```
-
-    You see this.
-
+    Sie sehen Folgendes.
     ```console
     (1 rows affected)
     ```
-
-1. Run this `DELETE` T-SQL statement to delete the record. This is the **delete** operation.
-
+1. Führen Sie diese `DELETE`-T-SQL-Anweisung aus, um den Datensatz zu löschen. Dies ist der **Delete**.
     ```sql
     DELETE FROM Drivers WHERE DriverID=123;
     GO
     ```
-
+    
     ```console
     (1 rows affected)
     ```
-
-1. Run this `SELECT` T-SQL statement to verify the `Drivers` table is empty.
-
+1. Führen Sie diese `SELECT`-T-SQL-Anweisung aus, um zu überprüfen, ob die `Drivers`-Tabelle leer ist.
     ```sql
     SELECT COUNT(*) FROM Drivers;
     GO
     ```
-
-    You see that the table contains no rows.
-
+    Sie sehen, dass die Tabelle keine Zeilen enthält.
     ```console
     -----------
               0
-
+    
     (1 rows affected)
     ```
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-Now that you have the hang of working with Azure SQL Database from Cloud Shell, you can get the connection string for your favorite SQL management tool &ndash; whether that's from SQL Server Management Studio, Visual Studio, or something else.
+Da Sie nun wissen, wie Sie mittels Cloud Shell mit Azure SQL-Datenbank arbeiten, können Sie die Verbindungszeichenfolge für Ihr bevorzugtes SQL-Verwaltungstool abrufen &ndash; ganz gleich, ob von SQL Server Management Studio, Visual Studio oder sonst wo aus.
 
-Cloud Shell makes it easy to access and work with your Azure resources. Because Cloud Shell is browser-based, you can access it from Windows, macOS, or Linux &ndash; essentially any system with a web browser.
+Cloud Shell erleichtert Ihnen den Zugriff auf Ihre Azure-Ressourcen und die Arbeit damit. Da Cloud Shell browserbasiert ist, können Sie mit Windows, macOS oder Linux darauf zugreifen &ndash; im Wesentlichen mit jedem System, in dem ein Webbrowser zur Verfügung steht.
 
-You gained some hands-on experience running Azure CLI commands to get information about your Azure SQL database. As a bonus, you practiced your T-SQL skills.
+Sie gewannen einige praktische Erfahrungen mit der Ausführung von Azure CLI-Befehlen zum Abrufen von Informationen zu Ihrer SQL Azure-Datenbank. Als Bonus übten Sie Ihre T-SQL-Fertigkeiten.
 
-Finally, let's wrap up and see how to tear down your database.
+Jetzt kommen wir zum Ende und sehen, wie wir Ihre Datenbank entfernen können.

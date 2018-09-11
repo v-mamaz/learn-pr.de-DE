@@ -1,53 +1,54 @@
-It's common to execute a piece of logic at a set interval. Imagine you're a blog owner and you notice that your subscribers aren't reading your most recent posts. You decide that the best action is to send an email once a week to remind them to check your blog. You implement this logic using an Azure function with a _timer trigger_ to invoke your function weekly.
+Es ist üblich, eine bestimmte Logik in festgelegten Intervallen auszuführen. Stellen Sie sich vor, Sie haben einen Blog und stellen fest, dass Ihre Abonnenten die neuesten Beiträge nicht lesen. Also entscheiden sie sich dafür, einmal pro Woche eine E-Mail zu senden, um sie an Ihren Blog zu erinnern. Sie implementieren diese Logik mit einer Azure-Funktion mit _Timertrigger_, damit Ihre Funktion wöchentlich aufgerufen wird.
 
-## What is a timer trigger?
+## <a name="what-is-a-timer-trigger"></a>Was ist ein Timertrigger?
 
-A timer trigger is a trigger that executes a function at a consistent interval. To create a timer trigger, you need to supply two pieces of information.
+Ein Zeitgebertrigger ist ein Trigger, der eine Funktion in einem bestimmten Intervall ausführt. Um einen Timertrigger zu erstellen, müssen Sie zwei Informationen angeben. 
 
-1. A *Timestamp parameter name*, which is simply an identifier to access the trigger in code.
-2. A *Schedule*, which is a *CRON expression* that sets the interval for the timer.
+1. Ein *Zeitstempel-Parametername*, d.h. ein Bezeichner für den Zugriff auf den Trigger im Code. 
+2. Ein *Zeitplan*, d.h. ein *CRON-Ausdruck*, der das Intervall für den Timer festlegt.
 
-## What is a CRON expression?
+## <a name="what-is-a-cron-expression"></a>Was ist ein CRON-Ausdruck?
 
-A *CRON expression* is a string that consists of six fields that represent a set of times.
+Ein *CRON-Ausdruck* ist eine Zeichenfolge aus sechs Feldern, die eine Zeitangabe darstellt.
 
-The order of the six fields in Azure is: `{second} {minute} {hour} {day} {month} {day of the week}`.
+Die Reihenfolge der Felder ist in Azure die folgende: `{second} {minute} {hour} {day} {month} {day of the week}`.
 
-For example, a *CRON expression* to create a trigger that executes every five minutes looks like:
+Ein *CRON-Ausdruck* zum Erstellen eines Triggers, der alle fünf Minuten ausgeführt wird, sieht beispielsweise so aus:
 
-```log
+```
 0 */5 * * * *
 ```
 
-At first, this string may look confusing. We'll come back and break down these concepts when we have a deeper look at *CRON expressions*.
+Diese Zeichenfolge kann auf den ersten Blick verwirrend aussehen. Wir betrachten diese Konzepte im Detail, wenn wir uns die *CRON-Ausdrücke* genauer ansehen.
 
-To build a *CRON expression*, you need to have a basic understanding of some of the special characters.
+Um einen *CRON-Ausdruck* zu erstellen, benötigen Sie ein grundlegendes Verständnis für einige Sonderzeichen.
 
-| Special character | Meaning | Example |
+| Sonderzeichen | Bedeutung | Beispiel |
 | ------------- | ------------- | ------------- |
-| *      | Selects every value in a field | An asterisk "*" in the day of the week field means *every* day. |
-| ,      | Separates items in a list | A comma "1,3" in the day of the week field means just Mondays (day 1) and Wednesdays (day 3). |
-| -      | Specifies a range | A hyphen "10-12" in the hour field means a range that includes the hours 10, 11, and 12. |
-| /      | Specifies an increment | A slash "*/10" in the minutes field means an increment of every 10 minutes. |
+| *      | Wählt jeden Wert in einem Feld aus | Ein Sternchen „*“ im Feld für den Wochentag steht für *jeden* Tag. |
+| ,      | Trennt Listenelemente | Ein Komma „1,3“ im Feld für den Wochentag wird bei Auflistungen verwendet. In diesem Beispiel trennt es „montags“ (Tag 1) und „mittwochs“ (Tag 3). |
+| -      | Gibt einen Bereich an | Ein Bindestrich „10-12“ im Feld für die Stunden gibt einen Bereich an, der hier 10, 11 und 12 Uhr einschließt. |
+| /      | Gibt ein Inkrement an | Ein Schrägstrich „*/10“ im Feld für die Minuten bedeutet in diesem Beispiel ein Inkrement von 10 Minuten. |
 
-Now we'll go back to the original CRON expression example. Let’s try to understand it better by breaking it down field by field.
+Nun kehren wir zum ursprünglichen CRON-Ausdruckbeispiel zurück. Versuchen wir, ihn besser zu verstehen, indem wir ihn Feld für Feld aufschlüsseln.
 
-```log
+```
 0 */5 * * * *
 ```
 
-The **first field** represents seconds. This field supports the values 0-59. Because the field contains a zero, it selects the first possible value, which is one second.
+Das **erste Feld** stellt die Sekunden dar. Es unterstützt die Werte 0 bis 59. Da das Feld eine 0 (Null) enthält, wird der erste Wert ausgewählt, der eine Sekunde beträgt.
 
-The **second field** represents minutes. The value "*/5" contains two special characters. First, the asterisk (\*) means "select every value within the field." Because this field represents minutes, the possible values are 0-59. The second special character is the slash (/), which represents an increment. When you combine these characters together, it means for all values 0-59, select every fifth value. An easier way to say that is simply "every five minutes."
+Das **zweite Feld** steht für die Minuten. Der Wert „*/5“ enthält zwei Sonderzeichen. Das Sternchen (\*) gibt an, dass jeder Wert im Feld ausgewählt wird. Da dieses Feld die Minuten darstellt, sind die möglichen Werte 0 bis 59. Das zweite Sonderzeichen ist der Schrägstrich (/), der ein Inkrement angibt. Wenn Sie diese Zeichen kombinieren, bedeutet das, dass im Bereich 0 bis 59 jeder fünfte Wert ausgewählt wird. Das bedeutet also „alle fünf Minuten“.
 
-The **remaining four fields** represent the hour, day, month, and weekday of the week. An asterisk for these fields means to select every possible value. In this example, we select "every hour of every day of every month."
+Die **verbleibenden vier Felder** stellen die Stunde, den Tag, den Monat und den Wochentag dar. Ein Sternchen in einem dieser Felder bedeutet, ein beliebiger Wert wird ausgewählt. In diesem Beispiel wählen wir „jede Stunde jedes Tages jedes Monats“ aus.
 
-When you put all the fields together, the expression is read as "on the first second, of every fifth minute of every hour, of every day, of every month".
+Wenn Sie alle Felder zusammensetzen, bedeutet der Ausdruck „in der ersten Sekunde jeder fünften Minute jeder Stunde jedes Tages jedes Monats“.
 
-## How to create a timer trigger
+## <a name="how-to-create-a-timer-trigger"></a>Erstellen eines Timertriggers
 
-A timer trigger can be created completely within the Azure portal. In your Azure function, select **timer trigger** from the list of predefined trigger types. Enter the logic that you want to execute. Supply a **Timestamp parameter name** and the **CRON expression**.
+Ein Zeitgebertrigger kann vollständig im Azure-Portal erstellt werden. Wählen Sie in Ihrer Azure-Funktion **Zeitgebertrigger** aus der Liste der vordefinierten Triggertypen aus. Geben Sie die Logik ein, die Sie ausführen möchten. Geben Sie einen **Zeitstempel-Parameternamen** und den **CRON-Ausdruck** an.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-A timer trigger invokes an Azure function on a consistent schedule. To define the schedule for a timer trigger, we build a *CRON expression*, which is a string that represents a set of times.
+Ein Zeitgebertrigger ruft eine Azure-Funktion nach einem einheitlichen Zeitplan auf. Um den Zeitplan für einen Zeitgebertrigger zu definieren, erstellen Sie einen *CRON-Ausdruck*. Dabei handelt es sich um eine Zeichenfolge, die eine Zeitangabe darstellt.
+

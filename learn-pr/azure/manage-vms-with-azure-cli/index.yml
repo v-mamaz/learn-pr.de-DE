@@ -1,0 +1,47 @@
+### YamlMime:Module
+uid: learn.manage-vms-with-azure-cli
+metadata:
+  title: Verwalten von virtuellen Computern mit der Azure CLI
+  description: Erfahren Sie, wie Sie mit der plattformübergreifenden Azure CLI VMs in Azure erstellen, starten und beenden sowie andere Verwaltungsaufgaben im Zusammenhang mit virtuellen Computern ausführen.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: aed93aa4528333f3d97ad6b6481950235c4b7363
+  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43414840"
+title: Verwalten von virtuellen Computern mit der Azure CLI
+summary: Erfahren Sie, wie Sie mit der plattformübergreifenden Azure CLI VMs in Azure erstellen, starten und beenden sowie andere Verwaltungsaufgaben im Zusammenhang mit virtuellen Computern ausführen.
+abstract: >
+  In diesem Modul lernen Sie Folgendes:
+
+  - Erstellen einer VM mit der Azure CLI
+
+  - Ändern der Größe von VMs mit der Azure CLI
+
+  - Ausführen grundlegender Verwaltungsaufgaben mit der Azure CLI
+
+  - Herstellen einer Verbindung mit einer aktiven VM über SSH und die Azure CLI
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+- administrator
+products:
+- azure
+- virtualMachines
+- azureCli
+units:
+- learn.manage-vms-with-azure-cli-data.1-what-is-the-cli
+- learn.manage-vms-with-azure-cli-data.2-logins-and-subscriptions
+- learn.manage-vms-with-azure-cli-data.3-create-a-resource-group
+- learn.manage-vms-with-azure-cli-data.4-create-a-vm
+- learn.manage-vms-with-azure-cli-data.5-testing-the-vm
+- learn.manage-vms-with-azure-cli-data.6-other-vm-images
+- learn.manage-vms-with-azure-cli-data.7-sizing-vms
+- learn.manage-vms-with-azure-cli-data.8-querying-vms
+- learn.manage-vms-with-azure-cli-data.9-managing-vms
+- learn.manage-vms-with-azure-cli-data.10-installing-software
+- learn.manage-vms-with-azure-cli-data.11-cleanup
+achievement: learn.manage-vms-with-azure-cli-data.badge

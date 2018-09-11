@@ -1,51 +1,51 @@
-A co-worker named Alain at First Up Consultants needs the ability to create and manage virtual machines for a project he is working on. Your manager has asked that you handle this request. Using the best practice to grant users the least privileges to get their work done, you decide to create a new resource group and assign Alain the Virtual Machine Contributor role.
+Ein Kollege bei First Up Consultants mit dem Namen Alain muss für ein Projekt, an dem er aktuell arbeitet, virtuelle Computer erstellen und verwalten können. Ihr Manager hat Sie darum gebeten, diese Anforderung zu bearbeiten. Unter Verwendung der Best Practices zur Gewährung minimaler Berechtigungen für Benutzer, damit diese ihren Auftrag durchführen können, entscheiden Sie, eine neue Ressourcengruppe zu erstellen und Alain die Rolle „Mitwirkender für virtuelle Computer“ zuzuweisen.
 
-## Sign in to the Azure portal
+## <a name="sign-in-to-the-azure-portal"></a>Anmelden auf dem Azure-Portal
 
-- Make sure you are still signed in to the Azure portal as **LabAdmin-_XXXXXXX_@_xxxxxxxxxxxx_.onmicrosoft.com**. You can find the username and password on the **Resources** tab at the top of this window.
+- Stellen Sie sicher, dass Sie immer noch als **LabAdmin-_XXXXXXX_@_xxxxxxxxxxxx_.onmicrosoft.com** im Azure-Portal angemeldet sind. Den Benutzernamen und das Kennwort finden Sie oben im Fenster auf der Registerkarte **Ressourcen**.
 
-## Grant access
+## <a name="grant-access"></a>Gewähren von Zugriff
 
-Follow these steps to assign the Virtual Machine Contributor role to a user at the resource group scope.
+Führen Sie diese Schritte aus, um einem Benutzer im Bereich der Ressourcengruppen die Rolle „Mitwirkender für virtuelle Computer“ zuzuweisen.
 
-1. In the navigation list, click **Resource groups**.
+1. Klicken Sie in der Navigationsliste auf **Ressourcengruppen**.
 
-1. Find and click the **FirstUpConsultantsRG1-_XXXXXXX_** resource group.
+1. Suchen Sie die Ressourcengruppe **FirstUpConsultantsRG1-_XXXXXXX_**, und klicken Sie darauf.
 
-   ![Resource group list](../media-draft/5-resource-groups.png)
+   ![Ressourcengruppenliste](../media-draft/5-resource-groups.png)
 
-1. Click **Access control (IAM)** to see the current list of role assignments.
+1. Klicken Sie auf **Zugriffssteuerung (IAM)**, um die aktuelle Liste der Rollenzuweisungen anzuzeigen.
 
-   ![Access control (IAM) blade for resource group](../media-draft/5-resource-group-access-control.png)
+   ![Blatt „Zugriffssteuerung (IAM)“ für Ressourcengruppe](../media-draft/5-resource-group-access-control.png)
 
-1. At the top, click **Add** to open the **Add permissions** pane.
+1. Klicken Sie im oberen Bereich auf **Hinzufügen**, um den Bereich **Berechtigungen hinzufügen** zu öffnen.
 
-   ![Add permissions pane](../media-draft/5-add-permissions.png)
+   ![Bereich „Berechtigungen hinzufügen“](../media-draft/5-add-permissions.png)
 
-1. In the **Role** drop-down list, select **Virtual Machine Contributor**.
+1. Wählen Sie in der Dropdownliste **Rolle** die Rolle **Mitwirkender für virtuelle Computer** aus.
 
-1. In the **Select** list, select **LabUser-_XXXXXXX_**.
+1. Wählen Sie in der Liste **Auswählen** den Benutzer **LabUser-_XXXXXXX_** aus.
 
-   ![Add permissions pane completed](../media-draft/5-add-permissions-save.png)
+   ![Bereich „Berechtigungen hinzufügen“ abgeschlossen](../media-draft/5-add-permissions-save.png)
 
-1. Click **Save** to create the role assignment.
+1. Klicken Sie auf **Speichern**, um die Rollenzuweisung zu erstellen.
 
-   After a few moments, the **LabUser-_XXXXXXX_** user is assigned the Virtual Machine Contributor role at the **FirstUpConsultantsRG1-_XXXXXXX_** resource group scope. The user can now create and manage virtual machines just within this resource group.
+   Nach einigen Augenblicken wird der Benutzer **LabUser-_XXXXXXX_** der Rolle „Mitwirkender für virtuelle Computer“ im Bereich **FirstUpConsultantsRG1-_XXXXXXX_** der Ressourcengruppen zugewiesen. Der Benutzer kann nun nur in dieser Ressourcengruppe virtuelle Computer erstellen und verwalten.
 
-   ![Virtual Machine Contributor role assignment](../media-draft/5-vm-contributor-assignment.png)
+   ![Zuweisung der Rolle „Mitwirkender für virtuelle Computer“](../media-draft/5-vm-contributor-assignment.png)
 
-## Remove access
+## <a name="remove-access"></a>Entfernen des Zugriffs
 
-In RBAC, to remove access, you remove a role assignment.
+In RBAC entfernen Sie eine Rollenzuweisung, um den Zugriff zu entfernen.
 
-1. In the list of role assignments, select the **LabUser-_XXXXXXX_** user with the Virtual Machine Contributor role.
+1. Wählen Sie in der Liste der Rollenzuweisungen den Benutzer **LabUser-_XXXXXXX_** mit der Rolle „Mitwirkender für virtuelle Computer“ aus.
 
-1. Click **Remove**.
+1. Klicken Sie auf **Entfernen**.
 
-   ![Remove role assignment message](../media-draft/5-remove-role-assignment.png)
+   ![Nachricht zum Entfernen der Rollenzuweisung](../media-draft/5-remove-role-assignment.png)
 
-1. In the **Remove role assignments** message that appears, click **Yes**.
+1. Klicken Sie in der Nachricht zum **Entfernen von Rollenzuweisungen** auf **Ja**.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this unit, you learned how to grant a user access to create and manage virtual machines in a resource group using the Azure portal. In the next unit, you look at how to grant access using PowerShell.
+In dieser Einheit haben Sie gelernt, wie Sie einem Benutzer über das Azure-Portal Zugriff gewähren, damit dieser virtuelle Computer in einer Ressourcengruppe erstellen und verwalten kann. In der nächsten Einheit erfahren Sie, wie Sie mithilfe von PowerShell Zugriff gewähren können.

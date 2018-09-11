@@ -1,15 +1,15 @@
-We've talked through the Azure pricing calculator and how you can use it to estimate your costs on Azure and compare pricing between different service offerings. We looked at savings options, how to export pricing estimates, and at various tools that Azure has available to help you keep your cloud spend in check.
+Wir haben über den Azure-Preisrechner gesprochen und wie Sie damit Ihre Kosten in Azure abschätzen und Preise verschiedener Dienstangebote vergleichen können. Wir haben uns angeschaut, welche Optionen zur Kostenersparnis existieren, wie Preisschätzungen exportiert werden und welche anderen Tools es gibt, die Azure Ihnen für die Kontrolle Ihrer Cloudausgaben bereitstellt.
 
-- Azure Advisor provides recommendations in a number of areas, including cost.
-- Azure Cost Management gives you reporting and billing information, so you can gain insights into where you're spending your money.
-- Cloudyn takes this even further and gives you detailed information that you can use for chargebacks and to identify areas of inefficiency.
+- Der Azure Advisor gibt Empfehlungen zu unterschiedlichen Bereichen, unter anderem auch zu Kosten.
+- Azure Cost Management bietet Berichts- und Rechnungsinformationen, sodass Sie einen Überblick über Ihre Ausgaben erhalten. 
+- Cloudyn geht sogar noch weiter und stellt ausführliche Informationen zu verbrauchsbasierter Kostenzuteilung und bestimmten Bereichen bereit, in denen die Effizienz optimiert werden kann.
 
-We then explored best practices to help you save money on both infrastructure and licensing.
+Anschließend wurden bewährte Methoden erörtert, durch die Sie Kosten bei der Infrastruktur und der Lizenzierung einsparen können.
 
-## Learn more
+## <a name="learn-more"></a>Weitere Informationen
 
-Here are some places to go to learn more about what we've covered today:
+Hier können Sie mehr zu den heute besprochenen Themen erfahren:
 
-- [Azure billing documentation](https://docs.microsoft.com/azure/billing/)
+- [Dokumentation zur Azure-Abrechnung](https://docs.microsoft.com/azure/billing/)
 - [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/)
-- [Azure budgets](https://docs.microsoft.com/azure/billing/billing-cost-management-budget-scenario)
+- [Azure-Budgets](https://docs.microsoft.com/azure/billing/billing-cost-management-budget-scenario)

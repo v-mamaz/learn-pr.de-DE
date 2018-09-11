@@ -1,16 +1,17 @@
-Azure Multi-Factor Authentication has traditionally been deployed like a hammer by IT departments, enabled for every user for every authentication. When the feature is integrated with conditional access, Azure Multi-Factor Authentication becomes a razor-sharp scalpel that allows you to specify which apps and circumstances require it.
+Azure Multi-Factor Authentication wird üblicherweise zügig von IT-Abteilungen bereitgestellt und ist für jeden Benutzer und jede Authentifizierung aktiviert. Nach der Integration des Features mit bedingtem Zugriff ist Azure Multi-Factor Authentication der perfekte Dienst, um festzulegen, für welche Apps und Situationen diese Authentifizierung erforderlich ist.
 
-Imagine that you work for First Up Consultants, an engineering firm that specializes in circuit and electrical design. They're moving their on-premises workloads to Azure. Your manager in the IT department is responsible for keeping the company’s assets secure. The admin wants you to make sure that any time an administrator accesses the Azure portal, they've performed multi-factor authentication. The admin has tasked you with enabling this functionality and testing it. You'll use Azure AD, conditional access, and Azure Multi-Factor Authentication.
+Angenommen, Sie arbeiten für ein Ingenieurbüro namens First Up Consultants, das auf Schaltkreise und elektrische Ausführung spezialisiert ist. Dieses Unternehmen verschiebt seine lokalen Workloads in Azure. Ihr Vorgesetzter in der IT-Abteilung ist verantwortlich für die Sicherheit der Unternehmensobjekte. Der Administrator möchte, dass Sie sicherstellen, dass bei jedem Zugriff eines Administrators auf des Azure-Portal die mehrstufige Authentifizierung durchlaufen wurde. Der Administrator hat Sie beauftragt, diese Funktion zu aktivieren und zu testen. Sie verwenden Azure AD, bedingten Zugriff und Azure Multi-Factor Authentication.
 
-In this module, you will learn how to use conditional access along with Azure Multi-Factor Authentication to secure access to the Azure portal.
+In diesem Modul lernen Sie, wie Sie den bedingten Zugriff mit Azure Multi-Factor Authentication verwenden, um den Zugriff auf das Azure-Portal zu schützen.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul lernen Sie Folgendes:
+- Erstellen eines Testbenutzers und einer Benutzergruppe
+- Aktivieren Sie eine Richtlinie für bedingten Zugriff, die Multi-Factor Authentication erfordert.
 
-- Create a test user and a user group.
-- Enable a conditional access policy that requires Multi-Factor Authentication (MFA).
+## <a name="prerequisites"></a>Voraussetzungen
 
-## Prerequisites
-
-- Knowledge of basic Azure concepts, such as resource groups and subscriptions.
+- Kenntnisse der grundlegenden Azure-Konzepte wie Ressourcengruppen und Abonnements
+- Zugriff auf ein Azure-Abonnement
+- Berechtigungen für das Erstellen eines Verzeichnisses

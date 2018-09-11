@@ -1,27 +1,27 @@
-The online retailer that you work for plans to expand to a new geographical area soon. This move will increase your customer base and transaction volume. You must ensure that your database is equipped to handle expansion whenever required.
+Der Onlinehändler, für den Sie arbeiten, möchte demnächst expandieren. Diese Umstellung wird Ihre Kundenbasis und das Transaktionsvolumen vergrößern. Sie müssen sicherstellen, dass Ihre Datenbank für die Erweiterung nach Bedarf vorbereitet ist.
 
-Having a partition strategy ensures that when your database needs to grow, it can do so easily and continue to perform efficient queries and transactions.
+Mit einer Partitionsstrategie stellen Sie sicher, dass Ihre Datenbank bei Bedarf mühelos wachsen und weiterhin effizient Abfragen und Transaktionen durchführen kann.
 
-## What is a partition strategy?
+## <a name="what-is-a-partition-strategy"></a>Was ist eine Partitionsstrategie?
 
-If you continue to add new data to a single server or a single partition, it will eventually run out of space. To prepare for this, you need a partitioning strategy to **scale out** instead of up. Scaling out is also called horizontal scaling, and it enables you to add more partitions to your database as your application needs them.
+Wenn Sie fortfahren, einem einzelnen Server oder einer einzelne Partition neue Daten hinzuzufügen, wird dort schließlich kein Speicherplatz mehr zur Verfügung stehen. Zur Vorbereitung darauf benötigen Sie eine Partitionierungsstrategie, um statt zentral **horizontal hochzuskalieren**. Horizontales Hochskalieren ermöglicht Ihnen, Ihrer Datenbank weitere Partitionen hinzuzufügen, wenn Ihre Anwendung sie benötigt.
 
-The partition and scale-out strategy in Azure Cosmos DB is driven by the partition key, which is a value set when you create a collection. Once the partition key is set, it cannot be changed without recreating the collection, so selecting the right partition key is an important decision to make early in your development process.  
+Die Partition und die Strategie zum horizontalen Hochskalieren in Azure Cosmos DB werden vom Partitionsschlüssel gesteuert, einem Wert, den Sie beim Erstellen einer Sammlung festlegen. Sobald der Partitionsschlüssel festgelegt ist, kann er nicht ohne Neuerstellen der Sammlung geändert werden; darum ist die Auswahl des richtigen Partitionsschlüssels eine wichtige Entscheidung, die Sie frühzeitig im Entwicklungsprozess treffen müssen.  
 
-In this unit, you will learn how to choose a partition key that's right for your scenario and will take advantage of the autoscaling that Azure Cosmos DB can do for you.
+In dieser Einheit lernen Sie, wie Sie einen Partitionsschlüssel auswählen, der für Ihr Szenario geeignet ist, und nutzen den Vorteil der automatischen Skalierung, die Azure Cosmos DB für Sie erledigen kann.
 
-## Partition key basics
+## <a name="partition-key-basics"></a>Grundlagen zum Partitionsschlüssel
 
-A partition key represents a value in your database that's frequently queried. In our online retail scenario, using the `userID` or `productId` value as the partition key is a good choice because it will be unique and likely used to lookup records. `userID` is a good choice, as your application frequently needs to retrieve the personalization settings, shopping cart, order history, and profile information for the user, just to name a few. `productId` is also a good choice, as your application needs to query inventory levels, shipping costs, color options, warehouse locations, and more.
+Ein Partitionsschlüssel stellt einen Wert in der Datenbank dar, der häufig abgefragt wird. In diesem Onlinehändlerszenario sind die Werte `UserID` und `ProductID` eine gute Wahl für den Partitionsschlüssel, da dieser eindeutig ist und wahrscheinlich zum Suchen von Datensätzen verwendet wird. `UserID` ist eine gute Wahl, da Ihre Anwendung beispielsweise häufig Personalisierungseinstellungen, den Einkaufswagen, den Bestellverlauf und Profilinformationen des Benutzers aufrufen muss. `ProductID` ist ebenfalls eine gute Wahl, da Ihre Anwendung Lagerbestände, Versandkosten, Farboptionen, Lagerhausstandorte usw. abfragen muss.
 
-A partition key should aim to distribute operations across the database. You want to distribute requests to avoid hot partitions. A hot partition is a single partition that receives many more requests than the others, which can create a throughput bottleneck. For example, for your e-commerce application, the current time would be a poor choice of partition key, because all the incoming data would go to a single partition key. `userID` or `productId` would be better, as all the users on your site would likely be adding and updating their shopping cart or profile information at about the same frequency, which distributes the reads and writes across all the user partitions. Likewise, updates to product data would also likely be evenly distributed, making `productId` a good partition key choice.
+Mit einem Partitionsschlüssel sollte versucht werden, Vorgänge in der Datenbank zu verteilen. Durch die Verteilung von Anforderungen können Sie „heiße“ Partitionen vermeiden. Eine „heiße“ Partition ist eine einzelne Partition, die viel mehr Anforderungen als die anderen empfängt, sodass ein Durchsatzengpass auftreten kann. Für Ihre E-Commerce-Anwendung wäre die aktuelle Uhrzeit z.B. als Partitionsschlüssel eine schlechte Wahl, da alle eingehenden Daten an einen einzelnen Partitionsschlüssel gesendet würden. `UserID` oder `ProductID` wäre besser, da alle Benutzer auf Ihrer Website ihre Warenkorb- oder Profilinformationen in etwa mit der gleichen Häufigkeit hinzufügen und aktualisieren würden, wodurch die Lese- und Schreibvorgänge auf alle Benutzerpartitionen verteilt würden. Ebenso würden Updates von Produktdaten wahrscheinlich auch relativ gleichmäßig verteilt, sodass `ProductID` als Partitionsschlüssel eine gute Wahl ist.
 
-Each partition key has a maximum storage space of 10 GB, which is the size of one physical partition in Azure Cosmos DB. So, if your single `userID` or `productId` record is going to be larger than 10 GB, think about using a composite key instead so that each record is smaller. An example of a composite key would be `userID-date`, which would look like **CustomerName-08072018**. This composite key approach would enable you to create a new partition for each day a user visited the site.
+Jeder Partitionsschlüssel hat einen maximalen Speicherplatz von 10 GB, was der Größe einer physischen Partition in Azure Cosmos DB entspricht. Wenn also Ihr einzelner `UserID`- oder `ProductID`-Datensatz größer als 10 GB sein wird, erwägen Sie stattdessen die Verwendung eines zusammengesetzten Schlüssels, damit die Größe aller Datensätze verringert wird. Ein Beispiel für einen zusammengesetzten Schlüssel wäre `UserID-date`, der **Kundenname-08072018** ähneln würde. Mit diesem Ansatz des zusammengesetzten Schlüssels könnten Sie für jeden Tag, an dem ein Benutzer die Website besucht, eine neue Partition erstellen.
 
-## Best practices
+## <a name="best-practices"></a>Bewährte Methoden
 
-When you're trying to determine the right partition key and the solution isn't obvious, here are a few tips to keep in mind.
+Wenn Sie versuchen, den richtigen Partitionsschlüssel zu bestimmen und die Lösung nicht offensichtlich ist, helfen Ihnen die folgenden Tipps.
 
-- Don’t be afraid of having too many partition keys. The more partition keys you have, the more scalability you have.
-- To determine the best partition key for a read-heavy workload, review the top three to five queries you plan on using. The value most frequently included in the WHERE clause is a good candidate for the partition key.
-- For write-heavy workloads, you'll need to understand the transactional needs of your workload, because the partition key is the scope of multi-document transactions.
+- Haben Sie keine Angst davor, zu viele Partitionsschlüssel zu besitzen. Je mehr Partitionsschlüssel Sie haben, desto mehr Skalierungsmöglichkeiten haben Sie.
+- Um den besten Partitionsschlüssel für eine Arbeitsauslastung mit vielen Lesevorgängen zu bestimmen, überprüfen Sie die wichtigsten drei bis fünf Abfragen, die Sie zu verwenden planen. Der am häufigsten in der WHERE-Klausel enthaltene Wert ist ein guter Kandidat für den Partitionsschlüssel.
+- Für Workloads mit vielen Schreibvorgängen müssen Sie die Transaktionsanforderungen Ihrer Workload verstehen, da der Partitionsschlüssel der Bereich der Transaktionen mit mehreren Dokumenten ist.

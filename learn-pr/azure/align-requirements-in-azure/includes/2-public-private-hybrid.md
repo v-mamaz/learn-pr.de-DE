@@ -1,71 +1,71 @@
-Imagine you work at a healthcare company. You have legacy systems, line of business systems, and future plans for new systems. You've heard there are advantages to using cloud computing. How do you choose the best deployment model for different solutions: public, private, or hybrid cloud?
+Angenommen, Sie arbeiten bei einem Unternehmen im Gesundheitswesen. Sie haben ältere Systeme, branchenspezifische Systeme, und Zukunftspläne für neue Systeme. Sie haben gehört, dass der Einsatz von Cloud Computing Vorteile bringt. Wie wählen Sie das beste Bereitstellungsmodell für verschiedene Lösungen aus: öffentliche Cloud, private Cloud oder Hybrid Cloud?
 
-## What is cloud computing?
+## <a name="what-is-cloud-computing"></a>Was ist Cloud Computing?
 
-Cloud computing is the provisioning of services and applications on demand over the internet. Servers, applications, data, and other resources are provided as a service. 
+Cloud Computing ist die bedarfsgesteuerte Bereitstellung von Diensten und Anwendungen über das Internet. Server, Anwendungen, Daten und andere Ressourcen werden als Dienst bereitgestellt. 
 
-To the user, the details of the services are abstracted. You can quickly provision computing resources and use the service with minimal management. You shouldn't think of cloud computing as a datacenter available through the internet. Cloud computing uses virtualization, commodity hardware, and automated processes to provide a self-service user experience to customers similar to a public utility.
+Für den Benutzer werden die Details der Dienste abstrahiert. Sie können Computingressourcen schnell bereitstellen und den Dienst mit minimalem Verwaltungsaufwand nutzen. Sie sollten sich Cloud Computing nicht als Rechenzentrum vorstellen, das über das Internet verfügbar ist. Beim Cloud Computing kommen Virtualisierung, handelsübliche Hardware und automatisierte Prozesse zum Einsatz, um den Kunden ein Self-Service-Benutzererlebnis zu bieten, das dem eines öffentlichen Versorgungsunternehmens ähnlich ist.
 
-There are three deployment models for cloud computing: public cloud, private cloud, and hybrid cloud. The following illustration shows an overview of these deployment models.
+Es gibt drei Bereitstellungsmodelle für Cloud Computing: öffentliche Cloud, private Cloud und Hybrid Cloud. Die folgende Abbildung stellt eine Übersicht über diese Bereitstellungsmodelle dar.
 
-![An illustration showing a high-level overview of cloud deployment models.](../media/2-cloud-deployment.png)
+![Eine Abbildung, die eine allgemeine Übersicht über Cloudbereitstellungsmodelle darstellt.](../media/2-cloud-deployment.png)
 
-!!! Video TC-008 placeholder !!! 
+!!! Video TC-008-Platzhalter !!! 
 
 > [!VIDEO https://channel9.msdn.com/Series/History/The-History-of-Microsoft-1995/player]
 
-## Public cloud
+## <a name="public-cloud"></a>Öffentliche Cloud
 
-Public clouds are the most common way of deploying cloud computing. Services are offered over the public internet and available to anyone who wants to purchase them. The cloud resources such as servers and storage are owned and operated by a third-party cloud service provider and delivered over the internet. Services may be free or sold on demand, allowing customers to pay only per usage for the CPU cycles, storage, or bandwidth they consume. Microsoft Azure is an example of a public cloud. 
+Öffentliche Clouds sind die gängigste Methode der Bereitstellung von Cloud Computing. Dienste werden über das öffentliche Internet angeboten und sind für alle Benutzer verfügbar, die sie erwerben möchten. Besitzer und Betreiber der Cloudressourcen wie Server und Speicher sind Drittanbieter von Clouddiensten, die diese über das Internet bereitstellen. Dienste werden entweder kostenlos angeboten oder nach Bedarf verkauft, sodass Kunden nur für die Nutzung von CPU-Zyklen, Speicher und Bandbreite zahlen müssen, die sie verwenden. Microsoft Azure ist ein Beispiel einer öffentlichen Cloud. 
 
-Let's imagine your healthcare company needs an enrollment website. The site needs to scale and be responsive during peak enrollment various times during the year. Your customers access the site from global locations. You can use the public cloud to automatically scale up to meet demand at peak enrollment. When site traffic is low, your site can scale down to save costs. Your site is responsive at peak demand, and you only pay for more resources when needed. You can also deploy your website in multiple geographic regions to increase reliability and responsiveness.
+Angenommen Sie, Ihr Unternehmen im Gesundheitswesen benötigt eine Registrierungswebsite. Die Website muss zu verschiedenen Spitzenzeiten bei Registrierungen im Verlauf des Jahres skalierbar und reaktionsschnell sein. Ihre Kunden greifen auf die Website von globalen Standorten aus zu. Sie können die öffentliche Cloud verwenden, um die Website zum Erfüllen des Bedarfs zu Spitzenzeiten bei Registrierungen automatisch zentral hoch zu skalieren. Wenn der Datenverkehr auf der Website niedrig ist, können Sie die Website zentral herunterskalieren, um Kosten zu sparen. Ihre Website ist bei Bedarfsspitzen reaktionsbereit, und Sie zahlen nur bei entsprechendem Bedarf für mehr Ressourcen. Sie können Ihre Website auch in mehreren geografischen Regionen bereitstellen, um Zuverlässigkeit und Reaktionsfähigkeit zu erhöhen.
 
-During the development of your website, developers want to create multiple development environments to speed their development process. Developers can use the public cloud to quickly provision virtual machines for sandboxed environments to develop a solution. When the developers no longer need an environment, they can delete it.
+Während der Entwicklung Ihrer Website möchten Entwickler mehrere Entwicklungsumgebungen erstellen, um ihren Entwicklungsprozess zu beschleunigen. Entwickler können die öffentliche Cloud nutzen, um schnell virtuelle Computer für Sandkastenumgebungen bereitzustellen und eine Lösung zu entwickeln. Wenn die Entwickler eine Umgebung nicht mehr benötigen, können sie sie löschen.
 
-### Why public cloud?
+### <a name="why-public-cloud"></a>Gründe für die öffentliche Cloud
 
-Public clouds can be deployed faster than on-premises infrastructures and with an almost infinitely scalable platform. Every employee of a company can use the same application from any office or branch using their device of choice as long as they can access the internet. 
+Öffentliche Clouds können schneller als lokale Infrastrukturen und mit einer nahezu beliebig skalierbaren Plattform bereitgestellt werden. Jeder Mitarbeiter eines Unternehmens kann im Büro oder in der Filiale die gleiche Anwendung mit dem Gerät seiner Wahl nutzen, solange er auf das Internet zugreifen kann. 
 
-Examples of why you would use public cloud:
+Szenarios, in denen sich die öffentliche Cloud eignet:
 
-- **Service consumption through on-demand or subscription model:** The on-demand or subscription model allows you to pay for the portion of CPU, storage, and other resources that you use or reserve.
-- **No up-front investment of hardware:** No requirement to purchase, manage, and maintain on-premises hardware and application infrastructure. The cloud service provider is held responsible for all management and maintenance of the system. 
-- **Automation:** Quickly provision infrastructure resources using a web portal, scripts, or via automation. 
-- **Geographic dispersity:** Store data near your users, or in desired locations without having to maintain your own datacenters.
-- **Reduced hardware maintenance:** The service provider is responsible for hardware maintenance.
+- **Bedarfsgesteuerte oder abonnementgestützte Dienstnutzung:** Beim bedarfsgesteuerten oder Abonnementmodell zahlen Sie nur für den Anteil an CPU, Speicher und anderen Ressourcen, den Sie nutzen oder reservieren.
+- **Keine direkten Investitionen in Hardware:** Sie müssen keine lokale Hardware- und Anwendungsinfrastruktur kaufen, verwalten und warten. Der Cloud-Dienstanbieter ist für die gesamte Verwaltung und Wartung des Systems verantwortlich. 
+- **Automatisierung:** Sie können Infrastrukturressourcen über ein Webportal, Skripts oder automatisch bereitstellen. 
+- **Geografische Verteilung:** Halten Sie Daten dort vor, wo sie gebraucht werden, ohne viele eigene Rechenzentren zu betreiben.
+- **Reduzierte Hardwarewartung:** Der Dienstanbieter ist für die Hardwarewartung verantwortlich.
 
-## Private cloud
+## <a name="private-cloud"></a>Private Cloud
 
-A private cloud consists of computing resources used exclusively by users from one business or organization. It can be physically located at your organization’s on-site datacenter, or it can be hosted by a third-party service provider. The term private cloud should not be considered a rebranding of traditional on-premises datacenters. A private cloud uses on-premises infrastructure and services to provide similar benefits of the public cloud. It uses an abstraction platform to provide *cloud-like* services such as Kubernetes clusters or a complete cloud environment like Azure Stack. The organization is responsible for the purchase, configuration, and maintenance of the hardware. Communication between the systems is usually on the network infrastructure that the business owns and maintains. For example, a private internal network or a dedicated fiber optic connection between buildings.
+Eine private Cloud besteht aus IT-Ressourcen, die ausschließlich von ausgewählten Benutzern eines Unternehmens oder einer Organisation genutzt werden. Sie kann physisch im lokalen Rechenzentrum Ihres Unternehmens oder bei einem Drittanbieter gehostet werden. Die Begriff „Private Cloud“ sollte nicht als Umfirmierung herkömmlicher lokaler Rechenzentren betrachtet werden. Eine private Cloud nutzt lokale Infrastruktur und Dienste, um ähnliche Vorteile wie die öffentliche Cloud zu bieten. Sie nutzt eine Abstraktionsplattform, um *cloudähnliche Dienste* wie Kubernetes-Cluster oder eine komplette Cloudumgebung wie Azure Stack bereitzustellen. Die Organisation ist für Erwerb, Konfiguration und Wartung der Hardware verantwortlich. Die Kommunikation zwischen den Systemen erfolgt in der Regel über die Netzwerkinfrastruktur, die das Unternehmen besitzt und verwaltet. Beispielsweise ein privates internes Netzwerk oder eine dedizierte Glasfaserverbindung zwischen Gebäuden.
 
-Imagine you work at healthcare company and you have an application that is in use at one of your datacenters. The operating environment can't be replicated in the public cloud. You have a new requirement to access data at another one of your datacenters. The database containing the data needs to remain at the other site because of regulatory compliance. This scenario is a private cloud. You have two datacenters your organization owns. You could use a public cloud VPN over the internet to connect the datacenters. However, the scenario would be considered a private cloud since the solution is private to the organization.
+Angenommen, Sie arbeiten in einem Unternehmen im Gesundheitswesen und haben eine Anwendung, die in einem Ihrer Rechenzentren im Einsatz ist. Die Betriebsumgebung kann nicht in der öffentlichen Cloud repliziert werden. Es gibt eine neue Anforderung, auf Daten in einem anderen Ihrer Rechenzentren zuzugreifen. Die Datenbank mit den Daten muss zwecks Einhaltung gesetzlicher Vorschriften am anderen Standort verbleiben. Dies ist ein Szenario für eine private Cloud. Sie verfügen über zwei Rechenzentren im Besitz Ihrer Organisation. Sie können ein VPN in der öffentlichen Cloud über das Internet verwenden, um eine Verbindung mit den Rechenzentren herzustellen. Dieses Szenario würde jedoch als private Cloud betrachtet werden, da die Lösung für die Organisation privat ist.
 
-### Why private cloud?
+### <a name="why-private-cloud"></a>Gründe für eine private Cloud
 
-A private cloud can provide more flexibility to an organization. Your organization can customize its cloud environment to meet specific business needs. Since resources are not shared with others, high levels of control and security are possible. Also, private clouds can provide a level of scalability and efficiency.
+Eine private Cloud kann einer Organisation mehr Flexibilität bieten. Ihr Unternehmen kann seine Cloudumgebung an spezifische Geschäftsanforderungen anpassen. Da Ressourcen nicht mit anderen gemeinsam genutzt werden, ist ein hohes Maß an Kontrolle und Sicherheit möglich. Darüber hinaus bieten private Clouds ein gewisses Maß an Skalierbarkeit und Effizienz.
 
-Examples of why you would use private cloud:
+Szenarios, in denen sich die private Cloud eignet:
 
-- **Pre-existing environment:** An existing operating environment that can't be replicated in the public cloud. A large investment in hardware and employees with solution expertise. A large organization may choose to commoditize their computing resources.
-- **Legacy applications:** Business-critical legacy applications that can't easily be physically relocated.
-- **Data sovereignty and security:** Political borders and legal requirements may dictate where data can physically exist.
-- **Regulatory compliance / certification:**  PCI or HIPAA compliance. Certified on-premises datacenter.
+- **Bereits vorhandene Umgebung:** Eine bestehende Betriebsumgebung, die nicht in der öffentlichen Cloud repliziert werden kann. Es wurde bereits in Hardware und Mitarbeiter mit Fachwissen zu Lösungen investiert. Eine große Organisation kann sich dafür entscheiden, ihre IT-Ressourcen zu einem Standardprodukt zu machen.
+- **Ältere Anwendungen:** Es gibt unternehmenswichtige ältere Anwendungen, die nicht ohne Weiteres physisch verlagert werden können.
+- **Datenhoheit und Sicherheit:** Politische Grenzen oder gesetzliche Vorgaben können vorschreiben, wo Daten physisch gespeichert werden müssen.
+- **Einhaltung gesetzlicher Bestimmungen/Zertifizierung:** PCI- und HIPAA-Konformität. Zertifiziertes lokales Rechenzentrum.
 
-## Hybrid cloud
+## <a name="hybrid-cloud"></a>Hybrid Cloud
 
-A hybrid cloud is a computing environment that combines a public cloud and a private cloud by allowing data and applications to be shared between them. When computing and processing demand fluctuates, hybrid cloud computing gives businesses the ability to seamlessly scale their on-premises infrastructure up to the public cloud to handle any overflow - without giving third-party datacenters access to the entirety of their data. Organizations gain the flexibility and computing power of the public cloud for basic and non-sensitive computing tasks, while keeping business-critical applications and data on-premises, safely behind a company firewall.
+Eine Hybrid Cloud ist eine IT-Umgebung, in der eine öffentliche und private Cloud kombiniert werden, um Daten und Anwendungen gemeinsam zu nutzen. Bei schwankendem Rechen- und Verarbeitungsbedarf bietet eine Hybrid Cloud Unternehmen die Möglichkeit, ihre lokale Infrastruktur nahtlos mithilfe der öffentlichen Cloud hoch zu skalieren, um eine eventuelle Spitze zu bewältigen, ohne Rechenzentren von Drittanbietern Zugriff auf die Gesamtheit ihrer Daten zu gewähren. Unternehmen kommen in den Genuss der Flexibilität und Rechenleistung der öffentlichen Cloud für einfache und unsensible Datenverarbeitungsaufgaben, während sie geschäftskritische Anwendungen und Daten lokal und sicher hinter einer Unternehmensfirewall nutzen können.
 
-Using a hybrid cloud helps eliminate the need to make up-front capital expenditures to handle short-term spikes in demand. It also has the flexibility to manage which resources are local versus resources in the cloud. Companies pay only for resources they temporarily use instead of having to purchase, program, and maintain additional resources and equipment that could remain idle over long periods of time. Integration is generally through a secure VPN between cloud providers like Azure and on-premises datacenters.
+Beim Einsatz einer Hybrid Cloud ist es nicht mehr notwendig, im Vorfeld Investitionen zu tätigen, um kurzfristige Bedarfsspitzen abzufedern. Es ermöglicht außerdem das flexible Bestimmen, welche Ressourcen lokal und welche in der Cloud verfügbar sind. Unternehmen zahlen nur für Ressourcen, die sie vorübergehend nutzen, anstatt zusätzliche Ressourcen und Betriebsmittel zu kaufen, zu programmieren und instand zu halten, die möglicherweise über einen längeren Zeitraum ungenutzt bleiben. Die Integration erfolgt in der Regel über ein sicheres VPN zwischen einem Cloudanbieter wie Azure und lokalen Rechenzentren.
 
-Imagine you work at healthcare company and you have an application where customers can access their healthcare information. A regulation requires that the data needs to remain at a physical location. The customer website needs to be responsive to their many global users.  As a solution, the database could be hosted in an on-premises datacenter and the website could be hosted in the public cloud. A VPN is used between the on-premises datacenter and the public cloud. This scenario would be considered a hybrid cloud.
+Angenommen, Sie arbeiten in einem Unternehmen im Gesundheitswesen und haben eine Anwendung, in der Kunden auf ihre medizinischen Daten zugreifen können. Eine Vorschrift verlangt, dass die Daten an einem konkreten Ort aufbewahrt werden müssen. Die Kundenwebsite muss auf die Anforderungen vieler globaler Nutzer reagieren können.  Eine Lösung kann sein, die Datenbank in einem lokalen Rechenzentrum und die Website in der öffentlichen Cloud zu hosten. Ein VPN wird zwischen dem lokalen Rechenzentrum und der öffentlichen Cloud verwendet. Dieses Szenario eignet sich für eine Hybrid Cloud.
 
-### Why hybrid cloud?
+### <a name="why-hybrid-cloud"></a>Gründe für eine Hybrid Cloud
 
-Hybrid cloud allows your organization to control and maintain a private infrastructure for sensitive assets. It also gives you the flexibility to take advantage of additional resources in the public cloud when you need them. With the ability to scale to the public cloud, you pay for extra computing power only when needed. It can also ease transitioning to the cloud. You can migrate gradually by phasing in workloads over time.
+Mit einer Hybrid Cloud kann Ihr Unternehmen eine private Infrastruktur für vertrauliche Datenbestände steuern und verwalten. Sie bietet Ihnen auch die Flexibilität, zusätzliche Ressourcen in der öffentlichen Cloud in Anspruch zu nehmen, sobald Sie sie benötigen. Mit der Möglichkeit einer Skalierung mithilfe der öffentlichen Cloud zahlen Sie nur bei Bedarf für zusätzliche Rechenleistung. Auch der Übergang zur Cloud kann dadurch erleichtert werden. Sie können allmählich migrieren, indem Sie die Workloads mit der Zeit schrittweise verlagern.
 
-Examples of why you would use hybrid cloud:
+Szenarios, in denen sich die Hybrid Cloud eignet:
 
-- **Existing hardware investment:** Business reasons require that you use an existing operating environment and hardware.
-- **Regulatory requirements:** Regulation requires that the data needs to remain at a physical location.
-- **Unique operating environment:** Public cloud can't replicate a legacy operating environment.
-- **Migration:** Move workloads to the cloud over time.
+- **Bereits erfolgte Investitionen in Hardware:** Aus geschäftlichen Gründen müssen Sie die vorhandene Betriebsumgebung und Hardware verwenden.
+- **Gesetzliche Vorschriften:** Vorschriften setzen voraus, dass die Daten an einem physischen Ort gespeichert werden müssen.
+- **Eindeutige Betriebsumgebung:** Eine ältere Betriebsumgebung kann nicht in der öffentlichen Cloud repliziert werden.
+- **Migration:**: Verlagern Sie Workloads mit der Zeit in die Cloud.

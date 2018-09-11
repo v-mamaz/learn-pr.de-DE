@@ -1,38 +1,35 @@
-Now that your Azure SQL database is up and running, you can connect it to your favorite SQL Server management tool to populate it with real data.
+Da Ihre Azure SQL-Datenbank nun in Betrieb ist, können Sie sie nun mit Ihrem bevorzugten SQL Server-Verwaltungstool verknüpfen, um sie mit echten Daten zu füllen.
 
-You initially considered whether to run your database on-premises or in the cloud. With Azure SQL Database, you configure a few basic options and you have a fully functional SQL database that you can connect to your apps.
+Anfangs haben Sie sich Gedanken darüber gemacht, ob Sie Ihre Datenbank lokal oder in der Cloud ausführen. Mit Azure SQL-Datenbank müssen Sie nur einige grundlegende Optionen konfigurieren, um eine voll funktionsfähige SQL-Datenbank zu erhalten, die Sie mit Ihren Apps verbinden können.
 
-There's no infrastructure or software patches to maintain. You're now free to focus more on getting your transportation logistics app prototype up and running and less on database administration. Your prototype won't be a throw-away demo, either. Azure SQL Database provides production-level security and performance features.
+Sie müssen keine Infrastruktur- oder Softwarepatches verwalten. Sie können sich nun darauf konzentrieren, den Prototyp Ihrer Transportlogistik-App in Betrieb zu nehmen, anstatt sich mit der Datenbankverwaltung zu beschäftigen. Der Prototyp soll auch nicht als weggeworfene Demo enden. Azure SQL-Datenbank bietet Sicherheits- und Leistungsfeatures auf Produktionsniveau.
 
-Remember that each Azure SQL logical server contains one or more databases. Azure SQL Database provides two pricing models, DTU and vCore, to help you balance cost versus performance across all your databases.
+Denken Sie daran, dass jeder logische Azure SQL-Server mindestens eine Datenbank enthält. Azure SQL-Datenbank bietet zwei Preismodelle, nach Datenbanktransaktionseinheit (DTU) oder virtuellen Kernen, damit Sie die Kosten mit den Leistungen über alle Datenbanken hinweg ausgleichen können.
 
-Choose DTU if you're just getting started or want a simple, preconfigured buying option. Choose vCore when you want greater control over what compute and storage resources you create and pay for.
+Wählen Sie das DTU-Modell aus, wenn Sie erst anfangen oder eine einfache vorkonfigurierte Kaufoption möchten. Wählen Sie das Modell für virtuelle Kerne aus, wenn Sie mehr Kontrolle über die Compute- und Speicherressourcen möchten, die Sie erstellen und bezahlen.
 
-Azure Cloud Shell makes it easy to start working with your databases. From Cloud Shell, you have access to the Azure CLI, which enables you to get information about your Azure resources. Cloud Shell also provides many other common utilities, such as `sqlcmd`, to help you start working right away with your new database.
+Cloud Shell erleichtert den Einstieg in die Arbeit mit Datenbanken. Über Cloud Shell können Sie auf Azure CLI zugreifen, um Informationen über Azure-Ressourcen abzurufen. Cloud Shell bietet auch viele andere allgemeine Hilfsprogramme, z.B. `sqlcmd`, damit Sie sofort mit Ihrer neuen Datenbank arbeiten können.
 
-## Clean up
+## <a name="cleanup"></a>Bereinigen
 
-<!---TODO: Update for sandbox?--->
+Sie können mehr mit der Installation der Azure SQL-Datenbank herumexperimentieren. Wenn Sie fertig sind, besteht die einfachste Möglichkeit zum Löschen der Datenbank darin, die übergeordnete Ressourcengruppe zu löschen.
 
-Feel free to experiment more with your Azure SQL Database installation. When you're done, the easiest way to delete your database is to delete its parent resource group.
+1. Klicken Sie im Azure-Portal auf **Ressourcengruppen**.
+1. Wählen Sie **logistics-db-rg** aus.
+1. Klicken Sie auf **Ressourcengruppe löschen**.
 
-1. From the portal, click **Resource groups**.
+    ![Löschen der Ressourcengruppe](../media-draft/delete-rg.png)
+1. Geben Sie „logistics-db-rg“ in der Eingabeaufforderung ein, und klicken Sie auf **Löschen**.
 
-1. Select **logistics-db-rg**.
+## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-1. Click **Delete resource group**.
+Die Dokumentation enthält viele weitere Informationen sowie Tutorials und Beispiele. Unter den folgenden Links finden Sie Informationen zu den hier behandelten Themen:
 
-1. At the prompt, type "logistics-db-rg" and click **Delete**.
+* [Dokumentation zu Azure SQL-Datenbank](https://docs.microsoft.com/en-us/azure/sql-database/)
+* [Kaufmodelle für Azure SQL-Datenbank und Ressourcen](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-service-tiers)
+* [Logischer Azure SQL-Datenbankserver und dessen Verwaltung](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-logical-servers)
+* [Azure SQL Database and SQL Data Warehouse firewall rules (Firewallregeln für Azure SQL-Datenbank und SQL Data Warehouse)](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-firewall-configure)
 
-## Additional resources
+Weitere Informationen über Cloud Shell finden Sie in der [Übersicht über Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview).
 
-The documentation provides lots more information, including tutorials and samples. Here are a few links to what we covered here:
-
-- [Azure SQL Database documentation](https://docs.microsoft.com/azure/sql-database/)
-- [Azure SQL Database purchasing models and resources](https://docs.microsoft.com/azure/sql-database/sql-database-service-tiers)
-- [Azure SQL Database logical servers and their management](https://docs.microsoft.com/azure/sql-database/sql-database-logical-servers)
-- [Azure SQL Database and SQL Data Warehouse firewall rules](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure)
-
-To learn more about Cloud Shell, see [Overview of Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
-
-If you're interested in learning more about the `sqlcmd` utility, see [sqlcmd Utility](https://docs.microsoft.com/sql/tools/sqlcmd-utility?view=sql-server-2017).
+Weitere Informationen über das `sqlcmd`-Hilfsprogramm finden Sie im Artikel zum [sqlcmd-Hilfsprogramm](https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility?view=sql-server-2017).

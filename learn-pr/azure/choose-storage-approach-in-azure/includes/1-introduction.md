@@ -1,8 +1,8 @@
-Data comes in different shapes and sizes, and there isn't one storage solution that fits all. For example, an online retail website has a number of distinct data sets that are all used to run the business: product catalog data, media files like photos and videos, and financial business data. Each data set has different requirements, and it's your job to figure out which storage solution is best. The main factors that determine the best storage solution are: data category, data usage, and performance.
+Daten liegen in unterschiedlichen Typen und Größen vor, weswegen es die „eine“ Speicherlösung nicht geben kann. Als Beispiel soll ein Onlinehändler dienen, der über eine Website mit verschiedenen Datasets verfügt, z.B. für Produktkatalogdaten, Mediendateien wie Fotos und Videos und Finanz- sowie Geschäftsdaten. Für jedes Dataset liegen unterschiedliche Anforderungen vor. Ihre Aufgabe besteht darin, zu ermitteln, welche Speicherlösung am besten geeignet ist. Die Datenkategorie, die Datennutzung und die Leistung sind bei dieser Entscheidung die wichtigsten Faktoren.
 
-## Learning objectives
-In this module, you will:
+## <a name="learning-objectives"></a>Lernziele
+In diesem Modul
 
-- Identify the different categories of data
-- Determine the usage of your data
-- Determine whether your data requires transactions 
+- identifizieren Sie unterschiedliche Datenkategorien,
+- ermitteln die Datennutzung
+- und entscheiden, ob Datentransaktionen notwendig sind. 

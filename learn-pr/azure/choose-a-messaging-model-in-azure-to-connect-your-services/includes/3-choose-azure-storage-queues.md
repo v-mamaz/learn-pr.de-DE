@@ -1,63 +1,63 @@
-Suppose you are planning the architecture for your music-sharing application. You want to ensure that music files are uploaded to the web API reliably from the mobile app - we then want to deliver the details about new songs directly to the app when an artist adds new music to their collection. This is a perfect use of a message-based system and Azure offers two solutions to this problem:
+Angenommen, Sie planen die Architektur einer Anwendung für den Austausch von Musik. Dabei möchten Sie sicherstellen, dass Musikdateien zuverlässig aus der mobilen App an die Web-API hochgeladen werden. Anschließend sollen die Details zu neuen Liedern der Musiker direkt an die App weitergegeben werden. In einem solchen Szenario eignet sich ein nachrichtenbasiertes System besonders gut. Azure bietet dafür zwei Lösungen:
 
 - Azure Queue Storage
 - Azure Service Bus
 
-## What is Azure Queue Storage?
-Queue storage is a service that uses Azure Storage to store large numbers of messages that can be securely accessed from anywhere in the world using a simple REST-based interface. Queues can contain millions of messages, limited only by the capacity of the storage account that owns it.
+## <a name="what-is-azure-queue-storage"></a>Was ist Azure Queue Storage?
+Bei Queue Storage handelt es sich um einen Dienst, der Azure Storage verwendet, um eine große Menge von Nachrichten zu speichern, auf die von überall auf der Welt über eine einfache REST-basierte Schnittstelle zugegriffen werden kann. Warteschlangen können Millionen von Nachrichten enthalten. Die Anzahl an gespeicherten Nachrichten wird nur durch das jeweilige zugewiesene Speicherkonto begrenzt.
 
-## What is Azure Service Bus?
-Service Bus is a message broker system intended for enterprise applications. These apps often utilize multiple communication protocols, have different data contracts, higher security requirements, and can include both cloud and on-premises services. Service Bus is built on top of a dedicated messaging infrastructure designed for exactly these scenarios.
+## <a name="what-is-azure-service-bus"></a>Was ist Azure Service Bus?
+Bei Azure Service Bus handelt es sich um ein Brokersystem für Nachrichten, das auf Unternehmensanwendungen ausgerichtet ist. Diese Apps verwenden häufig mehrere Kommunikationsprotokolle, verfügen über verschiedene Datenverträge, höhere Sicherheitsanforderungen und können sowohl lokale Dienste als auch Clouddienste umfassen. Service Bus unterstützt dedizierte Infrastrukturen für Nachrichten, die genau für solche Szenarios konzipiert sind.
 
-Both of these services are based on the idea of a "queue" which holds sent messages until the target is ready to receive them. If you've never worked with a message queue system before, they have several convenient benefits.
+Beide Dienste basieren auf der Idee einer „Warteschlange“, die solange mehrere gesendete Nachrichten enthält, bis der Empfänger bereit ist, diese zu empfangen. Wenn Sie noch nie mit einem Warteschlangensystem für Nachrichten gearbeitet haben, sollten Sie sich über deren zahlreichen Vorteile informieren. Diese werden im Folgenden erläutert.
 
-## Increased reliability
-Queues are used by distributed applications as a temporary storage location for messages pending delivery to a destination component. The source component can add a message to the queue and destination components can retrieve the message at the front of the queue for processing. Queues increase the reliability of the message exchange because, at times of high demand, messages can simply wait until a destination component is ready to process them.
+## <a name="increased-reliability"></a>Höhere Zuverlässigkeit
+Warteschlangen werden von verteilten Anwendungen als temporärer Speicherort für Nachrichten verwendet, deren Zustellung an eine Zielkomponente noch aussteht. Die Quellkomponente kann eine Nachrichten zu der Warteschlange hinzufügen, und die Zielkomponenten können die Nachrichten nacheinander aus der Warteschlange abrufen, um sie zu verarbeiten. Warteschlangen erhöhen die Zuverlässigkeit des Nachrichtenaustauschs, da in Zeiten hoher Nachfrage Nachrichten einfach warten können, bis eine Zielkomponente bereit ist, diese zu verarbeiten.
 
-## Message delivery guarantees
-Queuing systems usually guarantee delivery of each message in the queue to a destination component. However, these guarantees can take different approaches:
+## <a name="message-delivery-guarantees"></a>Übermittlungsgarantien für Nachrichten
+Warteschlangensysteme garantieren in der Regel die Zustellung jeder Nachricht in der Warteschlange an eine Zielkomponente. Allerdings können dabei unterschiedliche Ansätze verfolgt werden:
 
-- **At-Least-Once Delivery.** In this approach, each message is guaranteed to be delivered to at least one of the components that retrieve messages from the queue. Note, however, that in certain circumstances, it is possible that the same message may be delivered more than once. For example, if there are two instances of a web app retrieving messages from a queue, ordinarily each message goes to only one of those instances. However, if one instance takes a long time to process the message, and a time-out expires, the message may be sent to the other instance as well. Your web app code should be designed with this possibility in mind.
+- **At-Least-Once-Übermittlung** Bei diesem Ansatz wird jede Nachricht an mindestens eine der Komponenten übermittelt, die Nachrichten aus der Warteschlange abrufen. Unter Umständen ist es jedoch möglich, dass dieselbe Nachricht mehrfach übermittelt wird. Wenn beispielsweise zwei Instanzen einer Webanwendung Nachrichten aus einer Warteschlange abrufen, geht jede Nachricht in der Regel nur an eine dieser Instanzen. Wenn eine Instanz jedoch lange zum Verarbeiten der Nachrichten braucht, und ein Timeout abläuft, wird die Nachricht ggf. an die andere Instanz gesendet. Behalten Sie diese Möglichkeit im Hinterkopf, wenn Sie Ihren Web-App-Code entwickeln.
 
-- **At-Most-Once Delivery.** In this approach, each message is not guaranteed to be delivered, and there is a very small chance that it may not arrive. However, unlike At-Least-Once delivery, there is no chance that the message will be delivered twice. This is sometimes referred to as "automatic duplicate detection".
+- **At-Most-Once-Übermittlung** Bei diesem Ansatz wird nicht garantiert, dass jede Nachricht übermittelt wird. Es besteht daher die sehr geringe Wahrscheinlichkeit, dass eine Nachricht nicht ankommt. Allerdings kann es anders als bei der „At-Least-Once-Übermittlung“ nicht vorkommen, dass Nachrichten mehrmals übermittelt werden. Dies wird teilweise auch als „automatische Duplikaterkennung“ bezeichnet.
 
-- **First-In-First-Out (FIFO).** In most messaging systems, messages usually leave the queue in the same order in which they were added, but you should consider whether this order is guaranteed. If your distributed application requires that messages are processed in precisely the correct order, you must choose a queue system that includes a FIFO guarantee.
+- **First In, First Out (FIFO).** In den meisten Messagingsystemen verlassen Nachrichten die Warteschlange in der Reihenfolge, in der sie hinzugefügt wurden. Allerdings sollten Sie überprüfen, ob diese Reihenfolge eingehalten wird. Wenn Ihre verteilte Anwendung verlangt, dass Nachrichten genau in der richtigen Reihenfolge verarbeitet werden, müssen Sie ein Warteschlangensystem mit FIFO-Garantie verwenden.
 
-## Transactional support
-Some closely related groups of messages may cause problems when delivery fails for one message in the group.
+## <a name="transactional-support"></a>Transaktionsunterstützung
+Einige eng verwandte Nachrichtengruppen können Probleme verursachen, wenn die Übermittlung einer Nachricht in der Gruppe fehlschlägt.
 
-For example, consider an e-commerce application. When the user clicks the **Buy** button, a series of messages might be generated and sent off to various processing destinations:
+Nehmen Sie als Beispiel eine E-Commerce-Anwendung. Wenn der Benutzer auf die Schaltfläche **Kaufen** klickt, werden möglicherweise mehrere Nachrichten generiert und an verschiedene Ziele zur Verarbeitung gesendet:
 
-- A message with the order details is sent to a fulfillment center
-- A message with the total and payment details is sent to a credit card processor. 
-- A message with the receipt information is sent to a database to generate an invoice for the customer
+- Eine Nachricht mit den Details zur Bestellung wird an das Versandzentrum gesendet.
+- Ein Nachricht mit den Details zur Gesamtsumme und der Bezahlung wird an einen Dienst zur Verarbeitung von Kreditkarteninformationen gesendet. 
+- Eine Nachricht mit den Rechnungsinformationen wird an eine Datenbank gesendet, damit eine Rechnung für den Kunden generiert werden kann.
 
-In this case, we want to make sure _all_ messages get processed, or none of them are processed. We won't be in business long if the credit card message is not delivered, and all our orders are fulfilled without payment! You can avoid these kinds of problems by grouping the two messages into a transaction. Message transactions succeed or fail as a single unit - just like in the database world. If the credit card details message delivery fails, then so will the order details message.
+In diesem Fall soll sichergestellt werden, dass entweder _alle_ Nachrichten oder keine verarbeitet werden. Ihre Anwendung wird wahrscheinlich nicht lange verwendet, wenn die Nachricht zu den Kreditkarteninformationen nicht zugestellt wird und alle Bestellungen zwar versandt, aber nicht bezahlt werden. Solche Probleme können Sie vermeiden, indem Sie die beiden Nachrichten in einer Transaktion zusammenfassen. Nachrichtentransaktionen sind genauso wie bei Datenbanken immer als einzelne Einheit erfolgreich oder schlagen alle gemeinsam fehl. Wenn die Übermittlung der Kreditkartendaten fehlschlägt, gilt dasselbe für die Nachricht mit den Details zur Bestellung.
 
-## Which service should I choose?
-Having understood that the communication strategy for this architecture should be a message, you must choose whether to use Azure Storage queues or Azure Service Bus, both of which can be used to store and deliver messages between your components. Each has a slightly different feature set, which means you can choose one or the other, or use both, depending on the problem you are solving.
+## <a name="which-service-should-i-choose"></a>Welcher Dienst eignet sich für mich?
+Ihnen sollte klar sein, dass die Kommunikationsstrategie für diese Art von Architektur auf Nachrichten aufbauen sollte. Wenn dem so ist, können Sie entscheiden, ob Sie Azure Storage Queues oder Azure Service Bus verwenden möchten. Beide Dienste können verwendet werden, um Nachrichten zu speichern und an Ihre Komponenten zuzustellen. Beide weisen geringfügig unterschiedliche Funktionsmerkmale auf. Das heißt, Sie können sich für einen entscheiden oder beide verwenden. Welche Sie auswählen, hängt von dem zu lösenden Problem ab.
 
-#### Choose Service Bus queues if:
+#### <a name="choose-service-bus-queues-if"></a>Verwenden Sie Service Bus-Warteschlangen, wenn Folgendes zutrifft:
 
-- You need an At-Most-Once delivery guarantee.
-- You need a FIFO guarantee.
-- You need to group messages into transactions.
-- You want to receive messages without polling the queue.
-- You need to provide a role-based access model to the queues.
-- You need to handle messages larger than 64 KB but less than 256 KB.
-- Your queue size will not grow larger than 80 GB.
-- You would like to be able to publish and consume batches of messages.
+- Sie benötigen eine At-Most-Once-Zustellungsgarantie.
+- Sie benötigen eine FIFO-Garantie.
+- Sie müssen Nachrichten in Transaktionen gruppieren.
+- Sie möchten Nachrichten empfangen, ohne die Warteschlange abzufragen.
+- Sie müssen ein rollenbasiertes Zugriffsmodell für die Warteschlange bereitstellen.
+- Sie müssen Nachrichten mit einer Größe von 64 bis 256 KB verarbeiten.
+- Die Warteschlangengröße liegt unter 80 GB.
+- Sie möchten Nachrichtenbatches veröffentlichen und nutzen können.
 
-Queue storage isn't quite as feature-rich, but if you don't need any of those features, it can be a simpler choice. In addition, it's the best solution if your app has any of the following requirements.
+Queue Storage bietet etwas weniger Features. Sofern dies allerdings für Ihre Anforderungen ausreicht, ist es deutlich einfacher für Sie, wenn Sie diesen Dienst wählen. Er stellt außerdem die bessere Lösung dar, wenn Ihre App eine der folgenden Anforderungen hat.
 
-#### Choose Queue storage if:
+#### <a name="choose-queue-storage-if"></a>Verwenden Sie Queue Storage, wenn Folgendes zutrifft:
 
-- You need an audit trail of all messages that pass through the queue.
-- You expect the queue to exceed 80 GB in size.
-- You want to track progress for processing a message inside of the queue.
+- Sie benötigen serverseitige Protokolle aller Nachrichten, die die Warteschlange passieren.
+- Sie gehen davon aus, dass die Größe der Warteschlange 80 GB überschreitet.
+- Sie möchten den Verarbeitungsfortschritt einer Nachricht von der Anwendung innerhalb der Warteschlange nachverfolgen lassen.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-A queue is a simple, temporary storage location for messages sent between the components of a distributed application. Use a queue to organize messages and gracefully handle unpredictable surges in demand.
+Eine Warteschlange ist ein einfacher temporärer Speicherort für Nachrichten, die zwischen Komponenten einer verteilten Anwendung gesendet werden. Mit Warteschlangen können Sie Nachrichten organisieren und unvorhersehbare Nachfragespitzen bewältigen.
 
-Use Storage queues when you want a simple and easy-to-code queue system. For more advanced needs, use Service Bus queues.
+Verwenden Sie Azure Storage-Warteschlangen, wenn Sie ein einfaches und leicht zu programmierendes Warteschlangensystem wünschen. Nutzen Sie für anspruchsvollere Anforderungen Service Bus-Warteschlangen.

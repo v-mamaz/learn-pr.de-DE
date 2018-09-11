@@ -1,53 +1,53 @@
-At First Up Consultants, you've been granted access to the Azure subscription for the marketing team. You want to familiarize yourself with the Azure portal and see what roles are currently assigned.
+Bei First Up Consultants wurde Ihnen Zugriff auf das Azure-Abonnement für das Marketingteam gewährt. Sie möchten sich mit dem Azure-Portal vertraut machen und sehen, welche Rollen derzeit zugewiesen sind.
 
-## List role assignments for yourself
+## <a name="list-role-assignments-for-yourself"></a>Liste von Rollenzuweisungen für Sie selbst
 
-Follow these steps to see what roles are currently assigned to you.
+Führen Sie die folgenden Schritte aus, um zu sehen, welche Rollen Ihnen derzeit zugewiesen sind.
 
-1. In the navigation list, click **Azure Active Directory**.
+1. Klicken Sie in der Navigationsliste auf **Azure Active Directory**.
 
-1. Click **Users** to open **All users**.
+1. Klicken Sie auf **Benutzer**, um **Alle Benutzer** zu öffnen.
 
-    ![Azure Active Directory users](../media-draft/4-aad-all-users.png)
+    ![Benutzer von Azure Active Directory](../media-draft/4-aad-all-users.png)
 
-1. Find and click the **LabAdmin-_XXXXXXX_** user name.
+1. Suchen Sie den Benutzernamen **LabAdmin-_XXXXXXX_**, und klicken Sie darauf.
 
-    ![Azure Active Directory lab users](../media-draft/4-aad-all-users-lab.png)
+    ![Lab-User von Azure Active Directory](../media-draft/4-aad-all-users-lab.png)
 
-1. In the **Manage** section, click **Azure resources**.
+1. Klicken Sie im Abschnitt **Verwalten** auf **Azure-Ressourcen**.
 
-    ![Azure resources](../media-draft/4-aad-user-azure-resources.png)
+    ![Azure-Ressourcen](../media-draft/4-aad-user-azure-resources.png)
 
-    On the Azure resources blade, you can see the resources and roles you have access to. Your list will look different.
+    Auf dem Blatt „Azure-Ressourcen“ können Sie die Ressourcen und Rollen sehen, auf die Sie Zugriff haben. Ihre Liste wird anders aussehen.
 
-## List role assignments for a resource group
+## <a name="list-role-assignments-for-a-resource-group"></a>Auflisten von Rollenzuweisungen für eine Ressourcengruppe
 
-Follow these steps to see what roles are assigned at the resource group scope.
+Führen Sie die folgenden Schritte aus, um zu sehen, welche Rollen im Bereich der Ressourcengruppen zugewiesen wurden.
 
-1. In the navigation list, click **Resource groups**.
+1. Klicken Sie in der Navigationsliste auf **Ressourcengruppen**.
 
-   ![Resource groups](../media-draft/4-resource-groups.png)
+   ![Ressourcengruppen](../media-draft/4-resource-groups.png)
 
-1. Click the resource group named **FirstUpConsultantsRG1-_XXXXXXX_**.
+1. Klicken Sie auf die Ressourcengruppe mit dem Namen **FirstUpConsultantsRG1-_XXXXXXX_**.
 
-1. Click **Access control (IAM)**.
+1. Klicken Sie auf **Zugriffssteuerung (IAM)**.
 
-   On the Access control (IAM) blade, you can see who has access to this resource group. Notice that some roles are scoped to **This resource** while others are **(Inherited)** from a parent scope.
+   Auf dem Blatt „Zugriffssteuerung (IAM)“ wird angezeigt, wer Zugriff auf diese Ressourcengruppe hat. Beachten Sie, dass einige Rollen auf **Diese Ressource** begrenzt sind, während andere von einem übergeordneten Bereich **geerbt** werden.
 
-   ![Access control (IAM) for resource group](../media-draft/4-resource-group-access-control.png)
+   ![Zugriffssteuerung (IAM) für Ressourcengruppe](../media-draft/4-resource-group-access-control.png)
 
-## List roles
+## <a name="list-roles"></a>Auflisten der Rollen
 
-As you learned in the previous unit, a role is a collection of permissions. Azure has over 70 built-in roles that you can use in your role assignments. Follow these steps to list the roles.
+Wie Sie in der vorherigen Einheit gelernt haben, ist eine Rolle eine Sammlung von Berechtigungen. Azure verfügt über mehr als 70 integrierte Rollen, die Sie in Ihren Rollenzuweisungen verwenden können. Führen Sie die folgenden Schritte aus, um die Rollen aufzulisten.
 
-- At the top of the Access control (IAM) blade, click **Roles** to see a list of all the built-in and custom roles.
+- Klicken Sie oben auf dem Blatt „Zugriffssteuerung (IAM)“ auf **Rollen**, um eine Liste aller integrierten und benutzerdefinierten Rollen anzuzeigen.
 
-   ![Roles option](../media-draft/4-roles-option.png)
+   ![Rollenoption](../media-draft/4-roles-option.png)
 
-   You can see the number of users and groups that are assigned to each role.
+   Sie können die Anzahl von Benutzern und Gruppen anzeigen, die jeder Rolle zugewiesen sind.
 
-   ![Roles list](../media-draft/4-roles-list.png)
+   ![Rollenliste](../media-draft/4-roles-list.png)
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this unit, you learned how to list the role assignments for yourself in the Azure portal. You also learned how to list the role assignments at different scopes. In the next unit, you take the next step and use RBAC to grant access to a user.
+In dieser Einheit haben Sie gelernt, wie Sie die Rollenzuweisungen im Azure-Portal für sich selbst auflisten. Außerdem haben Sie gelernt, wie die Rollenzuweisungen in verschiedenen Bereichen aufgelistet werden. In der nächsten Einheit lernen Sie, wie Sie einem Benutzer über die rollenbasierte Zugriffssteuerung Zugriff gewähren.

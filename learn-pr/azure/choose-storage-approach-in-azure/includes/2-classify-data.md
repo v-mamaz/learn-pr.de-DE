@@ -1,62 +1,59 @@
-In an online retail business, there are different categories of data. Some data is structured, like customer financial information, and other data is unstructured, like product images. When it comes to the organization of data, there are three categories: structured, semi-structured, and unstructured. Each category of data may benefit from a different storage solution.
+Ein Onlinehandelsunternehmen arbeitet eventuell mit verschiedenen Arten von Daten. Einige Daten wie die Kontaktinformationen von Kunden können strukturiert sein, während andere Daten möglicherweise unstrukturiert sind (z.B. ein Produktbild). Es gibt drei Kategorien von Daten: strukturiert, teilweise strukturiert und unstrukturiert. Für die einzelnen Kategorien von Daten können sich unterschiedliche Speicherlösungen anbieten.
 
-Here, you'll learn how to classify your data into the appropriate categories so that you can choose the correct storage solution.
+Im Folgenden erfahren Sie, wie Sie Ihre Daten in die entsprechenden Kategorien klassifizieren, um die richtige Speicherlösung auszuwählen.
 
-## Structured data
+## <a name="structured-data"></a>Strukturierte Daten
 
-Structured data is data that adheres to a schema, so all of the data has the same fields or properties. Structured data can be stored in a database table with rows and columns. Structured data relies on keys to indicate how one row in a table relates to data in another row of another table. Structured data is also referred to as relational data, as the data's schema defines the table of data, and the fields in the table, and the clear relationship between the two.
+Strukturierte Daten sind Daten, die einem bestimmten Schema folgen, sodass alle Daten die gleichen Felder oder Eigenschaften aufweisen. Strukturierte Daten können in einer Datenbanktabelle mit Zeilen und Spalten gespeichert werden. Mithilfe von Schlüsseln werden strukturierte Daten in einer Zeile einer Tabelle mit verwandten Daten in einer Zeile einer anderen Tabelle verknüpft. Strukturierte Daten werden auch als relationale Daten bezeichnet, da das Schema die Datentabellen, die Felder in den Tabellen und die eindeutige Beziehung zwischen den beiden definiert.
 
-Structured data is straightforward in that it's easy to enter, query, and analyze. All of the data follows the same format.
+Strukturierte Daten sind einfach aufgebaut und können problemlos eingegeben, abgefragt und analysiert werden, da alle Daten das gleiche Format aufweisen.
 
-Examples of structured data include:
+Zu strukturierten Daten zählen beispielsweise Folgende:
+* Sensordaten
+* Finanzdaten
 
-- Sensor data
-- Financial data
+## <a name="semi-structured-data"></a>Teilweise strukturierte Daten
 
-## Semi-structured data
+Teilweise strukturierte Daten sind in geringerem Umfang strukturiert als strukturierte Daten und werden nicht in relationalen Datenbanken gespeichert, da die Felder nicht ohne Weiteres in Tabellen, Zeilen und Spalten eingefügt werden können. Teilweise strukturierte Daten enthalten Tags, die die Organisation und Hierarchie der Daten innerhalb der Daten offenlegen.  
 
-Semi-structured data is less organized than structured data, and does not get stored in relational databases, as the fields do not neatly fit into tables, rows, and columns. Semi-structured data contains tags that make the organization and hierarchy of the data apparent.  
+Sie werden auch als nicht relationale oder NoSQL-Daten bezeichnet.
 
-Semi-structured data is also referred to as non-relational or NoSQL data.
+Zu teilweise strukturierten Daten zählen beispielsweise Folgende:
+* JSON-Dateien
+* XML-Dateien
 
-Examples of semi-structured data include:
+## <a name="unstructured-data"></a>Unstrukturierte Daten
 
-- JSON files
-- XML files
+Die Organisation von unstrukturierten Daten lässt sich allein schon, was ihre Form betrifft, in der Regel nicht eindeutig bestimmen. Unstrukturierte Daten werden oft als Dateien (z.B. Fotos oder Videos) bereitgestellt, wobei die Videodatei selbst eine allgemeine Struktur und teilweise strukturierte Metadaten aufweisen kann, die Daten, in denen das Video selbst eingebettet ist, sind jedoch unstrukturiert. Fotos, Videos und andere vergleichbare Dateien werden daher als unstrukturierte Daten klassifiziert.
 
-## Unstructured data
+Zu unstrukturierten Daten zählen beispielsweise Folgende:
+* Mediendateien (z.B. Fotos, Videos und Audiodateien)
+* Office-Dateien (z.B. Word-Dokumente)
+* Textdateien
+* Protokolldateien
 
-The organization of unstructured data is generally ambiguous just by looking at the data. Unstructured data often is delivered in files, such as photos or videos. The video file itself may have an overall structure and come with semi-structured metadata, but the data that comprises the video itself is unstructured. Therefore, photos, videos, and other similar files are classified as unstructured data.
+Nachdem Sie nun die Unterschiede zwischen den einzelnen Arten von Daten kennengelernt haben, werfen wir einen Blick auf die Datasets, die in einer Onlinehandels-App verwendet werden, und klassifizieren diese.
 
-Examples of unstructured data include:
+### <a name="product-catalog-data"></a>Produktkatalogdaten
 
-- Media files, such as photos, videos, and audio files
-- Office files, such as Word documents
-- Text files
-- Log files
+Die Produktkatalogdaten eines Onlinehändlers sind relativ strukturiert, da jedes Produkt eine Produkt-SKU, eine Beschreibung, eine Mengenangabe, einen Preis, Größen- und Farboptionen, ein Foto und möglicherweise ein Video umfasst. Diese Daten wirken auf den ersten Blick relational, da sie die gleiche Struktur aufweisen. Werden allerdings neue Produkte eingeführt, kann es vorkommen, dass Sie im Laufe der Zeit verschiedene Felder zu Ihren Produkten hinzufügen müssen. Stellen Sie sich beispielsweise vor, Sie nehmen neue Tennisschuhe in Ihr Sortiment auf, die über eine Bluetooth-Funktion verfügen, mit der zur Aufzeichnung der Geschwindigkeit Sensordaten von den Schuhen an eine Fitness-App auf dem Smartphone des Benutzers übertragen werden. Dieser Trend scheint mittlerweile immer mehr Zulauf zu erhalten, sodass Sie es Kunden in absehbarer Zukunft ermöglichen wollen, nach „Bluetooth-fähigen“ Schuhen zu filtern. Alle vorhandenen Daten zu Schuhen nun mit der Eigenschaft „Bluetooth-fähig“ zu aktualisieren, wäre viel zu aufwendig. Unkomplizierter wäre es hingegen, neuen Schuhen diese Eigenschaft einfach hinzuzufügen.
 
-Now that you know the differences between each kind of data, let's look at the data sets used in an online retail business, and classify them.
+Durch Hinzufügen des Felds „Bluetooth-fähig“ wären die Daten Ihrer Schuhe nicht mehr heterogen, da Sie Unterschiede in das Schema eingeführt hätten. Wäre dies eine einmalige Änderung und die einzige Ausnahme, die Sie sich jemals vorstellen könnten, könnten Sie die vorhandenen Daten normalisieren, sodass alle Produkte ein Feld mit der Bezeichnung „Bluetooth-fähig“ enthalten. Dies ist jedoch nur eines von zahlreichen speziellen Feldern, die Sie in Zukunft eventuell unterstützen möchten. Die Klassifizierung dieser Daten ist deshalb als teilweise strukturiert zu betrachten. Die Daten werden durch Tags organisiert, wobei jedes Produkt im Katalog jedoch eindeutige Felder enthalten kann.
 
-## Product catalog data
+Datenklassifizierung: **Teilweise strukturiert**
 
-Product catalog data for an online retail business is fairly structured in nature, as each product has a product SKU, a description, a quantity, a price, size options, color options, a photo, and possibly a video. So, this data appears relational to start with, as it all has the same structure. However, as you introduce new products or different kinds of products, you may want to add different fields as time goes on. For example, new tennis shoes you're carrying are Bluetooth enabled, to relay sensor data from the shoe to a fitness app on the user’s phone. This appears to be a growing trend, and you want to enable customers to filter on "Bluetooth enabled" shoes in the future. You don't want to go back and update all your existing shoe data with the Bluetooth enabled property, you simply want to add it to new shoes.
+### <a name="photos-and-videos"></a>Fotos und Videos
 
-With the addition of the Bluetooth enabled field, your shoe data is no longer heterogeneous, as you've introduced differences in the schema. If this were a one-off instance and the only exception you ever think you'll encounter, you could go back and normalize the existing data so that all products included a "Bluetooth enabled" field. However, this is just one of many specialty fields you envision supporting in the future; thus, the classification of this data is semi-structured. The data is organized by tags, but each product in the catalog could contain unique fields.
+Bei den Fotos und Videos, die auf den Produktseiten angezeigt werden, handelt es sich um unstrukturierte Daten. Obwohl Mediendateien Metadaten enthalten können, ist der Text der Mediendatei unstrukturiert.
 
-Data classification: **Semi-structured**
+Datenklassifizierung: **Unstrukturiert**
 
-## Photos and videos
+### <a name="business-data"></a>Geschäftsdaten
 
-The photos and videos displayed on product pages are unstructured data. Although the media file may contain metadata, the body of the media file is unstructured.
+Business Analysten möchten in der Regel Business Intelligence-Funktionen implementieren, um Bestandspipelines auszuwerten und Vertriebsdaten zu überprüfen. Um diese Vorgänge auszuführen, müssen Daten aus mehreren Monaten zusammen aggregiert und dann abgefragt werden. Aufgrund des großen Bedarfs für Aggregatdaten müssen diese Daten strukturiert werden, damit die Daten der einzelnen Monate miteinander verglichen werden können.
 
-Data classification: **Unstructured**
+Datenklassifizierung: **Strukturiert**
 
-## Business data
+## <a name="summary"></a>Zusammenfassung
 
-Business analysts want to implement business intelligence to perform inventory pipeline evaluations and sales data reviews. In order to perform these operations, data from multiple months needs to be aggregated together, and then queried. Because of the large need to aggregate similar data, this data must be structured, so one month can be compared against the next.
-
-Data classification: **Structured**
-
-## Summary
-
-There are three categories of data: structured, semi-structured, and unstructured. Understanding the differences and determining the category of your data will help you choose the correct storage solution. Structured data is organized data that neatly fits into rows and columns in tables. Semi-structured data is still organized and has clear properties and values, but there's variety to the data. Unstructured data doesn't fit neatly into tables, nor does it have a schema.
+Es gibt drei Kategorien von Daten: strukturiert, teilweise strukturiert und unstrukturiert. Für die Auswahl der richtigen Speicherlösung sind ein grundlegendes Verständnis zu den Unterschieden und die Ermittlung der Kategorie Ihrer Daten erforderlich. Strukturierte Daten sind organisierte Daten, die ohne Weiteres in Zeilen und Spalten in Tabellen eingefügt werden können. Teilweise strukturierte Daten sind zwar ebenfalls organisiert und verfügen über eindeutige Eigenschaften und Werte, weisen jedoch Abweichungen in den Daten auf. Unstrukturierte Daten lassen sich nicht ohne Weiteres in Tabellen einfügen und weisen kein Schema auf.

@@ -1,15 +1,15 @@
-Suppose you manage an online sales learning portal for your organization. The majority of your sales team are often in different geographical areas, so the online learning portal is an essential requirement. It's even more important as your organization continues to increase the skills and knowledge enhancement training for the sales staff.
+Angenommen, Sie verwalten in Ihrem Unternehmen ein Onlinelernportal für den Vertrieb. Der Großteil Ihres Vertriebsteams ist ständig in verschiedenen geografischen Regionen unterwegs, weshalb das Onlinelernportal eine wesentliche Voraussetzung ist. Es ist umso wichtiger, da Ihr Unternehmen die Schulung des Vertriebspersonals zur Verbesserung von Fähigkeiten und Kenntnissen weiter vorantreibt.
 
-Your training data includes high-quality video, detailed sales simulations, and large repositories for maintaining student data and progress. Currently, all the training content is stored in your on-premises storage. You have an aggressive plan to add new courses and would like to avoid the need to continuously increase the local storage capacity.
+Ihre Schulungsdaten sind sehr umfangreich. Sie umfassen qualitativ hochwertige Videos, detaillierte Vertriebssimulationen und große Repositorys zur Pflege der Teilnehmerdaten und -fortschritte. Derzeit werden sämtliche Schulungsinhalte lokal gespeichert. Sie haben einen sehr ehrgeizigen Plan für das Hinzufügen neuer Kurse und möchten die Notwendigkeit vermeiden, kontinuierlich lokale Speicherkapazitäten hinzuzufügen.
 
-You're looking for a storage solution that is secure, durable, scalable, and easily accessible from across the globe.
+Sie suchen eine Speicherlösung, die sicher, langlebig, skalierbar und überall auf der Welt leicht zugänglich ist.
 
-Azure Storage provides features that will meet all of your business needs.
+Azure Storage bietet Features, die alle Ihre geschäftlichen Anforderungen erfüllen.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul lernen Sie Folgendes:
 
-- Explore the benefits of Azure Storage
-- Explore how Azure Storage meets your business demands
-- Compare Azure storage with on-premises storage
+- Erkunden der Vorteile von Azure Storage
+- Erkunden, wie Azure Storage Ihre Geschäftsanforderungen erfüllt
+- Vergleichen von Azure Storage mit lokalem Speicher

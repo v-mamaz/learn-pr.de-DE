@@ -1,23 +1,23 @@
-In the previous exercises, we gathered a basic understanding of Azure AD. We created a directory, created a user and group, and then created a conditional access rule that requires Azure Multi-Factor Authentication when accessing the Azure portal.
+In den vorherigen Übungen wurden grundlegende Kenntnisse von Azure AD vermittelt. Wir haben ein Verzeichnis, einen Benutzer, eine Gruppe und anschließend eine bedingte Zugriffsregel erstellt, sodass für den Zugriff auf das Azure-Portal Azure Multi-Factor Authentication erforderlich ist.
 
-Now, we'll test if we can access our resources.
+Nun testen wir, ob wir auf unsere Ressourcen zugreifen können.
 
-## Test access to resources
+## <a name="test-access-to-resources"></a>Testen des Zugriffs auf Ressourcen
 
-You know that your users will sign in and access all their SaaS applications using the MyApps portal, so this is what we'll test.
+Da Sie wissen, dass Ihre Benutzer sich anmelden und über das MyApps-Portal auf all ihre SaaS-Anwendungen zugreifen werden, soll genau das getestet werden.
 
-1. Open an InPrivate browser window.
+1. Öffnen Sie ein Browserfenster im InPrivate-Modus.
 
-1. Browse to https://myapps.microsoft.com.
+1. Navigieren Sie zu https://myapps.microsoft.com.
 
-1. Sign in as the user that we created in Unit 2.
+1. Melden Sie sich mit dem Benutzerkonto an, das in Einheit 2 erstellt wurde.
 
-   * Notice that you're signed in to the portal without requiring Multi-Factor Authentication.
+   * Beachten Sie, dass Sie ohne Multi-Factor Authentication beim Portal angemeldet sind.
 
-1. In the same browser window, browse to https://portal.azure.com.
+1. Navigieren Sie im gleichen Browserfenster zu https://portal.azure.com.
 
-   * Notice that you're now required to provide more information to keep your account secure. This interrupt is Azure Multi-Factor Authentication kicking in because of the conditional access policy we created. You can stop at this point and close the browser window.
+   * Beachten Sie, dass Sie zum Schützen Ihres Kontos weitere Informationen bereitstellen müssen. Diese Unterbrechung wird aufgrund der von uns erstellten Richtlinie für bedingten Zugriff von Azure Multi-Factor Authentication verursacht. An diesem Punkt können Sie die Arbeit beenden und das Browserfenster schließen.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this unit, you learned how to grant a user access to create and manage virtual machines in a resource group using Azure PowerShell. In the next unit, you look at how to create a custom role and define your own permissions.
+In dieser Einheit haben Sie gelernt, wie Sie einem Benutzer mit Azure PowerShell Zugriff erteilen, damit dieser virtuelle Computer in einer Ressourcengruppe erstellen und verwalten kann. In der nächsten Einheit erfahren Sie, wie Sie eine benutzerdefinierte Rolle erstellen und Ihre eigenen Berechtigungen definieren.

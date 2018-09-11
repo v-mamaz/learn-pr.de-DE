@@ -1,48 +1,48 @@
-When designing an app that needs to store data, it's important to think about how the app is going to organize data across storage accounts, containers, and blobs.
+Beim Entwerfen einer App, die Daten speichern muss, müssen Sie unbedingt überlegen, wie die App Daten in Speicherkonten, Containern und Blobs organisieren soll.
 
-## Storage accounts
+## <a name="storage-accounts"></a>Speicherkonten
 
-A single storage account is flexible enough to organize your blobs however you like, but you should use additional storage accounts as necessary to logically separate costs and control access to data.
+Ein einzelnes Speicherkonto ist flexibel genug, um Ihre Blobs nach Ihren Wünschen zu organisieren, aber Sie sollten zusätzliche Speicherkonten nach Bedarf hinzufügen, um Kosten- und Steuerungszugriff auf Daten logisch zu trennen.
 
-## Containers and blobs
+## <a name="containers-and-blobs"></a>Container und Blobs
 
-The nature of your application and the data that it stores should drive your strategy for naming and organizing containers and blobs.
+Die Art der Anwendung und die Daten, die sie speichert, sollten Ihre Strategie für das Benennen und Organisieren von Containern und Blobs bestimmen.
 
-Apps using blobs as part of a storage scheme that includes a database often don't need to rely heavily on organization, naming, or metadata to indicate anything about their data. Such apps commonly use identifiers like GUIDs as blob names and reference these identifiers in database records. The app will use the database to determine where blobs are stored and the kind of data they contain.
+Apps, die Blobs als Teil eines Speicherschemas verwenden, das eine Datenbank beinhaltet, müssen sich häufig nicht stark auf Organisation, Benennung oder Metadaten verlassen, um etwas zu ihren Daten anzuzeigen. Solche Apps verwenden im Allgemeinen Bezeichner wie z.B. GUIDs als Blobnamen und verweisen in Datenbank-Datensätzen auf diese Bezeichner. Die App verwendet die Datenbank, um zu bestimmen, wo Blobs gespeichert werden, und welche Art von Daten sie enthalten.
 
-Other apps may use Azure Blob storage more like a personal file system, where container and blob names are used to indicate meaning and structure. Blob names in these kinds of apps will often look like traditional file names and include file name extensions like `.jpg` to indicate what kind of data they contain. They'll use virtual directories (see below) to organize blobs and will frequently use metadata tags to store information about blobs and containers.
+Andere Apps verwenden Azure Blob Storage eher wie ein persönliches Dateisystem, in dem Bedeutung und Struktur mit Container- und Blobnamen angegeben werden. Blobnamen sehen in Apps dieser Arten oft wie herkömmliche Dateinamen aus und enthalten Dateinamenerweiterungen wie `.jpg`, um anzugeben, welche Art von Daten sie enthalten. Sie verwenden virtuelle Verzeichnisse (siehe unten), um Blobs zu organisieren, und häufig Metadatentags zum Speichern von Informationen zu Blobs und Containern.
 
-There are a few key things to consider when deciding how to organize and store blobs and containers.
+Bei der Entscheidung, wie Blobs und Container organisiert und gespeichert werden sollen, sind ein paar wichtige Punkte zu berücksichtigen.
 
-### Naming limitations
+### <a name="naming-limitations"></a>Einschränkungen bei der Benennung
 
-Container and blob names must conform to a set of rules, including length limitations and character restrictions. See the Further Reading section at the end of this module for more specific information about naming rules.
+Für Container -und Blobnamen müssen bestimmten Regeln eingehalten werden, die beispielsweise Längen- und Zeichenbeschränkungen umfassen. Spezifischere Informationen zu Benennungsregeln finden Sie im Abschnitt „Weitere Informationen“ am Ende dieses Moduls.
 
-### Public access and containers as security boundaries
+### <a name="public-access-and-containers-as-security-boundaries"></a>Öffentlicher Zugriff und Container als Sicherheitsgrenzen
 
-By default, all blobs require authentication to access. However, individual containers can be configured to allow public downloading of their blobs without authentication. This feature supports many use cases, such as hosting static website assets and sharing files. This is because downloading blob contents works the same way as reading any other kind of data over the web: you just point a browser or anything that can make a GET request at the blob URL.
+Standardmäßig setzen alle Blobs Authentifizierung für den Zugriff voraus. Allerdings können einzelne Container so konfiguriert werden, dass sie das öffentliche Herunterladen ihrer Blobs ohne Authentifizierung ermöglichen. Dieses Feature unterstützt viele Anwendungsfälle, wie z.B. das Hosten statischer Websiteressourcen und das Freigeben von Dateien. Der Grund hierfür ist, dass das Herunterladen von Blobinhalten in gleicher Weise funktioniert wie das Lesen von Daten jeder anderen Art über das Internet: Sie rufen in einem Browser oder einem anderen Programm, das eine GET-Anforderung stellen kann, die Blob-URL auf.
 
-Enabling public access is important for scalability because data downloaded directly from Blob storage doesn't generate any traffic in your server-side app. Even if you don't immediately take advantage of public access or if you will use a database to control data access via your application, plan on using separate containers for data you want to be publicly available.
+Das Aktivieren des öffentlichen Zugriffs ist wichtig für die Skalierbarkeit, da direkt aus Blob Storage heruntergeladene Daten keinen Datenverkehr in Ihrer serverseitigen App generieren. Auch wenn Sie nicht sofort den öffentlichen Zugriff nutzen, oder wenn Sie eine Datenbank zur Steuerung des Datenzugriffs über Ihre Anwendung verwenden werden, planen Sie die Verwendung von separaten Containern für Daten, die Sie öffentlich verfügbar machen möchten.
 
 > [!CAUTION]
-> Blobs in a container configured for public access can be downloaded without any kind of authentication or auditing by anyone who knows their storage URLs. Never put blob data in a public container that you don't intend to share publicly.
+> Blobs in einem für öffentlichen Zugriff konfigurierten Container können ohne jegliche Authentifizierung oder Überwachung von jedem Benutzer heruntergeladen werden, der ihre Speicher-URLs kennt. Legen Sie Blobdaten niemals in einem öffentlichen Container ab, den Sie nicht öffentlich freigeben möchten.
 
-In addition to public access, Azure has a shared access signature feature that allows fine-grained permissions control on containers. Precision access control enables scenarios that further improve scalability, so thinking about containers as security boundaries in general is a helpful guideline.
+Zusätzlich zum öffentlichen Zugriff bietet Azure ein Signaturfeature für freigegebenen Zugriff, das eine differenzierte Berechtigungensteuerung im Container ermöglicht. Eine präzise Zugriffssteuerung ermöglicht Szenarien, die die Skalierbarkeit weiter verbessern – die Berücksichtigung von Containern als Sicherheitsgrenzen ist also im Allgemeinen eine hilfreiche Richtlinie.
 
-### Blob name prefixes (virtual directories)
+### <a name="blob-name-prefixes-virtual-directories"></a>Präfixe von Blobnamen (virtuelle Verzeichnisse)
 
-Technically, containers are "flat" and do not support any kind of nesting or hierarchy. But if you give your blobs hierarchical names that look like file paths (such as `finance/budgets/2017/q1.xls`), the API's listing operation can filter results to specific prefixes. This allows you to navigate the list as if it was a hierarchical system of files and folders.
+Technisch gesehen sind Container „flach“ und unterstützen Schachtelung oder Hierarchie in keiner Weise. Aber wenn Sie Ihren Blobs hierarchische Namen geben, die wie Dateipfade aussehen (z.B. `finance/budgets/2017/q1.xls`), kann der Auflistungsvorgang der API Ergebnisse für bestimmte Präfixe filtern. So können Sie in der Liste navigieren, als wäre sie ein hierarchisches System von Dateien und Ordnern.
 
-This feature is often called *virtual directories* because some tools and client libraries use it to visualize and navigate Blob storage as if it was a file system. Each folder navigation triggers a separate call to list the blobs in that folder.
+Dieses Feature wird häufig als *virtuelle Verzeichnisse* bezeichnet, da einige Tools und Clientbibliotheken es zum Visualisieren von Blobspeicher und zum Navigieren darin verwenden, als wäre es ein Dateisystem. Jede Ordnernavigation löst einen separaten Aufruf zum Auflisten von Blobs in diesem Ordner aus.
 
-Using names that are like file names for blobs is a common technique for organizing and navigating complex blob data.
+Die Verwendung von Blobnamen, die Dateinamen ähneln, ist eine gängige Methode, um komplexe Blobdaten zu organisieren und diese zu durchsuchen.
 
-### Blob types
+### <a name="blob-types"></a>Blobtypen
 
-There are three different kinds of blobs you can store data in:
+Es gibt drei verschiedene Arten von Blobs, in denen Sie Daten speichern können:
 
-- **Block blobs** are composed of blocks of different sizes that can be uploaded independently and in parallel. Writing to a block blob involves uploading data to blocks and committing them to the blob.
-- **Append blobs** are specialized block blobs that support only appending new data (not updating or deleting existing data), but they're very efficient at it. Append blobs are great for scenarios like storing logs or writing streamed data.
-- **Page blobs** are designed for scenarios that involve random-access reads and writes. Page blobs are used to store the virtual hard disk (VHD) files used by Azure Virtual Machines, but they're great for any scenario that involves random access.
+- **Blockblobs** bestehen aus Blöcken verschiedener Größen, die gleichzeitig und unabhängig voneinander hochgeladen werden können. Wenn Sie für einen Blockblob einen Schreibvorgang ausführen, werden Daten in Blöcke hochgeladen. Anschließend wird ein Commit ausgeführt, um die Blöcke in den Blob zu übertragen.
+- **Anfügeblobs** sind spezielle Blockblobs, die zwar nur das Anfügen neuer Daten unterstützen (nicht Aktualisieren oder Löschen vorhandener Daten), diesen Vorgang jedoch sehr effizient ausführen. Anfügeblobs eignen sich hervorragend für Szenarios wie das Speichern von Protokollen oder Schreiben von Streamingdaten.
+- **Seitenblobs** sind für Szenarios mit Lese- und Schreibvorgängen mit wahlfreiem Zugriff vorgesehen. Seitenblobs dienen zum Speichern der Dateien der virtuellen Festplatte (Virtual Hard Disk, VHD), die von Azure Virtual Machines verwendet werden, aber sie eignen sich hervorragend für jedes Szenario, das wahlfreien Zugriff umfasst.
 
-Block blobs are the best choice for most scenarios that don't specifically call for append or page blobs. Their block-based structure supports very fast uploads and downloads and efficient access to individual pieces of a blob. The process of managing and committing blocks is automatically handled by most client libraries, and some will also handle parallel uploads and downloads to maximize performance.
+Blockblobs sind die beste Wahl für die meisten Szenarios, die nicht speziell Anfüge- oder Seitenblobs erfordern. Die blockbasierte Struktur unterstützt schnelle Uploads und Downloads sowie den effizienten Zugriff auf individuelle Blobkomponenten. Der Verwaltungs- und Commitprozess für Blöcke wird von den meisten Clientbibliotheken automatisch gesteuert. Einige Bibliotheken verarbeiten zusätzlich gleichzeitige Uploads und Downloads zur Leistungsoptimierung.

@@ -1,49 +1,48 @@
-Your research team needs to perform computationally intense data processing and doesn't have the equipment to do the work. They've decided to use Azure to do the data analysis.
+Ihr Forschungsteam muss rechnerisch aufwändige Datenverarbeitung durchführen und verfügt nicht über die erforderlichen Mittel. Sie haben sich dazu entschieden, Azure für die Datenanalyse zu verwenden.
 
-## What is Azure compute?
-Azure compute is an on-demand computing resource service for running cloud-based applications. It provides computing resources like multi-core processors and supercomputers via virtual machines and containers. It also provides serverless computing to enable running apps without requiring infrastructure setup or configuration. The resources are available on-demand and can typically be created in minutes or even seconds. You pay only for the resources you use and only for as long as you're using them.
+## <a name="what-is-azure-compute"></a>Was ist Azure Compute?
+Azure Compute ist ein bei Bedarf abrufbarer Dienst für Rechenressourcen zum Ausführen von cloudbasierten Anwendungen. Er stellt Rechenressourcen wie Multi-Core-Prozessoren und Supercomputer über virtuelle Computer und Container bereit. Darüber hinaus bietet der Dienst serverloses Computing, damit Apps ausgeführt werden können, ohne dass Infrastruktur eingerichtet oder konfiguriert werden muss. Die Ressourcen sind bei Bedarf verfügbar und können in der Regel innerhalb von Minuten oder sogar Sekunden erstellt werden. Sie zahlen nur für die Ressourcen, die Sie verwenden, und nur solange Sie sie verwenden.
 
-There are three common techniques for performing compute in Azure:
+Es gibt drei gängige Vorgehensweise zum Ausführen von Compute in Azure:
+1. Virtuelle Computer
+1. Container
+1. Serverloses Computing
 
-- Virtual machines
-- Containers
-- Serverless computing
+## <a name="what-are-virtual-machines"></a>Was sind virtuelle Computer?
 
-## What are virtual machines?
+Ein **virtueller Computer (VM)** ist eine Softwareemulation eines physischen Computers. Dies umfasst einen virtuellen Prozessor, den Arbeitsspeicher, den Speicher und die Netzwerkressourcen. Sie hosten ein Betriebssystem, und Sie können Software wie auf einem physischen Computer installieren und ausführen. Mithilfe eines Remotedesktopclients können Sie die VM verwenden und steuern, als würden Sie vor einem physischen Computer sitzen.
 
-A **virtual machine (VM)** is a software emulation of a physical computer. They include a virtual processor, memory, storage, and networking resources. They host an operating system, and you're able to install and run software just like a physical computer. And by using a remote desktop client, you can use and control the virtual machine as if you were sitting in front of a physical terminal.
+### <a name="virtual-machines-in-azure"></a>Virtuelle Computer in Azure
 
-### Virtual machines in Azure
+Virtuelle Computer (VMs) können in Azure erstellt und gehostet werden. Neue VMs können in der Regel innerhalb von Minuten erstellt und bereitgestellt werden, indem ein Image eines vorkonfigurierten virtuellen Computers ausgewählt wird.
 
-Virtual machines can be created and hosted in Azure. New virtual machines can typically be created and provisioned in minutes by selecting a pre-configured virtual machine image.
+Das Auswählen eines Images ist eine der wichtigsten Entscheidungen, die Sie beim Erstellen einer VM berücksichtigen müssen. Ein Image ist eine Vorlage, die zum Erstellen einer VM verwendet wird. Diese Vorlagen enthalten bereits ein Betriebssystem und häufig auch andere Software, z.B. Entwicklungstools oder Webhostingumgebungen.
 
-Selecting an image is one of the most important decisions you'll need to make when creating a VM. An image is a template used to create a virtual machine. These templates already include an operating system (OS) and often other software, such as development tools or web hosting environments.
+## <a name="what-are-containers"></a>Was sind Container?
 
-## What are containers?
+Container sind eine Virtualisierungsumgebung, die im Gegensatz zu VMs kein Betriebssystem beinhaltet. Stattdessen verweisen sie auf das Betriebssystem der Hostumgebung, in der der Container ausführt wird. Wenn zum Beispiel fünf Container auf einem Server mit einem spezifischen Linux-Kernel ausgeführt werden, werden alle fünf Container auf demselben Kernel ausgeführt. 
 
-Containers are a virtualization environment but, unlike a virtual machine, they do not include an operating system. Instead, they reference the operating system of the host environment that runs the container. For example, if five containers are running on a server with a specific Linux kernel, all five containers are running on that same kernel.
+Im folgenden Diagramm werden Anwendungen bei Ausführung in einer VM und als Container verglichen.
 
-The following illustration show a comparison between applications running directly on a VM and applications running inside containers on a VM.
+![Vergleich von Apps, die in einer VM und als Container ausgeführt werden](../media/vm-versus-containers.png)
 
-![An illustration showing how the operating system is a part of the virtual machine and not part of the container.](../media/2-vm-versus-containers.png)
+Container enthalten in der Regel eine von Ihnen geschriebene Anwendung sowie alle Bibliotheken, die für die Ausführung Ihrer Anwendung auf dem Kernel der Hostumgebung erforderlich sind. 
 
-Containers typically contain an application that you write and will include any libraries required for your application to run on the host environment's kernel. 
+Container sind kompakt und dafür konzipiert, dynamisch erstellt, horizontal hochskaliert und beendet zu werden, damit jede Änderung der Umgebung oder des Bedarfs abgedeckt werden kann.
 
-Containers are meant to be lightweight and are designed to be created, scaled out, and stopped dynamically. This allows you to respond to changes in demand and quickly restart in case of a crash or hardware interruption. 
+Die Verwendung von Containern hat den Vorteil, dass mehrere isolierte Anwendungen auf einem virtuellen Computer ausgeführt werden können. Da Container selbst gesichert und isoliert sind, benötigen Sie nicht unbedingt separate VMs für separate Workloads.
 
-A benefit of using containers is the ability to run multiple isolated applications on a virtual machine. Since containers themselves are secured and isolated, you don't necessarily need separate VMs for separate workloads.
+Azure unterstützt Docker-Container und mehrere Methoden zum Verwalten dieser Container. Container können manuell oder mit Azure-Diensten wie Azure Kubernetes Service verwaltet werden.
 
-Azure supports Docker containers and several ways to manage those containers. Containers can be managed manually or with Azure services such as Azure Kubernetes Service.
+### <a name="what-is-serverless-computing"></a>Was ist serverloses Computing?
 
-### What is serverless computing?
+Serverloses Computing ist eine in der Cloud gehostete Ausführungsumgebung, die Ihren Code ausführt, die zugrunde liegende Hostumgebung jedoch vollständig abstrahiert. Sie erstellen eine Instanz des Diensts und fügen Ihren Code hinzu. Eine Konfiguration oder Wartung der Infrastruktur ist weder erforderlich noch zulässig.
 
-Serverless computing is a cloud-hosted execution environment that runs your code but completely abstracts the underlying hosting environment. You create an instance of the service, and you add your code; no infrastructure configuration or maintenance is required, or even allowed.
+Sie konfigurieren Ihre serverlosen Apps, um auf _Ereignisse_ zu reagieren. Dabei kann es sich um einen REST-Endpunkt, einen Timer oder eine von einem anderen Azure-Dienst empfangene Nachricht handeln. Die serverlose App wird nur ausgeführt, wenn sie durch ein Ereignis ausgelöst wird.
 
-You configure your serverless apps to respond to _events_. This could be a REST endpoint, a periodic timer, or even a message received from another Azure service. The serverless app runs only when it's triggered by an event.
+Für die Infrastruktur sind Sie nicht verantwortlich. Die Skalierung und Leistungsanpassung erfolgt automatisch. Es werden nur die Ressourcen in Rechnung gestellt, die Sie verwenden. Das Reservieren von Kapazität ist nicht notwendig.
 
-Infrastructure isn't your responsibility. Scaling and performance are handled automatically, and you are billed only for the exact resources you use. There's no need to even reserve capacity.
+Azure verfügt über zwei Implementierungen von serverlosem Computing: 
 
-Azure has two implementations of serverless compute: 
-
-- **Azure Functions** which can execute code in almost any modern language
-- **Azure Logic Apps** which are designed in a web-based designer and can execute logic triggered by Azure services without writing any code.
+1. **Azure Functions** ist in der Lage, Code in fast jeder modernen Programmiersprache auszuführen.
+2. Mit **Azure Logic Apps** erstellte Apps werden in einem webbasierten Designer erstellt und können Logik ausführen, die von Azure-Diensten ausgelöst wird – und zwar ganz ohne Schreiben von Code.

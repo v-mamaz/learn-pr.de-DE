@@ -1,37 +1,37 @@
-The Azure CLI is a command-line program to connect to Azure and execute administrative commands on Azure resources. It runs on Linux, macOS, and Windows and allows administrators and developers to execute their commands through a terminal or command line prompt (or script!) instead of a web browser. For example, to restart a virtual machine (VM), you would use a command like the following:
+Die Azure CLI ist ein Befehlszeilenprogramm, über das Sie eine Verbindung mit Azure herstellen und Verwaltungsbefehle für Azure-Ressourcen ausführen können. Die Azure CLI wird unter Linux, macOS und Windows ausgeführt und ermöglicht es Administratoren und Entwicklern, ihre Befehle über ein Terminal oder eine Eingabeaufforderung (oder ein Skript) anstelle eines Webbrowsers auszuführen. Zum Neustarten einer VM würden Sie beispielsweise einen Befehl wie den folgenden verwenden:
 
  ```bash
  az vm restart -g MyResourceGroup -n MyVm
  ```
 
-The Azure CLI provides cross-platform command-line tools for managing Azure resources, and can be installed locally on Linux, Mac, or Windows computers. The Azure CLI can also be used from a browser through the Azure Cloud Shell. In both cases, it can be used interactively or scripted. For interactive use, you first launch a shell such as cmd.exe on Windows or Bash on Linux or macOS and then issue the command at the shell prompt. To automate repetitive tasks, you assemble the CLI commands into a shell script using the script syntax of your chosen shell and then execute the script.
+Die Azure CLI bietet plattformübergreifende Befehlszeilentools zum Verwalten von Azure-Ressourcen. Sie kann lokal auf Linux-, Mac- und Windows-Computern installiert werden. Die Azure CLI kann mit Azure Cloud Shell auch über Browser verwendet werden. In beiden Fällen kann sie interaktiv oder mit Skripts verwendet werden. Bei der interaktiven Nutzung starten Sie zunächst eine Shell wie cmd.exe unter Windows oder Bash unter Linux oder macOS, und geben Sie dann den Befehl bei der Eingabeaufforderung der Shell ein. Um sich wiederholende Aufgaben zu automatisieren, stellen Sie die CLI-Befehle mit der Syntax Ihrer ausgewählten Shell in einem Shellskript zusammen und führen dieses Skript dann aus.
 
-## How to install Azure CLI
+## <a name="how-to-install-azure-cli"></a>Installieren der Azure CLI
 
-On both Linux and macOS, you use a package manager to install PowerShell Core. The recommended package manager differs by OS and distribution:
-- Linux: **apt-get** on Ubuntu, **yum** on Red Hat, and **zypper** on OpenSUSE
+Verwenden Sie unter Linux und macOS einen Paket-Manager, um PowerShell Core zu installieren. Der empfohlene Paket-Manager unterscheidet sich je nach Betriebssystem und Distribution:
+- Linux: **apt-get** unter Ubuntu, **yum** unter Red Hat und **zypper** unter OpenSUSE
 - Mac: **Homebrew**
 
-The Azure CLI is available in the Microsoft repository, so you'll first need to add that repository to your package manager.
+Die Azure CLI ist im Microsoft-Repository verfügbar, sodass Sie zuerst dieses Repository dem Paket-Manager hinzufügen müssen.
 
-On Windows, you install the Azure CLI by downloading and running an MSI file.
+Installieren Sie die Azure CLI unter Windows, indem Sie eine MSI-Datei herunterladen und ausführen.
 
-## Using the Azure CLI in scripts
+## <a name="using-the-azure-cli-in-scripts"></a>Verwenden der Azure CLI in Skripts
 
-If you want to use the Azure CLI commands in scripts, you need to be aware of any issues around the "shell" or environment used for running the script. For example, in a bash shell, the following syntax is used when setting variables:
+Wenn Sie Azure CLI-Befehle in Skripts verwenden möchten, müssen Sie die möglichen Probleme in Zusammenhang mit der „Shell“ oder der Ausführungsumgebung kennen. Beispielsweise werden Variablen in einer Bash-Shell mithilfe der folgenden Syntax festgelegt:
 
  ```bash
  variable="value"
  variable=integer
  ```
 
-If you use a PowerShell environment for running Azure CLI scripts, you'll need to use this syntax for variables:
+Wenn Sie eine PowerShell-Umgebung zum Ausführen von Azure CLI-Skripts verwenden, müssen Sie diese Syntax für Variablen verwenden:
 
  ```powershell
  $variable="value"
  $variable=integer
  ```
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-The Azure CLI must be installed before it can be used to manage Azure resources from a local computer. The installation steps vary for Windows, Linux, and macOS, but once installed, the commands are common across platforms. 
+Sie müssen die Azure CLI installieren, um mit ihr Azure-Ressourcen von einem lokalen Computer aus zu verwalten. Die Installation ist für Windows, Linux und macOS unterschiedlich, allerdings gelten die Befehle nach der Installation plattformübergreifend. 

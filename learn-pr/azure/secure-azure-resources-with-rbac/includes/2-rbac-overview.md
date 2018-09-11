@@ -1,78 +1,78 @@
-Suppose you need to manage access to resources in Azure for the developer, engineering, and marketing teams. You’ve started to receive access requests, and you need to quickly come up to speed on how access management for resources works in Azure.
+Angenommen, Sie müssen für die Entwicklungs-, Technik- und Marketingteams den Zugriff auf Ressourcen in Azure verwalten. Sie haben bereits erste Zugriffsanforderungen erhalten und müssen schnell herausfinden, wie die Zugriffsverwaltung bei Ressourcen in Azure funktioniert.
 
-## What is RBAC?
+## <a name="what-is-rbac"></a>Was ist RBAC?
 
-Role-based access control (RBAC) is an authorization system built on [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) that provides fine-grained access management of resources in Azure. Azure has lots of resources, but a few examples include virtual machines, websites, networks, and storage.
+Bei der rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) handelt es sich um ein Autorisierungssystem, das auf [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) basiert und eine differenzierte Verwaltung des Zugriffs auf Ressourcen in Azure ermöglicht. Azure bietet viele Ressourcen, wobei sich einige Beispiele auf virtuelle Computer, Websites, Netzwerke und Speicher beziehen.
 
-## What can I do with RBAC?
+## <a name="what-can-i-do-with-rbac"></a>Welche Möglichkeiten bietet RBAC?
 
-RBAC allows you grant access to single users or user groups to Azure resources that you control.
+Mit RBAC können Sie einzelnen Benutzern oder Benutzergruppen Zugriff auf Azure-Ressourcen gewähren, die Sie bestimmen.
 
-Here are some examples:
-- Allow one user to manage virtual machines in a subscription and another user to manage virtual networks
-- Allow a database administrator group to manage SQL databases in a subscription
-- Allow a user to manage all resources in a resource group, such as virtual machines, websites, and subnets
-- Allow an application to access all resources in a resource group
+Hier einige Beispiele:
+- Ein Benutzer kann virtuelle Computer in einem Abonnement verwalten, während ein anderer Benutzer virtuelle Netzwerke verwalten kann
+- Eine Datenbankadministratorgruppe kann SQL-Datenbanken in einem Abonnement verwalten
+- Ein Benutzer kann sämtliche Ressourcen in einer Ressourcengruppe verwalten, wie z.B. virtuelle Computer, Websites und Subnetze
+- Eine Anwendung kann auf sämtliche Ressourcen in einer Ressourcengruppe zugreifen
 
-## RBAC in the Azure portal
+## <a name="rbac-in-the-azure-portal"></a>RBAC im Azure-Portal
 
-In several areas in the Azure portal, you'll see a blade named **Access control (IAM)**, also known as identity and access management. On this blade, you can see who has access to that area and their role. Using this same blade, you can grant or remove access.
+Im Azure-Portal wird in verschiedenen Bereichen ein Blatt mit dem Namen **Zugriffssteuerung (IAM)** (dentity & Access Management, Identitäts- und Zugriffsverwaltung) angezeigt. Auf diesem Blatt werden die Benutzer mit Zugriff auf diesen Bereich sowie deren Rollen angezeigt. Über dieses Blatt können Sie Zugriff gewähren oder den Zugriff aufheben.
 
-The following shows an example of the Access control (IAM) blade for a resource group. In this example, Alain Charon has been assigned the Backup Operator role on this resource group.
+Im Folgenden ist ein Beispiel für das Blatt „Zugriffssteuerung (IAM)“ für eine Ressourcengruppe dargestellt. In diesem Beispiel wurde Alain Charon die Rolle „Sicherungsoperator“ für diese Ressourcengruppe zugewiesen.
 
-![Access control (IAM) in the Azure portal](../media-draft/2-resource-group-access-control.png)
+![„Zugriffssteuerung (IAM)“ im Azure-Portal](../media-draft/2-resource-group-access-control.png)
 
-## How does RBAC work?
+## <a name="how-does-rbac-work"></a>Funktionsweise von RBAC
 
-You control access to resources using RBAC by creating role assignments, which control how permissions are enforced. To create a role assignment, you need three elements: a security principal, a role definition, and a scope. You can think of these elements as "who," "what," and "where."
+Den Zugriff auf Ressourcen steuern Sie mit RBAC, indem Sie Rollenzuweisungen erstellen, mit denen die Durchsetzung von Berechtigungen gesteuert wird. Zum Erstellen einer Rollenzuweisung sind drei Elemente erforderlich: ein Sicherheitsprinzipal, eine Rollendefinition und ein Bereich. Nach diesen drei Elementen können Sie mit „wer“, „was“ und „wo“ fragen.
 
-### 1. Security principal (who)
+### <a name="1-security-principal-who"></a>1. Sicherheitsprinzipal (wer)
 
-A *security principal* is just a fancy name for a user, group, or application that you want to grant access to.
+Ein *Sicherheitsprinzipal* ist nur ein ausgefallener Name für einen Benutzer, eine Gruppe oder eine Anwendung, auf den bzw. die Sie Zugriff gewähren möchten.
 
-![Security principal](../media-draft/2-rbac-security-principal.png)
+![Sicherheitsprinzipal](../media-draft/2-rbac-security-principal.png)
 
-### 2. Role definition (what you can do)
+### <a name="2-role-definition-what-you-can-do"></a>2. Rollendefinition (was Sie tun können)
 
-A *role definition* is a collection of permissions. It's sometimes just called a role. A role definition lists the permissions that can be performed, such as read, write, and delete. Roles can be high-level, like Owner, or specific, like Virtual Machine Contributor.
+Eine *Rollendefinition* ist eine Sammlung von Berechtigungen. Gelegentlich wird sie auch einfach als Rolle bezeichnet. In einer Rollendefinition sind die Berechtigungen wie etwa Lesen, Schreiben und Löschen aufgelistet. Rollen können auf allgemeiner Ebene erteilt werden (z.B. Besitzer) oder spezifisch sein (z.B. Mitwirkender für virtuelle Computer).
 
-![Role definition](../media-draft/2-rbac-role-definition.png)
+![Rollendefinition](../media-draft/2-rbac-role-definition.png)
 
-Azure includes several [built-in roles](/azure/role-based-access-control/built-in-roles) that you can use. The following lists four fundamental built-in roles:
+Azure umfasst mehrere [integrierte Rollen](/azure/role-based-access-control/built-in-roles), die Sie verwenden können. Im Folgenden werden vier grundlegende integrierte Rollen aufgeführt:
 
-- Owner - Has full access to all resources, including the right to delegate access to others.
-- Contributor - Can create and manage all types of Azure resources, but can’t grant access to others.
-- Reader - Can view existing Azure resources.
-- User Access Administrator - Lets you manage user access to Azure resources.
+- Besitzer: Verfügen über vollständigen Zugriff auf alle Ressourcen, einschließlich des Rechts, den Zugriff an andere Personen zu delegieren.
+- Mitwirkende: Können alle Arten von Azure-Ressourcen erstellen und verwalten, aber keinen anderen Personen Zugriff gewähren.
+- Leser: Können vorhandene Azure-Ressourcen anzeigen.
+- Benutzerzugriffsadministratoren: Können den Benutzerzugriff auf Azure-Ressourcen verwalten.
 
-If the built-in roles don't meet the specific needs of your organization, you can create your own [custom roles](/azure/role-based-access-control/custom-roles).
+Wenn die integrierten Rollen den Ansprüchen Ihrer Organisation nicht entsprechen, können Sie Ihre eigenen [benutzerdefinierten Rollen](/azure/role-based-access-control/custom-roles) erstellen.
 
-### 3. Scope (where)
+### <a name="3-scope-where"></a>3. Bereich (wo)
 
-*Scope* is where the access applies to. This is helpful if you want to make someone a Website Contributor, but only for one resource group.
+*Bereich* ist der Ort, für den die Zugriffsberechtigung gilt. Dies ist hilfreich, wenn Sie einem Benutzer die Rolle „Mitwirkender von Website“ zuweisen möchten, jedoch nur für eine Ressourcengruppe.
 
-In Azure, you can specify a scope at multiple levels: management group, subscription, resource group, or resource. Scopes are structured in a parent-child relationship. When you grant access at a parent scope, those permissions are inherited by the child scopes. For example, if you assign the Contributor role to a group at the subscription scope, that role is inherited by all resource groups and resources in the subscription.
+In Azure können Sie auf mehreren Ebenen einen Bereich angeben: Verwaltungsgruppe, Abonnement, Ressourcengruppe oder Ressource. Bereiche sind in einer Beziehung zwischen über- und untergeordneten Elementen strukturiert. Wenn Sie den Zugriff in einem übergeordneten Bereich gewähren, werden diese Berechtigungen vom untergeordneten Bereich übernommen. Wenn Sie beispielsweise einer Gruppe im Abonnementbereich die Rolle „Mitwirkender“ zuweisen, wird diese Rolle von allen Ressourcengruppen und Ressourcen im Abonnement übernommen.
 
-![Scope](../media-draft/2-rbac-scope.png)
+![Bereich](../media-draft/2-rbac-scope.png)
 
-### Role assignment
+### <a name="role-assignment"></a>Rollenzuweisung
 
-Once you have determined the who, what, and where, you can combine those elements to grant access. A *role assignment* is the process of binding a role to a security principal at a particular scope, for the purpose of granting access. To grant access, you create a role assignment. To revoke access, you remove a role assignment.
+Nachdem Sie wer, was und wo bestimmt haben, können Sie diese Elemente vereinen, um Zugriff zu gewähren. Eine *Rollenzuweisung* ist der Prozess, in dem eine Rolle zum Zwecke der Zugriffserteilung in einem bestimmten Bereich an einen Sicherheitsprinzipal gebunden wird. Erstellen Sie zum Gewähren des Zugriffs eine Rollenzuweisung. Entfernen Sie zum Widerrufen des Zugriffs eine Rollenzuweisung.
 
-The following example shows how the Marketing group has been assigned the Contributor role at the sales resource group scope.
+Im folgenden Beispiel wird gezeigt, wie der Gruppe „Marketing“ die Rolle „Mitwirkender“ im Bereich der Vertriebsressourcengruppe zugewiesen wurde.
 
-![Role assignment](../media-draft/2-rbac-overview.png)
+![Rollenzuweisung](../media-draft/2-rbac-overview.png)
 
-## RBAC is allow-only with no deny
+## <a name="rbac-is-allow-only-with-no-deny"></a>RBAC – nur zulassen, nicht verweigern
 
-Currently, RBAC is an allow-only model with no deny. What this means is that when you are assigned a role, RBAC allows you to perform certain actions, such as read, write, or delete. RBAC does not explicitly deny access. So, if one role assignment grants you read permissions to a resource group and different role assignment grants you write permissions to the same resource group, you will have write permissions on that resource group.
+Derzeit ist RBAC ein Modell, das nur Zulassen und kein Verweigern ermöglicht. Das bedeutet, dass RBAC zulässt, dass Sie bestimmte Aktionen wie Lesen, Schreiben oder Löschen durchführen können, wenn Ihnen eine entsprechende Rolle zugewiesen wurde. Den Zugriff explizit verweigern kann RBAC nicht. Wenn Ihnen also durch eine Rollenzuweisung Leseberechtigungen für eine Ressourcengruppe und durch eine andere Rollenzuweisung Schreibberechtigungen für dieselbe Ressourcengruppe erteilt wurden, verfügen Sie über Schreibberechtigungen für diese Ressourcengruppe.
 
-RBAC has something called `NotActions` permissions. `NotActions` is not a deny rule – it is simply a convenient way to create a set of allowed permissions when specific permissions need to be excluded.
+Bei RBAC gibt es sogenannte `NotActions`-Berechtigungen. `NotActions` ist keine Verweigerungsregel. Es ist lediglich eine bequeme Möglichkeit, eine Gruppe zulässiger Berechtigungen zu erstellen, wenn bestimmte Berechtigungen ausgeschlossen werden müssen.
 
-## Other roles in Azure
+## <a name="other-roles-in-azure"></a>Weitere Rollen in Azure
 
-As you work with Azure, you might encounter other roles, such as Global Administrator, Account Administrator, and several others. Many of these other roles are used for Azure Active Directory administration, such as creating users, resetting passwords, managing user licenses, and managing domains. There's more information that you can read if you want to learn the details, but the important thing to remember is that RBAC roles are used to manage access to Azure resources.
+Bei Ihrer Arbeit mit Azure werden Ihnen weitere Rollen begegnen wie etwa die Rollen „Globaler Administrator“, „Kontoadministrator“ und verschiedene andere. Viele dieser Rollen werden für die Azure Active Directory-Verwaltung verwendet, etwa zum Erstellen von Benutzern, zum Zurücksetzen von Kennwörtern, zum Verwalten von Benutzerlizenzen sowie zum Verwalten von Domänen. Es gibt weitere Informationen, die Sie lesen können, wenn Sie weitere Details erfahren möchten. Wichtig ist jedoch, dass Sie sich merken, dass RBAC-Rollen zum Verwalten des Zugriffs auf Azure-Ressourcen verwendet wird.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this unit, you learned the basics of how RBAC works. Now that you have the RBAC fundamentals out of the way, you can get your hands dirty by starting to use RBAC. The easiest way to get started is to use the Azure portal. The rest of this module has you perform hands-on exercises related to RBAC.
+In dieser Einheit haben Sie die Grundlagen der Funktionsweise von RBAC kennengelernt. Nachdem Sie die grundlegenden Dinge über RBAC wissen, können Sie RBAC in der Praxis ausprobieren. Die einfachste Möglichkeit zum Einstieg ist die Verwendung des Azure-Portals. Im restlichen Teil dieses Moduls werden Sie praktische Übungen im Zusammenhang mit RBAC durchführen.

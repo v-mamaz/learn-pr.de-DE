@@ -1,10 +1,10 @@
-Imagine you're building a photo-sharing application. Every day, thousands of users take pictures and rely on your application to keep them safe and make them accessible across all their devices. Storing these photos is critical to your business, and you would like to ensure that the system used in your application is fast, reliable and secure. Ideally without you having to build all these aspects into the app.
+Angenommen, Sie erstellen eine Anwendung zum Teilen von Fotos. Jeden Tag nutzen Tausende Benutzer Ihre Anwendung, um Bilder sicher zu verwalten und mit anderen zu teilen. Da die Fotos den Benutzern wichtig sind, möchten Sie sicherstellen, dass das verwendete Speichersystem schnell, zuverlässig und robust ist. Darüber hinaus möchten Sie gewährleisten, dass das System vollständig geschützt ist und umfassende Sicherungen durchgeführt werden. Dabei möchten Sie sich allerdings nicht mit allen Aspekten des Speichersystems vertraut machen müssen und die jeweiligen Komponenten nicht selbst erstellen sowie in das Speichersystem integrieren. Stattdessen soll es einfach nur wie gewünscht funktionieren.
 
-Azure Storage provides such power, resiliency, and performance in the cloud. This module will provide you with the knowledge to be able to utilize the power of Azure Storage to achieve the reliability and performance in your app that you require. This knowledge can then be applied to any application.
+Genau diese Leistungsfähigkeit und Resilienz stellt Azure Storage in der Cloud für Sie bereit. In diesem Modul erfahren Sie, wie Sie mit Azure Storage eben diesen Anwendungsanforderungen gerecht werden. Dieses Wissen können Sie anschließend auch für jede andere Anwendung nutzen.
 
-## Learning objectives
-In this module, you will:
+## <a name="learning-objectives"></a>Lernziele
+In diesem Modul
 
-- Explore the data types and services supported by an Azure storage account
-- Create a new Azure storage account using the Azure portal
-- Create a new application and connect the app to an Azure Storage account.
+- ermitteln Sie, ob Azure Storage für Ihre App geeignet ist,
+- bewerten Entwurfsüberlegungen bei der Verwendung von Azure Storage in Ihrer App
+- und erstellen eine Anwendung und verbinden diese mit einem Azure Storage-Konto.
