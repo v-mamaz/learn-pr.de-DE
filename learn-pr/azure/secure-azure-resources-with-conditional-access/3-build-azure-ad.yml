@@ -11,6 +11,5 @@ metadata:
   ms.lasthandoff: 09/01/2018
   ms.locfileid: "43454465"
 title: Erstellen von Verzeichnissen
-labOnDemandUrl: https://labondemand.com/Launch/00000000
 durationInMinutes: 15
 content: '[!include[](includes/3-build-azure-ad.md)]'

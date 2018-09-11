@@ -19,7 +19,7 @@ levels:
 roles:
 - administrator
 products:
-- Azure Active Directory
+- azure
 units:
 - learn.secure-access-azure-ad-multi-factor-authentication.1-introduction
 - learn.secure-access-azure-ad-multi-factor-authentication.2-azure-ad-overview

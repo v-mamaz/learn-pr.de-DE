@@ -11,6 +11,5 @@ metadata:
   ms.lasthandoff: 09/01/2018
   ms.locfileid: "43454396"
 title: Gewähren des Zugriffs mithilfe der RBAC und des Azure-Portals
-labOnDemandUrl: https://labondemand.com/Launch/00000000
 durationInMinutes: 10
 content: '[!include[](includes/5-grant-access.md)]'

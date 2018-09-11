@@ -11,6 +11,5 @@ metadata:
   ms.lasthandoff: 09/01/2018
   ms.locfileid: "43455546"
 title: Gewähren des Zugriffs mit der RBAC und mit Azure PowerShell
-labOnDemandUrl: https://labondemand.com/Launch/00000000
 durationInMinutes: 10
 content: '[!include[](includes/6-grant-access-powershell.md)]'

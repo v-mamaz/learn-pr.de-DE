@@ -11,6 +11,5 @@ metadata:
   ms.lasthandoff: 09/01/2018
   ms.locfileid: "43455328"
 title: Auflisten des Zugriffs mithilfe der RBAC und des Azure-Portals
-labOnDemandUrl: https://labondemand.com/Launch/00000000
 durationInMinutes: 10
 content: '[!include[](includes/4-list-access.md)]'

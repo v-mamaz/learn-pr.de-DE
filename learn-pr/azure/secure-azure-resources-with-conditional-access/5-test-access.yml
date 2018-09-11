@@ -11,6 +11,5 @@ metadata:
   ms.lasthandoff: 09/01/2018
   ms.locfileid: "43454280"
 title: Testen des Zugriffs auf Ressourcen
-labOnDemandUrl: https://labondemand.com/Launch/0000000
 durationInMinutes: 10
 content: '[!include[](includes/5-test-access.md)]'
