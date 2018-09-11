@@ -1,22 +1,22 @@
-Big data applications should have the ability to process increased throughput by scaling out to meet increased transaction volumes.
+Big Data-Anwendungen sollten erhöhte Durchsätze verarbeiten können. Horizontales Skalieren ist hilfreich, um höhere Transaktionsvolumen verarbeiten zu können.
 
-Suppose you work in the credit card department of a bank. You're part of a team that manages the system responsible for fraud testing to determine whether to approve or decline each transaction. Your system receives a stream of transactions and needs to process them in real time.
+Angenommen, Sie arbeiten in einer Bank in der Abteilung für Kreditkarten. Sie sind Teil eines Teams, das das System verwaltet, das Transaktionen im Hinblick auf mögliche Betrugsfälle prüft, um so zu ermitteln, ob eine Transaktion genehmigt oder verhindert wird. Das System empfängt einen Datenstrom an Transaktionen, die in Echtzeit verarbeitet werden müssen.
 
-The load on your system can spike during weekends and holidays. It should be able to handle increased throughput efficiently and accurately. Given the sensitive nature of the transactions, even the slightest error can have a huge impact.
+An Wochenenden und Feiertagen ist Ihr System ggf. besonders stark ausgelastet. Daher sollte es in der Lage sein, Durchsätze effizient und genau zu verarbeiten. Es handelt sich hierbei um Transaktionen, bei denen der kleinste Fehler enorme Auswirkungen haben kann.
 
-Azure Event Hubs can receive and process large number of transactions. It can also be configured to scale dynamically, when required, to handle increased throughput.
-In this module, you’ll learn how to connect Event Hubs to your application and reliably process huge transaction volumes.
+Azure Event Hubs kann große Mengen an Transaktionen empfangen und verarbeiten. Außerdem kann der Dienst so konfiguriert werden, dass bei Bedarf auf dynamische Weise eine horizontale Skalierung durchgeführt wird, um höhere Durchsätze zu verarbeiten.
+In diesem Modul erfahren Sie, wie Sie Event Hubs mit Ihrer Anwendung verbinden und auf zuverlässige Weise hohe Transaktionsvolumen verarbeiten können.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul wird Folgendes thematisiert:
 
-- Create an event hub using the Azure CLI.
-- Configure applications to send or receive messages through an event hub.
-- Evaluate event hub performance using the Azure portal.
+- Erstellen eines Event Hubs mit Azure CLI
+- Konfigurieren von Anwendungen zum Senden oder Empfangen von Nachrichten über einen Event Hub
+- Bewerten der Leistung eines Event Hubs über das Azure-Portal
 
-## Prerequisites
+## <a name="prerequisites"></a>Voraussetzungen
 
-- Experience creating and managing resources using the Azure portal.
-- Experience with using Azure CLI 2.0 to sign into Azure, and to create resources.
-- Knowledge of basic big data concepts such as streaming and event processing.
+- Erfahrung im Erstellen und Verwalten von Ressourcen über das Azure-Portal
+- Erfahrung im Umgang mit der Azure CLI 2.0 für die Registrierung in Azure und zum Erstellen von Ressourcen
+- Grundlegende Kenntnisse zu Big Data-Konzepten wie Streaming und Ereignisverarbeitung

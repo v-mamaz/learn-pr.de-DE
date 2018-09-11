@@ -1,65 +1,65 @@
-In a distributed application, some messages need to be sent to a single recipient component. Other messages need to reach more than one destination.
+In einer verteilten Anwendung müssen einige Nachrichten nur an eine Empfängerkomponente gesendet werden. Andere Nachrichten sind für mehr als ein Ziel bestimmt.
 
-Let's discuss what happens when a user cancels a pizza order. This is a little different than placing the initial order. In that case, we wanted to wait until the order cleared payment processing before sending the order on to other steps (like having it prepared and cooked at the local storefront). But for the cancel operation, we are going to notify both the storefront *and* the payment processor at the same time. This approach minimizes the chances that we waste ingredients or delivery driver time.
+Hier wird beschrieben, was passiert, wenn ein Benutzer die Bestellung einer Pizza storniert. Dieser Vorgang weicht etwas vom Aufgeben der ursprünglichen Bestellung ab. In diesem Fall wollten wir warten, bis für die Bestellung die Verarbeitung der Zahlung abgeschlossen ist, bevor die Bestellung an die weiteren Schritte gesendet wird (z.B. den Zubereitungs-/Kochvorgang im Geschäft). Für den Stornierungsvorgang benachrichtigen wir dagegen gleichzeitig das Geschäft *und* die Stelle, von der die Zahlung verarbeitet wird. Mit diesem Ansatz wird die Wahrscheinlichkeit verringert, dass wir Zutaten oder Lieferzeitaufwand vergeuden.
 
-To allow multiple components to receive the same message, we'll use an Azure Service Bus topic.
+Wir verwenden ein Azure Service Bus-Thema, um es zu ermöglichen, dass mehrere Komponenten die gleiche Nachricht erhalten.
 
-## How code that uses topics differs from queues
+## <a name="how-code-that-uses-topics-differs-from-queues"></a>Code mit Verwendung von Themen – Unterscheidung von Warteschlangen
 
-If you want every message sent to the topic to be delivered to all subscribing components, you'll use topics. Writing code that uses topics is a way to replace queues. You use the same **Microsoft.Azure.ServiceBus** NuGet package, configure connection strings, and use asynchronous programming patterns.
+Sie verwenden Themen, wenn Sie möchten, dass alle an das Thema gesendeten Nachrichten für alle am Abonnement beteiligten Komponenten zugestellt wird. Das Schreiben von Code mit Verwendung von Themen unterscheidet sich von Warteschlangen. Sie verwenden das gleiche **Microsoft.Azure.ServiceBus**-NuGet-Paket, konfigurieren Verbindungszeichenfolgen und nutzen asynchrone Programmierungsmuster.
 
-However, you use the `TopicClient` class instead of the `QueueClient` class to send messages and the `SubscriptionClient` class to receive messages.
+Anstelle der `QueueClient`-Klasse verwenden Sie aber die `TopicClient`-Klasse, um Nachrichten zu senden, und die `SubscriptionClient`-Klasse, um Nachrichten zu empfangen.
 
-## Setting filters on subscriptions
+## <a name="setting-filters-on-subscriptions"></a>Festlegen von Filtern für Abonnements
 
-If you want to control which messages sent to the topic are delivered to which subscriptions, you can place filters on each subscription in the topic. In the pizza application, for instance, our storefronts are running Universal Windows Platform (UWP) applications. Each store can subscribe to the "OrderCancellation" topic but filter for its own StoreId. We save internet bandwidth because we are not sending unnecessary messages to distant store locations. Meanwhile, the payment processing component subscribes to all our cancellation messages.
+Wenn Sie steuern möchten, welche an das Thema gesendeten Nachrichten an die jeweiligen Abonnements gesendet werden, können Sie für jedes Abonnement im Thema Filter festlegen. In der Pizza-Anwendung werden in den Geschäften beispielsweise UWP-Anwendungen ausgeführt. Jedes Geschäft kann das Thema „OrderCancellation“ abonnieren, aber nach seiner eigenen „StoreId“ filtern. Wir sparen Internetbandbreite, da keine unnötigen Nachrichten an weit entfernte Geschäftsstandorte gesendet werden. In der Zwischenzeit abonniert die Komponente für die Zahlungsverarbeitung unsere gesamten Stornierungsnachrichten.
 
-Filters can be one of three types:
+Drei Arten von Filtern sind möglich:
 
-- **Boolean Filters.** The `TrueFilter` ensures that all messages sent to the topic are delivered to the current subscription. The `FalseFilter` ensures that none of the messages are delivered to the current subscription. (This effectively blocks or switches off the subscription.)
-- **SQL Filters.** A SQL filter specifies a condition by using the same syntax as a `WHERE` clause in a SQL query. Only messages that return `True` when evaluated against this subscription will be delivered to the subscribers.
-- **Correlation Filters.** A correlation filter holds a set of conditions that are matched against the properties of each message. If the property in the filter and the property on the message have the same value, it is considered a match.
+- **Boolesche Filter:** Mit `TrueFilter` wird sichergestellt, dass alle an das Thema gesendeten Nachrichten für das aktuelle Abonnement zugestellt werden. Mit `FalseFilter` wird sichergestellt, dass keine Nachricht für das aktuelle Abonnement zugestellt wird. (Hierdurch wird das Abonnement praktisch blockiert bzw. ausgeschaltet.)
+- **SQL-Filter:** Mit einem SQL-Filter wird eine Bedingung angegeben, indem die gleiche Syntax wie in der `WHERE`-Klausel einer SQL-Abfrage verwendet wird. Nur Nachrichten, für die beim Auswerten für dieses Abonnement `True` zurückgegeben wird, werden für die Abonnenten zugestellt.
+- **Korrelationsfilter:** Ein Korrelationsfilter enthält einen Satz mit Bedingungen, die mit den Eigenschaften jeder Nachricht abgeglichen werden. Wenn die Eigenschaft im Filter und die Eigenschaft der Nachricht über den gleichen Wert verfügen, ergibt sich eine Übereinstimmung.
 
-For our StoreId filter, we *could* use a SQL filter. Those filters are the most flexible, but they're also the most computationally expensive and could slow down our Service Bus throughput. In this case, we choose a correlation filter instead. 
+Für unseren StoreId-Filter *können* wir einen SQL-Filter verwenden. Dies sind die flexibelsten Filter, die aber auch mit dem höchsten Rechenaufwand verbunden sind und zu einer Verlangsamung des Service Bus-Durchsatzes führen können. In diesem Fall wählen wir stattdessen einen Korrelationsfilter. 
 
-## TopicClient example
+## <a name="topicclient-example"></a>TopicClient-Beispiel
 
-In any sending or receiving component, you should add the following `using` statements to any code file that calls a Service Bus topic:
+Für alle Sende- oder Empfangskomponenten sollten Sie die folgenden using-Anweisungen allen Codedateien hinzufügen, mit denen ein Service Bus-Thema aufgerufen wird:
 
-```C#
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.Azure.ServiceBus;
-```
+    ```C#
+    using System.Threading;
+    using System.Threading.Tasks;
+    using Microsoft.Azure.ServiceBus;
+    ```
 
-To send a message, start by creating a new `TopicClient` object and pass it the connection string and the name of the topic:
+Beginnen Sie das Senden einer Nachricht, indem Sie ein neues `TopicClient`-Objekt erstellen und dafür die Verbindungszeichenfolge und den Namen des Themas übergeben:
 
-```C#
-topicClient = new TopicClient(TextAppConnectionString, "GroupMessageTopic");
-```
+    ```C#
+    topicClient = new TopicClient(TextAppConnectionString, "GroupMessageTopic");
+    ```
 
-You can send a message to the topic by calling the `TopicClient.SendAsync()` method and passing the message. As with queues, the message must be in the form of a UTF-8 encoded string:
+Sie können eine Nachricht an das Thema senden, indem Sie die `TopicClient.SendAsync()`-Methode aufrufen und die Nachricht übergeben. Wie bei Warteschlangen auch, muss die Nachricht das Format einer Zeichenfolge mit UTF-8-Codierung aufweisen:
 
-```C#
-string message = "Cancel! I can't believe you use canned mushrooms!";
-var encodedMessage = new Message(Encoding.UTF8.GetBytes(message));
-await topicClient.SendAsync(encodedMessage);
-```
+    ```C#
+    string message = "Cancel! I can't believe you use canned mushrooms!";
+    var encodedMessage = new Message(Encoding.UTF8.GetBytes(message));
+    await topicClient.SendAsync(encodedMessage);
+    ```
 
-To receive messages, you must create a `SubscriptionClient` object, not a `TopicClient` object, and pass it the connection string, the name of the topic, **and** the name of the subscription:
+Um Nachrichten zu erhalten, müssen Sie ein `SubscriptionClient`-Objekt erstellen (kein `TopicClient`-Objekt) und dafür die Verbindungszeichenfolge, den Namen des Themas **und** den Namen des Abonnements übergeben:
 
-```C#
-subscriptionClient = new SubscriptionClient(ServiceBusConnectionString, "GroupMessageTopic", "NorthAmerica");
-```
+    ```C#
+    subscriptionClient = new SubscriptionClient(ServiceBusConnectionString, "GroupMessageTopic", "NorthAmerica");
+    ```
 
-Then register a message handler - this is the asynchronous method in your code that processes the retrieved message.
+Registrieren Sie anschließend einen Nachrichtenhandler. Dies ist die asynchrone Methode in Ihrem Code, mit der die abgerufene Nachricht verarbeitet wird.
 
-```C#
-subscriptionClient.RegisterMessageHandler(MessageHandler, messageHandlerOptions);
-```
+    ```C#
+    subscriptionClient.RegisterMessageHandler(MessageHandler, messageHandlerOptions);
+    ```
 
-Within the message handler, call the `SubscriptionClient.CompleteAsync()` method to remove the message from the queue:
+Rufen Sie im Nachrichtenhandler die `SubscriptionClient.CompleteAsync()`-Methode auf, um die Nachricht aus der Warteschlange zu entfernen:
 
-```C#
-await subscriptionClient.CompleteAsync(message.SystemProperties.LockToken);
-```
+    ```C#
+    await subscriptionClient.CompleteAsync(message.SystemProperties.LockToken);
+    ```

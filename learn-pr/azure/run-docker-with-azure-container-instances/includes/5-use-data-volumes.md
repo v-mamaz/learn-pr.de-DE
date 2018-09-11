@@ -1,10 +1,10 @@
-By default, Azure Container Instances is stateless. If the container crashes or stops, all of its state is lost. To persist state beyond the lifetime of the container, you must mount a volume from an external store.
+Standardmäßig ist Azure Container Instances zustandslos. Wenn der Container abstürzt oder beendet wird, gehen alle Zustände verloren. Um den Zustand nach Ablauf der Lebensdauer des Containers beizubehalten, müssen Sie ein Volume aus einem externen Speicher bereitstellen.
 
-In this unit, you will mount an Azure file share to an Azure container instance for data storage and retrieval.
+In dieser Einheit stellen Sie eine Azure-Dateifreigabe in einer Azure-Containerinstanz zum Speichern und Abrufen von Daten bereit.
 
-## Create an Azure file share
+## <a name="create-an-azure-file-share"></a>Erstellen einer Azure-Dateifreigabe
 
-Before using an Azure file share with Azure Container Instances, you must create it. Run the following script to create a storage account. The storage account name must be globally unique, so the script adds a random value to the base string:
+Bevor Sie eine Azure-Dateifreigabe in Azure Container Instances einbinden, müssen Sie sie erstellen. Führen Sie das folgende Skript aus, um ein Speicherkonto zu erstellen. Der Name des Speicherkontos muss global eindeutig sein, daher fügt das Skript der Basiszeichenfolge einen Zufallswert hinzu:
 
 ```azurecli
 ACI_PERS_STORAGE_ACCOUNT_NAME=mystorageaccount$RANDOM
@@ -12,39 +12,39 @@ ACI_PERS_STORAGE_ACCOUNT_NAME=mystorageaccount$RANDOM
 az storage account create --resource-group myResourceGroup --name $ACI_PERS_STORAGE_ACCOUNT_NAME --location eastus --sku Standard_LRS
 ```
 
-Run the following command to place the storage account connection string into an environment variable named *AZURE_STORAGE_CONNECTION_STRING*. This environment variable is understood by the Azure CLI and can be used in storage-related operations:
+Führen Sie den folgenden Befehl aus, um die Verbindungszeichenfolge für das Speicherkonto in einer Umgebungsvariablen mit dem Namen *AZURE_STORAGE_CONNECTION_STRING* zu platzieren. Diese Umgebungsvariable kann von der Azure CLI gelesen und für speicherbezogene Vorgänge verwendet werden:
 
 ```azurecli
 export AZURE_STORAGE_CONNECTION_STRING=`az storage account show-connection-string --resource-group myResourceGroup --name $ACI_PERS_STORAGE_ACCOUNT_NAME --output tsv`
 ```
 
-Create the file share by running the `az storage share create` command. The following example creates a share with the name *aci-share-demo*:
+Erstellen Sie die Dateifreigabe durch Ausführen des Befehls `az storage share create`. Im folgenden Beispiel wird eine Freigabe mit dem Namen *aci-share-demo* erstellt:
 
 ```azurecli
 az storage share create --name aci-share-demo
 ```
 
-## Get storage credentials
+## <a name="get-storage-credentials"></a>Erhalten der Anmeldeinformationen für das Speicherkonto
 
-To mount an Azure file share as a volume in Azure Container Instances, you need three values: the storage account name, the share name, and the storage access key.
+Um eine Azure-Dateifreigabe als Volume in Azure Container Instances bereitzustellen, benötigen Sie drei Werte: den Namen des Speicherkontos, den Freigabenamen und den Speicherzugriffsschlüssel.
 
-If you used the script above, the storage account name was created with a random value at the end. To query the final string (including the random portion), use the following commands:
+Wenn Sie das oben angegebene Skript verwendet haben, wurde der Name des Speicherkontos mit einem zufälligen Wert am Ende erstellt. Um die endgültige Zeichenfolge (einschließlich des zufälligen Teils) abzufragen, verwenden Sie die folgenden Befehle:
 
 ```azurecli
 STORAGE_ACCOUNT=$(az storage account list --resource-group myResourceGroup --query "[?contains(name,'$ACI_PERS_STORAGE_ACCOUNT_NAME')].[name]" --output tsv)
 echo $STORAGE_ACCOUNT
 ```
 
-The share name is already known (aci-share-demo), so all that remains is the storage account key, which can be found using the following command:
+Der Freigabename ist bereits bekannt (aci-share-demo), daher verbleibt nur der Speicherkontoschlüssel, der mit dem folgenden Befehl gesucht werden kann:
 
 ```azurecli
 STORAGE_KEY=$(az storage account keys list --resource-group myResourceGroup --account-name $STORAGE_ACCOUNT --query "[0].value" --output tsv)
 echo $STORAGE_KEY
 ```
 
-## Deploy container and mount volume
+## <a name="deploy-container-and-mount-volume"></a>Bereitstellen des Containers und des Volumes
 
-To mount an Azure file share as a volume in a container, specify the share and volume mount point when you create the container:
+Um eine Azure-Dateifreigabe als Volume in einem Container bereitzustellen, geben Sie die Freigabe und den Bereitstellungspunkt des Volumes bei der Erstellung des Containers an:
 
 ```azurecli
 az container create \
@@ -59,25 +59,25 @@ az container create \
     --azure-file-volume-mount-path /aci/logs/
 ```
 
-Once the container has been created, get the public IP address:
+Nachdem der Container erstellt wurde, rufen Sie die öffentliche IP-Adresse ab:
 
 ```azurecli
 az container show --resource-group myResourceGroup --name aci-demo-files --query ipAddress.ip -o tsv
 ```
 
-Open a browser and navigate to the container's IP address. You will be presented with a simple form. Enter some text and click **Submit**. This action will create a file in the Azure Files share with the text entered here as the file body.
+Öffnen Sie einen Browser, und navigieren Sie zur IP-Adresse des Containers. Es wird ein einfaches Formular angezeigt. Geben Sie Text ein, und klicken Sie auf **Senden**. Dadurch wird eine Datei in der Azure-Dateifreigabe mit dem hier eingegebenen Text als Textkörper erstellt.
 
-![Azure Container Instances file share demo](../media-draft/files-ui.png)
+![Beispiel für eine Azure Container Instances-Dateifreigabe](../media-draft/files-ui.png)
 
-To validate, you can navigate to the file share in the Azure portal and download the file.
+Zur Überprüfung können Sie im Azure-Portal zur Dateifreigabe navigieren und die Datei herunterladen.
 
-![Sample text file with contents demo application](../media-draft/sample-text.png)
+![Beispieltextdatei mit Inhalten – Demoanwendung](../media-draft/sample-text.png)
 
-If the files and data stored in the Azure Files share were of any value, this share could be remounted on a new container instance to provide stateful data.
+Wenn es sich bei den Inhalten, die in der Azure-Dateifreigabe gespeichert sind, um wertvolle Dateien und Daten handelt, kann diese Freigabe auf einer neuen Containerinstanz erneut bereitgestellt werden, um zustandsbehaftete Daten verfügbar zu machen.
 
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this unit, you have created an Azure Files share and a container, and have mounted the file share to that container. This share was then used to store application data.
+In dieser Einheit haben Sie eine Azure-Dateifreigabe sowie einen Container erstellt und die Dateifreigabe anschließend in dem Container bereitgestellt. Diese Freigabe wurde dann verwendet, um Anwendungsdaten zu speichern.
 
-In the next unit, you will work through some common Container Instances troubleshooting operations.
+In der nächsten Einheit werden Sie einige gängige Vorgänge zur Problembehandlung in Container Instances durchführen.

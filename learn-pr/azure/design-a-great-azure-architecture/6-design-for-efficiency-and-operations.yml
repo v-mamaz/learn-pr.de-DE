@@ -1,0 +1,46 @@
+### YamlMime:ModuleUnit
+uid: learn.design-a-great-azure-architecture.6-design-for-efficiency-and-operations
+title: Entwurf für Effizienz und Vorgänge
+metadata:
+  title: Entwurf für Effizienz und Vorgänge
+  description: Entwurf für Effizienz und Vorgänge
+  ms.openlocfilehash: 6e61849930310593f52be7e954fdf40f8806fa80
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43847927"
+durationInMinutes: 10
+content: >
+  [!include[](includes/6-design-for-efficiency-and-operations.md)]
+quiz:
+  title: 'Wissenstest: Entwurf für Effizienz und Vorgänge'
+  questions:
+  - content: Was sind die Vorteile eines Kostenmodells mit nutzungsbasierter Bezahlung?
+    choices:
+    - content: Vollständige Transparenz der Kosten für Ihre Ressourcen.
+      isCorrect: false
+      incorrectExplanation: Dies ist ein Vorteil eines Kostenmodells mit nutzungsbasierter Bezahlung. Dies ist aber nicht die einzige richtige Wahl.
+    - content: Die Flexibilität, Ihre Ressourcen und Kosten bedarfsgerecht anpassen zu können.
+      isCorrect: false
+      incorrectExplanation: Dies ist ein Vorteil eines Kostenmodells mit nutzungsbasierter Bezahlung. Dies ist aber nicht die einzige richtige Wahl.
+    - content: Verringertes Risiko bei der Auswertung neuer Tools und Technologien.
+      isCorrect: false
+      incorrectExplanation: Dies ist ein Vorteil eines Kostenmodells mit nutzungsbasierter Bezahlung. Dies ist aber nicht die einzige richtige Wahl.
+    - content: Alle oben genannten Aspekte sind Vorteile eines Kostenmodells mit nutzungsbasierter Bezahlung.
+      isCorrect: true
+      correctExplanation: Alle oben genannten Aspekte sind Vorteile eines Kostenmodells mit nutzungsbasierter Bezahlung.
+  - content: Welches der folgenden Szenarien ist ein Beispiel für die Verbesserung der betrieblichen Effizienz?
+    choices:
+    - content: Automatisieren der Bereitstellung von Infrastruktur.
+      isCorrect: true
+      correctExplanation: Das Automatisieren der Bereitstellung von Infrastruktur ist ein gutes Beispiel für die Verbesserung der Betriebseffizienz.
+    - content: Verlagern von Diensten von PaaS zu IaaS.
+      isCorrect: false
+      incorrectExplanation: Die Verlagerung von Diensten von PaaS zu IaaS kann als ein Rückschritt in der betrieblichen Effizienz angesehen werden, da PaaS-Dienste in der Regel mit geringeren Betriebskosten verbunden sind.
+    - content: Dokumentieren manueller Schritte für die Bereitstellung von Infrastruktur.
+      isCorrect: false
+      incorrectExplanation: Dokumentation ist bei jeder Architektur wichtig, aber die operative Verbesserung ergibt sich aus der Automatisierung der manuellen Aktivitäten und nicht aus dem einfachen Dokumentieren dieser Aktivitäten.
+    - content: Verwalten von mehreren Protokollierungssystemen.
+      isCorrect: false
+      incorrectExplanation: Die Verwaltung mehrerer Protokollierungssysteme bringt einen erhöhten Betriebsaufwand und eine geringere Fähigkeit mit sich, Ereignisse und Metriken über die Protokollierungssysteme hinweg zu korrelieren. Die Zentralisierung in einem einzigen Protokollierungssystem kann die betriebliche Effizienz verbessern.

@@ -1,68 +1,70 @@
-In this unit, you'll assess an existing database using the Data Migration Assistant and review any features used in the local SQL Server instance that aren't currently supported by Azure SQL Database.
+In dieser Einheit bewerten Sie eine vorhandene Datenbank mithilfe des Datenmigrations-Assistenten und überprüfen alle Funktionen, die in der lokalen SQL Server-Instanz verwendet und derzeit nicht von Azure SQL-Datenbank unterstützt werden.
 
-## Setup
+## <a name="setup"></a>Einrichtung
 
-1. [Install the **Data Migration Assistant**](https://www.microsoft.com/download/details.aspx?id=53595) if you haven't done so already.
+1. [Installieren Sie den **Datenmigrations-Assistenten**](https://www.microsoft.com/download/details.aspx?id=53595), wenn Sie dies noch nicht getan haben.
 
-1. You'll need a SQL Server instance running, ensure you have connection details available.
+1. Dazu muss eine SQL Server-Instanz ausgeführt werden. Außerdem müssen Sie die Verbindungsdetails zur Hand haben.
 
-<!-- TODO: replace with an LOD VM -->
+<!-- 1. [**** likely replace with an LOD VM *****] TODO: -->
 
-1. Open a browser and navigate to https://docs.microsoft.com/sql/samples/adventureworks-install-configure?view=sql-server-2017.
+1. Öffnen Sie einen Internetbrowser, und navigieren Sie zu https://docs.microsoft.com/sql/samples/adventureworks-install-configure?view=sql-server-2017.
 
-1. In **OLTP downloads**, click **AdventureWorks2008R2.bak** and save it to your local machine.
+1. Klicken Sie unter **OLTP downloads** (OLTP-Downloads) auf **AdventureWorks2008R2.bak**, und speichern Sie die Datei auf Ihrem lokalen Computer.
 
-1. In Management Studio, restore *AdventureWorks 2008R2* to your default instance.
+1. Stellen Sie *AdventureWorks 2008R2* in Management Studio auf Ihrer Standardinstanz wieder her.
 
-## Create an assessment
+## <a name="create-an-assessment"></a>Erstellen einer Bewertung
 
-1. Start the **Microsoft Data Migration Assistant**.
+1. Starten Sie **Microsoft-Datenmigrations-Assistent**.
 
-1. In the app's left-hand navigation, click __+__ to create a new Data Migration Assistant project.
+1. Klicken Sie im linken Navigationsbereich der App auf __+__, um ein neues Datenmigrations-Assistent-Projekt zu erstellen.
 
-1. Specify the following options:
+1. Geben Sie die folgenden Optionen an:
 
-    - **Project type** - Select *Assessment*
-    - **Project name** - Enter a name for your project - for example, "Bicycle DB Assessment"
-    - **Source server type** - Select *SQL Server*
-    - **Target server type** - Select *Azure SQL Database*
+    - **Projekttyp:** Wählen Sie *Bewertung* aus.
+    - **Projektname:** Geben Sie einen Namen für Ihr Projekt ein, z.B. „FahrradDB-Bewertung“.
+    - **Typ des Quellservers:** Wählen Sie *SQL Server* aus.
+    - **Typ des Zielservers:** Wählen Sie *Azure SQL-Datenbank*.
 
-1. Click **Create**.
-    ![Screenshot showing the described configuration in the Data Migration Assistant for your AdventureWorks SQL Server data.](../media-draft/3-create-assessment.png)
+1. Klicken Sie auf **Erstellen**.
+    ![Screenshot der beschriebenen Konfiguration in Datenmigrations-Assistent für Ihre AdventureWorks-SQL Server-Daten](../media-draft/3-create-assessment.png)
 
-1. Select the assessment report type - check both:
-    - Check database compatibility
-    - Check feature parity
+1. Wählen Sie den Typ des Bewertungsberichts aus, und überprüfen Sie Folgendes:
+    - Datenbankkompatibilität überprüfen
+    - Check feature parity (Featureparität prüfen)
 
-1. Click **Next**.
+1. Klicken Sie auf **Weiter**.
 
-## Add databases to assess
+## <a name="add-databases-to-assess"></a>Auswählen zu bewertender Datenbanken
 
-1. If **Connect to a Server** is not showing on the right-hand side, click **Add Sources** to open the connection menu.
+1. Klicken Sie auf **Quellen hinzufügen**, um das Verbindungsmenü zu öffnen.
 
-1. Do the following:
-    - Enter your existing SQL server instance name
-    - Select the **Authentication** type
-    - Specify the connection properties for your server
+1. Gehen Sie wie folgt vor:
 
-1. Click **Connect**.
+    - Geben Sie den Namen Ihrer vorhandenen SQL Server-Instanz ein.
+    - Wählen Sie den **Authentifizierungstyp** aus.
+    - Geben Sie die Verbindungseigenschaften für Ihren Server ein.
 
-1. In **Add sources**, select the databases to assess. For this exercise, select **AdventureWorks2008R2**.
+1. Klicken Sie auf **Verbinden**.
 
-1. Click **Add**.
+1. Wählen Sie unter **Quellen hinzufügen** die Datenbanken aus, die bewertet werden sollen. Wählen Sie für diese Übung **AdventureWorks2008R2** aus.
+
+1. Klicken Sie auf **Hinzufügen**.
     > [!NOTE]
-    > To add databases from multiple SQL Server instances, use the **Add Sources** button. To remove multiple databases, hold the SHIFT+CTRL keys to select the databases you want to remove, then click **Remove Sources**.
+    > Verwenden Sie zum Hinzufügen von Datenbanken aus mehreren SQL Server-Instanzen die Schaltfläche **Quellen hinzufügen**. Wenn Sie mehrere Datenbanken entfernen möchten, drücken Sie UMSCHALT+STRG, um die zu entfernenden Datenbanken auszuwählen, und klicken Sie dann auf **Quellen entfernen**.
 
-1. Click **Start Assessment**.
+1. Klicken Sie auf **Bewertung starten**.
 
-## View results
+## <a name="view-results"></a>Anzeigen der Ergebnisse
 
-If there are multiple databases, the results for each database appears as soon as it is available. You don't need to wait for all database assessments to complete.
+Wenn mehrere Datenbanken vorhanden sind, werden die Ergebnisse der einzelnen Datenbanken angezeigt, sobald diese verfügbar sind. Sie müssen nicht warten, bis alle Datenbankbewertungen abgeschlossen wurden.
 
-1. Once the assessment for **AdventureWorks** is complete, click** Compatibility issues** and **SQL Server feature parity** radio buttons to view the results.
-    - The SQL Server feature parity category lists features that might not be fully supported and steps to remedy these issues. Feature parity issues will not stop a migration.
-    - The Compatibility issues category lists features that would block a migration and steps to remedy these issues.
+1. Nachdem die Bewertung für **AdventureWorks** abgeschlossen wurde, klicken Sie auf **Compatibility issues** (Kompatibilitätsprobleme) und **Featureempfehlungen**, um die Ergebnisse anzuzeigen.
 
-## Summary
+    - Die Kategorie „SQL Server-Featureparität“ enthält Features, die möglicherweise nicht vollständig unterstützt werden, und Schritte, um diese Probleme zu beheben. Migrationen werden jedoch aufgrund von Problemen mit der Featureparität nicht beendet.
+    - Die Kategorie „Kompatibilitätsprobleme“ enthält Features, die eine Migration beenden würden, und Schritte, um diese Probleme zu beheben.
 
-In this unit, you assessed a locally installed SQL Server database to verify if any features would be unavailable when you migrate the database to Azure SQL Database.
+## <a name="summary"></a>Zusammenfassung
+
+In dieser Einheit haben Sie eine lokal installierte SQL Server-Datenbank bewertet, um zu überprüfen, ob Features nicht verfügbar wären, wenn Sie die Datenbank zu Azure SQL-Datenbank migrieren.

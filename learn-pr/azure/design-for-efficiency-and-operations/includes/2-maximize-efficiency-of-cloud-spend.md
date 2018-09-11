@@ -1,4 +1,4 @@
-Sie sind ein Lösungsarchitekt. Ihre Organisation, Lamna Healthcare, hat ihre Workloads in die Cloud verschoben. Vor kurzem sind die Kosten für Ressourcen und Workflows stärker angestiegen als von Lamna erwartet wurde. Sie wurden gebeten zu prüfen, ob es sich um natürliches, effizientes Wachstum handelt, oder ob die Kosten reduziert werden können, wenn der Umgang mit den Cloudressourcen der Organisation effizienter gestaltet wird.
+Sie sind ein Lösungsarchitekt. Ihre Organisation, Lamna Healthcare, hat ihre Workloads in die Cloud verschoben. Vor kurzem sind die Kosten für Ressourcen und Workflows stärker angestiegen als von Lamna erwartet wurde. Sie wurden gebeten zu prüfen, ob es sich um natürliches, effizientes Wachstum handelt oder ob die Kosten reduziert werden können, wenn der Umgang mit den Cloudressourcen der Organisation effizienter gestaltet wird.
 
 ## <a name="how-the-cloud-changes-your-expenses"></a>Kostenänderungen durch die Cloud
 
@@ -58,7 +58,7 @@ Eine VM hat die richtige Größe, wenn diese an den jeweiligen Ressourcenbedarf 
 
 ![Abbildung zur Veranschaulichung der Einsparungen, die für einen nicht ausgelasteten virtuellen Computer durch die Umstellung auf die nächstniedrigere Größe erzielt wurden.](../media/vm-resize.png)
 
-Der Azure Advisor ermittelt, welche virtuellen Computer zu wenig ausgelastet sind. Der Advisor überwacht die Verwendung Ihrer virtuellen Computer 14 Tage lang und ermittelt virtuelle Computer mit geringer Auslastung. Virtuelle Computer, bei denen an mindestens vier Tagen die CPU-Auslastung unter 5 % und die Netzwerklast unter 7 MB lag, gelten als virtuelle Computer mit geringer Auslastung.
+Azure Advisor ermittelt, welche virtuellen Computer nicht ausgelastet sind. Advisor überwacht die Verwendung Ihrer virtuellen Computer 14 Tage lang und ermittelt virtuelle Computer mit geringer Auslastung. Virtuelle Computer, deren CPU-Auslastung über einen Zeitraum von mindestens vier Tagen höchstens 5 Prozent und deren Netzwerkauslastung höchstens 7 MB beträgt, gelten als nicht ausgelastete virtuelle Computer.
 
 #### <a name="implement-shutdown-schedules-for-virtual-machines"></a>Implementieren von Zeitplänen zum Abschalten virtueller Computer
 

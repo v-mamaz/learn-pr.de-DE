@@ -1,26 +1,26 @@
-Multiple documents in your database frequently need to be updated at the same time. 
+Mehrere Dokumente in Ihrer Datenbank müssen häufig zur gleichen Zeit aktualisiert werden. 
 
-For your online retail application, when a user places an order and wants to use a coupon code, a credit, or a dividend (or all three at once), you need to query their account for those options, make updates to their account indicating they used them, update the order total, and process the order.
+Wenn ein Benutzer in Ihrer Anwendung für den Onlineeinzelhandel eine Bestellung aufgibt und einen Gutscheincode, eine Gutschrift oder einen Gewinn (oder alle drei auf einmal) einlöst, müssen Sie sein Konto nach diesen Optionen abfragen, Aktualisierungen an seinem Konto vornehmen, um anzugeben, dass eine Rabattaktion verwendet wurde, die Bestellsumme aktualisieren und die Bestellung verarbeiten.
 
-All of these actions need to happen at the same time, within a single transaction. If the user chooses to cancel the order, you want to roll back the changes and not modify their account information, so that their coupon codes, credits, and dividends are available for their next purchase.
+Diese Aktionen müssen alle gleichzeitig innerhalb einer Transaktion durchgeführt werden. Wenn der Benutzer den Bestellvorgang abbricht, sollten Sie ein Rollback ausführen und die Kontoinformationen nicht ändern, sodass der Gutscheincode, die Gutschrift oder die Gewinnsumme beim nächsten Einkauf eingelöst werden können.
 
-The way to perform these transactions in Azure Cosmos DB is by using stored procedures and user-defined functions (UDFs). Stored procedures are the only way to ensure ACID (Atomicity, Consistency, Isolation, Durability) transactions because they are run on the server, and are thus referred to as server-side programming. UDFs are also stored on the server and are used during queries to perform computational logic on values or documents within the query. 
+Diese Art von Transaktionen können Sie in Azure Cosmos DB ausführen, indem Sie gespeicherte Prozeduren und benutzerdefinierte Funktionen verwenden. Gespeicherte Prozeduren sind die einzige Möglichkeit, ACID-Transaktionen (Atomarität, Konsistenz, Isolation, Dauerhaftigkeit) sicherzustellen, da sie auf dem Server ausgeführt werden. Sie werden daher als serverseitige Programmierung bezeichnet. Auch benutzerdefinierte Funktionen werden auf dem Server gespeichert und innerhalb von Abfragen verwendet, um Rechenlogik auf Werte oder Dokumente in der Abfrage anzuwenden. 
 
-In this module, you'll learn about stored procedures and UDFs, and then run some in the portal.
+In diesem Modul erhalten Sie Informationen zu gespeicherten Prozeduren und benutzerdefinierten Funktionen. Anschließend wird erläutert, wie Sie diese im Portal ausführen.
 
-## Stored procedure basics
+## <a name="stored-procedure-basics"></a>Grundlagen zu gespeicherten Prozeduren
 
-Stored procedures perform complex transactions on documents and properties. Stored procedures are written in JavaScript and are stored in a collection on Azure Cosmos DB. By performing the stored procedures on the database engine and close to the data, you can improve performance over client-side programming.
+Gespeicherte Prozeduren führen komplexe Transaktionen für Dokumente und Eigenschaften aus. Sie werden in JavaScript geschrieben und in Azure Cosmos DB in einer Sammlung gespeichert. Wenn Sie gespeicherte Prozeduren für die Datenbank-Engine und in der Nähe der Daten ausführen, können Sie die Leistung mithilfe clientseitiger Programmierung verbessern.
 
-Stored procedures are the only way to achieve atomic transactions within Azure Cosmos DB; the client-side SDKs do not support transactions.
+Gespeicherte Prozeduren stellen die einzige Möglichkeit dar, atomische Transaktionen in Azure Cosmos DB zu erzielen. Clientseitige SDKs unterstützen keine Transaktionen.
 
-Performing batch operations in stored procedures is also recommended because of the reduced need to create separate transactions.
+Außerdem wird empfohlen, Batchvorgänge in gespeicherten Prozeduren auszuführen, da dann weniger separate Transaktionen erstellt werden müssen.
 
 <!--TODO: Ideally I'd like to list some cases where a stored procedure is not the best option.-->
 
-## Stored procedure example
+## <a name="stored-procedure-example"></a>Beispiel für eine gespeicherte Prozedur
 
-The following sample is a simple HelloWorld stored procedure that gets the current context and sends a response that displays "Hello, World". Note that the stored procedure has an ID value, just like Azure Cosmos DB documents.
+Bei dem folgenden Beispiel handelt es sich um eine einfache gespeicherten HelloWorld-Prozedur, die den aktuellen Kontext abruft und eine Antwort sendet, die „Hello, World“ anzeigt. Beachten Sie, dass gespeicherte Prozeduren genauso wie Azure Cosmos DB-Dokumente einen ID-Wert aufweisen.
 
 ```java
 var helloWorldStoredProc = {
@@ -34,15 +34,15 @@ var helloWorldStoredProc = {
 }
 ```
 
-## User-defined function basics
+## <a name="user-defined-function-basics"></a>Grundlagen zu benutzerdefinierten Funktionen
 
-UDFs are used to extend the Azure Cosmos DB SQL query language grammar and implement custom business logic, such as calculations on properties and documents. UDFs can be called only from inside queries and, unlike stored procedures, they do not have access to the context object, so they cannot read or write documents.
+Mithilfe von benutzerdefinierten Funktionen (UDFs) ist es möglich, die Grammatik der SQL-Abfragesprache von Azure Cosmos DB zu erweitern und eine benutzerdefinierte Geschäftslogik wie Berechnungen für Eigenschaften und Dokumente zu implementieren. Benutzerdefinierte Funktionen können anders als gespeicherte Prozeduren nur innerhalb von Abfragen aufgerufen werden. Sie besitzen keinen Zugriff auf das Kontextobjekt und können daher Dokumente weder lesen noch schreiben.
 
-In an online commerce scenario, a UDF could be used to determine the sales tax to apply to an order total or a percentage discount to apply to products or orders.
+In einer Anwendung für den Onlineeinzelhandel sollten benutzerdefinierte Funktionen verwendet werden, um die Umsatzsteuer für eine Bestellung zu ermitteln oder einen Rabatt auf ein Produkt oder eine Bestellung anzuwenden.
 
-## User-defined function example
+## <a name="user-defined-function-example"></a>Beispiel zu benutzerdefinierten Funktionen
 
-The following sample creates a UDF to calculate discounts based on an order total, and then it returns the modified order total based on the discount:
+Im folgenden Beispiel wird eine benutzerdefinierte Funktion erstellt, um anhand der Gesamtsumme einer Bestellung Rabatte zu berechnen. Anschließend wird die geänderte Bestellsumme zurückgegeben:
 
 ```java
 var discountUdf = {
@@ -62,30 +62,30 @@ var discountUdf = {
 }
 ```
 
-## Create a stored procedure in the portal
+## <a name="create-a-stored-procedure-in-the-portal"></a>Erstellen einer gespeicherten Prozedur im Portal
 
-Let's create a new stored procedure in the portal. The portal automatically populates a simple stored procedure that retrieves the first item in the collection, so we'll run this stored procedure first.
+Nachfolgend wird erläutert, wie Sie eine gespeicherte Prozedur im Portal erstellen. Das Portal füllt automatisch eine einfache gespeicherte Prozedur mit Daten auf, die das erste Element in der Sammlung abruft: Wir führen diese gespeicherte Prozedur daher zuerst aus.
 
-1. In the Data Explorer, click **New Stored Procedure**.
+1. Klicken Sie im Daten-Explorer auf **Neue gespeicherte Prozedur**.
 
-    Data Explorer displays a new tab with a sample stored procedure.
+    Im Daten-Explorer wird eine neue Registerkarte mit einem Beispiel für eine gespeicherte Prozedur angezeigt.
 
   <!--TODO: Insert animated .gif of creating the stored procedure.-->
 
-2. In the **Stored Procedure Id** box, enter the name *sample*, click **Save**, and then click **Execute**.
+2. Geben Sie in das Feld **ID der gespeicherten Prozedur** den Namen *sample* ein, klicken Sie auf **Speichern** und dann auf **Ausführen**.
 
 
-3. In the **Input parameters** box, type the name of a partition key, *33218896*, and then click **Execute**. Note that stored procedures work within a single partition.
+3. Geben Sie in das Feld **Eingabeparameter** den Namen eines Partitionsschlüssels (*33218896*) ein, und klicken Sie dann auf **Ausführen**. Beachten Sie, dass gespeicherte Prozeduren innerhalb einer Partition ausgeführt werden.
 
-    ![Run a stored procedure in the portal](../media/6-stored-procedure.gif)
+    ![Ausführen einer gespeicherten Prozedur im Portal](../media-draft/6-stored-procedure.gif)
 
-    The **Result** pane displays the feed from the first document in the collection.
+    Im Bereich **Ergebnis** wird der Feed aus dem ersten Dokument in der Sammlung angezeigt.
 
-## Create a stored procedure that creates documents
+## <a name="create-a-stored-procedure-that-creates-documents"></a>Erstellen einer gespeicherten Prozedur, die Dokumente erstellt
 
-Now, let's create a stored procedure that creates documents.
+Nachfolgend wird erläutert, wie Sie eine gespeicherte Prozedur erstellen, die Dokumente erstellt.
 
-1. In the Data Explorer, click **New Stored Procedure**. Name this stored procedure *createDocuments*, click **Save**, and then click **Execute**.
+1. Klicken Sie im Daten-Explorer auf **Neue gespeicherte Prozedur**. Nennen Sie diese gespeicherte Prozedur *createDocuments*, und klicken Sie auf **Speichern** und dann auf **Ausführen**.
 
     ```java
     var createDocumentStoredProc = {
@@ -108,15 +108,15 @@ Now, let's create a stored procedure that creates documents.
 
 <!--TODO: Need to fix code above.-->
 
-2. Enter a partition key value of *3*, and then click **Execute**.
+2. Geben Sie den Partitionsschlüsselwert *3* ein, und klicken Sie dann auf **Ausführen**.
 
-    Data Explorer displays the newly created document. 
+    Der Daten-Explorer zeigt das neu erstellte Dokument an. 
 
-## Create a user-defined function
+## <a name="create-a-user-defined-function"></a>Erstellen einer benutzerdefinierten Funktion
 
-Now, let's create a UDF in Data Explorer.
+Nun erstellen wir eine benutzerdefinierte Funktion im Daten-Explorer.
 
-In the Data Explorer, click **New UDF**. Copy the following code into the window, name the UDF *tax*, and then click **Save**. There's no way to run the UDF from the portal, but we'll use it in a later module.
+Klicken Sie im Daten-Explorer auf **Neue benutzerdefinierte Funktion**. Kopieren Sie den folgenden Code in das Fenster, nennen Sie die benutzerdefinierte Funktion *tax*, und klicken Sie dann auf **Speichern**. Die benutzerdefinierte Funktion kann zwar nicht über das Portal ausgeführt werden, aber sie wird in einem späteren Modul verwendet.
 
 ```java
 function userDefinedFunction(){

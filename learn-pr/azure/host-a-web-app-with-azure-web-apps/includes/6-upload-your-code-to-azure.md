@@ -1,60 +1,60 @@
-﻿Now, let's see how we can stage our content and deploy with little or no downtime.
+Nun wollen wir uns ansehen, wie wir unsere Inhalte mit wenig oder ohne Ausfallzeit bereitstellen können.
 
-## What is a deployment slot?
+## <a name="what-is-a-deployment-slot"></a>Was ist ein Bereitstellungsslot?
 
-A deployment slot is an **independent** Web App with its own content, configuration, and even a unique host name. Therefore, it functions like any other Web App.
+Ein Bereitstellungsslot ist eine **unabhängige** Web-App mit eigenem Inhalt, eigener Konfiguration und sogar einem eindeutigen Hostnamen. Aus diesem Grund funktioniert ein solcher Slot wie jede andere Web-App.
 
-> Azure doesn't charge you extra for using deployment slots!
+> Azure stellt Ihnen für die Nutzung von Bereitstellungsslots nichts zusätzlich in Rechnung!
 
-Each deployment slot is accessible from its unique URL. For instance, let's say I've added a **staging** deployment slot with the name `BESTBIKE`. The URLs for the application and deployment slot are:
+Auf jeden Bereitstellungsslot kann über seine eindeutige URL zugegriffen werden. Angenommen, ich habe einen Bereitstellungsslot des Typs **Staging** mit dem Namen `BESTBIKE` hinzugefügt. Die URLs für die Anwendung und den Bereitstellungsslot sind wie folgt:
 
 - https://BESTBIKE.azurewebsites.net/
 - https://BESTBIKE-staging.azurewebsites.net/
 
-## Why are deployment slots useful?
+## <a name="why-are-deployment-slots-useful"></a>Warum sind Bereitstellungsslots nützlich?
 
-Deploying your Web App in the traditional way, whether it be via FTP, Web Deploy, Git, or another way, has some weaknesses:
+Die Bereitstellung Ihrer Web-App auf herkömmliche Weise, sei es per FTP, Web Deploy, Git oder auf andere Weise, hat gewisse Schwächen:
 
-- After the deployment completes, the Web App might restart, causing a **cold start** for the application. The first request to the application will be slower.
+- Nach Abschluss der Bereitstellung wird die Web-App möglicherweise neu gestartet, was zu einem **Kaltstart** der Anwendung führt. Die erste Anforderung an die Anwendung wird langsamer sein.
 
-- Potentially, you are deploying a *bad* version of your Web App, and you should test it (in production) before releasing it to your client.
+- Möglicherweise stellen Sie eine *fehlerbehaftete* Version Ihrer Web-App bereit. Sie sollten sie vorher (in der Produktion) testen, bevor Sie sie an Ihren Kunden weitergeben.
 
-This is where deployment slots come into play. You can make changes to your Web App to a **staging** deployment slot and test the changes without impacting users who are accessing the **production** deployment slot. When you are ready to move the new features into production, you can just **swap** the staging and production slots with **no downtime**.
+Hier kommen Bereitstellungsslots ins Spiel. Sie können Änderungen an Ihrer Web-App in einem Bereitstellungsslot des Typs **Staging** vornehmen und die Änderungen testen, ohne die Benutzer zu beeinträchtigen, die auf den Bereitstellungsslot **Produktion** zugreifen. Wenn Sie bereit sind, die neuen Features in die Produktion zu übernehmen, können Sie die Staging- und Produktionsslots **ohne Ausfallzeit** einfach **tauschen**.
 
-Another benefit of using deployment slots is that you can **warm up** your application in a staging slot before swapping it into the production slot. You will avoid the delays of a **cold start** and the lengthy initialization code.
+Ein weiterer Vorteil der Verwendung von Bereitstellungsslots ist, dass Sie Ihre Anwendung in einem Stagingslot **aufwärmen** können, bevor Sie sie an den Produktionsslot übergeben. Sie vermeiden die Verzögerungen eines **Kaltstarts** und langen Initialisierungscodes.
 
-Finally, you can **swap back** to the previous deployment slot if you realize that the new version of your application is not working as you expected.
+Schließlich können Sie zum vorherigen Bereitstellungsslot **zurück wechseln**, wenn Sie feststellen, dass die neue Version Ihrer Anwendung nicht wie erwartet funktioniert.
 
-## What is automated deployment?
+## <a name="what-is-automated-deployment"></a>Was bedeutet automatisierte Bereitstellung?
 
-Automated deployment, or continuous integration, is a process used to push out new features and bug fixes in a fast and repetitive pattern with minimal impact on end users.
+Die automatisierte Bereitstellung oder Continuous Integration ist ein Prozess, der dazu dient, neue Funktionen und Fehlerkorrekturen in einem schnellen und sich wiederholenden Muster mit minimalen Auswirkungen auf die Endbenutzer zu implementieren.
 
-Azure supports automated deployment directly from several sources. The following options are available:
+Azure unterstützt die automatische Bereitstellung direkt aus verschiedenen Quellen. Die folgenden Optionen sind verfügbar:
 
-- **Visual Studio Team Services (VSTS)**: You can push your code to VSTS, build your code in the cloud, run the tests, generate a release from the code, and finally, push your code to an Azure Web App.
+- **Visual Studio Team Services (VSTS)**: Sie können Ihren Code per Push an VSTS übertragen, den Build für Ihren Code in der Cloud durchführen, die Tests ausführen, eine Version aus dem Code generieren und schließlich Ihren Code per Push an ein Azure-Web-App übertragen.
 
-- **GitHub**: Azure supports automated deployment directly from GitHub. When you connect your GitHub repository to Azure for automated deployment, any changes you push to your production branch on GitHub will be automatically deployed for you.
+- **GitHub**: Azure unterstützt die automatische Bereitstellung direkt aus GitHub. Wenn Sie Ihr GitHub-Repository für die automatische Bereitstellung mit Azure verbinden, werden alle Änderungen, die Sie in Ihrem Produktions-Branch auf GitHub vornehmen, automatisch für Sie bereitgestellt.
 
-- **Bitbucket**: With its similarities to GitHub, you can configure an automated deployment with Bitbucket.
+- **Bitbucket**: Ähnlich wie mit GitHub können Sie mit Bitbucket eine automatisierte Bereitstellung konfigurieren.
 
-- **OneDrive**: You can connect your OneDrive account with Web Apps so that when you change any file on your OneDrive account, Azure will automatically detect it and pull back any changes on the web app files. This is a great option for static websites. It will give you the feeling that you are dealing with a local file system that reflects any changes on Azure, smoothly and instantly.
+- **OneDrive**: Sie können Ihr OneDrive-Konto mit Web-Apps verbinden, sodass Azure, wenn Sie eine Datei in Ihrem OneDrive-Konto ändern, dies automatisch erkennt und alle Änderungen zurück in die Web-App-Dateien einfließen lässt. Dies ist eine sehr nützliche Option für statische Websites. Sie haben das Gefühl, dass Sie es mit einem lokalen Dateisystem zu tun haben, das alle Änderungen in Azure sofort und reibungslos widerspiegelt.
 
-- **Dropbox**: Similar to OneDrive, you can host your web app files in a Dropbox account and have them automatically push and be deployed over an Azure Web App.
+- **Dropbox**: Ähnlich wie bei OneDrive können Sie Ihre Web-App-Dateien in einem Dropbox-Konto hosten und automatisch über eine Azure-Web-App verteilen lassen.
 
-- **External repository**: You can configure automated deployment with any external Git repository.
+- **Externes Repository**: Sie können die automatische Bereitstellung mit einem externen Git-Repository konfigurieren.
 
-### Non-automated deployment to Azure
+### <a name="non-automated-deployment-to-azure"></a>Nicht automatisierte Bereitstellung in Azure
 
-There are a few options that you can use to manually push your code to Azure:
+Ihnen stehen verschiedene Optionen zur Verfügung, um Ihren Code manuell per Push in Azure zu übertragen:
 
-- **FTP/S**: FTP or FTPS is a traditional way of pushing your code to any hosting environment. Despite the fact that it is not recommended anymore, you can still make use of it.
+- **FTP/S**: FTP oder FTPS ist eine herkömmliche Methode, Ihren Code in per Push in beliebige Hostingumgebungen zu übertragen. Trotz der Tatsache, dass diese Methode nicht mehr empfohlen wird, können Sie sie trotzdem nutzen.
 
-- **Web Deploy/IDE**: You can use the Visual Studio IDE to publish your web app to Azure. The Visual Studio publishing mechanism can make use of Web Deploy technology to push your code to Azure.
+- **Web Deploy/IDE**: Sie können die integrierte Entwicklungsumgebung von Visual Studio zum Veröffentlichen Ihrer Web-App in Azure einsetzen. Der Visual Studio-Veröffentlichungsmechanismus nutzt Web Deploy-Technologie, um Ihren Code per Push in Azure zu übertragen.
 
-- **Git**: Azure maintains a **local Git repository** for your application. You can **commit** your code directly to it.
+- **Git**: Azure verwaltet ein **lokales Git-Repository** für Ihre Anwendung. Sie können Ihren Code einfach direkt in diesem **committen**.
 
-> In this module, we are going to perform a non-automated deployment using Git.
+> In diesem Modul führen wir eine nicht automatisierte Bereitstellung mit Git durch.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-Azure provides multiple ways to upload your code to help it better fit in with your current workflow. You can also use deployment slots to help prevent downtime for your users.
+Azure bietet mehrere Möglichkeiten, Ihren Code entsprechend Ihrem aktuellen bevorzugten Workflow hochzuladen. Sie können auch Bereitstellungsslots verwenden, um Ausfallzeiten für Ihre Benutzer zu vermeiden.

@@ -1,26 +1,28 @@
 ### YamlMime:Module
 uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs
 metadata:
-  title: Enable reliable messaging for Big Data Applications using Azure Event Hubs
-  description: The insights gained from big data processing can be invaluable. You can detect fraudulent financial transactions, get real-time alerting from device telemetry, and so on. However, without a reliable means to process potentially millions of data messages per second, the value of such applications may be severely compromised. This module shows you how use Azure Event Hubs to reliably process high-volume data streams. You'll create and configure a new hub and then code applications to send/receive messages through the hub.
+  title: Aktivieren von zuverlässigem Messaging für Big Data-Anwendungen mithilfe von Azure Event Hubs
+  description: Durch die Verarbeitung von Big Data können Sie unschätzbare Erkenntnisse gewinnen. Beispielsweise haben Sie die Möglichkeit, finanzielle Transaktionen unter Missbrauchsumständen zu erkennen oder durch Gerätetelemetriedaten ausgelöste Warnungen in Echtzeit zu erhalten. Um möglicherweise Millionen von Datennachrichten pro Sekunden verarbeiten zu können, benötigen Sie jedoch eine zuverlässige Lösung, da andernfalls der Nutzen dieser Anwendungen stark eingeschränkt ist. In diesem Modul wird gezeigt, wie Sie mit Azure Event Hubs große Datenströme zuverlässig verarbeiten. Sie erstellen und konfigurieren einen neuen Hub und entwickeln anschließend Anwendungen, um Nachrichten an den Hub zu senden und von diesem zu empfangen.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Enable reliable messaging for Big Data Applications using Azure Event Hubs
-summary: Connect sending and receiving applications with Event Hubs so you can handle extremely high loads without losing data.
-abstract:  | 
-  In this module, you will:
-    - Create an event hub using the Azure CLI
-    - Configure applications to send or receive messages through an event hub
-    - Evaluate event hub performance using the Azure portal
-prerequisites: |
-  - Experience creating and managing resources using the Azure portal
-  - Experience with using Azure CLI 2.0 to sign into Azure, and to create resources
-  - Knowledge of basic big data concepts such as streaming and event processing
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: 4fc11f61dbc7fb9149d102c6b0ed710d188c5b5a
+  ms.sourcegitcommit: f6df5a988f64643099a0ffa283a522f8864c0070
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43854012"
+title: Aktivieren von zuverlässigem Messaging für Big Data-Anwendungen mithilfe von Azure Event Hubs
+summary: Indem Sie Anwendungen zum Empfangen und Senden von Nachrichten mit Event Hubs verbinden, können Sie auch extrem hohe Lasten verarbeiten, ohne dabei Daten zu verlieren.
+abstract: >
+  In diesem Modul wird Folgendes thematisiert:
+    - Erstellen eines Event Hubs mit Azure CLI
+    - Konfigurieren von Anwendungen zum Senden oder Empfangen von Nachrichten über einen Event Hub
+    - Bewerten der Leistung eines Event Hubs über das Azure-Portal
+prerequisites: >
+  - Erfahrung im Erstellen und Verwalten von Ressourcen über das Azure-Portal
+
+  - Erfahrung im Umgang mit der Azure CLI 2.0 für die Registrierung in Azure und zum Erstellen von Ressourcen
+
+  - Grundlegende Kenntnisse zu Big Data-Konzepten wie Streaming und Ereignisverarbeitung
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
@@ -30,7 +32,6 @@ products:
 - azure
 - azure-event-hubs
 units:
-#TODO: None of these units have a knowledge task or task validation component (need to add somewhere so users don't get marked complete solely by viewing the pages).
 - learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.1-introduction
 - learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.2-create-an-event-hub-using-azure-cli
 - learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.3-exercise-create-an-event-hub-using-azure-cli

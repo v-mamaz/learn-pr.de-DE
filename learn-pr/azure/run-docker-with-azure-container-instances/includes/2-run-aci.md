@@ -1,22 +1,22 @@
-Azure Container Instances makes it easy to create and manage Docker containers in Azure, without having to provision virtual machines or adopt a higher-level service. In this unit, you create a container in Azure and expose it to the internet with a fully qualified domain name (FQDN).
+Azure Container Instances erleichtert die Erstellung und Verwaltung von Docker-Containern in Azure, ohne dass Sie virtuelle Computer bereitstellen oder einen übergeordneten Dienst einführen müssen. In dieser Einheit erstellen Sie einen Container in Azure und machen ihn mit einem vollqualifizierten Domänennamen (FQDN) über das Internet verfügbar.
 
-## Create a resource group
+## <a name="create-a-resource-group"></a>Erstellen einer Ressourcengruppe
 
-Azure Container Instances, like all Azure resources, must be placed in a resource group, a logical collection into which Azure resources are deployed and managed.
+Wie alle Azure-Ressourcen muss auch Azure Container Instances in einer Ressourcengruppe (einer logische Sammlung für die Bereitstellung und Verwaltung von Azure-Ressourcen) platziert werden.
 
-Create a resource group with the `az group create` command.
+Erstellen Sie mit dem Befehl `az group create` eine Ressourcengruppe.
 
-The following example creates a resource group named *myResourceGroup* in the *eastus* location:
+Im folgenden Beispiel wird eine Ressourcengruppe mit dem Namen *myResourceGroup* am Standort *eastus* erstellt:
 
 ```azurecli
 az group create --name myResourceGroup --location eastus
 ```
 
-## Create a container
+## <a name="create-a-container"></a>Erstellen eines Containers
 
-You can create a container by providing a name, a Docker image, and an Azure resource group to the **az container create** command. You can optionally expose the container to the internet by specifying a DNS name label. In this example, you deploy a container that hosts a small web app.
+Zum Erstellen eines Containers müssen Sie einen Namen, ein Docker-Image und eine Azure-Ressourcengruppe für den Befehl **az container create** angeben. Durch Angeben einer DNS-Namensbezeichnung kann der Container optional auch für das Internet verfügbar gemacht werden. In diesem Beispiel stellen Sie einen Container bereit, der eine kompakte Webanwendung hostet.
 
-Execute the following command to start a container instance. The *--dns-name-label* value must be unique within the Azure region you create the instance, so you might need to modify this value to ensure uniqueness:
+Führen Sie den folgenden Befehl aus, um eine Containerinstanz zu starten. Der *--dns-name-label*-Wert muss innerhalb der Azure-Region, in der Sie die Instanz erstellen, eindeutig sein. Passen Sie den Wert also ggf. entsprechend an:
 
 ```azurecli
 az container create \
@@ -27,7 +27,7 @@ az container create \
     --dns-name-label aci-demo
 ```
 
-Within a few seconds, you should get a response to your request. Initially, the container is in the **Creating** state, but it should start within a few seconds. You can check the status using the `az container show` command:
+Innerhalb weniger Sekunden erhalten Sie eine Antwort auf Ihre Anforderung. Der Container befindet sich zunächst im Zustand **Wird erstellt...**, wird aber innerhalb weniger Sekunden gestartet. Sie können den Status mit dem Befehl `az container show` überprüfen:
 
 ```azurecli
 az container show \
@@ -37,7 +37,7 @@ az container show \
     --out table
 ```
 
-When you run the command, the container's fully qualified domain name (FQDN) and its provisioning state are displayed:
+Wenn Sie den Befehl ausführen, werden der vollqualifizierte Domänenname (FQDN) des Containers und der Bereitstellungsstatus angezeigt:
 
 ```bash
 FQDN                                    ProvisioningState
@@ -45,12 +45,12 @@ FQDN                                    ProvisioningState
 aci-demo.eastus.azurecontainer.io       Succeeded
 ```
 
-Once the container moves to the **Succeeded** state, navigate to its FQDN in your browser:
+Wenn der Container den Status **Erfolgreich** erreicht, navigieren Sie in Ihrem Browser zu seinem FQDN:
 
-![Browser screenshot showing an application running in an Azure container instance](../media-draft/aci-app-browser.png)
+![Screenshot eines Browsers mit ausgeführter Anwendung in einer Azure-Containerinstanz](../media-draft/aci-app-browser.png)
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this unit, you created an Azure container instance that is running a web server and application. You also accessed this application using the FQDN of the container instance.
+In dieser Einheit haben Sie eine Azure-Containerinstanz erstellt, in der ein Webserver und eine Anwendung ausgeführt werden. Mithilfe des FQDN der Containerinstanz haben Sie außerdem auf die Anwendung zugegriffen.
 
-In the next unit, you will configure container instance restart policies.
+In der nächsten Einheit konfigurieren Sie Neustartrichtlinien für Containerinstanzen.

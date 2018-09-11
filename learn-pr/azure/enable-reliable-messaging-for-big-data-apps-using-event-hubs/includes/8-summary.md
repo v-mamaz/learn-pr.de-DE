@@ -1,25 +1,24 @@
-Azure Event Hubs provides big data applications the capability to process large volume of data. It also has the ability to scale out during exceptionally high- demand periods as and when required. Azure Event Hubs decouple the sending and receiving messages to manage the data processing. This helps eliminate the risk of overwhelming consumer application and data loss due to any unplanned interruptions.
+Mithilfe von Azure Event Hubs können Big Data-Anwendungen große Datenmengen verarbeiten. Außerdem besteht zu Zeiten hoher Bedarfsanforderungen die Möglichkeit einer horizontalen Hochskalierung. Azure Event Hubs entkoppelt das Senden und Empfangen von Nachrichten, um die Datenverarbeitung zu verwalten. Dadurch wird das Risiko verringert, dass Consumeranwendungen überladen sind und aufgrund von ungeplanten Unterbrechungen Daten verloren gehen.
 
-In this module, you've seen how to deploy Azure Event Hubs as part of an event processing solution. 
-You learned how to:
+In diesem Modul haben Sie erfahren, wie Sie Azure Event Hubs als Teil einer Lösung zur Ereignisverarbeitung bereitstellen können. Es wurde Folgendes vermittelt:
 
-- Use the Azure CLI commands to create an Event Hubs namespace and an event hub in that namespace. 
-- Configure sender and receiver applications to send and receive messages through the event hub.
-- Use the Azure portal to view your event hub status and performance.
+- Das Verwenden der Azure CLI zum Erstellen eines Event Hubs-Namespace und eines darin enthaltenen Event Hubs 
+- Das Konfigurieren von Absender- und Empfängeranwendungen zum Senden und Empfangen von Nachrichten über den Event Hub
+- Das Verwenden des Azure-Portals zum Anzeigen des Status und der Leistung eines Event Hubs
 
-## Clean up 
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up"></a>Bereinigen 
+<!---TODO: Do we need to include cleanup for the free education tier?--->
 
-The resources you've used for your event hub testing will incur costs against your subscription. When you've have finished with the event hub, remember to remove these resources in order to avoid unnecessary charges.
+Aufgrund der Ressourcen, die Sie zum Testen Ihres Event Hubs verwendet haben, fallen Kosten für Ihr Abonnement an. Wenn Sie den Event Hub nicht mehr verwenden, sollten Sie ihn entfernen, damit keine unnötigen Änderungen an ihm vorgenommen werden können.
 
-Because you create the hub, namespace, and storage in the same resource group, the easiest way to clean up your Azure subscription is to remove the resource group, which will remove all its contents. 
+Da Sie den Hub, den Namespace und den Speicher in nur einer Ressourcengruppe erstellt haben, können Sie Ihr Azure-Abonnement am einfachsten bereinigen, indem Sie die Ressourcengruppe entfernen, die wiederum all ihre Inhalte entfernt. 
 
-Run the following command to remove the resource group, namespace, storage account, and all related resources. Replace `myResourceGroup` with the name of the resource group you created:
+Führen Sie den folgenden Befehl aus, um die Ressourcengruppe, den Namespace, das Speicherkonto und alle zugehörigen Ressourcen zu entfernen. Ersetzen Sie `myResourceGroup` durch die weiter oben erstellte Ressourcengruppe:
 
 ```azurecli
 az group delete --resource-group myResourceGroup
 ```
 
-When you are asked to confirm the delete, answer **Yes**.
+Wenn Sie aufgefordert werden, den Löschvorgang zu bestätigen, klicken Sie auf **Ja**.
 
-The command may take several minutes to complete as resources are deleted.
+Der Befehl zum Löschen der Ressourcen kann mehrere Minuten in Anspruch nehmen.

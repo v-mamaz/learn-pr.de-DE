@@ -1,62 +1,62 @@
-In this unit, you will install Visual Studio Code and the Azure App Service extension, which will get you ready to develop for Microsoft Azure and to deploy a web app.
+In dieser Einheit installieren Sie Visual Studio Code und die Azure App Service-Erweiterung. Dadurch können Sie für Microsoft Azure entwickeln und eine Web-App bereitstellen.
 
-## Exercise steps
+## <a name="exercise-steps"></a>Schritte
 
-First, identify which operating system you are using, and follow the steps in the appropriate section below to install Visual Studio Code.
+Finden Sie zunächst heraus, welches Betriebssystem Sie verwenden, und befolgen Sie die Schritte in den entsprechenden Abschnitten, um Visual Studio Code zu installieren.
 
-### Windows
+### <a name="windows"></a>Windows
 
-1. Download the Visual Studio Code installer for Windows.
+1. Laden Sie den Visual Studio Code-Installer für Windows herunter.
 
-1. Run the installer. This won't take long.
+1. Führen Sie das Installationsprogramm aus. Die Ausführung wird nicht lange dauern.
 
-1. Open VS Code by navigating to the installation folder (the default path is C:\Program Files\Microsoft VS Code for a 64-bit machine).
+1. Öffnen Sie Visual Studio Code, indem Sie zum Installationsordner navigieren (Standardpfad auf einem 64-Bit-Computer: C:\Programme\Microsoft VS Code).
 
-### macOS
+### <a name="macos"></a>macOS
 
-1. Download Visual Studio Code for macOS.
+1. Laden Sie Visual Studio Code für macOS herunter.
 
-1. Double-click on the downloaded archive to expand the contents.
+1. Doppelklicken Sie auf das heruntergeladene Archiv, um den Inhalt zu erweitern.
 
-1. Drag Visual Studio Code.app to the Applications folder, making it available in the Launchpad.
+1. Ziehen Sie „Visual Studio Code.app“ in den Ordner „Programme“. Dadurch wird die Datei im Launchpad verfügbar.
 
-1. Add VS Code to your Dock by right-clicking on the icon, and choosing Options > Keep in Dock.
+1. Fügen Sie Visual Studio Code zu Ihrem Dock hinzu, indem Sie mit der rechten Maustaste auf das Symbol und dann auf „Optionen > Im Dock belassen“.
 
-### Linux – Debian and Ubuntu
+### <a name="linux--debian-and-ubuntu"></a>Linux – Debian und Ubuntu
 
-1. Download and install the [.deb package (64-bit)](https://go.microsoft.com/fwlink/?LinkID=760868), either through the graphical software center, if it's available, or through the command line (replacing `<file>` with the .deb filename you downloaded):
+1. Laden Sie das [DEB-Paket (64-Bit)](https://go.microsoft.com/fwlink/?LinkID=760868) herunter, und installieren Sie es entweder über das grafische Softwarecenter (falls verfügbar) oder über die Befehlszeile (ersetzen Sie `<file>` durch den Namen der heruntergeladenen DEB-Datei):
 
     ```bash
     sudo dpkg -i <file>.deb
     sudo apt-get install -f # Install dependencies
     ```
 
-### Linux – RHEL, Fedora, and CentOS
+### <a name="linux--rhel-fedora-and-centos"></a>Linux – RHEL, Fedora und CentOS
 
-1. Use the following script to install the key and repository:
+1. Verwenden Sie folgendes Skript, um Schlüssel und Repository zu installieren:
 
     ```bash
     sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
     sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
     ```
 
-1. Update the package cache, and install the package by using dnf (Fedora 22 and above):
+1. Aktualisieren Sie den Paketcache, und installieren Sie das Paket mithilfe von „dnf“ (Fedora 22 und höher):
 
     ```bash
     dnf check-update
     sudo dnf install code
     ```
 
-### Linux – openSUSE and SLE
+### <a name="linux--opensuse-and-sle"></a>Linux – openSUSE und SLE
 
-1. The yum repository also works for openSUSE and SLE based systems. The following script will install the key and repository:
+1. Das yum-Repository funktioniert ebenfalls für openSUSE- und SLE-basierte Systeme. Mit folgendem Skript werden der Schlüssel und das Repository installiert:
 
     ```bash
     sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
     sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/zypp/repos.d/vscode.repo'
     ```
 
-1. Update the package cache and install the package by using:
+1. Aktualisieren Sie den Paketcache, und installieren Sie das Paket folgendermaßen:
 
     ```bash
     sudo zypper refresh
@@ -64,20 +64,20 @@ First, identify which operating system you are using, and follow the steps in th
     ```
 
 > [!NOTE]
-> For further details about installing or updating VS Code on various Linux distributions, please see the [Running VS Code on Linux documentation](https://code.visualstudio.com/docs/setup/linux).
+> Weitere Informationen zum Installieren oder Updaten von Visual Studio Code auf den verschiedenen Linux-Distributionen finden Sie in der Dokumentation [Running VS Code on Linux (Ausführen von Visual Studio Code unter Linux)](https://code.visualstudio.com/docs/setup/linux).
 
-## Install Azure App Service extension
+## <a name="install-azure-app-service-extension"></a>Installieren der Azure App Service-Erweiterung
 
-Once you have installed VS Code, open it.
+Öffnen Sie Visual Studio Code, sobald die Installation abgeschlossen ist.
 
-1. Go to the Extensions tab.
+1. Navigieren Sie zur Registerkarte „Extensions“ (Erweiterungen)
 
-1. Search for Azure App Service.
+1. Suchen Sie nach „Azure App Service“.
 
-1. Click Install.
+1. Klicken Sie auf „Installieren“.
 
-    The following screenshot shows the Azure App Service extension selected from the Visual Studio Code extension search results.
+    Der folgende Screenshot stellt die Azure App Service-Erweiterung dar, die in den Suchergebnissen für Visual Studio Code-Erweiterungen ausgewählt ist.
 
-    ![Screenshot of VS Code showing the Extensions tab with the Azure App Service extension highlighted in the search results.](../media/3-install-azure-extension.png)
+    ![Screenshot von Visual Studio Code, der die Registerkarte „Erweiterungen“ mit der in den Suchergebnissen hervorgehobenen Azure App Service-Erweiterung darstellt.](../media/3-install-azure-extension.png)
 
-This will install the extension. You will be ready to connect to your Azure subscription, and develop for and deploy your web, mobile, or API app to an Azure App Service.
+Dadurch wird die Erweiterung installiert. Sie können nun Ihr Azure-Abonnement verknüpfen, Web-Apps, mobile Apps oder API-Apps entwickeln und diese in Azure App Service bereitstellen.

@@ -1,27 +1,27 @@
-## Train your first deep learning model using PyTorch and Jupyter
+## <a name="train-your-first-deep-learning-model-using-pytorch-and-jupyter"></a>Trainieren Ihres ersten Deep Learning-Modells mithilfe von PyTorch und Jupyter
 
-![PyTorch logo](../media/5-image1.PNG) 
+![PyTorch-Logo](../media/5-image1.PNG) 
 
-Typically deep learning engineers do not hard code matrix algebra operations all by hand. They instead use frameworks such as PyTorch or TensorFlow.  
+Im Normalfall codieren Deep Learning-Techniker Matrixalgebraoperationen nicht durchgängig manuell. Stattdessen verwenden sie Frameworks, wie etwa PyTorch oder TensorFlow.  
 
-PyTorch is a python-based framework that provides flexibility as a deep learning development platform. PyTorch's workflow is built on top of python scientific computing library numpy. 
+PyTorch ist ein Python-basiertes Framework, das Flexibilität als Entwicklungsplattform für Deep Learning bietet. Der Workflow von PyTorch baut auf der wissenschaftlichen Computingbibliothek numpy von Python auf. 
 
-Now you might ask, why would we use PyTorch to build deep learning models?  
+Sie fragen sich jetzt vielleicht, warum wir PyTorch zum Erstellen von Deep Learning-Modellen verwenden?  
 
-- Easy to use API – It's as simple as python can be.
-- Python support – PyTorch smoothly integrates with the scientific computing stack.
-- Dynamic computation graphs – Instead of predefined graphs with specific functionalities, PyTorch build computational graphs dynamically that can be modified during runtime. Dynamic computation graphs are valuable for nested batching and when we do not know how much memory will be needed for creating a given network.
+- Einfach zu verwendende API – so einfach, wie Python nur sein kann.
+- Python-Unterstützung – PyTorch integriert sich reibungslos in den wissenschaftlichen Computingstapel.
+- Dynamische Computergraphen – Anstelle vordefinierter Graphen mit bestimmter Funktionalität erstellt PyTorch Computergraphen dynamisch, die zur Laufzeit verändert werden können. Dynamische Computergraphen sind für die verschachtelte Batchverarbeitung und in Fällen nützlich, in denen der Speicherplatzbedarf zum Erstellen eines bestimmten Netzwerks unbekannt ist.
 
-## Run your first PyTorch model
+## <a name="run-your-first-pytorch-model"></a>Ausführen Ihres ersten PyTorch-Modells
 
-Navigate to the Jupyter Notebook that you set up in the last chapter.
+Navigieren Sie zum Jupyter Notebook, das Sie im letzten Kapitel eingerichtet haben.
 
-- [[HOSTNAME OF DSVM]].westus2.cloudapp.azure.com:8888/?token={sometoken}
+- [[HOSTNAME OF DSVM]].westus2.cloudapp.azure.com:8888/?token={eintoken}
 
-Select the first_pytorch_classifier.ipynb notebook
+Wählen Sie das Notebook first_pytorch_classifier.ipynb aus
 
-![select the first_pytorch_classifier.ipynb](../media/5-image2.PNG)
+![Wählen Sie first_pytorch_classifier.ipynb aus](../media/5-image2.PNG)
 
-Follow the instructions in the notebook to train your first PyTorch classifer.
+Befolgen Sie die Anweisungen im Notebook, um Ihren ersten PyTorch-Klassifizierer zu trainieren.
 
-![screenshot of notebook](../media/5-image3.PNG)
+![Screenshot des Notebooks](../media/5-image3.PNG)

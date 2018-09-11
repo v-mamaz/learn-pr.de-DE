@@ -1,111 +1,111 @@
-Recall that our company processes video content on Windows VMs. A new city has contracted us to process their traffic cameras, but it's a model we've not worked with before. We need to create a new Windows VM and install some proprietary codecs so we can begin processing and analyzing their images.
+Wie zuvor bereits erwähnt, verarbeitet das Beispielunternehmen Videoinhalte auf virtuellen Windows-Computern. Angenommen, eine neue Stadt hat Sie damit beauftragt, die Aufnahmen ihrer Verkehrsüberwachungskameras zu verarbeiten. Es handelt sich allerdings dabei um ein Modell, mit dem Sie zuvor noch nicht gearbeitet haben. Sie müssen einen neuen virtuellen Windows-Computer erstellen und proprietäre Codecs installieren, damit Sie mit dem Verarbeiten und Analysieren der Bilder beginnen können.
 
-## Create a new Windows virtual machine
+## <a name="create-a-new-windows-virtual-machine"></a>Erstellen eines neuen virtuellen Windows-Computers
 
-We can create Windows VMs with the Azure portal, Azure CLI, or Azure PowerShell. The easiest approach is to the portal because it walks you through the required information and provides hints and helpful messages during the creation.
+Sie können virtuelle Windows-Computer über das Azure-Portal, die Azure CLI oder Azure PowerShell erstellen. Den einfachsten Ansatz stellt das Portal dar, da es Ihnen während des Erstellungsvorgangs sämtliche erforderlichen Informationen, Hinweise und hilfreiche Nachrichten zur Verfügung stellt.
 
-1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. Melden Sie sich am [Azure-Portal](https://portal.azure.com?azure-portal=true) an.
 
-1. Click **Create a resource** in the upper left corner of the Azure portal.
+1. Klicken Sie im Azure-Portal oben links auf **Ressource erstellen**.
 
-1. In the search box, enter  **Windows Server 2016 Datacenter**  and then click on the link with the same title in the presented list.
+1. Geben Sie **Windows Server 2016 Datacenter** in das Suchfeld ein, und klicken Sie dann in der angezeigten Liste auf den gleichnamigen Link.
 
-1. Click the **Create** button to start configuring the VM.
+1. Klicken Sie auf die Schaltfläche **Erstellen**, um mit dem Konfigurieren des virtuellen Computers zu beginnen.
 
-## Configure the VM settings
+## <a name="configure-the-vm-settings"></a>Konfigurieren der Einstellungen für den virtuellen Computer
 
-The VM creation experience in the portal is presented in a "wizard" format to walk you through all the configuration areas for the VM. Clicking the "Next" button will take you to the next configurable section. However, you can move between the sections at will with the tabs running across the top that identify each section.
+Im Portal steht für die VM-Erstellung ein Assistent zur Verfügung, der Sie durch sämtliche Konfigurationsbereiche für den virtuellen Computer führt. Wenn Sie auf die Schaltfläche „Weiter“ klicken, gelangen Sie jeweils zum nächsten Konfigurationsabschnitt. Sie können allerdings auch über die Registerkarten im oberen Abschnitt beliebig zwischen den einzelnen Abschnitten wechseln.
 
-![Create a virtual machine in the Azure portal](../media-drafts/3-azure-portal-create-vm.png)
+![Erstellen eines virtuellen Computers im Azure-Portal](../media-drafts/3-azure-portal-create-vm.png)
 
-Once you fill in all the required options (identified with red stars), you can skip the remainder of the wizard experience and start creating the VM through the **Review + Create** button at the bottom.
+Sobald Sie alle erforderlichen Optionen (durch rote Sternchen gekennzeichnet) angegeben haben, können Sie die restlichen Schritte des Assistenten überspringen und im unteren Bereich auf die Schaltfläche **Überprüfen und erstellen** klicken, um mit der Erstellung des virtuellen Computers zu beginnen.
 
-We'll start with the **Basics** section.
+Beginnen Sie mit dem Abschnitt **Grundlagen**.
 
-### Configure basic VM settings
+### <a name="configure-basic-vm-settings"></a>Konfigurieren der Grundeinstellungen für den virtuellen Computer
 
-1. Select the **Subscription** that should be billed for VM hours.
+1. Wählen Sie das **Abonnement** aus, über das die VM-Stunden abgerechnet werden sollen.
 
-1. For **Resource group**, select **Create new** and give the resource group the name **ExerciseResources**.
+1. Klicken Sie für **Ressourcengruppe** auf **Neu erstellen**, und geben Sie der Ressourcengruppe den Namen **ExerciseResources**.
 
 > [!NOTE]
-> As you change settings and tab out of each field Azure will validate each value automatically and place a green check-mark next to it when it's good. You can hover over error indicators to get more information for issues it discovers.
+> Wenn Sie die Einstellungen ändern und anschließend die TAB-TASTE drücken, prüft Azure den Wert automatisch und versieht ihn mit einem grünen Häkchen, wenn die Änderungen akzeptiert werden. Sie können mit der Maus über Fehlerindikatoren fahren, um weitere Informationen zu den einzelnen gefundenen Problemen abzurufen.
 
-1. In the **INSTANCE DETAILS** section, enter a name for your VM, such as "test-vp-vm2" (for Test Video Processor VM #2).
-    - It's best practice to standardize your resource names so you can easily identify their purpose. Windows VM names are a bit limited - they must be between 2 and 15 characters and be comprised of numbers, letters, and dashes.
+1. Geben im Abschnitt **INSTANZDETAILS** einen Namen für Ihren virtuellen Computer ein, z.B. „test-vp-vm2“ (kurz für „Test Video Processor VM #2).
+    - Es gilt als bewährte Methode, Ressourcennamen zu standardisieren, damit deren Zweck einfach ermittelt werden kann. Die Namen für virtuelle Windows-Computer sind eingeschränkt: Sie müssen zwischen 2 und 15 Zeichen lang sein und aus Zahlen, Buchstaben und Bindestrichen bestehen.
 
-1. Select a region close to you.
+1. Wählen Sie eine Region in Ihrer Nähe aus.
 
-1. Leave **Availability options** as "None". This option is used to ensure the VM is highly available by grouping multiple VMs together a set to deal with planned or unplanned maintenance events or outages.
+1. Behalten Sie die **Verfügbarkeitsoptionen** als „Keine“ bei. Diese Option wird verwendet, um sicherzustellen, dass der virtuelle Computer Hochverfügbarkeit aufweist. Zu diesem Zweck werden mehrere virtuelle Computer in einer Gruppe zusammengefasst, um geplante oder ungeplante Wartungsereignisse oder Ausfälle zu verarbeiten.
 
-1. Ensure the image is set to "Windows Server 2016 Datacenter". You can open the drop-down list to see all the options available.
+1. Stellen Sie sicher, dass das Image auf „Windows Server 2016 Datacenter“ festgelegt ist. Sie können die Dropdownliste öffnen, um alle verfügbaren Optionen anzuzeigen.
 
-1. In the **VM Disk Type** field, click the drop-down menu to see the options. Ensure that **SSD** is selected.
+1. Klicken Sie im Feld **VM-Datenträgertyp** auf das Dropdownmenü, um alle Optionen anzuzeigen. Stellen Sie sicher, dass **SSD** ausgewählt ist.
 
-1. The **Size** field is not directly editable and has a DS1 default size. Click the **Change size** link to explore other VM sizes. The resulting dialog allows you to filter based on # of CPUs, Name, and Disk Type. Select "Standard DS1 v2" (normally the default) when you are done. That will give the VM 1 CPU and 3.5 GB of memory.
+1. Das Feld **Größe** kann nicht direkt bearbeitet werden. Es weist die Standardgröße „DS1“ auf. Klicken Sie auf den Link **Größe ändern**, um andere VM-Größen abzurufen. Über das Dialogfeld, das daraufhin angezeigt wird, können Sie anhand der Anzahl von CPUs sowie anhand der Namen und des Datenträgertyps filtern. Kicken Sie abschließend auf „Standard DS1 v2“ (in der Regel die Standardeinstellung). Dadurch erhält der virtuelle Computer eine CPU und 3,5 GB Arbeitsspeicher.
 
     > [!TIP]
-    > You can also just slide the view to the left to get back to the VM settings as it opened a new window off to the right and slid the window over to view it.
+    > Sie können in der Ansicht auch zurück zu den VM-Einstellungen navigieren, wenn ein neues Fenster geöffnet wurde.
 
-1. In the **ADMINISTRATOR ACCESS** section, set the **Username** field to a username you will use to sign in to the VM.
+1. Legen Sie im Abschnitt **ADMINISTRATORZUGRIFF** das Feld **Benutzername** auf den Benutzernamen fest, den Sie verwenden möchten, um sich beim virtuellen Computer anzumelden.
 
-1. In the **Password** field, enter a password that's at least 12 characters long. It must have three of the following: one lower case character, one uppercase character, one number, and one special character that is not '\' or '-'. Use something you will remember or write it down, you will need it later.
+1. Geben Sie im Feld **Kennwort** ein Kennwort ein, das mindestens 12 Zeichen lang ist. Es muss drei der folgenden Merkmale aufweisen: einen Kleinbuchstaben, einen Großbuchstaben, eine Ziffer bzw. ein Sonderzeichen, das nicht „\'“ oder „-“ ist. Verwenden Sie ein Kennwort, das Sie sich merken können, oder notieren Sie sich das Kennwort. Sie werden es später noch benötigen.
 
-1. Confirm the **password**.
+1. Bestätigen Sie das **Kennwort**.
 
-1. In the **INBOUND PORT RULES** section, open the list and _uncheck_ "None". Since this is a Windows VM, we want to be able to access the desktop using RDP. Scroll the list if necessary until you find RDP (3389) and select it. As the note in the UI indicates, we can also adjust the network ports after we create the VM.
+1. Öffnen Sie die Liste im Abschnitt **REGELN FÜR EINGEHENDE PORTS**, und _deaktivieren_ Sie die Option „Keine“. Da es sich dabei um einen virtuellen Windows-Computer handelt, soll die Möglichkeit bestehen, mithilfe von RDP auf den Desktop zuzugreifen. Scrollen Sie ggf. durch die Liste, bis Sie RDP (3389) finden, und wählen Sie diese Option aus. In der Benutzeroberfläche wird der Hinweis angezeigt, dass auch nach dem Erstellen des virtuellen Computers die Netzwerkports geändert werden können.
 
-    ![Open the port for RDP access on the Windows VM](../media-drafts/3-open-ports.png)
+    ![Öffnen des Ports für RDP-Zugriff auf den virtuellen Windows-Computer](../media-drafts/3-open-ports.png)
 
-## Configure Disks for the VM
+## <a name="configure-disks-for-the-vm"></a>Konfigurieren von Datenträgern für den virtuellen Computer
 
-1. Click **Next** to move to the Disks section.
+1. Klicken Sie auf **Weiter**, um zum Abschnitt „Datenträger“ zu navigieren.
 
-    ![Configure disks for the VM](../media-drafts/3-configure-disks.png)
+    ![Konfigurieren von Datenträgern für den virtuellen Computer](../media-drafts/3-configure-disks.png)
 
-1. Choose "Premium SSD" for the **OS disk type**.
+1. Wählen Sie „SSD Premium“ als **Betriebssystemdatenträgertyp** aus.
 
-1. Use managed disks so we don't have to work with storage accounts. You can flip the switch in the GUI to see the difference in information that Azure needs if you like.
+1. Verwenden Sie verwaltete Datenträger, damit Sie nicht mit Speicherkonten arbeiten müssen. Sie können bei Bedarf in der grafischen Benutzeroberfläche die Einstellung ändern, damit Ihnen die Informationen angezeigt werden, die Azure benötigt.
 
-### Create a data disk
+### <a name="create-a-data-disk"></a>Erstellen eines Datenträgers
 
-Recall we will get an OS disk (C:) and Temporary disk (D:). Let's add a data disk as well.
+Rufen Sie sich in Erinnerung, dass wir einen Betriebssystemdatenträger (C:) und einen temporären Datenträger (D:) verwenden. Fügen Sie außerdem einen weiteren Datenträger für Daten hinzu.
 
-1. Click the **Create and attach a new disk** link in the **DATA DISKS** section.
+1. Klicken Sie im Abschnitt **DATENTRÄGER** auf den Link **Neuen Datenträger erstellen und anfügen**.
 
-    ![Create a data disk for the VM in the portal](../media-drafts/3-add-data-disk.png)
+    ![Erstellen eines Datenträgers für den virtuellen Computer im Portal](../media-drafts/3-add-data-disk.png)
 
-1. You can take all the defaults: Premium SSD, 1023 GB, and None (empty disk); although notice that here is where we could use a snapshot, or Storage Blob to create a VHD.
+1. Sie können alle Standardeinstellungen beibehalten: „SSD Premium“, „1.023 GB“ und „Keine“ (leerer Datenträger). Beachten Sie jedoch, dass wir an dieser Stelle eine Momentaufnahme oder ein Speicherblob verwenden könnten, um eine VHD zu erstellen.
 
-1. Click **OK** to create the disk and go back to the **DATA DISKS** section.
+1. Klicken Sie auf **OK**, um den Datenträger zu erstellen, und navigieren Sie zurück zum Abschnitt **DATENTRÄGER**.
 
-1. There should now be a new disk in the first row.
+1. Es sollte nun ein neuer Datenträger in der ersten Zeile angezeigt werden.
 
-    ![New disk in the VM](../media-drafts/3-new-disk.png)
+    ![Neuer Datenträger im virtuellen Computer](../media-drafts/3-new-disk.png)
 
-## Configure the Network
+## <a name="configure-the-network"></a>Konfigurieren des Netzwerks
 
-1. Click **Next** to move to the Networking section.
+1. Klicken Sie auf **Weiter**, um zum Abschnitt „Netzwerk“ zu navigieren.
 
-1. In a production system where we already have other components, we'd want to utilize an _existing_ virtual network. That way our VM can communicate with the other cloud services in our solution. If there isn't one defined in this location yet, we can create it here and configure the:
-    - **Address space**: the overall IPV4 space available to this network.
-    - **Subnet range**: the first subnet to subdivide the address space - it must fit within the defined address space. Once the VNet is created you can add additional subnets.
+1. In einem Produktionssystem, in dem bereits andere Komponenten vorhanden sind, sollten Sie ein _vorhandenes_ virtuelles Netzwerk verwenden. So kann Ihr virtueller Computer mit den anderen Clouddiensten in unserer Lösung kommunizieren. Wenn für diesen Speicherort noch kein Netzwerk definiert ist, können Sie es hier erstellen und die folgenden Bestandteile konfigurieren:
+    - **Adressraum**: Der IPv4-Bereich, der diesem Netzwerk insgesamt zur Verfügung steht.
+    - **Subnetzbereich:** Das erste Subnetz, das der Unterteilung des Adressraums dient. Dieses muss innerhalb des definierten Adressraums liegen. Sobald das VNET erstellt wurde, können Sie weitere Subnetze hinzufügen.
 
-1. Let's change the default ranges to use the `172.xxx` IP address space.
-    - Change the **Address space** field to be `172.16.0.0/16` to give it the full range of addresses
-    - Change the **Subnet range** field to be `172.16.1.0/24` to give it 256 IP addresses of the space.
+1. Ändern Sie die Standardbereiche, um den IP-Adressraum `172.xxx` zu verwenden.
+    - Ändern Sie das Feld **Adressraum** in `172.16.0.0/16`, um diesem den gesamten Adressbereich zuzuweisen.
+    - Ändern Sie das Feld **Subnetzbereich** in `172.16.1.0/24`, um ihm 256 IP-Adressen des Adressraums zuzuweisen.
 
 > [!NOTE]
-> By default, Azure will create a virtual network, network interface, and public IP for your VM. It's not trivial to change the networking options after the VM has been created so always double-check the network assignments on services you create in Azure.
+> Azure erstellt standardmäßig ein virtuelles Netzwerk, eine Netzwerkschnittstelle und eine öffentliche IP-Adresse für Ihren virtuellen Computer. Nach der Erstellung des virtuellen Computers können die Netzwerkoptionen nicht mehr problemlos geändert werden. Prüfen Sie daher immer genau die Netzwerkzuweisungen für die von Ihnen in Azure erstellten Dienste.
 
-## Finish configuring the VM and create the image
+## <a name="finish-configuring-the-vm-and-create-the-image"></a>Abschließen der Konfiguration des virtuellen Computers und Erstellen des Images
 
-The rest of the options have reasonable defaults and there's no need to change any of them. You can explore the other tabs if you like. The individual options have an `(i)` icon next to them that will show a help bubble to explain the option. This is a great way to learn about the various options you can use to configure the VM.
+Die restlichen Optionen weisen geeignete Standardeinstellungen auf, die nicht geändert werden müssen. Bei Interesse können sich die anderen Registerkarten genauer ansehen. Neben den einzelnen Optionen befindet sich jeweils ein `(i)`-Symbol, über das Sie eine Erläuterung der jeweiligen Option anzeigen können. Dies ist eine gute Möglichkeit, nähere Informationen über die verschiedenen Optionen zu erhalten, die Sie zum Konfigurieren des virtuellen Computers verwenden können.
 
-1. Click the **Review + create** button at the bottom of the panel.
+1. Klicken Sie im unteren Bereich auf die Schaltfläche **Überprüfen und erstellen**.
 
-1. The system will validate your options and give you details about the VM being created.
+1. Das System überprüft Ihre Optionen und zeigt Details zur Erstellung des virtuellen Computers an.
 
-1. Click **Create** to create and deploy the VM. The Azure dashboard will show the VM that's being deployed. This may take several minutes.
+1. Klicken Sie auf **Erstellen**, um den virtuellen Computer zu erstellen und bereitzustellen. Im Azure-Dashboard wird der virtuelle Computer angezeigt, der aktuell bereitgestellt wird. Dieser Vorgang kann einige Minuten in Anspruch nehmen.
 
-While that's deploying, let's look at what we can do with this VM.
+Währenddessen erfahren Sie in der nächsten Einheit, wozu Sie diesen virtuellen Computer verwenden können.

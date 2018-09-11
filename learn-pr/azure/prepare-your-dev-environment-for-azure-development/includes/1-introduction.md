@@ -1,14 +1,14 @@
-Microsoft Azure enables you to quickly and efficiently build, deploy, monitor, and scale cloud hosted solutions. Azure's deployment model is flexible. You could, for example, develop in Visual Studio, commit your code to GitHub, build with Visual Studio Team Services, and then deploy to Azure. Or you could use a different integrated development environment (IDE) like Eclipse, develop on Linux, and even deploy directly from your development machine to the cloud.
+Mit Microsoft Azure können Sie in der Cloud gehostete Lösungen schnell und effizient erstellen, bereitstellen, überwachen und skalieren. Das Azure-Bereitstellungsmodell ist dabei flexibel. Beispielsweise könnten Sie zur Entwicklung Visual Studio verwenden, Ihren Code in GitHub committen, den Buildvorgang in Visual Studio Team Services ausführen und anschließend Azure zur Bereitstellung nutzen. Eine weitere Möglichkeit wäre, eine andere integrierte Entwicklungsumgebung (IDE) wie Eclipse zu verwenden, unter Linux Code zu schreiben und direkt auf dem Entwicklungscomputer die Bereitstellung in der Cloud durchzuführen.
 
-Using Azure means you use your favorite IDE, you choose from a large range of development languages, from C# to Java to Node.js, and you choose your development operating system. Microsoft provides and supports a wide range of development tools for Windows, Linux, and macOS. 
+Azure bietet Ihnen die Freiheit, Ihre bevorzugte IDE zu nutzen, aus einer großen Anzahl von Entwicklungssprachen von C# über Java bis Node.js auszuwählen und ein geeignetes Betriebssystem zu verwenden. Microsoft stellt zahlreiche Entwicklungstools für Windows, Linux und macOS bereit und unterstützt zusätzlich weitere Tools. 
 
-In this module, you'll learn how to set up your development environment with several popular IDEs.
+In diesem Modul erfahren Sie, wie Sie Ihre Entwicklungsumgebung in häufig verwendeten IDEs einrichten.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul
 
-- Set up Visual Studio Code
-- Set up Visual Studio
-- Set up Eclipse for Java development
-- Prepare all environments for Azure development
+- richten Sie Visual Studio Code ein,
+- richten Visual Studio ein,
+- richten Eclipse für die Entwicklung mit Java ein
+- und bereiten alle Umgebungen für die Entwicklung mit Azure vor.

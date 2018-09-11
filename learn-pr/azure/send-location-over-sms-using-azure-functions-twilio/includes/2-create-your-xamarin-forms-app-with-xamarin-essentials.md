@@ -1,65 +1,65 @@
-The application you're building is a cross-platform mobile app that talks to an Azure function to share your location. In this unit, you create the blank mobile app using Visual Studio and install a NuGet package that has an API for getting the user's location.
+Die zu erstellende Anwendung ist eine plattformübergreifende mobile App, die mit einer Azure-Funktion kommuniziert, um Ihren Standort zu teilen. In dieser Einheit erstellen Sie mit Visual Studio die leere mobile App und installieren ein NuGet-Paket mit einer API zum Abrufen des Benutzerstandorts.
 
-## Create the Xamarin.Forms project
+## <a name="create-the-xamarinforms-project"></a>Erstellen des Xamarin.Forms-Projekts
 
-1. From Visual Studio, select *File->New->Project...*.
+1. Wählen Sie in Visual Studio *Datei > Neu > Projekt* aus.
 
-1. From the tree on the left-hand side, select *Visual C#->Cross-Platform* and then select *Mobile App (Xamarin.Forms)* from the panel in the center.
+1. Wählen Sie in der Struktur links *Visual C# > Plattformübergreifend* aus, und klicken Sie dann im Arbeitsbereich in der Mitte auf *Mobile App (Xamarin.Forms)*.
 
-1. Name the solution "ImHere".
+1. Geben Sie der Projektmappe den Namen „ImHere“.
 
-1. Choose an appropriate location for the solution.
+1. Wählen Sie einen geeigneten Speicherort für die Projektmappe.
 
-    > If you are running this module locally on Windows and are planning on building for Android, then make sure the path is as short as possible. There are path length limitations with the Android SDK, so your root path should be as short as possible.
+    > Wenn Sie dieses Modul lokal unter Windows ausführen und eine Entwicklung für Android planen, sollte der Pfad so kurz wie möglich gehalten werden. Für das Android SDK gelten Längenbeschränkungen, deshalb sollte ein möglichst kurzer Stammpfad gewählt werden.
 
-1. Click **OK**.
+1. Klicken Sie auf **OK**.
 
-    ![The New Solution dialog](../media-drafts/2-new-solution-dialog.png)
+    ![Dialogfeld „Neue Projektmappe“](../media-drafts/2-new-solution-dialog.png)
 
-1. From the **New Cross Platform App** dialog, select the *Blank App* template.
+1. Wählen Sie im Dialogfeld **Neue plattformübergreifende App** die Vorlage *Leere App* aus.
 
-1. For this module you will build a UWP app, so uncheck iOS and Android and leave UWP checked.
+1. Für dieses Modul erstellen Sie eine UWP-App. Deaktivieren Sie deshalb iOS und Android, und lassen Sie UWP aktiviert.
 
-    > If you are running this locally, then you can leave Android checked because the Android SDK is installed as part of the *Mobile Development With .NET* workload inside Visual Studio. If you also want to build for iOS, you will need to pair to a macOS build agent. You can read more on this in the [Xamarin iOS docs](https://docs.microsoft.com/xamarin/ios/get-started/installation/windows/connecting-to-mac/).
+    > Wenn Sie eine lokale Ausführung planen, können Sie Android aktiviert lassen, weil das Android SDK als Teil der Workload *Mobile-Entwicklung mit .NET* in Visual Studio installiert wird. Wenn Sie auch für iOS entwickeln möchten, ist eine Kopplung mit einem macOS-Build-Agent erforderlich. Weitere Informationen hierzu finden Sie in der [Xamarin iOS-Dokumentation](https://docs.microsoft.com/xamarin/ios/get-started/installation/windows/connecting-to-mac/).
 
-1. For the *Code Sharing Strategy*, select **.NET Standard**.
+1. Wählen Sie für *Codefreigabestrategie* die Option **.NET Standard** aus.
 
-1. Click **OK**.
+1. Klicken Sie auf **OK**.
 
-    ![The configure new solution dialog](../media-drafts/2-configure-solution-dialog.png)
+    ![Dialogfeld zum Konfigurieren der neuen Projektmappe](../media-drafts/2-configure-solution-dialog.png)
 
-Visual Studio will create two projects for you - a UWP app called `ImHere.UWP` and a .NET standard library, `ImHere`. Xamarin.Forms apps are made up of two parts - one or more platform-specific app projects and one (or more) .NET standard libraries. The platform-specific app projects contain the platform-specific code needed to run an app on the relevant platform. These projects then launch a Xamarin.Forms app that is defined in a cross-platform .NET standard library. You build your app in cross-platform code and, at runtime, any user interfaces you create are translated into the relevant platform-specific UI components.
+Visual Studio erstellt zwei Projekte für Sie: eine UWP-App namens `ImHere.UWP` und eine .NET Standard-Bibliothek `ImHere`. Xamarin.Forms-Apps setzen umfassen zwei Bestandteile – mindestens ein plattformspezifisches App-Projekt und (mindestens) eine .NET Standard-Bibliothek. Die plattformspezifischen App-Projekte enthalten den plattformspezifischen Code, der zum Ausführen einer App auf der jeweiligen Plattform benötigt wird. Diese Projekte starten anschließend eine Xamarin.Forms-App, die in einer plattformübergreifenden .NET Standard-Bibliothek definiert ist. Sie entwickeln Ihre App in plattformübergreifendem Code, und zur Laufzeit werden alle erstellten Benutzerschnittstellen in die relevanten plattformspezifischen Benutzeroberflächenkomponenten übersetzt.
 
-## Adding Xamarin.Essentials
+## <a name="adding-xamarinessentials"></a>Hinzufügen von „Xamarin.Essentials“
 
-The UWP, Android, and iOS platforms provide numerous similar capabilities that take advantage of the operating system and hardware. Despite these similarities, the APIs are very different. Using these APIs from cross-platform code requires writing platform-specific code in your app projects that you expose to your .NET standard libraries. [Xamarin.Essentials](https://docs.microsoft.com/xamarin/essentials/) is a NuGet package that provides a cross-platform abstraction over a number of these APIs, including the geolocation APIs that you will use in your app to get the user's location.
+Die UWP-, Android- und iOS-Plattformen bieten zahlreiche ähnliche Funktionen, die das Betriebssystem und die Hardware nutzen. Trotz dieser Ähnlichkeiten sind die APIs sehr unterschiedlich. Zur Verwendung dieser APIs aus plattformübergreifendem Code muss plattformspezifischer Code in Ihren App-Projekten geschrieben werden, den Sie für Ihre .NET Standard-Bibliotheken verfügbar machen. [Xamarin.Essentials](https://docs.microsoft.com/xamarin/essentials/) ist ein NuGet-Paket, das eine plattformübergreifende Abstraktion einiger dieser APIs bietet – einschließlich der Geolocation-APIs, die Sie in Ihrer App zum Abrufen des Benutzerstandorts verwenden.
 
-1. Right-click on the `ImHere` solution in the Visual Studio Solution Explorer and select *Manage NuGet Packages for Solution...*.
+1. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf die `ImHere`-Lösung, und wählen Sie *NuGet-Pakete für Projektmappe verwalten* aus.
 
-1. Select the **Browse** tab and search for "Xamarin.Essentials". This package is currently available as a prerelease NuGet package, so check the *include prelease* box.
+1. Wählen Sie die Registerkarte **Durchsuchen** aus, und suchen Sie nach „Xamarin.Essentials“. Dieses Paket ist zurzeit als Vorabrelease-NuGet-Paket verfügbar, aktivieren Sie deshalb die Option *Vorabversion einbeziehen*.
 
-1. Select the **Xamarin.Essentials** NuGet package.
+1. Wählen Sie das NuGet-Paket **Xamarin.Essentials** aus.
 
-1. Check all your projects in the project list on the right-hand side.
+1. Aktivieren Sie in der Projektliste auf der rechten Seite sämtliche Ihrer Projekte.
 
-1. Click the **Install** button to install the NuGet package. You'll need to accept the license to continue.
+1. Klicken Sie auf die Schaltfläche **Installieren**, um das NuGet-Paket zu installieren. Sie müssen die Lizenz akzeptieren, um den Vorgang fortzusetzen.
 
-    ![Adding the Xamarin.Essentials NuGet package to all projects in the solution](../media-drafts/2-add-essentials-nuget.png)
+    ![Hinzufügen des NuGet-Pakets „Xamarin.Essentials“ zu allen Projekten in der Projektmappe](../media-drafts/2-add-essentials-nuget.png)
 
-    > If you are running this module locally and want to target Android, you'll need to do some additional setup. For more information, see the [Xamarin.Essentials Getting Started docs](https://docs.microsoft.com/xamarin/essentials/get-started?context=xamarin%2Fios&tabs=windows%2Candroid).
+    > Wenn Sie dieses Modul lokal ausführen und Android als Zielplattform verwenden möchten, müssen Sie einige zusätzliche Einrichtungsschritte ausführen. Weitere Informationen finden Sie in der [Dokumentation für die ersten Schritte mit Xamarin.Essentials](https://docs.microsoft.com/xamarin/essentials/get-started?context=xamarin%2Fios&tabs=windows%2Candroid).
 
-## Building and running the app
+## <a name="building-and-running-the-app"></a>Erstellen und Ausführen der App
 
-1. Right-click on the `ImHere.UWP` project in Solution Explorer and select *Set as StartUp project*.
+1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das `ImHere.UWP`-Projekt, und wählen Sie *Als Startprojekt festlegen* aus.
 
-1. Set the build configuration to **Debug**, the platform to **x86**, and the device to run on to **Local Machine**.
+1. Legen Sie die Buildkonfiguration auf **Debuggen**, die Plattform auf **x86** und das Gerät für die Ausführung auf **Lokaler Computer** fest.
 
-    ![Setting the Debug x86 configuration to run on the local device](../media-drafts/2-debug-configuration.png)
+    ![Festlegen der x86-Debugkonfiguration zur Ausführung auf dem lokalen Gerät](../media-drafts/2-debug-configuration.png)
 
-1. Start debugging the app.
+1. Beginnen Sie mit dem Debuggen der App.
 
-    ![The app running](../media-drafts/2-debuging-app.png)
+    ![App bei der Ausführung](../media-drafts/2-debuging-app.png)
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this unit, you created a new Xamarin.Forms cross-platform mobile app and added the Xamarin.Essentials NuGet package. Next, you learn how to build up the mobile app UI and logic.
+In dieser Einheit haben Sie eine neue plattformübergreifende mobile Xamarin.Forms-App erstellt und das NuGet-Paket „Xamarin.Essentials“ hinzugefügt. Als Nächstes lernen Sie, wie Sie die Benutzeroberfläche und Logik der mobilen App entwickeln.

@@ -1,111 +1,110 @@
-We have an existing website running on a local Ubuntu Linux server. Our goal is to create an Azure virtual machine (VM), using the latest Ubuntu image, and migrate the site to the cloud. In this unit, you will learn about the options you will need to decide when creating a virtual machine in Azure.
+Wir verfügen über eine vorhandene Website, die auf einem lokalen Ubuntu Linux-Server ausgeführt wird. Unser Ziel ist das Erstellen eines virtuellen Azure-Computers (VM), das Verwenden des neuesten Ubuntu-Images und das Migrieren der Website in die Cloud. In diesem Abschnitt erfahren Sie mehr über die Optionen, über die Sie beim Erstellen eines virtuellen Computers in Azure entscheiden müssen.
 
-## Introduction to Azure Virtual Machines
+## <a name="introduction-to-azure-virtual-machines"></a>Einführung in Azure Virtual Machines
 
-Azure Virtual Machines are an on-demand, scalable cloud-computing resource. They include processor, memory, storage, and networking resources. You can start and stop virtual machines at will and manage them from the Azure portal or with the Azure CLI. You can also use a remote Secure Shell (SSH) to connect directly to the running VM and execute commands as if you are on a local computer.
+Virtuelle Azure-Computer sind skalierbare, bedarfsgesteuerte Cloud Computing-Ressourcen. Sie umfassen einen Prozessor, den Arbeitsspeicher, den Speicher und Netzwerkressourcen. Sie können virtuelle Computer beliebig starten und beenden und über das Azure-Portal oder die Azure CLI verwalten. Sie können auch eine SSH (Remote Secure Shell) verwenden, um direkt eine Verbindung mit dem ausgeführten virtuellen Computer herzustellen und Befehle auszuführen, als würden Sie auf einem lokalen Computer arbeiten.
 
-### Running Linux in Azure
+### <a name="running-linux-in-azure"></a>Ausführen von Linux in Azure
 
-Creating Linux-based VMs in Azure is easy. Microsoft has partnered with prominent Linux vendors to ensure their distributions are optimized for the Azure platform. You can create virtual machines from prebuilt images for a variety of popular Linux distributions such as SUSE, Red Hat, and Ubuntu or build your own Linux distribution to run in the cloud.
+Das Erstellen von auf Linux basierenden virtuellen Computern in Azure ist einfach. Microsoft arbeitet mit herausragenden Linux-Anbietern zusammen, um sicherzustellen, dass deren Distributionen für die Azure-Plattform optimiert sind. Sie können virtuelle Computer aus vordefinierten Images für eine Vielzahl gängiger Linux-Distributionen wie SUSE, Red Hat und Ubuntu erstellen oder Ihre eigene Linux-Distribution für die Ausführung in der Cloud erstellen.
 
-## Creating an Azure VM
+## <a name="creating-an-azure-vm"></a>Erstellen eines virtuellen Azure-Computers
 
-VMs can be defined and deployed on Azure in several ways: the Azure portal, a script (using the Azure CLI or Azure PowerShell), or through an Azure Resource Manager template. In all cases, you will need to supply several pieces of information that we'll cover shortly.
+Es gibt verschiedene Möglichkeiten, virtuelle Computer in Azure zu definieren und bereitzustellen: das Azure-Portal, ein Skript (über die Azure CLI oder PowerShell) oder eine Azure Resource Manager-Vorlage. In allen Fällen müssen Sie verschiedene Arten von Informationen bereitstellen, auf die wir später noch eingehen.
 
-The Azure Marketplace also provides preconfigured images that include both an OS and favorite software tools installed for specific scenarios.
+Außerdem stellt Azure Marketplace vorkonfigurierte Images zur Verfügung, die sowohl ein Betriebssystem als auch beliebte Softwaretools umfassen, die für bestimmte Szenarien installiert sind.
 
-![Screenshot of the Azure portal showing several virtual machine options in the Azure Marketplace.](../media/2-marketplace-vm-choices.png)
+![Azure Marketplace Virtual Machines](../media-drafts/2-marketplace-vm-choices.png)
 
-## Resources used in a Linux VM
+## <a name="resources-used-in-a-linux-vm"></a>Auf einem virtuellen Linux-Computer verwendete Ressourcen
 
-When creating a Linux VM in Azure, you also create resources to host the VM. These resources work together to virtualize a computer and run the Linux operating system. These must either exist (and be selected during VM creation), or they will be created with the VM:
+Wenn Sie einen virtuellen Linux-Computer in Azure erstellen, erstellen Sie gleichzeitig auch Ressourcen, um diesen zu hosten. Diese Ressourcen arbeiten zusammen, um einen virtuellen Computer zu erstellen und das Linux-Betriebssystem auszuführen. Sie sind entweder bereits vorhanden (und werden während der Erstellung des virtuellen Computers ausgewählt), oder Sie werden gemeinsam mit dem virtuellen Computer erstellt. Folgende Ressourcen müssen vorhanden sein:
 
-- A virtual machine that provides CPU and memory resources
-- An Azure Storage account to hold the virtual hard disks
-- Virtual disks to hold the OS, applications, and data
-- A virtual network (VNet) to connect the VM to other Azure services or your on-premise hardware
-- A network interface to communicate with the VNet
-- An optional public IP address so you can access the VM
+- Ein virtueller Computer, der CPU und Speicherressourcen bereitstellt.
+- Ein Azure Storage-Konto, in dem die virtuellen Festplatten gespeichert werden.
+- Virtuelle Datenträger, auf denen das Betriebssystem, die Anwendungen und Daten gespeichert werden.
+- Ein virtuelles Netzwerk (VNET), über das der virtuelle Computer mit anderen Azure-Diensten oder Ihrer lokalen Hardware verbunden wird.
+- Eine Netzwerkschnittstelle für die Kommunikation mit dem VNET.
+- Eine optionale öffentliche IP-Adresse, damit Sie auf den virtuellen Computer zugreifen können.
 
-Like other Azure services, you'll need a **Resource Group** to contain the VM (and optionally group these resources for administration). When you create a new VM, you can either use an existing resource group or create a new one.
+Wie bei anderen Azure-Diensten auch benötigen Sie eine **Ressourcengruppe**, in der der virtuelle Computer gespeichert wird. Sie sollten diese Ressourcen zu Verwaltungszwecken optional in einer Gruppe zusammenfassen. Bei der Erstellung eines neuen virtuellen Computers können Sie eine vorhandene Ressourcengruppe verwenden oder eine neue Ressourcengruppe erstellen.
 
-## Choose the VM image
+## <a name="choose-the-vm-image"></a>Auswählen des VM-Image
 
-Selecting an image is one of the first and most important decisions you'll make when creating a VM. An image is a template that's used to create a VM. These templates include an OS and often other software, such as development tools or web hosting environments.
+Das Auswählen eines Images ist eine der wichtigsten Entscheidungen, die Sie beim Erstellen einer VM berücksichtigen müssen. Ein Image ist eine Vorlage, die zum Erstellen einer VM verwendet wird. Diese Vorlagen enthalten ein Betriebssystem und häufig auch weitere Software, z.B. Entwicklungstools oder Webhostingumgebungen.
 
-Anything that a computer can have installed can be included in an image. You can create a VM from an image that's preconfigured to precisely the tasks you need, such as hosting a web app on the Apache HTTP Server.
-
-> [!TIP]  
-> You can also create and upload custom disk images. Check the documentation for more information.
-
-## Sizing your VM
-
-Just as a physical machine has a certain amount of memory and CPU power, so does a virtual machine. Azure offers a range of VMs of differing sizes at different price points. The size that you choose will determine the VM's processing power, memory, and maximum storage capacity.
-
-> [!WARNING]
-> There are quota limits on each subscription that can impact VM creation. By default, you cannot have more than 20 virtual _cores_ across all VMs within a region. You can either split up VMs across regions or file an [online request](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) to increase your limits.
-
-VM sizes are grouped into categories, starting with the B-series for basic testing and running up to the H-series for massive computing tasks. You should select the size of the VM based on the workload you want to perform. It is possible to change the size of a VM after it's been created, but the VM must be stopped first, so it's best to size it appropriately from the start if possible.
-
-#### Here are some guidelines based on the scenario you are targeting
-
-| What are you doing? | Consider these sizes
-|-------|------------------|
-| **General use computing/web**: Testing and development, small to medium databases, or low to medium traffic web servers. | B, Dsv3, Dv3, DSv2, Dv2 |
-| **Heavy computational tasks**: Medium traffic web servers, network appliances, batch processes, and application servers. | Fsv2, Fs, F |
-| **Large memory usage**: Relational database servers, medium to large caches, and in-memory analytics. | Esv3, Ev3, M, GS, G, DSv2, Dv2 |
-| **Data storage and processing**: Big data, SQL, and NoSQL databases that need high disk throughput and I/O. | Ls |
-| **Heavy graphics rendering** or video editing, as well as model training and inferencing (ND) with deep learning. | NV, NC, NCv2, NCv3, ND |
-| **High-performance computing (HPC)**: If you need the fastest and most powerful CPU virtual machines with optional high-throughput network interfaces. | H |
-
-## Choosing storage options
-
-The next set of decisions revolve around storage. First, you can choose the disk technology. Options include a traditional platter-based hard disk drive (HDD) or a more modern solid-state drive (SSD). Just like the hardware you purchase, SSD storage costs more but provides better performance.
+Alle Komponenten, die auf einem Computer installiert werden können, können auch in einem Image enthalten sein. Sie können einen virtuellen Computer über ein Image erstellen, das genau für die Aufgaben vorkonfiguriert ist, die Sie benötigen, beispielsweise zum Hosten einer Web-App auf einem Apache-Server.
 
 > [!TIP]
-> There are two levels of SSD storage available: standard and premium. Choose Standard SSD disks if you have normal workloads but want better performance. Choose Premium SSD disks if you have I/O intensive workloads or mission-critical systems that need to process data very quickly.
+> Sie können außerdem auch Ihre eigenen Datenträgerimages erstellen und hochladen. Weitere Informationen dazu finden Sie in der Dokumentation.
 
-### Mapping storage to disks
-
-Azure uses virtual hard disks (VHDs) to represent physical disks for the VM. VHDs replicate the logical format and data of a disk drive but are stored as page blobs in an Azure Storage account. You can choose on a per disk basis what type of storage it should use (SSD or HDD). This allows you to control the performance of each disk, likely based on the I/O you plan to perform on it.
-
-By default, two virtual hard disks (VHDs) will be created for your Linux VM:
-
-1. The **operating system disk**: This is your primary drive and has a maximum capacity of 2048 GB. It will be labeled as `/dev/sda` by default.
-
-1. A **temporary disk**: This provides temporary storage for the OS or any apps. On Linux virtual machines, the disk is `/dev/sdb` and is formatted and mounted to `/mnt` by the Azure Linux Agent. It is sized based on the VM size and is used to store the swap file. 
+## <a name="sizing-your-vm"></a>Auswählen der Größe Ihres virtuellen Computers
+Ein virtueller Computer weist wie ein physischer Computer eine bestimmte Menge an Arbeitsspeicher und CPU-Leistung auf. Azure bietet eine Reihe von virtuellen Computern mit unterschiedlichen Größen zu unterschiedlichen Preisen an. Die Größe, die Sie auswählen, bestimmt die Verarbeitungsleistung, den Arbeitsspeicher und die maximale Speicherkapazität Ihres virtuellen Computers.
 
 > [!WARNING]
-> The temporary disk is not persistent. You should only write data to this disk that is not critical to the system.
+> Es gelten Kontingentgrenzwerte für die einzelnen Abonnements, die Einfluss auf die Erstellung des virtuellen Computers haben können. Standardmäßig dürfen Ihre virtuellen Computer innerhalb einer Region insgesamt nicht mehr als 20 virtuelle _Kerne_ aufweisen. Sie können die virtuellen Computer entweder auf mehrere Regionen aufteilen oder einen [Onlineantrag](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) stellen, damit die Grenzwerte erhöht werden.
 
-#### What about data?
+Die VM-Größen werden in Kategorien unterteilt, angefangen bei der B-Serie für grundlegende Tests bis hin zur H-Serie für große Computingtasks. Wählen Sie die Größe des virtuellen Computers anhand der Workload aus, die Sie ausführen möchten. Sie können die Größe eines virtuellen Computers zwar ändern, nachdem Sie ihn erstellt haben, aber Sie müssen ihn zu diesem Zweck beenden. Daher ist es besser, wenn Sie direkt zu Beginn die richtige Größe auswählen.
 
-You can store data on the primary drive along with the OS, but a better approach is to create dedicated _data disks_. You can create and attach additional disks to the VM. Each disk can hold up to 4095 GB of data, with the maximum amount of storage determined by the VM size you select.
+#### <a name="here-are-some-guidelines-based-on-the-scenario-you-are-targeting"></a>Nachfolgend werden einige Richtlinien für verschiedene Szenarien aufgeführt.
 
-> [!NOTE]  
-> An interesting capability is to create a VHD image from a real disk. This allows you to easily migrate _existing_ information from an on-premises computer to the cloud.
+| Vorgehensweise | Prüfen Sie die folgenden Größen:
+|-------|------------------|
+| **Allgemeine Verwendung für das Computing bzw. Internet:** für Test- und Entwicklungsaufgaben, für kleine bis mittlere Datenbanken oder für Webserver mit geringer bis mittlerer Auslastung. | B, Dsv3, Dv3, DSv2, Dv2 |
+| **Schwierige Rechenaufgaben:** für Webserver, Network Appliances, Batchverarbeitungsvorgänge und Anwendungsserver mit mittlerer Auslastung. | Fsv2, Fs, F |
+| **Hohe Speicherauslastung:** für relationale Datenbankserver, mittlere bis große Caches und In-Memory-Analysen. | Esv3, Ev3, M, GS, G, DSv2, Dv2 |
+| **Speichern und Verarbeiten von Daten:** Datenbanken für Big Data, SQL und NoSQL, für die ein hoher Datenträgerdurchsatz und E/A erforderlich sind. | Ls |
+| **Aufwendiges Grafikrendering** oder Videobearbeitung sowie für Modelltraining und Rückschlüsse (ND) mit Deep Learning. | NV, NC, NCv2, NCv3, ND |
+| **High Performance Computing (HPC):** wenn Sie die schnellsten und leistungsfähigsten CPUs benötigen, die optional über Netzwerkschnittstellen mit hohem Durchsatz (RDMA) verfügen. | H |
 
-### Unmanaged vs. managed disks
+## <a name="choosing-storage-options"></a>Auswählen von Speicheroptionen
 
-The final storage choice you'll make is whether to use **unmanaged** or **managed** disks.
+Die nächsten Entscheidungen drehen sich um den Speicher. Zunächst können Sie die Datenträgertechnologie auswählen. Zu den Optionen zählt ein konventionelles Festplattenlaufwerk (HDD) oder ein modernerer SSD-Datenträger (Solid State Drive). Genau wie die Hardware, die Sie erwerben, kostet SSD-Speicher mehr, bietet aber eine bessere Leistung.
 
-With unmanaged disks, you are responsible for the storage accounts that are used to hold the VHDs that correspond to your VM disks. You pay the storage account rates for the amount of space you use. A single storage account has a fixed rate limit of 20,000 I/O operations/sec. This means that a single storage account is capable of supporting 40 standard virtual hard disks at full throttle. If you need to scale out, then you need more than one storage account, which can get complicated.
+> [!TIP]
+> Es sind zwei Ebenen von SSD-Speicher verfügbar: Standard und Premium. Wählen Sie SSD Standard-Datenträger aus, wenn Sie normale Workloads verwenden, aber eine bessere Leistung wünschen. Wählen Sie SSD Premium-Datenträger aus, wenn Sie über E/A-intensive Workloads oder unternehmenskritische Systeme verfügen, die Daten sehr schnell verarbeiten müssen.
 
-Managed disks are the newer and recommended disk storage model. They elegantly solve this complexity by putting the burden of managing the storage accounts onto Azure. You specify the disk type (Premium or Standard) and the size of the disk, and Azure creates and manages both the disk _and_ the storage it uses. You don't have to worry about storage account limits, which makes them easier to scale out. They also offer several other benefits:
+### <a name="mapping-storage-to-disks"></a>Zuordnen von Speicher zu Datenträgern
 
-- **Increased reliability**: Azure ensures that VHDs associated with high-reliability VMs will be placed in different parts of Azure Storage to provide similar levels of resilience.
-- **Better security**: Managed disks are real managed resources in the resource group. This means they can use role-based access control to restrict who can work with the VHD data.
-- **Snapshot support**: Snapshots can be used to create a read-only copy of a VHD. You have to shut down the owning VM, but creating the snapshot only takes a few seconds. Once it's done, you can power on the VM and use the snapshot to create a duplicate VM to troubleshoot a production issue or roll back the VM to the point in time that the snapshot was taken.
-- **Backup support**: Managed disks can be automatically backed up to different regions for disaster recovery with Azure Backup, all without affecting the service of the VM.
+Azure verwendet virtuelle Festplatten (VHDs), um physische Datenträger für den virtuellen Computer darzustellen. VHDs replizieren das logische Format und die Daten eines Festplattenlaufwerks, werden aber als Seitenblobs in einem Azure Storage-Konto gespeichert. Sie können pro Datenträger auswählen, welche Art von Speicher verwendet werden soll (SSD oder HDD). Dies ermöglicht es Ihnen, die Leistung jedes Datenträgers zu steuern, wahrscheinlich basierend auf der E/A, die Sie auf ihm ausführen möchten.
 
-## Network communication
+Standardmäßig werden zwei virtuelle Festplatten (VHDs) für Ihren virtuellen Linux-Computer erstellt:
 
-Virtual machines communicate with external resources using a virtual network (VNet). The VNet represents a private network in a single region that your resources communicate on. A virtual network is just like the networks you manage on-premises. You can divide them up with subnets to isolate resources, connect them to other networks (including your on-premises networks), and apply traffic rules to govern inbound and outbound connections.
+1. Der **Betriebssystemdatenträger**. Dies ist das primäre Laufwerk. Es besitzt eine maximale Kapazität von 2.048 GB. Es wird standardmäßig mit der Bezeichnung `/dev/sda` versehen.
 
-### Planning your network
+1. Ein **temporärer Datenträger**. Dieser dient als temporärer Speicher für das Betriebssystem oder Apps. Auf virtuellen Linux-Computern trägt der Datenträger den Namen `/dev/sdb`. Er wird vom Azure Linux-Agent formatiert und in `/mnt` eingebunden. Er wird basierend auf der Größe des virtuellen Computers dimensioniert und dient zum Speichern der Auslagerungsdatei. 
 
-When you create a new VM, you will have the option of creating a new virtual network or using an existing VNet in your region.
+> [!WARNING]
+> Der temporäre Datenträger ist nicht persistent. Sie sollten nur Daten auf diesen Datenträger schreiben, die für das System nicht wichtig sind.
 
-Having Azure create the network together with the VM is simple, but it's likely not ideal for most scenarios. It's better to plan your network requirements _up front_ for all the components in your architecture and create the VNet structure separately. Then create the VMs and place them into the already-created VNets. We'll look more at virtual networks later in this module.
+#### <a name="what-about-data"></a>Wie sieht es mit Daten aus?
 
-Before we create a virtual machine, we need to decide how we'd like to administer the VM. Let's look at our options.
+Sie können Daten auf dem primären Laufwerk zusammen mit dem Betriebssystem speichern, aber ein besserer Ansatz ist es, dedizierte _Datenträger für Daten_ zu erstellen. Sie können weitere Datenträger erstellen und an den virtuellen Computer anfügen. Jeder Datenträger kann bis zu 4.095 GB Daten enthalten. Die Höchstmenge des Speichers wird durch die Größe des virtuellen Computers bestimmt, die Sie auswählen.
+
+> [!NOTE]
+> Eine interessante Möglichkeit ist die Erstellung eines VHD-Images von einem echten Datenträger. Dies ermöglicht die einfache Migration _vorhandener_ Informationen von einem lokalen Computer in die Cloud.
+
+### <a name="unmanaged-vs-managed-disks"></a>Nicht verwaltete und verwaltete Datenträger im Vergleich
+
+Die letzte Speicherentscheidung, die Sie treffen müssen, bezieht sich darauf, ob Sie **nicht verwaltete** oder **verwaltete** Datenträger verwenden möchten.
+
+Mit nicht verwalteten Datenträgern sind Sie für die Speicherkonten verantwortlich, die verwendet werden, um die VHDs zu speichern, die den Datenträgern Ihrer virtuellen Computer entsprechen. Sie zahlen die Speicherkontogebühren für die Menge an Speicherplatz, die Sie verwenden. Ein einzelnes Speicherkonto verfügt über ein festes Ratenlimit von 20.000 E/A-Vorgängen/Sek. Dies bedeutet, dass ein einzelnes Speicherkonto 40 virtuelle Standardfestplatten mit voller Arbeitsauslastungskontrolle unterstützen kann. Wenn Sie horizontal hochskalieren müssen, benötigen Sie mehrere Speicherkonten. Dies kann kompliziert sein.
+
+Verwaltete Datenträger stellen das neuere und empfohlene Datenträgerspeichermodell dar. Sie lösen diese Komplexität elegant, indem sie die Last der Verwaltung der Speicherkonten an Azure übertragen. Sie geben den Datenträgertyp (Premium oder Standard) und die Größe des Datenträgers an, und Azure erstellt und verwaltet den Datenträger _und_ den verwendeten Speicher. Sie müssen sich keine Sorgen um die Limits für Speicherkonten machen, was deren horizontale Hochskalierung erleichtert. Sie bieten auch einige weitere Vorteile:
+
+- **Erhöhte Zuverlässigkeit**: Azure stellt sicher, dass VHDs, die hochzuverlässigen virtuellen Computern zugeordnet sind, in verschiedenen Teilen des Azure-Speichers platziert werden, um ein ähnliches Maß an Ausfallsicherheit zu gewährleisten.
+- **Größere Sicherheit**: Verwaltete Datenträger sind echte verwaltete Ressourcen in der Ressourcengruppe. Dies bedeutet, dass sie rollenbasierte Zugriffssteuerung verwenden können, um einzuschränken, wer mit den VHD-Daten arbeiten kann.
+- **Unterstützung von Momentaufnahmen**: Momentaufnahmen können verwendet werden, um eine schreibgeschützte Kopie einer VHD zu erstellen. Sie müssen den übergeordneten virtuellen Computer herunterfahren, aber das Erstellen der Momentaufnahme dauert nur wenige Sekunden. Wenn dieser Vorgang abgeschlossen ist, können Sie den virtuellen Computer aktivieren und die Momentaufnahme verwenden, um den virtuellen Computer zu duplizieren, damit Sie die Problembehandlung eines Produktionsproblems ausführen oder ein Rollback des virtuellen Computers zum Zeitpunkt erstellen können, zu dem die Momentaufnahme erstellt wurde.
+- **Sicherungsunterstützung**: Verwaltete Datenträger können ohne Auswirkungen auf den Dienst des virtuellen Computers automatisch in verschiedenen Regionen für die Notfallwiederherstellung mit Azure Backup gesichert werden.
+
+## <a name="network-communication"></a>Netzwerkkommunikation
+
+Virtuelle Computer kommunizieren mit externen Ressourcen über ein virtuelles Netzwerk (VNET). Das VNET stellt ein privates Netzwerk in einer einzelnen Region dar, in der Ihre Ressourcen kommunizieren. Ein virtuelles Netzwerk verhält sich wie die Netzwerke, die Sie lokal verwalten. Sie können es in Subnetze zum Isolieren von Ressourcen unterteilen, eine Verbindung mit anderen Netzwerken (einschließlich Ihrer lokalen Netzwerke) herstellen und Regeln für den Datenverkehr zum Steuern von eingehenden und ausgehenden Verbindungen anwenden.
+
+### <a name="planning-your-network"></a>Planen des Netzwerks
+
+Wenn Sie einen neuen virtuellen Computer erstellen, besteht die Option, ein neues virtuelles Netzwerk zu erstellen oder ein vorhandenes VNET in Ihrer Region zu verwenden.
+
+Es ist einfach, Azure das Netzwerk zusammen mit dem virtuellen Computer erstellen zu lassen, aber es ist wahrscheinlich für die meisten Szenarien nicht ideal. Es ist besser, Ihre Netzwerkanforderungen _im Voraus_  für alle Komponenten Ihrer Architektur zu planen und die VNET-Struktur separat zu erstellen. Erstellen Sie dann die virtuellen Computer, und platzieren Sie sie in den bereits erstellten VNETs. Wir werden uns später in diesem Modul ausführlicher mit virtuellen Netzwerken befassen.
+
+Bevor wir einen virtuellen Computer erstellen, müssen wir entscheiden, wie wir den virtuellen Computer verwalten möchten. Sehen wir uns die verfügbaren Optionen an.

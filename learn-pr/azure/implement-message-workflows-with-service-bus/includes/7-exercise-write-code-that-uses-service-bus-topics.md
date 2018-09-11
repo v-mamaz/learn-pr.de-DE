@@ -1,146 +1,145 @@
-You have chosen to use an Azure Service Bus topic to distribute messages about sales performance in your sales force distributed application. The app used by sales personnel on their mobile devices will send messages that summarize sales figures for each area and time period. Those messages will be distributed to web services located in the company's operational regions, including the Americas and Europe.
+Wir haben uns entschieden, ein Azure Service Bus-Thema zu verwenden, um Nachrichten über die Vertriebsleistung in Ihrer verteilten Sales Force-Anwendung zu verteilen. Die von Vertriebsmitarbeitern auf ihren mobilen Geräten verwendete App sendet Nachrichten mit zusammengefassten Umsatzzahlen für die einzelnen Gebiete und Zeiträume. Diese Nachrichten werden an Webdienste verteilt, die sich in den Geschäftsregionen des Unternehmens befinden, einschließlich Amerika und Europa.
 
-You have already implemented the necessary infrastructure in your Azure subscription, including the topic and subscriptions. Now, you want to write the code that sends messages to the topic and retrieves messages from each subscription.
+Sie haben in Ihrem Azure-Abonnement bereits die erforderliche Infrastruktur implementiert, einschließlich des Themas und der Abonnements. Jetzt möchten Sie den Code erstellen, der Nachrichten an das Thema sendet und Nachrichten bei den einzelnen Abonnements abruft.
 
-## Configure a connection string to a Service Bus namespace
+## <a name="configure-a-connection-string-to-a-service-bus-namespace"></a>Konfigurieren einer Verbindungszeichenfolge für einen Service Bus-Namespace
 
-Start by configuring connection strings both in the sending and receiving components:
+Konfigurieren Sie zunächst Verbindungszeichenfolgen sowohl in der sendenden als auch in der empfangenden Komponente:
 
-1. Switch to the Azure portal.
+1. Wechseln Sie zum Azure-Portal.
 
-1. In the home page, click **All Resources**, and then click the Service Bus namespace you created earlier.
+1. Klicken Sie auf der Startseite auf **Alle Ressourcen** und dann auf den zuvor erstellten Service Bus-Namespace.
 
-1. Under **SETTINGS**, click **Shared Access Policies**.
+1. Klicken Sie unter **EINSTELLUNGEN** auf **Freigegebene Zugriffsrichtlinien**.
 
-1. In the list of policies, click **RootManageSharedAccessKey**.
+1. Klicken Sie in der Liste mit den Richtlinien auf **RootManageSharedAccessKey**.
 
-1. To the right of the **Primary Connection string** text box, click the **Click to copy** button.
+1. Klicken Sie rechts vom Textfeld **Primäre Verbindungszeichenfolge** auf die Schaltfläche **Click to copy** (Klicken Sie zum Kopieren).
 
-1. Switch to **Visual Studio Code**.
+1. Wechseln Sie zu **Visual Studio Code**.
 
-1. In the **Explorer** pane, in the **performancemessagesender** folder, click the **Program.cs** file.
+1. Klicken Sie im Bereich **Explorer** im Ordner **performancemessagesender** auf die Datei **Program.cs**.
 
-1. Locate the following line of code:
-
-    ```C#
-    const string ServiceBusConnectionString = "";
-    ```
-
-1. Place the cursor between the quotation marks, and then press **Ctrl+V**.
-
-1. In the **Explorer** pane, in the **performancemessagereceiver** folder, click the **Program.cs** file.
-
-1. Locate the following line of code:
+1. Suchen Sie nach der folgenden Codezeile:
 
     ```C#
     const string ServiceBusConnectionString = "";
     ```
 
-1. Place the cursor between the quotation marks, and then press **Ctrl+V**.
+1. Platzieren Sie den Cursor zwischen den Anführungszeichen, und drücken Sie dann **STRG+V**.
 
-1. Click **File**, and then click **Save All**.
+1. Klicken Sie im Bereich **Explorer** im Ordner **performancemessagereceiver** auf die Datei **Program.cs**.
 
-1. Close all open editor windows.
+1. Suchen Sie nach der folgenden Codezeile:
 
-## Write code that sends a message to the topic
+    ```C#
+    const string ServiceBusConnectionString = "";
+    ```
 
-To complete the component that sends messages about sales performance, follow these steps:
+1. Platzieren Sie den Cursor zwischen den Anführungszeichen, und drücken Sie dann **STRG+V**.
 
-1. In Visual Studio Code, in the **Explorer** pane, in the **performancemessagesender** folder, click the **Program.cs** file.
+1. Klicken Sie auf **Datei** und anschließend auf **Alles speichern**.
 
-1. Locate the `SendPerformanceMessageAsync()` method.
+1. Schließen Sie alle geöffneten Editor-Fenster.
 
-1. Within that method, locate the following line of code:
+## <a name="write-code-that-sends-a-message-to-the-topic"></a>Schreiben von Code zum Senden einer Nachricht an das Thema
+
+Führen Sie diese Schritte aus, um die Komponente fertigzustellen, mit der Nachrichten zur Vertriebsleistung gesendet werden:
+
+1. Klicken Sie in Visual Studio Code im Bereich **Explorer** im Ordner **performancemessagesender** auf die Datei **Program.cs**.
+
+1. Wechseln Sie zur `SendPerformanceMessageAsync()`-Methode.
+
+1. Suchen Sie in dieser Methode nach der folgenden Codezeile:
 
     ```C#
     // Create a Topic Client here
     ```
 
-1. To create a topic client, replace that line of code with the following code:
+1. Ersetzen Sie diese Codezeile durch den folgenden Code, um einen Themenclient zu erstellen:
 
     ```C#
     topicClient = new TopicClient(ServiceBusConnectionString, TopicName);
     ```
 
-1. Within the `try...catch` block, locate the following line of code:
+1. Suchen Sie im `try...catch`-Block nach der folgenden Codezeile:
 
     ```C#
     // Create and send a message here
     ```
 
-1. To create and format a message for the queue, replace that line of code with the following code:
+1. Ersetzen Sie diese Codezeile durch den folgenden Code, um eine Nachricht für die Warteschlange zu erstellen und zu formatieren:
 
     ```C#
     string messageBody = $"Total sales for Brazil in August: $13m.";
     var message = new Message(Encoding.UTF8.GetBytes(messageBody));
     ```
 
-1. To display the message in the console, on the next line, add the following code:
+1. Fügen Sie in der nächsten Zeile den folgenden Code hinzu, um die Nachricht in der Konsole anzuzeigen:
 
     ```C#
     Console.WriteLine($"Sending message: {messageBody}");
     ```
 
-1. To send the message to the queue, on the next line, add the following code:
+1. Fügen Sie in der nächsten Zeile den folgenden Code hinzu, um die Nachricht an die Warteschlange zu senden:
 
     ```C#
     await topicClient.SendAsync(message);
     ```
 
-1. Locate the following line of code:
+1. Suchen Sie nach der folgenden Codezeile:
 
     ```C#
     // Close the connection to the topic here
     ```
 
-1. To close the connection to Service Bus, replace that line of code with the following code:
+1. Ersetzen Sie diese Codezeile durch den folgenden Code, um die Verbindung mit Service Bus zu schließen:
 
     ```C#
     await topicClient.CloseAsync();
     ```
 
-1. In Visual Studio Code, close all editor windows and save all changed files.
+1. Schließen Sie in Visual Studio Code alle Editor-Fenster, und speichern Sie alle geänderten Dateien.
 
-## Send a message to the topic
+## <a name="send-a-message-to-the-topic"></a>Senden einer Nachricht an das Thema
 
-To run the component that sends a message about a sale, follow these steps:
+Führen Sie diese Schritte aus, um die Komponente auszuführen, mit der eine Nachricht zu einem Verkauf gesendet wird:
 
-1. In Visual Studio Code, on the **View** menu, click **Debug**.
+1. Klicken Sie in Visual Studio Code im Menü **Ansicht** auf **Debuggen**.
 
-1. In the **Debug** pane, in the drop-down list, select **Launch Performance Message Sender**, and then press **F5**. Visual Studio Code builds and runs 
-the console application in debugging mode.
+1. Wählen Sie im Bereich **Debuggen** in der Dropdownliste die Option **Launch Performance Message Sender** (Senden von Leistungsnachrichten starten) aus, und drücken Sie anschließend **F5**. Visual Studio Code führt das Erstellen und Ausführen der Konsolenanwendung im Debugmodus durch.
 
-1. As the program executes, examine the messages in the **Debug Console**.
+1. Sehen Sie sich die Nachrichten in der **Debugging-Konsole** an, während das Programm ausgeführt wird.
 
-1. Switch to the Azure portal.
+1. Wechseln Sie zum Azure-Portal.
 
-1. If the Service Bus namespace is not displayed, in the home page, click **All Resources**, and then click the Service Bus namespace you created earlier.
+1. Klicken Sie auf der Startseite auf **Alle Ressourcen** und dann auf den zuvor erstellten Service Bus-Namespace, falls Service Bus nicht angezeigt wird.
 
-1. In the **Service Bus Namespace** blade, under **ENTITIES**, click **Topics**, and then click the **salesperformancemessages** topic. In the list of subscriptions, there should be one message displayed in both the **Americas** and **Europe** subscriptions.
+1. Klicken Sie auf dem Blatt **Service Bus-Namespace** unter **ENTITÄTEN** auf **Themen** und dann auf das Thema **salesperformancemessages**. In der Liste der Abonnements sollte sowohl im **Amerika**- als auch im **Europa**-Abonnement eine Nachricht angezeigt werden.
 
-## Write code that receives a message from a topic subscription
+## <a name="write-code-that-receives-a-message-from-a-topic-subscription"></a>Schreiben von Code zum Empfangen einer Nachricht von einem Themenabonnement
 
-To complete the component that retrieves messages about sales performance, follow these steps:
+Führen Sie diese Schritte aus, um die Komponente fertigzustellen, mit der Nachrichten zur Vertriebsleistung empfangen werden:
 
-1. In Visual Studio Code, in the **Explorer** pane, in the **performancemessagereceiver** folder, click the **Program.cs** file.
+1. Klicken Sie in Visual Studio Code im Bereich **Explorer** im Ordner **performancemessagereceiver** auf die Datei **Program.cs**.
 
-1. Locate the `MainAsync()` method.
+1. Wechseln Sie zur `MainAsync()`-Methode.
 
-1. Within that method, locate the following line of code:
+1. Suchen Sie in dieser Methode nach der folgenden Codezeile:
 
     ```C#
-    // Create a subscription client here
+    // Create a Subscription Client here
     ```
 
-1. To create a subscription client, replace that line with the following code:
+1. Ersetzen Sie diese Zeile durch den folgenden Code, um einen Abonnementclient zu erstellen:
 
     ```C#
     subscriptionClient = new SubscriptionClient(ServiceBusConnectionString, TopicName, SubscriptionName);
     ```
 
-1. Locate the `RegisterMessageHandler()` method.
+1. Suchen Sie nach der `RegisterMessageHandler()`-Methode.
 
-1. To configure message handling options, replace all the code within that method with the following code:
+1. Ersetzen Sie sämtlichen Code innerhalb dieser Methode durch den folgenden Code, um Optionen für die Behandlung von Nachrichten zu konfigurieren:
 
     ```C#
     var messageHandlerOptions = new MessageHandlerOptions(ExceptionReceivedHandler)
@@ -150,54 +149,54 @@ To complete the component that retrieves messages about sales performance, follo
     };
     ```
 
-1. To register the message handler, on the next line, add the following code:
+1. Fügen Sie in der nächsten Zeile den folgenden Code hinzu, um den Nachrichtenhandler zu registrieren:
 
     ```C#
     subscriptionClient.RegisterMessageHandler(ProcessMessagesAsync, messageHandlerOptions);
     ```
 
-1. Locate the `ProcessMessagesAsync()` method. You have registered this method as the one that handles incoming messages.
+1. Suchen Sie nach der `ProcessMessagesAsync()`-Methode. Sie haben diese Methode als Methode registriert, mit der eingehende Nachrichten behandelt werden.
 
-1. To display incoming messages in the console, replace all the code within that method with the following code:
+1. Ersetzen Sie den gesamten Code dieser Methode durch den folgenden Code, um in der Konsole eingehende Nachrichten anzuzeigen:
 
     ```C#
     Console.WriteLine($"Received sale performance message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{Encoding.UTF8.GetString(message.Body)}");
     ```
 
-1. To remove the received message from the subscription, on the next line, add the following code:
+1. Fügen Sie in der nächsten Zeile den folgenden Code hinzu, um die empfangene Nachricht aus dem Abonnement zu entfernen:
 
     ```C#
     await subscriptionClient.CompleteAsync(message.SystemProperties.LockToken);
     ```
 
-1. Return to the `MainAsync()` method and locate the following line of code:
+1. Wechseln Sie zurück zur `MainAsync()`-Methode, und suchen Sie nach der folgenden Codezeile:
 
     ```C#
     // Close the subscription here
     ```
 
-1. To close the connection to Service Bus, replace that code with the following code:
+1. Ersetzen Sie diesen Code durch den folgenden Code, um die Verbindung mit Service Bus zu schließen:
 
     ```C#
     await subscriptionClient.CloseAsync();
     ```
 
-1. In Visual Studio Code, close all editor windows and save all changed files.
+1. Schließen Sie in Visual Studio Code alle Editor-Fenster, und speichern Sie alle geänderten Dateien.
 
-## Retrieve a message from a topic subscription
+## <a name="retrieve-a-message-from-a-topic-subscription"></a>Abrufen einer Nachricht aus einem Themenabonnement
 
-To run the component that retrieves a message about sales performance, follow these steps:
+Führen Sie diese Schritte aus, um die Komponente auszuführen, mit der Nachrichten zur Vertriebsleistung empfangen werden:
 
-1. In Visual Studio Code, on the **View** menu, click **Debug**.
+1. Klicken Sie in Visual Studio Code im Menü **Ansicht** auf **Debuggen**.
 
-1. In the **Debug** pane, in the drop-down list, select **Launch Performance Message Receiver**, and then press **F5**. Visual Studio Code builds and runs the console application in debugging mode.
+1. Wählen Sie im Bereich **Debuggen** in der Dropdownliste die Option **Launch Performance Message Receiver** (Empfangen von Leistungsnachrichten starten) aus, und drücken Sie anschließend **F5**. Visual Studio Code führt das Erstellen und Ausführen der Konsolenanwendung im Debugmodus durch.
 
-1. As the program executes, examine the messages in the **Debug Console**.
+1. Sehen Sie sich die Nachrichten in der **Debugging-Konsole** an, während das Programm ausgeführt wird.
 
-1. When you see that the message has been received and displayed in the console, on the **Debug** menu, click **Stop Debugging**.
+1. Klicken Sie im Menü **Debuggen** auf **Debugging beenden**, wenn Sie sehen, dass die Nachricht empfangen wurde und in der Konsole angezeigt wird.
 
-1. Switch to the Azure portal.
+1. Wechseln Sie zum Azure-Portal.
 
-1. If the Service Bus namespace is not displayed, in the home page, click **All Resources**, and then click the Service Bus namespace you created earlier.
+1. Klicken Sie auf der Startseite auf **Alle Ressourcen** und dann auf den zuvor erstellten Service Bus-Namespace, falls Service Bus nicht angezeigt wird.
 
-1. In the **Service Bus Namespace** blade, under **ENTITIES**, click **Topics**, and then click the **salesperformancemessages** topic. In the list of subscriptions, there should be zero messages displayed in the **Americas** subscription because your application has processed and removed the only message. Notice that the message is still present in the **Europe** subscription.
+1. Klicken Sie auf dem Blatt **Service Bus-Namespace** unter **ENTITÄTEN** auf **Themen** und dann auf das Thema **salesperformancemessages**. In der Liste der Abonnements sollten im **Amerika**-Abonnement null Nachrichten angezeigt werden, da Ihre Anwendung die einzige Nachricht verarbeitet und entfernt hat. Beachten Sie, dass die Nachricht im **Europa**-Abonnement noch vorhanden ist.

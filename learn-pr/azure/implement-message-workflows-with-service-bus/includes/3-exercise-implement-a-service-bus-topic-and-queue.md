@@ -1,76 +1,76 @@
-Suppose you have an application for the sales team in your global company. Each team member has a mobile phone where your app will be installed. A web service hosted in Azure implements the business logic for your application and stores information in Azure SQL Database. There is one instance of the web service for each geographical region. You have identified the following purposes for sending messages between the mobile app and the web service:
+Angenommen, Sie verfügen in Ihrem globalen Unternehmen über eine Anwendung für das Vertriebsteam. Jedes Teammitglied nutzt ein Mobiltelefon, auf dem die App installiert ist. Mit einem in Azure gehosteten Webdienst wird die Geschäftslogik für Ihre Anwendung implementiert, und die Informationen werden in Azure SQL-Datenbank gespeichert. Für jede geografische Region ist eine Instanz des Webdiensts vorhanden. Sie haben für das Senden von Nachrichten zwischen der mobilen App und dem Webdienst die folgenden Ziele ermittelt:
 
-- Messages that relate to individual sales must be sent only to the web service instance in the user's region.
-- Messages that relate to sales performance must be sent to all instances of the web service.
+- Nachrichten, die sich auf einzelne Verkäufe beziehen, müssen nur an die Instanz des Webdiensts in der Region des Benutzers gesendet werden.
+- Nachrichten, die sich auf die Vertriebsleistung beziehen, müssen an alle Instanzen des Webdiensts gesendet werden.
 
-You have decided to implement a Service Bus queue for the first use case and the Service Bus topic for the second use case.
+Sie haben sich dafür entschieden, eine Service Bus-Warteschlange für den ersten Anwendungsfall und das Service Bus-Thema für den zweiten Anwendungsfall zu implementieren.
 
-In this exercise, you will create a Service Bus namespace, which will contain both a queue and a topic with subscriptions.
+In dieser Übung erstellen Sie einen Service Bus-Namespace, der sowohl eine Warteschlange als auch ein Thema mit Abonnements enthält.
 
-## Create a Service Bus namespace
+## <a name="create-a-service-bus-namespace"></a>Erstellen eines Service Bus-Namespace
 
-In Azure Service Bus, a namespace is a container, with a unique fully qualified domain name, for queues, topics, and relays. You must start by creating the namespace.
+In Azure Service Bus ist ein Namespace ein Container mit einem eindeutigen vollqualifizierten Domänennamen für Warteschlangen, Themen und Relays. Sie müssen zunächst den Namespace erstellen.
 
-Each namespace also has primary and secondary shared access signature encryption keys. A sending or receiving component must provide these keys when it connects to gain access to the objects within the namespace.
+Jeder Namespace verfügt außerdem über primäre und sekundäre SAS-Verschlüsselungsschlüssel (Shared Access Signature). Eine sendende oder empfangende Komponente muss diese Schlüssel angeben, wenn sie eine Verbindung herstellt, um Zugriff auf die Objekte im Namespace zu erhalten.
 
-To create a Service Bus namespace by using the Azure portal, follow these steps:
+Führen Sie diese Schritte aus, um einen Service Bus-Namespace mit dem Azure-Portal zu erstellen:
 
-1. In a browser, navigate to the [Azure portal](https://portal.azure.com/) and log in with your usual Azure account credentials.
+1. Navigieren Sie in einem Browser zum [Azure-Portal](https://portal.azure.com/), und melden Sie sich mit Ihren normalen Anmeldeinformationen für das Azure-Konto an.
 
-1. In the navigation on the left, click **All services**.
+1. Klicken Sie im linken Navigationsbereich auf **Alle Dienste**.
 
-1. In the **All Services** blade, scroll down to the **INTEGRATION** section, and then click **Service Bus**.
+1. Scrollen Sie auf dem Blatt **Alle Dienste** nach unten zum Abschnitt **INTEGRATION**, und klicken Sie auf **Service Bus**.
 
-    ![Create a Service Bus namespace](../media-draft/3-create-namespace-1.png)
+    ![Erstellen eines Service Bus-Namespace](../media-draft/3-create-namespace-1.png)
 
-1. In the top left of the **Service Bus** blade, click **Add**.
+1. Klicken Sie oben links auf dem Blatt **Service Bus** auf **Hinzufügen**.
 
-1. In the **Name** text box, type a unique name for the namespace. For example "salesteamapp" + *your initials* + *current date*.
+1. Geben Sie im Textfeld **Name** einen eindeutigen Namen für den Namespace ein. Beispiel: „salesteamapp“ + *Ihre Initialen* + *aktuelles Datum*
 
-1. In the **Pricing tier** drop-down list, select **Standard**.
+1. Wählen Sie in der Dropdownliste **Tarif** die Option **Standard** aus.
 
-1. In the **Subscription** drop-down list, select your subscription.
+1. Wählen Sie in der Dropdownliste **Abonnement** Ihr Abonnement aus.
 
-1. Under **Resource group**, select **Create new**, and then type **SalesTeamAppRG**.
+1. Wählen Sie unter **Ressourcengruppe** die Option **Neu erstellen**, und geben Sie dann **SalesTeamAppRG** ein.
 
-1. In the **Location** drop-down list, select a location near you, and then click **Create**. Azure creates the new Service Bus namespace.
+1. Wählen Sie in der Dropdownliste **Standort** einen Standort in Ihrer Nähe aus, und klicken Sie dann auf **Erstellen**. Der neue Service Bus-Namespace wird in Azure erstellt.
 
-    ![Create a Service Bus namespace](../media-draft/3-create-namespace-2.png)
+    ![Erstellen eines Service Bus-Namespace](../media-draft/3-create-namespace-2.png)
 
-## Create a Service Bus queue
+## <a name="create-a-service-bus-queue"></a>Erstellen einer Service Bus-Warteschlange
 
-Now that you have a namespace, you can create a queue for messages about individual sales. To do this, follow these steps:
+Nachdem Sie nun über einen Namespace verfügen, können Sie eine Warteschlange für Nachrichten zu einzelnen Verkäufen erstellen. Gehen Sie hierzu wie folgt vor:
 
-1. In the **Service Bus** blade, click **Refresh**. The namespace you just created is displayed.
+1. Klicken Sie auf dem Blatt **Service Bus** auf **Aktualisieren**. Der Namespace, den Sie gerade erstellt haben, wird angezeigt.
 
-1. Click the namespace you just created.
+1. Klicken Sie auf den gerade erstellten Namespace.
 
-1. In the top left of the namespace blade, click **+ Queue**.
+1. Klicken Sie oben links auf dem Namespaceblatt auf **+ Warteschlange**.
 
-1. In the **Create queue** blade, in the **Name** text box, type **salesmessages**, and then click **Create**. Azure creates the queue in your namespace.
+1. Geben Sie auf dem Blatt **Warteschlange erstellen** im Textfeld **Name** den Namen **salesmessages** ein, und klicken Sie dann auf **Erstellen**. Azure erstellt die Warteschlange in Ihrem Namespace.
 
-    ![Creating a queue](../media-draft/3-create-queue.png)
+    ![Erstellen einer Warteschlange](../media-draft/3-create-queue.png)
 
-## Create a Service Bus topic and subscriptions
+## <a name="create-a-service-bus-topic-and-subscriptions"></a>Erstellen eines Service Bus-Themas und von Abonnements
 
-You also want to create a topic that will be used for messages that relate to sales performance. Multiple instances of the business logic web service will subscribe to this topic from different countries. Each message will be delivered to multiple instances.
+Außerdem möchten Sie ein Thema erstellen, das für Nachrichten zur Vertriebsleistung verwendet wird. Mehrere Instanzen des Geschäftslogik-Webdiensts abonnieren dieses Thema aus verschiedenen Ländern. Jede Nachricht wird für mehrere Instanzen zugestellt.
 
-Follow these steps:
+Führen Sie diese Schritte aus:
 
-1. In the **Service Bus Namespace** blade, click **+ Topic**.
+1. Klicken Sie auf dem Blatt **Service Bus-Namespace** auf **+ Thema**.
 
-1. In the **Create topic** blade, in the **Name** text box, type **salesperformancemessages**, and then click **Create**. Azure creates the topic in your namespace.
+1. Geben Sie auf dem Blatt **Thema erstellen** im Textfeld **Name** den Namen **salesperformancemessages** ein, und klicken Sie dann auf **Erstellen**. Azure erstellt das Thema in Ihrem Namespace.
 
-    ![Creating a topic](../media-draft/3-create-topic.png)
+    ![Erstellen eines Themas](../media-draft/3-create-topic.png)
 
-1. When the topic has been created, in the **Service Bus Namespace** blade, under **Entities**, click **Topics**.
+1. Klicken Sie nach der Erstellung des Themas auf dem Blatt **Service Bus-Namespace** unter **Entitäten** auf **Themen**.
 
-1. In the list of topics, click **salesperformancemessages**, and then click **+ Subscription**.
+1. Klicken Sie in der Liste mit den Themen auf **salesperformancemessages** und dann auf **+ Abonnement**.
 
-1. In the **Name** text box, type **Americas**, and then click **Create**.
+1. Geben Sie im Textfeld **Name** den Namen **Americas** ein, und klicken Sie anschließend auf **Erstellen**.
 
-1. Click **+ Subscription**.
+1. Klicken Sie auf **+ Abonnement**.
 
-1. In the **Name** text box, type **EuropeAndAfrica**, and then click **Create**.
+1. Geben Sie im Textfeld **Name** den Namen **EuropeAndAfrica** ein, und klicken Sie anschließend auf **Erstellen**.
 
-You have built the infrastructure required to use Service Bus to increase the resilience of your sales force distributed application. You have created a queue for messages about individual sales and a topic for messages about sales performance. The topic includes multiple subscriptions because messages sent to that topic can be delivered to multiple recipient web services around the world.
+Sie haben die Infrastruktur erstellt, die erforderlich ist, um Service Bus zum Erhöhen der Resilienz Ihrer verteilten Anwendung für die Vertriebsmitarbeiter zu verwenden. Sie haben eine Warteschlange für Nachrichten zu einzelnen Verkäufen und ein Thema für Nachrichten zur Vertriebsleistung erstellt. Das Thema enthält mehrere Abonnements, da an das Thema gesendete Nachrichten für mehrere Empfängerwebdienste weltweit zugestellt werden können.

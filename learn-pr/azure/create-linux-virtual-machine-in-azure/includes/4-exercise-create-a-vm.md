@@ -1,108 +1,109 @@
-Recall that our goal is to move an existing Linux server running Apache to Azure. We'll start by creating an Ubuntu Linux server.
+Zur Erinnerung: Wir möchten einen vorhandenen Linux-Server, auf dem Apache ausgeführt wird, nach Azure verschieben. Dazu erstellen wir zunächst einen Ubuntu Linux-Server.
 
-## Create a new Linux virtual machine
+## <a name="create-a-new-linux-virtual-machine"></a>Erstellen eines neuen virtuellen Linux-Computers
 
-We can create Linux VMs with the Azure portal, the Azure CLI, or Azure PowerShell. The easiest approach when you are starting with Azure is to use the portal because it walks you through the required information and provides hints and helpful messages during the creation:
+Virtuelle Linux-Computer können über das Azure-Portal, mithilfe der Azure-Befehlszeilenschnittstelle oder unter Verwendung von Azure PowerShell erstellt werden. Die einfachste Methode für Azure-Neulinge ist das Portal, da es Sie Schritt für Schritt durch die Erstellung führt sowie Hinweise und hilfreiche Meldungen bereithält.
 
-1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com?azure-portal=true) an.
 
-1. Click **Create a resource** in the upper-left corner of the Azure portal.
+1. Klicken Sie links oben im Azure-Portal auf **Ressource erstellen**.
 
-1. In the search box, enter  **Ubuntu Server** to see the different versions available. Select **Ubuntu Server 18.04** from the presented list.
+1. Geben Sie **Ubuntu Server** in das Suchfeld ein, um die verfügbaren Versionen anzuzeigen. Wählen Sie in der angezeigten Liste die Option **Ubuntu Server 18.04** aus.
 
-1. Click the **Create** button to start configuring the VM.
+1. Klicken Sie auf die Schaltfläche **Erstellen**, um mit dem Konfigurieren des virtuellen Computers zu beginnen.
 
-## Configure the VM settings
+## <a name="configure-the-vm-settings"></a>Konfigurieren der Einstellungen für den virtuellen Computer
 
-The VM creation experience in the portal is presented in a **wizard** format to walk you through all the configuration areas for the VM. Clicking the **Next** button will take you to the next configurable section. However, you can move between the sections at will with the tabs running across the top that identify each part.
+Im Portal steht für die Erstellung virtueller Computer ein Assistent zur Verfügung, der Sie durch sämtliche Konfigurationsbereiche für den virtuellen Computer führt. Durch Klicken auf „Weiter“ gelangen Sie jeweils zum nächsten Konfigurationsbereich. Sie können allerdings auch über die Registerkarten im oberen Bereich beliebig zwischen den einzelnen Bereichen wechseln.
 
-![Screenshot of the Azure portal showing the initial Create a virtual machine blade for an Ubuntu Server machine.](../media/3-azure-portal-create-vm.png)
+![Erstellen eines neuen virtuellen Computers im Azure-Portal](../media-drafts/3-azure-portal-create-vm.png)
 
-Once you fill in all the required options (identified with red stars), you can skip the remainder of the wizard experience and start creating the VM through the **Review + Create** button at the bottom.
+Sobald Sie alle erforderlichen Optionen (mit roten Sternen kenntlich gemacht) angegeben haben, können Sie die restlichen Schritte des Assistenten überspringen und im unteren Bereich auf die Schaltfläche **Überprüfen + erstellen** klicken, um mit der Erstellung des virtuellen Computers zu beginnen.
 
-We'll start with the **Basics** section.
+Beginnen Sie mit dem Abschnitt **Grundlagen**.
 
-### Configure basic VM settings
+### <a name="configure-basic-vm-settings"></a>Konfigurieren der Grundeinstellungen für den virtuellen Computer
 
-1. Select the **Subscription** that should be billed for VM hours.
+1. Wählen Sie das **Abonnement** aus, über das die VM-Stunden abgerechnet werden sollen.
 
-1. For **Resource group**, select **Create new** and give the resource group the name **ExerciseResources**.
+1. Klicken Sie für **Ressourcengruppe** auf **Neu erstellen**, und geben Sie der Ressourcengruppe den Namen **ExerciseResources**.
 
-> [!NOTE]  
-> As you change settings and tab out of each field, Azure will validate each value automatically and place a green check mark next to it when it's good. You can hover over error indicators to get more information on issues it discovers.
+> [!NOTE]
+> Wenn Sie die Einstellungen ändern und anschließend die TAB-TASTE drücken, prüft Azure den Wert automatisch und platziert einen grünen Haken daneben, wenn die Änderungen akzeptiert werden. Sie können mit der Maus auf Fehlerindikatoren zeigen, um weitere Informationen zu gefundenen Problemen zu erhalten.
 
-1. In the **INSTANCE DETAILS** section, enter a name for your web server VM, such as **test-web-eus-vm1**. This indicates the environment (**test**), the role (**web**), location (**East US**), service (**vm**), and instance number (**1**).
-    - It's a best practice to standardize your resource names, so you can quickly identify their purpose. Linux VM names must be between 1 and 64 characters and be comprised of numbers, letters, and dashes.
+1. Geben Sie im Abschnitt **INSTANZENDETAILS** einen Namen für Ihren virtuellen Webservercomputer ein (beispielsweise „test-web-eus-vm1“). Dieser Name gibt die Umgebung („Test“), die Rolle („Web“), den Standort („USA, Osten“), den Dienst („VM“) und die Instanznummer („1“) an.
+    - Es empfiehlt sich, Ressourcennamen zu standardisieren, um sofort ihren Zweck ermitteln zu können. Namen für virtuelle Linux-Computer dürfen maximal 64 Zeichen umfassen und müssen sich aus Zahlen, Buchstaben und Bindestrichen zusammensetzen.
 
-1. Select a region close to you; we've chosen **East US**.
+1. Wählen Sie eine Region in Ihrer Nähe. Hier haben wir uns für „USA, Osten“ entschieden.
 
-1. Leave **Availability options** as **None**. This option is used to ensure the VM is highly available by grouping multiple VMs together as a set to deal with planned or unplanned maintenance events or outages.
+1. Behalten Sie für **Verfügbarkeitsoptionen** die Einstellung „Keine“ bei. Mit dieser Option wird die Hochverfügbarkeit des virtuellen Computers sichergestellt. Hierzu werden mehrere virtuelle Computer in einer Gruppe zusammengefasst, um geplante oder ungeplante Wartungsereignisse oder Ausfälle zu behandeln.
 
-1. Ensure that the image is set to **Ubuntu Server 18.04 LTS**. You can open the drop-down list to see all the options available.
+1. Vergewissern Sie sich, dass das Image auf „Ubuntu Server 18.04 LTS“ festgelegt ist. Sie können die Dropdownliste öffnen, um alle verfügbaren Optionen anzuzeigen.
 
-1. The **Size** field is not directly editable and has a **DS2_v3** default size, which is one of the general-purpose computing selections. This choice is perfect for a public web server, but click the **Change size** link to explore other VM sizes. The resulting dialog allows you to filter based on **# of CPUs**, **Name**, and **Disk Type**. Select the same **DS2_v3** choice, which gives you two vCPUs with 8 GB of RAM.
+1. Das Feld **Größe** kann nicht direkt bearbeitet werden und enthält standardmäßig die Größe **DS2_v3** (eine der universellen Computingoptionen). Diese Option ist für einen öffentlichen Webserver optimal. Klicken Sie aber trotzdem auf den Link **Größe ändern**, um sich die anderen VM-Größen anzusehen. Im daraufhin angezeigten Dialogfeld können Sie nach der Anzahl von CPUs, nach Name und nach Datenträgertyp filtern. Wählen Sie die Option **DS2_v3** aus, um zwei vCPUs mit 8 GB RAM zu erhalten.
 
     > [!TIP]
-    > You can also slide the view to the left to get back to the VM settings as it opened a new window off to the right and slid the window over to view it.
+    > Da auf der rechten Seite ein neues Fenster geöffnet und über das vorherige Fenster geschoben wurde, um es anzuzeigen, können Sie die Ansicht auch nach links verschieben, um wieder zu den VM-Einstellungen zu gelangen.
 
-1. In the **ADMINISTRATOR ACCESS** section, select the SSH public key option for **Authentication type**.
+1. Wählen Sie im Abschnitt **ADMINISTRATORZUGRIFF** für **Authentifizierungstyp** die Option „Öffentlicher SSH-Schlüssel“ aus.
 
-1. Enter a **username** you'll use to sign in with SSH.
+1. Geben Sie unter **Benutzername** einen Benutzernamen für die SSH-Anmeldung ein.
 
-1. Copy the SSH key from your public key file and paste it into the **SSH public key** field.
+1. Kopieren Sie den SSH-Schlüssel aus Ihrer Datei mit dem öffentlichen Schlüssel, und fügen Sie ihn in das Feld **Öffentlicher SSH-Schlüssel** ein.
 
 > [!IMPORTANT]
-> When you copy the public key into the Azure portal, make sure not to add any additional whitespace or linefeed characters.
+> Achten Sie beim Kopieren des öffentlichen Schlüssels in das Azure-Portal darauf, keine zusätzlichen Leer- oder Zeilenvorschubzeichen hinzuzufügen.
 
-1. In the **INBOUND PORT RULES** section, open the list and uncheck **None**. Since this is a Linux VM, we want to be able to access the VM using SSH remotely. Scroll the list if necessary until you find **ssh (22)** and select it. As the note in the UI indicates, we can also adjust the network ports after we create the VM.
+1. Öffnen Sie die Liste im Abschnitt **REGELN FÜR EINGEHENDE PORTS**, und _deaktivieren_ Sie die Option „Keine“. Da es sich hier um einen virtuellen Linux-Computer handelt, soll die Möglichkeit bestehen, per SSH-Remoteverbindung auf den virtuellen Computer zuzugreifen. Wählen Sie in der Liste die Option „ssh (22)“ aus. (Unter Umständen müssen Sie dazu ein wenig scrollen.) Auf der Benutzeroberfläche wird der Hinweis angezeigt, dass die Netzwerkports auch nach dem Erstellen des virtuellen Computers geändert werden können.
 
-    ![Screenshot of the Azure portal showing the administrator account and inbound port settings as described to open up a Linux VM for SSH access.](../media/3-open-ports.png) 
+    ![Öffnen des Ports für SSH-Zugriff auf den virtuellen Linux-Computer](../media-drafts/3-open-ports.png)
 
-## Configure disks for the VM
+## <a name="configure-disks-for-the-vm"></a>Konfigurieren von Datenträgern für den virtuellen Computer
 
-1. Click **Next** to move to the **Disks** section.
+1. Klicken Sie auf **Weiter**, um zum Abschnitt „Datenträger“ zu wechseln.
 
-    ![Screenshot of the Azure portal showing the Disks section of the Create a virtual machine blade.](../media/3-configure-disks.png) 
+    ![Konfigurieren von Datenträgern für den virtuellen Computer](../media-drafts/3-configure-disks.png)
 
-1. Choose **Premium SSD** for the **OS disk type**.
+1. Wählen Sie „SSD Premium“ als **Betriebssystemdatenträgertyp** aus.
 
-1. Use managed disks, so we don't have to work with storage accounts. You can flip the switch in the GUI to see the difference in information that Azure needs if you like.
+1. Verwenden Sie verwaltete Datenträger, um nicht mit Speicherkonten arbeiten zu müssen. Wenn Sie wissen möchten, welche unterschiedlichen Informationen Azure jeweils benötigt, können Sie die Einstellung über die grafische Benutzeroberfläche ändern.
 
-### Create a data disk
+### <a name="create-a-data-disk"></a>Erstellen eines Datenträgers
 
-Recall that we will get an OS disk (/dev/sda) and a temporary disk (/dev/sdb). Let's add a data disk as well:
+Zur Erinnerung: Wir erhalten einen Betriebssystemdatenträger (/dev/sda) und einen temporären Datenträger (/dev/sdb). Hier fügen wir auch noch einen Datenträger für Daten hinzu.
 
-1. Click the **Create and attach a new disk** link in the **DATA DISKS** section.
+1. Klicken Sie im Abschnitt **DATENTRÄGER** auf den Link **Create and attach a new disk** (Neuen Datenträger erstellen und anfügen).
 
-    ![Screenshot of the Azure portal showing the Create a new disk blade.](../media/3-add-data-disk.png) 
+    ![Erstellen eines Datenträgers für den virtuellen Computer über das Portal](../media-drafts/3-add-data-disk.png)
 
-1. You can take all the defaults: Premium SSD, 1023 GB, and **None** (empty disk), although notice that here is where we could use a snapshot or Azure Blob storage to create a VHD.
+1. Sie können alle Standardeinstellungen beibehalten: „SSD Premium“, „1.023 GB“ und „Keine“ (leerer Datenträger). Beachten Sie allerdings, dass wir an dieser Stelle eine Momentaufnahme oder ein Speicherblob verwenden könnten, um eine virtuelle Festplatte zu erstellen.
 
-1. Click **OK** to create the disk and go back to the **DATA DISKS** section.
+1. Klicken Sie auf **OK**, um den Datenträger zu erstellen, und navigieren Sie zurück zum Abschnitt **DATENTRÄGER**.
 
-1. There should now be a new disk in the first row.
+1. Es sollte nun ein neuer Datenträger in der ersten Zeile angezeigt werden.
 
-    ![Screenshot of the Azure portal showing the newly created data disk line for the VM creation process.](../media/3-new-disk.png) 
+    ![Neuer Datenträger für den virtuellen Computer](../media-drafts/3-new-disk.png)
 
-## Configure the network
+## <a name="configure-the-network"></a>Konfigurieren des Netzwerks
 
-1. Click **Next** to move to the **Networking** section.
+1. Klicken Sie auf **Weiter**, um zum Abschnitt „Netzwerk“ zu wechseln.
 
-1. In a production system where we already have other components, we'd want to utilize an _existing_ virtual network. That way, our VM can communicate with the other cloud services in our solution. If there isn't one defined in this location yet, we can create it here and configure the:
-    - **Address space**: The overall IPV4 space available to this network.
-    - **Subnet range**: The first subnet to subdivide the address space - it must fit within the defined address space. Once the VNet is created, you can add additional subnets.
+1. In einem Produktionssystem, in dem bereits andere Komponenten vorhanden sind, empfiehlt es sich, ein _bereits vorhandenes_ virtuelles Netzwerk zu verwenden. So kann Ihr virtueller Computer mit den anderen Clouddiensten in unserer Lösung kommunizieren. Wenn für diesen Standort noch kein virtuelles Netzwerk definiert ist, können Sie hier eines erstellen und Folgendes konfigurieren:
 
-> [!NOTE]  
-> By default, Azure will create a virtual network, network interface, and public IP for your VM. It's not trivial to change the networking options after the VM has been created, so always double-check the network assignments on services you create in Azure.
+    - **Adressbereich**: Der gesamte IPv4-Bereich, der dem Netzwerk zur Verfügung steht.
+    - **Subnetzbereich**: Das erste Subnetz zur Unterteilung des Adressbereichs. Er muss innerhalb des definierten Adressbereichs liegen. Nach der Erstellung des VNETs können Sie weitere Subnetze hinzufügen.
 
-## Finish configuring the VM and create the image
+> [!NOTE]
+> Standardmäßig erstellt Azure ein virtuelles Netzwerk, eine Netzwerkschnittstelle und eine öffentliche IP-Adresse für Ihren virtuellen Computer. Nach der Erstellung des virtuellen Computers können die Netzwerkoptionen nicht mehr so einfach geändert werden. Prüfen Sie daher immer genau die Netzwerkzuweisungen für die von Ihnen in Azure erstellten Dienste.
 
-The rest of the options have reasonable defaults, and there's no need to change any of them. You can explore the other tabs if you like. The individual options have an `(i)` icon next to them that will show a help bubble to explain the option. This is a great way to learn about the various options you can use to configure the VM:
+## <a name="finish-configuring-the-vm-and-create-the-image"></a>Abschließen der Konfiguration des virtuellen Computers und Erstellen des Images
 
-1. Click the **Review + create** button at the bottom of the panel.
+Die restlichen Optionen verfügen über passende Standardeinstellungen, die nicht geändert werden müssen. Bei Interesse können Sie sich die anderen Registerkarten genauer ansehen. Neben den einzelnen Optionen befindet sich jeweils ein `(i)`-Symbol, über das Sie eine Erläuterung der jeweiligen Option anzeigen können. Dies ist eine gute Möglichkeit, nähere Informationen über die verschiedenen Optionen zu erhalten, die Sie zum Konfigurieren des virtuellen Computers verwenden können.
 
-1. The system will validate your options and give you details about the VM being created.
+1. Klicken Sie im unteren Bereich auf die Schaltfläche **Überprüfen und erstellen**.
 
-1. Click **Create** to create and deploy the VM. The Azure dashboard will show the VM that's being deployed. This may take several minutes.
+1. Das System überprüft Ihre Optionen und zeigt Details zur Erstellung des virtuellen Computers an.
 
-While that's deploying, let's look at what we can do with this VM.
+1. Klicken Sie auf **Erstellen**, um den virtuellen Computer zu erstellen und bereitzustellen. Im Azure-Dashboard wird der virtuelle Computer angezeigt, der gerade bereitgestellt wird. Dieser Vorgang kann einige Minuten dauern.
+
+Währenddessen erfahren Sie in der nächsten Einheit, wozu Sie diesen virtuellen Computer verwenden können.

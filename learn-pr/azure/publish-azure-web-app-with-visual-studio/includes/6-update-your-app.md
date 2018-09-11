@@ -1,55 +1,55 @@
-You've successfully created your web app and published it to Azure, but what happens when you want to make changes? Visual Studio will remember where the app is published, which makes updating and changing your app a two-click process.
+Sie haben erfolgreich Ihre Web-App erstellt und in Azure veröffentlicht. Doch was geschieht, wenn Sie Änderungen vornehmen möchten? Visual Studio merkt sich den Speicherort, in dem die Anwendung veröffentlicht ist. So können Sie Ihre App in zwei Klicks aktualisieren und ändern.
 
-## Explore the project structure
+## <a name="explore-the-project-structure"></a>Erkunden der Projektstruktur
 
-We've created an ASP.NET web app in Visual Studio, and now you will need to edit and customize your website. Let's explore the project structure to see what Visual Studio has created for us.
+Wir haben eine ASP.NET-Web-App in Visual Studio erstellt und müssen nun Ihre Website bearbeiten und anpassen. Sehen Sie sich die Projektstruktur und die von Visual Studio erstellten Elemente an.
 
-### Dependencies
+### <a name="dependencies"></a>Abhängigkeiten
 
-Dependencies include the ASP.NET internals to get your app up and running. Unless you are adding specific third-party packages, you won't need to spend much time in this folder.
+Zu Abhängigkeiten zählen die ASP.NET-Informationen, um Ihre App in Betrieb zu nehmen. Diesen Ordner werden Sie nicht so häufig verwenden, es sei denn, Sie fügen bestimmte Pakete von Drittanbietern hinzu.
 
-### Properties
+### <a name="properties"></a>Eigenschaften
 
-The properties folder contains configuration data for where you are hosting your web app. If you expand the **PublishProfiles** folder now, you should see the URL for the Alpine Ski Hill site. Each publishing profile is an .xml file containing publishing configuration information such as the Azure address that Visual Studio uses to upload your files.
+Der Ordner „Eigenschaften“ enthält die Konfigurationsdaten für den Speicherort, in dem Sie Ihre Web-App hosten. Wenn Sie den Ordner **PublishProfiles** jetzt erweitern, sehen Sie die URL für die Alpine Ski Hill-Website. Veröffentlichungsprofile bestehen aus einer XML-Datei, die Konfigurationsinformationen wie die Azure-Adresse enthält, anhand derer Visual Studio Ihre Dateien hochlädt.
 
-### wwwroot
+### <a name="wwwroot"></a>wwwroot
 
-The wwwroot file contains all of your static assets for your site, such as the .css, .js, images, and .lib files. When you are ready to style and add more functionality to your site, you will work in here.
+Die Datei „wwwroot“ enthält alle statischen Ressourcen für Ihre Website, z.B. die CSS-, JS-, Bild- und LIB-Dateien. Diese benötigen Sie, wenn Sie Formatierungsarbeiten vornehmen und weitere Funktionen zu Ihrer Website hinzufügen möchten.
 
-### Pages
+### <a name="pages"></a>Seiten
 
-The **Pages** folder includes _**Razor**_ templates for the pages of your site.
-Razor is a syntax that is built up around HTML, which has special conventions for displaying data and executing logic on your site.
+Der Ordner **Seiten** enthält _**Razor**_-Vorlagen für die Seiten Ihrer Website.
+Razor ist eine auf HTML basierende Syntax, die spezielle Konventionen für die Anzeige von Daten und Ausführung von Logik auf Ihrer Website aufweist.
 
-Each page in your site is represented with two code files:
+Jede Seite auf Ihrer Website wird durch zwei Codedateien dargestellt:
 
-- The first is a `.cshtml` file, which is the Razor markup file. This file includes your display HTML and some C# logic.
+- Bei der ersten Datei handelt es sich um eine `.cshtml`-Datei, die Razor-Markupdatei. Diese Datei enthält Ihre HTML-Datei für die Anzeige und C#-Logik.
 
-- The second file is a `.cs` file, which is the C# code-behind that includes `PageModel` class. This file allows you to intercept HTTP requests and do some processing on that request before passing off any data to the Razor file.
+- Bei der zweiten Datei handelt es sich um eine `.cs`-Datei, die das C#-CodeBehind mit der `PageModel`-Klasse enthält. Mit dieser Datei können Sie HTTP-Anforderungen abfangen, und Verarbeitungsaufgaben für diese Anforderung durchführen, bevor Sie Daten an die Razor-Datei übergeben.
 
-### appsetting.json
+### <a name="appsettingjson"></a>appsetting.json
 
-This is a configuration file for ASP.NET.
+Dies ist eine Konfigurationsdatei für ASP.NET.
 
-### bundleconfig.json
+### <a name="bundleconfigjson"></a>bundleconfig.json
 
-The bundleconfig.json is preprocessing configuration. This file is making your .css and .js files smaller when they are published.
+„bundleconfig.json“ ist für die Vorverarbeitungskonfiguration bestimmt. Diese Datei sorgt dafür, dass Ihre CSS- und JS-Dateien beim Veröffentlichen komprimiert werden.
 
-### Program.cs and Startup.cs
+### <a name="programcs-and-startupcs"></a>„Program.cs“ und „Startup.cs“
 
-Program.cs and Startup.cs configure and launch your web host for your site.
+„Program.cs“ und „Startup.cs“ konfigurieren und starten Ihren Webhost für Ihre Website.
 
-## Updating your website using Razor
+## <a name="updating-your-website-using-razor"></a>Aktualisieren einer Website mithilfe von Razor
 
-We will want to make some basic changes to our website. In order to do this, you will need to have a basic understanding of how to leverage the Razor templates to customize your web app.
+Wir werden einige grundlegende Änderungen an unserer Website vornehmen. Zu diesem Zweck müssen Sie über ein grundlegendes Verständnis bezüglich der Nutzung der Razor-Vorlagen zum Anpassen Ihrer Web-App verfügen.
 
-## What is Razor?
+## <a name="what-is-razor"></a>Was ist Razor?
 
-Razor is an ASP.NET syntax used to create dynamic web pages with C#. When a server reads a Razor page, the C# code is run before it renders the HTML. This allows you to generate dynamic content quickly.
+Razor ist eine ASP.NET-Syntax zum Erstellen dynamischer Webseiten mit C#. Wenn ein Server eine Razor-Seite liest, wird der C#-Code ausgeführt, bevor er den HTML-Code rendert. So können Sie schnell dynamische Inhalte generieren.
 
-Razor uses `@` directives to tell ASP.NET how to process a page.
+Razor verwendet `@`-Anweisungen für die Verarbeitung einer Seite über ASP.NET.
 
-For example, take a look at the code in the `Contact.cshtml` page:
+Sehen Sie sich beispielsweise den Code auf der Seite `Contact.cshtml` an.
 
 ```aspx-csharp
 @page
@@ -62,21 +62,22 @@ For example, take a look at the code in the `Contact.cshtml` page:
 ...
 ```
 
-- The `@page` directive is telling ASP.NET to process this file as a Razor page.
-- The `@model` directive is telling ASP.NET to tie this Razor page with a C# class called `ContactModel`.
+Die `@page`-Anweisung weist ASP.NET z.B. an, diese Datei als Razor-Seite zu verarbeiten.
+Die `@model`-Anweisung teilt ASP.NET für diese Razor-Seite mit einer C#-Klasse mit dem Namen verknüpfen `ContactModel`.
 
-Razor also uses the `@` symbol to transition between code and HTML. If you look at the snippet above, you'll notice `@{ ... }`. This is a **Razor code block**. It's code which is _executed but not rendered_.
+Darüber hinaus verwendet Razor das `@`-Symbol für den Übergang zwischen Code und HTML.
+Wenn Sie sich z.B. den obigen Codeausschnitt ansehen, wird Ihnen `@{ ... }` auffallen. Hierbei handelt es sich um einen **Razor-Codeblock**. Dieser Code wird _ausgeführt, aber nicht gerendert_.
 
-To render the output of a code statement, we use the `@` in front of a C# expression. We have two examples of that in the code block above in the `<h2>` and `<h3>` tags.
+Um die Ausgabe einer Codeanweisung zu rendern, wird `@` vor dem C#-Ausdruck verwendet. Weiter oben in den Tags `<h2>` und `<h3>` gibt es zwei Beispiele für diesen Codeblock.
 
-## Publish your updates
+## <a name="publish-your-updates"></a>Veröffentlichen Ihrer Aktualisierungen
 
-Once you've made the changes to your website, you will want to publish them to Azure. This process is similar to how we initially published.
+Nachdem Sie die Änderungen an Ihrer Website vorgenommen haben, sollten Sie sie in Azure veröffentlichen. Dieser Prozess ist mit der ursprünglichen Veröffentlichung vergleichbar.
 
-1. Right-click the project in Solution Explorer.
+1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt.
 
-1. Now you should see the name of your website followed by Web Deploy. If you had named your website AlpineSkiHouse42, you would see **AlpineSkiHouse42 - Web Deploy** in the available options. Select that and your site will update in Azure.
+1. Der Name der Website sollte nun gefolgt von Web Deploy angezeigt werden. Beispiel: Wenn Sie Ihre Website „AlpineSkiHouse42“ benannt haben, würde unter den verfügbaren Optionen **AlpineSkiHouse42 – Web Deploy** angezeigt werden. Wählen Sie diese Option aus. Ihre Website wird dann in Azure aktualisiert.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-Creating and publishing a website are just the first steps in creating a good website. Once you start to add content, you'll need to update your site. Once you've initially published your site to Azure, you can update at any time from the Solution Explorer.
+Die Erstellung und Veröffentlichung einer Website stellen lediglich die ersten Schritte bei der Erstellung einer guten Website dar. Sobald Sie Inhalte hinzufügen, müssen Sie Ihre Website aktualisieren. Nachdem Sie Ihre Website zunächst in Azure veröffentlicht haben, können Sie sie jederzeit über den Projektmappen-Explorer aktualisieren.

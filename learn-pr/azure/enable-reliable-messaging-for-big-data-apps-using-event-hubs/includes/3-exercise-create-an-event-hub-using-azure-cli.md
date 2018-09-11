@@ -1,93 +1,93 @@
-You're now ready to create a new event hub. After creating the event hub, you'll use the Azure portal to view your new hub.
+Sie können nun einen neuen Event Hub erstellen. Nachdem der Event Hub erstellt wurde, verwenden Sie das Azure-Portal, um Ihren neuen Hub anzuzeigen.
 
-You'll create an event hub using the Azure CLI. For this exercise, use the Azure CLI 2.0. 
+Erstellen Sie einen Event Hub mit Azure CLI. Verwenden Sie für diese Übung Azure CLI 2.0. 
 
-## Create an Event Hubs namespace
+## <a name="create-an-event-hubs-namespace"></a>Erstellen eines Event Hubs-Namespace
 
-Use the following steps to create an Event Hubs namespace using Bash shell supported by Azure Cloud shell:
+Mit den folgenden Schritten können Sie einen Event Hubs-Namespace mithilfe der von Azure Cloud Shell unterstützten Bash-Shell erstellen.
 
-1. Sign in to the Cloud Shell (Bash).  
+1. Melden Sie sich bei Cloud Shell (Bash) an.  
 
-1. Create an Azure resource group using the following command:
+1. Erstellen Sie mithilfe des folgenden Befehls eine Azure-Ressourcengruppe.
 
     ```azurecli
         az group create --name <resource group name> --location <location>
     ```
 
-    |Parameter      |Description|
+    |Parameter      |Beschreibung|
     |---------------|-----------|
-    |--name (required)      |Enter a new resource group name.|
-    |--location (required)     |Enter the location of your nearest Azure datacenter, for example, westus.|
+    |--name (erforderlich)      |Geben Sie einen neuen Namen für die Ressourcengruppe ein.|
+    |--location (erforderlich)     |Geben Sie den Standort Ihres nächsten Azure-Rechenzentrums an, z.B. „westus“.|
 
-1. Create the Event Hubs namespace using the following command:
+1. Erstellen Sie mit dem folgenden Befehl den Event Hubs-Namespace:
 
     ```azurecli
         az eventhubs namespace create --name <Event Hubs namespace name> --resource-group <resource group name> -l <location>
     ```
 
-    |Parameter      |Description|
+    |Parameter      |Beschreibung|
     |---------------|-----------|
-    |--name (required)      |Enter a 6-50 characters-long unique name for your Event Hubs namespace. The name should contain only letters, numbers, and hyphens. It should start with a letter and end with a letter or number.|
-    |--resource-group (required)  |Enter the resource group you created in step 1.
-    |--l (optional)     |Enter the location of your nearest Azure datacenter, for example, westus.|
+    |--name (erforderlich)      |Geben Sie Ihrem Event Hubs-Namespace einen eindeutigen Namen, der zwischen 6 und 50 Zeichen lang ist. Der Name darf nur Buchstaben, Zahlen und Bindestriche enthalten. Er muss zudem mit einem Buchstaben beginnen und mit einem Buchstaben oder einer Zahl enden.|
+    |--resource-group (erforderlich)  |Geben Sie die Ressourcengruppe ein, die Sie in Schritt 1 erstellt haben.
+    |--l (optional)     |Geben Sie den Standort Ihres nächsten Azure-Rechenzentrums an, z.B. „westus“.|
 
-1. Fetch the connection string for your Event Hubs namespace using the following command. You'll need this to configure applications to send and receive messages using your event hub.
+1. Rufen Sie die Verbindungszeichenfolge für Ihren Event Hubs-Namespace mithilfe des folgenden Befehls ab. Sie benötigen diese, wenn Sie Anwendungen zum Senden und Empfangen von Nachrichten über Ihren Event Hub konfigurieren.
 
     ```azurecli
         az eventhubs namespace authorization-rule keys list --resource-group <resource group name> --namespace-name <EventHub namespace name> --name RootManageSharedAccessKey
     ```
 
-    |Parameter      |Description|
+    |Parameter      |Beschreibung|
     |---------------|-----------|
-    |--resource-group (required)  |Enter the resource group you created in step 1.|
-    |--namespace-name (required)      |Enter the namespace you created in step 2.|
+    |--resource-group (erforderlich)  |Geben Sie die Ressourcengruppe ein, die Sie in Schritt 1 erstellt haben.|
+    |--namespace-name (erforderlich)      |Geben Sie den Namespace ein, den Sie in Schritt 2 erstellt haben.|
 
-    This command returns the connection string for your Event Hubs namespace that you'll use later to configure your publisher and consumer applications. Save the value of the following keys for later use.
+    Dieser Befehl gibt die Verbindungszeichenfolge für Ihren Event Hubs-Namespace zurück, den Sie später zum Konfigurieren Ihrer Herausgeber- und Consumeranwendungen verwenden. Speichern Sie den Wert der folgenden Schlüssel für den späteren Gebrauch.
 
     - **primaryConnectionString**
     - **primaryKey**
 
-## Create an event hub
+## <a name="create-an-event-hub"></a>Erstellen eines Event Hubs
 
-Use the following steps to create your new event hub:
+Führen Sie die folgenden Schritte aus, um Ihren neuen Event Hub zu erstellen:
 
-1. Create a new event hub using the following command:
+1. Erstellen Sie einen neuen Event Hub über den folgenden Befehl:
 
     ```azurecli
         az eventhubs eventhub create --name <event hub name> --resource-group <Resource Group name> --namespace-name <Event Hubs namespace name>
     ```
 
-    |Parameter      |Description|
+    |Parameter      |Beschreibung|
     |---------------|-----------|
-    |--name (required)  |Enter a name for your event hub.|
-    |--resource-group (required)  |Enter the resource group you created in the previous procedure.|
-    |--namespace-name (required)      |Enter the namespace you created in the previous procedure.|
+    |--name (erforderlich)  |Geben Sie einen Namen für Ihren Event Hub ein.|
+    |--resource-group (erforderlich)  |Geben Sie die Ressourcengruppe ein, die Sie im vorherigen Abschnitt erstellt haben.|
+    |--namespace-name (erforderlich)      |Geben Sie den Namespace ein, den Sie im vorherigen Abschnitt erstellt haben.|
 
-1. View the details of your event hub using the following command: 
+1. Zeigen Sie über folgenden Befehl die Informationen Ihres Event Hubs an: 
 
     ```azurecli
         az eventhubs eventhub show --resource-group <Resource Group name> --namespace-name <Event Hubs namespace name> --name <event hub name>
     ```
 
-    |Parameter      |Description|
+    |Parameter      |Beschreibung|
     |---------------|-----------|
-    |--resource-group (required)  |Enter the resource group that you created in the previous procedure.|
-    |--namespace-name (required)      |Enter the namespace you created in the previous procedure.|
-    |--name  (required)|Enter the name of the event hub you created in step 1.|
+    |--resource-group (erforderlich)  |Geben Sie die Ressourcengruppe ein, die Sie im vorherigen Abschnitt erstellt haben.|
+    |--namespace-name (erforderlich)      |Geben Sie den Namespace ein, den Sie im vorherigen Abschnitt erstellt haben.|
+    |--name (erforderlich)|Geben Sie den Namen des Event Hubs ein, den Sie in Schritt 1 erstellt haben.|
 
-## View the event hub in the Azure portal
+## <a name="view-the-event-hub-in-the-azure-portal"></a>Anzeigen des Event Hubs im Azure-Portal
 
-Use the following steps view your event hub in the Azure portal.
+Befolgen Sie diese Schritte, um Ihren Event Hub im Azure-Portal anzuzeigen.
 
-1. Find your Event Hubs namespace using the Search bar at the top of the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. Suchen Sie über die Suchleiste am oberen Rand des [Azure-Portals](https://portal.azure.com?azure-portal=true) nach Ihrem Event Hubs-Namespace.
 
-1. Click your namespace to open it.
+1. Klicken Sie auf den Namespace, um ihn zu öffnen.
 
-1. From **Event Hubs Namespace** > **ENTITIES**, click **Event Hubs**.
-    Your event hub displays with a status of **Active**, and default values for **Message Retention** (*7*) and **Partition Count** of (*4*).
+1. Klicken Sie auf den **Event Hubs-Namespace** > **ENTITÄTEN** und dann auf **Event Hubs**.
+    Ihr Event Hub wird mit dem Zustand **Aktiv** angezeigt sowie mit den Standardwerten für die **Nachrichtenaufbewahrung** (*7*) und der **Anzahl der Partitionen** (*4*).
 
-    ![Event Hub displayed in the Azure Portal](../media-draft/3-event-hub.png)
+    ![Event Hub, der im Azure-Portal angezeigt wird](../media-draft/3-event-hub.png)
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-You've now created a new event hub, and you've all the necessary information ready to configure your publisher and consumer applications.
+Sie haben nun einen neuen Event Hub erstellt. Sie verfügen über alle erforderlichen Informationen zum Konfigurieren Ihrer Herausgeber- und Consumeranwendungen.

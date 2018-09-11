@@ -1,27 +1,27 @@
 <!--TODO: explain Etag in knowledge needed-->
 
-Once the connection to Azure Cosmos DB has been made, the next step is to create, read, replace, and delete the documents that are stored in the database. In this unit, you will create User documents in your WebCustomer collection, then you'll retrieve them by ID, replace them, and delete them.
+Nach dem Herstellen der Verbindung mit Azure Cosmos DB besteht der nächste Schritt darin, die in der Datenbank gespeicherten Dokumente zu erstellen, zu lesen, zu ersetzen und zu löschen. In dieser Einheit erstellen Sie in Ihrer WebCustomer-Sammlung Benutzerdokumente, rufen sie über die ID ab, ersetzen sie und löschen sie anschließend.
 
-## Working with documents programmatically
+## <a name="working-with-documents-programmatically"></a>Programmgesteuertes Arbeiten mit Dokumenten
 
-Data is stored in JSON documents in Azure Cosmos DB. [Documents](https://docs.microsoft.com/azure/cosmos-db/sql-api-resources#documents) can be created, retrieved, replaced, or deleted in the portal, as shown in the previous module, or programmatically, as described in this module. Azure Cosmos DB provides client-side SDKs for .NET, .NET Core, Java, Node.js, and Python, each of which supports these operations. In this module we'll be using the .NET Core SDK to perform CRUD (create, retrieve, update, and delete) operations. 
+Daten werden in Azure Cosmos DB als JSON-Dokumente gespeichert. [Dokumente](https://docs.microsoft.com/azure/cosmos-db/sql-api-resources#documents) können im Portal erstellt, abgerufen, ersetzt oder gelöscht werden, und zwar wie im vorherigen Modul oder wie in diesem Modul beschrieben programmgesteuert. Azure Cosmos DB bietet clientseitige SDKs für .NET, .NET Core, Java, Node.js und Python, die alle diese Vorgänge unterstützen. In diesem Modul wird das .NET Core SDK zum Ausführen von CRUD-Vorgängen (Create, Retrieve, Update, Delete – Erstellen, Abrufen, Aktualisieren, Löschen) verwendet. 
 
-The main operations for Azure Cosmos DB documents are part of the [DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient?view=azure-dotnet) class:
+Die wichtigsten Vorgänge für Azure Cosmos DB-Dokumente sind Teil der [DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient?view=azure-dotnet)-Klasse:
 * [CreateDocumentAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.createdocumentasync?view=azure-dotnet)
 * [ReadDocumentAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.readdocumentasync?view=azure-dotnet)
 * [ReplaceDocumentAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.replacedocumentasync?view=azure-dotnet)
-* [UpsertDocumentAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.upsertdocumentasync?view=azure-dotnet). Upsert performs a create or replace operation depending on whether the document already exists.
+* [UpsertDocumentAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.upsertdocumentasync?view=azure-dotnet). Upsert führt einen Vorgang zum Erstellen oder Ersetzen durch, je nachdem, ob das Dokument bereits vorhanden ist.
 * [DeleteDocumentAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.deletedocumentasync?view=azure-dotnet)
 
-To perform any of these operations, you need to create a class that represents the object stored in the database. Because we're working with a database of users, you'll want to create a **User** class to store primary data such as their first name, last name, and user id (which is required, as that's the partition key to enable horizontal scaling) and subclasses for shipping preferences and order history.
+Um diese Vorgänge auszuführen, müssen Sie eine Klasse erstellen, die das in der Datenbank gespeicherte Objekt darstellt. Da Sie mit einer Datenbank von Benutzern arbeiten, sollten Sie eine **User**-Klasse erstellen, um primäre Daten wie den Vor- und Nachnamen sowie die Benutzer-ID (diese ist erforderlich, da sie der Partitionsschlüssel für die horizontale Skalierung ist) zu speichern, sowie Unterklassen für die Versandeinstellungen und den Bestellverlauf.
 
-Once you have those classes created to represent your users, you'll create new user documents for each instance, and then we'll perform some simple CRUD operations on the documents.
+Nachdem Sie die Klassen, die Ihre Benutzer darstellen, erstellt haben, erstellen Sie neue Benutzerdokumente für jede Instanz und führen dann einige einfache CRUD-Operationen für die Dokumente durch.
 
-## Create documents
+## <a name="create-documents"></a>Erstellen von Dokumenten
 
-1. First, create a **User** class that represents the objects to store in Azure Cosmos DB. We will also create **OrderHistory** and **ShippingPreference** subclasses that are used within **User**. Note that documents must have an **Id** property serialized as **id** in JSON.
+1. Erstellen Sie zunächst eine **User**-Klasse, die die Objekte zum Speichern in Azure Cosmos DB darstellt. Außerdem werden die Unterklassen **OrderHistory** und **ShippingPreference** erstellt, die in **User** verwendet werden. Beachten Sie, dass Dokumente eine **Id**-Eigenschaft enthalten müssen, die in JSON als **id** serialisiert wird.
 
-    To create these classes, copy and paste the following **User**, **OrderHistory**, and **ShippingPreference** classes underneath the **BasicOperations** method.
+    Um diese Klassen zu erstellen, kopieren Sie die folgenden Klassen **User**, **OrderHistory**, **ShippingPreference** und fügen Sie unterhalb der Methode **BasicOperations** ein.
 
     ```csharp
     public class User
@@ -82,13 +82,13 @@ Once you have those classes created to represent your users, you'll create new u
     }
     ```
 
-1. In the integrated terminal, type the following command to run the program to ensure it runs.
+1. Geben Sie im integrierten Terminal den folgenden Befehl zum Ausführen des Programms ein, um die Ausführung sicherzustellen.
 
     ```csharp
     dotnet run
     ```
 
-1. Now copy and paste the **CreateUserDocumentIfNotExists** task under the **ShippingPreference** class.
+1. Kopieren Sie nun den Task **CreateUserDocumentIfNotExists**, und fügen Sie ihn unter der Klasse **ShippingPreference** ein.
 
     ```csharp
     private async Task CreateUserDocumentIfNotExists(string databaseName, string collectionName, User user)
@@ -113,7 +113,7 @@ Once you have those classes created to represent your users, you'll create new u
         }
     ```
 
-1. Then add the following to the **BasicOperations** method.
+1. Fügen Sie dann Folgendes zur Methode **BasicOperations** hinzu.
 
     ```csharp
      User yanhe = new User
@@ -192,13 +192,13 @@ Once you have those classes created to represent your users, you'll create new u
                 await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);
     ```
 
-1. In the integrated terminal, again, type the following command to run the program to ensure it runs.
+1. Geben Sie im integrierten Terminal erneut den folgenden Befehl zum Ausführen des Programms ein, um die Ausführung sicherzustellen.
 
     ```csharp
     dotnet run
     ```
 
-    The terminal displays the following output, indicating that both user records were successfully created.
+    Das Terminal zeigt die folgende Ausgabe an, die angibt, dass beide Benutzerdatensätze erfolgreich erstellt wurden.
 
     ```
     Database and collection validation complete
@@ -209,9 +209,9 @@ Once you have those classes created to represent your users, you'll create new u
     End of demo, press any key to exit.
     ```
 
-## Read documents
+## <a name="read-documents"></a>Lesen von Dokumenten
 
-1. To read documents from the database, copy in the following code and place it at the end of the Program.cs file.
+1. Um Dokumente aus der Datenbank zu lesen, kopieren Sie den folgenden Code, und fügen Sie ihn am Ende der Datei „Program.cs“ ein.
     
     ```csharp
     private async Task ReadUserDocument(string databaseName, string collectionName, User user)
@@ -235,18 +235,18 @@ Once you have those classes created to represent your users, you'll create new u
     }
     ```
 
-1.  Copy and paste the following code to the end of the **BasicOperations** method, after the `await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);` line.
+1.  Kopieren Sie den folgenden Code, und fügen Sie ihn an das Ende der **BasicOperations**-Methode nach der Zeile `await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);` ein.
 
     ```csharp
     await this.ReadUserDocument("Users", "WebCustomers", yanhe);
     ```
 
-1. Save the Program.cs file and then, in the integrated terminal, run the following command.
+1. Speichern Sie die Datei „Program.cs“, und führen Sie dann im integrierten Terminal den folgenden Befehl aus.
 
     ```
     dotnet run
     ```
-    The terminal displays the following output, where the output "Read user 1" indicates the document was retrieved.
+    Das Terminal zeigt die folgende Ausgabe an, wobei die Ausgabe „Read user 1“ angibt, dass das Dokument abgerufen wurde.
 
     ```
     Database and collection validation complete
@@ -259,11 +259,11 @@ Once you have those classes created to represent your users, you'll create new u
     End of demo, press any key to exit.
     ```
 
-## Replace documents
+## <a name="replace-documents"></a>Ersetzen von Dokumenten
 
-Azure Cosmos DB supports replacing JSON documents. In this case, we'll update a user record to account for a change to their last name.
+Azure Cosmos DB unterstützt das Ersetzen von JSON-Dokumenten. In diesem Fall wird ein Benutzerdatensatz aktualisiert, um eine Änderung an den Nachnamen zu berücksichtigen.
 
-1. Copy and paste the **ReplaceFamilyDocument** method at the end of the Program.cs file.
+1. Kopieren Sie die **ReplaceFamilyDocument**-Methode, und fügen Sie diese am Ende der Datei „Program.cs“ ein.
 
     ```csharp
     private async Task ReplaceUserDocument(string databaseName, string collectionName, User updatedUser)
@@ -287,19 +287,19 @@ Azure Cosmos DB supports replacing JSON documents. In this case, we'll update a 
     }
     ```
 
-1. Copy and paste the following code to the end of the **BasicOperations** method, after the `await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);` line.
+1. Kopieren Sie den folgenden Code, und fügen Sie ihn am Ende der **BasicOperations**-Methode nach der Zeile `await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);` ein.
 
     ```csharp
     yanhe.LastName = "Suh";
     await this.ReplaceUserDocument("Users", "WebCustomers", yanhe);
     ```
 
-1. Save the Program.cs file and then, in the integrated terminal, run the following command.
+1. Speichern Sie die Datei „Program.cs“, und führen Sie dann im integrierten Terminal den folgenden Befehl aus.
 
     ```
     dotnet run
     ```
-    The terminal displays the following output, where the output "Replaced last name for Suh" indicates the document was replaced.
+    Das Terminal zeigt die folgende Ausgabe an, wobei die Ausgabe „Replaced last name for Suh“ angibt, dass das Dokument ersetzt wurde.
 
     ```
     Database and collection validation complete
@@ -314,9 +314,9 @@ Azure Cosmos DB supports replacing JSON documents. In this case, we'll update a 
     End of demo, press any key to exit.
     ```
 
-## Delete documents
+## <a name="delete-documents"></a>Löschen von Dokumenten
 
-1. Copy and paste the **DeleteUserDocument** method underneath your **ReplaceUserDocument** method.
+1. Kopieren Sie die **DeleteUserDocument**-Methode, und fügen Sie sie unterhalb der **ReplaceUserDocument**-Methode ein.
     
     ```csharp
     private async Task DeleteUserDocument(string databaseName, string collectionName, User deletedUser)
@@ -340,19 +340,19 @@ Azure Cosmos DB supports replacing JSON documents. In this case, we'll update a 
     }
     ```
 
-1. Copy and paste the following code to your **BasicOperations** method underneath the second query execution.
+1. Kopieren Sie den folgenden Code, und fügen Sie ihn unterhalb der zweiten Abfrageausführung in die **BasicOperations**-Methode ein.
 
     ```csharp
     await this.DeleteUserDocument("Users", "WebCustomers", yanhe);
     ```
 
-1. In the integrated terminal, run the following command.
+1. Führen Sie im integrierten Terminal den folgenden Befehl aus.
 
     ```
     dotnet run
     ```
 
-    The terminal displays the following output, where the output "Deleted user 1" indicates the document was deleted.
+    Das Terminal zeigt die folgende Ausgabe an, wobei die Ausgabe „Deleted user 1“ angibt, dass das Dokument gelöscht wurde.
 
     ```
     Database and collection validation complete
@@ -368,6 +368,6 @@ Azure Cosmos DB supports replacing JSON documents. In this case, we'll update a 
     End of demo, press any key to exit.
     ```
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this unit you created, replaced, and deleted documents in your Azure Cosmos DB database.
+In dieser Einheit haben Sie Dokumente in Ihrer Azure Cosmos DB-Datenbank erstellt, ersetzt und gelöscht.

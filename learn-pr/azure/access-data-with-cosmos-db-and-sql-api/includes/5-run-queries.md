@@ -1,16 +1,16 @@
-Now that you've learned about what kinds of queries you can create, let's use the Data Explorer in the Azure portal to retrieve and filter your product data.
+Nachdem Sie gelernt haben, welche Arten von Abfragen erstellt werden können, verwenden wir nun den Daten-Explorer im Azure-Portal zum Abrufen und Filtern Ihrer Produktdaten.
 
-In your Data Explorer window, note that by default, the query on the **Document** tab is set to `SELECT * FROM c`. This default query retrieves and displays all documents in the collection.
+Beachten Sie, dass die Abfrage auf der Registerkarte **Dokument** im Fenster Ihres Daten-Explorers standardmäßig auf `SELECT * FROM c` festgelegt ist. Diese Standardabfrage ruft alle Dokumente in der Sammlung ab und zeigt sie an.
 
-![Default query in Data Explorer is SELECT * FROM c](../media/5-azure-cosmosdb-data-explorer-query.png)
+![Die Standardabfrage im Daten-Explorer ist SELECT * FROM c.](../media-draft/5-azure-cosmosdb-data-explorer-query.png)
 
-## Create a new query
+## <a name="create-a-new-query"></a>Erstellen einer neuen Abfrage
 
-1. In Data Explorer, click the **New SQL Query** tab. Note that the default query on the new  **Query 1** tab is `SELECT * from c`, and then click **Execute Query**. This query returns all results in the database.
+1. Klicken Sie im Daten-Explorer auf die Registerkarte **Neue SQL-Abfrage**. Beachten Sie, dass `SELECT * from c` die Standardabfrage auf der neuen Registerkarte **Abfrage 1** ist, und klicken Sie dann auf **Abfrage ausführen**. Diese Abfrage gibt alle Ergebnisse in der Datenbank zurück.
 
-    ![Change the default query by adding ORDER BY c._ts DESC and clicking Apply Filter](../media/5-azure-cosmosdb-data-explorer-edit-query.png)
+    ![Ändern Sie die Standardabfrage, indem Sie ORDER BY c._ts DESC hinzufügen und auf „Filter anwenden“ klicken.](../media-draft/5-azure-cosmosdb-data-explorer-edit-query.png)
 
-2. Now, let's run some of the queries discussed in the previous unit. On the query tab, delete `SELECT * from c`, copy and paste the following query, and then click **Execute Query**:
+2. Lassen Sie uns jetzt einige der in der vorherigen Einheit erörterten Abfragen ausführen. Löschen Sie `SELECT * from c` auf der Registerkarte „Abfrage“, kopieren Sie die folgende Abfrage, fügen Sie diese ein, und klicken Sie dann auf **Abfragen ausführen**.
 
     ```
     SELECT *
@@ -18,11 +18,11 @@ In your Data Explorer window, note that by default, the query on the **Document*
     WHERE p.id ="1"
     ```
 
-    The results return the product whose `productId` is 1.
+    Die Ergebnisse geben das Produkt zurück, dessen `productId` 1 ist.
 
-    ![Change the default query by adding ORDER BY c._ts DESC and clicking Apply Filter](../media/5-azure-cosmosdb-data-explorer-query-by-id.png)
+    ![Ändern Sie die Standardabfrage, indem Sie ORDER BY c._ts DESC hinzufügen und auf „Filter anwenden“ klicken.](../media-draft/5-azure-cosmosdb-data-explorer-query-by-id.png)
 
-3. Delete the previous query, copy and paste the following query, and click **Execute Query**. This query returns the price, description, and product ID for all products, ordered by price, in ascending order.
+3. Löschen Sie die vorherige Abfrage, kopieren Sie die folgende Abfrage, fügen Sie diese ein, und klicken Sie dann auf **Abfrage ausführen**. Diese Abfrage gibt in aufsteigender Reihenfolge und nach dem Preis sortiert den Preis, die Beschreibung und die Produkt-ID für alle Produkte zurück.
  
     ```
     SELECT p.price, p.description, p.productId
@@ -30,6 +30,6 @@ In your Data Explorer window, note that by default, the query on the **Document*
     ORDER BY p.price ASC
     ```
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-You have now completed some basic queries on your data in Azure Cosmos DB. 
+Sie haben nun einige grundlegende Abfragen für Ihre Daten in Azure Cosmos DB abgeschlossen. 

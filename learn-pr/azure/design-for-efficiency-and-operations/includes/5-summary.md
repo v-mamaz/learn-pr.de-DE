@@ -14,7 +14,7 @@ Anschließend wurden die Einblicke in den Betrieb beschrieben, die Sie durch das
 
 Schließlich wurde erläutert, dass es verschiedene Möglichkeiten gibt, Aufgaben zu automatisieren und die Funktionen für Ihre Organisation zu verbessern. Nachfolgend werden einige der wichtigsten Punkte zusammengefasst, die thematisiert wurden:
 
-- Zwei Ansätze zur Bereitstellung von Ressourcen: der imperative Ansatz (Skripterstellung) und der deklarative Ansatz (Vorlagen).
-- Nach der Bereitstellung der VM kann geprüft werden, wie diese angepasst werden kann. Einerseits können Sie benutzerdefinierte Images verwenden und so vermeiden, dass überhaupt Anpassungen notwendig sind. Andererseits können Sie nach der Bereitstellung ein Skript ausführen.
-- Automatisieren von Azure-Aufgaben: Azure Automation leistet Unterstützung beim Installieren von Updates oder beim geplanten Herunterfahren von VMs.
-- Automatisieren von Laborumgebungen: Azure DevTest Labs geht im Hinblick auf die Automatisierung einen Schritt weiter und stellt eine einfach zu verwendende Schnittstelle bereit, die es Ihnen ermöglicht, verschiedene Automatisierungsfunktionen wie Images oder das Herunterfahren von VMs zu verwenden, ohne sich Sorgen machen zu müssen, wie diese Aufgaben implementiert werden.
+- **Zwei Ansätze zum Automatisieren der Bereitstellung von Ressourcen:** der imperative Ansatz (Skripterstellung) und der deklarative Ansatz (Vorlagen).
+- **Nach der Bereitstellung des virtuelle Computer kann geprüft werden, wie dieser angepasst werden kann.** Einerseits können Sie benutzerdefinierte Images verwenden und so vermeiden, dass überhaupt Anpassungen notwendig sind. Andererseits können Sie nach der Bereitstellung ein Skript ausführen.
+- **Automatisieren von Azure-Aufgaben:** Azure Automation leistet Unterstützung beim Installieren von Updates oder beim geplanten Herunterfahren von virtuellen Computern.
+- **Automatisieren von Laborumgebungen:** Azure DevTest Labs geht im Hinblick auf die Automatisierung einen Schritt weiter und stellt eine einfach zu verwendende Schnittstelle bereit, die es Ihnen ermöglicht, verschiedene Automatisierungsfunktionen wie Images oder das Herunterfahren von virtuellen Computern zu verwenden, ohne sich Sorgen machen zu müssen, wie diese Aufgaben implementiert werden.

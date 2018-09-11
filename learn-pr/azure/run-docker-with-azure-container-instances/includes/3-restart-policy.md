@@ -1,24 +1,24 @@
-The ease and speed of deploying containers in Azure Container Instances provides a compelling platform for executing run-once tasks like build, test, and image rendering in a container instance.
+Da Container in Azure Container Instances sehr schnell und bequem bereitgestellt werden können, ist dies eine ideale Plattform zum Ausführen von einmaligen Aufgaben, wie dem Erstellen, Testen und Rendern von Images in einer Containerinstanz.
 
-With a configurable restart policy, you can specify that your containers are stopped when their processes have completed. Because container instances are billed by the second, you're charged only for the compute resources used while the container executing your task is running.
+Mit einer konfigurierbaren Neustartrichtlinie können Sie angeben, dass Container nach dem Abschluss ihrer Prozesse beendet werden. Da Containerinstanzen nach Sekunden abgerechnet werden, fallen nur Gebühren für die Computerressourcen an, die beim Ausführen des Containers verwendet werden, der Ihre Aufgabe ausführt.
 
-## Container restart policies
+## <a name="container-restart-policies"></a>Neustartrichtlinien für Container
 
-When you create a container in Azure Container Instances, you can specify one of three restart policy settings:
+Wenn Sie in Azure Container Instances einen Container erstellen, können Sie eine von drei Einstellungen für Neustartrichtlinien festlegen:
 
-| Restart policy   | Description |
+| Neustartrichtlinie   | Beschreibung |
 | ---------------- | :---------- |
-| `Always` | Containers in the container group are always restarted. This is the **default** setting applied when no restart policy is specified at container creation. |
-| `Never` | Containers in the container group are never restarted. The containers run at most once. |
-| `OnFailure` | Containers in the container group are restarted only when the process executed in the container fails (when it terminates with a nonzero exit code). The containers are run at least once. |
+| `Always` | Container in der Containergruppe werden immer neu gestartet. Dies ist die **Standardeinstellung**, wenn beim Erstellen des Containers keine Neustartrichtlinie angegeben wird. |
+| `Never` | Container in der Containergruppe werden nie neu gestartet. Die Container werden höchstens einmal ausgeführt. |
+| `OnFailure` | Container in der Containergruppe werden nur dann neu gestartet, wenn bei dem im Container ausgeführten Prozess ein Fehler auftritt (wenn er also mit einem Exitcode ungleich 0 beendet wird). Die Container werden mindestens einmal ausgeführt. |
 
-In the previous unit of this module, a container was created without a specified restart policy. By default, this container received the *Always* restart policy. Because the workload in the container is long running (a web server), this policy makes sense.
+In der vorherigen Einheit dieses Moduls wurde ein Container ohne Angabe einer Neustartrichtlinie erstellt. Die Standardeinstellung der Neustartrichtlinie für diesen Container lautete *Always*. Diese Richtlinie ist sinnvoll, da die Arbeitsauslastung im Container eine lange Ausführungsdauer aufweist (ein Webserver).
 
-## Run to completion
+## <a name="run-to-completion"></a>Ausführen bis zum Abschluss
 
-To see the restart policy in action, create a container instance from the *microsoft/aci-wordcount* image and specify the *OnFailure* restart policy. This example container runs a Python script that analyzes the text of Shakespeare's Hamlet, writes the 10 most common words to STDOUT, and then exits.
+Wenn Sie die Richtlinie für den Neustart in der Praxis sehen möchten, erstellen Sie eine Containerinstanz aus dem Image *microsoft/aci-wordcount*, und geben Sie die Neustartrichtlinie *OnFailure* an. Bei diesem Beispielcontainer wird ein Python-Skript ausgeführt, das den Text von Shakespeares „Hamlet“ analysiert, die zehn häufigsten Wörter in STDOUT schreibt und dann beendet wird.
 
-Run the example container with the following `az container create` command:
+Führen Sie den Beispielcontainer mit dem folgenden `az container create`-Befehl aus:
 
 ```azureclu
 az container create \
@@ -28,9 +28,9 @@ az container create \
     --restart-policy OnFailure
 ```
 
-Azure Container Instances starts the container and then stops it when its application (or script, in this case) exits. When Azure Container Instances stops a container whose restart policy is *Never* or *OnFailure*, the container's status is set to **Terminated**.
+Azure Container Instances startet den Container und beendet ihn, wenn die Anwendung (oder wie in diesem Fall das Skript) beendet wird. Wenn Azure Container Instances einen Container beendet, dessen Neustartrichtlinie *Never* oder *OnFailure* lautet, wird der Status des Containers auf **Beendet** festgelegt.
 
-You can check a container's status with the `az container show` command:
+Sie können den Status des Containers mit dem Befehl `az container show` überprüfen:
 
 ```azurecli
 az container show \
@@ -39,13 +39,13 @@ az container show \
     --query containers[0].instanceView.currentState.state
 ```
 
-Once the example container's status shows **Terminated**, you can see its task output by viewing the container logs. Run the **az container logs** command to view the script's output:
+Sobald der Status des Beispielcontainers **Beendet** lautet, können Sie die Taskausgabe in den Containerprotokollen anzeigen. Führen Sie den Befehl **az container logs** aus, um die Ausgabe des Skripts anzuzeigen:
 
 ```azurecli
 az container logs --resource-group myResourceGroup --name mycontainer-restart-demo
 ```
 
-Output:
+Ausgabe:
 
 ```bash
 [('the', 990),
@@ -60,8 +60,8 @@ Output:
  ('HAMLET', 386)]
 ```
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this unit, you created a container instance with a restart policy of *OnFailure*. This configuration works well for containers that run short-lived tasks.
+In dieser Einheit haben Sie eine Containerinstanz mit der Neustartrichtlinie *OnFailure* erstellt. Diese Konfiguration eignet sich für Container mit kurzlebigen Aufgaben.
 
-In the next unit, you will set environment variables in Azure Container Instances.
+In der nächsten Einheit erfahren Sie, wie Umgebungsvariablen in Azure Container Instances festgelegt werden.

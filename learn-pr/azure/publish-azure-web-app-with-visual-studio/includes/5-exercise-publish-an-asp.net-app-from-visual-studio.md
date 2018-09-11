@@ -1,73 +1,73 @@
-You now have a local running ASP.NET Core web application. In this unit, you'll publish your application to Azure App Service.
+Sie verfügen nun über eine lokal ausgeführte ASP.NET Core-Webanwendung. In dieser Einheit veröffentlichen Sie Ihre Anwendung in Azure App Service.
 
-### Visual Studio for Windows
+### <a name="visual-studio-for-windows"></a>Visual Studio für Windows
 
-1. In Solution Explorer, right-click your project and select **Publish**.
+1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf Ihr Projekt, und wählen Sie **Veröffentlichen** aus.
 
-1. In the dialog box that appears, on the left, choose **App Service** as your publish target.  On the right, select **Create New** to create a new app service.
+1. Wählen Sie im angezeigten Dialogfeld auf der linken Seite **App Service** als Veröffentlichungsziel aus.  Zum Erstellen eines neuen App-Diensts wählen Sie rechts **Neu erstellen** aus.
 
-1. Click the **Publish** button to create your new app service.
+1. Klicken Sie auf die Schaltfläche **Veröffentlichen**, um Ihren neuen App-Dienst zu erstellen.
 
 > [!NOTE]
-> When you deploy your apps, you can create a new App Service plan or you can continue to add apps to an existing plan. For this exercise, you will create a new **Azure app service**.
+> Wenn Sie Ihre Apps bereitstellen, können Sie einen neuen App Service-Plan erstellen oder weiterhin Apps zu einem bestehenden Plan hinzufügen. Für diese Übung erstellen Sie eine neue **Azure App Service**-Instanz.
 
-### Visual Studio Mac
+### <a name="visual-studio-mac"></a>Visual Studio für Mac
 
-1. In Solution Explorer, right-click your project.
+1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf Ihr Projekt.
 
-1. Select **Publish**.
+1. Wählen Sie **Veröffentlichen** aus.
 
-1. Click **Publish to Azure**. This will connect to your Azure account. It may take a few minutes to connect and list your current services.
+1. Klicken Sie auf **Veröffentlichen in Azure**. Dadurch wird eine Verbindung mit Ihrem Azure-Konto hergestellt. Es kann einige Minuten dauern, bis die Verbindung hergestellt ist und Ihre aktuellen Dienste aufgelistet sind.
 
-1. Click **New** to create a new app service.
+1. Klicken Sie auf **Neu**, um einen neuen App-Dienst zu erstellen.
 
-## Configure your new Azure App Service
+## <a name="configure-your-new-azure-app-service"></a>Konfigurieren Ihrer neuen Azure App Service-Instanz
 
-1. In the **Create App Service dialog** box, click **Add an account**, and sign in to your Azure subscription. If you're already signed in, select the account containing the desired subscription from the drop-down menu.
+1. Klicken Sie im Dialogfeld **App Service erstellen** auf **Konto hinzufügen**, und melden Sie sich bei Ihrem Azure-Abonnement an. Falls Sie bereits angemeldet sind, können Sie im Dropdownmenü das Konto mit dem gewünschten Abonnement auswählen.
 
-1. Enter the required information about your App Service plan.
+1. Geben Sie die erforderlichen Informationen zu Ihrem App Service-Plan ein.
 
-    ![Create App Service](../media-draft/5-CreateAppService.png)
+    ![Erstellen einer App Service-Instanz](../media-draft/5-CreateAppService.png)
 
-    In the **Create App Service** dialog box, you will provide the following information:
+    Geben Sie im Dialogfeld **App Service erstellen** folgende Informationen an:
 
-    - **App Name**: This is the name of your application.  This will determine the URL of the published application, which will be https://_AppName_.azurewebsites.net.  It has to be a unique value. Therefore, you will have to try out some different names to find one that is not reserved.
+    - **App-Name**: Dies ist der Name Ihrer Anwendung.  Mit ihm wird die URL der veröffentlichten Anwendung festgelegt, die https://_App-Name_.azurewebsites.net lauten wird.  Der eingegebene Wert muss eindeutig sein. Daher müssen Sie verschiedene Namen ausprobieren, um einen noch nicht reservierten Namen zu finden.
 
-    - **Subscription**: The Azure subscription you wish to deploy the app service to.
+    - **Abonnement**: Das Azure-Abonnement, für das Sie den App-Dienst bereitstellen möchten.
 
-    - **Resource Group:** Click the **New...** button next to the resource group, and enter a unique name for the resource group.
+    - **Ressourcengruppe**: Klicken Sie neben der Ressourcengruppe auf die Schaltfläche **Neu...**, und geben Sie einen eindeutigen Namen für die Ressourcengruppe ein.
 
-        ![New Resource Group](../media-draft/5-NewResourceGroup.png)
+        ![Neue Ressourcengruppe](../media-draft/5-NewResourceGroup.png)
 
-    - **Hosting Plan:** The hosting plan specifies the location, size, and features of the web server farm that hosts your app. You can select an existing hosting plan or create a new one. For this exercise, you will create a new one.
+    - **Hostingplan**: Der Hostingplan gibt den Standort, die Größe und die Funktionen der Webserverfarm an, die Ihre App hostet. Sie können einen vorhandenen Hostingplan auswählen oder einen neuen Plan erstellen. Für diese Übung erstellen Sie einen neuen Plan.
 
-        Click the **New...** button next to the hosting plan.
+        Klicken Sie neben dem Hostingplan auf die Schaltfläche **Neu...** .
 
-        ![New Hosting Plan](../media-draft/5-NewHostingPlan.png)
+        ![Neuer Hostingplan](../media-draft/5-NewHostingPlan.png)
 
-        Give your hosting plan a name, and then specify the location and the size.  
+        Benennen Sie Ihren Hostingplan, und geben Sie dann den Speicherort und die Größe an.  
         
         > [!NOTE]
-        > Specifying different locations and sizes will impact the cost of the service. For the exercise, it is recommended that you specify the **Free** size, which will ensure you won't incur any costs.
+        > Die Angabe unterschiedlicher Standorte und Größen wirkt sich auf die Kosten für den Dienst aus. Für diese Übung wird empfohlen, die Größe auf **Free** festzulegen, um sicherzustellen, dass Ihnen keine Kosten entstehen.
 
-    - **Application Insights:** Specifies if you want to use Application Insights for your application. For this exercise, we recommend that you choose **None.**
+    - **Application Insights**: Gibt an, ob Sie Application Insights für Ihre Anwendung verwenden möchten. Für diese Übung wird empfohlen, **None** (Keine) auszuwählen.
 
-1. Click the **Create** button to start provisioning your app service. You will see progress as it deploys:
+1. Klicken Sie auf die Schaltfläche **Erstellen**, um die Bereitstellung Ihres App-Diensts zu starten. Während der Bereitstellung wird der Fortschritt angezeigt:
 
-    ![Deploy Progress](../media-draft/5-DeployProgress.png)
+    ![Fortschritt der Bereitstellung](../media-draft/5-DeployProgress.png)
 
-1. Once the app service is provisioned, Visual Studio will build and deploy your web app.  In your Visual Studio build output, you can see the output of the deployment.
+1. Sobald der App-Dienst verfügbar ist, wird Visual Studio Ihre Web-App erstellen und bereitstellen.  In der von Visual Studio kompilierten Ausgabe wird die Ausgabe der Bereitstellung angezeigt.
 
-    ![Publish Result](../media-draft/5-PublishResult.png)
+    ![Veröffentlichen des Ergebnisses](../media-draft/5-PublishResult.png)
 
-1. Congratulations, your ASP.NET Core web application is now published and live. You will be able to see the final URL for your site in the build output and also on the publishing page in Visual Studio.
+1. Herzlichen Glückwunsch, Ihre ASP.NET Core-Webanwendung ist nun veröffentlicht und online verfügbar. Sie können die endgültige URL für Ihre Website in der kompilierten Ausgabe und auch auf der Veröffentlichungsseite in Visual Studio sehen.
 
-    ![Publish Result](../media-draft/5-PublishPage.png)
+    ![Veröffentlichen des Ergebnisses](../media-draft/5-PublishPage.png)
 
-1. To test your website, go to the URL indicated.
+1. Um Ihre Website zu testen, öffnen Sie die angegebene URL.
 
-    ![Live Site](../media-draft/5-WebPageLive.png)
+    ![Livewebsite](../media-draft/5-WebPageLive.png)
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-This exercise demonstrated the process of provisioning an Azure app service and deploying an ASP.NET Core web application. You now have a live web app.
+Diese Übung veranschaulichte den Prozess der Bereitstellung einer Azure App Service-Instanz und einer ASP.NET Core-Webanwendung. Sie verfügen nun über eine Livewebanwendung.

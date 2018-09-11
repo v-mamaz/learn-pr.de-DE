@@ -1,53 +1,54 @@
 ### YamlMime:ModuleUnit
 uid: learn.interactive-deep-learning.3q-docker
-title: Knowledege Check
+title: Wissensüberprüfung
 metadata:
-  title: Knowledege Check
-  description: Docker + Deep Learning Knowledege Check
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: Wissensüberprüfung
+  description: Wissensüberprüfung zu Docker und Deep Learning
+  displayType: one-column
+  ms.openlocfilehash: 1327473f4e03e1d186b07e110c14c3439d7acb3b
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43835193"
 durationInMinutes: 2
-content: Answer the following to continue
+content: Beantworten Sie die folgenden Fragen, um fortzufahren
 quiz:
-  title: 'Docker Deep Learning Quiz'
+  title: Docker-Deep Learning-Quiz
   questions:
-  - content: 'What is CUDA?'
+  - content: Was ist CUDA?
     choices:
-    - content: CUDA is a parallel computing platform and API.
+    - content: CUDA ist eine Plattform und API für paralleles Computing.
       isCorrect: true
-    - content: CUDA is a super powerful GPU model provided by Nvidia and nicknamed after a famous hotrod from the 60s.
+    - content: CUDA ist ein extrem leistungsstarkes GPU-Modell von Nvidia, das nach einem berühmten Hotrod aus den 60er-Jahren benannt ist.
       isCorrect: false
-    - content: CUDA is a deep learning architecture used for image classification.
+    - content: CUDA ist eine Deep Learning-Architektur, die für die Bildklassifizierung verwendet wird.
       isCorrect: false
-  - content: 'What is docker?'
+  - content: Was ist Docker?
     choices:
-    - content: Docker is a framework for training neural networks.
+    - content: Docker ist ein Framework für das Trainieren von neuronalen Netzen.
       isCorrect: false
-    - content: Docker is an open platform distributed applications.
-      correctExplanation: Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
+    - content: Docker ist eine offene Plattform für verteilte Anwendungen.
+      correctExplanation: Docker ist eine offene Plattform für Entwickler und Systemadministratoren zum Erstellen, Ausliefern und Ausführen von verteilten Anwendungen, gleich ob auf Laptops, VMs in Rechenzentren oder in der Cloud.
       isCorrect: true
-    - content: Docker is a platform for webapps.
+    - content: Docker ist eine Plattform für Web-Apps.
       isCorrect: false
-  - content: 'What is the main difference between Nvidia-Docker and Docker?'
+  - content: Was ist der wichtigste Unterschied zwischen Nvidia-Docker und Docker?
     choices:
-    - content: Docker runs on windows and Nvidia-Docker runs only on linux.
+    - content: Docker wird unter Windows ausgeführt, während Nvidia-Docker nur unter Linux ausgeführt wird.
       isCorrect: false
-      incorrectExplanation: While this answer is correct, it is not the main difference.
-    - content: Nvidia Docker provides support for Nvidia GPUs where as a Docker supports only CPUs
+      incorrectExplanation: Diese Antwort ist zwar richtig, stellt aber nicht den wichtigsten Unterschied dar.
+    - content: NVIDIA-Docker bietet Unterstützung für Nvidia-GPUs, während Docker nur CPUs unterstützt.
       isCorrect: true
-    - content: Docker supports all GPUs Nvidia-Docker is more light weight since it only needs ot support Nvidia GPUs.
+    - content: Docker unterstützt alle GPUs, während Nvidia-Docker schlanker ist, da es nur Nvidia-GPUs unterstützen muss.
       isCorrect: false
-  - content: 'What is one of the main dependency challenges faced when using the DSVM?'
+  - content: Was ist im Hinblick auf Abhängigkeiten eine der größten Herausforderungen beim Verwenden der DSVM?
     choices:
-    - content: The DSVM is sandboxed and doesn't provide direct support for installing new packages.
-      incorrectExplanation: DSVMs are Azure Virtual Machine images, pre-installed, configured, and tested with several popular tools that are commonly used for data analytics, machine learning, and deep learning training, they are customizable.
+    - content: Die DSVM wird in einer Sandbox ausgeführt und bietet keine direkte Unterstützung für das Installieren neuer Pakete.
+      incorrectExplanation: DSVMs sind Images für virtuelle Azure-Computer, die mit verschiedenen beliebten Tools vorinstalliert, konfiguriert und getestet wurden. Diese Images werden häufig in den Bereichen Datenanalyse, maschinelles Lernen und Deep Learning-Training eingesetzt und sind anpassbar.
       isCorrect: false
-    - content: The DSVM only supports CNTK and Cognitive Service dependencies.
-      incorrectExplanation: DSVMs provide out of the box support for many popular frameworks such as PyTorch, Chainer, and Tensorflow.
+    - content: Die DSVM unterstützt nur Abhängigkeiten zu CNTK und Cognitive Service.
+      incorrectExplanation: DSVMs bieten standardmäßig Unterstützung für viele beliebte Frameworks, wie PyTorch, Chainer und Tensorflow.
       isCorrect: false
-    - content: Certain deep learning frameworks and packages require different enviorments, GPU drivers and binary packages
+    - content: Bestimmte Deep Learning-Frameworks und -Pakete erfordern verschiedene Umgebungen, GPU-Treiber und Binarypakete.
       isCorrect: true

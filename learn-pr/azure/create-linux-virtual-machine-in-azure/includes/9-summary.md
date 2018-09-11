@@ -1,22 +1,21 @@
-In this module, you learned how to create a Linux VM using the Azure portal. You then connected to the public IP address of the VM and managed it with an SSH connection. 
+In diesem Modul haben Sie gelernt, wie Sie mithilfe des Azure-Portals einen virtuellen Linux-Computer erstellen. Anschließend haben Sie eine Verbindung mit der öffentlichen IP-Adresse dieses virtuellen Computers hergestellt und ihn mit einer SSH-Verbindung verwaltet. 
 
-You learned that while SSH allows us to interact with the operating system and software of the virtual machine, the portal will enable us to configure the virtual hardware and connectivity. We also could have used PowerShell or the Azure CLI, if a command-line or scriptable environment were preferred.
+Sie haben gelernt, dass SSH eine Interaktion mit dem Betriebssystem und der Software des virtuellen Computers ermöglicht, während das Portal eine Konfiguration der virtuellen Hardware und der Konnektivität ermöglicht. Wenn eine Befehlszeile oder eine skriptfähige Umgebung bevorzugt gewesen wäre, hätten wir auch PowerShell oder die Azure CLI verwenden können.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up-the-resources"></a>Bereinigen der Ressourcen
 
-You are charged for VMs while they run and for the storage based on how much you use. Always stop and deallocate VMs when you aren't using them, and when you no longer need the resources, it's a good idea to delete them. To remove all the resources that you created, you can delete them one by one or delete the resource group:
+Sie bezahlen für virtuelle Computer, während diese ausgeführt werden und für den verwendeten Speicherplatz. Wenn Sie virtuelle Computer nicht benutzen, sollten Sie diese immer beenden und deren Zuordnung aufheben. Außerdem ist es ratsam, nicht mehr benötigte Ressourcen zu löschen. Um alle von Ihnen erstellte Ressourcen zu entfernen, können Sie diese entweder nacheinander oder die gesamte Ressourcengruppe löschen.
 
-1. Sign in to the Azure portal.
+1. Melden Sie sich beim Azure-Portal an.
 
-1. On the left menu, select **All Services**.
+1. Wählen Sie im Menü links **Alle Dienste** aus.
 
-1. Select **Resource Groups**.
+1. Klicken Sie auf **Ressourcengruppen**.
 
-1. Find the resource group that you created in the first exercise. Click the ellipsis (...) on the right side of the list view.
+1. Suchen Sie nach der Ressourcengruppe, die Sie in der ersten Übung erstellt haben. Klicken Sie auf die Auslassungspunkte (...) rechts neben der Listenansicht.
 
-1. Select **Delete resource group**.
+1. Klicken Sie auf die Option **Ressourcengruppe löschen**.
 
-1. On the next screen, enter the resource group name to confirm the deletion.
+1. Geben Sie auf dem nächsten Bildschirm den Namen der Ressourcengruppe ein, um den Löschvorgang zu bestätigen.
 
-1. Click **Delete**.
+1. Klicken Sie auf **Löschen**.

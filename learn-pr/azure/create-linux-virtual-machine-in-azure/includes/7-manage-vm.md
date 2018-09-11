@@ -1,50 +1,52 @@
-Making adjustments to server configuration is commonly performed with equipment in your on-premises environment. In this sense, you can consider Azure VMs to be an extension of that environment. You can alter configuration, manage networks, open or block traffic, and more through the Azure portal, the Azure CLI, or Azure PowerShell tools.
+In der Regel werden Änderungen an Serverkonfigurationen mithilfe von Geräten in Ihrer lokalen Umgebung vorgenommen. In diesem Zusammenhang können virtuelle Azure-Computer als eine Erweiterung dieser Umgebung angesehen werden. Sie können über das Azure-Portal, die Azure CLI oder Azure PowerShell-Tools die Konfiguration ändern, Netzwerke verwalten, den Datenverkehr öffnen oder blockieren und vieles mehr.
 
-We've got our server running, and Apache is installed and serving up pages. Our security team mandates that we lock down all our servers, and we've not done anything to this VM yet. We didn't do anything, and it let Apache listen on port 80. Let's explore the Azure network configuration to see how to use the built-in security support to harden our server.
+Unser Server wird ausgeführt, und Apache ist installiert und stellt Seiten zur Verfügung. Unser Sicherheitsteam verlangt, dass wir alle unsere Server sperren, und wir haben für diesen virtuellen Computer noch keine derartige Aktion ausgeführt. Der Datenverkehr war geöffnet, und Apache hat an Port 80 gelauscht. Lassen Sie uns die Azure-Netzwerkkonfiguration untersuchen, um zu sehen, wie Sie die integrierte Sicherheitsunterstützung nutzen können, um unseren Server zu schützen.
 
-## Opening ports in Azure VMs
+## <a name="opening-ports-in-azure-vms"></a>Öffnen von Ports in virtuellen Azure-Computern
 
-<!-- TODO: The Azure portal is inconsistent here in applying the NSG. By default, new VMs are locked down. 
+<!-- TODO: Azure portal is inconsistent here in applying the NSG.
+By default, new VMs are locked down. 
 
-Apps can make outgoing requests, but the only inbound traffic allowed is from the virtual network (e.g., other resources on the same local network) and from Azure Load Balancer (probe checks). -->
+Apps can make outgoing requests, but the only inbound traffic allowed is from the virtual network (e.g., other resources on the same local network), and from Azure's Load Balancer (probe checks). -->
 
-There are two steps to adjusting the configuration to support different protocols on the network. When you create a new VM, you have an opportunity to open a few common ports (RDP, HTTP, HTTPS, and SSH). However, if you require other changes to the firewall, you will need to adjust them manually.
+Die Anpassung der Konfiguration für die Unterstützung verschiedener Protokolle im Netzwerk erfolgt in zwei Schritten. Wenn Sie einen neuen virtuellen Computer erstellen, können Sie einige häufig verwendete Ports öffnen (RDP, HTTP, HTTPS und SSH). Wenn Sie allerdings andere Änderungen an der Firewall vornehmen müssen, müssen Sie diese manuell anpassen.
 
-The process for this involves two steps:
+Dieser Vorgang umfasst zwei Schritte:
 
-1. Create a network security group.
-2. Create an inbound rule allowing traffic on the ports you need.
+1. Erstellen einer Netzwerksicherheitsgruppe
 
-### What is a network security group?
+1. Erstellen einer Regel für eingehenden Datenverkehr, die Datenverkehr an den benötigten Ports zulässt
 
-Virtual networks (VNets) are the foundation of the Azure networking model and provide isolation and protection. Network security groups (NSGs) are the primary tool you use to enforce and control network traffic rules at the networking level. NSGs are an optional security layer that provides a software firewall by filtering inbound and outbound traffic on the VNet. 
+### <a name="what-is-a-network-security-group"></a>Was ist eine Netzwerksicherheitsgruppe?
 
-Security groups can be associated to a network interface (for per host rules), a subnet in the virtual network (to apply to multiple resources), or both levels. 
+Virtuelle Netzwerke (VNETs) sind die Grundlage des Azure-Netzwerkmodells und stellen Isolation und Schutz bereit. Netzwerksicherheitsgruppen sind das wichtigste Tool zum Erzwingen und Überwachen von Regeln zum Netzwerkdatenverkehr auf Netzwerkebene. Sie stellen eine optionale Sicherheitsebene dar, die eine Softwarefirewall bereitstellt, indem sie eingehenden und ausgehenden Datenverkehr für das VNET filtert. 
 
-#### Security group rules
+Außerdem können Sicherheitsgruppen einer Netzwerkschnittstelle (für hostspezifische Regeln), einem Subnetz im virtuellen Netzwerk (um auf mehrere Ressourcen angewendet zu werden) oder beiden Ebenen zugeordnet werden. 
 
-NGSs use _rules_ to allow or deny traffic moving through the network. Each rule identifies the source and destination address (or range), protocol, port (or range), direction (inbound or outbound), a numeric priority, and whether to allow or deny the traffic that matches the rule.
+#### <a name="security-group-rules"></a>Regeln für Sicherheitsgruppen
 
-![An illustration showing the architecture of network security groups in two different subnets. In one subnet, there are two virtual machines, each with their own network interface rules.  The subnet itself has a set of rules that applies to both the virtual machines. ](../media/7-nsg-rules.png)
+Netzwerksicherheitsgruppen verwenden _Regeln_, um Datenverkehr im Netzwerk zuzulassen oder zu blockieren. Jede Regel erkennt die Quell- und Zieladresse (oder den Bereich), das Protokoll, den Port (oder den Bereich), die Richtung (eingehend oder ausgehend) sowie eine numerische Priorität und stellt fest, ob Datenverkehr, der der Regel entspricht, zugelassen oder blockiert wird. Die folgende Abbildung zeigt NSG-Regeln, die auf den Subnetz- und Netzwerkschnittstellenebenen angewendet werden.
 
-Each security group has a set of default security rules to apply the default network rules described above. These default rules cannot be modified but _can_ be overridden.
+![Eine Abbildung, die die Architektur von Netzwerksicherheitsgruppen in zwei verschiedenen Subnetzen zeigt. In einem Subnetz sind zwei virtuelle Computer mit jeweils eigenen Netzwerkschnittstellenregeln vorhanden.  Das Subnetz selbst verfügt über einen Satz von Regeln, die für beide virtuelle Computer gelten. ](../media-drafts/7-nsg-rules.png)
 
-#### How Azure uses network rules
+Jede Sicherheitsgruppe verfügt über einen Satz von Standardsicherheitsregeln, um die oben beschriebenen Standardnetzwerkregeln anzuwenden. Diese Standardregeln können zwar nicht verändert, aber sie können _überschrieben_ werden.
 
-For inbound traffic, Azure processes the security group associated to the subnet and then the security group applied to the network interface. Outbound traffic is handled in the opposite order (the network interface first, followed by the subnet).
+#### <a name="how-azure-uses-network-rules"></a>So verwendet Azure Netzwerkregeln
 
-> [!WARNING]  
-> Keep in mind that security groups are optional at both levels. If no security group is applied, then **all traffic is allowed** by Azure. If the VM has a public IP, this could be a serious risk, particularly if the OS doesn't provide a built-in firewall.
+Für eingehenden Datenverkehr verarbeitet Azure zuerst die Sicherheitsgruppe, die dem Subnetz zugeordnet ist, und anschließend die Sicherheitsgruppe, die der Netzwerkschnittstelle zugeordnet ist. Ausgehender Datenverkehr wird in umgekehrter Reihenfolge verarbeitet (zuerst die Netzwerkschnittstelle, gefolgt vom Subnetz).
 
-The rules are evaluated in _priority order_, starting with the **lowest priority** rule. Deny rules always **stop** the evaluation. For example, if a network interface rule blocks an outbound request, any rules applied to the subnet will not be checked. For traffic to be allowed through the security group, it must pass through _all_ applied groups.
+> [!WARNING]
+> Beachten Sie, dass Sicherheitsgruppen auf beiden Ebenen optional sind. Wenn keine Sicherheitsgruppe verwendet wird, lässt Azure **sämtlichen Datenverkehr** zu. Wenn der virtuelle Computer über eine öffentliche IP-Adresse verfügt, kann dies ein ernsthaftes Risiko darstellen, insbesondere wenn das Betriebssystem keine integrierte Firewall zur Verfügung stellt.
 
-The last rule is always a **Deny All** rule. This is a default rule added to every security group for both inbound and outbound traffic with a priority of 65500. That means to have traffic pass through the security group, _you must have an allow rule_, or the final default rule will block it.
+Die Regeln werden je nach _Priorität_ bewertet, angefangen bei der Regeln mit der **niedrigsten Priorität**. Ablehnungsregeln **beenden** die Auswertung immer. Wenn eine Netzwerkschnittstellenregel beispielsweise eine ausgehende Anforderung blockiert, werden alle auf das Subnetz angewandten Regeln nicht überprüft. Damit die Sicherheitsgruppe Datenverkehr zulässt, muss er _alle_ angewendeten Gruppen durchlaufen.
 
-> [!NOTE]  
-> SMTP (port 25) is a special case. Depending on your subscription level and when your account was created, outbound SMTP traffic may be blocked. You can request to remove this restriction with business justification.
+Die letzte Regel ist immer eine **Alle Ablehnen**-Regel. Es handelt sich dabei um eine Standardregel, die sämtlichen Sicherheitsregeln für eingehenden und ausgehenden Datenverkehr mit einer Priorität von 65500 hinzugefügt wird. Dies bedeutet, dass der Datenverkehr die Sicherheitsgruppe durchlaufen muss, und _Sie müssen über eine Zulassungsregel verfügen_. Andernfalls wird er von der letzten Standardregel blockiert.
 
-Since we didn't create a security group for this VM, let's do that and apply it.
+> [!NOTE]
+> SMTP (Port 25) ist ein Sonderfall. Abhängig von Ihrer Abonnementstufe und dem Erstelldatum Ihres Kontos wird ausgehender SMTP-Datenverkehr möglicherweise blockiert. Sie können einen Antrag auf Entfernen dieser Einschränkung stellen, wenn Sie dies geschäftlich begründen können.
 
-## Creating network security groups
+Da wir keine Sicherheitsgruppe für diesen virtuellen Computer erstellt haben, holen wird dies jetzt nach und wenden die Sicherheitsgruppe auch an.
 
-Security groups are managed resources like most everything in Azure; you can create them in the Azure portal or through command-line scripting tools. The challenge is in defining the rules. Let's look at defining a new rule to allow HTTP access and block everything else.
+## <a name="creating-network-security-groups"></a>Erstellen von Netzwerksicherheitsgruppen
+
+Sicherheitsgruppen sind verwaltete Ressourcen, die Sie wie beinahe alle Azure-Elemente im Azure-Portal oder über Tools zur Skripterstellung auf Befehlszeilenebene erstellen können. Die Herausforderung besteht darin, die Regeln zu definieren. Sehen wir uns an, wie eine neue Regel definiert wird, die den HTTP-Zugriff erlaubt und alles andere blockiert.

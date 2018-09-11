@@ -1,107 +1,107 @@
-Let's apply a network security group to our network, so that we only allow HTTP traffic through our server.
+Wenden wir eine Netzwerksicherheitsgruppe auf unser Netzwerk an, um ausschließlich HTTP-Datenverkehr über unsere Server zuzulassen.
 
-## Create a network security group
+## <a name="create-a-network-security-group"></a>Erstellen einer Netzwerksicherheitsgruppe
 
-Azure should have created a security group for us because we indicated we wanted SSH access. But let's create a new security group, so you can walk through the entire process. This is particularly important if you decide to create your virtual network _before_ your VMs. As mentioned earlier, security groups are _optional_ and not necessarily created with the network.
+Aufgrund der Angabe, dass wir SSH-Zugriff benötigen, sollte Azure eine Sicherheitsgruppe für uns erstellt haben. Wir erstellen hier jedoch eine neue Sicherheitsgruppe, damit Sie sich mit dem gesamten Prozess vertraut machen können. Das ist besonders wichtig, wenn Sie Ihr virtuelles Netzwerk _vor_ Ihren virtuellen Computern erstellen möchten. Zur Erinnerung: Sicherheitsgruppen sind _optional_ und werden nicht unbedingt zusammen mit dem Netzwerk erstellt.
 
-1. In the [Azure portal](https://portal.azure.com?azure-portal=true), click the **Create a resource** button in the left-corner sidebar to start a new resource creation.
+1. Klicken Sie im [Azure-Portal](https://portal.azure.com?azure-portal=true) auf der linken Randleiste auf die Schaltfläche **Ressource erstellen**, um die Ressourcenerstellung zu starten.
 
-1. Type **Network security group** into the filter box and select the matching item in the list.
+1. Geben Sie „Netzwerksicherheitsgruppe“ in das Filterfeld ein, und wählen Sie das entsprechende Element in der Liste aus.
 
-1. Make sure the **Resource Manager** deployment model is selected and click **Create**.
+1. Vergewissern Sie sich, dass das Bereitstellungsmodell **Resource Manager** ausgewählt ist, und klicken Sie auf **Erstellen**.
 
-1. Provide a **Name** for your security group. Again, naming conventions are a good idea here. Let's use **test-web-eus-nsg1** for **Test Web Network Security Group #1 in East US**. You'll likely want to change the location portion of the name to reflect where you put the security group.
+1. Geben Sie unter **Name** einen Namen für Ihre Sicherheitsgruppe an. Auch hier empfiehlt sich die Verwendung einer Benennungskonvention. Wir verwenden also „test-web-eus-nsg1“ für die erste Web-Netzwerksicherheitsgruppe zu Testzwecken in der Region „USA, Osten“. Ändern Sie bei Bedarf den Standortteil, um den Standort Ihrer Sicherheitsgruppe anzugeben.
 
-1. Select the proper **Subscription** and use your existing **Resource group**.
+1. Wählen Sie das richtige **Abonnement** aus, und verwenden Sie Ihre bereits vorhandene **Ressourcengruppe**.
 
-1. Finally, put it into the same **Location** as the VM / virtual network. This is important; you won't be able to apply this resource if it's in a different location.
+1. Platzieren Sie sie abschließend am gleichen **Standort** wie den virtuellen Computer/das virtuelle Netzwerk. Andernfalls können Sie diese Ressource nicht anwenden.
 
-1. Click **Create** to create the group.
+1. Klicken Sie auf **Erstellen**, um die Gruppe zu erstellen.
 
-## Add a new inbound rule to our network security group
+## <a name="add-a-new-inbound-rule-to-our-network-security-group"></a>Hinzufügen einer neuen Eingangsregel zu unserer Netzwerksicherheitsgruppe
 
-Deployment should complete quickly. When it's finished, we can add new rules to our security group:
+Die Bereitstellung sollte schnell abgeschlossen sein. Danach können wir unserer Sicherheitsgruppe neue Regeln hinzufügen.
 
-1. Find the new security group resource and select it in the Azure portal.
+1. Suchen Sie im Azure-Portal nach der neuen Sicherheitsgruppenressource, und wählen Sie sie aus.
 
-1. On the overview page, you'll find that it has some default rules created to lock down the network.
+1. Auf der Übersichtsseite sehen Sie, dass einige Standardregeln zum Sperren des Netzwerks erstellt wurden.
 
-    On the inbound side:
+    Eingangsseite:
 
-    - All incoming traffic from one VNet to another is allowed. This lets resources on the VNet talk to each other.
-    - Azure Load Balancer **probe** requests to ensure the VM is alive.
-    - All other inbound traffic is denied.  
+    - Sämtlicher eingehender Datenverkehr zwischen zwei VNETs wird zugelassen. Dadurch können Ressourcen im VNET miteinander kommunizieren.
+    - Testanforderungen des Azure Load Balancers, um zu überprüfen, ob der virtuelle Computer aktiv ist
+    - Jeglicher andere eingehende Datenverkehr wird unterbunden. Ausgangsseite:
+    - Sämtlicher interner Netzwerkdatenverkehr im VNET wird zugelassen.
+    - Sämtlicher ausgehender Datenverkehr an das Internet wird zugelassen.
+    - Jeglicher andere ausgehende Datenverkehr wird unterbunden.
 
-    On the outbound side:  
-    - All in-network traffic on the VNet is allowed.
-    - All outbound traffic to the internet is permitted.
-    - All other outbound traffic is denied.
+> [!NOTE]
+> Da diese Standardregeln mit hohen Prioritätswerten festgelegt sind, werden sie _zuletzt_ ausgewertet. Diese Regeln können weder geändert noch gelöscht werden. Sie können die Regeln aber _überschreiben_, indem Sie spezifischere Regeln für Ihren Datenverkehr mit niedrigerem Prioritätswert erstellen.
 
-    > [!NOTE]  
-    > These default rules are set with high-priority values, which means that they get evaluated _last_. They cannot be changed or deleted, but you can _override_ them by creating more specific rules to match your traffic with a lower priority value.
+1. Klicken Sie im Bereich **Einstellungen** für die Sicherheitsgruppe auf den Abschnitt **Eingangssicherheitsregeln**.
 
-1. Click the **Inbound security rules** section in the **Settings** panel for the security group.
+1. Klicken Sie auf **+Hinzufügen**, um eine neue Sicherheitsregel hinzuzufügen.
 
-1. Click **+ Add** to add a new security rule.
+    ![Hinzufügen einer Sicherheitsregel](../media-drafts/8-add-rule.png)
 
-    ![Screenshot of the Azure portal showing the inbound security rules settings with the Add button highlighted.](../media/8-add-rule.png)
+    Die Eingabe der Informationen für eine Sicherheitsregel kann auf zwei Arten erfolgen: im einfachen oder im erweiterten Modus. Zwischen diesen beiden Modi kann mithilfe der Schaltfläche im oberen Bereich des Bereichs „Hinzufügen“ gewechselt werden.
 
-    There are two ways to enter the information necessary for a security rule: basic and advanced. You can switch between them by clicking the button at the top of the **add** panel.
+    ![Gegenüberstellung von einfacher und erweiterter Regeleingabe](../media-drafts/8-advanced-create-rule.png)
 
-    ![A pair of screenshots of the Azure portal showing the toggle between Basic and Advanced rule input, with an arrow linking between the two states of the toggle button highlighted.](../media/8-advanced-create-rule.png)
+    Im erweiterten Modus kann die Regel vollständig angepasst werden. Wenn Sie allerdings ein bekanntes Protokoll konfigurieren möchten, ist der einfache Modus etwas benutzerfreundlicher.
 
-    The advanced mode provides the ability to customize the rule completely. However, if you need to configure a known protocol, the basic mode is a bit easier to work with.
+1. Wechseln Sie in den einfachen Modus.
 
-1. Switch to the basic mode.
+1. Fügen Sie die Informationen für unsere HTTP-Regel hinzu.
 
-1. Add the information for our HTTP rule:
+    - Legen Sie den **Dienst** auf „HTTP“ fest. Dadurch wird automatisch der Portbereich eingerichtet.
+    - Legen Sie die **Priorität** auf „1.000“ fest. Der Wert muss niedriger sein als der Wert der Regel **Verweigern**. Der Bereich kann bei einem beliebigen Wert beginnen. Es empfiehlt sich jedoch, einen gewissen Puffer einzubauen, falls später noch eine Ausnahme erstellt werden muss.
+    - Benennen Sie die Regel. Wir verwenden hier den Namen „allow-http-traffic“.
+    - Geben Sie eine Beschreibung für die Regel ein.
 
-    - Set the **Service** to be HTTP. This will set your port range up for you.
-    - Set the **Priority** to **1000**. It has to be a lower number than the default **Deny** rule. You can start the range at any value, but it's recommended that you give yourself some space in case an exception needs to be created later.
-    - Give the rule a name; we'll use **allow-http-traffic**.
-    - Give the rule a description.
+1. Kehren Sie zum Modus **Erweitert** zurück. Wie Sie sehen, sind unsere Einstellungen immer noch vorhanden. In diesem Bereich können wir differenziertere Einstellungen erstellen. Wir können beispielsweise die **Quelle** auf eine bestimmte IP-Adresse oder auf einen bestimmten IP-Adressbereich für die Kameras beschränken. Wenn Sie die aktuelle IP-Adresse Ihres lokalen Computers kennen, können Sie das ausprobieren. Behalten Sie andernfalls die Einstellung „Beliebig“ bei, um die Regel testen zu können.
 
-1. Switch back to the **Advanced** mode. Notice that our settings are still present. We can use this panel to create more fine-grained settings. In particular, we would likely restrict the **Source** to be a specific IP address or range of IP addresses specific to the cameras. If you know the current IP address of your local computer, you can try that. Otherwise, leave the setting as **Any**, so you can test the rule.
+1. Klicken Sie auf **Hinzufügen**, um die Regel zu erstellen. Dadurch wird die Eingangsregelliste aktualisiert. Die Regeln werden nach Priorität sortiert und in der angezeigten Reihenfolge ausgewertet.
+    
+## <a name="apply-the-security-group"></a>Anwenden der Sicherheitsgruppe
 
-1. Click **Add** to create the rule. This will update the list of inbound rules - notice they are in priority order, which is how they will be examined.
+Zur Erinnerung: Wir können die Sicherheitsgruppe auf eine Netzwerkschnittstelle anwenden, um einen einzelnen virtuellen Computer zu schützen, oder auf ein Subnetz, sodass sie für alle Ressourcen dieses Subnetzes gilt. Der zweite Fall ist gängiger, daher verwenden wir ihn hier. Zu der Ressource in Azure gelangen wir entweder über die Ressource des virtuellen Netzwerks oder indirekt über den virtuellen Computer, der das virtuelle Netzwerk verwendet.
 
-## Apply the security group
+1. Wechseln Sie zum Bereich **Übersicht** für den virtuellen Computer. Den virtuellen Computer finden Sie unter **Alle Ressourcen**.
 
-Recall that we can apply the security group to a network interface to guard a single VM or to a subnet where it would apply to any resources on that subnet. The latter approach tends to be the most common, so let's do that. We could get to this resource in Azure through either the virtual network resource or indirectly through the VM that is using the virtual network.
+1. Klicken Sie im Abschnitt **Einstellungen** auf **Netzwerk**.
 
-1. Switch to the **Overview** panel for the virtual machine. You can find the VM under **All Resources**.
+    ![Element „Netzwerk“ in den Einstellungen des virtuellen Computers](../media-drafts/8-network-settings.png)
 
-1. Select the **Networking** item in the **Settings** section.
+1. In den Netzwerkeigenschaften finden Sie Informationen zum Netzwerk des virtuellen Computers –einschließlich **Virtuelles Netzwerk/Subnetz**. Hierbei handelt es sich um einen klickbaren Link, über den Sie zu der Ressource gelangen. Klicken Sie auf den Link, um das virtuelle Netzwerk zu öffnen. Dieser Link steht _auch_ im Bereich **Übersicht** des virtuellen Computers zur Verfügung. Beide Links öffnen die **Übersicht** des virtuellen Netzwerks.
 
-1. In the networking properties, you will find information about the networking applied to the VM, including the **Virtual network/subnet**. This is a clickable link to get to the resource. Click it to open the virtual network. This link is _also_ available on the **Overview** panel of the VM. Either of these will open the **Overview** of the virtual network.
+1. Klicken Sie im Abschnitt **Einstellungen** auf **Subnetze**.
 
-1. In the **Settings** section, select the **Subnets** item.
+1. Hier sollte ein einzelnes Subnetz (Standard) definiert sein, das wir zusammen mit dem virtuellen Computer und dem virtuellen Netzwerk erstellt haben. Klicken Sie auf das Listenelement, um die Details zu öffnen.
 
-1. We should have a single subnet defined (default) from when we created the VM + network earlier. Click the item in the list to open the details.
+1. Klicken Sie auf den Eintrag **Netzwerksicherheitsgruppe**.
 
-1. Click the **Network security group** entry.
+1. Wählen Sie Ihre neue Sicherheitsgruppe (**test-web-eus-nsg1**) aus. Hier sollte sich noch eine weitere Gruppe befinden, die zusammen mit dem virtuellen Computer erstellt wurde.
 
-1. Select your new security group: **test-web-eus-nsg1**. There should be another group here as well that was created with the VM.
+1. Klicken Sie auf **Speichern**, um die Änderung zu speichern. Die Anwendung auf das Netzwerk dauert etwas.
 
-1. Click **Save** to save the change. It will take a minute to apply to the network.
+## <a name="verify-the-rules"></a>Überprüfen der Regeln
 
-## Verify the rules
+Als Nächstes überprüfen wir die Änderung.
 
-Let's validate the change:
+1. Kehren Sie zum Bereich **Übersicht** für den virtuellen Computer zurück. Den virtuellen Computer finden Sie unter **Alle Ressourcen**.
 
-1. Switch back to the **Overview** panel for the virtual machine. You can find the VM under **All Resources**.
+1. Klicken Sie im Abschnitt **Einstellungen** auf **Netzwerk**.
 
-1. Select the **Networking** item in the **Settings** section.
+1. Über den Link **Effektive Sicherheitsregeln** im Bereich **Übersicht** für das Netzwerk können Sie schnell überprüfen, wie Regeln ausgewertet werden. Klicken Sie auf den Link, um die Analyse zu öffnen, und vergewissern Sie sich, dass Ihre neue Regel vorhanden ist.
 
-1. In the **Overview** panel for the network, there is a link for **Effective security rules** that will quickly show you how rules are going to be evaluated. Click the link to open the analysis and make sure you see your new rule.
+    ![Effektive Sicherheitsregeln für unser Netzwerk](../media-drafts/8-effective-rules.png)
 
-    ![Screenshot of the Azure portal showing the Effective security rules blade for our network.](../media/8-effective-rules.png)
+1. Ob alles funktioniert, können wir natürlich am besten überprüfen, indem wir eine HTTP-Anforderung an unseren Server senden. Dies sollte weiterhin funktionieren. Sie können sogar die Regel **HTTP** löschen, um sich zu vergewissern, dass die Sicherheitsgruppenregeln nun angewendet werden.
 
-1. Of course, the best way to validate it's all working is to hit our server with an HTTP request. It should still work. You can even delete the **HTTP** rule to verify that the security group rules are now being applied.
+## <a name="one-more-thing"></a>Noch etwas...
 
-## One more thing
+Die korrekte Implementierung von Sicherheitsregeln ist nicht immer ganz einfach. Bei der Anwendung dieser neuen Sicherheitsgruppe ist uns ein Fehler unterlaufen: Wir haben unseren SSH-Zugriff verloren. Zur Behebung dieses Problems können Sie der Sicherheitsgruppe eine weitere Regel hinzufügen, um den SSH-Zugriff zu unterstützen. Achten Sie darauf, die eingehenden TCP/IP-Adressen für die Regel auf Ihre eigenen Adressen zu beschränken.
 
-Security rules are tricky to get right. We made a mistake when we applied this new security group - we lost our SSH access! To fix this, you can add another rule to the security group to support SSH access. Make sure to restrict the inbound TCP/IP addresses for the rule to be the ones you own.
-
-> [!WARNING]  
-> Always make sure to lock down ports used for administrative access. An even better approach is to create a VPN to link the virtual network to your private network and only allow RDP or SSH requests from that address range. You can also change the port used by SSH to be something other than the default. Keep in mind that changing ports is not sufficient to stop attacks. It simply makes it a little harder to discover.
+> [!WARNING]
+> Denken Sie immer daran, für den Administratorzugriff verwendete Ports zu sperren. Noch besser: Erstellen Sie ein VPN, um das virtuelle Netzwerk mit Ihrem privaten Netzwerk zu verbinden, und lassen Sie nur RDP- oder SSH-Anforderungen aus diesem Adressbereich zu. Sie können auch die Standardeinstellung für den von SSH verwendeten Port ändern. Denken Sie aber daran, dass eine Portänderung noch keine ausreichende Angriffsabwehr darstellt, sondern lediglich die Portermittlung etwas erschwert.

@@ -1,18 +1,17 @@
-[Microsoft Cognitive Services](https://azure.microsoft.com/services/cognitive-services/ "Microsoft Cognitive Services") is a suite of services and APIs backed by machine learning that enables developers to incorporate intelligent features such as facial recognition in photos and videos, sentiment analysis in text, and language understanding into their applications. The Microsoft [Custom Vision Service](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/) is among the newest members of the Cognitive Services suite. Its purpose is to create image classification models that "learn" from labeled images you provide. Want to know if a photo contains a picture of a flower? Train the Custom Vision Service with a collection of flower images, and it can tell you whether the next image includes a flower — or even what type of flower it is.
+Bei [Microsoft Cognitive Services](https://azure.microsoft.com/services/cognitive-services/ "Microsoft Cognitive Services") handelt es sich um eine Sammlung von Diensten und APIs, die durch Machine Learning unterstützt werden und Entwicklern das Integrieren von intelligenten Features wie Gesichtserkennung in Fotos und Videos, Stimmungsanalyse in Texten und Language Understanding in ihre Anwendungen ermöglicht. Der Microsoft [Custom Vision Service](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/) wurde erst kürzlich von Microsoft zur Cognitive Services-Sammlung hinzugefügt. Dieser Dienst soll Modelle zur Bildklassifizierung erstellen, die anhand von bereitgestellten gekennzeichneten Bildern „lernen“. Sie würden gerne wissen, ob auf einem bestimmten Bild eine Blume zu finden ist? Trainieren Sie Custom Vision Service mit einer Sammlung von Bildern, auf denen Blumen dargestellt sind. Dann kann der Dienst Ihnen mitteilen, ob auf dem nächsten Bild eine Blume zu sehen ist und sogar, um welche Art von Blume es sich handelt.
 
-### Learning objectives
+### <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul wird Folgendes thematisiert:
 
-- Create a Custom Vision Service project
-- Train a Custom Vision Service model with tagged images
-- Test a Custom Vision Service model
-- Create apps that leverage Custom Vision Service models by calling REST APIs
+- Erstellen eines Custom Vision Service-Projekts
+- Trainieren eines Custom Vision Service-Modells mit gekennzeichneten Bildern
+- Testen eines Custom Vision Service-Modells
+- Erstellen von Apps, die Custom Vision Service-Modelle nutzen, um REST-APIs aufzurufen
 
-### Prerequisites  
+### <a name="prerequisites"></a>Voraussetzungen  
 
-<!---TODO: Need links here and better verbiage; is Microsoft account needed?--->
-
-- A [Microsoft account](https://account.microsoft.com/account).
+<!---TODO: Need links here and better verbiage--->
+- Ein [Microsoft-Konto](https://account.microsoft.com/account)
 - Visual Studio Code
-- Node.js.
+- Node.js

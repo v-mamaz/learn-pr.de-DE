@@ -1,30 +1,30 @@
-## Intro to deep learning
+## <a name="intro-to-deep-learning"></a>Einführung in Deep Learning
 
-The goal of Machine Learning ML is to find features to train a model that transforms input data (such as pictures, time series, or audio) to a given output (for example captions, price values, transcriptions). In traditional data science, features are often hand-picked.
+Das Ziel von Machine Learning (ML) besteht darin, Merkmale zu finden, mit denen ein Modell trainiert werden kann, um Eingabedaten (etwa Bild-, Zeitreihen- oder Audiodaten) in eine bestimmte Ausgabe (etwa Untertitel, Preiswerte oder Transkriptionen) umzuwandeln. Bei herkömmlicher Data Science werden die Merkmale häufig von Hand ausgewählt.
 
-![Canonical example of a feed forward deep neural network.](../media/2-image1.PNG)
+![Canonical-Beispiel eines Deep Neural Network mit Feed Forward.](../media/2-image1.PNG)
 
-In Deep Learning (DL), the process of feature extraction is learned through representing inputs as vectors and transforming them, with a series of clever linear algebra operations, into a given output.  
+Bei Deep Learning (DL) basiert die Extraktion von Merkmalen auf einem Lernprozess. Dabei werden Eingaben als Vektoren dargestellt und mithilfe einiger intelligenter Algebra-Operationen in eine bestimmte Ausgabe umgewandelt.  
 
-The model output is then compared against the expected output using an equation called a loss function. The value returned by the loss function of each training input is used to guide the model to extract features that will result in a lower loss value on the next pass.  
+Die Ausgabe des Modells wird dann unter Verwendung einer Gleichung (Verlustfunktion) mit der erwarteten Ausgabe abgeglichen. Der Wert, der von der Verlustfunktion für jede Trainingseingabe zurückgegeben wird, dient zur Optimierung des Modells, sodass beim nächsten Mal Merkmale mit einem geringeren Verlustwert extrahiert werden können.  
  
-The series of matrix operations that we computer as part of the linear algebra component tend to be computationally expensive and are often heavily parallelizable, requiring specialized compute such as Graphics Processing Units GPUs to compute efficiently.
+Die Matrixoperationen, die im Rahmen der linearen Algebra-Komponente ausgeführt werden, sind häufig sehr rechenintensiv und stark parallelisierbar. Für eine effiziente Berechnung werden daher spezielle Prozessoren (beispielsweise GPUs) benötigt.
 
-## Data Science Virtual Machine
+## <a name="data-science-virtual-machine"></a>Data Science Virtual Machine
 
-![DSVM Options](../media/2-image2.PNG)
+![DSVM-Optionen](../media/2-image2.PNG)
 
-DSVMs are Azure Virtual Machine images, pre-installed, configured, and tested with several popular tools that are commonly used for data analytics, machine learning, and deep learning training.
+DSVM-Instanzen sind Images für virtuelle Azure-Computer, die mit verschiedenen beliebten Tools vorinstalliert, konfiguriert und getestet wurden. Diese Images werden häufig in den Bereichen Datenanalyse, maschinelles Lernen und Deep Learning-Training eingesetzt.
 
-They provide:
+Sie bieten Folgendes:
 
-- Consistent setup across team, promote sharing and collaboration, Azure scale and management, Near-Zero Setup, full cloud-based desktop for data science.
-- On-demand elastic capacity Ability to run analytics on all Azure hardware configurations with vertical and horizontal scaling. Pay only for what you use, when you use it.
-- Deep Learning with GPUs Readily available GPU clusters with Deep Learning tools already pre-configured. 
+- Konsistente Einrichtung im gesamten Team, Förderung von Freigabe und Zusammenarbeit, Azure-Skalierung und -Verwaltung, so gut wie kein Einrichtungsaufwand, vollständig cloudbasierter Desktop für Data Science.
+- Flexible Kapazität bei Bedarf: Möglichkeit zum Ausführen von Analysen für sämtliche Azure-Hardwarekonfigurationen mit vertikaler und horizontaler Skalierung. Nutzungsbasiertes Zahlungsmodell.
+- Deep Learning mit GPUs: Sofort verfügbare GPU-Cluster mit bereits vorkonfigurierten Deep Learning-Tools. 
 
-The DSVM contains several tools for AI including popular GPU editions of deep learning frameworks and tools such as Microsoft R Server Developer Edition, Anaconda Python, Jupyter notebooks for Python and R, IDEs for Python and R, SQL database and many other data science and ML tools.
+DSVM enthält mehrere KI-Tools. Dazu zählen unter anderem GPU-Editionen beliebter Deep Learning-Frameworks und -Tools wie Microsoft R Server Developer Edition, Anaconda Python, Jupyter-Notebooks für Python und R, IDEs für Python und R, SQL-Datenbank und viele andere Data Science- und ML-Tools.
 
-The DSVM can run on Azure GPU NC-series VM instances. These GPUs use discrete device assignment, resulting in performance close to bare-metal, and are well-suited to deep learning problems.
+DSVM kann in Azure VM-Instanzen mit GPU der NC-Serie ausgeführt werden. Dank diskreter Gerätezuordnung erzielen diese GPUs eine mit Bare-Metal-Hardware vergleichbare Leistung und eignen sich somit perfekt für Deep Learning-Aufgaben.
 
 <!--### Quiz? 
 

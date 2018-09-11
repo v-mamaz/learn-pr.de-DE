@@ -1,15 +1,15 @@
-## Docker
+## <a name="docker"></a>Docker
 
-![Docker logo](../media/3-image1.PNG)
+![Docker-Logo](../media/3-image1.PNG)
 
-Docker enables developers to easily pack, ship, and run any  application as a lightweight, portable, self-sufficient container, which can run virtually anywhere. If the DSVM base image comes with the most popular deep learning frameworks pre-installed, why is there a need for containerization clients such as Docker?
+Docker ermöglicht es Entwicklern, beliebige Anwendungen auf einfache Weise als schlanken, portablen, selbstgenügsamen Container zu packen, versenden und auszuführen, der praktisch überall ausgeführt werden kann. Wenn das DSVM-Basisimage die beliebtesten Deep Learning-Frameworks bereits vorinstalliert enthält, warum gibt es dann einen Bedarf an Containerisierungsclients wie Docker?
 
-Often when attempting to run deep learning tasks developers find themselves facing dependency nightmares, such as: 
+Bei dem Versuch, Deep Learning-Aufgaben auszuführen, sehen sich Entwickler häufig alptraumhaften Szenarien hinsichtlich der Abhängigkeiten gegenüber, wie etwa diesen: 
 
-- Having to build custom packages - Deep learning researchers tend to think less about production when they publish code to Git Hub. If they can get a package working on their own development environment, they often just assume that others will be able to do so as well.
-- GPU driver versioning - CUDA is a parallel computing platform and application programming interface (API) developed by Nvidia. It allows software developers and software engineers to use a CUDA-enabled graphics processing unit (GPU) for general-purpose processing. Certain versions of Tensorflow will not work with versions of CUDA above 9.1 but other frameworks such as PyTorch seem to perform better with later versions of CUDA.
+- Das Erfordernis zum Erstellen benutzerdefinierter Pakete – Deep Learning-Forscher denken tendenziell eher wenig an die Produktion wenn sie Code auf Git Hub veröffentlichen. Wenn sie ein Paket in ihrer eigenen Entwicklungsumgebung ausführungsbereit bekommen, nehmen sie oft einfach an, dass das anderen genauso gelingen wird.
+- Verwaltung von GPU-Treiberversionen – CUDA ist eine parallele Computingplattform und Anwendungsprogrammierschnittstelle (API), die von Nvidia entwickelt wurde. Sie ermöglicht Softwareentwicklern und Softwaretechnikern die Verwendung einer CUDA-fähigen GPU (Graphics Processing Unit, Grafikprozessor) für allgemeine Computingzwecke. Bestimmte Versionen von Tensorflow funktionieren nicht mit CUDA-Versionen über 9.1, aber andere Frameworks, wie z.B. PyTorch, scheinen mit höheren Versionen von CUDA eine bessere Leistung zu erreichen.
 
-To get around these issues and to increase the usability of code, you can use Docker or its GPU variant Nvidia-Docker to manage and run deep learning projects. 
+Um diese Probleme zu umgehen und die Benutzerfreundlichkeit des Codes zu erhöhen, können Sie Docker oder dessen GPU-Variante Nvidia-Docker verwenden, um Deep Learning-Projekte zu verwalten und auszuführen. 
 
 <!--Quiz 
 What is CUDA? 

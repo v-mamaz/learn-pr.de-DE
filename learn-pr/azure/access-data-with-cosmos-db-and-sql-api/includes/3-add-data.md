@@ -1,25 +1,25 @@
-Adding data to your Azure Cosmos DB database is simple. You open the Azure portal, navigate to your database, and use the Data Explorer to add JSON documents to the database. There are more advanced ways to add data, but we'll start here because the Data Explorer is a great tool to get you acquainted with the inner workings and functionality provided by Azure Cosmos DB.
+Das Hinzufügen von Daten zu Ihrer Azure Cosmos DB-Datenbank sollte kein Problem sein. Sie öffnen das Azure-Portal, navigieren zu Ihrer Datenbank und verwenden den Daten-Explorer, um der Datenbank JSON-Dokumente hinzuzufügen. Es gibt zwar auch komplexere Möglichkeiten, um Daten hinzuzufügen, wir beginnen aber mit dieser Methode, da sich der Daten-Explorer sehr gut dazu eignet, sich mit den internen Abläufen und Funktionen von Azure Cosmos DB vertraut zu machen.
 
-## What is the Data Explorer?
-The Azure Cosmos DB Data Explorer is a tool included in the Azure portal that is used to manage data stored in an Azure Cosmos DB. It provides a UI for viewing and navigating data collections, as well as for editing documents within the database.
+## <a name="what-is-the-data-explorer"></a>Was ist der Daten-Explorer?
+Der Daten-Explorer von Azure Cosmos DB ist ein Tool im Azure-Portal, mit dem Sie in Azure Cosmos DB gespeicherte Daten verwalten können. Über die bereitgestellte Benutzeroberfläche können Sie Datensammlungen anzeigen, durch Datensammlungen navigieren und Dokumente in der Datenbank bearbeiten.
 
-## Add data using the Data Explorer
+## <a name="add-data-using-the-data-explorer"></a>Hinzufügen von Daten mithilfe des Daten-Explorers
 
-1. If you're continuing from the previous module, click **Data Explorer** in the Azure portal window, and then click **Open Full Screen**.
+1. Wenn Sie zuvor das vorherige Modul absolviert haben, klicken Sie im Fenster des Azure-Portals auf **Daten-Explorer** und anschließend auf **Vollbildmodus öffnen**.
 
-    Otherwise, sign in to the [Azure portal](https://portal.azure.com/?azure-portal=true), click **All services** > **Databases** > **Azure Cosmos DB**. Then select your account, click **Data Explorer**, and then click **Open Full Screen**.
+    Melden Sie sich andernfalls beim [Azure-Portal](https://portal.azure.com/?azure-portal=true) an, und klicken Sie auf **Alle Dienste** > **Datenbanken** > **Azure Cosmos DB**. Wählen Sie dann Ihr Konto aus, klicken Sie auf **Daten-Explorer**, und klicken Sie anschließend auf **Vollbildmodus öffnen**
  
-   ![Create new documents in Data Explorer in the Azure portal](../media/3-azure-cosmosdb-data-explorer-full-screen.png)
+   ![Erstellen neuer Dokumente über den Daten-Explorer im Azure-Portal](../media-draft/3-azure-cosmosdb-data-explorer-full-screen.png)
 
-2. In the **Open Full Screen** box, click **Open**.
+2. Klicken Sie im Feld **Vollbildmodus öffnen** auf **Öffnen**.
 
-    The web browser displays the new full-screen Data Explorer, which gives you more space and a dedicated environment for working with your database.
+    Im Webbrowser wird der neue Daten-Explorer im Vollbildmodus angezeigt. Dadurch haben Sie mehr Platz und verfügen über eine dedizierte Umgebung für die Arbeit mit Ihrer Datenbank.
 
-3. To create a new JSON document, click **New Document**.
+3. Klicken Sie auf **Neues Dokument**, um ein neues JSON-Dokument zu erstellen.
 
-   ![Create new documents in Data Explorer in the Azure portal](../media/3-azure-cosmosdb-data-explorer-new-document.png)
+   ![Erstellen neuer Dokumente über den Daten-Explorer im Azure-Portal](../media-draft/3-azure-cosmosdb-data-explorer-new-document.png)
 
-4. Now, add a document to the collection with the following structure. Just copy and paste the following code into the **Documents** tab:
+4. Fügen Sie der Sammlung ein Dokument hinzu, und verwenden Sie dabei die folgende Struktur. Kopieren Sie einfach den folgenden Code, und fügen Sie ihn auf der Registerkarte **Dokumente** ein:
 
      ```
     {
@@ -38,11 +38,11 @@ The Azure Cosmos DB Data Explorer is a tool included in the Azure portal that is
         }
      ```
 
-5. Once you've added the JSON to the **Documents** tab, click **Save**.
+5. Nachdem Sie den JSON-Code auf der Registerkarte **Dokumente** hinzugefügt haben, klicken Sie auf **Speichern**.
 
-    ![Copy in JSON data and click Save in Data Explorer in the Azure portal](../media/3-azure-cosmosdb-data-explorer-save-document.png)
+    ![Kopieren Sie JSON-Daten, fügen Sie sie ein, und klicken Sie im Azure-Portal im Daten-Explorer auf „Speichern“.](../media-draft/3-azure-cosmosdb-data-explorer-save-document.png)
 
-6. Create and save one more document by copying the following JSON object into Data Explorer and clicking **Save**.
+6. Erstellen und speichern Sie ein weiteres Dokument, indem Sie das folgende JSON-Objekt in den Daten-Explorer kopieren und auf **Speichern** klicken.
 
      ```
     {
@@ -62,10 +62,10 @@ The Azure Cosmos DB Data Explorer is a tool included in the Azure portal that is
     }
      ```
 
-7. Confirm the documents have been saved by clicking **Documents** on the left-hand menu. 
+7. Vergewissern Sie sich, dass die Dokumente gespeichert wurden, indem Sie im linken Menü auf **Dokumente** klicken. 
 
-    Data Explorer displays the two documents in the **Documents** tab.
+    Die beiden Dokumente werden im Daten-Explorer auf der Registerkarte **Dokumente** angezeigt.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this module, you added two documents, each representing a product in your product catalog, to your database by using the Data Explorer. The Data Explorer is a good way to create documents, modify documents, and get started with Azure Cosmos DB.  
+In diesem Modul haben Sie Ihrer Datenbank mithilfe des Daten-Explorers zwei Dokumente hinzugefügt, die jeweils ein Produkt in Ihrem Produktkatalog darstellen. Der Daten-Explorer eignet sich sehr gut, um Dokumente zu erstellen, Dokumente zu ändern und sich mit Azure Cosmos DB vertraut zu machen.  

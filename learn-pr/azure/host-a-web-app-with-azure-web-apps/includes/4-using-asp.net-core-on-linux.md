@@ -1,75 +1,75 @@
-﻿You've decided to use an open-source technology for building your web application. You know that ASP.NET Core is a cross-platform and open-source framework. You decide to develop your web app in a Linux environment using ASP.NET Core!
+Sie möchten zum Erstellen einer Webanwendung eine Open-Source-Technologie verwenden. Sie wissen, dass ASP.NET Core ein plattformübergreifendes Open-Source-Framework ist. Sie möchten Ihre Web-App in einer Linux-Umgebung mithilfe von ASP.NET Core entwickeln.
 
-Web Apps in Azure allows you to use your favorite web technology. Whether you're most comfortable with Node.js, PHP, or .NET Core, Web Apps will work for you.
+Dank Web-Apps in Azure können Sie die von Ihnen bevorzugte Webtechnologie verwenden. Web-Apps ist das Richtige für Sie, ganz gleich, ob Sie mit Node.js, PHP oder .NET Core besonders zufrieden sind.
 
-Here, you will create an ASP.NET Core application using the .NET command-line interface (CLI).
+Hier erstellen Sie eine ASP.NET Core-Anwendung mithilfe der .NET-Befehlszeilenschnittstelle.
 
-## What is ASP.NET Core?
+## <a name="what-is-aspnet-core"></a>Was ist ASP.NET Core?
 
-ASP.NET Core is the latest evolution of Microsoft's popular ASP.NET web framework, a cross-platform, open-source framework for building modern, cloud-based, and internet-connected applications.
+ASP.NET Core ist die neueste Entwicklung des bekannten ASP.NET-Webframeworks von Microsoft, ein plattformübergreifendes Open-Source-Framework zum Erstellen von modernen, cloudbasierten und mit dem Internet verbundenen Anwendungen.
 
-ASP.NET Core applications can be written to target the .NET Core Framework or the existing, full .NET Framework.
+ASP.NET Core-Anwendungen können für .NET Core Framework oder für das gesamte vorhandene .NET Framework geschrieben werden.
 
-Being a cross-platform and open-source framework, you can build ASP.NET Core apps on a variety of platforms, including Windows, macOS, and Linux. Thus far, Microsoft offers the Visual Studio IDE for both Windows and macOS environments. In addition, the Visual Studio Code editor is cross-platform and compatible with them.
+Da es sich um ein plattformübergreifendes Open-Source-Framework handelt, können Sie ASP.NET Core-Apps auf unterschiedlichen Plattformen erstellen, so auch unter Windows, macOS und Linux. Bislang stellt Microsoft die Visual Studio-IDE für Windows- und für macOS-Umgebungen bereit. Zudem ist der Visual Studio Code-Editor plattformübergreifend und mit diesen Umgebungen kompatibel.
 
->To support building ASP.NET Core applications on different platforms, Microsoft introduced the .NET Core CLI tools to help you build, test, and publish your applications using a rich, consistent, and cross-platform set of APIs.
+>Um das Erstellen von ASP.NET Core-Anwendungen auf unterschiedlichen Plattformen zu unterstützten, hat Microsoft die .NET Core-CLI-Tools eingeführt. Mit diesen Tools können Sie Ihre Anwendungen mit umfangreichen, konsistenten und plattformübergreifenden APIs erstellen, testen und veröffentlichen.
 
-With ASP.NET Core, you can build web apps and services, IoT apps, and mobile back ends. ASP.NET Core applications can be hosted either in the cloud or on-premises.
+Mit ASP.NET Core können Sie Web-Apps und -dienste, IoT-Apps sowie mobile Back-Ends. ASP.NET Core-Anwendungen können entweder in der Cloud oder lokal gehostet werden.
 
-By design, ASP.NET Core consists of an embedded web server and a runtime environment that runs the application code. The application code is written using a reworked ASP.NET MVC framework that relies on smaller modules and packages. The result is a smaller web application blueprint that is easy to maintain and host over cloud environments. The following illustration shows an ASP.NET Core application hosted in .NET Core and the external web server that handles internet http traffic.
+ASP.NET Core besteht standardmäßig aus einem eingebetteten Webserver und einer Laufzeitumgebung, in der der Anwendungscode ausgeführt wird. Der Anwendungscode wird mithilfe eines überarbeiteten ASP.NET MVC-Frameworks geschrieben, das auf kleinere Module und Pakete zurückgreift. Daraus ergibt sich eine kleinere Webanwendungsblaupause, die mühelos über Cloudumgebungen verwaltet und gehostet werden kann. Die folgende Abbildung zeigt eine in .NET Core gehostete ASP.NET Core-Anwendung und den externen Webserver, der den HTTP-Internetdatenverkehr verarbeitet.
 
-![An illustration showing an ASP.NET Core application and its execution environment.](../media/4-asp-net-core-architecture.png)
+![Eine Abbildung mit einer ASP.NET Core-Anwendung und der zugehörigen Ausführungsumgebung](../media/4-asp-net-core-architecture.png)
 
-ASP.NET Core applications are standalone **console** applications invoked through the **dotnet** driver tool. ASP.NET Core applications are not loaded into the IIS worker process, but rather, are loaded through a native IIS module called **AspNetCoreModule** that executes the external console application.
+ASP.NET Core-Anwendungen sind eigenständige **Konsolenanwendungen**, die über das Treibertool **dotnet** aufgerufen werden. ASP.NET Core-Anwendungen werden nicht in den IIS-Arbeitsprozess, sondern vielmehr über ein natives IIS-Modul mit dem Namen **AspNetCoreModule** geladen, das die externe Konsolenanwendung ausführt.
 
-## How to create an ASP.NET Core web project
+## <a name="how-to-create-an-aspnet-core-web-project"></a>Erstellen eines ASP.NET Core-Webprojekts
 
-There are a few options for creating a new ASP.NET Core project:
+Zum Erstellen eines neuen ASP.NET Core-Projekts gibt es verschiedene Möglichkeiten:
 
-- You can use Visual Studio (Windows and macOS versions) templates to generate a new project. Visual Studio offers a variety of templates that you can use to create web projects. For instance, you can use the **Empty** template to create a bare-bones ASP.NET Core project with the basic setup. In addition, you can use the **Web Application (Modal-View-Controller)** template to generate a full-fledged ASP.NET Core MVC application, with sample **controllers** and **views** that can help you start coding your application. The latest arrival is the **Web Application** project template that is used to create an ASP.NET Core project based on Razor pages and not on the traditional MVC project structure.
+- Sie können Visual Studio-Vorlagen (Windows- und macOS-Versionen) verwenden, um ein neues Projekt zu erstellen. Visual Studio bietet eine Vielzahl von Vorlagen, die Sie zum Erstellen von Webprojekten verwenden können. Sie können beispielsweise die Vorlage **Leer** verwenden, um ein reines ASP.NET Core-Projekt mit dem grundlegenden Setup zu erstellen. Darüber hinaus können Sie die Vorlage **Webanwendung (Modal-View-Controller)** verwenden, um eine vollwertige ASP.NET Core MVC-Anwendung mit **Beispielcontrollern** und -**ansichten** zu erstellen, die Sie beim Programmieren der Anwendung unterstützen. Der jüngste Neuzugang ist die Projektvorlage **Webanwendung**, die zum Erstellen eines ASP.NET Core-Projekts basierend auf Razor-Seiten und statt auf der herkömmlichen MVC-Projektstruktur verwendet wird.
 
-- You can use the .NET Core CLI tools to generate a new ASP.NET Core project. Microsoft maintains an almost common set of ASP.NET Core project templates for both Visual Studio and the CLI tools. The only difference with the CLI tools is that you need to type commands to create a new ASP.NET Core project.
-> The .NET CLI tools make use of the **templating engine** to support different project templates.  To learn more, visit the GitHub repository for the [templating engine](https://github.com/dotnet/templating) used internally by the .NET CLI tools.
+- Sie können die .NET Core-CLI-Tools zum Erstellen eines neuen ASP.NET Core-Projekts verwenden. Microsoft stellt allgemeine ASP.NET Core-Projektvorlagen für Visual Studio und die CLI-Tools bereit. Dabei unterscheiden sich die Vorlagen für CLI-Tools nur insofern, als dass zum Erstellen eines neuen ASP.NET Core-Projekts Befehle eingegeben werden müssen.
+> Die .NET-CLI-Tools nutzen das **Vorlagenmodul** zur Unterstützung unterschiedlicher Projektvorlagen.  Weitere Informationen zu dem von den .NET-CLI-Tools intern verwendeten [Vorlagenmodul](https://github.com/dotnet/templating) finden Sie im GitHub-Repository.
 
-The above are considered the top tools for generating ASP.NET Core projects. However, there are more tools out there that you can search for and explore.
+Die oben beschriebenen Vorlagen gelten als wichtige Tools zum Erstellen von ASP.NET Core-Projekten. Es gibt jedoch noch weitere Tools, die Sie suchen und ausprobieren können.
 
-It's worth mentioning that the projects generated by the different tools can be slightly different, however, they all generate valid and optimized ASP.NET Core projects.
+Die Projekte, die mit anderen Tools erstellt werden, können ein wenig anders sein. Sie alle generieren jedoch gültige und optimierte ASP.NET Core-Projekte.
 
-## .NET CLI tools
+## <a name="net-cli-tools"></a>.NET-CLI-Tools
 
-The .NET CLI tools, also known as .NET Core CLI, is a cross-platform tool that provides commands for creating and restoring packages, and for building, running. and publishing .NET applications from the command line without the need for a full-featured IDE.
+Bei den .NET-CLI-Tools, auch bekannt als .NET Core-CLI, handelt es sich um ein plattformübergreifendes Tool, das Befehle zum Erstellen und Wiederherstellen von Paketen sowie zum Erstellen, Ausführen und Veröffentlichen von .NET-Anwendungen über die Befehlszeile ohne IDE mit vollem Funktionsumfang bereitstellt.
 
-The .NET CLI is installed as part of the .NET Core SDK. Multiple versions of the CLI can coexist on the same machine and run side by side.
+Die .NET-CLI wird als Teil des .NET Core SDK installiert. Auf einem Computer können mehrere Versionen der Befehlszeilenschnittstelle vorhanden sein und parallel ausgeführt werden.
 
-To start using the .NET CLI, you need to install the relevant .NET Core SDK with respect to the environment that you are using to develop your app: Windows, macOS, or Linux. Go to [.NET Downloads](https://www.microsoft.com/net/download?initial-os=linux) and grab the .NET Core SDK for Linux. I am using an Ubuntu 18.04 OS running on top Windows 10 using VMware Workspace Player 14 to demonstrate the different commands offered by .NET CLI.
+Damit Sie die .NET-CLI nutzen können, müssen Sie das entsprechende .NET Core SDK für die Umgebung installieren, die Sie zum Entwickeln der App verwenden: Windows, macOS oder Linux. Wechseln Sie zu [.NET Downloads](https://www.microsoft.com/net/download?initial-os=linux), und wählen Sie das .NET Core SDK für Linux aus. Ich verwende ein Ubuntu 18.04-Betriebssystem, das unter Windows 10 ausgeführt wird und VMware Workspace Player 14 verwendet, um die von der .NET-CLI bereitgestellten Befehle vorzustellen.
 
-Open the command line and type the following:
+Öffnen Sie die Befehlszeile, und geben Sie Folgendes ein:
 
 ```console
 dotnet --version
 ```
 
-This command displays the version of the .NET CLI installed.
+Mit diesem Befehl wird die Version der installierten .NET-CLI angezeigt.
 
-Running the above command on my machine displays this: `2.1.302`.
+Wenn ich den obigen Befehl auf meinem Computer ausführe, wird Folgendes angezeigt: `2.1.302`.
 
-Let us start exploring some of the popular commands of the .NET CLI.
+Erkunden wir zunächst einige der häufig verwendeten Befehle der .NET-CLI.
 
-The *dotnet* command has the following general syntax:
+Der *dotnet*-Befehl weist im Allgemeinen folgende Syntax auf:
 
 ```console
 dotnet [verb] [arguments]
 ```
 
-The verb represents the action to execute. The arguments represent the list of input arguments that the verb requires in order to execute.
+Das Verb stellt die auszuführende Aktion dar. Die Argumente stellen die Liste der Eingabeargumente dar, die das Verb für die Ausführung benötigt.
 
-To get help on the *dotnet* usage and list all of the *verbs* available, and other related information, type the following command:
+Hilfe zur Verwendung von *dotnet* und zur Liste aller verfügbarer *Verben* sowie verwandte Informationen erhalten Sie, indem Sie den folgenden Befehl eingeben:
 
 ```console
 dotnet --help
 ```
 
-This command displays the following:
+Mit diesem Befehl wird Folgendes angezeigt:
 
 ```console
 .NET Command Line Tools (2.1.302)
@@ -90,23 +90,23 @@ SDK commands:
 ...
 ```
 
-Under the **SDK commands**, you can see the entire list of commands that you can execute against the .NET Core SDK.
+Unter den **SDK-Befehlen** wird die gesamte Liste der Befehle angezeigt, die Sie für das .NET Core SDK ausführen können.
 
-The most useful commands at all times are the following:
+Folgende Befehle sind die nützlichsten:
 
-- **dotnet new**: This command is used to scaffold/generate a new .NET application.
+- **dotnet new**: Dieser Befehl wird verwendet, um für eine neue .NET-Anwendung ein Gerüst zu erstellen bzw. eine neue .NET-Anwendung zu erstellen.
 
-- **dotnet restore**: This command is used to restore/download all packages that are referenced by the application.
+- **dotnet restore**: Dieser Befehl wird verwendet, um alle von der Anwendung referenzierten Pakete wiederherzustellen/herunterzuladen.
 
-- **dotnet run**: This command is used to run your .NET application.
+- **dotnet run**: Dieser Befehl wird zum Ausführen der .NET-Anwendung verwendet.
 
-Now, to get assistance on how to use a specific command, you can type the following:
+Um Unterstützung zur Verwendung eines bestimmten Befehls zu erhalten, können Sie Folgendes eingeben:
 
 ```console
 dotnet run --help
 ```
 
-This command results in:
+Dieser Befehl ergibt Folgendes:
 
 ```console
 Usage: new [options]
@@ -147,27 +147,27 @@ Examples:
     dotnet new --help
 ```
 
-This command lists all the available options that you can use with the `dotnet new` command. Also, it lists all the available project templates that you can use to generate your next .NET application. Finally, a section shows examples on how to use the command to generate a new .NET application.
+Mit diesem Befehl werden alle verfügbaren Optionen auflistet, die Sie mit dem `dotnet new`-Befehl verwenden können. Ferner werden alle verfügbaren Projektvorlagen aufgelistet, die Sie zum Erzeugen der nächsten .NET-Anwendung verwenden können. Und schließlich werden in einem Abschnitt Beispiele zur Verwendung des Befehls zum Erzeugen einer neuen .NET-Anwendung angezeigt.
 
-You can learn the rest of the commands by using the `--help` argument for any command available in the .NET CLI.
+Informationen zu den restlichen Befehlen erhalten Sie, indem Sie das `--help`-Argument für die in der .NET-CLI verfügbaren Befehle verwenden.
 
-## ASP.NET Core installation on Linux environment
+## <a name="aspnet-core-installation-on-linux-environment"></a>ASP.NET Core-Installation in einer Linux-Umgebung
 
-The latest and greatest version of ASP.NET Core is v2.1. In general, ASP.NET Core ships as part of the .NET Core SDK. Therefore, by installing the .NET Core SDK on your machine, you can start developing with any .NET Core application, including ASP.NET Core web apps.
+Die aktuelle und höchste Version von ASP.NET Core ist Version 2.1. Im Allgemeinen wird ASP.NET Core als Teil von .NET Core SDK ausgeliefert. Daher können Sie nach der Installation des .NET Core SDK auf Ihrem Computer mit der Entwicklung von .NET Core-Anwendungen, auch von ASP.NET Core-Web-Apps, beginnen.
 
-For this demonstration, I am using an Ubuntu 18.04 OS running on Windows 10, with the help of VMware Workstation Player.
+Für diese Demonstration verwende ich ein Ubuntu 18.04-Betriebssystem unter Windows 10 zusammen mit VMware Workstation Player.
 
-To download the .NET Core SDK, you need to visit the [.NET Downloads](https://www.microsoft.com/net/download) home page. The page contains links to download the .NET Core SDK on different platforms: Windows, Linux, and macOS.
+Um .NET Core SDK herunterzuladen, besuchen Sie die Startseite [.NET Downloads](https://www.microsoft.com/net/download). Die Seite enthält Links zum Herunterladen des .NET Core SDK auf verschiedene Plattformen: Windows, Linux und MacOS.
 
-Click on the **Linux** tab. You have two options:
+Klicken Sie auf die Registerkarte **Linux**. Sie haben zwei Möglichkeiten:
 
 - .NET Core SDK
-- .NET Core Runtime
+- .NET Core-Runtime
 
-The .NET Core Runtime is already contained inside the .NET Core SDK. The runtime is used to run an application. All the tools to develop, test, run, and publish are inside the .NET Core SDK. Therefore, you will click on **.NET Core SDK**.
+Die .NET Core-Runtime ist bereits im .NET Core SDK enthalten. Die Runtime wird zum Ausführen einer Anwendung verwendet. Alle Tools zum Entwickeln, Testen, Ausführen und Veröffentlichen sind im .NET Core SDK zu finden. Klicken Sie daher auf **.NET Core SDK**.
 
-The Microsoft website redirects you to the download page. There, you need to select the **Linux Distribution**. In my case, I will select **Ubuntu 18.04**. Automatically, upon selection, the instructions on how to install .NET Core SDK on Ubuntu 18.04 is displayed.
+Sie werden von der Microsoft-Website zur Downloadseite weitergeleitet. Dort müssen Sie die **Linux-Distribution** auswählen. In meinem Fall wähle ich **Ubuntu 18.04** aus. Beim Auswählen werden automatisch Anweisungen zum Installieren des .NET Core SDK unter Ubuntu 18.04 angezeigt.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-When deciding to build a web application, you have a choice of many languages and frameworks. Azure tries to make this choice easier by allowing you to host different types of applications, like Node.js, PHP, or .NET Core. This allows you to use the languages and frameworks that you're most comfortable with instead of changing to meet the needs of your web host.
+Wenn Sie eine Webanwendung erstellen möchten, haben Sie die Auswahl zwischen verschiedenen Sprachen und Frameworks. Azure versucht, Ihnen diese Auswahl zu erleichtern, denn Sie können unterschiedliche Arten von Anwendungen wie Node.js, PHP oder .NET Core hosten. Dadurch können Sie die Sprachen und Frameworks verwenden, mit denen Sie besonders zufrieden sind, und müssen sich nicht an die Anforderungen Ihres Webhosts anpassen.

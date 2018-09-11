@@ -1,4 +1,4 @@
-Sie möchten sichergehen, dass Sie Clients oder Websites innerhalb Ihrer Umgebung unter Verwendung verschlüsselter Tunnel über das öffentliche Internet mit Azure verbinden können. In dieser Übung erstellen Sie ein Point-to-Site-VPN-Gateway und stellen anschließend über einen Clientcomputer eine Verbindung mit diesem Gateway her. Aus Sicherheitsgründen verwenden Sie Verbindungen mit nativer Azure-Zertifikatauthentifizierung.
+Sie möchten sichergehen, dass Sie Clients oder Websites innerhalb Ihrer Umgebung unter Verwendung verschlüsselter Tunnel über das öffentliche Internet mit Azure verbinden können. In dieser Einheit erstellen Sie ein Point-to-Site-VPN-Gateway und stellen anschließend über einen Clientcomputer eine Verbindung mit diesem Gateway her. Aus Sicherheitsgründen verwenden Sie Verbindungen mit nativer Azure-Zertifikatauthentifizierung.
 
 Der Prozess umfasst folgende Schritte:
 
@@ -6,19 +6,20 @@ Der Prozess umfasst folgende Schritte:
 
 1. Hochladen des öffentlichen Schlüssels für ein Stammzertifikat zur Authentifizierung
 
-1. Generieren eines Clientzertifikats auf der Grundlage des Stammzertifikats und anschließendes Installieren des Clientzertifikats auf jedem Clientcomputer, der eine Verbindung mit dem VNet herstellt, um die Authentifizierung zu ermöglichen
+1. Generieren eines Clientzertifikats auf der Grundlage des Stammzertifikats und anschließendes Installieren des Clientzertifikats auf jedem Clientcomputer, der eine Verbindung mit dem virtuellen Netzwerk herstellt, um die Authentifizierung zu ermöglichen
 
-1. Erstellen von VPN-Clientkonfigurationsdateien mit den erforderlichen Informationen, damit der Client eine Verbindung mit dem VNet herstellen kann
+1. Erstellen von VPN-Clientkonfigurationsdateien mit den erforderlichen Informationen, damit der Client eine Verbindung mit dem virtuellen Netzwerk herstellen kann
 
 ## <a name="before-you-begin"></a>Vorbereitung
+<!---TODO: These should be prerequisites in the first unit and on the index.yml--->
 
-Für diese Aufgabe benötigen Sie Folgendes:
+Für dieses Modul benötigen Sie Folgendes:
 
 - Azure PowerShell
 
 - Einen Ordner namens „C:\cert“
 
-So installieren Sie Azure PowerShell:
+So installieren Sie Azure PowerShell
 
 1. Klicken Sie mit der rechten Maustaste auf die Windows-Schaltfläche, und klicken Sie anschließend auf **Windows PowerShell (Administrator)**.
 
@@ -75,7 +76,7 @@ Gehen Sie wie folgt vor, um sich anzumelden und Variablen festzulegen:
     $GWIPconfName = "gwipconf"
     ```
 
-## <a name="configure-a-vnet"></a>Konfigurieren eines VNets
+## <a name="configure-a-virtual-network"></a>Konfigurieren eines virtuellen Netzwerks
 
 1. Erstellen Sie eine Ressourcengruppe.
 
@@ -91,9 +92,10 @@ Gehen Sie wie folgt vor, um sich anzumelden und Variablen festzulegen:
     $gwsub = New-AzureRmVirtualNetworkSubnetConfig -Name $GWSubName -AddressPrefix $GWSubPrefix
     ```
 
-1. Erstellen Sie das virtuelle Netzwerk unter Verwendung der Subnetzwerte und eines statischen DNS-Servers. 
+1. Erstellen Sie das virtuelle Netzwerk unter Verwendung der Subnetzwerte und eines statischen DNS-Servers.
+
     > [!IMPORTANT]
-    > Ignorieren Sie die Warnmeldung, und warten Sie, bis die Ausführung des Befehls abgeschlossen ist.
+    > Ignorieren Sie die Warnmeldung, und warten Sie dann, bis die Ausführung des Befehls abgeschlossen ist.
 
     ```PowerShell
     New-AzureRmVirtualNetwork -Name $VNetName -ResourceGroupName $RG -Location $Location -AddressPrefix $VNetPrefix1,$VNetPrefix2 -Subnet $fesub, $besub, $gwsub -DnsServer 10.2.1.3
@@ -121,7 +123,7 @@ Achten Sie beim Erstellen dieses VPN-Gateways auf Folgendes:
 - „VpnType“ muss „RouteBased“ lauten.
 
 > [!NOTE]
-> Hinweis: Dieser Teil der Übung kann abhängig vom Wert der Gateway-SKU bis zu 45 Minuten dauern.
+> Beachten Sie, dass dieser Teil der Übung abhängig vom Wert der Gateway-SKU bis zu 45 Minuten dauern kann.
 
 1. Führen Sie zum Erstellen des VPN-Gateways den folgenden Befehl aus, und drücken Sie die EINGABETASTE.
 
@@ -175,9 +177,9 @@ Achten Sie beim Erstellen dieses VPN-Gateways auf Folgendes:
 
 1. Klicken Sie im Zertifikatexport-Assistenten auf **Weiter**.
 
-1. Vergewissern Sie sich, dass **Nein, privaten Schlüssel nicht exportieren** ausgewählt ist, und klicken Sie auf **Weiter**.
+1. Vergewissern Sie sich, dass **Nein, privaten Schlüssel nicht exportieren** ausgewählt ist, und klicken Sie dann auf **Weiter**.
 
-1. Vergewissern Sie sich auf der Seite **Dateiformat für den Export**, dass **Base-64-codiert X.509 (.CER)** ausgewählt ist, und klicken Sie auf **Weiter**.
+1. Vergewissern Sie sich auf der Seite **Format der zu exportierenden Datei**, dass **Base-64-codiert X.509 (.CER)** ausgewählt ist, und klicken Sie dann auf **Weiter**.
 
 1. Geben Sie auf der Seite **Zu exportierende Datei** unter **Dateiname** die Zeichenfolge **C:\cert\P2SRootCert.cer** ein, und klicken Sie anschließend auf „Weiter“.
 
@@ -217,13 +219,13 @@ Achten Sie beim Erstellen dieses VPN-Gateways auf Folgendes:
     $profile.VPNProfileSASUrl
     ```
 
-1. Kopieren Sie die URL aus der Befehlsausgabe, und fügen Sie sie in Ihrem Browser ein. Daraufhin sollte der Browser mit dem Herunterladen einer ZIP-Datei beginnen. Entzippen Sie die Datei, und legen Sie sie an einem geeigneten Speicherort ab.
+1. Kopieren Sie die URL aus der Befehlsausgabe, und fügen Sie sie in Ihren Browser ein. Daraufhin sollte der Browser mit dem Herunterladen einer ZIP-Datei beginnen. Entzippen Sie die Datei, und legen Sie sie an einem geeigneten Speicherort ab.
 
-1. Navigieren Sie in dem extrahierten Ordner entweder zum Ordner „WindowsAmd64“ (für Windows-Computer mit 64 Bit) oder zum Ordner „WindowsZX86“ (für Computer mit 32 Bit).
+1. Navigieren Sie im extrahierten Ordner entweder zum Ordner „WindowsAmd64“ (für 64-Bit-Windows-Computer) oder zum Ordner „WindowsZX86“ (für 32-Bit-Computer).
 
 1. Doppelklicken Sie auf die Datei „VpnClientSetupxxxxx.exe“ für Ihre Architektur.
 
-1. Klicken Sie im Bildschirm **Der Computer wurde durch Windows geschützt.** auf **Weitere Informationen** und anschließend auf **Trotzdem ausführen**.
+1. Klicken Sie auf dem Bildschirm **Der Computer wurde durch Windows geschützt.** auf **Weitere Informationen** und anschließend auf **Trotzdem ausführen**.
 
 1. Klicken Sie im Dialogfeld **Benutzerkontensteuerung** auf **Ja**.
 
@@ -262,4 +264,4 @@ Achten Sie beim Erstellen dieses VPN-Gateways auf Folgendes:
 
 ## <a name="summary"></a>Zusammenfassung
 
-Sie haben soeben ein VPN-Gateway eingerichtet, das es Ihnen ermöglicht, eine verschlüsselte Clientverbindung mit einem VNet in Azure herzustellen. Dieser Ansatz eignet sich hervorragend für Clientcomputer und kleinere Site-to-Site-Verbindungen.
+Sie haben soeben ein VPN-Gateway eingerichtet, das es Ihnen ermöglicht, eine verschlüsselte Clientverbindung mit einem virtuellen Netzwerk in Azure herzustellen. Dieser Ansatz eignet sich hervorragend für Clientcomputer und kleinere Site-to-Site-Verbindungen.

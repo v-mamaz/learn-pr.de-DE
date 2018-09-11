@@ -1,1 +1,1 @@
-In this module, you prepared your development environment by installing an appropriate integrated development environment (IDE) for your needs. You also installed the Azure toolkit within that IDE, to streamline the publishing of content directly to the various Azure services.
+In diesem Modul haben Sie Ihre Entwicklungsumgebung vorbereitet, indem Sie eine für Sie geeignete IDE installiert haben. Sie haben auch das Azure-Tool in dieser IDE installiert, um das direkte Veröffentlichen von Inhalt in den verschiedenen Azure-Diensten zu optimieren.

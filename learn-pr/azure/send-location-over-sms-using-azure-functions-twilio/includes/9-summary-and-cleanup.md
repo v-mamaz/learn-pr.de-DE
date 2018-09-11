@@ -1,36 +1,34 @@
-You've successfully created a cross-platform mobile app using Xamarin and an Azure function with a Twilio binding.
+Sie haben erfolgreich eine plattformübergreifende mobile App mit Xamarin und eine Azure-Funktion mit einer Twilio-Bindung erstellt.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
 
-When you're done working with this Azure Functions application, you can delete all resources created during the tutorial from the Azure portal.
+Nachdem Sie die Arbeit an dieser Azure Functions-Anwendung abgeschlossen haben, können Sie alle Ressourcen löschen, die während des Tutorials im Azure-Portal erstellt wurden.
 
-1. From Visual Studio, select *View->Cloud Explorer*.
+1. Klicken Sie in Visual Studio auf *Ansicht > Cloud-Explorer*.
 
-1. From the drop-down at the top of this panel, select *Resource Groups*.
+1. Wählen Sie oben im Panel aus der Dropdownliste *Ressourcengruppen* aus.
 
-1. Expand the subscription that you used to create the resource group. Right-click on the "ImHere" resource group and select *Open in Portal*.
+1. Erweitern Sie das Abonnement, das Sie zum Erstellen der Ressourcengruppe verwendet haben. Klicken Sie mit der rechten Maustaste auf die Ressourcengruppe „ImHere“ und anschließend auf *Im Portal öffnen*.
 
-    ![Open the resource group in the portal from the cloud explorer window](../media-drafts/9-open-resource-group-in-portal.png)
+    ![Öffnen Sie im Portal die Ressourcengruppe über das Cloud-Explorer-Fenster.](../media-drafts/9-open-resource-group-in-portal.png)
 
-1. Log into the Azure portal in your browser, if necessary.
+1. Melden Sie sich falls erforderlich in Ihrem Browser beim Azure-Portal an.
 
-1. The portal will open on the "ImHere" resource group. Click the **Delete Resource Group** button.
+1. Im geöffneten Portal wird die Ressourcengruppe „ImHere“ angezeigt. Klicken Sie auf **Ressourcengruppe löschen**.
 
-    ![Delete the resource group](../media-drafts/9-delete-resource-group.png)
+    ![Löschen der Ressourcengruppe](../media-drafts/9-delete-resource-group.png)
 
-1. Enter the name of the resource group to confirm the deletion and click **Delete**.
+1. Geben Sie zur Bestätigung des Löschvorgangs den Namen der Ressourcengruppe ein, und klicken Sie auf **Löschen**.
 
-    ![Enter the resource group name to confirm the deletion](../media-drafts/9-confirm-delete-resource-group.png)
+    ![Eingeben des Namens der Ressourcengruppe zur Bestätigung des Löschvorgangs](../media-drafts/9-confirm-delete-resource-group.png)
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this module, you learned how to:
-
-- Create a cross-platform Xamarin.Forms app that uses Xamarin.Essentials.
-- Create a cross-platform UI using XAML with application logic in a ViewModel, as well as bind properties in a ViewModel to the UI.
-- Detect the user's location.
-- Create an Azure Function with an HTTP trigger and run it locally.
-- Call an Azure Function from a mobile app, passing data as JSON.
-- Bind an Azure Function to Twilio to send an SMS message.
-- Publish an Azure Function to Azure.
+In diesem Artikel haben Sie Folgendes gelernt:
+- Erstellen einer plattformübergreifenden Xamarin.Forms-App, die Xamarin.Essentials nutzt
+- Erstellen einer plattformübergreifenden Benutzeroberfläche mit XAML zusammen mit Anwendungslogik in einem ViewModel sowie Binden der ViewModel-Eigenschaften an die Benutzeroberfläche
+- Erfassen des Benutzerstandorts
+- Erstellen einer Azure-Funktion mit einem HTTP-Trigger und lokales Ausführen der Funktion
+- Aufrufen einer Azure-Funktion über eine mobile App und Übergeben von Daten im JSON-Format
+- Binden einer Azure-Funktion an Twilio und Senden einer SMS
+- Veröffentlichen einer Azure-Funktion in Azure

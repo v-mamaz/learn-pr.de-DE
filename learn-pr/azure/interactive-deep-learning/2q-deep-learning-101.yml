@@ -1,52 +1,53 @@
 ### YamlMime:ModuleUnit
 uid: learn.interactive-deep-learning.2q-deep-learning-101
-title: Knowledege Check
+title: Wissensüberprüfung
 metadata:
-  title: Knowledege Check
-  description: Deep learning 101 Knowledege Check
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: Wissensüberprüfung
+  description: Deep Learning 101 – Wissensüberprüfung
+  displayType: one-column
+  ms.openlocfilehash: 6539b5c2f32d97a1a20ef2f801a1749f760643e7
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43835123"
 durationInMinutes: 2
-content: Answer the following to continue
+content: Beantworten Sie die folgenden Fragen, um fortzufahren
 quiz:
-  title: 'Deep Learning 101 Quiz'
+  title: Deep Learning 101 – Quiz
   questions:
-  - content: 'What is one of the main differences between traditional machine learning and deep learning?'
+  - content: Was ist einer der Hauptunterschiede zwischen traditionellem maschinellem Lernen und Deep Learning?
     choices:
-    - content: In deep learning we only use linear models where as in traditonal machine learning we use all kinds of models graph, algebraic and probablistic.
+    - content: Beim Deep Learning verwenden wir nur lineare Modelle, während beim traditionellen maschinellen Lernen alle Arten von Modellen verwendet werden – Graph, algebraisch und probabilistisch.
       isCorrect: false
-    - content: In traditional machine learning features are hand picked in deep learning they are hand picked and learned.
+    - content: Beim traditionellen maschinellen Lernen sind die Features von Hand ausgewählt, beim Deep Learning werden sie von Hand ausgewählt und gelernt.
       isCorrect: true
-      correctExplanation: In Deep Learning (DL), the process of feature extraction is learned through representing inputs as vectors and transforming them, with a series of clever linear algebra operations, into a given output.
-    - content: Deep learning is modeled after the brain and traditional machine learning is modeled after the heart.
+      correctExplanation: Bei Deep Learning (DL) basiert die Extraktion von Merkmalen auf einem Lernprozess. Dabei werden Eingaben als Vektoren dargestellt und mithilfe einiger intelligenter Algebra-Operationen in eine bestimmte Ausgabe umgewandelt.
+    - content: Deep Learning ist dem Gehirn nachgebildet, während traditionelles maschinelles Lernen dem Herzen nachgebildet ist.
       isCorrect: false
-  - content: 'What is the purpose of the DSVM?'
+  - content: Welchen Zweck hat die DSVM?
     choices:
-    - content: The DSVMs are the only way to interact with machine learning on Azure.
+    - content: Die DSVMs sind die einzige Möglichkeit zur Interaktion mit Machine Learning in Azure.
       isCorrect: false
-    - content: DSVMs are prebuilt images that provide support for the most popular data science and machine learning frameworks.
+    - content: DSVMs sind vorgefertigte Images, die Unterstützung für die am häufigsten verwendeten Data Science- und Machine Learning-Frameworks bieten.
       isCorrect: true
-      correctExplanation: DSVMs are Azure Virtual Machine images, pre-installed, configured, and tested with several popular tools that are commonly used for data analytics, machine learning, and deep learning training.
-    - content: Unlike the Deep Learning Virtual Machine image DSVMs can only be used for traditional data science.
+      correctExplanation: DSVMs sind Azure-VM-Images, die mit verschiedenen beliebten Tools vorinstalliert, konfiguriert und getestet wurden. Diese Images werden häufig in den Bereichen Datenanalyse, maschinelles Lernen und Deep Learning-Training eingesetzt.
+    - content: Im Gegensatz zum Deep Learning-VM-Image können DSVMs nur für traditionelle Data Science verwendet werden.
       isCorrect: false
-  - content: 'Why are GPUs often used for deep learning?'
+  - content: Warum werden für Deep Learning so häufig GPUs eingesetzt?
     choices:
-    - content: The matrix algebra in deep learning requires lots of parallel computation and GPUs make the viable.
-      correctExplanation: The series of matrix operations that we computer as part of the linear algebra component tend to be computationally expensive and are often heavily parallelizable, requiring specialized compute such as Graphics Processing Units GPUs to compute efficiently.
+    - content: Die Matrixalgebra im Deep Learning erfordert viele gleichzeitige Berechnungen, und mit GPUs sind diese möglich.
+      correctExplanation: Die Matrixoperationen, die im Rahmen der linearen Algebrakomponente ausgeführt werden, sind häufig sehr rechenintensiv und stark parallelisierbar. Für eine effiziente Berechnung werden daher spezielle Prozessoren (beispielsweise Grafikprozessoren) benötigt.
       isCorrect: true
-    - content: GPUs ensure that deep learning models converge during gradient decent.
+    - content: GPUs stellen sicher, dass Deep Learning-Modelle während des Gradientenabstiegs konvergieren.
       isCorrect: false
-    - content: GPUs are needed to evaluate a loss function. 
+    - content: GPUs werden benötigt, um eine Verlustfunktion auszuwerten.
       isCorrect: false
-  - content: 'What is the difference between an N-Series and D-Series machines on Azure?'
+  - content: Was ist der Unterschied zwischen N-Serien- und D-Serien-Computern in Azure?
     choices:
-    - content: D series are for deep learning where as N series are for Normal compute.
+    - content: Die D-Serie ist für Deep Learning bestimmt, während die N-Serie für normale Computeaufgaben vorgesehen ist.
       isCorrect: false
-    - content: D series are for general compute where as N series contain GPUs.
+    - content: Die D-Serie ist für allgemeine Berechnungen, während die N-Serie GPUs enthält.
       isCorrect: true
-    - content: D series are for high preformance compute where as N series contain GPUs.
+    - content: Die D-Serie ist für Hochleistungsberechnungen, während die N-Serie GPUs enthält.
       isCorrect: false

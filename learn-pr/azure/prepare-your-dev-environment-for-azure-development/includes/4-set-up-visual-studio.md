@@ -1,32 +1,32 @@
-Visual Studio is a fully featured and rich integrated development environment (IDE), aimed at almost any kind of software professional. Visual Studio has a full set of tools and features specifically aimed at developing applications with Microsoft Azure. The tight integration in Visual Studio means that Azure deployment, debugging, and development tools are first class. Visual Studio for Mac is no different. This unit will introduce you to both, and their strengths when it comes to Azure development.
+Visual Studio ist eine umfassend integrierte Entwicklungsumgebung (IDE) mit vollem Funktionsumfang, die für nahezu jeden Softwareexperten geeignet ist. Visual Studio verfügt über einen vollständigen Satz von Tools und Features, die speziell auf die Entwicklung von Anwendungen mit Microsoft Azure konzipiert sind. Die enge Integration in Visual Studio bedeutet, dass Azure-Tools für Bereitstellung, Debuggen und Entwicklung erstklassig sind. Dies gilt auch für Visual Studio für Mac. In dieser Einheit erhalten Sie Informationen über beide Versionen und über ihre Stärken in Bezug auf die Azure-Entwicklung.
 
-## Visual Studio
+## <a name="visual-studio"></a>Visual Studio
 
-Visual Studio is a fully featured IDE used to develop applications for Windows, Android, iOS, the web, and Azure.
+Visual Studio ist eine IDE mit vollem Funktionsumfang zum Entwickeln von Anwendungen für Windows, Android, iOS, das Internet und Azure.
 
-When installing Visual Studio, you'll see that several workloads are available. Workloads are collections of libraries and components that define an area of functionality that can be installed. Instead of installing a single individual component, where you must know and remember the dependencies between each, you can use workloads to do "themed" installations. This ensures that all necessary components are included.
+Wenn Sie Visual Studio installieren, sind mehrere Workloads verfügbar. Workloads sind Sammlungen von Bibliotheken und Komponenten, die einen Bereich von Funktionen definieren, der installiert werden kann. Statt einzelne Komponenten zu installieren, bei denen Sie die Abhängigkeiten untereinander kennen müssen, können Sie Workloads verwenden, um „thematische“ Installationen durchzuführen. Dadurch wird sichergestellt, dass alle erforderlichen Komponenten einbezogen werden.
 
-The base installation of Visual Studio comes with no tools or libraries for Azure development. For that, you need to include the Azure development workload. This includes the Azure SDKs, tooling, and template projects for getting started creating applications and experiences on Azure.
+Die Basisinstallation von Visual Studio enthält keine Tools oder Bibliotheken für die Azure-Entwicklung. Dafür müssen Sie die Workload „Azure-Entwicklung“aufnehmen. Diese umfasst die Azure SDKs, Tools und Vorlagenprojekte für die ersten Schritte beim Erstellen von Anwendungen und Umgebungen in Azure.
 
-To install Visual Studio, download the installer. This installer will ask which workloads to install, which is where you specify the Azure development workload. If there is additional functionality needed, this is most likely available through NuGet or a Visual Studio extension.
+Um Visual Studio zu installieren, laden Sie den Installer herunter. Dieser Installer fragt, welche Workloads installiert werden sollen. Hier geben Sie die Workload „Azure-Entwicklung“ an. Wenn zusätzliche Funktionen erforderlich sind, stehen diese in den meisten Fällen über NuGet oder eine Visual Studio-Erweiterung zur Verfügung.
 
-## Visual Studio for Mac
+## <a name="visual-studio-for-mac"></a>Visual Studio für Mac
 
-Visual Studio for Mac is a natively designed and developed IDE for macOS. It provides a first class developer experience for creating applications for mobile apps on Android and iOS, the web, and .NET Core solutions. It is also perfectly suited for creating applications on Azure.
+Visual Studio für Mac ist eine nativ entworfene und entwickelte IDE für macOS. Sie bietet eine erstklassige Entwicklerumgebung zum Erstellen von Anwendungen für mobile Apps unter Android und iOS, das Internet und .NET Core-Lösungen. Sie ist auch hervorragend für die Erstellung von Anwendungen in Azure geeignet.
 
-The base installation of Visual Studio for Mac comes with contextual integration of Azure tooling. For example, if you are building a Xamarin app for Android, then the Connected Services workload will provide a link to create a mobile back end with Azure App Service. If you want to create an Azure function, then that is a project template under the Cloud category.
+Die Basisinstallation von Visual Studio für Mac bietet eine kontextbezogene Integration von Azure-Tools. Wenn Sie z.B. eine Xamarin-App für Android erstellen, bietet die Workload „Verbundene Dienste“ einen Link zum Erstellen eines mobilen Back-Ends für Azure App Service. Für die Erstellung einer Azure-Funktion wird eine Projektvorlage aus der Kategorie „Cloud“ verwendet.
 
-If you require tools for Azure features and functions that aren't in the base installation, NuGet is the way to go. The NuGet package manager has a ton of Azure packages that extend the functionality and tooling of Visual Studio for Mac.
+Wenn Sie Tools für Azure-Features und -Funktionen benötigen, die in der Basisinstallation nicht vorhanden sind, ist NuGet die beste Wahl. Der NuGet-Paket-Manager weist zahlreiche Azure-Pakete auf, die die Funktionen und Tools von Visual Studio für Mac erweitern.
 
-To install Visual Studio for Mac, download the installer. The installer will inspect your system to determine what components are needed or need to be updated. You can customize the components to install from those that are found to be missing from your system. The base installation will include Azure tooling. If additional functionality is needed, it will likely be available through NuGet or a Visual Studio for Mac extension.
+Um Visual Studio für Mac zu installieren, laden Sie den Installer herunter. Der Installer prüft Ihr System, um zu bestimmen, welche Komponenten erforderlich sind oder aktualisiert werden müssen. Sie können anhand der Komponenten, die im System fehlen, die zu installierenden Komponenten anpassen. Die Basisinstallation umfasst Azure-Tools. Wenn zusätzliche Funktionen erforderlich sind, stehen diese wahrscheinlich über NuGet oder eine Erweiterung von Visual Studio für Mac zur Verfügung.
 
 > [!NOTE]
-> You may be prompted for administrator credentials on your machine to install certain components.
+> Sie müssen möglicherweise Administratoranmeldeinformationen auf Ihrem Computer angeben, um bestimmte Komponenten zu installieren.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this unit, you have installed Visual Studio either on Windows or on macOS.
+In dieser Einheit haben Sie Visual Studio unter Windows oder macOS installiert.
 
-For Windows you chose the Azure development workload in the installer experience, which installed all the necessary tooling for building Azure applications and generating Azure resources. You can then access all the Azure resources for your subscription through Explorer tooling, or via resource referencing.
+Für Windows haben Sie die Workload „Azure-Entwicklung“ im Installer ausgewählt. Damit wurden alle erforderlichen Tools zum Erstellen von Azure-Anwendungen und zum Generieren von Azure-Ressourcen installiert. Sie können auf alle Azure-Ressourcen für Ihr Abonnement über Explorer-Tools oder über Ressourcenverweise zugreifen.
 
-Visual Studio for Mac comes with some Azure tooling built into the base installation, and many more features available through NuGet. This will give access to resources and services on your Azure subscription as well.
+Für Visual Studio für Mac sind einige Azure-Tools in die Basisinstallation integriert. Viele weitere Features sind über NuGet verfügbar. Dadurch erhalten Sie auch Zugriff auf Ressourcen und Dienste in Ihrem Azure-Abonnement.

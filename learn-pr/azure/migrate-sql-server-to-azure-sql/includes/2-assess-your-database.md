@@ -1,24 +1,26 @@
-You have decided to move your SQL Server databases to Azure SQL Database to benefit from Azure's scalability and availability. However, you want to validate that Azure SQL Server provides all of the functionality that you currently use in your on-premises SQL Server.
+Sie haben beschlossen, Ihre SQL Server-Datenbanken nach Azure SQL-Datenbank zu migrieren, um von der Skalierbarkeit und Verfügbarkeit von Azure zu profitieren. Sie möchten allerdings sichergehen, dass Azure SQL Server alle Funktionen bietet, die Sie aktuell in Ihrer lokalen SQL Server-Instanz verwenden.
 
-You'll use a tool called the **Data Migration Assistant** to help you to assess your existing database for compatibility with Azure SQL Server.
+Daher verwenden Sie ein Tool namens Datenmigrations-Assistent, um die Kompatibilität Ihrer vorhandenen Datenbank mit Azure SQL Server zu bewerten.
 
-## What is the Data Migration Assistant (DMA)?
+## <a name="what-is-the-data-migration-assistant-dma"></a>Was ist der Datenmigrations-Assistent (DMA)?
 
-The Data Migration Assistant tool is specifically designed to analyze on-premises SQL Server instances. It will detect and report common issues that can impede SQL database migrations to Azure SQL Server.
+Der Datenmigrations-Assistent wurde speziell für die Analyse lokaler SQL Server-Instanzen entwickelt. Er erkennt und meldet allgemeine Probleme, die die Migration von SQL-Datenbanken nach Azure SQL Server beeinträchtigen können.
 
-It will detect compatibility issues that can block migration as well as recognize features used in your on-premises server that are either partially supported or unsupported.
+Er erkennt Kompatibilitätsprobleme, die eine Migration verhindern können, sowie verwendete Features Ihres lokalen Servers, die nur teilweise oder gar nicht unterstützt werden.
 
-It will also provide comprehensive recommendations to perform on your on-premises server before migration.
+Darüber hinaus liefert er umfassende Empfehlungen für Schritte, die vor der Migration auf Ihrem lokalen Server ausgeführt werden sollten.
 
-### Why do you need the Data Migration Assistant?
+### <a name="why-do-you-need-data-migration-assistant"></a>Welche Vorteile bietet der Datenmigrations-Assistent?
 
-Azure SQL Database shares a common code base with SQL Server. However, not all features are present in the cloud. The Data Migration Assistant can help to identify features you are using in your on-premise SQL Server that are not available in Azure SQL Server. You can refer to the [Azure SQL Database feature list](https://docs.microsoft.com/azure/sql-database/sql-database-features) for an up-to-date list of what is different between the two products.
+Azure SQL-Datenbank wird kontinuierlich weiterentwickelt und unterstützt derzeit noch nicht alle Features von SQL Server.
 
-## How to assess your database using the Data Migration Assistant?
+Aktuelle Angaben hierzu finden Sie in der [Featureliste für Azure SQL-Datenbank](https://docs.microsoft.com/azure/sql-database/sql-database-features).
 
-Assessing your database using the Data Migration Assistant typically involves the following steps:
+## <a name="how-to-assess-your-database-using-data-migration-assistant"></a>Wie kann ich meine Datenbank mithilfe des Datenmigrations-Assistenten bewerten?
 
-1. **Install the Data Migration Assistant** – Download and install Data Migration Assistant from https://www.microsoft.com/download/details.aspx?id=53595. Azure SQL Database is regularly updated; Data Migration Assistant is also updated to reflect any new capabilities. It is recommended to run the installer to ensure you have the latest version installed.
-2. **Create an assessment** – You create a new assessment that defines your on-premises database and the target database. You can also assess another target of SQL Server on Azure Virtual Machines to allow you to compare alternative migrations.
-3. **Select options for assessment and database sources** – You select your options, for example, whether you want to check compatibility or feature parity among the two databases. Then, choose your source database. You can select multiple sources.
-4. **Review results** - The detailed results allows you to review errors and take corrective action. The results show unsupported features with cross-database references and SQL Server Agent. It also gives a list of partially supported features, with full-text search and auditing. The result provides possible errors and advice on how to rectify those errors. You can export the Data Migration Assistant results as a .json file.
+Die Bewertung einer Datenbank mit dem Datenmigrations-Assistenten umfasst in der Regel folgende Schritte:
+
+- **Installieren des Datenmigrations-Assistenten:** Laden Sie den Datenmigrations-Assistenten unter https://www.microsoft.com/download/details.aspx?id=53595 herunter, und installieren Sie ihn. Azure SQL-Datenbank wird regelmäßig aktualisiert, und auch der Datenmigrations-Assistent wird aktualisiert, um neue Funktionen zu berücksichtigen. Es empfiehlt sich, das Installationsprogramm auszuführen, um sicherzustellen, dass die neueste Version installiert ist.
+- **Erstellen einer Bewertung:** Sie erstellen eine neue Bewertung, die Ihre lokale Datenbank und die Zieldatenbank definiert. Sie können auch ein weiteres Ziel von SQL Server für Azure Virtual Machines bewerten, um Alternativmigrationen zu vergleichen.
+- **Auswählen von Optionen für Bewertung und Datenbankquellen:** Sie wählen die gewünschten Optionen aus – beispielsweise, ob Sie die Kompatibilität oder die Featureparität zwischen den beiden Datenbanken überprüfen möchten. Danach wählen Sie Ihre Quelldatenbank aus. Sie können mehrere Quellen auswählen.
+- **Überprüfen der Ergebnisse:** Anhand der ausführlichen Ergebnisse können Sie Fehler überprüfen und Korrekturmaßnahmen ergreifen. Die Ergebnisse zeigen nicht unterstützte Features mit datenbankübergreifenden Verweisen und SQL Server-Agent. Darüber hinaus erhalten sie eine Liste teilweise unterstützter Features mit Volltextsuche und Überprüfung. Das Ergebnis gibt Aufschluss über mögliche Fehler und enthält Empfehlungen zur Behebung. Die Ergebnisse des Datenmigrations-Assistenten können als JSON-Datei exportiert werden.

@@ -1,69 +1,69 @@
-Distributed applications use queues, such as Service Bus queues, as temporary storage locations for messages that are awaiting delivery to a destination component. To send and receive messages through a queue, you must write code in the source and destination components.
+Für verteilte Anwendungen werden Warteschlangen, z.B. Service Bus-Warteschlangen, als temporäre Speicherorte für Nachrichten verwendet, die auf ihre Zustellung für eine Zielkomponente warten. Zum Senden und Empfangen von Nachrichten über eine Warteschlange müssen Sie auf den Quell- und Zielkomponenten Code schreiben.
 
-Consider the Contoso Slices application. The customer places the order through a website or mobile app. Because websites and mobile apps run on customer devices, there is really no limit to how many orders could come in at once. By having the mobile app and website deposit the orders in a queue, we can allow the back-end component (a web app) to process orders from that queue at its own pace.
+Sehen Sie sich die Anwendung „Contoso Slices“ an. Der Kunde gibt die Bestellung über eine Website oder mobile App auf. Da die Ausführung hierbei auf Kundengeräten erfolgt, gibt es praktisch keine Beschränkung der Anzahl von gleichzeitig eingehenden Bestellungen. Indem die Bestellungen der mobilen App und der Website in eine Warteschlange eingereiht werden, können wir für die Back-End-Komponente (eine Web-App) ermöglichen, dass Bestellungen aus dieser Warteschlange mit der eigenen Geschwindigkeit verarbeitet werden.
 
-The Contoso Slices application actually has several steps to handle a new order. But all of them are dependent on first authorizing payment, so we decide to use a queue. Our receiving component's first job will be processing the payment.
+Die Anwendung Contoso Slices verfügt über mehrere Schritte zum Verarbeiten einer neuen Bestellung. Da aber alle Schritte davon abhängig sind, dass zuerst die Zahlung autorisiert werden muss, entscheiden wir uns für die Verwendung einer Warteschlange. Die erste Aufgabe unserer empfangenden Komponente ist die Verarbeitung der Zahlung.
 
-In the mobile app and website, Contoso needs to write code that adds a message to the queue. In the back-end web app, they'll write code that picks up messages from the queue.
+In der mobilen App und auf der Website muss Contoso Code schreiben, mit dem der Warteschlange eine Nachricht hinzugefügt wird. In der Back-End-Web-App wird Code geschrieben, mit dem Nachrichten aus der Warteschlange ausgewählt werden.
 
-Here, you will learn how to write that code.
+Hier lernen Sie, wie Sie diesen Code schreiben.
 
-## The Microsoft.Azure.ServiceBus NuGet package
+## <a name="the-microsoftazureservicebus-nuget-package"></a>NuGet-Paket „Microsoft.Azure.ServiceBus“
 
-To make it easy to write code that sends and receives messages through Service Bus, Microsoft provides a library of .NET classes, which you can use in any .NET Framework language to interact with a Service Bus queue, topic, or relay. You can include this library in your application by adding the **Microsoft.Azure.ServiceBus** NuGet package.
+Microsoft stellt eine Bibliothek mit .NET-Klassen bereit, um das Schreiben des Codes zu vereinfachen, mit dem Nachrichten über Service Bus gesendet und empfangen werden. Sie können sie mit allen .NET Framework-Sprachen nutzen, um mit einer Warteschlange, einem Thema oder einem Relay von Service Bus zu interagieren. Diese Bibliothek können Sie in Ihre Anwendung einbinden, indem Sie das NuGet-Paket **Microsoft.Azure.ServiceBus** hinzufügen.
 
-The most important class in this library for queues is the `QueueClient` class. You must start by instantiating this class both in sending and receiving components.
+Die wichtigste Klasse in dieser Bibliothek für Warteschlangen ist die `QueueClient`-Klasse. Zunächst müssen Sie diese Klasse jeweils in der sendenden und empfangenden Komponente instanziieren.
 
-## Connection strings and keys
+## <a name="connection-strings-and-keys"></a>Verbindungszeichenfolgen und Schlüssel
 
-Source components and destination components both need two pieces of information to connect to a queue in a Service Bus namespace:
+Sowohl für Quellkomponenten als auch für Zielkomponenten sind zwei Informationen erforderlich, um eine Verbindung mit einer Warteschlange in einem Service Bus-Namespace herzustellen:
 
-- The location of the Service Bus namespace, also known as an **endpoint**. The location is specified as a fully qualified domain name within the **servicebus.windows.net** domain. For example: **pizzaService.servicebus.windows.net**.
-- An access key. Service Bus restricts access to queues, topics, and relays by requiring an access key.
+- Speicherort des Service Bus-Namespace. Wird auch als **Endpunkt** bezeichnet. Der Speicherort wird als vollqualifizierter Domänenname in der Domäne **servicebus.windows.net** angegeben. Beispiel: **pizzaService.servicebus.windows.net**.
+- Ein Zugriffsschlüssel. Service Bus beschränkt den Zugriff auf Warteschlangen, Themen und Relays, indem das Angeben eines Zugriffsschlüssels gefordert wird.
 
-Both of these pieces of information are provided to the `QueueClient` object in the form of a connection string. You can obtain the correct connection string for your namespace from the Azure portal.
+Beide Informationen werden in Form einer Verbindungszeichenfolge für das `QueueClient`-Objekt bereitgestellt. Sie können die richtige Verbindungszeichenfolge für Ihren Namespace im Azure-Portal abrufen.
 
-## Calling methods asynchronously
+## <a name="calling-methods-asynchronously"></a>Asynchrones Aufrufen von Methoden
 
-The queue in Azure may be located thousands of miles away from sending and receiving components. Even if it is physically close, slow connections and bandwidth contention may cause delays when a component calls a method on the queue. For this reason, the Service Bus client library makes `async` methods available for interacting with the queues. We'll use these methods to avoid blocking a thread while waiting for calls to complete.
+Die Warteschlange in Azure kann sich von den sendenden und empfangenden Komponenten Tausende Kilometer weit entfernt befinden. Auch wenn die physische Entfernung nicht groß ist, können langsame Verbindungen und Bandbreitenkonflikte zu Verzögerungen führen, wenn eine Komponente eine Methode in der Warteschlange aufruft. Aus diesem Grund werden über die serviceBus-Clientbibliothek `async`-Methoden für die Interaktion mit den Warteschlangen bereitgestellt. Wir verwenden diese Methoden, um das Blockieren eines Threads zu vermeiden, während auf den Abschluss von Aufrufen gewartet wird.
 
-When sending a message to a queue, for example, use the `QueueClient.SendAsync()` method with the `await` keyword.
+Verwenden Sie beim Senden einer Nachricht an eine Warteschlange beispielsweise die `QueueClient.SendAsync()`-Methode mit dem Schlüsselwort `await`.
 
-## Write code that sends to queues 
+## <a name="write-code-that-sends-to-queues"></a>Schreiben von Code für das Senden an Warteschlangen 
 
-In any sending or receiving component, you should add the following `using` statements to any code file that calls a Service Bus queue:
+Für alle Sende- oder Empfangskomponenten sollten Sie die folgenden using-Anweisungen allen Codedateien hinzufügen, mit denen eine Service Bus-Warteschlange aufgerufen wird:
 
-```C#
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.Azure.ServiceBus;
-```
+    ```C#
+    using System.Threading;
+    using System.Threading.Tasks;
+    using Microsoft.Azure.ServiceBus;
+    ```
 
-Next, create a new `QueueClient` object and pass it the connection string and the name of the queue:
+Erstellen Sie als Nächstes ein neues `QueueClient`-Objekt, und übergeben Sie dafür die Verbindungszeichenfolge und den Namen der Warteschlange:
 
-```C#
-queueClient = new QueueClient(TextAppConnectionString, "PrivateMessageQueue");
-```
+    ```C#
+    queueClient = new QueueClient(TextAppConnectionString, "PrivateMessageQueue");
+    ```
 
-You can send a message to the queue by calling the `QueueClient.SendAsync()` method and passing the message in the form of a UTF-8 encoded string:
+Sie können eine Nachricht an die Warteschlange senden, indem Sie die `QueueClient.SendAsync()`-Methode aufrufen und die Nachricht in Form einer Zeichenfolge mit UTF-8-Codierung übergeben:
 
-```C#
-string message = "Sure would like a large pepperoni!";
-var encodedMessage = new Message(Encoding.UTF8.GetBytes(message));
-await queueClient.SendAsync(encodedMessage);
-```
+    ```C#
+    string message = "Sure would like a large pepperoni!";
+    var encodedMessage = new Message(Encoding.UTF8.GetBytes(message));
+    await queueClient.SendAsync(encodedMessage);
+    ```
 
-## Receive messages from queue
+## <a name="receive-messages-from-queue"></a>Empfangen von Nachrichten einer Warteschlange
 
-To receive messages, you must first register a message handler - this is the method in your code that will be invoked when a message is available on the queue.
+Sie müssen zuerst einen Nachrichtenhandler registrieren, um Nachrichten empfangen zu können. Dies ist die Methode in Ihrem Code, die aufgerufen wird, wenn eine Nachricht in der Warteschlange verfügbar ist.
 
-```C#
-queueClient.RegisterMessageHandler(MessageHandler, messageHandlerOptions);
-```
+    ```C#
+    queueClient.RegisterMessageHandler(MessageHandler, messageHandlerOptions);
+    ```
 
-Do your processing work. Then, within the message handler, call the `QueueClient.CompleteAsync()` method to remove the message from the queue:
+Führen Sie Ihre Verarbeitungsschritte aus. Rufen Sie dann im Nachrichtenhandler die `QueueClient.CompleteAsync()`-Methode auf, um die Nachricht aus der Warteschlange zu entfernen:
 
-```C#
-await queueClient.CompleteAsync(message.SystemProperties.LockToken);
-```
+    ```C#
+    await queueClient.CompleteAsync(message.SystemProperties.LockToken);
+    ```
     

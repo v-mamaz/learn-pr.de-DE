@@ -1,25 +1,25 @@
-You have assessed your on-premises database to check its compatibility and feature parity against the Azure SQL database. Because the customer base for your online bicycle retail business is limited to one geographical location, you can afford to take your database offline during an off-peak time, for example, the early morning hours.
+Sie haben Ihre lokale Datenbank bewertet, um ihre Kompatibilität und Featureparität mit der Azure SQL-Datenbank zu überprüfen. Da die Kundenbasis Ihres Onlinefahrradhandels auf einen einzelnen geografischen Standort beschränkt ist, können Sie es sich leisten, die Datenbank zu Nebenzeiten (etwa in den frühen Morgenstunden) offline zu schalten.
 
-The best approach for database migration in this scenario is to use the Data Migration Assistant, which provides a wizard to guide you through migration steps. In this unit, we'll discuss how the Data Migration Assistant carries out the actual migration.
+In diesem Szenario empfiehlt es sich, die Datenbankmigration mithilfe des Datenmigrations-Assistenten durchzuführen, der Sie durch die Migrationsschritte führt. In dieser Einheit erfahren Sie, wie der Datenmigrations-Assistent die eigentliche Migration durchführt.
 
-## Migrate the Database Using Data Migration Assistant
+## <a name="migrate-the-database-using-data-migration-assistant"></a>Migrieren der Datenbank mithilfe des Datenmigrations-Assistenten
 
-When using the Data Migration Assistant to migrate your database, choose a time frame when there is a zero or minimum transactional activity on your database.
+Wenn Sie Ihre Datenbank mithilfe des Datenmigrations-Assistenten migrieren möchten, wählen Sie einen Zeitrahmen, in dem in Ihrer Datenbank möglichst wenige Transaktionen stattfinden.
 
-Before starting with the migration process, fix any errors identified during the assessment stage. The assessment report details the fixes that must be made before proceeding with the actual migration.
+Beheben Sie vor Beginn des Migrationsprozesses alle Fehler, die während der Bewertungsphase gefunden wurden. Der Bewertungsbericht gibt Aufschluss über die Korrekturen, die vor der Durchführung der tatsächlichen Migration vorgenommen werden müssen.
 
-To reduce the total time taken for a migration, you can change the performance level of the target Azure SQL Database for the period of migration. You can increase the performance to a higher level, such as P15, to reduce the downtime caused by migration. However, to reduce costs, ensure that you return the performance level to its previous value after the migration.
+Zur Beschleunigung der Migration können Sie die Leistungsstufe der Azure SQL-Zieldatenbank für den Zeitraum der Migration ändern. Sie können die Leistung auf eine höhere Stufe festlegen (etwa P15), um migrationsbedingte Ausfallzeiten zu verringern. Aus Kostengründen sollten Sie die Leistungsstufe nach der Migration allerdings wieder auf den ursprünglichen Wert zurücksetzen.
 
-The actual migration process involves the following steps:
+Der eigentliche Migrationsprozess umfasst folgende Schritte:
 
-1. Creating an empty Azure SQL Database.
+1. Erstellen einer Azure SQL-Datenbank.
 
-1. Creating a new migration project.
+1. Erstellen eines neuen Migrationsprojekts.
 
-1. Defining the source and target servers and databases.
+1. Definieren der Quell- und Zielserver/-datenbanken.
 
-1. Selecting the objects to migrate. You don't need to migrate all the objects, however, ensure that you do not leave any dependent objects. For example, if a SQL view accesses a table, and you're migrating the view, ensure that you also migrate the table.
+1. Auswählen der zu migrierenden Objekte. Sie müssen nicht alle Objekte migrieren. Achten Sie jedoch darauf, alle abhängigen Objekte einzuschließen. Wenn Sie also beispielsweise eine Ansicht migrieren, die auf eine Tabelle zugreift, müssen Sie auch die Tabelle migrieren.
 
-1. Deploying the schema. This migrates the structure of the database, but not the data.
+1. Bereitstellen des Schemas. Dieser Schritt dient zum Migrieren der Datenbankstruktur (nicht der Daten).
 
-1. Migrating the data. This migrates the contents of the tables in the database and is the most time-consuming step.
+1. Migrieren der Daten. In diesem Schritt wird der Inhalt der Tabellen in die Datenbank migriert. Dies ist der zeitaufwendigste Schritt.

@@ -1,20 +1,21 @@
-You've created a new Linux virtual machine, changed its size, stopped and started it, and updated the configuration with the Azure CLI.
+Sie haben mit der Azure CLI einen neuen virtuellen Linux-Computer erstellt, seine Größe geändert, ihn angehalten und gestartet und die Konfiguration aktualisiert.
 
-<!-- Cleanup sandbox -->
-[!include[](../../../includes/azure-sandbox-cleanup.md)]
+## <a name="cleanup"></a>Bereinigen
 
-When you are working in your own subscription, you can execute the following Azure CLI command to delete the resource group and all associated resources.
+Jetzt sind wir mit dem Bearbeiten des virtuellen Computers fertig und benötigen ihn nicht mehr. Also löschen wir die Ressourcen. Diese Bereinigung ist wichtig, damit die Compute- und Speicherressourcen nicht weiter für Ihr Konto abgerechnet werden. 
+
+Sie können mit dem Befehl „`delete`“ einzelne Ressourcen löschen. Die einfachste Methode besteht aber darin, mit „`az group delete`“ alles zu entfernen. Führen Sie in der Azure CLI folgenden Befehl aus:
 
 ```azurecli
-az group delete --name [resource-group-name] --no-wait
+az group delete --name ExerciseResources --no-wait
 ```
 
-Answer "yes" to the prompt when shown, or use the `--yes` parameter to auto-answer the prompt.
+Wenn Sie dazu aufgefordert werden, antworten Sie mit „yes“, oder verwenden Sie den `--yes`-Parameter, um die Antwort automatisch zu geben.
 
-This command deletes all of the resources associated with the resource group, and is guaranteed to deallocate them in the correct order. The `--no-wait` parameter keeps the Azure CLI from blocking while the deletion takes place. Leave it off to wait for the resources to be deleted. Or use the `az group wait -n [resource-group-name] --deleted` command later in your script to wait for the deletion to finish.
+Dieser Befehl löscht alle der Ressourcengruppe zugeordneten Ressourcen und hebt ihre Zuordnung garantiert in der richtigen Reihenfolge auf. Der Parameter „`--no-wait`“ verhindert eine Blockierung durch die Azure CLI, während der Löschvorgang ausgeführt wird. Lassen Sie den Parameter deaktiviert, um zu warten, bis die Ressourcen gelöscht wurden. Sie können auch den `az group wait -n ExerciseResources --deleted`-Befehl später im Skript verwende, um darauf zu warten, dass der Löschvorgang beendet wird.
 
 
-## Further reading
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
-- [Azure CLI overview](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)
-- [Azure CLI command reference](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest)
+- [Übersicht über die Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)
+- [Azure CLI-Befehlsreferenz](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest)

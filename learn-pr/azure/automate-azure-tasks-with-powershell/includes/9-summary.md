@@ -1,14 +1,14 @@
-In this module, we wrote a script to automate the creation of multiple VMs. Even though the script was relatively short, you can see the potential power when you combine loops, variables, and functions from PowerShell with cmdlets from Azure PowerShell.
+In diesem Modul haben wir ein Skript zum Automatisieren der Erstellung mehrerer VMs geschrieben. Auch wenn das Skript relativ kurz war, konnten Sie das Potenzial erkennen, wenn Sie Schleifen, Variablen und Funktionen aus PowerShell mit Azure PowerShell-Cmdlets kombinieren.
 
-Azure PowerShell is a good automation choice for admins with PowerShell experience. The combination of clean syntax and a powerful scripting language also makes it worth considering even if you are new to PowerShell. This level of automation for time-consuming and error-prone tasks should help you reduce administrative time and increase quality.
+Azure PowerShell ist für Administratoren mit PowerShell-Erfahrung eine gute Wahl bei der Automatisierung. Durch die Kombination von übersichtlicher Syntax und leistungsfähiger Skriptsprache ist das Tool auch dann interessant, wenn Sie mit PowerShell noch nicht vertraut sind. Dieses Maß an Automatisierung für zeitintensive und fehleranfällige Aufgaben sollte Ihnen helfen, die Zeit für die Verwaltung zu reduzieren und die Qualität zu erhöhen.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up-your-resources"></a>Bereinigen von Ressourcen
+<!---TODO: Do we need to include cleanup for the free education tier?--->
 
-Provisioned and running VMs incur costs against your subscription. You should remove unneeded VMs to avoid unnecessary charges. The easiest way to cleanup your Azure subscription is to remove the associated resource group; this will also delete all the VMs in the group. And you can do this from PowerShell! When you are finished, please run the following Azure PowerShell cmdlet:
+Für bereitgestellte und aktive VMs fallen Kosten in Ihrem Abonnement an. Entfernen Sie nicht benötigte VMs, um unnötige Gebühren zu vermeiden. Die einfachste Möglichkeit, Ihr Azure-Abonnement zu bereinigen, ist das Entfernen der zugehörigen Ressourcengruppe. Dabei werden auch alle VMs in der Gruppe gelöscht. Hierfür können Sie PowerShell verwenden. Wenn Sie fertig sind, führen Sie das folgende Azure PowerShell-Cmdlet aus:
 
 ```powershell
 Remove-AzureRmResourceGroup -Name TrialsResourceGroup
 ```
 
-When you are asked to confirm the delete, answer **Yes**. The command may take several minutes to complete.
+Sie werden aufgefordert, den Löschvorgang zu bestätigen. Wählen Sie **Ja** aus. Der Befehl kann mehrere Minuten in Anspruch nehmen.

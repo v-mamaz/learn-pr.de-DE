@@ -1,27 +1,27 @@
-The last thing we want to try on our VM is to install a web server. One of the easiest packages to install is `nginx`.
+Das Letzte, was wir in unserer VM ausprobieren möchten, ist die Installation eines Webservers. Eines der am einfachsten zu installierenden Pakete ist `nginx`.
 
-1. Locate the public IP address of your Linux virtual machine. Remember you can use the `vm list-ip-addresses` command to look it up.
+1. Bestimmen Sie die öffentliche IP-Adresse Ihres virtuellen Linux-Computers. Denken Sie daran, dass Sie den Befehl `vm list-ip-addresses` verwenden können, um ihn nachzuschlagen.
 
-1. Next, open an `ssh` connection to the machine like you did when we tested it. Remember you will need to pass in the admin name ("**aldis**").
+1. Öffnen Sie als Nächstes wie beim Test eine `ssh`-Verbindung mit dem Computer. Sie müssen hierbei den Administratornamen übergeben („**aldis**“).
 
-1. In the presented shell, execute the following command to install the `nginx` web server.
+1. Führen Sie in der dargestellten Shell den folgenden Befehl zum Installieren des Webservers `nginx` aus.
 
 ```azurecli
 sudo apt-get -y update && sudo apt-get -y install nginx
 ```
 
-1. In Azure Cloud Shell, use `curl` to read the default page from your Linux web server. Alternatively, you can open a new browser tab and browse to the public IP address.
+1. Verwenden Sie in Azure Cloud Shell `curl`, um die Standardseite von Ihrem Linux-Webserver einzulesen. Alternativ können Sie eine neue Browserregisterkarte öffnen und zur öffentlichen IP-Adresse navigieren.
 
 ```azurecli
 curl 168.61.54.62
 ```
 
-It will fail because the Linux virtual machine doesn't expose port 80 (`http`) through the built-in firewall. Luckily, the Azure CLI has a command for that: `vm open-port`. 
+Er wird fehlschlagen, weil der virtuelle Linux-Computer den Port 80 (`http`) durch die integrierte Firewall nicht verfügbar macht. Glücklicherweise bietet die Azure CLI einen Befehl hierfür: `vm open-port`. 
 
-1. Type the following into Cloud Shell to open port 80:
+1. Geben Sie Folgendes in Cloud Shell ein, um Port 80 zu öffnen:
 
 ```
 az vm open-port --port 80 --resource-group ExerciseResources --name SampleVM
 ```
 
-Finally, try `curl` again. This time it should return data. You can see the page in a browser as well.
+Wiederholen Sie schließlich `curl`. Dieses Mal sollten Daten zurückgegeben werden. Sie können die Seite auch in einem Browser anzeigen.

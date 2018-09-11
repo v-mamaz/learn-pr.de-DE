@@ -1,22 +1,22 @@
-In this unit, you will perform some basic troubleshooting operations such as pulling container logs, container events, and attaching to a container instance. By the end of this module, you should understand basic capabilities for troubleshooting container instances.
+In dieser Einheit führen Sie einige grundlegende Problembehandlungsvorgänge durch, z.B. das Abrufen von Containerprotokollen und Containerereignissen sowie das Anfügen dieser an eine Containerinstanz. Nach Abschluss dieses Moduls sollten Sie mit den grundlegenden Funktionen für die Problembehandlung von Containerinstanzen vertraut sein.
 
-## Create a container
+## <a name="create-a-container"></a>Erstellen eines Containers
 
-Start by creating a container to use in this unit. If you still have the first container created in this module, skip this step:
+Erstellen Sie zunächst einen Container, den Sie für diese Einheit verwenden. Sie können diesen Schritt überspringen, wenn Sie noch über den ersten Container verfügen, den Sie im Rahmen dieses Moduls erstellt haben:
 
 ```azurecli
 az container create --resource-group myResourceGroup --name mycontainer --image microsoft/aci-helloworld --ports 80 --ip-address Public
 ```
 
-## Get logs from a container instance
+## <a name="get-logs-from-a-container-instance"></a>Abrufen von Protokollen aus einer Containerinstanz
 
-To view logs from your application code within a container, you can use the `az container logs` command:
+Die können den Befehl `az container logs` verwenden, um Protokolle aus Ihrem Anwendungscode in einem Container anzuzeigen:
 
 ```azazurecli
 az container logs --resource-group myResourceGroup --name mycontainer
 ```
 
-The following is log output from the example container after the web app has been accessed a few times:
+Es folgt die Protokollausgabe des Beispielcontainers, nachdem mehrmals auf eine Web-App zugegriffen wurde:
 
 ```bash
 listening on port 80
@@ -26,15 +26,15 @@ listening on port 80
 ::ffff:0.0.0.0 - - [20/Aug/2018:21:44:27 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"
 ```
 
-## Get container events
+## <a name="get-container-events"></a>Abrufen von Containerereignissen
 
-The `az container attach` command provides diagnostic information during container startup. Once the container has started, it also streams STDOUT and STDERR to your local console:
+Der Befehl `az container attach` stellt während des Startvorgangs des Containers Diagnoseinformationen bereit. Nachdem der Container gestartet wurde, werden auch STDOUT und STDERR auf Ihre lokale Konsole gestreamt:
 
 ```azazurecli
 az container attach --resource-group myResourceGroup --name mycontainer
 ```
 
-Example output:
+Beispielausgabe:
 
 
 ```bash
@@ -49,17 +49,17 @@ listening on port 80
 listening on port 80
 ```
 
-## Execute a command in a container
+## <a name="execute-a-command-in-a-container"></a>Ausführen eines Befehls in einem Container
 
-Azure Container Instances supports executing a command in a running container. Running a command in a container you've already started is especially helpful during application development and troubleshooting. The most common use of this feature is to launch an interactive shell, so that you can debug issues in a running container.
+Azure Container Instances unterstützt die Ausführung eines Befehls in einem ausgeführten Container. Die Ausführung eines Befehls in einem bereits gestarteten Container ist besonders bei der Anwendungsentwicklung und Problembehandlung von großem Nutzen. Am häufigsten wird dieses Feature zum Starten einer interaktiven Befehlsshell verwendet, sodass Probleme in einem ausgeführten Container behoben werden können.
 
-This example starts an interactive terminal session with the running container:
+In diesem Beispiel wird eine interaktive Terminalsitzung mit dem ausgeführten Container gestartet:
 
 ```azurecli
 az container exec --resource-group myResourceGroup --name mycontainer --exec-command /bin/sh
 ```
 
-Once the command has completed, you are effectively working inside of the container. In this example, the `ls` command was run to display the contents of the working directory:
+Sobald der Befehl abgeschlossen ist, arbeiten Sie effektiv innerhalb des Containers. In diesem Beispiel wurde der `ls`-Befehl ausgeführt, um den Inhalt des Arbeitsverzeichnisses anzuzeigen:
 
 ```bash
 usr/src/app # ls
@@ -67,23 +67,23 @@ index.html         node_modules       package.json
 index.js           package-lock.json
 ```
 
-Enter `exit` to stop the remote session.
+Geben Sie `exit` ein, um die Remotesitzung zu beenden.
 
-## Monitor container CPU and memory
+## <a name="monitor-container-cpu-and-memory"></a>Überwachen von Container-CPU und -Arbeitsspeicher
 
-You may want to pull metrics on CPU and memory usage. To do so, first get the ID of the Azure container instance. In this example, the ID is placed in a variable named `CONTAINER_ID`:
+Sie sollten die Metriken zur CPU- und Arbeitsspeicherauslastung abrufen. Zu diesem Zweck müssen Sie zuerst die ID der Azure-Containerinstanz abrufen. In diesem Beispiel wird die ID in einer Variable namens `CONTAINER_ID` platziert:
 
 ```azurecli
 CONTAINER_ID=$(az container show --resource-group myResourceGroup --name mycontainer --query id --output tsv)
 ```
 
-Now, use the `az monitor metrics list` command to pull back CPU usage information:
+Verwenden Sie nun den `az monitor metrics list`-Befehl, um die Informationen zur CPU-Auslastung abzurufen:
 
 ```azurecli
 az monitor metrics list --resource $CONTAINER_ID --metric CPUUsage --output table
 ```
 
-Example output:
+Beispielausgabe:
 
 ```bash
 Timestamp            Name              Average
@@ -105,13 +105,13 @@ Timestamp            Name              Average
 2018-08-20 21:53:00  CPU Usage      0.5
 ```
 
-The following command can be used to get memory usage information:
+Der folgende Befehl kann zum Abrufen der Informationen zur Arbeitsspeicherauslastung verwendet werden:
 
 ```azurecli
 az monitor metrics list --resource $CONTAINER_ID --metric MemoryUsage --output table
 ```
 
-Example output:
+Beispielausgabe:
 
 ```bash
 Timestamp            Name              Average
@@ -131,19 +131,19 @@ Timestamp            Name              Average
 2018-08-20 21:55:00  Memory Usage  19181568.0
 ```
 
-This information is also available in the Azure portal. To see graphical representation of CPU and memory usage information, visit the Azure portal overview page for a container instance.
+Diese Informationen stehen Ihnen auch im Azure-Portal zur Verfügung. Öffnen Sie im Azure-Portal die Übersichtsseite einer Containerinstanz, um eine grafische Darstellung der Informationen zur CPU- und Arbeitsspeicherauslastung anzuzeigen.
 
-![Azure portal view of Azure Container Instances CPU and memory usage information](../media-draft/cpu-memory.png)
+![Ansicht der Informationen zu der CPU- und Arbeitsspeicherauslastung von Azure Container Instances im Azure-Portal](../media-draft/cpu-memory.png)
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up"></a>Bereinigen
+<!---TODO: Do we need to include cleanup for the free education tier?--->
 
-This is the last unit of the Azure Container Instances learning module. At this point, you can cleanup the created resources by deleting the resource group. To do so, use the **az group delete** command:
+Dies ist die letzte Einheit des Azure Container Instances-Lernmoduls. Sie können nun die erstellten Ressourcen bereinigen, indem Sie die Ressourcengruppe löschen. Verwenden Sie hierzu den Befehl **az group delete**:
 
 ```azurecli
 az group delete --name myResourceGroup --no-wait
 ```
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this unit, you learned about several troubleshooting operations such as pulling container logs, container events, and attaching to a container instance.
+In dieser Einheit haben Sie einige Problembehandlungsvorgänge kennengelernt, z.B. das Abrufen von Containerprotokollen und Containerereignissen sowie das Anfügen dieser an eine Containerinstanz.

@@ -1,42 +1,42 @@
-The Azure CLI includes the `vm` command to work with virtual machines in Azure. We can supply several subcommands to do specific tasks. The most common include:
+Die Azure CLI enthält den Befehl „`vm`“ für die Arbeit mit virtuellen Computern in Azure. Wir können verschiedene Unterbefehle bereitstellen, um bestimmte Aufgaben auszuführen. Dies sind die am häufigsten verwendeten:
 
-| Sub-command | Description |
+| Unterbefehl | Beschreibung |
 |-------------|-------------|
-| `create`    | Create a new virtual machine |
-| `deallocate` | Deallocate a virtual machine |
-| `delete` | Delete a virtual machine |
-| `list` | List the created virtual machines in your subscription |
-| `open-port` | Open a specific network port for inbound traffic |
-| `restart` | Restart a virtual machine |
-| `show` | Get the details for a virtual machine |
-| `start` | Start a stopped virtual machine |
-| `stop` | Stop a running virtual machine |
-| `update` | Update a property of a virtual machine |
+| `create`    | Erstellen eines neuen virtuellen Computers |
+| `deallocate` | Aufheben der Zuordnung eines virtuellen Computers |
+| `delete` | Löschen eines virtuellen Computers |
+| `list` | Auflisten der erstellten virtuellen Computer in Ihrem Abonnement |
+| `open-port` | Öffnen eines bestimmten Netzwerkports für eingehenden Datenverkehr |
+| `restart` | Neustarten eines virtuellen Computers |
+| `show` | Abrufen der Details für einen virtuellen Computer |
+| `start` | Starten eines angehaltenen virtuellen Computers |
+| `stop` | Anhalten eines ausgeführten virtuellen Computers |
+| `update` | Aktualisieren der Eigenschaft eines virtuellen Computers |
 
 > [!NOTE]
-> For a complete list of commands, you can check the [Azure CLI reference documentation](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest).
+> Eine vollständige Liste der Befehle finden Sie in der [Dokumentation der Azure CLI-Referenz](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest).
 
-Let's start with the first one: `az vm create`. This command is used to create a virtual machine in a resource group. There are several parameters you can pass to configure all the aspects of the new VM. The three parameters that must be supplied are:
+Beginnen wir mit dem ersten: `az vm create`. Mit diesem Befehl wird ein virtueller Computer in einer Ressourcengruppe erstellt. Es gibt verschiedene Parameter, die Sie übergeben können, um alle Aspekte des neuen virtuellen Computers zu konfigurieren. Diese drei Parameter müssen angegeben werden:
 
-| Parameter | Description |
+| Parameter | Beschreibung |
 |-----------|-------------|
-| `resource-group` | The resource group that will own the virtual machine. |
-| `name` | The name of the virtual machine - must be unique within the resource group. |
-| `image` | The operating system image to use to create the VM. |
+| `resource-group` | Die Ressourcengruppe, die Besitzer des virtuellen Computers sein soll. |
+| `name` | Der Name des virtuellen Computers – muss innerhalb der Ressourcengruppe eindeutig sein. |
+| `image` | Das Betriebssystemimage, das zum Erstellen des virtuellen Computers verwendet werden soll. |
 
-In addition, it's helpful to add the `--verbose` flag to see progress while the VM is being created. 
+Darüber hinaus ist es hilfreich, das `--verbose`-Flag hinzuzufügen, um den Fortschritt der Erstellung des virtuellen Computers zu beobachten. 
 
-## Create a Linux virtual machine
+## <a name="create-a-linux-virtual-machine"></a>Erstellen eines virtuellen Linux-Computers
 
-Let's create a new Linux virtual machine. Execute the following command in Azure Cloud Shell:
+Erstellen wir jetzt einen neuen virtuellen Linux-Computer. Führen Sie in Azure Cloud Shell folgenden Befehl aus:
 
 ```azurecli
-az vm create --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --verbose 
+az vm create --resource-group ExerciseResources --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --verbose 
 ```
 
-This command will create a new **Debian** Linux virtual machine with the name `SampleVM`. Notice that the Azure CLI tool is blocked while the VM is being created. If you would prefer not to wait, you can use the `--no-wait` option to tell the Azure CLI tool to return immediately, for example if you're executing the command in a script. Later in the script, use the `azure vm wait --name [vm-name]` command to wait for the VM to finish being created.
+Dieser Befehl erstellt einen neuen virtuellen Linux-Computer unter **Debian** mit dem Namen „`SampleVM`“. Beachten Sie, dass das Azure CLI-Tool während der Erstellung des virtuellen Computers gesperrt ist. Wenn Sie nicht warten möchten, können Sie die Option „`--no-wait`“ verwenden, damit das Azure CLI-Tool sofort wieder verfügbar ist, wenn Sie den Befehl beispielsweise in einem Skript ausführen. Verwenden Sie später im Skript den Befehl „`azure vm wait --name [vm-name]`“, um zu warten, bis der virtuelle Computer vollständig erstellt wurde.
 
-If you look at the verbose responses, you will also see that the `SampleVM` name is used to name various dependencies for the VM.
+Wenn Sie sich die ausführlichen Antworten ansehen, werden Sie auch feststellen, dass der Name „`SampleVM`“ in verschiedenen Abhängigkeiten für den virtuellen Computer verwendet wird.
 
 ```
 Succeeded: SampleVMNSG (Microsoft.Network/networkSecurityGroups)
@@ -47,15 +47,13 @@ Succeeded: SampleVMVNET (Microsoft.Network/virtualNetworks)
 Accepted: vm_deploy_vzKnQDyyq48yPUO4VrSDfFIi81vHKZ9g (Microsoft.Resources/deployments)
 ```
 
-You can override these auto-generated resource names using optional parameters to `vm create`, such as `--vnet-name` and `--public-ip-address-dns-name`.
+Sie können diese automatisch generierten Ressourcennamen mithilfe von optionalen Parametern für „`vm create`“ überschreiben, z.B.: `--vnet-name` und `--public-ip-address-dns-name`.
 
-Notice that we are specifying the admin account name through the `admin-username` flag to be "aldis". If you omit this, the `vm create` command will use your _current user name_. Since the rules for account names are different for each OS, it's safer to specify a specific name. Common names such as "root" and "admin" are not allowed for most images.
+Beachten Sie, dass wir den Namen des Administratorkontos mit dem `admin-username`-Flag zu „aldis“ ändern. Wenn Sie dies auslassen, verwendet der `vm create`-Befehl Ihren _aktuellen Benutzernamen_. Da die Regeln für Kontonamen in jedem Betriebssystem anders sind, ist es sicherer, einen bestimmten Namen anzugeben. Allgemeine Namen wie „root“ und „admin“ sind für die meisten Images nicht zulässig.
 
-We are also using the `generate-ssh-keys` flag. This parameter is used for Linux distributions and creates a pair of security keys so we can use the `ssh` tool to access the virtual machine remotely. The two files are placed into the `.ssh` folder on your machine and in the VM. If you already have an SSH key named `id_rsa` in the target folder, then it will be used rather than having a new key generated.
+Wir verwenden auch das `generate-ssh-keys`-Flag. Dieser Parameter wird für Linux-Distributionen verwendet und erstellt ein Sicherheitsschlüsselpaar, sodass wir das `ssh`-Tool verwenden können, um remote auf den virtuellen Computer zuzugreifen. Die beiden Dateien werden in den Ordner „`.ssh`“ auf Ihrem Computer und auf dem virtuellen Computer platziert. Wenn Sie bereits über einen SSH-Schlüssel namens „`id_rsa`“ im Zielordner verfügen, wird dieser verwendet, anstatt einen neuen Schlüssel zu generieren.
 
-Once it finishes creating the VM, you will get a JSON response which includes the current state of the virtual machine and its public and private IP addresses assigned by Azure:
-
-<!-- TODO: find out the default location! -->
+Sobald der virtuelle Computer erstellt wurde, erhalten Sie eine JSON-Antwort, die den aktuellen Zustand des virtuellen Computers und seine von Azure zugewiesenen öffentlichen und privaten IP-Adressen enthält:
 
 ```json
 {
@@ -71,7 +69,5 @@ Once it finishes creating the VM, you will get a JSON response which includes th
 }
 ```
 
-<!-- TODO: find out the default location! -->
-
 > [!NOTE]
-> Notice that the VM was created in the **eastus** location. By default, the virtual machine is created in the location identified by the owning region. However, sometimes you might want to associate the VM with an existing region, but actually have it spin up somewhere else in the world. You can do this by specifying the option `--location` parameter as part of the `az vm create` command.
+> Beachten Sie, dass der virtuelle Computer am Speicherort **eastus** erstellt wurde. Standardmäßig wird der virtuelle Computer am von der besitzenden Region identifizierten Speicherort erstellt. Wenn Sie den virtuellen Computer einer vorhandenen Region zuordnen möchten, kann es allerdings vorkommen, dass dieser einer beliebigen Region irgendwo anders zugeordnet wird. Dies ist möglich, indem Sie den `--location`-Parameter als Teil des `az vm create`-Befehls angeben.

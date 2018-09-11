@@ -1,106 +1,106 @@
-Your company has decided to manage the video data from their traffic cameras in Azure using VMs. In order to run the multiple codecs, we first need to create the VMs. We also need to connect and interact with the VMs. In this unit, you will learn how to create a VM using the Azure portal. You will configure the VM for remote access, select a VM image, and choose the proper storage option.
+Ihr Unternehmen hat sich dazu entschlossen, die Videodaten seiner Verkehrskameras in Azure mithilfe von VMs zu verwalten. Um die verschiedenen Codecs auszuführen, müssen zuerst die VMs erstellt werden. Außerdem muss eine Verbindung mit den VMs hergestellt und mit diesen interagiert werden. In dieser Einheit erfahren Sie, wie Sie einen virtuellen Computer über das Azure-Portal erstellen. Sie konfigurieren den virtuellen Computer für den Remotezugriff und wählen ein VM-Image sowie die entsprechende Speicheroption aus.
 
-## Introduction to Windows virtual machines in Azure
+## <a name="introduction-to-windows-virtual-machines-in-azure"></a>Einführung in virtuelle Windows-Computer in Azure
 
-Azure VMs are an on-demand scalable cloud computing resource. They're similar to virtual machines that are hosted in Windows Hyper-V. They include processor, memory, storage, and networking resources. You can start and stop virtual machines at will, just like with Hyper-V, and manage them from the Azure portal or with the Azure CLI. You can also use a Remote Desktop Protocol (RDP) client to connect directly to the Windows desktop user interface (UI) and use the VM as if you were signed in to a local Windows computer.
+Azure-VMs sind skalierbare bedarfsgesteuerte Cloud Computing-Ressourcen. Diese sind mit virtuellen Computern vergleichbar, die in Windows Hyper-V gehostet werden. Sie umfassen einen Prozessor, den Arbeitsspeicher, den Speicher und Netzwerkressourcen. Sie können virtuelle Computer wie mit Hyper-V beliebig starten und beenden und über das Azure-Portal oder die Azure CLI verwalten. Sie können auch einen RDP-Client (Remotedesktopprotokoll) verwenden, um direkt eine Verbindung mit der Windows-Desktopbenutzeroberfläche herzustellen und den virtuellen Computer so verwenden, als wären Sie bei einem lokalen Windows-Computer angemeldet.
 
-## Creating an Azure VM
+## <a name="creating-an-azure-vm"></a>Erstellen eines virtuellen Azure-Computers
 
-VMs can be defined and deployed on Azure in several ways: The Azure portal, a script (using the Azure CLI or Azure PowerShell), or through an Azure Resource Manager template. In all cases, you will need to supply several pieces of information which we'll cover shortly.
+Es gibt verschiedene Möglichkeiten, virtuelle Computer in Azure zu definieren und bereitzustellen: das Azure-Portal, ein Skript (über die Azure CLI oder PowerShell) oder eine Azure Resource Manager-Vorlage. In allen Fällen müssen Sie verschiedene Arten von Informationen bereitstellen, auf die wir später noch eingehen.
 
-The Azure Marketplace also provides pre-configured images that include both an OS and popular software tools installed for specific scenarios.
+Außerdem stellt der Azure Marketplace vorkonfigurierte Images zur Verfügung, die sowohl ein Betriebssystem als auch beliebte Softwaretools umfassen, die für bestimmte Szenarien installiert sind.
 
 ![Azure Marketplace Virtual Machines](../media-drafts/2-marketplace-vm-choices.png)
 
-## Resources used in a Windows VM
+## <a name="resources-used-in-a-windows-vm"></a>In einem virtuellen Windows-Computer verwendete Ressourcen
 
-When creating a Windows VM in Azure, you also create resources to host the VM. These resources work together to virtualize a computer and run the Windows operating system. These must either exist (and be selected during VM creation), or they will be created with the VM.
+Beim Erstellen eines virtuellen Windows-Computers in Azure können Sie auch Ressourcen zum Hosten des virtuellen Computers erstellen. Diese Ressourcen arbeiten zusammen, um einen virtuellen Computer zu erstellen und das Windows-Betriebssystem auszuführen. Sie sind entweder bereits vorhanden (und werden während der Erstellung des virtuellen Computers ausgewählt), oder Sie werden gemeinsam mit dem virtuellen Computer erstellt. Folgende Ressourcen müssen vorhanden sein:
 
-- A Virtual machine that provides CPU and memory resources.
-- An Azure Storage account to hold the virtual hard disks.
-- Virtual disks to hold the OS, applications, and data.
-- Virtual network (VNet) to connect the VM to other Azure services or your own on-premise hardware.
-- A network interface to communicate with the VNet.
-- A public IP address so you can access the VM. This is optional.
+- Ein virtueller Computer, der CPU und Speicherressourcen bereitstellt.
+- Ein Azure Storage-Konto, in dem die virtuellen Festplatten gespeichert werden.
+- Virtuelle Datenträger, auf denen das Betriebssystem, die Anwendungen und Daten gespeichert werden.
+- Ein virtuelles Netzwerk (VNET), über das der virtuelle Computer mit anderen Azure-Diensten oder Ihrer eigenen lokalen Hardware verbunden wird.
+- Eine Netzwerkschnittstelle, die zur Kommunikation mit dem VNET dient.
+- Eine öffentliche IP-Adresse, damit Sie auf den virtuellen Computer zugreifen können. Dies ist optional.
 
-Like other Azure services, you'll need a **Resource Group** to contain the VM (and optionally group these resources together for administration). When you create a new VM, you can either use an existing resource group or create a new one.
+Wie bei anderen Azure-Diensten auch benötigen Sie eine **Ressourcengruppe**, in der der virtuelle Computer gespeichert wird. Sie sollten diese Ressourcen zu Verwaltungszwecken optional in einer Gruppe zusammenfassen. Bei der Erstellung eines neuen virtuellen Computers können Sie eine vorhandene Ressourcengruppe verwenden oder eine neue Ressourcengruppe erstellen.
 
-## Choose the VM image
+## <a name="choose-the-vm-image"></a>Auswählen des VM-Image
 
-Selecting an image is one of the first and most important decisions you'll make when creating a VM. An image is a template that's used to create a VM. These templates include an OS and often other software, such as development tools or web hosting environments.
+Das Auswählen eines Images ist eine der wichtigsten Entscheidungen, die Sie beim Erstellen einer VM berücksichtigen müssen. Ein Image ist eine Vorlage, die zum Erstellen einer VM verwendet wird. Diese Vorlagen enthalten ein Betriebssystem und häufig auch andere Software, z.B. Entwicklungstools oder Webhostingumgebungen.
 
-Anything that a computer can have installed can be included in an image. You can create a VM from an image that's pre-configured to exactly the tasks you need, such as hosting an ASP.Net Core app.
+Alle Komponenten, die auf einem Computer installiert werden können, können auch in einem Image enthalten sein. Sie können einen virtuellen Computer aus einem Image erstellen, das genau für die Aufgaben vorkonfiguriert ist, die Sie benötigen, beispielsweise zum Hosten einer ASP.NET Core-App.
 
 > [!TIP]
-> You can also create and upload your own images, check the documentation for more information.
+> Sie können außerdem auch Ihre eigenen Images erstellen und hochladen. Weitere Informationen dazu finden Sie in der Dokumentation.
 
-## Sizing your VM
-Just as a physical machine has a certain amount of memory and CPU power, so does a virtual machine. Azure offers a range of VMs of differing sizes at different price points. The size that you choose will determine the VMs processing power, memory, and max storage capacity.
+## <a name="sizing-your-vm"></a>Auswählen der Größe Ihres virtuellen Computers
+Ein virtueller Computer weist wie ein physischer Computer eine bestimmte Menge an Arbeitsspeicher und CPU-Leistung auf. Azure bietet eine Reihe von virtuellen Computern mit unterschiedlichen Größen zu unterschiedlichen Preisen an. Die Größe, die Sie auswählen, bestimmt die Verarbeitungsleistung, den Arbeitsspeicher und die maximale Speicherkapazität Ihres virtuellen Computers.
 
 > [!WARNING]
-> There are quota limits on each subscription that can impact VM creation. By default, you cannot have more than 20 virtual _cores_ across all VMs within a region. You can either split up VMs across regions or file an [online request](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) to increase your limits.
+> Es gelten Kontingentgrenzwerte für die einzelnen Abonnements, die Einfluss auf die Erstellung des virtuellen Computers haben können. Standardmäßig dürfen Ihre virtuellen Computer innerhalb einer Region insgesamt nicht mehr als 20 virtuelle _Kerne_ aufweisen. Sie können die virtuellen Computer entweder auf mehrere Regionen aufteilen oder einen [Onlineantrag](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) stellen, damit die Grenzwerte erhöht werden.
 
-VM sizes are grouped into categories, starting with the B-series for basic testing and running up to the H-series for massive computing tasks. You should select the size of the VM based on the workload you want to perform. It is possible to change the size of a VM after it's been created, but the VM must be stopped first so it's best to size it appropriately from the start if possible.
+Die VM-Größen werden in Kategorien unterteilt, angefangen bei der B-Serie für grundlegende Tests bis hin zur H-Serie für große Computingtasks. Wählen Sie die Größe des virtuellen Computers anhand der Workload aus, die Sie ausführen möchten. Sie können die Größe eines virtuellen Computers zwar ändern, nachdem Sie ihn erstellt haben, aber Sie müssen ihn zu diesem Zweck beenden. Daher ist es besser, wenn Sie direkt zu Beginn die richtige Größe auswählen.
 
-#### Here are some guidelines based on the scenario you are targeting.
+#### <a name="here-are-some-guidelines-based-on-the-scenario-you-are-targeting"></a>Nachfolgend werden einige Richtlinien für verschiedene Szenarien aufgeführt.
 
-| What are you doing? | Consider these sizes
+| Vorgehensweise | Prüfen Sie die folgenden Größen:
 |-------|------------------|
-| **General use computing / web** Testing and development, small to medium databases, or low to medium traffic web servers. | B, Dsv3, Dv3, DSv2, Dv2 |
-| **Heavy computational tasks** Medium traffic web servers, network appliances, batch processes, and application servers. | Fsv2, Fs, F |
-| **Large memory usage** Relational database servers, medium to large caches, and in-memory analytics. | Esv3, Ev3, M, GS, G, DSv2, Dv2 |
-| **Data storage and processing** Big Data, SQL, and NoSQL databases which need high disk throughput and IO. | Ls |
-| **Heavy graphics rendering** or video editing, as well as model training and inferencing (ND) with deep learning. | NV, NC, NCv2, NCv3, ND |
-| **High-performance computing (HPC)** If you need the fastest and most powerful CPU virtual machines with optional high-throughput network interfaces. | H |
+| **Allgemeine Verwendung für das Computing bzw. Internet:** für Test- und Entwicklungsaufgaben, für kleine bis mittlere Datenbanken oder für Webserver mit geringer bis mittlerer Auslastung. | B, Dsv3, Dv3, DSv2, Dv2 |
+| **Schwierige Computingaufgaben:** für Webserver, Network Appliances, Batchverarbeitungsvorgänge und Anwendungsserver mit mittlerer Auslastung. | Fsv2, Fs, F |
+| **Hohe Speicherauslastung:** für relationale Datenbankserver, mittlere bis große Caches und In-Memory-Analysen. | Esv3, Ev3, M, GS, G, DSv2, Dv2 |
+| **Speichern und Verarbeiten von Daten:** Datenbanken für Big Data, SQL und NoSQL, für die ein hoher Datenträgerdurchsatz und E/A erforderlich sind. | Ls |
+| **Aufwendiges Grafikrendering** oder Videobearbeitung sowie für Modelltraining und Rückschlüsse (ND) mit Deep Learning. | NV, NC, NCv2, NCv3, ND |
+| **High Performance Computing (HPC):** wenn Sie die schnellsten und leistungsfähigsten CPUs benötigen, die optional über Netzwerkschnittstellen mit hohem Durchsatz (RDMA) verfügen. | H |
 
-## Choosing storage options
+## <a name="choosing-storage-options"></a>Auswählen von Speicheroptionen
 
-The next set of decisions revolve around storage. First, you can choose the disk technology. Options include a traditional platter-based hard disk drive (HDD) or a more modern solid-state drive (SSD). Just like the hardware you purchase, SSD storage costs more but provides better performance.
+Die nächsten Entscheidungen drehen sich um den Speicher. Zunächst können Sie die Datenträgertechnologie auswählen. Zu den Optionen zählt ein konventionelles Festplattenlaufwerk (HDD) oder ein modernerer SSD-Datenträger (Solid State Drive). Genau wie die Hardware, die Sie erwerben, kostet SSD-Speicher mehr, bietet aber eine bessere Leistung.
 
 > [!TIP]
-> There are two levels of SSD storage available: standard and premium. Choose Standard SSD disks if you have normal workloads but want better performance. Choose Premium SSD disks if you have I/O intensive workloads or mission-critical systems that need to process data very quickly.
+> Es sind zwei Ebenen von SSD-Speicher verfügbar: Standard und Premium. Wählen Sie SSD Standard-Datenträger aus, wenn Sie normale Workloads verwenden, aber eine bessere Leistung wünschen. Wählen Sie SSD Premium-Datenträger aus, wenn Sie über E/A-intensive Workloads oder unternehmenskritische Systeme verfügen, die Daten sehr schnell verarbeiten müssen.
 
-### Mapping storage to disks
+### <a name="mapping-storage-to-disks"></a>Zuordnen von Speicher zu Datenträgern
 
-Azure uses Virtual hard disks (VHDs) to represent physical disks for the VM. VHDs replicate the logical format and data of a disk drive but are stored as page blobs in an Azure Storage account. You can choose on a per-disk basis what type of storage it should use (SSD or HDD). This allows you to control the performance of each disk, likely based on the I/O you plan to perform on it.
+Azure verwendet virtuelle Festplatten (VHDs), um physische Datenträger für den virtuellen Computer darzustellen. VHDs replizieren das logische Format und die Daten eines Festplattenlaufwerks, werden aber als Seitenblobs in einem Azure Storage-Konto gespeichert. Sie können pro Datenträger auswählen, welche Art von Speicher verwendet werden soll (SSD oder HDD). Dies ermöglicht es Ihnen, die Leistung jedes Datenträgers zu steuern, wahrscheinlich basierend auf der E/A, die Sie auf ihm ausführen möchten.
 
-By default, two virtual hard disks (VHDs) will be created for your Windows VM:
+Standardmäßig werden zwei virtuelle Festplatten (VHDs) für Ihren virtuellen Linux-Computer erstellt:
 
-1. The **Operating System disk**. This is your primary or C: drive and has a maximum capacity of 2048 GB.
+1. Der **Betriebssystemdatenträger**. Dies ist das primäre Laufwerk (Laufwerk C:). Es besitzt eine maximale Kapazität von 2.048 GB.
 
-1. A **Temporary disk**. This provides temporary storage for the OS or any apps. It is configured as the D: drive by default and is sized based on the VM size, making it an ideal location for the Windows paging file.
+1. Ein **temporärer Datenträger**. Dieser dient als temporärer Speicher für das Betriebssystem oder Apps. Er wird standardmäßig als Laufwerk D: konfiguriert und basierend auf der VM-Größe dimensioniert, was ihn zu einem idealen Speicherort für die Windows-Auslagerungsdatei macht.
 
 > [!WARNING]
-> The temporary disk is not persistent. You should only write data to this disk that you are willing to lose at any time.
+> Der temporäre Datenträger ist nicht persistent. Sie sollten nur Daten auf diesen Datenträger schreiben, deren Verlust unkritisch ist.
 
-#### What about data?
+#### <a name="what-about-data"></a>Wie sieht es mit Daten aus?
 
-You can store data on the C: drive along with the OS, but a better approach is to create dedicated _data disks_. You can create and attach additional disks to the VM. Each disk can hold up to 4095 GB of data, with the maximum amount of storage determined by the VM size you select.
+Sie können Daten auf dem Laufwerk C: zusammen mit dem Betriebssystem speichern, aber ein besserer Ansatz ist es, dedizierte _Datenträger für Daten_ zu erstellen. Sie können weitere Datenträger erstellen und an den virtuellen Computer anfügen. Jeder Datenträger kann bis zu 4.095 GB Daten enthalten. Die Höchstmenge des Speichers wird durch die Größe des virtuellen Computers bestimmt, die Sie auswählen.
 
 > [!NOTE]
-> An interesting capability is to create a VHD image from a real disk. This allows you to easily migrate _existing_ information from an on-premise computer to the cloud.
+> Eine interessante Möglichkeit ist die Erstellung eines VHD-Images von einem echten Datenträger. Dies ermöglicht die einfache Migration _vorhandener_ Informationen von einem lokalen Computer in die Cloud.
 
-### Unmanaged vs. Managed disks
+### <a name="unmanaged-vs-managed-disks"></a>Nicht verwaltete Datenträger im Vergleich zu verwalteten Datenträgern
 
-The final storage choice you'll make is whether to use **unmanaged** or **managed** disks.
+Die letzte Speicherentscheidung, die Sie treffen müssen, bezieht sich darauf, ob Sie **nicht verwaltete** oder **verwaltete** Datenträger verwenden möchten.
 
-With unmanaged disks, you are responsible for the storage accounts that are used to hold the VHDs that correspond to your VM disks. You pay the storage account rates for the amount of space you use. A single storage account has a fixed rate limit of 20,000 I/O operations/sec. This means that a single storage account is capable of supporting 40 standard virtual hard disks at full throttle. If you need to scale out, then you need more than one storage account, which can get complicated.
+Mit nicht verwalteten Datenträgern sind Sie für die Speicherkonten verantwortlich, die verwendet werden, um die VHDs zu speichern, die den Datenträgern Ihrer virtuellen Computer entsprechen. Sie zahlen die Speicherkontogebühren für die Menge an Speicherplatz, die Sie verwenden. Ein einzelnes Speicherkonto verfügt über ein festes Ratenlimit von 20.000 E/A-Vorgängen/Sek. Dies bedeutet, dass ein einzelnes Speicherkonto 40 virtuelle Standardfestplatten mit voller Arbeitsauslastungskontrolle unterstützen kann. Wenn Sie horizontal hochskalieren müssen, benötigen Sie mehrere Speicherkonten. Dies kann kompliziert sein.
 
-Managed disks are the newer and recommended disk storage model. They elegantly solve this complexity by putting the burden of managing the storage accounts onto Azure. You specify the disk type (Premium or Standard) and the size of the disk and Azure creates and manages both the disk _and_ the storage it uses. You don't have to worry about storage account limits, which makes them easier to scale out. They also offer several other benefits:
+Verwaltete Datenträger stellen das neuere und empfohlene Datenträgerspeichermodell dar. Sie lösen diese Komplexität elegant, indem sie die Last der Verwaltung der Speicherkonten an Azure übertragen. Sie geben den Datenträgertyp (Premium oder Standard) und die Größe des Datenträgers an, und Azure erstellt und verwaltet den Datenträger _und_ den verwendeten Speicher. Sie müssen sich keine Sorgen um die Limits für Speicherkonten machen, was deren horizontale Hochskalierung erleichtert. Sie bieten auch einige weitere Vorteile:
 
-- **Increased reliability**: Azure ensures that VHDs associated with high-reliability VMs will be placed in different parts of Azure storage to provide similar levels of resilience.
-- **Better security**: Managed disks are truly managed resources in the resource group. This means they can use role-based access control to restrict who can work with the VHD data.
-- **Snapshot support**: Snapshots can be used to create a read-only copy of a VHD. You have to shut down the owning VM but creating the snapshot only takes a few seconds. Once it's done you can power on the VM and use the snapshot to create a duplicate VM to troubleshoot a production issue or rollback the VM to the point in time that the snapshot was taken.
-- **Backup support**: Managed disks can be automatically backed up to different regions for disaster recovery with Azure Backup all without affecting the service of the VM.
+- **Erhöhte Zuverlässigkeit**: Azure stellt sicher, dass VHDs, die hochzuverlässigen virtuellen Computern zugeordnet sind, in verschiedenen Teilen des Azure-Speichers platziert werden, um ein ähnliches Maß an Ausfallsicherheit zu gewährleisten.
+- **Größere Sicherheit**: Verwaltete Datenträger sind echte verwaltete Ressourcen in der Ressourcengruppe. Dies bedeutet, dass sie rollenbasierte Zugriffssteuerung verwenden können, um einzuschränken, wer mit den VHD-Daten arbeiten kann.
+- **Unterstützung von Momentaufnahmen**: Momentaufnahmen können verwendet werden, um eine schreibgeschützte Kopie einer VHD zu erstellen. Sie müssen den übergeordneten virtuellen Computer herunterfahren, aber das Erstellen der Momentaufnahme dauert nur wenige Sekunden. Wenn dieser Vorgang abgeschlossen ist, können Sie den virtuellen Computer aktivieren und die Momentaufnahme verwenden, um den virtuellen Computer zu duplizieren, damit Sie die Problembehandlung eines Produktionsproblems ausführen oder ein Rollback des virtuellen Computers zum Zeitpunkt erstellen können, zu dem die Momentaufnahme erstellt wurde.
+- **Sicherungsunterstützung**: Verwaltete Datenträger können ohne Auswirkungen auf den Dienst des virtuellen Computers automatisch in verschiedenen Regionen für die Notfallwiederherstellung mit Azure Backup gesichert werden.
 
-## Network communication
+## <a name="network-communication"></a>Netzwerkkommunikation
 
-Virtual machines communicate with external resources using a virtual network (VNet). The VNet represents a private network in a single region that your resources communicate on. A virtual network is just like the networks you manage on-premises. You can divide them up with subnets to isolate resources, connect them to other networks (including your on-premises networks), and apply traffic rules to govern inbound and outbound connections.
+Virtuelle Computer kommunizieren mit externen Ressourcen über ein virtuelles Netzwerk (VNET). Das VNET stellt ein privates Netzwerk in einer einzelnen Region dar, in der Ihre Ressourcen kommunizieren. Ein virtuelles Netzwerk verhält sich wie die Netzwerke, die Sie lokal verwalten. Sie können es in Subnetze zum Isolieren von Ressourcen unterteilen, eine Verbindung mit anderen Netzwerken (einschließlich Ihrer lokalen Netzwerke) herstellen und Regeln für den Datenverkehr zum Steuern von eingehenden und ausgehenden Verbindungen anwenden.
 
-### Planning your network
+### <a name="planning-your-network"></a>Planen des Netzwerks
 
-When you create a new VM, you will have the option of creating a new virtual network, or using an existing VNet in your region.
+Wenn Sie einen neuen virtuellen Computer erstellen, besteht die Option, ein neues virtuelles Netzwerk zu erstellen oder ein vorhandenes VNET in Ihrer Region zu verwenden.
 
-Having Azure create the network together with the VM is simple but it's likely not ideal for most scenarios. It's better to plan your network requirements _up-front_ for all the components in your architecture and create the VNet structure you will need separately. Then create the VMs and place them into the already-created VNets.
+Es ist einfach, Azure das Netzwerk zusammen mit dem virtuellen Computer erstellen zu lassen, aber es ist wahrscheinlich für die meisten Szenarien nicht ideal. Es ist besser, Ihre Netzwerkanforderungen _im Voraus_  für alle Komponenten Ihrer Architektur zu planen und die VNET-Struktur separat zu erstellen. Erstellen Sie dann die virtuellen Computer, und platzieren Sie sie in den bereits erstellten VNETs.
 
-We'll look more at virtual networks a bit later in this module. Let's apply some of this knowledge and create a VM in Azure.
+Wir werden uns etwas später in diesem Modul ausführlicher mit virtuellen Netzwerken befassen. Wenden wir etwas von diesem Wissen an und erstellen einen virtuellen Computer in Azure.

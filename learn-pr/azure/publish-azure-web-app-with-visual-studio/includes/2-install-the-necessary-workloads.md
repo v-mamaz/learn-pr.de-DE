@@ -1,37 +1,36 @@
-The first step in getting your new site ready is to prepare your development environment. Creating and deploying ASP.NET web applications requires that you have the necessary tools installed on your local machine. Here, we will cover the tools you need and how to install them.
+Der erste Schritt auf dem Weg zu Ihrer neuen Website ist das Vorbereiten Ihrer Entwicklungsumgebung. Für das Erstellen und Bereitstellen von ASP.NET-Webanwendungen müssen die erforderlichen Tools auf Ihrem lokalen Computer installiert sein. Im Folgenden werden diese Tools und deren Installation beschrieben.
 
-## Prepare your development environment
+## <a name="prepare-your-development-environment"></a>Vorbereiten Ihrer Entwicklungsumgebung
 
-Visual Studio 2017 has two workloads that you need to create, publish, and deploy your website to Azure. These workloads include all of the templates for your ASP.NET site and provide the ability to connect and deploy your site to Azure.
+Visual Studio 2017 enthält zwei Workloads, die Sie für das Erstellen, Veröffentlichen und Bereitstellen Ihrer Website in Azure benötigen. Diese Workloads enthalten alle Vorlagen für Ihre ASP.NET-Website und ermöglichen, Ihre Anwendung mit Azure zu verbinden und dort bereitzustellen.
 
-You need to make sure you have the following workloads installed:
+Stellen Sie sicher, dass Sie folgende Workloads installiert haben:
 
-- ASP.NET and web development
+- ASP.NET und Webentwicklung
 
-The web development workload in Visual Studio 2017 is designed to maximize your productivity in developing web applications using ASP.NET and standards-based technologies like HTML and JavaScript.
+Die Workload für die Webentwicklung in Visual Studio 2017 wurde dafür entwickeln, Ihre Produktivität beim Entwickeln von Webanwendungen mithilfe von ASP.NET und standardbasierten Technologien wie HTML und JavaScript zu maximieren.
 
-- Azure development
+- Azure-Entwicklung
 
-The Azure development workload in Visual Studio 2017 installs the latest Azure SDK for .NET and tools for Visual Studio. Once these items are installed, you can view resources in Cloud Explorer, create resources using Azure Resource Manager tools, build applications for Azure web and Cloud Services, and perform big data operations using Azure Data Lake tools.
+Durch die Workload „Azure-Entwicklung“ in Visual Studio 2017 werden das neueste Azure SDK für .NET sowie Tools für Visual Studio installiert. Nach der Installation dieser Elemente können Sie Ressourcen im Cloud-Explorer anzeigen, Ressource mithilfe von Azure Resource Manager-Tools erstellen, Anwendungen für Web- und Clouddienste von Azure erstellen und Big Data-Vorgänge mithilfe von Azure Data Lake-Tools durchführen.
 
-## How to install the required workloads
+## <a name="how-to-install-the-required-workloads"></a>Installieren erforderlicher Workloads
 
-You will use the Visual Studio Installer to modify the components installed as part of Visual Studio.
+Verwenden Sie den Visual Studio-Installer, um die Komponenten zu bearbeiten, die mit Visual Studio installiert wurden.
 
-- To launch the Installer, from your Windows Start menu, scroll down to **V**, and then click **Visual Studio Installer**. Alternatively, while the Start menu is open, you can just type ```Visual Studio Installer``` to find the Installer link. Then select **Enter.**
+- Scrollen Sie im Windows-Startmenü zum Buchstaben **V**, und klicken Sie dann auf **Visual Studio-Installer**, um den Installer zu starten. Alternativ können Sie im Startmenü ```Visual Studio Installer``` eingeben, um den Link zum Installer zu suchen. Drücken Sie anschließend die **EINGABETASTE**.
 
-- The Visual Studio Installer window appears. Click the **Modify** button. If that is not visible, you can select **Modify** under the **More** drop-down menu.
+- Das Fenster des Visual Studio-Installers wird angezeigt. Klicken Sie auf **Ändern**. Wenn diese Schaltfläche nicht angezeigt wird, können Sie **Ändern** im Dropdownmenü **Weitere** auswählen.
 
-    ![Modify Visual Studio](../media-draft/3-visual-studio-installer-modify.PNG)
+    ![Ändern von Visual Studio](../media-draft/3-visual-studio-installer-modify.PNG)
 
-- Ensure the **ASP.NET and web development** and **Azure development** workloads are selected under the **Web & Cloud** section of the **Workloads** tab.
-    ![Install Workloads](../media-draft/2-select-workloads.png)
+- Stellen Sie sicher, dass die Workloads **ASP.NET und Webentwicklung** und **Azure-Entwicklung** im Abschnitt **Web und Cloud** der Registerkarte **Workloads** ausgewählt sind.   ![Installieren von Workloads](../media-draft/2-select-workloads.png)
 
-Next, click the **Modify** button on the bottom right of the Installer. The Visual Studio Installer will download and install the necessary components. You are now ready to create an ASP.NET web app and upload it to Microsoft Azure.
+Klicken Sie anschließend im unteren rechten Bereich des Installers auf **Ändern**. Der Visual Studio-Installer lädt die erforderlichen Komponenten herunter und installiert diese. Sie können nun eine ASP.NET-Web-App erstellen und diese in Microsoft Azure hochladen.
 
 > [!IMPORTANT]
-> Visual Studio for Mac _should_ have the necessary workloads preinstalled. If you need to reinstall, you will have to download [Visual Studio for Mac](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio-mac/?sku=communitymac&rel=15_), which will run the Installer. From there, you will be able to choose the workloads you want to add.
+> In Visual Studio für Mac _sollten_ die erforderlichen Workloads bereits installiert sein. Wenn Sie diese erneut installieren müssen, müssen Sie [Visual Studio für Mac](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio-mac/?sku=communitymac&rel=15_) herunterladen und den Installer ausführen. Im Installer können Sie die Workloads auswählen, die Sie hinzufügen möchten.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-You can create, manage, and publish an ASP.NET website from Visual Studio 2017 with the **ASP.NET and web development** and **Azure development** workloads.
+Sie können eine ASP.NET-Website in Visual Studio 2017 mit den Workloads **ASP.NET und Webentwicklung** und **Azure-Entwicklung** erstellen, verwalten und veröffentlichen.

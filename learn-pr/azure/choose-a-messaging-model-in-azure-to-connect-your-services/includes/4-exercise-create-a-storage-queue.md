@@ -1,4 +1,4 @@
-In dieser Übung erstellen Sie ein neues Speicherkonto für Ihr Azure-Abonnement. Verwenden Sie anschließend Azure Cloud Shell, um eine neue Warteschlange zu erstellen, eine Meldung hinzuzufügen und dann diese Meldung zu lesen und aus der Warteschlange zu entfernen.
+In dieser Einheit erstellen Sie ein neues Speicherkonto in Ihrem Azure-Abonnement. Sie verwenden anschließend Azure Cloud Shell, um eine neue Warteschlange zu erstellen, eine Nachricht hinzuzufügen und dann diese Nachricht zu lesen und aus der Warteschlange zu entfernen.
 
 Hierbei handelt es sich um die gleichen Aktionen, die von Komponenten in einer verteilten Anwendung durchgeführt werden. Beispielsweise kann eine mobile App einer Warteschlange eine Meldung hinzufügen, die dann darauf wartet, dass ein Webdienst sie abruft und verarbeitet.
 

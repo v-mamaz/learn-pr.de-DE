@@ -1,27 +1,27 @@
-Jim manages a set of Azure virtual machines running on our corporate web infrastructure, which includes several websites and database servers running on various platforms. 
+Jim verwaltet eine Reihe von virtuellen Azure-Computern, die in der Webinfrastruktur unseres Unternehmens ausgeführt werden, die zahlreiche Websites und Datenbankserver mit verschiedenen Plattformen umfasst. 
 
-While the Azure portal is easy to use, Jim has found that navigating through the various blades adds time to some of the tasks. 
+Das Azure-Portal lässt sich zwar sehr einfach bedienen, aber Jim hat festgestellt, dass die Navigation durch die zahlreichen Blätter bei einigen Aufgaben recht zeitaufwendig ist. 
 
-While exploring alternatives, he discovers the Azure CLI tool.
+Er sucht also nach Alternativen und stößt dabei auf die Azure CLI (Command Line Interface, Befehlszeilenschnittstelle).
 
-Working with the Azure CLI, Jim can write scripts to check the status of his servers, deploy a new configuration, open a port, or connect to a virtual machine to change a setting.
+Mit der Azure CLI kann Jim Skripts zum Überprüfen des Status seiner Server schreiben, eine neue Konfiguration bereitstellen, einen Port öffnen oder eine Verbindung mit einem virtuellen Computer herstellen, um eine Einstellung zu ändern.
 
-Perhaps you are like Jim and are looking for a tool to help automate tasks in your cloud environment. We're going to show you how to use the Azure CLI to create and manage virtual machines hosted in Azure. 
+Vielleicht geht es Ihnen wie Jim, und Sie suchen nach einem Tool, das Ihnen dabei hilft, Aufgaben in Ihrer Cloudumgebung zu automatisieren. Wir zeigen Ihnen jetzt, wie Sie die Azure CLI verwenden, um in Azure gehostete virtuelle Computer zu erstellen und zu verwalten. 
 
-## Azure CLI
+## <a name="azure-cli"></a>Azure CLI
 
-The Azure CLI is Microsoft's cross-platform command-line tool for managing Azure resources. It's available for macOS, Linux, and Windows, or in the browser using [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
+Die Azure CLI ist das plattformübergreifende Befehlszeilentool von Microsoft zum Verwalten von Azure-Ressourcen. Sie steht für macOS, Linux und Windows sowie unter Verwendung von [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) im Browser zur Verfügung.
 
 > [!IMPORTANT]
-> There are two versions of the Azure CLI tool available today: Azure CLI 1.0 and Azure CLI 2.0. We'll be using Azure CLI 2.0, which is the latest version and is recommended unless you're running legacy scripts. Azure CLI 1.0 is started with the `azure` command, and Azure CLI 2.0 is started with the `az` command. 
+> Es gibt aktuell zwei Versionen der Azure CLI: Azure CLI 1.0 und Azure CLI 2.0. Wir verwenden hier die neueste Version, Azure CLI 2.0, die empfohlen wird, außer wenn Sie ältere Skripts ausführen. Die Azure CLI 1.0 wird mit dem Befehl „`azure`“ gestartet, die Azure CLI 2.0 mit dem Befehl „`az`“. 
 
-The Azure CLI can help you manage Azure resources such as virtual machines and disks from the command line or in scripts. Let's get started and see what it can do.
+Die Azure CLI kann Sie dabei unterstützen, Azure-Ressourcen wie z.B. virtuelle Computer und Datenträger über die Befehlszeile oder mithilfe von Skripts zu verwalten. Fangen wir einfach an und finden heraus, was Sie mit dem Tool tun können.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul wird Folgendes thematisiert:
 
-- Create a virtual machine with the Azure CLI
-- Resize virtual machines with the Azure CLI.
-- Perform basic management tasks using the Azure CLI.
-- Connect to a running VM with SSH and the Azure CLI.
+- Erstellen einer VM mit der Azure CLI
+- Ändern der Größe von virtuellen Computern mit der Azure CLI
+- Durchführen grundlegender Verwaltungsaufgaben mithilfe der Azure CLI
+- Herstellen einer Verbindung mit einer aktiven VM über SSH und die Azure CLI

@@ -1,13 +1,13 @@
-## Introduction 
+## <a name="introduction"></a>Einführung 
 
-This module will walk through the basics of deep learning by the end of the module you will:
+Dieses Modul führt Sie schrittweise durch die Grundlagen von Deep Learning. Am Ende dieses Moduls sollten Sie Folgendes erreicht haben:
 
-- Learn the Basics of Deep Learning
-- Spin up your first Deep Learning Virtual Machine (DVSM)
-- Learn how to use Docker to set up a Custom Deep learning environment
-- Connect to Interactive Jupyter Notebooks through docker on the DSVM
-- Run your first deep learning experiment with Jupyter.
+- Erlernen der Grundlagen von Deep Learning
+- Starten Ihrer ersten Deep Learning Virtual Machine (DVSM)
+- Lernen, wie Docker zum Einrichten einer benutzerdefinierten Umgebung für Deep Learning verwendet wird
+- Über Docker auf der DSVM eine Verbindung mit interaktiven Jupyter Notebooks herstellen
+- Ihr erstes Deep Learning-Experiment mit Jupyter ausführen.
 
-## Prerequisites
+## <a name="prerequisites"></a>Voraussetzungen
 
-- Azure subscription with access to D series VMs 
+- Azure-Abonnement mit Zugriff auf VMs der D-Serie 

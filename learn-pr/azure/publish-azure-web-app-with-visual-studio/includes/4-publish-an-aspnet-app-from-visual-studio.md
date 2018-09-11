@@ -1,93 +1,93 @@
-You created a site and you want to deploy it to Azure. Now we need to consider which Azure services to leverage to best support our needs. Web Apps provides a highly scalable, self-patching web hosting service for your applications.
+Sie haben eine Site erstellt und möchten sie in Azure bereitstellen. Wir müssen nun überlegen, welche Azure-Dienste unsere Anforderungen am besten erfüllen. Web-Apps bieten einen hochgradig skalierbaren Webhostingdienst mit Self-Patching für Ihre Anwendungen.
 
-Here, we look at how to use Visual Studio to publish your ASP.NET Core web application to an Azure App Service plan.
+Hier erfahren Sie, wie Sie Visual Studio verwenden, um Ihre ASP.NET Core-Webanwendung in einem Azure App Service-Plan zu veröffentlichen.
 
-## Azure subscription
+## <a name="azure-subscription"></a>Azure-Abonnement
 
-To publish to Azure, you need to have an Azure subscription. You can use an [Azure Free Subscription](https://azure.microsoft.com/free/) for testing the Azure App Service features.
+Für das Veröffentlichen in Azure müssen Sie über ein Azure-Abonnement verfügen. Zum Testen der Azure App Service-Features können Sie ein [kostenloses Azure-Abonnement](https://azure.microsoft.com/free/) verwenden.
 
-## What is Web Apps?
+## <a name="what-is-web-apps"></a>Was sind Web-Apps?
 
-The Web Apps feature of Azure App Service is a service for hosting web applications, REST APIs, and mobile backends. Web Apps host code is written in a variety of languages, such as .NET, .NET Core, Java, Ruby, Node.js, PHP, and Python. Web Apps is ideal for most websites, particularly if you don't need a lot of control over the hosting infrastructure.
+Das Web-Apps-Feature von Azure App Service ist ein Dienst für das Hosten von Webanwendungen, REST-APIs und mobilen Back-Ends. Web-Apps-Hostcode ist in einer Vielzahl von Sprachen geschrieben, beispielsweise .NET, .NET Core, Java, Ruby, Node.js, PHP und Python. Web-Apps eignen sich ideal für die meisten Websites, insbesondere, wenn Sie nicht viel Kontrolle über die Hostinginfrastruktur benötigen.
 
-## What is the App Service plan?
+## <a name="what-is-the-app-service-plan"></a>Was ist der App Service-Plan?
 
-The App Service plan defines the compute resources your app will consume, where those resources are located, how many additional resources the plan can consume, and the type of service plan in use. These compute resources are analogous to the server farm in conventional web hosting. One or more apps can be configured to run on the same App Service plan.
+Der App Service-Plan definiert die Computeressourcen, die Ihre App in Anspruch nehmen wird, wo sich diese Ressourcen befinden, wie viele zusätzliche Ressourcen der Plan in Anspruch nehmen kann und welcher Typ von Dienstplan verwendet wird. Diese Computeressourcen entsprechen der Serverfarm beim herkömmlichen Webhosting. Es können eine oder mehrere Apps für die Ausführung auf demselben App Service-Plan konfiguriert werden.
 
-When you deploy your apps, you can create a new App Service plan or you can continue to add apps to an existing plan.  However, apps in the same App Service plan all share the same compute resources. To determine whether the new app has the necessary resources, you need to understand the capacity of the existing App Service plan, and the expected load for the new app. Overloading an App Service plan can potentially cause downtime for your new and existing apps.
+Wenn Sie Ihre Apps bereitstellen, können Sie einen neuen App Service-Plan erstellen oder weitere Apps zu einem vorhandenen Plan hinzufügen.  Nur für Apps desselben App Service-Plans werden jedoch dieselben Computeressourcen gemeinsam genutzt. Um festzustellen, ob die neue App über die erforderlichen Ressourcen verfügt, müssen Sie die Kapazität des vorhandenen App Service-Plans und die erwartete Last für die neue App kennen. Das Überladen eines App Service-Plans kann für neue und vorhandene Apps unter Umständen zu Ausfallzeiten führen.
 
-You can define an App Service plan in advance in the Azure portal with PowerShell or the Azure CLI, or set one up as you publish your application in Visual Studio.
+Sie können einen App Service-Plan im Azure-Portal mithilfe von PowerShell oder der Azure CLI vorab definieren oder einen Plan einrichten, während Sie Ihre Anwendung in Visual Studio veröffentlichen.
 
-Each App Service plan defines:
+Jeder App Service-Plan definiert Folgendes:
 
-- Region (West US, East US, and so on)
-- Number of VM instances
-- Size of VM instances (small, medium, large)
-- Pricing tier (Free, Shared, Basic, Standard, Premium, Premium V2, Isolated, Consumption)
+- Region (USA Westen, USA Osten usw.)
+- Anzahl der VM-Instanzen
+- Größe der VM-Instanzen (klein, mittel, groß)
+- Tarif (Free, Shared, Basic, Standard, Premium, Premium V2, Isolated, Consumption)
 
-## Specify the region
+## <a name="specify-the-region"></a>Angeben der Region
 
-When creating an App Service plan, you have to define a region or location where that plan will be hosted. Typically, you would choose a region geographically close to your expected customers.
+Wenn Sie einen App Service-Plan erstellen, müssen Sie eine Region oder einen Ort definieren, wo dieser Plan gehostet wird. In der Regel wählen Sie eine Region aus, die sich geografisch in der Nähe Ihrer zu erwartenden Kunden befindet.
 
-## What are the pricing and reliability levels?
+## <a name="what-are-the-pricing-and-reliability-levels"></a>Was ist das Preisniveau, welches sind die Zuverlässigkeitsstufen?
 
-A key factor when deploying apps to Azure App Service is choosing the right service plan. Your App Service plan can be scaled up and down at any time. You can choose a lower pricing tier at first and scale up later when you need more App Service features.
+Ein wichtiger Faktor bei der Bereitstellung von Apps in Azure App Service ist die Auswahl des richtigen Service-Plans. Ihr App Service-Plan kann jederzeit zentral hoch- und herunterskaliert werden. Sie können zuerst einen niedrigeren Tarif wählen und diesen dann später zentral hochskalieren, wenn Sie weitere App Service-Features benötigen.
 
-There are a few categories of pricing tiers:
+Es gibt verschiedene Kategorien von Tarifen:
 
-**Shared compute**: **Free** and **Shared**, the two base tiers, run an app on the same Azure VM as other App Service apps, including apps of other customers. These tiers allocate CPU quotas to each app that runs on the shared resources, and the resources cannot scale out.
+**Freigegebener Computemodus**: Bei **Free** und **Shared** (die beiden Basistarife) wird eine App auf derselben Azure-VM wie andere App Service-Apps ausgeführt, einschließlich der Apps anderer Kunden. Für diese Tarife werden CPU-Kontingente für jede App zugeteilt, die auf den freigegebenen Ressourcen ausgeführt wird, und für die Ressourcen ist das horizontale Hochskalieren nicht möglich.
 
-Free and Shared plans are best for small-scale personal projects with very limited traffic demands, with a set limit of 165 MB of outbound data every 24 hours.
+Kostenlose Pläne und Shared-Pläne eignen sich am besten für kleinere persönliche Projekte mit stark eingeschränkten Anforderungen hinsichtlich des Datenverkehrs und mit einer festgelegten Begrenzung von 165 MB ausgehender Daten pro 24 Stunden.
 
-**Dedicated compute**: The **Basic, Standard, Premium, and Premium V2** tiers run apps on dedicated Azure VMs. Only apps in the same App Service plan share the same compute resources. The higher the tier, the more VM instances are available to you for scale out.
+**Dedizierter Computemodus**: In den Tarifen **Basic, Standard, Premium und Premium V2** werden Apps auf dedizierten Azure-VMs ausgeführt. Nur für Apps desselben App Service-Plans werden dieselben Computeressourcen gemeinsam genutzt. Je höher der Tarif ist, desto mehr VM-Instanzen stehen Ihnen für das horizontale Hochskalieren zur Verfügung.
 
-The Standard service plan is best suited for live production workloads, where you are publishing commercial applications to customers.
-The Premium service plans support high-capacity web apps where you do not want the additional costs of a dedicated (isolated) plan.
+Der Serviceplan Standard ist am besten für Live-Produktionsworkloads geeignet, wenn Sie kommerzielle Anwendungen für Kunden veröffentlichen.
+Die Premium-Servicepläne unterstützen Web-Apps mit hoher Kapazität, bei denen die zusätzlichen Kosten eines dedizierten (isolieren) Plans vermieden werden sollen.
 
-**Isolated**: This tier runs dedicated Azure VMs on dedicated Azure virtual networks, which provide network isolation on top of compute isolation to your apps. It provides the maximum scale-out capabilities. You would only select an Isolated service plan when you have a specific requirement for the highest levels of security and performance.
+**Isolated**: Bei diesem Tarif werden dedizierte Azure-VMs in dedizierten Azure Virtual Networks ausgeführt, die eine Netzwerkisolation und eine Computeisolation für Ihre Apps ermöglichen. Sie verfügen hiermit über die maximalen Funktionen für die horizontale Skalierung. Sie wählen in der Regel nur dann einen isolierten Serviceplan aus, wenn Sie ein Höchstmaß an Sicherheit und Leistung benötigen.
 
-Isolate your app into a new App Service plan when:
+Isolieren Sie Ihre App in einem neuen App Service-Plan, wenn Folgendes gilt:
 
-- The app is resource-intensive
-- You want to scale the app independently from the other apps in the existing plan
-- The app needs resources in a different geographical region
+- Die App ist ressourcenintensiv.
+- Sie möchten die App unabhängig von den anderen Apps im vorhandenen Plan skalieren.
+- Die App benötigt Ressourcen in einer anderen geografischen Region.
 
-**Consumption**: This tier is only available to function apps. It scales the functions dynamically depending on workload. For more information, see the Azure Functions hosting plans comparison.
+**Consumption** (Verbrauchsplan): Dieser Tarif ist nur für Funktionen-Apps verfügbar. Die Funktionen werden je nach Workload dynamisch skaliert. Weitere Informationen hierzu finden Sie im Vergleich von Azure Functions-Hostingplänen.
 
-## Specify the resource group
+## <a name="specify-the-resource-group"></a>Angeben der Ressourcengruppe
 
-As with most Azure resources, you will need to specify the resource group you want to use. You can use an existing resource group or create a new one directly from Visual Studio. A resource group is a logical container into which Azure resources like web apps, databases, and storage accounts are deployed and managed. It is a useful mechanism for keeping associated resources together.
+Wie bei den meisten Azure-Ressourcen müssen Sie die Ressourcengruppe angeben, die Sie verwenden möchten. Sie können eine vorhandene Ressourcengruppe verwenden oder eine neue Ressourcengruppe direkt aus Visual Studio erstellen. Eine Ressourcengruppe ist ein logischer Container, in dem Azure-Ressourcen wie Web-Apps, Datenbanken und Speicherkonten bereitgestellt und verwaltet werden. Dies ist ein nützlicher Mechanismus, um zugeordnete Ressourcen zusammenzuhalten.
 
-## Deploy your web app from Visual Studio
+## <a name="deploy-your-web-app-from-visual-studio"></a>Bereitstellen Ihrer Web-App aus Visual Studio
 
-It's a short process to publish your app to Azure from Visual Studio.
+Das Veröffentlichen Ihrer App in Azure aus Visual Studio umfasst nur wenige Schritte.
 
-### Select the project
+### <a name="select-the-project"></a>Auswählen des Projekts
 
-1. Right-click the project in Solution Explorer.
+1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt.
 
-1. Select **Publish > Publish to Azure**.
+1. Wählen Sie **Veröffentlichen > Veröffentlichen in Azure** aus.
 
-### Configure the App Service plan in Windows
+### <a name="configure-the-app-service-plan-in-windows"></a>Konfigurieren des App Service-Plans unter Windows
 
-1. Configure the App Service plan
+1. Konfigurieren des App Service-Plans
 
-    - Hosting: You will configure your App Service plan in this tab. It specifies the location, size, and features of the web server that hosts your app. You can select an existing hosting plan or create a new one. Windows will automatically generate globally unique names which you can change during setup.
-    - Services: You can configure a SQL database for your site here.
+    - Hosting: Sie konfigurieren Ihren App Service-Plan auf dieser Registerkarte. Hier werden der Standort, die Größe und die Funktionen des Webservers angegeben, der Ihre App hostet. Sie können einen vorhandenen Hostingplan auswählen oder einen neuen Plan erstellen. Windows generiert automatisch global eindeutige Namen, die Sie während des Setups ändern können.
+    - Dienste: Sie können hier eine SQL-Datenbank für Ihre Site konfigurieren.
 
         > [!NOTE]
-        > Although you can connect and manage a SQL database in Azure from Visual Studio, that is beyond the scope of this module.
+        > Sie können eine SQL-Datenbank in Azure zwar auch aus Visual Studio verbinden und verwalten, diese Vorgehensweise wird jedoch nicht im Rahmen des vorliegenden Moduls behandelt.
 
-1. Click **Create** to deploy the app. Once this is done, Visual Studio will launch the web page where your site is hosted.
+1. Klicken Sie zum Bereitstellen der App auf **Erstellen**. Nun startet Visual Studio die Webseite, auf der Ihre Site gehostet wird.
 
-### Configure the App Service plan for Mac
+### <a name="configure-the-app-service-plan-for-mac"></a>Konfigurieren des App Service-Plans für Mac
 
-1. You can select an existing App Service plan if you have one set up in Azure, or you can create a new one.
+1. Sie können einen vorhandenen App Service-Plan auswählen, sofern Sie einen solchen Plan in Azure eingerichtet haben, oder einen neuen Plan erstellen.
 
-1. Configure your  App Service plan in this tab. It specifies the location, size, and features of the web server that hosts your app. You can select an existing hosting plan or create a new one. Remember that Azure requires the name of your website and all resources to be globally unique.
+1. Konfigurieren Sie Ihren App Service-Plan auf dieser Registerkarte. Hier werden der Standort, die Größe und die Funktionen des Webservers angegeben, der Ihre App hostet. Sie können einen vorhandenen Hostingplan auswählen oder einen neuen Plan erstellen. Denken Sie daran, dass in Azure der Name Ihrer Website und aller Ressourcen global eindeutig sein muss.
 
-1. Click **Create** to deploy the app. Once this is done, Visual Studio will launch the web page where your site is hosted.
+1. Klicken Sie zum Bereitstellen der App auf **Erstellen**. Nun startet Visual Studio die Webseite, auf der Ihre Site gehostet wird.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-ASP.NET Core web applications and Azure App Services provide a flexible, scalable solution for hosting your ASP.NET web app. As with all Azure services, you will need to provide a resource group and select the pricing tier which best fulfills your needs.
+ASP.NET Core-Webanwendungen und Azure App Services bieten eine flexible, skalierbare Lösung für das Hosten Ihrer ASP.NET-Web-App. Wie bei allen Azure-Diensten müssen Sie eine Ressourcengruppe angeben und den Tarif auswählen, der Ihre Anforderungen am besten erfüllt.
