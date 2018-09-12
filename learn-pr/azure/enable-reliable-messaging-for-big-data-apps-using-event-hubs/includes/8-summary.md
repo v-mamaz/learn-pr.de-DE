@@ -7,7 +7,7 @@ In diesem Modul haben Sie erfahren, wie Sie Azure Event Hubs als Teil einer Lös
 - Das Verwenden des Azure-Portals zum Anzeigen des Status und der Leistung eines Event Hubs
 
 ## <a name="clean-up"></a>Bereinigen 
-<!---TODO: Do we need to include cleanup for the free education tier?--->
+<!---TODO: Update for sandbox?--->
 
 Aufgrund der Ressourcen, die Sie zum Testen Ihres Event Hubs verwendet haben, fallen Kosten für Ihr Abonnement an. Wenn Sie den Event Hub nicht mehr verwenden, sollten Sie ihn entfernen, damit keine unnötigen Änderungen an ihm vorgenommen werden können.
 

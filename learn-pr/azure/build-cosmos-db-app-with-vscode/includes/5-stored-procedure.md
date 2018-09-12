@@ -44,6 +44,7 @@ In dieser gespeicherten Prozedur wird mithilfe der OrderId (Bestell-ID), die ein
     Auf der Konsole wird die Meldung ausgegeben, dass die gespeicherte Prozedur abgeschlossen wurde.
 
 ## <a name="clean-up"></a>Bereinigen
+<!---TODO: Update for sandbox?--->
 
 Wenn Sie weiterhin an den Modulen in diesem Lernpfad arbeiten möchten, können Sie den Bereinigungsvorgang überspringen. Andernfalls müssen Sie mithilfe der folgenden Schritte den Bereinigungsvorgang für Ihre Ressourcen ausführen, da Ihnen sonst die Nutzung des Diensts in Rechnung gestellt wird.
 

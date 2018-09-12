@@ -1,46 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-efficiency-and-operations.3-use-monitoring-and-analytics-to-gain-operational-insights
-title: Use monitoring and analytics to gain operational insights
+title: Verwenden von Überwachung und Analysefunktionen zum Erhalt operativer Erkenntnisse
 metadata:
-  title: Use monitoring and analytics to gain operational insights
-  description: In this unit, we'll discuss how to use monitoring and analytics to gain operational insights
+  title: Verwenden von Überwachung und Analysefunktionen zum Erhalt operativer Erkenntnisse
+  description: In dieser Einheit wird erörtert, wie Überwachung und Analysefunktionen zum Erhalt operativer Erkenntnisse verwendet werden können.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: ea067302b66dcb00c9fb9b67e30de95dc68e758a
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44230659"
 durationInMinutes: 8
-content: |
+content: >
   [!include[](includes/3-use-monitoring-and-analytics-to-gain-operational-insights.md)]
 quiz:
-  title: 'Knowledge check - Use monitoring and analytics to gain operational insights'
+  title: 'Wissenstest: Verwenden von Überwachung und Analysefunktionen zum Erhalt operativer Erkenntnisse'
   questions:
-  - content: 'Which of the following would you use to troubleshoot run-time exceptions in your application?'
+  - content: Welchen der folgenden Dienste würden Sie zur Problembehandlung von Laufzeitausnahmen in Ihrer Anwendung verwenden?
     choices:
-    - content: 'Service Health'
+    - content: Service Health
       isCorrect: false
-      incorrectExplanation: 'Azure Service Health will give you insight into the health of Azure services, but will not provide insight into your application.'
-    - content: 'Network Watcher'
+      incorrectExplanation: Azure Service Health liefert Informationen zur Integrität von Azure-Diensten, aber keine Informationen zu Ihrer Anwendung.
+    - content: Network Watcher
       isCorrect: false
-      incorrectExplanation: 'Azure Network Watcher will help you troubleshoot network performance issues, but will not provide insight into your application.'
-    - content: 'Activity Log'
+      incorrectExplanation: Azure Network Watcher unterstützt Sie bei der Behandlung von Problemen mit der Netzwerkleistung, liefert aber keine Informationen zu Ihrer Anwendung.
+    - content: Aktivitätsprotokoll
       isCorrect: false
-      incorrectExplanation: 'Azure Activity Log will log events that have been performed on your resources on the Azure platform, but will not provide insight into your application.'
-    - content: 'Application Insights'
+      incorrectExplanation: Im Azure-Aktivitätsprotokoll werden Ereignisse für Ihre Ressourcen auf der Azure-Plattform protokolliert. Es liefert aber keine Informationen zu Ihrer Anwendung.
+    - content: Application Insights
       isCorrect: true
-      correctExplanation: 'Application Insights will help you detect & diagnose issues and understand usage for your web apps and services, including run-time exceptions.'
-  - content: 'Which of the following services would you use to identify who deleted a virtual machine?'
+      correctExplanation: Application Insights hilft Ihnen beim Erkennen und Diagnostizieren von Problemen sowie beim Nachvollziehen der Nutzung Ihrer Web-Apps und Dienste (einschließlich Laufzeitausnahmen).
+  - content: Welchen der folgenden Dienste würden Sie verwenden, um zu identifizieren, wer einen virtuellen Computer gelöscht hat?
     choices:
-    - content: 'Service Health'
+    - content: Service Health
       isCorrect: false
-      incorrectExplanation: 'Azure Service Health will give you insight into the health of Azure services, but will not provide insight into actions performed on your resources.'
-    - content: 'Network Watcher'
+      incorrectExplanation: Azure Service Health liefert Informationen zur Integrität von Azure-Diensten, aber keine Informationen zu Aktionen, die für Ihre Ressourcen ausgeführt wurden.
+    - content: Network Watcher
       isCorrect: false
-      incorrectExplanation: 'Azure Network Watcher will help you troubleshoot network performance issues, but will not provide insight into actions performed on your resources.'
-    - content: 'Activity Log'
+      incorrectExplanation: Azure Network Watcher unterstützt Sie bei der Behandlung von Problemen mit der Netzwerkleistung, liefert aber keine Informationen zu Aktionen, die für Ihre Ressourcen ausgeführt wurden.
+    - content: Aktivitätsprotokoll
       isCorrect: true
-      correctExplanation: 'Azure Activity Log will log events that have been performed on your resources on the Azure platform, including deletion of resources.'
-    - content: 'Application Insights'
+      correctExplanation: Im Azure-Aktivitätsprotokoll werden Ereignisse für Ihre Ressourcen auf der Azure-Plattform protokolliert. Dazu zählt auch die Löschung von Ressourcen.
+    - content: Application Insights
       isCorrect: false
-      incorrectExplanation: 'Application Insights will help you detect & diagnose issues and understand usage for your web apps and services, but will not provide insight into actions performed on your resources.'
+      incorrectExplanation: Application Insights hilft Ihnen beim Erkennen und Diagnostizieren von Problemen sowie beim Nachvollziehen der Nutzung Ihrer Web-Apps und Dienste, liefert aber keine Informationen zu Aktionen, die für Ihre Ressourcen ausgeführt wurden.

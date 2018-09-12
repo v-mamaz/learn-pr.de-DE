@@ -1,52 +1,57 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-containers.5-knowledge-check
-title: Knowledge check
+title: Wissenstest
 metadata:
-  title: Knowledge check
-  description: Introduction to containers knowledge check.
+  title: Wissenstest
+  description: Einführung zum Container-Wissenstest
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: d4fc7700e80f8716294a84f91da41e80c76f1be1
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44247278"
 durationInMinutes: 5
 quiz:
-  title: 'Introduction to containers'
+  title: Einführung in Container
   questions:
-  - content: 'Which of the following is not a benefit of container adoption?'
+  - content: Welche der folgenden Aussagen beschreibt keine Vorteile der Containereinführung?
     choices:
-    - content: Fast start times.
-      incorrectExplanation: Containers can start significantly faster than virtual or physical systems.
+    - content: Schnelle Startzeiten
+      incorrectExplanation: Container können erheblich schneller als virtuelle oder physische Systeme beginnen.
       isCorrect: false
-    - content: Efficient use of host resource.
+    - content: Effiziente Nutzung der Hostressource
       isCorrect: false
-      incorrectExplanation: Due to a shared image architecture, many containers can run on a single host, while efficiently utilizing host resources.
-    - content: Built-in disaster recovery.
+      incorrectExplanation: Aufgrund einer gemeinsamen Imagearchitektur können viele Container auf einem einzelnen Host ausgeführt werden, während sie Hostressourcen effizient versenden.
+    - content: Integrierte Notfallwiederherstellung
       isCorrect: true
-      correctExplanation: Containers don't inherently change disaster recovery procedures.
-    - content: Enables cloud-native application architecture.
+      correctExplanation: Container ändern Notfallwiederherstellungsverfahren grundsätzlich nicht.
+    - content: Ermöglicht native Cloudanwendungsarchitektur
       isCorrect: false
-      incorrectExplanation: Containers can help to develop applications with a modern or cloud-native architecture.
-  - content: 'What command will show all container instances (stopped and running)?'
+      incorrectExplanation: Container sind nützlich beim Entwickeln von Anwendungen mit einer modernen oder nativen Cloudarchitektur.
+  - content: Welcher Befehl zeigt alle (beendeten und ausgeführten) Containerinstanzen an?
     choices:
     - content: docker ps
-      incorrectExplanation: This command will only show running containers.
+      incorrectExplanation: Mit diesem Befehl werden nur ausgeführte Container angezeigt.
       isCorrect: false
     - content: docker ps -a
       isCorrect: true
-      correctExplanation: This command will list all running and stopped containers.
+      correctExplanation: Dieser Befehl listet alle ausgeführten und beendeten Container auf.
     - content: docker ps -x
-      incorrectExplanation: This isn't a valid Docker command.
+      incorrectExplanation: Dies ist kein gültiger Docker-Befehl.
       isCorrect: false
     - content: docker ps
-      incorrectExplanation: This command lists container images.
+      incorrectExplanation: Dieser Befehl listet Containerimages auf.
       isCorrect: false
-  - content: 'In production, container image creation should be automated with a Dockerfile.'
+  - content: In einer Produktionsumgebung sollte die Containerimageerstellung mit einer Dockerfile automatisiert werden.
     choices:
     - content: False.
-      incorrectExplanation: Container creation automation has many benefits and should be utilized in production container environments.
+      incorrectExplanation: Die Automatisierung der Containererstellung hat viele Vorteile und sollte in Produktionscontainerumgebungen verwendet werden.
       isCorrect: false
     - content: True.
       isCorrect: true
-      correctExplanation: Container creation automation has many benefits and should be utilized in production container environments.
+      correctExplanation: Die Automatisierung der Containererstellung hat viele Vorteile und sollte in Produktionscontainerumgebungen verwendet werden.

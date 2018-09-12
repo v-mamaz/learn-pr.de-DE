@@ -1,78 +1,71 @@
 ### YamlMime:ModuleUnit
 uid: learn.monitor-manage-device-with-iotcentral.6-knowledge-check
 metadata:
-# Search engine metadata  
-  title: Knowledge check 
-  description: This is a knowledge check of the Azure IoT Central tutorial
+  title: Wissenstest
+  description: Dies ist ein Wissenstest für das Azure IoT Central-Tutorial
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Knowledge check of the Azure IoT Central tutorial
+  ms.openlocfilehash: 5ce0369f1953aa5cde23ae268c69653acff17acf
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232811"
+title: Wissenstest für das Azure IoT Central-Tutorial
 durationInMinutes: 11
-content: |
+content: >
   [!include[](includes/6-knowledge-check.md)]
 quiz:
-  title: 'Knowledge check for the Azure IoT Central tutorial'
+  title: Wissenstest für das Azure IoT Central-Tutorial
   questions:
-  - content: Where do you define telemetry in IoT Central?
+  - content: An welcher Stelle definieren Sie die Telemetrie in IoT Central?
     choices:
-    - content: Settings
+    - content: Einstellungen
       isCorrect: false
-    - content: Properties
+    - content: Eigenschaften
       isCorrect: false
-    - content: Measurements
+    - content: Messungen
       isCorrect: true
     - content: Dashboard
       isCorrect: false
-    - content: Rules
+    - content: Regeln
       isCorrect: false
-
-  - content: What are the actions available when configuring rules?
+  - content: Welche Aktionen stehen beim Konfigurieren von Regeln zur Verfügung?
     choices:
-    - content: Email
+    - content: E-Mail
       isCorrect: false
     - content: Microsoft Flow
       isCorrect: false
     - content: Webhook
       isCorrect: false
-    - content: All of the above
+    - content: Alle oben genannten Möglichkeiten sind zutreffend.
       isCorrect: true
-    - content: None of the above 
+    - content: Keine der oben genannten Möglichkeiten
       isCorrect: false
-
-  - content: Where do you add the firmware of your device?
+  - content: Wo fügen Sie die Firmware Ihres Geräts hinzu?
     choices:
-    - content: Measurements
+    - content: Messungen
       isCorrect: false
-    - content: Settings
+    - content: Einstellungen
       isCorrect: false
-    - content: Properties
+    - content: Eigenschaften
       isCorrect: true
-    - content: Rules
+    - content: Regeln
       isCorrect: false
-    - content: Dashboard 
+    - content: Dashboard
       isCorrect: false
-
-  - content: How do you obtain the connection string to connect your device to IoT Central?
+  - content: Wie erhalten Sie die Verbindungszeichenfolge zum Verbinden Ihres Geräts mit IoT Central?
     choices:
-    - content: By adding a device in IoT Central
+    - content: Durch Hinzufügen eines Geräts in IoT Central
       isCorrect: true
-    - content: By providing the firmware MAC address
+    - content: Durch Bereitstellen der MAC-Adresse der Firmware
       isCorrect: false
-    - content: Customizing it on your own and registering it with IoT Central
+    - content: Durch selbstständiges Anpassen und anschließendes Registrieren bei IoT Central
       isCorrect: false
-    - content: All of the above
+    - content: Alle oben genannten Möglichkeiten sind zutreffend.
       isCorrect: false
-    - content: None of the above
+    - content: Keine der oben genannten Möglichkeiten
       isCorrect: false
-
-
-
-
-
-
-
-

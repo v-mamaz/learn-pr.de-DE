@@ -1,46 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-availability-and-recoverability.2-high-availability
-title: Build a highly available architecture
+title: Erstellen einer hochverfügbaren Architektur
 metadata:
-  title: Build a highly available architecture
-  description: Build a highly available architecture
+  title: Erstellen einer hochverfügbaren Architektur
+  description: Erstellen einer hochverfügbaren Architektur
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: e79f3bce5e25dd0f92602b9880cb6d6df99b8fa0
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44247686"
 durationInMinutes: 20
-content: |
+content: >
   [!include[](includes/2-high-availability.md)]
 quiz:
-  title: 'Knowledge Check - Build a highly available architecture'
+  title: 'Wissenstest: Erstellen einer hochverfügbaren Architektur'
   questions:
-  - content: 'An SLA is important to define for your service because:'
+  - content: 'Es ist aus den folgenden Gründen wichtig, eine SLA für den Dienst zu definieren:'
     choices:
-    - content: 'It helps you determine your backup retention requirements.'
+    - content: Sie unterstützt Sie beim Ermitteln Ihrer Anforderungen an die Aufbewahrung von Sicherungen.
       isCorrect: false
-      incorrectExplanation: 'Backup retention is important to define, but it is not driven by SLA.'
-    - content: 'It helps you determine the availability of your service that you will commit to your customers.'
+      incorrectExplanation: Das Definieren der Aufbewahrung von Sicherungen ist wichtig, wird aber nicht durch eine SLA gesteuert.
+    - content: Sie hilft Ihnen, die Verfügbarkeit Ihres Diensts zu bestimmen, die Sie Ihren Kunden zusichern.
       isCorrect: true
-      correctExplanation: 'Service level agreement is a commitment you are making to your customers for the availability of your service.'
-    - content: 'You can use it to convince your manager to automate virtual machine creation.'
+      correctExplanation: Die Vereinbarung zum Servicelevel ist eine Zusage, die Sie für Ihre Kunden bezüglich der Verfügbarkeit Ihres Diensts treffen.
+    - content: Sie können sie verwenden, um Ihren Vorgesetzten zu überzeugen, die Erstellung virtueller Computer zu automatisieren.
       isCorrect: false
-      incorrectExplanation: 'While this is a good discussion to have, your SLA will likely not have any impact on the outcome.'
-    - content: 'You use it to define the RBAC settings for your resources.'
+      incorrectExplanation: Obwohl dieses Thema eine gute Gesprächsgrundlage ist, wird Ihre SLA wahrscheinlich keinen Einfluss auf das Ergebnis haben.
+    - content: Sie verwenden sie, um die RBAC-Einstellungen für Ihre Ressourcen zu definieren.
       isCorrect: false
-      incorrectExplanation: 'RBAC settings are important, but they are not related to the SLA of your application.'
-  - content: 'Which of the following is not used in a highly available architecture?'
+      incorrectExplanation: RBAC-Einstellungen sind wichtig, beziehen sich aber nicht auf die SLA Ihrer Anwendung.
+  - content: Welche der folgenden Komponenten werden nicht in einer hochverfügbaren Architektur verwendet?
     choices:
-    - content: 'Load balancing'
+    - content: Lastenausgleich
       isCorrect: false
-      incorrectExplanation: 'Load balancing is typically used in a highly available architecture to distribute load to available systems and remove failed systems from load.'
-    - content: 'Availability zones'
+      incorrectExplanation: Lastausgleich wird normalerweise in einer hochverfügbaren Architektur verwendet, um die Last auf verfügbare Systeme zu verteilen und ausgefallene Systeme aus der Last zu entfernen.
+    - content: Verfügbarkeitszonen
       isCorrect: false
-      incorrectExplanation: 'Availability zones are used in a highly available architecture to distribute systems across multiple datacenters within a region.'
-    - content: 'Availability sets'
+      incorrectExplanation: Verfügbarkeitszonen werden in einer hochverfügbaren Architektur verwendet, um Systeme auf mehrere Datencenter innerhalb einer Region zu verteilen.
+    - content: Verfügbarkeitsgruppen
       isCorrect: false
-      incorrectExplanation: 'Availability sets are used in a highly available architecture to minimize the impact from localized failures and maintenance events.'
-    - content: 'A recovery service vault'
+      incorrectExplanation: Verfügbarkeitsgruppen werden in einer hochverfügbaren Architektur verwendet, um die Auswirkungen von lokalisierten Ausfällen und Wartungsereignissen zu minimieren.
+    - content: Ein Recovery Services-Tresor
       isCorrect: true
-      correctExplanation: 'Recovery service vaults provide a destination for backups, but they are not part of a highly available architecture.'
+      correctExplanation: Recovery Services-Tresore bieten ein Ziel für Sicherungen, sind aber nicht Bestandteil einer hochverfügbaren Architektur.

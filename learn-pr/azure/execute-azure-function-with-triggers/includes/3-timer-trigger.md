@@ -2,9 +2,9 @@ Es ist üblich, eine bestimmte Logik in festgelegten Intervallen auszuführen. S
 
 ## <a name="what-is-a-timer-trigger"></a>Was ist ein Timertrigger?
 
-Ein Zeitgebertrigger ist ein Trigger, der eine Funktion in einem bestimmten Intervall ausführt. Um einen Timertrigger zu erstellen, müssen Sie zwei Informationen angeben. 
+Ein Zeitgebertrigger ist ein Trigger, der eine Funktion in einem bestimmten Intervall ausführt. Um einen Timertrigger zu erstellen, müssen Sie zwei Informationen angeben.
 
-1. Ein *Zeitstempel-Parametername*, d.h. ein Bezeichner für den Zugriff auf den Trigger im Code. 
+1. Ein *Zeitstempel-Parametername*, d.h. ein Bezeichner für den Zugriff auf den Trigger im Code.
 2. Ein *Zeitplan*, d.h. ein *CRON-Ausdruck*, der das Intervall für den Timer festlegt.
 
 ## <a name="what-is-a-cron-expression"></a>Was ist ein CRON-Ausdruck?
@@ -15,7 +15,7 @@ Die Reihenfolge der Felder ist in Azure die folgende: `{second} {minute} {hour} 
 
 Ein *CRON-Ausdruck* zum Erstellen eines Triggers, der alle fünf Minuten ausgeführt wird, sieht beispielsweise so aus:
 
-```
+```log
 0 */5 * * * *
 ```
 
@@ -32,7 +32,7 @@ Um einen *CRON-Ausdruck* zu erstellen, benötigen Sie ein grundlegendes Verstän
 
 Nun kehren wir zum ursprünglichen CRON-Ausdruckbeispiel zurück. Versuchen wir, ihn besser zu verstehen, indem wir ihn Feld für Feld aufschlüsseln.
 
-```
+```log
 0 */5 * * * *
 ```
 

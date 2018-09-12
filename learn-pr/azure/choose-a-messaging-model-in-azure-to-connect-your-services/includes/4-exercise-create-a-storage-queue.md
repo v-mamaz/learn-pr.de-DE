@@ -3,6 +3,7 @@ In dieser Einheit erstellen Sie ein neues Speicherkonto in Ihrem Azure-Abonnemen
 Hierbei handelt es sich um die gleichen Aktionen, die von Komponenten in einer verteilten Anwendung durchgeführt werden. Beispielsweise kann eine mobile App einer Warteschlange eine Meldung hinzufügen, die dann darauf wartet, dass ein Webdienst sie abruft und verarbeitet.
 
 ## <a name="create-a-storage-account"></a>Erstellen eines Speicherkontos
+<!---TODO: Update for sandbox.--->
 
 Da Azure Storage-Warteschlangen ein Bestandteil von universellen Azure-Speicherkonten ist, müssen Sie zunächst ein Speicherkonto erstellen:
 

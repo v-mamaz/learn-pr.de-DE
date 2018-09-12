@@ -136,7 +136,7 @@ Diese Informationen stehen Ihnen auch im Azure-Portal zur Verfügung. Öffnen Si
 ![Ansicht der Informationen zu der CPU- und Arbeitsspeicherauslastung von Azure Container Instances im Azure-Portal](../media-draft/cpu-memory.png)
 
 ## <a name="clean-up"></a>Bereinigen
-<!---TODO: Do we need to include cleanup for the free education tier?--->
+<!---TODO: Update for sandbox?--->
 
 Dies ist die letzte Einheit des Azure Container Instances-Lernmoduls. Sie können nun die erstellten Ressourcen bereinigen, indem Sie die Ressourcengruppe löschen. Verwenden Sie hierzu den Befehl **az group delete**:
 

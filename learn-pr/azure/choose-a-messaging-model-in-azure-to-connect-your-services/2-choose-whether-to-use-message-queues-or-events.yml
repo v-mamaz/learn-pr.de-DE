@@ -1,26 +1,31 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-messaging-model.2-choose-whether-to-use-message-queues-or-events
-title: Choose whether to use messages or events
+title: Wählen Sie aus, ob Nachrichten oder Ereignisse verwendet werden sollen.
 metadata:
-  title: Choose whether to use messages or events
-  description: Choose whether to use messages or events
+  title: Wählen Sie aus, ob Nachrichten oder Ereignisse verwendet werden sollen.
+  description: Wählen Sie aus, ob Nachrichten oder Ereignisse verwendet werden sollen.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 00474301121987cab2098cdfa80cb15e98a4a36f
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44245969"
 durationInMinutes: 10
-content: |
+content: >
   [!include[](includes/2-choose-whether-to-use-message-queues-or-events.md)]
 quiz:
-  title: "Messaging models"
+  title: Messagingmodelle
   questions:
-  - content: "In your distributed application you have a web service that authenticates users. When a user logs on, the web service must communicate with a desktop application that runs on all users' computers to display the status of that user as \"Online\". True or false: This is an example of a message in a distributed application."
+  - content: 'In Ihrer verteilten Anwendung haben Sie einen Webdienst, der Benutzer authentifiziert. Wenn sich ein Benutzer anmeldet, muss der Webdienst mit einer Desktopanwendung kommunizieren, die auf den Computern aller Benutzer ausgeführt wird, um den „Online“-Status des Benutzers anzuzeigen. Wahr oder falsch: Dies ist ein Beispiel einer Nachricht in einer verteilten Anwendung.'
     choices:
-    - content: "True"
-      incorrectExplanation: "Sorry, this is an example of an event in a distributed application. The communication is routed to all subscribers and the publisher has no knowledge or preference on how the communication is handled by a subscriber, nor even any knowledge of how many subscribers there are, if any."
+    - content: Wahr
+      incorrectExplanation: Dies ist leider ein Beispiel eines Ereignisses in einer verteilten Anwendung. Die Kommunikation wird an alle Abonnenten und Herausgeber weitergeleitet, und der Herausgeber weiß nicht, wie die Kommunikation durch einen Abonnenten abgewickelt wird und hat auch keine Präferenzen diesbezüglich. Er weiß auch nicht, wie viele Abonnenten es ggf. gibt.
       isCorrect: false
-    - content: "False"
-      correctExplanation: "Correct! This would be an event notification which would trigger an action. This is a perfect case of using an event."
+    - content: Falsch
+      correctExplanation: Richtig! Dies wäre eine Ereignisbenachrichtigung, die eine Aktion auslösen würde. Dies ist die perfekte Situation, um ein Ereignis zu verwenden.
       isCorrect: true
