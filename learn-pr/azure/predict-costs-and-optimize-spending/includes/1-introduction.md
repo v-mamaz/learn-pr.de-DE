@@ -2,8 +2,8 @@ Wenn Sie eine Lösung in der Cloud planen, ist das Abwägen von Leistung und Kos
 
 Deshalb müssen wir mehrere Fragen sicher beantworten können:
 
-- Wie viel Kosten fallen für diese Lösung in diesem Finanzjahr an? 
-- Gibt es eine Konfiguration, mit der wir Geld sparen können? 
+- Wie viel Kosten fallen für diese Lösung in diesem Finanzjahr an?
+- Gibt es eine Konfiguration, mit der wir Geld sparen können?
 - Gibt es eine Möglichkeit abzuschätzen, wie eine Änderung sich auf die Kosten und die Leistung auswirken wird, _ohne_ die Änderung in einem Produktionssystem vornehmen zu müssen?
 
 In diesem Modul sehen wir uns Tools an, mit denen Sie diese und andere Fragen beantworten können.
@@ -17,6 +17,6 @@ In diesem Modul lernen Sie Folgendes:
 - Bewährte Methoden, um Infrastrukturkosten einzusparen
 - Bewährte Methoden, um Lizenzierungskosten einzusparen
 
-## <a name="prerequisite"></a>Voraussetzung 
+## <a name="prerequisite"></a>Voraussetzung
 
-- Ein grundlegendes Verständnis Ihrer Optionen bei Azure-Infrastrukturkomponenten 
+- Ein grundlegendes Verständnis Ihrer Optionen bei Azure-Infrastrukturkomponenten

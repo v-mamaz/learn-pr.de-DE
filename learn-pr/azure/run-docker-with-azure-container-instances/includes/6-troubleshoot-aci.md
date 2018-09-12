@@ -10,15 +10,15 @@ az container create --resource-group myResourceGroup --name mycontainer --image 
 
 ## <a name="get-logs-from-a-container-instance"></a>Abrufen von Protokollen aus einer Containerinstanz
 
-Die können den Befehl `az container logs` verwenden, um Protokolle aus Ihrem Anwendungscode in einem Container anzuzeigen:
+Sie können den Befehl `az container logs` verwenden, um Protokolle aus Ihrem Anwendungscode in einem Container anzuzeigen:
 
 ```azazurecli
 az container logs --resource-group myResourceGroup --name mycontainer
 ```
 
-Es folgt die Protokollausgabe des Beispielcontainers, nachdem mehrmals auf eine Web-App zugegriffen wurde:
+Hier sehen Sie die Protokollausgabe des Beispielcontainers, nachdem mehrmals auf eine Web-App zugegriffen wurde:
 
-```bash
+```output
 listening on port 80
 ::ffff:0.0.0.0 - - [20/Aug/2018:21:44:24 +0000] "GET / HTTP/1.1" 200 1663 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"
 ::ffff:0.0.0.0 - - [20/Aug/2018:21:44:24 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://23.101.136.193/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"
@@ -37,7 +37,7 @@ az container attach --resource-group myResourceGroup --name mycontainer
 Beispielausgabe:
 
 
-```bash
+```output
 Container 'mycontainer' is in state 'Running'...
 (count: 1) (last timestamp: 2018-08-20 21:43:26+00:00) pulling image "microsoft/aci-helloworld"
 (count: 1) (last timestamp: 2018-08-20 21:43:32+00:00) Successfully pulled image "microsoft/aci-helloworld"
@@ -51,7 +51,7 @@ listening on port 80
 
 ## <a name="execute-a-command-in-a-container"></a>Ausführen eines Befehls in einem Container
 
-Azure Container Instances unterstützt die Ausführung eines Befehls in einem ausgeführten Container. Die Ausführung eines Befehls in einem bereits gestarteten Container ist besonders bei der Anwendungsentwicklung und Problembehandlung von großem Nutzen. Am häufigsten wird dieses Feature zum Starten einer interaktiven Befehlsshell verwendet, sodass Probleme in einem ausgeführten Container behoben werden können.
+Azure Container Instances unterstützt die Ausführung eines Befehls in einem ausgeführten Container. Die Ausführung eines Befehls in einem bereits gestarteten Container ist besonders bei der Anwendungsentwicklung und Problembehandlung von großem Nutzen. Am häufigsten wird dieses Feature zum Starten einer interaktiven Shell verwendet, damit Sie Probleme in einem ausgeführten Container beheben können.
 
 In diesem Beispiel wird eine interaktive Terminalsitzung mit dem ausgeführten Container gestartet:
 
@@ -59,9 +59,9 @@ In diesem Beispiel wird eine interaktive Terminalsitzung mit dem ausgeführten C
 az container exec --resource-group myResourceGroup --name mycontainer --exec-command /bin/sh
 ```
 
-Sobald der Befehl abgeschlossen ist, arbeiten Sie effektiv innerhalb des Containers. In diesem Beispiel wurde der `ls`-Befehl ausgeführt, um den Inhalt des Arbeitsverzeichnisses anzuzeigen:
+Sobald der Befehl ausgeführt wurde, arbeiten Sie effektiv innerhalb des Containers. In diesem Beispiel wurde der `ls`-Befehl ausgeführt, um den Inhalt des Arbeitsverzeichnisses anzuzeigen:
 
-```bash
+```output
 usr/src/app # ls
 index.html         node_modules       package.json
 index.js           package-lock.json
@@ -69,9 +69,9 @@ index.js           package-lock.json
 
 Geben Sie `exit` ein, um die Remotesitzung zu beenden.
 
-## <a name="monitor-container-cpu-and-memory"></a>Überwachen von Container-CPU und -Arbeitsspeicher
+## <a name="monitor-container-cpu-and-memory"></a>Überwachen von Container-CPU und -speicher
 
-Sie sollten die Metriken zur CPU- und Arbeitsspeicherauslastung abrufen. Zu diesem Zweck müssen Sie zuerst die ID der Azure-Containerinstanz abrufen. In diesem Beispiel wird die ID in einer Variable namens `CONTAINER_ID` platziert:
+Sie sollten die Metriken zur CPU- und Speicherauslastung abrufen. Zu diesem Zweck müssen Sie zuerst die ID der Azure-Containerinstanz abrufen. In diesem Beispiel wird die ID in einer Variable namens `CONTAINER_ID` platziert:
 
 ```azurecli
 CONTAINER_ID=$(az container show --resource-group myResourceGroup --name mycontainer --query id --output tsv)
@@ -85,7 +85,7 @@ az monitor metrics list --resource $CONTAINER_ID --metric CPUUsage --output tabl
 
 Beispielausgabe:
 
-```bash
+```output
 Timestamp            Name              Average
 -------------------  ------------  -----------
 2018-08-20 21:39:00  CPU Usage
@@ -105,7 +105,7 @@ Timestamp            Name              Average
 2018-08-20 21:53:00  CPU Usage      0.5
 ```
 
-Der folgende Befehl kann zum Abrufen der Informationen zur Arbeitsspeicherauslastung verwendet werden:
+Der folgende Befehl kann zum Abrufen der Informationen zur Speicherauslastung verwendet werden:
 
 ```azurecli
 az monitor metrics list --resource $CONTAINER_ID --metric MemoryUsage --output table
@@ -113,7 +113,7 @@ az monitor metrics list --resource $CONTAINER_ID --metric MemoryUsage --output t
 
 Beispielausgabe:
 
-```bash
+```output
 Timestamp            Name              Average
 -------------------  ------------  -----------
 2018-08-20 21:43:00  Memory Usage
@@ -131,9 +131,9 @@ Timestamp            Name              Average
 2018-08-20 21:55:00  Memory Usage  19181568.0
 ```
 
-Diese Informationen stehen Ihnen auch im Azure-Portal zur Verfügung. Öffnen Sie im Azure-Portal die Übersichtsseite einer Containerinstanz, um eine grafische Darstellung der Informationen zur CPU- und Arbeitsspeicherauslastung anzuzeigen.
+Diese Informationen stehen Ihnen auch im Azure-Portal zur Verfügung. Öffnen Sie im Azure-Portal die Übersichtsseite einer Containerinstanz, um eine grafische Darstellung der Informationen zur CPU- und Speicherauslastung anzuzeigen.
 
-![Ansicht der Informationen zu der CPU- und Arbeitsspeicherauslastung von Azure Container Instances im Azure-Portal](../media-draft/cpu-memory.png)
+![Ansicht der Informationen zu der CPU- und Speicherauslastung von Azure Container Instances im Azure-Portal](../media-draft/cpu-memory.png)
 
 ## <a name="clean-up"></a>Bereinigen
 <!---TODO: Update for sandbox?--->
