@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: de9ee97ef0b153a982034efed2949ee9200333dc
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: d870ef7796b83a628652a76c1a7e42b26c21d8e7
+  ms.sourcegitcommit: c99f7e4ac79611b51dfb48196b4f3d810e4ed2c6
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44238302"
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44387283"
 title: Erstellen eines virtuellen Windows-Computers in Azure
 summary: 'Mit virtuellen Azure-Computern (VMs) können Sie dedizierte Computingressourcen in wenigen Minuten erstellen, die wie ein physischer Desktopcomputer oder ein physischer Server verwendet werden können. Egal, ob Ihr virtueller Computer ein Server ist, mit dem Sie aus Verwaltungszwecken eine Verbindung herstellen, oder eine virtuelle Arbeitsstation für einen Endbenutzer: Das Remotedesktopprotokoll (RDP) sorgt dafür, dass sich die Verwendung nicht von der Verwendung eines lokalen, physischen Computers unterscheidet.'
 abstract: >
@@ -27,13 +27,14 @@ abstract: >
 prerequisites: Keine
 iconUrl: http://via.placeholder.com/120x120
 levels:
-- intermediate
+- beginner
 roles:
+- administrator
 - developer
 products:
 - azure
-- azure-virtual-machines
 - azure-portal
+- azure-virtual-machines
 units:
 - learn.create-a-windows-vm-in-azure.1-introduction
 - learn.create-a-windows-vm-in-azure.2-create-a-windows-virtual-machine
