@@ -3,16 +3,19 @@ uid: learn.secure-azure-resources-with-rbac.3-knowledge-check-rbac-overview
 metadata:
   title: 'Wissenstest: Was ist RBAC?'
   description: 'Wissenstest: Was ist RBAC?'
-  displayType: one-column
-  ms.openlocfilehash: 973a839a37cfc03f3078519642d2216d4983ef15
-  ms.sourcegitcommit: 850ce909966600e7a8d6f89d8bdebbb621416838
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 85b15c5e29716aa4aa54bc49c7ad6c016901c41b
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/03/2018
-  ms.locfileid: "43478876"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44243249"
 title: 'Wissenstest: Was ist RBAC?'
 durationInMinutes: 3
-content: 'Wissenstest: Was ist RBAC?'
 quiz:
   title: 'Wissenstest: Was ist RBAC?'
   questions:

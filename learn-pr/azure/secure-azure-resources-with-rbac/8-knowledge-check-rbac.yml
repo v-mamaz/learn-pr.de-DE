@@ -3,16 +3,19 @@ uid: learn.secure-azure-resources-with-rbac.8-knowledge-check-rbac
 metadata:
   title: Wissenstest – mithilfe von RBAC
   description: Wissenstest – mithilfe von RBAC
-  displayType: one-column
-  ms.openlocfilehash: 6888c6b1d676f0bc3066cce4c92d0202984c2b52
-  ms.sourcegitcommit: 850ce909966600e7a8d6f89d8bdebbb621416838
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ef602766d1f775d59db158e0eb384830c08d0e69
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/03/2018
-  ms.locfileid: "43479199"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44235567"
 title: Wissenstest – mithilfe von RBAC
 durationInMinutes: 5
-content: Wissenstest – mithilfe von RBAC
 quiz:
   title: Wissenstest – mithilfe von RBAC
   questions:
