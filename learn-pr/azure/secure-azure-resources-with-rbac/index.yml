@@ -32,8 +32,7 @@ units:
 - learn.secure-azure-resources-with-rbac.3-knowledge-check-rbac-overview
 - learn.secure-azure-resources-with-rbac.4-list-access
 - learn.secure-azure-resources-with-rbac.5-grant-access
-- learn.secure-azure-resources-with-rbac.6-grant-access-powershell
-- learn.secure-azure-resources-with-rbac.7-view-activity-logs
-- learn.secure-azure-resources-with-rbac.8-knowledge-check-rbac
-- learn.secure-azure-resources-with-rbac.9-summary
+- learn.secure-azure-resources-with-rbac.6-view-activity-logs
+- learn.secure-azure-resources-with-rbac.7-knowledge-check-rbac
+- learn.secure-azure-resources-with-rbac.8-summary
 achievement: learn.secure-azure-resources-with-rbac.badge

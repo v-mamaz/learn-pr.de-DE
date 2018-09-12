@@ -2,7 +2,7 @@
 uid: learn.intro-to-data-in-azure
 metadata:
   title: Introduction to data in Azure
-  description: In this module, we'll explore the benefits of Azure Storage versus on-premises storage.
+  description: In this module, we'll explore the benefits of Azure data storage versus on-premises storage.
   ms.date: 09/24/2018
   #TODO: Update with real author name.
   author: markjulmar
@@ -10,12 +10,12 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
 title: Introduction to data in Azure
-summary: In this module, we'll explore the benefits of Azure Storage versus on-premises storage.
+summary: In this module, we'll explore the benefits of Azure data storage versus on-premises storage.
 abstract:  | 
   In this module, you will:
-  - Explore the benefits of Azure Storage
-  - Explore how Azure Storage meets your business demands
-  - Compare Azure storage with on-premises storage
+  - Survey the data storage options in Azure
+  - Explore how Azure data storage can meet your business demands
+  - Compare Azure data storage with on-premises storage
 prerequisites: None
 #TODO: Update icon URL with real image 
 iconUrl: http://via.placeholder.com/120x120
