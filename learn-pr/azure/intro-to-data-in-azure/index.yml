@@ -1,25 +1,31 @@
 ### YamlMime:Module
 uid: learn.intro-to-data-in-azure
 metadata:
-  title: Einführung in Daten in Azure
-  description: In diesem Modul lernen Sie die Vorteile von Azure Storage kennen. Außerdem erfahren Sie mehr über die Unterschiede zwischen Azure Storage und einem lokalen Speicher.
-  ms.openlocfilehash: 03ccd3d61bbd4e542269929bb508cbe14c2e6d87
-  ms.sourcegitcommit: bf091e3a389138b59573865ca54775e38a4ffa1f
-  ms.translationtype: HT
-  ms.contentlocale: de-DE
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43155149"
-title: Einführung in Daten in Azure
-summary: Vorteile von Azure Storage
-abstract: In diesem Modul lernen Sie die Vorteile von Azure Storage kennen. Außerdem erfahren Sie mehr über die Unterschiede zwischen Azure Storage und einem lokalen Speicher.
-cardDescription: Erkunden der Vorteile von Azure Storage
+  title: Introduction to data in Azure
+  description: In this module, we'll explore the benefits of Azure Storage versus on-premises storage.
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Introduction to data in Azure
+summary: In this module, we'll explore the benefits of Azure Storage versus on-premises storage.
+abstract:  | 
+  In this module, you will:
+  - Explore the benefits of Azure Storage
+  - Explore how Azure Storage meets your business demands
+  - Compare Azure storage with on-premises storage
+prerequisites: None
+#TODO: Update icon URL with real image 
 iconUrl: http://via.placeholder.com/120x120
-levels:
+levels: 
 - beginner
-roles:
+roles: 
 - developer
-products:
-- Azure
+products: 
+- azure
+- azure-storage
 units:
 - learn.intro-to-data-in-azure.1-introduction
 - learn.intro-to-data-in-azure.2-benefits-of-using-azure-to-store-data
