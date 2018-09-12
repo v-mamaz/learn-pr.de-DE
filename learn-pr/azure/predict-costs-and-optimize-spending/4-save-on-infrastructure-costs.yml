@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.predict-costs-and-optimize-spending.4-save-on-infrastructure-costs
+title: <span data-ttu-id="76f8f-101">Einsparungen bei den Infrastrukturkosten</span><span class="sxs-lookup"><span data-stu-id="76f8f-101">Save on infrastructure costs</span></span>
+metadata:
+  title: <span data-ttu-id="76f8f-102">Einsparungen bei den Infrastrukturkosten</span><span class="sxs-lookup"><span data-stu-id="76f8f-102">Save on infrastructure costs</span></span>
+  description: <span data-ttu-id="76f8f-103">In dieser Einheit wird erläutert, wie Sie bei den Infrastrukturkosten Einsparungen erzielen können.</span><span class="sxs-lookup"><span data-stu-id="76f8f-103">In this unit, we'll discuss how to save on infrastructure costs</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 7de7c9ebfe9743b18d01e4e2c298f97efa227efb
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44244779"
+durationInMinutes: 10
+content: >
+  [!include[](includes/4-save-on-infrastructure-costs.md)]
+quiz:
+  title: <span data-ttu-id="76f8f-104">Einsparungen bei den Infrastrukturkosten</span><span class="sxs-lookup"><span data-stu-id="76f8f-104">Save on infrastructure costs</span></span>
+  questions:
+  - content: <span data-ttu-id="76f8f-105">Welche dieser Lösungen ist <b>keine</b> Möglichkeit zur Kosteneinsparung?</span><span class="sxs-lookup"><span data-stu-id="76f8f-105">Which one of these is <b>not</b> a cost-saving solution?</span></span>
+    choices:
+    - content: <span data-ttu-id="76f8f-106">Aufheben der Zuordnung virtueller Computer außerhalb der Geschäftszeiten.</span><span class="sxs-lookup"><span data-stu-id="76f8f-106">Deallocate virtual machines in off hours.</span></span>
+      incorrectExplanation: <span data-ttu-id="76f8f-107">Die Verwendung von Azure Reserved Virtual Machine Instances, das Aufheben der Zuordnung virtueller Maschinen virtueller Computer außerhalb der Geschäftszeiten, das Löschen nicht verwendeter virtueller Maschinen und die Migration zu PaaS oder SaaS sind allesamt Beispiele für Lösungen zum Einsparen von Kosten.</span><span class="sxs-lookup"><span data-stu-id="76f8f-107">Using Azure Reserved Virtual Machine Instances, deallocating virtual machines in off hours, right-sizing underutilized virtual machines, deleting unused virtual machines, and migrating to PaaS or SaaS are all examples of cost-saving solutions.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="76f8f-108">Verwenden von Azure Reserved Virtual Machine Instances.</span><span class="sxs-lookup"><span data-stu-id="76f8f-108">Use Azure Reserved Virtual Machine Instances.</span></span>
+      incorrectExplanation: <span data-ttu-id="76f8f-109">Die Verwendung von Azure Reserved Virtual Machine Instances, das Aufheben der Zuordnung virtueller Maschinen virtueller Computer außerhalb der Geschäftszeiten, das Löschen nicht verwendeter virtueller Maschinen und die Migration zu PaaS oder SaaS sind allesamt Beispiele für Lösungen zum Einsparen von Kosten.</span><span class="sxs-lookup"><span data-stu-id="76f8f-109">Using Azure Reserved Virtual Machine Instances, deallocating virtual machines in off hours, right-sizing underutilized virtual machines, deleting unused virtual machines, and migrating to PaaS or SaaS are all examples of cost-saving solutions.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="76f8f-110">Lastenausgleich Ihrer virtuellen Computer für eingehende Nachrichten.</span><span class="sxs-lookup"><span data-stu-id="76f8f-110">Load balance your virtual machines for incoming messages.</span></span>
+      correctExplanation: <span data-ttu-id="76f8f-111">Ein Lastenausgleich wird zum Optimieren der Leistung durchgeführt.</span><span class="sxs-lookup"><span data-stu-id="76f8f-111">Load balancing is used for performance optimization.</span></span> <span data-ttu-id="76f8f-112">Die Verwendung von Azure Reserved Virtual Machine Instances, das Aufheben der Zuordnung virtueller Maschinen virtueller Computer außerhalb der Geschäftszeiten, das Löschen nicht verwendeter virtueller Maschinen und die Migration zu PaaS oder SaaS sind allesamt Beispiele für Lösungen zum Einsparen von Kosten.</span><span class="sxs-lookup"><span data-stu-id="76f8f-112">Using Azure Reserved Virtual Machine Instances, deallocating virtual machines in off hours, right-sizing underutilized virtual machines, deleting unused virtual machines, and migrating to PaaS or SaaS are all examples of cost-saving solutions.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="76f8f-113">Ändern der Größe von wenig genutzten virtuellen Computern.</span><span class="sxs-lookup"><span data-stu-id="76f8f-113">Right-size underutilized virtual machines.</span></span>
+      incorrectExplanation: <span data-ttu-id="76f8f-114">Die Verwendung von Azure Reserved Virtual Machine Instances, das Aufheben der Zuordnung virtueller Maschinen virtueller Computer außerhalb der Geschäftszeiten, das Löschen nicht verwendeter virtueller Maschinen und die Migration zu PaaS oder SaaS sind allesamt Beispiele für Lösungen zum Einsparen von Kosten.</span><span class="sxs-lookup"><span data-stu-id="76f8f-114">Using Azure Reserved Virtual Machine Instances, deallocating virtual machines in off hours, right-sizing underutilized virtual machines, deleting unused virtual machines, and migrating to PaaS or SaaS are all examples of cost-saving solutions.</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="76f8f-115">Das Azure Architecture Center ________:</span><span class="sxs-lookup"><span data-stu-id="76f8f-115">The Azure Architecture Center is ________:</span></span>
+    choices:
+    - content: <span data-ttu-id="76f8f-116">Das Azure Architecture Center ist der ideale Ort, um Ideen für die Transformation Ihrer Anwendung sowie Best Practices für eine große Auswahl von Architekturen und Azure-Diensten zu erhalten.</span><span class="sxs-lookup"><span data-stu-id="76f8f-116">A great place to get ideas for transforming your application, as well as best practices across a wide array of architectures and Azure services.</span></span>
+      correctExplanation: <span data-ttu-id="76f8f-117">Das Azure Architecture Center bietet Vorschläge zum Verbessern Ihrer App und zum Einsparen von Kosten.</span><span class="sxs-lookup"><span data-stu-id="76f8f-117">The Azure Architecture Center will provide suggestions about ways to improve your app and save money.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="76f8f-118">Das Azure Architecture Center ist ein Gebäude auf dem Microsoft-Campus in Seattle, in dem Sie sich mit anderen Benutzern über die Infrastruktur austauschen können.</span><span class="sxs-lookup"><span data-stu-id="76f8f-118">A building on the Microsoft Seattle campus where you can talk about infrastructure.</span></span>
+      incorrectExplanation: <span data-ttu-id="76f8f-119">Das Azure Architecture Center ist ein in Azure integriertes Softwareprodukt, das Vorschläge zur Verbesserung Ihrer App bereitstellt.</span><span class="sxs-lookup"><span data-stu-id="76f8f-119">The Azure Architecture Center is a software product built into Azure that provides suggestions to improve your app.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="76f8f-120">Das Azure Architecture Center ist ein cloudbasiertes Museum zu Ehren von Frank Lloyd Wright.</span><span class="sxs-lookup"><span data-stu-id="76f8f-120">A cloud-based museum to Frank Lloyd Wright.</span></span>
+      incorrectExplanation: <span data-ttu-id="76f8f-121">Das Azure Architecture Center ist ein in Azure integriertes Softwareprodukt, das Vorschläge zur Verbesserung Ihrer App bereitstellt.</span><span class="sxs-lookup"><span data-stu-id="76f8f-121">The Azure Architecture Center is a software product built into Azure that provides suggestions to improve your app.</span></span>
+      isCorrect: false

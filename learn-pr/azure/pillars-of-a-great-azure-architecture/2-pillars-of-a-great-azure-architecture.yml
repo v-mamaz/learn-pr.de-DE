@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.pillars-of-a-great-azure-architecture.2-pillars-of-a-great-azure-architecture
+title: <span data-ttu-id="e6464-101">Säulen einer guten Azure-Architektur</span><span class="sxs-lookup"><span data-stu-id="e6464-101">Pillars of a great Azure Architecture</span></span>
+metadata:
+  title: <span data-ttu-id="e6464-102">Säulen einer guten Azure-Architektur</span><span class="sxs-lookup"><span data-stu-id="e6464-102">Pillars of a great Azure Architecture</span></span>
+  description: <span data-ttu-id="e6464-103">Säulen einer guten Azure-Architektur</span><span class="sxs-lookup"><span data-stu-id="e6464-103">Pillars of a great Azure Architecture</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: c5737d681d5fcdd8997435c2bfe41b633bca1254
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231417"
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-pillars-of-a-great-azure-architecture.md)]
+quiz:
+  title: '<span data-ttu-id="e6464-104">Wissenstest: Säulen einer guten Azure-Architektur</span><span class="sxs-lookup"><span data-stu-id="e6464-104">Knowledge Check - Pillars of a great Azure architecture</span></span>'
+  questions:
+  - content: <span data-ttu-id="e6464-105">Welches der folgenden Szenarien wäre ein Beispiel für etwas, das Sie in der Sicherheitssäule behandeln können?</span><span class="sxs-lookup"><span data-stu-id="e6464-105">Which of the following would be an example of something you might address in the security pillar?</span></span>
+    choices:
+    - content: <span data-ttu-id="e6464-106">Definieren einer Richtlinie für die Sicherung virtueller Computer.</span><span class="sxs-lookup"><span data-stu-id="e6464-106">Defining a policy for virtual machine backup</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e6464-107">Die Sicherungsrichtlinie für virtuelle Computer ist wichtig, fällt jedoch nicht unter die Sicherheitssäule.</span><span class="sxs-lookup"><span data-stu-id="e6464-107">The backup policy for virtual machines is important, but does not fall within the security pillar.</span></span>
+    - content: <span data-ttu-id="e6464-108">Aktivieren von Multi-Factor Authentication für alle Administratorkonten.</span><span class="sxs-lookup"><span data-stu-id="e6464-108">Enabling multi-factor authentication for all administrative accounts</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e6464-109">Das Aktivieren von Multi-Factor Authentication ist ein gutes Beispiel für etwas, das Sie als Teil der Sicherheitssäule behandeln können.</span><span class="sxs-lookup"><span data-stu-id="e6464-109">Enabling multi-factor authentication is a great example of something you might address as part of the security pillar.</span></span>
+    - content: <span data-ttu-id="e6464-110">Auswerten Ihrer Cloudausgaben, um Bereiche für Kosteneinsparungen zu identifizieren.</span><span class="sxs-lookup"><span data-stu-id="e6464-110">Evaluating your cloud spend to identify areas of cost savings</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e6464-111">Es ist wichtig, Bereiche zu identifizieren, in denen Sie die Kosten senken können, aber dies fällt nicht unter die Sicherheitssäule.</span><span class="sxs-lookup"><span data-stu-id="e6464-111">It is important to identify areas where you can reduce cost, but this does not fall within the security pillar.</span></span>
+    - content: <span data-ttu-id="e6464-112">Wechseln zu einem Dienst mit automatischer Skalierung, um auf Schwankungen der Last dynamisch reagieren zu können.</span><span class="sxs-lookup"><span data-stu-id="e6464-112">Moving to an autoscaling service to dynamically handle fluctuations in load</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e6464-113">Die Verwendung der automatischen Skalierung zur Bewältigung von Lastschwankungen bietet große Vorteile, fällt aber nicht unter die Sicherheitssäule.</span><span class="sxs-lookup"><span data-stu-id="e6464-113">Using autoscaling to handle fluctuations in load is a great capability to leverage, but does not fall within the security pillar.</span></span>
+  - content: <span data-ttu-id="e6464-114">Welches der folgenden Szenarien wäre ein Beispiel für etwas, das Sie in der Verfügbarkeits- und Wiederherstellbarkeitssäule behandeln können?</span><span class="sxs-lookup"><span data-stu-id="e6464-114">Which of the following would be an example of something you might address in the availability & recoverability pillar?</span></span>
+    choices:
+    - content: <span data-ttu-id="e6464-115">Definieren einer Richtlinie für die Sicherung virtueller Computer.</span><span class="sxs-lookup"><span data-stu-id="e6464-115">Defining a policy for virtual machine backup</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e6464-116">Das Definieren einer Richtlinie für VM-Sicherungen ist eine Aktivität, die sich auf die Wiederherstellbarkeit konzentriert. Sie fällt deshalb unter diese Säule.</span><span class="sxs-lookup"><span data-stu-id="e6464-116">Defining a policy for VM backup is an activity focused on recoverability, so it does fall within this pillar.</span></span>
+    - content: <span data-ttu-id="e6464-117">Aktivieren von Multi-Factor Authentication für alle Administratorkonten.</span><span class="sxs-lookup"><span data-stu-id="e6464-117">Enabling multi-factor authentication for all administrative accounts</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e6464-118">Das Aktivieren von Multi-Factor Authentication ist ein gutes Beispiel für etwas, das Sie als Teil der Sicherheitssäule behandeln können, aber es fällt nicht unter die Verfügbarkeits- und Wiederherstellbarkeitssäule.</span><span class="sxs-lookup"><span data-stu-id="e6464-118">Enabling multi-factor authentication is a great example of something you might address as part of the security pillar, but it does not apply to the availability & recoverability pillar.</span></span>
+    - content: <span data-ttu-id="e6464-119">Auswerten Ihrer Cloudausgaben, um Bereiche für Kosteneinsparungen zu identifizieren.</span><span class="sxs-lookup"><span data-stu-id="e6464-119">Evaluating your cloud spend to identify areas of cost savings</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e6464-120">Es ist wichtig, Bereiche zu identifizieren, in denen Sie die Kosten senken können, aber dies fällt nicht unter die Verfügbarkeits- und Wiederherstellbarkeitssäule.</span><span class="sxs-lookup"><span data-stu-id="e6464-120">It is important to identify areas where you can reduce cost, but this does not fall within the availability & recoverability pillar.</span></span>
+    - content: <span data-ttu-id="e6464-121">Wechseln zu einem Dienst mit automatischer Skalierung, um auf Schwankungen der Last dynamisch reagieren zu können.</span><span class="sxs-lookup"><span data-stu-id="e6464-121">Moving to an autoscaling service to dynamically handle fluctuations in load</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e6464-122">Die Verwendung der automatischen Skalierung zur Bewältigung von Lastschwankungen bietet große Vorteile, fällt aber nicht unter die Verfügbarkeits- und Wiederherstellbarkeitssäule.</span><span class="sxs-lookup"><span data-stu-id="e6464-122">Using autoscaling to handle fluctuations in load is a great capability to leverage, but does not fall within the availability & recoverability pillar.</span></span>

@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.pillars-of-a-great-azure-architecture.4-design-for-performance-and-scalability
+title: <span data-ttu-id="86449-101">Entwurf für Leistung und Skalierbarkeit</span><span class="sxs-lookup"><span data-stu-id="86449-101">Design for performance and scalability</span></span>
+metadata:
+  title: <span data-ttu-id="86449-102">Entwurf für Leistung und Skalierbarkeit</span><span class="sxs-lookup"><span data-stu-id="86449-102">Design for performance and scalability</span></span>
+  description: <span data-ttu-id="86449-103">Entwurf für Leistung und Skalierbarkeit</span><span class="sxs-lookup"><span data-stu-id="86449-103">Design for performance and scalability</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 3c4260d45a4175e57f423e569558192cb06bf68f
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44243657"
+durationInMinutes: 15
+content: >
+  [!include[](includes/4-design-for-performance-and-scalability.md)]
+quiz:
+  title: '<span data-ttu-id="86449-104">Wissenstest: Entwurf für Leistung und Skalierbarkeit</span><span class="sxs-lookup"><span data-stu-id="86449-104">Knowledge check - Design for performance and scalability</span></span>'
+  questions:
+  - content: <span data-ttu-id="86449-105">Welches der folgenden Szenarien ist ein Beispiel für zentrales Hochskalieren?</span><span class="sxs-lookup"><span data-stu-id="86449-105">Which of the following is an example of scaling up?</span></span>
+    choices:
+    - content: <span data-ttu-id="86449-106">Aktualisieren Ihrer Anwendung zur Verwendung eines Warteschlangendiensts.</span><span class="sxs-lookup"><span data-stu-id="86449-106">Updating your application to use a queuing service</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="86449-107">Die Einbindung eines Warteschlangendienstes in Ihre Anwendung kann eine intelligente architektonische Entscheidung sein, ist aber kein Beispiel für zentrales Hochskalieren.</span><span class="sxs-lookup"><span data-stu-id="86449-107">Including a queuing service in your application can be a smart architecual decision, but is not an example of scaling up.</span></span>
+    - content: <span data-ttu-id="86449-108">Hinzufügen weiterer Webserver zu einer Webfarm.</span><span class="sxs-lookup"><span data-stu-id="86449-108">Adding more web servers into a web farm</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="86449-109">Das Hinzufügen weiterer Webserver zu einer Webfarm ist ein Beispiel für horizontales Hochskalieren.</span><span class="sxs-lookup"><span data-stu-id="86449-109">Adding more web servers into a web farm is an example of scaling out.</span></span>
+    - content: <span data-ttu-id="86449-110">Hinzufügen eines weiteren virtuellen Computers zu einem Datenbankcluster.</span><span class="sxs-lookup"><span data-stu-id="86449-110">Adding another virtual machine into a database cluster</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="86449-111">Das Hinzufügen eines weiteren virtuellen Computers zu einem Datenbankcluster ist kein Beispiel für zentrales Hochskalieren.</span><span class="sxs-lookup"><span data-stu-id="86449-111">Adding another virtual machine into a database cluster is not an example of scaling up.</span></span>
+    - content: <span data-ttu-id="86449-112">Aktualisieren eines virtuellen Computers auf eine größere Größe.</span><span class="sxs-lookup"><span data-stu-id="86449-112">Updating a virtual machine to a larger size</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="86449-113">Durch das Ändern eines virtuellen Computers in eine größere Größe erhöhen sich die Ressourcen, die für die Instanz verfügbar sind. Dies ist ein Beispiel für zentrales Hochskalieren.</span><span class="sxs-lookup"><span data-stu-id="86449-113">Channging a virtual machine to a larger size increases the resources available to the instance, and is an example of scaling up.</span></span>
+  - content: <span data-ttu-id="86449-114">Welches der folgenden Szenarien ist ein Beispiel für horizontales Hochskalieren?</span><span class="sxs-lookup"><span data-stu-id="86449-114">Which of the following is an example of scaling out?</span></span>
+    choices:
+    - content: <span data-ttu-id="86449-115">Aktualisieren eines virtuellen Computers auf eine größere Größe.</span><span class="sxs-lookup"><span data-stu-id="86449-115">Updating a virtual machine to a larger size</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="86449-116">Durch das Ändern eines virtuellen Computers in eine größere Größe erhöhen sich die Ressourcen, die für die Instanz verfügbar sind. Dies ist ein Beispiel für zentrales Hochskalieren.</span><span class="sxs-lookup"><span data-stu-id="86449-116">Channging a virtual machine to a larger size increases the resources available to the instance, and is an example of scaling up.</span></span>
+    - content: <span data-ttu-id="86449-117">Hinzufügen zusätzlichen Speichers zu einem virtuellen Computer.</span><span class="sxs-lookup"><span data-stu-id="86449-117">Adding more storage to a virtual machine</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="86449-118">Das Hinzufügen von mehr Speicher zu einem virtuellen Computer ist kein Beispiel für horizontales Hochskalieren.</span><span class="sxs-lookup"><span data-stu-id="86449-118">Adding more storage to a virtual machine is not an example of scaling out.</span></span>
+    - content: <span data-ttu-id="86449-119">Hinzufügen weiterer Webserver zu einer Webfarm.</span><span class="sxs-lookup"><span data-stu-id="86449-119">Adding more web servers into a web farm</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="86449-120">Das Hinzufügen weiterer Webserver zu einer Webfarm ist ein Beispiel für horizontales Hochskalieren.</span><span class="sxs-lookup"><span data-stu-id="86449-120">Adding more web servers into a web farm is an example of scaling out.</span></span>
+    - content: <span data-ttu-id="86449-121">Replizieren von Sicherungen in eine andere Region.</span><span class="sxs-lookup"><span data-stu-id="86449-121">Replicating backups to another region</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="86449-122">Das Replizieren von Sicherungen in eine andere Region bezieht sich nicht auf die Skalierung von Ressourcen.</span><span class="sxs-lookup"><span data-stu-id="86449-122">Replicating backups to another region is not applicable to scaling of resources.</span></span>
