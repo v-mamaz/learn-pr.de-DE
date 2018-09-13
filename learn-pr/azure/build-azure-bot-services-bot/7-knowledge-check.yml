@@ -1,0 +1,114 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.7-knowledge-check
+title: <span data-ttu-id="da8b5-101">Überprüfen Sie Ihre Kenntnisse</span><span class="sxs-lookup"><span data-stu-id="da8b5-101">Check your knowledge</span></span>
+metadata:
+  title: <span data-ttu-id="da8b5-102">Überprüfen Sie Ihre Kenntnisse</span><span class="sxs-lookup"><span data-stu-id="da8b5-102">Check your knowledge</span></span>
+  description: <span data-ttu-id="da8b5-103">Vergewissern Sie sich, dass Sie die erforderlichen Schritte zum Erstellen eines Chatbots mit dem Azure Bot Service verstanden haben.</span><span class="sxs-lookup"><span data-stu-id="da8b5-103">Confirm that you understood the steps required to build a chat bot with the Azure Bot Service.</span></span>
+  ms.openlocfilehash: 03a830345f79ae78ea30dd6cf1dc811aba4a8741
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43363418"
+durationInMinutes: 10
+quiz:
+  title: <span data-ttu-id="da8b5-104">Erstellen von neuronalen Netzwerken mit TensorFlow und der Data Science Virtual Machine von Azure</span><span class="sxs-lookup"><span data-stu-id="da8b5-104">Building neural networks with TensorFlow and the Azure Data Science Virtual Machine</span></span>
+  questions:
+  - content: <span data-ttu-id="da8b5-105">Was wurde alles erstellt, als der Azure-Web-App-Bot bereitgestellt wurde?</span><span class="sxs-lookup"><span data-stu-id="da8b5-105">When the Azure web app bot was deployed, what all was created?</span></span>
+    choices:
+    - content: <span data-ttu-id="da8b5-106">Ein Botdienst.</span><span class="sxs-lookup"><span data-stu-id="da8b5-106">A bot service</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-107">Ein Botdienst wurde erstellt, aber noch etwas anderes.</span><span class="sxs-lookup"><span data-stu-id="da8b5-107">A bot service was created, but something else was, too.</span></span>
+    - content: <span data-ttu-id="da8b5-108">Eine Web-App.</span><span class="sxs-lookup"><span data-stu-id="da8b5-108">A web app</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-109">Eine Web-App wurde erstellt, aber noch etwas anderes.</span><span class="sxs-lookup"><span data-stu-id="da8b5-109">A web app was created, but something else was, too.</span></span>
+    - content: <span data-ttu-id="da8b5-110">Ein Botdienst und eine Web-App.</span><span class="sxs-lookup"><span data-stu-id="da8b5-110">A bot service and web app</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="da8b5-111">Prima.</span><span class="sxs-lookup"><span data-stu-id="da8b5-111">Great!</span></span> <span data-ttu-id="da8b5-112">Fahren Sie mit dem nächsten Teil der Aufgabe fort.</span><span class="sxs-lookup"><span data-stu-id="da8b5-112">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="da8b5-113">Es wurde noch nichts bereitgestellt.</span><span class="sxs-lookup"><span data-stu-id="da8b5-113">Nothing got deployed yet</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-114">Eine Bereitstellung erfolgte in diesem Schritt.</span><span class="sxs-lookup"><span data-stu-id="da8b5-114">A deployment happened by this step.</span></span>
+  - content: <span data-ttu-id="da8b5-115">Was wird mit QnA Maker erstellt?</span><span class="sxs-lookup"><span data-stu-id="da8b5-115">What is QnA Maker used to create?</span></span>
+    choices:
+    - content: <span data-ttu-id="da8b5-116">Ein Dienst, der eine Reihe von Fragen entgegennimmt und beantwortet.</span><span class="sxs-lookup"><span data-stu-id="da8b5-116">A service that takes in a set of questions and answers</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="da8b5-117">Prima.</span><span class="sxs-lookup"><span data-stu-id="da8b5-117">Great!</span></span> <span data-ttu-id="da8b5-118">Fahren Sie mit dem nächsten Teil der Aufgabe fort.</span><span class="sxs-lookup"><span data-stu-id="da8b5-118">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="da8b5-119">Ein Dienst zum Beantworten von Fragen.</span><span class="sxs-lookup"><span data-stu-id="da8b5-119">A service to answer questions</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-120">QnA Maker hilft bei der Beantwortung von Fragen, aber er kann noch mehr.</span><span class="sxs-lookup"><span data-stu-id="da8b5-120">It helps answer questions, but that's not all QnA Maker can do.</span></span>
+    - content: <span data-ttu-id="da8b5-121">Ein Dienst, der neue Antworten auf Fragen generiert.</span><span class="sxs-lookup"><span data-stu-id="da8b5-121">A service that generates new answers to questions</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-122">QnA Maker generiert keine neue Antworten, gibt aber Antworten, die er kennt.</span><span class="sxs-lookup"><span data-stu-id="da8b5-122">QnA Maker doesn't generate new answers, but it does give answers it knows about.</span></span>
+    - content: <span data-ttu-id="da8b5-123">Ein Bot.</span><span class="sxs-lookup"><span data-stu-id="da8b5-123">A bot</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-124">QnA Maker kann mit einem Bot verknüpft werden, erstellt aber keinen.</span><span class="sxs-lookup"><span data-stu-id="da8b5-124">QnA Maker can be associated with a bot, but it doesn't create one.</span></span>
+  - content: <span data-ttu-id="da8b5-125">Welche Möglichkeiten stehen Ihnen in QnA Maker zum Auffüllen Ihrer Wissensdatenbank zur Verfügung?</span><span class="sxs-lookup"><span data-stu-id="da8b5-125">What ways can you populate your knowledge base in QnA Maker?</span></span>
+    choices:
+    - content: <span data-ttu-id="da8b5-126">Sie können Ihre Wissensdatenbank nur manuell auffüllen.</span><span class="sxs-lookup"><span data-stu-id="da8b5-126">Can only manually populate your knowledge base</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-127">Sie könnten die Wissensdatenbank manuell auffüllen, aber es gibt weitere Möglichkeiten.</span><span class="sxs-lookup"><span data-stu-id="da8b5-127">You could manually populate the knowledge base, but there are other ways.</span></span>
+    - content: <span data-ttu-id="da8b5-128">Mit einer Textdatei.</span><span class="sxs-lookup"><span data-stu-id="da8b5-128">With a text file</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-129">Eine Textdatei ist nicht die einzige Möglichkeit zum Auffüllen der Wissensdatenbank.</span><span class="sxs-lookup"><span data-stu-id="da8b5-129">A text file isn't the only way to populate the knowledge base.</span></span>
+    - content: <span data-ttu-id="da8b5-130">Mit einer URL.</span><span class="sxs-lookup"><span data-stu-id="da8b5-130">With a URL</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-131">Eine URL ist nicht die einzige Möglichkeit zum Auffüllen der Wissensdatenbank.</span><span class="sxs-lookup"><span data-stu-id="da8b5-131">A URL isn't the only way to populate the knowledge base.</span></span>
+    - content: <span data-ttu-id="da8b5-132">Mit einer Textdatei oder URL.</span><span class="sxs-lookup"><span data-stu-id="da8b5-132">With a text file or URL</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="da8b5-133">Prima.</span><span class="sxs-lookup"><span data-stu-id="da8b5-133">Great!</span></span> <span data-ttu-id="da8b5-134">Fahren Sie mit dem nächsten Teil der Aufgabe fort.</span><span class="sxs-lookup"><span data-stu-id="da8b5-134">Proceed to the next part of the lab.</span></span>
+  - content: <span data-ttu-id="da8b5-135">Welche Schritte sind erforderlich, um QnA Maker in Ihren Anwendungen zu verwenden?</span><span class="sxs-lookup"><span data-stu-id="da8b5-135">What step(s) are needed to use QnA Maker in your applications?</span></span>
+    choices:
+    - content: <span data-ttu-id="da8b5-136">Speichern.</span><span class="sxs-lookup"><span data-stu-id="da8b5-136">Save</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-137">Sie müssen nicht speichern, jedoch sind andere Schritte erforderlich.</span><span class="sxs-lookup"><span data-stu-id="da8b5-137">You do need to save, but other steps are needed.</span></span>
+    - content: <span data-ttu-id="da8b5-138">Speichern und trainieren.</span><span class="sxs-lookup"><span data-stu-id="da8b5-138">Save and train</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-139">Training ist wichtig, doch was müssen Sie sonst noch tun, um den Dienst zu nutzen?</span><span class="sxs-lookup"><span data-stu-id="da8b5-139">Training is important, but what else do you need to consume the service?</span></span>
+    - content: <span data-ttu-id="da8b5-140">Speichern, trainieren und veröffentlichen.</span><span class="sxs-lookup"><span data-stu-id="da8b5-140">Save, train, and publish</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="da8b5-141">Prima.</span><span class="sxs-lookup"><span data-stu-id="da8b5-141">Great!</span></span> <span data-ttu-id="da8b5-142">Fahren Sie mit dem nächsten Teil der Aufgabe fort.</span><span class="sxs-lookup"><span data-stu-id="da8b5-142">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="da8b5-143">Veröffentlichen.</span><span class="sxs-lookup"><span data-stu-id="da8b5-143">Publish</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-144">Leider können Sie nicht direkt veröffentlichen.</span><span class="sxs-lookup"><span data-stu-id="da8b5-144">Unfortunately, you can't just go straight to publishing.</span></span>
+  - content: <span data-ttu-id="da8b5-145">Welches weitere Paket außer den Bot Framework-Paketen ist erforderlich, um RESTful-Dienste zu erstellen und zu nutzen?</span><span class="sxs-lookup"><span data-stu-id="da8b5-145">Other than the bot framework packages, what other package is needed to build and consume RESTful services?</span></span>
+    choices:
+    - content: <span data-ttu-id="da8b5-146">Restify</span><span class="sxs-lookup"><span data-stu-id="da8b5-146">restify</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="da8b5-147">Prima.</span><span class="sxs-lookup"><span data-stu-id="da8b5-147">Great!</span></span> <span data-ttu-id="da8b5-148">Fahren Sie mit dem nächsten Teil der Aufgabe fort.</span><span class="sxs-lookup"><span data-stu-id="da8b5-148">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="da8b5-149">Express</span><span class="sxs-lookup"><span data-stu-id="da8b5-149">express</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-150">Express wird als vollständiges Webframework verwendet, nicht einfach nur zum Erstellen von RESTful-Diensten.</span><span class="sxs-lookup"><span data-stu-id="da8b5-150">Express is used to as a full web framework, not to just create RESTful services.</span></span>
+    - content: <span data-ttu-id="da8b5-151">Swagger</span><span class="sxs-lookup"><span data-stu-id="da8b5-151">swagger</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-152">Swagger wird verwendet, um Ihre APIs anzugeben, zu erstellen und zu testen, nicht einfach nur zum Erstellen von RESTful-Diensten.</span><span class="sxs-lookup"><span data-stu-id="da8b5-152">Swagger is used to specify, build, and test your APIs, not just to create RESTful services.</span></span>
+    - content: <span data-ttu-id="da8b5-153">Babel</span><span class="sxs-lookup"><span data-stu-id="da8b5-153">babel</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-154">Babel wird verwendet, um neue Versionen von JavaScript für Browser zu kompilieren, die die neue Syntax möglicherweise nicht unterstützen.</span><span class="sxs-lookup"><span data-stu-id="da8b5-154">Babel is used to compile new versions of JavaScript for browsers that may not support the new syntax.</span></span>
+  - content: <span data-ttu-id="da8b5-155">In welchem Abschnitt des Azure-Portals für den Web-App-Bot fügen Sie die QnA Maker-Einstellungen hinzu?</span><span class="sxs-lookup"><span data-stu-id="da8b5-155">In the Azure portal for the web app bot, what section do you go to add the QnA Maker settings?</span></span>
+    choices:
+    - content: <span data-ttu-id="da8b5-156">Alle App-Diensteinstellungen.</span><span class="sxs-lookup"><span data-stu-id="da8b5-156">All app service settings</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-157">Mit dieser Einstellung können Sie Einstellungen im App-Dienst ändern, der der Web-App zugeordnet ist.</span><span class="sxs-lookup"><span data-stu-id="da8b5-157">This setting allows you to change settings on the app service associated with the web app.</span></span>
+    - content: <span data-ttu-id="da8b5-158">Anwendungseinstellungen.</span><span class="sxs-lookup"><span data-stu-id="da8b5-158">Application settings</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="da8b5-159">Prima.</span><span class="sxs-lookup"><span data-stu-id="da8b5-159">Great!</span></span> <span data-ttu-id="da8b5-160">Fahren Sie mit dem nächsten Teil der Aufgabe fort.</span><span class="sxs-lookup"><span data-stu-id="da8b5-160">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="da8b5-161">Erstellen.</span><span class="sxs-lookup"><span data-stu-id="da8b5-161">Build</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-162">In diesem Abschnitt können Sie den Code für den Bot anzeigen und abrufen.</span><span class="sxs-lookup"><span data-stu-id="da8b5-162">This section allows you to view and get the code for the bot.</span></span>
+    - content: <span data-ttu-id="da8b5-163">Kanäle.</span><span class="sxs-lookup"><span data-stu-id="da8b5-163">Channels</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-164">In diesem Abschnitt können Sie den Bot verschiedenen Diensten anschließen, damit sie mit dem Bot interagieren können.</span><span class="sxs-lookup"><span data-stu-id="da8b5-164">This section allows you to hook the bot up to different services to interact with the bot.</span></span>
+  - content: <span data-ttu-id="da8b5-165">Zu welchem Abschnitt im Azure-Portal müssten Sie wechseln, um Ihren Bot zu Microsoft Teams hinzuzufügen?</span><span class="sxs-lookup"><span data-stu-id="da8b5-165">If you wanted to add your bot to Microsoft Teams, what section in the Azure portal do you go to?</span></span>
+    choices:
+    - content: <span data-ttu-id="da8b5-166">Alle App-Diensteinstellungen.</span><span class="sxs-lookup"><span data-stu-id="da8b5-166">All app service settings</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-167">Diese Einstellung erlaubt Ihnen Änderungen.</span><span class="sxs-lookup"><span data-stu-id="da8b5-167">This setting allows you to change.</span></span>
+    - content: <span data-ttu-id="da8b5-168">Anwendungseinstellungen.</span><span class="sxs-lookup"><span data-stu-id="da8b5-168">Application settings</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-169">Mit dieser Einstellung können Sie bestimmte Einstellungen für die Webanwendung festlegen.</span><span class="sxs-lookup"><span data-stu-id="da8b5-169">This setting allows you to specify specific settings for the web application.</span></span>
+    - content: <span data-ttu-id="da8b5-170">Erstellen.</span><span class="sxs-lookup"><span data-stu-id="da8b5-170">Build</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="da8b5-171">In diesem Abschnitt können Sie den Code für den Bot anzeigen und abrufen.</span><span class="sxs-lookup"><span data-stu-id="da8b5-171">This section allows you to view and get the code for the bot.</span></span>
+    - content: <span data-ttu-id="da8b5-172">Kanäle.</span><span class="sxs-lookup"><span data-stu-id="da8b5-172">Channels</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="da8b5-173">Prima.</span><span class="sxs-lookup"><span data-stu-id="da8b5-173">Great!</span></span> <span data-ttu-id="da8b5-174">Fahren Sie mit dem nächsten Teil der Aufgabe fort.</span><span class="sxs-lookup"><span data-stu-id="da8b5-174">Proceed to the next part of the lab.</span></span>

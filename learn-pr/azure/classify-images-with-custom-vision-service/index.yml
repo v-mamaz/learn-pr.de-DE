@@ -1,26 +1,28 @@
 ### YamlMime:Module
 uid: learn.classify-images-with-custom-vision-services
 metadata:
-  title: Ausführen von Bildklassifizierung mithilfe von Microsoft Custom Vision Service
-  description: In diesem Modul erstellen Sie ein Custom Vision Service-Modell, trainieren dieses mit berühmten Gemälden, die mit einem Künstlernamen getaggt wurden, und verwenden das Modell einer Node.js-App zum Identifizieren des Künstlers des hochgeladenen Gemäldes.
-  ms.openlocfilehash: aa4602f549550fec5e88ee34cfec7e08587029ef
-  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  title: Klassifizieren von Bildern mit dem Microsoft Custom Vision Service
+  description: Trainieren Sie Microsoft Custom Vision Service mit einer Sammlung von Bildern, auf denen Blumen dargestellt sind. Dann kann der Dienst Ihnen mitteilen, ob auf dem nächsten Bild eine Blume zu sehen ist und sogar, um welche Art von Blume es sich handelt.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: e42f009259c03fbe7feb15471ae5a126eb08f010
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43228430"
-title: Ausführen von Bildklassifizierung mithilfe von Microsoft Custom Vision Service
-summary: In diesem Modul erstellen Sie ein Custom Vision Service-Modell, trainieren dieses mit berühmten Gemälden, die mit einem Künstlernamen getaggt wurden, und verwenden das Modell einer Node.js-App zum Identifizieren des Künstlers des hochgeladenen Gemäldes.
-abstract: In diesem Modul erstellen Sie ein Custom Vision Service-Modell, trainieren dieses mit berühmten Gemälden, die mit einem Künstlernamen getaggt wurden, und verwenden das Modell einer Node.js-App zum Identifizieren des Künstlers des hochgeladenen Gemäldes.
-cardDescription: In diesem Modul erstellen Sie ein Custom Vision Service-Modell, trainieren dieses mit berühmten Gemälden, die mit einem Künstlernamen getaggt wurden, und verwenden das Modell einer Node.js-App zum Identifizieren des Künstlers des hochgeladenen Gemäldes.
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43826041"
+title: Klassifizieren von Bildern mit dem Microsoft Custom Vision Service
+summary: Trainieren Sie Custom Vision Service mit einer Sammlung von Bildern, auf denen Blumen dargestellt sind. Dann kann der Dienst Ihnen mitteilen, ob auf dem nächsten Bild eine Blume zu sehen ist und sogar, um welche Art von Blume es sich handelt.
+abstract: "In diesem Modul lernen Sie Folgendes:\n  - Erstellen eines Custom Vision Service-Projekts \n  - Trainieren eines Custom Vision Service-Modells mit gekennzeichneten Bildern  \n  - Testen eines Custom Vision Service-Modells \n  - Erstellen von Apps, die Custom Vision Service-Modelle nutzen, um REST-APIs aufzurufen\n"
+prerequisites: Keine
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
 roles:
 - developer
 products:
-- Azure
+- azure
 units:
+- learn.classify-images-with-custom-vision-services.0-introduction
 - learn.classify-images-with-custom-vision-services.1-create-custom-vision-service-project
 - learn.classify-images-with-custom-vision-services.2-upload-tagged-images
 - learn.classify-images-with-custom-vision-services.3-train-model
@@ -28,4 +30,4 @@ units:
 - learn.classify-images-with-custom-vision-services.5-build-app
 - learn.classify-images-with-custom-vision-services.6-classify-images
 - learn.classify-images-with-custom-vision-services.7-knowledge-check
-achievement: learn.placeholder.badge
+achievement: learn.classify-images-with-custom-vision-services.badge

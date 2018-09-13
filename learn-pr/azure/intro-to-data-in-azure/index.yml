@@ -2,24 +2,30 @@
 uid: learn.intro-to-data-in-azure
 metadata:
   title: Einführung in Daten in Azure
-  description: In diesem Modul lernen Sie die Vorteile von Azure Storage kennen. Außerdem erfahren Sie mehr über die Unterschiede zwischen Azure Storage und einem lokalen Speicher.
-  ms.openlocfilehash: 03ccd3d61bbd4e542269929bb508cbe14c2e6d87
-  ms.sourcegitcommit: bf091e3a389138b59573865ca54775e38a4ffa1f
+  description: In diesem Modul lernen Sie die Vorteile von Azure Storage im Vergleich zu lokalem Speicher kennen.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: f88854bb3e05794983d7fbce01fb64cbd7912788
+  ms.sourcegitcommit: f6df5a988f64643099a0ffa283a522f8864c0070
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43155149"
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43853961"
 title: Einführung in Daten in Azure
-summary: Vorteile von Azure Storage
-abstract: In diesem Modul lernen Sie die Vorteile von Azure Storage kennen. Außerdem erfahren Sie mehr über die Unterschiede zwischen Azure Storage und einem lokalen Speicher.
-cardDescription: Erkunden der Vorteile von Azure Storage
+summary: In diesem Modul lernen Sie die Vorteile von Azure Storage im Vergleich zu lokalem Speicher kennen.
+abstract: >
+  In diesem Modul lernen Sie Folgendes:
+    - Erkunden der Vorteile von Azure Storage
+    - Erkunden, wie Azure Storage Ihre Geschäftsanforderungen erfüllt
+    - Vergleichen von Azure Storage mit lokalem Speicher
+prerequisites: Keine
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
 roles:
 - developer
 products:
-- Azure
+- azure
+- azure-storage
 units:
 - learn.intro-to-data-in-azure.1-introduction
 - learn.intro-to-data-in-azure.2-benefits-of-using-azure-to-store-data

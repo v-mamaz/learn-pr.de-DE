@@ -1,0 +1,19 @@
+<span data-ttu-id="97092-101">Sie erstellen eine eigenständige Unternehmenswebsite, die sich an Ihre Kunden richtet.</span><span class="sxs-lookup"><span data-stu-id="97092-101">You're building a new stand-alone customer-facing website for your business.</span></span> <span data-ttu-id="97092-102">Die genauen Anforderungen dieser Website wurden noch nicht definiert, jedoch sind Sie für den vollständigen Erstellungsvorgang zuständig.</span><span class="sxs-lookup"><span data-stu-id="97092-102">The exact needs of this website haven't been defined yet, but you'll be responsible for creating the site from start to finish.</span></span> <span data-ttu-id="97092-103">Sie verfügen über einschlägige JavaScript-Kenntnisse und möchten daher eine Lösung finden, bei der Sie Ihre Stärken ausspielen können.</span><span class="sxs-lookup"><span data-stu-id="97092-103">You have substantial experience in JavaScript, so you want to find a solution that will play well to your strengths.</span></span>
+
+<span data-ttu-id="97092-104">In diesem Modul erstellen Sie einen Host für einen MEAN-Webanwendungsstapel (MongoDB, Express, AngularJS und Node.js) auf einem virtuellen Linux-Computer. Alle Komponenten werden dabei in Azure gehostet.</span><span class="sxs-lookup"><span data-stu-id="97092-104">In this module, you will create a MEAN (MongoDB, Express, AngularJS, and Node.js) web application stack host on a Linux virtual machine, all hosted in Azure.</span></span>
+
+## <a name="learning-objectives"></a><span data-ttu-id="97092-105">Lernziele</span><span class="sxs-lookup"><span data-stu-id="97092-105">Learning objectives</span></span>
+<span data-ttu-id="97092-106">In diesem Modul</span><span class="sxs-lookup"><span data-stu-id="97092-106">In this module, you will:</span></span>
+
+- <span data-ttu-id="97092-107">Entscheiden Sie, ob der MEAN-Webstapel die richtige Lösung für Sie ist</span><span class="sxs-lookup"><span data-stu-id="97092-107">Decide if the MEAN web stack is right for you</span></span>
+- <span data-ttu-id="97092-108">Erstellen Sie einen virtuellen Ubuntu Linux-Computer zum Hosten der Webanwendung</span><span class="sxs-lookup"><span data-stu-id="97092-108">Create an Ubuntu Linux VM to host your web app</span></span>
+- <span data-ttu-id="97092-109">Fügen Sie einen MongoDB-Datenspeicher für Ihre Web-App hinzu</span><span class="sxs-lookup"><span data-stu-id="97092-109">Add MongoDB as a data store for your web app</span></span>
+- <span data-ttu-id="97092-110">Fügen Sie Node.js als Hostlaufzeit für Ihre Web-App hinzu</span><span class="sxs-lookup"><span data-stu-id="97092-110">Add Node.js as a host runtime for your web app</span></span>
+- <span data-ttu-id="97092-111">Fügen Sie Express als Node.js-Webframework hinzu</span><span class="sxs-lookup"><span data-stu-id="97092-111">Add Express as a Node.js web framework</span></span>
+- <span data-ttu-id="97092-112">Fügen Sie mongooseJS für die Objektmodellierung der MongoDB-Daten hinzu</span><span class="sxs-lookup"><span data-stu-id="97092-112">Add mongooseJS for object modeling of your MongoDB data</span></span>
+- <span data-ttu-id="97092-113">Erstellen Sie eine einfache Web-App, die auf dem MEAN-Stapel gehostet wird</span><span class="sxs-lookup"><span data-stu-id="97092-113">Create a simple web app hosted on the MEAN stack</span></span>
+- <span data-ttu-id="97092-114">Veröffentlichen Sie die Webanwendung über Ihren virtuellen Computer</span><span class="sxs-lookup"><span data-stu-id="97092-114">Make the web application publicly available from your VM</span></span>
+
+## <a name="prerequisites"></a><span data-ttu-id="97092-115">Voraussetzungen</span><span class="sxs-lookup"><span data-stu-id="97092-115">Prerequisites</span></span>
+
+- <span data-ttu-id="97092-116">Erfahrung im Umgang mit der Bash-Befehlszeilenschnittstelle</span><span class="sxs-lookup"><span data-stu-id="97092-116">Experience with the Bash command-line interface</span></span>
