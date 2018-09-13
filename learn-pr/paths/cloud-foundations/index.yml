@@ -4,12 +4,16 @@ metadata:
   title: Grundlagen zur Cloud
   description: Sie interessieren sich für die Cloud, wissen jedoch nicht, welche Vorteile sie Ihnen bietet? Dieser Lernpfad ist der Ausgangspunkt. Lernen Sie die Vorteile von Cloud Computing, Funktionen in Azure, mit denen Sie Zeit und Geld sparen, sowie grundlegende Strategien beim Wechsel in die Cloud kennen – und vieles mehr.
   ms.date: 09/24/2018
-  ms.openlocfilehash: 42a739267fee3c7b403b72bfc3a07d631f408c17
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1d05fe55ca0240006910275a7fa7eb0a4977e7fb
+  ms.sourcegitcommit: 7de323416e472639edcff135bfc7d47bd5715256
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43826863"
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44370980"
 title: Grundlagen zur Cloud
 summary: Sie interessieren sich für die Cloud, wissen jedoch nicht, welche Vorteile sie Ihnen bietet? Dieser Lernpfad ist der Ausgangspunkt. Lernen Sie die Vorteile von Cloud Computing, Funktionen in Azure, mit denen Sie Zeit und Geld sparen, sowie grundlegende Strategien beim Wechsel in die Cloud kennen – und vieles mehr.
 prerequisites: Keine
@@ -23,9 +27,10 @@ roles:
 products:
 - azure
 modules:
-- principles-cloud-computing
+- learn.principles-cloud-computing
 - learn.azure-services-features
 - learn.intro-to-compute
 - learn.intro-to-data-in-azure
+- learn.introduction-to-security
 - learn.intro-to-azure-networking
 achievement: learn.cloud-foundations.trophy
