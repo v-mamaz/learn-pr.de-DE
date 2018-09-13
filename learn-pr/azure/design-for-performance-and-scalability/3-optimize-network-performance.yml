@@ -1,0 +1,46 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.3-optimize-network-performance
+title: Optimieren der Netzwerkleistung
+metadata:
+  title: Optimieren der Netzwerkleistung
+  description: In dieser Einheit wird beschrieben, wie Sie die Netzwerkleistung Ihrer Architektur optimieren.
+  ms.openlocfilehash: e845deafc637b4d5ee870c80a01e2316046bf082
+  ms.sourcegitcommit: 2df436853854bfcb39bc82ee461d7011bf8531ca
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/04/2018
+  ms.locfileid: "43675609"
+durationInMinutes: 5
+content: >
+  [!include[](includes/3-optimize-network-performance.md)]
+quiz:
+  title: 'Wissenstest: Optimieren der Netzwerkleistung'
+  questions:
+  - content: 'Unter Netzwerklatenz versteht man Folgendes:'
+    choices:
+    - content: den im Netzwerk möglichen Durchsatz
+      isCorrect: false
+      incorrectExplanation: Netzwerkdurchsatz ist ein Maß der Kapazität und entspricht nicht der Netzwerklatenz.
+    - content: die Zeit, die benötigt wird, um Daten von einer Quelle an ein Ziel zu senden
+      isCorrect: true
+      correctExplanation: Die Zeit, die benötigt wird, um Daten von einer Quelle an ein Ziel zu senden, wird als Netzwerklatenz bezeichnet.
+    - content: die Gültigkeitsdauer einer Ressource in einem Content Delivery Network
+      isCorrect: false
+      incorrectExplanation: Die Gültigkeitsdauer einer Ressource in einem Content Delivery Network bezieht sich auf die Häufigkeit, mit der die Ressource über die ursprüngliche Quelle aktualisiert wird, und hat nichts mit der Netzwerklatenz zu tun.
+    - content: eine private Verbindung zwischen einem lokalen Netzwerk und Azure
+      isCorrect: false
+      incorrectExplanation: ExpressRoute ist eine private Verbindung zwischen einem lokalen Netzwerk und Azure, die zwar die Latenz verbessern kann, den Begriff jedoch nicht definiert.
+  - content: Ihre Webanwendung wird in der Region „USA, Osten“ gehostet. Durch welche der folgenden Maßnahmen würde die Netzwerklatenz für Benutzer weltweit am kostengünstigsten reduziert?
+    choices:
+    - content: Bereitstellen von ExpressRoute für alle Benutzer
+      isCorrect: false
+      incorrectExplanation: ExpressRoute wird pro Netzwerkadresse, nicht pro Benutzer bereitgestellt. Damit kann zwar die Leistung für Benutzer unter dieser Adresse verbessert werden. Benutzer außerhalb dieser Adresse verwenden jedoch kein ExpressRoute, und damit ändert sich für sie an der Leistung nichts.
+    - content: Verwenden eines Content Delivery Network, durch das Ressourcen und Inhalte in größerer Nähe der Benutzer bereitgestellt werden
+      isCorrect: true
+      correctExplanation: Durch die Verwendung eines Content Delivery Network werden Ressourcen an Standorten zwischengespeichert, die den Endbenutzern physisch näher sind, und können somit schneller geladen werden. Dadurch wird die Netzwerklatenz auf kostengünstige Weise für Benutzer weltweit reduziert.
+    - content: Verwenden von Traffic Manager im leistungsorientierten Routingmodus
+      isCorrect: false
+      incorrectExplanation: Traffic Manager ist ein DNS-Lastenausgleich, mit dem die Zeit zum Herstellen einer Verbindung mit Ressourcen reduziert werden kann, für den jedoch Webdienste an mehreren Standorten gesucht werden müssten und der nicht die kostengünstigste Möglichkeit zum Lösen dieses Problems darstellt.
+    - content: Bereitstellen weiterer Instanzen in der Region „USA, Osten“ zum Abfangen der zusätzlichen Last, die durch Benutzer erzeugt wird
+      isCorrect: false
+      incorrectExplanation: Durch die Bereitstellung weiterer Instanzen kann der Dienst in „USA, Osten“ zwar größere Lasten bewältigen, das Problem der Netzwerklatenz für Benutzer weltweit wird dadurch jedoch nicht behoben.

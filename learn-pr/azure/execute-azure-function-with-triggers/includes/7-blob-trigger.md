@@ -1,49 +1,49 @@
-Imagine you're a photographer and you have a website where you display your pictures of the day. Because you're busy, you don't have a consistent upload schedule, but you want to notify your fans when you upload a picture. You decide to create an Azure function to automatically send a tweet whenever you upload an image to your Azure Storage blob container.
+Nehmen wir an, Sie seien Fotograf und besäßen eine Website, auf denen Sie Ihre Bilder des Tages anzeigen. Weil Sie sehr beschäftigt sind, haben Sie keinen konsistenten Uploadzeitplan, aber Sie möchten Ihren Fans mitteilen, wann Sie ein Bild hochladen. Sie entscheiden, eine Azure-Funktion zu erstellen, um automatisch einen Tweet zu senden, wenn Sie ein Bild in Ihren Azure Storage-Blobcontainer hochladen.
 
-Here, you learn how to create a blob trigger and instruct it to monitor a specific location in your Azure Storage blob container.
+Hier erfahren Sie, wie Sie einen Blobtrigger erstellen, und ihn anweisen, einen bestimmten Speicherort in Ihrem Azure Storage-Blobcontainer zu überwachen.
 
-## What is Azure Storage?
+## <a name="what-is-azure-storage"></a>Was ist Azure Storage?
 
-Azure Storage is Microsoft's cloud storage solution that supports all types of data, including: blobs, queues, and NoSQL. The goal of Azure Storage is to provide data storage that's:
+Azure Storage ist die Cloudspeicherlösung von Microsoft, die alle Arten von Daten einschließlich Blobs, Warteschlangen und NoSQL unterstützt. Das Ziel von Azure Storage ist, Datenspeicher mit folgenden Eigenschaften bereitzustellen:
 
-- Highly available
-- Secure
-- Scalable
-- Managed
+- Hoch verfügbar
+- Sicher
+- Skalierbar
+- Verwaltet
 
-We're not going to focus on Azure Storage too much. Instead, we use it to create blobs that will trigger our function to run.
+Wir werden uns nicht zu intensiv mit Azure Storage beschäftigen. Stattdessen verwenden wir Azure Storage zum Erstellen von Blobs, die die Ausführung unserer Funktion auslösen.
 
-## What is Azure Blob storage?
+## <a name="what-is-azure-blob-storage"></a>Was ist Azure-Blobspeicher?
 
-Azure Blob storage is an object storage solution that's designed to store large amounts of unstructured data. 
+Azure-Blobspeicher ist eine Objektspeicherlösung, die zum Speichern großer Mengen unstrukturierter Daten entworfen wurde. 
 
-For example, Azure Blob storage is great at doing things like:
+Azure Blob Storage eignet sich z.B. hervorragend für folgende Aufgaben:
 
-- Storing files
-- Serving files
-- Streaming video and audio
-- Logging data
+- Speichern von Dateien
+- Bereitstellen von Dateien
+- Video- und Audiostreaming
+- Protokollieren von Daten
 
-There are three types of blobs: **block blobs**, **append blobs**, and **page blobs**. Block blobs are the most common type. They allow you to store text or binary data efficiently. Append blobs are like block blobs, but they're designed more for append operations like creating a log file that's being constantly updated. Finally, page blobs are made up of pages and are designed for frequent random read and write operations.
+Es gibt drei Arten von Blobs: **Blockblobs**, **Anfügeblobs** und **Seitenblobs**. Blockblobs sind der gängigste Typ. Dort können Sie Text- oder Binärdaten effizient speichern. Anfügeblobs sind wie Blockblobs, aber sie eignen sich eher für Anfügevorgänge wie das Erstellen einer Protokolldatei, die ständig aktualisiert wird. Seitenblobs bestehen aus Seiten und sind für häufige wahlfreie Lese-/Schreibzugriffe vorgesehen.
 
-## What is a blob trigger?
+## <a name="what-is-a-blob-trigger"></a>Was ist ein Blobtrigger?
 
-A blob trigger is a trigger that executes a function when a file is uploaded or updated in Azure Blob storage. To create a blob trigger, you create an Azure Storage account and provide a location that the trigger monitors.
+Ein Blobtrigger führt eine Funktion aus, wenn eine Datei in Azure-Blobspeicher hochgeladen oder aktualisiert wird. Um einen Blobtrigger zu erstellen, müssen Sie ein Azure Storage-Konto erstellen und einen Speicherort angeben, den der Trigger überwacht.
 
-## How to create a blob trigger
+## <a name="how-to-create-a-blob-trigger"></a>Gewusst wie: Erstellen eines Blobtriggers
 
-Just like the other triggers we've seen so far, we create a blob trigger in the Azure portal. Inside your Azure function, select **Blob trigger** from the list of predefined trigger types. Then enter the logic to execute when a blob is created or updated.
+Genau wie die anderen Trigger, die wir bisher kennengelernt haben, erstellen wir einen Blobtrigger im Azure-Portal. Wählen Sie in Ihrer Azure-Funktion **Blobtrigger** aus der Liste der vordefinierten Triggertypen aus. Geben Sie dann die Logik ein, die beim Erstellen oder Aktualisieren eines Blobs ausgeführt wird.
 
-One setting that you'll want to look at is the **Path**. The **Path** tells the blob trigger where to monitor to see if a blob is uploaded or updated. By default, the **Path** value is: 
+Eine Einstellung, die Sie beachten sollten, ist der **Pfad**. Der **Pfad** weist den Blobtrigger an, wo er überwachen soll, ob ein Blob hochgeladen oder aktualisiert wird. Standardmäßig ist der Wert **Pfad** festgelegt auf: 
 
-> samples-workitems/{name}
+> samples-workitems/{Name}
 
-Let's break down this concept into two pieces: *samples-workitems* and *{name}*. The first part, *samples-workitems*, represents the blob container that the trigger monitors. The second part, *{name means that every type of file will cause the trigger to invoke the function. The function is invoked because there's no filter. For example, I could make the trigger invoke the function only when a PNG file is added by using syntax like:
+Wir unterteilen dieses Konzept in zwei Teile: *samples-workitems* und *{Name}*. Der erste Teil, *samples-workitems*, stellt den Blobcontainer dar, den der Trigger überwacht. Der zweite Teil, *{Name}, bedeutet, dass jeder Dateityp den Trigger veranlasst, die Funktion aufzurufen. Die Funktion wird aufgerufen, da kein Filter vorhanden ist. Beispielsweise lässt sich mithilfe der folgenden Syntax einstellen, dass der Trigger die Funktion nur aufruft, wenn eine PNG-Datei hinzugefügt wird:
 
-> samples-workitems/{name}.png
+> samples-workitems/{Name}.png
 
-The last significant piece of information with this concept is the text *name*. The *name* represents a parameter in your Azure function that receives the name of the added file. For example, if I upload a file named *resume.txt*, my Azure function receives that value as a string through a parameter called *name*.
+Die letzte wichtige Information in diesem Konzept ist der Text *Name*. Der *Name* stellt einen Parameter in Ihrer Azure-Funktion dar, der den Namen der hinzugefügten Datei empfängt. Wenn ich z.B. eine Datei namens *resume.txt* hochlade, empfängt meine Azure-Funktion diesen Wert als Zeichenfolge über einen Parameter namens *Name*.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-A blob trigger invokes an Azure function when it sees activity at a specific location in your Azure Storage blob account. You set the location to monitor by modifying the **Path** value in the Azure portal.
+Ein Blobtrigger ruft eine Azure-Funktion auf, wenn er Aktivität an einem bestimmten Speicherort in Ihrem Azure-Blobspeicherkonto feststellt. Sie legen den zu überwachenden Speicherort durch Ändern des Werts **Pfad** im Azure-Portal fest.

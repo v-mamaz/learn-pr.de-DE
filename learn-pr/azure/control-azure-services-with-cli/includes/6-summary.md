@@ -1,12 +1,11 @@
-The Azure CLI is a good choice for anyone new to Azure command line and scripting. Its simple syntax and cross-platform compatibility help reduce the risk of errors when performing regular and repetitive tasks. In this module, you used the Azure CLI commands to create a resource group, and deploy a web app by using a small set of commands. These commands could be combined into a shell script as part of automation solution. 
+Azure CLI ist eine gute Wahl für alle, die mit der Azure-Befehlszeile und Skripterstellung noch nicht vertraut sind. Durch die einfache Syntax und plattformübergreifende Kompatibilität wird das Fehlerrisiko bei regelmäßigen und sich wiederholenden Aufgaben reduziert. In diesem Modul haben Sie Azure CLI-Befehle verwendet, um eine Ressourcengruppe zu erstellen und eine Web-App mithilfe von wenigen Befehlen bereitzustellen. Diese Befehle können als Teil der Automatisierungslösung zu einem Shellskript zusammengefasst werden. 
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="cleanup"></a>Bereinigen
 
-Running web apps incurs costs against your subscription. Remove unneeded resources to avoid unnecessary charges. The easiest way to cleanup your Azure subscription is to remove the resource group; this will also delete all the resources in the group. When you're finished with this module, run the following Azure command:
+Für die Ausführung von Web-Apps fallen Kosten in Ihrem Abonnement an. Entfernen Sie nicht benötigte Ressourcen, um unnötige Gebühren zu vermeiden. Die einfachste Möglichkeit, Ihr Azure-Abonnement zu bereinigen, ist das Entfernen der Ressourcengruppe. Dabei werden auch alle Ressourcen in der Gruppe gelöscht. Wenn Sie mit diesem Modul fertig sind, führen Sie den folgenden Azure-Befehl aus:
 
     ```azurecli
     az group delete --resource-group popupResGroup
     ```
 
-When you're asked to confirm the delete, answer **Yes**. The command may take several minutes to complete as resources are deleted. 
+Sie werden aufgefordert, den Löschvorgang zu bestätigen. Wählen Sie hierzu **Ja** aus. Der Befehl zum Löschen der Ressourcen kann mehrere Minuten in Anspruch nehmen. 

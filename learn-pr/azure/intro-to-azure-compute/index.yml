@@ -1,22 +1,24 @@
 ### YamlMime:Module
 uid: learn.intro-to-compute
 metadata:
-  title: Introduction to Azure compute
-  description: Review the Azure compute services and how they can be used to solve common business needs.
+  title: Einführung in Azure Compute
+  description: Erkunden Sie die Azure Compute-Dienste und bringen Sie in Erfahrung, wie Sie mit deren Hilfe gängige Geschäftsanforderungen erfüllen können.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Introduction to Azure compute
-summary: Review the Azure compute services and how they can be used to solve common business needs.
-abstract:  | 
-  In this module, you will:
-  - Identify Azure compute options
-  - Select one or more compute options that are appropriate for solving your business needs
-prerequisites: None
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: bfbd082a7e9be8e00b4bb1f492d087cf3258a031
+  ms.sourcegitcommit: f6df5a988f64643099a0ffa283a522f8864c0070
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43853995"
+title: Einführung in Azure Compute
+summary: Erkunden Sie die Azure Compute-Dienste und bringen Sie in Erfahrung, wie Sie mit deren Hilfe gängige Geschäftsanforderungen erfüllen können.
+abstract: >
+  In diesem Modul lernen Sie Folgendes:
+
+  - Identifizieren von Azure Compute-Optionen
+
+  - Auswählen von mindestens einer geeigneten Compute-Option zum Erfüllen Ihrer Geschäftsanforderungen
+prerequisites: Keine
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner

@@ -1,4 +1,4 @@
-Sie haben sich für die Verwendung einer Service Bus-Warteschlange entschieden, um Nachrichten zu den einzelnen Verkäufen zwischen der mobilen App, die von Ihren Vertriebsmitarbeitern genutzt wird, und dem in Azure gehosteten Webdienst auszutauschen. Über den Webdienst werden Details zu den einzelnen Verkäufen in einer Azure SQL-Datenbank gespeichert.
+Sie haben sich für die Verwendung einer Service Bus-Warteschlange entschieden, um Nachrichten zu den einzelnen Verkäufen zwischen der mobilen App, die von Ihren Vertriebsmitarbeitern genutzt wird, und dem in Azure gehosteten Webdienst auszutauschen. Über den Webdienst werden Details zu den einzelnen Verkäufen in einer Azure SQL-Datenbank-Instanz gespeichert.
 
 Sie haben die erforderlichen Objekte in Ihrem Azure-Abonnement implementiert. Nun möchten Sie Code schreiben, mit dem Nachrichten an diese Warteschlange gesendet und daraus abgerufen werden.
 
@@ -46,7 +46,7 @@ Beide Werte können im Azure-Portal in Form einer vollständigen Verbindungszeic
 
 1. Klicken Sie in der Liste mit den Richtlinien auf **RootManageSharedAccessKey**.
 
-1. Klicken Sie rechts vom Textfeld **Primäre Verbindungszeichenfolge** auf die Schaltfläche **Click to copy** (Klicken Sie zum Kopieren).
+1. Klicken Sie rechts vom Textfeld **Primäre Verbindungszeichenfolge** auf die Schaltfläche **Klicken Sie zum Kopieren**.
 
 1. Wechseln Sie zu **Visual Studio Code**.
 
@@ -85,7 +85,7 @@ Führen Sie diese Schritte aus, um die Komponente fertigzustellen, mit der Nachr
 1. Suchen Sie in dieser Methode nach der folgenden Codezeile:
 
     ```C#
-    // Create a Queue Client here
+    // Create a queue client here
     ```
 
 1. Ersetzen Sie diese Codezeile durch den folgenden Code, um einen Warteschlangenclient zu erstellen:
@@ -139,13 +139,13 @@ Verwenden Sie diese Schritte, um die Komponente auszuführen, mit der eine Nachr
 
 1. Klicken Sie in Visual Studio Code im Menü **Ansicht** auf **Debuggen**.
 
-1. Wählen Sie im Bereich **Debuggen** in der Dropdownliste die Option **Launch Private Message Sender** (Senden privater Nachrichten starten), und drücken Sie anschließend **F5**. Visual Studio Code führt das Erstellen und Ausführen der Konsolenanwendung im Debugmodus durch.
+1. Wählen Sie im Bereich **Debuggen** in der Dropdownliste die Option **Senden privater Nachrichten starten**, und drücken Sie anschließend **F5**. Visual Studio Code führt das Erstellen und Ausführen der Konsolenanwendung im Debugmodus durch.
 
 1. Sehen Sie sich die Nachrichten in der **Debugging-Konsole** an, während das Programm ausgeführt wird.
 
 1. Wechseln Sie zum Azure-Portal.
 
-1. Klicken Sie auf der Startseite auf **Alle Ressourcen** und dann auf den zuvor erstellten Service Bus-Namespace, falls Service Bus nicht angezeigt wird.
+1. Falls der Service Bus-Namespace nicht angezeigt wird, klicken Sie auf der Startseite auf **Alle Ressourcen** und dann auf den zuvor erstellten Service Bus-Namespace.
 
 1. Klicken Sie auf dem Blatt **Service Bus-Namespace** unter **ENTITÄTEN** auf **Warteschlangen** und dann auf die Warteschlange **salesmessages**. Unter **ANZAHL AKTIVER NACHRICHTEN** sollte angezeigt werden, dass der Warteschlange eine Nachricht hinzugefügt wurde.
 
@@ -160,7 +160,7 @@ Führen Sie diese Schritte aus, um die Komponente fertigzustellen, mit der Nachr
 1. Suchen Sie in dieser Methode nach der folgenden Codezeile:
 
     ```C#
-    // Create a Queue Client here
+    // Create a queue client here
     ```
 
 1. Ersetzen Sie diese Zeile durch den folgenden Code, um einen Warteschlangenclient zu erstellen:
@@ -207,7 +207,7 @@ Führen Sie diese Schritte aus, um die Komponente fertigzustellen, mit der Nachr
     // Close the queue here
     ```
 
-1. Ersetzen Sie diesen Code durch den folgenden Code, um die Verbindung mit Service Bus zu schließen:
+1. Ersetzen Sie diese Zeile durch den folgenden Code, um die Verbindung mit Service Bus zu schließen:
 
     ```C#
     await queueClient.CloseAsync();
@@ -221,7 +221,7 @@ Verwenden Sie diese Schritte, um die Komponente auszuführen, mit der eine Nachr
 
 1. Klicken Sie in Visual Studio Code im Menü **Ansicht** auf **Debuggen**.
 
-1. Wählen Sie im Bereich **Debuggen** in der Dropdownliste die Option **Launch Private Message Receiver** (Empfangen privater Nachrichten starten), und drücken Sie anschließend **F5**. Visual Studio Code führt das Erstellen und Ausführen der Konsolenanwendung im Debugmodus durch.
+1. Wählen Sie im Bereich **Debuggen** in der Dropdownliste die Option **Empfangen privater Nachrichten starten**, und drücken Sie anschließend **F5**. Visual Studio Code führt das Erstellen und Ausführen der Konsolenanwendung im Debugmodus durch.
 
 1. Sehen Sie sich die Nachrichten in der **Debugging-Konsole** an, während das Programm ausgeführt wird.
 
@@ -229,7 +229,7 @@ Verwenden Sie diese Schritte, um die Komponente auszuführen, mit der eine Nachr
 
 1. Wechseln Sie zum Azure-Portal.
 
-1. Klicken Sie auf der Startseite auf **Alle Ressourcen** und dann auf den zuvor erstellten Service Bus-Namespace, falls Service Bus nicht angezeigt wird.
+1. Falls der Service Bus-Namespace nicht angezeigt wird, klicken Sie auf der Startseite auf **Alle Ressourcen** und dann auf den zuvor erstellten Service Bus-Namespace.
 
 1. Klicken Sie auf dem Blatt **Service Bus-Namespace** unter **ENTITÄTEN** auf **Warteschlangen** und dann auf die Warteschlange **salesmessages**. Unter **ANZAHL AKTIVER NACHRICHTEN** sollte angezeigt werden, dass die Nachricht aus der Warteschlange entfernt wurde.
 

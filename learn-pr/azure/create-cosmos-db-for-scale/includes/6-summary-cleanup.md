@@ -1,18 +1,18 @@
-This module has shown you how to create an Azure Cosmos DB account that you can use for real-world scenarios like online retail apps. By creating a database with a smart partition key, you'll be able to scale horizontally as your need for data storage grows. You've also learned about request unit needs for your application, and how to set them during account creation so that you can scale up your throughput later, when user demand increases.
+In diesem Modul haben Sie gelernt, wie Sie ein Azure Cosmos DB-Konto erstellen, dass Sie für reale Szenarien wie Onlinehandel-Apps verwenden können. Wenn Sie eine Datenbank mit einem intelligenten Partitionsschlüssel erstellen, können Sie horizontal skalieren, wenn Ihr Datenspeicherungsbedarf wächst. Sie haben auch den Bedarf an Anforderungseinheiten Ihrer Anwendung kennen gelernt, und wie Sie ihn während der Kontoerstellung festlegen, sodass Sie den Durchsatz später bei zunehmendem Benutzerbedarf zentral hochskalieren können.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up-your-resources"></a>Bereinigen von Ressourcen
+<!---TODO: Do we need to include cleanup for the free education tier?--->
 
-If you plan to continue working on the modules in this learning path, skip the cleanup process. Otherwise, use the following steps to delete your resources to avoid incurring charges for use of the service:
+Wenn Sie die Module in diesem Lernpfad weiterhin verwenden möchten, überspringen Sie den Cleanupprozess. Löschen Sie andernfalls mit den folgenden Schritten Ihre Ressourcen, um zu verhindern, dass Gebühren für die Verwendung des Diensts entstehen:
 
-1. In the Azure portal, select **Resource groups** on the far left, and then select the resource group you created.  
+1. Klicken Sie im Azure-Portal ganz links auf **Ressourcengruppen** und anschließend auf die erstellte Ressourcengruppe.  
 
-    If the left menu is collapsed, click ![Expand button](../media-draft/6-expand.png) to expand it.
+    Sollte das linke Menü reduziert sein, klicken Sie auf ![Schaltfläche „Erweitern“](../media-draft/6-expand.png) , um es zu erweitern.
 
-   ![Metrics in the Azure portal](../media-draft/6-delete-resources-select.png)
+   ![Metriken im Azure-Portal](../media-draft/6-delete-resources-select.png)
 
-1. In the new window, select the resource group, and then click **Delete resource group**.
+1. Wählen Sie in dem neuen Fenster die Ressourcengruppe aus, und klicken Sie auf **Ressourcengruppe löschen**.
 
-   ![Metrics in the Azure portal](../media-draft/6-delete-resources.png)
+   ![Metriken im Azure-Portal](../media-draft/6-delete-resources.png)
 
-1. In the new window, type the name of the resource group to delete, and then click **Delete**.
+1. Geben Sie im neuen Fenster den Namen der zu löschenden Ressourcengruppe ein, und klicken Sie dann auf **Löschen**.

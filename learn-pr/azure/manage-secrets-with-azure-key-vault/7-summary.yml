@@ -1,60 +1,60 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-secrets-with-azure-key-vault.7-summary
-title: Summary
+title: Zusammenfassung
 metadata:
-  title: Summary
-  description: Summary
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: Zusammenfassung
+  description: Zusammenfassung
+  ms.openlocfilehash: 8b422922451069a360481cdee7dde4effef0ea2c
+  ms.sourcegitcommit: 59967a43a5379f618738d95c9f82b7180a82187b
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/04/2018
+  ms.locfileid: "43694485"
 durationInMinutes: 3
-content: |
+content: >
   [!include[](includes/7-summary.md)]
 quiz:
-  title: 'Knowledge check: Azure Key Vault'
+  title: 'Wissenstest: Azure Key Vault'
   questions:
-  - content: Which of the following is **not** a primary benefit of Azure Key Vault?
+  - content: Welche der folgenden Aussagen beschreibt **keinen** wesentlichen Vorteil von Azure Key Vault?
     choices:
-    - content: Secure storage of private user information.
+    - content: Sichere Speicherung privater Benutzerdaten.
       isCorrect: true
-      correctExplanation: Key Vault is intended for storing application secrets, not user secrets.
-    - content: Synchronizing application secrets among multiple instances of an application.
+      correctExplanation: Key Vault dient zum Speichern von Anwendungs- und nicht von Benutzergeheimnissen.
+    - content: Synchronisierung von Anwendungsgeheimnissen zwischen mehreren Instanzen einer Anwendung.
       isCorrect: false
-      incorrectExplanation: Key Vault does enable multiple instances of applications to access the same secrets by storing them centrally.
-    - content: Reducing the need for application developers to directly handle application secrets. 
+      incorrectExplanation: Key Vault ermöglicht mehreren Instanzen von Anwendungen den Zugriff auf dieselben Geheimnisse, indem diese zentral gespeichert werden.
+    - content: Reduzierung der Notwendigkeit für Anwendungsentwickler, direkt mit Anwendungsgeheimnissen umzugehen.
       isCorrect: false
-      incorrectExplanation: Reducing hands-on interaction with secrets is a primary benefit of Key Vault and increases security.
-    - content: Controlling access to application secrets with assignable permissions.
+      incorrectExplanation: Die Reduzierung der praktischen Interaktion mit Geheimnissen ist ein Hauptvorteil von Key Vault zur Erhöhung der Sicherheit.
+    - content: Steuerung des Zugriffs auf Anwendungsgeheimnisse mit zuweisbaren Zugriffsberechtigungen.
       isCorrect: false
-      incorrectExplanation: Key Vault's access control policies increase secret security by limiting access to secrets.
-  - content: Which of these statements best describes Key Vault's authentication and authorization process?
+      incorrectExplanation: Die Zugriffssteuerungsrichtlinien von Key Vault erhöhen die Sicherheit von Geheimnissen, indem der Zugriff auf Geheimnisse eingeschränkt wird.
+  - content: Welche dieser Aussagen beschreibt am besten den Authentifizierungs- und Autorisierungsprozess von Key Vault?
     choices:
-    - content: Applications authenticate to a vault with the username and password of the lead developer and have full access to all secrets in the vault.
+    - content: Anwendungen authentifizieren sich bei einem Tresor mit dem Benutzernamen und Kennwort des Chefentwicklers und haben uneingeschränkten Zugriff auf alle Geheimnisse im Tresor.
       isCorrect: false
-      incorrectExplanation: Key Vault authentication does not use usernames and passwords, and applications should authenticate with their own identities, not the identity of a person.
-    - content: Applications and users authenticate to a vault with a Microsoft Account and are authorized to access specific secrets.
+      incorrectExplanation: Bei der Key Vault-Authentifizierung werden keine Benutzernamen und Kennwörter verwendet, und Anwendungen müssen sich mit ihren eigenen Identitäten und nicht mit der Identität einer Person authentifizieren.
+    - content: Anwendungen und Benutzer authentifizieren sich mit einem Microsoft-Konto bei einem Tresor und sind berechtigt, auf bestimmte Geheimnisse zuzugreifen.
       isCorrect: false
-      incorrectExplanation: Key Vault authentication does not use Microsoft Accounts, and access policies do not offer control over individual secrets in a vault.
-    - content: Applications and users authenticate to a vault with their Azure Active Directory identities and are authorized to perform different actions on all secrets in the vault.
+      incorrectExplanation: Für die Key Vault-Authentifizierung werden keine Microsoft-Konten verwendet, und Zugriffsrichtlinien bieten keine Kontrolle über einzelne Geheimnisse in einem Tresor.
+    - content: Anwendungen und Benutzer authentifizieren sich mit ihren Azure Active Directory-Identitäten bei einem Tresor und sind berechtigt, verschiedene Aktionen auf alle Geheimnisse im Tresor anzuwenden.
       isCorrect: true
-      correctExplanation: All authentication to Key Vault uses Azure Active Directory identities, and access policies are based on actions that apply to every secret in the vault.
-    - content: Applications authenticate to a vault using the usernames and passwords of users who sign in to the web app, and are granted access to secrets owned by those users.
+      correctExplanation: Alle Authentifizierungsverfahren für Key Vault verwenden Azure Active Directory-Identitäten, und die Zugriffsrichtlinien basieren auf Aktionen, die für alle Geheimnisse im Tresor gelten.
+    - content: Anwendungen authentifizieren sich bei einem Tresor unter Verwendung von Benutzernamen und Kennwörtern von Benutzern, die sich bei der Web-App anmelden, und erhalten Zugriff auf die Geheimnisse, die diesen Benutzern gehören.
       isCorrect: false
-      incorrectExplanation: Users of an app should not have access to an application's Key Vault, and vaults should not be used to store user secrets.
-  - content: How does Key Vault help protect your secrets after they have been loaded by your app?
+      incorrectExplanation: Benutzer einer App sollten keinen Zugriff auf den Key Vault einer Anwendung haben, und Tresore sollten nicht zum Speichern von Benutzergeheimnissen verwendet werden.
+  - content: Wie hilft Key Vault, Ihre Geheimnisse zu schützen, nachdem sie von Ihrer App hochgeladen wurden?
     choices:
-    - content: Key Vault automatically generates new secret values each time you load a secret so they can never be reused.
+    - content: Key Vault generiert bei jedem Laden eines Geheimnisses automatisch neue Geheimniswerte, damit diese nie mehr wiederverwendet werden können.
       isCorrect: false
-      incorrectExplanation: Key Vault does not automatically generate new secret values.
-    - content: The Key Vault client library protects regions of memory used by your application to prevent accidental secret exposure.
+      incorrectExplanation: Key Vault generiert nicht automatisch neue Geheimniswerte.
+    - content: Die Key Vault-Clientbibliothek schützt die von Ihrer Anwendung verwendeten Speicherbereiche, um eine versehentliche Enthüllung von Geheimnissen zu verhindern.
       isCorrect: false
-      incorrectExplanation: This is not a feature of the Key Vault client library.
-    - content: Key Vault double-encrypts secrets, requiring your app to decrypt them locally every time they are used.
+      incorrectExplanation: Dies ist kein Feature der Key Vault-Clientbibliothek.
+    - content: Key Vault verschlüsselt Geheimnisse doppelt, sodass Ihre Anwendung sie bei jeder Verwendung lokal entschlüsseln muss.
       isCorrect: false
-      incorrectExplanation: Secret values returned to your app from a vault are not encrypted.
-    - content: It doesn't &mdash; secrets are unprotected once they are loaded by your application.
+      incorrectExplanation: Geheimniswerte, die von einem Tresor an Ihre App zurückgegeben werden, sind nicht verschlüsselt.
+    - content: Gar nicht &mdash; Geheimnisse sind ungeschützt, sobald sie von Ihrer Anwendung geladen werden.
       isCorrect: true
-      correctExplanation: Once secrets have been loaded by an app, they are unprotected. Take care not to log them, store them or return them in client responses in your application code.  
+      correctExplanation: Nachdem Geheimnisse von einer App geladen wurden, sind sie nicht mehr geschützt. Achten Sie darauf, sie nicht zu protokollieren, zu speichern oder in Clientantworten an Ihren Anwendungscode zurückzugeben.

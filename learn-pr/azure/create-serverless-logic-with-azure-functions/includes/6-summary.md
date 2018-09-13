@@ -1,12 +1,12 @@
-You've learned how to use Azure Functions to host business logic services in the cloud. It's a great way to add hosted services to your solution that can scale and grow with your business. You focus on the code using the language of your choice, and Azure manages the infrastructure. Functions can integrate with other services, like Event Grid, GitHub, Twilio, Microsoft Graph, and Logic Apps to create complex and robust serverless workflows quickly and easily.
+Sie haben erfahren, wie Sie Azure Functions verwenden, um Dienste für die Geschäftslogik in der Cloud zu hosten. Das ist eine hervorragende Möglichkeit, gehostete Dienste zu Ihrer Lösung hinzuzufügen, die mit Ihrem Unternehmen wachsen können. Sie konzentrieren sich auf den Code in der Sprache Ihrer Wahl – und Azure verwaltet die Infrastruktur. Zum schnellen und einfachen Erstellen von komplexen und robusten serverlosen Workflows kann Functions in andere Dienste wie Event Grid, GitHub, Twilio, Microsoft Graph und Logic Apps integriert werden.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up-your-resources"></a>Bereinigen von Ressourcen
+<!---TODO: Do we need to include cleanup for the free education tier?---> Azure-Funktionen werden zwar nur ausgeführt, wenn sie ausgelöst werden – dennoch sollten Sie die Ressourcen entfernen, die Sie in der Übung erstellt haben.
 
-Although Azure functions run only when they're triggered, you may want to remove the resources we created in the exercise.
+1. Melden Sie sich mit Ihrem Azure-Konto beim [Azure-Portal](https://portal.azure.com?azure-portal=true) an.
 
-1. Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true) using your Azure account.
+1. Greifen Sie durch Auswahl von **Alle Ressourcen** im linken Menü auf die Ressourcengruppe zu, die Sie in der ersten Übung erstellt haben, und wählen Sie dann **escalator-functions-group** aus.
 
-1. Access the resource group you created in the first exercise by choosing **All resources** in the left-hand menu, and then selecting **escalator-functions-group**.
+1. Klicken Sie auf der Symbolleiste auf die Schaltfläche **Ressourcengruppe löschen**. Sie werden aufgefordert, den Namen der Ressourcengruppe einzugeben, die gelöscht werden soll. Klicken Sie dann auf die Schaltfläche **Löschen**.  
 
-1. In the toolbar, press the **Delete resource group** button. You will be asked to type in the name of the resource group to be deleted. Press the **Delete** button once complete.
+![Ressourcengruppe löschen](../media-draft/6-cleanup.png)

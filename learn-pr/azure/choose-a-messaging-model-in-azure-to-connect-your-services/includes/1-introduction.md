@@ -1,16 +1,16 @@
-Many applications consist of programs that run on several different computers or devices. In such distributed applications, messages must be sent between the components across networks and long distances. Even on the same server or in the same data center, loosely coupled architectures require mechanisms for components to communicate. Reliable messaging is often a critical problem.
+Viele Anwendungen bestehen aus Programmen, die auf mehreren Computern oder Geräten ausgeführt werden. In solchen verteilten Anwendungen müssen Nachrichten zwischen den Komponenten über Netzwerke und große Entfernungen gesendet werden. Selbst auf demselben Server oder im selben Rechenzentrum erfordern lose gekoppelte Architekturen Mechanismen für die Kommunikation der Komponenten. Zuverlässiges Messaging ist häufig ein kritisches Problem.
 
-Suppose you work at a software company that develops a music-sharing application. Musicians can upload music they create to your platform by using a web front end or a mobile app. They can listen to and comment on other members' work. The application consists of a website that runs at your ISP, a mobile app that runs on users' mobile devices, a web API that runs in Azure, and an Azure SQL Database where data is stored.
+Angenommen, Sie arbeiten bei einer Softwarefirma, die eine Anwendung für den Austausch von Musik entwickelt. Dabei können Musiker ihre Songs über ein Web-Front-End oder eine mobile App auf Ihre Plattform hochladen. Außerdem können sie sich die Lieder anderer Mitglieder anhören und diese kommentieren. Die Anwendung besteht aus einer Website, die bei Ihrem ISP ausgeführt wird, einer mobilen App, die auf den mobilen Geräten der Benutzer ausgeführt wird, einer Web-API, die in Azure läuft, und einer Azure SQL-Datenbank, in der Daten gespeichert werden.
 
-You have observed that at times of high demand, some music files are not successfully uploaded, and some comments are not posted. Your testing shows that these issues are caused by dropped messages between front-end components and the web API. You plan to solve these issues by using one or more of the following technologies: Azure Storage queues, Azure Event Hubs, Azure Event Grid, and Azure Service Bus.
+Sie haben beobachtet, dass im Fall hoher Auslastung einige Musikdateien nicht erfolgreich hochgeladen und einige Kommentare nicht veröffentlicht werden. Ihre Tests zeigen, dass diese Probleme durch verloren gegangene Nachrichten zwischen Front-End-Komponenten und der Web-API verursacht werden. Nun möchten Sie diese Probleme mit mindestens einer der folgenden Technologien lösen: Azure Storage-Warteschlangen, Azure Event Hubs, Azure Event Grid und Azure Service Bus.
 
-Here, you will learn how to choose the right messaging technology in Azure for each communication task in a distributed application.
+Im Folgenden erfahren Sie, wie Sie für jede Kommunikationsaufgabe in einer verteilten Anwendung die richtige Messagingtechnologie in Azure auswählen.
 
-## Learning objectives
-In this module, you will:
+## <a name="learning-objectives"></a>Lernziele
+In diesem Modul
 
-- Describe events and messages, and the challenges you can use them to solve in a distributed application.
-- Identify scenarios in which Storage queue is the best messaging technology for an application.
-- Identify scenarios in which Event Grid is the best messaging technology for an application.
-- Identify scenarios in which Event Hubs is the best messaging technology for an application.
-- Identify scenarios in which Service Bus is the best messaging technology for an application.
+- beschreiben Sie Ereignisse und Nachrichten sowie die Herausforderungen, die Sie damit in einer verteilten Anwendung bewältigen können,
+- ermitteln Szenarios, in denen eine Azure Storage-Warteschlange die beste Messagingtechnologie für eine Anwendung ist,
+- ermitteln Szenarios, in denen Event Grid die beste Messagingtechnologie für eine Anwendung ist,
+- ermitteln Szenarios, in denen Event Grid die beste Messagingtechnologie für eine Anwendung ist
+- und ermitteln Szenarios, in denen Azure Service Bus die beste Messagingtechnologie für eine Anwendung ist.

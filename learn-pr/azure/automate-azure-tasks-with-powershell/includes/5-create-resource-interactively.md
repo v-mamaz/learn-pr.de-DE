@@ -24,12 +24,18 @@ Get-Help <cmdlet-name> -detailed
 Als Nächstes erstellen Sie eine Ressourcengruppe mit einer lokalen Installation von Azure PowerShell. 
 
 Dazu sind vier Schritte notwendig: 
+
 1. Importieren Sie die Azure-Cmdlets.
+
 1. Stellen Sie eine Verbindung mit Ihrem Azure-Abonnement her.
+
 1. Erstellen Sie die Ressourcengruppe.
+
 1. Stellen Sie sicher, dass das Erstellen erfolgreich war.
 
-![Schritte zum Erstellen einer Ressource in Azure mit Azure PowerShell](../media/5-create-resource-overview.png)
+Die folgende Abbildung zeigt eine Übersicht dieser Schritte.
+
+![Eine Abbildung, die die Schritte zum Erstellen einer Ressourcengruppe zeigt.](../media/5-create-resource-overview.png)
 
 Jeder Schritt entspricht einem anderen Cmdlet.
 

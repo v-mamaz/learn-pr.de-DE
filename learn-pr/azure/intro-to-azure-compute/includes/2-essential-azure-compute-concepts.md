@@ -4,9 +4,10 @@ Ihr Forschungsteam muss rechnerisch aufwändige Datenverarbeitung durchführen u
 Azure Compute ist ein bei Bedarf abrufbarer Dienst für Rechenressourcen zum Ausführen von cloudbasierten Anwendungen. Er stellt Rechenressourcen wie Multi-Core-Prozessoren und Supercomputer über virtuelle Computer und Container bereit. Darüber hinaus bietet der Dienst serverloses Computing, damit Apps ausgeführt werden können, ohne dass Infrastruktur eingerichtet oder konfiguriert werden muss. Die Ressourcen sind bei Bedarf verfügbar und können in der Regel innerhalb von Minuten oder sogar Sekunden erstellt werden. Sie zahlen nur für die Ressourcen, die Sie verwenden, und nur solange Sie sie verwenden.
 
 Es gibt drei gängige Vorgehensweise zum Ausführen von Compute in Azure:
-1. Virtuelle Computer
-1. Container
-1. Serverloses Computing
+
+- Virtuelle Computer
+- Container
+- Serverloses Computing
 
 ## <a name="what-are-virtual-machines"></a>Was sind virtuelle Computer?
 
@@ -20,15 +21,15 @@ Das Auswählen eines Images ist eine der wichtigsten Entscheidungen, die Sie bei
 
 ## <a name="what-are-containers"></a>Was sind Container?
 
-Container sind eine Virtualisierungsumgebung, die im Gegensatz zu VMs kein Betriebssystem beinhaltet. Stattdessen verweisen sie auf das Betriebssystem der Hostumgebung, in der der Container ausführt wird. Wenn zum Beispiel fünf Container auf einem Server mit einem spezifischen Linux-Kernel ausgeführt werden, werden alle fünf Container auf demselben Kernel ausgeführt. 
+Container sind eine Virtualisierungsumgebung, die im Gegensatz zu VMs kein Betriebssystem beinhaltet. Stattdessen verweisen sie auf das Betriebssystem der Hostumgebung, in der der Container ausführt wird. Wenn zum Beispiel fünf Container auf einem Server mit einem spezifischen Linux-Kernel ausgeführt werden, werden alle fünf Container auf demselben Kernel ausgeführt.
 
-Im folgenden Diagramm werden Anwendungen bei Ausführung in einer VM und als Container verglichen.
+In der folgenden Abbildung werden Anwendungen, die direkt auf einem virtuellen Computer ausgeführt werden, mit Anwendungen verglichen, die innerhalb eines Containers auf einem virtuellen Computer ausgeführt werden.
 
-![Vergleich von Apps, die in einer VM und als Container ausgeführt werden](../media/vm-versus-containers.png)
+![Eine Abbildung, in der dargestellt wird, dass das Betriebssystem Teil des virtuellen Computers und nicht Teil des Containers ist.](../media/2-vm-versus-containers.png)
 
 Container enthalten in der Regel eine von Ihnen geschriebene Anwendung sowie alle Bibliotheken, die für die Ausführung Ihrer Anwendung auf dem Kernel der Hostumgebung erforderlich sind. 
 
-Container sind kompakt und dafür konzipiert, dynamisch erstellt, horizontal hochskaliert und beendet zu werden, damit jede Änderung der Umgebung oder des Bedarfs abgedeckt werden kann.
+Container sind kompakt und dafür konzipiert, dynamisch erstellt, hochskaliert und beendet zu werden. Dadurch können Sie auf Änderungen des Bedarfs reagieren und im Fall eines Absturzes oder einer Hardwarestörung rasch neu starten. 
 
 Die Verwendung von Containern hat den Vorteil, dass mehrere isolierte Anwendungen auf einem virtuellen Computer ausgeführt werden können. Da Container selbst gesichert und isoliert sind, benötigen Sie nicht unbedingt separate VMs für separate Workloads.
 
@@ -44,5 +45,5 @@ Für die Infrastruktur sind Sie nicht verantwortlich. Die Skalierung und Leistun
 
 Azure verfügt über zwei Implementierungen von serverlosem Computing: 
 
-1. **Azure Functions** ist in der Lage, Code in fast jeder modernen Programmiersprache auszuführen.
-2. Mit **Azure Logic Apps** erstellte Apps werden in einem webbasierten Designer erstellt und können Logik ausführen, die von Azure-Diensten ausgelöst wird – und zwar ganz ohne Schreiben von Code.
+- **Azure Functions** ist in der Lage, Code in fast jeder modernen Programmiersprache auszuführen.
+- Mit **Azure Logic Apps** erstellte Apps werden in einem webbasierten Designer erstellt und können Logik ausführen, die von Azure-Diensten ausgelöst wird – und zwar ganz ohne Schreiben von Code.

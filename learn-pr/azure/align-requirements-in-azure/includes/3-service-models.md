@@ -1,7 +1,7 @@
 Cloud Computing-Ressourcen werden mithilfe drei verschiedener Modelle bereitgestellt.
 
 - **Infrastructure-as-a-Service (IaaS)** bietet eine sofort nutzbare Computinginfrastruktur, die Sie über das Internet bereitstellen und verwalten können.
-- **Platform-as-a-Service (PaaS)** bietet vordefinierte Entwicklungs- und Bereitstellungsumgebungen, die Sie verwenden können, um Ihre eigenen Clouddienste zu übermitteln.
+- **Platform-as-a-Service (PaaS)** bietet vordefinierte Entwicklungs- und Bereitstellungsumgebungen, die Sie verwenden können, um Ihre eigenen Clouddienste bereitzustellen.
 - Bei **Software-as-a-Service (SaaS)** werden Anwendungen über das Internet als webbasierter Dienst bereitgestellt.
 
 !!! Video TC-007-Platzhalter !!!

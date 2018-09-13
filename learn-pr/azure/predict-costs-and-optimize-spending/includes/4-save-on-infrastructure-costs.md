@@ -16,7 +16,7 @@ Zuvor wurde besprochen, dass Azure Cost Management und Azure Advisor möglicherw
 
 Überdimensionierte VMs sind eine häufige Ursache für unnötige Kosten in Azure, die aber schnell behoben werden kann. Sie können die Größe einer VM über das Azure-Portal, Azure PowerShell oder die Azure CLI ändern.
 
-> [!NOTE]
+> [!TIP]
 > Um die Größe einer VM zu ändern, müssen Sie sie beenden, ihre Größe ändern und die VM dann neu starten. Dieser Vorgang kann abhängig davon, wie umfassend die Größenänderung ist, einige Minuten in Anspruch nehmen. Planen Sie eine Downtime, oder leiten Sie Ihren Datenverkehr auf eine andere Instanz um, während Sie diese Aufgabe ausführen.
 
 ## <a name="deallocate-virtual-machines-in-off-hours"></a>Aufheben der Zuordnung virtueller Computer außerhalb der Geschäftszeiten

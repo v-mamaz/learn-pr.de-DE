@@ -1,15 +1,15 @@
-When you turn on a light, you simply want the light to work. You know you need electricity for that to happen, but in that moment, the details of how the electricity gets to the light bulb aren’t important. You might not think about electricity being created in a power plant, traveling through large network of high-voltage transmission lines to your town, going through a substation, and eventually making its way into your home.
+Wenn Sie das Licht einschalten, möchten Sie einfach, dass das Licht angeht. Sie wissen, dass Sie dafür Strom brauchen, aber in diesem Moment ist es nicht wichtig, wie genau der Strom zur Glühbirne gelangt. Sie denken wahrscheinlich nicht daran, dass Strom in einem Kraftwerk produziert und über das komplexe Netzwerk der Hochspannungsleitungen in Ihre Stadt, an eine Trafostation und schließlich in Ihr Haus geleitet wird.
 
-![Clouds over a skyline representing electricity being delivered](../media/1-heading.png)
+![Wolken über einer Skyline stellen die Lieferung von Strom dar](../media/1-heading.png)
 
-The process of turning on a light is hidden behind the simple act of flipping a switch. At this point, electricity becomes a utility, which has many benefits. First, you only pay for what you need. When you buy a light bulb, you don’t pay your electricity provider up front for how long you could possibly use it. Instead, you pay for the amount that you actually use. Second, you don’t have to worry about how power plants upgrade to the latest technology. Finally, you don’t have to manage scaling the electricity. For example, as people move to your town, you can rest assured that your light will stay on.
+Der Prozess des Lichteinschaltens ist hinter der simplen Schalterbetätigung verborgen. An diesem Punkt wird der Strom zu einem äußerst nützlichen Hilfsmittel. Zum einen bezahlen Sie nur für das, was Sie verbrauchen. Wenn Sie eine Glühbirne kaufen, leisten Sie nicht zugleich eine Vorauszahlung für die voraussichtliche Nutzungsdauer an Ihren Stromanbieter. Stattdessen zahlen Sie für den Strom, den Sie tatsächlich verbrauchen. Zum andern müssen Sie sich keine Gedanken darüber machen, wie Kraftwerke ein Upgrade auf die neueste Technologie durchführen. Schließlich müssen Sie die Stromversorgung nicht skalieren. Wenn die Einwohnerzahl Ihrer Stadt steigt, können Sie z.B. sicher sein, dass Ihr Licht nicht erlischt.
 
-As a technology professional, it would be nice to have these same benefits when developing and deploying applications. Storing data, streaming video, or even hosting a website all require managing hardware and software. This management is an unnecessary obstacle when delivering your application to your users. Luckily there is a solution to this problem: **cloud computing**.
+Technologieexperten würden sich im Zusammenhang mit dem Entwickeln und Bereitstellen von Anwendungen über dieselben Vorteile freuen. Datenspeicherung, Videostreaming oder sogar das Hosten einer Website setzen die Verwaltung von Hardware und Software voraus. Diese Verwaltung ist ein unnötiges Hindernis, wenn Sie Ihre Anwendung Benutzern zur Verfügung stellen. Glücklicherweise gibt es eine Lösung für dieses Problem: **Cloud Computing**.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul lernen Sie Folgendes:
 
-- Explore common cloud computing services
-- Explore the benefits of cloud computing
-- Decide which cloud deployment model is best for you
+- Kennenlernen gängiger Cloud Computing-Dienste
+- Kennenlernen der Vorteile des Cloud Computings
+- Bestimmen des für Sie am besten geeigneten Modells zur Cloudbereitstellung

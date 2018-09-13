@@ -8,28 +8,31 @@ Denken Sie daran, dass jeder logische Azure SQL-Server mindestens eine Datenbank
 
 Wählen Sie das DTU-Modell aus, wenn Sie erst anfangen oder eine einfache vorkonfigurierte Kaufoption möchten. Wählen Sie das Modell für virtuelle Kerne aus, wenn Sie mehr Kontrolle über die Compute- und Speicherressourcen möchten, die Sie erstellen und bezahlen.
 
-Cloud Shell erleichtert den Einstieg in die Arbeit mit Datenbanken. Über Cloud Shell können Sie auf Azure CLI zugreifen, um Informationen über Azure-Ressourcen abzurufen. Cloud Shell bietet auch viele andere allgemeine Hilfsprogramme, z.B. `sqlcmd`, damit Sie sofort mit Ihrer neuen Datenbank arbeiten können.
+Azure Cloud Shell erleichtert den Einstieg in die Arbeit mit Datenbanken. Über Cloud Shell können Sie auf Azure CLI zugreifen, um Informationen über Azure-Ressourcen abzurufen. Cloud Shell bietet auch viele andere allgemeine Hilfsprogramme, z.B. `sqlcmd`, damit Sie sofort mit Ihrer neuen Datenbank arbeiten können.
 
 ## <a name="cleanup"></a>Bereinigen
 
 Sie können mehr mit der Installation der Azure SQL-Datenbank herumexperimentieren. Wenn Sie fertig sind, besteht die einfachste Möglichkeit zum Löschen der Datenbank darin, die übergeordnete Ressourcengruppe zu löschen.
 
 1. Klicken Sie im Azure-Portal auf **Ressourcengruppen**.
+
 1. Wählen Sie **logistics-db-rg** aus.
+
 1. Klicken Sie auf **Ressourcengruppe löschen**.
 
     ![Löschen der Ressourcengruppe](../media-draft/delete-rg.png)
+
 1. Geben Sie „logistics-db-rg“ in der Eingabeaufforderung ein, und klicken Sie auf **Löschen**.
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 Die Dokumentation enthält viele weitere Informationen sowie Tutorials und Beispiele. Unter den folgenden Links finden Sie Informationen zu den hier behandelten Themen:
 
-* [Dokumentation zu Azure SQL-Datenbank](https://docs.microsoft.com/en-us/azure/sql-database/)
-* [Kaufmodelle für Azure SQL-Datenbank und Ressourcen](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-service-tiers)
-* [Logischer Azure SQL-Datenbankserver und dessen Verwaltung](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-logical-servers)
-* [Azure SQL Database and SQL Data Warehouse firewall rules (Firewallregeln für Azure SQL-Datenbank und SQL Data Warehouse)](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-firewall-configure)
+- [Dokumentation zu Azure SQL-Datenbank](https://docs.microsoft.com/azure/sql-database/)
+- [Kaufmodelle für Azure SQL-Datenbank und Ressourcen](https://docs.microsoft.com/azure/sql-database/sql-database-service-tiers)
+- [Logischer Azure SQL-Datenbankserver und dessen Verwaltung](https://docs.microsoft.com/azure/sql-database/sql-database-logical-servers)
+- [Azure SQL Database and SQL Data Warehouse firewall rules (Firewallregeln für Azure SQL-Datenbank und SQL Data Warehouse)](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure)
 
-Weitere Informationen über Cloud Shell finden Sie in der [Übersicht über Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview).
+Weitere Informationen über Cloud Shell finden Sie in der [Übersicht über Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
-Weitere Informationen über das `sqlcmd`-Hilfsprogramm finden Sie im Artikel zum [sqlcmd-Hilfsprogramm](https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility?view=sql-server-2017).
+Weitere Informationen über das `sqlcmd`-Hilfsprogramm finden Sie im Artikel zum [sqlcmd-Hilfsprogramm](https://docs.microsoft.com/sql/tools/sqlcmd-utility?view=sql-server-2017).

@@ -6,7 +6,7 @@ Stellen Sie sich folgendes Szenario vor, um dies besser zu verstehen: Sie sind l
 
 Die Transportindustrie erfordert enge Koordination aller Beteiligten: Disponenten, Dispatcher, Fahrer und sogar Kunden.
 
-Ihr aktueller Prozess umfasst stapelweise Papierformulare und Stunden am Telefon, um Lieferungen zu koordinieren. Sie stellen fest, dass Unterschriften bei den Unterlagen oft fehlen und Dispatcher häufig nicht verfügbar sind. Aufgrund dieser Verzögerungen müssen Fahrer oft warten, wodurch wichtige Lieferungen später ankommen. Die Kundenzufriedenheit und das Wiederholungsgeschäft sind entscheidend für den Saldo Ihres Unternehmens.
+Ihr aktueller Prozess umfasst stapelweise Papierformulare und Stunden am Telefon, um Lieferungen zu koordinieren. Sie stellen fest, dass Unterschriften bei den Unterlagen oft fehlen und Verteiler häufig nicht verfügbar sind. Aufgrund dieser Verzögerungen müssen Fahrer oft warten, wodurch wichtige Lieferungen später ankommen. Die Kundenzufriedenheit und das Wiederholungsgeschäft sind entscheidend für den Saldo Ihres Unternehmens.
 
 Ihr Team entscheidet sich dazu, von Papierformularen und Telefonanrufen auf digitale Dokumente und Onlinekommunikation umzusteigen. Mit dem Umstieg auf digitale Prozesse kann das Team Lieferzeiten im Webbrowser oder in einer mobilen App koordinieren und nachverfolgen.
 
@@ -14,9 +14,9 @@ Gestalten Sie in kurzer Zeit einen Prototyp für Ihr Team. Dieser Prototyp soll 
 
 ## <a name="learning-objectives"></a>Lernziele
 
-Hier lernen Sie Folgendes:
+In diesem Modul lernen Sie Folgendes:
 
 - Die Vorteile von Azure SQL-Datenbank zum Ausführen einer relationalen Datenbank
 - Welche Optionen für die Konfiguration und Preise Ihnen für Azure SQL-Datenbank zur Verfügung stehen
-- Das Erstellen einer Azure SQL-Datenbank über das Portal
-- Die Verwendung von Cloud Shell zum Herstellen einer Verbindung mit Ihrer Azure SQL-Datenbank, das Hinzufügen einer Tabelle und das Arbeiten mit Daten
+- Wie Azure SQL-Datenbanken im Portal erstellt werden.
+- Die Verwendung von Cloud Shell zum Herstellen einer Verbindung mit Azure SQL-Datenbank, das Hinzufügen einer Tabelle und das Arbeiten mit Daten

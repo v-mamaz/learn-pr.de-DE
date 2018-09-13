@@ -1,32 +1,32 @@
-In this unit, you will continue with the example of a company that makes Linux admin tools. Recall that you plan to use Linux VMs to let potential customers test your software. You have a resource group ready and now it is time to create the VMs.
+In dieser Einheit machen Sie mit dem Beispiel einer Firma weiter, die Linux-Verwaltungstools herstellt. Wie bereits besprochen planen Sie, Linux-VMs zu verwenden, um potenzielle Kunden Ihre Software testen zu lassen. Eine Ressourcengruppe steht bereit, und nun ist es an der Zeit, die VMs zu erstellen.
 
-Your company has paid for a booth at a big Linux trade show. You plan a demo area containing three terminals each connected to a separate Linux VM. At the end of each day, you want to delete the VMs and recreate them, so they start fresh every morning. Creating the VMs manually after work when you are tired would be error prone. You want to write a PowerShell script to automate the VM creation process.
+Ihr Unternehmen hat einen Stand auf einer großen Linux-Messe gebucht. Sie planen einen Demobereich mit drei Terminals, die jeweils an eine separate Linux-VM angeschlossen sind. Am Ende jedes Tages möchten Sie die VMs löschen und neu erstellen, damit sie jeden Morgen neu starten können. Das manuelle Erstellen der VMs nach der Arbeit, wenn Sie erschöpft sind, wäre zu fehleranfällig. Sie möchten ein PowerShell-Skript schreiben, um die Erstellung der VMs zu automatisieren.
 
-## Write a script that creates Virtual Machines
+## <a name="write-a-script-that-creates-virtual-machines"></a>Schreiben eines Skripts zum Erstellen virtueller Computer
 
-Follow these steps to write the script:
+Gehen Sie folgendermaßen vor, um das Skript zu schreiben:
 
-1. Create a new text file named **ConferenceDailyReset.ps1**.
+1. Erstellen Sie eine neue Textdatei mit dem Namen **ConferenceDailyReset.ps1**.
 
-1. Capture the parameter in a variable:
+1. Erfassen Sie den Parameter in einer Variablen:
 
     ```powershell
     param([string]$resourceGroup)
     ```
 
-1. Authenticate with Azure using your credentials:
+1. Authentifizieren Sie sich bei Azure mit Ihren Anmeldeinformationen:
 
     ```powershell
     Connect-AzureRmAccount
     ```
 
-1. Prompt for a username and password for the VM's admin account and capture the result in a variable:
+1. Fordern Sie einen Benutzernamen und ein Kennwort für das Administratorkonto der VM an, und erfassen Sie das Ergebnis in einer Variablen:
 
     ```powershell
     $adminCredential = Get-Credential -Message "Enter a username and password for the VM administrator."
     ```
 
-1. Create a loop that executes three times:
+1. Erstellen Sie eine Schleife, die dreimal ausgeführt wird:
 
     ```powershell
     For ($i = 1; $i -le 3; $i++) 
@@ -35,21 +35,21 @@ Follow these steps to write the script:
     }
     ```
 
-1. In the loop body, create a name for each VM and store it in a variable:
+1. Erstellen Sie im Schleifentext einen Namen für jede VM, und speichern Sie ihn in einer Variablen:
 
     ```powershell
     $vmName = "ConferenceDemo" + $i
     ```
 
-1. Next, create a VM using the `$vmName` variable:
+1. Erstellen Sie als Nächstes eine VM mithilfe der Variablen `$vmName`:
 
    ```powershell
    New-AzureRmVm -ResourceGroupName $resourceGroup -Name $vmName -Credential $adminCredential -Location "East US" -Image UbuntuLTS
    ```
 
-1. Save the file.
+1. Speichern Sie die Datei.
 
-The completed script should look like this:
+Die fertige Skript sollte wie folgt aussehen:
 
 ```powershell
 param([string]$resourceGroup)
@@ -66,22 +66,21 @@ For ($i = 1; $i -le 3; $i++)
 }
 ```
 
-## Execute the script
+## <a name="execute-the-script"></a>Ausführen des Skripts
 
-Launch PowerShell and change to the directory where you saved the script file. To run the script, execute the following command:
+Starten Sie PowerShell, und wechseln Sie zum Verzeichnis, in dem Sie die Skriptdatei gespeichert haben. Geben Sie den folgenden Befehl ein, um das Skript auszuführen:
 
 ```powershell
 .\ConferenceDailyReset.ps1 TrialsResourceGroup
 ```
 
-The script may take a few minutes to complete. When it is finished, verify that it ran successfully:
+Die Ausführung des Skripts kann einige Minuten dauern. Wenn sie abgeschlossen ist, stellen Sie sicher, dass es erfolgreich ausgeführt wurde:
 
-<!---TODO: Update for sandbox?--->
-1. In a browser, sign into the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. Melden Sie sich in einem Browser beim Azure-Portal an.
 
-1. In the navigation on the left, click **Resource Groups**.
+1. Klicken Sie im linken Navigationsbereich auf **Ressourcengruppen**.
 
-1. In the list of resource groups, click **TrialsResourceGroup**. In the list of resources, you should see the newly created VMs and their associated resources.
+1. Klicken Sie in der Liste der Ressourcengruppen auf **TrialsResourceGroup**. In der Liste der Ressourcen sollten Sie die neu erstellten VMs und die zugehörigen Ressourcen vorfinden.
 
-## Summary
-You wrote a script that automated the creation of three VMs in the resource group indicated by a script parameter. The script is short and simple but automates a process that would take a long time to complete manually with the portal.
+## <a name="summary"></a>Zusammenfassung
+Sie haben ein Skript geschrieben, das die Erstellung dreier VMs in der von einem Skriptparameter angegebenen Ressourcengruppe automatisiert. Das Skript ist kurz und einfach, automatisiert aber einen Prozess, der im Portal viel Zeit in Anspruch nehmen würde.

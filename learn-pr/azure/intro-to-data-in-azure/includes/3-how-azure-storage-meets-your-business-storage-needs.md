@@ -61,7 +61,9 @@ Wenn Sie mit virtuellen Computern arbeiten, können Sie standardmäßige SSD- un
 Azure Storage bietet drei Speicherebenen für Blobspeicher:
 
 1. **Speicherebene „Heiß“:** Diese Azure-Speicherebene ist für die Speicherung von Daten optimiert, auf die häufig zugegriffen wird. 
+
 1. **Speicherebene „Kalt“**: Diese Azure-Speicherebene ist für die Speicherung von Daten optimiert, auf die weniger häufig zugegriffen wird und die mindestens 30 Tage lang gespeichert werden.
+
 1. **Speicherebene „Archiv“:** Diese Azure-Speicherebene ist für die Speicherung von Daten optimiert, auf die selten zugegriffen wird und die bei flexiblen Latenzanforderungen mindestens 180 Tage lang gespeichert werden. Der Archivspeicher in Azure eignet sich ideal zum Speichern älterer Versionen Ihrer Daten, sodass Sie die Daten abrufen können, wenn diese für Überprüfungen oder andere unregelmäßige Aktivitäten benötigt werden.
 
 ![Archive_Tier](../media-draft/Archive_Storage_Tier.png)
@@ -74,7 +76,7 @@ Azure Storage bietet Verschlüsselungs- und Replikationsfeatures, um für die Si
 
 Ihnen stehen folgende Verschlüsselungstypen für Ihre Ressourcen zur Verfügung:
 
-1. Die **Azure-Speicherdienstverschlüsselung (SSE)** für ruhende Daten unterstützt Sie dabei, Ihre Daten zu sichern, um die Anforderungen Ihrer Organisation an die Sicherheit und Einhaltung von gesetzlichen Bestimmungen zu erfüllen. Azure SSE verschlüsselt die Daten vor dem Speichern und entschlüsselt sie vor dem Abrufen wieder. Die Verschlüsselung und Entschlüsselung sind für den Benutzer transparent.
+1. Die **Azure-Speicherdienstverschlüsselung ( Storage Service Encryption, SSE)** für ruhende Daten unterstützt Sie dabei, Ihre Daten zu sichern, um die Anforderungen Ihrer Organisation an die Sicherheit und Einhaltung von gesetzlichen Bestimmungen zu erfüllen. Azure SSE verschlüsselt die Daten vor dem Speichern und entschlüsselt sie vor dem Abrufen wieder. Die Verschlüsselung und Entschlüsselung sind für den Benutzer transparent.
 1. Bei der **clientseitigen Verschlüsselung** werden die Daten bereits von den Clientbibliotheken verschlüsselt. Azure speichert die Daten verschlüsselt im Ruhezustand, und die Daten werden während des Abrufs entschlüsselt.
 
     Dieses Verschlüsselungsfeature stellt sicher, dass Ihre Daten die globalen Schutzstandards erfüllen. Es eignet sich zum Speichern vertraulicher Informationen, z.B. personenbezogene und finanzielle Daten.
