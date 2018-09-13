@@ -6,20 +6,20 @@ Als Nächstes verwenden Sie Azure CLI zum Erstellen einer Ressourcengruppe und a
 
 1. Starten Sie die Azure-Befehlszeilenschnittstelle, und führen Sie den Anmeldebefehl aus.
 
-    ```bash
+    ```azurecli
     az login
     ```
     Wenn sich in Ihrem Webbrowser keine Azure-Anmeldeseite öffnet, befolgen Sie die Befehlszeilenanweisungen, und geben Sie unter [https://aka.ms/devicelogin](https://aka.ms/devicelogin) einen Autorisierungscode ein.
 
 1. Erstellen Sie eine Ressourcengruppe.
 
-    ```bash
+    ```azurecli
     az group create --location westeurope --name popupResGroup
     ```
 
 1. Überprüfen Sie, ob die Ressourcengruppe erfolgreich erstellt wurde, indem Sie alle Ressourcengruppen in einer Tabelle auflisten.
 
-    ```bash
+    ```azurecli
     az group list --output table
     ```
 
@@ -28,7 +28,7 @@ Als Nächstes verwenden Sie Azure CLI zum Erstellen einer Ressourcengruppe und a
 
 1. Wenn Sie über viele Elemente in der Gruppe verfügen, können Sie nach den Rückgabewerten filtern, indem Sie eine `--query`-Option hinzufügen. Testen Sie den folgenden Befehl:
 
-    ```bash
+    ```azurecli
     az group list --query '[?name == popupResGroup]'
     ```
 
@@ -43,13 +43,13 @@ Beim Ausführen von Web-Apps mithilfe von Azure App Service zahlen Sie für die 
     > [!WARNING]
     > Die Namen der App und des Plans müssen _eindeutig_ sein, fügen Sie den Namen also ein Suffix hinzu, und ersetzen Sie den `<unique>`-Text im folgenden Befehl mit einer Reihe von Zahlen, Ihren Initialen oder einem anderen Text, um sicherzustellen, dass der Name im gesamten Umfang von Azure eindeutig ist. 
 
-    ```bash
+    ```azurecli
     az appservice plan create --name popupapp-<unique> --resource-group popupResGroup --location westeurope
     ```
 
 1. Überprüfen Sie, ob der Serviceplan erfolgreich erstellt wurde, indem Sie alle Pläne in einer Tabelle auflisten.
 
-    ```bash
+    ```azurecli
     az appservice plan list --output table
     ```
 
@@ -58,13 +58,13 @@ Beim Ausführen von Web-Apps mithilfe von Azure App Service zahlen Sie für die 
 Als Nächstes erstellen Sie die Web-App in Ihrem Serviceplan. Sie können den Code zur gleichen Zeit bereitstellen, in diesem Beispiel wird dies jedoch in separaten Schritten durchgeführt.
 
 1. Erstellen Sie die Web-App, und geben Sie den Namen des zuvor erstellten Plans an. **Der Name der App muss wie der des Plans eindeutig sein. Ersetzen Sie den Marker `<unique>` durch Text, damit der Name global eindeutig ist.**
-    ```bash
+    ```azurecli
     az webapp create --name popupapp-<unique> --resource-group popupResGroup --plan popupapp-<unique>
     ```
 
 1. Überprüfen Sie, ob die App erfolgreich erstellt wurde, indem Sie alle Apps in einer Tabelle auflisten.
 
-    ```bash
+    ```azurecli
     az webapp list --output table
     ```
 
@@ -74,7 +74,7 @@ Als Nächstes erstellen Sie die Web-App in Ihrem Serviceplan. Sie können den Co
 
 1. Der letzte Schritt besteht im Bereitstellen von Code über ein GitHub-Repository in die Web-App. Sie verwenden hierzu eine einfache PHP-Seite, die im GitHub-Repository „Azure Samples“ verfügbar ist und „HelloWorld!“ anzeigt, wenn sie ausgeführt wird. Stellen Sie sicher, dass Sie den Namen der Web-App verwenden, die Sie erstellt haben.
 
-    ```bash
+    ```azurecli
     az webapp deployment source config --name popupapp-<unique> --resource-group popupResGroup --repo-url "https://github.com/Azure-Samples/php-docs-hello-world" --branch master --manual-integration
     ```
 

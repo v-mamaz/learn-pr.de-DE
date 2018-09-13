@@ -6,8 +6,6 @@ Azure Storage ist eine cloudbasierte Lösung, die für moderne Geschäftsanforde
 
 ## <a name="benefits-of-using-azure-to-store-data"></a>Vorteile der Verwendung von Azure zum Speichern von Daten
 
-![Vorteile](../media-draft/Benefits.png)
-
 Es folgen einige der Vorteile von Azure Storage:
 
 - **Automatisierte Sicherung und Wiederherstellung:** Dieses Feature verringert das Risiko, dass Ihre Daten verloren gehen, wenn es zu einem unvorhergesehenen Ausfall oder einer Unterbrechung kommt.

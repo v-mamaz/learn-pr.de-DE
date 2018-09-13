@@ -2,8 +2,7 @@ Cloud Computing lässt sich in drei Hauptkategorien untergliedern. Diese müssen
 
 ## <a name="explore-the-three-categories-of-cloud-computing"></a>Lernen Sie die drei Kategorien von Cloud Computing kennen
 
-<!-- TODO: replace video link? -->
-
+<!-- TODO: Verify video -->
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEbs]
 
 ### <a name="infrastructure-as-a-service-iaas"></a>Infrastructure-as-a-Service (IaaS)

@@ -27,6 +27,7 @@ Angesichts der ganzen Schwierigkeiten, die das Unternehmen mit Anwendungsgeheimn
 Als Erstes erstellen Sie einen Tresor, in dem Sie ein Geheimnis speichern.
 
 ### <a name="create-a-resource-group"></a>Erstellen einer Ressourcengruppe
+<!---TODO: Update for sandbox?--->
 
 Erstellen Sie für alle Ressourcen in dieser Einheit eine Ressourcengruppe namens `keyvault-exercise-group`. Am Ende dieses Moduls löschen wir diese Ressourcengruppe, um alles auf einmal zu bereinigen. Wir verwenden `eastus` als Speicherort für alles in dieser Einheit.
 

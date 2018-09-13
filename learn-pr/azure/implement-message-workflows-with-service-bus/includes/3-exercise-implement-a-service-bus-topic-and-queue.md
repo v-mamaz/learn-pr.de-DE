@@ -21,7 +21,7 @@ Führen Sie diese Schritte aus, um einen Service Bus-Namespace mit dem Azure-Por
 
 1. Scrollen Sie auf dem Blatt **Alle Dienste** nach unten zum Abschnitt **INTEGRATION**, und klicken Sie auf **Service Bus**.
 
-    ![Erstellen eines Service Bus-Namespace](../media-draft/3-create-namespace-1.png)
+    ![Erstellen eines Service Bus-Namespace](../media/3-create-namespace-1.png)
 
 1. Klicken Sie oben links auf dem Blatt **Service Bus** auf **Hinzufügen**.
 
@@ -35,7 +35,7 @@ Führen Sie diese Schritte aus, um einen Service Bus-Namespace mit dem Azure-Por
 
 1. Wählen Sie in der Dropdownliste **Standort** einen Standort in Ihrer Nähe aus, und klicken Sie dann auf **Erstellen**. Der neue Service Bus-Namespace wird in Azure erstellt.
 
-    ![Erstellen eines Service Bus-Namespace](../media-draft/3-create-namespace-2.png)
+    ![Erstellen eines Service Bus-Namespace](../media/3-create-namespace-2.png)
 
 ## <a name="create-a-service-bus-queue"></a>Erstellen einer Service Bus-Warteschlange
 
@@ -49,7 +49,7 @@ Nachdem Sie nun über einen Namespace verfügen, können Sie eine Warteschlange 
 
 1. Geben Sie auf dem Blatt **Warteschlange erstellen** im Textfeld **Name** den Namen **salesmessages** ein, und klicken Sie dann auf **Erstellen**. Azure erstellt die Warteschlange in Ihrem Namespace.
 
-    ![Erstellen einer Warteschlange](../media-draft/3-create-queue.png)
+    ![Erstellen einer Warteschlange](../media/3-create-queue.png)
 
 ## <a name="create-a-service-bus-topic-and-subscriptions"></a>Erstellen eines Service Bus-Themas und von Abonnements
 
@@ -61,7 +61,7 @@ Führen Sie diese Schritte aus:
 
 1. Geben Sie auf dem Blatt **Thema erstellen** im Textfeld **Name** den Namen **salesperformancemessages** ein, und klicken Sie dann auf **Erstellen**. Azure erstellt das Thema in Ihrem Namespace.
 
-    ![Erstellen eines Themas](../media-draft/3-create-topic.png)
+    ![Erstellen eines Themas](../media/3-create-topic.png)
 
 1. Klicken Sie nach dem Erstellen des Themas auf dem Blatt **Service Bus-Namespace** unter **Entitäten** auf **Themen**.
 

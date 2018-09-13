@@ -44,6 +44,4 @@ Wir unterteilen dieses Konzept in zwei Teile: *samples-workitems* und *{Name}*. 
 
 Die letzte wichtige Information in diesem Konzept ist der Text *Name*. Der *Name* stellt einen Parameter in Ihrer Azure-Funktion dar, der den Namen der hinzugefügten Datei empfängt. Wenn ich z.B. eine Datei namens *resume.txt* hochlade, empfängt meine Azure-Funktion diesen Wert als Zeichenfolge über einen Parameter namens *Name*.
 
-## <a name="summary"></a>Zusammenfassung
-
 Ein Blobtrigger ruft eine Azure-Funktion auf, wenn er Aktivität an einem bestimmten Speicherort in Ihrem Azure-Blobspeicherkonto feststellt. Sie legen den zu überwachenden Speicherort durch Ändern des Werts **Pfad** im Azure-Portal fest.

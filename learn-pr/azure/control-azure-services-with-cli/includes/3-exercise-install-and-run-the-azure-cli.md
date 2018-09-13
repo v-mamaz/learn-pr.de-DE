@@ -76,7 +76,7 @@ Unter Linux und macOS f체hren Sie die Azure CLI aus, indem Sie eine Bash-Shell �
 
 1. Starten Sie die Azure CLI, und 체berpr체fen Sie Ihre Installation, indem Sie die Versionspr체fung ausf체hren.
 
-    ```bash
+    ```azurecli
     az --version
     ```
 

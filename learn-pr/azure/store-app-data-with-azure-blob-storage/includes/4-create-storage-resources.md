@@ -23,6 +23,7 @@ Der Code, mit dem wir beginnen, lässt sich kompilieren und ausführen, aber die
 Nun richten wir die Speicherinfrastruktur für unsere App ein.
 
 ### <a name="resource-group-and-storage-account"></a>Ressourcengruppe und Speicherkonto
+<!---TODO: Update for sandbox?--->
 
 Zuerst erstellen wir eine Ressourcengruppe, die alle Ressourcen in dieser Einheit enthalten soll. Diese Gruppe werden wir am Ende löschen, um alle erstellten Elemente zu bereinigen. Wir erstellen auch das Speicherkonto, in dem unsere App Blobs speichern soll.
 

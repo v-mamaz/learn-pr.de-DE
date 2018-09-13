@@ -29,7 +29,7 @@ Sie haben sich entschieden, die Web- und Anwendungsebene für Ihre Logistik-App 
     Azure SQL-Datenbank bietet mehrere Preisoptionen. Mit diesen Preisoptionen können Sie Leistung und Kosten gegeneinander abwägen. Sie können mit wenigen Euro im Monat beginnen.
 
 - **Skalieren**
- 
+
     Sie erkennen, dass sich die Transportlogistik-Datenmenge, die Sie speichern müssen, jedes Jahr verdoppelt. Wie viel überschüssige Kapazität sollten Sie bei lokaler Ausführung einplanen?
 
     Mit Azure SQL-Datenbank können Sie die Leistung und Größe Ihrer Datenbank dynamisch anpassen, wenn Ihre Anforderungen sich ändern.
