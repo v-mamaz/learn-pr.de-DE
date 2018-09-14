@@ -6,7 +6,7 @@ Azure bietet viele Möglichkeiten zum Speichern Ihrer Daten. Es stehen mehrere D
 
 Vier dieser Datendienste wurden unter dem Namen _Azure Storage_ zusammengefasst. Zu diesen vier Diensten zählen Azure Blob Storage, Azure Files, Azure Queue Storage und Azure Table Storage. Die folgende Abbildung zeigt die Elemente von Azure Storage.
 
-![Abbildung zur Auflistung von Azure-Datendiensten, die Teil von Azure Storage sind](../media-drafts/2-azure-storage.png)
+![Abbildung zur Auflistung von Azure-Datendiensten, die Teil von Azure Storage sind](../media/2-azure-storage.png)
 
 Diesen vier Diensten wurde besondere Aufmerksamkeit geschenkt, da sie alle primitive, cloudbasierte Speicherdienste darstellen und häufig zusammen in derselben Anwendung verwendet werden.
 
@@ -14,17 +14,17 @@ Diesen vier Diensten wurde besondere Aufmerksamkeit geschenkt, da sie alle primi
 
 Ein _Speicherkonto_ ist ein Container, der eine Reihe von Azure Storage-Diensten zusammen gruppiert. Nur Datendienste von Azure Storage können in einem Speicherkonto enthalten sein (Azure Blob Storage, Azure Files, Azure Queue Storage und Azure Table Storage). Die folgende Abbildung zeigt ein Speicherkonto mit mehreren Datendiensten.
 
-![Abbildung eines Azure Storage-Kontos mit einer gemischten Sammlung von Datendiensten](../media-drafts/2-what-is-a-storage-account.png)
+![Abbildung eines Azure Storage-Kontos mit einer gemischten Sammlung von Datendiensten](../media/2-what-is-a-storage-account.png)
 
 Durch die Kombination von Datendiensten in einem Speicherkonto können Sie diese als Gruppe verwalten. Die Einstellungen, die Sie bei der Erstellung des Kontos angeben, oder die Sie nach der Erstellung ändern, werden auf sämtliche Bereiche im Konto angewendet. Beim Löschen des Speicherkontos werden alle darin gespeicherten Daten gelöscht.
 
 Ein Speicherkonto ist eine Azure-Ressource, die in einer Ressourcengruppe enthalten ist. Die folgende Abbildung zeigt ein Azure-Abonnement, das mehrere Ressourcengruppen enthält, wobei jede Gruppe mindestens ein Speicherkonto umfasst.
 
-![Abbildung eines Azure-Abonnements mit mehreren Ressourcengruppen und Speicherkonten](../media-drafts/2-resource-groups-and-storage-accounts.png)
+![Abbildung eines Azure-Abonnements mit mehreren Ressourcengruppen und Speicherkonten](../media/2-resource-groups-and-storage-accounts.png)
 
 Andere Azure-Datendienste wie Azure SQL-Datenbank und Azure Cosmos DB werden als unabhängige Azure-Ressourcen verwaltet und können nicht in einem Speicherkonto enthalten sein. Die folgende Abbildung zeigt eine typische Anordnung: In Speicherkonten sind zwar Azure Blob Storage, Azure Files, Azure Queue Storage und Azure Table Storage, aber keine weiteren Dienste enthalten.
 
-![Abbildung eines Azure-Abonnements mit Datendiensten, die nicht in einem Speicherkonto platziert werden können](../media-drafts/2-typical-subscription-organization.png)
+![Abbildung eines Azure-Abonnements mit Datendiensten, die nicht in einem Speicherkonto platziert werden können](../media/2-typical-subscription-organization.png)
 
 ## <a name="storage-account-settings"></a>Speicherkontoeinstellungen
 
@@ -50,7 +50,7 @@ Zu den von einem Speicherkonto gesteuerten Einstellungen zählen Folgende:
 
 Ein Speicherkonto stellt eine Sammlung von Einstellungen wie Standort, Replikationsstrategie und Abonnements dar. Sie benötigen ein Speicherkonto für sämtliche Gruppen von Einstellungen, die auf Ihre Daten angewendet werden sollen. Die folgende Abbildung zeigt zwei Speicherkonten, die sich hinsichtlich einer Einstellung unterscheiden. Bereits ein Unterschied macht separate Speicherkonten erforderlich.
 
-![Abbildung zu zwei Speicherkonten mit unterschiedlichen Einstellungen](../media-drafts/2-multiple-storage-accounts.png)
+![Abbildung zu zwei Speicherkonten mit unterschiedlichen Einstellungen](../media/2-multiple-storage-accounts.png)
 
 Die Anzahl von Speicherkonten, die Sie benötigen, wird in der Regel durch die Vielfalt Ihrer Daten, Kostensensitivität und Toleranz hinsichtlich des Verwaltungsaufwands bestimmt.
 

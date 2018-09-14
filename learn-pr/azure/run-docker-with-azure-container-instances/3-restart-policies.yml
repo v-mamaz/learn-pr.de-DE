@@ -2,7 +2,7 @@
 uid: learn.run-docker-containers-aci.3-restart-policy
 metadata:
   title: Steuern des Neustartverhaltens von Azure Container Instances
-  description: Steuern des Neustartverhaltens von Containerinstanzen
+  description: Steuern Sie das Neustartverhalten von Container Instances.
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
