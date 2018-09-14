@@ -1,0 +1,41 @@
+### YamlMime:Module
+uid: learn.create-linux-vm-in-azure
+metadata:
+  title: Erstellen eines virtuellen Linux-Computers in Azure
+  description: In diesem Modul wird erörtert, wie Sie mithilfe des Azure-Portals einen virtuellen Linux-Computer erstellen.
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 772e1b47c18cfbfb5b54e551b75579c18de4ffdc
+  ms.sourcegitcommit: 1aec476e479e92851bc3b5b7795f1200740bc1e5
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43498000"
+abstract: >
+  In diesem Modul lernen Sie Folgendes:
+    - Grundlagen über die Optionen, die für virtuelle Computer in Azure zur Verfügung stehen.
+    - Erstellen eines virtuellen Linux-Computers im Azure Stack-Portal.
+    - Herstellen einer Verbindung mit einem ausgeführten virtuellen Linux-Computer mithilfe von SSH.
+    - Installieren der Software und Ändern der Netzwerkkonfiguration auf einem virtuellen Computer mithilfe des Azure-Portals.
+title: Erstellen eines virtuellen Linux-Computers in Azure
+summary: In diesem Modul wird erörtert, wie Sie mithilfe des Azure-Portals einen virtuellen Linux-Computer erstellen.
+cardDescription: In diesem Modul wird erörtert, wie Sie mithilfe des Azure-Portals einen virtuellen Linux-Computer erstellen.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- administrator
+- developer
+products:
+- Azure
+- virtual machines
+units:
+- learn.create-linux-vm-in-azure.1-introduction
+- learn.create-linux-vm-in-azure.2-create-a-linux-virtual-machine
+- learn.create-linux-vm-in-azure.3-exercise-generate-ssh-key
+- learn.create-linux-vm-in-azure.4-exercise-create-a-vm
+- learn.create-linux-vm-in-azure.5-connect-to-a-linux-virtual-machine
+- learn.create-linux-vm-in-azure.6-exercise-connect-to-a-linux-vm-using-ssh
+- learn.create-linux-vm-in-azure.7-manage-vm
+- learn.create-linux-vm-in-azure.8-exercise-manage-vm
+- learn.create-linux-vm-in-azure.9-summary
+achievement: learn.create-linux-vm-in-azure.badge
