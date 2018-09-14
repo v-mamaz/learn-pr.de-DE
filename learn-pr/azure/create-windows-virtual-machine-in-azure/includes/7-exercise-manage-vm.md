@@ -1,4 +1,4 @@
-Der Server ist nun in der Lage, Videodaten zu verarbeiten. In einem letzten Schritt müssen Sie die Ports öffnen, die die Verkehrsüberwachungskameras verwenden, um Videodateien auf den Server zu laden. 
+Der Server ist nun in der Lage, Videodaten zu verarbeiten. In einem letzten Schritt müssen Sie die Ports öffnen, die die Verkehrsüberwachungskameras verwenden, um Videodateien auf den Server zu laden.
 
 ## <a name="create-a-network-security-group"></a>Erstellen einer Netzwerksicherheitsgruppe
 
@@ -15,7 +15,7 @@ Aufgrund der Angabe, dass Remotedesktopzugriff benötigt wird, sollte Azure eine
 
 1. Geben Sie einen **Name** für Ihre Sicherheitsgruppe an. Auch hier empfiehlt sich die Verwendung einer Namenskonvention. Verwenden Sie z.B. „test-vp-nsg2“ für die zweite Netzwerksicherheitsgruppe zum Testen des Videoprozessors.
 
-1. Wählen Sie das richtige **Abonnement** aus, und verwenden Sie Ihre bereits vorhandene **Ressourcengruppe**.
+1. Wählen Sie die richtigen **Abonnement** und verwenden Ihrer vorhandenen **Ressourcengruppe**, <rgn>[Ressourcengruppennamen Sandkasten]</rgn>.
 
 1. Platzieren Sie sie abschließend am gleichen **Standort** wie den virtuellen Computer bzw. das virtuelle Netzwerk. Dies ist wichtig, da Sie diese Ressource andernfalls nicht anwenden können.
 
@@ -32,25 +32,25 @@ Die Bereitstellung sollte schnell abgeschlossen sein.
     Eingangsseite:
 
     - Der gesamte eingehende Datenverkehr zwischen zwei VNETs wird zugelassen. Auf diese Weise können Ressourcen im VNET miteinander kommunizieren.
-    - Testanforderungen für Azure Load Balancer zur Überprüfung, ob der virtuelle Computer aktiv ist
-    - Jeglicher andere eingehende Datenverkehr wird unterbunden.
+    - Azure Load Balancer sendet Testanforderungen, um zu überprüfen, ob die VM aktiv ist.
+    - Anderer eingehender Datenverkehr wird vollständig unterbunden.
     Ausgangsseite:
     - Der gesamte eingehende Netzwerkdatenverkehr im VNET wird zugelassen.
     - Der gesamte ausgehende Datenverkehr in das Internet wird zugelassen.
-    - Jeglicher andere ausgehende Datenverkehr wird unterbunden.
+    - Anderer ausgehender Datenverkehr wird vollständig unterbunden.
 
 > [!NOTE]
 > Da diese Standardregeln mit hohen Prioritätswerten festgelegt sind, werden sie _zuletzt_ ausgewertet. Diese Regeln können weder geändert noch gelöscht werden. Sie können die Regeln aber _überschreiben_, indem Sie spezifischere Regeln für Ihren Datenverkehr mit einem niedrigeren Prioritätswert erstellen.
 
 1. Klicken Sie im Bereich **Einstellungen** für die Sicherheitsgruppe auf den Abschnitt **Eingangssicherheitsregeln**.
 
-1. Klicken Sie auf **+Hinzufügen**, um eine neue Sicherheitsregel hinzuzufügen.
+1. Klicken Sie auf **+ Hinzufügen**, um eine neue Sicherheitsregel hinzuzufügen.
 
-    ![Hinzufügen einer Sicherheitsregel](../media-drafts/8-add-rule.png)
+    ![Der Screenshot zeigt das Dialogfeld "Eine Sicherheits-Regel hinzufügen".](../media/8-add-rule.png)
 
-    Die Eingabe der Informationen für eine Sicherheitsregel kann auf zwei Arten erfolgen: im einfachen oder im erweiterten Modus. Zwischen diesen beiden Modi kann mithilfe der Schaltfläche im oberen Bereich des Bereichs „Hinzufügen“ gewechselt werden.
+    Es gibt zwei Optionen für die Eingabe der Informationen für eine Sicherheitsregel: im einfachen oder im erweiterten Modus. Zwischen diesen beiden Modi kann mithilfe der Schaltfläche im oberen Bereich des Bereichs „Hinzufügen“ gewechselt werden.
 
-    ![Gegenüberstellung von Basic- und erweiterter Regeleingabe](../media-drafts/8-advanced-create-rule.png)
+    ![Ein Paar von Screenshots der Azure-Portal mit dem Umschalten zwischen Basic "und" erweiterte Regel, mit Eingaben einen Pfeil zwischen den beiden Status der Umschaltfläche hervorgehoben.](../media/8-advanced-create-rule.png)
 
     Im erweiterten Modus kann die Regel vollständig angepasst werden. Wenn Sie allerdings ein bekanntes Protokoll konfigurieren möchten, ist der einfache Modus etwas benutzerfreundlicher.
 
@@ -63,23 +63,23 @@ Die Bereitstellung sollte schnell abgeschlossen sein.
     - Benennen Sie die Regel. Wir verwenden hier den Namen „traffic-cam-ftp-upload-2“.
     - Geben Sie eine Beschreibung für die Regel ein.
 
-1. Kehren Sie zum Modus **Erweitert** zurück. Wie Sie sehen, sind unsere Einstellungen immer noch vorhanden. In diesem Bereich können wir differenziertere Einstellungen erstellen. Wir können beispielsweise die **Quelle** auf eine bestimmte IP-Adresse oder auf einen bestimmten IP-Adressbereich für die Kameras beschränken. Wenn Sie die aktuelle IP-Adresse Ihres lokalen Computers kennen, können Sie das ausprobieren. Behalten Sie andernfalls die Einstellung „Beliebig“ bei, um die Regel testen zu können.
+1. Kehren Sie zum Modus **Erweitert** zurück. Wie Sie sehen, sind unsere Einstellungen immer noch vorhanden. In diesem Bereich können Sie differenziertere Einstellungen erstellen. Sie können beispielsweise die **Quelle** auf eine bestimmte IP-Adresse oder auf einen bestimmten IP-Adressbereich für die Kameras beschränken. Wenn Sie die aktuelle IP-Adresse Ihres lokalen Computers kennen, können Sie das ausprobieren. Behalten Sie andernfalls die Einstellung „Beliebig“ bei, um die Regel zu testen.
 
 1. Klicken Sie auf **Hinzufügen**, um die Regel zu erstellen. Dadurch wird die Eingangsregelliste aktualisiert. Die Regeln werden nach Priorität sortiert und in der angezeigten Reihenfolge ausgewertet.
-    
+
 ## <a name="apply-the-security-group"></a>Anwenden der Sicherheitsgruppe
 
-Zur Erinnerung: Wir können die Sicherheitsgruppe auf eine Netzwerkschnittstelle anwenden, um einen einzelnen virtuellen Computer zu schützen, oder auf ein Subnetz, sodass sie für alle Ressourcen dieses Subnetzes gilt. Der zweite Fall ist gängiger, daher verwenden wir ihn hier. Zu der Ressource in Azure gelangen wir entweder über die Ressource des virtuellen Netzwerks oder indirekt über den virtuellen Computer, der das virtuelle Netzwerk verwendet.
+Zur Erinnerung: Eine Sicherheitsgruppe lässt sich auf eine Netzwerkschnittstelle anwenden, um einen einzelnen virtuellen Computer zu schützen, oder auf ein Subnetz, um alle Ressourcen dieses Subnetzes zu schützen. Der zweite Fall ist gängiger, daher verwenden wir ihn hier. Wir können auf diese Ressource in Azure entweder über virtual Network-Ressource bzw. verwendet die indirekt über den virtuellen Computer im virtuelle Netzwerk.
 
 1. Wechseln Sie zum Bereich **Übersicht** für den virtuellen Computer. Den virtuellen Computer finden Sie unter **Alle Ressourcen**.
 
-1. Klicken Sie im Abschnitt **Einstellungen** auf **Netzwerk**.
+1. Klicken Sie im Abschnitt **Einstellungen** auf das Element **Netzwerk**.
 
-    ![Element „Netzwerk“ in den Einstellungen des virtuellen Computers](../media-drafts/8-network-settings.png)
+    ![Der Screenshot zeigt die Details des Netzwerks Elements in den Einstellungen des virtuellen Computers mit der Netzwerksicherheitsgruppe angewendet.](../media/8-network-settings.png)
 
 1. In den Netzwerkeigenschaften finden Sie Informationen zum Netzwerk des virtuellen Computers – einschließlich **Virtuelles Netzwerk/Subnetz**. Hierbei handelt es sich um einen klickbaren Link, über den Sie zu der Ressource gelangen. Klicken Sie auf den Link, um das virtuelle Netzwerk zu öffnen. Dieser Link steht _auch_ im Bereich **Übersicht** des virtuellen Computers zur Verfügung. Beide Links öffnen die **Übersicht** des virtuellen Netzwerks.
 
-1. Klicken Sie im Abschnitt **Einstellungen** auf **Subnetze**.
+1. Klicken Sie im Abschnitt **Einstellungen** auf das Element **Subnetze**.
 
 1. Hier sollte ein einzelnes Subnetz (Standard) definiert sein, das zuvor zusammen mit dem virtuellen Computer und dem virtuellen Netzwerk erstellt wurde. Klicken Sie auf das Listenelement, um die Details zu öffnen.
 
@@ -95,15 +95,15 @@ Im nächsten Schritt überprüfen wir die Änderung.
 
 1. Kehren Sie zum Bereich **Übersicht** für den virtuellen Computer zurück. Den virtuellen Computer finden Sie unter **Alle Ressourcen**.
 
-1. Klicken Sie im Abschnitt **Einstellungen** auf **Netzwerk**.
+1. Klicken Sie im Abschnitt **Einstellungen** auf das Element **Netzwerk**.
 
-1. Über den Link **Effektive Sicherheitsregeln im Bereich **Übersicht** für das Netzwerk können Sie schnell überprüfen, wie Regeln ausgewertet werden. Klicken Sie auf den Link, um die Analyse zu öffnen, und vergewissern Sie sich, dass Ihre FTP-Regel angezeigt wird.
+1. Über den Link **Effektive Sicherheitsregeln** im Bereich **Übersicht** für das Netzwerk können Sie schnell überprüfen, wie Regeln ausgewertet werden. Klicken Sie auf den Link, um die Analyse zu öffnen, und vergewissern Sie sich, dass Ihre FTP-Regel angezeigt wird.
 
-    ![Effektive Sicherheitsregeln für unser Netzwerk](../media-drafts/8-effective-rules.png)
+    ![Der Screenshot zeigt die effektiven Sicherheitsregeln für unser Netzwerk.](../media/8-effective-rules.png)
 
-1. Wenn Sie die FTP-Serverrolle installiert haben, sollten Sie nun eine Verbindung mit dem FTP-Endpunkt herstellen können. Probieren Sie es aus!
+1. Mit dieser Regel wird mit einem FTP-Server herstellen können; Wenn wir hatten die FTP-Worker-Rolle hinzugefügt und konfiguriert Ordner, würden Sie einen FTP-Client zu verwenden, um mit dem Server herstellen können.
 
-## <a name="one-more-thing"></a>Noch etwas...
+## <a name="one-more-thing"></a>Anmerkung:
 
 Die richtige Implementierung von Sicherheitsregeln ist nicht immer ganz einfach. Bei der Anwendung dieser neuen Sicherheitsgruppe kann z.B. der Fehler auftreten, dass kein Remotedesktopzugriff mehr vorhanden ist. Zur Behebung dieses Problems können Sie der Sicherheitsgruppe eine weitere Regel hinzufügen, um den RDP-Zugriff zu unterstützen. Achten Sie darauf, die eingehenden TCP/IP-Adressen für die Regel auf Ihre eigenen Adressen zu beschränken.
 

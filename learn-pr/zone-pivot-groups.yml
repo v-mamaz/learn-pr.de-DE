@@ -1,38 +1,38 @@
 ### YamlMime:ZonePivotGroups
 groups:
-- id: platform
-  title: Platform
-  prompt: Choose your platform
-  pivots:
-    - id: linux
-      title: Linux
-    - id: macos
-      title: Mac
-    - id: windows
-      title: Windows
-- id: azure-interface
-  title: Shell
-  prompt: Choose your shell
-  pivots:
-    - id: bash
-      title: Bash
-    - id: powershell
-      title: PowerShell
-    - id: portal
-      title: Azure Portal
-- id: dev-lang-csharp-javascript
-  title: Development language
-  prompt: Choose your development language
-  pivots:
-    - id: csharp
-      title: C#
-    - id: javascript
-      title: JavaScript
-- id: platform-cloud
-  title: Platform
-  prompt: Choose which platform you want to run in the cloud
-  pivots:
-    - id: windows-cloud
-      title: Windows
-    - id: linux-cloud
-      title: Linux
+  - id: platform
+    title: Plattform
+    prompt: Wählen Sie Ihre Plattform
+    pivots:
+      - id: linux
+        title: Linux
+      - id: macos
+        title: Mac
+      - id: windows
+        title: Windows
+  - id: azure-interface
+    title: Shell
+    prompt: Wählen Sie die shell
+    pivots:
+      - id: bash
+        title: Bash
+      - id: powershell
+        title: PowerShell
+      - id: portal
+        title: Azure-Portal
+  - id: dev-lang-csharp-javascript
+    title: Bevorzugte Programmiersprache
+    prompt: Wählen Sie Ihre bevorzugte Programmiersprache
+    pivots:
+      - id: csharp
+        title: 'C#'
+      - id: javascript
+        title: JavaScript
+  - id: platform-cloud
+    title: Plattform
+    prompt: 'Wählen Sie die Plattform, die in der Cloud ausgeführt werden soll'
+    pivots:
+      - id: windows-cloud
+        title: Windows
+      - id: linux-cloud
+        title: Linux

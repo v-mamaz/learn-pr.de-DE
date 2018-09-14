@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.5-encryption
-title: Encryption
+title: Verschlüsselung
 metadata:
-  title: Encryption
-  description: In this unit we'll discuss how to use encryption to secure your architecture
+  title: Verschlüsselung
+  description: 'In dieser Einheit erörtern wir, wie Sie die Verschlüsselung verwenden, um Ihre Architektur zu schützen.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,27 +13,27 @@ durationInMinutes: 5
 content: |
   [!include[](includes/5-encryption.md)]
 quiz:
-  title: 'Knowledge Check - Encryption'
+  title: 'Wissenstest: Verschlüsselung'
   questions:
-  - content: 'Only Windows virtual machines can use Azure Disk Encryption'
-    choices:
-    - content: 'True'
-      isCorrect: false
-      incorrectExplanation: 'Azure Disk Encryption is available for both Windows and Linux virtual machines.'
-    - content: 'False'
-      isCorrect: true
-      correctExplanation: 'Azure Disk Encryption is available for both Windows and Linux virtual machines.'
-  - content: 'When classifying data, which of the following is a factor when determining its classification?'
-    choices:
-    - content: 'Level of risk posed to customers if exposed'
-      isCorrect: true
-      correctExplanation: 'The level of risk posed to customers if data is exposed is a key factor in its classification.'
-    - content: 'Method of data transport'
-      isCorrect: false
-      incorrectExplanation: 'The method of data transport is important once data has been classified, but is not a factor in determining its classification.'
-    - content: 'Whether the data is stored on virtual machines or in a database'
-      isCorrect: false   
-      incorrectExplanation: 'The location of storage may be dependant on the classification of data, but is not a factor when determining the classification.' 
-    - content: 'The amount of data stored'
-      isCorrect: false
-      incorrectExplanation: 'The amount of data being stored is irrelevant in its classification.'
+    - content: Nur virtuelle Windows-Computer können Azure Disk Encryption verwenden.
+      choices:
+        - content: Richtig
+          isCorrect: false
+          incorrectExplanation: Azure Disk Encryption ist für virtuelle Computer sowohl Windows und Linux verfügbar.
+        - content: Falsch
+          isCorrect: true
+          correctExplanation: Azure Disk Encryption ist für virtuelle Computer sowohl Windows und Linux verfügbar.
+    - content: 'Beim Klassifizieren von Daten, die welche der folgenden Faktor ist, wenn Sie ihre Klassifizierung zu ermitteln?'
+      choices:
+        - content: 'Risikostufe für Kunden, wenn verfügbar gemacht'
+          isCorrect: true
+          correctExplanation: 'Die Ebene der Risiken für Kunden, wenn Daten verfügbar gemacht werden ist ein wichtiger Faktor in seiner Klassifizierung.'
+        - content: Datentransportmethode
+          isCorrect: false
+          incorrectExplanation: 'Die Methode der Datenübertragung ist wichtig, sobald Daten klassifiziert wurde hat, aber es kein Faktor ist bei der Bestimmung seiner Klassifizierung.'
+        - content: Ob die Daten auf einem virtuellen Computer oder in einer Datenbank gespeichert werden
+          isCorrect: false
+          incorrectExplanation: 'Der Speicherort des Speichers hängt von der Klassifizierung der Daten ist möglicherweise, aber es ist kein Faktor beim Bestimmen der klassifizierungs.'
+        - content: Menge der gespeicherten Daten
+          isCorrect: false
+          incorrectExplanation: Die Menge der gespeicherten Daten ist in der Klassifizierung nicht relevant.

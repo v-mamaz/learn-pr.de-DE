@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-db-for-postgresql.server-security-considerations
-title: Server security considerations
+title: Überlegungen zur Sicherheit der Server
 metadata:
-  title: Server security considerations
-  description: You have a number of options to restrict access to your Azure Database for PostgreSQL server and databases. See how to configure the Azure Database for PostgreSQL connection security settings.
+  title: Überlegungen zur Sicherheit der Server
+  description: 'Sie haben eine Reihe von Optionen, um den Zugriff auf Ihren Azure Database for PostgreSQL-Server und Datenbanken zu beschränken. Finden Sie unter Vorgehensweise: Konfigurieren von Azure Database for PostgreSQL Einstellungen der verbindungssicherheit.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

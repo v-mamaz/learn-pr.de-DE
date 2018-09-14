@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.host-a-web-application-with-azure-app-service.5-exercise-create-an-asp.net-core-web-application-on-linux
-title: Exercise - Create an ASP.NET Core application on Linux
+title: Übung – Erstellen einer ASP.NET Core-Anwendung unter Linux
 metadata:
-  title: Exercise - Create an ASP.NET Core application on Linux
-  description: Exercise - Create an ASP.NET Core application on Linux
+  title: Übung – Erstellen einer ASP.NET Core-Anwendung unter Linux
+  description: Übung – Erstellen einer ASP.NET Core-Anwendung unter Linux
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

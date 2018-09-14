@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-azure-virtual-machines.5-high-availability
-title: Manage the availability of your Azure VMs
+title: Verwalten der Verfügbarkeit von virtuellen Azure-Computern
 metadata:
-  title: Manage the availability of your Azure VMs
-  description: Manage the availability of your Azure VMs
+  title: Verwalten der Verfügbarkeit von virtuellen Azure-Computern
+  description: Verwalten der Verfügbarkeit von virtuellen Azure-Computern
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

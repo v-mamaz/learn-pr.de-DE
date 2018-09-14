@@ -1,0 +1,53 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-iot-devices.4-summary
+metadata:
+  title: Zusammenfassung
+  description: Zusammenfassung
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Zusammenfassung
+durationInMinutes: 7
+content: |
+  [!include[](includes/4-summary.md)]
+quiz:
+  title: Wissenstest - Verwalten von IoT-Geräten als IT-Administrator
+  questions:
+    - content: 'IoT Hub ist ein Azure-Dienst, mit dem Sie umfangreiche Telemetriedaten von Ihren Geräten in der Cloud erfassen können, um sie zu speichern oder zu verarbeiten.'
+      choices:
+        - content: Richtig
+          isCorrect: true
+          correctExplanation: Richtig.
+        - content: Falsch
+          isCorrect: false
+          incorrectExplanation: Falsche.
+    - content: 'Die beste IoT-Möglichkeit für IT-Betrieb ist, in dem von den folgenden Bereichen?'
+      choices:
+        - content: Aviation
+          isCorrect: false
+          incorrectExplanation: Falsche.
+        - content: Datensicherheit
+          isCorrect: true
+          correctExplanation: Richtig.
+        - content: Bioengineering
+          isCorrect: false
+          incorrectExplanation: Falsche.
+        - content: Automotive
+          isCorrect: false
+          incorrectExplanation: Falsche.
+    - content: Standardmäßig ist nicht dem von einem der freigegebenen Zugriffsrichtlinien erstellt?
+      choices:
+        - content: iothubowner
+          isCorrect: false
+          incorrectExplanation: Diese Richtlinie wird standardmäßig erstellt.
+        - content: service
+          isCorrect: false
+          incorrectExplanation: Diese Richtlinie wird standardmäßig erstellt.
+        - content: device
+          isCorrect: false
+          incorrectExplanation: Diese Richtlinie wird standardmäßig erstellt.
+        - content: registryWrite
+          isCorrect: true
+          correctExplanation: Es gibt keine entsprechende Richtlinie als "registrywrite".

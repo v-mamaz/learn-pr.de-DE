@@ -11,7 +11,7 @@ Die Java-Empfängeranwendung, die Sie in dieser Einheit konfigurieren, speichert
 1. Erstellen Sie in der Ressourcengruppe mit dem folgenden Befehl ein Speicherkonto (Allgemein V2):
 
     ```azurecli
-    az storage account create --name <storage account name> --resource-group <resource group name>  --location <location> --sku Standard_RAGRS --encryption blob
+    az storage account create --name <storage account name> --resource-group <rgn>[Sandbox resource group name]</rgn>  --location <location> --sku Standard_RAGRS --encryption blob
     ```
 
     |Parameter      |Beschreibung|
@@ -23,7 +23,7 @@ Die Java-Empfängeranwendung, die Sie in dieser Einheit konfigurieren, speichert
 1. Listen Sie mit dem folgenden Befehl alle Zugriffsschlüssel auf, die Ihrem Speicherkonto zugeordnet sind:
 
     ```azurecli
-    az storage account keys list --account-name <storage account name> --resource-group <resource group name>
+    az storage account keys list --account-name <storage account name> --resource-group <rgn>[Sandbox resource group name]</rgn>
     ```
 
     |Parameter      |Beschreibung|
@@ -36,7 +36,7 @@ Die Java-Empfängeranwendung, die Sie in dieser Einheit konfigurieren, speichert
 1. Zeigen Sie die Verbindungszeichenfolge für Ihr Speicherkonto mit dem folgenden Befehl ein:
 
     ```azurecli
-    az storage account show-connection-string -n <storage account name> -g <resource group name>
+    az storage account show-connection-string -n <storage account name> -g <rgn>[Sandbox resource group name]</rgn>
     ```
 
     |Parameter      |Beschreibung|
@@ -55,8 +55,6 @@ Die Java-Empfängeranwendung, die Sie in dieser Einheit konfigurieren, speichert
 ## <a name="clone-the-event-hubs-github-repository"></a>Klonen des GitHub-Repositorys „Event Hubs“
 
 Klonen Sie das GitHub-Repository „Event Hubs“, indem Sie die folgenden Schritte ausführen.
-
-1. Melden Sie sich bei Azure Cloud Shell (Bash) an.
 
 1. Die Quelldateien für die Anwendung, die Sie in dieser Einheit erstellen, befinden sich in einem [GitHub-Repository](https://github.com/Azure/azure-event-hubs). Stellen Sie mit den folgenden Befehlen sicher, dass Sie sich in Ihrem Startverzeichnis in Cloud Shell befinden, und klonen Sie dann dieses Repository:
 

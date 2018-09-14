@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.execute-azure-function-with-triggers.2-determine-best-trigger
-title: Determine the best trigger for your Azure function 
+title: Bestimmen des besten Triggers für Ihre Azure-Funktion
 metadata:
-  title: Determine the best trigger for your Azure function 
-  description: Determine the best trigger for your Azure function 
+  title: Bestimmen des besten Triggers für Ihre Azure-Funktion
+  description: Bestimmen des besten Triggers für Ihre Azure-Funktion
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

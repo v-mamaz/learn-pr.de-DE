@@ -9,43 +9,31 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 2f38fea8367aeac95b8bd0593b2132f96989700f
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: de-DE
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44234103"
 durationInMinutes: 7
-content: >
+content: |
   [!include[](includes/3-design-organization-strategy.md)]
 quiz:
-  title: 'Wissenstest: Blob Storage'
+  title: Wissenstest
   questions:
-  - content: Welcher Blobtyp eignet sich für die meisten Speicherszenarios am besten?
-    choices:
-    - content: Byteblobs
-      isCorrect: false
-      incorrectExplanation: „Byteblobs“ sind kein Blobtyp.
-    - content: Seitenblobs
-      isCorrect: false
-      incorrectExplanation: Seitenblobs werden für eine große Anzahl Lese- und Schreibvorgänge mit wahlfreiem Zugriff verwendet, z.B. bei der Verwendung durch einen virtuellen Azure-Computer zum Speichern einer virtuellen Festplatte.
-    - content: Blockblobs
-      isCorrect: true
-      correctExplanation: Blockblobs sind in der Regel die beste Wahl für allgemeine Speicheranforderungen.
-    - content: Anfügeblobs
-      isCorrect: false
-      incorrectExplanation: Anfügeblobs unterstützen nur das Anfügen neuer Daten. Das Aktualisieren oder Löschen vorhandener Daten wird nicht unterstützt.
-  - content: Blobs ermöglichen das *unstrukturierte* Speichern von Daten. Was bedeutet *unstrukturiert*?
-    choices:
-    - content: Blobs können weder organisiert noch benannt werden. Sie sind nur Sammlungen von Bytes.
-      isCorrect: false
-      incorrectExplanation: Die Bezeichnung „unstrukturiert“ bezieht sich auf die Daten *in den Blobs*, nicht auf die Organisation der Blobs innerhalb eines Speicherkontos.
-    - content: Es gibt keine Einschränkungen hinsichtlich der Art von Daten, die in Blobs gespeichert werden kann.
-      isCorrect: true
-      correctExplanation: Blobs geben keinerlei Struktur für die Daten vor, d.h. dass Ihre App jede Art von Daten in Blobs speichern kann.
-    - content: Blobs können keine strukturierten Daten, wie z.B. JSON oder XML, enthalten.
-      isCorrect: false
-      incorrectExplanation: Blobs *können* zwar strukturierte Daten enthalten, doch es gibt keinerlei Interaktion zwischen Blob Storage und diesen Daten. Es liegt in der Zuständigkeit der App, die Struktur von Blobinhalten zu erkennen und entsprechend zu verarbeiten.
-    - content: Aus Blobs heruntergeladene Daten werden nach dem Zufallsprinzip organisiert und erfordern eine spezielle Clientbibliothek, um sie sinnvoll zu organisieren.
-      isCorrect: false
-      incorrectExplanation: Jegliche Bearbeitung von Blobs, einschließlich des Herunterladens von Blobinhalten, kann ohne Clientbibliothek durch die direkte Verwendung der REST-API erfolgen. Aus Blobs heruntergeladene Daten werden nicht nach dem Zufallsprinzip organisiert.
+    - content: Welche Art von BLOBs für die meisten Storage-Szenarien am besten geeignet ist?
+      choices:
+        - content: Byteblobs
+          isCorrect: false
+        - content: Seitenblobs
+          isCorrect: false
+        - content: Blockblobs
+          isCorrect: true
+          correctExplanation: Block-Blobs können hochgeladen und aufgrund der Struktur ihrer blockbasierte schnell heruntergeladen werden.
+        - content: Anfügeblobs
+          isCorrect: false
+    - content: Blobs ermöglichen das *unstrukturierte* Speichern von Daten. Was bedeutet *unstrukturiert*?
+      choices:
+        - content: Blobs können weder organisiert noch benannt werden. Sie sind nur Sammlungen von Bytes.
+          isCorrect: false
+        - content: 'Es gibt keine Einschränkungen für den Typ der Daten, die Sie in Blobs speichern können.'
+          isCorrect: true
+          correctExplanation: 'BLOBs sind die Grenzwerte für jede Struktur für Ihre Daten, was bedeutet, dass jede Art von Daten in Ihrer Anwendung in ein Blob gespeichert werden kann.'
+        - content: 'Blobs können keine strukturierten Daten, wie z.B. JSON oder XML, enthalten.'
+          isCorrect: false
+        - content: Daten aus Blobs heruntergeladen ist nach dem Zufallsprinzip organisiert und erfordert eine Clientbibliothek zu analysieren.
+          isCorrect: false

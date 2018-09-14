@@ -1,4 +1,4 @@
-Azure Key Vault ist ein *Geheimnisspeicher*: ein zentraler Clouddienst zum Speichern von Anwendungsgeheimnissen. Key Vault hilft, die oben genannten Szenarios zu verhindern, indem Anwendungsgeheimnisse an einem zentralen Ort gespeichert werden und sicherer Zugriff, eine Berechtigungssteuerung und eine Zugriffsprotokollierung ermöglicht werden.
+Azure Key Vault ist ein *Geheimnisspeicher*: ein zentraler Clouddienst zum Speichern von Anwendungsgeheimnissen. Key Vault hilft Ihrer Anwendung Geheimnisse in einem zentralen Ort sorgen und Bereitstellen von sicherem Zugriff, Berechtigungen-Steuerelement, zu kontrollieren und benutzerzugriffsprotokollierung.
 
 Folgende Hauptvorteile ergeben sich aus der Nutzung von Key Vault:
 

@@ -1,4 +1,4 @@
-In dieser Einheit installieren Sie Eclipse auf Ihrem lokalen Computer. Anschließend installieren Sie das Azure-Toolkit, um die Entwicklung von Java-Anwendungen mit Azure-Integration vorzubereiten. Die Installation erfolgt schnell und einfach. Am Ende der Übung ist alles eingerichtet, was Sie für Ihre erste Java-Anwendung benötigen, für die Sie die Features und Dienste von Azure nutzen können.
+In dieser Einheit installieren Sie Eclipse und das Azure-Toolkit auf dem lokalen Computer. Die Installation erfolgt schnell und einfach. Am Ende der Übung müssen alles, was Sie Sie zum Erstellen Ihrer ersten Java-Anwendung unter Azure benötigen.
 
 ## <a name="install-eclipse-ide"></a>Installieren der Eclipse-IDE
 
@@ -8,7 +8,7 @@ In dieser Einheit installieren Sie Eclipse auf Ihrem lokalen Computer. Anschlie�
 
     1. Doppelklicken Sie unter Windows auf die heruntergeladene Datei.
 
-    1. Entpacken Sie den Installer unter macOS und Linux aus der heruntergeladenen Datei. Starten Sie den Installer anschließend.
+    1. Entpacken Sie unter MacOS und Linux das Installationsprogramm aus der heruntergeladenen Datei, und führen Sie ihn aus.
 
         > [!NOTE]
         > Wenn das Java Development Kit nicht vorhanden ist, fordert der Installer Sie möglicherweise dazu auf, dieses zu installieren.
@@ -47,8 +47,8 @@ Die Installation des Azure-Toolkits verläuft unter Windows, macOS und Linux gle
 
 1. Starten Sie Eclipse neu (falls erforderlich).
 
-1. Überprüfen Sie die Installation des Azure-Toolkits, indem Sie sicherstellen, dass die Menüoption **Tools** > **Azure** in Eclipse vorhanden ist.
+1. Überprüfen der Installation für Azure-Toolkit indem überprüft wird, die Sie finden eine **Tools** > **Azure** Menüoption in Eclipse.
 
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser Einheit haben Sie Eclipse für Java installiert und die Integration mit Azure-Diensten und -Produkten vorbereitet. Die Installation erfolgt schnell und einfach, wodurch Eclipse für die Java-Entwicklung mit Integration in Clouddienste optimal geeignet ist.
+In dieser Einheit müssen Sie Eclipse installiert und vorbereitet, damit die Integration mit Azure-Dienste und Produkte nutzen.

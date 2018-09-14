@@ -9,11 +9,43 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: ce5e1852bec8bd2fae48d5abc05ccc41c6ddd368
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: de-DE
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44233219"
 durationInMinutes: 3
-content: '[!include[](includes/7-summary.md)]'
+content: |
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: 'Wissenstest: Zwischenspeichern und Leistung in Azure Storage und Datenträger'
+  questions:
+    - content: Welche Option zum Zwischenspeichern ist eine gute Wahl für Schreibintensive Vorgänge wie das Speichern von Protokolldateien?
+      choices:
+        - content: Schreibgeschützt
+          isCorrect: false
+          incorrectExplanation: 'Nur-Lese Zwischenspeichern eignet sich gut für Datenträger, einschließlich der TempDB-Datendateien. Allerdings werden Schreibintensive Vorgänge Leistung nicht verbessert und möglicherweise sogar bewirken, dass eine geringfügige Abnahme der Leistung.'
+        - content: Lesen/Schreiben
+          isCorrect: false
+          incorrectExplanation: 'Dies ist eine gute Option, wenn Ihre app ordnungsgemäß schreiben zwischengespeicherte Daten auf beständige Datenträger bei Bedarf.'
+        - content: Keine
+          isCorrect: true
+          correctExplanation: Schreibintensive Vorgänge profitieren nicht in der Regel von der Zwischenspeicherung. "None" ist wahrscheinlich die beste Wahl für einen dedizierten Datenträger in Protokolldateien.
+    - content: 'Für welche Art von Datenträger startet Azure den virtuellen Computer neu, um Cachetyp ändern?'
+      choices:
+        - content: Daten
+          isCorrect: false
+          incorrectExplanation: Durch Ändern der cacheeinstellung eines Datenträgers wird getrennt und erneut angefügt wird der Zieldatenträger jedoch nicht den virtuellen Computer neu gestartet.
+        - content: Betriebssystem (OS)
+          isCorrect: true
+          correctExplanation: Ändern die cacheeinstellung des Betriebssystem-Datenträgers erfordert einen Neustart des virtuellen Computers.
+        - content: Temporär
+          isCorrect: false
+          incorrectExplanation: Sie können Optionen zum Zwischenspeichern auf einem temporären Datenträger nicht ändern.
+        - content: Zonenredundanter Speicher (ZRS)
+          isCorrect: false
+          incorrectExplanation: Storage Premium-Konto unterstützt nicht ZRS.
+    - content: 'Nehmen wir an, dass Sie Azure PowerShell zum Verwalten einer virtuellen Maschine verwenden. Haben Sie ein lokales Objekt, das den virtuellen Computer darstellt, und Sie haben mehrere Änderungen vorgenommen, auf das lokale Objekt. Welches PowerShell-Cmdlet, würden Sie verwenden diese lokalen Änderungen mit dem eigentlichen virtuellen Computer anwenden?'
+      choices:
+        - content: Update-AzureRmVM
+          isCorrect: true
+          correctExplanation: Dieses Cmdlet aktualisiert den Zustand des virtuellen Azure-Computer in den Zustand von einem Objekt virtueller Maschinen.
+        - content: Set-AzureRmVM
+          isCorrect: false
+        - content: New-AzureRmVM
+          isCorrect: false

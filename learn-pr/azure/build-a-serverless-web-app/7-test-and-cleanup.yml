@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.build-a-serverless-web-app.7-test-and-cleanup
-title: Test and cleanup
+title: Test und Cleanup
 metadata:
-  title: Test and cleanup
-  description: Test and cleanup
+  title: Test und Cleanup
+  description: Test und Cleanup
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

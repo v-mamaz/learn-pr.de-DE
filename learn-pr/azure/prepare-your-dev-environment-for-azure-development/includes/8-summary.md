@@ -1,1 +1,1 @@
-In diesem Modul haben Sie Ihre Entwicklungsumgebung vorbereitet, indem Sie eine für Sie geeignete IDE installiert haben. Sie haben auch das Azure-Tool in dieser IDE installiert, um das direkte Veröffentlichen von Inhalt in den verschiedenen Azure-Diensten zu optimieren.
+In diesem Modul haben Sie Ihre Entwicklungsumgebung vorbereitet, indem Sie eine für Sie geeignete IDE installiert haben. Installation auch das Azure-Toolkit in diese IDE, die Veröffentlichung von Inhalten direkt an die verschiedenen Azure-Dienste zu optimieren.

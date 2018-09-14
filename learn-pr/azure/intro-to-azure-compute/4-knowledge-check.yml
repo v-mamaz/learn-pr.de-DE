@@ -4,37 +4,23 @@ title: Wissenstest
 metadata:
   title: Wissenstest
   description: Wissenstest zum Modul „Einführung in Azure Compute“
-  ms.openlocfilehash: 45f6d679f668ab9a585aca93395796d49fe5a69e
-  ms.sourcegitcommit: bcd9fd78122da4fc1545c7923a5fc0cd0a8abe96
-  ms.translationtype: HT
-  ms.contentlocale: de-DE
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43152178"
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 durationInMinutes: 2
-content: >
+content: |
   [!include[](includes/4-knowledge-check.md)]
 quiz:
-  title: Wissenstest zur Einführung in Azure Compute
+  title: Wissenstest
   questions:
-  - content: Stellen Sie sich vor, dass Ihr Astronomieteam klein ist und dass die Mitglieder des Teams zwar ausgezeichnete Astronomen und Programmierer sind, aber nur über grundlegendes Wissen zur Server- und Webverwaltung verfügen. Für welche der folgenden Optionen sollten Sie sich entscheiden?
-    choices:
-    - content: Azure Kubernetes Service (AKS)
-      isCorrect: false
-      incorrectExplanation: Kubernetes erfordert fortgeschrittenes Wissen zur Containerorchestrierung.
-    - content: Service Fabric
-      isCorrect: false
-      incorrectExplanation: Die Arbeit der Astronomen muss nicht weit oder global verteilt werden.
-    - content: App Service
-      isCorrect: true
-      correctExplanation: Da der Dienst vollständig verwaltet ist und die Anwendungen skaliert, kann sich das Team auf das Schreiben seiner spezialisierten Software konzentrieren.
-  - content: Stellen Sie sich vor, dass Ihr Astronomieteam astronomische Berechnungen vornehmen muss, die Stunden oder sogar Tage in Anspruch nehmen. Die parallele Ausführung macht kaum einen Unterschied. Für welche der folgenden Optionen sollten Sie sich entscheiden?
-    choices:
-    - content: Cloud Services
-      isCorrect: false
-      incorrectExplanation: Nicht alle astronomischen Berechnungen können parallel ausgeführt werden, weshalb das Bereitstellen zusätzlicher VMs die Leistung nur geringfügig verbessert.
-    - content: Azure Batch
-      isCorrect: true
-      correctExplanation: Bestimmte astronomische Berechnungen erfordern die Leistung eines Supercomputers.
-    - content: Container Instances
-      isCorrect: false
-      incorrectExplanation: Möglicherweise können nicht alle astronomischen Berechnungen parallel ausgeführt werden, weshalb das Bereitstellen zusätzlicher Container die Leistung nur geringfügig verbessert.
+    - content: 'Ihr Astronomie-Team hat eine Reihe von bildverarbeitung Anwendungen, die viele der rechenleistung und Speicher zum Ausführen benötigen. Möchten Sie diese Anwendungen in Azure schnell zu migrieren. Für welche der folgenden Optionen sollten Sie sich entscheiden?'
+      choices:
+        - content: Cloud Services
+          isCorrect: false
+        - content: Azure Batch
+          isCorrect: true
+          correctExplanation: 'Azure Batch bietet auftragsplanung und datenverarbeitungsverwaltung auftragsverwaltung des Cloud-Maßstab, mit der Möglichkeit, Dutzende, Hunderte oder Tausende von VMs zu skalieren.'
+        - content: Container Instances
+          isCorrect: false

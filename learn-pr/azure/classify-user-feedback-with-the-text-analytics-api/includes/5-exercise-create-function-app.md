@@ -1,87 +1,77 @@
-To build our solution, we'll need to host some code.  An Azure Functions function app is a good place to host our logic. 
+ Eine Funktions-app stellt einen Kontext für die Verwaltung und Ausführung Ihrer Funktionen bereit. Wir erstellen eine Funktionen-app, und fügen Sie eine Funktion hinzu. 
 
-## Create a Function App to host our function
+## <a name="create-a-function-app-to-host-our-function"></a>Erstellen einer Funktionen-App zum Hosten unserer-Funktion
 
-[!INCLUDE [resource-group-note](./rg-notice.md)]
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/?azure-portal=true) an.
 
-1. Make sure you are signed in to the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true) with your Azure account.
+1. Wählen Sie die **erstellen Sie eine Ressource** Schaltfläche finden Sie auf der linken oberen Ecke des Azure-Portal, klicken Sie dann auf **Compute** > **Funktions-App**.
 
-1. Select the **Create a resource** button found on the upper left-hand corner of the Azure portal, then select **Compute** > **Function App**.
+1. Geben Sie die Einstellungen der Funktionen-app wie in der folgenden Tabelle angegeben.
 
-1. Enter the function app settings as specified in the following table.
-
-
-    | Setting      | Suggested value  | Description                                        |
+    | Einstellung      | Empfohlener Wert  | Beschreibung                                        |
     | ------------ |  ------- | -------------------------------------------------- |
-    | **App name** | Globally unique name | Name that identifies your new function app. Valid characters are `a-z`, `0-9`, and `-`.  | 
-    | **Subscription** | Your subscription | The subscription under which this new function app is created. | 
-    | **Resource Group**|  [!INCLUDE [resource-group-name](./rg-name.md)] | Name for the  resource group in which to create your function app.<br/><br/>Make sure to select **Use existing** and use the resource group that we created in the last exercise. That way, all resource we made in this module are kept together. | 
-    | **OS** | Windows | The operating system that hosts the function app.  |
-    | **Hosting** |   Consumption plan | Hosting plan that defines how resources are allocated to your function app. In the default **Consumption Plan**, resources are added dynamically as required by your functions. In this [serverless](https://azure.microsoft.com/overview/serverless-computing/) hosting, you only pay for the time your functions run.   |
-    | **Location** | West US | Choose a [region](https://azure.microsoft.com/regions/) near you or near other services your functions access.<br/><br/>Select the same region that you used when creating the Text Analytics API account in the last exercise. |
-    | **Storage account** |  Globally unique name |  Name of the new storage account used by your function app. Storage account names must be between 3 and 24 characters in length and may contain numbers and lowercase letters only. This dialog populates the field with a unique name that is derived from the name you gave the app. However, feel free to use a different name or even an existing account. |
+    | **App-Name** | Global eindeutiger Name | Der Name, der Ihre neue Funktionen-App bezeichnet Gültige Zeichen sind `a-z`, `0-9` und `-`.  | 
+    | **Abonnement** | Ihr Abonnement | Das Abonnement, unter dem diese neue Funktions-App erstellt wird. | 
+    | **Ressourcengruppe**|  <rgn>[Sandkasten Resource Group-Name]</rgn> | Der Name für die Ressourcengruppe, in dem Sie Ihre Funktionen-app zu erstellen.<br/><br/>Stellen Sie sicher, dass **vorhandene** und die Ressourcengruppe aus der letzten Übung verwenden. Auf diese Weise alle Ressourcen, die wir in diesem Modul vorgenommen werden zusammengehalten. | 
+    | **Betriebssystem** | Windows | Das Betriebssystem, das die Funktionen-app hostet.  |
+    | **Hosting** |   Verbrauchsplan | Der Hostingplan, der definiert, wie Ihre Ressourcen der Funktionen-App zugewiesen werden Im **Standard-Verbrauchstarif** werden Ressourcen je nach Bedarf der Funktionen dynamisch hinzugefügt. Beim [serverlosen Hosting](https://azure.microsoft.com/overview/serverless-computing/) bezahlen Sie nur die Zeit, in der Ihre Funktionen ausgeführt werden.   |
+    | **Standort** | Wählen Sie aus der Liste | Wählen Sie eine [Region](https://azure.microsoft.com/regions/) in Ihrer Nähe oder in der Nähe von anderen Diensten aus, auf die Ihre Funktionen zugreifen.<br/><br/>Wählen Sie die Region, die Sie beim Erstellen der Textanalyse-API-Konto in der letzten Übung verwendet. |
+    | **Speicherkonto** |  Global eindeutiger Name |  Der Name des neuen Speicherkontos, das von Ihrer Funktionen-App verwendet wird. Speicherkontonamen müssen zwischen 3 und 24 Zeichen lang sein und dürfen nur Zahlen und Kleinbuchstaben enthalten. Dieses Dialogfeld füllt das Feld mit einem eindeutigen Namen, die nicht mit dem Namen abgeleitet wird Sie die app zugewiesen haben. Allerdings können auch einen anderen Namen oder sogar ein vorhandenes Konto verwenden. |
 
-3. Select **Create** to provision and deploy the function app.
+1. Klicken Sie auf **Erstellen**, um die Funktionen-App bereitzustellen.
 
-4. Select the Notification icon in the upper-right corner of the portal and watch for a **Deployment in progress** message similar to the following message.
+1. Wählen Sie das Benachrichtigungssymbol in der oberen rechten Ecke des Portals, und sehen Sie sich für eine **Bereitstellung** Meldung ähnlich der folgenden Meldung.
 
-![Notification that function app deployment is in progress](../media-draft/func-app-deploy-progress-small.PNG)
+1. Bereitstellung kann einige Zeit dauern. Also im Notification Hub bleiben, und sehen Sie sich für eine **Bereitstellung erfolgreich** Meldung ähnlich der folgenden angezeigt.
 
-5. Deployment can take some time. So, stay in the notification hub and  watch for a **Deployment succeeded** message similar to the following message.
+1. Herzlichen Glückwunsch! Sie haben erstellt und Ihrer Funktionen-app bereitgestellt. Wählen Sie **Zu Ressource wechseln**, um Ihre neue Funktionen-App anzuzeigen.
 
-![Notification that function app deployment has completed](../media-draft/func-app-text-analytics-deploy-success.png)
+> [!TIP]
+> Sollten Sie Ihre Funktions-Apps im Portal nicht finden, können Sie [Funktionen-Apps Ihren Favoriten im Azure-Portal hinzufügen](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings#favorite).
 
-6. Congratulations! You've created and deployed your function app. Select **Go to resource** to view your new function app.
+## <a name="create-a-function-to-execute-our-logic"></a>Erstellen Sie eine Funktion, um unsere Logik ausführen
 
->[!TIP]
->Having trouble finding your function apps in the portal, try [adding Function Apps to your favorites in the Azure portal](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings#favorite).
+Nun, da wir eine Funktions-app haben, ist es Zeit, eine Funktion zu erstellen. Eine Funktion wird durch einen Trigger aktiviert. In diesem Modul werden wir einen warteschlangentrigger verwenden. Die Laufzeit wird eine Warteschlange abrufen und starten dieser Funktion können Sie eine neue Nachricht zu verarbeiten.
 
-## Create a function to hold our logic
+1. Erweitern Sie Ihre neue Funktions-app und dann auf die **Funktionen** Auflistung. Aktivieren Sie das Hinzufügen (__+__) Wenn sie angezeigt wird der Prozess der Funktion zu starten.
 
-Now that we have a function app, it's time to create a function. A function is activated through a trigger. In this module, we'll use a Queue trigger. The runtime will poll a queue and start this function to process a new message.
+1. In der **schneller Einstieg** wählen Sie die Seite angezeigt wird, die jetzt und **benutzerdefinierte Funktion**, lädt die Liste der verfügbaren Vorlagen.
 
-1. Expand your new function app, then hover over the **Functions** collection. Select the Add (**+**) button when it appears to start the function creation process.
+1. Wählen Sie **JavaScript** auf die **warteschlangentrigger** Eintrag in der Vorlage.
 
-![Animation of the plus sign appearing when the user hovers over the functions menu item.](../media-draft/func-app-plus-hover-small.gif)
+![Screenshot des Azure Functions-Vorlagen mit JavaScript, die auf den Eintrag der Datenwarteschlange Trigger ausgewählt haben.](../media/quickstart-select-queue-trigger.png)
 
-2. In the **Get started quickly** page that now appears, select **Custom function**, which loads the list of available function templates. 
+4. In der **neue Funktion** angezeigten Dialogfeld die folgenden Werte eingeben.
 
-1. Select **JavaScript** on the **Queue trigger** template list entry.
-
-![Screenshot of Azure Functions templates with JavaScript selected on the Queue trigger entry.](../media-draft/quickstart-select-queue-trigger.png)
-
-1. In the **New Function** dialog that appears, enter the following values.
-
-
-|Property  |Value  |
+|Eigenschaft  |Wert  |
 |---------|---------|
-|Language     |   **JavaScript**      |
+|Sprache     |   **JavaScript**      |
 |Name     |   **discover-sentiment-function**      |
-|Queue name     |   **new-feedback-q**      |
-|Storage account connection        |  **AzureWebJobsDashboard**       |
+|Warteschlangenname     |   **new-feedback-q**      |
+|Speicherkontoverbindung        |  **AzureWebJobsDashboard**       |
 
-![Screenshot of Azure Functions templates with JavaScript selected on the Queue trigger entry.](../media-draft/new-function-dialog.png)
+![Screenshot des Azure Functions-Vorlagen mit JavaScript, die auf den Eintrag der Datenwarteschlange Trigger ausgewählt haben.](../media/new-function-dialog.png)
 
-5. Select **Create** to begin the function creation process.
+5. Wählen Sie **erstellen** mit der Funktion Erstellung beginnen.
 
-1. A function is created in your chosen language using the Queue Trigger function template. While we'll implement the function in JavaScript in this module, you can create a function in any [supported language](https://docs.microsoft.com/azure/azure-functions/supported-languages).
+1. Eine Funktion ist in Ihrer gewählten Sprache, die mithilfe der Vorlage der Warteschlangentrigger-Funktion erstellt. Während wir die Funktion in JavaScript in diesem Modul implementieren müssen, können Sie eine Funktion erstellen, in einem [unterstützte Sprache](https://docs.microsoft.com/azure/azure-functions/supported-languages).
 
-When the create process is complete, the code editor opens in the portal and loads the *index.js* page. This file is the code file where we write our function logic.
+Wenn der Erstellungsvorgang abgeschlossen ist, Code-Editor wird geöffnet, in das Portal und lädt die *"Index.js"* Seite. Diese Datei ist die Codedatei, in dem wir unsere Funktionslogik schreiben.
 
-## Try it out
+## <a name="try-it-out"></a>Ausprobieren
 
-Let's test what we have so far. We haven't written any code yet, so this test is to make sure what we've configured so far, runs.
+Testen Sie nun, was wir bisher haben. Wir noch nicht geschrieben werden, dass jeder Code, damit dieser Test ist, um sicherzustellen, was wir bisher konfiguriert haben ausgeführt wird.
 
-1. Click **Run** at the top of the code editor.
+1. Klicken Sie auf **ausführen** am oberen Rand der Code-Editor.
 
-2. Observe the **Logs** tab that opens at the bottom of the screen. If everything works as planned, you'll see a message similar to the following message.
-![Screenshot of response message of a successful call to our function.](../media-draft/func-default-run.PNG)
+1. Beachten Sie die **Protokolle** Registerkarte, die am unteren Rand des Bildschirms geöffnet wird. Wenn alles funktioniert wie vorgesehen, sehen Sie eine Meldung ähnlich der folgenden angezeigt.
+    ![Screenshot der Response-Nachricht von einem erfolgreichen Aufruf unsere-Funktion.](../media/func-default-run.PNG)
 
-The **Run** button started our function and passed *sample queue data*, the default text from the **Test** request window to our function.
+Die **ausführen** Schaltfläche unserer Funktion gestartet, und übergeben *Warteschlange Beispieldaten*, den Standardtext aus der **Test** Fenster für die Steuerungsanforderung, unsere-Funktion.
 
-Nice work! You've successfully added a Queue-triggered function to your function app and tested to make sure it's working as expected! We'll add more functionality to the function in the next exercise.
+Gut gemacht! Sie haben erfolgreich eine Warteschlange ausgelöste Funktion zu Ihrer Funktions-app hinzugefügt und getestet werden, um sicherzustellen, dass es wie erwartet funktioniert. Wir fügen weitere Funktionen für die Funktion in der nächsten Übung.
 
- Let's look briefly at the function's other file, the *function.json* config file. The configuration data from this file is shown in the following JSON listing.
+Wir betrachten kurz die Funktion der anderen Datei die *"Function.JSON"* Config-Datei. Die Konfigurationsdaten aus dieser Datei werden angezeigt, in der folgenden JSON-Liste.
 
 ```json
 {
@@ -98,11 +88,11 @@ Nice work! You've successfully added a Queue-triggered function to your function
 }
 ```
 
-As you can see, this function has a trigger binding named **myQueueItem** of type `queueTrigger`. When a new message arrives in the queue we've named **new-feedback-q**, our function is called. We reference the new message through the myQueueItem binding parameter. Bindings really do take care of some of the heavy lifting for us!
+Wie Sie sehen können, wird diese Funktion weist eine triggerbindung mit dem Namen **MyQueueItem** des Typs `queueTrigger`. Wenn eine neue Nachricht in der Warteschlange eingeht, wir haben mit dem Namen **Feedback-Q**, unsere-Funktion wird aufgerufen. Wir verweisen auf die neue Nachricht über den MyQueueItem gebundenen Parameter. Bindungen wirklich Teil der Arbeit für uns erledigt!
 
-In the next step, we'll add code to call the Text Analytics API service.
+Im nächsten Schritt fügen wir Code zum Aufrufen des Textanalyse-API-Diensts.
 
->[!TIP]
->You can see index.js and function.json by expanding the **View Files** menu on the right of the function panel in the Azure portal. 
+> [!TIP]
+> Sie können die Datei "Index.js" und "Function.JSON" anzeigen, indem Sie erweitern die **Ansichtsdateien** im Menü auf der rechten Seite des Panels Funktion im Azure-Portal.
 
-This exercise was all about getting our Azure Functions infrastructure in place. We have a working function hosted in a function app that runs when a new message arrives in our queue that we've named [!INCLUDE [input-q](./q-name-input.md)]. The real fun begins in the next exercise, when we add code to call a Microsoft Cognitive Service to do sentiment analysis.
+In dieser Übung wurde zu unserer Azure Functions-Infrastruktur vorhanden. Wir haben eine funktionierende-Funktion, gehostet in einer Funktionen-app, die ausgeführt wird, wenn eine neue Nachricht in unserer Warteschlange eingeht, die wir mit dem Namen haben [!INCLUDE [input-q](./q-name-input.md)]. Der Spaß beginnt in der nächsten Übung, wenn wir Code zum Aufrufen einer Microsoft Cognitive Services dazu stimmungsanalysen hinzufügen.

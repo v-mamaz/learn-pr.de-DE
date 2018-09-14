@@ -1,22 +1,22 @@
-Your company makes use of container images to manage compute workloads in the company. You use local Docker tooling to build your container images. The decision to make use of an Azure Container Registry now allows you to build container images in the cloud. 
+Ihr Unternehmen verwendet Containerimages für die Verwaltung von Computeworkloads im Unternehmen. Für das Erstellen von Containerimages werden lokale Docker-Tools verwendet. Wenn Sie sich für Azure Container Registry entscheiden, können Sie nun Containerimages in der Cloud erstellen. 
 
-You can now use Azure Container Registry Build to build these containers. Container Registry Build also allows for DevOps process integration with automated build on source code commit.
+Sie können nun Azure Container Registry Build zum Erstellen dieser Container verwenden. Container Registry Build ermöglicht auch die Integration von DevOps-Prozessen mit automatischer Erstellung nach dem Committen von Quellcode.
 
-Let's automate the creation of a container image using Azure Container Registry Build.
+Automatisieren Sie die Erstellung eines Containerimages mit Azure Container Registry Build.
 
-## Create a container image with Azure Container Registry Build
+## <a name="create-a-container-image-with-azure-container-registry-build"></a>Erstellen eines Containerimage mit Azure Container Registry Build
 
-You use a standard Dockerfile to provide build instructions. Azure Container Registry Build allows you to reuse any Dockerfile currently in your environment, including multi-staged builds.
+Verwenden Sie eine Standard-Dockerfile-Datei, um Buildanweisungen bereitzustellen. Mit Azure Container Registry Build können Sie alle Dockerfile-Dateien wiederverwenden, die Sie derzeit in Ihrer Umgebung verwenden, einschließlich mehrstufiger Builds.
 
-We'll use new Dockerfile for our example. 
+In diesem Beispiel verwenden wir eine neue Dockerfile-Datei. 
 
-The first step is to create a new file named `Dockerfile`. You can use any text editor to edit the file. We'll use Visual Studio Code for this example.
+Hierzu wird im ersten Schritt eine neue Datei mit dem Namen `Dockerfile` erstellt. Sie können einen beliebigen Text-Editor verwenden, um die Datei zu bearbeiten. In diesem Beispiel verwenden wir Visual Studio Code.
 
 ```bash
 code Dockerfile
 ```
 
-Copy the following contents to your new Dockerfile. Make sure to safe the file. 
+Kopieren Sie den folgenden Inhalt in die neue Dockerfile-Datei. Speichern Sie die Datei unbedingt. 
 
 ```bash
 FROM    node:9-alpine
@@ -27,25 +27,25 @@ EXPOSE  80
 CMD     ["node", "server.js"]
 ```
 
-This configuration adds a Node.js application to the `node:9-alpine` image. Then configures the container to serve the application on port 80 via the *EXPOSE* instruction.
+Durch diese Konfiguration wird dem `node:9-alpine`-Image eine Node.js-Anwendung hinzugefügt. Anschließend wird der Container so konfiguriert, dass er die Anwendung über die Anweisung *EXPOSE* auf Port 80 bereitstellt.
 
-Now run the Azure CLI command, `az acr build`, to build the container image from the Dockerfile.
+Führen Sie nun den Azure CLI-Befehl `az acr build` aus, um das Containerimage aus der Dockerfile-Datei zu erstellen.
 
 ```azurecli
 az acr build --registry <acrName> --image helloacrbuild:v1 .
 ```
 
-You'll see the image being built and pushed to your Container Registry as you run the command.
+Während Sie den Befehl ausführen, können Sie sehen, wie das Image erstellt und mithilfe von Push an Ihre Containerregistrierung übertragen wird.
 
-## Verify the image
+## <a name="verify-the-image"></a>Überprüfen des Images
 
-Run the following command to verify that the image has been created and stored in the registry.
+Führen Sie den folgenden Befehl aus, um zu überprüfen, ob das Image erstellt und in der Registrierung gespeichert wurde.
 
 ```azurecli
 az acr repository list --name <acrName> --output table
 ```
 
-The output should look similar to the following:
+Die Ausgabe sollte in etwa wie folgt aussehen:
 
 ```console
 Result
@@ -53,4 +53,4 @@ Result
 helloacrbuild
 ```
 
-The `helloacrbuild` image is now ready to be used.
+Das Image `helloacrbuild` kann jetzt verwendet werden.

@@ -3,32 +3,32 @@ uid: learn.predict-costs-and-optimize-spending.3-predict-and-optimize-with-cost-
 title: Vorhersagen und Optimieren mit Cost Management und dem Azure Advisor
 metadata:
   title: Vorhersagen und Optimieren mit Cost Management und dem Azure Advisor
-  description: In dieser Einheit besprechen wir, wie Sie mit Cost Management und dem Azure Advisor Vorhersagen treffen und Optimierungen vornehmen können.
-  ms.openlocfilehash: a1e0bda42bd3f2d28ebfa78391506b6fdadfcb04
-  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
-  ms.translationtype: HT
-  ms.contentlocale: de-DE
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43790572"
+  description: 'In dieser Einheit besprechen wir, wie Sie mit Cost Management und dem Azure Advisor Vorhersagen treffen und Optimierungen vornehmen können.'
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 durationInMinutes: 15
-content: >
+azureSandbox: true
+content: |
   [!include[](includes/3-predict-and-optimize-with-cost-management-and-advisor.md)]
 quiz:
   title: Vorhersagen und Optimieren mit Cost Management und dem Azure Advisor
   questions:
-  - content: Der Azure Advisor gibt ausschließlich Empfehlungen zu Kosten.
-    choices:
-    - content: "TRUE"
-      incorrectExplanation: Der Azure Advisor gibt Empfehlungen zu Hochverfügbarkeit, Sicherheit, Leistung und Kosten.
-      isCorrect: false
-    - content: "FALSE"
-      correctExplanation: Der Azure Advisor gibt Empfehlungen zu Hochverfügbarkeit, Sicherheit, Leistung und Kosten.
-      isCorrect: true
-  - content: 'Mit Azure Cost Management können Sie folgende Aktionen durchführen:'
-    choices:
-    - content: Anzeigen von Verlaufsdaten zu den Kosten von Diensten.
-      correctExplanation: Cost Management analysiert, wofür Sie in der Vergangenheit Ihr Geld ausgegeben haben, und gleicht diese Kosten mit einem festgelegten Budget ab.
-      isCorrect: true
-    - content: Anzeigen von Kostenschätzungen bei Änderungen am Dienst.
-      incorrectExplanation: Verwenden Sie zum Anzeigen von Kostenschätzungen den Azure-Preisrechner. Cost Management analysiert, wofür Sie in der Vergangenheit Ihr Geld ausgegeben haben, und gleicht diese Kosten mit einem festgelegten Budget ab.
-      isCorrect: false
+    - content: Der Azure Advisor gibt ausschließlich Empfehlungen zu Kosten.
+      choices:
+        - content: Richtig
+          incorrectExplanation: 'Der Azure Advisor gibt Empfehlungen zu Hochverfügbarkeit, Sicherheit, Leistung und Kosten.'
+          isCorrect: false
+        - content: Falsch
+          correctExplanation: 'Der Azure Advisor gibt Empfehlungen zu Hochverfügbarkeit, Sicherheit, Leistung und Kosten.'
+          isCorrect: true
+    - content: 'Mit Azure Cost Management können Sie folgende Aktionen durchführen:'
+      choices:
+        - content: Anzeigen von Verlaufsdaten zu den Kosten von Diensten.
+          correctExplanation: 'Cost Management analysiert, wofür Sie in der Vergangenheit Ihr Geld ausgegeben haben, und gleicht diese Kosten mit einem festgelegten Budget ab.'
+          isCorrect: true
+        - content: Anzeigen von Kostenschätzungen bei Änderungen am Dienst.
+          incorrectExplanation: 'Verwenden Sie zum Anzeigen von Kostenschätzungen den Azure-Preisrechner. Cost Management analysiert, wofür Sie in der Vergangenheit Ihr Geld ausgegeben haben, und gleicht diese Kosten mit einem festgelegten Budget ab.'
+          isCorrect: false

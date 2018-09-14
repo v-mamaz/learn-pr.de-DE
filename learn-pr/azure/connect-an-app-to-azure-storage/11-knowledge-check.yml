@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.11-knowledge-check
+title: Wissenstest
+metadata:
+  title: Wissenstest
+  description: Wissenstest
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 3
+quiz:
+  title: Herstellen einer Verbindung mit Azure Storage
+  questions:
+    - content: Wie viele Zugriffsschlüssel werden für den Zugriff auf Ihr Azure Storage-Konto bereitgestellt?
+      choices:
+        - content: '1'
+          isCorrect: false
+        - content: '2'
+          isCorrect: true
+          correctExplanation: 'Jedes Speicherkonto verfügt über zwei Zugriffsschlüssel. Dadurch können Sie bei der Befolgung der Best-Practice-Richtlinien in regelmäßigen Abständen ersetzen Sie den Schlüssel, die von den Anwendungen, ohne dass Ausfallzeiten verwendet.'
+        - content: '3'
+          isCorrect: false
+        - content: '4'
+          isCorrect: false
+    - content: 'Sie können entweder die REST-API oder die Azure-Bibliotheken verwenden, programmgesteuert auf ein Speicherkonto zugreifen. Was ist der wichtigste Vorteil der Verwendung der Clientbibliothek?'
+      choices:
+        - content: Kosten
+          isCorrect: false
+        - content: Verfügbarkeit
+          isCorrect: false
+        - content: Lokalisierung
+          isCorrect: false
+        - content: Der Einfachheit halber
+          isCorrect: true
+          correctExplanation: 'Code, die Clientbibliothek verwendet, ist im Allgemeinen viel kürzer und einfacher als Code, der die REST-API verwendet. Die Client-Bibliothek-Handles, Anforderungen zusammenstellen und Analysieren von Antworten für Sie.'
+    - content: 'Welche der folgenden ist eine gute Analogie, für die Zugriffsschlüssel für ein Speicherkonto?'
+      choices:
+        - content: IP-Adresse
+          isCorrect: false
+        - content: REST-Endpunkt
+          isCorrect: false
+        - content: Benutzername und Kennwort
+          isCorrect: true
+          correctExplanation: 'Der Zugriffstaste besitzt das Konto identifiziert und ermöglicht den Zugriff. Dies ist sehr ähnlich ist, um Anmeldeinformationen wie Benutzername und Kennwort.'
+        - content: Kryptografiealgorithmus
+          isCorrect: false

@@ -1,0 +1,17 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.10-exercise-connect-with-your-azure-storage-configuration
+title: Herstellen einer Verbindung mit Ihrer Azure Storage-Konfiguration
+metadata:
+  title: Herstellen einer Verbindung mit Ihrer Azure Storage-Konfiguration
+  description: Herstellen einer Verbindung mit Ihrer Azure Storage-Konfiguration
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  zone_pivot_groups: dev-lang-csharp-javascript
+interactive: bash-editor
+azureSandbox: true
+durationInMinutes: 15
+content: |
+  [!include[](includes/10-exercise-connect-with-your-azure-storage-configuration.md)]

@@ -1,4 +1,4 @@
-Da Sie nun wissen, wie mit Anforderungseinheiten der Datenbankdurchsatz ermittelt wird und wie mit dem Partitionsschlüssel die Strategie für horizontales Skalieren Ihrer Datenbank erstellt wird, können Sie Ihre Datenbank und Ihre Sammlung erstellen.
+Da Sie nun wissen, wie mit Anforderungseinheiten der Datenbankdurchsatz ermittelt wird und wie mit dem Partitionsschlüssel die Strategie für horizontales Skalieren Ihrer Datenbank erstellt wird, können Sie Ihre Datenbank und Ihre Sammlung erstellen. Durchsatz und Partition Key, die Werte beim Erstellen der Sammlung festgelegt werden müssen, empfiehlt sich daher diese Konzepte verstehen, vor dem Erstellen einer Datenbank.
 
 ## <a name="creating-your-database-and-collection"></a>Erstellen der Datenbank und der Sammlung
 
@@ -10,17 +10,17 @@ Da Sie nun wissen, wie mit Anforderungseinheiten der Datenbankdurchsatz ermittel
 
 1. Geben Sie auf der Seite **Sammlung hinzufügen** die Einstellungen für die neue Sammlung ein.
 
-    Einstellung | Empfohlener Wert | BESCHREIBUNG
+    Einstellung | Empfohlener Wert | Beschreibung
     --------|-----------------|-------------
-    Datenbank-ID      | Benutzer         | Geben Sie *Users* als Namen für die neue Datenbank ein. Datenbanknamen müssen zwischen 1 und 255 Zeichen lang sein und dürfen weder /, \\, #, ? noch nachgestellte Leerzeichen enthalten.
-    Sammlungs-ID    | WebCustomers  | Geben Sie *WebCustomers* als Namen für die neue Sammlung ein. Für Sammlungs-IDs gelten dieselben Zeichenanforderungen wie für Datenbanknamen.
+    Datenbank-ID      | Produkte         | Geben Sie *Produkte* als Namen für die neue Datenbank. Datenbanknamen müssen zwischen 1 und 255 Zeichen lang sein und dürfen weder /, \\, #, ? noch nachgestellte Leerzeichen enthalten.
+    Sammlungs-ID    | Kleidung  | Geben Sie *Clothing* als Namen für die neue Sammlung. Für Sammlungs-IDs gelten dieselben Zeichenanforderungen wie für Datenbanknamen.
     Speicherkapazität | Unbegrenzt     | Übernehmen Sie den Standardwert **Unbegrenzt**. Dieser Wert ist die Speicherkapazität der Datenbank, und damit kann Ihre Datenbank nach Bedarf horizontal skaliert werden.
-    Partitionsschlüssel    | UserId        | „UserID“ ist ein guter Partitionsschlüssel für ein Onlinehändlerszenario, da sich viele Abfragen auf die Kunden-ID beziehen.
+    Partitionsschlüssel    | productId        | ProductId ist einen guten Partitionsschlüssel für ein online-Einzelhandel-Szenario, da so viele Abfragen für die Produkt-ID basieren
     Throughput       |1000 RU        | Ändern Sie den Durchsatz in 1000 Anforderungseinheiten pro Sekunde (RU/s). 1000 ist der Mindestwert für RU/s, den Sie festlegen können, um die automatische Skalierung zu aktivieren.
     
     Aktivieren Sie erst einmal nicht die Option für den **Durchsatz der Bereitstellungsdatenbank**, und fügen Sie der Sammlung keine eindeutigen Schlüssel hinzu.
     
-1. Klicken Sie auf **OK**. Im Daten-Explorer werden die neue Datenbank und die neue Sammlung angezeigt.
+1. Klicken Sie auf **OK**. Im Daten-Explorer zeigt die neue Datenbank und Sammlung.
 
     ![Daten-Explorer mit der neuen Datenbank und der neuen Sammlung](../media-draft/5-azure-cosmos-db-new-collection.png)
 

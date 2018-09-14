@@ -20,29 +20,29 @@ Ihre E-Commerce-Website sendet Standardcode in HTML, CSS und JavaScript sowie Bi
 
 Azure stellt überall auf der Welt in verschiedenen Regionen Rechenzentren zur Verfügung.
 
-Der Bau eines Rechenzentrums ist sehr teuer. Dabei müssen nicht nur die Geräte angeschafft werden, sondern es muss auch dafür gesorgt werden, dass das Rechenzentrum mit Strom versorgt wird und ein ausreichendes Kühlsystem vorhanden ist. Außerdem muss für jeden Standort Personal eingestellt werden, das dafür sorgt, dass die Systeme gewartet werden. Daher wäre es viel zu teuer, ein Replikat eines Rechenzentrums an einem anderen Standort zu errichten. Wenn Sie also Azure verwenden, sind die Kosten viel geringer, da die nötigen Geräte und das Personal bereits vorhanden sind.
+Der Bau eines Rechenzentrums ist sehr teuer. Kosten sind nicht der einzige Faktor. Geben Sie die Stromversorgung, Kühlung und Mitarbeiter um behalten Sie Ihre Systeme, die an jedem Standort ausgeführt werden sollen. Daher wäre es viel zu teuer, ein Replikat eines Rechenzentrums an einem anderen Standort zu errichten. Aber auf diese Weise mit Azure kann Kosten wesentlich, da Azure bereits die Ausrüstung und die Mitarbeiter verfügt.
 
-Wenn Sie identische Replikate Ihres Diensts in mehreren Regionen erstellen, ist dies eine Möglichkeit, um die Latenz zu reduzieren. Nachfolgend sehen Sie ein Diagramm.
+Wenn Sie identische Replikate Ihres Diensts in mehreren Regionen erstellen, ist dies eine Möglichkeit, um die Latenz zu reduzieren. HThe, die folgende Abbildung zeigt ein Beispiel für globale Bereitstellung.
 
-![Die E-Commerce-Website, die in den Regionen „USA, Osten“, „Europa, Norden“ und „Asien, Osten“ ausgeführt wird.](../media-draft/global-deployment.png)
+![Eine Abbildung, die eine Weltkarte mit drei Azure-Rechenzentren hervorgehoben angezeigt. Jedes Rechenzentrum wird durch einen eindeutigen Domänennamen gekennzeichnet sind.](../media/4-global-deployment.png)
 
 Auf dem Diagramm sehen Sie Ihre E-Commerce-Website, die in drei Azure-Regionen ausgeführt wird: „USA, Osten“, „Europa, Norden“ und „Asien, Osten“. Beachten Sie die einzelnen DNS-Namen. Nachfolgend wird erläutert, wie Sie Benutzer unter der contoso.com-Domäne mit dem Dienst verbinden können, der diesem am nächsten gelegen ist.
 
 ## <a name="use-traffic-manager-to-route-users-to-the-closest-endpoint"></a>Verwenden des Traffic Managers zum Weiterleiten von Benutzern an den nächstgelegenen Endpunkt
 
-Sie können beispielsweise den **Traffic Manager** verwenden. Der Traffic Manager verwendet den DNS-Server, der dem Benutzer am nächsten gelegen ist, um Benutzerdatenverkehr an einen global verteilten Endpunkt weiterzuleiten. Nachfolgend sehen Sie ein Diagramm.
+Eine Antwort ist **Azure Traffic Manager**. Der Traffic Manager verwendet den DNS-Server, der dem Benutzer am nächsten gelegen ist, um Benutzerdatenverkehr an einen global verteilten Endpunkt weiterzuleiten. Die folgende Abbildung zeigt die von Traffic Manager-Rolle.
 
-![Verwenden des Traffic Managers zum Weiterleiten eines Benutzers in Italien an den nächstgelegenen Endpunkt](../media-draft/traffic-manager.png)
+![Eine Abbildung, die mit Azure Traffic Manager-routing eine benutzeranforderung an das nächstgelegene Rechenzentrum. ](../media/4-traffic-manager.png)
 
-Der Traffic Manager kann den zwischen Client und Server übergebenen Datenverkehr nicht sehen. Stattdessen leitet der Clientwebbrowser diesen an einen bevorzugten Endpunkt weiter. Der Traffic Manager hat verschiedene Möglichkeiten, Datenverkehr weiterzuleiten, z.B. an den Endpunkt mit der niedrigsten Latenz.
+Der Traffic Manager kann den zwischen Client und Server übergebenen Datenverkehr nicht sehen. Stattdessen leitet es den Webbrowser des Clients an einem bevorzugten Endpunkt. Traffic Manager können Datenverkehr auf verschiedene Weise, wie z. B. an den Endpunkt mit der geringsten Wartezeit weiter.
 
-Dieses Setup kann auch Ihre lokale Bereitstellung in Kalifornien umfassen. Darauf wird an dieser Stelle allerdings nicht genauer eingegangen. Sie können den Traffic Manager mit Ihren lokalen Netzwerken verbinden. D.h., Sie können Ihre bereits vorhandenen Rechenzentren weiter verwenden. Alternativ können Sie Ihre Anwendung auch vollständig in die Cloud verschieben. Die Entscheidung liegt bei Ihnen.
+Obwohl hier nicht gezeigt, kann dieses Setup auch Ihrer lokalen Bereitstellung in Kalifornien unter enthalten. Sie können Traffic Manager auf Ihren eigenen lokalen Netzwerken, verbinden, können Sie Ihre vorhandene Data Center-Investitionen zu verwalten. Alternativ können Sie Ihre Anwendung auch vollständig in die Cloud verschieben. Die Entscheidung liegt bei Ihnen.
 
-## <a name="compare-azure-load-balancer-to-traffic-manager"></a>Azure Load Balancer und der Traffic Manager im Vergleich
+## <a name="compare-load-balancer-to-traffic-manager"></a>Vergleichen Sie Load Balancer an Traffic Manager
 
-Azure Load Balancer verteilt den Datenverkehr auf die gesamte Region, damit Ihre Dienste hochverfügbarer und resilienter sind. Der Traffic Manager agiert auf DNS-Ebene und leitet den Client an einen bevorzugten Endpunkt weiter. Dieser Endpunkt kann sich in der Region befinden, die dem Benutzer am nächsten gelegen ist.
+Azure Load Balancer verteilt den Datenverkehr auf die gesamte Region, damit Ihre Dienste hochverfügbarer und resilienter sind. Traffic Manager arbeitet auf DNS-Ebene und weist den Client an einem bevorzugten Endpunkt. Dieser Endpunkt kann sich in der Region befinden, die dem Benutzer am nächsten gelegen ist.
 
-Sowohl der Azure Load Balancer als auch der Traffic Manager tragen auf unterschiedliche Weise zur Resilienz Ihres Diensts bei. Wenn Azure Load Balancer eine VM erkennt, die nicht reagiert, wird der Datenverkehr an andere VMs im Pool weitergeleitet. Der Traffic Manager überwacht die Integrität der Endpunkte. Wenn der Traffic Manager im Gegensatz dazu einen Endpunkt erkennt, der nicht reagiert, leitet er Datenverkehr an den Endpunkt weiter, der am nächsten gelegen ist und reagiert.
+Load Balancer und Traffic Manager sowohl machen Ihre Dienste stabiler, jedoch etwas anders. Wenn Load Balancer einen nicht reagierenden virtuellen Computer erkennt, leitet er Datenverkehr an andere virtuelle Computer im Pool. Der Traffic Manager überwacht die Integrität der Endpunkte. Wenn der Traffic Manager im Gegensatz dazu einen Endpunkt erkennt, der nicht reagiert, leitet er Datenverkehr an den Endpunkt weiter, der am nächsten gelegen ist und reagiert.
 
 ## <a name="summary"></a>Zusammenfassung
 

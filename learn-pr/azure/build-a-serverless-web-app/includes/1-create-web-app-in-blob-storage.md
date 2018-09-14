@@ -1,61 +1,54 @@
-In this module, you will deploy a simple web application that presents an HTML-based user interface. A serverless back end enables the application to upload images and automatically generate descriptive captions.
+Im Rahmen dieses Moduls stellen Sie eine einfache Web-App bereit, die eine HTML-basierte Benutzeroberfläche darstellt. Ein serverloses Back-End kann es sich um die Anwendung zum Hochladen von Bildern und beschreibende Titel automatisch zu generieren.
 
-![Running web app](../media/0-app-screenshot-finished.png)
+![Ausführen der Web-App](../media/0-app-screenshot-finished.png)
 
-The following diagram shows the Azure services that are used by the application.
+Im folgenden Diagramm sind die Azure-Dienste aufgeführt, die von der Anwendung verwendet werden.
 
-![Solution architecture diagram](../media/0-architecture.jpg)
+![Diagramm der Lösungsarchitektur](../media/0-architecture.jpg)
 
-1. Azure Blob storage serves static web content (HTML, CSS, JS) and stores images.
-2. Azure Functions manages image uploads, resizing, and metadata storage.
-3. Azure Cosmos DB stores image metadata.
-4. Azure Logic Apps retrieves image captions from the Cognitive Services Computer Vision API.
-5. Azure Active Directory manages user authentication.
+1. Azure Blob Storage stellt statischen Webinhalt (HTML, CSS, JS) bereit und speichert Bilder.
+2. Azure Functions verwaltet das Hochladen von Bildern, die Größenänderung und die Speicherung von Metadaten.
+3. Azure Cosmos DB speichert Bildmetadaten.
+4. Mit Azure Logic Apps ruft Image Beschriftungen aus die maschinelles sehen-API der Cognitive Services-Computer ab.
+5. Azure Active Directory wird zum Verwalten der Benutzerauthentifizierung verwendet.
 
-Azure Blob storage is a low-cost and massively scalable service that can be used to host static files. In this module, you will use Blob storage to serve static content (for example, HTML, JavaScript, or CSS) for a web app you build.
+Azure Blob Storage ist ein kostengünstiger und extrem skalierbarer Dienst, der zum Hosten von statischen Dateien verwendet werden kann. In diesem Modul verwenden BLOB-Speicher Sie zum Bereitstellen statischer Inhalte (z. B. HTML, JavaScript oder CSS) für eine Web-app, die Sie erstellen.
 
-## Create an Azure Storage account
-<!---TODO: Update for sandbox?--->
+## <a name="create-an-azure-storage-account"></a>Erstellen eines Azure-Speicherkontos
 
-An Azure Storage account is an Azure resource that allows you to store tables, queues, files, blobs (objects), and virtual machine disks.
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-1. Select the **Enter focus mode** button to launch Azure Cloud Shell (Bash). This button is at the top right or the bottom of the page, depending on how wide your browser window is. Focus mode docks a Cloud Shell window on the right side of your browser window, so you can easily execute commands that are shown in the tutorial.
+Ein Azure-Speicherkonto ist eine Azure-Ressource, mit der Sie Tabellen, Warteschlangen, Dateien, Blobs (Objekte) und VM-Datenträger speichern können.
 
-1. In Azure, a resource group is a container that holds related Azure resources for ease of management. Create a new resource group named **first-serverless-app**.
-
-    ```azurecli
-    az group create -n first-serverless-app -l westcentralus
-    ```
-
-1. The static content (HTML, CSS, and JavaScript files) for this tutorial is hosted in Blob storage. Blob storage requires a Storage account. Create a general-purpose v2 (GPv2) Storage account in the resource group. Replace `<storage account name>` with a unique name.
+1. Der statische Inhalt (HTML-, CSS- und JavaScript-Dateien) für dieses Tutorial wird in Blob Storage gehostet. Für Blob Storage ist ein Speicherkonto erforderlich. Erstellen Sie eine General Purpose v2 (GPv2)-Storage-Konto in der Ressourcengruppe. Ersetzen Sie `<storage account name>` durch einen eindeutigen Namen.
 
     ```azurecli
-    az storage account create -n <storage account name> -g first-serverless-app --kind StorageV2 -l westcentralus --https-only true --sku Standard_LRS
+    az storage account create -n <storage account name> -g <rgn>[Sandbox resource group name]</rgn> --kind StorageV2 --https-only true --sku Standard_LRS
     ```
     
-1. Use the Search bar at the top of the [Azure portal](https://portal.azure.com/?azure-portal=true) to find the storage account that you just created. Open the account.
+1. Verwenden Sie die Suchleiste oben im [Azure-Portal](https://portal.azure.com/?azure-portal=true), um das Speicherkonto zu finden, das Sie eben erstellt haben. Öffnen Sie das Konto.
 
-1. On the left navigation, select **Static website (preview)** to configure a container for static website hosting.
-    - Select **Enabled** to enable a static website.
-    - Enter **index.html** as the index document name. The box already has *index.html* in a gray font, but this is only example text. You still have to enter **index.html** in the box.
-    - Click **Save**.
+1. Klicken Sie im linken Navigationsbereich auf **Statische Website (Vorschau)**, um einen Container für das Hosten von statischen Websites zu konfigurieren.
+    - Klicken Sie auf **Aktiviert**, um eine statische Website zu aktivieren.
+    - Geben Sie **index.html** als Name des Indexdokuments ein. Im Feld steht *index.html* bereits in grauer Schrift, jedoch ist dies nur ein Beispieltext. Sie müssen trotzdem **index.html** in das Feld eingeben.
+    - Klicken Sie auf **Speichern**.
     
-    ![Enter static website settings](../media/1-storage-static-website.png)
+    ![Eingeben der Einstellungen für die statische Website](../media/1-storage-static-website.png)
 
-1. Save the **Primary Endpoint** in a place where you can conveniently copy it from while working through the tutorial. This endpoint is the URL of your web application.
+1. Speichern Sie den **primären Endpunkt** an einem Ort, an dem Sie ihn beim Durcharbeiten des Tutorials bequem kopieren können. Dieser Endpunkt ist die URL Ihrer Web-App.
 
-## Upload the web application
+## <a name="upload-the-web-application"></a>Hochladen der Web-App
 
-1. The source files for the application that you build in this tutorial are located in a [GitHub repository](https://github.com/Azure-Samples/functions-first-serverless-web-application). Go to your home directory in Cloud Shell and clone this repository.
+1. Die Quelldateien für die Anwendung, die Sie in diesem Tutorial erstellen, befinden sich in einem [GitHub-Repository](https://github.com/Azure-Samples/functions-first-serverless-web-application). Wechseln Sie zu Ihrem Basisverzeichnis in Cloud Shell, und Klonen Sie dieses Repository.
 
     ```azurecli
     cd ~
     git clone https://github.com/Azure-Samples/functions-first-serverless-web-application
     ```
 
-    The repository is cloned to `/home/<username>/functions-first-serverless-web-application`.
+    Das Repository wird in `/home/<username>/functions-first-serverless-web-application` geklont.
 
-1. The client-side web application is located in the **www** folder and is built using the Vue.js JavaScript framework. Open the **www** folder and run **npm** commands to install the application dependencies and build the application. The last of these commands might take several minutes to complete.
+1. Die clientseitige Webanwendung befindet sich im Ordner **www** und wird mit dem JavaScript-Framework „Vue.js“ erstellt. Öffnen der **Www** Ordner, und führen **Npm** Befehle zum Installieren der anwendungsabhängigkeiten und erstellen Sie die Anwendung. Es kann mehrere Minuten dauern, bis der letzte dieser Befehle abgeschlossen ist.
 
     ```azurecli
     cd ~/functions-first-serverless-web-application/www
@@ -63,20 +56,20 @@ An Azure Storage account is an Azure resource that allows you to store tables, q
     npm run generate
     ```
 
-    The application is generated in the **dist** folder.
+    Die Anwendung wird im Ordner **dist** generiert.
 
-1. Change the current directory to the **dist** folder and upload the application to the **$web** blob container.
+1. Legen Sie den **dist**-Ordner als das aktuelle Verzeichnis fest, und laden Sie die Anwendung in den Blobcontainer **$web** hoch.
 
     ```azurecli
     cd dist
     az storage blob upload-batch -s . -d \$web --account-name <storage account name>
     ```
 
-1. To view the application, open the static website’s primary endpoint URL in a web browser.
+1. Um die Anwendung anzuzeigen, öffnen Sie die statische Website primären Endpunkt-URL in einem Webbrowser aus.
 
-    ![First serverless web app home page](../media/1-app-screenshot-new.png)
+    ![Startseite der ersten serverlosen Web-App](../media/1-app-screenshot-new.png)
 
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this unit, you created a resource group named **first-serverless-app** that contains a Storage account. A blob container named **$web** in the Storage account stores the static content for your web application and makes the content publicly available. Next, you will learn how to use a serverless function to upload images to Blob storage from this web application.
+In dieser Einheit haben Sie ein Speicherkonto erstellt. Ein blobcontainer namens **$web** in Storage-Konto speichert die statische Inhalte für Ihre Webanwendung und stellt den Inhalt öffentlich zur Verfügung. Als Nächstes lernen Sie, wie Sie mit einer serverlosen Funktion zum Hochladen von Bildern in Blob Storage von der Webanwendung.

@@ -1,53 +1,27 @@
-Let's assume you're using an on-premises PostgreSQL database. Your company is now looking at expanding device support, availability, data tracking, and processing features by moving your server into Azure. You'll investigate how much effort it takes to automate the creation of an Azure Database for PostgreSQL.
+Nehmen wir an, dass Sie eine lokale PostgreSQL-Datenbank verwenden. Ihr Unternehmen ist Betrachtung jetzt Unterstützung für Geräte, Verfügbarkeit, Überwachung der Daten und Verarbeitungsfunktionen durch das Verschieben Ihrer Server in Azure erweitern. Sie müssen untersuchen, wie viel Aufwand dauert um die Erstellung eines Azure Database for PostgreSQL-Server zu automatisieren.
 
-Creating a single Azure Database for PostgreSQL server using the Azure portal is easy. Creating more than one database and running ongoing maintenance using only the portal may become tedious. You'll use the Azure CLI to create scripts when you want to automate management tasks.
+Erstellen einen einzelnen Azure-Datenbank für PostgreSQL-Server mithilfe von Azure-Portal ist einfach. Erstellen von mehr als eine Datenbank und Ausführen von laufenden Wartung, die über die nur das Portal können mühsam werden. Verwenden Sie die Azure-Befehlszeilenschnittstelle zum Erstellen von Skripts, wenn Sie Verwaltungsaufgaben automatisieren möchten.
 
-Creating almost any resource within Microsoft Azure can be automated using the Azure CLI. In this unit, you'll learn how to automate management of your Azure Database for PostgreSQL servers using the Azure CLI.
+Erstellen fast jede Ressource in Microsoft Azure kann mithilfe der Azure CLI automatisiert werden. In dieser Einheit erfahren Sie, wie Sie zum Automatisieren der Verwaltung Ihrer Azure-Datenbank für PostgreSQL-Server mithilfe der Azure CLI.
 
-## What is Azure CLI?
+## <a name="what-is-the-azure-cli"></a>Was ist Azure CLI?
 
-[Azure CLI](https://docs.microsoft.com/cli/azure/) is Microsoft’s cross-platform command-line environment for managing Azure resources. You can use the Azure CLI from your browser with Azure Cloud Shell, or you can install Azure CLI locally on Mac OS X, Linux, or Windows. The Azure CLI is run from a local command line using bash or Powershell. Running Azure CLI locally however requires additional setup. We'll use the Azure Cloud Shell for executing Azure CLI commands.
+Die [Azure-Befehlszeilenschnittstelle](https://docs.microsoft.com/cli/azure/) ist Microsofts plattformübergreifende befehlszeilenumgebung für die Verwaltung von Azure-Ressourcen. Sie können die Azure-Befehlszeilenschnittstelle in Ihrem Browser mit Azure Cloud Shell verwenden, oder Sie können die Azure-Befehlszeilenschnittstelle lokal installieren, auf Mac OS X, Linux oder Windows. Der Azure-Befehlszeilenschnittstelle, die von einer lokalen Befehlszeile aus mithilfe von Bash oder PowerShell ausgeführt wird. Der Azure CLI lokal ausführen, ist zusätzliche Konfigurationsschritte erforderlich. Wir verwenden Azure Cloud Shell, für die Azure CLI-Befehle ausführen.
 
-## What is Azure Cloud Shell?
+## <a name="what-is-azure-cloud-shell"></a>Was ist Azure Cloud Shell?
 
-Azure Cloud Shell is a browser-based shell experience that is hosted in the cloud and allows you to connect to Azure using an authenticated session. You can execute Azure CLI commands to automate the management of an Azure Database for PostgreSQL. Common Azure CLI tools are pre-installed and configured in Cloud Shell for you to use with your account.
+Azure Cloud Shell ist eine browserbasierte Shell-Oberfläche, die in der Cloud gehostet wird, und können Sie in Azure mithilfe einer authentifizierten Sitzungs verbinden. Sie können die Azure CLI-Befehle zur Automatisierung der Verwaltung eines Azure Database for PostgreSQL-Server ausführen. Allgemeine Azure CLI-Tools sind bereits installiert und konfiguriert, die in Cloud Shell für Sie mit Ihrem Konto verwenden.
 
 > [!NOTE]
-> Cloud Shell requires an Azure storage resource to persist any files you create while working in the Cloud Shell. On first launch Cloud Shell prompts to create a resource group, storage account, and Azure Files share on your behalf. This is a one-time step and will be automatically attached for all future Cloud Shell sessions.
+> Cloudshell muss eine Azure Storage-Ressource, alle Dateien beizubehalten, die Sie bei der Arbeit in Cloud Shell erstellen. Beim ersten Start fordert Cloud Shell zum Erstellen einer Ressourcengruppe, die Storage-Konto und Azure Files-Freigabe in Ihrem Namen. Dies ist ein Einmaliger Schritt, und wird für alle zukünftigen Cloud Shell-Sitzungen automatisch angefügt werden.
 
-## Create an Azure Database for PostgreSQL server using Azure CLI
+## <a name="create-an-azure-database-for-postgresql-server-using-the-azure-cli"></a>Erstellen eines Azure Database for PostgreSQL-Server mithilfe der Azure-Befehlszeilenschnittstelle
 
-You'll use Azure Cloud Shell to create an Azure Database for PostgreSQL server using Azure CLI. Let's look at the steps you'll take.
+Verwenden Sie das Azure Cloud Shell-Terminal auf der rechten Seite eines Azure Database for PostgreSQL-Server mithilfe von Azure-Befehlszeilenschnittstelle erstellen.
 
-First, sign into the Azure portal.
+Der Azure-Befehlszeilenschnittstelle Server Erstellung Nutzung Hilfe zum Befehl zeigt alle verfügbaren Parameter sieht wie im folgenden Beispiel aus:
 
-Open the Cloud Shell from the Azure portal. Open your browser and go to [Azure portal](https://portal.azure.com?azure-portal=true) and click the Open Cloud Shell button:
-
-Cloud Shell allows you to run your commands either in `bash` or `PowerShell`. We'll use the `bash` command-line option for all examples.
-
-If you have several subscriptions, make sure you activate the appropriate subscription with the following command, replacing the zeros with your subscription identifier.
-
-   ```bash
-   az account set --subscription 00000000-0000-0000-0000-000000000000
-   ```
-
-You'll run the following command to list all your subscriptions.
-
-   ```bash
-   az account list --output table
-   ```
-
-The next step is to create a resource group to manage the server and where the resource group will be located. Recall, you'll use a resource group to manage all the resources related to your server. The location option allows you to specify where the server is created physically. You'll run the next command and replace the `<resource_group_name>` and `<location>` respectively with appropriate values.
-
-   ```bash
-   az group create --name <resourcegroup> --location <location>
-   ```
-
-The last step is to create the Azure Database for PostgreSQL server.
-
-   The Azure CLI server creation command usage help showing all available parameters looks like the following example:
-
-   ```bash
+   ```azurecli
    az postgres server create [-h] [--verbose] [--debug]
                              [--output {json,jsonc,table,tsv}]
                              [--query JMESPATH]
@@ -65,34 +39,34 @@ The last step is to create the Azure Database for PostgreSQL server.
 
    ```
 
-   The following command line shows the required set of parameters to create an Azure Database for PostgreSQL server. You'll notice some are optional parameters and aren't listed.
+Die folgende Befehlszeile wird der erforderliche Satz von Parametern zum Erstellen eines Azure Database for PostgreSQL-Server. Sie werden feststellen, dass einige Parameter optional sind und werden nicht aufgeführt.
 
-   ```bash
+   ```azurecli
    az postgres server create --resource-group <resource_group_name> --name <new_server_name> --admin-user <admin_user_name> --admin-password <server_admin_password> --sku-name <sku> --version <version_number>  --location <region_name> --storage-size <size> --backup-retention <days>
    ```
 
-### Parameter descriptions
+### <a name="parameter-descriptions"></a>Beschreibungen der Parameter
 
-The `--resource-group <resource_group_name>` parameter specifies the resource group within which to create the server.
+Die `--resource-group <resource_group_name>` Parameter gibt an, die Ressourcengruppe, in dem der Server erstellen.
 
-The server `admin-user` and `admin-password` that you specify is required to sign in to the server and its databases. Remember or record this information for later when interacting with the new server.
+Der Server `admin-user` und `admin-password` die Angabe ist erforderlich, um die Anmeldung mit dem Server und seine Datenbanken. Denken Sie daran, oder notieren Sie diese Informationen später bei der Interaktion mit dem neuen Server.
 
-You use the `--sku-name` parameter is used to specify part of the pricing tier, in this case compute resource. The value follows the convention `{pricing tier}_{compute generation}_{vCores}`.
+Sie verwenden die `--sku-name` Parameter Geben Sie einen Teil des Tarifs fest, in diesem Fall, rechen-Ressource. Der Wert folgt der Konvention `{pricing tier}_{compute generation}_{vCores}`.
 
-Examples:
+Beispiele:
 
-- `--sku-name B_Gen4_4` maps to Basic, Gen 4, and 4 vCores.
-- `--sku-name GP_Gen5_32` maps to General Purpose, Gen 5, and 32 vCores.
-- `--sku-name MO_Gen5_2` maps to Memory Optimized, Gen 5, and 2 vCores.
+- `--sku-name B_Gen4_4` ist „Basic“, „Gen 4“ und „4 V-Kerne“ zugeordnet.
+- `--sku-name GP_Gen5_32` ist „Universell“, „Gen 5“ und „32 V-Kerne“ zugeordnet.
+- `--sku-name MO_Gen5_2` ist „Arbeitsspeicheroptimiert“, „Gen 5“ und „2 V-Kerne“ zugeordnet.
 
-Recall, we discussed the three pricing tiers in the unit where we create the server using the portal.
+Denken Sie daran, dass die drei Tarife in die Einheit erläutert, in dem wir den Server über das Portal erstellt.
 
-Let's assume you want to use a Basic, Gen 5, and 1 vCore compute resource, you'll then specify the parameter as `--sku-name B_Gen5_1`.
+Nehmen wir an Sie eine einfache, Gen 5 verwenden möchten, und 1 vCore-computeressource. Geben Sie den Parameter als `--sku-name B_Gen5_1`.
 
-You use the `--storage-size` parameter is also used the specify part of the pricing tier. If the value isn't specified, then it defaults to 5,120 MB. Valid storage sizes range from 5,120 MB and increases in additional increments of 1,024 MB up to 1,048,576 MB.
+Sie verwenden die `--storage-size` Parameter, um Teil des Tarifs anzugeben. Wenn der Wert nicht angegeben ist, wird standardmäßig dann 5.120 MB. Gültiger speicherkontoname Größen reichen von 5.120 MB und in Schritten von 1.024 MB erhöht, bis zu 1.048.576 MB.
 
-The `--backup-retention` parameter is used when you need to specify the retention period for backups specified in days. If the value isn't specified, then it defaults to seven days.
+Die `--backup-retention` Parameter wird verwendet, wenn müssen Sie die Beibehaltungsdauer für Sicherungen angeben, der in Tagen angegeben ist. Wenn der Wert nicht angegeben ist, wird standardmäßig klicken Sie dann auf sieben Tage.
 
-You use the `--version` parameter is used to specify the major version of PostgreSQL you would like to use.
+Sie verwenden die `--version` Parameter, um die Hauptversion von PostgreSQL anzugeben, die Sie verwenden möchten.
 
-You've now seen the steps to create an Azure Database for PostgreSQL using Azure CLI. In the next unit, you'll create an Azure Database for PostgreSQL server using Azure CLI.
+Sie haben nun die Schritte zum Erstellen eines Azure Database for PostgreSQL-Server mithilfe der Azure-Befehlszeilenschnittstelle gesehen. In der nächsten Einheit erstellen Sie einen Azure Database for PostgreSQL-Server mithilfe der Azure-Befehlszeilenschnittstelle.

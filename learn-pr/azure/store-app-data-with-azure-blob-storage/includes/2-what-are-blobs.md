@@ -6,10 +6,10 @@ Blobs sind in der Regel nicht für strukturierte Daten geeignet, die regelmäßi
 
 Bei allen Arten von Anwendungen und Architekturen werden Blobs für die Datenspeicherung verwendet:
 
-* Apps, die große Mengen von Daten über ein Messagingsystem kommunizieren müssen, das nur kleine Nachrichten unterstützt, können Daten in Blobs speichern und die Blob-URLs in Nachrichten senden.
-* Blobspeicher können wie ein Dateisystem zum Speichern und Freigeben von Dokumenten und anderen persönlichen Daten verwendet werden.
-* Statische Webressourcen wie Bilder können in Blobs gespeichert und zum öffentlichen Download verfügbar gemacht werden, als wären sie Dateien auf einem Webserver.
-* Viele Azure-Komponenten verwenden Blobs im Hintergrund. Azure Cloud Shell beispielsweise speichert die Dateien und Konfiguration in Blobs, und Azure Virtual Machines verwendet Blobs zum Speichern auf der Festplatte.
+- Apps, die große Mengen von Daten mithilfe der messaging-System, das unterstützt nur kleine Nachrichten übermittelt werden muss. Diese apps können Daten in Blobs speichern und senden Sie das Blob-URLs in Nachrichten.
+- Blobspeicher können wie ein Dateisystem zum Speichern und Freigeben von Dokumenten und anderen persönlichen Daten verwendet werden.
+- Statische Webressourcen wie Bilder können in Blobs gespeichert und zum öffentlichen Download verfügbar gemacht werden, als wären sie Dateien auf einem Webserver.
+- Viele Azure-Komponenten verwenden Blobs im Hintergrund. Azure Cloud Shell beispielsweise speichert die Dateien und Konfiguration in Blobs, und Azure Virtual Machines verwendet Blobs zum Speichern auf der Festplatte.
 
 Einige Apps erstellen, aktualisieren und löschen Blobs ständig als Teil ihrer Arbeit. Andere verwenden eine geringe Anzahl von Blobs und ändern diese nur selten.
 

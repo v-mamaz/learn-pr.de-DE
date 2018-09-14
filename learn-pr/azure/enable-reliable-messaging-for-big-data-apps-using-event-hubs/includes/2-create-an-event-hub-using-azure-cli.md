@@ -6,9 +6,9 @@ Ein Event Hub ist eine Azure-Ressource. Daher ist Ihr erster Schritt das Erstell
 
 Azure Event Hubs ist ein cloudbasierter Dienst zur Ereignisverarbeitung, der pro Sekunde Millionen von Ereignissen empfangen und verarbeiten kann. Event Hubs fungiert als Zugang zu einer Ereignispipeline, in der eingehende Daten empfangen und gespeichert werden, bis Verarbeitungsressourcen verfügbar sind.
 
-Eine Entität, die Daten an die Event Hubs sendet, wird als *Herausgeber* und eine Entität, die Daten von den Event Hubs liest, als *Consumer* oder *Abonnent* bezeichnet. Azure Event Hubs befindet sich zwischen diesen beiden Entitäten, um die Produktion (durch den Herausgeber) und den Verbrauch (durch den Abonnenten) eines Ereignisdatenstroms aufzuteilen. Diese Entkopplung hilft, Szenarien zu bewältigen, in denen die Rate der Ereignisproduktion viel höher ist als der Verbrauch.
+Eine Entität, die Daten an die Event Hubs sendet, wird als *Herausgeber* und eine Entität, die Daten von den Event Hubs liest, als *Consumer* oder *Abonnent* bezeichnet. Azure Event Hubs befindet sich zwischen diesen beiden Entitäten, um die Produktion (durch den Herausgeber) und den Verbrauch (durch den Abonnenten) eines Ereignisdatenstroms aufzuteilen. Diese Entkopplung hilft, Szenarien zu bewältigen, in denen die Rate der Ereignisproduktion viel höher ist als der Verbrauch. Die folgende Abbildung zeigt die Rolle von einem Event Hub.
 
-![Herausgeber senden mehrere Ereignisse an einen einzelnen Event Hub und stellen die Daten Abonnenten zur Verfügung](../media-draft/2-event-hub-overview.png "Übersicht über Event Hubs")
+![Eine Abbildung mit einem Azure Event Hub, die zwischen vier Verlegern und zwei Abonnenten platziert werden. Der Event Hub empfängt mehrere Ereignisse von den Herausgebern, serialisiert die Ereignisse in Datenströme und stellt die Datenströme an Abonnenten zur Verfügung.](../media-draft/2-event-hub-overview.png)
 
 ### <a name="events"></a>Ereignisse
 

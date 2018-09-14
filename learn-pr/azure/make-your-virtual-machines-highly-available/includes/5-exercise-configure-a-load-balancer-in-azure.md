@@ -1,46 +1,46 @@
-You have already created the key resources for your online bank architecture. In this exercise, you will complete the setup by configuring security settings, a back-end address pool, health probe rules, and load-balancing rules. Once setup is complete, you will test the load balancer by removing a VM from the pool and verifying that client requests are no longer sent to this VM.
+Sie haben bereits wichtigsten Ressourcen für Ihre Architektur online Bank erstellt. In dieser Übung führen Sie das Setup durch Konfigurieren von Sicherheitseinstellungen, ein Back-End-Adresspool, Integritätsregeln für Tests und Regeln des Lastenausgleichs. Nachdem Setup abgeschlossen ist, testen Sie den Load Balancer durch Entfernen eines virtuellen Computers aus dem Pool, und überprüfen, dass Clientanforderungen an diesen virtuellen Computer nicht mehr gesendet werden.
 
-## Inbound rules
+## <a name="inbound-rules"></a>Regeln für eingehenden Datenverkehr
 
-Create an inbound security rule to allow for inbound HTTP connections that use port 80.
+Erstellen Sie eine Sicherheitsregel für eingehenden Datenverkehr zu für eingehende HTTP-Verbindungen, die Verwendung von Port 80 an.
 
-1. In the Azure portal, in the left menu, click **All resources**. Then, in the resource list, click **woodgrove-NSG**.
+1. In der [Azure-Portal](https://portal.azure.com/?azure-portal=true), klicken Sie im linken Menü auf **alle Ressourcen**. Klicken Sie in der Ressourcenliste auf **Woodgrove-NSG**.
 
-1. On the **woodgrove-NSG** blade, under **Settings**, click **Inbound security rules**, and then click **Add**.
+1. Auf der **Woodgrove-NSG** Blatt unter **Einstellungen**, klicken Sie auf **Eingangssicherheitsregeln**, und klicken Sie dann auf **hinzufügen**.
 
-1. On the **Add inbound security rule** blade, enter the following information:
-    - Source: **Service Tag**
-    - Source service tag: **Internet**
-    - Source port ranges: **\***
-    - Destination: **Any**
-    - Destination port ranges: **80**
-    - Protocol: **TCP**
-    - Action: **Allow**
-    - Priority: **100**
-    - Name: **woodgrove-HTTP-rule**
+1. Auf der **eingangssicherheitsregel hinzufügen** auf dem Blatt, geben Sie die folgende Informationen:
+    - Quelle: **Diensttag**
+    - Quelldiensttag: **Internet**
+    - Quellportbereiche: **\***
+    - Ziel: **alle**
+    - Zielportbereich: **80**
+    - Protokoll: **TCP**
+    - Aktion: **zulassen**
+    - Priorität: **100**
+    - Name: **Woodgrove-HTTP-Regel**
 
-1. Click **Add**.
+1. Klicken Sie auf **Hinzufügen**.
 
-Create an inbound security rule to allow for inbound RDP connections that use port 3389.
+Erstellen Sie eine Sicherheitsregel für eingehenden Datenverkehr um, die Verwendung von Port 3389 eingehende RDP-Verbindungen zu ermöglichen.
 
-1. On the **woodgrove-NSG - Inbound security rules** blade, click **Add**.
+1. Auf der **Woodgrove-NSG - Sicherheitsregeln für eingehende** auf dem Blatt klicken Sie auf **hinzufügen**.
 
-1. On the **Add inbound security rule** blade, enter the following information:
-    - Source: **Service Tag**
-    - Source service tag: **Internet**
-    - Source port ranges: **\***
-    - Destination: **Any**
-    - Destination port ranges: **3389**
-    - Protocol: **TCP**
-    - Action: **Allow**
-    - Priority: **200**
-    - Name: **woodgrove-RDP-rule**
+1. Auf der **eingangssicherheitsregel hinzufügen** auf dem Blatt, geben Sie die folgende Informationen:
+    - Quelle: **Diensttag**
+    - Quelldiensttag: **Internet**
+    - Quellportbereiche: **\***
+    - Ziel: **alle**
+    - Zielportbereich: **3389**
+    - Protokoll: **TCP**
+    - Aktion: **zulassen**
+    - Priorität: **200**
+    - Name: **Woodgrove-RDP-Regel**
 
-1. Click **Add**.
+1. Klicken Sie auf **Hinzufügen**.
 
-## Prepare a script to install and configure IIS on the VMs
+## <a name="prepare-a-script-to-install-and-configure-iis-on-the-vms"></a>Vorbereiten eines Skripts zum Installieren und Konfigurieren von IIS auf den virtuellen Computern
 
-1. Copy the following PowerShell commands into a text editor:
+1. Kopieren Sie die folgenden PowerShell-Befehle in einem Text-Editor ein:
 
     ```powershell
     # install IIS server role
@@ -53,125 +53,125 @@ Create an inbound security rule to allow for inbound RDP connections that use po
     Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Web page from <b>" + $env:computername + "</b>")
     ```
 
-1. Save the file locally as **ConfigureIIS.ps1**.
+1. Speichern Sie die Datei lokal **ConfigureIIS.ps1**.
 
-### Install and configure IIS on VMs
+### <a name="install-and-configure-iis-on-vms"></a>Installieren und Konfigurieren von IIS auf virtuellen Computern
 
-1. In the Azure portal, in the left menu, click **All resources**. Then, in the resource list, click **woodgrove-SVR01**.
+1. Klicken Sie im Azure-Portal im linken Menü auf **alle Ressourcen**. Klicken Sie in der Ressourcenliste auf **Woodgrove-SVR01**.
 
-1. On the Overview page, click **Connect**.
+1. Klicken Sie auf der Seite "Übersicht" auf **Connect**.
 
-1. In the **Connect to virtual machine** blade, click **Download RDP File**. Then, in the pop-up, click **Open**.
+1. In der **Herstellen einer Verbindung mit dem virtuellen Computer** auf dem Blatt klicken Sie auf **RDP-Datei herunterladen**. Klicken Sie im Popupfenster auf **öffnen**.
 
-1. In the **Remote Desktop Connection** window, click **Connect**.
+1. Klicken Sie im Fenster **Remotedesktopverbindung** auf **Verbinden**.
 
-1. In the **Windows Security** dialog box, click **More choices**, and then click **Use a different account**.
+1. In der **Windows-Sicherheit** Dialogfeld klicken Sie auf **Weitere Optionen**, und klicken Sie dann auf **verwenden ein anderes Konto**.
 
-1. In the **Windows Security** dialog box, enter the credentials that you used when you provisioned the VMs, and then click **OK**.
+1. In der **Windows Security** Dialogfeld Geben Sie die Anmeldeinformationen, die Sie verwendet werden, wenn Sie die virtuellen Computer bereitgestellt, und klicken Sie dann auf **OK**.
 
-1. If you get a **Remote Desktop Connection** certificate warning, click **Yes**.
+1. Wenn Sie erhalten eine **Remotedesktopverbindung** Warnung Zertifikat, klicken Sie auf **Ja**.
 
-1. On your local computer, open the folder containing your script.
+1. Öffnen Sie auf dem lokalen Computer den Ordner mit dem Skript aus.
 
-1. Copy **ConfigureIIS.ps1** to the clipboard.
+1. Kopie **ConfigureIIS.ps1** in die Zwischenablage.
 
-1. Switch to the RDP session. Then, the server, open Windows Explorer, and paste **ConfigureIIS.ps1** to **C:\\**.
+1. Wechseln Sie zu der RDP-Sitzung. Klicken Sie dann öffnen Sie Windows Explorer, und fügen Sie **ConfigureIIS.ps1** zu **C:\\**.
 
-1. In the RDP session, click **Start**, and then open **Windows PowerShell**.
+1. Klicken Sie in der RDP-Sitzung auf **starten**, und öffnen Sie dann **Windows PowerShell**.
 
-1. At the PowerShell prompt, type the following command, and then press **Enter:**
+1. Geben Sie an der PowerShell-Eingabeaufforderung den folgenden Befehl aus, und drücken Sie dann die **EINGABETASTE:**
 
     ```powershell
     cd \
     ```
 
-1. At the PowerShell prompt, type the following command, and then press **Enter:**
+1. Geben Sie an der PowerShell-Eingabeaufforderung den folgenden Befehl aus, und drücken Sie dann die **EINGABETASTE:**
 
     ```powershell
     .\ConfigureIIS.ps1
     ```
 
-1. Close the RDP connection.
+1. Schließen Sie die RDP-Verbindung.
 
-1. Repeat steps 1-13 for **woodgrove-SVR02** and **woodgrove-SVR03**.
+1. Wiederholen Sie die Schritte 1 bis 13 für **Woodgrove-SVR02** und **Woodgrove-SVR03**.
 
-## Create a back-end address pool
+## <a name="create-a-back-end-address-pool"></a>Erstellen eines Back-End-Adresspools
 
-Next, use the portal to create a back-end address pool for the public load balancer.
+Als Nächstes verwenden Sie das Portal, um einen Back-End-Adresspool für den öffentlichen Load Balancer zu erstellen.
 
-1. In the Azure portal, in the left menu, click **All resources**. Then, in the resource list, click **woodgrove-LB**.
+1. Klicken Sie im Azure-Portal im linken Menü auf **alle Ressourcen**. Klicken Sie in der Ressourcenliste auf **Woodgrove-LB-**.
 
-1. On the **woodgrove-LB** blade, under **Settings**, click **Backend pools**, and then click **Add**.
+1. Auf der **Woodgrove-LB-** Blatt unter **Einstellungen**, klicken Sie auf **Back-End-Pools**, und klicken Sie dann auf **hinzufügen**.
 
-1. On the **Add backend pool** blade, add the following information:
-    - Name: **woodgrove-BEP**
-    - Associated to: select **Availability set**.
-    - Availability set: **woodgrove-AS**.
+1. Auf der **Back-End-Pool hinzufügen** auf dem Blatt, fügen Sie die folgenden Informationen hinzu:
+    - Name: **Woodgrove-BEP**
+    - Zugeordnete: Wählen Sie **verfügbarkeitsgruppe**
+    - Verfügbarkeitsgruppe: **Woodgrove-AS**
 
-1. Click **Add a target network IP configuration**. Then, in the **Target virtual machine** list, select **woodgrove-SVR01**. In the **Network IP configuration** list, select the VM's IP address pool.
+1. Klicken Sie auf **Zielnetzwerk-IP-Konfiguration hinzufügen**. Klicken Sie auf die **virtuellen Zielcomputer** Liste **Woodgrove-SVR01**. In der **Netzwerk-IP-Konfiguration** wählen Sie die VM IP-Adresspool.
 
-1. Click **Add a target network IP configuration**. Then, in the **Target virtual machine** list, select **woodgrove-SVR02**, and in the **Network IP configuration** list, select the VM's IP address pool.
+1. Klicken Sie auf **Zielnetzwerk-IP-Konfiguration hinzufügen**. Klicken Sie auf die **virtuellen Zielcomputer** Liste **Woodgrove-SVR02**, und klicken Sie in der **Netzwerk-IP-Konfiguration** wählen Sie die VM IP-Adresspool.
 
-1. Click **Add a target network IP configuration**. Then, in the **Target virtual machine** list, select **woodgrove-SVR03**, and in the **Network IP configuration** list, select the VM's IP address pool.
+1. Klicken Sie auf **Zielnetzwerk-IP-Konfiguration hinzufügen**. Klicken Sie auf die **virtuellen Zielcomputer** Liste **Woodgrove-SVR03**, und klicken Sie in der **Netzwerk-IP-Konfiguration** wählen Sie die VM IP-Adresspool.
 
-1. On the **Add backend pool** blade, click **OK**.
+1. Auf der **Back-End-Pool hinzufügen** auf dem Blatt klicken Sie auf **OK**.
 
-1. Wait until the load balancer configuration has updated before proceeding with the exercise.
+1. Warten Sie, bis die Lastenausgleichsmodul-Konfiguration vor dem Fortfahren mit der Übung aktualisiert wurde.
 
-## Create a health probe for the load balancer
+## <a name="create-a-health-probe-for-the-load-balancer"></a>Erstellen eines Integritätstests für den Load balancer
 
-Next, add a health probe for HTTP over port 80.
+Fügen Sie einen Integritätstest für HTTP über Port 80.
 
-1. On the **woodgrovelb** blade, under **Settings**, click **Health probes**, and then click **Add**.
+1. Auf der **Woodgrovelb** Blatt unter **Einstellungen**, klicken Sie auf **Integritätstests**, und klicken Sie dann auf **hinzufügen**.
 
-1. On the **Add health probe** blade, add the following information:
+1. Auf der **Integritätstest hinzufügen** auf dem Blatt, fügen Sie die folgenden Informationen hinzu:
     - Name: **woodgrove-HP**
-    - Protocol: **HTTP**
+    - Protokoll: **HTTP**
     - Port: **80**
-    - Path: **/**
-    - Interval: **15**.
-    - Unhealthy threshold: **2**
+    - Pfad: **/**
+    - Intervall: **15**
+    - Fehlerschwellenwert: **2**
 
-1. On the **Add health probe** blade, click **OK**.
+1. Auf der **Integritätstest hinzufügen** auf dem Blatt klicken Sie auf **OK**.
 
-1. Wait until the load balancer configuration has updated before proceeding with the exercise.
+1. Warten Sie, bis die Lastenausgleichsmodul-Konfiguration vor dem Fortfahren mit der Übung aktualisiert wurde.
 
-## Create a load balancer rule
+## <a name="create-a-load-balancer-rule"></a>Erstellen einer Load Balancer-Regel
 
-Finally, create a load balancing rule for the HTTP over port 80, that associates the back-end pool with the health probe.
+Abschließend erstellen Sie eine lastenausgleichsregel für den HTTP über Port 80, die den Integritätstest der Back-End-Adresspool zuordnet.
 
-1. On the **woodgrove-LB** blade, under **Settings**, click **Load balancing rules**, and then click **Add**.
+1. Auf der **Woodgrove-LB-** Blatt unter **Einstellungen**, klicken Sie auf **Lastenausgleichsregeln**, und klicken Sie dann auf **hinzufügen**.
 
-1. On the **Add load balancing rule** blade, in the **Name** box, type **woodgrove-HTTP-LBRule**. Then verify that the following information has been automatically entered:
-    - IP Version: **IPv4**
-    - Frontend IP address: **LoadBalancerFrontEnd**
-    - Protocol: **TCP**
+1. Auf der **lastenausgleichsregel hinzufügen** Blatt in der **Namen** geben **Woodgrove-HTTP-LBRule**. Klicken Sie dann stellen Sie sicher, dass die folgende Informationen automatisch eingegeben wurde:
+    - IP-Version: **IPv4**
+    - Frontend IP-Adresse: **LoadBalancerFrontEnd**
+    - Protokoll: **TCP**
     - Port: **80**
-    - Backend port: **80**
-    - Backend pool: **woodgrove-BEP**
-    - Health probe: **woodgrove-HP**
-    - Session persistence: **None**
-    - Idle timeout: **4 minutes**.
-    - Floating IP: **Disabled**
+    - Back-End-Port: **80**
+    - Back-End-Pool: **Woodgrove-BEP**
+    - Integritätstest: **Woodgrove-HP**
+    - Sitzungspersistenz: **keine**
+    - Das inaktiv-Timeout: **4 Minuten**
+    - Floating-IP: **deaktiviert**
 
-1. On the **Add load balancing rule** blade, click **OK**.
+1. Auf der **lastenausgleichsregel hinzufügen** auf dem Blatt klicken Sie auf **OK**.
 
-1. Wait until the load balancer configuration has updated before proceeding with the exercise.
+1. Warten Sie, bis die Lastenausgleichsmodul-Konfiguration vor dem Fortfahren mit der Übung aktualisiert wurde.
 
-## Test the load balancer
+## <a name="test-the-load-balancer"></a>Testen des Lastenausgleichs
 
-1. In the Azure portal, in the left menu, click **All resources**, and then in the resource list, click **woodgrove-LB-ip**.
+1. Klicken Sie im Azure-Portal im linken Menü auf **alle Ressourcen**, und klicken Sie dann in der Ressourcenliste auf **Woodgrove-LB-IP-**.
 
-1. On the **Overview** blade, select the **IP address**, and then click the **Copy** button.
+1. Auf der **Übersicht über die** Blatt die **IP-Adresse**, und klicken Sie dann auf die **Kopie** Schaltfläche.
 
-1. In a new browser tab, paste the IP address into the address bar of your browser. Note the name of the server and keep this tab open.
+1. Fügen Sie in einer neuen Browserregisterkarte die IP-Adresse in die Adressleiste Ihres Browsers ein. Notieren Sie den Namen des Servers ein, und lassen Sie diese Registerkarte geöffnet.
 
-1. In the Azure portal, in the left menu, click **All resources**. Then, in the resource list, click the server you noted above.
+1. Klicken Sie im Azure-Portal im linken Menü auf **alle Ressourcen**. Klicken Sie auf dem Server, dem Sie oben notiert haben. Klicken Sie dann in der Ressourcenliste.
 
-1. On the **Overview** blade, click **Stop**, and then click **Yes**.
+1. Auf der **Übersicht** auf dem Blatt klicken Sie auf **beenden**, und klicken Sie dann auf **Ja**.
 
-1. Wait until the VM has stopped, and then switch to the tab you viewed in step 3. Refresh the page.
+1. Warten Sie, bis der virtuelle Computer beendet wurde, und wechseln Sie zur Registerkarte "", die Sie in Schritt 3 angezeigt. Aktualisieren Sie die Seite.
 
-1. The load balancer will now send your HTTP request to one of your other VMs.
+1. Der Load Balancer sendet nun Ihre HTTP-Anforderung an eine Ihrer anderen VMs.
 
-In this exercise, you completed the deployment of your backend VMs and the load balancer.
+In dieser Übung haben Sie die Bereitstellung von Ihrem Back-End-VMs und den Load Balancer.

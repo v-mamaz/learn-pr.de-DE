@@ -1,315 +1,305 @@
-In this unit, you're going to create a simple AngularJS application hosted in Node.js and use Express for routing. On the back end, MongoDB will serve as your data store. The application is a book database, where you will be able to list, add, and delete books.
+In dieser Übung erstellen Sie eine einfache, in Node.js gehostete AngularJS-Anwendung und verwenden Express für das Routing. Auf dem Back-End dient Ihnen MongoDB als Datenspeicher. Die Anwendung ist eine Buchdatenbank, in der Sie Bücher auflisten, hinzufügen und löschen können.
 
 > [!Important]
-> This is a simple application. Its purpose is to test the newly installed MEAN stack. This application is not sufficiently secure or ready for production use.
+> Dies ist eine einfache Anwendung. Sie dient zum Testen des neu installierten MEAN-Stapels. Diese Anwendung ist weder ausreichend sicher noch bereit für die Produktion.
 
-## Connect to the VM
+## <a name="create-the-application"></a>Erstellen der Anwendung
 
-If you aren't still connected to your VM, run the following command. Substitute your admin username and your VM's public IP address from above for the `<vm-admin-username>` and `<vm-public-ip>` placeholders.
+Zunächst werden wir den Code, Skripts und HTML-Dateien für die Anwendung zu erstellen. Wir führen Sie dies in der Cloud Shell-Editor und anschließend kopieren Sie die Dateien mit dem virtuellen Computer.
 
-```bash
-ssh <vm-admin-username>@<vm-public-ip>
-```
-
-## Create the back end
-
-1. Create a folder structure for your new sample application with the following command.
+1. Wenn Sie weiterhin per auf Ihrem virtuellen Computer sind, verwenden Sie in Cloud Shell `exit` , in der Cloud Shell-Dateisystem zurück.
 
     ```bash
-    mkdir ~/Books
-    mkdir ~/Books/app
-    mkdir ~/Books/public
+    exit
     ```
 
-    In your admin user's home location, you created a folder called "Books" to contain your project's app and its dependencies. Within that folder, you created an "app" folder to contain all your application resources and scripts. Finally, we will also create a "public" folder to hold all of the client-side files that will be served up directly to appropriate HTTP requests.
+1. Erstellen Sie die Ordner und Dateien für Ihre Anwendung aus, und öffnen Sie sie in der Cloud Shell-Editor.
 
-1. Install **Express** to handle routing of your HTTP requests, to decide what content to return to a user of your web application.
+    ```bash
+    cd ~
+    mkdir Books
+    mkdir Books/app
+    mkdir Books/public
+    touch Books/app/model.js
+    touch Books/app/routes.js
+    touch Books/server.js
+    touch Books/public/script.js
+    touch Books/public/index.html
+    code Books
+    ```
 
-    Run the following command to add Express as a package for your web application to use.
+    Dies erstellt einen Ordner namens "Books" Ihres Projekts-Anwendung und deren Abhängigkeiten enthält. In diesem Ordner haben Sie einen Ordner „app“ erstellt, der alle Ihre Anwendungsressourcen und Skripts enthält. Schließlich erstellen wir auch einen „public“-Ordner zum Speichern aller clientseitigen Dateien, die direkt auf entsprechende HTTP-Anforderungen hin bereitgestellt werden.
 
-      ```bash
-      npm install express
-      ```
+## <a name="create-the-application"></a>Erstellen der Anwendung
 
-1. Install **Mongoose** to help relay your book data between MongoDB and the HTTP request routing.
+1. Erstellen Sie das Mongoose-Datenmodell. Öffnen Sie in den Editor `app/model.js` und fügen Sie in den folgenden Code.
 
-    The book information will be queried via REST API requests. To simplify the transfer of data in and out of MongoDB to our API, we will use Mongoose. Mongoose is a schema-based system for modeling data. We will be using it in our sample application to keep our data models consistent through the various GET, POST, and DELETE HTTP requests.
+    ```javascript
+    var mongoose = require('mongoose');
+    var dbHost = 'mongodb://localhost:27017/Books';
+    mongoose.connect(dbHost,  { useNewUrlParser: true } );
+    mongoose.connection;
+    mongoose.set('debug', true);
+    var bookSchema = mongoose.Schema( {
+        name: String,
+        isbn: {type: String, index: true},
+        author: String,
+        pages: Number
+    });
+    var Book = mongoose.model('Book', bookSchema);
+    module.exports = Book // mongoose.model('Book', bookSchema);
+    ```
 
-    Run the following command to add Mongoose as a package for your web application to use.
+    > [!IMPORTANT]
+    > Wenn Sie Code in eine Datei im Editor einfügen, stellen Sie sicher, um danach mit speichern `Ctrl+S`.
+
+    Dieser Code stellt eine Verbindung mit einer Datenbank namens „Books“ auf dem MongoDB-Server des lokalen virtuellen Computers her. Er erstellt dann ein Dokument namens „Book“ mit dem von der `bookSchema`-Variablen definierten Schema.
+
+2. Erstellen Sie die Express-Routen, die HTTP-Anforderungen behandelt. Open `app/routes.js` im Editor, und fügen Sie den folgenden Code.
+
+    ```javascript
+    var path = require('path');
+    var Book = require('./model');
+    var routes = function(app) {
+        app.get('/book', function(req, res) {
+            Book.find({}, function(err, result) {
+                if ( err ) throw err;
+                res.json(result);
+            });
+        });
+        app.post('/book', function(req, res) {
+            var book = new Book( {
+                name:req.body.name,
+                isbn:req.body.isbn,
+                author:req.body.author,
+                pages:req.body.pages
+            });
+            book.save(function(err, result) {
+                if ( err ) throw err;
+                res.json( {
+                    message:"Successfully added book",
+                    book:result
+                });
+            });
+        });
+        app.delete("/book/:isbn", function(req, res) {
+            Book.findOneAndRemove(req.query, function(err, result) {
+                if ( err ) throw err;
+                res.json( {
+                    message: "Successfully deleted the book",
+                    book: result
+                });
+            });
+        });
+        app.get('*', function(req, res) {
+            res.sendFile(path.join(__dirname + '/public', 'index.html'));
+        });
+    };
+    module.exports = routes;
+    ```
+
+    Dieser Code erstellt vier Routen für die Anwendung. Die ersten drei geben an, was zu tun ist, wenn jemand eine API-GET-, POST- oder DELETE-Anforderung an die `/book`-Ressource sendet. Die letzte ist eine alles abfangende Route, die die anfordernde Person zur Indexseite leitet.
+
+    Express kann HTTP-Antworten direkt an den Routenverarbeitungscode leiten oder statischen Inhalt aus Dateien bereitstellen. In dieser Beispiel-Web-Anwendung findet beides statt. Wir antworten mit JSON-Daten auf Buch-API-Anforderungen und mit HTML-Daten direkt aus der Datei „index.html“.
+
+3. Erstellen Sie die Express-Server zum Hosten der Anwendung. Open `server.js` im Editor, und fügen Sie den folgenden Code:
+
+    ```javascript
+    var express = require('express');
+    var bodyParser = require('body-parser');
+    var app = express();
+    app.use(express.static(__dirname + '/public'));
+    app.use(bodyParser.json());
+    require('./app/routes')(app);
+    app.set('port', 80);
+    app.listen(app.get('port'), function() {
+        console.log('Server up: http://localhost:' + app.get('port'));
+    });
+    ```
+
+    Dieser Code erstellt die Webanwendung selbst. Er stellt statische Dateien aus einem Ordner mit dem Namen **public** (als Nächstes erstellt) bereit und verwendet die im vorherigen Schritt definierten Routen.
+
+4. Erstellen Sie die clientseitige JavaScript-Anwendung. Open `public/script.js` im Editor, und fügen Sie in diesem Code:
+
+    ```javascript
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope, $http) {
+        var getData = function() {
+            return $http( {
+                method: 'GET',
+                url: '/book'
+            }).then(function successCallback(response) {
+                $scope.books = response.data;
+            }, function errorCallback(response) {
+                console.log('Error: ' + response);
+            });
+        };
+        getData();
+        $scope.del_book = function(book) {
+            $http( {
+                method: 'DELETE',
+                url: '/book/:isbn',
+                params: {'isbn': book.isbn}
+            }).then(function successCallback(response) {
+                console.log(response);
+                return getData();
+            }, function errorCallback(response) {
+                console.log('Error: ' + response);
+            });
+        };
+        $scope.add_book = function() {
+            var body = '{ "name": "' + $scope.Name +
+            '", "isbn": "' + $scope.Isbn +
+            '", "author": "' + $scope.Author +
+            '", "pages": "' + $scope.Pages + '" }';
+            $http({
+                method: 'POST',
+                url: '/book',
+                data: body
+            }).then(function successCallback(response) {
+                console.log(response);
+                return getData();
+            }, function errorCallback(response) {
+                console.log('Error: ' + response);
+            });
+        };
+    });
+    ```
+
+    Dieser clientseitige AngularJS-Code erstellt eine neue angular-Anwendung `myApp` mit einem Controller `myCtrl`. Wenn die Anwendung im Browser des Betrachters ausgeführt wird, wird eine HTTP-GET-Anforderung zum Abrufen der Bücherliste in der Datenbank ausgegeben.
+
+5. Erstellen Sie die Benutzeroberfläche für die app ein. Open `public/index.html` im Editor, und fügen Sie in diesem Code:
+
+    ```html
+    <!doctype html>
+    <html ng-app="myApp" ng-controller="myCtrl">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div>
+        <table>
+            <tr>
+            <td>Name:</td>
+            <td><input type="text" ng-model="Name"></td>
+            </tr>
+            <tr>
+            <td>Isbn:</td>
+            <td><input type="text" ng-model="Isbn"></td>
+            </tr>
+            <tr>
+            <td>Author:</td>
+            <td><input type="text" ng-model="Author"></td>
+            </tr>
+            <tr>
+            <td>Pages:</td>
+            <td><input type="number" ng-model="Pages"></td>
+            </tr>
+        </table>
+        <button ng-click="add_book()">Add</button>
+        </div>
+        <hr>
+        <div>
+        <table>
+            <tr>
+            <th>Name</th>
+            <th>Isbn</th>
+            <th>Author</th>
+            <th>Pages</th>
+            </tr>
+            <tr ng-repeat="book in books">
+            <td><input type="button" value="Delete" data-ng-click="del_book(book)"></td>
+            <td>{{book.name}}</td>
+            <td>{{book.isbn}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.pages}}</td>
+            </tr>
+        </table>
+        </div>
+    </body>
+    </html>
+    ```
+
+    Dieser Code erstellt ein einfaches HTML-Formular mit vier Feldern zum Übermitteln von neuen Buchdaten und eine Tabelle zum Anzeigen aller Bücher, die bereits in der Datenbank gespeichert sind. Die verschiedenen `ng-`-HTML-Attribute verknüpfen den AngularJS-Code mit der Benutzeroberfläche.
+
+6. Bearbeitende von Dateien fertig. Stellen Sie sicher, dass Sie alle, führen Sie dann den folgenden Befehl zum Kopieren auf den virtuellen Computer gespeichert haben. Geben Sie Ihr Kennwort ein, wenn Sie dazu aufgefordert werden.
+
+    ```bash
+    scp -r ~/Books <vm-admin-username>@<vm-public-ip>:~/Books
+    ```
+
+## <a name="install-node-packages"></a>Installationspakete für Knoten
+
+1. SSH in Ihrem virtuellen Computer.
+
+    ```bash
+    ssh <vm-admin-username>@<vm-public-ip>
+    ```
+
+1. Wechseln Sie in das Verzeichnis `Books`.
+
+    ```bash
+    cd ~/Books
+    ```
+
+1. Installieren Sie **Express** zur Verarbeitung des Routings Ihrer HTTP-Anforderungen, wobei entschieden wird, welche Inhalte an einen Benutzer Ihrer Webanwendung zurückgegeben werden.
+
+    Führen Sie den folgenden Befehl zum Hinzufügen von Express als Paket für Ihre zu verwendende Webanwendung aus.
+
+    ```bash
+    npm install express
+    ```
+
+1. Installieren Sie **Mongoose** zur Unterstützung des Weiterleitens Ihrer Buchdaten zwischen MongoDB und dem HTTP-Anforderungsrouting.
+
+    Die Buchinformationen werden über REST-API-Anforderungen abgefragt. Um die Übertragung von Daten in MongoDB und heraus an unsere API zu vereinfachen, verwenden wir Mongoose. Mongoose ist ein schemabasiertes System für die Modellierung von Daten. Wir werden es in unserer Beispielanwendung verwenden, um unsere Datenmodelle über die verschiedenen GET-, POST- und DELETE-HTTP-Anforderungen hinweg konsistent zu halten.
+
+    Führen Sie den folgenden Befehl zum Hinzufügen von Mongoose als Paket für Ihre zu verwendende Webanwendung aus.
 
       ```bash
       npm install mongoose
       ```
 
-1. Install **body-parser** to pre-process JSON request data for use in our Express routing.
+1. Installieren Sie **body-parser**, um JSON-Anforderungsdaten für die Verwendung in unserem Express-Routing vorzuverarbeiten.
 
-    On the back end, `body-parser` will serve as a middleware between Node.js and Express for parsing incoming JSON request data.
+    Auf dem Back-End dient `body-parser` als Middleware zwischen Node.js und Express zum Analysieren der eingehenden JSON-Anforderungsdaten.
 
-    Run the following command to add `body-parser` as a package for your web application to use.
+    Führen Sie den folgenden Befehl zum Hinzufügen von `body-parser` als Paket für Ihre zu verwendende Webanwendung aus.
 
       ```bash
       npm install body-parser
       ```
 
     > [!TIP]
-    > When installing multiple npm packages, you can include them all in a single command such as this:
+    > Wenn Sie mehrere Npm-Pakete zu installieren, können Sie sie in einem einzigen Befehl aus, wie diese einschließen:
     >
     > ```bash
     > npm install express mongoose body-parser
     > ```
 
-1. Create the data model back end for your books web application using Mongoose.
+## <a name="test-the-application"></a>Testen der Anwendung
 
-    1. In the **app** folder within your **Books** application folder, create a new JavaScript file called **model.js** to contain your book's Mongoose-based data model.
+1. Starten Sie die Anwendung mit dem folgenden Befehl mit Node.js.
 
-        ```bash
-        nano ~/Books/app/model.js
-        ```
+    ```bash
+    sudo node server.js
+    ```
 
-    1. Paste the following code into this new file to create our book schema using Mongoose.
+    Dadurch wird das Back-End der Anwendung gestartet, das dann Port 80 auf eingehende HTTP-Anforderungen überwacht.
 
-        ```javascript
-        var mongoose = require('mongoose');
-        var dbHost = 'mongodb://localhost:27017/Books';
-        mongoose.connect(dbHost,  { useNewUrlParser: true } );
-        mongoose.connection;
-        mongoose.set('debug', true);
-        var bookSchema = mongoose.Schema( {
-            name: String,
-            isbn: {type: String, index: true},
-            author: String,
-            pages: Number
-        });
-        var Book = mongoose.model('Book', bookSchema);
-        module.exports = Book // mongoose.model('Book', bookSchema);
-        ```
+1. Testen Sie die Anwendungsfunktionalität.
 
-        > [!TIP]
-        > To save the current file in **nano**, you need to press **Ctrl**+**O**. To exit **nano**, you need to press **Ctrl**+**X**.
+    Öffnen Sie Ihren bevorzugten Browser, und navigieren Sie zur öffentlichen IP-Adresse Ihrer Azure-VM als URL.
 
-        This code is connecting to a database called "Books" on the local VM's MongoDB server. It then creates a database document called "Book" with the schema defined by the `bookSchema` variable.
+    ```bash
+    http://<vm-public-ip>
+    ```
 
-1. Create the Express routes for the application to handle the various HTTP requests.
+    Wenn alles in Ordnung ist, sehen Sie etwa folgenden Bildschirm:
 
-    1. Within the **app** folder, create a new JavaScript file called **routes.js**.
+    Der folgende Screenshot zeigt die Benutzeroberfläche zum Übermitteln von Buchdetails zur Speicherung in der MongoDB-Datenbank.
 
-        ```bash
-        nano ~/Books/app/routes.js
-        ```
+    ![Screenshot eines Webbrowsers mit dem Dateneingabeformular zum Hinzufügen eines Buchs.](../media-draft/10-book-page.png)
 
-    1. Paste the following code into this new file to establish the routes using Express.
-
-        ```javascript
-        var path = require('path');
-        var Book = require('./model');
-        var routes = function(app) {
-            app.get('/book', function(req, res) {
-                Book.find({}, function(err, result) {
-                    if ( err ) throw err;
-                    res.json(result);
-                });
-            });
-            app.post('/book', function(req, res) {
-                var book = new Book( {
-                    name:req.body.name,
-                    isbn:req.body.isbn,
-                    author:req.body.author,
-                    pages:req.body.pages
-                });
-                book.save(function(err, result) {
-                    if ( err ) throw err;
-                    res.json( {
-                        message:"Successfully added book",
-                        book:result
-                    });
-                });
-            });
-            app.delete("/book/:isbn", function(req, res) {
-                Book.findOneAndRemove(req.query, function(err, result) {
-                    if ( err ) throw err;
-                    res.json( {
-                        message: "Successfully deleted the book",
-                        book: result
-                    });
-                });
-            });
-            app.get('*', function(req, res) {
-                res.sendFile(path.join(__dirname + '/public', 'index.html'));
-            });
-        };
-        module.exports = routes;
-        ```
-
-        This code will create four routes for our application. The first three specify what to do when someone sends an API GET, POST, or DELETE request to the `/book` resource. The last one is a catch-all route to send the requester to the index page.
-
-        Express can serve up HTTP responses directly in the route handling code, or it can serve up static content from files. We are doing both in this sample web application. We respond with JSON data for book API requests and with HTML data direct from the index.html file.
-
-1. Create a **server.js** file in the **Books** folder to configure the Node.js hosting (using the Express routes).
-
-    1. Back in the application root **Books** folder, create a new JavaScript file called **server.js**.
-
-        ```bash
-        nano ~/Books/server.js
-        ```
-
-    1. Paste the following code into this new file to configure your web application and start listening to the default HTTP port.
-
-        ```javascript
-        var express = require('express');
-        var bodyParser = require('body-parser');
-        var app = express();
-        app.use(express.static(__dirname + '/public'));
-        app.use(bodyParser.json());
-        require('./app/routes')(app);
-        app.set('port', 80);
-        app.listen(app.get('port'), function() {
-            console.log('Server up: http://localhost:' + app.get('port'));
-        });
-        ```
-
-        This code creates the web application itself. It will serve static files from a folder named **public** (created next) and will use the routes defined in the previous step.
-
-1. Create the front-end HTML and client-side JavaScript application.
-
-    1. Within the **public** content folder, create a new JavaScript file called **script.js**.
-
-        ```bash
-        nano ~/Books/public/script.js
-        ```
-
-    1. Paste the following code into this new file to configure your client-side web application to handle communicating with your web server.
-
-        ```javascript
-        var app = angular.module('myApp', []);
-        app.controller('myCtrl', function($scope, $http) {
-            var getData = function() {
-                return $http( {
-                    method: 'GET',
-                    url: '/book'
-                }).then(function successCallback(response) {
-                    $scope.books = response.data;
-                }, function errorCallback(response) {
-                    console.log('Error: ' + response);
-                });
-            };
-            getData();
-            $scope.del_book = function(book) {
-                $http( {
-                    method: 'DELETE',
-                    url: '/book/:isbn',
-                    params: {'isbn': book.isbn}
-                }).then(function successCallback(response) {
-                    console.log(response);
-                    return getData();
-                }, function errorCallback(response) {
-                    console.log('Error: ' + response);
-                });
-            };
-            $scope.add_book = function() {
-                var body = '{ "name": "' + $scope.Name +
-                '", "isbn": "' + $scope.Isbn +
-                '", "author": "' + $scope.Author +
-                '", "pages": "' + $scope.Pages + '" }';
-                $http({
-                    method: 'POST',
-                    url: '/book',
-                    data: body
-                }).then(function successCallback(response) {
-                    console.log(response);
-                    return getData();
-                }, function errorCallback(response) {
-                    console.log('Error: ' + response);
-                });
-            };
-        });
-        ```
-
-        This client-side AngularJS code creates a new angular application `myApp` containing one controller `myCtrl`. When the application is run in the viewer's browser, it will issue an HTTP GET request to retrieve the list of books in the database.
-
-    1. Also within the **public** content folder, create a new HTML file called **index.html**.
-
-        ```bash
-        nano ~/Books/public/index.html
-        ```
-
-    1. Paste the following markup into this new file to set up your web application's HTML user interface.
-
-        ```html
-        <!doctype html>
-        <html ng-app="myApp" ng-controller="myCtrl">
-        <head>
-            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
-            <script src="script.js"></script>
-        </head>
-        <body>
-            <div>
-            <table>
-                <tr>
-                <td>Name:</td>
-                <td><input type="text" ng-model="Name"></td>
-                </tr>
-                <tr>
-                <td>Isbn:</td>
-                <td><input type="text" ng-model="Isbn"></td>
-                </tr>
-                <tr>
-                <td>Author:</td>
-                <td><input type="text" ng-model="Author"></td>
-                </tr>
-                <tr>
-                <td>Pages:</td>
-                <td><input type="number" ng-model="Pages"></td>
-                </tr>
-            </table>
-            <button ng-click="add_book()">Add</button>
-            </div>
-            <hr>
-            <div>
-            <table>
-                <tr>
-                <th>Name</th>
-                <th>Isbn</th>
-                <th>Author</th>
-                <th>Pages</th>
-                </tr>
-                <tr ng-repeat="book in books">
-                <td><input type="button" value="Delete" data-ng-click="del_book(book)"></td>
-                <td>{{book.name}}</td>
-                <td>{{book.isbn}}</td>
-                <td>{{book.author}}</td>
-                <td>{{book.pages}}</td>
-                </tr>
-            </table>
-            </div>
-        </body>
-        </html>
-        ```
-
-        This code will create a simple HTML form with four fields to submit new book data and a table to display all the books already stored in the database. The various `ng-` HTML attributes will wire up the AngularJS code to the UI.
-
-1. Test the full books web application.
-
-    1. Start the application with Node.js with the following command.
-
-        ```bash
-        sudo node ~/Books/server.js
-        ```
-
-        This will start the back end of our application, which will then start listening on port 80 for incoming HTTP requests.
-
-    1. Test the application functionality.
-
-        Open your preferred browser, and navigate to the public IP address of your Azure VM as the URL.
-
-        ```bash
-        http://<vm-public-ip>
-        ```
-
-        If everything is in order, you should see a screen similar to this:
-
-        The following screenshot displays the user interface to submit book details for storage in the MongoDB database.
-
-
-        ![Screenshot of a web browser showing the data-entry form to add a book.](../media-draft/10-book-page.png)
-
-    You should now be able to submit books to save to the MongoDB database. As well, you can see the full list of books loaded from the database.
+    Sie sollten jetzt Bücher zum Speichern in der MongoDB-Datenbank übermitteln können. Außerdem sehen Sie die vollständige Liste der aus der Datenbank geladenen Bücher.

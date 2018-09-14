@@ -1,69 +1,72 @@
-Let's start by taking a quick look at Azure storage services, data styles, and accounts. 
+Betrachten wir zunächst einen Blick auf Azure Storage-Dienste, Daten-Stile und -Konten. 
 
-Microsoft Azure Storage is a managed service that provides durable, secure, and scalable storage in the cloud. Let's break those terms down.
+Microsoft Azure Storage ist ein verwalteter Dienst, der stellt dauerhafte, sichere und skalierbaren Speicher, in der Cloud. Schauen wir uns diese Begriffe nach unten.
 
 | | |
 |-|-|
-| **Durable** | Redundancy ensures that your data is safe in the event of transient hardware failures. You can also replicate data across datacenters or geographical regions for additional protection from local catastrophe or natural disaster. Data replicated in this way remains highly available in the event of an unexpected outage. |
-| **Secure** | All data written to Azure Storage is encrypted by the service. Azure Storage provides you with fine-grained control over who has access to your data. |
-| **Scalable** | Azure Storage is designed to be massively scalable to meet the data storage and performance needs of today's applications. |
-| **Managed** | Microsoft Azure handles maintenance and any critical problems for you. |
+| **Durable** | Mit Redundanz wird sichergestellt, dass Ihre Daten sicher sind, falls es zu vorübergehenden Hardwareausfällen kommt. Sie können auch Daten über Rechenzentren oder geografische Regionen für zusätzlichen Schutz vor lokalen Notfällen oder Naturkatastrophen replizieren. Daten, die auf diese Weise repliziert werden, sind bei einem unerwarteten Ausfall weiterhin hoch verfügbar. |
+| **Schützen** | Alle Daten, die in Azure Storage geschrieben werden, werden vom Dienst verschlüsselt. Bei Azure Storage können Sie genau steuern, wer Zugriff auf Ihre Daten hat. |
+| **Skalierbar** | Azure Storage ist auf hohe Skalierbarkeit ausgelegt, um die Datenspeicherungs- und Leistungsanforderungen heutiger Anwendungen zu erfüllen. |
+| **Verwaltet** | Microsoft Azure übernimmt für Sie die Wartung und Behandlung aller kritischen Probleme. |
 
-A single Azure subscription can host up to 200 storage accounts, each of which can hold 500 TB of data. If you have a business case, you can talk to the Azure Storage team and get approval for up to 250 storage accounts in a subscription which pushes your max storage up to 125 Petabytes!
+Ein einzelnes Azure-Abonnement kann bis zu 200 Speicherkonten, hosten, die jeweils 500 TB an Daten aufnehmen kann. Wenn Sie einen Business Case verfügen, können Sie wenden Sie sich an das Azure Storage-Team und Genehmigung für bis zu 250 Speicherkonten in einem Abonnement, die Ihre maximale Speicherkapazität bis zu 125 Petabytes überträgt erhalten.
 
-## Azure data services
+## <a name="azure-data-services"></a>Azure-Datendienste
 
-Azure storage includes four types of data.
+Azure Storage umfasst vier Typen von Daten.
 
-- **Blobs**: A massively scalable object store for text and binary data.
-- **Files**: Managed file shares for cloud or on-premises deployments.
-- **Queues**: A messaging store for reliable messaging between application components.
-- **Tables**: A NoSQL store for schemaless storage of structured data. This service has been replaced by Cosmos DB and will not discussed here.
+- **BLOBs**: ein stark skalierbarer Objektspeicher für Text- und binäre Daten.
+- **Dateien**: verwaltete Datei Dateifreigaben für die Cloud oder in lokalen Bereitstellungen.
+- **Warteschlangen**: ein messagingspeicher für zuverlässiges messaging zwischen Anwendungskomponenten.
+- **Tabellen**: ein NoSQL-Speicher für die schemalose Speicherung von strukturierten Daten. Dieser Dienst wurde ersetzt durch Cosmos DB und wird hier nicht erörtert.
 
-All of these data types in Azure Storage are accessible from anywhere in the world over HTTP or HTTPS. Microsoft provides SDKs for Azure Storage in a variety of languages, as well as a REST API. You can also visually explore your data right in the Azure portal.
+Alle diese Datentypen im Azure-Speicher werden von zugegriffen an einer beliebigen Stelle in der Welt über HTTP oder HTTPS. Microsoft stellt SDKs für Azure-Speicher in einer Vielzahl von Sprachen sowie eine REST-API bereit. Sie können Daten direkt im Azure-Portal auch visuell untersuchen.
 
-### Blob storage
-Azure Blob storage is an object storage solution optimized for storing massive amounts of unstructured data, such as text or binary data. Blob storage is ideal for:
+### <a name="blob-storage"></a>Blob-Speicher
 
-- Serving images or documents directly to a browser, including full static websites.
-- Storing files for distributed access.
-- Streaming video and audio.
-- Storing data for backup and restore, disaster recovery, and archiving.
-- Storing data for analysis by an on-premises or Azure-hosted service.
+Azure Blob Storage ist eine Objekt-speicherlösung, die für die Speicherung großer Mengen von unstrukturierten Daten, z.B. Text-oder Binärdaten optimiert. Blobspeicher ist für folgende Zwecke ideal geeignet:
 
-Azure Storage supports three kinds of blobs:
+- Speichern von Bildern oder Dokumenten direkt für einen Browser, einschließlich vollständig statischen Websites.
+- Speichern von Dateien für verteilten Zugriff
+- Streamen von Video und Audio
+- Speichern von Daten für Sicherung und Wiederherstellung, notfallwiederherstellung und Archivierung.
+- Speichern von Daten für Analysen durch einen lokalen oder von Azure gehosteten Dienst
 
-| Blob type | Description |
+Azure Storage unterstützt drei Arten von Blobs:
+
+| BLOB-Typ | Beschreibung |
 |-----------|-------------|
-| **Block blobs** | Block blobs are used to hold text or binary files up to ~5 TB (50,000 blocks of 100 MB) in size. The primary use case for block blobs is the storage of files that are read from beginning to end, such as media files or image files for websites. They are named block blobs because files larger than 100 MB must be uploaded as small blocks, which are then consolidated (or committed) into the final blob. |
-| **Page blobs** | Page blobs are used to hold random-access files up to 8 TB in size. Page blobs are used primarily as the backing storage for the VHDs used to provide durable disks for Azure Virtual Machines (Azure VMs). They are named page blobs because they provide random read/write access to 512-byte pages. |
-| **Append blobs** | Append blobs are made up of blocks like block blobs, but they are optimized for append operations. These are frequently used for logging information from one or more sources into the same blob. For example, you might write all of your trace logging to the same append blob for an application running on multiple VMs. A single append blob can be up to 195 GB. |
+| **Blockblobs** | Block-Blobs werden verwendet, um Text zu speichern, oder bis zu 5 TB (50.000 Blöcke von 100 MB) der Binärdateien Größe. Der wichtigste Anwendungsfall für Blockblobs ist die Speicherung von Dateien, die von Anfang bis Ende gelesen werden, z.B. Mediendateien oder Imagedateien für Websites. Sie werden blockblobs bezeichnet, da Dateien, die größer als 100 MB als kleine Blöcke müssen, die anschließend konsolidiert hochgeladen werden (in das endgültige Blob oder ein Commit ausgeführt werden). |
+| **Seitenblobs** | Seiten-Blobs werden verwendet, um enthalten random-Access-Dateien bis zu 8 TB groß. Seiten-Blobs dienen hauptsächlich als Hintergrundspeicher für die VHDs verwendet, um dauerhafte Datenträger für Azure Virtual Machines (Azure-VMs) bereitzustellen. Sie werden als Seitenblobs bezeichnet, da sie zufälligen Lese-/Schreibzugriff auf 512-Byte-Seiten ermöglichen. |
+| **Anfügeblobs** | Fügen Sie Blobs bestehen aus Blöcken wie Block-Blobs, jedoch optimiert sind, für die Anfügevorgänge. Diese werden häufig zum Protokollieren von Informationen aus einer oder mehreren Quellen in der gleichen Blob verwendet. Beispielsweise können Sie aller die Ablaufverfolgung in dasselbe anfügeblob für eine Anwendung auf mehrere virtuelle Computer schreiben. Ein einzelnes Anfügeblob kann eine maximale Größe von 195 GB haben. |
 
-### Files
-Azure Files enables you to set up highly available network file shares that can be accessed by using the standard Server Message Block (SMB) protocol. That means that multiple VMs can share the same files with both read and write access. You can also read the files using the REST interface or the storage client libraries. You can also associate a unique URL to any file to allow fine-grained access to a private file for a set period of time. File shares can be used for many common scenarios:
+### <a name="files"></a>Dateien
 
-- Storing shared configuration files for VMs, tools, or utilities so that everyone is using the same version.
-- Log files such as diagnostics, metrics, and crash dumps.
-- Shared data between on-premises applications and Azure VMs to allow migration of apps to the cloud over a period of time.
+Azure Files ermöglicht Ihnen die Einrichtung hochverfügbarer Netzwerkdateifreigaben, die mithilfe des standardmäßigen Server Message Block (SMB)-Protokolls zugegriffen werden kann. Dies bedeutet, dass mehrere virtuelle Computer die gleichen Dateien mit Lese- und Schreibzugriff verwenden können. Die Dateien können auch mithilfe der REST-Schnittstelle oder mithilfe der Speicherclientbibliotheken gelesen werden. Sie können auch eine eindeutige URL für jede Datei, um einen festgelegten Zeitraum differenzierten Zugriff auf die Datei mit einem privaten ermöglichen zuordnen. Dateifreigaben können in zahlreichen Szenarien verwendet werden:
 
-### Queues
-The Azure Queue service is used to store and retrieve messages. Queue messages can be up to 64 KB in size, and a queue can contain millions of messages. Queues are generally used to store lists of messages to be processed asynchronously.
+- Speichern freigegebenen Konfigurationsdateien für virtuelle Computer, Tools oder Dienstprogramme, damit alle Benutzer die gleiche Version verwendet wird.
+- Protokolldateien, z. B. Diagnose, Metriken und Absturzabbilder erfasst.
+- Gemeinsam verwendeten Daten auf lokale Anwendungen und Azure-VMs, um die Migration von apps in der Cloud über einen Zeitraum zu ermöglichen.
 
-You can use queues to loosely connect different parts of your application together. For example, we could perform image processing on the photos uploaded by our users. Perhaps we want to provide some sort of face detection, or tagging capability so people can search through all the images they have stored in our service. We could use queues to pass messages to our image processing service to let it know that new images have been uploaded and are ready for processing. This sort of architecture would allow you to develop and update each part of the service independently.
+### <a name="queues"></a>Warteschlangen
 
-## Azure storage accounts
+Der Azure Queue-Dienst wird zum Speichern und Abrufen von Nachrichten verwendet. Warteschlangennachrichten können eine Größe von bis zu 64 KB haben, und eine Warteschlange kann Millionen von Nachrichten enthalten. Warteschlangen dienen im Allgemeinen zum Speichern von Listen mit Nachrichten, die asynchron verarbeitet werden sollen.
 
-To access any of these services from an application, you have to create a _storage account_. The storage account provides a unique namespace in Azure to store and access your data objects. A storage account contains any blobs, files, queues, tables, and VM disks that you create under that account.
+Sie können Warteschlangen verwenden, um verschiedene Teile Ihrer Anwendung lose miteinander zu verbinden. Beispielsweise können wir auf die vom Benutzer hochgeladenen Fotos bildverarbeitung. Möglicherweise geben Sie eine Art von gesichtserkennung werden soll, oder Tags-Funktion, so dass es sich bei der Suche nach Personen über alle Images können sie in unserem Dienst gespeichert haben. Wir können Warteschlangen verwenden, um die Nachrichten an unsere Bildverarbeitungsdienst zum Laden, damit sie wissen, dass neue Bilder hochgeladen wurden, und sind bereit für die Verarbeitung übergeben. Diese Art von Architektur können Sie zum Entwickeln und jeder Teil des Diensts unabhängig voneinander aktualisieren.
 
-### Creating a storage account
+## <a name="azure-storage-accounts"></a>Azure-Speicherkonten
 
-You can create an Azure storage account using the Azure portal, Azure PowerShell, or Azure CLI. Azure Storage provides three distinct account options, with different pricing and features supported.
+Um eines dieser Dienste über eine Anwendung zuzugreifen, müssen Sie erstellen eine _Speicherkonto_. Das Storage-Konto bietet es sich um einen eindeutigen Namespace, in Azure speichern und Abrufen Ihrer Datenobjekte. Ein Speicherkonto enthält alle Blobs, Dateien, Warteschlangen, Tabellen und VM-Datenträger, die Sie unter diesem Konto zu erstellen.
+
+### <a name="creating-a-storage-account"></a>Erstellen eines Speicherkontos
+
+Sie können Azure Storage-Konto mithilfe der Azure-Portal, Azure PowerShell oder Azure-Befehlszeilenschnittstelle erstellen. Azure Storage bietet drei verschiedene Kontooptionen jeweils unterschiedliche Preise und Funktionen, die unterstützt werden.
 
 > [!div class="mx-tableFixed"]
-> | Account type | Description |
+> | Kontotyp | Beschreibung |
 > |--------------|-------------|
-> | **General-purpose v2 (GPv2)** | General-purpose v2 (GPv2) accounts are storage accounts that support all of the latest features for blobs, files, queues, and tables. Pricing for GPv2 accounts has been designed to deliver the lowest per gigabyte prices. |
-> | **General-purpose v1 (GPv1)** | General-purpose v1 (GPv1) accounts provide access to all Azure Storage services, but may not have the latest features or the lowest per gigabyte pricing. For example, cool storage and archive storage are not supported in GPv1. Pricing is lower for GPv1 transactions, so workloads with high churn or high read rates may benefit from this account type. |
-> | **Blob storage accounts** | A legacy account type, blob storage accounts support all the same block blob features as GPv2, but are limited to supporting only block and append blobs. Pricing is broadly similar to pricing for general-purpose v2 accounts. |
-    
-If you are interested in learning more about creating storage accounts, make sure to go through the **Create an Azure storage account** module in the learning portal.
+> | **General Purpose v2 (GPv2)** | Konten vom Typ „General Purpose v2 (GPv2)“ unterstützen alle aktuellen Features für Blobs, Dateien, Warteschlangen und Tabellen. Die Preise für GPv2-Konten wurde entwickelt, um die niedrigsten GB-Preise zu übermitteln. |
+> | **Allgemein v1 (GPv1)** | Allgemein v1 (GPv1)-Konten bieten Zugriff auf Azure Storage-Dienste, aber möglicherweise nicht die aktuellen Features oder die niedrigsten GB-Preise. Beispielsweise werden die Speicherebenen „Cool“ und „Archiv“ in GPv1 nicht unterstützt. Die Preise für GPv1-Transaktionen sind niedriger, sodass Workloads mit hohen Datenänderungs- oder Leseraten ggf. von der Nutzung dieses Kontotyps profitieren. |
+> | **Blob-Speicherkonten** | Einen legacy-Kontotyp, Blob Storage-Konten unterstützen die gleichen Block-BLOB-Features wie GPv2, aber sie sind auf unterstützen nur Block- und anfügeblobs zu ermitteln. Die Preise sind weitestgehend mit den Preisen für allgemeine Konten vom Typ „General Purpose v2“ identisch. |
+
+Wenn Sie möchten mehr über das Erstellen von Speicherkonten, stellen Sie sicher, durchlaufen die **erstellen Sie ein Azure Storage-Konto** -Modul in das Lernportal.

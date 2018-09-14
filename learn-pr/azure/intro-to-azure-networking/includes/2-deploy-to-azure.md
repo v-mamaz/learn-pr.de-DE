@@ -1,40 +1,52 @@
-Der erste Schritt besteht mit hoher Wahrscheinlichkeit darin, Ihre lokale Konfiguration in der Cloud neu zu erstellen.
+Der erste Schritt werden Sie wahrscheinlich zum Neuerstellen Ihrer lokalen Konfigurations in der Cloud.
 
-Mit der folgenden grundlegenden Konfiguration erhalten Sie einen Überblick darüber, wie Netzwerke konfiguriert werden und Netzwerkdatenverkehr an bzw. von Azure gesendet wird.
+Diese Basiskonfiguration bietet Ihnen einen Eindruck davon, wie Netzwerke konfiguriert sind und wie Netzwerkverkehr aus Azure verschiebt.
 
 ## <a name="your-e-commerce-site-at-a-glance"></a>Ihre E-Commerce-Website auf einen Blick
 
-In einer [n-schichtigen Architektur](https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/n-tier) wird eine Anwendung in mindestens zwei logische Schichten aufgeteilt. Höhere Schichten können dabei auf Dienste niedrigerer Schichten zugreifen. Umgekehrt sollte dies jedoch nicht möglich sein.
+Größere Unternehmenssysteme bestehen häufig mehrere miteinander verbundene Anwendungen und Dienste, die reibungslos zusammenarbeiten. Sie möglicherweise ein Front-End-System, das zeigt erfasst und ermöglicht es Kunden, die einen Auftrag zu erstellen. Die möglicherweise mit einer Vielzahl von Web Services bieten die Inventurdaten, Verwalten von Benutzerprofilen, Prozess-Kreditkarten und Request-Fulfillment verarbeiteten Bestellungen kommunizieren.
 
-Schichten sind im Idealfall wiederverwendbar und werden dazu verwendet, unterschiedliche Aufgaben voneinander zu trennen. Eine Schichtenarchitektur vereinfacht außerdem die Wartung, da Schichten unabhängig voneinander geändert oder ersetzt werden können. Zusätzlich können neue Schichten bei Bedarf eingefügt werden.
+Es gibt verschiedene Strategien und Muster, die von Softwarearchitekten und Entwicklern eingesetzt werden, um diese komplexe Systeme einfacher zu entwerfen, erstellen, verwalten und warten. Sehen wir uns einige davon, beginnend mit _lose gekoppelter Architekturen_.
+
+### <a name="benefits-of-a-loosely-coupled-architecture"></a>Vorteile einer lose gekoppelten Architektur
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yHrc]
+
+### <a name="using-an-n-tier-architecture"></a>Verwenden eine Architektur mit N Ebenen
+
+Ein Architekturmuster, die verwendet werden kann, um lose gekoppelte Systeme zu erstellen ist _N-schichtige_.
+
+Ein [N-schichtige Architektur](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/n-tier) unterteilt eine Anwendung in zwei oder mehrere logische Ebenen. Aus Sicht der Systemarchitektur ein höherer Tarif auf Dienste zugreifen, von einem niedrigen Tarif, aber eine niedrigere Ebene sollten nie auf einen höheren Tarif zugreifen.
+
+Ebenen können Belange abzutrennen und im Idealfall einfacher wiederverwendet werden sollen. Verwenden eine geschichtete Architektur vereinfacht auch den Verwaltungsaufwand. Ebenen unabhängig ersetzt oder aktualisiert werden können, und die neuen Tarife eingefügt werden können, falls erforderlich.
 
 Unter einer _dreischichtigen_ Architektur wird eine n-schichtige Anwendung mit drei Schichten verstanden. Auch für Ihre E-Commerce-Webanwendung wird eine dreischichtige Architektur verwendet:
 
-* Die **Webschicht** stellt über einen Browser die Webschnittstelle für Ihre Benutzer bereit.
-* In der **Logikschicht** wird die Geschäftslogik ausgeführt.
-* Die **Datenschicht** enthält Datenbanken und andere Speicher, die Produktinformationen und Kundenbestellungen enthalten.
+* Die **Webebene** die Weboberfläche für Ihre Benutzer über einen Browser bietet.
+* Die **Anwendungsebene** Geschäftslogik ausgeführt.
+* Die **Datenebene** enthält Datenbanken und anderen Speicher, die Product Informationen und Kunde Bestellungen enthalten.
 
-Nachfolgend sehen Sie ein Diagramm. Interessant ist hier der Ablauf, der bei den Benutzern beginnt und bei der Datenschicht endet.
+Die folgende Abbildung zeigt den Fluss der Anforderung des Benutzers, für die Datenebene.
 
-![Eine grundlegende dreischichtige Webanwendung](../media-draft/three-tier.png)
+![Eine Abbildung, zeigt eine Architektur mit drei Ebenen, in dem jede Ebene in einem dedizierten virtuellen Computer gehostet wird.](../media/2-three-tier.png)
 
-Wenn der Benutzer auf die Schaltfläche zum Aufgeben der Bestellung klickt, wird die Anforderung zusammen mit der Adresse des Benutzers und den Zahlungsinformationen an die Webschicht gesendet. Die Webschicht übergibt diese Informationen der Logikschicht, in der die Zahlungsinformationen überprüft werden und eine Bestandsprüfung durchgeführt wird. Mithilfe der Logikschicht kann die Bestellung anschließend in der Datenschicht gespeichert werden, damit später die Auftragsabwicklung eingeleitet werden kann.
+Wenn der Benutzer auf die Schaltfläche zum Aufgeben der Bestellung klickt, wird die Anforderung zusammen mit der Adresse des Benutzers und den Zahlungsinformationen an die Webschicht gesendet. Die Webschicht übergibt diese Informationen der Logikschicht, in der die Zahlungsinformationen überprüft werden und eine Bestandsprüfung durchgeführt wird. Die Anwendungsebene kann dann die Reihenfolge in der Datenebene, später für die Erfüllung übernommen werden speichern.
 
 ## <a name="your-e-commerce-site-running-on-azure"></a>Ihre E-Commerce-Website in Azure
 
-Azure bietet mehrere Möglichkeiten zum Hosten Ihrer Webanwendungen, die von vollständig vorkonfigurierten Umgebungen, in denen Ihr Code gehostet wird, bis hin zu virtuellen Computern reichen, die Sie selbst konfigurieren, anpassen und verwalten.
+Azure bietet viele verschiedene Arten von Umgebungen, die vollständig vorkonfiguriert, dass Ihre Webanwendungen zu hosten, die Ihren Code, um virtuelle Computer, die Sie konfigurieren hosten, anpassen und verwalten.
 
-Angenommen, Sie möchten Ihre E-Commerce-Website auf virtuellen Computern betreiben. In Ihrer Testumgebung in Azure könnte dies etwa wie folgt aussehen.
+Angenommen, Sie möchten Ihre E-Commerce-Website auf virtuellen Computern betreiben. In Ihrer Testumgebung in Azure könnte dies etwa wie folgt aussehen. Die folgende Abbildung zeigt eine Architektur mit drei Ebenen auf virtuellen Computern ausgeführt werden, mit den Sicherheitsfunktionen aktiviert, um eingehende Anforderungen zu beschränken. 
 
-![Eine grundlegende dreischichtige Webanwendung in Azure](../media-draft/test-deployment.png)
+![Eine Abbildung, zeigt eine Architektur mit drei Ebenen, in dem jede Ebene auf einem separaten virtuellen Computer ausgeführt wird. Jeder virtuelle Computer wird mit der Bezeichnung mit der IP-Adresse und befindet sich in einem eigenen virtuellen Netzwerk. Jedes virtuelles Netzwerk verfügt über eine Netzwerksicherheitsgruppe, die die geöffneten Ports aufgeführt.](../media/2-test-deployment.png)
 
 Im Folgenden erhalten Sie einen Überblick über die einzelnen Komponenten.
 
-## <a name="what-is-an-azure-region"></a>Was ist eine Azure-Region?
+### <a name="what-is-an-azure-region"></a>Was ist eine Azure-Region?
 
 Eine _Region_ ist ein Azure-Rechenzentrum an einem bestimmten geografischen Standort. Beispiele für Regionen sind „USA, Osten“, „USA, Westen“ und „Europa, Norden“. Wie Sie sehen, wird die Anwendung in der Region „USA, Osten“ ausgeführt.
 
-## <a name="what-is-a-virtual-network"></a>Was ist ein virtuelles Netzwerk?
+### <a name="what-is-a-virtual-network"></a>Was ist ein virtuelles Netzwerk?
 
 Ein _virtuelles Netzwerk_ ist ein logisch isoliertes Netzwerk in Azure. Wenn Sie bereits Netzwerke in Hyper-V, VMware oder in anderen öffentlichen Clouds eingerichtet haben, sind Sie sicherlich mit virtuellen Azure-Netzwerken vertraut.
 
@@ -42,7 +54,7 @@ Die Web-, Logik- und Datenschichten verfügen jeweils über einen eigenen virtue
 
 Benutzer interagieren direkt mit der Webschicht, weshalb der virtuelle Computer in dieser Schicht über eine öffentliche IP-Adresse verfügt. Mit der Logik- und Datenschicht interagieren die Benutzer hingegen nicht. Diese virtuellen Computer verfügen dementsprechend über jeweils eine private IP-Adresse.
 
-Die physische Hardware wird von Azure-Rechenzentren für Sie verwaltet. Die virtuellen Netzwerke konfigurieren Sie mithilfe von Software, wodurch Sie virtuelle Netzwerke wie eigene Netzwerke behandeln können. Beispielsweise haben Sie die Möglichkeit, ein virtuelles Netzwerk in Subnetze zu unterteilen, um besser steuern zu können, wie das Netzwerk IP-Adressen zuweist. Außerdem können Sie andere Netzwerke – beispielsweise das öffentliche Internet oder Netzwerke innerhalb des privaten IP-Adressraums – festlegen, die über das virtuelle Netzwerk erreichbar sind.
+Die physische Hardware wird von Azure-Rechenzentren für Sie verwaltet. Die virtuellen Netzwerke konfigurieren Sie mithilfe von Software, wodurch Sie virtuelle Netzwerke wie eigene Netzwerke behandeln können. Beispielsweise haben Sie die Möglichkeit, ein virtuelles Netzwerk in Subnetze zu unterteilen, um besser steuern zu können, wie das Netzwerk IP-Adressen zuweist. Welche anderen Netzwerken, die Ihrem virtuelle Netzwerk erreichen kann, wählen Sie auch, ob dies das öffentliche Internet oder anderen Netzwerken in der privaten IP-Adressbereich ist ein.
 
 ### <a name="whats-a-network-security-group"></a>Was ist eine Netzwerksicherheitsgruppe?
 
@@ -57,8 +69,8 @@ Der virtuelle Computer in der Webschicht lässt beispielsweise eingehenden Daten
 
 Ihre dreischichtige Anwendung wird nun in Azure in der Region „USA, Osten“ ausgeführt. Eine _Region_ ist ein Azure-Rechenzentrum an einem bestimmten geografischen Standort.
 
-Jede Schicht kann nur auf Dienste untergeordneter Schichten zugreifen. Der virtuelle Computer in der Webschicht verfügt über eine öffentliche IP-Adresse, da Datenverkehr über das Internet empfangen wird. Die virtuellen Computer in der niedrigeren Logik- und Datenschicht verfügen jeweils über private IP-Adressen, da sie nicht direkt über das Internet kommunizieren.
+Jede Schicht kann nur auf Dienste untergeordneter Schichten zugreifen. Der virtuellen Computer auf der Webebene ausgeführt verfügt über eine öffentliche IP-Adresse aus, da sie aus dem Internet Datenverkehr empfängt. Die virtuellen Computer in den niedrigeren Tarifen, die Anwendungs- und Datenebenen, jede haben private IP-Adressen, da sie nicht direkt über das Internet kommunizieren.
 
 Mit _virtuellen Netzwerken_ können Sie zugehörige Systeme gruppieren und isolieren. Über _Netzwerksicherheitsgruppen_ steuern Sie, welcher Datenverkehr über ein virtuelles Netzwerk übertragen wird.
 
-Die hier beschriebene Konfiguration erleichtert Ihnen die ersten Schritte. Wenn Sie jedoch Ihre E-Commerce-Website für die Produktionsphase in der Cloud bereitstellen, werden vermutlich die gleichen Probleme wie bei Ihrer lokalen Bereitstellung auftreten.
+Die Konfiguration, die Sie hier gesehen haben, ist ein guter Anfang. Aber wenn Sie Ihre e-Commerce-Website für die Produktion in der Cloud bereitstellen, wahrscheinlich führen Sie in den gleichen Problemen wie in der lokalen Bereitstellung.

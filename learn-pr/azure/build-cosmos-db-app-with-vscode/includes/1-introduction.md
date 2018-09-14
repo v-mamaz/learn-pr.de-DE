@@ -1,17 +1,19 @@
-Angenommen, Sie verwalten den Speicher für einen Onlinehändler. Sie benötigen Tools für das Erstellen, Aktualisieren und Löschen Ihrer Benutzer- und Produktdaten. Azure Cosmos DB stellt SDKs für .NET, .NET Core, Java, Node.js und Python bereit.
+Angenommen, Sie verwalten den Speicher für einen Onlinehändler. Sie benötigen Tools für das Erstellen, Aktualisieren und Löschen Ihrer Benutzer- und Produktdaten.
 
 In diesem Modul erstellen Sie eine .NET Core-Konsolenanwendung in Visual Studio Code, um Benutzerdatensätze zu erstellen, zu aktualisieren und zu löschen, um Ihre Daten abzufragen und um mithilfe von C# gespeicherte Prozeduren auszuführen.
 
-Visual Studio bietet eine nützliche Erweiterung für Azure Cosmos DB, mit der Sie auf einfache Weise die Datenbank und die Sammlung sowie die Dokumente anzeigen können, die Sie in den vorherigen Modulen erstellt haben. Außerdem können Sie mithilfe der Erweiterung neue Ressourcen erstellen und Ihre Verbindungszeichenfolge kopieren, ohne das Azure-Portal öffnen zu müssen.
+In Azure Cosmos DB, die eine einfache Visual Studio Code-Erweiterung verfügt, sodass Sie leichter finden können, die Datenbank, Sammlung und Dokumente, die Sie erstellt, in den vorherigen Modulen haben, Ihre Daten gespeichert werden und Sie können neue Ressourcen, die mit der Erweiterung erstellen, und kopieren Sie Ihre die Verbindungszeichenfolge ohne Azure-Portal zu öffnen.
 
 ## <a name="learning-objectives"></a>Lernziele
 
 In diesem Modul lernen Sie Folgendes:  
 
 - Erstellen einer Anwendung zum Speichern und Abfragen von Daten in Azure Cosmos DB
-- Verwenden Sie das integrierte Terminal in Visual Studio Code, um schnell eine Konsolenanwendung zu erstellen.
-- Fügen Sie mithilfe der Azure Cosmos DB-Erweiterung für Visual Studio Code die Azure Cosmos DB-Funktionalität hinzu.
+- Verwenden Sie das integrierte Terminal in Visual Studio Code, um schnell eine Konsolenanwendung erstellen
+- Hinzufügen von Azure Cosmos DB-Funktionen mit der Azure Cosmos DB-Erweiterung für Visual Studio Code
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-- [Visual Studio Code](https://code.visualstudio.com/) muss installiert sein.
+- Müssen [Visual Studio Code](https://code.visualstudio.com/) installiert
+- Müssen [.NET Core 2.1](https://www.microsoft.com/net/download) installiert
+- Muss die [Azure-Konto](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) in Visual Studio Code die Erweiterung installiert

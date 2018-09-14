@@ -1,178 +1,178 @@
-Next, let's look at how to create and modify dashboards using the Azure Portal, and by editing the underlying JSON file directly.
+Als Nächstes schauen wir uns an, wie Sie Dashboards mithilfe des Azure-Portals und durch direktes Bearbeiten der zugrunde liegenden JSON-Datei erstellen und ändern können.
 
-## What is a dashboard?
+## <a name="what-is-a-dashboard"></a>Was ist ein Dashboard?
 
-A _dashboard_ is a customizable collection of UI tiles displayed in the Azure portal. You add, remove, and position tiles to create the exact view you want, and then save that view as a dashboard. Multiple dashboards are supported, and you can switch between them as needed. You can even share your dashboards with other team members.
+Ein _Dashboard_ ist eine anpassbare Sammlung von Benutzeroberflächenkacheln, die im Azure-Portal angezeigt werden. Sie können Kacheln hinzufügen, entfernen und anordnen, um genau die gewünschte Ansicht zu erstellen und sie dann als Dashboard zu speichern. Es werden mehrere Dashboards unterstützt, und Sie können nach Bedarf zwischen ihnen wechseln. Sie können Ihre Dashboards auch für andere Teammitglieder freigeben.
 
-Dashboards give you considerable flexibility regarding how you manage Azure. For example, you can create dashboards for specific roles within the organization, and then use role-based access control (RBAC) to control who can access that dashboard. Hence, your database administrator would have a dashboard that contains views of the SQL database service, whereas your Azure Active Directory administrator would have views of the users and groups within Azure AD. You can even customize the portal between your production and development environments within the portal - creating a specific dashboard for each environment you are managing.
+Dashboards bieten Ihnen viel Flexibilität bei der Verwaltung von Azure. Sie können z.B. Dashboards für bestimmte Rollen innerhalb der Organisation erstellen und dann die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) verwenden, um zu steuern, wer auf das jeweilige Dashboard zugreifen darf. So kann Ihr Datenbankadministrator ein Dashboard einrichten, das Ansichten des SQL-Datenbank-Diensts enthält, und Ihr Azure Active Directory-Administrator kann Ansichten der Benutzer und Gruppen in Azure AD erhalten. Sie können das Portal auch für Ihre Produktions- und Entwicklungsumgebung anpassen – dabei erstellen Sie ein spezielles Dashboard für jede Umgebung, die Sie verwalten.
 
-Dashboards are stored as JavaScript Object Notation (JSON) files. This means they can be uploaded and downloaded to other computers, or shared with members of the Azure directory. Azure stores dashboards within resource groups, just like virtual machines or storage accounts that you can manage within the portal.
+Dashboards werden als JSON-Dateien (JavaScript Object Notation) gespeichert. Das bedeutet, dass sie auf andere Computer hoch- und heruntergeladen oder mit Mitgliedern des Azure Active Directory gemeinsam genutzt werden können. Azure speichert Dashboards in Ressourcengruppen genauso wie virtuelle Computer oder Speicherkonten, die Sie im Portal verwalten können.
 
 > [!TIP]
-> Because dashboards are JSON files, you can also [customize them programmatically](https://docs.microsoft.com/azure/azure-portal/azure-portal-dashboards-create-programmatically), making them compelling administrative tools. Also, some tile types can be query-based, so they update automatically when the source data changes.
+> Da Dashboards JSON-Dateien sind, können Sie sie auch [programmgesteuert anpassen](https://docs.microsoft.com/azure/azure-portal/azure-portal-dashboards-create-programmatically) und zu faszinierenden Verwaltungstools machen. Darüber hinaus können einige Kacheltypen abfragebasiert sein und bei Änderung der Quelldaten automatisch aktualisiert werden.
 
-## Explore the default dashboard
+## <a name="explore-the-default-dashboard"></a>Untersuchen des Standarddashboards
 
-The default dashboard is named "Dashboard". When you log into the portal, you are presented with this dashboard containing five web parts.
+Das Standarddashboard wird als „Dashboard“ bezeichnet. Wenn Sie sich beim Portal anmelden, wird Ihnen dieses Dashboard mit fünf Webparts angezeigt.
 
-![Default Web Parts](../media-draft/8-dashboard-default-webparts.png)
+![Standardwebparts](../media-draft/8-dashboard-default-webparts.png)
 
-These default web parts are
+Dies sind die Standardwebparts:
 
-1. All resources
+1. Alle Ressourcen
 
-1. Azure Getting Started
+1. Erste Schritte mit Azure
 
-1. Quickstarts + tutorials
+1. Schnellstarts + Tutorials
 
 1. Marketplace
 
 1. Service Health
 
-## Creating and managing dashboards
+## <a name="creating-and-managing-dashboards"></a>Erstellen und Verwalten von Dashboards
 
-Along the top of the dashboard are the controls that enable you to create, upload, download, edit, and share a dashboard. You can also switch a dashboard to full screen, clone it, or delete it.
+Oberhalb des Dashboards befinden sich die Steuerelemente, mit denen Sie ein Dashboard erstellen, hochladen, herunterladen, bearbeiten und freigeben können. Sie können ein Dashboard auch in den Vollbildmodus schalten oder es klonen oder löschen.
 
-![Customize dashboard controls](../media-draft/8-customise-dashboard-controls.png)
+![Anpassen von Dashboardsteuerelementen](../media-draft/8-customise-dashboard-controls.png)
 
-- [Select dashboard](#select-dashboard)
-- [Create a new dashboard](#create-new)
-- [Upload and Download](#upload-download)
-- [Edit](#edit-dashboard)
-- [Share](#share-dashboard)
-- [Full screen](#full-screen)
-- [Clone](#clone-dashboard)
-- [Delete](#delete-dashboard)
+- [Auswählen eines Dashboards](#select-dashboard)
+- [Erstellen eines neuen Dashboards](#create-new)
+- [Hochladen und Herunterladen](#upload-download)
+- [Bearbeiten](#edit-dashboard)
+- [Freigeben](#share-dashboard)
+- [Vollbild](#full-screen)
+- [Klonen](#clone-dashboard)
+- [Löschen](#delete-dashboard)
 
 <a name="select-dashboard"></a>
 
-## Select dashboard
+## <a name="select-dashboard"></a>Auswählen eines Dashboards
 
-To the far left of the toolbar is the **Select Dashboard** drop-down control. Clicking this control enables you to select from dashboards that you have already defined for your account. This control makes it simple for you to define multiple dashboards for different purposes and then switch from one to another and back again, depending on what you are trying to do at the time.
+Ganz links in der Symbolleiste befindet sich das Dropdownsteuerelement **Dashboard auswählen**. Wenn Sie auf dieses Steuerelement klicken, können Sie aus Dashboards auswählen, die Sie bereits für Ihr Konto definiert haben. Mit diesem Steuerelement können Sie ganz einfach mehrere Dashboards für verschiedene Zwecke definieren und dann zwischen den Dashboards wechseln, je nachdem, welche Aufgabe Sie gerade erledigen möchten.
 
-Note that any dashboards that you create will initially be private; that is, only you can see them. To make a dashboard available across your enterprise, you need to share it. We'll look at that option shortly.
+Beachten Sie, dass alle von Ihnen erstellten Dashboards zunächst privat sind, also nur Sie diese anzeigen können. Um ein Dashboard weiteren Personen in Ihrem Unternehmen zur Verfügung zu stellen, müssen Sie es freigeben. Wir gehen in Kürze auf diese Option ein.
 
 <a name="create-new"></a>
 
-## Create a new dashboard
+## <a name="create-a-new-dashboard"></a>Erstellen eines neuen Dashboards
 
-To create a new dashboard, click **New dashboard**. The dashboard workspace appears, with no tiles present. You can then add, remove and adjust tiles however you like. When you are finished customizing the dashboard, click **Done customizing** to save and switch to that dashboard.
+Um ein neues Dashboard zu erstellen, klicken Sie einfach auf **Neues Dashboard**. Der Dashboardarbeitsbereich wird ohne Kacheln angezeigt. Sie können dann hinzufügen, entfernen und passen Sie Kacheln beliebig. Wenn Sie mit der Anpassung des Dashboards fertig sind, klicken Sie auf **Anpassung abgeschlossen**, um es zu speichern und zu diesem Dashboard zu wechseln.
 
 <a name="upload-download"></a>
 
-## Upload and Download
+## <a name="upload-and-download"></a>Hochladen und Herunterladen
 
-The **Upload** and **Download** buttons enable you to download your current dashboard as a JSON file, customize it, and then distribute it and upload it or have someone else upload that file back to the Azure portal, thereby replacing their current dashboard.
+Mit den Schaltflächen **Hochladen** und **Herunterladen** können Sie Ihr aktuelles Dashboard als JSON-Datei herunterladen, es anpassen und dann verteilen und hochladen. Auch eine andere Person kann diese Datei wieder in das Azure-Portal hochladen und dadurch ihr eigenes aktuelles Dashboard ersetzen.
 
-If you click **Download**, the current dashboard downloads into your default Downloads folder. Opening the downloaded file then shows the JSON code.
+Wenn Sie auf **Herunterladen** klicken, wird das aktuelle Dashboard in Ihren standardmäßigen Ordner für Downloads heruntergeladen. Wenn Sie die heruntergeladene Datei öffnen, wird der JSON-Code angezeigt.
 
-![Dashboard JSON code](../media-draft/8-dashboard-json-code.png)
+![JSON-Code des Dashboards](../media-draft/8-dashboard-json-code.png)
 
-You can then edit that code manually (for example, by changing tile sizes) and then upload it back to Azure by clicking the **Upload** button.
+Sie können diesen Code manuell bearbeiten, indem Sie z.B. Kachelgrößen ändern und den Code dann per Klick auf die Schaltfläche **Hochladen** wieder in Azure hochladen.
 
 <a name="edit-dashboard"></a>
 
-### Edit a dashboard
+### <a name="edit-a-dashboard"></a>Bearbeiten eines Dashboards
 
-Although you can edit a dashboard by downloading the JSON file, changing values in the file, and uploading the file back to Azure, that approach isn't intuitive for designing a user interface. To use the GUI to configure your current dashboard you can enter edit mode in several ways:
+Sie können zwar ein Dashboard bearbeiten, indem Sie die JSON-Datei herunterladen, Werte in der Datei ändern und die Datei wieder in Azure hochladen. Allerdings ist diese Vorgehensweise für den Entwurf einer Benutzeroberfläche nicht intuitiv. Um die grafische Benutzeroberfläche zum Konfigurieren Ihres aktuellen Dashboards zu verwenden, können Sie auf verschiedene Weise in den Bearbeitungsmodus wechseln:
 
-1. Click the **Edit** button
-1. Right-click on the dashboard and click **Edit**. 
-1. Hover over a tile on the dashboard - a `...` menu will appear on the top/right corner with edit options.
+1. Klicken Sie auf die Schaltfläche **Bearbeiten**.
+1. Klicken Sie mit der rechten Maustaste auf das Dashboard, und klicken Sie auf **Bearbeiten**. 
+1. Bewegen Sie den Mauszeiger auf dem Dashboard auf eine Kachel, sodass ein `...`-Menü mit Bearbeitungsoptionen in der oberen rechten Ecke angezeigt wird.
 
-The dashboard switches to edit mode.
+Das Dashboard wechselt in den Bearbeitungsmodus.
 
-![Edit dashboard](../media-draft/8-edit-dashboard.png)
+![Dashboard bearbeiten](../media-draft/8-edit-dashboard.png)
 
-On the left-hand side appears the Tile Gallery, with several possible tiles. You can filter the Tile Gallery by category and resource type:
+Auf der linken Seite wird der Kachelkatalog mit einer Reihe möglicher Kacheln angezeigt. Sie können dem Kachelkatalog nach Kategorie und Ressource filtern:
 
-![Tile Gallery](../media-draft/8-tile-gallery.png)
+![Kachelkatalog](../media-draft/8-tile-gallery.png)
 
-Adding tiles is as easy as selecting the tile from the list on the left and then dragging it to the work area. You can then move each tile about, resize it, or change the data that it displays.
+Um Kacheln hinzuzufügen, wählen Sie einfach aus der Liste links eine Kachel aus, und ziehen Sie diese in den Arbeitsbereich. Sie können jede Kachel verschieben, ihre Größe oder die darin angezeigten Daten ändern.
 
 > [!TIP]
-> One cool feature a lot of people are unaware of is that you can take elements on child blades and put them on your dashboard. Just hover over the item and look for the `...` tile edit menu - this will have a "Pin to Dashboard" option which lets you quickly grab a tile from a service and put it onto the dashboard.
+> Ein interessantes Feature, das viele Benutzer nicht kennen, ist die Möglichkeit, dass Sie Elemente von untergeordneten Blättern auf Ihrem Dashboard platzieren können. Bewegen Sie einfach den Mauszeiger auf das Element, und platzieren Sie mit der „An Dashboard anheften“-Option des `...`-Kachelbearbeitungsmenüs schnell eine Kachel aus einem Dienst auf dem Dashboard.
 
-The work area in edit mode is divided into squares. Each tile must occupy at least one square, and tiles will snap to the nearest largest set of tile dividers. Any overlapping tiles are moved out of the way. When you make a tile smaller, the surrounding tiles will move back up against it.
+Der Arbeitsbereich ist im Bearbeitungsmodus in Quadrate unterteilt. Jede Kachel muss mindestens ein Quadrat belegen, wobei Kacheln an den nächstgelegenen Trennlinien ausgerichtet werden. Überlappenden Kacheln werden beiseite verschoben. Wenn Sie eine Kachel verkleinern, werden die umgebenden Kacheln wieder in die Nähe geschoben.
 
-#### Change tile sizes
+#### <a name="change-tile-sizes"></a>Ändern der Kachelgrößen
 
-Some tiles have a set size, and you can edit their size only programmatically. However, you can edit tiles with a gray bottom right-hand corner by dragging the corner indicator.
+Einige Kacheln verfügen über eine festgelegte Größe, die Sie nur programmgesteuert bearbeiten können. Sie können jedoch Kacheln mit einer grauen Ecke rechts unten bearbeiten, indem Sie die Eckmarkierung mit der Maus ziehen.
 
-![Resizable tile](../media-draft/8-resizable-tile.png)
+![Kachel mit veränderbarer Größe](../media-draft/8-resizable-tile.png)
 
-Alternatively, right-click the context menu and specify the size you want.
+Alternativ dazu können Sie auch mit der rechten Maustaste auf das Kontextmenü klicken und die gewünschte Größe angeben.
 
-![Tile size](../media-draft/8-tile-size.png)
+![Kachelgröße](../media-draft/8-tile-size.png)
 
-To create your dashboard, pull tiles from the Tile Gallery onto the workspace and then rearrange them.
+Um ein Dashboard zu erstellen, ziehen Sie Kacheln aus dem Kachelkatalog in den Arbeitsbereich und ordnen sie an.
 
-#### Change tile settings
+#### <a name="change-tile-settings"></a>Ändern der Kacheleinstellungen
 
-Some tiles have editable settings. For example, with the clock tile, when you drag it onto the workspace, it opens the **Edit clock** tile. You can then set the time zone, which it displays, and also set whether it displays in 12- or 24-hour format.
+Einige Kacheln weisen Einstellungen auf, die sich bearbeiten lassen. Wenn Sie z.B. die Kachel „Uhr“ in den Arbeitsbereich ziehen, wird die Kachel **Uhr bearbeiten** geöffnet. Dort können Sie die Zeitzone sowie die Anzeige im 12- oder 24-Stunden-Format festlegen.
 
-![Edit clock](../media-draft/8-edit-clock.png)
+![Bearbeiten der Uhr](../media-draft/8-edit-clock.png)
 
-For multi-national or transcontinental companies, you can add clocks, each in a different time zone.
+In multinationalen oder transkontinentalen Unternehmen können Sie Uhren hinzufügen, die jeweils unterschiedliche Zeitzonen anzeigen.
 
-#### Accepting your edits
+#### <a name="accepting-your-edits"></a>Übernehmen der Änderungen
 
-When you have arranged the tiles as you want them, either click **Done customizing**, or right-click and then click **Done customizing**.
+Wenn Sie die Kacheln nach Wunsch angeordnet haben, klicken Sie auf **Anpassung abgeschlossen**, oder klicken Sie mit der rechten Maustaste und klicken dann auf **Anpassung abgeschlossen**.
 
-## Edit a dashboard by changing the JSON file
+## <a name="edit-a-dashboard-by-changing-the-json-file"></a>Bearbeiten eines Dashboards durch Ändern der JSON-Datei
 
-You can also edit a dashboard by changing the JSON file. This approach provides more options for changing settings, but you cannot see the changes until you upload the file back into Azure.
+Sie können ein Dashboard auch durch Ändern der JSON-Datei bearbeiten. Diese Vorgehensweise bietet mehr Optionen für das Ändern von Einstellungen, aber Sie können die Änderungen erst sehen, nachdem Sie die Datei wieder in Azure hochgeladen haben.
 
-![JSON settings](../media-draft/8-json-code.png)
+![JSON-Einstellungen](../media-draft/8-json-code.png)
 
-In the example above, to change the size of the tile, edit the **colSpan** and **rowSpan** variables, then save the file and upload it back to Azure. You can also distribute the file to other users.
+Um im Beispiel oben die Größe der Kachel zu ändern, bearbeiten Sie die Variablen **colSpan** und **rowSpan**. Speichern Sie dann die Datei, und laden Sie sie wieder in Azure hoch. Sie können die Datei auch an andere Benutzer verteilen.
 
-## Reset a dashboard
+## <a name="reset-a-dashboard"></a>Zurücksetzen eines Dashboards
 
-You can reset any dashboard to the default style. In edit mode, right-click and select **Reset to default state**. A dialog box will ask you to confirm that you want to reset that dashboard.
+Sie können jedes Dashboard auf den Standardstil zurücksetzen. Klicken Sie im Bearbeitungsmodus mit der rechten Maustaste, und wählen Sie **Auf Standardzustand zurücksetzen** aus. Sie werden in einem Dialogfeld aufgefordert, zu bestätigen, dass Sie dieses Dashboard zurücksetzen möchten.
 
 <a name="share-dashboard"></a>
 
-## Share or unshare a dashboard
+## <a name="share-or-unshare-a-dashboard"></a>Freigeben bzw. Aufheben der Freigabe eines Dashboards
 
-When you define a new dashboard, it is private and visible only to your account. To make it visible to others, you need to share a dashboard. However, as with any other Azure resource, you need to specify a resource group (or use an existing resource group) to store shared dashboards in. If you do not have an existing resource group, Azure will create a *dashboards* resource group in whichever location you specify. If you have existing resource groups, you can specify that resource group to store the dashboards.
+Wenn Sie ein neues Dashboard definieren, ist es privat und nur für Ihr Konto sichtbar. Um anderen Benutzer die Ansicht des Dashboards zu ermöglichen, müssen Sie es freigeben. Sie müssen jedoch, wie bei jeder anderen Azure-Ressource auch, eine Ressourcengruppe angeben (oder eine vorhandenen Ressourcengruppe verwenden), in der freigegebene Dashboards gespeichert werden. Wenn Sie nicht über eine vorhandene Ressourcengruppe verfügen, erstellt Azure die Ressourcengruppe *Dashboards* an einem von Ihnen angegebenen Speicherort. Wenn Sie über eine Ressourcengruppe verfügen, können Sie diese verwenden, um die Dashboards zu speichern.
 
-![Sharing and access control 1](../media-draft/8-share-dashboards-default.png)
+![Freigabe und Zugriffssteuerung 1](../media-draft/8-share-dashboards-default.png)
 
-When you have shared the template, you will see a second **Sharing + access control** blade.
+Wenn Sie die Vorlage freigegeben haben, sehen Sie ein zweites Blatt: **Freigabe + Zugriffssteuerung**.
 
-![Sharing and access control 2](../media-draft/8-share-dashboards-access-control.png)
+![Freigabe und Zugriffssteuerung 2](../media-draft/8-share-dashboards-access-control.png)
 
-You can then click **Manage users** to specify the users who have access to that dashboard.
+Sie können dann auf **Benutzer verwalten** klicken, um die Benutzer anzugeben, die auf dieses Dashboard zugreifen dürfen.
 
-### Switching to a shared dashboard
+### <a name="switching-to-a-shared-dashboard"></a>Wechsel zu einem freigegebenen Dashboard
 
-To switch to a shared dashboard, you click on the list of dashboards, and then click **Browse all dashboards**.
+Um zu einem freigegebenen Dashboard zu wechseln, klicken Sie auf die Liste der Dashboards und dann auf **Alle Dashboards durchsuchen**.
 
-![Browse all dashboards](../media-draft/8-browse-dashboards.png)
+![Alle Dashboards durchsuchen](../media-draft/8-browse-dashboards.png)
 
-You will now see the **All dashboards** blade, with the names of any shared dashboards displayed. Just click on a dashboard to apply it to the Azure portal.
+Sie sehen das Blatt **Alle Dashboards**, auf dem die Namen aller freigegebenen Dashboards angezeigt werden. Klicken Sie auf ein Dashboard, um es auf das Azure-Portal anzuwenden.
 
-![Shared dashboards](../media-draft/8-select-shared-dashboard.png)
+![Freigegebene Dashboards](../media-draft/8-select-shared-dashboard.png)
 
 <a name="full-screen"></a>
 
-## Display a dashboard as a full screen
+## <a name="display-a-dashboard-as-a-full-screen"></a>Anzeigen eines Dashboards im Vollbildmodus
 
-If you want the largest dashboard real estate, click the **Full screen** button to display your current dashboard without any browser menus. If you have any tiles outside the boundaries of your screen display, slider bars will appear at the right and bottom of your screen.
+Wenn Sie das Dashboard möglichst groß anzeigen möchten, klicken Sie auf die Schaltfläche **Vollbild**, um Ihr aktuelles Dashboard ohne Browsermenüs anzuzeigen. Falls sich Kacheln außerhalb der Bildschirmanzeige befinden, werden rechts und unten auf dem Bildschirm Schieberegler angezeigt.
 
-When you have finished working in full-screen mode, press the ESC key or click **Exit Full Screen** next to the Dashboard name at the top of the screen.
+Um den Vollbildmodus zu beenden, drücken Sie die ESC-Taste, oder klicken Sie am oberen Bildschirmrand neben dem Dashboardnamen auf **Vollbildmodus beenden**.
 
 <a name="clone-dashboard"></a>
 
-## Clone a dashboard
+## <a name="clone-a-dashboard"></a>Klonen eines Dashboards
 
-Cloning a dashboard creates an instant copy called "Clone of \<dashboard name>" and switches to that copy as the current dashboard. Cloning is also an easy way to create dashboards before sharing them. For example, if you have a dashboard that is almost as you want it, clone it, make the changes that you need, and then share it.
+Beim Klonen eines Dashboards wird eine Sofortkopie namens „Klon von \<Dashboardname>“ erstellt, wobei diese Kopie zum aktuellen Dashboard wird. Klonen ist auch eine einfache Möglichkeit, Dashboards zu erstellen, bevor sie freigegeben werden. Wenn Sie z.B. über ein Dashboard verfügen, das bereits fast Ihren Wünschen entspricht, klonen Sie es, nehmen die notwendigen Änderungen vor und geben es dann frei.
 
 <a name="delete-dashboard"></a>
 
-## Delete a dashboard
+## <a name="delete-a-dashboard"></a>Löschen eines Dashboards
 
-Deleting a dashboard removes it from your list of available dashboards. You are prompted to confirm that you want to delete the dashboard, but there is no facility to recover a dashboard that has been deleted.
+Durch Löschen eines Dashboards wird es aus der Liste der verfügbaren Dashboards entfernt. Sie werden aufgefordert zu bestätigen, dass Sie das Dashboard löschen möchten. Beachten Sie aber, dass es keine Möglichkeit gibt, ein gelöschtes Dashboard wiederherzustellen.
 
-Let's try out some of these options by creating a new dashboard.
+Wir werden nun einige dieser Optionen ausprobieren, indem wir ein neues Dashboard erstellen.

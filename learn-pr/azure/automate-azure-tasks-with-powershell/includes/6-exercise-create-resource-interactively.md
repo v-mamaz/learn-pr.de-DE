@@ -3,6 +3,7 @@ Nehmen Sie an, Sie arbeiten in einem Unternehmen, das eine Sammlung von Linux-Ve
 Damit diese VMs für interne Tests separat von den VMs Ihres Unternehmen verwaltet werden, erstellen Sie eine dedizierte Ressourcengruppe, um diese zu hosten. Sie benötigen nur eine Ressourcengruppe. Daher ist die Verwendung von Azure PowerShell im interaktiven Modus die naheliegende Wahl für diese Aufgabe.
 
 ## <a name="steps-to-create-a-resource-group"></a>Schritte zum Erstellen einer Ressourcengruppe
+<!---TODO: Update for sandbox.--->
 
 1. Starten Sie PowerShell.
 
@@ -30,11 +31,11 @@ Damit diese VMs für interne Tests separat von den VMs Ihres Unternehmen verwalt
     Get-AzureRmResource | Format-Table
     ```
 
-Eine weitere Möglichkeit zur Überprüfung, ob die Ressourcengruppe erfolgreich erstellt wurde, ist das Azure-Portal. Melden Sie sich hierfür beim Portal an, und navigieren zum Abschnitt **Ressourcengruppen** (siehe unten). Die neue Ressourcengruppe sollte in der Liste angezeigt werden.
+Eine weitere Möglichkeit zum Überprüfen, ob die Ressourcengruppe erfolgreich erstellt wurde, ist im Azure-Portal verwenden. Melden Sie sich hierfür beim Portal an, und navigieren zum Abschnitt **Ressourcengruppen** (siehe unten). Die neue Ressourcengruppe sollte in der Liste angezeigt werden.
 
-Der folgende Screenshot zeigt den Speicherort der Kategorie „Ressourcengruppen“ im Azure-Portal an.
+Der folgende Screenshot zeigt den Speicherort der Ressource Kategorie "Gruppen" im Azure-Portal an.
 
-![Screenshot des Blatts "Azure-Portal-Favoriten" mit der hervorgehobenen Ressourcengruppenkategorie.](../media/6-listing-resource-groups.png)
+![Screenshot des Azure Portals Favoriten Blatts mit der Resource Group-Kategorie hervorgehoben.](../media/6-listing-resource-groups.png)
 
 ## <a name="summary"></a>Zusammenfassung
 In dieser Übung wird ein allgemeines Muster für eine interaktive PowerShell-Sitzung veranschaulicht. Sie haben ein Standard-Cmdlet verwendet, um für die Durchführung einer bestimmten Aufgabe das AzureRM-Modul und dann die Azure PowerShell-Cmdlets zu importieren. Nun haben Sie eine Ressourcengruppe in Ihrem Abonnement erstellt und können nun VMs erstellen.

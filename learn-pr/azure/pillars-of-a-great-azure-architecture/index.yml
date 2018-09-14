@@ -1,35 +1,33 @@
 ### YamlMime:Module
 uid: learn.pillars-of-a-great-azure-architecture
 metadata:
-  title: Pillars of a great Azure architecture
-  description: Learn how to make your architecture a success on Azure
+  title: Säulen der eine großartige Azure-Architektur
+  description: 'Erfahren Sie, wie Sie Ihre Architektur in Azure erfolgreich gestalten können.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Pillars of a great Azure architecture
-summary: You want to build great things on Azure, but you’re not sure exactly what that means. There is a wealth of tools and services at your disposal on Azure, but what’s important to make sure you’re successful? How do you instill confidence in your customers that their data is secure? Could your architecture handle a spike in traffic if a media report goes viral? Could your architecture handle the failure of one or more critical components? Are you using resources in the most efficient manner possible? Using key principles throughout your architecture regardless of technology choice, can help you design, build, and continuously improve your architecture.
+title: Säulen der eine großartige Azure-Architektur
+summary: 'Sie möchten großartige Dinge in Azure gestalten, aber Sie sind sich nicht sicher, was das genau bedeutet. In Azure steht Ihnen eine Fülle von Tools und Diensten zur Verfügung, aber was ist wichtig, um sicherzustellen, dass Sie erfolgreich sind? Wie können Sie Ihren Kunden das Vertrauen in die Sicherheit ihrer Daten vermitteln? Könnte Ihre Architektur eine Spitze im Datenverkehr bewältigen, wenn ein Medienbericht viral wird? Könnte Ihre Architektur den Ausfall mindestens einer kritischen Komponente bewältigen? Verwenden Sie Ressourcen auf effizienteste Weise? Die Verwendung von Schlüsselprinzipien in Ihrer gesamten Architektur (unabhängig von der Wahl der Technologie) kann Ihnen helfen, Ihre Architektur zu entwerfen, zu erstellen und kontinuierlich zu verbessern.'
 abstract: |
-  In this module, you will:
-  - Identify key pillars for architecting a solution in the cloud
-  - Apply key principles for creating a solid architectural foundation
-prerequisites: None
-#TODO: Update icon URL with real image
-iconUrl: http://via.placeholder.com/120x120
+  In diesem Modul lernen Sie Folgendes:
+  - Identifizieren Sie wesentliche Säulen für die Architektur einer Lösung in der cloud
+  - Anwenden von Schlüsselprinzipien zum Erstellen einer soliden architektonischen Grundlage
+prerequisites: Keine
+iconUrl: /learn/achievements/pillars-of-a-great-azure-architecture.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- solution-architect
+  - solution-architect
 products:
-- azure
+  - azure
 units:
-- learn.pillars-of-a-great-azure-architecture.1-introduction
-- learn.pillars-of-a-great-azure-architecture.2-pillars-of-a-great-azure-architecture
-- learn.pillars-of-a-great-azure-architecture.3-design-for-security
-- learn.pillars-of-a-great-azure-architecture.4-design-for-performance-and-scalability
-- learn.pillars-of-a-great-azure-architecture.5-design-for-availability-and-recoverability
-- learn.pillars-of-a-great-azure-architecture.6-design-for-efficiency-and-operations
-- learn.pillars-of-a-great-azure-architecture.7-summary
+  - learn.pillars-of-a-great-azure-architecture.1-introduction
+  - learn.pillars-of-a-great-azure-architecture.2-pillars-of-a-great-azure-architecture
+  - learn.pillars-of-a-great-azure-architecture.3-design-for-security
+  - learn.pillars-of-a-great-azure-architecture.4-design-for-performance-and-scalability
+  - learn.pillars-of-a-great-azure-architecture.5-design-for-availability-and-recoverability
+  - learn.pillars-of-a-great-azure-architecture.6-design-for-efficiency-and-operations
+  - learn.pillars-of-a-great-azure-architecture.7-summary
 achievement: learn.pillars-of-a-great-azure-architecture.badge

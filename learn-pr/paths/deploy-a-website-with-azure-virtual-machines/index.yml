@@ -1,28 +1,26 @@
 ### YamlMime:LearningPath
 uid: learn.deploy-a-website-with-azure-virtual-machines
 metadata:
-  title: Deploy a website with Azure Virtual Machines
-  description: Web apps in Azure allow you to publish and manage your website easily without having to work with the underlying servers, storage, or network assets. Instead, you can focus on your website features and rely on the robust Azure platform to provide secure access to your site.
+  title: Bereitstellen einer Website mit Azure Virtual Machines
+  description: 'Mit Web-Apps in Azure können Sie Ihre Website einfach veröffentlichen und verwalten, ohne mit den zugrunde liegenden Server-, Speicher- oder Netzwerkressourcen arbeiten zu müssen. Stattdessen können Sie sich auf die Features Ihrer Website konzentrieren und sich darauf verlassen, dass die robuste Azure-Plattform sicheren Zugriff auf Ihre Website ermöglicht.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Deploy a website with Azure Virtual Machines
-summary: If your web hosting requirements aren't directly supported by the Azure Web app platform, you can leverage virtual machines to customize and control every aspect of the web server. Learn how to create, configure, and manage virtual machines on Linux and Windows that host web apps.
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
-levels: 
-- beginner
-roles: 
-- developer
-products: 
-- azure
+title: Bereitstellen einer Website mit Azure Virtual Machines
+summary: 'Wenn Ihre Webhostinganforderungen nicht direkt von der Azure-Web-App-Plattform unterstützt werden, können Sie virtuelle Computer zum Anpassen und Steuern jedes Aspekts des Webservers nutzen. Informationen zum Erstellen, Konfigurieren und Verwalten von virtuellen Computern, die Web-Apps hosten, unter Linux und Windows.'
+prerequisites: Keine
+iconUrl: /achievements/deploy-a-website-with-azure-virtual-machines.svg
+levels:
+  - beginner
+roles:
+  - developer
+products:
+  - azure
 modules:
-- learn.introduction-to-azure-virtual-machines
-- learn.create-linux-vm-in-azure
-- learn.create-a-windows-vm-in-azure
-- learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm
+  - learn.introduction-to-azure-virtual-machines
+  - learn.create-linux-vm-in-azure
+  - learn.create-a-windows-vm-in-azure
+  - learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm
 achievement: learn.deploy-a-website-with-azure-virtual-machines.trophy

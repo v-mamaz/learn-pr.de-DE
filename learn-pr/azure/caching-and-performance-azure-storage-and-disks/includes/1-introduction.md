@@ -1,14 +1,14 @@
-You manage your corporate database infrastructure of SQL Server VMs running in Azure. Times are good, and you need to scale up your operation, while still managing costs. Some database operations involve many reads of existing data. The regular invoice and reporting runs are write-heavy operations. You'd like to find a way to optimize your infrastructure to handle all operation types. Before investing in infrastructure improvements, you decide to explore VM disk caching options first.
+Sie verwalten Ihre Unternehmensdatenbank-Infrastruktur von SQL Server-VMs in Azure ausgeführt wird. Die Zeit ist, und Sie müssen, um den Vorgang, bei der Verwaltung dennoch Kosten zentral hochzuskalieren. Ausführung einiger Datenbankvorgänge umfassen viele Lesevorgänge vorhandener Daten. Sind mit vielen Schreibvorgängen-Vorgänge, die reguläre Rechnung und die berichterstellung ausgeführt wird. Sie möchten, finden Sie eine Möglichkeit zur Optimierung Ihrer Infrastruktur, um alle Vorgangstypen zu behandeln. Entscheiden Sie vor der Investition in die Verbesserungen der Infrastruktur, VM-Datenträger-cachingoptionen zuerst untersuchen.
 
-Caching is a common approach to speeding up computing resources. Azure supports a range of caching technologies to help optimize data access across the Azure landscape, including specific cache options for the Azure storage and disks used by Azure virtual machines (VMs).
+Das Zwischenspeichern ist eine gängige Methode zum Beschleunigen der computing-Ressourcen. Azure unterstützt verschiedene Typen des Zwischenspeicherns von Technologien zum Optimieren der Datenzugriff über die Azure-Landschaft, einschließlich der spezifischen Cacheoptionen für das Azure-Speicher und Datenträger, die von virtuellen Azure-Computern (VMs) verwendet.
 
-We're going to explore all disk caching options in Azure, and manage disk caching with the portal and PowerShell.
+Wir wollen alle Datenträger-cachingoptionen in Azure zu untersuchen und Verwalten von Datenträgercache mit dem Portal und PowerShell.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul lernen Sie Folgendes:
 
-- Describe the key considerations around disk performance in Azure (IOPS)
-- Describe the effects of caching on disk performance in Azure
-- Enable and manage cache settings with the Azure portal
-- Enable and manage cache settings with PowerShell
+- Beschreiben Sie die wichtigsten Überlegungen auf die datenträgerleistung in Azure (IOPS)
+- Beschreiben Sie die Auswirkungen der Zwischenspeicherung auf die datenträgerleistung in Azure
+- Aktivieren und Verwalten von Einstellungen des Caches mit dem Azure-portal
+- Aktivieren und Verwalten von Einstellungen für Clientcache mit PowerShell

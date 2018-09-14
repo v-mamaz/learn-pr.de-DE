@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.cosmos-db-app-with-vscode.setup-cosmosdb
+metadata:
+  title: Einrichten Ihres Azure Cosmos DB-Kontos
+  description: Einrichten Ihres Azure Cosmos DB-Kontos
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Einrichten Ihres Cosmos DB-Kontos
+durationInMinutes: 5
+interactive: bash
+content: |
+  [!include[](includes/setup-cosmosdb.md)]

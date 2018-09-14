@@ -62,7 +62,7 @@ Installieren Sie als Nächstes **PowerShell Core** mit dem Homebrew-Paket-Manage
     pwsh
     ```
 
-## <a name="install-azure-powershell"></a>Installieren von Azure PowerShell
+## <a name="install-azure-powershell"></a>Installieren von Azure Powershell
 Installieren Sie nach dem **PowerShell**-Basisprodukt **Azure PowerShell**, um die Azure-spezifischen Befehle zu installieren.
 
 ### <a name="windows"></a>Windows

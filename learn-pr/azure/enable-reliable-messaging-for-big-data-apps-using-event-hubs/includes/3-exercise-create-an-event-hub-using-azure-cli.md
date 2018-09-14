@@ -4,25 +4,16 @@ Erstellen Sie einen Event Hub mit Azure CLI. Verwenden Sie für diese Übung Azu
 
 ## <a name="create-an-event-hubs-namespace"></a>Erstellen eines Event Hubs-Namespace
 
-Mit den folgenden Schritten können Sie einen Event Hubs-Namespace mithilfe der von Azure Cloud Shell unterstützten Bash-Shell erstellen.
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-1. Melden Sie sich bei Cloud Shell (Bash) an.  
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-1. Erstellen Sie mithilfe des folgenden Befehls eine Azure-Ressourcengruppe.
-
-    ```azurecli
-        az group create --name <resource group name> --location <location>
-    ```
-
-    |Parameter      |Beschreibung|
-    |---------------|-----------|
-    |--name (erforderlich)      |Geben Sie einen neuen Namen für die Ressourcengruppe ein.|
-    |--location (erforderlich)     |Geben Sie den Standort Ihres nächsten Azure-Rechenzentrums an, z.B. „westus“.|
+Verwenden Sie die folgenden Schritte aus, um Event Hubs-Namespaces mithilfe von Azure Cloud Shell unterstützt Bash-Shell zu erstellen:
 
 1. Erstellen Sie mit dem folgenden Befehl den Event Hubs-Namespace:
 
     ```azurecli
-        az eventhubs namespace create --name <Event Hubs namespace name> --resource-group <resource group name> -l <location>
+        az eventhubs namespace create --name <Event Hubs namespace name> --resource-group <rgn>[Sandbox resource group name]</rgn> -l <location>
     ```
 
     |Parameter      |Beschreibung|
@@ -34,7 +25,7 @@ Mit den folgenden Schritten können Sie einen Event Hubs-Namespace mithilfe der 
 1. Rufen Sie die Verbindungszeichenfolge für Ihren Event Hubs-Namespace mithilfe des folgenden Befehls ab. Sie benötigen diese, wenn Sie Anwendungen zum Senden und Empfangen von Nachrichten über Ihren Event Hub konfigurieren.
 
     ```azurecli
-        az eventhubs namespace authorization-rule keys list --resource-group <resource group name> --namespace-name <EventHub namespace name> --name RootManageSharedAccessKey
+        az eventhubs namespace authorization-rule keys list --resource-group <rgn>[Sandbox resource group name]</rgn> --namespace-name <EventHub namespace name> --name RootManageSharedAccessKey
     ```
 
     |Parameter      |Beschreibung|
@@ -54,7 +45,7 @@ Führen Sie die folgenden Schritte aus, um Ihren neuen Event Hub zu erstellen:
 1. Erstellen Sie einen neuen Event Hub über den folgenden Befehl:
 
     ```azurecli
-        az eventhubs eventhub create --name <event hub name> --resource-group <Resource Group name> --namespace-name <Event Hubs namespace name>
+        az eventhubs eventhub create --name <event hub name> --resource-group <rgn>[Sandbox resource group name]</rgn> --namespace-name <Event Hubs namespace name>
     ```
 
     |Parameter      |Beschreibung|
@@ -66,7 +57,7 @@ Führen Sie die folgenden Schritte aus, um Ihren neuen Event Hub zu erstellen:
 1. Zeigen Sie über folgenden Befehl die Informationen Ihres Event Hubs an: 
 
     ```azurecli
-        az eventhubs eventhub show --resource-group <Resource Group name> --namespace-name <Event Hubs namespace name> --name <event hub name>
+        az eventhubs eventhub show --resource-group <rgn>[Sandbox resource group name]</rgn> --namespace-name <Event Hubs namespace name> --name <event hub name>
     ```
 
     |Parameter      |Beschreibung|

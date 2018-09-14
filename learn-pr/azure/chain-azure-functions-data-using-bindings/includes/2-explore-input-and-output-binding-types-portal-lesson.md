@@ -1,59 +1,53 @@
-Accessing and processing data are key tasks in many software solutions. Consider some of these scenarios:
+Zugreifen auf und Verarbeiten von Daten sind wichtige Aufgaben viele softwarelösungen. Betrachten Sie einige dieser Szenarien:
 
-* You've been asked to implement a way to move incoming data from blob storage to Azure Cosmos DB.
-* You want to post incoming messages to a queue for processing by another component in your enterprise.
-* Your service needs to grab gamer scores from a queue and update an online scoreboard.
+* Sie haben eine Möglichkeit zum Verschieben von eingehenden Daten aus Blob Storage mit Azure Cosmos DB implementiert aufgefordert wurde.
+* Eingehende Nachrichten an eine Warteschlange für die Verarbeitung von einer anderen Komponente in Ihrem Unternehmen bereitstellen möchten.
+* Der Dienst muss Spieler Ergebnisse aus einer Warteschlange abrufen und aktualisieren Sie ein online Anzeigetafel.
 
-All of these examples are about moving data. The data source and destinations differ from scenario to scenario, but the pattern is similar. You connect to a data source, you read and write data. Azure Functions helps you integrate with data and services using bindings. 
+Alle diese Beispiele sind Informationen zum Verschieben von Daten. Die Datenquelle und die Ziele unterscheiden sich von Szenario zum Szenario, aber das Muster ist ähnlich. Sie eine Verbindung mit einer Datenquelle herstellen, Sie lesen und Schreiben von Daten. Azure Functions können Sie mit Daten und Diensten, die mit Bindungen zu integrieren. 
 
-## What is a binding?
+## <a name="what-is-a-binding"></a>Was ist eine Bindung?
 
-In functions, bindings provide a declarative way to connect to data from within your code. They make it easier to integrate with data streams consistently in a function. A trigger defines how a function is invoked. You can only have one trigger, but you can have multiple bindings in a function. This is powerful because you can connect to your data sources without having to hard code the values, like for instance, the *connection string*.
+In Funktionen stellen Bindungen eine deklarative Möglichkeit zum Verbinden mit Daten aus dem Code heraus. Sie erleichtern die Integration von Datenströmen konsistent in eine Funktion. Ein Trigger definiert, wie eine Funktion aufgerufen wird. Sie können nur einen Trigger haben, aber Sie haben mehrere Bindungen in einer Funktion. Dies ist effektiv, da Sie mit den Datenquellen verbinden können, ohne dass die Werte, wie z. B. hartcodieren der *Verbindungszeichenfolge*.
 
-### Two kinds of bindings
+### <a name="two-kinds-of-bindings"></a>Zwei Arten von Bindungen
 
-There are two kinds of bindings you can use for your functions:
+Es gibt zwei Arten von Bindungen, die Sie für Ihre Funktionen verwenden können:
 
-1. **Input binding**
-    An input binding is a connection to a data **source**. Our function reads data from this source.
+1. **Eingabebindung** eingabebindung wird eine Verbindung mit einer Datenquelle **Quelle**. Unsere Funktion liest Daten aus dieser Quelle.
 
-1. **Output binding**
-    An output binding is a connection to a data **destination**. Our function writes data to this destination.
+1. **Ausgabebindung** eine ausgabebindung ist eine Verbindung mit einer Datenquelle **Ziel**. Unsere Funktion schreibt die Daten an dieses Ziel.
 
-### Types of supported bindings
+### <a name="types-of-supported-bindings"></a>Typen von unterstützten Bindungen.
 
-The *type* of binding defines where we are reading or sending data. There is a binding to respond to web requests and a large selection of bindings to interact with storage.
+Die *Typ* Bindung definiert, in dem wir lesen oder Senden von Daten. Eine Bindung zur Beantwortung von webanforderungen und einer großen Anzahl von Bindungen für die Interaktion mit Speicher ist vorhanden.
 
-Here's a list of commonly used bindings:
+Hier ist eine Liste der häufig verwendeten Bindungen:
 - Blob
-- Queue
-- CosmosDB
+- Warteschlange
+- Cosmos DB
 - Event Hubs
-- External Files
-- External Tables
+- Externe Dateien
+- Externe Tabellen
 - HTTP
 
-### Binding properties
+### <a name="binding-properties"></a>Bindungseigenschaften
 
-There are four properties that are required in all bindings. You may have to supply additional properties based on the type of binding and/or storage you are using.
+Es gibt vier Eigenschaften, die in allen Bindungen erforderlich sind. Sie müssen möglicherweise zusätzliche Eigenschaften, die basierend auf den Typ der Bindung bzw. Speicher verwendeten angeben.
 
-- **Name**
-    The `name` property defines the function parameter through which you access the data. For example, in a queue input binding, this is the name of the function parameter that receives the queue message content. 
+- **Namen** der `name` Eigenschaft definiert den Funktionsparameter, die über die Sie auf die Daten zugreifen. In eine warteschlangeneingabebindung ist dies z. B. den Namen des Parameters der Funktion, die den Inhalt der warteschlangennachricht empfängt. 
 
-- **Type**
-    The `type` property identifies the type of binding, i.e., the type of data or service we want to interact with.
+- **Typ** der `type` Eigenschaft identifiziert den Typ der Bindung, d. h., die den Typ der Daten oder des Diensts für die Interaktion mit werden sollten.
 
-- **Direction**
-    The `direction` property identifies the direction data is flowing ie. is it an input or output binding?
+- **Richtung** der `direction` Eigenschaft identifiziert, der die Richtung, die Daten ie fließen. ist es eine Eingabe- oder ausgabeadapter-Bindung?
 
-- **Connection**
-    The `connection` property is the name of an app setting that contains the connection string, not the connection string itself. Bindings use connection strings stored in app settings to enforce the best practice that function.json does not contain service secrets.
+- **Verbindung** der `connection` Eigenschaft ist der Name des app-Einstellung, die die Verbindungszeichenfolge und nicht die Verbindungszeichenfolge selbst enthält. Bindungen nutzen in der app-Einstellungen erzwingen die bewährte Methode gespeichert, "Function.JSON" enthält keine Geheimnisse eines Diensts.
 
-## Create a binding
+## <a name="create-a-binding"></a>Erstellen Sie eine Bindung
 
-Bindings are defined in JSON. A binding is configured in your function's configuration file, which is named `function.json` and lives in the same folder as your function code.
+Bindungen werden im JSON-Format definiert. Eine Bindung wird in die Funktions XML-Konfigurationsdatei mit dem Namen konfiguriert `function.json` und befindet sich im gleichen Ordner wie Ihrem Funktionscode.
 
- Let's examine a sample of an *input binding*:
+ Sehen wir uns ein Beispiel für eine *eingabebindung*:
 
 ```json
     ...
@@ -67,18 +61,18 @@ Bindings are defined in JSON. A binding is configured in your function's configu
     ...
 ```
 
-To create this binding we:
+Erstellen Sie diese Bindung wir:
 
-1. Create a binding in our `function.json` file.
+1. Erstellen Sie eine Bindung in unserer `function.json` Datei.
 
-1. Provide the value for the `name` variable. In this example, the variable will hold the blob data.
+1. Geben Sie den Wert für die `name` Variable. In diesem Beispiel wird die Variable, die Blob-Daten enthalten.
 
-1. Provide the storage `type`, in the preceding example, we are using Blob storage.
+1. Geben Sie den Speicher `type`, verwenden wir im vorherigen Beispiel-BLOB-Speicher.
 
-1. Provide the `path`, which specifies the container and the item name which goes in it. The `path` property is required for Blobs.
+1. Geben Sie die `path`, der angibt, den Container und die Elementnamen, der bei der es gesendet wird. Die `path` Eigenschaft ist erforderlich für Blobs.
 
-1. Provide the `connection` string setting name defined in the application's settings file. It's used as a lookup to find the connection string to connect to your storage.
+1. Geben Sie die `connection` Zeichenfolgenname der Einstellung in der Datei mit der Anwendung definiert. Es wird als eine Suche verwendet, finden Sie die Verbindungszeichenfolge zur Verbindung mit Ihren Speicher.
 
-1. Define the `direction` as `in`, it will read data from the Blob.
+1. Definieren der `direction` als `in`, Daten aus dem Blob gelesen wird.
 
-Bindings are used to connect to data into your function. In the example we looked at, we used an input binding to connect user images to be processed by our function as thumbnails.
+Bindungen werden zum Verbinden mit Daten in Ihre Funktion. In dem Beispiel, dem wir uns angesehen haben, verwendet haben wir eine eingabebindung benutzerimages von unserer Funktion verarbeitet werden, als Miniaturansichten Verbindung.

@@ -4,24 +4,23 @@ Unser Ziel ist, einen neuen virtuellen Azure-Computer zu erstellen. Wir müssen 
 
 Azure verwendet _Ressourcengruppen_, um zusammengehörige Ressourcen wie virtuelle Computer und Datenbanken zu gruppieren. Die Ressourcengruppe bestimmt auch einen Standort (als „Region“ bezeichnet), der entscheidet, in welchem Rechenzentrum die Ressource platziert wird.
 
-Da wir experimentieren, starten Sie mit dem Erstellen einer neuen Ressourcengruppe namens `ExerciseResources`, die Sie in der Region `eastus` platzieren.
+> [!NOTE]
+> Die Azure-Sandbox bietet eine vorab erstellte Ressourcengruppe mit dem Namen <rgn>[Ressourcengruppennamen Sandkasten]</rgn>. Sie müssen sich nicht zum Ausführen dieser Schritte. Allerdings sind für die Erstellung Ihrer _eigenen_ Ressourcen für tatsächliche Projekte, diese werden die Befehle, die Sie ausführen müssen. Die Azure-Sandbox lässt nicht zu, dass Sie Ressourcengruppen direkt zu erstellen.
 
-<!-- TODO: replace with free ed-tier -->
-
-Geben Sie in Azure Cloud Shell den folgenden Azure CLI-Befehl ein, um die Ressourcengruppe in Ihrem Abonnement zu erstellen.
+Beispielsweise können Sie den folgenden Azure CLI-Befehl eingeben, in Azure Cloud Shell zum Erstellen einer Ressourcengruppe in der **USA, Osten** Region. Ersetzen Sie **[Ressourcengruppe]** durch einen gültigen Namen an, die in das aktive Abonnement eindeutig ist.
 
 ```azurecli
-az group create --name ExerciseResources --location eastus
+az group create --name [resource-group] --location eastus
 ```
 
-Ein JSON-Block wird zurückgegeben, der angibt, dass die Ressourcengruppe erstellt wurde. Dieser sollte ungefähr wie folgt aussehen:
+Dies würde zurückgeben, eine JSON-Block, der angibt, ob die Ressourcengruppe erstellt wurde.
 
 ```json
 {
-  "id": "/subscriptions/abc13b0c-d2c4-64b2-9ac5-2f4cb819b752/resourceGroups/ExerciseResources",
+  "id": "/subscriptions/abc13b0c-d2c4-64b2-9ac5-2f4cb819b752/resourceGroups/<resourcegroup>",
   "location": "eastus",
   "managedBy": null,
-  "name": "ExerciseResources",
+  "name": "<resourcegroup>",
   "properties": {
     "provisioningState": "Succeeded"
   },
@@ -31,4 +30,4 @@ Ein JSON-Block wird zurückgegeben, der angibt, dass die Ressourcengruppe erstel
 
 Beachten Sie, dass der eindeutige Bezeichner, Standort und Name des Abonnements als Teil der Antwort zurückgegeben wird. Sie können diese Informationen verwenden, um zu überprüfen, ob sie im richtigen Abonnement und am richtigen Standort erstellt wurden.
 
-Nachdem wir nun über eine Ressourcengruppe verfügen, lassen Sie uns einen neuen virtuellen Computer erstellen.
+Nun wir wissen, wie eine Ressourcengruppe zu erstellen erstellen wir einen neuen virtuellen Computer an.

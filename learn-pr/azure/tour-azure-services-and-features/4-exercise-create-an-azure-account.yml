@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-services-features.4-exercise-create-an-azure-account
-title: Create an Azure account
+title: Erstellen eines Azure-Kontos
 metadata:
-  title: Create an Azure account
-  description: Create an Azure account
+  title: Erstellen eines Azure-Kontos
+  description: Erstellen eines Azure-Kontos
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

@@ -1,48 +1,47 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-computer-vision-service.7-summary
-title: Summary and knowledge check
+title: Zusammenfassung und das Wissen überprüfen
 metadata:
-  title: Summary and knowledge check
-  description: Summary and knowledge check
+  title: Zusammenfassung und das Wissen überprüfen
+  description: Zusammenfassung und das Wissen überprüfen
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
+  author: AndrewJByrne
+  ms.author: marouill
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-durationInMinutes: 10
+durationInMinutes: 5
 content: |
   [!include[](includes/7-summary.md)]
 quiz:
-  title: 'Computer Vision quiz'
+  title: 'Wissenstest: Verarbeiten von Bildern mit dem Dienst für maschinelles sehen'
   questions:
-  - content: "What kind of famous images won't be identified with Computer Vision?"
-    choices:
-    - content: 'Landmarks '
-      isCorrect: false
-    - content: 'Celebrities'
-      isCorrect: false
-    - content: 'Movies'
-      isCorrect: true
-  - content: 'Which visual features can we elect to receive when analyzing images?'
-    choices:
-    - content: 'Shapes'
-      isCorrect: true
-    - content: 'Image categorization'
-      isCorrect: false
-    - content: 'Tags'
-      isCorrect: false
-    - content: 'Textual description'
-      isCorrect: false
-    - content: 'Faces'
-      isCorrect: false
-    - content: 'Colors'
-      isCorrect: false
-    - content: 'Adult and suggestive content'
-      isCorrect: false
-  - content: 'What does smart cropping do?'
-    choices:
-    - content: 'Crops pictures from the top left'
-      isCorrect: false
-    - content: 'Crops pictures based on regions of interest (faces, objects in focus, others)'
-      isCorrect: true
+    - content: Bei der Analyse eines Bilds mit der maschinelles sehen-API können Sie visual Funktionstypen zurückzugebenden angeben.  Welche der folgenden ist ein gültiges visual Feature beim Aufrufen des Vorgangs "analyze"?
+      choices:
+        - content: 'Filme '
+          isCorrect: false
+          incorrectExplanation: Filme ist kein gültiges visual Featuretyp.
+        - content: Tiere
+          isCorrect: false
+          incorrectExplanation: Tiere ist kein gültiges visual Featuretyp.
+        - content: Prominente
+          isCorrect: true
+          correctExplanation: 'Die beiden visual Feature-Typen, die Sie angeben können, sind die berühmte Personen und Orientierungspunkte.'
+    - content: 'Welche der folgenden wird beschrieben, was *intelligentes Zuschneiden* ist beim Generieren einer Miniaturansicht mit der `generateThumbnail` Vorgang?'
+      choices:
+        - content: Es werden die Bilder aus der oberen linken Ecke abgeschnitten.
+          isCorrect: false
+          incorrectExplanation: 'Zuschneiden eines Abbilds von der oberen linken Ecke können Sie entfernen einen erheblichen Teil des Bilds, auch bekannt als die relevanten Bereich führen.'
+        - content: Das Produkt konzentriert sich auf den "interessanten Bereich" die Miniaturansicht.
+          isCorrect: true
+          correctExplanation: 'Wenn der Parameter "SmartCropping" auf "true" festgelegt ist, gilt die API intelligente zuschneiden, um die Miniaturansicht auf die "Interessenbereich" zu zentrieren. Andernfalls werden sie in nur an das Rechenzentrum abgeschnitten.'
+    - content: 'Sie können das Computer Vision-API in Ihre Lösung integrieren. Sie erstellt einen Cognitives Services-Konto für den Computer Vision-Dienst in der Region USA, Osten. Welche der folgenden ist die richtige Adresse für den Zugriff auf die `ocr` Vorgang?'
+      choices:
+        - content: eastus2.api.cognitive.microsoft.com/vision/v1.0/ocr
+          isCorrect: false
+          incorrectExplanation: 'Sie nicht für eine Zugriffstaste, um Anforderungen aus dieser Region auszuführen registrieren. Beachten Sie, dass der Endpunkt gibt an, die Region, die Sie bei der Registrierung haben gewählt, die Dienst-URL und eine Ressource in der Anforderung verwendet wird.'
+        - content: eastus.api.cognitive.microsoft.com/vision/v1.0/describe
+          isCorrect: false
+          incorrectExplanation: Diese Adresse sendet eine Anforderung an die Ressource für die Entitäten an.
+        - content: eastus.api.cognitive.microsoft.com/vision/v1.0/ocr
+          isCorrect: true
+          correctExplanation: 'Der Endpunkt gibt an, die Region, die Sie bei der Registrierung haben gewählt, die Dienst-URL und eine Ressource in der Anforderung verwendet wird.'

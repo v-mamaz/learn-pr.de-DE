@@ -10,7 +10,7 @@ In dieser Einheit verwenden Sie das Azure-Portal, um zu überprüfen, ob Ihr Eve
 
     ![Anzeigen von Event Hub-Nachrichten](../media-draft/6-view-messages.png)
 
-1. Die Anwendungen „SimpleSend“ und „EventProcessorSample“ werden zum Senden bzw. Empfangen von 100 Nachrichten konfiguriert. Sie sehen, dass der Event Hub 100 Nachrichten der SimpleSend-Anwendung verarbeitet und 100 Nachrichten an die EventProcessorSample-Anwendung übertragen hat.
+1. Die Anwendungen „SimpleSend“ und „EventProcessorSample“ werden zum Senden bzw. Empfangen von 100 Nachrichten konfiguriert. Sie sehen, dass der Event Hub 100 Nachrichten aus der Anwendung SimpleSend verarbeitet hat und verfügt über 100 Nachrichten an die EventProcessorSample-Anwendung übertragen.
 
 ## <a name="test-event-hub-resilience"></a>Testen der Event Hub-Resilienz
 
@@ -22,7 +22,6 @@ Wenn Sie folgende Schritte befolgen, sehen Sie, was passiert, wenn eine Anwendun
     cd ~
     cd azure-event-hubs/samples/Java/Basic/SimpleSend
     java -jar ./target/simplesend-1.0.0-jar-with-dependencies.jar
-    ENTER
     ```
 
 1. Wenn Sie **Send Complete...** (Sendevorgang abgeschlossen) sehen, drücken Sie die EINGABETASTE.
@@ -43,7 +42,6 @@ Warten Sie mindestens fünf Minuten.
     cd ~
     cd azure-event-hubs/samples/Java/Basic/EventProcessorSample
     java -jar ./target/eventprocessorsample-1.0.0-jar-with-dependencies.jar
-    ENTER
     ```
 
 1. Wenn in der Konsole keine Nachrichten mehr angezeigt werden, drücken Sie die EINGABETASTE.

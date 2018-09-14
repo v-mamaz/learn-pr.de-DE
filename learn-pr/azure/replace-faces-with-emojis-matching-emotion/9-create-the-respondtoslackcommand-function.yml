@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.the-mojifier.9-create-the-respondtoslackcommand-function
+metadata:
+  title: Erstellen Sie die RespondToSlackCommand
+  description: Erstellen Sie einen zweiten Endpunkt die Slack ruft jedes Mal wenn ein Benutzer führt die `\mojify` Befehl.
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+labId: 45987
+title: Erstellen Sie die RespondToSlackCommand
+durationInMinutes: 7
+content: |
+  [!include[](includes/9-create-the-respondtoslackcommand-function.md)]

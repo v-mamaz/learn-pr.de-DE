@@ -1,26 +1,16 @@
 Azure Container Instances erleichtert die Erstellung und Verwaltung von Docker-Containern in Azure, ohne dass Sie virtuelle Computer bereitstellen oder einen übergeordneten Dienst einführen müssen. In dieser Einheit erstellen Sie einen Container in Azure und machen ihn mit einem vollqualifizierten Domänennamen (FQDN) über das Internet verfügbar.
 
-## <a name="create-a-resource-group"></a>Erstellen einer Ressourcengruppe
-
-Wie alle Azure-Ressourcen muss auch Azure Container Instances in einer Ressourcengruppe (einer logische Sammlung für die Bereitstellung und Verwaltung von Azure-Ressourcen) platziert werden.
-
-Erstellen Sie mit dem Befehl `az group create` eine Ressourcengruppe.
-
-Im folgenden Beispiel wird eine Ressourcengruppe mit dem Namen *myResourceGroup* am Standort *eastus* erstellt:
-
-```azurecli
-az group create --name myResourceGroup --location eastus
-```
-
 ## <a name="create-a-container"></a>Erstellen eines Containers
+
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
 Zum Erstellen eines Containers müssen Sie einen Namen, ein Docker-Image und eine Azure-Ressourcengruppe für den Befehl **az container create** angeben. Durch Angeben einer DNS-Namensbezeichnung kann der Container optional auch für das Internet verfügbar gemacht werden. In diesem Beispiel stellen Sie einen Container bereit, der eine kompakte Webanwendung hostet.
 
-Führen Sie den folgenden Befehl aus, um eine Containerinstanz zu starten. Der *--dns-name-label*-Wert muss innerhalb der Azure-Region, in der Sie die Instanz erstellen, eindeutig sein. Passen Sie den Wert also ggf. entsprechend an:
+Führen Sie den folgenden Befehl in der Cloud Shell, um eine Containerinstanz zu starten. Der *--dns-name-label*-Wert muss innerhalb der Azure-Region, in der Sie die Instanz erstellen, eindeutig sein. Passen Sie den Wert also ggf. entsprechend an:
 
 ```azurecli
 az container create \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name mycontainer \
     --image microsoft/aci-helloworld \
     --ports 80 \
@@ -31,7 +21,7 @@ Innerhalb weniger Sekunden erhalten Sie eine Antwort auf Ihre Anforderung. Der C
 
 ```azurecli
 az container show \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name mycontainer \
     --query "{FQDN:ipAddress.fqdn,ProvisioningState:provisioningState}" \
     --out table
@@ -39,7 +29,7 @@ az container show \
 
 Wenn Sie den Befehl ausführen, werden der vollqualifizierte Domänenname (FQDN) des Containers und der Bereitstellungsstatus angezeigt:
 
-```bash
+```output
 FQDN                                    ProvisioningState
 --------------------------------------  -------------------
 aci-demo.eastus.azurecontainer.io       Succeeded

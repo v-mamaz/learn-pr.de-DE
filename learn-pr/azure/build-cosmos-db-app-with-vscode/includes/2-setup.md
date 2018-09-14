@@ -2,25 +2,19 @@ In diesem Modul erstellen Sie eine einfache Konsolen-App mit dem integrierten Te
 
 ## <a name="create-a-console-app"></a>Erstellen einer Konsolen-App
 
-1. Erstellen Sie einen Ordner, in dem Sie arbeiten.
-
-1. Öffnen Sie ein Eingabeaufforderungsfenster, und navigieren Sie zum Ordner.
-
-1. Erstellen einer neuen .NET Core-Konsolenanwendung
-
-```bash
-dotnet new console 
-```
-
 1. Öffnen Sie Visual Studio Code, und wählen Sie **Datei** > **Ordner öffnen** aus.
 
 1. Erstellen Sie einen neuen Ordner für Ihr neues C#-Projekt, und klicken Sie dann auf **Ordner auswählen**.
 
-1. Vergewissern Sie sich, das AutoSpeichern aktiviert ist, indem Sie auf das Menü „Datei“ klicken und überprüfen, ob „AutoSpeichern“ leer ist.
+1. Stellen Sie sicher, automatische Speichern ist aktiviert, indem Sie im Menü Datei auf und **automatische Speicherung** , wenn es leer ist.
 
-1. Öffnen Sie das integrierte Terminal aus Visual Studio Code, indem Sie im Hauptmenü **Ansicht** > **Integriertes Terminal** auswählen.
+1. Öffnen Sie das integrierte Terminal aus Visual Studio Code dazu **Ansicht** > **Terminal** im Hauptmenü.
 
-1. Geben Sie im Terminalfenster **dotnet new console** ein.
+1. Geben Sie in der terminal-Fenster den folgenden Befehl ein.
+
+    ```
+    dotnet new console
+    ```
 
     Mit diesem Befehl wird eine Datei **Program.cs** in Ihrem Ordner erstellt, die ein bereits geschriebenes einfaches Hello World-Programm enthält, gemeinsam mit einem C#-Projekt namens **learning-module.csproj**.
 
@@ -38,7 +32,7 @@ dotnet new console
 
     Folgen Sie den Anweisungen, um den bereitgestellten Code zu kopieren und in den Webbrowser einzufügen, wodurch Ihre Visual Studio Code-Sitzung authentifiziert wird.
 
-1. Klicken Sie im Menü links auf das ![Explorer-Symbol](../media/2-setup/visual-studio-code-explorer-icon.png) **Explorer**-Symbol, und erweitern Sie dann **Azure Cosmos DB**.
+1. Klicken Sie auf die ![Azure-Symbol](../media/2-setup/visual-studio-code-explorer-icon.png) **Azure** Symbol im linken Menü, und erweitern Sie dann **Azure Cosmos DB**.
 
 1. Erweitern Sie „Azure-Abonnement“ > „Azure Cosmos DB-Konto“. Wenn Sie in den vorherigen Modulen die Datenbank **Products** und die Sammlung **Clothing** erstellt haben, werden diese in der Erweiterung angezeigt.
 
@@ -46,11 +40,11 @@ dotnet new console
 
 1. Erstellen wir jetzt eine neue Datenbank und Sammlung für Ihre Kunden.
 
-    Klicken Sie im Explorer-Fenster mit der rechten Maustaste auf Ihr Konto, und klicken Sie dann auf **Datenbank erstellen**. 
+    Klicken Sie im Azure-Fenster mit der rechten Maustaste in Ihrem Konto, und klicken Sie dann auf **Create Database**.
     
     Geben Sie im Textfeld im oberen Bildschirmbereich als Datenbankname **Users** ein, und gehen Sie dann folgendermaßen vor: **EINGABETASTE** > **WebCustomers** für den Sammlungsnamen > **EINGABETASTE** > **userId** für den Partitionsschlüssel > **EINGABETASTE** > **1000** für die anfängliche Durchsatzkapazität > **EINGABETASTE**.
 
-    ![Azure Cosmos DB-Erweiterung in Visual Studio Code](../media/2-setup/vs-code-azure-cosmos-db-extension.gif) <!--Retake on fresh machine without the other subscriptions showing-->
+    ![Azure Cosmos DB-Erweiterung in Visual Studio Code](../media/2-setup/vs-code-azure-cosmos-db-extension.gif) 
 
     Die neue Datenbank „Users“ und die Sammlung „WebCustomers“ werden im Explorer-Fenster angezeigt.
 
@@ -95,8 +89,6 @@ dotnet new console
     ```
 
 1. Kopieren Sie Ihre Verbindungszeichenfolge aus der Azure Cosmos DB-Erweiterung, indem Sie mit der rechten Maustaste auf das learning-module-Konto und dann auf **Verbindungszeichenfolge kopieren** klicken.
-
-    ![Azure Cosmos DB-Erweiterung in Visual Studio Code](../media/2-setup/vs-code-copy-connection-string.gif) 
 
 1. Fügen Sie die Verbindungszeichenfolge in eine Textdatei ein, und kopieren Sie den **AccountEndpoint**-Abschnitt aus der Textdatei in **accountEndpoint** in „App.config“.
 

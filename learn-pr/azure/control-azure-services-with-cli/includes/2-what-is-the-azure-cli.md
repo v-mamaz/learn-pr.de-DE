@@ -1,6 +1,6 @@
 Die Azure CLI ist ein Befehlszeilenprogramm, über das Sie eine Verbindung mit Azure herstellen und Verwaltungsbefehle für Azure-Ressourcen ausführen können. Die Azure CLI wird unter Linux, macOS und Windows ausgeführt und ermöglicht es Administratoren und Entwicklern, ihre Befehle über ein Terminal oder eine Eingabeaufforderung (oder ein Skript) anstelle eines Webbrowsers auszuführen. Zum Neustarten einer VM würden Sie beispielsweise einen Befehl wie den folgenden verwenden:
 
- ```bash
+ ```azurecli
  az vm restart -g MyResourceGroup -n MyVm
  ```
 
@@ -20,7 +20,7 @@ Installieren Sie die Azure CLI unter Windows, indem Sie eine MSI-Datei herunterl
 
 Wenn Sie Azure CLI-Befehle in Skripts verwenden möchten, müssen Sie die möglichen Probleme in Zusammenhang mit der „Shell“ oder der Ausführungsumgebung kennen. Beispielsweise werden Variablen in einer Bash-Shell mithilfe der folgenden Syntax festgelegt:
 
- ```bash
+ ```azurecli
  variable="value"
  variable=integer
  ```

@@ -2,29 +2,33 @@
 uid: learn.secure-access-azure-ad-multi-factor-authentication
 metadata:
   title: Schützen von Azure-Ressourcen durch bedingten Zugriff
-  description: Es wird beschrieben, wie Sie den bedingten Zugriff in Azure Active Directory verwenden.
-  ms.openlocfilehash: 0fa3e6ecc210bd779fd7c06354cce805e453b9b7
-  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
-  ms.translationtype: HT
-  ms.contentlocale: de-DE
-  ms.lasthandoff: 09/03/2018
-  ms.locfileid: "43476953"
+  description: 'Viele Organisationen möchten zwar ihren Sicherheitsstatus erhöhen, allerdings soll diese Anforderung in einem ausgeglichenen Verhältnis zu einer erleichterten Bedienung für Benutzer stehen. Azure AD bietet einen Mechanismus, um diese Balance für den bedingten Zugriff zu unterstützen. Unter bestimmten Umständen können Organisationen kompensierende Steuerelemente wie Azure Multi-Factor Authentication (MFA) benötigen. Es wird beschrieben, wie Sie den bedingten Zugriff in Azure Active Directory verwenden.'
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 title: Schützen von Azure-Ressourcen durch bedingten Zugriff
-summary: Als Administrator möchten Sie den Zugriff auf bestimmte Anwendungen, wie z.B. das Azure-Portal, sichern.
-abstract: Viele Organisationen möchten zwar ihren Sicherheitsstatus erhöhen, allerdings soll diese Anforderung in einem ausgeglichenen Verhältnis zu einer erleichterten Bedienung für Benutzer stehen. Azure AD bietet einen Mechanismus, um diese Balance für den bedingten Zugriff zu unterstützen. Unter bestimmten Umständen können Organisationen kompensierende Steuerelemente wie Azure Multi-Factor Authentication (MFA) benötigen. Diese bestimmten Umstände liegen vor, wenn auf sensible Anwendungen zugegriffen wird, es sich um eine nicht vertrauenswürdige IP-Adresse handelt oder bestimmte Risikobedingungen vorliegen.
-cardDescription: Erfahren Sie, wie Sie mithilfe des bedingten Zugriffs den Zugriff auf bestimmte Anwendungen, wie z.B. das Azure-Portal, sichern.
-iconUrl: http://via.placeholder.com/120x120
+summary: 'Viele Organisationen möchten zwar ihren Sicherheitsstatus erhöhen, allerdings soll diese Anforderung in einem ausgeglichenen Verhältnis zu einer erleichterten Bedienung für Benutzer stehen. Azure AD bietet einen Mechanismus, um diese Balance für den bedingten Zugriff zu unterstützen. Unter bestimmten Umständen können Organisationen kompensierende Steuerelemente wie Azure Multi-Factor Authentication (MFA) benötigen. Es wird beschrieben, wie Sie den bedingten Zugriff in Azure Active Directory verwenden.'
+abstract: |
+  In diesem Modul lernen Sie Folgendes:
+  - Erstellen Sie einen Testbenutzer und eine Benutzergruppe
+  - Aktivieren Sie eine Richtlinie für bedingten Zugriff, die Multi-Factor Authentication (MFA) erforderlich sind.
+prerequisites: |
+  - Kenntnisse der grundlegenden Azure-Konzepte wie Ressourcengruppen und Abonnements
+iconUrl: /learn/achievements/secure-azure-resources-with-conditional-access.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- administrator
+  - administrator
 products:
-- azure
+  - azure
+  - azure-active-directory
 units:
-- learn.secure-access-azure-ad-multi-factor-authentication.1-introduction
-- learn.secure-access-azure-ad-multi-factor-authentication.2-azure-ad-overview
-- learn.secure-access-azure-ad-multi-factor-authentication.3-build-azure-ad
-- learn.secure-access-azure-ad-multi-factor-authentication.4-secure-access
-- learn.secure-access-azure-ad-multi-factor-authentication.5-test-access
-- learn.secure-access-azure-ad-multi-factor-authentication.6-summary
+  - learn.secure-access-azure-ad-multi-factor-authentication.1-introduction
+  - learn.secure-access-azure-ad-multi-factor-authentication.2-azure-ad-overview
+  - learn.secure-access-azure-ad-multi-factor-authentication.3-build-azure-ad
+  - learn.secure-access-azure-ad-multi-factor-authentication.4-secure-access
+  - learn.secure-access-azure-ad-multi-factor-authentication.5-test-access
+  - learn.secure-access-azure-ad-multi-factor-authentication.6-summary
 achievement: learn.secure-access-azure-ad-multi-factor-authentication.badge

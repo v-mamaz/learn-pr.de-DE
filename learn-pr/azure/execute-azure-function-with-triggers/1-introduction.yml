@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.execute-azure-function-with-triggers.1-introduction
-title: Introduction
+title: Einführung
 metadata:
-  title: Introduction
-  description: Introduction
+  title: Einführung
+  description: Einführung
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

@@ -7,11 +7,10 @@ In diesem Modul lernen Sie, wie Sie den bedingten Zugriff mit Azure Multi-Factor
 ## <a name="learning-objectives"></a>Lernziele
 
 In diesem Modul lernen Sie Folgendes:
-- Erstellen eines Testbenutzers und einer Benutzergruppe
-- Aktivieren Sie eine Richtlinie für bedingten Zugriff, die Multi-Factor Authentication erfordert.
+
+- Erstellen Sie einen Testbenutzer und eine Benutzergruppe.
+- Aktivieren Sie eine Richtlinie für bedingten Zugriff, die Multi-Factor Authentication (MFA) erforderlich sind.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-- Kenntnisse der grundlegenden Azure-Konzepte wie Ressourcengruppen und Abonnements
-- Zugriff auf ein Azure-Abonnement
-- Berechtigungen für das Erstellen eines Verzeichnisses
+- Kenntnisse der grundlegenden Azure Konzepten wie Ressourcengruppen und Abonnements.

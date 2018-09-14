@@ -1,84 +1,84 @@
-You have connected your coffee machine to the Azure IoT Central application, enabling the exchange of data that allows you to monitor and manage your coffee machine. In this unit, you create rules that trigger actions when the water temperature of the coffee machine is outside the normal range. The actions are either emails or mobile notifications depending on whether or not the machine is under warranty. To add Microsoft Flow as an action, you need an Azure subscription. If you do not have an Azure subscription, adding Microsoft Flow as an action is optional.
+Sie haben Ihre Kaffeemaschine mit der Azure IoT Central-Anwendung verbunden und so den Austausch von Daten aktiviert, mit deren Hilfe Sie Ihre Kaffeemaschine überwachen und verwalten können. In dieser Einheit erstellen Sie Regeln, die Aktionen auslösen, wenn die Wassertemperatur die Kaffeemaschine außerhalb des normalen Bereichs liegt. Die Aktionen sind entweder E-Mails oder SMS-Benachrichtigungen, je nachdem, ob für die Maschine noch Garantie gilt oder nicht. Um Microsoft Flow als Aktion hinzuzufügen, benötigen Sie ein Azure-Abonnement. Wenn Sie nicht über ein Azure-Abonnement verfügen, ist das Hinzufügen von Microsoft Flow als Aktion optional.
 
-## Create rules in IoT Central with Email as the action
-Azure IoT Central has its native email capabilities to send notifications. In this scenario, if the coffee machine is outside the optimal temperature range and is not protected by the warranty, an email is sent by IoT Central to the client’s maintenance department.
+## <a name="create-rules-in-iot-central-with-email-as-the-action"></a>Erstellen von Regeln in IoT Central mit E-Mail als Aktion
+Azure IoT Central kann Benachrichtigungen mithilfe seiner nativen E-Mail-Funktion senden. In diesem Szenario wird, wenn die Kaffeemaschine außerhalb des optimalen Temperaturbereichs liegt und nicht durch Garantie geschützt ist, eine E-Mail von IoT Central an die Wartungsabteilung des Kunden gesendet.
 
-Navigate to the **Rules** page for the exercises in this unit. Select **+ New Rule**, then **Telemetry**. Add the following two rules when the coffee machine warranty has expired and the water temperature is outside the optimal range. When you're finished, choose **Save**. 
+Navigieren Sie zu der **Regeln** Seite für die Übungen in dieser Einheit. Wählen Sie **+ neue Regel**, klicken Sie dann **Telemetriedaten**. Fügen Sie die folgenden zwei Regeln hinzu, wenn die Garantie der Kaffeemaschine abgelaufen ist und die Wassertemperatur außerhalb des optimalen Bereichs liegt. Wählen Sie abschließend **Speichern** aus. 
 
 > [!NOTE]
-> When conditions are applied, all statements have to be true for the rules to be executed. If your condition is an "or" statement as in this scenario (e.g. the optimal temperature is less or greater than the predefined values while the warranty has expired), split the statement into two rules as shown here.
+> Wenn die Bedingungen angewendet werden, müssen alle Aussagen wahr sein, damit die Regeln ausgeführt werden. Wenn Ihre Bedingung wie in einer "oder"-Anweisung ist Teilen dieses Szenario (z. B. die optimale Temperatur ist kleiner oder größer als die vordefinierte Werte während der Garantie ist abgelaufen), die Anweisung in zwei Regeln wie hier gezeigt.
 
-1. Name the rule: Coffee Maker Water Too Cold (Expired)
+1. Benennen Sie die Regel: Wasser in Kaffeemaschine zu kalt (abgelaufen)
 
-    Add the conditions:      
-    * Device Warranty Expired equals 1
-    * Water Temperature is less than Coffee Makers Min Temperature
+    Fügen Sie die Bedingungen hinzu:      
+    * Abgelaufene Gerätegarantie entspricht 1
+    * Wassertemperatur ist kleiner als Kaffeemaschinen Min Temperatur
 
-    ![Using Rule](../images/5-flow-a.png)
+    ![Verwenden von Regelsätzen](../images/5-flow-a.png)
 
-1. Name the rule: Coffee Maker Water Too Hot (Expired)
+1. Benennen Sie die Regel: Wasser in Kaffeemaschine zu heiß (abgelaufen)
 
-    Add the conditions:      
-    * Device Warranty Expired equals 1
-    * Water Temperature is greater than Coffee Makers Max Temperature
+    Fügen Sie die Bedingungen hinzu:      
+    * Abgelaufene Gerätegarantie entspricht 1
+    * Wassertemperatur ist größer als die maximale Temperature Kaffeemaschinen
 
-1. To add an **Action**, scroll down on the Configure Telemetry Rule panel and choose **+** next to Actions, then choose **Email**.
+1. Hinzufügen einer **Aktion**, einen Bildlauf nach unten im Bereich Telemetriedaten Regel konfigurieren, und wählen Sie **+** neben Aktionen, und wählen Sie dann **-e-Mail**.
 
-1. To define the action, add the email address that you used to sign in to the IoT Central application. Add the notification message when the water temperature is too hot: "Coffee maker's water is too hot. Maintenance is required.  Warranty has expired." Repeat the same steps for when the water temperature is too cold. Add the message: "Coffee maker's water is too cold. Maintenance is required.  Warranty has expired."
+1. Um die Aktion zu definieren, fügen Sie die E-Mail-Adresse hinzu, die Sie für die Anmeldung bei der IoT Central-Anwendung verwendet haben. Fügen Sie die Benachrichtigungsmeldung für die zu hohe Wassertemperatur hinzu: „Das Wasser in der Kaffeemaschine ist zu heiß. Wartung erforderlich.  Die Garantie ist abgelaufen.“ Wiederholen Sie die gleichen Schritte für die zu kalte Wassertemperatur. Fügen Sie die Nachricht hinzu: „Das Wasser in der Kaffeemaschine ist zu kalt. Wartung erforderlich.  Die Garantie ist abgelaufen.“
 
-1. Choose **Save**. Your rule is listed on the Rules page.
+1. Wählen Sie **Speichern** aus. Die Regel wird auf der Seite Regeln aufgeführt.
 
-1. To trigger the rule, set the optimal temperature in Settings outside the range that you specified under Properties. Once you are done with the validation, turn off the rules to avoid flooding your Inbox with emails. 
+1. Damit die Regel ausgelöst wird, legen Sie die optimale Temperatur in den Einstellungen außerhalb des Bereichs, die Sie unter Eigenschaften angegeben. Sobald Sie mit der Überprüfung fertig sind, deaktivieren Sie die Regeln, um zu vermeiden, Ihren Posteingang mit e-Mails überfluten. 
 
-## Create rules in IoT Central with Microsoft Flow as the action
+## <a name="create-rules-in-iot-central-with-microsoft-flow-as-the-action"></a>Erstellen von Regeln in IoT Central mit Microsoft Flow als Aktion
 
-Microsoft Flow automates workflows across many applications. It’s one of the actions that can be triggered when a rule is fired in IoT Central. In this scenario, Microsoft Flow sends a mobile notification to a local technician when the coffee machine reaches certain temperature threshold and is under warranty. Navigate to **Rules** to configure conditions and add a Flow as an action when the rule is fired. 
+Microsoft Flow automatisiert Workflows übergreifend über viele Anwendungen hinweg. Es ist eine der Aktionen, die durch Auslösen einer Regel in IoT Central eingeleitet werden können. In diesem Szenario sendet Microsoft Flow eine SMS-Benachrichtigung an einen lokalen Techniker, wenn die Kaffeemaschine einen bestimmten Temperaturschwellenwert erreicht und noch der Garantie unterliegt. Navigieren Sie zu **Regeln**, um Bedingungen zu konfigurieren und einen Flow als Aktion hinzuzufügen, wenn die Regel ausgelöst wird. 
  
 > [!NOTE]
-> This exercise is optional if you do not have an Azure subscription to turn on Microsoft Flow.
+> Diese Übung ist optional, wenn Sie nicht über ein Azure-Abonnement verfügen, mit dem Sie Microsoft Flow aktivieren können.
 
 
-### Extend your IoT Central trial to 30 days
+### <a name="extend-your-iot-central-trial-to-30-days"></a>Verlängern Sie Ihre IoT Central-Testversion auf 30 Tage
 
-1. To turn on Microsoft Flow, you need to extend your trial to 30 days. To do so, select **Extend Trial to 30 days** on the Billing page, choose an Azure Active Directory and Azure subscription. An Azure subscription enables you to create instances of Azure services. Azure IoT Central automatically finds all the Azure Subscriptions you have access to, and displays them in the drop-down.
+1. Um Microsoft Flow zu aktivieren, müssen Sie sich zum Verlängern des Testzeitraums um 30 Tage. Wählen Sie zu diesem Zweck **Testversion auf 30 Tage verlängern** wählen Sie auf der Seite "Abrechnung" eine Azure Active Directory und Azure-Abonnement. Mit einem Azure-Abonnement können Sie Instanzen von Azure-Diensten erstellen. Azure IoT Central sucht automatisch nach allen Azure-Abonnements, auf die Sie Zugriff haben, und zeigt sie im Dropdownmenü an.
     
-1. If you don’t have an Azure subscription, you can create one on the [Azure sign-up page](https://aka.ms/createazuresubscription). After you create the Azure subscription, navigate back to the **Application Manager** page. Your new subscription appears in the **Azure Subscription** drop-down.
+1. Wenn Sie kein Azure-Abonnement besitzen, können Sie auf der Seite [Azure-Registrierungsseite](https://aka.ms/createazuresubscription) ein Abonnement erstellen. Nachdem Sie das Azure-Abonnement erstellt haben, navigieren Sie zurück zu den **Anwendungsmanager** Seite. Ihr neues Abonnement wird in der Dropdownliste **Azure-Abonnement** angezeigt.
         
 
-### Add the following rules when the coffee machine is under warranty. 
+### <a name="add-the-following-rules-when-the-coffee-machine-is-under-warranty"></a>Fügen Sie die folgenden Regeln hinzu, wenn für die Kaffeemaschine noch Garantie gilt. 
 
-1. Name the rule: Coffee Maker Water Too Cold (Warranty)
+1. Benennen Sie die Regel: Wasser in Kaffeemaschine zu kalt (Garantie)
 
-    Add the conditions:      
-    * Device Warranty Expired equals 0
-    * Water Temperature is less than Coffee Makers Min Temperature
+    Fügen Sie die Bedingungen hinzu:      
+    * Abgelaufene Gerätegarantie entspricht 0
+    * Wassertemperatur ist kleiner als Kaffeemaschinen Min Temperatur
 
-1. Name the rule: Coffee Maker Water Too Hot (Warranty)
+1. Benennen Sie die Regel: Wasser in Kaffeemaschine zu heiß (Garantie)
 
-    Add the conditions:      
-    * Device Warranty Expired equals 0
-    * Water Temperature is greater than Coffee Makers Max Temperature
+    Fügen Sie die Bedingungen hinzu:      
+    * Abgelaufene Gerätegarantie entspricht 0
+    * Wassertemperatur ist größer als die maximale Temperature Kaffeemaschinen
 
-1. After you save the rule conditions, choose Microsoft Flow as a new action when the coffee maker is under warranty. A new tab or window should open in your browser, taking you to Microsoft Flow. You land on an overview page showing an IoT Central connector connecting to a custom action. Choose **Continue**. 
+1. Nachdem Sie die Regelbedingungen gespeichert haben, wählen Sie Microsoft Flow als neue Aktion aus, wenn für die Kaffeemaschine noch Garantie gilt. In Ihrem Browser sollte eine neue Registerkarte oder ein neues Fenster geöffnet werden, um Ihnen den Zugang zu Microsoft Flow zu ermöglichen. Sie gelangen auf eine Übersichtsseite, auf der ein IoT Central-Connector angezeigt wird, der eine Verbindung mit einer benutzerdefinierten Aktion herstellt. Klicken Sie auf **Weiter**. 
 
-    You are taken to the Microsoft Flow designer to build your workflow. The workflow has an IoT Central trigger that has your Application and Rule already filled in.
+    Sie werden an den Microsoft Flow-Designer weitergeleitet, um Ihren Workflow zu erstellen. Der Workflow verfügt über einen IoT Central-Auslöser, in den Ihre Anwendung und Regel bereits eingetragen sind.
 
-    At this point, you can add any action you want to your workflow. As an example, let's send a mobile notification. Search for notification, and choose Notifications - Send me a mobile notification.
+    An diesem Punkt können Sie Ihrem Workflow eine beliebige Aktion hinzufügen. Als Beispiel senden wir eine Mobiltelefonbenachrichtigung. Suchen Sie nach „Benachrichtigung“, und wählen Sie „Benachrichtigungen – Mobiltelefonbenachrichtigung an mich senden“ aus.
 
-    In the action, fill in the Text field with what you want your notification to say. You can include Dynamic content from your IoT Central rule, passing along important information such as device ID and name.
+    Füllen Sie in der Aktion das Feld „Text“ mit dem Inhalt der Benachrichtigung aus. Sie können dynamische Inhalte aus Ihrer IoT Central-Regel einschließen, um wichtige Informationen wie die Geräte-ID und den Namen des Geräts zu übergeben.
     
-    ![Using Microsoft Flow as an action](../images/5-flow-b.png)
+    ![Verwenden von Microsoft Flow als Aktion](../images/5-flow-b.png)
 
-1. Once you've set up the workflow in Microsoft Flow, download the [Flow app](https://www.microsoft.com/en-us/p/microsoft-flow/9nkn0p5l9n84?activetab=pivot%3aoverviewtab) from Microsoft Store to your mobile device. Sign in using the same account that you used to set up the flow in the Flow web app. For testing purposes, set the optimal temperature out of range to trigger the rule. 
+1. Sobald Sie den Workflow in Microsoft Flow eingerichtet haben, laden Sie die [Flow-App](https://www.microsoft.com/en-us/p/microsoft-flow/9nkn0p5l9n84?activetab=pivot%3aoverviewtab) aus dem Microsoft Store auf Ihr mobiles Gerät herunter. Melden Sie sich mit dem gleichen Konto an, das Sie verwendet haben, um den Flow in der Flow-Web-App einzurichten. Legen Sie zu Testzwecken die optimale Temperatur außerhalb des gültigen Bereichs, um die Regel ein. 
 
     > [!NOTE]
-    > Device Property: Device Warranty Expired (1 for expired or 0 for under warranty in the device code) is randomly generated by the device and then sent by the device to the Azure IoT Central application. For testing purposes, if you'd like to control Device Warranty Expired (1 or 0), reboot your coffee machine until you receive the intended warranty state to trigger the action that you're testing. To receive a mobile notification, reboot your coffee machine until you see that Device Warranty Expired is 0 in the console log. 
+    > Geräteeigenschaft: Gerätegarantie abgelaufen (1 für abgelaufen oder 0 für unter Garantie im Gerätecode) wird vom Gerät nach dem Zufallsprinzip generiert und dann vom Gerät an die Azure IoT Central-Anwendung gesendet. Für Testzwecke verwendet werden, wenn Sie Geräte Garantie abgelaufen ist (1 oder 0) steuern möchten, neu starten Sie Ihrer Kaffeemaschine bis Sie den Zustand vorgesehenen Garantie für die Aktion auszulösen, die Sie testen empfangen. Um eine Benachrichtigung auf Ihrem Mobilgerät zu erhalten, starten Sie Ihre Kaffeemaschine neu, bis Sie sehen, dass Geräte Gewährleistung abgelaufen 0 in das Konsolenprotokoll. 
 
-    After several minutes, notifications appear in the Flow mobile app.
+    Nach einigen Minuten werden Sie in der mobilen Flow-app Benachrichtigungen angezeigt.
 
-    ![Using Microsoft Flow as an action](../images/5-flow-c.png)
+    ![Verwenden von Microsoft Flow als Aktion](../images/5-flow-c.png)
 
-## Summary
-You’ve learned to create rules in IoT Central and triggered actions such as an email or a mobile notification through Microsoft Flow when the rule is fired. In this case, when the water temperature of the coffee machine is out of the optimal range, notifications are sent to either a repair technician or the client depending on the status of the warranty. 
+## <a name="summary"></a>Zusammenfassung
+Sie haben das Erstellen von Regeln in IoT Central gelernt und Aktionen wie das Senden einer E-Mail oder einer SMS-Benachrichtigung mithilfe von Microsoft Flow beim Auslösen der Regel ausgelöst. Wenn die Wassertemperatur die Kaffeemaschine außerhalb des Bereichs optimal ist, werden Benachrichtigungen in diesem Fall entweder einen Servicetechniker oder des Clients abhängig vom Status der Garantie gesendet. 
 
 

@@ -2,7 +2,7 @@ Um Ihnen die Entscheidung zu erleichtern, ob serverloses Computing das Richtige 
 
 ## <a name="what-is-serverless-compute"></a>Was ist serverloses Computing?
 
-Serverloses Computing kann als Function-as-a-Service (FaaS) oder Microservice aufgefasst werden, der auf einer Cloudplattform gehostet wird. Ihre Geschäftslogik wird in Form von Funktionen ausgeführt, sodass Sie die Infrastruktur nicht manuell bereitstellen oder skalieren müssen. Der Cloudanbieter verwaltet die Infrastruktur. Ihre App wird automatisch je nach Last horizontal hoch- oder herunterskaliert. Azure bietet mehrere Möglichkeiten, diese Art von Architektur zu erstellen. Die beiden gängigsten sind Azure Logic Apps und Azure Functions, auf die wir uns in diesem Modul konzentrieren.
+Serverloses Computing kann als Function-as-a-Service (FaaS) oder Microservice aufgefasst werden, der auf einer Cloudplattform gehostet wird. Ihre Geschäftslogik wird in Form von Funktionen ausgeführt, sodass Sie die Infrastruktur nicht manuell bereitstellen oder skalieren müssen. Der Cloudanbieter verwaltet die Infrastruktur. Ihre App wird automatisch je nach Last horizontal hoch- oder herunterskaliert. Azure bietet mehrere Möglichkeiten, diese Art von Architektur zu erstellen. Die beiden am häufigsten verwendeten Ansätze sind Azure Logic Apps und Azure Functions, die wir in diesem Modul konzentrieren.
 
 ## <a name="what-is-azure-functions"></a>Was ist Azure Functions?
 
@@ -30,7 +30,7 @@ Funktionen sind eine zentrale Komponente des serverlosen Computings, aber auch e
 
 ## <a name="drawbacks-of-a-serverless-compute-solution"></a>Nachteile einer serverlosen Computinglösung
 
-Serverloses Computing ist nicht immer die geeignete Lösung für das Hosten Ihrer Geschäftslogik. Nachstehend sind einige Merkmale von Funktionen aufgeführt, die Ihre Entscheidung zum Hosten Ihrer Dienste mit serverlosem Computing beeinflussen könnten. 
+Serverloses Computing ist nicht immer die geeignete Lösung für das Hosten Ihrer Geschäftslogik. Nachstehend sind einige Merkmale von Funktionen aufgeführt, die Ihre Entscheidung zum Hosten Ihrer Dienste mit serverlosem Computing beeinflussen könnten.
 
 ### <a name="execution-time"></a>Ausführungszeit
 

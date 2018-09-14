@@ -1,70 +1,70 @@
-For most organizations, data is the most valuable and irreplaceable asset. Encryption serves as the last and strongest line of defense in a layered security strategy. 
+Die meisten Organisationen sind die Daten der wichtigsten und wertvollsten Asset. Verschlüsselung dient als die stärksten und letzten Verteidigungslinie in einer mehrschichtigen Sicherheitsstrategie. 
 
-Contoso Shipping knows that encryption is the only protection their data has once it leaves the datacenter as it heads to those mobile apps.
+Contoso Protokollversand weiß, dass die Verschlüsselung der einzige verfügbare Schutz ist, den über Daten verfügt, sobald das Rechenzentrum überlässt, wie es leitet an die mobile apps.
 
-## What is encryption?
+## <a name="what-is-encryption"></a>Was ist Verschlüsselung?
 
-Encryption is the process of making data unreadable and unusable. To use or read the encrypted data, it must be *decrypted*, which requires the use of a secret key. There are two top-level types of encryption: **symmetric** and **asymmetric**.
+Verschlüsselung ist der Vorgang, Daten nicht lesbar und nicht verwendbar zu machen. Damit Sie verschlüsselte Daten verwenden oder lesen können, müssen diese *entschlüsselt* werden. Dies erfordert einen geheimen Schlüssel. Es gibt zwei Typen von der obersten Ebene der Verschlüsselung: **symmetrischen** und **asymmetrischen**.
 
-Symmetric encryption uses the same key to encrypt and decrypt the data. Consider a desktop password manager application. You enter your passwords and they are encrypted with your own personal key (your key is often derived from your master password). When the data needs to be retrieved, the same key is used and the data is decrypted.
+Die symmetrische Verschlüsselung verwendet den gleichen Schlüssel zum Verschlüsseln und Entschlüsseln der Daten. Ziehen Sie eine Kennwort-Manager-Desktopanwendung in Betracht. Sie geben Ihre Passwörter ein, und diese werden mit Ihrem persönlichen Schlüssel verschlüsselt (Ihr Schlüssel wird oft von Ihrem Masterkennwort abgeleitet). Wenn die Daten abgerufen werden müssen, wird der gleiche Schlüssel verwendet, und die Daten werden entschlüsselt.
 
-Asymmetric encryption uses a public key and private key pair. Either key can encrypt but a single key can't decrypt its own encrypted data. To decrypt, you need the paired key. Asymmetric encryption is used for things like Transport Layer Security (TLS) (used in HTTPS) and data signing.
+Die asymmetrische Verschlüsselung verwendet ein öffentlich-privates Schlüsselpaar. Beide Schlüssel verschlüsseln kann, aber ein einzelner Schlüssel kann nicht seine eigenen verschlüsselten Daten entschlüsselt. Zum Entschlüsseln benötigen Sie das jeweils andere Schlüsselpaar. Asymmetrischer Verschlüsselung wird für Dinge wie Sicherheit TLS (Transport Layer) (verwendet in HTTPS) und das Signieren von Daten verwendet.
 
-Both symmetric and asymmetric encryption play a role in properly securing your data. 
+Sowohl die symmetrische als auch die asymmetrische Verschlüsselung spielen eine Rolle bei der ordnungsgemäßen Sicherung von Daten. 
 
-Encryption is typically approached in two ways: encryption at rest and encryption in transit.
+Bei der Verschlüsselung wird in der Regel zwischen zwei Optionen unterschieden: Verschlüsselung ruhender Daten und Verschlüsselung in Übertragung begriffener Daten.
 
-## Encryption in transit
+## <a name="encryption-in-transit"></a>Verschlüsselung in Übertragung begriffener Daten
 
-Data in transit is the data actively moving from one location to another, such as across the internet or through a private network. Secure transfer can be handled by several different layers. It could be done by encrypting the data at the application layer prior to sending it over a network. HTTPS is an example of application layer in transit encryption. 
+In Übertragung begriffene Daten sind Daten, die sich aktiv von einem Ort zu einem anderen bewegen, z.B. über das Internet oder über ein privates Netzwerk. Sicherer Übertragung kann von mehreren verschiedenen Ebenen behandelt werden. Es konnte durch Verschlüsseln der Daten auf der Anwendungsebene vor dem Senden über ein Netzwerk erfolgen. HTTPS ist ein Beispiel für die Anwendungsebene in der Übertragung Verschlüsselung. 
 
-You can also set up a secure channel, like a virtual private network (VPN), at a network layer, to transmit data between two systems. 
+Sie können auch einen sicheren Kanal wie ein virtuelles privates Netzwerk (VPN), auf der Netzwerkebene ein einrichten, zum Übertragen von Daten zwischen zwei Systemen. 
 
-Encrypting data in transit protects the data from outside observers and provides a mechanism to transmit data while limiting risk of exposure. 
-
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
-![Encryption in transit](../media-COPIED-FROM-DESIGNFORSECURITY/encryption-in-transit.png)
-
-
-## Encryption at rest
-
-Data at rest is the data that has been stored on a physical medium. This could be data stored on the disk of a server, data stored in a database, or data stored in a storage account. Regardless of the storage mechanism, encryption of data at rest ensures that the stored data is unreadable without the keys and secrets needed to decrypt it. If an attacker was to obtain a hard drive with encrypted data and did not have access to the encryption keys, the attacker would not compromise the data without great difficulty.
-
-The actual data that is encrypted could vary in its content, usage, and importance to the organization. This could be financial information critical to the business, intellectual property that has been developed by the business, personal data about customers or employees that the business stores, and even the keys and secrets used for the encryption of the data itself.
+Das Verschlüsseln von Daten, die übertragen werden, schützt die Daten vor externen Beobachtern und bietet einen Mechanismus zur Datenübertragung bei gleichzeitiger Einschränkung des Offenlegungsrisikos. 
 
 <!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
-![Encryption at rest](../media-COPIED-FROM-DESIGNFORSECURITY/encryption-at-rest.png)
+![Verschlüsselung während der Übertragung](../media-COPIED-FROM-DESIGNFORSECURITY/encryption-in-transit.png)
 
-## Encryption on Azure
 
-Let's take a look at some ways that Azure enables you to encrypt data across services.
+## <a name="encryption-at-rest"></a>Verschlüsselung ruhender Daten
 
-### Encrypt raw storage
+Ruhende Daten sind Daten, die auf einem physischen Medium gespeichert sind. Das sind beispielsweise Daten, die auf dem Datenträger eines Servers, in einer Datenbank oder in einem Speicherkonto gespeichert sind. Unabhängig vom Speichermechanismus stellt die Verschlüsselung ruhender Daten sicher, dass die gespeicherten Daten ohne die zum Entschlüsseln erforderlichen Schlüssel und Geheimnisse nicht lesbar sind. Wenn ein Angreifer nun eine Festplatte mit verschlüsselten Daten erhält, aber keinen Zugriff auf die Verschlüsselungsschlüssel hat, kann der Angreifer die Daten nicht ohne Weiteres kompromittieren.
 
-Azure Storage Service Encryption for data at rest helps you protect your data to meet your organizational security and compliance commitments. With this feature, the Azure storage platform automatically encrypts your data before persisting it to Azure Managed Disks, Azure Blob storage, Azure Files, or Azure Queue storage, and decrypts the data before retrieval. The handling of encryption, encryption at rest, decryption, and key management in Storage Service Encryption is transparent to applications using the services.
+Die tatsächlich verschlüsselten Daten können in Hinblick auf Inhalt, Verwendung und Bedeutung für das Unternehmen variieren. Dies könnte finanzielle Informationen, die Geschäftsabläufe, geistiges Eigentum, die von Geschäfts, persönliche Daten über Kunden oder Mitarbeiter, die das Unternehmen speichert, entwickelt wurde und sogar die Schlüssel und Geheimnisse, die für die Verschlüsselung der Daten selbst verwendet werden. .
 
-### Encrypt virtual machines
+<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
+![Verschlüsselung ruhender Daten](../media-COPIED-FROM-DESIGNFORSECURITY/encryption-at-rest.png)
 
-Storage Service Encryption provides low-level encryption protection for data written to physical disk, but how do you protect the virtual hard disks (VHDs) of virtual machines? If a malicious attacker gained access to your Azure subscription and exfiltrated the VHDs of your virtual machines, how would you ensure they would be unable to access data stored on the VHD?
+## <a name="encryption-on-azure"></a>Verschlüsselung in Azure
 
-Azure Disk Encryption is a capability that helps you encrypt your Windows and Linux IaaS virtual machine disks. Azure Disk Encryption leverages the industry-standard BitLocker feature of Windows and the dm-crypt feature of Linux to provide volume encryption for the OS and data disks. The solution is integrated with Azure Key Vault to help you control and manage the disk encryption keys and secrets (and you can use managed service identities for accessing Key Vault).
+Betrachten wir einige Möglichkeiten, wie Sie mit Azure Daten dienstübergreifend verschlüsseln können.
 
-For Contoso Shipping, using VMs was one of their first moves toward the cloud. Having all the VHDs encrypted is a very easy, low-impact way to ensure they are doing all they can to secure their data.
+### <a name="encrypt-raw-storage"></a>Verschlüsseln von unformatierten Speicher
 
-### Encrypt databases
+Die Azure-Speicherdienstverschlüsselung für ruhende Daten unterstützt Sie dabei, Ihre Daten zu schützen, um die Sicherheits- und Complianceanforderungen Ihrer Organisation zu erfüllen. Mit dieser Funktion verschlüsselt die Azure-Speicherplattform Ihre Daten automatisch vor dem Ablegen in Azure Managed Disks, Azure Blob Storage, Azure Files oder Azure Queue Storage und entschlüsselt sie vor dem Abrufen. Die Verarbeitung der Ver- und Entschlüsselung, der Verschlüsselung ruhender Daten und der Speicherdienstverschlüsselung ist für Anwendungen, die die Dienste verwenden, transparent.
 
-Transparent data encryption (TDE) helps protect Azure SQL Database and Azure Data Warehouse against the threat of malicious activity. It performs real-time encryption and decryption of the database, associated backups, and transaction log files at rest without requiring changes to the application. By default, TDE is enabled for all newly deployed Azure SQL Database instances.
+### <a name="encrypt-virtual-machines"></a>Verschlüsseln virtueller Computer
 
-TDE encrypts the storage of an entire database by using a symmetric key called the database encryption key. By default, Azure provides a unique encryption key per logical SQL Server instance and handles all the details. Bring your own key (BYOK) is also supported with keys stored in Azure Key Vault.
+Schützt Azure-Speicherdienstverschlüsselung Low-Level-Verschlüsselung für Daten, die auf physischen Datenträger geschrieben, aber wie schützen Sie die virtuellen Festplatten (VHDs) von virtuellen Computern? Angenommen ein bösartiger Angreifer erhält Zugriff auf Ihr Azure-Abonnement und filtert die VHDs Ihrer virtuellen Computer: Wie stellen Sie dann sicher, dass er nicht auf die VHD-Daten zugreifen kann?
 
-Because TDE is enabled by default, Contoso Shipping can be confident they have the proper protections in place for data stored in their databases.
+Azure Disk Encryption ist eine Funktion, mit der Sie die Datenträger von virtuellen Windows- und Linux-IaaS-Computern verschlüsseln können. Azure Disk Encryption nutzt der Branche zum Standard-BitLocker-Features von Windows und die Funktion dm-Crypt von Linux, um Volumeverschlüsselung für das Betriebssystem und die Datenträger bereitzustellen. Die Lösung in Azure Key Vault können Sie steuern und Verwalten der Datenträger-Verschlüsselungsschlüssel und Geheimnisse integriert ist (und Sie können verwaltete Dienstidentitäten verwenden, für den Zugriff auf Key Vault).
 
-### Encrypt secrets
+Um den Rückversand für Contoso wurde mithilfe von virtuellen Computern eines ihrer ersten Verschiebungen in Richtung der Cloud. Alle VHDs, die verschlüsselt ist eine sehr schnell und mit geringen Auswirkungen Möglichkeit, um sicherzustellen, dass sie alle ausführen, um ihre Daten sichern kann.
 
-We've seen that the encryption services all use keys to encrypt and decrypt data, so how do we ensure that the keys themselves are secure? Corporations may also have passwords, connection strings, or other sensitive pieces of information that they need to securely store.
+### <a name="encrypt-databases"></a>Verschlüsseln von Datenbanken
 
-Azure Key Vault is a cloud service that works as a secure secrets store. Key Vault allows you to create multiple secure containers, called vaults. These vaults are backed by hardware security modules (HSMs). Vaults help reduce the chances of accidental loss of security information by centralizing the storage of application secrets. Key vaults also control and log the access to anything stored in them. Azure Key Vault can handle requesting and renewing TLS certificates, providing the features required for a robust certificate life cycle management solution. Key Vault is designed to support any type of secret. These secrets could be passwords, database credentials, API keys, and certificates.
+Transparent Data Encryption (TDE) trägt zum Schutz von Azure SQL-Datenbank und Azure Data Warehouse vor der Bedrohung durch schädliche Aktivitäten bei. TDE ver- und entschlüsselt die Datenbank, die zugehörigen Sicherungen und die Transaktionsprotokolldateien im Ruhezustand in Echtzeit, ohne dass Änderungen an der Anwendung erforderlich sind. Standardmäßig ist TDE für alle neu bereitgestellten Azure SQL-Datenbank-Instanzen aktiviert.
 
-Because Azure AD identities can be granted access to use Azure Key Vault secrets, applications with managed service identities enabled can automatically and seamlessly acquire the secrets they need.
+TDE verschlüsselt die Speicherung einer gesamten Datenbank, indem ein symmetrischer Schlüssel verwendet wird, der als Datenbankverschlüsselungsschlüssel bezeichnet wird. Standardmäßig werden Azure stellt einen eindeutigen Verschlüsselungsschlüssel pro logischer SQL Server-Instanz und behandelt alle Details. Bring-your own Key (BYOK) wird ebenfalls mit Schlüsseln in Azure Key Vault unterstützt.
 
-Encryption is often the last layer of defense from attackers and is an important piece of a layered approach to securing your systems. Azure provides built-in capabilities and services to encrypt and protect data from unintended exposure. Protection of customer data stored within Azure services is of paramount importance to Microsoft and should be included in any design. Foundational services such as Azure Storage, Azure Virtual Machines, Azure SQL Database, and Azure Key Vault can help secure your environment through encryption.
+Da TDE standardmäßig aktiviert ist, kann Contoso Protokollversand sein sicher, dass sie die richtigen Schutzmaßnahmen für Daten in ihren Datenbanken verfügen.
+
+### <a name="encrypt-secrets"></a>Verschlüsseln von Geheimnissen
+
+Es wurde erläutert, dass alle Verschlüsselungsdienste Schlüssel zum Verschlüsseln und Entschlüsseln von Daten verwenden. Wie können Sie also sicherstellen, dass die Schlüssel selbst sicher sind? Möglicherweise müssen Unternehmen auch, Kennwörter, Verbindungszeichenfolgen und andere vertraulichen Informationen, die sie benötigen, um sicher zu speichern.
+
+Azure Key Vault ist ein Clouddienst, der als sicherer Geheimnisspeicher fungiert. Mit Key Vault können Sie mehrere sichere Container (sogenannte Tresore) erstellen. Diese Tresore basieren auf Hardwaresicherheitsmodulen (HSMs). Tresore zentralisieren die Speicherung von Anwendungsgeheimnissen und verringern so die Gefahr, dass Sicherheitsinformationen verloren gehen. Key Vault-Instanzen auch steuern, und melden Sie den Zugriff auf alle darin gespeicherten Daten. Azure Key Vault können behandeln, anfordern und Erneuern von TLS-Zertifikate, die Funktionen für eine zuverlässige Lebenszyklus-Management-Lösung erforderlich sind. Key Vault ist für die Unterstützung jeder Art von Geheimnissen konzipiert. Diese Geheimnisse möglicherweise Kennwörter, Datenbank-Anmeldeinformationen, API-Schlüssel und Zertifikate.
+
+Da es sich bei Azure AD-Identitäten Zugriff auf Azure Key Vault-Geheimnissen erteilt werden können, Anwendungen mit verwalteten Dienstidentitäten aktiviert können automatisch nahtlos bzw. abrufen und die geheimen Schlüssel, die sie benötigen.
+
+Verschlüsselung ist häufig die letzte Stufe zum Schutz vor Angriffen, und es ist ein wichtiger Bestandteil der Verwendung eines Schichtenmodells für Sicherheit Ihrer Systeme. Azure bietet integrierte Funktionen und Dienste zum Verschlüsseln und die Daten vor unbeabsichtigten Offenlegung zu schützen. Schutz von Kundendaten in Azure-Dienste gespeichert ist von größter Wichtigkeit an Microsoft und in jedem Entwurf enthalten sein sollen. Grundlegende Dienste wie Azure Storage, Azure Virtual Machines, Azure SQL-Datenbank und Azure Key Vault können Ihre Umgebung durch Verschlüsselung schützen.

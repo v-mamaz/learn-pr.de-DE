@@ -1,11 +1,11 @@
-We have covered a lot of ground in this module. 
+Wir haben viel in diesem Modul behandelt. 
 
 > [!div class="checklist"]
-> * You have seen some of the core products in Azure across the main service pillars.
-> * You have learned how to create a free account for Microsoft Azure and how to sign in using that account. 
-> * You reviewed the features of the Azure portal and its customization options. 
-> * You created, customized, and shared a dashboard.
+> * Sie haben einige Kernprodukte in Azure über die zentralen Dienstsäulen hinweg kennengelernt.
+> * Sie haben erfahren, wie Sie ein kostenloses Konto für Microsoft Azure erstellen und sich mit diesem Konto anmelden. 
+> * Sie haben die Features des Azure-Portals und die zugehörigen Anpassungsoptionen erkundet. 
+> * Sie haben ein Dashboard erstellt, angepasst und freigegeben.
 
-However, this is just the beginning. Azure has so much to offer you, no matter what role you plan in your organization. If you are a developer, Azure provides an easy way to test new platforms and build sophisticated apps. If you are an administrator, you will use the Azure portal, Azure CLI, or Azure PowerShell tools to administer your cloud-based infrastructure. If you are an architect, you can use Azure to test out new architecture ideas quickly.
+Das ist jedoch erst der Anfang. Azure hat Ihnen unabhängig von der Rolle, die Sie in Ihrer Organisation planen, jede Menge zu bieten. Wenn Sie Entwickler sind, bietet Ihnen Azure eine einfache Möglichkeit, neue Plattformen zu testen und anspruchsvolle Apps zu erstellen. Wenn Sie Administrator sind, verwenden Sie das Azure-Portal, Azure CLI oder Azure PowerShell zum Verwalten der cloudbasierten Infrastruktur. Wenn Sie Architekt sind, können Sie Azure zum schnellen Testen neuer Architekturideen verwenden.
 
-Keep exploring Azure by selecting one or more paths through the content that's structured specifically for what you want to learn.
+Erkunden Sie Azure weiter, indem Sie einen oder mehrere Pfade durch den speziell für Ihren Lernbedarf strukturierten Inhalt wählen.

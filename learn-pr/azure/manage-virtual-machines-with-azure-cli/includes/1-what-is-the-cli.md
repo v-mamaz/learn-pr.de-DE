@@ -19,9 +19,9 @@ Die Azure CLI kann Sie dabei unterstützen, Azure-Ressourcen wie z.B. virtuelle 
 
 ## <a name="learning-objectives"></a>Lernziele
 
-In diesem Modul wird Folgendes thematisiert:
+In diesem Modul lernen Sie Folgendes:
 
 - Erstellen einer VM mit der Azure CLI
-- Ändern der Größe von virtuellen Computern mit der Azure CLI
-- Durchführen grundlegender Verwaltungsaufgaben mithilfe der Azure CLI
+- Ändern der Größe von VMs mit der Azure CLI
+- Ausführen grundlegender Verwaltungsaufgaben mit der Azure CLI
 - Herstellen einer Verbindung mit einer aktiven VM über SSH und die Azure CLI

@@ -4,52 +4,51 @@ title: Wissenstest
 metadata:
   title: Wissenstest
   description: Wissenstest
-  ms.openlocfilehash: 1a5c1fe6d9806846351614beaabe412465e4b0a6
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
-  ms.translationtype: HT
-  ms.contentlocale: de-DE
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43831435"
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 durationInMinutes: 5
 quiz:
   title: Wissenstest
   questions:
-  - content: Wenn für eine Containerinstanz keine Neustartrichtlinie konfiguriert wird, welche Richtlinie wird dann standardmäßig festgelegt?
-    choices:
-    - content: Always
-      correctExplanation: Standardmäßig wird die Neustartrichtlinie **Always** festgelegt.
-      isCorrect: true
-    - content: Never
-      isCorrect: false
-      incorrectExplanation: Standardmäßig wird die Neustartrichtlinie **Always** festgelegt.
-    - content: OnFailure
-      isCorrect: false
-      incorrectExplanation: Standardmäßig wird die Neustartrichtlinie **Always** festgelegt.
-  - content: Welche der folgenden Aussagen trifft nicht zu?
-    choices:
-    - content: Die Werte einer Umgebungsvariable werden standardmäßig im Azure-Portal und in der Azure CLI-Ausgabe angezeigt.
-      incorrectExplanation: Die Werte von Umgebungsvariablen werden im Azure-Portal und in der Azure CLI-Ausgabe angezeigt.
-      isCorrect: false
-    - content: Umgebungsvariablen können in sichere Umgebungsvariablen konvertiert werden.
-      isCorrect: true
-      correctExplanation: Umgebungsvariablen können nicht in sichere Umgebungsvariablen konvertiert werden. Zu diesem Zweck muss die Containerinstanz neu erstellt werden.
-    - content: Mit sicheren Umgebungsvariablen werden Werte aus dem Azure-Portal und aus der Azure CLI-Ausgabe ausgeblendet.
-      incorrectExplanation: Mit sicheren Umgebungsvariablen werden Werte aus dem Azure-Portal und aus der Azure CLI-Ausgabe ausgeblendet.
-      isCorrect: false
-    - content: Mit Umgebungsvariablen können Verbindungszeichenfolgen und andere Anwendungsinformationen an eine Azure-Containerinstanz übergeben werden.
-      incorrectExplanation: Mit Umgebungsvariablen können Verbindungszeichenfolgen und andere Anwendungsinformationen an eine Azure-Containerinstanz übergeben werden.
-      isCorrect: false
-  - content: Mit welchem Befehl zur Problembehandlung können Containerstartereignisse angezeigt werden?
-    choices:
-    - content: az container logs
-      incorrectExplanation: Beim Abrufen von Protokollen werden nur die Protokolle angezeigt.
-      isCorrect: false
-    - content: az container attach
-      isCorrect: true
-      correctExplanation: Mit dem Befehl „az container attach“ werden Containerereignisse und -protokolle angezeigt.
-    - content: az container events
-      incorrectExplanation: Dies ist kein gültiger Azure CLI-Befehl.
-      isCorrect: false
-    - content: az container exec
-      incorrectExplanation: Der Befehl „az container exec“ wird verwendet, um einen Befehl in einer Containerinstanz auszuführen.
-      isCorrect: false
+    - content: 'Wenn für eine Containerinstanz keine Neustartrichtlinie konfiguriert wird, welche Richtlinie wird dann standardmäßig festgelegt?'
+      choices:
+        - content: Always
+          correctExplanation: Standardmäßig wird die Neustartrichtlinie **Always** festgelegt.
+          isCorrect: true
+        - content: Never
+          isCorrect: false
+          incorrectExplanation: Standardmäßig wird die Neustartrichtlinie **Always** festgelegt.
+        - content: OnFailure
+          isCorrect: false
+          incorrectExplanation: Standardmäßig wird die Neustartrichtlinie **Always** festgelegt.
+    - content: Welche der folgenden Aussagen trifft nicht zu?
+      choices:
+        - content: Die Werte einer Umgebungsvariable werden standardmäßig im Azure-Portal und in der Azure CLI-Ausgabe angezeigt.
+          incorrectExplanation: Die Werte von Umgebungsvariablen werden im Azure-Portal und in der Azure CLI-Ausgabe angezeigt.
+          isCorrect: false
+        - content: Umgebungsvariablen können in sichere Umgebungsvariablen konvertiert werden.
+          isCorrect: true
+          correctExplanation: Umgebungsvariablen können nicht in sichere Umgebungsvariablen konvertiert werden. Zu diesem Zweck muss die Containerinstanz neu erstellt werden.
+        - content: Mit sicheren Umgebungsvariablen werden Werte aus dem Azure-Portal und aus der Azure CLI-Ausgabe ausgeblendet.
+          incorrectExplanation: Mit sicheren Umgebungsvariablen werden Werte aus dem Azure-Portal und aus der Azure CLI-Ausgabe ausgeblendet.
+          isCorrect: false
+        - content: Mit Umgebungsvariablen können Verbindungszeichenfolgen und andere Anwendungsinformationen an eine Azure-Containerinstanz übergeben werden.
+          incorrectExplanation: Mit Umgebungsvariablen können Verbindungszeichenfolgen und andere Anwendungsinformationen an eine Azure-Containerinstanz übergeben werden.
+          isCorrect: false
+    - content: Mit welchem Befehl zur Problembehandlung können Containerstartereignisse angezeigt werden?
+      choices:
+        - content: az container logs
+          incorrectExplanation: Beim Abrufen von Protokollen werden nur die Protokolle angezeigt.
+          isCorrect: false
+        - content: az container attach
+          isCorrect: true
+          correctExplanation: Mit dem Befehl „az container attach“ werden Containerereignisse und -protokolle angezeigt.
+        - content: az container events
+          incorrectExplanation: Dies ist kein gültiger Azure CLI-Befehl.
+          isCorrect: false
+        - content: az container exec
+          incorrectExplanation: 'Der Befehl „az container exec“ wird verwendet, um einen Befehl in einer Containerinstanz auszuführen.'
+          isCorrect: false

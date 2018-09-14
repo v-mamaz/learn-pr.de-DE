@@ -1,79 +1,82 @@
-Die Wahl der richtigen Speicherlösung kann zu einer Leistungsverbesserung führen. In diesem Artikel wenden Sie das Wissen an, das Sie in Bezug auf die Daten im Szenario des Onlinehändlers erworben haben, und wählen den idealen Azure-Dienst für jedes Dataset aus. 
+Auswählen der richtigen speicherlösung kann eine bessere Leistung, Kosten zu sparen und verbesserte Verwaltbarkeit führen. Hier werden Sie anwenden, was Sie haben gelernt, über die Daten in Ihrem Szenario Onlinehandel, und finden die beste Azure-Dienst für jedes DataSet. 
 
 ## <a name="product-catalog-data"></a>Produktkatalogdaten
 
-Datenklassifizierung: Teilweise strukturiert
+**Datenklassifizierung:** halbstrukturierten aufgrund müssen erweitern oder ändern das Schema für neue Produkte
 
-Vorgänge:
+**Vorgänge**:
 
-* Kunden müssen eine Vielzahl von Lesevorgängen ausführen und die Möglichkeit haben, auf viele Felder in der Datenbank zuzugreifen.
-* Unternehmen müssen eine Vielzahl von Lesevorgängen ausführen, um den sich ständig ändernden Bestand nachzuvollziehen.
+- Kunden benötigen eine hohe Anzahl von Lesevorgängen, mit der Möglichkeit, Abfragen für viele Felder innerhalb der Datenbank.
+- Das Unternehmen benötigt eine hohe Anzahl von Schreibvorgängen auf die ständig verändernden Inventur verfolgen.
 
-Latenz und Durchsatz: Hoher Durchsatz bei niedriger Latenz
+**Latenz und Durchsatz**: Hoher Durchsatz bei niedriger Latenz
 
-Transaktionsunterstützung: Erforderlich
+**Transaktionsunterstützung**: Erforderlich
 
 ### <a name="recommended-service-azure-cosmos-db"></a>Empfohlener Dienst: Azure Cosmos DB
 
-Azure Cosmos DB unterstützt teilweise strukturierte Daten oder NoSQL-Daten. Unterstützung für neue Felder wie das Feld „Bluetooth-fähig“ oder sonstige neue Felder, die Sie später womöglich benötigen, ist bei Azure Cosmos DB eine Selbstverständlichkeit.
+Azure Cosmos DB unterstützt teilweise strukturierte Daten oder NoSQL-Daten. Unterstützung der neuen Felder, z. B. das Feld "Bluetooth-aktiviert" oder in der Zukunft Sie müssen neue Felder ist also ein mit Azure Cosmos DB erhalten.
 
-In Bezug auf Vorgänge unterstützt Azure Cosmos DB SQL für Abfragen, und jede Eigenschaft wird standardmäßig indiziert, sodass die Erstellung von Abfragen entsprechend den Anforderungen Ihrer Kunden zum Filtern nach fast sämtlichen Inhalten unterstützt wird.
-
-In Bezug auf Latenz und Durchsatz ermöglicht Ihnen Azure Cosmos DB die Konfiguration Ihres Durchsatzes, sodass Sie in Spitzenzeiten beim Einkauf Ressourcen zentral hochskalieren können, um die steigende Kundennachfrage bedienen zu können, und in Zeiten mit nachlassender Nachfrage Ressourcen zentral hochskalieren zentral herunterskalieren können, um Kosten zu sparen. Da Azure Cosmos DB alle Eigenschaften standardmäßig indiziert, können Sie es Kunden ermöglichen, beliebige Felder abzufragen.
+Azure Cosmos DB unterstützt SQL für Abfragen, und jede Eigenschaft standardmäßig indiziert. Sie können Abfragen erstellen, sodass Ihre Kunden auf einer beliebigen Eigenschaft im Katalog filtern können.
 
 Azure Cosmos DB ist auch mit ACID konform, sodass Sie sicher sein können, dass Ihre Transaktionen entsprechend dieser strikten Anforderungen durchgeführt werden.
 
-Ein weiteres Plus: Mit Azure Cosmos DB können Sie Ihre Daten zudem mit einem einzigen Mausklick auf der ganzen Welt replizieren. Wenn Ihre E-Commerce-Website bisher z.B. auf Benutzer in den USA, in Frankreich und im Vereinigten Königreich ausgerichtet war, können Sie Ihre Daten in diesen Rechenzentren replizieren, um Latenzen zu verringern, da Sie die Daten physisch näher zu Ihren Benutzern migriert haben. Auch wenn Daten auf der ganzen Welt repliziert werden, können Sie aus einer der fünf Konsistenzebenen wählen, damit Sie den Trade-Off zwischen Konsistenz, Verfügbarkeit, Latenz und Durchsatz ermitteln können.
+Ein weiteres Plus: Mit Azure Cosmos DB können Sie Ihre Daten zudem mit einem einzigen Mausklick auf der ganzen Welt replizieren. Also wenn Ihre e-Commerce-Website auf Benutzer, die in den USA, Frankreich und England concentrated gibt, können Sie replizieren Ihre Daten in diesen Rechenzentren um Latenz zu verringern, wie Sie die Daten näher an Ihre Benutzer physisch verschoben haben. 
 
-### <a name="why-not-other-azure-services"></a>Gründe für andere Azure-Dienste
+Auch bei Daten, die auf der ganzen Welt repliziert werden können Sie von einem der fünf konsistenzebenen auswählen. Wenn Sie die richtige Ebene auswählen, können Sie die Kompromisse zwischen Konsistenz, Verfügbarkeit, Latenz und Durchsatz bestimmen. Sie können zentral hochskalieren, um einer höheren Nachfrage der Kunden während der Spitzeneinkaufszeiten gerecht zu werden, oder während ruhigerer Zeiten herunterskalieren, um Kosten zu sparen.
 
-Andere Azure-Dienste wie Azure Table Storage, Azure HBase als Teil von HDInsight und Azure Redis Cache können ebenfalls NoSQL-Daten speichern. In diesem Szenario ist Azure Cosmos DB besser geeignet als Azure Table Storage, Azure Redis Cache oder Azure HBase als Teil von HDInsight, da Benutzer mehrere Felder abfragen. Azure Cosmos DB indiziert standardmäßig jedes Feld, während die anderen Dienste eingeschränkt sind, was die Daten, die indiziert werden können, betrifft, und die Möglichkeiten zum Abfragen von Feldern in der Datenbank somit beschränkt sind.
+### <a name="why-not-other-azure-services"></a>Warum keine anderen Azure-Dienste?
+
+Azure SQL-Datenbank wäre eine hervorragende Wahl für dieses DataSet wäre da nicht die Notwendigkeit zum Erweitern des Schema-Ad-Hoc für neue Produkte. In Azure SQL-Datenbank werden alle Daten an ein Schema entsprechen muss. Azure SQL-Datenbank können viele der Vorteile von Azure Cosmos DB bereitstellen, aber es kann keine heterogenen Daten verarbeiten. 
+
+Andere Azure-Dienste wie Azure Table Storage, Azure HBase als Teil von HDInsight und Azure Redis Cache können ebenfalls NoSQL-Daten speichern. In diesem Szenario werden Benutzer nach mehreren Feldern abfragen möchten damit Azure Cosmos DB besser geeignet ist. Azure Cosmos DB indiziert jedes Feld in der Standardeinstellung, während die anderen Dienste sind, beschränkt, in den Daten, die sie indizieren und Abfragen für nicht indizierte Felder-führt zu Leistungseinbußen.
 
 ## <a name="photos-and-videos"></a>Fotos und Videos
 
-Datenklassifizierung: Unstrukturiert
+**Datenklassifizierung**: Unstrukturiert
 
-Vorgänge:
+**Vorgänge**:
 
-* Fotos und Videos müssen nur anhand der ID abgerufen werden.
-* Erstellungs- und Aktualisierungsvorgänge kommen nur gelegentlich vor und weisen eventuell höhere Latenzen auf als Lesevorgänge.
+- Nur nach ID abgerufen werden müssen
+- Kunden benötigen eine hohe Anzahl der Lesevorgänge mit geringer Latenz.
+- Erstellungs- und Aktualisierungsvorgänge kommen nur gelegentlich vor und weisen eventuell höhere Latenzen auf als Lesevorgänge.
 
-Latenz und Durchsatz: Abrufe anhand der ID müssen niedrige Latenzen und einen hohen Durchsatz unterstützen. Erstellungs- und Aktualisierungsvorgänge weisen eventuell höhere Latenzen auf als Lesevorgänge.
+**Latenz und Durchsatz**: Abrufe anhand der ID müssen niedrige Latenzen und einen hohen Durchsatz unterstützen. Erstellungs- und Aktualisierungsvorgänge weisen eventuell höhere Latenzen auf als Lesevorgänge.
 
-Transaktionsunterstützung: Nicht erforderlich
+**Transaktionsunterstützung**: Nicht erforderlich
 
-## <a name="recommended-service-azure-blob-storage"></a>Empfohlener Dienst: Azure Blob Storage
+### <a name="recommended-service-azure-blob-storage"></a>Empfohlener Dienst: Azure Blob Storage
 
-Azure Blob Storage unterstützt das Speichern von Dateien, z.B. Fotos und Videos. Da der Dienst mit Azure Content Delivery Network (CDN) konform ist, können die am häufigsten verwendeten Inhalte zwischengespeichert und auf Edgeservern gespeichert werden, wodurch Latenzen bei der Verarbeitung dieser Bilder zugunsten Ihrer Benutzer verkürzt werden.
+Azure Blob Storage unterstützt das Speichern von Dateien, z.B. Fotos und Videos. Es funktioniert auch mit Azure Content Delivery Network (CDN) durch das Zwischenspeichern von des am häufigsten verwendeten Inhalts, und speichern es auf Edgeservern an. Azure CDN verringert die Latenz bei der Verarbeitung von diesen Abbildern an Ihre Benutzer.
 
-Mithilfe von Azure Blob Storage können Sie Bilder auch von der heißen zur kalten Speicherebene oder Archivspeicherebene migrieren, um die Kosten zu reduzieren und den Durchsatz auf die am häufigsten angezeigten Bilder und Videos zu konzentrieren.
+Mit Azure Blob Storage, können Sie Images auch aus der Speicherebene "Hot" in der Speicherebene "kalt" oder "Archiv" verschieben, um Kosten und den Durchsatz der Fokus auf die am häufigsten zu reduzieren angezeigt werden soll, Bilder und Videos.
 
-### <a name="why-not-other-azure-services"></a>Gründe für andere Azure-Dienste
+### <a name="why-not-other-azure-services"></a>Warum keine anderen Azure-Dienste?
 
-Sie könnten Ihre Bilder in Azure App Services hochladen, damit der Server, auf dem Ihre App ausgeführt wird, Ihre Bilder verarbeiten kann. Dies würde funktionieren, wenn Sie nicht über viele Bilder, sondern über viele Dateien und eine globale Zielgruppe verfügen. Sie würden dann bessere Ergebnisse mit Azure Blob Storage als mit Azure Content Delivery Network erhalten.
+Sie konnte Ihre Images in Azure App Service hochgeladen werden, damit der gleiche Server, der Ihre app ausgeführt wird, um Ihre Images eingesetzt wird. Diese Lösung funktioniert, wenn Sie nicht viele Dateien enthalten. Aber bei vielen Dateien und einer globalen Zielgruppe erzielen Sie bessere Ergebnisse mit Azure Blob Storage mit Azure Content Delivery Network.
 
 ## <a name="business-data"></a>Geschäftsdaten
 
-Datenklassifizierung: Strukturiert
+**Datenklassifizierung**: Strukturiert
 
-Vorgänge: Schreibgeschützte komplexe Analyseabfragen über verschiedene Datenbanken hinweg
+**Vorgänge**: Schreibgeschützte komplexe Analyseabfragen über verschiedene Datenbanken hinweg
 
-Latenz und Durchsatz: Eine gewisse Latenz in den Ergebnissen ist aufgrund der komplexen Natur der Abfragen zu erwarten.
+**Latenz und Durchsatz**: Eine gewisse Latenz in den Ergebnissen ist aufgrund der komplexen Natur der Abfragen zu erwarten.
 
-Transaktionsunterstützung: Erforderlich
+**Transaktionsunterstützung**: Erforderlich
 
 ### <a name="recommended-service-azure-sql-database"></a>Empfohlener Dienst: Azure SQL-Datenbank
 
-Geschäftsdaten werden in den meisten Fällen von Business Analysten abgefragt, die aller Wahrscheinlichkeit eher mit SQL als mit anderen Abfragesprachen vertraut sind. Azure SQL-Datenbank könnte als eigenständige Lösung verwendet werden, jedoch auch mit Azure Analysis Services gekoppelt werden. Datenanalysten könnten dann ein semantisches Modell für die Daten in Azure SQL-Datenbank erstellen und diese dann für Geschäftskunden freigeben, indem sie lediglich eine Verbindung mit dem Modell über ein beliebiges BI-Tool herstellen. Die Daten können dann unmittelbar eingesehen und zur Gewinnung eines umfangreicheren Einblicks untersucht werden. 
+Geschäftsdaten werden in den meisten Fällen von Wirtschaftsanalysten abgefragt, die aller Wahrscheinlichkeit nach eher mit SQL als anderen Abfragesprachen vertraut sind. Azure SQL-Datenbank selbst könnte als Lösung verwendet werden, aber in Verbindung mit Azure Analysis Services können Datenanalysten ein semantisches Modell der Daten in SQL-Datenbank erstellen. Die Datenanalysten können dann es Geschäftsbenutzern, freigeben, damit es genügt, eine Verbindung mit dem Modell jedes Business Intelligence (BI)-Tool sofort untersuchen Sie die Daten und gewinnen von Einblicken. 
 
-### <a name="why-not-other-azure-services"></a>Gründe für andere Azure-Dienste
+### <a name="why-not-other-azure-services"></a>Warum keine anderen Azure-Dienste?
 
-Azure SQL Data Warehouse unterstützt OLAP-Lösungen und SQL-Abfragen. Business Analysten müssen jedoch plattformübergreifende Datenbankabfragen ausführen, die Azure SQL Data Warehouse nicht unterstützt.
+Azure SQL Data Warehouse unterstützt OLAP-Lösungen und SQL-Abfragen. Aber Ihre Wirtschaftsanalysten müssen datenbankübergreifende Abfragen ausführen, was SQL Data Warehouse nicht unterstützt.
 
-Azure Analysis Services könnte zusätzlich zu Azure SQL-Datenbank verwendet werden. Ihre Business Analysten werden jedoch weitaus versierter in der Arbeit mit SQL sein als mit Power BI, weshalb sie aller Wahrscheinlichkeit nach eine Datenbank benötigen werden, die SQL-Abfragen unterstützt. Diese werden nicht von Azure Analysis Services unterstützt. Darüber hinaus sind die Finanzdaten, die Sie in Ihrem Geschäftsdataset speichern, relational und mehrdimensional. Azure Analysis Services unterstützt zwar die im Dienst selbst gespeicherten Tabellendaten, allerdings keine mehrdimensionalen Daten. Zum Analysieren von mehrdimensionalen Daten mit Azure Analysis Services können Sie direkte Abfragen an Azure SQL-Datenbank verwenden.
+Azure Analysis Services kann zusätzlich zu Azure SQL-Datenbank verwendet werden. Jedoch werden Ihre Unternehmensanalysten mehr Kenntnisse in SQL als bei der Arbeit mit Power BI. So möchten sie eine Datenbank, die SQL-Abfragen, unterstützt Azure Analysis Services nicht. Darüber hinaus sind die finanziellen Daten, die Sie in Ihrem Business-Dataset speichern, relationaler und mehrdimensionaler Natur. Azure Analysis Services unterstützt tabellarische Daten, die für den Dienst selbst gespeichert, aber keine mehrdimensionalen Daten. Zum Analysieren von mehrdimensionalen Daten mit Azure Analysis Services können Sie eine direkte Abfragen der SQL-Datenbank verwenden.
 
-Azure Stream Analytics bietet eine hervorragende Möglichkeit, um Daten zu analysieren und in verwertbare Erkenntnisse umzuwandeln. Der Schwerpunkt liegt hier jedoch auf Echtzeitdaten, die gestreamt werden, und in diesem Fall ziehen Business Analysten nur historische Daten heran.
+Azure Stream Analytics bietet eine hervorragende Möglichkeit, um Daten zu analysieren und in verwertbare Erkenntnisse umzuwandeln. Der Schwerpunkt liegt hier jedoch auf Echtzeitdaten, die gestreamt werden. In diesem Szenario werden nur Daten zur Versionsgeschichte der Wirtschaftsanalytiker untersucht.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Jede Datenkategorie stellt unterschiedliche Anforderungen. Ihre Aufgabe besteht darin, zu ermitteln, welche Lösung am besten geeignet ist. Folgendes sollten Sie immer in Betracht ziehen: die Kategorie der Daten, die erforderlichen Vorgänge, Latenzen und die Notwendigkeit für Transaktionsunterstützung.
+Jeder Typ von Daten hat unterschiedliche Anforderungen, und es ist Ihre Aufgabe, um zu ermitteln, welche Lösung am besten geeignet ist. Denken Sie stets den Typ der Daten, die Vorgänge, die erforderlich sind, erwartet, Latenz und die Notwendigkeit der transaktionsunterstützung.

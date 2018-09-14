@@ -1,26 +1,26 @@
-To create and use Azure services, you will eventually need an account. If you already have an Azure account, you can skip this unit and move onto the next one where we will begin to explore the Azure Portal.
+Wenn Sie Azure-Dienste erstellen und verwenden möchten, benötigen Sie über kurz oder lang ein Konto. Wenn Sie bereits über ein Azure-Konto verfügen, können Sie diese Einheit überspringen und mit der nächsten Einheit fortfahren, in der das Azure-Portal thematisiert wird.
 
-If you don't have an account, we will walk through creating a free Azure account now.
+Wenn Sie kein Konto haben, erfahren Sie nachfolgend, wie Sie ein kostenloses Azure-Konto erstellen können.
 
 > [!NOTE]
-> You need a valid credit card for age and identity validation. Your card will _not be charged_ until you decide to upgrade the trial / free account to a full subscription.
+> Zur Überprüfung von Alter und Identität benötigen Sie eine gültige Kreditkarte. Ihre Karte wird _erst belastet_, wenn Sie sich entschließen, für die kostenlose Testversion bzw. das kostenlose Konto ein Upgrade auf ein vollständiges Abonnement auszuführen.
 
-## Sign up for a free account
+## <a name="sign-up-for-a-free-account"></a>Registrieren für ein kostenloses Konto
 
-1. In a web browser, navigate to [azure.microsoft.com](https://azure.microsoft.com?azure-portal=true), and click **Free Account**.
+1. Wechseln Sie in einem Webbrowser zu ["Azure.Microsoft.com"](https://azure.microsoft.com?azure-portal=true), und klicken Sie auf **kostenloses Konto**.
 
-1. On the **Create your Azure free account today** page, click **Start free >** button. 
+1. Klicken Sie auf der Seite **Create your Azure free account today** (Noch heute Ihr kostenloses Azure-Konto erstellen) auf die Schaltfläche **Start free** (Kostenlos einsteigen). 
 
-1. You'll be prompted to sign in with your Microsoft account. Sign in with your Microsoft credentials or create a new free Microsoft account.
+1. Sie werden aufgefordert, sich dann mit Ihrem Microsoft-Konto anzumelden. Melden Sie sich mit Ihren Microsoft-Anmeldeinformationen an, oder erstellen Sie ein neues kostenloses Microsoft-Konto.
 
-1. On the **About you** page, select your correct country or region, and then enter your first and last names, along with your email address and phone number. Depending on your country, you may see additional fields, such as VAT number. Click **Next** to continue.
+1. Wählen Sie auf der Seite **About you** (Persönliche Informationen) das richtige Land oder die richtige Region aus, und geben Sie dann Ihren Vor- und Nachnamen sowie Ihre E-Mail-Adresse und Telefonnummer ein. Je nach Land bzw. Region werden möglicherweise zusätzliche Felder angezeigt, beispielsweise für die Steuernummer. Klicken Sie zum Fortfahren auf **Weiter**.
 
-1. On the **Identity verification by phone** screen, select your country code, and type the number of a telephone to which you have immediate access.
+1. Wählen Sie auf der Seite zur **Identitätsüberprüfung per Telefon** Ihre Landesvorwahl aus, und geben Sie eine Telefonnummer ein, unter der Sie stets erreichbar sind.
 
-1. You have the option of text or callback to obtain a verification code. Click the relevant button, type the code in the **Verification code** box, and click **Verify code**.
+1. Sie können sich wahlweise eine SMS schicken lassen oder einen Rückruf anfordern, um einen Prüfcode zu erhalten. Klicken Sie auf die gewünschte Schaltfläche, geben Sie den Code in das Feld **Prüfcode** ein, und klicken Sie auf **Code überprüfen**.
 
-1. If the verification code is correct, you will now be asked to enter details of a valid credit card. Enter the card number, the expiration date, the CVV number, your name as it is written on the card, the address to which the card is registered, along with the postal or ZIP code, and then click **Next**.
+1. Wenn der Prüfcode stimmt, werden Sie aufgefordert, gültige Kreditkarteninformationen einzugeben. Geben Sie die Kartennummer, das Ablaufdatum, die Kreditkartenprüfnummer, Ihren Namen (wie auf der Karte angegeben), die für die Karte registrierte Adresse sowie die Postleitzahl ein, und klicken Sie dann auf **Weiter**.
 
-1. Finally, check the box to accept the subscription agreement, privacy statement, and communications policy. The second checkbox is optional. Now click **Sign up**.
+1. Aktivieren Sie abschließend das Feld zum Akzeptieren des Abonnementvertrags, der Datenschutzerklärung und der Kommunikationsrichtlinie. Das zweite Kontrollkästchen ist optional. Klicken Sie jetzt auf **Registrieren**.
 
-You have now successfully set up a free account, and you will be taken to the Azure portal home page. Let's explore that next.
+Sie haben erfolgreich ein kostenloses Konto eingerichtet und werden auf die Startseite des Azure-Portals umgeleitet. Sehen wir uns dieses nun als Nächstes an.

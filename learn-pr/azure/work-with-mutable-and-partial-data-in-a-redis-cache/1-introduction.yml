@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.1-introduction
-title: Introduction
+title: Einführung
 metadata:
-  title: Introduction
-  description: Introduction
+  title: Einführung
+  description: Einführung
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark

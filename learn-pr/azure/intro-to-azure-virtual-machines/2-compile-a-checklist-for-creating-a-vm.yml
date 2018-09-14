@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-azure-virtual-machines.2-compile-a-checklist-for-creating-a-vm
-title: Compiling a checklist for creating an Azure Virtual Machine
+title: Anlegen einer Checkliste zum Erstellen eines virtuellen Azure-Computers
 metadata:
-  title: Compiling a checklist for creating an Azure Virtual Machine
-  description: Compile a checklist for creating an Azure Virtual Machine
+  title: Anlegen einer Checkliste zum Erstellen eines virtuellen Azure-Computers
+  description: Anlegen einer Checkliste zum Erstellen eines virtuellen Azure-Computers
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

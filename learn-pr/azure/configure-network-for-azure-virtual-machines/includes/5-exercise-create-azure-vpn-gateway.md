@@ -1,63 +1,63 @@
-You want to ensure that you can connect clients or sites within your environment into Azure using encrypted tunnels across the public Internet. In this unit, you'll create a point-to-site VPN gateway, and then connect to that gateway from a client computer. You'll use native Azure certificate authentication connections for security.
+Sie möchten sichergehen, dass Sie Clients oder Websites innerhalb Ihrer Umgebung unter Verwendung verschlüsselter Tunnel über das öffentliche Internet mit Azure verbinden können. In dieser Einheit erstellen Sie ein Point-to-Site-VPN-Gateway und stellen anschließend über einen Clientcomputer eine Verbindung mit diesem Gateway her. Aus Sicherheitsgründen verwenden Sie Verbindungen mit nativer Azure-Zertifikatauthentifizierung.
 
-You will carry out the following process:
+Der Prozess umfasst folgende Schritte:
 
-1. Create a RouteBased VPN gateway.
+1. Erstellen eines RouteBased-VPN-Gateways
 
-1. Upload the public key for a root certificate for authentication purposes.
+1. Hochladen des öffentlichen Schlüssels für ein Stammzertifikat zur Authentifizierung
 
-1. Generate a client certificate from the root certificate, and then install the client certificate on each client computer that will connect to the virtual network for authentication purposes.
+1. Generieren eines Clientzertifikats auf der Grundlage des Stammzertifikats und anschließendes Installieren des Clientzertifikats auf jedem Clientcomputer, der eine Verbindung mit dem virtuellen Netzwerk herstellt, um die Authentifizierung zu ermöglichen
 
-1. Create VPN client configuration files, which contain the necessary information for the client to connect to the virtual network.
+1. Erstellen von VPN-Clientkonfigurationsdateien mit den erforderlichen Informationen, damit der Client eine Verbindung mit dem virtuellen Netzwerk herstellen kann
 
-## Before you begin
+## <a name="before-you-begin"></a>Vorbereitung
 <!---TODO: These should be prerequisites in the first unit and on the index.yml--->
 
-To complete this module, you must have:
+Für dieses Modul benötigen Sie Folgendes:
 
-- Azure PowerShell installed
+- Azure PowerShell ist installiert
 
-- A folder named **C:\cert**
+- Ein Ordner namens **C:\cert**
 
-To install Azure PowerShell:
+So installieren Sie Azure PowerShell
 
-1. Right-click the Windows button and click **PowerShell (Admin)**.
+1. Klicken Sie mit der rechten Maustaste auf die Windows-Schaltfläche, und klicken Sie anschließend auf **Windows PowerShell (Administrator)**.
 
-1. In the **User Account Control** message box, click **Yes**.
+1. Klicken Sie in der Meldung der **Benutzerkontensteuerung** auf **Ja**.
 
-1. In the PowerShell window, type the following command and press Enter:
+1. Geben Sie im PowerShell-Fenster den folgenden Befehl ein, und drücken Sie die EINGABETASTE:
 
     ```PowerShell
     Import-Module AzureRM
     ```
 
-1. At the security prompt, type A and press Enter.
+1. Geben Sie bei dem Sicherheitshinweis „A“ ein, und drücken Sie die EINGABETASTE.
 
-## Sign in and set variables
+## <a name="sign-in-and-set-variables"></a>Anmelden und Festlegen von Variablen
 
-To sign in and set variables, carry out the following steps:
+Gehen Sie wie folgt vor, um sich anzumelden und Variablen festzulegen:
 
-1. Connect to Azure by entering the following command and pressing Enter:
+1. Geben Sie den folgenden Befehl ein, und drücken Sie die EINGABETASTE, um eine Verbindung mit Azure herzustellen:
 
     ```PowerShell
     Connect-AzureRmAccount
     ```
 
-1. Get a list of your Azure subscriptions.
+1. Rufen Sie eine Liste mit Ihren Azure-Abonnements ab.
 
     ```PowerShell
     Get-AzureRmSubscription
     ```
 
-1. Specify the subscription that you want to use.
+1. Geben Sie das Abonnement an, das Sie verwenden möchten.
 
     ```PowerShell
     Select-AzureRmSubscription -SubscriptionName "{Name of your subscription}"
     ```
 
-    Replace "Name of subscription" with your subscription name.
+    Ersetzen Sie „Name des Abonnements“ durch den Namen Ihres Abonnements.
 
-1. Enter the following variables and press Enter after each one.
+1. Geben Sie die folgenden Variablen ein, und drücken Sie nach jeder Eingabe die EINGABETASTE.
 
     ```PowerShell
     $VNetName  = "VNetData"
@@ -77,15 +77,15 @@ To sign in and set variables, carry out the following steps:
     $GWIPconfName = "gwipconf"
     ```
 
-## Configure a virtual network
+## <a name="configure-a-virtual-network"></a>Konfigurieren eines virtuellen Netzwerks
 
-1. Create a resource group.
+1. Erstellen Sie eine Ressourcengruppe.
 
     ```PowerShell
     New-AzureRmResourceGroup -Name $RG -Location $Location
     ```
 
-1. Create subnet configurations for the virtual network. These have the name **FrontEnd, BackEnd**, and **GatewaySubnet**. All of these subnets exist within the virtual network prefix.
+1. Erstellen Sie Subnetzkonfigurationen für das virtuelle Netzwerk. Benennen Sie sie mit **Front-End, Back-End** und **GatewaySubnet**. Diese Subnetze befinden sich alle innerhalb des Präfix des virtuellen Netzwerks.
 
     ```PowerShell
     $fesub = New-AzureRmVirtualNetworkSubnetConfig -Name $FESubName -AddressPrefix $FESubPrefix
@@ -93,40 +93,40 @@ To sign in and set variables, carry out the following steps:
     $gwsub = New-AzureRmVirtualNetworkSubnetConfig -Name $GWSubName -AddressPrefix $GWSubPrefix
     ```
 
-1. Create the virtual network using the subnet values and a static DNS server.
+1. Erstellen Sie das virtuelle Netzwerk unter Verwendung der Subnetzwerte und eines statischen DNS-Servers.
 
     > [!IMPORTANT]
-    > Ignore the warning message, and then wait for the command to finish.
+    > Ignorieren Sie die Warnmeldung, und warten Sie dann, bis die Ausführung des Befehls abgeschlossen ist.
 
     ```PowerShell
     New-AzureRmVirtualNetwork -Name $VNetName -ResourceGroupName $RG -Location $Location -AddressPrefix $VNetPrefix1,$VNetPrefix2 -Subnet $fesub, $besub, $gwsub -DnsServer 10.2.1.3
     ```
 
-1. Now specify the variables for this network that you have just created.
+1. Geben Sie nun die Variablen für das Netzwerk an, das Sie soeben erstellt haben.
 
     ```PowerShell
     $vnet = Get-AzureRmVirtualNetwork -Name $VNetName -ResourceGroupName $RG
     $subnet = Get-AzureRmVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet
     ```
 
-1. Request a dynamically assigned public IP address.
+1. Fordern Sie eine dynamisch zugewiesene öffentliche IP-Adresse an.
 
     ```PowerShell
     $pip = New-AzureRmPublicIpAddress -Name $GWIPName -ResourceGroupName $RG -Location $Location -AllocationMethod Dynamic
     $ipconf = New-AzureRmVirtualNetworkGatewayIpConfig -Name $GWIPconfName -Subnet $subnet -PublicIpAddress $pip
     ```
 
-## Create the VPN gateway
+## <a name="create-the-vpn-gateway"></a>Erstellen des VPN-Gateways
 
-When creating this VPN gateway:
+Achten Sie beim Erstellen dieses VPN-Gateways auf Folgendes:
 
-- GatewayType must be Vpn
-- VpnType must be RouteBased
+- „GatewayType“ muss „Vpn“ lauten.
+- „VpnType“ muss „RouteBased“ lauten.
 
 > [!NOTE]
-> Note that this part of the exercise can take up to 45 minutes to complete, depending on the value of GatewaySku.
+> Beachten Sie, dass dieser Teil der Übung abhängig vom Wert der Gateway-SKU bis zu 45 Minuten dauern kann.
 
-1. To create the VPN gateway, run the following command and press Enter.
+1. Führen Sie zum Erstellen des VPN-Gateways den folgenden Befehl aus, und drücken Sie die EINGABETASTE.
 
     ```PowerShell
     New-AzureRmVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG `
@@ -134,22 +134,22 @@ When creating this VPN gateway:
     -VpnType RouteBased -EnableBgp $false -GatewaySku VpnGw1 -VpnClientProtocol "IKEv2"
     ```
 
-1. Wait for the command output to appear.
+1. Warten Sie, bis die Ausgabe des Befehls angezeigt wird.
 
-## Add the VPN client address pool
+## <a name="add-the-vpn-client-address-pool"></a>Hinzufügen des VPN-Clientadresspools
 
-1. Run the following command and press Enter.
+1. Führen Sie den folgenden Befehl aus, und drücken Sie die EINGABETASTE.
 
     ```PowerShell
     $Gateway = Get-AzureRmVirtualNetworkGateway -ResourceGroupName $RG -Name $GWName
     Set-AzureRmVirtualNetworkGateway -VirtualNetworkGateway $Gateway -VpnClientAddressPool $VPNClientAddressPool
     ```
 
-1. Wait for the command output to appear.
+1. Warten Sie, bis die Ausgabe des Befehls angezeigt wird.
 
-## Generate a client certificate
+## <a name="generate-a-client-certificate"></a>Generieren eines Clientzertifikats
 
-1. Create the self-signed root certificate.
+1. Erstellen Sie das selbstsignierte Stammzertifikat.
 
     ```PowerShell
     $cert = New-SelfSignedCertificate -Type Custom -KeySpec Signature `
@@ -158,7 +158,7 @@ When creating this VPN gateway:
     -CertStoreLocation "Cert:\CurrentUser\My" -KeyUsageProperty Sign -KeyUsage CertSign
     ```
 
-1. Generate a client certificate.
+1. Generieren Sie ein Clientzertifikat.
 
     ```PowerShell
     New-SelfSignedCertificate -Type Custom -DnsName P2SChildCert -KeySpec Signature `
@@ -168,35 +168,35 @@ When creating this VPN gateway:
     -Signer $cert -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.2")
     ```
 
-1. Export the root certificate public key. On your client computer, type the following command and press Enter.
+1. Exportieren Sie den öffentlichen Schlüssel des Stammzertifikats. Geben Sie auf Ihrem Clientcomputer den folgenden Befehl ein, und drücken Sie die EINGABETASTE.
 
     ```PowerShell
     certmgr
     ```
 
-1. Navigate to Personal/Certificates. Right-click P2SRootCert, click **All tasks**, and then select **Export**.
+1. Navigieren Sie zu „Personal/Certificates“. Klicken Sie mit der rechten Maustaste auf „P2SRootCert“, klicken Sie auf **Alle Aufgaben**, und klicken Sie anschließend auf **Exportieren**.
 
-1. In the Certificate Export Wizard, click **Next**.
+1. Klicken Sie im Zertifikatexport-Assistenten auf **Weiter**.
 
-1. Ensure that **No, do not export the private key** is selected, and then click **Next**.
+1. Vergewissern Sie sich, dass **Nein, privaten Schlüssel nicht exportieren** ausgewählt ist, und klicken Sie dann auf **Weiter**.
 
-1. On the **Export File Format** page, ensure that **Base-64 encoded X.509 (.CER)** is selected, and then click **Next**.
+1. Vergewissern Sie sich auf der Seite **Format der zu exportierenden Datei**, dass **Base-64-codiert X.509 (.CER)** ausgewählt ist, und klicken Sie dann auf **Weiter**.
 
-1. In the **File to Export** page, under **File name**, enter **C:\cert\P2SRootCert.cer**, and then click Next.
+1. Geben Sie auf der Seite **Zu exportierende Datei** unter **Dateiname** die Zeichenfolge **C:\cert\P2SRootCert.cer** ein, und klicken Sie anschließend auf „Weiter“.
 
-1. On the **Completing the Certificate Export Wizard** page, click **Finish**.
+1. Klicken Sie auf der **Abschlussseite des Zertifikatexport-Assistenten**auf **Fertig stellen**.
 
-1. On the **Certificate Export Wizard** message box, click **OK**.
+1. Klicken Sie im **Meldungsfeld des Zertifikatexport-Assistenten** auf **OK**.
 
-## Upload the root certificate public key information
+## <a name="upload-the-root-certificate-public-key-information"></a>Hochladen der Informationen des öffentlichen Schlüssels des Stammzertifikats
 
-1. In the PowerShell window, execute the following command to declare a variable for the certificate name:
+1. Führen Sie im PowerShell-Fenster den folgenden Befehl aus, um eine Variable für den Zertifikatnamen zu deklarieren:
 
     ```PowerShell
     $P2SRootCertName = "P2SRootCert.cer"
     ```
 
-1. Execute the following command:
+1. Führen Sie den folgenden Befehl aus:
 
     ```PowerShell
     $filePathForCert = "C:\cert\P2SRootCert.cer"
@@ -205,64 +205,64 @@ When creating this VPN gateway:
     $p2srootcert = New-AzureRmVpnClientRootCertificate -Name $P2SRootCertName -PublicCertData $CertBase64
     ```
 
-1. Now upload the certificate to Azure. Azure then recognizes it as a trusted root certificate.
+1. Laden Sie nun das Zertifikat in Azure hoch. Daraufhin wird es von Azure als vertrauenswürdiges Stammzertifikat erkannt.
 
     ```PowerShell
     Add-AzureRmVpnClientRootCertificate -VpnClientRootCertificateName $P2SRootCertName -VirtualNetworkGatewayname "VNetDataGW" -ResourceGroupName "TestRG" -PublicCertData $CertBase64
     ```
 
-## Configure the native VPN client
+## <a name="configure-the-native-vpn-client"></a>Konfigurieren des nativen VPN-Clients
 
-1. Execute the following command to create VPN client configuration files in .ZIP format.
+1. Führen Sie den folgenden Befehl aus, um VPN-Clientkonfigurationsdateien im ZIP-Format zu erstellen.
 
     ```PowerShell
     $profile=New-AzureRmVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNetDataGW" -AuthenticationMethod "EapTls"
     $profile.VPNProfileSASUrl
     ```
 
-1. Copy the URL returned in the output from this command and paste it into your browser. Your browser should start downloading a .ZIP file. Unzip it and put it in a suitable location.
+1. Kopieren Sie die URL aus der Befehlsausgabe, und fügen Sie sie in Ihren Browser ein. Daraufhin sollte der Browser mit dem Herunterladen einer ZIP-Datei beginnen. Entzippen Sie die Datei, und legen Sie sie an einem geeigneten Speicherort ab.
 
-1. In the extracted folder, navigate to either the WindowsAmd64 folder (for 64-bit Windows computers) or the WindowsZX86 folder (for 32-bit computers).
+1. Navigieren Sie im extrahierten Ordner entweder zum Ordner „WindowsAmd64“ (für 64-Bit-Windows-Computer) oder zum Ordner „WindowsZX86“ (für 32-Bit-Computer).
 
-1. Double-click on the VpnClientSetupxxxxx.exe file, depending on your architecture.
+1. Doppelklicken Sie auf die Datei „VpnClientSetupxxxxx.exe“ für Ihre Architektur.
 
-1. In the **Windows protected your PC** screen, click **More info**, and then click **Run anyway**.
+1. Klicken Sie auf dem Bildschirm **Der Computer wurde durch Windows geschützt.** auf **Weitere Informationen** und anschließend auf **Trotzdem ausführen**.
 
-1. In the **User Account Control** dialog box, click **Yes**.
+1. Klicken Sie im Dialogfeld **Benutzerkontensteuerung** auf **Ja**.
 
-1. In the **VNetData** dialog box, click **Yes**.
+1. Klicken Sie im Dialogfeld **VNetData** auf **Ja**.
 
-## Connect to Azure
+## <a name="connect-to-azure"></a>Herstellen einer Verbindung mit Azure
 
-1. Press the Windows key, type **Settings** and press Enter.
+1. Drücken Sie die Windows-Taste, geben Sie **Einstellungen** ein, und drücken Sie die EINGABETASTE.
 
-1. In the **Settings** window, click **Network and Internet**.
+1. Klicken Sie im Fenster **Einstellungen** auf **Netzwerk und Internet**.
 
-1. In the left-hand pane, click **VPN**.
+1. Klicken Sie im linken Bereich auf **VPN**.
 
-1. In the right-hand pane, click **VNetData**, and then click **Connect**.
+1. Klicken Sie im rechten Bereich auf **VNetData** und anschließend auf **Verbinden**.
 
-1. In the VNetData window, click **Connect**.
+1. Klicken Sie im Fenster „VNetData“ auf **Verbinden**.
 
-1. In the next VNetData window, click **Continue**.
+1. Klicken Sie im nächsten VNetData-Fenster auf **Weiter**.
 
-1. In the **User Account Control** message box, click **Yes**.
+1. Klicken Sie in der Meldung der **Benutzerkontensteuerung** auf **Ja**.
 
 > [!NOTE]
-> If these steps do not work, you may need to restart your computer.
+> Sollten diese Schritte nicht funktionieren, ist möglicherweise ein Neustart des Computers erforderlich.
 
-## Verify your connection
+## <a name="verify-your-connection"></a>Überprüfen der Verbindung
 
-1. Press the Windows key, type **cmd** and press Enter. The **Command Prompt** window appears.
+1. Drücken Sie die Windows-Taste, geben Sie **cmd** ein, und drücken Sie die EINGABETASTE. Das Fenster **Eingabeaufforderung** wird angezeigt.
 
-1. Type `IPCONFIG /ALL` and press Enter.
+1. Geben Sie `IPCONFIG /ALL` ein, und drücken Sie die EINGABETASTE.
 
-1. Copy the IP address under PPP adapter VNetData, or write it down.
+1. Kopieren Sie die IP-Adresse unter dem PPP-Adapter „VNetData“, oder schreiben Sie sich die Adresse auf.
 
-1. Confirm that IP address is in the **VPNClientAddressPool range of 172.16.201.0/24**.
+1. Vergewissern Sie sich, dass die IP-Adresse im **VPNClientAddressPool-Bereich 172.16.201.0/24** liegt.
 
-1. You have successfully made a connection to the Azure VPN gateway.
+1. Sie haben erfolgreich eine Verbindung mit dem Azure-VPN-Gateway hergestellt.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-You just set up a VPN gateway, allowing you to make an encrypted client connection to a virtual network in Azure. This approach is great with client computers and smaller site-to-site connections.
+Sie haben soeben ein VPN-Gateway eingerichtet, das es Ihnen ermöglicht, eine verschlüsselte Clientverbindung mit einem virtuellen Netzwerk in Azure herzustellen. Dieser Ansatz eignet sich hervorragend für Clientcomputer und kleinere Site-to-Site-Verbindungen.

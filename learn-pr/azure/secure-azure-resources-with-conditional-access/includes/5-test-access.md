@@ -10,7 +10,7 @@ Da Sie wissen, dass Ihre Benutzer sich anmelden und über das MyApps-Portal auf 
 
 1. Navigieren Sie zu https://myapps.microsoft.com.
 
-1. Melden Sie sich mit dem Benutzerkonto an, das in Einheit 2 erstellt wurde.
+1. Melden Sie sich als Benutzer, dass wir im Einheit 3 erstellt haben.
 
    * Beachten Sie, dass Sie ohne Multi-Factor Authentication beim Portal angemeldet sind.
 

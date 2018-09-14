@@ -27,8 +27,9 @@ Angesichts der ganzen Schwierigkeiten, die das Unternehmen mit Anwendungsgeheimn
 Als Erstes erstellen Sie einen Tresor, in dem Sie ein Geheimnis speichern.
 
 ### <a name="create-a-resource-group"></a>Erstellen einer Ressourcengruppe
+<!---TODO: Update for sandbox?--->
 
-Erstellen Sie für alle Ressourcen in dieser Übung eine Ressourcengruppe namens `keyvault-exercise-group`. Am Ende dieses Moduls löschen wir diese Ressourcengruppe, um alles auf einmal zu bereinigen. Wir verwenden `eastus` als Speicherort für alles in dieser Übung.
+Erstellen Sie für alle Ressourcen in dieser Einheit eine Ressourcengruppe namens `keyvault-exercise-group`. Am Ende dieses Moduls löschen wir diese Ressourcengruppe, um alles auf einmal zu bereinigen. Wir verwenden `eastus` als Speicherort für alles in dieser Einheit.
 
 Verwenden Sie das Azure Cloud Shell-Terminalfenster auf der rechten Seite, um den folgenden Azure CLI-Befehl auszuführen. Dadurch wird die Ressourcengruppe in Ihrem Abonnement erstellt.
 

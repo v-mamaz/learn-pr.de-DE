@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.chain-azure-functions-data-using-input-output-bindings.1-introduction
-title: Introduction
+title: Einführung
 metadata:
-  title: Introduction
-  description: Introduction
+  title: Einführung
+  description: Einführung
 durationInMinutes: 2
 content: |
   [!include[](includes/1-introduction.md)]

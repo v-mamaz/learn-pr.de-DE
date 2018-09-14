@@ -1,46 +1,46 @@
-Just like any other computer, virtual machines in Azure use disks as a place to store an operating system, applications, and data. These disks are called virtual hard disks (VHDs).
+Virtuelle Computer in Azure verwenden wie alle anderen Computer auch einen Datenträger, auf dem das Betriebssystem, Anwendungen und Daten gespeichert sind. Diese Datenträger werden als virtuellen Festplatten (VHDs) bezeichnet.
 
-Suppose you have created a virtual machine (VM) in Azure, which will host the database of case histories that your law firm relies on. A well-designed disk configuration is fundamental to good performance and resilience for SQL Server.
+Nehmen wir an, dass Sie einen virtuellen Computer (VM) erstellt haben, in dem die Datenbank des fallverläufen gehostet werden, denen Ihre Anwaltskanzlei verwendet Azure. Eine gut entworfene Datenträgerkonfiguration ist elementar für eine gute Leistung und Stabilität für SQL Server.
 
-In this unit, you'll learn how to choose the right configuration values for your disks and how to attach those disks to a VM.
+In dieser Einheit erfahren Sie, wie Sie die richtigen Konfigurationswerte für Ihre Datenträger auswählen und diese Datenträger an einen virtuellen Computer anfügen.
 
-## How disks are used by VMs
+## <a name="how-disks-are-used-by-vms"></a>Wie Datenträger von virtuellen Computern verwendet werden.
 
-VMs use disks for three different purposes:
+VMs werden Datenträger für drei verschiedene Zwecke verwenden:
 
-- **Operating system storage**. Every VM includes one disk that stores the operating system. This drive is registered as a SATA drive and labeled as the C: drive in Windows and mounted at "/" in Unix-like operating systems. It has a maximum capacity of 2048 gigabytes (GB), and its content is taken from the VM image you used to create the VM.
-- **Temporary storage**. Every VM also includes a temporary VHD that is used for page and swap files. Data on this drive may be lost during a maintenance event or redeployment. The drive is labeled as D: on a Windows VM by default. Do not use this drive to store important data that you do not want to lose.
-- **Data storage**. A data disk is any other disk attached to a VM. You use data disks to store files, databases, and any other data that you need to persist across reboots. Some VM images include data disks by default. You can also add your own data disks up to the maximum number specified by the size of the VM. Each data disk is registered as a SCSI drive and has a max capacity of 4095 GB. You can choose drive letters or mount points for your data drives.
+- **Betriebssystemspeicher**. Jeder virtuelle Computer enthält einen Datenträger, die das Betriebssystem speichert. Dieses Laufwerk ist als SATA-Laufwerk registriert und mit der Bezeichnung Laufwerk in Windows und bereitgestellt werden, unter "/" in Unix-ähnlichen Betriebssystemen. Es hat eine maximale Kapazität von 2048 Gigabyte (GB), und dessen Inhalt stammt aus dem VM-Image, die, das Sie zum Erstellen des virtuellen Computers verwendet.
+- **Temporäre Speicherung**. Jeder virtuelle Computer enthält eine temporäre virtuelle Festplatte, die für Auslagerungsdateien verwendet wird. Daten auf diesem Laufwerk möglicherweise während einer Wartung oder erneute Bereitstellung verloren. Das Laufwerk ist standardmäßig als "d:" auf einer Windows-VM bezeichnet. Verwenden Sie dieses Laufwerk nicht, um wichtige Daten speichern, die Sie nicht verlieren möchten.
+- **Datenspeicher**. Ein Datenträger ist eine beliebige andere Datenträger an eine VM angefügt. Sie verwenden Datenträger zum Speichern von Dateien, Datenbanken und alle anderen Daten, die Sie bei Neustarts beibehalten müssen. Einige VM-Images werden standardmäßig Datenträger für Daten enthalten. Sie können auch eigene Datenträger für Daten bis zur maximalen Anzahl, angegeben durch die Größe des virtuellen Computers hinzufügen. Jeder Datenträger als SCSI-Laufwerk registriert und hat eine maximale Kapazität von 4095 GB. Wählen Sie Laufwerkbuchstaben oder Bereitstellungspunkte für Ihre Datenträger für Daten.
 
-## Storing VHD files
+## <a name="storing-vhd-files"></a>Das Speichern von VHD-Dateien
 
-In Azure, VHDs are stored in an Azure storage account as **page blobs**.
+In Azure-VHDs werden gespeichert, in Azure Storage-Konto als **Seitenblobs**.
 
-This table shows the various kinds of storage accounts and which objects can be used with each.
+Die folgende Tabelle enthält die verschiedenen Arten von Speicherkonten sowie die Objekte, die jeweils mit den Konten verwendet werden können.
 
-|**Type of storage account**|**General-purpose standard**|**General-purpose premium**|**Blob storage, hot and cool access tiers**|
+|**Speicherkontotyp**|**Standard (Allgemein)**|**Premium (Allgemein)**|**Blobspeicher, Zugriffsebenen „Heiß“ und „Kalt“**|
 |-----|-----|-----|-----|
-|**Services supported**| Azure Blob storage, Azure Files, Azure Queue storage | Blob storage | Blob storage|
-|**Types of blobs supported**|Block blobs, page blobs, and append blobs | Page blobs | Block blobs and append blobs|
+|**Unterstützte Dienste**| Azure Blob Storage, Azure Files, Azure Queue storage | Blob-Speicher | Blob-Speicher|
+|**Unterstützte Blobtypen**|Blockblobs, Seitenblobs und Anfügeblobs | Seitenblobs | Blockblobs und Anfügeblobs|
 
-Because VHDs are stored as page blobs, and only standard storage supports page blobs, you need a standard storage account to store VHDs.
+Beide Seiten-Blobs allgemeinen Standard- und Storage Premium-Support. Wählen Sie ein standardmäßiges Speicherkonto aus, wenn die Kosten auf Ihr primäres Ziel ist. Storage Premium ist teurer, aber es liefert auch viel höheren e/a-Vorgänge/Sekunde (IOPS). Wenn Data-Leistung für Ihren virtuellen Computer erforderlich ist, bevorzugen Sie Storage Premium.
 
-## Attach data disks to VMs
+## <a name="attach-data-disks-to-vms"></a>Anfügen von Datenträgern an virtuelle Computer
 
-You can add data disks to a virtual machine at any time by attaching them to the VM. Attaching a disk associates the VHD file with the VM. 
+Sie können Datenträger an einen virtuellen Computer zu einem beliebigen Zeitpunkt hinzufügen, von dem virtuellen Computer anfügen. Anfügen eines Datenträgers wird die VHD-Datei mit dem virtuellen Computer verknüpft. 
 
-The VHD can't be deleted from storage while it's attached.
+Die virtuelle Festplatte kann nicht aus dem Speicher gelöscht werden, solange sie angefügt ist.
 
-### Attach an existing data disk to an Azure VM
+### <a name="attach-an-existing-data-disk-to-an-azure-vm"></a>Fügen Sie einen vorhandenen Datenträger an eine Azure-VM
 
-You may already have a VHD that stores the data you want to use in your Azure VM. In our law firm scenario, for example,  perhaps you've already converted your physical disks to VHDs locally. In this case, you can use the PowerShell `Add-AzureRmVhd` cmdlet to upload it to the storage account. This cmdlet is optimized for transferring VHD files and may complete the upload faster than other methods. The transfer is completed by using multiple threads for best performance. Once the VHD has been uploaded, attach it to an existing VM as a data disk. This approach an excellent way to deploy data of all types to Azure VMs. The data is automatically present in the VM, and there's no need to partition or format the new disk.
+Möglicherweise verfügen Sie bereits über eine virtuelle Festplatte, die Daten speichert, die Sie in Ihrer Azure-VM verwenden möchten. In diesem Szenario recht gute haben z. B. möglicherweise Sie bereits physischen Datenträger in virtuelle Festplatten lokal konvertiert. In diesem Fall können Sie die PowerShell `Add-AzureRmVhd` Cmdlet, um ihn in das Speicherkonto hochzuladen. Dieses Cmdlet ist optimiert für die Übertragung von VHD-Dateien und möglicherweise schneller als die anderen Methoden den Upload abgeschlossen. Die Übertragung abgeschlossen ist, indem mithilfe mehrerer Threads für eine optimale Leistung. Sobald die VHD hochgeladen wurde, fügen Sie sie als Datenträger für Daten einem vorhandenen virtuellen Computer. Dieser Ansatz eine hervorragende Möglichkeit, die Daten aller Typen auf virtuellen Azure-Computern bereitstellen. Die Daten automatisch auf dem virtuellen Computer vorhanden sind, und besteht keine Notwendigkeit zum Partitionieren oder den neuen Datenträger formatieren.
 
-### Attach a new data disk to an Azure VM
+### <a name="attach-a-new-data-disk-to-an-azure-vm"></a>Fügen Sie einen neuen Datenträger an eine Azure-VM
 
-You can use the Azure portal to add a new, empty data disk to a VM. 
+Sie können im Azure-Portal verwenden, um einen neuen, leeren Datenträger an einen virtuellen Computer hinzufügen. 
 
-It will create a **.vhd** file as a page blob in the storage account that you specify, and it attaches that .vhd file as a data disk to the VM. 
+Dieser Vorgang erstellt eine **VHD** Datei als Seiten-Blob im Speicherkonto, dass Sie angeben, und die VHD-Datei als Datenträger für Daten mit dem virtuellen Computer anfügen.
 
-Before you can use the new VHD to store data, you have to initialize, partition, and format the new disk. We'll practice these steps in the next exercise.
+Bevor Sie die neue virtuelle Festplatte zum Speichern von Daten verwenden können, müssen Sie initialisieren, Partition und formatieren den neuen Datenträger ein. Wir werden diese Schritte in der nächsten Übung üben.
 
-In physical on-premises servers, you store data on physical hard disks. You store data in an Azure virtual machine (VM) on virtual hard disks (VHDs). These VHDs are stored as page blobs in Azure storage accounts. For example, when you migrate your law firm's database of case histories to Azure, you must create VHDs where the database files will be saved.
+In lokalen physischen Servern speichern Sie Daten auf physische Festplatten. Sie können Daten auf einer Azure-VM (VM) auf virtuellen Festplatten (VHDs) speichern. Diese VHDs werden als Seitenblobs in Azure Storage-Konten gespeichert. Z. B. Wenn Sie Ihre Anwaltskanzlei Datenbank fallverläufen in Azure migrieren, müssen Sie VHDs erstellen, in dem die Datenbankdateien gespeichert wird.

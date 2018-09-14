@@ -1,10 +1,10 @@
 
-In this module, you explored the concepts of cloud computing. Cloud computing is the provisioning of services and applications on demand over the internet. Servers, applications, data, and other resources are provided as a service. 
+In diesem Modul haben Sie die Konzepte des Cloud Computing kennengelernt. Cloud Computing ist die bedarfsgesteuerte Bereitstellung von Diensten und Anwendungen über das Internet. Server, Anwendungen, Daten und andere Ressourcen werden als Dienst bereitgestellt. 
 
-Cloud computing resources are delivered using three different service models:
+Cloud Computing-Ressourcen werden mithilfe von drei verschiedenen Dienstmodellen bereitgestellt:
 
-1. Infrastructure-as-a-service (IaaS) provides instant computing infrastructure that you can provision and manage over the Internet.
+1. Infrastructure-as-a-Service (IaaS) bietet eine sofort nutzbare Computinginfrastruktur, die Sie über das Internet bereitstellen und verwalten können.
 
-2. Platform as a service (PaaS) provides ready-made development and deployment environments that you can use to deliver your own cloud services.
+2. Platform-as-a-Service (PaaS) bietet vordefinierte Entwicklungs- und Bereitstellungsumgebungen, die Sie verwenden können, um Ihre eigenen Clouddienste zu übermitteln.
 
-3. Software as a service (or SaaS) delivers applications over the Internet as a web-based service.
+3. Software-as-a-Service (oder SaaS) stellt Anwendungen über das Internet als webbasierten Dienst bereit.

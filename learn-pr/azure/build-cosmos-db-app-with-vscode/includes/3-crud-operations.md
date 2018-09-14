@@ -299,7 +299,7 @@ Azure Cosmos DB unterstützt das Ersetzen von JSON-Dokumenten. In diesem Fall wi
     ```
     dotnet run
     ```
-    Das Terminal zeigt die folgende Ausgabe an, wobei die Ausgabe „Replaced last name for Suh“ angibt, dass das Dokument ersetzt wurde.
+    Das Terminal zeigt die folgende Ausgabe an, wobei „Replaced last name for Suh“ darauf hinweist, dass das Dokument ersetzt wurde.
 
     ```
     Database and collection validation complete

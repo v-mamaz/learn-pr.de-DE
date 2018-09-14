@@ -1,19 +1,19 @@
-Security is one of the most important aspects of any architecture. Ensuring that your business data and customer data are secure is critical. A public data breach can ruin a company's reputation as well as cause significant personal and financial harm. In this module, we’ll discuss key architectural security considerations as you design an environment on the cloud.
+Sicherheit ist eines der wichtigsten Aspekte von jeder Architektur. Es ist wichtig, sicherzustellen, dass Ihre Geschäfts- und Kundendaten geschützt sind. Eine öffentliche sicherheitsverletzung kann auflöst, eines Unternehmens Zuverlässigkeit als auch wichtige persönliche und finanzielle Schaden verursachen. Dieses Modul befasst sich mit den wichtigsten architektonischen Sicherheitshinweisen für das Entwerfen einer Umgebung in der Cloud.
 
-As we learn about architecting our cloud solutions with security as a primary consideration, we'll see how one fictional Azure customer puts these principles to work:
+Wie wir erfahren Sie mehr über die Architektur von unseren Cloudlösungen mit Sicherheit als ein wichtiger Aspekt, sehen wir ein fiktives Azure Kunden setzt diese Prinzipien arbeiten:
 
-Lamna Healthcare is a national healthcare provider. Their IT organization has recently started to move the majority of their IT systems to Azure. They have a mixture of custom apps, open-source apps, and off-the-shelf applications, with varying architectures and technology platforms. We'll learn what they need to do to migrate to the cloud while keeping their systems and data secure.
+Lamna Healthcare ist ein nationaler Anbieter für Gesundheitsdienstleistungen. Die IT-Organisation des Unternehmens hat vor Kurzem damit angefangen, einen Großteil des IT-Systems in Azure zu verschieben. Sie verfügen über eine Mischung von benutzerdefinierten apps, Open Source-Anwendungen und handelsüblichen Anwendungen mit unterschiedlichen Architekturen und Technologieplattformen. Erfahren, was sie tun, um in die Cloud migrieren und die Sicherheit ihrer Systeme und Daten zu schützen.
 
 > [!NOTE]
-> The concepts discussed in this module are not all-inclusive, but represent some of the important considerations when building a solution on the cloud. Microsoft publishes a broad set of patterns, guidelines, and examples on designing applications on Azure. It is highly recommended that you look through the content in the [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) as you start planning and designing your architecture.
+> In diesem Modul werden nicht alle Konzepte beschrieben, aber einige der wichtigsten, die für das Erstellen einer Lösung in der Cloud hilfreich sein können. Microsoft bietet verschiedene Muster, Richtlinien und Beispiele zum Entwerfen von Anwendungen in Azure an. Es wird dringend empfohlen, dass Sie sich mithilfe des [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) informieren, bevor Sie damit beginnen, Ihre Architektur zu planen und zu entwerfen.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul lernen Sie Folgendes:
 
-- Learn how to take a defense in depth approach to securing your architecture.
-- Learn how to protect your identities.
-- Learn what technologies are available to protect your Azure infrastructure.
-- Learn how and where to use encryption to secure your data.
-- Learn how to protect your architecture at the network level.
-- Learn how to leverage application security best practices to integrate security into your application.
+- Erfahren Sie, wie Sie zum Schutz Ihrer Architektur tiefgehende Verteidigungsansätze verfolgen können.
+- Erfahren Sie, wie Sie Ihre Identitäten schützen.
+- Erfahren Sie, welche Technologien zum Schutz Ihrer Azure-Infrastruktur zur Verfügung stehen.
+- Erfahren Sie, wie und wo Sie Verschlüsselung zum Schützen Ihrer Daten verwenden können.
+- Erfahren Sie, wie Sie Ihre Architektur auf Netzwerkebene schützen können.
+- Erfahren Sie, wie Sie bewährte Methoden für die Sicherheit von Anwendungen zum Schutz Ihrer Anwendung nutzen können.

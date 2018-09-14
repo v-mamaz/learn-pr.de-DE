@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-efficiency-and-operations.2-maximize-efficiency-of-cloud-spend
-title: Maximize efficiency of cloud spend
+title: Maximieren der Effizienz von Cloudausgaben
 metadata:
-  title: Maximize efficiency of cloud spend
-  description: In this unit, we'll discuss how to maximize the efficiency of your cloud expenditures
+  title: Maximieren der Effizienz von Cloudausgaben
+  description: 'In dieser Einheit wird erläutert, wie Sie die Effizienz Ihrer Cloudausgaben maximieren.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,27 +13,27 @@ durationInMinutes: 15
 content: |
   [!include[](includes/2-maximize-efficiency-of-cloud-spend.md)]
 quiz:
-  title: 'Knowledge check - Maximize efficiency of cloud spend'
+  title: Wissenstest – Maximieren der Effizienz von Cloudausgaben
   questions:
-  - content: 'Which of the following is the best candidate for a reserved instance?'
-    choices:
-    - content: 'A web application deployed on Azure App Service.'
-      isCorrect: false
-      incorrectExplanation: 'Azure App Service is a PaaS service, reserved instances can only be used for virtual machines.'
-    - content: 'A non-production virtual machine that is automatically shut down in off-hours when not in use.'
-      isCorrect: false
-      incorrectExplanation: 'Since this virtual machine will not be running the majority of the time it will not fully utilize the instance reservation, and is not a good candidate for a reserved instance.'
-    - content: 'An Azure SQL Database instance.'
-      isCorrect: false
-      incorrectExplanation: 'Azure SQL Database is a PaaS service, reserved instances can only be used for virtual machines.'
-    - content: 'A database server for an HR system for a global business.'
-      isCorrect: true
-      correctExplanation: 'Because of the criticality and global nature of this system, it is likely that it would be running the majority of the time, making it a great candidate for a reserved instance.'
-  - content: 'Compute costs associated with a VM stop accruing when:'
-    choices:
-    - content: 'You shut the virtual machine down from inside the OS.'
-      isCorrect: false
-      incorrectExplanation: 'If you shut down the OS of the virtual machine, it is still allocated on the Azure platform and will continue to accrue compute costs.'
-    - content: 'You click the Stop button in the Azure portal.'
-      isCorrect: true
-      correctExplanation: 'Clicking the Stop button will deallocate the virtual machine from the Azure platform and will no longer accrue compute costs.'
+    - content: Welcher der folgenden Kandidaten eignet sich am besten für eine reservierte Instanz?
+      choices:
+        - content: 'Eine Webanwendung, die für Azure App Service bereitgestellt wird.'
+          isCorrect: false
+          incorrectExplanation: Azure App Service ist ein PaaS-Dienst. Reservierte Instanzen können nur für virtuelle Computer verwendet werden.
+        - content: 'Ein virtueller Computer, der nicht für die Produktion bestimmt ist und automatisch außerhalb der offiziellen Geschäftszeiten heruntergefahren wird, wenn er nicht verwendet wird.'
+          isCorrect: false
+          incorrectExplanation: Dieser virtuelle Computer ist die meiste Zeit nicht aktiv. Er kann also nicht in vollem Umfang von der Instanzreservierung profitieren und ist somit kein guter Kandidat für eine reservierte Instanz.
+        - content: Eine Instanz von Azure SQL-Datenbank.
+          isCorrect: false
+          incorrectExplanation: Azure SQL-Datenbank ist ein PaaS-Dienst. Reservierte Instanzen können nur für virtuelle Computer verwendet werden.
+        - content: Ein Datenbankserver für ein System zur Personalverwaltung in einem weltweit tätigen Unternehmen.
+          isCorrect: true
+          correctExplanation: 'Aufgrund der Wichtigkeit und der globalen Natur dieses Systems ist davon auszugehen, dass es die meiste Zeit aktiv ist. Damit ist es ein hervorragender Kandidat für eine reservierte Instanz.'
+    - content: 'Computekosten für einen virtuellen Computer fallen in folgenden Szenarien nicht mehr an:'
+      choices:
+        - content: Wenn Sie den virtueller Computer innerhalb des Betriebssystems herunterfahren.
+          isCorrect: false
+          incorrectExplanation: 'Wenn Sie das Betriebssystem des virtuellen Computers herunterfahren, bleibt dieser trotzdem auf der Azure-Plattform zugeordnet, und es fallen weiterhin Computekosten an.'
+        - content: Wenn Sie im Azure-Portal auf die Schaltfläche „Beenden“ klicken.
+          isCorrect: true
+          correctExplanation: 'Durch Klicken auf die Schaltfläche „Beenden“ wird die Zuordnung des virtuellen Computers auf der Azure-Plattform aufgehoben, und es fallen keine Computekosten mehr an.'

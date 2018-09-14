@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-compute.1-introduction
-title: Gründe für die Verwendung von Azure Compute
+title: Einführung
 metadata:
-  title: Gründe für die Verwendung von Azure Compute
-  description: Gründe für die Verwendung von Azure Compute
-  ms.openlocfilehash: bda822e80658bb6abb0e3833a28de99c1888ef2c
-  ms.sourcegitcommit: bcd9fd78122da4fc1545c7923a5fc0cd0a8abe96
-  ms.translationtype: HT
-  ms.contentlocale: de-DE
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43152161"
-durationInMinutes: 2
-content: '[!include[](includes/1-introduction.md)]'
+  title: Einführung
+  description: Einführung
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 1
+content: |
+  [!include[](includes/1-introduction.md)]

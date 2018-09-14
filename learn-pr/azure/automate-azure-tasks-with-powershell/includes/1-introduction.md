@@ -10,12 +10,12 @@ Hier sehen Sie, wie die Azure-Ressourcen mithilfe von Azure PowerShell verwaltet
 In diesem Modul lernen Sie Folgendes:
 
 - Entscheiden, ob Azure PowerShell das richtige Tool für Ihre Azure-Verwaltungsaufgaben ist
-- Installieren von Azure PowerShell unter Linux, macOS und/oder Windows
+- Installieren Sie Azure PowerShell unter Linux, MacOS und/oder Windows
 - Verbinden mit einem Azure-Abonnement über Azure PowerShell
 - Erstellen von Azure-Ressourcen mit Azure PowerShell
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-- Erfahrung mit einer Befehlszeilenschnittstelle wie PowerShell oder Bash
+- Einführung in eine Befehlszeilenschnittstelle wie PowerShell oder Bash
 - Kenntnisse der grundlegenden Azure-Konzepte wie Ressourcengruppen und virtuelle Computer
 - Erfahrung beim Verwalten von Azure-Ressourcen über das Azure-Portal

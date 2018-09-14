@@ -1,8 +1,8 @@
-Here, you'll add an expiration time to our data in the Azure Redis Cache.
+Hier fügen Sie eine Ablaufzeit auf unsere Daten in Azure Redis Cache.
 
-## Add an expiration time
+## <a name="add-an-expiration-time"></a>Fügen Sie eine Ablaufzeit
 
-In the last exercise, we left off with the following code in **Program.cs**.
+In der letzten Übung aufgehört mit den folgenden Code in **"Program.cs"**.
 
 ```csharp
 using (RedisClient redisClient = new RedisClient(redisConnectionString))
@@ -24,9 +24,9 @@ using (RedisClient redisClient = new RedisClient(redisConnectionString))
 }
 ```
 
-Let’s add an expiration of 15 seconds to both **MyKey1** and **MyKey2**.
+Fügen Sie ein Ablaufdatum von 15 Sekunden sowohl **MyKey1** und **MyKey2**.
 
-1. Add the following code before you commit the transaction
+Fügen Sie den folgenden Code aus, bevor Sie die Transaktion ausführen:
 
     ```csharp
     //Add an expiration time
@@ -34,26 +34,26 @@ Let’s add an expiration of 15 seconds to both **MyKey1** and **MyKey2**.
     transaction.QueueCommand(c => ((RedisNativeClient)c).Expire("MyKey2", 15));
     ```
 
-    In this code, the **Expire** method is a part of the **RedisNativeClient**. To access the method, we must first cast our object.
+In diesem Code wird die **ablaufen** Methode ist ein Teil der **RedisNativeClient**. Um die Methode zugreifen zu können, müssen wir zunächst das-Objekt umwandeln.
 
-## Verify the expiration
+## <a name="verify-the-expiration"></a>Überprüfen Sie das Ablaufdatum
 
-Now that we added the code to expire our data, lets run the program and check that the data is removed from Redis.
+Nun, da wir den Code, um die Daten ablaufen hinzugefügt haben, lassen Sie uns das Programm auszuführen, und überprüfen Sie, dass die Daten aus Azure Redis Cache entfernt werden.
 
-1. Run the program.
+1. Führen Sie das Programm aus.
 
     ```bash
     dotnet run
     ```
     
-1. Switch back to the Azure Redis Console in the Azure portal.
+1. Wechseln Sie zurück in die Azure Redis Cache-Konsole im Azure-Portal.
 
-1. To verify that the data is still there, issue the following command:
+1. Um sicherzustellen, dass die Daten immer noch vorhanden sind, geben Sie den folgenden Befehl aus:
 
     ```
     get MyKey1
     ```
 
-1. After 15 seconds, issue the command again. You should see that the data is no longer there.
+1. Geben Sie den Befehl erneut aus, nach 15 Sekunden. Sollte angezeigt werden, dass die Daten nicht mehr vorhanden ist.
 
-    ![Screenshot of the Azure Redis console showing the Value of MyKey1 being nil.](../media/6-redis-console-data-expiration.png)
+    ![Screenshot der Azure Redis Cache-Konsole mit dem Wert des MyKey1, wird NULL](../media/6-redis-console-data-expiration.png)

@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.7-connect-to-your-azure-storage-account
+title: Verbinden mit Ihrem Azure-Speicherkonto
+metadata:
+  title: Verbinden mit Ihrem Azure-Speicherkonto
+  description: Verbinden mit Ihrem Azure-Speicherkonto
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 10
+content: |
+  [!include[](includes/7-connect-to-your-azure-storage-account.md)]

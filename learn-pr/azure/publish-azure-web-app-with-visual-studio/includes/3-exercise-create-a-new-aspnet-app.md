@@ -1,8 +1,6 @@
-Da sich Ihre App nun einsatzbereit auf Ihrem lokalen Computer befindet, kann sie in Azure veröffentlicht werden. 
-
 In dieser Einheit entwerfen und erstellen Sie eine neue ASP.NET-Webanwendung und führen sie auf dem lokalen Computer aus.
 
-## <a name="create-a-new-project"></a>Erstellen eines neuen Projekts
+## <a name="create-a-project"></a>Erstellen eines Projekts
 
 ### <a name="visual-studio-for-windows"></a>Visual Studio für Windows
 
@@ -37,7 +35,7 @@ Im ersten Schritt wird Visual Studio gestartet und eine lokale ASP.NET Core-Weba
 
 1. Wählen Sie unter **.NET Core** eine **ASP.NET Core-Web-App** aus, und klicken Sie dann auf **Weiter**.
 
-1. Geben Sie unter **Projektname** die Zeichenfolge **AlpineSkiHouse** ein. Damit sollte auch der Projektmappenname automatisch aufgefüllt werden.
+1. Geben Sie unter **Projektname** die Zeichenfolge **AlpineSkiHouse** ein. Dies sollte auch den Namen der Projektmappe auffüllen.
 
 1. Wählen Sie für das Projekt einen **Speicherort** auf Ihrem lokalen Computer aus.
 

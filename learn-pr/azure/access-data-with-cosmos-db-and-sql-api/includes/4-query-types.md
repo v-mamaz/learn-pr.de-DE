@@ -31,6 +31,7 @@ WHERE p.id ="1"
         "category": "Women's Clothing",
         "manufacturer": "Contoso Sport",
         "description": "Quick dry crew neck t-shirt",
+        "price": "14.99",
         "shipping": {
             "weight": 1,
             "dimensions": {
@@ -39,11 +40,11 @@ WHERE p.id ="1"
                 "depth": 1
             }
         },
-        "_rid": "glAZAJFm0VsBAAAAAAAAAA==",
-        "_self": "dbs/glAZAA==/colls/glAZAJFm0Vs=/docs/glAZAJFm0VsBAAAAAAAAAA==/",
-        "_etag": "\"00006000-0000-0000-0000-5b71be760000\"",
+        "_rid": "iAEeANrzNAAJAAAAAAAAAA==",
+        "_self": "dbs/iAEeAA==/colls/iAEeANrzNAA=/docs/iAEeANrzNAAJAAAAAAAAAA==/",
+        "_etag": "\"00003a02-0000-0000-0000-5b9208440000\"",
         "_attachments": "attachments/",
-        "_ts": 1534180982
+        "_ts": 1536297028
     }
 ]
 ```
@@ -96,22 +97,22 @@ FROM Products.shipping
 
 ```
 [
-{
-    "weight": 1,
-    "dimensions": {
-        "width": 6,
-        "height": 8,
-        "depth": 1
+    {
+        "weight": 1,
+        "dimensions": {
+            "width": 6,
+            "height": 8,
+            "depth": 1
+        }
+    },
+    {
+        "weight": 2,
+        "dimensions": {
+            "width": 8,
+            "height": 11,
+            "depth": 3
+        }
     }
-},
-{
-    "weight": 1,
-    "dimensions": {
-        "width": 6,
-        "height": 8,
-        "depth": 1
-    }
-}
 ]
 ```
 
@@ -130,7 +131,7 @@ Im obigen Beispiel wird zwar ein Array als Quelle verwendet, aber Sie können da
     ]
 
 ## <a name="where-clause"></a>WHERE-Klausel
-Die WHERE-Klausel gibt die Bedingungen an, die die in der Quelle angegebenen JSON-Dokumente erfüllen müssen, um als Teil des Ergebnisses zurückgegeben zu werden. Jedes JSON-Dokument muss die angegebenen Bedingungen erfüllen (**true**), um in das Ergebnis einbezogen zu werden. Die WHERE-Klausel ist optional.
+Die WHERE-Klausel gibt die Bedingungen an, die die in der Quelle angegebenen JSON-Dokumente erfüllen müssen, damit sie als Teil des Ergebnisses zurückgegeben werden. Jedes JSON-Dokument muss die angegebenen Bedingungen erfüllen (**true**), um in das Ergebnis einbezogen zu werden. Die WHERE-Klausel ist optional.
 
 Mit der folgenden Abfrage werden Dokumente angefordert, die eine ID mit dem Wert „1“ enthalten:
 
@@ -202,7 +203,7 @@ In der folgenden Abfrage werden die Produkt-IDs der einzelnen Produkte zurückge
 
 ## <a name="geospatial-queries"></a>Räumliche Abfragen
 
-Sie können räumliche Abfragen mithilfe von GeoJSON-Punkten durchführen. Wenn Sie die Koordinaten in der Datenbank verwenden, können Sie die Entfernung zwischen zwei Punkten berechnen und ermitteln, ob sich ein Punkt, ein Polygon oder ein LineString-Element innerhalb eines anderen Punkts, Polygons oder LineString-Elements befindet.
+Geoabfragen können Sie Abfragen nach räumliche Daten mithilfe von GeoJSON-Punkte ausführen. Verwenden die Koordinaten in der Datenbank, können Sie die Entfernung zwischen zwei Punkten zu berechnen und bestimmen, ob ein Punkt, Polygon oder LineString innerhalb einer anderen Punkt, Polygon oder LineString befindet.
 
 Hierdurch kann der Benutzer für Produktkatalogdaten seine Standortinformationen eingeben und prüfen, ob es innerhalb eines Radius von 80 Kilometern ein Geschäft gibt, in dem der gesuchte Artikel verfügbar ist. 
 

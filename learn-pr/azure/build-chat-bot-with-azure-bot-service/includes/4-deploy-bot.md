@@ -1,50 +1,50 @@
-When you created an Azure web app bot in [Exercise 1](#Exercise1), an Azure web app was deployed to host it. But the bot does require some code, and it still needs to be deployed to the Azure web app. Fortunately, the code was generated for you by the Azure Bot Service. In this unit, you will use Visual Studio Code to place the code in a local Git repository and publish the bot to Azure by pushing changes from the local repository to a remote repository connected to the Azure web app that hosts the bot — a process known as [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration).
+Als Sie in [Übung 1](#Exercise1) einen Azure-Web-App-Bot erstellt haben, wurde eine Azure-Web-App bereitgestellt, um ihn zu hosten. Der Bot erfordert jedoch etwas Code und muss immer noch für die Azure-Web-App bereitgestellt werden. Glücklicherweise wurde der Code für Sie vom Azure Bot Service generiert. In dieser Einheit verwenden Sie Visual Studio Code, um den Code in einem lokalen Git-Repository zu platzieren und den Bot durch Pushen von Änderungen aus dem lokalen Repository in ein mit der Azure-Web-App verbundenes Remoterepository, das den Bot hostet, in Azure zu veröffentlichen – ein als [Continuous Integration](https://en.wikipedia.org/wiki/Continuous_integration) bekannter Prozess.
 
-1. If [Git](https://git-scm.com/) isn't installed on your PC, go to https://git-scm.com/downloads and install the Git client for your operating system. Git is a free and open-source distributed version control system, and it integrates seamlessly into Visual Studio Code. If you aren't sure whether Git is installed, open a Command Prompt or terminal window and execute the following command:
+1. Wenn [Git](https://git-scm.com/) nicht auf Ihrem PC installiert ist, wechseln Sie zu https://git-scm.com/downloads, und installieren Sie den Git-Client für Ihr Betriebssystem. Git ist ein kostenloses, verteiltes und nahtlos in Visual Studio Code integriertes Open-Source-Versionskontrollsystem. Wenn Sie nicht sicher sind, ob Git installiert ist, öffnen Sie eine Eingabeaufforderung oder ein Terminalfenster, und führen Sie den folgenden Befehl aus:
 
     ```bash
     git --version
     ```
 
-    If a version number is displayed, then the Git client is installed.
+    Wenn eine Versionsnummer angezeigt wird, ist der Git-Client installiert.
 
-1. If Node.js isn't installed on your PC, go to https://nodejs.org/ and install the latest LTS version. You can determine whether Node.js is installed by opening a Command Prompt or terminal window and typing the following command:
+1. Wenn Node.js nicht auf Ihrem PC installiert ist, fahren Sie mit https://nodejs.org/ fort, und installieren Sie die neueste LTS-Version. Sie können ermitteln, ob Node.js installiert ist, indem Sie eine Eingabeaufforderung oder ein Terminalfenster öffnen und den folgenden Befehl eingeben:
 
     ```bash
     node --version
     ```
 
-    If Node is installed, the version number will be displayed.
+    Wenn Node installiert ist, wird die Versionsnummer angezeigt.
 
-1. If Visual Studio Code isn't installed on your PC, go to https://code.visualstudio.com/ and install it now.
+1. Wenn Visual Studio Code nicht auf Ihrem PC installiert ist, fahren Sie mit https://code.visualstudio.com/ fort, und installieren Sie es jetzt.
 
-1. Create a folder named "Factbot" in the location of your choice on your hard disk to hold the bot's source code.
+1. Erstellen Sie auf Ihrer Festplatte einen Ordner namens „Factbot“ am Speicherort Ihrer Wahl, der den Quellcode des Bots enthalten soll.
 
 <!---TODO: Update for sandbox?--->
-1. Return to the Azure portal and open the "factbot-rg" resource group. Then, click the web app bot you created in the prior exercise.
+1. Kehren Sie zum Azure-Portal zurück, und öffnen Sie die Ressourcengruppe „factbot-rg“. Klicken Sie auf die Web-app-Bot, die Sie in der vorherigen Übung erstellt haben.
 
-1. Click **Build** in the menu on the left, and then click **Download zip file** to prepare a zip file containing the bot's source code. Once the zip file is prepared, click the **Download zip file** button to download it. When the download is complete, copy the contents of the zip file to the "Factbot" folder that you created in Step 4.
+1. Klicken Sie im Menü auf der linken Seite auf **Erstellen** und dann auf **ZIP-Datei herunterladen**, um eine ZIP-Datei vorzubereiten, die den Quellcode des Bots enthält. Sobald die ZIP-Datei vorbereitet ist, klicken Sie auf die Schaltfläche **ZIP-Datei herunterladen**, um sie herunterzuladen. Wenn der Download abgeschlossen ist, kopieren Sie den Inhalt der ZIP-Datei in den Ordner „Factbot“, den Sie in Schritt 4 erstellt haben.
 
-1. Still on the "Build" blade, click **Configure continuous deployment**. Click **Setup** at the top of the ensuing blade, followed by **Choose Source**. Then, select **Local Git Repository** as the deployment source and click **OK**.
+1. Klicken Sie – immer noch auf dem Blatt „Erstellen“ – auf **Konfigurieren von Continuous Deployment**. Klicken Sie am oberen Rand des folgenden Blatts auf **Setup**, gefolgt von **Quelle auswählen**. Wählen Sie dann **Lokales Git-Repository** als Bereitstellungsquelle aus, und klicken Sie auf **OK**.
 
-1. Close the "Deployments" blade and click **All App service settings** in the menu on the left.
+1. Schließen Sie das Blatt „Bereitstellungen“, und klicken Sie im Menü auf der linken Seite auf **Alle App Service-Einstellungen**.
 
-1. Click **Deployment credentials**, and then enter a user name and password. You will probably have to enter a user name other than "FactbotAdministrator" because the name must be unique within Azure. Then, click **Save** and close the blade.
+1. Klicken Sie auf **Anmeldeinformationen für die Bereitstellung**, und geben Sie einen Benutzernamen und ein Kennwort ein. Wahrscheinlich müssen Sie einen anderen Benutzernamen als „FactbotAdministrator“ eingeben, da der Name innerhalb von Azure eindeutig sein muss. Klicken Sie dann auf **Speichern**, und schließen Sie das Blatt.
 
-    ![Screenshot of the Azure portal showing the new bot App Service blade displaying the Deployment credentials screen with the Deployment credentials menu item and Save button highlighted.](../media/4-portal-enter-ci-creds.png)
+    ![Screenshot des Azure-Portal mit dem neuen Bot Anzeigen der Bildschirm für die Bereitstellung mit der Bereitstellung von App Service-Blatt Anmeldeinformationen Menüelement und hervorgehobene Schaltfläche "Speichern".](../media/4-portal-enter-ci-creds.png)
 
-1. Start Visual Studio Code and use the **File** > **Open Folder...** command to open the "Factbot" folder that you copied the bot's source code to in Step 6.
+1. Starten Sie Visual Studio Code, und öffnen Sie mit dem Befehl **Datei** > **Ordner öffnen...** den Ordner „Factbot“, in den Sie in Schritt 6 den Quellcode des Bots kopiert haben.
 
-1. Click the **Source Control** button in the activity bar on the left side of Visual Studio Code, and click the **Initialize Repository** icon at the top. Then, click the **Initialize Repository** button in the ensuing dialog.
+1. Klicken Sie in der Aktivitätsleiste auf der linken Seite von Visual Studio Code auf die Schaltfläche **Quellcodeverwaltung** und dann oben auf das Symbol **Repository initialisieren**. Klicken Sie dann im folgenden Dialogfeld auf die Schaltfläche **Repository initialisieren**.
 
-1. Type "First commit." into the message box, and then click the check mark to commit your changes.
+1. Geben Sie „First commit“ (Erster Commit) in das Nachrichtenfeld ein, und klicken Sie dann auf das Häkchen, um Ihre Änderungen zu übernehmen.
 
-1. Select **Integrated Terminal** from Visual Studio Code's **View** menu to open an integrated terminal. Then, execute the following command in the integrated terminal, replacing BOT_NAME in two places with the bot name you entered in Exercise 1, Step 3.
+1. Wählen Sie **Integriertes Terminal** im Menü **Ansicht** von Visual Studio Code aus, um ein integriertes Terminal zu öffnen. Führen Sie dann den folgenden Befehl im integrierten Terminal aus, wobei Sie BOT_NAME an zwei Stellen durch den Botnamen ersetzen, den Sie in Übung 1, Schritt 3 eingegeben haben.
 
     ```bash
     git remote add qna-factbot https://BOT_NAME.scm.azurewebsites.net:443/BOT_NAME.git
     ```
 
-1. Click the ellipsis (the three dots) at the top of the SOURCE CONTROL panel and select **Publish Branch** from the menu to push the bot code from the local repository to Azure. If prompted for credentials, enter the user name and password you specified in Step 9 of this exercise.
+1. Klicken Sie auf die Auslassungspunkte (drei Punkte) am oberen Rand der QUELLCODEVERWALTUNG, und wählen Sie **Branch veröffentlichen** im Menü aus, um den Botcode aus dem lokalen Repository nach Azure zu pushen. Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, geben Sie den Benutzernamen und das Kennwort ein, die Sie in Schritt 9 dieser Übung angegeben haben.
 
-Your bot has been published to Azure. But before you test it there, let's run it locally and learn how to debug it in Visual Studio Code.
+Ihr Bot wurde in Azure veröffentlicht. Aber bevor Sie ihn dort testen, lassen Sie uns ihn lokal ausführen, und erfahren Sie, wie Sie ihn in Visual Studio Code debuggen können.

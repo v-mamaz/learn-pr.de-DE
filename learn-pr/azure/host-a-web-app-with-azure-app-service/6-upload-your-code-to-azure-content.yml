@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.host-a-web-application-with-azure-app-service.6-upload-your-code-to-azure
-title: Using deployment slots
+title: Verwenden von Bereitstellungsslots
 metadata:
-  title: Using deployment slots
-  description: Using deployment slots
+  title: Verwenden von Bereitstellungsslots
+  description: Verwenden von Bereitstellungsslots
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

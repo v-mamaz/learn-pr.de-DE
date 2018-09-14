@@ -1,69 +1,69 @@
-Behind your sports website is a database, which returns data by executing queries. However, performance slows down when the load is high, particularly during large sporting events. In hosted environments, increased resource usage translates into higher costs. Caching data ensures your website will perform well and run economically.
+Im Hintergrund Ihrer Sportwebseite befindet sich eine Datenbank, die durch das Ausführen von Abfragen Daten zurückgibt. Allerdings verlangsamt, Leistung, wenn die Last hoch, besonders bei großen sportveranstaltungen ist. In gehosteten Umgebungen führt ein erhöhter Ressourcenverbrauch zu höheren Kosten. Das Zwischenspeichern von Daten im Cache stellt sicher, dass Ihre Website eine gute Leistung wirtschaftlich liefert.
 
-## What is caching?
+## <a name="what-is-caching"></a>Was ist Zwischenspeichern?
 
-Caching is the act of storing frequently-accessed data in memory that is very close to the application that consumes the data. Caching is used to increase performance and reduce the load on your servers. We use Redis to create an in-memory cache that can provide excellent latency and potentially improve performance.
+Das Zwischenspeichern ist der Vorgang des Speicherns von häufig verwendete Daten im Arbeitsspeicher, die sehr dicht bei der Anwendung, die die Daten nutzt. Zwischenspeichern wird verwendet, um die Leistung zu erhöhen und die Last auf Ihren Servern zu verringern. Wir verwenden Redis, um eine in-Memory-Cache zu erstellen, der ausgezeichnete Latenz und die Leistung möglicherweise verbessern.
 
-## What is a Redis cache?
+## <a name="what-is-a-redis-cache"></a>Was ist ein Redis Cache?
 
-Redis (**RE**mote **DI**ctionary **S**erver) cache is an open-source, in-memory key value pair store. It's popular because it's fast and can store and manipulate common data types such as strings, hashes, and sets. It's also considered developer friendly as it supports multiple languages such as Python, C, C++, C#, Java, and JavaScript among others.
+Redis (**RE**mote **DI**ctionary **S**Server) Cache ist ein Open-Source- In-Memory-Speicher für Schlüsselwertepaare. Er ist beliebt, da schnell ist und gespeichert und können allgemeine Datentypen wie Zeichenfolgen, Hashes und Sätze bearbeiten. Es wird auch berücksichtigt Developer benutzerfreundliche dies mehrere Sprachen wie Python, C#, C++, c#, Java und JavaScript, u. a. unterstützt.
 
-## What is Azure Redis Cache?
+## <a name="what-is-azure-redis-cache"></a>Was ist Azure Redis Cache?
 
-Microsoft Azure Redis Cache is based on the popular open-source Redis cache. It gives you access to a secure, dedicated Redis cache, managed by Microsoft. A cache created using Azure Redis Cache is accessible from any application within Microsoft Azure. Azure Redis Cache is typically used to improve the performance of systems that rely heavily on back-end data stores.
+Microsoft Azure Redis Cache basiert auf dem beliebten Open-Source-Redis Cache. Sie erhalten Zugriff auf einen sicheren dedizierten Redis Cache, der von Microsoft verwaltet wird. Ein mit Azure Redis Cache erstellter Cache ist für beliebige Anwendungen in Microsoft Azure erreichbar. Azure Redis Cache wird in der Regel zum Verbessern der Leistung von Systemen verwendet, die stark von Back-End-Datenspeichern abhängig sind.
 
-Your cached data is located in-memory on an Azure server running the Redis cache as opposed to being loaded from disk by a database. Your cache is also highly scalable. You can alter the size and pricing tier at any time.
+Ihre zwischengespeicherten Daten befinden sich im Arbeitsspeicher eines Azure-Servers, auf dem der Redis Cache betrieben wird, anstatt dass eine Datenbank sie vom Datenträger lädt. Der Cache ist zudem äußerst skalierbar. Sie können Größe und Tarif jederzeit ändern.
 
-## What type of data can be stored in the cache?
+## <a name="what-type-of-data-can-be-stored-in-the-cache"></a>Welche Art von Daten im Cache gespeichert werden kann?
 
-Redis supports a variety of data types all oriented around _binary safe_ strings. This means that you can use any binary sequence for a value, from a string like "i-love-rocky-road" to the contents of an image file. An empty string is also a valid value.
+Redis unterstützt eine Vielzahl von alle Datentypen, um die _Binärdatei sicher_ Zeichenfolgen. Dies bedeutet, dass Sie eine beliebige binäre Sequenz nach einem Wert aus einer Zeichenfolge wie "i-Liebe-rocky-Road" auf den Inhalt einer Bilddatei verwenden können. Eine leere Zeichenfolge ist ebenfalls ein gültiger Wert.
 
-- Binary-safe strings (most common)
-- Lists of strings
-- Unordered sets of strings
-- Hashes
-- Sorted sets of strings
-- Maps of strings
+- Binary-sichere Zeichenfolgen (am häufigsten verwendeten)
+- Listen mit Zeichenfolgen
+- Ungeordneten Sätzen von Zeichenfolgen
+- Hashwerte
+- Sortierte Sätze von Zeichenfolgen
+- Zuordnungen von Zeichenfolgen
 
-Each data value is associated to a _key_ which can be used to lookup the value from the cache. Redis works best with smaller values (100k or less), so consider chopping up bigger data into multiple keys. Storing larger values is possible (up to 500 MB), but increases network latency and can cause caching and out-of-memory issues if the cache isn't configured to expire old values.
+Jedes Datenwerts bezieht sich auf eine _Schlüssel_ die verwendet werden können, um den Wert aus dem Cache zu suchen. Redis funktioniert am besten mit kleineren Werten (100 KB oder weniger), daher sollten Sie die Aufteilung großer Daten in mehrere Schlüssel. Größere Werte speichern kann (bis zu 500 MB), aber erhöht sich die Netzwerklatenz und können Zwischenspeicherung und Out-of-Memory-Probleme verursachen, wenn der Cache Ablaufen der alten Werte nicht konfiguriert ist.
 
-## What is a Redis key?
-Redis keys are also binary safe strings. Here are some guidelines for choosing keys:
+## <a name="what-is-a-redis-key"></a>Was ist ein Redis-Schlüssel?
+Redis-Schlüssel sind auch binäre sichere Zeichenfolgen. Hier sind einige Richtlinien für die Tastenkombination ein:
 
-- Avoid long keys. They take up more memory and require longer lookup times because they have to be compared byte-by-byte. If you want to use a binary blob as the key, generate a unique hash and use that as the key instead. The maximum size of a key is 512 MB, but you should _never_ use a key that size.
-- Use keys which can identify the data. For example, "sport:football;date:2008-02-02" would be a better key than "fb:8-2-2". The former is more readable and the extra size is negligible. Find the balance between size and readability.
-- Use a convention. A good one is "object:id", as in "sport:football". 
+- Vermeiden Sie lange Schlüssel. Sie mehr Arbeitsspeicher beanspruchen und erfordern, dass längere Suche Timeout, da sie haben im Vergleich Byte-pro-Byte sein. Wenn Sie ein binäres Blob als Schlüssel verwenden möchten, generieren Sie einen eindeutigen Hash, und verwenden Sie, die als Schlüssel. Die maximale Größe eines Schlüssels ist 512 MB, aber Sie sollten _nie_ verwenden Sie einen Schlüssel dieser Größe.
+- Verwenden Sie Schlüssel, die die Daten identifizieren können. Z. B. "Sport: Football; Datum: 2008-02-02" wäre ein besserer Schlüssel als "Fb:8-2-2". Im ersten Fall besser lesbar ist, und die zusätzliche Größe sind zu vernachlässigen. Ausgewogenes Verhältnis zwischen Größe und Lesbarkeit.
+- Verwenden Sie eine Konvention. Eine gute raus ist "-Objekt: Id", wie in "Sport: Football". 
 
-## How is data stored in a Redis cache?
+## <a name="how-is-data-stored-in-a-redis-cache"></a>Wie werden Daten in einem Redis Cache gespeichert?
 
-Data in Redis is stored in _**nodes**_ and _**clusters**_.
+Daten in Redis befinden sich in _**Knoten**_ und _**Clustern**_.
 
-**Nodes** are a space in Redis where your data is stored.
+**Knoten** sind ein Speicherplatz in Redis, in denen Ihre Daten gespeichert werden.
 
-**Clusters** are sets of three or more nodes your dataset is split across. Clusters are useful because your operations will continue if a node fails or is unable to communicate to the rest of the cluster.
+**Cluster** sind Gruppen von mindestens drei Knoten, auf die Ihr Dataset aufgeteilt ist. Cluster sind nützlich, da Ihre Vorgänge nicht unterbrochen werden, wenn ein Knoten ausfällt oder nicht mit dem Rest des Clusters kommunizieren kann.
 
-## What are Redis caching architectures?
+## <a name="what-are-redis-caching-architectures"></a>Was sind Redis Cache-Architekturen?
 
-Redis caching architecture is how we distribute our data in the cache. Redis distributes data in three major ways:
+Die Redis Cache-Architektur bestimmt, wie wir unsere Daten im Cache verteilen. Redis verteilt die Daten auf drei Arten:
 
-1. **Single node**
-1. **Multiple node**
-1. **Clustered**
+1. **Einzelner Knoten**
+1. **Mehrere Knoten**
+1. **Cluster**
 
-Redis caching architectures are split across Azure by tiers:
+Für Redis Cache-Architekturen gibt es in Azure verschiedene Tarife:
 
-### Basic cache
+### <a name="basic-cache"></a>Cachetarif „Basic“
 
-A basic cache provides you with a _**single node**_ Redis cache. The complete dataset will be stored in a single node. This tier is ideal for development, testing, and non-critical workloads.
+Dieser Cache bietet Ihnen einen Redis Cache mit _**einzelnem Knoten**_. Das vollständige Dataset wird in einem einzelnen Knoten gespeichert. Dieser Tarif eignet sich ideal für Entwicklungs- und Testzwecke sowie für nicht kritische Workloads.
 
-### Standard cache
+### <a name="standard-cache"></a>Cachetarif „Standard“
 
-The standard cache creates _**multiple node**_ architectures. Redis replicates a cache in a two-node primary/secondary configuration. Azure manages the replication between the two nodes. This is a production-ready cache with master/slave replication.
+Der Standard-Cache bietet Architekturen mit _**mehreren Knoten**_. Redis repliziert einen Cache in einer Primär-/Sekundärkonfiguration mit zwei Knoten. Azure verwaltet die Replikation zwischen den beiden Knoten. Dies ist ein produktionsbereiter Cache mit Master/Slave-Replikation.
 
-### Premium tier
+### <a name="premium-tier"></a>Premium-Tarif
 
-The premium tier includes the features of the standard tier but adds the ability to persist data, take snapshots, and back up data. With this tier, you can create a Redis cluster that shards data across multiple Redis nodes to increase available memory. The premium tier also supports an Azure Virtual Network to give you complete control over your connections, subnets, IP addressing, and network isolation. This tier also includes geo-replication, so you can ensure your data is close to the app that's consuming it.
+Der Premium-Tarif bietet die Leistungsmerkmale des Standardtarifs, ermöglicht aber auch das dauerhafte Speichern von Daten, das Erstellen von Momentaufnahmen und das Sichern von Daten. In diesem Tarif können Sie einen Redis-Cluster erstellen, der Daten auf mehrere Redis-Knoten verteilt, um den verfügbaren Arbeitsspeicher zu vergrößern. Der Premium-Tarif unterstützt auch ein Azure Virtual Network, um Ihnen die vollständige Kontrolle über Ihre Verbindungen, Subnetze, IP-Adressen und die Netzwerkisolation zu geben. Dieser Tarif bietet auch die Georeplikation, sodass Sie sicher sein können, dass sich Ihre Daten in der Nähe der App befinden, die sie benötigt.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-A database is great for storing large amounts of data, but there is an inherent latency when looking up data. You send a query. The server interprets the query, looks up the data, and returns it. Servers also have capacity limits for handling requests. If too many requests are made, data retrieval will likely slow down. Caching will store frequently requested data in memory that can be returned faster than querying a database, which should lower latency and increase performance. Azure Redis Cache gives you access to a secure, dedicated, and scalable Redis cache, hosted in Azure, and managed by Microsoft.
+Eine Datenbank ist ideal für die Speicherung großer Datenmengen, aber es gibt beim Nachschlagen von Daten eine inhärente Wartezeit. Sie senden eine Abfrage. Der Server interpretiert die Abfrage, schlägt die Daten nach und gibt sie zurück. Server weisen auch Kapazitätsbeschränkungen für die Bearbeitung von Anforderungen auf. Wenn zu viele Anforderungen gestellt werden, verlangsamt sich wahrscheinlich der Datenabruf. Beim Zwischenspeichern werden häufig angeforderte Daten im Arbeitsspeicher gehalten, die schneller zurückgegeben werden können als bei Abfrage einer Datenbank, was die Wartezeit verkürzen und die Leistung erhöhen sollte. Azure Redis Cache bietet Zugriff auf einen sicheren, dedizierten und skalierbaren Redis Cache, der in Azure gehostet und von Microsoft verwaltet wird.

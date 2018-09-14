@@ -3,47 +3,31 @@ uid: learn.intro-to-data-in-azure.5-knowledge-check
 metadata:
   title: Wissenstest
   description: Wissenstest
-  ms.openlocfilehash: 5956110e16d5e8479e149ee83abc6fbfda8787ad
-  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
-  ms.translationtype: HT
-  ms.contentlocale: de-DE
-  ms.lasthandoff: 09/01/2018
-  ms.locfileid: "43414080"
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 title: Wissenstest
 durationInMinutes: 5
 quiz:
   title: Wissenstest
   questions:
-  - content: Ihr Onlinelernportal muss die Anschrift und E-Mail-Adresse jedes Benutzers speichern. Mit welchen Azure-Features können Sie diese Informationen gut verwalten?
-    choices:
-    - content: Azure-Archivspeicher
-      isCorrect: false
-      incorrectExplanation: Der Azure-Archivspeicher eignet sich zum Speichern älterer Versionen Ihrer Daten, sodass Sie die Daten abrufen können, wenn diese für Überprüfungen oder andere unregelmäßig durchgeführte Aktivitäten benötigt werden.
-    - content: Azure SQL-Datenbank
-      isCorrect: true
-      correctExplanation: Richtig! Mit Azure SQL-Datenbank können Sie relationale Daten speichern und mit leistungsstarken Abfragen schnell abrufen.
-    - content: Azure Files
-      isCorrect: false
-      incorrectExplanation: Azure Files wird für Dateifreigaben in der Cloud verwendet. Diese können gleichzeitig durch die Cloud oder lokale Bereitstellungen von Windows, Linux und macOS eingebunden werden.
-  - content: Die in den Vertriebsschulungsportalen verwendeten Simulationsdateien können sehr groß werden. Wie unterstützt Azure diese Dateien?
-    choices:
-    - content: Azure Blob Storage kann Dateien bis zu einer Größe von 8 TB unterstützen.
-      isCorrect: true
-      correctExplanation: Richtig! Azure Blob Storage bietet die Möglichkeit, große Video- und Audiodateien zu speichern und von jedem Standort der Welt aus direkt in Browsern zu streamen.
-    - content: Azure Files kann das Speichern und Streamen großer Dateien unterstützen.
-      isCorrect: false
-      incorrectExplanation: Azure Files wird für Dateifreigaben in der Cloud verwendet. Diese können gleichzeitig durch die Cloud oder lokale Bereitstellungen von Windows, Linux und macOS eingebunden werden.
-    - content: Azure unterstützt das Speichern und Streamen großer Dateien nicht.
-      isCorrect: false
-      incorrectExplanation: Azure bietet die Möglichkeit, große Video- und Audiodateien zu speichern und von jedem Standort der Welt aus direkt in Browsern zu streamen.
-  - content: Wie unterstützt Azure die Stabilität und Zuverlässigkeit von Daten?
-    choices:
-    - content: Mithilfe von Azure-Replikationsfeatures.
-      isCorrect: true
-      correctExplanation: Richtig! Azure bietet Replikationsfeatures, um Daten vor Naturkatastrophen zu schützen, und unterstützt Verschlüsselung, um die Daten vor Angriffen zu schützen.
-    - content: Sie benötigen zusätzlichen Premiumsupport, um Ihre Daten zu verschlüsseln und zu entschlüsseln. Die Zuverlässigkeit wird durch Sicherungsfeatures von Drittanbietern unterstützt.
-      isCorrect: false
-      incorrectExplanation: Sie benötigen keinen weiteren Support. Azure bietet alle Funktionen, die zum Schutz Ihrer Daten vor unvorhergesehenen Risiken und Bedrohungen erforderlich sind.
-    - content: Azure bietet keine integrierten Redundanz- und Verschlüsselungsfunktionen.
-      isCorrect: false
-      incorrectExplanation: Azure enthält integrierte Funktionen zum Schutz Ihrer Daten vor Risiken und Bedrohungen.
+    - content: 'Nehmen wir an, dass Sie einen Systemstart mit begrenzte Mittel arbeiten. Es Azure-Datenspeicher über eine lokale Lösung Warum empfiehlt sich?'
+      choices:
+        - content: 'Um sicherzustellen, dass auszuführen auf eine bestimmte Marke von Hardware, um Sie zu einer marketing Partnerschaft, Hardwareanbieter kann.'
+          isCorrect: false
+        - content: Das Azure Abrechnungsmodell mit nutzungsbasierter Bezahlung können Sie vermeiden teuren Hardware zu kaufen.
+          isCorrect: true
+          correctExplanation: 'Es sind keine großen, im Vorfeld Kapitalausgaben (CapEx) mit Azure. Monatlich Zahlen Sie nur für die Dienste, die Sie verwenden (OpEx).'
+        - content: Um genaue Kontrolle über den Speicherort des Datenspeichers zu erhalten.
+          isCorrect: false
+    - content: 'Welche der folgenden Situationen würden die meisten Vorteile ergeben, von einem lokalen Datenspeicher in Azure verschieben?'
+      choices:
+        - content: 'Unvorhersehbare Speicher--Anforderung, die zu- und Abnahme mehrmals im Laufe des Jahres.'
+          isCorrect: true
+          correctExplanation: 'Azure-Datenspeicher ist flexibel. Sie können schnell und einfach hinzufügen oder entfernen die Kapazität. Sie können die abfrageleistung, sodass Spitzenlasten verarbeiten oder beeinträchtigen die Leistung zur Reduzierung von Kosten erhöhen. In jedem Fall bezahlen Sie nur, was Sie nutzen.'
+        - content: 'Langfristige, stabilen bedarfsanstieg von Speicher.'
+          isCorrect: false
+        - content: 'Konsistente, unveränderliche speicheranforderungen.'
+          isCorrect: false

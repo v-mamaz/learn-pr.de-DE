@@ -5,60 +5,73 @@ Als Erstes müssen wir eine leere Cosmos DB-Datenbank und eine Sammlung erstelle
 
 # <a name="create-a-cosmos-db-account--database-with-the-azure-cli"></a>Erstellen eines Cosmos DB-Kontos und einer Datenbank mithilfe der Azure-Befehlszeilenschnittstelle
 
-1. Wählen Sie zunächst das richtige Abonnement aus: Verwenden Sie die Abonnement-ID Ihres Abonnements für kostenlosen Education-Zugriff.
+[!include[](../../../includes/azure-sandbox-activate.md)]
+
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
+
+<!--
+TODO: This is original text prior to updates to use the sandbox. These can be worked back in as instructions for people using their own subscriptions. There is one more block like this below. Note that the assignment of RESOURCE_GROUP below would need to be different as well.
+
+1. Start by selecting the correct subscription - you want to select the subscription ID associated with your free education access subscription.
 
     ```azurecli
     az account list --output table
     ```
 
-1. Vergewissern Sie sich, dass die Abonnementliste „sandbox“ enthält, und legen Sie dieses Element als die zu verwendende Option fest: <!-- TODO: get official name here -->
+1. Make sure you see "sandbox" in the subscription list and set it as the current one to use:
 
     ```azurecli
     az account set --subscription "sandbox"
     ```
     
-1. Rufen Sie die Ressourcengruppe ab, die für Sie erstellt wurde. Falls Sie Ihr eigenes Abonnement verwenden, überspringen Sie diesen Schritt, und geben Sie in der Umgebungsvariablen `RESOURCE_GROUP` weiter unten lediglich einen eindeutigen Namen an, den Sie verwenden möchten. Notieren Sie sich den Namen der Ressourcengruppe. Dort erstellen wir unsere Datenbank. <!-- Do we get a token for this? -->
+1. Get the Resource Group that has been created for you. If you are using your own subscription, skip this step and just supply a unique name you want to use in the `RESOURCE_GROUP` environment variable below. Take note of the Resource Group name. This is where we will create our database.
 
     ```azurecli
     az group list --out table
     ```
+-->
 
-1. Legen Sie der Einfachheit halber einige Umgebungsvariablen fest, um nicht immer wieder die gleichen Werte eingeben zu müssen. 
+1. Legen Sie einige Umgebungsvariablen, sodass Sie keine häufig verwendeten Werte jedes Mal erneut eingeben.
 
     > [!IMPORTANT]
-    > Diese Werte müssen auf die entsprechenden Werte für Ihre Sitzung festgelegt werden. Ersetzen Sie also beispielsweise den Wert `<resource group>` durch den Ressourcengruppennamen, den Sie weiter oben angegeben haben.
+    > Diese Werte müssen auf die entsprechenden Werte für Ihre Sitzung festgelegt werden. Ersetzen Sie z. B. die `<comsos db name>` Wert mit dem Namen Ihrer Cosmos DB haben möchten.
 
     ```azurecli
-    export RESOURCE_GROUP="<resource group>"
+    export RESOURCE_GROUP="<rgn>[Sandbox resource group name]</rgn>"
     export NAME="<cosmos db name>"
     export LOCATION="<location>"
     ```
-    
-1. Legen Sie als Nächstes eine Variable für den Datenbanknamen fest. Nennen Sie sie „Users“, um der Datenbank aus dem letzten Modul zu entsprechen.
+
+2. Legen Sie als Nächstes eine Variable für den Datenbanknamen fest. Nennen Sie sie „Users“, um der Datenbank aus dem letzten Modul zu entsprechen.
 
     ```azurecli
     export DB_NAME="Products"
     ```
-    
-1. Falls Sie hierbei Ihr eigenes Abonnement und eine _neue_ Ressourcengruppe verwenden (empfohlen), erstellen Sie die Ressourcengruppe mithilfe des folgenden Befehls. **Wichtig:** Bei Verwendung der kostenlosen Lernressourcen von Microsoft Learn ist dieser Schritt nicht erforderlich. Vergewissern Sie sich stattdessen, dass die obige Variable `RESOURCE_GROUP` auf Ihre zugewiesene Ressourcengruppe festgelegt ist.
+
+<!-- 
+
+TODO: Pre-sandbox text to be worked back in.
+
+1. If you are doing this on your own subscription, and you are using a _new_ Resource Group (recommended), then use the following command to create the Resource Group. **Important:** If you are using the free education resources provided by Microsoft Learn, then you do not need to execute this step. Instead, make sure the `RESOURCE_GROUP` variable above is set to your assigned resource group.
 
     ```azurecli
     az group create --name $RESOURCE_GROUP --location $LOCATION
     ```
-    
-1. Erstellen Sie als Nächstes ein Azure Cosmos DB-Konto. Der Erstellungsvorgang dauert ein paar Minuten.
+-->
+
+3. Erstellen Sie als Nächstes ein Azure Cosmos DB-Konto. Der Erstellungsvorgang dauert ein paar Minuten.
 
     ```azurecli
     az cosmosdb create --name $NAME --kind GlobalDocumentDB --resource-group $RESOURCE_GROUP
     ```
-    
-1. Erstellen Sie unter dem Konto die Datenbank `Products`.
+
+4. Erstellen Sie unter dem Konto die Datenbank `Products`.
 
     ```azurecli
     az cosmosdb database create --name $NAME --db-name $DB_NAME --resource-group $RESOURCE_GROUP
     ```
-    
-1. Erstellen Sie abschließend die Sammlung `Clothing`.
+
+5. Erstellen Sie abschließend die Sammlung `Clothing`.
 
     ```azurecli
     az cosmosdb collection create --collection-name "Clothing" --partition-key-path "/productId" --throughput 1000 --name $NAME --db-name $DB_NAME --resource-group $RESOURCE_GROUP

@@ -20,9 +20,9 @@ Beginnen wir mit dem ersten: `az vm create`. Mit diesem Befehl wird ein virtuell
 
 | Parameter | Beschreibung |
 |-----------|-------------|
-| `resource-group` | Die Ressourcengruppe, die Besitzer des virtuellen Computers sein soll. |
+| `resource-group` | Die Ressourcengruppe, die der virtuellen Maschine sein wird. |
 | `name` | Der Name des virtuellen Computers – muss innerhalb der Ressourcengruppe eindeutig sein. |
-| `image` | Das Betriebssystemimage, das zum Erstellen des virtuellen Computers verwendet werden soll. |
+| `image` | Das Betriebssystemabbild zu verwenden, um den virtuellen Computer zu erstellen. |
 
 Darüber hinaus ist es hilfreich, das `--verbose`-Flag hinzuzufügen, um den Fortschritt der Erstellung des virtuellen Computers zu beobachten. 
 
@@ -31,7 +31,7 @@ Darüber hinaus ist es hilfreich, das `--verbose`-Flag hinzuzufügen, um den For
 Erstellen wir jetzt einen neuen virtuellen Linux-Computer. Führen Sie in Azure Cloud Shell folgenden Befehl aus:
 
 ```azurecli
-az vm create --resource-group ExerciseResources --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --verbose 
+az vm create --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --verbose 
 ```
 
 Dieser Befehl erstellt einen neuen virtuellen Linux-Computer unter **Debian** mit dem Namen „`SampleVM`“. Beachten Sie, dass das Azure CLI-Tool während der Erstellung des virtuellen Computers gesperrt ist. Wenn Sie nicht warten möchten, können Sie die Option „`--no-wait`“ verwenden, damit das Azure CLI-Tool sofort wieder verfügbar ist, wenn Sie den Befehl beispielsweise in einem Skript ausführen. Verwenden Sie später im Skript den Befehl „`azure vm wait --name [vm-name]`“, um zu warten, bis der virtuelle Computer vollständig erstellt wurde.
@@ -55,6 +55,8 @@ Wir verwenden auch das `generate-ssh-keys`-Flag. Dieser Parameter wird für Linu
 
 Sobald der virtuelle Computer erstellt wurde, erhalten Sie eine JSON-Antwort, die den aktuellen Zustand des virtuellen Computers und seine von Azure zugewiesenen öffentlichen und privaten IP-Adressen enthält:
 
+<!-- TODO: find out the default location! -->
+
 ```json
 {
   "fqdns": "",
@@ -68,6 +70,8 @@ Sobald der virtuelle Computer erstellt wurde, erhalten Sie eine JSON-Antwort, di
   "zones": ""
 }
 ```
+
+<!-- TODO: find out the default location! -->
 
 > [!NOTE]
 > Beachten Sie, dass der virtuelle Computer am Speicherort **eastus** erstellt wurde. Standardmäßig wird der virtuelle Computer am von der besitzenden Region identifizierten Speicherort erstellt. Wenn Sie den virtuellen Computer einer vorhandenen Region zuordnen möchten, kann es allerdings vorkommen, dass dieser einer beliebigen Region irgendwo anders zugeordnet wird. Dies ist möglich, indem Sie den `--location`-Parameter als Teil des `az vm create`-Befehls angeben.

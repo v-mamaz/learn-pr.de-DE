@@ -1,10 +1,10 @@
-In this module, you've seen how security can be applied against the database. Remember, any one security vulnerability still makes your database vulnerable. It's important to make sure you have everything possible to reduce threats to your database. 
+In diesem Modul haben Sie gelernt, wie die Sicherheit für die Datenbank angewendet werden kann. Beachten Sie, dass jede eine Sicherheitslücke weiterhin Ihre Datenbank anfällig macht. Es ist wichtig, um sicherzustellen, dass Sie alles möglich, zu mindern von Bedrohungen für Ihre Datenbank haben.
 
-You've learned how to:
+Sie haben gelernt, wie Sie:
 
-- Configure the firewall for the Azure SQL Server database
-- Control user access at the database and Active Directory levels
-- Manage encryption between the client and server
-- Add auditing and threat monitoring to the Azure SQL Server database
+- Konfigurieren der Firewall für Azure SQL Server-Datenbank
+- Steuern des Zugriffs auf die Datenbank und Active Directory
+- Verwalten der Verschlüsselung zwischen Client und server
+- Fügen Sie die Überwachung und bedrohungserkennung, Überwachung, mit der Azure SQL-Datenbank
 
-All of the aspects work together to secure your database. Your customers are important, your reputation is important, and that makes your database security important. 
+Alle Aspekte arbeiten zusammen, um Ihre Datenbank zu sichern. Ihre Kunden wichtig ist, sind der Ruf Ihrer Organisation ist wichtig, und somit Ihre datenbanksicherheit wichtig.

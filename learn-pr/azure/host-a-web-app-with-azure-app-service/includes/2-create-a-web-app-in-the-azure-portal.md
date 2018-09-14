@@ -1,75 +1,75 @@
-﻿Here, you'll learn how to create a web app in Azure App Service using the Azure portal.
+Hier erfahren Sie, wie Sie eine Web-app in Azure App Service mithilfe von Azure-Portal zu erstellen.
 
-## Why use the Azure portal?
+## <a name="why-use-the-azure-portal"></a>Gründe für das Azure-Portal
 
-The first step in hosting your web application is to create a web app (an App Service app) inside your Azure subscription.
+Der erste Schritt beim Hosten der Webanwendung ist die Erstellung eine Web-app (eine App Service-app) in Ihrem Azure-Abonnement.
 
-There are several ways you can create a web app. You can use the Azure portal, the Azure CLI, a script, or an IDE.
+Es gibt mehrere Möglichkeiten, die Sie eine Web-app erstellen können. Sie können das Azure-Portal, die Azure-Befehlszeilenschnittstelle (Azure CLI), ein Skript oder eine IDE (integrierte Entwicklungsumgebung) verwenden.
 
-Here, we are going to use the portal because it's a graphical experience, which makes it a great learning tool. The portal helps you discover available features, add additional resources, and customize existing resources.
+Hier nutzen wir das Portal, weil es eine grafische Oberfläche bietet, die es zu einem großartigen Lehrmittel macht. Das Portal hilft Ihnen, verfügbare Funktionen zu ermitteln, zusätzliche Ressourcen hinzuzufügen und vorhandene Ressourcen anzupassen.
 
-## What is Azure App Service?
+## <a name="what-is-azure-app-service"></a>Was ist Azure App Service?
 
-Azure App Service is a fully managed computing platform within the Azure environment that is optimized for hosting web apps, REST APIs, and mobile back ends.
+Azure App Service ist ein vollständig verwalteter computing-Plattform in der Azure-Umgebung, die für das Hosten von Web-apps-REST-APIs und mobilen Back-Ends optimiert ist.
 
-This platform as a service (PaaS) offered by Microsoft Azure allows you to focus on the build side of things while Azure takes care of the infrastructure to run and scale your applications.
+Mit diesem PaaS-Angebot (Platform as a Service) von Microsoft Azure können Sie sich auf die Entwicklung konzentrieren, während Azure sich um die Infrastruktur zum Ausführen und Skalieren Ihrer Anwendungen kümmert.
 
-## How to create a web app
+## <a name="how-to-create-a-web-app"></a>Vorgehensweise: erstellen eine Web-app
 
-When it's time to host your own app, you visit the Azure portal and create a **Web App**. By creating a **Web App** in the Azure portal, you are actually creating a set of hosting resources in App Service, which you can use to host any web-based application that is supported by Azure, whether it be ASP.NET Core, Node.js, PHP, etc. The figure below shows how easy it is to configure the framework/language used by the app.
+Wenn es Zeit, die zum Hosten Ihrer eigenen app ist, Sie finden Sie auf das Azure-Portal und erstellen eine **Web-App**. Durch das Erstellen einer **Web-App** im Azure-Portal, erstellen Sie einen Satz von hosting von Ressourcen in App Service, die Sie verwenden können, zum Hosten von eine beliebige webbasierte Anwendung, die von Azure unterstützt wird, ob sie die ASP.NET Core, Node.js, PHP usw. sein. Die folgende Abbildung zeigt, wie einfach es ist, das Framework bzw. die Sprache der App zu konfigurieren.
 
-![Web app settings](../media/2-web-app-settings.png)
+![Web-App-Einstellungen](../media/2-web-app-settings.png)
 
-The Azure portal provides a template to create a web app. This template requires the following fields:
+Das Azure-Portal bietet es sich um eine Vorlage zum Erstellen einer WebApp. Diese Vorlage hat die folgenden Pflichtfelder:
 
-- **App name**: The name of the web app.
-- **Subscription**: A valid and active subscription.
-- **Resource group**: A valid resource group. The sections below explain in detail what a resource group is.
-- **OS**: The operating system. The options are: Windows, Linux, and Docker containers. On Windows, you can host any type of application from a variety of technologies. The same applies for Linux hosting, except the fact that you can only create ASP.NET Core web apps that use the .NET Core framework over Linux. For other ASP.NET apps using the full .NET Framework, you will have to host over Windows OS. The final option is Docker containers, where you can deploy your own local Docker containers directly over containers hosted and maintained by Azure. So basically, any web app that makes use of an open-source technology (PHP, ASP.NET Core, etc.) can be hosted on a Linux OS.
-- **App Service plan/location**: A valid Azure App Service plan. The sections below explain in detail what an App Service plan is.
-- **Applications Insights**: You can turn on the Azure Application Insights option and benefit from the monitoring and metric tools that the Azure portal offers to help you keep an eye on the performance of your apps.
+- **App-Name** : Der Name der Web-App.
+- **Abonnement**: Eine gültiges und aktives Abonnement.
+- **Ressourcengruppe**: Eine gültige Ressourcengruppe. In den folgenden Abschnitten wird ausführlich erläutert, was eine Ressourcengruppe ist.
+- **Betriebssystem**: Das Betriebssystem. Die Optionen sind: Windows, Linux und Docker-Container. Unter Windows können Sie jede Art von Anwendung mit einer Vielzahl von Technologien hosten. Dasselbe gilt für das Linux-Hosting mit Ausnahme der Tatsache, dass Sie nur ASP.NET Core-Web-Apps erstellen können, die das .NET Core-Framework über Linux verwenden. Bei anderen ASP.NET-Apps, die das gesamte .NET Framework verwenden, muss das Hosting über das Windows-Betriebssystem erfolgen. Die letzte Option sind Docker-Container, bei denen Sie Ihre eigenen lokalen Docker-Container direkt in von Azure gehosteten und verwalteten Containern bereitstellen können. Grundsätzlich kann also jede Web-App, die eine Open-Source-Technologie (PHP, ASP.NET Core, usw.) nutzt, unter einem Linux-Betriebssystem gehostet werden.
+- **App Service-Plan/Standort**: Ein gültiger Azure App Service-Plan. In den folgenden Abschnitten wird ausführlich erläutert, was ein App Service-Plan ist.
+- **Application Insights**: Sie können Azure Application Insights aktivieren und von den Überwachungs- und Metriktools des Azure-Portals profitieren, die Ihnen helfen, die Leistung Ihrer Apps im Auge zu behalten.
 
-The Azure portal gives you the upper hand in managing, monitoring, and controlling your web app through the many available tools.
+Das Azure-Portal gibt Ihnen durch die vielen verfügbaren Tools die Kontrolle über die Verwaltung, Überwachung und Steuerung Ihrer Webanwendung.
 
-### Deployment slots
+### <a name="deployment-slots"></a>Bereitstellungsslots
 
-Using the Azure portal, you can easily add **deployment slots** to an App Service web app. For instance, you can create a **staging** deployment slot where you can push your code to test on Azure. Once you are happy with your code, you can easily **swap** the staging deployment slot with the production slot. You do all this with a few simple mouse clicks in the Azure portal.
+Über das Azure-Portal können Sie problemlos hinzufügen **bereitstellungsslots** in einer App Service-Web-app. Sie können z.B. einen Bereitstellungsslot für das **Staging** erstellen, in den Sie Ihren zu testenden Code in Azure übertragen. Sobald Sie mit Ihrem Code zufrieden sind, können Sie ganz einfach den Bereitstellungsslot „Staging“ gegen den Bereitstellungsslot „Produktion“ **tauschen**. Dies erledigen Sie alles über ein paar einfache Mausklicks im Azure-Portal.
 
-![Deployment slots](../media/2-deployment-slots.png)
+![Bereitstellungsslots](../media/2-deployment-slots.png)
 
-### Continuous integration/deployment support
+### <a name="continuous-integrationdeployment-support"></a>Unterstützung für Continuous Integration/Continuous Deployment
 
-The Azure portal provides out-of-the-box continuous integration and deployment with Visual Studio Team Services, GitHub, Bitbucket, Dropbox, OneDrive, or a local Git repository on your development machine. You connect your web app with any of the above sources and App Service will do the rest for you by auto-syncing code and any future changes on the code into the web app. Furthermore, with Visual Studio Team Services, you can define your own build and release process that ends up compiling your source code, running the tests, building a release, and finally pushing the release into a web app every time your commit the code. All that happens implicitly without any need to intervene.
+Das Azure-Portal bietet die Out-of-the-Box continuous Integration und Continuous Deployment mit Visual Studio Team Services, GitHub, Bitbucket, Dropbox, OneDrive oder ein lokales Git-Repository auf Ihrem Entwicklungscomputer. Verbinden Ihrer Web-app mit einer der oben aufgeführten Quellen und App Service der Rest erfolgt automatisch für Sie von Code automatisch synchronisiert und zukünftigen Änderungen am Code in der Web-app. Darüber hinaus können Sie mit Visual Studio Team Services Ihren eigenen Build- und Release-Prozess definieren, der am Ende dazu führt, dass Ihr Quellcode kompiliert, die Tests ausgeführt, eine Version erstellt und schließlich die Version jedes Mal, wenn Sie für den Code ein Commit durchführen, per Push in eine Web-App übertragen wird. Das alles geschieht implizit, ohne dass Sie eingreifen müssen.
 
-![Configure continuous integration](../media/2-continuous-integration.PNG)
+![Konfigurieren von Continuous Integration](../media/2-continuous-integration.PNG)
 
-### Integrated Visual Studio publishing and FTP publishing
+### <a name="integrated-visual-studio-publishing-and-ftp-publishing"></a>Integrierte Visual Studio- und FTP-Veröffentlichung
 
-In addition to being able to set up continuous integration/deployment for your web app, you can always benefit from the tight integration with Visual Studio to publish your web app to Azure via Web Deploy technology. Also, Azure supports FTP, although you are better off not using FTP for publishing because it lacks some capability in Web Deploy to pick and choose only those files that were changed or added, and not just publish everything to Azure!
+Neben der Möglichkeit, Continuous Integration/Continuous Deployment für Ihre Web-App einzurichten, können Sie jederzeit von der engen Integration mit Visual Studio profitieren, um Ihre Web-App über die Web Deploy-Technologie in Azure zu veröffentlichen. Darüber hinaus unterstützt Azure FTP, obwohl es besser ist, FTP nicht für die Veröffentlichung zu verwenden, da diese Technologie nicht die Möglichkeiten von Web Deploy bietet, nur die Dateien auszuwählen, die geändert oder hinzugefügt wurden, sodass Sie stets alles in Azure veröffentlichen müssen!
 
-### Built-in auto scale support (automatic scale-out based on real-world load)
+### <a name="built-in-auto-scale-support-automatic-scale-out-based-on-real-world-load"></a>Integrierte automatische Skalierung unterstützt (automatische Skalierung basierend auf realen Last)
 
-Baked into the web app is the ability to scale up/down or scale out. Depending on the usage of the web app, you can scale your app up/down by increasing/decreasing the resources of the underlying machine that is hosting your web app. Resources can be number of cores or the amount of RAM available.
+In die Web-App integriert ist die Möglichkeit zum zentrales Hoch- bzw. Herunterskalieren bzw. zum Erweitern. Je nach Nutzung der Web-App können Sie sie zentral hoch- bzw. herunterskalieren, indem Sie die Ressourcen des zugrunde liegenden Computers, der Ihre Web-App hostet soll, erhöhen bzw. verringern. Ressourcen können die Anzahl der Kerne oder die Menge des verfügbaren Arbeitsspeichers sein.
 
-Scaling out, on the other hand, is the ability to increase the number of machine instances that are running your web app.
+Die Erweiterung ist dagegen die Fähigkeit, die Anzahl der VM-Instanzen zu erhöhen, auf denen Ihre Web-App ausgeführt wird.
 
-## What is a resource group?
+## <a name="what-is-a-resource-group"></a>Was ist eine Ressourcengruppe?
 
-A resource group is a method of grouping interdependent resources and services such as virtual machines, web apps, databases, and more for a given application and environment. Think of it as a **folder**, a place to group elements of your app.
+Eine Ressourcengruppe ist eine Methode, voneinander abhängige Ressourcen und Dienste wie virtuelle Computer, Web-Apps, Datenbanken und mehr für eine bestimmte Anwendung und Umgebung zu gruppieren. Stellen Sie sie sich als **Ordner** vor, in dem Sie Elemente Ihrer App gruppieren können.
 
-Resource groups allow you to easily manage and delete resources. They also provide a way to monitor, control access, provision, and manage billing for collections of resources that are required to run an application or are used by a client.
+Ressourcengruppen bieten eine einfache Möglichkeit, Ressourcen zu verwalten und zu löschen. Sie bieten auch eine Möglichkeit zur Überwachung, Zugriffssteuerung, Bereitstellung und Verwaltung der Abrechnung von Sammlungen von Ressourcen, die für den Betrieb einer Anwendung erforderlich sind oder von einem Kunden verwendet werden.
 
-## What is an App Service plan?
+## <a name="what-is-an-app-service-plan"></a>Was ist ein App Service-Plan?
 
-An App Service plan is a set of physical resources and capacity available to deploy your App Service apps into.
+Ein App Service-Plan ist eine Zusammenstellung von physischen Ressourcen und Kapazität, die für die Bereitstellung Ihrer App Service-Apps zur Verfügung stehen.
 
-The Azure portal provides a template to create a new App Service plan. This template requires the following basic information:
+Das Azure-Portal bietet eine Vorlage zum Erstellen eines neuen App Service-Plans. Diese Vorlage fordert die folgenden grundlegenden Informationen an:
 
-- Region (West US, Central US, North Europe, etc.)
-- Scale count (one, two, three instances, etc.)
-- Instance size (Small, Medium, or Large)
-- SKU, or pricing tier (Free, Shared, Basic, Standard, Premium, PremiumV2, and Isolated)
+- Region (USA, Westen, Europa, Norden usw.)
+- Skalierung (Anzahl der Instanzen)
+- Instanzgröße (klein, mittel, groß)
+- SKU oder den Tarif (Free, Shared, Basic, Standard, Premium, PremiumV2 und isoliert)
 
-Web apps, mobile apps, and API apps hosted in Azure App Service, as well as Azure Functions, all run in an App Service plan. While you can deploy an unlimited number of applications into an App Service plan, the number you use greatly depends on the types of applications deployed and their required resources in CPU utilization.
+Web-apps, mobile apps und API-apps in Azure App Service sowie Azure Functions, die jeweils ausgeführt, in einem App Service-Plan gehostet. Während Sie eine unbegrenzte Anzahl von Anwendungen in einem App Service-Plan bereitstellen können, hängt die Anzahl der von Ihnen verwendeten Anwendungen in hohem Maß von der Art der bereitgestellten Anwendungen und ihren erforderlichen Ressourcen bei der CPU-Auslastung ab.
 
-You can always use your App Service plan in the Azure portal to visualize your CPU and memory utilization to help determine your needs for scaling or moving applications into another App Service plan.
+Sie können Ihren App Service-Plan jederzeit im Azure-Portal verwenden, um Ihre CPU- und Speicherauslastung zu visualisieren und Ihren Bedarf an Skalierung oder Verlagerung von Anwendungen in einen anderen App Service-Plan zu ermitteln.

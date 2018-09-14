@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-azure-virtual-machines.1-introduction
-title: Introduction to Azure Virtual Machines
+title: Einführung in virtuelle Azure-Computer
 metadata:
-  title: Introduction to Azure Virtual Machines
-  description: Introduction to Azure Virtual Machines
+  title: Einführung in virtuelle Azure-Computer
+  description: Einführung in virtuelle Azure-Computer
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

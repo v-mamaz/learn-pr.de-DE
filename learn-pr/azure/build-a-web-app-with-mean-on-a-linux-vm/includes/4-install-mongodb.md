@@ -1,18 +1,18 @@
-Most applications need a data store. MongoDB, the "M" in the MEAN stack, is one of the most popular NoSQL data store solutions, and it's free and open source. A NoSQL data store doesn't require data to be structured in a pre-defined way as it would with a relational database like SQL Server or MySQL.
+Die meisten Anwendungen benötigen einen Datenspeicher. Das „M“ im MEAN-Stapel steht für MongoDB, eine der beliebtesten NoSQL-Datenspeicherlösungen. Es handelt sich dabei um ein kostenloses Open Source-Produkt. Bei NoSQL-Datenspeicher ist es nicht wie bei relationalen Datenbanken wie SQL Server und MySQL erforderlich, dass Daten auf zuvor festgelegte Weise strukturiert werden.
 
-MongoDB stores its data in JSON-like documents that don't require rigid data structures. We then interact with MongoDB using queries and commands sent as JavaScript Object Notation (JSON).
+MongoDB speichert Daten in JSON-ähnlichen Dokumenten, für die keine festen Datenstrukturen erforderlich sind. Anschließend wird mithilfe von Abfragen und Befehlen, die als JavaScript Object Notation (JSON) gesendet werden, mit MongoDB interagiert.
 
-## MongoDB versions
+## <a name="mongodb-versions"></a>MongoDB-Versionen
 
-There are two versions of MongoDB available:
+Es gibt zwei verfügbare MongoDB-Versionen:
 
 - MongoDB Community Server
 - MongoDB Enterprise Server
 
-In this module, we're going to use MongoDB Community Server, version 3.6 at the time of this writing, for our web application data store.
+In diesem Modul wird MongoDB Community Server (Version 3.6 zum Zeitpunkt der Erstellung dieses Dokuments) als Datenspeicher für die Webanwendung verwendet.
 
-## How to install MongoDB
+## <a name="how-to-install-mongodb"></a>So Installieren Sie MongoDB
 
-MongoDB can be installed on Linux, macOS, and Windows. We will be installing it on our Ubuntu Linux VM for this module, but the recommended package manager differs by OS and distribution. The installation process for all operating systems is well-documented in the [MongoDB install documentation](https://docs.mongodb.com/manual/administration/install-community/).
+MongoDB kann unter Linux, macOS und Windows installiert werden. In diesem Modul wird der Dienst auf unserer Ubuntu Linux-VM installiert. Es ist allerdings abhängig vom Betriebssystem und der Distribution, welcher Paket-Manager sich am besten eignet. Der Installationsvorgang für alle Betriebssysteme ist umfassend dokumentiert, in der [Dokumentation zum Installieren von MongoDB](https://docs.mongodb.com/manual/administration/install-community/).
 
-To install on our Ubuntu VM, we will use the **apt-get** package manager.
+In diesem Modul wird für die Ubuntu-VM der **apt-get**-Paket-Manager verwendet.

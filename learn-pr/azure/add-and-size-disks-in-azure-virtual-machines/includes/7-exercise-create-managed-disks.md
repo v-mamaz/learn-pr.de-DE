@@ -1,20 +1,19 @@
-In this short exercise, we'll learn how to migrate an existing, unmanaged VHD to a managed VHD. 
+In dieser kurzen Übung erfahren wir, Migrieren von einer virtuellen Festplatte mit vorhandenen, nicht verwalteten zu verwalteten einer virtuellen Festplatte. 
 
-## Sign in to Azure
-<!---TODO: Update for sandbox?--->
+## <a name="sign-in-to-azure"></a>Anmelden bei Azure
 
-1. Sign in to the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/?azure-portal=true) an.
 
-## Migrate our disks to managed disks
+## <a name="migrate-our-disks-to-managed-disks"></a>Datenträger zu managed Disks migrieren
 
-1. In the Azure portal, in the navigation on the left, select **Virtual machines**.
+1. Wählen Sie im Azure-Portal im Navigationsbereich auf der linken Seite **VMs**.
 
-1. In the list of virtual machines, select our virtual machine,  **MailSenderVM**.
+1. Wählen Sie in der Liste der virtuellen Maschinen, unsere virtuellen Computer **MailSenderVM**.
 
-1. In the **MailSenderVM** pane, under **SETTINGS**, select **Disks**.
+1. In der **MailSenderVM** Bereich unter **EINSTELLUNGEN**Option **Datenträger**.
 
-1. In the **MailSenderVM - Disks** page, select **Migrate to managed disks**.
+1. In der **MailSenderVM - Datenträger** Seite **Migrieren zu managed Disks**.
 
-1. In the **Migrate to managed disks** page, select **Migrate**. Azure stops the VM, migrates the disks, and then restarts the VM. This process may take several minutes.
+1. In der **Migrieren zu managed Disks** Seite **migrieren**. Azure den virtuellen Computer beendet, migriert die Datenträger und startet dann den virtuellen Computer neu. Dieser Vorgang kann mehrere Minuten dauern.
 
-We migrated our disks to managed disks in this exercise. By using managed disks, you don't have to configure storage accounts for those disks because Azure manages them for you.
+Datenträger migriert in verwaltete Datenträger in dieser Übung. Mithilfe von verwalteten Datenträgern müssen Sie Storage-Konten für diese Datenträger nicht konfigurieren, weil Azure für Sie verwaltet.

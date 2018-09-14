@@ -1,0 +1,3 @@
+In diesem Modul wurden vier verschiedene Azure-Dienste vorgestellt, die es Ihnen ermöglichen, zuverlässige und resiliente verteilte Anwendungen zu erstellen. Die Wahl des richtigen Diensts hängt in erster Linie vom Typ der Daten (Nachrichten oder Ereignisse) ab, die an die einzelnen Komponenten übergeben werden sollen. Zudem spielt es eine Rolle, welche Features Sie zum Bereitstellen und Verarbeiten der Daten benötigen.
+
+Erfahren Sie mit den anderen Microsoft-Learn-Modulen, die Sie anzeigt, wie Sie jede dieser messaging-Komponenten in Azure verwenden.

@@ -1,10 +1,11 @@
-Great work! With your first virtual machine under your belt, you now have a sense of how Azure works and how easy it is to bring up a system, configure some software, and tear everything down when it's no longer needed.
+Gut gemacht! Mit dem ersten virtuellen Computer in der Tasche Sie jetzt haben eine Vorstellung der Funktionsweise von Azure und wie einfach es ist, rufen Sie ein System, das Konfigurieren von Software und alles, was nach Belieben löschen, wenn es nicht mehr benötigt wird.
 
-Azure provides services that can help transform the way your organization delivers new features to your users in ways you simply can't do without the power of the cloud.
+Azure bietet Dienste, mit die Ihre Arbeitsweise transformieren, die Ihrer Organisation neue Features für Ihre Benutzer Möglichkeiten bietet, einfach ohne die Leistungsfähigkeit der Cloud nicht möglich. hierzu können.
 
-## Continue your Azure journey
+[!include[](../../../includes/azure-sandbox-cleanup.md)]
 
-Microsoft Learn provides learning paths based on your role and interests.
+## <a name="continue-your-azure-journey"></a>Ihre Azure Journey fortgesetzt
 
-A great next step is to check out the
-[Cloud foundations](/learn/paths/cloud-foundations/) learning path. You'll learn the fundamental concepts behind cloud computing and how Azure services such as compute, storage, networking, and security can help you unlock the power of the cloud and create that next great breakthrough idea.
+Microsoft-Learn bietet Azure-Lernpfade basierend auf Rolle und Ihrer Interessen.
+
+Ein guter nächste Schritt ist, sehen Sie sich die [Cloud Foundations](/learn/paths/cloud-foundations/) Lernpfad. Erfahren Sie, die grundlegenden Konzepte hinter Cloud computing und wie Azure-Dienste wie Compute, Speicher, Netzwerk und Sicherheit können Sie die Leistungsfähigkeit der Cloud zu entsperren und erstellen diese nächste große Durchbruch Idee.

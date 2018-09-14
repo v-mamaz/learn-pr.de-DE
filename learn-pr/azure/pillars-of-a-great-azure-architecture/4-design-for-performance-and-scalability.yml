@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.pillars-of-a-great-azure-architecture.4-design-for-performance-and-scalability
-title: Design for performance and scalability
+title: Entwurf für Leistung und Skalierbarkeit
 metadata:
-  title: Design for performance and scalability
-  description: Design for performance and scalability
+  title: Entwurf für Leistung und Skalierbarkeit
+  description: Entwurf für Leistung und Skalierbarkeit
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,33 +13,33 @@ durationInMinutes: 15
 content: |
   [!include[](includes/4-design-for-performance-and-scalability.md)]
 quiz:
-  title: 'Knowledge check - Design for performance and scalability'
+  title: 'Wissenstest: Entwurf für Leistung und Skalierbarkeit'
   questions:
-  - content: 'Which of the following is an example of scaling up?'
-    choices:
-    - content: 'Updating your application to use a queuing service'
-      isCorrect: false
-      incorrectExplanation: 'Including a queuing service in your application can be a smart architecual decision, but is not an example of scaling up.'
-    - content: 'Adding more web servers into a web farm'
-      isCorrect: false
-      incorrectExplanation: 'Adding more web servers into a web farm is an example of scaling out.'
-    - content: 'Adding another virtual machine into a database cluster'
-      isCorrect: false
-      incorrectExplanation: 'Adding another virtual machine into a database cluster is not an example of scaling up.'
-    - content: 'Updating a virtual machine to a larger size'
-      isCorrect: true
-      correctExplanation: 'Channging a virtual machine to a larger size increases the resources available to the instance, and is an example of scaling up.'
-  - content: 'Which of the following is an example of scaling out?'
-    choices:
-    - content: 'Updating a virtual machine to a larger size'
-      isCorrect: false
-      incorrectExplanation: 'Channging a virtual machine to a larger size increases the resources available to the instance, and is an example of scaling up.'
-    - content: 'Adding more storage to a virtual machine'
-      isCorrect: false
-      incorrectExplanation: 'Adding more storage to a virtual machine is not an example of scaling out.'
-    - content: 'Adding more web servers into a web farm'
-      isCorrect: true
-      correctExplanation: 'Adding more web servers into a web farm is an example of scaling out.'
-    - content: 'Replicating backups to another region'
-      isCorrect: false
-      incorrectExplanation: 'Replicating backups to another region is not applicable to scaling of resources.'
+    - content: Welches der folgenden Szenarien ist ein Beispiel für zentrales Hochskalieren?
+      choices:
+        - content: Aktualisieren Ihrer Anwendung zur Verwendung eines Warteschlangendiensts.
+          isCorrect: false
+          incorrectExplanation: 'Die Einbindung eines Warteschlangendienstes in Ihre Anwendung kann eine intelligente architektonische Entscheidung sein, ist aber kein Beispiel für zentrales Hochskalieren.'
+        - content: Hinzufügen weiterer Webserver zu einer Webfarm.
+          isCorrect: false
+          incorrectExplanation: Das Hinzufügen weiterer Webserver zu einer Webfarm ist ein Beispiel für horizontales Hochskalieren.
+        - content: Hinzufügen eines weiteren virtuellen Computers zu einem Datenbankcluster.
+          isCorrect: false
+          incorrectExplanation: Das Hinzufügen eines weiteren virtuellen Computers zu einem Datenbankcluster ist kein Beispiel für zentrales Hochskalieren.
+        - content: Aktualisieren eines virtuellen Computers auf eine größere Größe.
+          isCorrect: true
+          correctExplanation: 'Durch das Ändern eines virtuellen Computers in eine größere Größe erhöhen sich die Ressourcen, die für die Instanz verfügbar sind. Dies ist ein Beispiel für zentrales Hochskalieren.'
+    - content: Welches der folgenden Szenarien ist ein Beispiel für horizontales Hochskalieren?
+      choices:
+        - content: Aktualisieren eines virtuellen Computers auf eine größere Größe.
+          isCorrect: false
+          incorrectExplanation: 'Durch das Ändern eines virtuellen Computers in eine größere Größe erhöhen sich die Ressourcen, die für die Instanz verfügbar sind. Dies ist ein Beispiel für zentrales Hochskalieren.'
+        - content: Hinzufügen zusätzlichen Speichers zu einem virtuellen Computer.
+          isCorrect: false
+          incorrectExplanation: Das Hinzufügen von mehr Speicher zu einem virtuellen Computer ist kein Beispiel für horizontales Hochskalieren.
+        - content: Hinzufügen weiterer Webserver zu einer Webfarm.
+          isCorrect: true
+          correctExplanation: Das Hinzufügen weiterer Webserver zu einer Webfarm ist ein Beispiel für horizontales Hochskalieren.
+        - content: Replizieren von Sicherungen in eine andere Region.
+          isCorrect: false
+          incorrectExplanation: Das Replizieren von Sicherungen in eine andere Region bezieht sich nicht auf die Skalierung von Ressourcen.

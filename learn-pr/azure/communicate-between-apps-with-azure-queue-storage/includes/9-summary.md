@@ -1,12 +1,12 @@
-In this module, you've seen how queues in Azure storage accounts are used to pass messages between components in a distributed application. Using queues in this way can help to make a distributed application more reliable and resilient to failures and periods of high demand. If you use the Microsoft Azure Storage Client Library for .NET, you can easily write C# or VB.NET code that creates queues, adds messages, or retrieves and removes messages from queues.
+In diesem Modul haben Sie erfahren, wie mit Warteschlangen in Azure-Speicherkonten Nachrichten zwischen Komponenten in einer verteilten Anwendung ausgetauscht werden. Dadurch kann die Zuverlässigkeit und Fehlerresilienz bei starker Auslastung erhöht werden. Wenn Sie die Microsoft Azure Storage-Clientbibliothek für .NET verwenden, können Sie problemlos C#- oder VB.NET-Code schreiben, mit dem Warteschlangen erstellt oder diesen Warteschlangen Nachrichten hinzugefügt bzw. aus diesen abgerufen oder entfernt werden.
 
 <!-- Cleanup sandbox -->
 [!include[](../../../includes/azure-sandbox-cleanup.md)]
 
-When you are working in your own subscription, you can execute the following Azure CLI command to delete the resource group and all associated resources.
+Wenn Sie in Ihrem eigenen Abonnement arbeiten, können Sie den folgenden Azure CLI-Befehl zum Löschen der Ressourcengruppe und alle zugeordneten Ressourcen ausführen.
 
 ```azurecli
 az group delete --name [resource-group-name] --yes --no-wait
 ```
 
-The optional `--no-wait` option tells the shell to not wait for Azure to complete the operation.
+Der optionale `--no-wait` -Option weist die Shell wartet nicht auf Azure, um den Vorgang abzuschließen.

@@ -11,10 +11,11 @@ Wenn wir das Verzeichnis erstellen, werden unserem Konto automatisch globale Adm
 Azure AD Premium umfasst Features wie Multi-Factor Authentication und Richtlinien für bedingten Zugriff. Wenn diese Features zusammen verwendet werden, bieten diese beim Schutz des Zugriffs auf Anwendungen die meiste Granularität.
 
 Eine Richtlinie für bedingten Zugriff setzt sich wie folgt zusammen:
-   * Benutzer oder Gruppen
-   * Anwendungen, auf die versucht wird zuzugreifen
-   * Zu erfüllende Steuerelemente, z.B. Multi-Factor Authentication
+
+- Benutzer oder Gruppen
+- Anwendungen, auf die versucht wird zuzugreifen
+- Zu erfüllende Steuerelemente, z.B. Multi-Factor Authentication
 
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser Einheit haben Sie die Grundlagen von Azure AD kennengelernt und erfahren, welche Features zum Sichern des Zugriffs auf Anwendungen zur Verfügung stehen. Nun, da Sie die Grundlagen kennen, können wir mit den ersten Schritten mit Azure AD beginnen. Der Rest dieses Moduls enthält praktische Übungen zum Aktivieren und Testen von Multi-Factor Authentication mithilfe des bedingten Zugriffs.
+In dieser Einheit haben Sie die Grundlagen von Azure AD kennengelernt und erfahren, welche Features zum Sichern des Zugriffs auf Anwendungen zur Verfügung stehen. Nun, haben Sie die Grundlagen aus dem Weg, erste Schritte mit Azure AD. Der Rest dieses Moduls enthält praktische Übungen zum Aktivieren und Testen von Multi-Factor Authentication mithilfe des bedingten Zugriffs.

@@ -1,16 +1,14 @@
-Now that you have a functioning container development environment, let's take a quick spin through some basic container operations. This unit doesn't include a complete list of Docker capabilities (not even close). This unit will prepare you to run, list, and delete containers. Throughout the remainder of this module, you will gain additional exposure to container operations.
+Nun, da Sie über eine funktionsfähige Entwicklungsumgebung für den Container verfügen, sehen wir uns die Befehle zum Ausführen, Liste, und Löschen von Containern.
 
-## Run a basic container
+## <a name="create-and-run-a-basic-container"></a>Erstellen und einen einfachen Container ausführen
 
-Before digging into the details of running and managing containers, let's quickly see just how easy it is to run a container.
-
-Create your first container with the following command.
+Erstellen Sie Ihren ersten Container über den folgenden Befehl.
 
 ```bash
 docker run alpine echo "Hello World"
 ```
 
-You should see output similar to the following:
+Ihnen sollte eine Ausgabe wie die folgende angezeigt werden:
 
 ```output
 Unable to find image 'alpine:latest' locally
@@ -21,36 +19,32 @@ Status: Downloaded newer image for alpine:latest
 Hello World
 ```
 
-The `docker run` command creates an instance of a container. In this case, the container was created from a container image named `alpine`, which was downloaded to your local system. After the container started, the `echo "Hello World"` command was run inside of the container and the output echoed to your terminal.
+Der Befehl `docker run` erstellt eine Instanz eines Containers. In diesem Fall wurde der Container aus einem Containerimage mit dem Namen `alpine` erstellt. Dieses wurde heruntergeladen und in Ihrem lokalen System gespeichert. Nachdem der Container gestartet wurde, wurde der Befehl `echo "Hello World"` innerhalb des Containers ausgeführt und die Ausgabe an Ihr Terminal übergeben.
 
-At this point, don't worry about the technical details of each of these actions. They will be detailed throughout this module.
+## <a name="get-container-images"></a>Aufrufen von Containerimages
 
-## Get container images
+Ein containerimage enthält das zugrunde liegende Betriebssystem und jede zusätzliche Prozesse, Anwendungen und Konfigurationen. Containerimages werden in einer Containerimageregistrierung gespeichert. Im Beispiel "Hello World" der *alpine* Bild wurde mithilfe von Pull aus Docker Hub, einem öffentlichen Container Registry ist.
 
-As you saw in the 'Hello World' example, containers are run from a container image. These images include the container base operating system and any additional processes, applications, and configurations. Container images are stored in a container image registry. In the 'Hello World' example, the *alpine* image was pulled from Docker Hub, which is a public container registry.
-
-Let's see how to search for and download a pre-created container image.
-
-Run the following command to see a list of images that have been downloaded to your system.
+Führen Sie den folgenden Befehl aus, um eine Liste mit Images abzurufen, die heruntergeladen und in Ihrem System gespeichert wurden.
 
 ```bash
 docker images
 ```
 
-If you've been following along, you should see the alpine image. This image was downloaded when the 'Hello World' example was run.
+Ausführung der `docker run alpine` Befehl oben alpine aufgeführten Bild sollte angezeigt werden.
 
 ```output
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 alpine              latest              11cd0b38bc3c        2 weeks ago         4.41MB
 ```
 
-To search for a container image, use the `docker search` command. For instance, use the following example to list all container images that include `nginx` in the name.
+Verwenden Sie den Befehl `docker search`, um nach einem Containerimage zu suchen. Sie können das folgende Beispiel verwenden, um alle Containerimages aufzulisten, deren Namen `nginx` enthält.
 
 ```bash
 docker search nginx
 ```
 
-The output should look similar to the following:
+Die Ausgabe sollte in etwa wie folgt aussehen:
 
 ```output
 NAME                                                   DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
@@ -81,13 +75,13 @@ ansibleplaybookbundle/nginx-apb                        An APB to deploy NGINX   
 mailu/nginx                                            Mailu nginx frontend                            0                                       [OK]
 ```
 
-If you'd like to pre-download an image prior to running it, use the `docker pull` command. The following example pulls the *nginx* image to your system.
+Wenn Sie ein Image erst herunterladen möchten, bevor Sie es ausführen, verwenden Sie den Befehl `docker pull`. Das folgende Beispiel pullt das *NGINX*-Image in Ihr System.
 
 ```bash
 docker pull nginx
 ```
 
-The output should look similar to the following:
+Die Ausgabe sollte in etwa wie folgt aussehen:
 
 ```output
 Using default tag: latest
@@ -97,13 +91,13 @@ f2f27ed9664f: Extracting [===============>                                   ]  
 54ff137eb1b2: Download complete
 ```
 
-Run `docker images` again to list all of the images on your system. You'll see that the *nginx* image has been added to your system.
+Führen Sie `docker images` erneut aus, um alle Images in Ihrem System aufzulisten. Dann sollten Sie sehen, dass das *NGINX*-Image zu Ihrem System hinzugefügt wurde.
 
 ```bash
 docker images
 ```
 
-The output should look similar to the following:
+Die Ausgabe sollte in etwa wie folgt aussehen:
 
 ```output
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
@@ -111,109 +105,107 @@ nginx               latest              c82521676580        26 hours ago        
 alpine              latest              11cd0b38bc3c        2 weeks ago         4.41MB
 ```
 
-## Run containers
+## <a name="run-containers"></a>Ausführen von Containern
 
-Now that you've identified and downloaded the *nginx* image, run a container from the image. When using the Docker CLI to run a container image, use the `docker run` command.
+Da Sie jetzt das *NGINX*-Image ermittelt und heruntergeladen haben, können Sie jetzt darüber einen Container ausführen. Wenn Sie die Docker-CLI verwenden, um ein Containerimage auszuführen, greifen Sie auf den Befehl `docker run` zurück.
 
-In the following example, the `-d` argument specifies that the container will run in a detached mode. In this configuration, the container runs a specified process. If that process stops or crashes, the container itself is stopped. The `-p 8080:80` argument specifies that network traffic arriving to port 8080 on the container host, your development system in this case, is forwarded to port 80 of the container. Finally, the `ngingx` argument is the name of the container image to run.
+Die `-d` Argument gibt an, dass der Container in einem getrennten Modus ausgeführt wird. In dieser Konfiguration führt der Container einen festgelegten Prozess aus. Wenn dieser Prozess anhält oder abstürzt, wird auch der Container angehalten. Die `-p 8080:80` Argument gibt an, an Port 8080 auf dem containerhost auf Ihrem Entwicklungssystem in diesem Fall eingehende Netzwerkdatenverkehr an Port 80 des Containers weitergeleitet wird. Bei Argument `ngingx` handelt es sich um den Namen, des Containerimages, das ausgeführt werden soll.
 
-For a complete list of `docker run` arguments, see the [docker run reference](https://docs.docker.com/engine/reference/run/).
+Eine vollständige Liste mit `docker run`-Argumenten finden Sie in der [Referenz zur Ausführung von Docker](https://docs.docker.com/engine/reference/run/).
 
 ```bash
 docker run -d -p 8080:80 nginx
 ```
 
-This operation returns the full container ID.
+Dieser Vorgang gibt die vollständige Container-ID zurück.
 
 ```output
 bd2424bfe7a5423d7d65efdf0b1622770d59e212db7b82862c3129fb630b5721
 ```
 
-List the running containers on your system using the `docker ps` command.
+Listen Sie die Container, die auf Ihrem System ausgeführt werden, mithilfe des Befehls `docker ps` auf.
 
 ```bash
 docker ps
 ```
 
-You should see a single running container, which is the NGINX container run in the last step. Notice that the container has both an ID and a Name. Either one of these values can be used to manage the container. Take note of the container ID. This value will be used later in the unit.
+Es sollte ein einzelner Container angezeigt werden, der ausgeführt wird. Dabei handelt es sich um den NGINX-Container, der im letzten Schritt ausgeführt wurde. Beachten Sie, dass der Container sowohl über eine ID als auch über einen Namen verfügt. Beide Werte können verwendet werden, um den Container zu verwalten. Notieren Sie sich die Container-ID. Dieser Wert wird später verwendet werden.
 
 ```output
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
 bd2424bfe7a5        nginx               "nginx -g 'daemon of…"   37 minutes ago      Up 37 minutes       0.0.0.0:8080->80/tcp   gallant_engelbart
 ```
 
-To test the container, open a browser and enter http://localhost:8080 for the address. After it completes, you should see the NGINX default website.
+Um den Container zu testen, öffnen Sie einen Browser, und geben Sie `http://localhost:8080` für die Adresse. Nachdem der Vorgang abgeschlossen ist, sehen Sie die NGINX-Standardwebseite eine Begrüßungsnachricht enthält.
 
-![Microsoft Edge with the NGINX splash screen](../media-draft/3-nginx.png)
+## <a name="delete-containers"></a>Löschen von Containern
 
-## Delete containers
-
-When you're done working with a container, it can be deleted by providing the container name or ID to the `docker rm` command. Try out this operation with the container ID of the container running NGINX. Replace the ID in this example with the ID from your environment.
+Sie Löschen eines Containers übergeben, dessen Name oder ID, die `docker rm` Befehl. Wiederholen Sie diesen Vorgang die Container-ID des Containers, dem NGINX ausgeführt wird.
 
 ```bash
 docker rm bd2424bfe7a5
 ```
 
-Notice that the container can't be removed because it's in a running state.
+Beachten Sie, dass der Container nicht entfernt werden kann, da er sich im Ausführungszustand befindet.
 
 ```output
 Error response from daemon: You cannot remove a running container a31c5a5f2a8d6e420435bfcadbe158fa6a26ed29c005a892171505cc0c2861b2. Stop the container before attempting removal or force remove
 ```
 
-Stop the container with the `docker stop` command.
+Halten Sie den Container über den Befehl `docker stop` an.
 
 ```bash
 docker stop bd2424bfe7a5
 ```
 
-Notice at this point, if you run `docker ps` to list all containers, the nginx container is not listed.
+Beachten Sie dabei, dass der NGINX-Container nicht aufgeführt wird, wenn Sie `docker ps` ausführen, um alle Container aufzulisten.
 
 ```bash
 docker ps
 ```
 
-The output should look similar to the following:
+Die Ausgabe sollte in etwa wie folgt aussehen:
 
 ```output
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 ```
 
-To return a list of all containers, including containers in a stopped state, add the `-a` argument to the `docker ps` command.
+Fügen Sie dem Befehl `docker ps` das Argument `-a` hinzu, um eine Liste aller Container zurückzugeben, einschließlich der Container, die angehalten wurden.
 
 ```bash
 docker ps -a
 ```
 
-The output should look similar to the following:
+Die Ausgabe sollte in etwa wie folgt aussehen:
 
 ```output
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                     PORTS               NAMES
 bd2424bfe7a5        nginx               "nginx -g 'daemon of…"   13 seconds ago      Exited (0) 3 seconds ago                       focused_spence
 ```
 
-Try the delete operation again. Replace the ID in this example with the ID from your environment.
+Versuchen Sie erneut, den Löschvorgang auszuführen. Ersetzen Sie die ID in diesem Beispiel durch die ID aus Ihrer Umgebung.
 
 ```bash
 docker rm bd2424bfe7a5
 ```
 
-This operation returns the container ID.
+Dieser Vorgang gibt die Container-ID zurück.
 
 ```output
 bd2424bfe7a5
 ```
 
-## Delete a container image
+## <a name="delete-a-container-image"></a>Löschen eines Containerimage
 
-When you're done working with a container image, it can be removed with the `docker rmi` command. If any container (running or stopped) has been started from the container image, the image can't be deleted. The containers first need to be removed. Adding the `-f` argument to the `docker rmi` command will force the removal of all associated containers, and will then remove the container image.
+Sie löschen eine Container-Image mit dem `docker rmi` Befehl. Wenn ein Container über das Containerimage gestartet wurde, kann dieses nicht gelöscht werden. Dabei spielt es keine Rolle, ob der Container noch ausgeführt wird oder angehalten wurde. Sie müssen zunächst die Container entfernen. Hinzufügen der `-f` Argument für die `docker rmi` Befehl erzwingt das Entfernen von allen zugehörigen Container und containerimages werden dann entfernt.
 
-Remove the NGINX container image with the following command.
+Entfernen Sie das NGINX-Containerimage mithilfe des folgenden Befehls.
 
 ```bash
 docker rmi nginx
 ```
 
-The output should look similar to the following:
+Die Ausgabe sollte in etwa wie folgt aussehen:
 
 ```output
 Untagged: nginx:latest
@@ -223,7 +215,3 @@ Deleted: sha256:119ded3eca5e85ef43ee966e74564c604ccda064d955a8c5ed762e1d5e87f428
 Deleted: sha256:6ece91c2763d826487e707f7b8ec063742ad0ee56cc9e605465cce95550c9a7f
 Deleted: sha256:cdb3f9544e4c61d45da1ea44f7d92386639a052c620d1550376f22f5b46981af
 ```
-
-## Summary
-
-In this unit, you learned about some basic Docker operations. In the next unit, you will create a custom container image.

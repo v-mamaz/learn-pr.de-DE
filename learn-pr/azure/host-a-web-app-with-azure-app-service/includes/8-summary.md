@@ -1,28 +1,5 @@
-You've successfully created and deployed a full-featured web application to Azure App Service.
+Sie haben erfolgreich erstellt und eine voll funktionsfähige Webanwendung in Azure App Service bereitgestellt.
 
-App Service simplifies managing and controlling your web app in comparison to traditional hosting options. App Service can help you reduce the time and effort spent running and managing your web app, and provide advanced cloud features such as auto scaling and Git integration.
+App Service vereinfacht das Verwalten und Steuern Ihrer Web-App im Vergleich zu herkömmlichen Hostingoptionen. App Service können Sie das Einsparen von Zeit und Aufwand ausführen und Verwalten Ihrer Web-app, und geben erweiterte Features wie z. B. die automatische Skalierung und Git-Integration.
 
-## Clean up
-<!---TODO: Update for sandbox?--->
-
-When you are done working with this application, you can follow the steps below to delete all resources created during the tutorial.
-
-As you know, a resource group is useful for associating all the resources that are created and related to your web app. So, cleaning up after yourself on Azure is a matter of deleting the resource group, and hence, all the resources created under that group disappear.
-
-Let's explore together how you can delete a resource group using the Azure portal:
-
-1. Sign in to the [Azure portal](https://portal.azure.com/?azure-portal=true).
-
-1. Click the **Resource groups** menu item on the left-side of the Dashboard. The **Resource groups** page lists all the resource groups that you have created in the Azure portal.
-
-1. Select the resource group name that you created in Unit #2. The portal navigates you to the app page.
-
-1. The Azure portal navigates you to the **Resource group** page. There, you can see a list of all the resources that you've created during this module under this resource group.
-
-1. Click the **Delete resource group** link at the top of the page.
-
-1. Azure verifies that you really want to delete this resource group by asking you to type the name of it. To proceed, type the name of the resource group.
-
-1. Click the **Delete** button at the bottom of the confirmation window.
-
-1. Azure takes a few seconds to delete all the resources of the resource group.
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

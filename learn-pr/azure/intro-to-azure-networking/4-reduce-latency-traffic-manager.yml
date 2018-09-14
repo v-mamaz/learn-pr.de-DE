@@ -1,37 +1,33 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-azure-networking.4-reduce-latency-traffic-manager
-title: Reduzieren von Latenz mit Traffic Manager
+title: Verringerung der Latenz mit Azure Traffic Manager
 metadata:
-  title: Reduzieren von Latenz mit Traffic Manager
-  description: Erfahren Sie, wie Traffic Manager die Latenz verringern und Resilienz zwischen geografischen Regionen erstellen kann.
-  ms.openlocfilehash: fa64f6d6e7bfe0f991bf15002f24690a2c02f0fd
-  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
-  ms.translationtype: HT
-  ms.contentlocale: de-DE
-  ms.lasthandoff: 09/03/2018
-  ms.locfileid: "43477791"
+  title: Verringerung der Latenz mit Azure Traffic Manager
+  description: 'Erfahren Sie, wie Traffic Manager die Latenz verringern und Resilienz zwischen geografischen Regionen erstellen kann.'
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 durationInMinutes: 7
-content: >
+content: |
   [!include[](includes/4-reduce-latency-traffic-manager.md)]
 quiz:
   title: 'Wissenstest: Reduzieren von Latenz mit Traffic Manager'
   questions:
-  - content: Wie verringert Traffic Manager die Latenz?
-    choices:
-    - content: Er wählt nur die schnellsten Netzwerke zwischen Endpunkten aus.
-      isCorrect: false
-      incorrectExplanation: Traffic Manager berücksichtigt keine bestimmten Netzwerkgeschwindigkeiten.
-    - content: Traffic Manager wählt den Endpunkt aus, der dem DNS-Server des Benutzers am nächsten ist.
-      isCorrect: true
-      correctExplanation: Die Latenz kann einfach verringert werden, indem Sie den Server, der dem Benutzer am nächsten ist, auswählen.
-    - content: Ähnlich wie Content Delivery Networks kann dieser Server Inhalt zwischenspeichern.
-      isCorrect: false
-      incorrectExplanation: Traffic Manager kann den zwischen Client und Server übergebenen Datenverkehr weder sehen, noch kann er Inhalt speichern.
-  - content: Sie leben in England, aber Ihr DNS-Server befindet sich in Italien. Wie leitet Traffic Manager Datenverkehr weiter?
-    choices:
-    - content: Er wählt den Dienst aus, der England am nächsten ist.
-      isCorrect: false
-      incorrectExplanation: Traffic Manager verwendet zum Lenken des Datenverkehrs den _DNS-Server_, der dem Benutzer am nächsten gelegen ist, und nicht dessen Standort.
-    - content: Er wählt den Dienst aus, der Italien am nächsten ist.
-      isCorrect: true
-      correctExplanation: Traffic Manager verwendet zum Lenken des Datenverkehrs den _DNS-Server_, der dem Benutzer am nächsten gelegen ist, und nicht dessen Standort.
+    - content: Wie verringern Azure Traffic Manager Latenz zu?
+      choices:
+        - content: Er wählt nur die schnellsten Netzwerke zwischen Endpunkten aus.
+          isCorrect: false
+        - content: 'Traffic Manager wählt den Endpunkt aus, der dem DNS-Server des Benutzers am nächsten ist.'
+          isCorrect: true
+          correctExplanation: 'Die Latenz kann einfach verringert werden, indem Sie den Server, der dem Benutzer am nächsten ist, auswählen.'
+        - content: Ähnlich wie Content Delivery Networks kann dieser Server Inhalt zwischenspeichern.
+          isCorrect: false
+    - content: 'Angenommen Sie leben in England, aber ein DNS-Server befindet sich in Italien. Wie leitet Traffic Manager Datenverkehr weiter?'
+      choices:
+        - content: 'Er wählt den Dienst aus, der England am nächsten ist.'
+          isCorrect: false
+        - content: 'Er wählt den Dienst aus, der Italien am nächsten ist.'
+          isCorrect: true
+          correctExplanation: 'Traffic Manager verwendet die _DNS-Server_ , für den Benutzer zum Leiten des Datenverkehrs am nächsten ist.'

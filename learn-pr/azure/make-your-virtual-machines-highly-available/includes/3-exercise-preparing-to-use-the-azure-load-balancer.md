@@ -1,126 +1,130 @@
-In this exercise, you will create a load balancer, a virtual network, and multiple virtual machines using the Azure portal.
+In dieser Übung erstellen Sie einen Load Balancer, ein virtuelles Netzwerk und mehrere virtuelle Computer im Azure-Portal verwenden.
 
-Suppose you work for Woodgrove Bank, a startup that is about to launch online banking services. This sector is highly competitive, so you need to guarantee of a minimum of 99.99% service availability. You have determined that Azure Load Balancer with a pool of three virtual machines will meet this goal.
+Nehmen wir an, dass Sie bei der Woodgrove Bank ein Startupunternehmen arbeiten, die zu online-Banking Services zu starten. Diesem Sektor ist stark umkämpft, daher Sie von mindestens 99,99 % Verfügbarkeit garantiert müssen. Sie haben festgestellt, dass Azure Load Balancer einen Pool von drei virtuellen Maschinen auf dieses Ziel erfüllt.
 
-## Create a public load balancer
+## <a name="create-a-public-load-balancer"></a>Erstellen eines öffentlichen Lastenausgleichs
 
-1. In a browser, navigate to the [Azure portal](https://portal.azure.com/?azure-portal=true) and sign in to your account.
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-1. In the sidebar, click **Create a resource**. Then, in the **New** blade, click **Networking**, and then click **Load Balancer**.
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-1. In the **Create load balancer** blade, enter or select the following information:
-    - Name: **woodgrove-LB**
-    - Type: **Public**
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/?azure-portal=true) an.
+
+1. Klicken Sie in der Randleiste **erstellen Sie eine Ressource**. Klicken Sie auf die **neu** auf dem Blatt klicken Sie auf **Networking**, und klicken Sie dann auf **Load Balancer**.
+
+1. In der **Load Balancer erstellen** Blatt eingeben, oder wählen Sie die folgende Informationen:
+    - Name: **Woodgrove-LB-**
+    - Typ: **öffentliche**
     - SKU: **Basic**
-    - Public IP address: Select **Create new**. In the text box, type **woodgrove-LB-ip**. Leave the Assignment as **Dynamic**.
-    - Resource group: Select **Create new**, and in the box, type **woodgrove-RG**.
-    - Location: Select a region near you.
+    - Öffentliche IP-Adresse: Wählen Sie **neu erstellen**. Geben Sie in das Textfeld ein **Woodgrove-LB-IP-**. Übernehmen Sie die Zuweisung als **dynamische**.
+    - Ressourcengruppe: Wählen Sie **vorhandene** , und wählen Sie <rgn>[Ressourcengruppennamen Sandkasten]</rgn>.
+    - Speicherort: Wählen Sie eine Region in Ihrer Nähe.
 
-1. Click **Create**.
+1. Klicken Sie auf **Erstellen**.
 
-1. Wait until the load balancer has deployed before continuing with the exercise.
+1. Warten Sie, bis der Load Balancer bereitgestellt hat, bevor Sie mit der Übung fortfahren.
 
-## Create a virtual network
+## <a name="create-a-virtual-network"></a>Erstellen eines virtuellen Netzwerks
 
-1. In the left menu, click **Create a resource**. In the **New** blade, click **Networking**, and then click **Virtual network**.
+1. Klicken Sie im linken Menü auf **erstellen Sie eine Ressource**. In der **neu** auf dem Blatt klicken Sie auf **Networking**, und klicken Sie dann auf **virtuelles Netzwerk**.
 
-1. In the **Create virtual network** blade, enter or select the following information:
-    - Name: **woodgrove-VNET**
-    - Address space: **172.20.0.0/16**
-    - Resource group: Select **Use existing**, and then select **woodgrove-RG**.
+1. In der **virtuelles Netzwerk erstellen** Blatt eingeben, oder wählen Sie die folgende Informationen:
+    - Name: **Woodgrove-VNET**
+    - Adressraum: **172.20.0.0/16**
+    - Ressourcengruppe: Wählen Sie **vorhandene**, und wählen Sie dann <rgn>[Ressourcengruppennamen Sandkasten]</rgn>.
     - Subnet: **backendSubnet**
-    - Address space: **172.20.0.0/24**
-    - DDoS protection: **Basic**
-    - Service endpoints: **Disabled**
+    - Adressraum: **172.20.0.0/24**
+    - DDoS-Schutz: **Basic**
+    - Dienstendpunkte: **deaktiviert**
 
-1. Click **Create**.
+1. Klicken Sie auf **Erstellen**.
 
-1. Wait until the virtual network has deployed before continuing with the exercise.
+1. Warten Sie, bis das virtuelle Netzwerk bereitgestellt wurde, bevor Sie mit der Übung fortfahren.
 
-## Create a VM template
+## <a name="create-a-vm-template"></a>Erstellen Sie eine VM-Vorlage
 
-Start by defining the basic VM information:
+Definieren Sie zunächst die grundlegenden Informationen über den virtuellen Computer:
 
-1. In the Azure portal, in the left menu, click **Virtual machines**, and then click **Create virtual machine**.
+1. Klicken Sie im Azure-Portal im linken Menü auf **VMs**, und klicken Sie dann auf **erstellen virtuellen Computer**.
 
-1. On the **Compute** blade, in the **Recommended** section, click **Windows Server**.
+1. Auf der **Compute** Blatt in der **empfohlen** auf **Windows Server**.
 
-1. In the **Windows Server** blade, click **Windows Server 2016 Datacenter**.
+1. Klicken Sie auf dem Blatt **Windows Server** auf **Windows Server 2016 Datacenter**.
 
-1. In the **Windows Server 2016 Datacenter** blade, click **Create**.
+1. Klicken Sie auf dem Blatt **Windows Server 2016 Datacenter** auf **Erstellen**.
 
-1. In the **Basics** blade, in the **Name** box, type **woodgrove-SVR01**.
+1. In der **Grundlagen** Blatt in der **Namen** geben **Woodgrove-SVR01**.
 
-1. In the **Username** and **Password boxes**, type a secure name and password for an administrator account on this server.
+1. In der **Benutzername** und **Kennwortfelder**, geben Sie einen sicheren Namen und ein Kennwort für ein Administratorkonto auf dem Server.
 
-1. In the **Subscription** box, select your Azure subscription.
+1. Wählen Sie im Feld **Abonnement** Ihr Azure-Abonnement aus.
 
-1. Under **Resource group**, select **Use existing**. In the list, select **woodgrove-RG**.
+1. Klicken Sie unter **Ressourcengruppe**Option **vorhandene**. Wählen Sie in der Liste **Woodgrove-RG**.
 
-1. In the **Location** drop-down list, select a region near you.
+1. Wählen Sie in der Dropdownliste **Standort** eine Region in Ihrer Nähe aus.
 
-1. Click **OK**.
+1. Klicken Sie auf **OK**.
 
-Choose a size for the VM, and then configure the settings:
+Wählen Sie eine Größe für den virtuellen Computer aus, und klicken Sie dann konfigurieren Sie die Einstellungen zu:
 
-1. On the **Choose a size** blade, select a **Standard** SKU, such as **D2s_v3**. Then click **Select**.
+1. Auf der **wählen Sie eine Größe** Blatt eine **Standard** SKU, z. B. **D2s_v3**. Klicken Sie dann auf **Auswählen**.
 
-1. On the **Settings** blade, click **Availability set**.
+1. Auf der **Einstellungen** auf dem Blatt klicken Sie auf **verfügbarkeitsgruppe**.
 
-1. On the **Change availability set** blade, click **Create new**.
+1. Auf der **Ändern der verfügbarkeitsgruppe** auf dem Blatt klicken Sie auf **neu erstellen**.
 
-1. On the **Create new** blade, in the **Name** box, type **woodgrove-AS**, and then click **OK**.
+1. Auf der **neu erstellen** Blatt in der **Namen** geben **Woodgrove-AS**, und klicken Sie dann auf **OK**.
 
-1. On the **Settings** blade, under **Network Security Group**, click **Advanced**, and then click **(new) woodgrove-SVR01-nsg**.
+1. Auf der **Einstellungen** Blatt unter **Netzwerksicherheitsgruppe**, klicken Sie auf **erweitert**, und klicken Sie dann auf **(neu) Woodgrove-SVR01-Nsg**.
 
-1. On the **Create network Security group** blade, in the **Name** box, change the name to **woodgrove-NSG**, and then click **OK**.
+1. Auf der **Netzwerksicherheitsgruppe erstellen** Blatt in der **Namen** ändern den Namen in **Woodgrove-NSG**, und klicken Sie dann auf **OK**.
 
-1. On the **Settings** blade, click **OK**.
+1. Auf der **Einstellungen** auf dem Blatt klicken Sie auf **OK**.
 
-Save the settings to a template, so that you can easily deploy multiple VMs.
+Speichern Sie die Einstellungen an der Vorlage, damit Sie problemlos auf mehrere virtuelle Computer bereitstellen können.
 
-1. On the **Create** blade, click **Download template and parameters**.
+1. Auf der **erstellen** auf dem Blatt klicken Sie auf **Vorlage und Parameter herunterladen**.
 
-1. On the **Template** blade, click **Add to library**.
+1. Auf der **Vorlage** auf dem Blatt klicken Sie auf **Hinzufügen zur Bibliothek**.
 
-1. On the **Save template** blade, in the **Name** and **Description** boxes, type **woodgrove-server-template**. Then click **Save**.
+1. Auf der **speichern Vorlage** Blatt in der **Namen** und **Beschreibung** Felder, geben **Woodgrove-Server-Vorlage**. Klicken Sie anschließend auf **Speichern**.
 
 > [!NOTE]
-> If you need to find this template, click **All services** in the left menu, type **template** in the filter box, and then click **Templates (PREVIEW)**.
+> Wenn Sie diese Vorlage suchen möchten, klicken Sie auf **alle Dienste** Geben Sie im linken Menü **Vorlage** im Feld "Filter", und klicken Sie dann auf **Vorlagen (Vorschau)**.
 
-## Use the template to provision the first VM
+## <a name="use-the-template-to-provision-the-first-vm"></a>Verwenden Sie die Vorlage, um den ersten virtuellen Computer bereitzustellen.
 
-1. On the **Template** blade, click **Deploy**.
+1. Auf der **Vorlage** auf dem Blatt klicken Sie auf **bereitstellen**.
 
-1. On the **Custom deployment** blade, under **Resource Group**, select **Use existing**. In the list, select **woodgrove-RG**.
+1. Auf der **benutzerdefinierte Bereitstellung** Blatt unter **Ressourcengruppe**Option **vorhandene**. Wählen Sie in der Liste **Woodgrove-RG**.
 
-1. On the **Custom deployment** blade, in the **Admin password** box, type the same password that you used previously.
+1. Auf der **benutzerdefinierte Bereitstellung** Blatt in der **Administratorkennwort** geben das gleiche Kennwort, das Sie zuvor verwendet haben.
 
-1. On the **Custom deployment** blade, select the **I agree to the terms and conditions** check box, and then click **Purchase** (the cost is the regular Azure compute charge, which depends on the VM pricing tier).
+1. Auf der **benutzerdefinierte Bereitstellung** Blatt die **ich stimme den Bestimmungen und Bedingungen** , und klicken Sie dann auf **Kauf** (der Preis ist der regulären Azure Compute anfallen, die hängt von der VM-Tarif).
 
-1. Wait until the VM has deployed before continuing with the exercise. This is so you can be sure that the template is correctly configured before you use it to provision additional VMs, and that all the associated resources have been created.
+1. Warten Sie die Bereitstellung des virtuellen Computers ab, bevor Sie mit der Übung fortfahren. Dies ist daher können Sie sicher, dass die Vorlage ordnungsgemäß konfiguriert ist, bevor Sie ihn verwenden, um zusätzliche virtuelle Computer bereitzustellen und alle zugehörigen Ressourcen erstellt wurden sein.
 
-## Use the template to provision two additional VMs
+## <a name="use-the-template-to-provision-two-additional-vms"></a>Verwenden Sie die Vorlage zum Bereitstellen von zwei zusätzliche virtuelle Computer
 
-1. In the Azure portal, on the **Template** blade, click **Deploy**.
+1. Im Azure-Portal auf der **Vorlage** auf dem Blatt klicken Sie auf **bereitstellen**.
 
-1. On the **Custom deployment** blade, under **Resource Group**, select **Use existing**. In the list, select **woodgrove-RG**.
+1. Auf der **benutzerdefinierte Bereitstellung** Blatt unter **Ressourcengruppe**Option **vorhandene**. Wählen Sie in der Liste **Woodgrove-RG**.
 
-1. On the **Custom deployment** blade, in the **Virtual Machine Name** box, change the name to **woodgrove-SVR02**.
+1. Auf der **benutzerdefinierte Bereitstellung** Blatt in der **Name des virtuellen Computers** ändern den Namen in **Woodgrove-SVR02**.
 
-1. On the **Custom deployment** blade, in the **Network Interface Name** box, change the name to **woodgrovesvr02222**.
+1. Auf der **benutzerdefinierte Bereitstellung** Blatt in der **Netzwerkschnittstellenname** ändern den Namen in **woodgrovesvr02222**.
 
-1. On the **Custom deployment** blade, in the **Admin password** box, type the same password that you used previously.
+1. Auf der **benutzerdefinierte Bereitstellung** Blatt in der **Administratorkennwort** geben das gleiche Kennwort, das Sie zuvor verwendet haben.
 
-1. On the **Custom deployment** blade, in the **Public Ip Address Name** box, change the name to **woodgrove-SVR02-ip**.
+1. Auf der **benutzerdefinierte Bereitstellung** Blatt in der **Name der öffentlichen Ip-Adresse** ändern den Namen in **Woodgrove-SVR02-IP-**.
 
-1. On the **Custom deployment** blade, select the **I agree to the terms and conditions** check box, and then click **Purchase** (the cost is the regular Azure compute charge, which depends on the VM pricing tier).
+1. Auf der **benutzerdefinierte Bereitstellung** Blatt die **ich stimme den Bestimmungen und Bedingungen** , und klicken Sie dann auf **Kauf** (der Preis ist der regulären Azure Compute anfallen, die hängt von der VM-Tarif).
 
-1. Repeat steps 1 - 7, using the following information:
-    - Virtual machine name: **woodgrove-SVR03**
-    - Network interface name: **woodgrovesvr03333**
-    - Public IP address name: **woodgrove-SVRr03-ip**
+1. Wiederholen Sie die Schritte 1 bis 7, mit den folgenden Informationen:
+    - Name des virtuellen Computers: **Woodgrove-SVR03**
+    - Netzwerkschnittstellenname: **woodgrovesvr03333**
+    - Name der öffentlichen IP-Adresse: **Woodgrove-SVRr03-Ip**
 
-1. Wait until the VMs have deployed before continuing with the exercise.
+1. Warten Sie, bis die virtuellen Computer bereitgestellt haben, bevor Sie mit der Übung fortfahren.
 
-You now have a public load balancer ready to configure, and three VMs ready to use with this load balancer.
+Sie verfügen nun über einen öffentlichen Load Balancers bereit zur Konfiguration und drei virtuelle Computer bereit, mit diesen Load Balancer verwenden.

@@ -3,38 +3,33 @@ uid: learn.intro-to-azure-networking.2-deploy-to-azure
 title: Bereitstellen Ihrer Website in Azure
 metadata:
   title: Bereitstellen Ihrer Website in Azure
-  description: Hier erfahren Sie, wie eine dreischichtige Anwendung in Azure aussehen könnte.
-  ms.openlocfilehash: 3bbacd16929ffb05448a2d3e60cd37c637275229
-  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
-  ms.translationtype: HT
-  ms.contentlocale: de-DE
-  ms.lasthandoff: 09/03/2018
-  ms.locfileid: "43477841"
+  description: 'Hier erfahren Sie, wie eine dreischichtige Anwendung in Azure aussehen könnte.'
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 durationInMinutes: 7
-content: >
+content: |
   [!include[](includes/2-deploy-to-azure.md)]
 quiz:
   title: 'Wissenstest: Bereitstellen Ihrer Website in Azure'
   questions:
-  - content: Was ist eine Azure-_Region_?
-    choices:
-    - content: Ein Azure-Rechenzentrum an einem bestimmten geografischen Standort
-      isCorrect: true
-      correctExplanation: Azure-Regionen unterstützen Sie beim Bereitstellen der Apps und Dienste, die den Benutzern am nächsten sind. „USA, Westen“ und „Europa, Norden“ sind Beispiele.
-    - content: Eine Möglichkeit, wichtige Netzwerke in kleinere Netzwerke zu unterteilen.
-      isCorrect: false
-      incorrectExplanation: Azure-Netzwerke sind in _Subnetze_ unterteilt.
-    - content: Firewallregeln, die definieren, welcher Datenverkehr in und aus Azure fließen kann.
-      isCorrect: false
-      incorrectExplanation: Sie verwenden _Netzwerksicherheitsgruppen_, um Firewallregeln zu definieren.
-  - content: Welche der folgenden Aussagen über virtuelle Netzwerke ist richtig?
-    choices:
-    - content: Sie konfigurieren virtuelle Netzwerke mithilfe von Software.
-      isCorrect: true
-      correctExplanation: Software ermöglich es Ihnen, virtuelle Netzwerke wie Ihre eigenen Netzwerke zu behandeln. Azure verwaltet die physische Hardware für Sie.
-    - content: Ein virtuelles Netzwerk akzeptiert Netzwerkdatenverkehr an allen Ports. Sie konfigurieren die Firewall durch virtuelle Computer.
-      isCorrect: false
-      incorrectExplanation: Sie können Ihr virtuelles Netzwerk einer Netzwerksicherheitsgruppe zuordnen, die als Firewall auf Cloudebene fungiert.
-    - content: Virtuelle Netzwerke sind über das Internet immer erreichbar.
-      isCorrect: false
-      incorrectExplanation: Obwohl ein virtuelles Netzwerk standardmäßig über das Internet erreichbar ist, konfigurieren Sie, welche Netzwerke (einschließlich privater Netzwerke) Ihr Netzwerk erreichen können.
+    - content: Was ist eine Azure-_Region_?
+      choices:
+        - content: Ein Azure-Rechenzentrum an einem bestimmten geografischen Standort
+          isCorrect: true
+          correctExplanation: 'Azure-Regionen unterstützen Sie beim Bereitstellen der Apps und Dienste, die den Benutzern am nächsten sind. „USA, Westen“ und „Europa, Norden“ sind Beispiele.'
+        - content: 'Eine Möglichkeit, wichtige Netzwerke in kleinere Netzwerke zu unterteilen.'
+          isCorrect: false
+        - content: 'Firewallregeln, die den Fluss des Datenverkehrs innerhalb und außerhalb des Azure definieren.'
+          isCorrect: false
+    - content: Welche der folgenden Aussagen über virtuelle Netzwerke ist richtig?
+      choices:
+        - content: Sie konfigurieren virtuelle Netzwerke mithilfe von Software.
+          isCorrect: true
+          correctExplanation: 'Software ermöglich es Ihnen, virtuelle Netzwerke wie Ihre eigenen Netzwerke zu behandeln. Azure verwaltet die physische Hardware für Sie.'
+        - content: Ein virtuelles Netzwerk akzeptiert Netzwerkdatenverkehr an allen Ports. Sie konfigurieren die Firewall durch virtuelle Computer.
+          isCorrect: false
+        - content: Virtuelle Netzwerke sind immer über das Internet erreichbar.
+          isCorrect: false

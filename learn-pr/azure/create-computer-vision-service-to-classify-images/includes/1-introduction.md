@@ -1,13 +1,15 @@
-End users often post content that may be inappropriate for work in their personal online interactions. As a lead developer at Contoso Beverage Distribution, you are responsible for building and maintaining a line-of-business app that lets your frontline distributors scan and upload images of store shelves where they are restocking. 
+Als leitender Entwickler bei Contoso trinken Verteilung Sie sind verantwortlich für die Erstellung und Wartung einer Line-of-Business-Apps, mit dem Ihre an vorderster Front Verteiler überprüfen und Hochladen von Bildern der Store-Fächer, in dem sie aufgefüllt werden.
 
-You need to validate that any images posted by users respect the content rules set by your company. Your goals are clear; the company doesn't want inappropriate content posted to company sites. Given the advancements in Artificial Intelligence, you decide that rewriting this app to include Computer Vision will proactively prevent these types of incidents from occurring. The service you create will identify images and provide many other functionalities to fulfill your company's needs.
+Überprüfen, dass die Regeln fest, die Ihrem Unternehmen, keine Bilder, die von Benutzern bereitgestellt berücksichtigen werden sollen. Das Unternehmen soll nicht mehr unerwünschten Inhalten, die an Standorten des Unternehmens gesendet. 
 
-## Learning objectives
+Sie haben entscheiden Sie, ob erstellen oder erwerben Sie eine Lösung. Erstellen eine komplexe Bild Verarbeitung und Analyse-Engine ist teuer. Eine Alternative der maschinelles sehen-API von Microsoft verwenden. In diesem Modul wir untersuchen die Features, die von dieser API und rufen Sie den Dienst aus, um einige Bilder zu verarbeiten. 
 
-In this module, you will:
+## <a name="learning-objectives"></a>Lernziele
 
-- Create a Computer Vision API service
-- Analyze an image and identify its content
-- Generate thumbnails
-- Extract printed text
-- Convert handwritten words into text
+In diesem Modul lernen Sie Folgendes:
+
+- Erstellen Sie ein Cognitive Services-Konto.
+- Abrufen von Informationen zu den visuellen Inhalt in einem Bild
+- Generieren einer Miniaturansicht eines Bilds
+- Erkennen Sie und extrahieren Sie gedruckten Text aus einem image
+- Erkennen und Extrahieren von handschriftlichem Text aus einem Bild

@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.top-5-security-items-to-consider.3-inputs-and-outputs
-title: Inputs and Outputs
+title: Eingaben und Ausgaben
 metadata:
-  title: Inputs and Outputs
-  description: Inputs and Outputs
+  title: Eingaben und Ausgaben
+  description: Eingaben und Ausgaben
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
@@ -13,47 +13,47 @@ durationInMinutes: 10
 content: |
   [!include[](includes/3-inputs-and-outputs.md)]
 quiz:
-  title: 'Knowledge Check - Azure Security center'
+  title: Wissenstest - Azure SecurityCenter
   questions:
-  - content: 'Which of the following data sources need to be sanitized?'
-    choices:
-    - content: 'Data from a 3rd party API.'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'Data from the URL parameter.'
-      isCorrect: false
-      correctExplanation: 'TBD.'
-    - content: 'Data collected from the user via an input field.'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'All of the above'
-      isCorrect: true
-      incorrectExplanation: 'TBD.'
-  - content: 'Which of the following data needs to be output encoded?'
-    choices:
-    - content: 'Data saved to the database'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'Data to be output to the screen'
-      isCorrect: true
-      correctExplanation: 'TBD.'
-    - content: 'Data sent to a 3rd party API'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'Data in the URL parameters'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-  - content: 'Parameterized queries (stored procedures in SQL) are always a more secure choice for talking to the database because:'
-    choices:
-    - content: 'They are more organized than inline database commands, and therefore less confusing for users.'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'There is a clear outline of the script in the stored procedure, ensuring better visibility.'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'Hackers don’t understand how to program in SQL.'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'Parameterized queries substitute variables before running queries, meaning it avoids the opportunity for code to be submitted in place of a variable.'
-      isCorrect: true
-      correctExplanation: 'TBD.'
+    - content: Welche der folgenden Datenquellen überprüft werden müssen?
+      choices:
+        - content: Daten aus a 3rd party API.
+          isCorrect: false
+          incorrectExplanation: 'Dies ist nur eine von vielen Quellen, die überprüft werden muss.'
+        - content: Daten aus der URL-Parameter.
+          isCorrect: false
+          incorrectExplanation: 'Dies ist nur eine von vielen Quellen, die zu überprüfenden'
+        - content: 'Daten, die über einem Eingabefeld für vom Benutzer gesammelt werden.'
+          isCorrect: false
+          incorrectExplanation: 'Dies ist nur eine von vielen Quellen, die überprüft werden muss.'
+        - content: Alle oben genannten.
+          isCorrect: true
+          correctExplanation: 'Richtig. Alle diese Datenquellen überprüft werden müssen.  Vertrauen Sie niemals alle Daten, die geändert werden können.'
+    - content: Welche der folgenden Ausgabe codiert sein muss?
+      choices:
+        - content: 'Daten, die in der Datenbank gespeichert'
+          isCorrect: false
+          incorrectExplanation: 'Obwohl die Daten, die in der Datenbank gespeichert, muss überprüft werden, um sicherzustellen, dass die Daten in Ordnung ist, müssen wir nicht codiert werden für die Ausgabe.'
+        - content: Daten auf dem Bildschirm ausgegeben werden.
+          isCorrect: true
+          correctExplanation: 'Sie richtig sind, müssen Daten auf dem Bildschirm ausgegeben ständigen ausgegeben werden codiert, um sicherzustellen, dass es nie als Code interpretiert wird.'
+        - content: Daten an eine 3. API Partei gesendet werden
+          isCorrect: false
+          incorrectExplanation: 'Obwohl an a 3rd-API-Partei gesendete Daten müssen überprüft werden, um sicherzustellen, dass die Daten in Ordnung ist, müssen wir nicht für die Ausgabe codiert werden.'
+        - content: Daten in die URL-Parameter
+          isCorrect: false
+          incorrectExplanation: 'Obwohl die Daten aus der URL-Parameter müssen überprüft werden, bevor sie in unserer Anwendung verwendet wird, müssen wir nicht codiert werden für die Ausgabe.'
+    - content: 'Parametrisierte Abfragen (gespeicherte Prozeduren in SQL) sind immer einer sichereren Wahl für die Kommunikation mit der Datenbank, weil:'
+      choices:
+        - content: Sie sind als Inline-Datenbankbefehle besser organisierte und daher weniger für Benutzer verwirrend.
+          isCorrect: false
+          incorrectExplanation: Organisation des Codes ist nicht der Grund für den parametrisierte Abfragen sicherer als Inline-SQL sind.
+        - content: 'Es gibt eine Gliederung Entfernen des Skripts in der gespeicherten Prozedur, eine bessere Sichtbarkeit sichergestellt.'
+          isCorrect: false
+          incorrectExplanation: Gliederung Entfernen des Skripts ist nicht der Grund für den parametrisierte Abfragen sicherer als Inline-SQL sind.
+        - content: 'Hacker nicht verstehen, wie in SQL programmieren.'
+          isCorrect: false
+          incorrectExplanation: 'Viele Hacker verstehen SQL, ist dies nicht die richtige Antwort.'
+        - content: 'Parametrisierte Abfragen ersetzen Variablen vor dem Ausführen von Abfragen, was bedeutet, dass es verhindert, dass die Möglichkeit, Code anstelle einer Variable übermittelt werden.'
+          isCorrect: true
+          correctExplanation: 'Die Felder, die in parametrisierten Abfragen verwendet werden als Daten und keinen Code, den Schutz vor Injection-Anfälligkeiten behandelt. Weitere Informationen zum Implementieren von parametrisierten Abfragen finden Sie unter den [OWASP-Parametrisierung-Abfragespickzettel]( https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet).'

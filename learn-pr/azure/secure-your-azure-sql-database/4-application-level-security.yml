@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-your-azure-sql-database.4-application-level-security
 metadata:
-  title: Application-level security
-  description: Learn techniques to secure your sensitive information, and learn issues to avoid while writing application code that accesses your database.
+  title: Sicherheit auf Zeilenebene-Anwendung
+  description: 'Lernen Sie Verfahren kennen, um Ihre vertraulichen Daten schützen, und erfahren Sie mehr Probleme, die beim Schreiben von Code für die Anwendung den Zugriff auf Ihre Datenbank zu vermeiden.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Application-level security
+title: Sicherheit auf Zeilenebene-Anwendung
 durationInMinutes: 15
 content: |
   [!include[](includes/4-application-level-security.md)]

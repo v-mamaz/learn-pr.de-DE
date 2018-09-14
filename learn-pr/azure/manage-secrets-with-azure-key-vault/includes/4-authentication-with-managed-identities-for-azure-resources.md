@@ -1,20 +1,20 @@
-Azure Key Vault uses **Azure Active Directory** to authenticate users and applications that try to access a vault. To grant our web application access to the vault, we first need to register our app with Azure Active Directory. Registering creates an identity for the app. Once the app has an identity, we can assign vault permissions to it.
+Azure Key Vault verwendet **Azure Active Directory** zum Authentifizieren von Benutzern und Anwendungen, die versuchen, auf einen Tresor zuzugreifen. Um unserer Webanwendung Zugriff auf den Tresor zu gewähren, müssen wir unsere App zunächst bei Azure Active Directory registrieren. Bei der Registrierung wird eine Identität für die App erstellt. Sobald eine Identität vorliegt, können ihr Tresorberechtigungen zugewiesen werden.
 
-Apps and users authenticate to Key Vault using an Azure Active Directory authentication token. Getting a token from Azure Active Directory requires a secret or certificate, because anyone with a token could use the application identity to access all of the secrets in the vault.
+Anwendungen und Benutzer authentifizieren sich bei Key Vault mit einem Azure Active Directory-Authentifizierungstoken. Um ein Token von Azure Active Directory zu beziehen, ist ein Geheimnis oder Zertifikat erforderlich, da jeder mit einem Token die Anwendungsidentität verwenden kann, um auf alle Geheimnisse im Tresor zuzugreifen.
 
-Our application secrets are secure in the vault, but we still need to keep a secret or certificate outside of the vault in order to access them! This problem is called the *bootstrapping problem*, and Azure has a solution for it.
+Unsere Anwendungsgeheimnisse sind im Tresor sicher, aber wir benötigen trotzdem noch ein Geheimnis oder Zertifikat außerhalb des Tresors, um darauf zugreifen zu können! Dieses Problem wird *Bootstrapping* genannt, wofür Azure allerdings eine Lösung hat.
 
-## Managed identities for Azure resources
+## <a name="managed-identities-for-azure-resources"></a>Verwaltete Identitäten für Azure-Ressourcen
 
-Managed identities for Azure resources is an Azure feature that your app can use to access Key Vault and other Azure services without having to manage even a single secret outside of the vault. Using a managed identity is a simple and secure way to take advantage of Key Vault from your web app.
+Verwaltete Identitäten für Azure-Ressourcen ist ein Azure-Feature, mit denen Ihre app Key Vault und andere Azure-Dienste zugreifen, ohne selbst einen einzelnen geheimen Schlüssel außerhalb des Tresors verwalten zu müssen. Mithilfe einer verwalteten Identität ist eine einfache und sichere Möglichkeit zu Key Vault aus Ihrer Web-app nutzen.
 
-When you enable managed identity on your web app, Azure activates a separate token-granting REST service specifically for use by your app. Your app will request tokens from this service instead of directly from Azure Active Directory. Your app needs to use a secret to access this service, but that secret is injected into your app's environment variables by App Service when it starts up. You don't need to manage or store this secret value anywhere, and nothing outside of your app can access this secret or the managed identity token service endpoint.
+Wenn Sie verwaltete Identität für Ihre Web-app aktivieren, aktiviert Azure einen separaten-Token-granting-REST-Dienst speziell für die Verwendung von Ihrer app. Ihre App fordert Token nicht direkt von Azure Active Directory, sondern von diesem Dienst an. Für den Zugriff auf den Dienst muss Ihre App ein Geheimnis verwenden. Dieses wird beim Start Ihrer App von App Service eingefügt und den Umgebungsvariablen zugewiesen. Müssen Sie nicht zum Verwalten oder speichern diese geheimniswert an einer beliebigen Stelle, und nichts außerhalb Ihrer app kann auf dieses Geheimnis oder die verwaltete Identität Sicherheitstoken-Dienstendpunkt zugreifen.
 
-Managed identities for Azure resources also registers your app in Azure Active Directory for you, and will delete the registration if you delete the web app or disable its managed identity.
+Verwaltete Identitäten für Azure-Ressourcen auch Ihrer app in Azure Active Directory registriert sich für Sie und die Registrierung wird gelöscht, wenn Sie die Web-app zu löschen oder deaktivieren die zugehörige verwaltete Identität.
 
-Managed identities are available in all editions of Azure Active Directory, including the Free edition included with an Azure subscription. Using it in App Service has no extra cost and requires no configuration, and it can be enabled or disabled on an app at any time.
+Verwaltete Identitäten sind verfügbar in allen Editionen von Azure Active Directory, einschließlich der kostenlosen Edition, die in einem Azure-Abonnement enthalten. Seine Verwendung in App Service ist kostenlos, erfordert keine Konfiguration und kann jederzeit in einer App aktiviert oder deaktiviert werden.
 
 > [!NOTE]
-> Managed identities for Azure resources is not currently supported for Linux or Container web apps.
+> Verwaltete Identitäten für Azure-Ressourcen wird derzeit nicht für Linux oder Container-Web-apps unterstützt.
 
-Enabling a managed identity for a web app requires only a single Azure CLI command with no configuration. We'll do it later on when we set up an App Service app and deploy to Azure. Before that, though, we're going to apply our knowledge of managed identities to write the code for our app.
+Aktivieren eine verwaltete Identität für eine Web-app erfordert nur einen einzelnen Azure-CLI-Befehl ohne Konfiguration. Diesen Schritt führen Sie später aus, wenn Sie eine App Service-App einrichten und in Azure bereitstellen. Davor werden jedoch wir unsere Informationen von verwalteten Identitäten in den Code für unsere app schreiben anwenden.

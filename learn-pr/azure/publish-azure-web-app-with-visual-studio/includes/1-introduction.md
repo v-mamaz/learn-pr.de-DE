@@ -4,11 +4,11 @@ Visual Studio und Azure App Service bieten einen leistungsstarken Mechanismus zu
 
 ## <a name="learning-objectives"></a>Lernziele
 
-In diesem Modul
+In diesem Modul lernen Sie Folgendes:
 
-- erstellen Sie eine ASP.NET-Web-App in Visual Studio 2017 für PC oder Mac,
-- veröffentlichen eine ASP.NET-Web-App in Azure mit Visual Studio 2017
-- und aktualisieren eine ASP.NET-Anwendung in Azure mit Visual Studio für PC oder Mac.
+- Erstellen Sie eine ASP.NET Web-app in Visual Studio 2017, PC oder Mac
+- Veröffentlichen einer ASP.NET Web-app in Azure mit Visual Studio 2017
+- Aktualisieren Sie eine ASP.NET-Anwendung in Azure mithilfe von Visual Studio für PC oder Mac
 
 ## <a name="prerequisites"></a>Voraussetzungen
 

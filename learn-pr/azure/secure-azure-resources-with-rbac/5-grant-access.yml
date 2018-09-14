@@ -2,14 +2,14 @@
 uid: learn.secure-azure-resources-with-rbac.5-grant-access
 metadata:
   title: Gewähren des Zugriffs mithilfe der RBAC und des Azure-Portals
-  description: Erfahren Sie, wie Sie einem Benutzer mit dem Azure-Portal Zugriff gewähren, damit dieser virtuelle Computer in einer Ressourcengruppe erstellen und verwalten kann.
-  displayType: one-column
-  ms.openlocfilehash: a2e4aa48292ea8b1535d9a61e643ca5cdfe3abcb
-  ms.sourcegitcommit: bb4b1f9e2a7399769ff84199f018abd14a3e73aa
-  ms.translationtype: HT
-  ms.contentlocale: de-DE
-  ms.lasthandoff: 09/01/2018
-  ms.locfileid: "43454396"
+  description: 'Erfahren Sie, wie Sie einem Benutzer mit dem Azure-Portal Zugriff gewähren, damit dieser virtuelle Computer in einer Ressourcengruppe erstellen und verwalten kann.'
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 title: Gewähren des Zugriffs mithilfe der RBAC und des Azure-Portals
+labId: 45985
 durationInMinutes: 10
-content: '[!include[](includes/5-grant-access.md)]'
+content: |
+  [!include[](includes/5-grant-access.md)]

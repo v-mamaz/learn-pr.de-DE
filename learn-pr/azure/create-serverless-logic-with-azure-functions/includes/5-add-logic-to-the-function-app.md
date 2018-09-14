@@ -1,40 +1,40 @@
-Let's continue with our gear drive example and add the logic for the temperature service. Specifically, we're going to receive data from an HTTP request.
+Lassen Sie uns mit unserem Zahnradsteuerungs-Beispiel fortfahren und die Logik für den Temperaturdienst hinzufügen. Insbesondere werden wir Daten von einer HTTP-Anforderung empfangen.
 
-## Function requirements
+## <a name="function-requirements"></a>Anforderungen an die Funktion
 
-First, we need to define some requirements for our logic:
+Zunächst müssen wir einige Anforderungen an unsere Logik definieren:
 
-- Temperatures between 0-25 should be flagged as **OK**.
-- Temperatures between 26-50 should be flagged as **CAUTION**.
-- Temperatures above 50 should be flagged as **DANGER**.
+- Temperaturen von 0 bis 25 sollen mit **OK** gekennzeichnet werden.
+- Temperaturen von 26 bis 50 sollen mit **CAUTION** gekennzeichnet werden.
+- Temperaturen über 50 sollen mit **DANGER** gekennzeichnet werden.
 
-## Add a function to our function app
+## <a name="add-a-function-to-our-function-app"></a>Hinzufügen einer Funktion zu unserer Funktions-App
 
-As we discussed in the preceding unit, Azure provides templates that help you get started building functions. In this unit, we'll use the `HttpTrigger` template to implement the temperature service.
+Wie in der vorherigen Einheit bereits erläutert wurde, verfügt Azure über Vorlagen, die Ihnen das Erstellen von Funktionen erleichtern. In dieser Einheit verwenden wir die Vorlage `HttpTrigger`, um den Temperaturdienst zu implementieren.
 
-1. Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true) using your Azure account.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com?azure-portal=true) an.
 
-1. Select the resource group you created in the first exercise by choosing **All resources** in the left-hand menu, and then selecting **escalator-functions-group**.
+1. Wählen Sie die Ressourcengruppe durch Auswahl aus der ersten Übung **alle Ressourcen** im linken Menü, und klicken Sie dann auswählen <rgn>[Ressourcengruppennamen Sandkasten]</rgn>.
 
-1. The resources for the group will then be displayed. Click the name of the function app that you created in the previous exercise by selecting the **escalator-functions-xxxxxxx** item (also indicated by the lightning bolt Function icon).
+3. Die Ressourcen für die Gruppe werden angezeigt. Klicken Sie auf den Namen der Funktions-app, die Sie in der vorherigen Übung erstellt haben, durch Auswählen der **eskalationsverantwortlicher-Funktionen – Xxxxxxx** Element (auch gekennzeichnet durch das Blitzsymbol Symbol "Funktion").
 
-  ![Screenshot of the Azure portal showing the All resources blade highlighted as well as the escalator function app we created.](../media/5-access-function-app.png)
+  ![Screenshot des Azure-Portal mit dem Blatt "alle Ressourcen" hervorgehoben, sowie die eskalationsverantwortlicher Funktions-app wurde erstellt.](../media/5-access-function-app.png)
 
-1. The left-side menu displays your function app name and a submenu with three items: *Functions*, *Proxies*, and *Slots*.  To start creating our first function, select **Functions** and click  the **New function** button at the top of the resulting page.
+4. Das linke Menü enthält den Namen Ihrer Funktions-App und ein Untermenü mit drei Punkten: *Funktionen*, *Proxys* und *Slots*.  Wählen Sie zum Starten erstellen unsere erste Funktion **Funktionen** , und klicken Sie auf die **neue Funktion** Schaltfläche am oberen Rand der resultierende Seite.
 
-  ![Screenshot of the Azure portal showing the Functions list for our function app, with the Functions menu item and New function button highlighted.](../media/5-function-add-button.png)
+  ![Screenshot des Azure-Portal mit der Liste der Funktionen für unsere Funktionen-app mit dem Menüelement Funktionen und die neue Schaltfläche "Funktion" hervorgehoben.](../media/5-function-add-button.png)
 
-1. In the Quickstart screen, select the **Custom function** link in the **Get started on your own** section as shown in the following screenshot.
+5. Klicken Sie auf dem Bildschirm „Schnellstart“ im Abschnitt **Selbstständig einsteigen** auf den Link **Benutzerdefinierte Funktion** (siehe den folgenden Screenshot). Wenn Sie die Schnellstart-Bildschirm nicht angezeigt wird, klicken Sie auf die **wechseln Sie in der schnellstartanleitung** Link am oberen Rand der Seite.
 
-  ![Screenshot of the Azure portal showing the Quickstart blade with the Custom function button highlighted in the Get started on your own section.](../media/5-custom-function.png)
+  ![Screenshot des Azure-Portal mit dem Blatt "Schnellstart" mit hervorgehobener GET-Anforderung benutzerdefinierte Funktionsschaltfläche auf einen eigenen Abschnitt gestartet.](../media/5-custom-function.png)
 
-1. From the list of templates displayed on the screen, select the **JavaScript** implementation of the **HTTP trigger** template as shown in the following screenshot.
+6. Wählen Sie aus der Liste der Vorlagen, die auf dem Bildschirm angezeigt, die **JavaScript** Implementierung der **HTTP-Trigger** Vorlage wie im folgenden Screenshot gezeigt.
 
-1. Enter **DriveGearTemperatureService** in the name field of the **New Function** dialog that appears. Leave the Authorization level as "Function" and press the **Create** button to create the function.
+7. Geben Sie **DriveGearTemperatureService** in das Feld „Name“ des eingeblendeten Dialogfelds **Neue Funktion** ein. Belassen Sie die Autorisierungsstufe auf „Funktion“, und klicken Sie auf die Schaltfläche **Erstellen**, um die Funktion zu erstellen.
 
-  ![Screenshot of the Azure portal showing the new HTTP trigger function options, with the language field set to JavaScript and the name set to DriveGearTemperatureService.](../media/5-create-httptrigger-form.png)
+  ![Screenshot des Azure-Portal mit den neuen HTTP-Trigger Funktionsoptionen, mit dem Language-Feld, das auf JavaScript und den Namen, um DriveGearTemperatureService festgelegt.](../media/5-create-httptrigger-form.png)
 
-1. When your function creation completes, the code editor opens with the contents of the *index.js* code file. The default code that the template generated for us is listed in the following snippet.
+8. Wenn die Erstellung Ihrer Funktion abgeschlossen ist, öffnet sich der Code-Editor mit dem Inhalt der Codedatei *index.js*. Der Standardcode, den die Vorlage für uns generiert hat, wird im folgenden Codeausschnitt aufgeführt.
 
 ```javascript
 module.exports = function (context, req) {
@@ -56,9 +56,9 @@ module.exports = function (context, req) {
 };
 ```
 
-Our function expects a name to be passed in either through the HTTP request query string or as part of the request body. The function responds by returning the message  **Hello, {name}**, echoing back the name that was sent in the request.
+Unsere-Funktion erwartet einen Namen, der entweder über die Abfragezeichenfolge der HTTP-Anforderung oder als Teil des Anforderungstexts übergeben wird. Die Funktion antwortet mit der Meldung **Hello, {Name}**, die den in der Anforderung gesendeten Namen wiedergibt.
 
-On the right-hand side of the source view, you'll find two tabs. The **View file** lists the code and config file for your function.  Select **function.json** to view the configuration of the function, which should look like the following:
+Auf der rechten Seite der Quellansicht sehen Sie zwei Registerkarten. Die **Ansichtsdateien** Registerkarte werden den Code und Config-Datei für Ihre Funktion aufgelistet.  Wählen Sie **"Function.JSON"** zum Anzeigen von der Konfiguration der Funktion, die wie folgt aussehen sollte:
 
 ```javascript
 {
@@ -79,50 +79,50 @@ On the right-hand side of the source view, you'll find two tabs. The **View file
 }
 ```
 
-This configuration declares that the function runs when it receives an HTTP request. The output binding declares that the response will be sent as an HTTP response.
+Diese Konfiguration deklariert, dass die Funktion ausgeführt wird, sobald sie eine HTTP-Anforderung empfängt. Die Ausgabebindung deklariert, dass die Antwort als HTTP-Antwort gesendet wird.
 
-## Test the function using cURL
+## <a name="test-the-function-using-curl"></a>Testen der Funktion mit cURL
 
 > [!TIP]
-> **cURL** is a command line tool that can be used to send or receive files. It's included with Linux, macOS, and Windows 10, and can be downloaded for most other operating systems. cURL supports numerous protocols like HTTP, HTTPS, FTP, FTPS, SFTP, LDAP, TELNET, SMTP, POP3, etc. For more information, please refer to the links below:
+> **cURL** ist ein Befehlszeilentool, das zum Senden und Empfangen von Dateien verwendet werden kann. Es ist in Linux, MacOS und Windows 10 enthalten und kann für die meisten anderen Betriebssysteme heruntergeladen werden. cURL unterstützt zahlreiche Protokolle wie HTTP, HTTPS, FTP, FTPS, SFTP, LDAP, TELNET, SMTP, POP3 usw. Weitere Informationen finden Sie unter den unten angegebenen Links:
 >
 >- <https://en.wikipedia.org/wiki/CURL>
 >- <https://curl.haxx.se/docs/>
 
-To test the function, you can send an HTTP request to the function URL using cURL on the command line. To find the endpoint URL of the function, return to your function code and select the **Get function URL** link, as shown in the following screenshot. Save this link temporarily.
+Zum Testen der Funktion können Sie über die Befehlszeile mit cURL eine HTTP-Anforderung an die Funktions-URL senden. Um die Endpunkt-URL der Funktion zu finden, kehren Sie zu Ihrem Funktionscode zurück, und wählen Sie den Link **Funktions-URL abrufen** aus (siehe den folgenden Screenshot). Speichern Sie diesen Link vorübergehend.
 
- ![Screenshot of the Azure portal showing the function editor, with the Get function URL button highlighted.](../media/5-get-function-url.png)
+ ![Screenshot des Azure-Portal mit der Funktion-Editor mit der Schaltfläche "Get-Funktion-URL" hervorgehoben.](../media/5-get-function-url.png)
 
-### Securing HTTP triggers
+### <a name="securing-http-triggers"></a>Schützen von HTTP-Triggern
 
-HTTP triggers let you use API keys to block unknown callers by requiring the key to be present on each request. When you create a function, you select the _authorization level_. By default, it's set to "Function", which requires a function-specific API key, but it can also be set to "Admin" to use a global "master" key, or "Anonymous" to indicate that no key is required. You can also change the authorization level through the function properties after creation.
+Mit HTTP-Triggern können Sie API-Schlüssel verwenden, um unbekannte Aufrufer zu blockieren, indem Sie verlangen, dass der Schlüssel bei jeder Anforderung vorhanden ist. Wenn Sie eine Funktion erstellen, wählen Sie die _Autorisierungsstufe_. In der Standardeinstellung "Function", das einen funktionsspezifischen API-Schlüssel erforderlich ist, wird festgelegt, aber es kann auch auf "Admin" festgelegt werden, verwenden Sie einen Schlüssel für globale "master" oder "Anonymous", um anzugeben, dass kein Schlüssel erforderlich ist. Sie können die Autorisierungsstufe auch nach dem Erstellen über die Funktionseigenschaften ändern.
 
-Since we specified "Function" when we created this function, we will need to supply the key when we send the HTTP request. You can send it as a query string parameter named `code`, or as an HTTP header (preferred) named `x-functions-key`.
+Da wir bei der Erstellung dieser Funktion „Funktion“ angegeben haben, müssen wir beim Senden der HTTP-Anforderung den Schlüssel angeben. Sie können ihn als Parameter mit einer Abfragezeichenfolge mit dem Namen `code` oder als HTTP-Header (bevorzugt) mit dem Namen `x-functions-key` senden.
 
-The function and master keys are found in the **Manage** section when the function is expanded. By default, they are hidden, and you need to display them.
+Funktions- und Masterschlüssel finden Sie im Abschnitt **Verwalten**, wenn die Funktion erweitert wird. Standardmäßig sind sie ausgeblendet, sodass Sie sie einblenden müssen.
 
-1. Expand your function and select the **Manage** section, show the default Function Key, and copy it to the clipboard.
+1. Erweitern Sie Ihre Funktion, und wählen Sie die **verwalten** im Abschnitt, der Standard-Funktion-Schlüssel anzeigen und kopieren Sie ihn in die Zwischenablage.
 
-![Screenshot of the Azure portal showing the function Manage blade with the revealed function key highlighted.](../media/5-get-function-key.png)
+![Screenshot des Azure-Portal mit dem Blatt "Funktionen verwalten" mit der hardwarebedingten Funktionsschlüssel hervorgehoben.](../media/5-get-function-key.png)
 
-1. Next, format a cURL command with the URL for your function, and the Function key.
+1. Formatieren Sie anschließend einen cURL-Befehl mit der URL Ihrer Funktion und dem Funktionsschlüssel.
 
-    - Use a `POST` request.
-    - Add a `Content-Type` header value of type `application/json`.
-    - Make sure to replace the URL below with your own.
-    - Pass the Function Key as the header value `x-functions-key`.
+    - Verwenden Sie eine `POST`-Anforderung.
+    - Fügen Sie einen Headerwert für `Content-Type` des Typs `application/json` hinzu.
+    - Achten Sie darauf, dass Sie die URL durch Ihre eigene ersetzen.
+    - Übergeben Sie den Funktionsschlüssel als den Headerwert `x-functions-key`.
 
     ```bash
     curl --header "Content-Type: application/json" --header "x-functions-key: <your-function-key>" --request POST --data "{\"name\": \"Azure Function\"}" https://<your-url-here>/api/DriveGearTemperatureService
     ```
 
-The function will respond back with the text `"Hello Azure Function"`.
+Die Funktion antwortet mit dem Text `"Hello Azure Function"`.
 
-## Add business logic to the function
+## <a name="add-business-logic-to-the-function"></a>Hinzufügen von Geschäftslogik zur Funktion
 
-Next, let's add the logic to the function that checks temperature readings that it receives and sets a status for each.
+Als Nächstes fügen wir die Logik zur Funktion hinzu, die die empfangenen Temperaturmesswerte überprüft und für jeden einen Status festlegt.
 
-Our function is expecting an array of temperature readings. The following JSON snippet is an example of the request body that we'll send to our function. Each `reading` entry has an ID, timestamp, and temperature.
+Unsere Funktion erwartet ein Array von Temperaturmesswerten. Der folgende JSON-Codeausschnitt ist ein Beispiel für den Anforderungstext, den wir an unsere Funktion senden. Jeder `reading`-Eintrag verfügt über ID, Zeitstempel und Temperatur.
 
 ```json
 {
@@ -146,9 +146,9 @@ Our function is expecting an array of temperature readings. The following JSON s
 }
 ```
 
-Next, we'll replace the default code in our function with the following code that implements our business logic.
+Als Nächstes ersetzen wir den Standardcode in unserer Funktion durch den folgenden Code, der unsere Geschäftslogik implementiert.
 
-1. Open the **index.js** file and replace it with the following code.
+1. Öffnen Sie die Datei **index.js**, und ersetzen Sie sie durch den folgenden Code.
 
 ```javascript
 module.exports = function (context, req) {
@@ -183,17 +183,17 @@ module.exports = function (context, req) {
 };
 ```
 
-The logic we added is straightforward. We iterate over the array of readings and check the temperature field. Depending on the value of that field, we set a status of **OK**, **CAUTION**, or **DANGER**. We then send back the array of readings with a status field added to each entry.
+Die Logik, die wir hinzugefügt haben, ist einfach. Wir iterieren über das Array der Messwerte und überprüfen das Temperaturfeld. Abhängig vom Wert dieses Felds wird der Status **OK**, **CAUTION** oder **DANGER** festgelegt. Wir senden dann das Array der Messwerte mit einem zu jedem Eintrag hinzugefügten Statusfeld zurück.
 
-Notice the `log` statements. When the function runs, these statements will add messages in the log window.
+Beachten Sie die `log`-Anweisungen. Wenn die Funktion ausgeführt wird, fügen diese Anweisungen Meldungen im Protokollfenster hinzu.
 
-## Test our business logic
+## <a name="test-our-business-logic"></a>Testen der Geschäftslogik
 
-In this case, we're going to use the **Test** pane in the portal to test our function.
+In diesem Fall verwenden wir den Bereich **Test** im Portal, um unsere Funktion zu testen.
 
-1. Open the **Test** window from the right-hand side flyout menu.
+1. Öffnen Sie das Fenster **Test** im rechten Flyoutmenü.
 
-1. Paste the sample request, duplicated from above, into the request body text box.
+1. Fügen Sie das Beispiel für eine Anforderung in die Anforderung Text-Textfeld ein.
 
     ```json
     {
@@ -217,12 +217,12 @@ In this case, we're going to use the **Test** pane in the portal to test our fun
     }
     ```
 
-1. Select **Run** and view the response in the output pane. To see log messages, open the **Logs** tab in the bottom flyout of the page. The following screenshot shows an example response in the output pane and messages in the  **Logs** pane.
+1. Wählen Sie **Ausführen** aus, und zeigen Sie die Antwort im Ausgabebereich an. Um Protokollmeldungen anzuzeigen, öffnen Sie die Registerkarte **Protokolle** im Flyoutmenü unten auf der Seite. Der folgende Screenshot zeigt eine Beispielantwort im Ausgabebereich und Meldungen im Bereich **Protokolle**.
 
-![Screenshot of the Azure portal showing the function editor blade with the Test and Logs tabs visible. A sample response from the function is shown in the output pane.](../media/5-portal-testing.png)
+![Screenshot des Azure-Portal mit der Funktion-Editor auf dem Blatt mit der Registerkarten "Test" und "Protokolle" angezeigt. Eine Beispiel für eine Antwort von der Funktion wird im Ausgabebereich angezeigt.](../media/5-portal-testing.png)
 
-You can see in the output pane that our status field has been correctly added to each of the readings.
+Im Ausgabebereich sehen Sie, dass unser Statusfeld korrekt zu jedem Messwert hinzugefügt wurde.
 
-If you navigate to the **Monitor** dashboard, you'll see that the request has been logged to Application Insights.
+Sie können auch auf dem Dashboard **Monitor** prüfen, ob die Anforderung in Application Insights protokolliert wurde.
 
-![Screenshot of the Azure portal showing the prior test success result in the function Monitor dashboard.](../media/5-app-insights.png)
+![Screenshot des Azure-Portal mit dem vorherigen Testergebnis für den Erfolg im Dashboard überwachen Funktion.](../media/5-app-insights.png)

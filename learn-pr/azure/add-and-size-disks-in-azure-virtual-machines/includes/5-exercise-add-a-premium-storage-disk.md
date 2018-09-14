@@ -1,77 +1,76 @@
-If your virtual machine (VM) hosts a disk-intensive application, you should consider using premium storage for the virtual hard drives (VHDs).
+Wenn Ihre virtuellen Computer (VM) eine Datenträger-Intensive Anwendung hostet, sollten Sie die Verwendung von Storage Premium für die virtuellen Festplatten (VHDs).
 
-For example, you decide to add a VHD to store outgoing mail on your SMTP server VM. To optimize disk performance, you decide on premium storage for outgoing mail. 
+Beispielsweise möchten Sie eine virtuelle Festplatte zum Speichern ausgehenden e-Mails auf Ihr SMTP-Server-VM hinzufügen. Um die datenträgerleistung zu optimieren, entscheiden Sie in Storage Premium für ausgehende e-Mails.
 
-Let's add a premium SSD to the VM. 
+Fügen Sie einen Premium-SSD mit dem virtuellen Computer an.
 
-## Sign in to Azure
-<!---TODO: Update for sandbox?--->
+## <a name="sign-in-to-azure"></a>Anmelden bei Azure
 
-1. Sign in to the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/?azure-portal=true) an.
 
-## Create a premium storage account
+## <a name="create-a-premium-storage-account"></a>Erstellen eines Premium-Speicherkontos
 
-All premium storage VHDs must be stored in a premium storage account. Follow these steps to create a premium storage account.
+Alle Premium-Speicher-VHDs muss in einem Premium-Speicherkonto gespeichert werden. Um Premium-Speicherkonto zu erstellen, gehen Sie wie folgt vor.
 
-1. Select **Storage accounts** under **FAVORITES** in the left-hand menu of the portal.
+1. Wählen Sie **Speicherkonten** unter **Favoriten** im linken Menü des Portals.
 
-1. Select **+ Add** at the top left of the **Storage accounts** screen.
+1. Wählen Sie **+ hinzufügen** am oben links auf die **Speicherkonten** Bildschirm.
 
-1. In the **Create storage account** pane that opens, set the following properties.
+1. In der **Storage-Konto erstellen** Bereich, der geöffnet wird, legen Sie die folgenden Eigenschaften.
 
-|Property  |Value  |Notes  |
+|Eigenschaft  |Wert  |Hinweise  |
 |---------|---------|---------|
-|Name     |    *A unique name (see note)*     |   This name must be unique across all existing storage account names in Azure. It must be 3 to 24 characters long, and can contain only lowercase letters and numbers.      |
-|Account kind     |  **Storage (general-purpose v1)**       |         |
-|Location     |  *Select the same location as the VM you created earlier*       |         |
-|Replication     |   **Locally redundant storage (LRS)**      |  Select this value from the dropdown. If you recall, we're creating a premium storage account, and premium storage supports only LRS replication.       |
-|Performance     |  **Premium**       | Premium storage accounts are backed by solid-state drives and offer consistent, low-latency performance.        |
-|Resource group     |  *Select **Use existing** and then  **MailInfrastructure***      |  We want to keep all resources together under the same resource group.       |
+|Name     |    *Ein eindeutiger Name (siehe Hinweis)*     |   Dieser Name muss für alle vorhandenen speicherkontonamen in Azure eindeutig sein. Er muss 3 bis 24 Zeichen lang sein und darf nur Kleinbuchstaben und Ziffern enthalten.      |
+|Kontoart     |  **Speicher (Allgemein v1)**       |         |
+|Standort     |  *Wählen Sie den gleichen Speicherort wie der virtuelle Computer, die Sie zuvor erstellt haben*       |         |
+|Replikation     |   **Lokal redundanter Speicher (LRS)**      |  Wählen Sie diesen Wert aus der Dropdownliste aus. Wenn Sie sich erinnern, wir erstellen ein Storage Premium-Konto und Storage Premium unterstützt nur die LRS-Replikation.       |
+|Leistung     |  **Premium**       | Storage Premium-Konten werden durch Solid State Drives gesichert und Leistung für konsistente, niedriger Latenz bieten.        |
+|Ressourcengruppe     |  *Wählen Sie **vorhandene** und dann <rgn>[Sandkasten Resource Group-Name]</rgn>*      |  Wir möchten alle Ressourcen unter der gleichen Ressourcengruppe beibehalten.       |
 
-When you've filled out this dialog, it should look like the following screenshot. 
+Wenn Sie dieses Dialogfeld ausgefüllt haben, sollte es wie im folgenden Screenshot aussehen. 
 
-!["Create storage account" dialog showing all properties set as instructed.](../media-draft/create-premium-sa.png)
+!["Speicherkonto erstellen" Dialogfeld zeigt alle Eigenschaften festgelegt, wie beschrieben.](../media-draft/create-premium-sa.png)
 
-1. Select **Create** to start the storage account creation process. This process can take a few moments to complete. 
+1. Wählen Sie **erstellen** der Speicher für die kontoerstellung gestartet. Dieser Vorgang kann einige Minuten dauern. 
 
-1. When you receive a notification that deployment of the new storage account finished successfully, select **Refresh** in the storage accounts list to display the premium storage account we created. Note the name of this account, as it will be used in the next step.
+1. Wenn Sie eine Benachrichtigung erhalten, die Bereitstellung des neuen Speicherkontos, das erfolgreich abgeschlossen haben, wählen Sie **aktualisieren** in Storage-Konten auflisten zum Anzeigen von Storage Premium-Konto erstellt. Notieren Sie den Namen der dieses Konto an, wie er im nächsten Schritt verwendet wird.
 
-## Create VHD in the premium storage account
+## <a name="create-vhd-in-the-premium-storage-account"></a>Virtuelle Festplatte in Storage Premium-Konto erstellen
 
-Now you can add a new VHD to the VM and specify the premium storage account as its location. Follow these steps:
+Jetzt können Sie fügen eine neue virtuelle Festplatte mit dem virtuellen Computer und Storage Premium-Konto als den Speicherort angeben. Führen Sie diese Schritte aus:
 
-1. In the navigation on the left, under **FAVORITES**, select **Virtual machines**.
+1. In der Navigationsleiste auf der linken Seite unter **Favoriten**Option **VMs**.
 
-1. In the list of VMs, select **MailSenderVM**.
+1. Wählen Sie in der Liste der VMs, **MailSenderVM**.
 
-1. Under **SETTINGS** of the **MailSenderVM** configuration menu on the left, select **Disks**.
+1. Klicken Sie unter **EINSTELLUNGEN** von der **MailSenderVM** Menü auf der linken Seite auf Konfiguration **Datenträger**.
 
-1. Under **Data disks**, select **Add data disk**.
+1. Klicken Sie unter **Datenträger**Option **Datenträger**.
 
-1. In the **Attach unmanaged disks** pane, set the following properties.
+1. In der **nicht verwaltete Datenträger anfügen** Bereich legen Sie die folgenden Eigenschaften.
 
 
-|Property  |Value  |Notes  |
+|Eigenschaft  |Wert  |Hinweise  |
 |---------|---------|---------|
 |Name     |   **MailSenderVMOutgoing**      |         |
-|Source type     |  **New (empty disk)**       |   Select this value from the dropdown.       |
-|Account type     |  **Premium SSD**       |  Select this value from the dropdown.        |
+|Quelltyp     |  **Neu (leerer Datenträger)**       |   Wählen Sie diesen Wert aus der Dropdownliste aus.       |
+|Kontotyp     |  **Premium-SSD**       |  Wählen Sie diesen Wert aus der Dropdownliste aus.        |
 
-1. To the left of the **Storage container** field, select **Browse**.
+1. Auf der linken Seite von der **Speichercontainer** die Option **Durchsuchen**.
 
-1. In the list of storage accounts, find and select the premium storage account you created earlier in this unit. The type of the entry will be listed as **Premium-LRS**.
+1. Klicken Sie in der Liste der Speicherkonten suchen Sie, und wählen Sie die Storage Premium-Konto, die, das Sie zuvor in dieser Einheit erstellt haben. Der Typ des Eintrags als aufgeführt **Premium-LRS**.
 
-1. In the list of containers, select __+ Container__.
+1. Wählen Sie in der Liste der Container, __+ Container__.
 
-1. In the **New container** pane, in the **Name** textbox, type **vhds** and then select **OK**.
+1. In der **neuen Container** Bereich, in der **Namen** Geben Sie im Textfeld **Vhds** und wählen Sie dann **OK**.
 
-1. In the list of containers, select **vhds** and then choose **Select**.
+1. Wählen Sie in der Liste der Container, **Vhds** und wählen Sie dann **wählen**.
 
-1. Back on the **Attach unmanaged disk** pane, select **OK**.
+1. Auf der **nicht verwalteten Datenträger anfügen** wählen Sie im Bereich **OK**.
 
-1. Back on the **MailSenderVM - Disks** pane, select **Save**. Azure adds the new premium storage disk to the VM.
+1. Auf der **MailSenderVM - Datenträger** wählen Sie im Bereich **speichern**. Azure fügt die neue Storage Premium-Datenträger mit dem virtuellen Computer hinzu.
 
-Our virtual machine has an operating system disk, a standard disk, and a premium SSD-based disk.
+Der virtuelle Computer verfügt über ein Betriebssystem-Datenträger standard-Datenträger und SSD-basierte Premium-Datenträger.
 
 > [!NOTE]
-> The new disk must be initialized, partitioned, and formatted before it can store data. To avoid repetition, these steps have been omitted from this exercise. If you want to complete these tasks, complete the steps in the [Partition and format a data disk](../3-exercise-add-data-disks-to-azure-virtual-machines.yml##partition-and-format-a-data-disk) section of the preceding exercise.
+> Der neue Datenträger muss initialisiert, partitioniert und formatiert, bevor sie Daten speichern kann. Um Wiederholungen zu vermeiden, wurden diese Schritte aus dieser Übung ausgelassen. Wenn Sie diese Aufgaben ausführen möchten, führen Sie die Schritte in der [partitionieren und Formatieren eines Datenträgers](../3-exercise-add-data-disks-to-azure-virtual-machines.yml##partition-and-format-a-data-disk) Teil der vorherigen Übung.

@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-availability-and-recoverability.4-backup-and-restore
-title: Protect your data with backup and restore
+title: Schützen von Daten durch Sicherung und Wiederherstellung
 metadata:
-  title: Protect your data with backup and restore
-  description: Protect your data with backup and restore
+  title: Schützen von Daten durch Sicherung und Wiederherstellung
+  description: Schützen von Daten durch Sicherung und Wiederherstellung
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,30 +13,30 @@ durationInMinutes: 15
 content: |
   [!include[](includes/4-backup-and-restore.md)]
 quiz:
-  title: 'Knowledge Check - Protect your data with backup and restore'
+  title: 'Wissenstest: Schützen von Daten durch Sicherung und Wiederherstellung'
   questions:
-  - content: 'It is important to test restores regularly because:'
-    choices:
-    - content: 'It allows you to validate the integrity of your backups.'
-      isCorrect: false
-      incorrectExplanation: 'Testing restores regularly does allow you to validate the integrity of your backups, but this is not the only correct choice.'
-    - content: 'It allows you to become familiar with the restoration process.'
-      isCorrect: false
-      incorrectExplanation: 'Testing restores regularly does allow you to become more familiar with the restoration process, but this is not the only correct choice.'
-    - content: 'It can help you to identify gaps in your backup and restore processes.'
-      isCorrect: false
-      incorrectExplanation: 'Testing restores regularly does allow you to identify gaps in your backup and restore processes, but this is not the only correct choice.'
-    - content: 'All of the above.'
-      isCorrect: true
-      correctExplanation: 'All of the above are excellent reasons to regularly test the restoration of your backups.'
-  - content: 'Which of the following does not include automatic regular backup of data?'
-    choices:
-    - content: 'Azure Blob storage'
-      isCorrect: true
-      correctExplanation: 'Azure Blob storage does not include automatic backups of your data. You will need to implement backups through other methods.'
-    - content: 'Azure Cosmos DB'
-      isCorrect: false
-      incorrectExplanation: 'Azure Cosmos DB does include fully automated, regular backups of your data.'
-    - content: 'Azure SQL Database'
-      isCorrect: false
-      incorrectExplanation: 'Azure SQL Database does include fully automated, regular backups of your data.'
+    - content: 'Es ist wichtig, Wiederherstellungen testen Sie regelmäßig, da:'
+      choices:
+        - content: Sie können die Integrität Ihrer Sicherungen überprüfen.
+          isCorrect: false
+          incorrectExplanation: 'Das regelmäßige Testen von Wiederherstellungen ermöglicht es Ihnen, die Integrität Ihrer Sicherungen zu überprüfen. Dies ist aber nicht die einzige richtige Wahl.'
+        - content: Sie können mit dem Wiederherstellungsprozess vertraut.
+          isCorrect: false
+          incorrectExplanation: 'Das regelmäßige Testen von Wiederherstellungen ermöglicht es Ihnen, sich besser mit dem Wiederherstellungsvorgang vertraut zu machen. Dies ist aber nicht die einzige richtige Wahl.'
+        - content: Sie können Sie zum Identifizieren von Lücken in der Sicherung und Wiederherstellung von Daten.
+          isCorrect: false
+          incorrectExplanation: 'Wiederherstellungen regelmäßig testen, erlaubt Ihnen das Identifizieren von Lücken in der Sicherung und Wiederherstellung von Daten, aber dies ist nicht die nur die richtige Wahl.'
+        - content: Alle oben genannten.
+          isCorrect: true
+          correctExplanation: Alle oben genannten Aspekte sind überzeugende Argumente für das regelmäßige Testen der Wiederherstellung Ihrer Sicherungen.
+    - content: Welche der folgenden umfasst keine automatische regelmäßigen Sicherung der Daten?
+      choices:
+        - content: Azure-Blobspeicher
+          isCorrect: true
+          correctExplanation: Azure-BLOB-Speicher umfasst keine automatische Sicherungen Ihrer Daten. Sie müssen Sicherungen über andere Methoden implementieren.
+        - content: Azure Cosmos DB
+          isCorrect: false
+          incorrectExplanation: 'Azure Cosmos DB ist vollständig automatisierte, regelmäßige Sicherungen Ihrer Daten enthalten.'
+        - content: Azure SQL-Datenbank
+          isCorrect: false
+          incorrectExplanation: 'Azure SQL-Datenbank umfasst vollständig automatisierte, regelmäßige Sicherungen Ihrer Daten.'

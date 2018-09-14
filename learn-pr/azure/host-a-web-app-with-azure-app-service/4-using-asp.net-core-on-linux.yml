@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.host-a-web-application-with-azure-app-service.4-using-asp.net-core-on-linux
-title: Working with ASP.NET Core on Linux
+title: Arbeiten mit ASP.NET Core unter Linux
 metadata:
-  title: Working with ASP.NET Core on Linux
-  description: Working with ASP.NET Core on Linux
+  title: Arbeiten mit ASP.NET Core unter Linux
+  description: Arbeiten mit ASP.NET Core unter Linux
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

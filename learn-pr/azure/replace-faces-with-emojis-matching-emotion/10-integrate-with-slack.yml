@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.the-mojifier.10-integrate-with-slack
+metadata:
+  title: Integrieren Sie die Mojifier in Slack
+  description: 'Verbinden Sie Ihre Azure-Funktionen zusammen mit Slack und erstellen Sie eine Slack _Schrägstrich_ Befehl aus, um unsere Azure-Funktionen aufrufen, und zeigt das resultierende Mojified-Image im Slack-Fenster.'
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+labId: 45987
+title: Integrieren Sie die Mojifier in Slack
+durationInMinutes: 10
+content: |
+  [!include[](includes/10-integrate-with-slack.md)]

@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.4-infrastructure-protection
-title: Infrastructure protection
+title: Infrastrukturschutz
 metadata:
-  title: Infrastructure protection
-  description: In this unit we'll discuss how to protect access to your infrastructure
+  title: Infrastrukturschutz
+  description: 'In dieser Einheit wird erläutert, wie Sie den Zugriff auf Ihre Infrastruktur schützen.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,27 +13,27 @@ durationInMinutes: 5
 content: |
   [!include[](includes/4-infrastructure-protection.md)]
 quiz:
-  title: 'Knowledge Check - Infrastructure protection'
+  title: 'Wissenstest: Infrastrukturschutz'
   questions:
-  - content: 'Role-based access control can be applied to all but which of the following scopes?'
-    choices:
-    - content: 'Subscription'
-      isCorrect: false
-      incorrectExplanation: 'RBAC can be applied to the subscription scope.'
-    - content: 'Resource group'
-      isCorrect: false
-      incorrectExplanation: 'RBAC can be applied to the resource group scope.'
-    - content: 'Linux filesystem'
-      isCorrect: true
-      correctExplanation: 'RBAC can only be applied to Azure resources. Linux filesystems are not within the scope that can be secured with Azure RBAC.'
-    - content: 'Resource'
-      isCorrect: false
-      incorrectExplanation: 'RBAC can be applied directly to resources.'
-  - content: 'A managed service identity could be assigned to a virtual machine to give it rights to start and stop other virtual machines.'
-    choices:
-    - content: 'True'
-      isCorrect: true
-      correctExplanation: 'Managed service identity is a method of assigning an identity to services. Through this assignment, RBAC acces can be granted to manage Azure services, such as starting and stopping virtual machines.'
-    - content: 'False'
-      isCorrect: false
-      incorrectExplanation: 'Managed service identity is a method of assigning an identity to services. Through this assignment, RBAC acces can be granted to manage Azure services, such as starting and stopping virtual machines.'
+    - content: Rollenbasierte Zugriffssteuerung kann auf alle bis auf die der folgenden Bereiche angewendet werden?
+      choices:
+        - content: Abonnement
+          isCorrect: false
+          incorrectExplanation: RBAC kann auf Abonnementebene angewendet werden.
+        - content: Ressourcengruppe
+          isCorrect: false
+          incorrectExplanation: RBAC kann auf den Ressourcenbereich für die Gruppe angewendet werden.
+        - content: Linux-Dateisystem
+          isCorrect: true
+          correctExplanation: 'Rollenbasierte Zugriffssteuerung kann nur auf Azure-Ressourcen angewendet werden. Linux-Dateisysteme sind nicht innerhalb des Bereichs, die in Azure RBAC abgesichert werden kann.'
+        - content: Ressource
+          isCorrect: false
+          incorrectExplanation: RBAC kann direkt auf Ressourcen angewendet werden.
+    - content: 'Eine verwaltete Dienstidentität konnte an einen virtuellen Computer zugewiesen werden, damit es die Berechtigungen zum Starten und beenden andere virtuelle Computer erhält.'
+      choices:
+        - content: Richtig
+          isCorrect: true
+          correctExplanation: 'Verwaltete Dienstidentität ist eine Methode zum Zuweisen einer Identitäts auf Dienste. Durch diese Zuweisung kann RBAC-Zugriff zum Verwalten von Azure-Dienste, wie das Starten und Beenden von virtuellen Computern gewährt werden.'
+        - content: Falsch
+          isCorrect: false
+          incorrectExplanation: 'Verwaltete Dienstidentität ist eine Methode zum Zuweisen einer Identitäts auf Dienste. Durch diese Zuweisung kann RBAC-Zugriff zum Verwalten von Azure-Dienste, wie das Starten und Beenden von virtuellen Computern gewährt werden.'

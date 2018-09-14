@@ -1,24 +1,27 @@
 ### YamlMime:LearningPath
 uid: learn.architect-great-solutions-in-azure
-title: Entwerfen hervorragender Lösungen in Azure
-summary: Informationen zum Entwerfen und Erstellen sicherer, skalierbarer und leistungsstarker Lösungen in Azure mittels Untersuchung der wichtigsten Prinzipien jeder guten Architektur.
-prerequisites: Keine
-iconUrl: http://via.placeholder.com/120x120
-levels:
-- beginner
-roles:
-- solution-architect
-products:
-- azure
 metadata:
-  title: Entwerfen hervorragender Lösungen in Azure
-  description: Informationen zum Entwerfen und Erstellen sicherer, skalierbarer und leistungsstarker Lösungen in Azure mittels Untersuchung der wichtigsten Prinzipien jeder guten Architektur.
-  ms.openlocfilehash: fa52506c710451958693c478575c7cab90194d9f
-  ms.sourcegitcommit: cac22638c8487b2a9e567262aee73616ff0035e9
-  ms.translationtype: HT
-  ms.contentlocale: de-DE
-  ms.lasthandoff: 08/24/2018
-  ms.locfileid: "42910286"
+  title: Entwerfen Sie großartige Lösungen in Azure
+  description: 'Informationen Sie zum Entwerfen und erstellen sichere, skalierbare und leistungsstarke Lösungen in Azure anhand der wichtigsten Prinzipien finden Sie in jedem guten Architektur.'
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Entwerfen Sie großartige Lösungen in Azure
+summary: 'Informationen Sie zum Entwerfen und erstellen sichere, skalierbare und leistungsstarke Lösungen in Azure anhand der wichtigsten Prinzipien finden Sie in jedem guten Architektur.'
+prerequisites: Keine
+iconUrl: /achievements/architect-great-solutions-in-azure.svg
+levels:
+  - beginner
+roles:
+  - solution-architect
+products:
+  - azure
 modules:
-- learn.sample-module-cloudshell
+  - learn.pillars-of-a-great-azure-architecture
+  - learn.design-for-security
+  - learn.design-for-performance-and-scalability
+  - learn.design-for-efficiency-and-operations
+  - learn.design-for-availability-and-recoverability
 achievement: learn.architect-great-solutions-in-azure.trophy

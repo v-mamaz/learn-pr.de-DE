@@ -1,39 +1,31 @@
-TheMojifier is a Slack _slash_ command which replaces peoples faces in images with emojis matching their emotion, like so:
+TheMojifier ist eine Slack _Schrägstrich_ Peoples Gesichter auf Bildern mit übereinstimmenden ihre Emotionen, Emojis ersetzt Befehl wie folgt:
 
-![Example image](/media-drafts/example-mojify-image.png)
+![Beispielbild](/media-drafts/example-mojify-image.png)
 
-It's designed to work from Slack as a custom command, you can name the command how you want, for this document I've named it `mojify`.
+Es wurde entwickelt, um über Slack als einen benutzerdefinierten Befehl zu arbeiten. Sie können den Befehl was Ihnen gefallen hat, nicht aber für dieses Modul, wir nennen sie `mojify`.
 
-To execute the commmand type `/mojify <image to mojify>`, like so:
+Geben Sie zum Ausführen des Befehls `/mojify <image to mojify>`:
 
-![Example Image](/media-drafts/9.slack-type-mojify.png)
+![Beispielbild](/media-drafts/9.slack-type-mojify.png)
 
-The mojifier then:
+Klicken Sie dann wird die Mojifier zur Verfügung:
 
-1.  Calculates the emotion of any people in the image.
-2.  Matches emotions to emojis.
-3.  Replaces the faces with emojis.
-4.  Posts the image back to Twitter as a reply.
+  1.  Berechnen Sie die Emotionen überhaupt keine Personen in der Abbildung
+  2.  Emotionen, Emojis übereinstimmen
+  3.  Gesichter im Bild ersetzt mit emojis
+  4.  Posten Sie das aktualisierte Image in Slack, als Antwort
 
-It’s written using TypeScript and several Azure technologies including [Azure Functions](https://azure.microsoft.com/services/functions/&WT.mc_id=mojifier-sandbox-ashussai) and [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/?WT.mc_id=mojifier-sandbox-ashussai)
+Mithilfe von TypeScript und mehrere Azure-Technologien, einschließlich der Mojifier geschrieben [Azure Functions](https://azure.microsoft.com/services/functions/) und [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/). Sie verwenden diese, um Ihre eigene Version von stellen _TheMojifier_. 
 
-In this tutorial I’m going to explain how TheMojifier was made and show you how to create your own Slack command using Azure technologies.
+> [!NOTE] 
+> Alle Code für Mojifier ist verfügbar für [GitHub](https://github.com/microsoftdocs/mslearn-the-mojifier).
 
-> TODO, where will this be now?
-> All the code for Mojifier is available on [GitHub](https://github.com/jawache/mojifier)
+## <a name="tools-youll-use"></a>Tools, die Sie verwenden
 
-# Requirements
+### <a name="azure-cognitive-services"></a>Azure Cognitive Services
 
-To build the mojifier, we need to use several Azure services.
+Azure Cognitive Services sind eine Reihe von allgemeinen APIs, die Sie verwenden können, schnell erweiterte künstliche Intelligenz (KI) Funktionen in eine app hinzuzufügen. Wenn Sie wissen wie eine HTTP-Anforderung, sollte dann Sie Cognitive Services verwenden können.
 
-## Azure Cognitive Services
+### <a name="azure-functions"></a>Azure Functions
 
-Azure Cognitive Services are a set of high-level APIs you can use to add advanced AI functionality into your application quickly. If you can make an HTTP request, you can use Cognitive Services.
-
-[More info](https://azure.microsoft.com/services/cognitive-services/?WT.mc_id=mojifier-sandbox-ashussai)
-
-## Azure Functions
-
-As powerful as Logic Apps are sometimes you need to write business logic using the full expressiveness of a programming language. Azure Functions is a technology that lets you host snippets of code that can respond to events or HTTP requests, Azure handles all of the scaling issues for you and you only pay for what you use.
-
-[More info](https://azure.microsoft.com/services/functions/&WT.mc_id=mojifier-sandbox-ashussai)
+Mit Azure Functions können, die Sie Codeausschnitte hosten, die auf Ereignisse oder HTTP-Anforderungen reagieren können. Azure kümmert sich um Skalierung Probleme, und Sie bezahlen nur für die tatsächliche Nutzung. Wie wird mit Elementen auf der Microsoft-Learn, Kosten für Sie in der Learning-Umgebung behandelt.

@@ -1,25 +1,25 @@
-Your company has compute workloads deployed to several regions to make sure you have a local presence to serve your distributed customer base. 
+Ihr Unternehmen stellt Computeworkloads an verschiedene Regionen bereit, damit Sie lokale Präsenz für Ihren verteilten Kundenstamm zeigen. 
 
-Your aim is to place a container registry in each region where images are run. This strategy will allow for network-close operations, enabling fast, reliable image layer transfers. 
+Das Ziel ist, eine Containerregistrierung in jeder Region zu platzieren, in der Images ausgeführt werden. Durch diese Strategie werden netzwerknahe Vorgänge und dadurch schnelle, zuverlässige Übertragungen auf Imageebene gewährleistet. 
 
-Geo-replication enables an Azure container registry to function as a single registry, serving several regions with multi-master regional registries.
+Mit der Georeplikation kann eine Azure-Containerregistrierung als zentrale Registrierung verwendet werden, die mehreren Regionen regionale Multimasterregistrierungen zur Verfügung stellt.
 
-A geo-replicated registry provides the following benefits:
+Eine Registrierung mit Georeplikation bietet folgende Vorteile:
 
-- Single registry/image/tag names can be used across multiple regions
-- Network-close registry access from regional deployments
-- No additional egress fees, as images are pulled from a local, replicated registry in the same region as your container host
-- Single management of a registry across multiple regions
+- einzelner Registrierungs-/Image-/Tagname in mehreren Regionen verwendbar
+- Netzwerknaher Registrierungszugriff in regionalen Bereitstellungen
+- Keine zusätzlichen Ausgangsgebühren, da Images aus einer lokalen, replizierten Registrierung in der gleichen Region wie Ihr Containerhost abgerufen werden
+- Zentrale Verwaltung einer Registrierung für mehrere Regionen
 
-## Replicate an image to multiple locations
+## <a name="replicate-an-image-to-multiple-locations"></a>Replizieren eines Images für mehrere Standorte
 
-You'll use the `az acr replication create` Azure CLI command to replicate your container images from one region to another. In this example, you'll create a replication for the `japaneast` region. Update `<acrName>` with the name of your Container Registry.
+Sie verwenden den Azure CLI-Befehl `az acr replication create`, um Ihre Containerimages aus einer Region in eine andere zu replizieren. In diesem Beispiel wird eine Replikation für die Region `japaneast` erstellt. Ersetzen Sie `<acrName>` durch den Namen Ihrer Containerregistrierung.
 
 ```azurecli
 az acr replication create --registry <acrName> --location japaneast
 ```
 
-The output should look similar to the following:
+Die Ausgabe sollte in etwa wie folgt aussehen:
 
 ```console
 {
@@ -38,13 +38,13 @@ The output should look similar to the following:
 }
 ```
 
-As a final step. You are able to retrieve all container image replicas created. You'll use the `az acr replication list` command to retrieve this list. Update `<acrName>` with the name of your Container Registry.
+Der letzte Schritt. Sie können alle Replikate von Containerimages abrufen, die Sie erstellt haben. Verwenden Sie den Befehl `az acr replication list` zum Abrufen dieser Liste. Ersetzen Sie `<acrName>` durch den Namen Ihrer Containerregistrierung.
 
 ```azurecli
 az acr replication list --registry <acrName> --output table
 ```
 
-The output should look similar to the following:
+Die Ausgabe sollte in etwa wie folgt aussehen:
 
 ```console
 NAME       LOCATION    PROVISIONING STATE    STATUS
@@ -53,19 +53,19 @@ japaneast  japaneast   Succeeded             Ready
 eastus     eastus      Succeeded             Ready
 ```
 
-Keep in mind that you are not limited to the Azure CLI to list your image replicas. From within the Azure portal, selecting `Replications` for an Azure Container Registry displays a map that details current replications. Container images can be replicated to additional regions by selecting the regions on the map.
+Bedenken Sie, dass Sie für das Auflisten der Imagereplikate nicht nur Azure CLI verwenden können. Wenn Sie im Azure-Portal `Replications` für eine Azure-Containerregistrierung auswählen, wird eine Karte mit den aktuellen Replikationen angezeigt. Containerimages können für zusätzliche Regionen repliziert werden, indem diese auf der Karte ausgewählt werden.
 
-![Container replication map as seen in the Azure portal](../media/replication-map.png)
+![Replikationskarte für Container im Azure-Portal](../media/replication-map.png)
 
-## Clean up
+## <a name="clean-up"></a>Bereinigen
 <!---TODO: Update for sandbox?--->
 
-At this point, you can cleanup the created resources by deleting the resource group. To do so, use the `az group delete` command.
+Sie können nun die erstellten Ressourcen bereinigen, indem Sie die Ressourcengruppe löschen. Verwenden Sie hierzu den Befehl `az group delete`.
 
 ```azurecli
 az group delete --name myResourceGroup --no-wait
 ```
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-You've now successfully replicated a container image to multiple Azure datacenters using the Azure CLI. 
+Sie haben nun erfolgreich ein Containerimage für mehrere Azure-Rechenzentren mithilfe der Azure CLI repliziert. 

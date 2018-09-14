@@ -1,12 +1,13 @@
-Cloud computing provides configurable computing resources and services that can be quickly provisioned with minimal management effort. There are Azure services for almost any business computing need. Do you need an interactive website? A back end for a mobile app? Secure storage for your client data? All of these and more are available. And these resources are available when you need them, and you're typically only charged for the amount you use.
+Cloud Computing bietet konfigurierbare Rechenressourcen und Dienste, die mit minimalem Verwaltungsaufwand schnell bereitgestellt werden können. Für nahezu jeden geschäftlichen IT-Bedarf gibt es Azure-Dienste. Benötigen Sie eine interaktive Website? Ein Back-End für eine mobile App? Sicheren Speicher für Ihre Clientdaten? All dies und noch mehr ist verfügbar. Und diese Ressourcen sind verfügbar, wenn Sie sie brauchen, wobei Ihnen normalerweise nur der verwendete Umfang in Rechnung gestellt wird.
 
-Hopefully, the cloud is an attractive option, but what if you already have existing on-premises infrastructure? Or you have highly sensitive data that you're not willing or able to store off-site?
+Hoffentlich ist die Cloud für Sie eine attraktive Option. Doch was ist, wenn Sie bereits über eine vorhandene lokale Infrastruktur verfügen? Oder wenn Sie hochsensible Daten haben, die Sie nicht extern speichern wollen oder können?
 
-Azure provides several configurations allowing you to blend or transition between on-premises and a solution hosted completely in the cloud.
+Azure bietet verschiedene Konfigurationen, die Ihnen eine Kombination aus oder einen Übergang zwischen einer lokalen und einer vollständig in der Cloud gehosteten Lösung ermöglichen.
 
-## Learning objectives
-In this module, you will:
+## <a name="learning-objectives"></a>Lernziele
 
-- Compare each cloud computing deployment model (public, private, and hybrid).
-- Understand the advantages of each cloud computing service model.
-- Decide which deployment and service model you should use for your services.
+In diesem Modul lernen Sie Folgendes:
+
+- vergleichen Sie Cloud Computing-Bereitstellungsmodelle (öffentlich, privat und hybrid),
+- lernen die Vorteile der einzelnen Cloud Computing-Dienstmodelle kennen
+- Entscheiden Sie, welche Bereitstellung und welches Dienstmodell Sie für Ihren Dienst verwenden.

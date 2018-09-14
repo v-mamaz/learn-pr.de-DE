@@ -1,78 +1,65 @@
 ### YamlMime:ModuleUnit
 uid: learn.monitor-manage-device-with-iotcentral.6-knowledge-check
 metadata:
-# Search engine metadata  
-  title: Knowledge check 
-  description: This is a knowledge check of the Azure IoT Central tutorial
+  title: Wissenstest
+  description: Dies ist ein Wissenstest für das Azure IoT Central-Tutorial
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Knowledge check of the Azure IoT Central tutorial
+title: Wissenstest für das Azure IoT Central-Tutorial
 durationInMinutes: 11
 content: |
   [!include[](includes/6-knowledge-check.md)]
 quiz:
-  title: 'Knowledge check for the Azure IoT Central tutorial'
+  title: Wissenstest für das Azure IoT Central-Tutorial
   questions:
-  - content: Where do you define telemetry in IoT Central?
-    choices:
-    - content: Settings
-      isCorrect: false
-    - content: Properties
-      isCorrect: false
-    - content: Measurements
-      isCorrect: true
-    - content: Dashboard
-      isCorrect: false
-    - content: Rules
-      isCorrect: false
-
-  - content: What are the actions available when configuring rules?
-    choices:
-    - content: Email
-      isCorrect: false
-    - content: Microsoft Flow
-      isCorrect: false
-    - content: Webhook
-      isCorrect: false
-    - content: All of the above
-      isCorrect: true
-    - content: None of the above 
-      isCorrect: false
-
-  - content: Where do you add the firmware of your device?
-    choices:
-    - content: Measurements
-      isCorrect: false
-    - content: Settings
-      isCorrect: false
-    - content: Properties
-      isCorrect: true
-    - content: Rules
-      isCorrect: false
-    - content: Dashboard 
-      isCorrect: false
-
-  - content: How do you obtain the connection string to connect your device to IoT Central?
-    choices:
-    - content: By adding a device in IoT Central
-      isCorrect: true
-    - content: By providing the firmware MAC address
-      isCorrect: false
-    - content: Customizing it on your own and registering it with IoT Central
-      isCorrect: false
-    - content: All of the above
-      isCorrect: false
-    - content: None of the above
-      isCorrect: false
-
-
-
-
-
-
-
-
+    - content: An welcher Stelle definieren Sie die Telemetrie in IoT Central?
+      choices:
+        - content: Einstellungen
+          isCorrect: false
+        - content: Eigenschaften
+          isCorrect: false
+        - content: Messungen
+          isCorrect: true
+        - content: Dashboard
+          isCorrect: false
+        - content: Regeln
+          isCorrect: false
+    - content: Welche Aktionen stehen beim Konfigurieren von Regeln zur Verfügung?
+      choices:
+        - content: E-Mail
+          isCorrect: false
+        - content: Microsoft Flow
+          isCorrect: false
+        - content: Webhook
+          isCorrect: false
+        - content: Alle oben genannten Möglichkeiten
+          isCorrect: true
+        - content: Keine der oben genannten Möglichkeiten
+          isCorrect: false
+    - content: Wo fügen Sie die Firmware Ihres Geräts hinzu?
+      choices:
+        - content: Messungen
+          isCorrect: false
+        - content: Einstellungen
+          isCorrect: false
+        - content: Eigenschaften
+          isCorrect: true
+        - content: Regeln
+          isCorrect: false
+        - content: Dashboard
+          isCorrect: false
+    - content: Wie erhalten Sie die Verbindungszeichenfolge zum Verbinden Ihres Geräts mit IoT Central?
+      choices:
+        - content: Durch Hinzufügen eines Geräts in IoT Central
+          isCorrect: true
+        - content: Durch Bereitstellen der MAC-Adresse der Firmware
+          isCorrect: false
+        - content: Durch selbstständiges Anpassen und anschließendes Registrieren bei IoT Central
+          isCorrect: false
+        - content: Alle oben genannten Möglichkeiten
+          isCorrect: false
+        - content: Keine der oben genannten Möglichkeiten
+          isCorrect: false

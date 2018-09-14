@@ -5,37 +5,36 @@ durationInMinutes: 3
 metadata:
   title: 'Wissenstest: Erstellen eines Speicherkontos'
   description: Fragen zu den Eigenschaften und der Erstellung eines Speicherkontos.
-  ms.openlocfilehash: ab689dd2ef9802ce036ec683909b291c3b342370
-  ms.sourcegitcommit: c07e11980180ae35cb3485548f81e16152d77781
-  ms.translationtype: HT
-  ms.contentlocale: de-DE
-  ms.lasthandoff: 09/02/2018
-  ms.locfileid: "43471303"
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 quiz:
   title: 'Wissenstest: Erstellen eines Speicherkontos'
   questions:
-  - content: 'Angenommen Sie verfügen über zwei Videodateien, die als BLOBs gespeichert sind. Eines der Videos ist unternehmenskritisch. Für dieses Video ist eine Replikationsrichtlinie erforderlich, die mehrere Kopien in verschiedenen Rechenzentren erstellt. Das andere Videos ist nicht unternehmenskritisch. Für dieses Video reicht eine lokale Replikationsrichtlinie aus. Richtig oder falsch: Zur Erfüllung der Einschränkungen müssen sich die zwei BLOBs in separaten Speicherkonten befinden.'
-    choices:
-    - content: Richtig
-      isCorrect: true
-      correctExplanation: Die Replikationsrichtlinie ist ein Merkmal für ein Speicherkonto. Jedes Element im Speicherkonto muss dieselbe Richtlinie verwenden. Wenn für einige Daten die Georeplikationsstrategie und für andere Daten die lokale Replikationsstrategie verwendet werden soll, benötigen Sie zwei Speicherkonten.
-    - content: Falsch
-      isCorrect: false
-  - content: 'Der Name eines Speicherkontos muss folgende Voraussetzungen erfüllen:'
-    choices:
-    - content: Er muss innerhalb der Ressourcengruppe, in der er sich befindet, eindeutig sind.
-      isCorrect: false
-    - content: Er muss innerhalb Ihres Azure-Abonnements eindeutig sein.
-      isCorrect: false
-    - content: Global eindeutig
-      isCorrect: true
-      correctExplanation: Der Name des Speicherkontos wird als Teil des URI für den API-Zugriff verwendet, er muss folglich global eindeutig sein.
-  - content: Wann würden Sie in einem typischen Projekt Ihr Speicherkonto bzw. Ihre Speicherkonten erstellen?
-    choices:
-    - content: Zu Beginn, während der Einrichtung des Projekts.
-      isCorrect: true
-      correctExplanation: Speicherkonten sind in der Regel die Lebensdauer eines Projekts über stabil. Sie werden für gewöhnlich zu Beginn eines Projekts erstellt.
-    - content: Nach der Bereitstellung, wenn das Projekt ausgeführt wird.
-      isCorrect: false
-    - content: Am Ende, während der Ressourcenbereinigung.
-      isCorrect: false
+    - content: 'Angenommen Sie verfügen über zwei Videodateien, die als BLOBs gespeichert sind. Eines der Videos ist unternehmenskritisch. Für dieses Video ist eine Replikationsrichtlinie erforderlich, die mehrere Kopien in verschiedenen Rechenzentren erstellt. Das andere Videos ist nicht unternehmenskritisch. Für dieses Video reicht eine lokale Replikationsrichtlinie aus. "True" oder "false": um diese Einschränkungen erfüllen zu können, müssen die beiden Blobs werden in separaten Speicherkonten.'
+      choices:
+        - content: Richtig
+          isCorrect: true
+          correctExplanation: 'Die Replikationsrichtlinie ist ein Merkmal für ein Speicherkonto. Jedes Element im Speicherkonto muss dieselbe Richtlinie verwenden. Wenn Sie einige Daten zur Nutzung der Strategie für die georeplikation und andere Daten zur Nutzung der Strategie für die lokale Replikation benötigen, klicken Sie dann benötigen zwei Speicherkonten Sie.'
+        - content: Falsch
+          isCorrect: false
+    - content: 'Der Name des Speicherkontos muss sein:'
+      choices:
+        - content: 'Er muss innerhalb der Ressourcengruppe, in der er sich befindet, eindeutig sind.'
+          isCorrect: false
+        - content: Er muss innerhalb Ihres Azure-Abonnements eindeutig sein.
+          isCorrect: false
+        - content: Global eindeutig ist.
+          isCorrect: true
+          correctExplanation: 'Der Name des Speicherkontos wird als Teil des URI für den API-Zugriff verwendet, er muss folglich global eindeutig sein.'
+    - content: Wann würden Sie in einem typischen Projekt Ihr Speicherkonto bzw. Ihre Speicherkonten erstellen?
+      choices:
+        - content: 'Zu Beginn, während der Einrichtung des Projekts.'
+          isCorrect: true
+          correctExplanation: Speicherkonten sind in der Regel die Lebensdauer eines Projekts über stabil. Sie werden für gewöhnlich zu Beginn eines Projekts erstellt.
+        - content: 'Nach der Bereitstellung, wenn das Projekt ausgeführt wird.'
+          isCorrect: false
+        - content: Am Ende wird während der ressourcenbereinigung.
+          isCorrect: false

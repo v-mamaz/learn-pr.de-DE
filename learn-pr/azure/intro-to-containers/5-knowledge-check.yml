@@ -1,52 +1,47 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-containers.5-knowledge-check
-title: Knowledge check
+title: Wissenstest
 metadata:
-  title: Knowledge check
-  description: Introduction to containers knowledge check.
+  title: Wissenstest
+  description: Einführung zum Container-Wissenstest
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
 durationInMinutes: 5
 quiz:
-  title: 'Introduction to containers'
+  title: Einführung in Container
   questions:
-  - content: 'Which of the following is not a benefit of container adoption?'
-    choices:
-    - content: Fast start times.
-      incorrectExplanation: Containers can start significantly faster than virtual or physical systems.
-      isCorrect: false
-    - content: Efficient use of host resource.
-      isCorrect: false
-      incorrectExplanation: Due to a shared image architecture, many containers can run on a single host, while efficiently utilizing host resources.
-    - content: Built-in disaster recovery.
-      isCorrect: true
-      correctExplanation: Containers don't inherently change disaster recovery procedures.
-    - content: Enables cloud-native application architecture.
-      isCorrect: false
-      incorrectExplanation: Containers can help to develop applications with a modern or cloud-native architecture.
-  - content: 'What command will show all container instances (stopped and running)?'
-    choices:
-    - content: docker ps
-      incorrectExplanation: This command will only show running containers.
-      isCorrect: false
-    - content: docker ps -a
-      isCorrect: true
-      correctExplanation: This command will list all running and stopped containers.
-    - content: docker ps -x
-      incorrectExplanation: This isn't a valid Docker command.
-      isCorrect: false
-    - content: docker ps
-      incorrectExplanation: This command lists container images.
-      isCorrect: false
-  - content: 'In production, container image creation should be automated with a Dockerfile.'
-    choices:
-    - content: False.
-      incorrectExplanation: Container creation automation has many benefits and should be utilized in production container environments.
-      isCorrect: false
-    - content: True.
-      isCorrect: true
-      correctExplanation: Container creation automation has many benefits and should be utilized in production container environments.
+    - content: Welche der folgenden Aussagen beschreibt keine Vorteile der Containereinführung?
+      choices:
+        - content: Schnelle Startzeiten
+          isCorrect: false
+          incorrectExplanation: Container können erheblich schneller als virtuelle oder physische Systeme beginnen.
+        - content: Effiziente Nutzung der Hostressource
+          isCorrect: false
+          incorrectExplanation: 'Aufgrund einer gemeinsamen Image-Architektur können mehrere Container auf einem Host, während Sie effizient unter Verwendung von Hostressourcen ausführen.'
+        - content: Integrierte Notfallwiederherstellung
+          isCorrect: true
+          correctExplanation: Container ändern Notfallwiederherstellungsverfahren grundsätzlich nicht.
+        - content: Ermöglicht native Cloudanwendungsarchitektur
+          isCorrect: false
+          incorrectExplanation: Container sind nützlich beim Entwickeln von Anwendungen mit einer modernen oder nativen Cloudarchitektur.
+    - content: Welcher Befehl zeigt alle (beendeten und ausgeführten) Containerinstanzen an?
+      choices:
+        - content: docker ps
+          isCorrect: false
+          incorrectExplanation: Mit diesem Befehl werden nur ausgeführte Container angezeigt.
+        - content: Docker-images
+          isCorrect: false
+          incorrectExplanation: Dieser Befehl listet Containerimages auf.
+        - content: docker ps -a
+          isCorrect: true
+          correctExplanation: Dieser Befehl listet alle ausgeführten und beendeten Container auf.
+    - content: '"True" oder "false": Erstellen des Containers Image sollte in produktionsumgebungen mit einer dockerfile-Datei automatisiert werden.'
+      choices:
+        - content: Richtig
+          isCorrect: true
+          correctExplanation: 'Automation ist schneller, leicht wiederholbar und weniger fehleranfällig als manuelle imageerstellung. Bewährte Methode empfiehlt die Verwendung von Automatisierung in produktionsumgebungen für Container.'
+        - content: Falsch
+          isCorrect: false

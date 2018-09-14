@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.2-defense-in-depth
-title: Defense in depth
+title: Tiefgehende Verteidigung
 metadata:
-  title: Defense in depth
-  description: In this unit we'll discuss how to practice defense in depth
+  title: Tiefgehende Verteidigung
+  description: 'In dieser Einheit wird erörtert, wie Sie die tiefgehende Verteidigung verwenden.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,27 +13,27 @@ durationInMinutes: 5
 content: |
   [!include[](includes/2-defense-in-depth.md)]
 quiz:
-  title: 'Knowledge Check - Defense in depth'
+  title: 'Wissenstest: Mehrstufige Verteidigung'
   questions:
-  - content: 'Which of the following would be an appropriate tactic to apply to a defense in depth security strategy?'
-    choices:
-    - content: 'Deallocating virtual machines when not in use'
-      isCorrect: false
-      incorrectExplanation: 'This can be an effective tactic to reduce costs, but it not a tactic for a security strategy.'
-    - content: 'Setting up alerts for CPU percentage exceeds 90%'
-      isCorrect: false
-      incorrectExplanation: 'This may be a valuable monitoring metric to identify performance issues in your application, but is not a tactic in a security strategy.'
-    - content: 'Storing connection strings in a configuration file'
-      isCorrect: false
-      incorrectExplanation: 'Storing connection strings in a configuration file is a security risk and is not a tactic in a security strategy.'
-    - content: 'Enforcing MFA for all administrative level accounts'
-      isCorrect: true
-      correctExplanation: 'Enforcing MFA for all administrative level accounts adds an extra layer of protection for highly privliged accounts and is an effective tactic as part of a defense in depth security strategy.'
-  - content: 'By moving to the cloud, my architecture is fully secure and I can hand off all security responsibilities to my cloud provider.'
-    choices:
-    - content: 'True'
-      isCorrect: false
-      incorrectExplanation: 'Moving to the cloud does offload some responsibilities to the cloud provider, but a model of shared responsibility is still in effect.'
-    - content: 'False'
-      isCorrect: true
-      correctExplanation: 'Moving to the cloud does offload some responsibilities to the cloud provider, but a model of shared responsibility is still in effect.'
+    - content: 'Welche der folgenden wäre eine geeignete Taktik, um eine Sicherheitsstrategie mit tiefgehender Verteidigung anzuwenden?'
+      choices:
+        - content: Aufheben der Zuordnung virtueller Computer nicht in Verwendung
+          isCorrect: false
+          incorrectExplanation: 'Dies kann eine effektive Möglichkeit, Kosten, aber es keine Methodik für eine Sicherheitsstrategie zu reduzieren, sein.'
+        - content: Einrichten von Benachrichtigungen für CPU-Prozentsatz über 90 %
+          isCorrect: false
+          incorrectExplanation: 'Dies kann eine wertvolle überwachungsmetrik zum Identifizieren von Leistungsproblemen in Ihrer Anwendung, aber ist es sich nicht um eine Vorgehensweise in einer Sicherheitsstrategie.'
+        - content: Speichern von Verbindungszeichenfolgen in einer Konfigurationsdatei
+          isCorrect: false
+          incorrectExplanation: Das Speichern von Verbindungszeichenfolgen in einer Konfigurationsdatei ist ein Sicherheitsrisiko dar und keine Vorgehensweise in einer Sicherheitsstrategie.
+        - content: Erzwingen von MFA für alle Administratorkonten auf
+          isCorrect: true
+          correctExplanation: Erzwingen von MFA für alle Administratorkonten Ebene Fügt eine zusätzliche Sicherheitsebene für hoch Privliged Konten und eine effektive Möglichkeit als Teil einer Defense-in-Depth-Sicherheitsstrategie ist.
+    - content: Durch den Wechsel in die Cloud ist meine Architektur vollständig sicher und ich kann meinem Cloudanbieter alle Sicherheitsaufgaben übergeben.
+      choices:
+        - content: Richtig
+          isCorrect: false
+          incorrectExplanation: 'In die Cloud verlagern einige Aufgaben an den Cloudanbieter auslagern, jedoch ein Modell für gemeinsame Verantwortung ist weiterhin wirksam.'
+        - content: Falsch
+          isCorrect: true
+          correctExplanation: 'In die Cloud verlagern einige Aufgaben an den Cloudanbieter auslagern, jedoch ein Modell für gemeinsame Verantwortung ist weiterhin wirksam.'

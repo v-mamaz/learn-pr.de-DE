@@ -1,12 +1,12 @@
-Sie wurden von einem globalen Unternehmen für Automobilrennsport beauftragt, seine gesamte Überwachung und die Webplattform zu modernisieren. Das Unternehmen hat sich dazu entschieden, vorhandene Linux-Server durch eine Vielzahl von cloudbasierter Infrastruktur zu ersetzen, die die neuesten Trends in der Architektur nutzt. Ein Teil des Systems wird mithilfe von Azure Functions auf der serverlosen Plattform von Azure ausgeführt, um Echtzeitdaten, Positionsstatistiken, Daten des Rennens und andere relevante Teile der analysierten Informationen in Datenbankclustern zu verarbeiten. Das Unternehmen möchte seine vorhandene Website behalten, die zwar letztes Jahr erst überarbeitet wurde, jetzt aber auf diesen modernen Datenstrom zugreifen können soll.
+Sie wurden von einem globalen Unternehmen für Automobilrennsport beauftragt, seine gesamte Überwachung und die Webplattform zu modernisieren. Das Unternehmen hat sich dazu entschieden, vorhandene Linux-Server durch eine vielseitige cloudbasierte Infrastruktur zu ersetzen, die die aktuellen Architekturtrends nutzt. Teil des Systems wird auf mithilfe von Azure Functions zum Verarbeiten von in Echtzeit Race Daten, Statistiken, Race Daten und andere relevante Teile im analysierten Informationen in Clustern von Datenbanken übertragen der serverlosen Azure-Plattform ausgeführt. Sie möchten behalten ihre vorhandene Website, die gerade Vorjahr umgeschrieben wurde, es aber in diesen modernen Datenstrom eine Verbindung herstellen.
 
-Da die Website bereits unter Apache mit Linux ausgeführt wird, entscheiden Sie sich, diese mithilfe eines virtuellen Azure-Computers direkt in Azure zu verschieben. Dies gewährt mit nur minimalem Aufwand Ihrerseits Zugriff auf die Daten.
+Die Website, die auf Apache unter Linux, und da es liegt bereits ausgeführt und ausgeführt wird, entscheiden Sie sich direkt in Azure durch die Nutzung von virtuellen Azure-Computer verschoben wird. Dadurch erhalten die den Websitezugriff auf die Daten mit einer minimalen Menge an Arbeit Ihrerseits.
 
 ## <a name="learning-objectives"></a>Lernziele
 
 In diesem Modul lernen Sie Folgendes:
 
-- Kenntnis der Optionen, die für virtuelle Computer in Azure zur Verfügung stehen
-- Erstellen eines virtuellen Linux-Computers im Azure Stack-Portal
-- Herstellen einer Verbindung mit einem ausgeführten virtuellen Linux-Computer mithilfe von SSH
-- Installieren Sie die Software, und ändern Sie mithilfe des Azure-Portals die Netzwerkkonfiguration auf einem virtuellen Computer.
+- Grundlegendes zu den Optionen, die für virtuelle Computer in Azure verfügbar sind
+- Erstellen einer Linux-VM über das Azure-portal
+- Verbinden Sie mit einer ausgeführten Linux-VM mit SSH
+- Installieren von Software und Ändern der Netzwerkkonfiguration auf einem virtuellen Computer mithilfe des Azure-Portals

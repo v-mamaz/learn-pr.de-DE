@@ -1,0 +1,39 @@
+### YamlMime:ModuleUnit
+uid: learn.access-data-with-cosmos-db-and-sql-api.4-query-types
+metadata:
+  title: Abfragetypen
+  description: 'Erfahren Sie, welche Arten von Abfragen Sie in Azure Cosmos DB zum Abrufen Ihrer Daten verwenden können.'
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Abfragetypen
+durationInMinutes: 5
+content: |
+  [!include[](includes/4-query-types.md)]
+quiz:
+  title: Wissenstest
+  questions:
+    - content: Was ist die einzige erforderliche Klausel in einer SQL-Abfrage?
+      choices:
+        - content: SELECT
+          isCorrect: true
+          correctExplanation: Richtig! Wählen Sie ist die einzige erforderliche-Klausel in einer Abfrage.
+        - content: VON
+          isCorrect: false
+          incorrectExplanation: Nein. FROM ist eine optionale Klausel in einer SQL-Abfrage.
+        - content: WHERE
+          isCorrect: false
+          incorrectExplanation: 'Nein, ist, in dem eine optionale Klausel in einer SQL-Abfrage.'
+    - content: 'Die Abfrage würden Sie verwenden, erhalten eine geordnete Liste von Produkten-IDs und produktbeschreibungen, mit der größten Produkt-ID beginnt und endet mit der kleinsten Produkt-ID?'
+      choices:
+        - content: SELECT p.productId FROM Products p ORDER BY p.productId ASC
+          isCorrect: false
+          incorrectExplanation: 'Falsch, diese Klausel würde nur die Produkt-IDs in aufsteigender Reihenfolge zurückgeben.'
+        - content: SELECT p.id FROM Products p ORDER BY p.productId DESC
+          isCorrect: false
+          incorrectExplanation: 'Falsch, diese Klausel würde nur die ID in absteigender Reihenfolge zurückgeben.'
+        - content: 'SELECT p.productId, p.description FROM Products p ORDER BY p.productId DESC'
+          isCorrect: true
+          incorrectExplanation: 'Richtig, diese Klausel würde sowohl die Produkt-ID, als auch die Produktbeschreibung in aufsteigender Reihenfolge zurückgeben.'

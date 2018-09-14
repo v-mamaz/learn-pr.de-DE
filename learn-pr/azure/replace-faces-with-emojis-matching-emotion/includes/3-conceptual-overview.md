@@ -1,10 +1,10 @@
-Before we delve too deep into the implementations let’s first answer some higher level questions.
+Bevor wir zu weit in die Implementierungen beschäftigen, lassen Sie uns zunächst einige Fragen zu beantworten höheren Ebene.
 
-## How to calculate the emotion of a face?
+## <a name="how-to-calculate-the-emotion-of-a-face"></a>Wie die Emotionen einer Fläche berechnen?
 
-Calculating emotion is one of the easiest parts of the application. We use the [FaceAPI](https://azure.microsoft.com/services/cognitive-services/face/?WT.mc_id=mojifier-sandbox-ashussai), part of the Azure Cognitive Services offering.
+Die Berechnung Emotion ist einer der Teile der Anwendung am häufigsten zugegriffen werden kann. Wir verwenden die [FaceAPI](https://azure.microsoft.com/services/cognitive-services/face/), der Teil des Angebots von Azure Cognitive Services.
 
-The FaceAPI takes as input an image and returns information about the image, including if it detected any faces, the locations of the faces in the image and if requested it will also calculate and return the emotions of the faces as well, like so:
+Das FaceAPI nimmt als Eingabe eine Bild und gibt Informationen über das Image besteht, einschließlich, wenn es Gesichter, die Positionen der Gesichter im Bild erkannt, und wenn diese angefordert berechnet und Zurückgeben der Emotionen der Flächen aus, wie folgt:
 
 ```json
 {
@@ -19,15 +19,15 @@ The FaceAPI takes as input an image and returns information about the image, inc
 }
 ```
 
-Take for instance this image:
+Führen Sie beispielsweise dieser Abbildung:
 
-![Example Face](/media-drafts/example-face.jpg)
+![Beispiel für Gesichtserkennung](/media-drafts/example-face.jpg)
 
-To process this image, you would make a POST request to an API endpoint like this:
+Um dieses Image zu verarbeiten, sollten Sie eine POST-Anforderung an die API-Endpunkt wie folgt vornehmen:
 
-    https://<region>.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=false&returnFaceLandmarks=false&returnFaceAttributes=emotion
+https://xxxxxxxxx.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=false&returnFaceLandmarks=false&returnFaceAttributes=emotion
 
-We provide the image in the body like so:
+Wir bieten das Bild im Text wie folgt:
 
 ```json
 {
@@ -35,15 +35,17 @@ We provide the image in the body like so:
 }
 ```
 
-> **Note**
+> **Hinweis**
 >
-> The API by default doesn’t return the emotion, you need to explicitly specify the query param `returnFaceAttributes=emotion`
+> Die API wird standardmäßig der Emotionen zurückgegeben wird, müssen Sie explizit die Query-Parameter angeben `returnFaceAttributes=emotion`
 
-The API is authenticated by the use of a secret key; we need to send this key with the header
+Die Verwendung eines geheimen Schlüssels authentifiziert die API; Wir müssen diesen Schlüssel mit dem Header zu senden.
 
-    Ocp-Apim-Subscription-Key: <your-subscription-key>
+```
+Ocp-Apim-Subscription-Key: <your-subscription-key>
+```
 
-The API with the query params above would return a JSON like so:
+Die API mit der obigen Abfrage Params würde eine JSON-Code zurück, die wie folgt:
 
 ```json
 [
@@ -70,37 +72,37 @@ The API with the query params above would return a JSON like so:
 ]
 ```
 
-It returns an array of results, one per face detected in the image. For each face, it returns the size/location of the face as `faceRectangle` and the emotions represented as a number from 0 to 1 as `faceAttributes`.
+Es gibt ein Array von Ergebnissen, eine pro Gesicht im Bild erkannt. Für jedes Gesicht, gibt es zurück, der Größe bzw. an einem Standort das Gesicht als `faceRectangle` und die Emotionen, ausgedrückt als Zahl von 0 auf 1 als `faceAttributes`.
 
-> **Tip**
+> **Tipp**
 >
-> You can start playing around with Cognitive Services even _without_ having an Azure account, simply go to [this page](https://azure.microsoft.com/try/cognitive-services/?api=face-api&WT.mc_id=mojifier-sandbox-ashussai) and enter your email address to get trial access.
+> Sie können beginnen, ein wenig Herumspielen mit Cognitive Services auch _ohne_ müssen ein Azure-Konto an, wechseln Sie zu [auf dieser Seite](https://azure.microsoft.com/try/cognitive-services/?api=face-api&WT.mc_id=mojifier-sandbox-ashussai) , und geben Sie Ihre e-Mail-Adresse um Testversion zu erhalten.
 
-## How to map an emotion to an emoji?
+## <a name="how-to-map-an-emotion-to-an-emoji"></a>Wie Sie eine Emotion ein Emoji zuordnen?
 
-Imagine there were only two emotions, fear and happiness, with values ranging from 0 to 1. Then every face could be plotted in a 2D _emotional space_ based on the emotion of the user, like so:
+Angenommen Sie, gab es nur zwei Emotionen "," Angst "und" Fröhlich, mit Werten zwischen 0 und 1. Und dann jedes Gesicht in einer 2D-Texturmap. darstellbare _emotionaler Speicherplatz_ basierend auf der Emotionen des Benutzers wie folgt:
 
-![Euclidean Distance 1](/media-drafts/graph-1.jpg)
+![Euklidische Distanz 1](/media-drafts/graph-1.jpg)
 
-Imagine then that we also figured out the emotional point for each emoji, and plotted those on the 2D emotional space as well. Then if we calculate the distance between your face and all the other emojis in this 2D emotional space we can figure out the closest emoji to your emotion, like so:
+Angenommen Sie, klicken Sie dann, dass wir auch der emotionaler Punkt für die einzelnen Emoji herausgefunden, und auf das emotionale 2D-Bereich ebenfalls dargestellt. Wenn wir berechnen den Abstand zwischen dem Zifferblatt Ihrer und die andere Emojis in einem dieser emotionaler 2D-Bereich wir, bis die nächste Emoji, das Ihre Emotionen herausfinden können, dann wie folgt:
 
-![Euclidean Distance 2](/media-drafts/graph-2.png)
+![Euklidische Distanz 2](/media-drafts/graph-2.png)
 
-This calculation is called the `euclidian distance`, and this is precisely what we used but not in 2D emotional space, in an 8D emotional space with (anger, contempt, disgust, fear, happiness, neutral, sadness, surprise).
+Diese Berechnung wird aufgerufen, die `euclidian distance`, und dies wird von uns verwendet, aber nicht in 2D emotionaler Speicherplatz in einem emotionaler 8d-Raum mit (Wut, verachtung, ekel, Angst, fröhlich, Neutral, traurig, überrascht).
 
-> **Tip**
+> **Tipp**
 >
-> To make like easier we used the npm package called euclidean-distance, <https://www.npmjs.com/package/euclidean-distance>.
+> Um sicherzustellen, wie einfacher das Npm-Paket namens euklidischen Abstand verwendet <https://www.npmjs.com/package/euclidean-distance>.
 
-## Shared Code
+## <a name="shared-code"></a>Freigegebener Code
 
-The sample starter project comes with a shared folder with code that already handles a lot of the use cases above.
+Das Beispiel-Starter-Projekt enthält einen freigegebenen Ordner mit Code, der bereits einen Großteil der oben genannten Fällen behandelt.
 
-### EmotivePoint
+### <a name="emotivepoint"></a>EmotivePoint
 
-If you look closely at the `EmotivePoint` class in `shared/emmotive-point.ts` you will notice a few things
+Bei genauer Betrachtung der `EmotivePoint` -Klasse im `shared/emmotive-point.ts` sehen Sie einige Dinge.
 
-The contructor takes as input an object containing emotive information and stores as local member variables, like so:
+Der Konstruktor akzeptiert als Eingabe ein Objekt mit emotive Informationen aus und speichert Sie als Mitglied der lokalen Variablen wie folgt:
 
 ```typescript
  constructor({
@@ -124,7 +126,7 @@ The contructor takes as input an object containing emotive information and store
   }
 ```
 
-It also has a function called distance which we can use to calcualte the euclidian distance between two emotive points, like so:
+Es verfügt auch über eine Funktion namens Abstand berechnet den euklidischen Abstand zwischen zwei Punkten emotive verwenden wie folgt:
 
 ```typescript
   distance(other) {
@@ -134,7 +136,7 @@ It also has a function called distance which we can use to calcualte the euclidi
   }
 ```
 
-We therefore can create two emotive points and calculate how close they are like so:
+Wir daher erstellen Sie zwei emotive Punkten und berechnen, wie nah können wie folgt:
 
 ```typescript
 let a = new EmotivePoint({
@@ -146,18 +148,18 @@ let b = new EmotivePoint({
 let distance = a.distance(b);
 ```
 
-### Face
+### <a name="face"></a>Gesicht
 
-Another helper class is the `Face` class, this combines a few different properties including the `EmotivePoint` of a face and also the rectangle defining the face in the image, we use the `Rect` class for that.
+Einer weiteren Hilfsklasse ist die `Face` Klasse; dabei werden einige andere Eigenschaften, einschließlich kombiniert die `EmotivePoint` einer Fläche und auch das Rechteck definieren das Gesicht im Bild; wir verwenden die `Rect` Klasse.
 
-If you look closely at the `Face` class constructor in `shared/face.ts` you will notice this line of code:
+Bei genauer Betrachtung der `Face` Klassenkonstruktor im `shared/face.ts` sehen Sie diese Codezeile:
 
 ```typescript
 this.moji = this.chooseMoji(this.emotivePoint);
 ```
 
-`emotivePoint` is the emotive point of the face itself.
-`chooseMoji` returns an appropriate emoji based on the emotivePoint of the face.
+`emotivePoint` ist der emotive Punkt der Oberfläche selbst.
+`chooseMoji` Gibt eine entsprechende Emoji basierend auf den EmotivePoint, der das Gesicht zurück.
 
 ```typescript
   chooseMoji(point) {
@@ -175,12 +177,12 @@ this.moji = this.chooseMoji(this.emotivePoint);
   }
 ```
 
-`MOJIS` is the list of emotive points for all the emojis, we'll discuss how to generate these in the next lecture.
+`MOJIS` die Liste der emotive Punkte für alle ist die Emojis, werden gleich erörtert wie diese in der nächsten Vorlesung generiert.
 
-The `chooseMoji` fucntion simply caclualtes the distance between this face and all the emojies, returning the closest one.
+Die `chooseMoji` -Funktion berechnet den Abstand zwischen diesem Gesichts- und die Emojis dasjenige zurückgeben.
 
-# Summary
+# <a name="summary"></a>Zusammenfassung
 
-For each emoji we calcualte a point in _emotional_ space, this is called _calibration_ and we will cover this in the next chapter.
+Für jede Emoji berechnen wir die zeitpunktwiederherstellung _emotionaler_ Leerzeichen, dies wird als bezeichnet _Kalibrierung_ dies im nächsten Kapitel behandelt.
 
-Then using the Azure Face API we get a list of faces in an images with the emotional point of each face. Then using the euclidian distance algorithm to find the closest emoji to each face.
+Verwenden der Azure-Gesichtserkennungs-API, wir rufen Sie eine Liste der Gesichter in Bildern mit dem emotionaler Punkt jeder einzelnen Fläche. Klicken Sie dann mithilfe der euklidischen Distanz-Algorithmus finden Sie die nächsten Emoji, das jedes Gesicht ein.

@@ -1,20 +1,20 @@
-Komplexe oder wiederkehrende Aufgaben erfordern häufig viel Zeit für die Verwaltung. Organisationen bevorzugen, diese Aufgaben zu automatisieren, um Kosten zu senken und Fehler zu vermeiden.
+Komplexe und wiederkehrende Aufgaben nutzen häufig viel Zeit bei der Verwaltung. Organisationen bevorzugen zur Automatisierung dieser Aufgaben aus, um Kosten zu senken und Fehler zu vermeiden.
 
-Dies ist im Customer Relationship Management-Unternehmensbeispiel wichtig. Dort testen Sie Ihre Software auf mehreren virtuellen Linux-Computern, die Sie kontinuierlich löschen und neu erstellen müssen. Angenommen, Sie möchten ein PowerShell-Skript verwenden, um die Erstellung der virtuellen Computer zu automatisieren.
+Dies ist wichtig, im Beispiel Unternehmen (Customer Relationship Management, CRM). Testen Sie Ihre Software auf mehrere virtuelle Linux-Computer (VMs), die Sie kontinuierlich löschen und neu erstellen müssen. Möchten ein PowerShell-Skript zu verwenden, um die Erstellung der virtuellen Computer zu automatisieren.
 
-Bevor Sie einen virtuellen Computer erstellen, müssen einige zusätzliche Voraussetzungen für das Skript erfüllt sein. 
-- Sie erstellen mehrere virtuelle Computer, deshalb sollte die Erstellung in einer Schleife stattfinden.
-- Sie müssen virtuelle Computer in drei verschiedenen Ressourcengruppen erstellen, der Name der Ressourcengruppe sollte dem Skript also als Parameter übergeben werden.
+Über den Basisbetrieb Erstellen eines virtuellen Computers müssen Sie einige zusätzliche Anforderungen für das Skript aus. 
+- Mehrere virtuelle Computer, erstellen Sie daher die Erstellung in einer Schleife aufgenommen werden soll
+- Sie müssen in drei verschiedenen Ressourcengruppen, VMs erstellen, damit der Name der Ressourcengruppe an das Skript als Parameter übergeben werden sollen
 
-In diesem Abschnitt sehen Sie, wie Sie ein Azure PowerShell-Skript schreiben und ausführen, das diese Anforderungen erfüllt.
+In diesem Abschnitt sehen Sie, wie Sie schreiben, und führen Sie ein Azure PowerShell-Skript, das diese Anforderungen erfüllt.
 
 ## <a name="what-is-a-powershell-script"></a>Was ist ein PowerShell-Skript?
-Ein PowerShell-Skript ist eine Textdatei, die Befehle und Steuerelementkonstrukte enthält. Bei diesen Befehlen handelt es sich um Aufrufe von Cmdlets. Die Steuerelementkonstrukte sind beispielsweise Schleifen, Variablen, Parameter, Kommentare, die von PowerShell bereitgestellt werden.
+Ein PowerShell-Skript ist eine Textdatei mit Befehlen und Steuerelement erstellt. Die Befehle sind die Aufrufe der Cmdlets. Die Steuerelementkonstrukte sind Funktionen wie Schleifen, Variablen, Parameter, Kommentare, usw., die vom PowerShell Programmierung.
 
-PowerShell-Skriptdateien haben die Erweiterung **PS1**. Sie können diese Dateien mit jedem Text-Editor erstellen und speichern. 
+PowerShell-Skriptdateien haben ein **ps1** Dateierweiterung. Sie können zu erstellen und speichern diese Dateien mit einem beliebigen Texteditor. 
 
 > [!TIP]
-> Wenn Sie PowerShell-Skripts unter Windows schreiben, können Sie PowerShell ISE (Integrated Scripting Environment) verwenden. Dieser Editor stellt Features wie die Syntaxkennzeichnung und eine Liste der verfügbaren Cmdlets bereit.
+> Wenn Sie in Windows PowerShell-Skripts schreiben, können Sie die Windows PowerShell Integrated Scripting Environment (ISE) verwenden. Dieser Editor stellt Features wie die Syntaxkennzeichnung und eine Liste der verfügbaren Cmdlets bereit.
 >
 Der folgende Screenshot zeigt die Windows PowerShell Integrated Scripting Environment (ISE) mit einem Beispielskript zum Verbinden mit Azure und Erstellen eines virtuellen Computers in Azure.
 
@@ -27,23 +27,23 @@ Sobald Sie dieses Skript geschrieben haben, führen Sie dieses über die PowerSh
 ```
 
 ## <a name="powershell-techniques"></a>PowerShell-Verfahren
-PowerShell hat viele Features, die auch in typischen Programmiersprachen vorhanden sind. Sie können Variablen definieren, Branches und Schleifen verwenden, Befehlszeilenparameter erfassen, Funktionen schreiben, Kommentare hinzufügen und vieles mehr. Für unser Skript sind drei Features erforderlich: Variablen, Schleifen und Parameter.
+PowerShell umfasst viele Features, die in typischen Programmiersprachen gefunden. Sie können definieren Sie Variablen, verwenden Sie Branches und Schleifen, erfassen Befehlszeilenparameter, Funktionen schreiben, Hinzufügen von Kommentaren usw. Wir benötigen drei Funktionen für unser Skript: Variablen, Schleifen und Parameter.
 
 ### <a name="variables"></a>Variables
-PowerShell unterstützt Variablen. Verwenden Sie **$**, um eine Variable zu deklarieren und **=**, um einen Wert zuzuweisen. Beispiel:
+PowerShell unterstützt Variablen. Verwendung **$** zum Deklarieren einer Variablen und **=** , einen Wert zuzuweisen. Beispiel:
 
 ```powershell
 $loc = "East US"
 $iterations = 3
 ```
 
-Variablen können Objekte enthalten. Die folgende Definition legt die Variable **adminCredential** beispielsweise auf das Objekt fest, das vom Cmdlet **Get-Credential** zurückgegeben wird.
+Variablen können Objekte enthalten. Die folgende Definition legt z. B. die **AdminCredential** -Variable auf das von zurückgegebene Objekt der **Get-Credential** Cmdlet.
 
 ```powershell
 $adminCredential = Get-Credential
 ```
 
-Verwenden Sie das Präfix **$** und seinen Namen wie im Folgenden dargestellt, um den Wert abzurufen, der in einer Variable gespeichert ist: 
+Verwenden Sie zum Abrufen des in einer Variablen gespeicherten Wertes dem **$** Präfix und den Namen, wie unten dargestellt: 
 
 ```powershell
 $loc = "East US"
@@ -51,9 +51,9 @@ New-AzureRmResourceGroup -Name "MyResourceGroup" -Location $loc
 ```
 
 ### <a name="loops"></a>Schleifen
-PowerShell verfügt über mehrere Schleifen, z.B. **For**, **Do...While** und **For...Each**. Die **For**-Schleife ist für unsere Anforderungen am besten geeignet, da wir ein Cmdlet mit einer festgelegten Häufigkeit ausführen.
+PowerShell verfügt über mehrere Schleifen: **für**, **tun... Während**, **für... Jede**und so weiter. Die **für** Schleife ist die beste Übereinstimmung für unsere Anforderungen, da wir ein Cmdlet eine feste Anzahl von ausgeführt wird.
 
-Die Hauptsyntax wird im Folgenden dargestellt. Das Beispiel wird für zwei Iterationen ausgeführt und gibt jedes Mal den Wert von **i** aus. Die Vergleichsoperatoren lauten z.B. **-lt** (kleiner als), **-le** (kleiner als oder gleich), **eq** (gleich) oder **ne** (nicht gleich).
+Die Core-Syntax ist unten dargestellt; In diesem Beispiel wird für zwei Iterationen ausgeführt und den Wert des **ich** jedes Mal. Die Vergleichsoperatoren werden geschrieben, **- Lt** für "kleiner als" **-le** für "kleiner als oder gleich" **Eq** für "gleich" **Ne** für "nicht gleich", usw.
 
 ```powershell
 For ($i = 1; $i -lt 3; $i++)
@@ -63,32 +63,33 @@ For ($i = 1; $i -lt 3; $i++)
 ```
 
 ### <a name="parameters"></a>Parameter
-Wenn Sie ein Skript ausführen, können Sie Argumente über die Befehlszeile übergeben. Sie können ebenfalls Namen für jeden Parameter bereitstellen, damit das Skript die Werte extrahieren kann. Beispiel: 
+Wenn Sie ein Skript ausführen, können Sie Argumente in der Befehlszeile übergeben. Sie können Namen für jeden Parameter können Sie das Skript die Werte zu extrahieren, bereitstellen. Beispiel:
 
 ```powershell
 .\setupEnvironment.ps1 -size 5 -location "East US"
 ```
 
-Innerhalb des Skripts erfassen Sie die Werte in Variablen. In diesem Beispiel werden die Parameter nach Namen abgeglichen:
+Innerhalb des Skripts erfassen Sie die Werte in Variablen an. In diesem Beispiel werden die Parameter nach Namen abgeglichen:
 
 ```powershell
 param([string]$location, [int]$size)
 ```
 
-Sie können die Namen weglassen, wenn Sie die Befehlszeile verwenden. Beispiel: 
+Sie können die Namen über die Befehlszeile weglassen. Beispiel:
 
 ```powershell
 .\setupEnvironment.ps1 5 "East US"
 ```
 
-Verwenden Sie innerhalb des Skripts Position für den Abgleich, wenn die Parameter unbenannt sind:
+Verwenden Sie innerhalb des Skripts Position für den Abgleich, wenn der Parameter unbenannt sind:
 
 ```powershell
 param([int]$size, [string]$location)
 ```
 
-## <a name="how-to-create-a-linux-virtual-machine"></a>Erstellen eines benutzerdefinierten virtuellen Linux-Computers
-Azure PowerShell stellt das Cmdlet **New-AzureRmVm** bereit, um einen virtuellen Computer zu erstellen. Das Cmdlet hat viele Parameter, um die große Anzahl von Konfigurationseinstellungen für virtuelle Computer zu verarbeiten. Die meisten Parameter haben sinnvolle Standardwerte, deshalb müssen Sie nur fünf Werte angeben:
+## <a name="how-to-create-a-linux-virtual-machine"></a>Vorgehensweise: erstellen eine Linux-VM
+
+Azure PowerShell bietet die **New-AzureRmVm** -Cmdlet zum Erstellen eines virtuellen Computers. Das Cmdlet verfügt über viele Parameter, damit es die große Anzahl von VM-Konfigurationseinstellungen verarbeiten kann. Die meisten Parameter haben sinnvolle Standardwerte, daher wir nur fünf Dinge anzugeben müssen:
 
 - **ResourceGroupName:** Die Ressourcengruppe, in der der neue virtuelle Computer platziert wird.
 - **Name:** Der Name des virtuellen Computers in Azure.

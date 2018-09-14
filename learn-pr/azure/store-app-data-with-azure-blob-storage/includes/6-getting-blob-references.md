@@ -4,7 +4,7 @@ Sie erhalten ein `ICloudBlob`, wenn Sie es mit den Namen des Blobs anfordern ode
 
 ## <a name="getting-blobs-by-name"></a>Abrufen von Blobs anhand des Namens
 
-Rufen Sie eine der `GetXXXReference`-Methoden auf einem `CloudBlobContainer` auf, um ein `ICloudBlob` anhand des Namens abzurufen. Wenn Sie den Typ des Blobs kennen, den Sie abrufen, verwenden Sie eine der spezifischen Methoden (`GetBlockBlobReference`, `GetAppendBlobReference` oder `GetPageBlobReference`) zum Abrufen eines Objekts, das für diesen Blobtyp zugeschnittene Methoden und Eigenschaften enthält.
+Rufen Sie eine der `GetXXXReference`-Methoden auf einem `CloudBlobContainer` auf, um ein `ICloudBlob` anhand des Namens abzurufen. Wenn Sie den Typ des Blobs kennen, das Sie abrufen, verwenden Sie eine der spezifischen Methoden (`GetBlockBlobReference`, `GetAppendBlobReference` oder `GetPageBlobReference`) zum Abrufen eines Objekts, das für diesen Blobtyp zugeschnittene Methoden und Eigenschaften enthält.
 
 Keine dieser Methoden führt Netzwerkaufrufe durch oder bestätigt, ob das Zielblob tatsächlich vorhanden ist oder nicht. Sie erstellen nur ein lokales Blobverweisobjekt, das anschließend zum Aufrufen von Methoden verwendet werden kann, die *tatsächlich* über das Netzwerk ausgeführt werden und mit Blobs im Speicher interagieren. Die separate Methode `GetBlobReferenceFromServerAsync` ruft die Blobspeicher-API auf und löst eine Ausnahme aus, wenn das Blob noch nicht vorhanden ist.
 
@@ -52,7 +52,7 @@ var blockBlobs = resultSegment.Results.OfType<CloudBlockBlob();
 
 Eines der Features in unserer App erfordert das Abrufen einer Liste von Blobs aus der API. Wir verwenden das oben gezeigte Muster, um alle Blobs in unserem Container aufzulisten. Bei der Verarbeitung der Liste erhalten Sie die Namen der einzelnen Blobs.
 
-Öffnen Sie `BlobStorage.cs` im Editor, ersetzen Sie `GetNames` durch den folgenden Code, und speichern Sie die Änderungen.
+Verwenden Sie Editor, ersetzen Sie `GetNames` in `BlobStorage.cs` durch den folgenden Code, und speichern Sie Ihre Änderungen.
 
 ```csharp
 public async Task<IEnumerable<string>> GetNames()

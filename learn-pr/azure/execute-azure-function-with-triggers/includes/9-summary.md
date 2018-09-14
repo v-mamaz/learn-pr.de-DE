@@ -1,9 +1,5 @@
-An Azure function won't do work until something explicitly tells it to execute. In this module, we explored the timer, HTTP, and blob triggers.
+Eine Azure-Funktion wird erst ausgeführt, wenn sie explizit dazu aufgefordert wird. In diesem Modul haben wir den Zeitgeber-, HTTP- und Blobtrigger untersucht.
 
-Timer triggers are great when you need to execute a function at a consistent time. HTTP triggers allow you to execute logic when you receive data from an outside source. Blob triggers allow you to respond to data that's stored or updated in the cloud.
+Zeitgebertrigger sind ideal, wenn Sie eine Funktion zu einem konsistenten Zeitpunkt ausführen möchten. Mit HTTP-Triggern können Sie Logik ausführen, wenn Sie Daten aus einer externen Quelle empfangen. Mit Blobtriggern können Sie auf Daten reagieren, die in der Cloud gespeichert oder aktualisiert werden.
 
-## Cleanup
-
-To completely delete the Function, you can delete the Resource Group, or the Function itself from the toolbar.
-
-![Screenshot of the Azure portal showing a Functions App toolbar with the Delete button highlighted.](../media/6-delete-function.png)
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

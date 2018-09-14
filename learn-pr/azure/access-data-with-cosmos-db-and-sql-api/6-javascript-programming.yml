@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.access-data-with-cosmos-db-and-sql-api.6-javascript-programming
+metadata:
+  title: Ausführen komplexer Vorgänge für Ihre Daten
+  description: 'Erfahren Sie, wie Sie mithilfe von gespeicherten Prozeduren und benutzerdefinierten Funktionen (UDFs) im Azure-Portal komplexe Vorgänge ausführen.'
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+azureSandbox: true
+title: Ausführen komplexer Vorgänge für Ihre Daten
+durationInMinutes: 10
+content: |
+  [!include[](includes/6-javascript-programming.md)]

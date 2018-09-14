@@ -1,69 +1,69 @@
-Let's create an Azure Redis Cache instance to store and return commonly used values.
+Erstellen wir eine Azure Redis Cache-Instanz zum Speichern und häufig verwendete Werte zurückgeben.
 
 <!-- TODO: do we need to activate the sandbox here? -->
 
-## Create a Redis cache in Azure
+## <a name="create-a-redis-cache-in-azure"></a>Erstellen eines Redis-Caches in Azure
 
-1. Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com?azure-portal=true) an.
 
-1. Click **Create a resource**, click **Databases**, and click **Redis Cache**.
+1. Klicken Sie auf **erstellen Sie eine Ressource**, klicken Sie auf **Datenbanken**, und klicken Sie auf **Redis Cache**.
 
-    The following screenshot shows the Redis Cache location within the various database resource options on the Azure portal.
+    Der folgende Screenshot zeigt den Redis Cache-Speicherort innerhalb der verschiedenen Datenbankressourcen-Optionen im Azure-Portal.
 
-    ![Screenshot showing the Azure portal database options, with the Create a resource, Database, and Redis Cache options highlighted.](../media/4-create-a-cache-1.png)
+    ![Screenshot mit den Datenbankoptionen des Azure-Portals, wobei die Optionen „Ressource erstellen“, „Datenbank“ und „Redis Cache“ hervorgehoben sind.](../media/4-create-a-cache-1.png)
 
-### Identify the location for the cache
+### <a name="identify-the-location-for-the-cache"></a>Geben Sie den Speicherort für den cache
 
 <!-- Resource selection -->
 [!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-### Configure your cache
+### <a name="configure-your-cache"></a>Konfigurieren Ihres Caches
 
-Apply the following settings on the cache.
+Wenden Sie die folgenden Einstellungen auf den Cache ein.
 
-1. **DNS Name:** Create a globally unique name such as **ContosoSportsApp1028**.
+1. **DNS-Name**: Erstellen Sie einen global eindeutigen Namen, z.B. **ContosoSportsApp1028**.
 
-1. **Subscription:** Select the Azure Sandbox subscription.
+1. **Abonnement:** wählen Sie das Azure-Sandbox-Abonnement.
 
-1. **Resource group:** Select <rgn>[Sandbox resource group name]</rgn> for the Resource Group.
+1. **Ressourcengruppe:** wählen <rgn>[Ressourcengruppennamen Sandkasten]</rgn> für die Ressourcengruppe aus.
 
-1. **Location:** Normally, you would select a location near your customers - in this case, the East Coast. However, the Azure Sandbox only allows specific regions to be selected for resources as noted above. Please select one of those locations.
+1. **Speicherort:** normalerweise wählen Sie einen Speicherort in der Nähe Ihrer Kunden – in diesem Fall der Ostküste. Der Azure-Sandbox können jedoch nur bestimmte Regionen für Ressourcen, wie oben bereits erwähnt ausgewählt werden. Wählen Sie einen der Orte an.
 
-1. **Pricing tier:** Select **Basic C0**. This is the lowest tier you can use. Production apps would likely want to store more data and utilize some of the Premium features such as clustering which would require a higher tier selection.
+1. **Tarif**: Wählen Sie **Basic C0** aus. Dies ist die niedrigste Ebene, die Sie verwenden können. Produktions-apps würden wahrscheinlich weitere Daten zu speichern und nutzen einige der Premium-Features wie z. B. Cluster, die eine höhere Ebene Auswahl erforderlich wäre.
 
-1. Click **Create**.
+1. Klicken Sie auf **Erstellen**.
 
-    The following screenshot shows a representative configuration used to create a new Redis Cache resource. Note that yours will be slightly different due to the Azure Sandbox.
+    Der folgende Screenshot zeigt eine repräsentative Konfiguration, die zum Erstellen einer neuen Redis Cache-Ressource verwendet wird. Beachten Sie, dass Ihnen etwas unterscheidet sich aufgrund der Azure-Sandbox.
 
-    ![Screenshot showing the Azure portal blade when creating a new Redis Cache resource, populated with an example configuration DNS name, subscription, new resource group, location, and pricing tier.](../media/4-create-a-cache-2.png)
+    ![Screenshot mit dem Azure-Portal-Blatt beim Erstellen einer neuen Redis Cache-Ressource mit DNS-Name, Abonnement, neuer Ressourcengruppe, Speicherort und Tarif der Beispielkonfiguration.](../media/4-create-a-cache-2.png)
 
 > [!IMPORTANT]
-> You will have to wait until the cache is deployed before continuing. This process might take some time.
+> Warten Sie, bis der Cache bereitgestellt wurde. Dieser Vorgang kann eine Weile dauern.
 
-## Verify your data
+## <a name="verify-your-data"></a>Überprüfen Ihrer Daten
 
-You can use the **Console** feature in the Azure portal to issue commands to your Redis cache instance after it has been created.
+Können Sie die **Konsole** Feature im Azure-Portal, Befehle an Ihre Redis Cache-Instanz, nachdem es erstellt wurde.
 
-1. Locate your Redis cache by selecting **All Resources** in the left-hand sidebar and using the filter box on the left to select Redis Cache instances. Alternatively, you can use the search box at the top and type the name of the cache.
+1. Suchen Sie den Redis Cache dazu **alle Ressourcen** in der linken Randleiste und verwenden das Feld "Filter" auf der linken Seite zum Auswählen von Redis Cache-Instanzen. Alternativ können Sie verwenden Sie das Suchfeld oben, und geben Sie den Namen des Caches.
 
-1. Select your Redis cache instance.
+1. Wählen Sie Ihr Redis Cache-Instanz.
 
-1. In the **Overview** blade for your Redis Cache, select **Console**. This will open a Redis console, which allows you to enter low-level Redis commands.
+1. In der **Übersicht** auf dem Blatt für Ihren Redis Cache wählen **Konsole**. Dadurch wird eine Redis-Konsole geöffnet, Low-Level-Redis-Befehle eingeben können.
 
-1. Type **ping**. Verify that the value returned is **PONG**.
+1. Typ **Ping**. Stellen Sie sicher, dass der zurückgegebene Wert ist **PINGPONG**.
 
-1. Type **set test one**. Verify that the value returned is **OK**.
+1. Typ **Set-Test eins**. Stellen Sie sicher, dass der zurückgegebene Wert ist **OK**.
 
-1. Type **get test**. Verify that the value returned is **"one"**.
+1. Typ **erste Test**. Stellen Sie sicher, dass der zurückgegebene Wert ist **"one"**.
 
-1. Switch back to the **Overview** panel either through the breadcrumb bar on the top, or use the scrollbar to slide the view back to the left.
+1. Wechseln Sie zurück zu den **Übersicht über die** entweder über die Breadcrumb-Leiste im oberen Bereich aus, oder verwenden Sie die Bildlaufleiste, schieben Sie die Ansicht auf der linken Seite zurück.
 
-## Retrieve the access keys and host name
+## <a name="retrieve-the-access-keys-and-host-name"></a>Abrufen der Zugriffsschlüssel und des Hostnamens
 
-1. Select **Settings** > **Access keys**. 
+1. Wählen Sie **Einstellungen** > **Zugriffsschlüssel**. 
 
-1. Copy the **Primary connection string (StackExchange.Redis)** to a safe place, you will need it for the next exercise.
+1. Kopieren der **primäre Verbindungszeichenfolge (StackExchange.Redis)** an einem sicheren Ort auf, Sie benötigen sie für die nächste Übung.
 
-    This key includes your primary key and host name in a complete connection string for use within your application settings for the **StackExchange.Redis** package we are going to use.
+    Dieser Schlüssel enthält den Namen Ihres primären Schlüssels und des Hosts in eine vollständige Verbindungszeichenfolge für die Verwendung in den Einstellungen Ihrer Anwendung für die **"stackexchange.redis"** Paket, die wir verwenden wollen.
 
-Next, let's learn about some of the commands we can use to interrogate the cache.
+Als Nächstes betrachten wir einige der Befehle können mit den Cache abzufragen.

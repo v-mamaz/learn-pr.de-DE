@@ -1,52 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-container-registry.knowledge-check
-title: Knowledge check
+title: Wissenstest
 metadata:
-  title: Knowledge check
-  description: Azure Container Registry knowledge check.
+  title: Wissenstest
+  description: Wissenstest zu Azure Container Registry
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
 durationInMinutes: 5
 quiz:
-  title: 'Knowledge check'
+  title: Wissenstest
   questions:
-  - content: 'Which of the following is not a benefit of using Azure Container Registry?'
-    choices:
-    - content: Replicate container images to many Azure datacenters.
-      incorrectExplanation: The Azure Container Registry geo-replication feature enables this.
-      isCorrect: false
-    - content: Pull container images from Container Registry using any Docker container-related technology.
-      isCorrect: false
-      incorrectExplanation: Container Registry can be used with all Docker-related technology.
-    - content: Make container images publicly available for pull operations.
-      isCorrect: true
-      correctExplanation: Container Registry is a private registry. Images stored in Container Registry cannot be accessed without authentication.
-    - content: Build container images without the need for locally installed Docker tools.
-      isCorrect: false
-      incorrectExplanation: Container images can be built in the cloud using Azure Container Registry Build.
-  - content: 'What is the recommended authentication method for Azure Container Registry?'
-    choices:
-    - content: Admin account.
-      incorrectExplanation: Although an admin account can be created for Azure Container Registry, this is not the recommended authentication method.
-      isCorrect: false
-    - content: User name and password.
-      incorrectExplanation: An Azure container registry can be admin-account enabled, which provides a user name and password. However, this is not the recommended authentication method.
-      isCorrect: false
-    - content: Azure service principal.
-      isCorrect: true
-      correctExplanation: Azure service principals provide granular access to container images in Azure Container Registry. Using a service principal, read-only and full access can be provided to the container registry.
-    - content: No authentication.
-      incorrectExplanation: Azure Container Registry is a private registry and cannot be accessed without authentication..
-      isCorrect: false
-  - content: 'Geo-replication is available in the Container Registry Standard SKU.'
-    choices:
-    - content: True.
-      incorrectExplanation: Geo-replication is only available in the Premium SKU.
-      isCorrect: false
-    - content: False.
-      isCorrect: true
-      correctExplanation: Geo-replication is only available in the Premium SKU.
+    - content: Welche der folgenden Aussagen beschreibt keinen Vorteil von Azure Container Registry?
+      choices:
+        - content: Replizieren von Containerimages in vielen Azure-Rechenzentren.
+          incorrectExplanation: Dies ist mit der Georeplikationsfunktion von Azure Container Registry möglich.
+          isCorrect: false
+        - content: Abrufen von Containerimages aus Container Registry mithilfe einer beliebigen Docker-Containertechnologie.
+          isCorrect: false
+          incorrectExplanation: Container Registry kann mit sämtlichen Docker-bezogenen Technologien verwendet werden.
+        - content: Bereitstellen von Containerimages zur öffentlichen Verwendung für Pullvorgänge.
+          isCorrect: true
+          correctExplanation: Container Registry ist eine private Registrierung. In Container Registry gespeicherte Images sind nicht ohne Authentifizierung zugänglich.
+        - content: Erstellen von Containerimages ohne lokal installierte Docker-Tools.
+          isCorrect: false
+          incorrectExplanation: Containerimages können in der Cloud mit Azure Container Registry Build erstellt werden.
+    - content: Welche Authentifizierungsmethode wird für Azure Container Registry empfohlen?
+      choices:
+        - content: Administratorkonto
+          incorrectExplanation: 'Es ist zwar möglich, für Azure Container Registry ein Administratorkonto zu erstellen, doch dies ist nicht die empfohlene Authentifizierungsmethode.'
+          isCorrect: false
+        - content: Benutzername und Kennwort
+          incorrectExplanation: 'Die Azure-Containerregistrierung kann mit einem Administratorkonto aktiviert werden, wodurch Benutzername und Kennwort vorhanden sind. Dabei handelt es sich jedoch nicht um die empfohlene Authentifizierungsmethode.'
+          isCorrect: false
+        - content: Azure-Dienstprinzipal
+          isCorrect: true
+          correctExplanation: Mit Azure-Dienstprinzipalen kann der Zugriff auf Containerimages in Azure Container Registry präzise gesteuert werden. Durch die Verwendung eines Dienstprinzipals können schreibgeschützter Zugriff und Vollzugriff auf die Containerregistrierung gewährt werden.
+        - content: Keine Authentifizierung
+          incorrectExplanation: 'Azure Container Registry ist eine private Registrierung, auf die ohne Authentifizierung nicht zugegriffen werden kann.'
+          isCorrect: false
+    - content: Georeplikation ist in der Standard-SKU von Container Registry verfügbar.
+      choices:
+        - content: Richtig.
+          incorrectExplanation: Georeplikation ist nur in der Premium-SKU verfügbar.
+          isCorrect: false
+        - content: Falsch.
+          isCorrect: true
+          correctExplanation: Georeplikation ist nur in der Premium-SKU verfügbar.

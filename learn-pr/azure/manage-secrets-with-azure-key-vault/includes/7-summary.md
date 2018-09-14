@@ -1,14 +1,15 @@
-In diesem Modul haben Sie die Konfiguration des Geheimnisses einer App in Azure Key Vault gesichert. Unser App-Code authentifiziert sich mit der verwalteten Dienstidentität beim Tresor und lädt beim Start automatisch die Geheimnisse aus dem Tresor in das ASP.NET Core-Konfigurationssystem.
+In diesem Modul haben Sie die Konfiguration des Geheimnisses einer App in Azure Key Vault gesichert. Unser App-Code authentifiziert sich mit der verwalteten Identität beim Tresor und lädt beim Start automatisch die Geheimnisse aus dem Tresor in das ASP.NET Core-Konfigurationssystem.
 
-## <a name="cleanup"></a>Bereinigen
+## <a name="clean-up"></a>Bereinigen
+<!---TODO: Update for sandbox?--->
 
-Um Ihr Azure-Abonnement zu bereinigen, führen Sie die folgenden Schritte in Azure Cloud Shell aus, um die Ressourcengruppe zu löschen, die alle Ressourcen enthält, die wir in diesem Modul erstellt haben.
+Führen Sie die folgenden Schritte in Azure Cloud Shell aus, um die Ressourcengruppe zu löschen, die alle Ressourcen enthält, die wir in diesem Modul erstellt haben, um so Ihr Azure-Abonnement zu bereinigen.
 
 ```console
 az group delete --name keyvault-exercise-group
 ```
 
-Um Ihren Cloud Shell-Speicher zu bereinigen, löschen Sie das Verzeichnis „`KeyVaultDemoApp`“.
+Löschen Sie zum Bereinigen Ihres Cloud Shell-Speichers das Verzeichnis `KeyVaultDemoApp`.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
@@ -25,5 +26,5 @@ Wenn dies eine echte App wäre, wie würde es weitergehen?
 
 - [Dokumentation zu Key Vault](https://docs.microsoft.com/azure/key-vault/)
 - [Weitere Informationen zu AddAzureKeyVault und den erweiterten Optionen](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1&tabs=aspnetcore2x)
-- [Dieses Tutorial](https://docs.microsoft.com/azure/key-vault/key-vault-use-from-web-application) führt durch die Verwendung von „`KeyVaultClient`“ und erläutert die manuelle Authentifizierung bei Azure Active Directory mithilfe eines Clientgeheimnisses anstelle einer verwalteten Dienstidentität.
-- Lesen Sie die [Dokumentation zum MSI-Tokendienst](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity#using-the-rest-protocol), um den Authentifizierungsworkflow selbst zu implementieren.
+- [Dieses Tutorial](https://docs.microsoft.com/azure/key-vault/key-vault-use-from-web-application) führt durch die Verwendung von `KeyVaultClient` und erläutert die manuelle Authentifizierung bei Azure Active Directory mithilfe eines Clientgeheimnisses anstelle einer verwalteten Identität.
+- In der [Dokumentation zu verwalteten Identitäten für den Tokendienst für Azure-Ressourcen](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity#using-the-rest-protocol) finden Sie weitere Informationen zur Implementierung des Authentifizierungsworkflows.

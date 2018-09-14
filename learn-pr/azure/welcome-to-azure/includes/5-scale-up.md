@@ -1,84 +1,80 @@
-Your web server is up and running, but you realize you need more computing power to make the experience great for your users. How can you make your VM run faster?
+Ihre Webserver ausgeführt wird, und wird ausgeführt, aber Sie nutzen, benötigen Sie mehr rechenleistung, um die Erfahrung für Ihre Benutzer hervorragend ist. Wie können Sie Ihren virtuellen Computer schneller ausgeführt?
 
-In your data center, you might move your web server to more powerful hardware to solve performance problems. The problem is you need to buy, rack, and power your new system. With Azure, the answer is much simpler.
+In Ihrem Rechenzentrum können Sie Ihrem Webserver zu leistungsstärkerer Hardware zum Lösen von Leistungsproblemen verschieben. Das Problem ist, dass Sie kaufen, ein rack und schalten Sie das neue System müssen. Mit Azure ist die Antwort viel einfacher.
 
-Now you'll scale up your VM to a more powerful size. Before you change your VM's size, you must shut it down, or deallocate it.
+Jetzt müssen Sie Ihren virtuellen Computer auf eine leistungsfähigere Größe hochskalieren. Bevor Sie Ihre VM Größe ändern, müssen Sie ihn schließen oder Zuordnung aufheben.
 
-First, let's define what scale means and what happens when you deallocate your VM.
+Zuerst definieren wir, welche Skalierung bedeutet und was geschieht, wenn Sie die Zuordnung Ihres virtuellen Computers aufheben.
 
-## What is scale?
+## <a name="what-is-scale"></a>Was ist die Skalierung?
 
-_Scale_ refers to adding network bandwidth, memory, storage, or compute power to achieve better performance.  
+_Skalierung_ bezieht sich auf das Hinzufügen von Netzwerkbandbreite, Arbeitsspeicher, Speicher oder rechenleistung, um eine bessere Leistung zu erzielen.  
 
-You may have heard the terms _scale up_ and _scale out_.
+Sie haben die Begriffe gehört _zentral hochskalieren_ und _horizontal hochskalieren_.
 
-Scaling up, or vertical scaling, means to increase the memory, storage, or compute power on an existing virtual machine. For example, you can add additional memory to a web or database server to make it run faster.
+Zentral hochzuskalieren oder vertikale Skalierung, bedeutet, dass den Arbeitsspeicher, Speicher, erhöhen oder zu computeleistung auf einem vorhandenen virtuellen Computer. Sie können eine Web- oder Datenbank-Server, um Ausführung zu beschleunigen, z. B. zusätzlichen Arbeitsspeicher hinzufügen.
 
 > [!TIP]
-> You can also _scale down_ your system if you needed to scale up only temporarily.
+> Sie können auch _Herunterskalieren_ Ihr System, wenn Sie nur vorübergehend zentral hochskalieren.
 
-Scaling out, or horizontal scaling, means to additional virtual machines to power your application. For example, you might create many virtual machines configured in exactly the same way and use a load balancer to distribute work across them.
+Horizontales hochskalieren oder horizontale Skalierung, bedeutet, dass zusätzliche virtuelle Computer auf Ihre Anwendung zu unterstützen. Z. B. können Sie viele virtuelle Computer so konfiguriert, auf genau die gleiche Weise erstellen und verwenden einen Load Balancer, um die Arbeit auf sie verteilen.
 
-## What is deallocation?
+## <a name="what-is-deallocation"></a>Was ist die Aufhebung der Zuordnung?
 
-Deallocation is the process that shuts down your VM and releases its compute resources.
+Aufhebung der Zuordnung ist der Prozess, der Ihr virtueller Computer heruntergefahren und die computeressourcen frei.
 
-When you shut down your PC at work or at home, the operating system closes your programs and then notifies the power management hardware to turn off power.
+Wenn Sie Ihren PC am Arbeitsplatz oder zu Hause Herunterfahren, wird das Betriebssystem schließt alle Programme und benachrichtigt, die Power Management Hardware Strom ausschalten.
 
-Deallocating a virtual machine is similar. After your VM shuts down, Azure reclaims the hardware used to power it. Your data disks and storage remain intact. When you start your VM back up, you'll pick up where you left off, just like with your PC.
+Aufheben der Zuordnung eines virtuellen Computers entspricht. Nachdem Ihr virtueller Computer heruntergefahren wird, gibt Azure die Hardware verwendet, um die Leistungsfähigkeit frei. Ihre Datenträger für Daten und Speicher bleiben intakt. Wenn Sie Ihren virtuellen Computer starten, sichern, wird Sie weitermachen, wo Sie aufgehört, wie mit Ihrem PC.
 
-When deallocated, you are not billed for the compute and network resources that your virtual machine uses. You still pay for any associated disks to sit in storage, but the overall cost is much lower than it would be if the VM were running.
+Aufhebung der Zuordnung, sind Sie nicht für die Compute und Netzwerk-Ressourcen in Rechnung gestellt, die dem virtuellen Computer verwendet. Sie bezahlen für alle zugeordneten Datenträger im Speicher befindet, aber die Gesamtkosten für die ist wesentlich geringer, als es der Fall wäre, wenn die VM ausgeführt wurden.
 
-Here, you'll deallocate your VM briefly so that you can resize it. But you can also deallocate your VMs for a longer period to save cost. Say you have a bank of VMs that you use for testing during work hours. You can schedule your VMs to be automatically deallocated on nights and weekends. If you need to stay late, you can manually restart them.
+Hier müssen Sie Ihren virtuellen Computer kurz Zuordnung aufheben, damit Sie die Größe anpassen können. Aber Sie können auch heben Sie die Zuordnung Ihrer virtuellen Computer für einen längeren Zeitraum, um Kosten zu sparen. Angenommen, Sie haben eine Bank von virtuellen Computern, die Sie während der Arbeitszeiten zu Testzwecken verwenden. Sie können Ihre virtuellen Computer automatisch auf Nächte und Wochenenden freigegeben werden, planen. Wenn Sie spät bleiben müssen, können Sie diese manuell neu starten.
 
-## Scale up your VM
+## <a name="scale-up-your-vm"></a>Zentrales hochskalieren Ihres virtuellen Computers
 
-Recall that you specified the size **Standard_DS2_v2** when you created your VM. Your VM currently has two virtual CPUs and 7 GB of memory.
+Denken Sie daran, dass Sie die Größe angegeben **"standard_ds2_v2"** bei der Erstellung Ihres virtuellen Computers. Ihr virtueller Computer verfügt derzeit zwei virtuellen CPUs und 7 GB Arbeitsspeicher.
 
-Let's bump up to the next size, **Standard_DS3_v2**. Your VM will then have four virtual CPUs and 14 GB of memory.
+Lassen Sie uns auf die Größe, erhöhen Sie die **Standard_DS3_v2**. Ihr virtueller Computer müssen vier virtuelle CPUs und 14 GB Arbeitsspeicher.
 
 ::: zone pivot="windows-cloud"
 
-1. From Cloud Shell, deallocate your VM.
+1. Führen Sie in Cloud Shell, `az vm deallocate` freizugeben oder zu beenden, Ihren virtuellen Computer.
 
-    ```powershell
-    Stop-AzureRmVM `
-      -ResourceGroupName "myResourceGroup" `
-      -Name "myVM" `
-      -Force
+    ```azurecli
+    az vm deallocate \
+      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --name myWindowsVM
     ```
-    The process takes a couple minutes to complete.
-1. Run these commands to specify your VM's new size.
-    ```powershell
-    $vm = Get-AzureRmVM `
-      -ResourceGroupName "myResourceGroup" `
-      -VMName "myVM"
-    $vm.HardwareProfile.VmSize = "Standard_DS3_v2"
-    Update-AzureRmVM `
-      -VM $vm `
-      -ResourceGroupName "myResourceGroup"
-    ```
-    The update process takes about a minute.
-1. Restart your VM.
+    Der Vorgang dauert ein paar Minuten in Anspruch.
+1. Führen Sie `az vm resize` Erhöhen der Größe des virtuellen Computers **Standard_DS3_v2**.
 
-    ```powershell
-    Start-AzureRmVM `
-      -ResourceGroupName "myResourceGroup" `
-      -Name "myVM"
+    ```azurecli
+    az vm resize \
+      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --name myWindowsVM \
+      --size Standard_DS3_v2
     ```
-    The process takes about a minute.
-1. Verify that your VM is running the new size.
+    Der Aktualisierungsvorgang dauert etwa eine Minute.
+1. Führen Sie `az vm start` Ihrer virtuellen Computer neu starten.
 
-    ```powershell
-    $vm = Get-AzureRmVM `
-      -ResourceGroupName "myResourceGroup" `
-      -VMName "myVM"
-    $vm.HardwareProfile
+    ```azurecli
+    az vm start \
+      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --name myWindowsVM
     ```
-    You see your new VM size, **Standard_DS3_v2**.
+    Der Vorgang dauert ungefähr eine Minute.
+1. Führen Sie `az vm show` um sicherzustellen, dass die neue Größe ausgeführt wird.
+
+    ```azurecli
+    az vm show \
+      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --name myWindowsVM \
+      --query "hardwareProfile" \
+      --output tsv
+    ```
+    Sie finden Sie unter der neuen VM-Größe, **Standard_DS3_v2**.
     ```console
-    VmSize
-    ------
     Standard_DS3_v2
     ```
 
@@ -86,30 +82,41 @@ Let's bump up to the next size, **Standard_DS3_v2**. Your VM will then have four
 
 ::: zone pivot="linux-cloud"
 
-1. From Cloud Shell, run `az vm deallocate` to deallocate, or stop, your VM.
+1. Führen Sie in Cloud Shell, `az vm deallocate` freizugeben oder zu beenden, Ihren virtuellen Computer.
 
     ```azurecli
-    az vm deallocate --resource-group myResourceGroup --name myVM
+    az vm deallocate \
+      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --name myLinuxVM
     ```
-    The process takes a couple of minutes to complete.
-1. Run `az vm resize` to increase your VM's size to **Standard_DS3_v2**.
+    Der Vorgang dauert ein paar Minuten in Anspruch.
+1. Führen Sie `az vm resize` Erhöhen der Größe des virtuellen Computers **Standard_DS3_v2**.
 
     ```azurecli
-    az vm resize --resource-group myResourceGroup --name myVM --size Standard_DS3_v2
+    az vm resize \
+      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --name myLinuxVM \
+      --size Standard_DS3_v2
     ```
-    The update process takes about a minute.
-1. Run `az vm start` to restart your VM.
+    Der Aktualisierungsvorgang dauert etwa eine Minute.
+1. Führen Sie `az vm start` Ihrer virtuellen Computer neu starten.
 
     ```azurecli
-    az vm start --resource-group myResourceGroup --name myVM
+    az vm start \
+      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --name myLinuxVM
     ```
-    The process takes about a minute.
-1. Run `az vm show` to verify that your VM is running the new size.
+    Der Vorgang dauert ungefähr eine Minute.
+1. Führen Sie `az vm show` um sicherzustellen, dass die neue Größe ausgeführt wird.
 
     ```azurecli
-    az vm show -n myVM -g myResourceGroup --query "hardwareProfile" -o tsv
+    az vm show \
+      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --name myLinuxVM \
+      --query "hardwareProfile" \
+      --output tsv
     ```
-    You see your new VM size, **Standard_DS3_v2**.
+    Sie finden Sie unter der neuen VM-Größe, **Standard_DS3_v2**.
     ```console
     Standard_DS3_v2
     ```
@@ -117,12 +124,12 @@ Let's bump up to the next size, **Standard_DS3_v2**. Your VM will then have four
 ::: zone-end
 
 > [!NOTE]
-> By default, Azure assigns a new public IP address to your VM when you stop and restart it. This is OK for learning purposes. In practice, you can reserve a public IP address that stays with your VM even when your VM is restarted.
+> Standardmäßig weist Azure eine neue öffentliche IP-Adresse Ihres virtuellen Computers beim Beenden und starten Sie ihn neu. Dies ist in Ordnung zu Lernzwecken. In der Praxis können Sie eine öffentliche IP-Adresse, die bleibt mit Ihrem virtuellen Computer reservieren, selbst wenn Ihr virtueller Computer neu gestartet wird.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-Nice job! With just a few commands, your VM is now twice as powerful.
+Gute Arbeit! Mit nur wenigen Befehlen ist der virtuellen Computer jetzt doppelt so leistungsfähig.
 
-Scaling up and scaling out are two ways to increase performance. Here you scaled up your VM to increase its compute power.
+Hochskalieren und horizontales Skalieren werden zwei Möglichkeiten, um die Leistung zu erhöhen. Hier hochskaliert Sie Ihrer VM, die rechenleistung zu erhöhen.
 
-You deallocate a VM before you can resize it. You can also deallocate your VMs when they're not in use to save costs.
+Sie heben die Zuordnung eines virtuellen Computers auf, bevor Sie die Größe anpassen können. Sie können auch Ihre virtuellen Computer Zuordnung aufheben, wenn sie nicht verwendet, um Kosten zu sparen sind.

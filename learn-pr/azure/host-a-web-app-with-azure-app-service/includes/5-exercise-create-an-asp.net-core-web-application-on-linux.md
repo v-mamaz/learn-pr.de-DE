@@ -1,23 +1,23 @@
-﻿In this unit, you will create an ASP.NET Core web app using the .NET CLI on an Ubuntu machine.
+In dieser Einheit erstellen Sie auf einem Ubuntu-Computer mithilfe der .NET CLI eine ASP.NET Core-Web-App.
 
-## ASP.NET Core installation on Linux environment
+## <a name="aspnet-core-installation-on-linux-environment"></a>ASP.NET Core-Installation in einer Linux-Umgebung
 
-Visit the Microsoft [.NET Downloads page](https://www.microsoft.com/net/download) and follow the same steps mentioned on the .NET Core SDK page. They are below. In order to execute the commands, you need to open a new **Terminal** command-line instance.
+Besuchen Sie die [Downloadseite von Microsoft .NET](https://www.microsoft.com/net/download), und führen Sie die Schritte aus, die auf der Seite „.NET Core SDK“ angegeben sind. Sie sind nachstehend aufgeführt. Öffnen Sie zum Ausführen der Befehle eine neue Befehlszeileninstanz vom Typ **Terminal**.
 
-### Register Microsoft key and feed
+### <a name="register-microsoft-key-and-feed"></a>Registrieren von Microsoft-Schlüssel und Feed
 
-Before installing .NET, you'll need to register the Microsoft key, register the product repository, and install the required dependencies. This only needs to be done once per machine.
+Vor der Installation von .NET müssen Sie den Microsoft-Schlüssel und das Produktrepository registrieren sowie die erforderlichen Abhängigkeiten installieren. Dieser Schritt muss nur einmal pro Computer ausgeführt werden.
 
 ```console
 ~$ wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
 ~$ sudo dpkg -i packages-microsoft-prod.deb
 ```
 
-## Install the .NET SDK
+## <a name="install-the-net-sdk"></a>Installieren des .NET SDK
 
-Update the products available for installation, then install the .NET SDK.
+Aktualisieren Sie die Produkte, die zur Installation verfügbar sind, und installieren Sie das .NET SDK.
 
-At your command prompt, run the following commands:
+Führen Sie an der Eingabeaufforderung die folgenden Befehle aus:
 
 ```console
 sudo apt-get install apt-transport-https
@@ -25,31 +25,31 @@ sudo apt-get update
 sudo apt-get install dotnet-sdk-2.1
 ```
 
-During the installation process, you might be asked to enter your account password. Provide your password and hit Enter to continue.
+Während der Installation werden Sie ggf. zur Eingabe des Kennworts Ihres Kontos aufgefordert. Geben Sie Ihr Kennwort ein, und drücken Sie die EINGABETASTE, um fortzufahren.
 
-To verify the installation, type the following:
+Geben Sie Folgendes ein, um die Installation zu überprüfen:
 
 ```console
 dotnet --version
 ```
 
-And the output displayed is:
+Daraufhin wird folgende Ausgabe angezeigt:
 
 ```console
 2.1.302
 ```
 
-Now that you have the .NET Core SDK installed, you also have the ASP.NET Core installed. Let's see together how you can make use of the .NET CLI to create a new ASP.NET Core project using the commands we just learned.
+Bei der Installation des .NET Core SDK wurde auch ASP.NET Core installiert. Sehen wir uns gemeinsam an, wie Sie über die .NET CLI mithilfe der soeben vermittelten Befehle ein neues ASP.NET-Core-Projekt erstellen.
 
-## Open a Terminal window
+## <a name="open-a-terminal-window"></a>Öffnen eines Terminalfensters
 
-First, you need to open the Terminal window. The Terminal window allows you to execute commands, and has a similar role to the Windows Command Prompt window.
+Als Erstes müssen Sie das Terminalfenster öffnen. Das Terminalfenster ermöglicht die Ausführung von Befehlen und hat eine ähnliche Funktion wie das Windows-Fenster „Eingabeaufforderung“.
 
-## Create a new web project
+## <a name="create-a-new-web-project"></a>Erstellen eines neuen Webprojekts
 
-The heart of the .NET CLI tools is the *dotnet* driver tool. Using this command, you will create a new ASP.NET Core web project.
+Das Herzstück der .NET CLI-Tools ist das Treibertool *dotnet*. Mit diesem Befehl erstellen Sie ein neues ASP.NET Core-Webprojekt.
 
-To create a new ASP.NET Core MVC application, you only need to type the following commands:
+Um eine neue ASP.NET Core MVC-Anwendung zu erstellen, müssen Sie lediglich die folgenden Befehle eingeben:
 
 ```console
 cd ~/Documents
@@ -58,7 +58,7 @@ cd BestBikeApp      # Hit Enter
 dotnet new mvc      # Hit Enter
 ```
 
-The above commands navigate to the *Documents* root folder, and then create a new folder. Then, you go inside that folder. Finally, you issue the .NET CLI command to generate a new ASP.NET MVC application with all the packages restored:
+Mit den obigen Befehlen navigieren Sie zum Stammordner *Documents* und erstellen dann einen neuen Ordner. Danach wird der Ordner geöffnet. Und schließlich wird der .NET CLI-Befehl ausgeführt, um eine neue ASP.NET-MVC-Anwendung mit allen wiederhergestellten Paketen zu erstellen:
 
 ```console
 The template "ASP.NET Core Web App (Model-View-Controller)" was created successfully.
@@ -69,13 +69,13 @@ Running 'dotnet restore' on /home/your-user/Documents/BestBikeApp/BestBikeApp.cs
 ...
 ```
 
-All you have to do now is run the application by issuing this command:
+Sie müssen jetzt nur noch den folgenden Befehl ausführen, um die Anwendung zu starten:
 
 ```console
 dotnet run
 ```
 
-In the *terminal*, the *dotnet* command displays some useful information for the running app:
+Im *Terminal* zeigt der Befehl *dotnet* einige nützliche Informationen zur aktiven Anwendung an:
 
 ```console
 Using launch settings from /home/your-user/Documents/BestBikeApp/Properties/launchSettings.json...
@@ -87,31 +87,31 @@ Now listening on: http://localhost:5000
 Application started. Press Ctrl+C to shut down.
 ```
 
-The output describes the situation after starting your app: the application is running and listening at port 5001 and 5002 (via HTTPS).
+Die Ausgabe beschreibt die Situation nach dem Start Ihrer Anwendung: Die Anwendung wird ausgeführt und lauscht an den Ports 5001 und 5002 (über HTTPS).
 
-In order to run HTTPS locally on the machine in development mode, you need to create and trust a **self-signed certificate**.
+Wenn Sie HTTPS lokal auf dem Computer im Entwicklungsmodus ausführen möchten, müssen Sie ein **selbstsigniertes Zertifikat** erstellen und als vertrauenswürdig einstufen.
 
-## Create a self-signed certificate
+## <a name="create-a-self-signed-certificate"></a>Erstellen eines selbstsignierten Zertifikats
 
-Run the command below to generate a development self-signed certificate:
+Führen Sie den folgenden Befehl aus, um ein selbstsigniertes Entwicklungszertifikat zu generieren:
 
 ```console
 dotnet dev-certs https -v
 ```
 
-Running the command returns the following:
+Nach der Befehlsausführung wird Folgendes zurückgegeben:
 
 ```console
 The HTTPS developer certificate was generated successfully.
 ```
 
-## Run the application
+## <a name="run-the-application"></a>Ausführen der Anwendung
 
-For this demonstration, we are using the Firefox browser.
+Für diese Demonstration verwenden wir den Browser Firefox.
 
-Open the browser and type in the address `http://localhost:5001` to verify the application is running successfully.
+Öffnen Sie den Browser, und geben Sie die Adresse `http://localhost:5001` ein, um sich zu vergewissern, dass die Anwendung erfolgreich ausgeführt wird.
 
-![Screenshot showing a web browser view of the ASP.NET Core MVC template default web page.](../media/5-asp-core-mvc-default-template.PNG)
+![Screenshot einer Webbrowseransicht der Standardwebseite der ASP.NET Core-MVC-Vorlage.](../media/5-asp-core-mvc-default-template.PNG)
 
 > [!NOTE]
-> You need to **add an exception** for the application's URL because the development self-signed certificate couldn't be verified by Firefox.
+> Sie müssen für die URL der Anwendung **eine Ausnahme hinzufügen**, da das selbstsignierte Zertifikat für die Entwicklung von Firefox nicht verifiziert werden konnte.

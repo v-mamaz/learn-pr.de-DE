@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-security.4-encryption
-title: Encryption
+title: Verschlüsselung
 metadata:
-  title: Encryption
-  description: In this unit, we'll discuss how to use encryption to secure your data.
+  title: Verschlüsselung
+  description: 'In dieser Einheit erörtern wir, wie Sie die Verschlüsselung verwenden, um Ihre Daten zu schützen.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

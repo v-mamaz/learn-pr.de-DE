@@ -1,13 +1,13 @@
-Imagine you work for a healthcare provider. How do you instill confidence in your customers that their data is secure? Can your architecture handle a spike in traffic if a media report goes viral? Can your architecture handle the failure of one or more critical components? Are you using resources in the most efficient manner possible?
+Stellen Sie sich vor, Sie arbeiten für einen Gesundheitsdienstleister. Wie können Sie Ihren Kunden das Vertrauen in die Sicherheit ihrer Daten vermitteln? Kann Ihre Architektur eine Spitze im Datenverkehr bewältigen, wenn ein Medienbericht viral wird? Kann Ihre Architektur den Ausfall mindestens einer kritischen Komponente bewältigen? Verwenden Sie Ressourcen auf effizienteste Weise?
 
-A great architecture helps guide you to design, build, and continuously improve a secure, reliable, and efficient application. In this module, we'll introduce you to the pillars and principles that are essential to a great Azure architecture.
+Eine großartige Architektur hilft Ihnen dabei, eine sichere, zuverlässige und effiziente Anwendung zu entwerfen, zu erstellen und kontinuierlich zu verbessern. In diesem Modul stellen wir Ihnen die Säulen und Prinzipien vor, die für eine gute Azure-Architektur unerlässlich sind.
 
 > [!NOTE]
-> The concepts discussed in this module are not all-inclusive, but represent some of the important considerations when building a solution on the cloud. Microsoft publishes a broad set of patterns, guidelines, and examples on designing applications on Azure. It is highly recommended that you look through the content in the [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) as you start planning and designing your architecture.
+> In diesem Modul werden nicht alle Konzepte beschrieben, aber einige der wichtigsten, die für das Erstellen einer Lösung in der Cloud hilfreich sein können. Microsoft bietet verschiedene Muster, Richtlinien und Beispiele zum Entwerfen von Anwendungen in Azure an. Es wird dringend empfohlen, dass Sie sich mithilfe des [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) informieren, bevor Sie damit beginnen, Ihre Architektur zu planen und zu entwerfen.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul lernen Sie Folgendes:
 
-- Identify key pillars for architecting a solution in the cloud
-- Apply key principles for creating a solid architectural foundation
+- Identifizieren Sie wesentliche Säulen für die Architektur einer Lösung in der cloud
+- Anwenden von Schlüsselprinzipien zum Erstellen einer soliden architektonischen Grundlage

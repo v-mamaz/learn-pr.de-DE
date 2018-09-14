@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-availability-and-recoverability.2-high-availability
-title: Build a highly available architecture
+title: Erstellen einer hochverfügbaren Architektur
 metadata:
-  title: Build a highly available architecture
-  description: Build a highly available architecture
+  title: Erstellen einer hochverfügbaren Architektur
+  description: Erstellen einer hochverfügbaren Architektur
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,33 +13,33 @@ durationInMinutes: 20
 content: |
   [!include[](includes/2-high-availability.md)]
 quiz:
-  title: 'Knowledge Check - Build a highly available architecture'
+  title: 'Wissenstest: Erstellen einer hochverfügbaren Architektur'
   questions:
-  - content: 'An SLA is important to define for your service because:'
-    choices:
-    - content: 'It helps you determine your backup retention requirements.'
-      isCorrect: false
-      incorrectExplanation: 'Backup retention is important to define, but it is not driven by SLA.'
-    - content: 'It helps you determine the availability of your service that you will commit to your customers.'
-      isCorrect: true
-      correctExplanation: 'Service level agreement is a commitment you are making to your customers for the availability of your service.'
-    - content: 'You can use it to convince your manager to automate virtual machine creation.'
-      isCorrect: false
-      incorrectExplanation: 'While this is a good discussion to have, your SLA will likely not have any impact on the outcome.'
-    - content: 'You use it to define the RBAC settings for your resources.'
-      isCorrect: false
-      incorrectExplanation: 'RBAC settings are important, but they are not related to the SLA of your application.'
-  - content: 'Which of the following is not used in a highly available architecture?'
-    choices:
-    - content: 'Load balancing'
-      isCorrect: false
-      incorrectExplanation: 'Load balancing is typically used in a highly available architecture to distribute load to available systems and remove failed systems from load.'
-    - content: 'Availability zones'
-      isCorrect: false
-      incorrectExplanation: 'Availability zones are used in a highly available architecture to distribute systems across multiple datacenters within a region.'
-    - content: 'Availability sets'
-      isCorrect: false
-      incorrectExplanation: 'Availability sets are used in a highly available architecture to minimize the impact from localized failures and maintenance events.'
-    - content: 'A recovery service vault'
-      isCorrect: true
-      correctExplanation: 'Recovery service vaults provide a destination for backups, but they are not part of a highly available architecture.'
+    - content: 'Eine SLA ist wichtig, da für Ihren Dienst zu definieren:'
+      choices:
+        - content: Sie können Sie Ihre Anforderungen für die Beibehaltung der Sicherung zu ermitteln.
+          isCorrect: false
+          incorrectExplanation: 'Aufbewahrung von Sicherungen ist wichtig, zu definieren, aber es wird keine Vereinbarung zum Servicelevel gesteuert.'
+        - content: 'Sie können Sie die Verfügbarkeit Ihres Diensts zu ermitteln, die Sie für Ihre Kunden ein Commit ausgeführt werden.'
+          isCorrect: true
+          correctExplanation: 'Vereinbarung zum Servicelevel ist eine Verpflichtung dar, die Sie für Ihre Kunden für die Verfügbarkeit Ihres Diensts vornehmen.'
+        - content: 'Sie können es verwenden, um zu überzeugen, Ihren Manager zum Automatisieren der Erstellung des virtuellen Computers.'
+          isCorrect: false
+          incorrectExplanation: 'Obwohl dieses Thema eine gute Gesprächsgrundlage ist, wird Ihre SLA wahrscheinlich keinen Einfluss auf das Ergebnis haben.'
+        - content: Damit können Sie um die RBAC-Einstellungen für Ihre Ressourcen zu definieren.
+          isCorrect: false
+          incorrectExplanation: 'RBAC-Einstellungen sind wichtig, aber sie sind nicht verknüpft, um die SLA Ihrer Anwendung.'
+    - content: Welche der folgenden Komponenten werden nicht in einer hochverfügbaren Architektur verwendet?
+      choices:
+        - content: Lastenausgleich
+          isCorrect: false
+          incorrectExplanation: 'Lastausgleich wird normalerweise in einer hochverfügbaren Architektur verwendet, um die Last auf verfügbare Systeme zu verteilen und ausgefallene Systeme aus der Last zu entfernen.'
+        - content: Verfügbarkeitszonen
+          isCorrect: false
+          incorrectExplanation: 'Verfügbarkeitszonen werden in einer hochverfügbaren Architektur verwendet, um Systeme auf mehrere Datencenter innerhalb einer Region zu verteilen.'
+        - content: Verfügbarkeitsgruppen
+          isCorrect: false
+          incorrectExplanation: 'Verfügbarkeitsgruppen werden in einer hoch verfügbaren Architektur verwendet, um die Auswirkungen von Ausfällen und Wartungsereignisse zu minimieren.'
+        - content: Ein Recovery Services-Tresor
+          isCorrect: true
+          correctExplanation: 'Recovery Services-Tresore bieten ein Ziel für Sicherungen, aber sie sind nicht Teil einer hoch verfügbaren Architektur.'

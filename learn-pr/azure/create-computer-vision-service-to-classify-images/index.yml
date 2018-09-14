@@ -1,37 +1,36 @@
 ### YamlMime:Module
 uid: learn.create-computer-vision-service
 metadata:
-  title: Create a Computer Vision service to identify images
-  description: Learn how to create a Computer Vision service to help identify and tag images.
+  title: Verarbeiten von Bildern mit dem Dienst für maschinelles sehen
+  description: 'Erfahren Sie, wie Sie mit der maschinelles sehen-API analysieren Sie Bilder für Insights, Text aus Bildern zu extrahieren, und Generieren von Miniaturansichten von hoher Qualität.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Create a Computer Vision service to identify images
-summary: Learn how to create a Computer Vision service to help identify and tag images
+title: Verarbeiten von Bildern mit dem Dienst für maschinelles sehen
+summary: 'Erfahren Sie, wie Sie mit der maschinelles sehen-API analysieren Sie Bilder für Insights, Text aus Bildern zu extrahieren, und Generieren von Miniaturansichten von hoher Qualität.'
 abstract: |
-  In this module, you will:
-  - Create a Computer Vision API service
-  - Analyze an image and identify its content
-  - Generate thumbnails
-  - Extract printed text
-  - Convert handwritten words into text
-prerequisites: None
-iconUrl: http://via.placeholder.com/120x120
+  In diesem Modul lernen Sie Folgendes:
+  - Erstellen Sie ein Cognitive Services-Konto.
+  - Abrufen von Informationen zu den visuellen Inhalt in einem Bild
+  - Generieren einer Miniaturansicht eines Bilds
+  - Erkennen Sie und extrahieren Sie gedruckten Text aus einem image
+  - Erkennen und Extrahieren von handschriftlichem Text aus einem Bild
+prerequisites: Keine
+iconUrl: /learn/achievements/create-computer-vision-service-to-classify-images.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
+  - developer
 products:
-- azure
-units: 
-- learn.create-computer-vision-service.1-intro
-- learn.create-computer-vision-service.2-create-service
-- learn.create-computer-vision-service.3-analyze-images
-- learn.create-computer-vision-service.4-generate-thumbnail
-- learn.create-computer-vision-service.5-extract-printed-text
-- learn.create-computer-vision-service.6-extract-handwritten-text
-- learn.create-computer-vision-service.7-summary
+  - azure
+units:
+  - learn.create-computer-vision-service.1-intro
+  - learn.create-computer-vision-service.2-create-service
+  - learn.create-computer-vision-service.3-analyze-images
+  - learn.create-computer-vision-service.4-generate-thumbnail
+  - learn.create-computer-vision-service.5-extract-printed-text
+  - learn.create-computer-vision-service.6-extract-handwritten-text
+  - learn.create-computer-vision-service.7-summary
 achievement: learn.create-computer-vision-service.badge

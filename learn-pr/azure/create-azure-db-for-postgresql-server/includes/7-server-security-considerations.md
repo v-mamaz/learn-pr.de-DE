@@ -1,130 +1,130 @@
-Lets' assume you're using an on-premises PostgreSQL database. You're managing all security aspects and locked down all access to your servers using the standard PostgreSQL server level firewall rules. You now want to make sure that you can configure the same server level firewall rules in Azure.
+Nehmen wir an, dass Sie eine lokale PostgreSQL-Datenbank verwenden. Sie verwalten alle Sicherheitsaspekte, und Sie haben Vollzugriff auf Ihre Server mit den Standardregeln des PostgreSQL-Firewallregel auf Serverebene gesperrt. Nun möchten Sie sicherstellen, dass Sie die gleiche Weise konfigurieren können auf Serverebene Firewall-Regeln in Azure.
 
-## Server Security Considerations and Connection Methods
+## <a name="server-security-considerations-and-connection-methods"></a>Überlegungen zur Sicherheit der Server und Verbindungsmethoden
 
-You have a number of options to restrict access to your Azure Database for PostgreSQL server and databases. Network access can be restricted at a network, server, or database level. You can use any of the following options:
+Sie haben eine Reihe von Optionen, um den Zugriff auf Ihren Azure Database for PostgreSQL-Server und Datenbanken zu beschränken. Zugriff auf das Netzwerk kann auf ein Netzwerk, Server oder Datenbankebene eingeschränkt werden. Sie können eine der folgenden Optionen verwenden:
 
-- User accounts to restrict database access
-- Virtual networks to restrict network access
-- Firewall rules to restrict server access
+- Benutzerkonten zum Einschränken des Datenbankzugriffs
+- Virtuelle Netzwerke mit Zugriff auf das Netzwerk einschränken
+- Firewall-Regeln für den Serverzugriff
 
-### Authentication and authorization
+### <a name="authentication-and-authorization"></a>Authentifizierung und Autorisierung
 
-Azure Database for PostgreSQL server supports native PostgreSQL authentication. You can connect and authenticate to server with the server's admin login. You'll also create users to connect to specific databases to limit access.
+Azure Database for PostgreSQL-Server unterstützt native PostgreSQL-Authentifizierung. Sie können eine Verbindung herstellen und authentifizieren Sie sich bei dem Server mit den Anmeldeinformationen für Serveradministrator. Sie erstellen auch Benutzern die Verbindung für bestimmte Datenbanken, um den Zugriff einzuschränken.
 
-### What is a Virtual Network?
+### <a name="what-is-a-virtual-network"></a>Was ist ein virtuelles Netzwerk?
 
-A virtual network is a logically isolated network created within the Azure network. You can use a virtual network to control what Azure resources can connect to other resources.
+Ein virtuelles Netzwerk ist eines logisch isolierten Netzwerks, das im Azure-Netzwerk erstellt wird. Sie können ein virtuelles Netzwerk verwenden, um zu steuern, welche Azure-Ressourcen auf andere Ressourcen verbinden können.
 
-Imagine you're running a web application that connects to a database. You'll use subnets to isolate different parts of the network. A subnet is a part of a network based upon a range of IP addresses.
+Stellen Sie sich vor, dass Sie eine Webanwendung ausführen, die einer Datenbank herstellt. Sie werden Subnetze verwenden, um verschiedene Teile des Netzwerks zu isolieren. Ein Subnetz ist ein Teil des Netzwerks, die auf einen Bereich von IP-Adressen basieren.
 
-To configure these subnets, you'll create a virtual network and then subdivide the network into subnets. The web application will operate on one subnet and the database on another subnet. Each subnet would have its own rules for communicating to and from the other network. These rules give you the ability to restrict access from the database to the web application.
+Um diesen Subnetzen zu konfigurieren, Sie erstellen ein virtuelles Netzwerk und dann das Netzwerk in Subnetze unterteilen. Die Webanwendung wird für ein Subnetz und die Datenbank in einem anderen Subnetz verwendet werden. Jedes Subnetz müssen eigene Regeln für die Kommunikation zu und von anderen Netzwerk. Diese Regeln bieten Ihnen die Möglichkeit, den Zugriff auf die Webanwendung aus der Datenbank zu beschränken.
 
-Creating a virtual network is beyond the scope of this module. If you need more information, please explore other learning modules related to virtual networks.
+Erstellen eines virtuellen Netzwerks ist, würde den Rahmen dieses Moduls. Wenn Sie weitere Informationen benötigen, untersuchen Sie andere Learning-Module, die im Zusammenhang mit virtuellen Netzwerken.
 
-### What is a firewall?
+### <a name="what-is-a-firewall"></a>Was ist eine Firewall?
 
-A firewall is a service that grants server access based on the originating IP address of each request. You create firewall rules that specify ranges of IP addresses. Only clients from these granted IP addresses, will be allowed to access the server. Firewall rules generally speaking also includes specific network protocol and port information. For example, a PostgreSQL server by default listens to TCP requests on port 5432.
+Eine Firewall ist ein Dienst, der Server den Zugriff auf Grundlage der ursprünglichen IP-Adresse für jede Anforderung gewährt. Sie erstellen Firewallregeln, die IP-Adressbereiche angeben. Nur Clients, die von diesen IP-Adressen erhält Zugriff auf den Server gewährt wurden. Firewall-Regeln, enthalten im Allgemeinen auch bestimmten Netzwerk-Protokoll und Port. Beispielsweise überwacht ein PostgreSQL-Server wird standardmäßig TCP-Anforderungen über Port 5432.
 
-### Azure Database for PostgreSQL server firewall
+### <a name="azure-database-for-postgresql-server-firewall"></a>Azure-Datenbank für PostgreSQL-Serverfirewall
 
-The Azure Database for PostgreSQL server firewall prevents all access to your database server until you specify which computers have permission. The firewall configuration allows you to specify a range of IP addresses that are allowed to connect to the server. The server always uses the default PostgreSQL connection information.
+Azure Database for PostgreSQL-Serverfirewall verhindert jeglichen Zugriff auf Ihren Datenbankserver, bis Sie angeben, welche Computer zugriffsberechtigt sind. Die Konfiguration der Firewall können Sie einen Bereich von IP-Adressen angeben, die für die Verbindung mit dem Server zulässig sind. Der Server verwendet immer die standardmäßigen PostgreSQL-Verbindungsinformationen.
 
-![Azure firewall functional diagram](../media-draft/7-firewall-diagram.png)
+![Funktionsdiagramm für Azure-firewall](../media-draft/7-firewall-diagram.png)
 
-### Azure Database for PostgreSQL server SSL connections
+### <a name="azure-database-for-postgresql-server-ssl-connections"></a>Azure-Datenbank für PostgreSQL-Server SSL-Verbindungen
 
-Azure Database for PostgreSQL prefers your client applications connects to the PostgreSQL service using Secure Sockets Layer (SSL). Enforcing SSL connections between your database server and your client applications helps protect against "man in the middle" and similar attacks by encrypting the data between the server and client. Enabling SSL requires the exchange of keys and strict authentication between client and server for the connection to work. Details about using SSL are beyond the scope of this learning module. If you need more information, please explore other learning modules related to SSL.
+Azure-Datenbank für PostgreSQL bevorzugt, dass Ihre Clientanwendungen mit der PostgreSQL-Dienst mithilfe von Secure Sockets Layer (SSL) verbinden. Erzwingen von SSL-Verbindungen zwischen Ihren Datenbankserver und Clientanwendungen trägt zum Schutz gegen "Man in the Middle" und ähnliche Angriffe durch das Verschlüsseln der Daten zwischen Server und Client. Aktivieren von SSL erfordert den Austausch von Schlüsseln und strenge Authentifizierung zwischen Client und Server für die Verbindung funktioniert. Informationen zur Verwendung von SSL sprengen den Rahmen dieses lernmodul ab. Wenn Sie weitere Informationen benötigen, untersuchen Sie andere Learning-Module, die im Zusammenhang mit SSL.
 
-## Configure Connection Security
+## <a name="configure-connection-security"></a>Konfigurieren der Sicherheit der Clientverbindung
 
-Let's look at the decisions and steps you make to configure an Azure Database for PostgreSQL server firewall. You'll also see how to connect to the server you've created earlier.
+Sehen wir uns die Entscheidungen und die Schritte, die Sie vornehmen, um einen Azure Database for PostgreSQL-Server-Firewall zu konfigurieren. Sie sehen auch die Verbindung mit dem Server, die Sie zuvor erstellt haben.
 
-First, you'll open the [Azure portal](https://portal.azure.com?azure-portal=true) and navigate to the server resource for which you would like to create a firewall rule.
+Öffnen Sie zunächst die [Azure-Portal](https://portal.azure.com?azure-portal=true) und navigieren Sie zu die Server-Ressource, die für die Sie eine Firewallregel erstellen möchten.
 
-Then you'll select the **Connection Security** option to open the connection security blade to the right.
+Wählen Sie dann die **Verbindungssicherheit** Option, um das Blatt "verbindungssicherheit" auf der rechten Seite zu öffnen.
 
-![Screenshot of the Azure portal showing the Connection security section of the PostgreSQL database resource blade.](../media-draft/7-db-security-settings.png)
+![Screenshot des Azure-Portal mit der Verbindung im Sicherheitsabschnitt das Ressourcenblatt des PostgreSQL-Datenbank](../media-draft/7-db-security-settings.png)
 
-On this screen, you have several options. You can:
+Auf diesem Bildschirm müssen Sie mehrere Optionen. Ihre Möglichkeiten:
 
-- Add the IP address you use to access the portal as a firewall entry by clicking on the **+ Add client IP** button
-- Allow access to Azure services. By default all Azure services **don't** have access to the PostgreSQL server
-- Add firewall rules by entering ranges of IP addresses
-- Enforce SSL connections. This option forces you client to connect to the server using an SSL certificate.
+- Fügen Sie die IP-Adresse, mit denen Sie Zugriff auf das Portal als einen Eintrag für die Firewall durch Klicken auf die **Client-IP hinzufügen** Schaltfläche.
+- Zugriff auf Azure-Dienste zulassen. Standardmäßig werden alle Azure-Dienste **nicht** haben Zugriff auf dem PostgreSQL-Server.
+- Fügen Sie Firewall-Regeln, indem Sie die IP-Adressbereiche eingeben.
+- Erzwingen von SSL-Verbindungen. Diese Option erzwingt, dass der Client die Verbindung mit dem Server mit einem SSL-Zertifikat.
 
-Always remember to click on the **Save** icon above the entry fields to save the updated configuration once you've made changes.
+Denken Sie immer daran, auf die **speichern** Symbol oberhalb der Felder für die die aktualisierte Konfiguration zu speichern, nachdem Sie Änderungen vorgenommen haben.
 
-### Allow access to Azure services
+### <a name="allow-access-to-azure-services"></a>Zugriff auf Azure-Dienste erlauben
 
-To use Azure Cloud Shell to access or configure your server, make sure to enable **Allow Access to Azure Services**. This step is going to add a firewall rule to the server configuration to allow access from Cloud Shell. This rule will not show as one of the custom rules you add though.
+Um Azure Cloud Shell zum Zugreifen auf oder konfigurieren Sie den Server zu verwenden, müssen Sie Sie aktivieren **ermöglichen den Zugriff auf Azure-Diensten**. Dieser Schritt wird eine Firewallregel hinzuzufügen, die Server-Konfiguration, um den Zugriff über Cloud Shell zu ermöglichen. Diese Regel nicht als eine der benutzerdefinierten Regeln angezeigt, die Sie hinzufügen.
 
-You also need to disable **Enforce SSL connection**. PowerShell cann't connect to the server if SSL is required for client connections.
+Sie müssen auch deaktivieren **SSL-Verbindung erzwingen**. PowerShell kann nicht mit dem Server verbinden, wenn SSL für Clientverbindungen erforderlich ist.
 
-Both of these options will result in an error message displayed on the command line if not configured correctly.
+Beide Optionen führt zu einer Fehlermeldung, die wurde in der Befehlszeile angezeigt, wenn nicht ordnungsgemäß konfiguriert.
 
-For example, if access is not allowed to Azure services and enforce SSL connections is enabled then you'll see something similar to this error when the firewall is blocking access.
+Z. B. wenn der Zugriff kann nicht auf Azure-Dienste und Erzwingen von SSL-Verbindungen ist aktiviert und Sie in etwa diesen Fehler sehen, wenn die Firewall den Zugriff blockiert:
 
-> psql: FATAL: no pg_hba.conf entry for host "123.45.67.89", user "adminuser", database "postgres", SSL on FATAL:  SSL connection is required. Please specify SSL options and retry.
+> Psql: FATAL: kein pg_hba.conf-Eintrag für Host "123.45.67.89," Benutzer "Adminuser", Datenbank "Postgres", SSL für SCHWERWIEGEND: SSL-Verbindung ist erforderlich. Please specify SSL options and retry.
 
-### Create a firewall rule using the portal
+### <a name="create-a-firewall-rule-using-the-portal"></a>Erstellen einer Firewallregel mithilfe des Portals
 
-Let's say, you want to create a firewall rule that provides access from any IP address.
+Nehmen wir an, dass eine Firewallregel erstellen, die Zugriff über alle IP-Adresse ermöglicht werden soll.
 
 > [!WARNING]
-> Creating this firewall rule will allow any IP address on the Internet to attempt to connect to your server. Eventhough clients will not be able access the server without the username and password, enable this rule with caution and make sure you understand the security implications.
+> Erstellen diese Firewallregel auf können eine beliebige IP-Adresse im Internet versuchen, mit dem Server herstellen. Auch wenn bei Clients keine werden Zugriff auf den Server ohne Benutzername und Kennwort, aktivieren Sie diese Regel mit Vorsicht und stellen Sie sicher, dass Sie Auswirkungen auf die Sicherheit kennen.
 
-You create a new firewall rule by entering the following data in the labeled fields:
+Sie erstellen eine neue Firewallregel, indem Sie die folgenden Daten in die gekennzeichneten Felder einzugeben:
 
-- Rule Name: `AllowAll`
-- Start IP: `0.0.0.0`
-- End IP: `255.255.255.255`
+- Regelname: `AllowAll`
+- Start-IP: `0.0.0.0`
+- End-IP: `255.255.255.255`
 
-To remove a firewall rule, you'll click the ellipsis at the end of the rule you want to delete. Click the Delete button to delete the rule.
+Um eine Firewallregel zu entfernen, müssen Sie die Auslassungspunkte (...) am Ende der Regel klicken, die Sie löschen möchten. Klicken Sie auf die **löschen** Schaltfläche, um die Regel zu löschen.
 
-Click on the **Save** icon above the entry fields to commit the deletion of the rule.
+Klicken Sie auf die **speichern** Symbol oberhalb der Felder für die um das Löschen der Regel zu übernehmen.
 
-### Create a firewall rule using the Azure CLI
+### <a name="create-a-firewall-rule-using-the-azure-cli"></a>Erstellen einer Firewallregel mithilfe der Azure CLI
 
-You use the Azure CLI to add firewall rules to your server with the `az postgres server firewall-rule create` command using Azure CloudShell.
+Sie verwenden die Azure-Befehlszeilenschnittstelle, um die Firewallregeln hinzufügen, auf Ihrem Server mit der `az postgres server firewall-rule create` Befehl mithilfe von Azure Cloud Shell.
 
-Let's say you want to create the same rules as above You'' use the following command:
+Nehmen wir an, dass die gleichen Regeln wie oben beschrieben erstellt werden soll. Verwenden Sie den folgenden Befehl ein:
 
-  ```bash
+  ```azurecli
   az postgres server firewall-rule create --resource-group <resource_group_name> --server <server-name> --name AllowAll --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
   ```
 
-You remove firewall rules from your server with the command `az postgres server firewall-rule delete`.
+Entfernen von Firewallregeln vom Server mit dem Befehl `az postgres server firewall-rule delete`.
 
-Let's say you want to delete the firewall you created then use the following command:
+Nehmen wir an, dass die Firewall zu löschen, die Sie erstellt werden sollen. Anschließend verwenden Sie den folgenden Befehl aus:
 
-  ```bash
+  ```azurecli
   az postgres server firewall-rule delete --name AllowAll --resource-group <resource_group_name> --server-name <server-name>
   ```
 
-## Connecting to your server
+## <a name="connecting-to-your-server"></a>Herstellen einer Verbindung mit Ihrem server
 
-Like any modern database, PostgreSQL requires regularly server administration to achieve best performance. You have a number of options to connect and manage your Azure Database for PostgreSQL server. We'll use `psql` to connect to the server.
+Wie alle modernen Datenbank erfordert PostgreSQL regelmäßigen serververwaltung, um die optimale Leistung zu erzielen. Sie haben eine Reihe von Optionen zum Verbinden und Verwalten Ihrer Azure Database for PostgreSQL-Server. Wir verwenden `psql` für die Verbindung mit dem Server.
 
-### What is psql?
+### <a name="what-is-psql"></a>Was ist Psql?
 
-The command-line tool called `psql` is the PostgreSQL distributed interactive terminal for working with PostgreSQL server and databases. `psql` works with Azure Database for PostgreSQL the same as with any other PostgreSQL implementation and is included with the Azure Cloud Shell. The `psql` tool allows you to manage databases as well as execute structure queries against these databases.
+Wird aufgerufen, das Befehlszeilentool `psql` PostgreSQL-Instanz verteilt interaktiven Terminal für die Arbeit mit der PostgreSQL-Server und Datenbanken. `psql` funktioniert mit Azure-Datenbank für PostgreSQL genauso wie bei jeder anderen PostgreSQL-Implementierung und ist im Lieferumfang von Azure Cloud Shell. Die `psql` Tool können Sie zum Verwalten von Datenbanken sowie die Struktur-Abfragen für diese Datenbanken auszuführen.
 
-Using `psql` requires a successful connection to a PostgreSQL server. There are a number of command-line parameters available for use when working with `psql`.
+Mithilfe von `psql` erfordert eine Verbindung mit einer PostgreSQL-Server. Stehen zahlreiche Befehlszeilenparameter für die Verwendung bei der Arbeit mit `psql`.
 
-- `--host` - the host to which you'd like to connect
-- `--username` - the user name/i.d. with which to connect
-- `--dbname` - the name of the database to connect to.
+- `--host` – Der Host, den Sie eine Verbindung herstellen möchten.
+- `--username` – Der Name/Benutzername für die Verbindung.
+- `--dbname` – Der Name der Datenbank für die Verbindung.
 
 > [!Note]
-> You'll typically connect to the `postgres` management database when managing your server access and databases configuration.
+> Sie werden in der Regel eine Verbindung mit der `postgres` -Verwaltungsdatenbank, wenn Sie die Serverkonfiguration für den Zugriff und die Datenbank zu verwalten.
 
-Here is the complete command:
+Hier ist der vollständige Befehl ein:
 
   ```bash
   psql --host=<server-name>.postgres.database.azure.com --username=<admin-user>@<server-name> --dbname=<database>
   ```
 
-Once connected, you'll be presented with a command prompt and can execute commands to your server and databases.
+Nach dem Sie verbunden sind, wird eine Eingabeaufforderung angezeigt, und Sie können Befehle auf Ihrem Server und Datenbanken.
 
-You've now seen the steps you take to configure an Azure Database for PostgreSQL security settings. In the next unit, you'll configure an  Azure Database for PostgreSQL security settings. You'll also connect to the server using Cloud Shell.
+Sie haben nun die Schritte gesehen, mit denen Sie Azure-Datenbank für PostgreSQL-Sicherheitseinstellungen konfigurieren. In der nächsten Einheit konfigurieren Sie Azure-Datenbank für PostgreSQL-Sicherheitseinstellungen. Sie müssen auch den Server mithilfe von Cloud Shell eine Verbindung herstellen.

@@ -9,23 +9,23 @@ metadata:
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-durationInMinutes: 10
+durationInMinutes: 15
 content: |
   [!include[](includes/2-azure-security-center.md)]
 quiz:
-  title: 'Knowledge Check - Azure Security center'
+  title: Wissenstest - Azure SecurityCenter
   questions:
-  - content: 'Which one of the items below is not an Azure Security Center feature?'
-    choices:
-    - content: 'Actionable Recommendations'
-      isCorrect: false
-      correctExplanation: 'TBD.'
-    - content: 'Mitigation Reporting'
-      isCorrect: true
-      incorrectExplanation: 'TBD.'
-    - content: 'Just-In-Time access control'
-      isCorrect: false
-      correctExplanation: 'TBD.'
-    - content: 'Threat Protection'
-      isCorrect: false
-      correctExplanation: 'TBD.'
+    - content: Die eines der folgenden Elemente ist nicht über ein Feature von Azure Security Center?
+      choices:
+        - content: Direkt umsetzbare Empfehlungen
+          isCorrect: false
+          incorrectExplanation: Dies ist ein Feature von Azure Security Center.
+        - content: Nutzung und die Preise von Berichten
+          isCorrect: true
+          correctExplanation: Das ist richtig!  Nutzung und Preise Berichte sind nicht Teil des ASC.
+        - content: Just-In-Time-Zugriffssteuerung
+          isCorrect: false
+          incorrectExplanation: Dies ist ein Feature von Azure Security Center.
+        - content: Schutz vor gerätebedrohungen
+          isCorrect: false
+          incorrectExplanation: Dies ist ein Feature von Azure Security Center.

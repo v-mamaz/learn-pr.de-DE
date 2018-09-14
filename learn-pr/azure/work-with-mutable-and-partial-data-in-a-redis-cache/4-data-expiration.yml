@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.4-data-expiration
-title: Data expiration
+title: Ablauf von Daten
 metadata:
-  title: Data expiration
-  description: Data expiration
+  title: Ablauf von Daten
+  description: Ablauf von Daten
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark

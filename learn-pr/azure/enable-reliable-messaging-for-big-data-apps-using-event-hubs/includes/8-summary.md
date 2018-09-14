@@ -6,19 +6,4 @@ In diesem Modul haben Sie erfahren, wie Sie Azure Event Hubs als Teil einer Lös
 - Das Konfigurieren von Absender- und Empfängeranwendungen zum Senden und Empfangen von Nachrichten über den Event Hub
 - Das Verwenden des Azure-Portals zum Anzeigen des Status und der Leistung eines Event Hubs
 
-## <a name="clean-up"></a>Bereinigen 
-<!---TODO: Do we need to include cleanup for the free education tier?--->
-
-Aufgrund der Ressourcen, die Sie zum Testen Ihres Event Hubs verwendet haben, fallen Kosten für Ihr Abonnement an. Wenn Sie den Event Hub nicht mehr verwenden, sollten Sie ihn entfernen, damit keine unnötigen Änderungen an ihm vorgenommen werden können.
-
-Da Sie den Hub, den Namespace und den Speicher in nur einer Ressourcengruppe erstellt haben, können Sie Ihr Azure-Abonnement am einfachsten bereinigen, indem Sie die Ressourcengruppe entfernen, die wiederum all ihre Inhalte entfernt. 
-
-Führen Sie den folgenden Befehl aus, um die Ressourcengruppe, den Namespace, das Speicherkonto und alle zugehörigen Ressourcen zu entfernen. Ersetzen Sie `myResourceGroup` durch die weiter oben erstellte Ressourcengruppe:
-
-```azurecli
-az group delete --resource-group myResourceGroup
-```
-
-Wenn Sie aufgefordert werden, den Löschvorgang zu bestätigen, klicken Sie auf **Ja**.
-
-Der Befehl zum Löschen der Ressourcen kann mehrere Minuten in Anspruch nehmen.
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

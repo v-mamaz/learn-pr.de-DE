@@ -1,10 +1,10 @@
-Wir haben uns entschieden, ein Azure Service Bus-Thema zu verwenden, um Nachrichten über die Vertriebsleistung in Ihrer verteilten Sales Force-Anwendung zu verteilen. Die von Vertriebsmitarbeitern auf ihren mobilen Geräten verwendete App sendet Nachrichten mit zusammengefassten Umsatzzahlen für die einzelnen Gebiete und Zeiträume. Diese Nachrichten werden an Webdienste verteilt, die sich in den Geschäftsregionen des Unternehmens befinden, einschließlich Amerika und Europa.
+Sie möchten eine Azure Service Bus-Thema zu verwenden, um Nachrichten zu vertriebsleistung in Ihrer Anwendung verteilte Außendienstmitarbeiter zu verteilen. Die app ein, die Vertriebsmitarbeiter im Hinblick auf ihren mobilen Geräten senden Nachrichten, die Umsatzzahlen für jeden Bereich und Zeitraum zusammenzufassen. Diese Nachrichten werden an Webdienste verteilt, die sich in den Geschäftsregionen des Unternehmens befinden, einschließlich Amerika und Europa.
 
-Sie haben in Ihrem Azure-Abonnement bereits die erforderliche Infrastruktur implementiert, einschließlich des Themas und der Abonnements. Jetzt möchten Sie den Code erstellen, der Nachrichten an das Thema sendet und Nachrichten bei den einzelnen Abonnements abruft.
+Sie haben in Ihrem Azure-Abonnement bereits die erforderliche Infrastruktur implementiert, einschließlich des Themas und der Abonnements. Nun möchten den Code zu schreiben, der Nachrichten an das Thema gesendet und ruft Nachrichten aus jedem Abonnement ab.
 
 ## <a name="configure-a-connection-string-to-a-service-bus-namespace"></a>Konfigurieren einer Verbindungszeichenfolge für einen Service Bus-Namespace
 
-Konfigurieren Sie zunächst Verbindungszeichenfolgen sowohl in der sendenden als auch in der empfangenden Komponente:
+Konfigurieren von Verbindungszeichenfolgen, die sowohl in den sendenden und empfangenden Komponenten starten:
 
 1. Wechseln Sie zum Azure-Portal.
 
@@ -14,7 +14,7 @@ Konfigurieren Sie zunächst Verbindungszeichenfolgen sowohl in der sendenden als
 
 1. Klicken Sie in der Liste mit den Richtlinien auf **RootManageSharedAccessKey**.
 
-1. Klicken Sie rechts vom Textfeld **Primäre Verbindungszeichenfolge** auf die Schaltfläche **Click to copy** (Klicken Sie zum Kopieren).
+1. Klicken Sie rechts vom Textfeld **Primäre Verbindungszeichenfolge** auf die Schaltfläche **Click to copy** \(Zum Kopieren klicken).
 
 1. Wechseln Sie zu **Visual Studio Code**.
 
@@ -93,7 +93,7 @@ Führen Sie diese Schritte aus, um die Komponente fertigzustellen, mit der Nachr
     // Close the connection to the topic here
     ```
 
-1. Ersetzen Sie diese Codezeile durch den folgenden Code, um die Verbindung mit Service Bus zu schließen:
+1. Ersetzen Sie diese Codezeile zum Schließen der Verbindung mit Service Bus mit dem folgenden Code:
 
     ```C#
     await topicClient.CloseAsync();
@@ -107,13 +107,13 @@ Führen Sie diese Schritte aus, um die Komponente auszuführen, mit der eine Nac
 
 1. Klicken Sie in Visual Studio Code im Menü **Ansicht** auf **Debuggen**.
 
-1. Wählen Sie im Bereich **Debuggen** in der Dropdownliste die Option **Launch Performance Message Sender** (Senden von Leistungsnachrichten starten) aus, und drücken Sie anschließend **F5**. Visual Studio Code führt das Erstellen und Ausführen der Konsolenanwendung im Debugmodus durch.
+1. In der **Debuggen** Bereich in der Dropdown-Liste **Leistung Nachrichtenabsender starten**, und drücken Sie dann die **F5**. Visual Studio Code führt das Erstellen und Ausführen der Konsolenanwendung im Debugmodus durch.
 
 1. Sehen Sie sich die Nachrichten in der **Debugging-Konsole** an, während das Programm ausgeführt wird.
 
 1. Wechseln Sie zum Azure-Portal.
 
-1. Klicken Sie auf der Startseite auf **Alle Ressourcen** und dann auf den zuvor erstellten Service Bus-Namespace, falls Service Bus nicht angezeigt wird.
+1. Falls der Service Bus-Namespace nicht angezeigt wird, klicken Sie auf der Startseite auf **Alle Ressourcen** und dann auf den zuvor erstellten Service Bus-Namespace.
 
 1. Klicken Sie auf dem Blatt **Service Bus-Namespace** unter **ENTITÄTEN** auf **Themen** und dann auf das Thema **salesperformancemessages**. In der Liste der Abonnements sollte sowohl im **Amerika**- als auch im **Europa**-Abonnement eine Nachricht angezeigt werden.
 
@@ -128,7 +128,7 @@ Führen Sie diese Schritte aus, um die Komponente fertigzustellen, mit der Nachr
 1. Suchen Sie in dieser Methode nach der folgenden Codezeile:
 
     ```C#
-    // Create a Subscription Client here
+    // Create a subscription client here
     ```
 
 1. Ersetzen Sie diese Zeile durch den folgenden Code, um einen Abonnementclient zu erstellen:
@@ -189,7 +189,7 @@ Führen Sie diese Schritte aus, um die Komponente auszuführen, mit der Nachrich
 
 1. Klicken Sie in Visual Studio Code im Menü **Ansicht** auf **Debuggen**.
 
-1. Wählen Sie im Bereich **Debuggen** in der Dropdownliste die Option **Launch Performance Message Receiver** (Empfangen von Leistungsnachrichten starten) aus, und drücken Sie anschließend **F5**. Visual Studio Code führt das Erstellen und Ausführen der Konsolenanwendung im Debugmodus durch.
+1. In der **Debuggen** Bereich in der Dropdown-Liste **Leistung Nachrichtenempfänger starten**, und drücken Sie dann die **F5**. Visual Studio Code führt das Erstellen und Ausführen der Konsolenanwendung im Debugmodus durch.
 
 1. Sehen Sie sich die Nachrichten in der **Debugging-Konsole** an, während das Programm ausgeführt wird.
 
@@ -197,6 +197,6 @@ Führen Sie diese Schritte aus, um die Komponente auszuführen, mit der Nachrich
 
 1. Wechseln Sie zum Azure-Portal.
 
-1. Klicken Sie auf der Startseite auf **Alle Ressourcen** und dann auf den zuvor erstellten Service Bus-Namespace, falls Service Bus nicht angezeigt wird.
+1. Falls der Service Bus-Namespace nicht angezeigt wird, klicken Sie auf der Startseite auf **Alle Ressourcen** und dann auf den zuvor erstellten Service Bus-Namespace.
 
 1. Klicken Sie auf dem Blatt **Service Bus-Namespace** unter **ENTITÄTEN** auf **Themen** und dann auf das Thema **salesperformancemessages**. In der Liste der Abonnements sollten im **Amerika**-Abonnement null Nachrichten angezeigt werden, da Ihre Anwendung die einzige Nachricht verarbeitet und entfernt hat. Beachten Sie, dass die Nachricht im **Europa**-Abonnement noch vorhanden ist.

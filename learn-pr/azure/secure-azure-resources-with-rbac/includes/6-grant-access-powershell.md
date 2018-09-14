@@ -6,17 +6,17 @@ Sie verwenden immer das Blatt **Zugriffssteuerung (IAM)** im Azure-Portal. Das V
 
 1. Klicken Sie oben im Portal auf **Cloud Shell**, um den Bereich „Cloud Shell“ zu öffnen.
 
-    ![Schaltfläche „Cloud Shell“](../media-draft/6-cloud-shell-button.png)
+    ![Schaltfläche „Cloud Shell“](../media/6-cloud-shell-button.png)
 
 1. Stellen Sie oben links im Cloud Shell-Bereich sicher, dass **PowerShell** festgelegt ist. Wenn **Bash** festgelegt ist, ändern Sie die Einstellung zu **PowerShell**.
 
     Das Laden kann einige Minuten in Anspruch nehmen. Die anschließende Ausgabe sieht etwa so aus:
 
-    ![Cloud Shell PowerShell](../media-draft/6-cloud-shell-powershell.png)
+    ![Cloud Shell PowerShell](../media/6-cloud-shell-powershell.png)
 
 ## <a name="grant-access"></a>Gewähren von Zugriff
 
-Wenn Sie einem Benutzer mit Azure PowerShell Zugriff gewähren möchten, verwenden Sie den Befehl [New-AzureRmRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment). Sie müssen den Sicherheitsprinzipal, die Rollendefinition und den Bereich angeben.
+Um Zugriff zu einem Benutzer mithilfe von Azure PowerShell zu gewähren, verwenden Sie den New-AzureRmRoleAssignment-Befehl. Sie müssen den Sicherheitsprinzipal, die Rollendefinition und den Bereich angeben.
 
 Führen Sie diese Schritte aus, um dem Benutzer **LabUser-_XXXXXXX_** die Rolle „Mitwirkender für virtuelle Computer“ im Ressourcengruppenbereich zuzuweisen.
 
@@ -44,7 +44,7 @@ Führen Sie diese Schritte aus, um dem Benutzer **LabUser-_XXXXXXX_** die Rolle 
 
 ## <a name="list-access"></a>Auflisten des Zugriffs
 
-Wenn Sie den Zugriff für die Ressourcengruppe überprüfen möchten, listen Sie mit dem Befehl [Get-AzureRmRoleAssignment](/powershell/module/azurerm.resources/get-azurermroleassignment) die Rollenzuweisungen auf.
+Um den Zugriff für die Ressourcengruppe zu überprüfen, verwenden Sie den Get-AzureRmRoleAssignment-Befehl zum Auflisten der rollenzuweisungen an.
 
 Führen Sie diese Schritte aus, um alle Rollenzuweisungen für den Benutzer **LabUser-XXXXXXX** im Ressourcengruppenbereich aufzulisten.
 
@@ -59,7 +59,7 @@ Führen Sie diese Schritte aus, um alle Rollenzuweisungen für den Benutzer **La
     RoleAssignmentId   : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/FirstUpConsultantsRG1-XXXXXXX/providers/Microsoft.Authorization/roleAssignments/33333333-3333-3333-3333-333333333333
     Scope              : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/FirstUpConsultantsRG1-XXXXXXX
     DisplayName        : LabUser-XXXXXXX
-    SignInName         : LabUser-XXXXXXX@xxxxxxxxxxxx.onmicrosoft.com 
+    SignInName         : LabUser-XXXXXXX@xxxxxxxxxxxx.onmicrosoft.com
     RoleDefinitionName : Virtual Machine Contributor
     RoleDefinitionId   : 9980e02c-c2be-4d73-94e8-173b1dc7cf3c
     ObjectId           : 11111111-1111-1111-1111-111111111111
@@ -71,11 +71,11 @@ Führen Sie diese Schritte aus, um alle Rollenzuweisungen für den Benutzer **La
 
     Wenn Sie das Blatt **Zugriffssteuerung (IAM)** für die Ressourcengruppe im Azure-Portal aktualisieren, sieht die Rollenzuweisung wie folgt aus:
 
-    ![Rollenzuweisungen für einen Benutzer im Ressourcengruppenbereich](../media-draft/6-cloud-shell-access-control.png)
+    ![Rollenzuweisungen für einen Benutzer im Ressourcengruppenbereich](../media/6-cloud-shell-access-control.png)
 
 ## <a name="remove-access"></a>Entfernen des Zugriffs
 
-Verwenden Sie zum Entfernen des Zugriffs für Benutzer, Gruppen und Anwendungen den Befehl [Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment), um eine Rollenzuweisung zu entfernen.
+Um den Zugriff für Benutzer, Gruppen und Anwendungen zu entfernen, verwenden Sie Remove-AzureRmRoleAssignment, um eine rollenzuweisung zu entfernen.
 
 Führen Sie diese Schritte aus, um dem Benutzer **LabUser-_XXXXXXX_** die Rollenzuweisung „Mitwirkender für virtuelle Computer“ im Ressourcengruppenbereich zu entziehen.
 
@@ -91,8 +91,7 @@ Führen Sie diese Schritte aus, um dem Benutzer **LabUser-_XXXXXXX_** die Rollen
 
 1. Klicken Sie im PowerShell-Bereich auf die Schließen-Schaltfläche (**X**), um den Bereich zu schließen.
 
-    ![Cloud Shell – Schaltfläche „Schließen“](../media-draft/6-cloud-shell-close.png)
-
+    ![Cloud Shell – Schaltfläche „Schließen“](../media/6-cloud-shell-close.png)
 
 ## <a name="summary"></a>Zusammenfassung
 

@@ -1,52 +1,33 @@
-This module was all about integrating data and services into your functions. We started off with a quick tour of the binding types that show up when you add them to a function. We then looked at reading data from an Azure Cosmos DB using an input binding. The platform takes care of managing connection strings and we saw how easy it is to read data in our code using the binding. Finally we focused our attention on writing data different sources with the help of output bindings. This journey is summarized in the following table.
+Dieses Modul wurde alles über die Integration von Daten und Dienste in Ihre Funktionen. Wir begannen mit einen kurzen Überblick über die Bindungstypen, die angezeigt werden, wenn Sie sie an eine Funktion hinzufügen. Wir haben uns angeschaut dann Lesen von Daten aus einer Azure Cosmos DB-eingabebindung verwenden. Die Plattform übernimmt die Verwaltung von Verbindungszeichenfolgen und erläutert, wie einfach es ist zum Lesen von Daten in unserem Code unter Verwendung der Bindung. Zum Schluss konzentrierten wir uns unsere Aufmerksamkeit auf das Schreiben von Daten von verschiedenen Quellen mit Hilfe der ausgabebindungen. Dieser Weg ist in der folgenden Tabelle zusammengefasst.
 
 [!INCLUDE [summary table](./summary-table.md)]
 
-You can apply the approaches you have learned here to add and test bindings in your functions. Here are a few interesting ideas to get more practice with bindings and to build on what you have learned here.
+Sie können die Ansätze anwenden, die Sie hier gelernt haben, hinzufügen und Testen von Bindungen in Ihren Funktionen. Hier sind einige interessante Ideen aus, um weitere vertraut zu machen, mit Bindungen und erstellen auf die Sie hier gelernt haben.
 
-* Create another function to read from Blob Storage and other input bindings that we haven't used in this module.
+* Erstellen Sie eine andere Funktion zum Lesen von BLOB-Speicher und andere eingabebindungen, die wir in diesem Modul nicht verwendet haben.
 
-* Create another function to write to more destinations using other supported output binding types.
+* Erstellen Sie eine andere Funktion zum Schreiben in mehrere Ziele, die mit anderen unterstützten Ausgabetypen für die Bindung an.
 
-* In the last unit, we introduced a queue and posted messages to it with an output binding. As a next step, consider adding another function that reads the messages in the queue and prints out the **MESSAGE TEXT** to the console with `Console.Log()`.
+* In der letzten Einheit wir eingeführt, eine Warteschlange und Nachrichten an diese mit einer ausgangsbindung bereitgestellt. Als Nächstes, erwägen Sie eine andere Funktion, die die Nachrichten in der Warteschlange liest und druckt die **MELDUNGSTEXT** an die Konsole mit `Console.Log()`.
 
-As we saw in this module, the Azure portal offers easy-to-use features to start building functions and connecting them to data and other services.
+Wie wir in diesem Modul gesehen haben, bietet das Azure-Portal einfach zu bedienende Features, um Funktionen zu erstellen und das Verbinden mit Daten und andere Dienste zu starten.
 
-## Clean up resources
+[!include[](../../../includes/azure-sandbox-cleanup.md)]
 
-*Resources* in Azure refers to function apps, functions, storage accounts, and so forth. They are grouped into *resource groups*, and you can delete everything in a group by deleting the group.
+## <a name="further-reading"></a>Weitere nützliche Informationen
 
-You created resources to complete this module. You may be billed for these resources, depending on your [account status](https://azure.microsoft.com/account/) and [service pricing](https://azure.microsoft.com/pricing/). If you don't need the resources anymore, here's how to delete them:
+Obwohl dies nicht die eine vollständige Liste gedacht ist, sind die folgenden einige Ressourcen, die im Zusammenhang mit den Themen in diesem Modul aus, die Sie interessant finden können.
 
-1. In the Azure portal, go to the **Resource group** page.
+ * [Dokumentation zu Azure Functions](https://docs.microsoft.com/azure/azure-functions/)
 
-   To get to that page from the function app page, select the **Overview** tab and then select the link under **Resource group**.
-
-   To get to that page from the dashboard, select **Resource groups**, and then select the resource group that you used for this module. 
-
-> [!NOTE]
-> The default name of the resource group we suggested for this module was [!INCLUDE [resource-group-name](./rg-name.md)] but it is possible that you used another name.
-
-2. In the **Resource group** page, review the list of included resources, and verify that they are the ones you want to delete.
-
-3. Select **Delete resource group**, and follow the instructions.
-
-   Deletion may take a couple of minutes. When it's done, a notification appears for a few seconds. You can also select the bell icon at the top of the page to view the notification.
-
-## Further Reading
-
-While this is not intended to be an exhaustive list, the following are some resources related to the topics covered in this module that you might find interesting.
-
- * [Azure Functions documentation](https://docs.microsoft.com/azure/azure-functions/)
-
-* [The Azure Functions Challenge](https://aka.ms/afc)
+* [Die Herausforderung mit Azure Functions](https://aka.ms/afc)
 
 * [Azure Serverless Computing Cookbook](https://azure.microsoft.com/resources/azure-serverless-computing-cookbook/)
 
- * [How to use Queue storage from Node.js](https://docs.microsoft.com/azure/storage/queues/storage-nodejs-how-to-use-queues)
+ * [Gewusst wie: Verwenden von Queue Storage mit Node.js](https://docs.microsoft.com/azure/storage/queues/storage-nodejs-how-to-use-queues)
 
- * [Introduction to Azure Cosmos DB: SQL API](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction)
+ * [Einführung in Azure Cosmos DB: SQL-API](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction)
 
-* [A technical overview of Azure Cosmos DB](https://azure.microsoft.com/blog/a-technical-overview-of-azure-cosmos-db/)
+* [Eine technische Übersicht über Azure Cosmos DB](https://azure.microsoft.com/blog/a-technical-overview-of-azure-cosmos-db/)
 
-* [Azure Cosmos DB documentation](https://docs.microsoft.com/azure/cosmos-db/)
+* [Dokumentation für Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/)

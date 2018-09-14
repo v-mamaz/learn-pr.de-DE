@@ -2,14 +2,13 @@
 uid: learn.secure-access-azure-ad-multi-factor-authentication.3-build-azure-ad
 metadata:
   title: Erstellen von Verzeichnissen
-  description: Erfahren Sie, wie Sie ein Verzeichnis erstellen und temporäre Lizenzen zuweisen.
-  displayType: one-column
-  ms.openlocfilehash: 554e80f34cff1228f9c71dfde416dbbc36125d17
-  ms.sourcegitcommit: bb4b1f9e2a7399769ff84199f018abd14a3e73aa
-  ms.translationtype: HT
-  ms.contentlocale: de-DE
-  ms.lasthandoff: 09/01/2018
-  ms.locfileid: "43454465"
+  description: 'Erfahren Sie, wie Sie ein Verzeichnis erstellen und temporäre Lizenzen zuweisen.'
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 title: Erstellen von Verzeichnissen
-durationInMinutes: 15
-content: '[!include[](includes/3-build-azure-ad.md)]'
+durationInMinutes: 5
+content: |
+  [!include[](includes/3-build-azure-ad.md)]

@@ -1,10 +1,10 @@
-Es ist üblich, eine bestimmte Logik in festgelegten Intervallen auszuführen. Stellen Sie sich vor, Sie haben einen Blog und stellen fest, dass Ihre Abonnenten die neuesten Beiträge nicht lesen. Also entscheiden sie sich dafür, einmal pro Woche eine E-Mail zu senden, um sie an Ihren Blog zu erinnern. Sie implementieren diese Logik mit einer Azure-Funktion mit _Timertrigger_, damit Ihre Funktion wöchentlich aufgerufen wird.
+Es ist üblich, eine bestimmte Logik in festgelegten Intervallen auszuführen. Stellen Sie sich vor, Sie haben einen Blog und stellen fest, dass Ihre Abonnenten die neuesten Beiträge nicht lesen. Also entscheiden sie sich dafür, einmal pro Woche eine E-Mail zu senden, um sie an Ihren Blog zu erinnern. Sie implementieren diese Logik, die mit einer Azure-Funktions-app mit einem _Trigger mit Timer_ Ihrer Funktion wöchentlich aufrufen.
 
 ## <a name="what-is-a-timer-trigger"></a>Was ist ein Timertrigger?
 
-Ein Zeitgebertrigger ist ein Trigger, der eine Funktion in einem bestimmten Intervall ausführt. Um einen Timertrigger zu erstellen, müssen Sie zwei Informationen angeben. 
+Ein Zeitgebertrigger ist ein Trigger, der eine Funktion in einem bestimmten Intervall ausführt. Um einen Timertrigger zu erstellen, müssen Sie zwei Informationen angeben.
 
-1. Ein *Zeitstempel-Parametername*, d.h. ein Bezeichner für den Zugriff auf den Trigger im Code. 
+1. Ein *Zeitstempel-Parametername*, d.h. ein Bezeichner für den Zugriff auf den Trigger im Code.
 2. Ein *Zeitplan*, d.h. ein *CRON-Ausdruck*, der das Intervall für den Timer festlegt.
 
 ## <a name="what-is-a-cron-expression"></a>Was ist ein CRON-Ausdruck?
@@ -15,7 +15,7 @@ Die Reihenfolge der Felder ist in Azure die folgende: `{second} {minute} {hour} 
 
 Ein *CRON-Ausdruck* zum Erstellen eines Triggers, der alle fünf Minuten ausgeführt wird, sieht beispielsweise so aus:
 
-```
+```log
 0 */5 * * * *
 ```
 
@@ -32,7 +32,7 @@ Um einen *CRON-Ausdruck* zu erstellen, benötigen Sie ein grundlegendes Verstän
 
 Nun kehren wir zum ursprünglichen CRON-Ausdruckbeispiel zurück. Versuchen wir, ihn besser zu verstehen, indem wir ihn Feld für Feld aufschlüsseln.
 
-```
+```log
 0 */5 * * * *
 ```
 
@@ -46,8 +46,8 @@ Wenn Sie alle Felder zusammensetzen, bedeutet der Ausdruck „in der ersten Seku
 
 ## <a name="how-to-create-a-timer-trigger"></a>Erstellen eines Timertriggers
 
-Ein Zeitgebertrigger kann vollständig im Azure-Portal erstellt werden. Wählen Sie in Ihrer Azure-Funktion **Zeitgebertrigger** aus der Liste der vordefinierten Triggertypen aus. Geben Sie die Logik ein, die Sie ausführen möchten. Geben Sie einen **Zeitstempel-Parameternamen** und den **CRON-Ausdruck** an.
+Ein Zeitgebertrigger kann vollständig im Azure-Portal erstellt werden. Wählen Sie in Ihrer Azure-Funktions-app **Trigger mit Timer** aus der Liste der Triggervorlagen. Geben Sie die Logik ein, die Sie ausführen möchten. Geben Sie einen **Zeitstempel-Parameternamen** und den **CRON-Ausdruck** an.
 
-## <a name="summary"></a>Zusammenfassung
+In diesem Modul konzentrieren wir uns auf das Portal, aber es ist auch möglich, Trigger, die programmgesteuert mit Core-Tools, Visual Studio oder Visual Studio Code erstellen.
 
-Ein Zeitgebertrigger ruft eine Azure-Funktion nach einem einheitlichen Zeitplan auf. Um den Zeitplan für einen Zeitgebertrigger zu definieren, erstellen Sie einen *CRON-Ausdruck*. Dabei handelt es sich um eine Zeichenfolge, die eine Zeitangabe darstellt.
+Ein Trigger mit Timer Ruft eine Azure Functions-app nach einem Zeitplan konsistent. Um den Zeitplan für einen Zeitgebertrigger zu definieren, erstellen Sie einen *CRON-Ausdruck*. Dabei handelt es sich um eine Zeichenfolge, die eine Zeitangabe darstellt.

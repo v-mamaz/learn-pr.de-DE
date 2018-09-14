@@ -1,14 +1,14 @@
-Blobs give you file storage in the cloud and an API that lets you build apps to access the data.
+Blobs bieten Ihnen einen Dateispeicher in der Cloud und eine API, die Ihnen ermöglicht, Apps für den Datenzugriff zu erstellen.
 
-Suppose you work at an augmented-reality gaming company. Your game runs on every mobile platform. You want to add a new feature to let users record video clips of their gameplay and upload the clips to your servers. Users will be able to watch clips directly in the game or through your website. You plan to log every upload and viewing for use in analytics and for traceability.
+Nehmen wir an, Sie arbeiten bei einem Augmented Reality Gaming-Unternehmen. Ihr Spiel wird auf jeder mobilen Plattform ausgeführt. Sie möchten eine neue Funktion hinzufügen, damit Benutzer Videoclips ihrer Spiele aufnehmen und die Clips auf Ihre Server hochladen können. Die Benutzer werden in der Lage sein, Clips direkt im Spiel oder auf Ihrer Website zu betrachten. Sie planen, jedes Hochladen und Anzeigen zur Verwendung in der Analyse und zur Nachverfolgbarkeit zu protokollieren.
 
-You need a storage solution that can handle thousands of simultaneous uploads, massive amounts of video data, and constantly growing log files. You also need to add the viewing functionality to all your mobile apps and your website, so you want API access from multiple platforms and languages.
+Sie benötigen eine Speicherlösung, die Tausende gleichzeitiger Uploads, große Mengen von Videodaten und ständig wachsende Protokolldateien verarbeiten kann. Da Sie auch allen Ihren mobilen Apps und Ihrer Website die Anzeigefunktionalität hinzufügen müssen, benötigen Sie API-Zugriff von mehreren Plattformen aus und in verschiedenen Sprachen.
 
-Here, you will see how Azure Blob storage could be appropriate for this application.
+Hier sehen Sie, wie Azure Blob Storage für diese Anwendung geeignet sein könnte.
 
-## Learning objectives
-In this module, you will:
+## <a name="learning-objectives"></a>Lernziele
+In diesem Modul lernen Sie Folgendes:
 
-- Organize your data with Azure Blob Storage
-- Create storage resources to hold blobs
-- Store and retrieve data from Azure Blob Storage
+- Organisieren Ihrer Daten mit Azure Blob Storage
+- Erstellen von Speicherressourcen für Blobs
+- Speichern von Daten in und Abrufen aus Azure-Blobspeicher

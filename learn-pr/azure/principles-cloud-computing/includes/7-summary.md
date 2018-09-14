@@ -1,5 +1,7 @@
 In diesem Modul haben wir gelernt, was Cloud Computing ist und wie alle Unternehmen, ob Start-Up oder Konzern, davon profitieren können. An diesem Punkt sollte uns also klar sein, was Cloud Computing ist, wir haben jedoch noch nicht über einen spezifischen Cloudanbieter gesprochen.
 
+![Verbundene Schleichwerbung zur Darstellung von Elektrizität übermittelt werden](../media/7-heading.png)
+
 ### <a name="microsoft-azure"></a>Microsoft Azure
 
 Azure ist die Plattform von Microsoft für Cloud Computing. Azure bietet mehr als 100 Dienste, mit denen Sie alles machen können: vom Ausführen Ihrer vorhandenen Anwendungen auf virtuellen Computern bis zum Untersuchen neuer Softwaremodelle wie intelligenter Bots und Mixed Reality.

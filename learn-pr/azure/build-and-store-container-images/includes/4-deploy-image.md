@@ -1,36 +1,36 @@
-Container images can be pulled from Azure Container Registry from many container management platforms, such as Azure Container Instances, Azure Kubernetes Registry, and Docker for Windows or Mac. When running container images from Azure Container Registry, authentication credentials may be needed. It is recommended to use an Azure service principal for authentication with Container Registry. Furthermore, it is also recommended to secure the Azure service principal credentials in Azure Key Vault.
+Containerimages können über viele Containerverwaltungsplattformen aus Azure Container Registry abgerufen werden, z.B. Azure Container Instances, Azure Kubernetes Registry und Docker für Windows oder Mac. Für das Ausführen von Containerimages aus Azure Container Registry können Authentifizierungsanmeldeinformationen erforderlich sein. Es wird empfohlen, einen Azure-Dienstprinzipal für die Authentifizierung mit Container Registry zu verwenden. Darüber hinaus wird ebenfalls empfohlen, die Anmeldeinformationen für den Azure-Dienstprinzipal in Azure Key Vault zu schützen.
 
-In this unit, you will create a service principal for your Azure container registry, store it in Azure Key Vault, and then deploy the container to Azure Container Instances using the service principal's credentials.
+In dieser Einheit erstellen Sie einen Dienstprinzipal für die Azure-Containerregistrierung, speichern diesen in Azure Key Vault und stellen dann den Container mithilfe der Anmeldeinformationen des Dienstprinzipals in Azure Container Instances bereit.
 
-## Configure registry authentication
+## <a name="configure-registry-authentication"></a>Konfigurieren der Authentifizierung der Registrierung
 
-All production scenarios should use service principals to access an Azure container registry. Service principals allow you to provide role-based access control (RBAC) to your container images. For example, you can configure a service principal with pull-only access to a registry.
+Für alle Produktionsszenarios sollten Dienstprinzipale für den Zugriff auf eine Azure-Containerregistrierung verwendet werden. Mit Dienstprinzipalen können Sie die rollenbasierte Zugriffssteuerung für Ihre Containerimages bereitstellen. Beispielsweise können Sie einen Dienstprinzipal mit ausschließlichem Pullzugriff auf eine Registrierung konfigurieren.
 
-If you don't already have a vault in Azure Key Vault, create one with the Azure CLI using the following commands.
+Wenn Sie noch keinen Tresor in Azure Key Vault haben, erstellen Sie einen mit Azure CLI und den folgenden Befehlen.
 
-First, create a variable with the name of your container registry. This variable is used throughout this unit.
+Erstellen Sie zunächst eine Variable mit dem Namen Ihrer Containerregistrierung. Diese Variable wird im gesamten Verlauf dieser Einheit verwendet.
 
 ```azurecli
 ACR_NAME=<acrName>
 ```
 
-Create an Azure key vault with the `az keyvault create` command.
+Erstellen Sie mit dem Befehl `az keyvault create` einen Azure-Schlüsseltresor.
 
 ```azurecli
 az keyvault create --resource-group myResourceGroup --name $ACR_NAME-keyvault
 ```
 
-Now, you need to create a service principal and store its credentials in your key vault.
+Nun müssen Sie einen Dienstprinzipal erstellen und dessen Anmeldeinformationen in Ihrem Schlüsseltresor speichern.
 
-Use the `az ad sp create-for-rbac` command to create the service principal. The `--role` argument configures the service principal with the *reader* role, which grants it pull-only access to the registry. To grant both push and pull access, change the `--role` argument to *contributor*.
+Verwenden Sie den Befehl `az ad sp create-for-rbac`, um den Dienstprinzipal zu erstellen. Das Argument `--role` konfiguriert den Dienstprinzipal mit der Rolle *reader* (Leser), die ihm ausschließlich Pullzugriff auf die Registrierung gewährt. Ändern Sie das Argument `--role` in *contributor* (Mitwirkender), um sowohl Push- als auch Pullzugriff zu gewähren.
 
 ```azurecli
 az ad sp create-for-rbac --scopes $(az acr show --name $ACR_NAME --query id --output tsv) --role reader
 ```
 
-This is what the output of the service principal creation will look like. Take note of the `appId` and the `password` values. These will be stored in the Azure key vault.
+So würde die Ausgabe der Erstellung des Dienstprinzipals aussehen. Notieren Sie sich die Werte `appId` und `password`. Diese werden im Azure-Schlüsseltresor gespeichert.
 
-```bash
+```output
 {
   "appId": "1fa05179-0000-0000-0000-e269a4e97c41",
   "displayName": "azure-cli-2018-08-19-22-35-26",
@@ -40,30 +40,30 @@ This is what the output of the service principal creation will look like. Take n
 }
 ```
 
-Next, use the `az keyvault secret set` command to store the service principal's *appId* in the vault. Replace `<appId>` with the `appId` of the service principal.
+Verwenden Sie als Nächstes den `az keyvault secret set`-Befehl, um die *App-ID* des Dienstprinzipals im Tresor zu speichern. Ersetzen Sie `<appId>` durch die `appId` des Dienstprinzipals.
 
 ```azurecli
 az keyvault secret set --vault-name $ACR_NAME-keyvault --name $ACR_NAME-pull-usr --value <appId>
 ```
 
-Now, use the `az keyvault secret set` command to store the service principal's *password* in the vault. Replace `<password>` with the `password` of the service principal.
+Verwenden Sie jetzt den Befehl `az keyvault secret set`, um das *Kennwort* des Dienstprinzipals im Schlüsseltresor zu speichern. Ersetzen Sie `<password>` durch die `password` des Dienstprinzipals.
 
 ```azurecli
 az keyvault secret set --vault-name $ACR_NAME-keyvault --name $ACR_NAME-pull-pwd --value <password>
 ```
 
-You've created an Azure key vault and stored two secrets in it:
+Sie haben einen Azure-Schlüsseltresor erstellt und zwei Geheimnisse in diesem gespeichert:
 
-* `$ACR_NAME-pull-usr`: The service principal ID, for use as the container registry **username**.
-* `$ACR_NAME-pull-pwd`: The service principal password, for use as the container registry **password**.
+* `$ACR_NAME-pull-usr`: Die Dienstprinzipal-ID für die Verwendung als **Benutzername** für die Containerregistrierung.
+* `$ACR_NAME-pull-pwd`: Das Kennwort des Dienstprinzipals für die Verwendung als **Kennwort** für die Containerregistrierung.
 
-You can now reference these secrets by name when you or your applications and services pull images from the registry.
+Sie können nun anhand des Namens auf diese Geheimnisse verweisen, wenn Sie oder Ihre Anwendungen und Dienste Images per Pull aus der Registrierung abrufen.
 
-### Deploy a container with Azure CLI
+### <a name="deploy-a-container-with-azure-cli"></a>Bereitstellen eines Containers mit Azure CLI
 
-Now that the service principal credentials are stored in Azure Key Vault, your applications and services can use them to access your private registry.
+Jetzt, da die Anmeldeinformationen des Dienstprinzipals in Azure Key Vault gespeichert sind, können Ihre Anwendungen und Dienste diese verwenden, um auf Ihre private Registrierung zuzugreifen.
 
-Execute the following `az container create` command to deploy a container instance. The command uses the service principal's credentials stored in Azure Key Vault to authenticate to your container registry.
+Führen Sie den folgenden `az container create`-Befehl aus, um eine Containerinstanz bereitzustellen. Der Befehl verwendet die in Azure Key Vault gespeicherten Anmeldeinformationen des Dienstprinzipals, um sich bei Ihrer Containerregistrierung zu authentifizieren.
 
 ```azurecli
 az container create \
@@ -76,13 +76,13 @@ az container create \
     --registry-password $(az keyvault secret show --vault-name $ACR_NAME-keyvault --name $ACR_NAME-pull-pwd --query value -o tsv)
 ```
 
-Get the IP address of the Azure container instance.
+Rufen Sie die IP-Adresse der Azure-Containerinstanz ab.
 
 ```azurecli
 az container show --resource-group myResourceGroup --name acr-build --query ipAddress.ip --output table
 ```
 
-Open up a browser and navigate to the IP address of the container. If everything has been configured correctly, you should see the following results:
+Öffnen Sie einen Browser, und navigieren Sie zur IP-Adresse des Containers. Wenn alles ordnungsgemäß konfiguriert wurde, sollten jetzt die folgenden Ergebnisse angezeigt werden:
 
-![Sample web application with the text Hello World](../media/hello.png)
+![Beispiel-Web-App mit dem Text „Hello World“](../media/hello.png)
 

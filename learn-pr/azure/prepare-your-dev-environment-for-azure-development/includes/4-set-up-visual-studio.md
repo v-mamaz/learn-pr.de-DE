@@ -1,4 +1,4 @@
-Visual Studio ist eine umfassend integrierte Entwicklungsumgebung (IDE) mit vollem Funktionsumfang, die für nahezu jeden Softwareexperten geeignet ist. Visual Studio verfügt über einen vollständigen Satz von Tools und Features, die speziell auf die Entwicklung von Anwendungen mit Microsoft Azure konzipiert sind. Die enge Integration in Visual Studio bedeutet, dass Azure-Tools für Bereitstellung, Debuggen und Entwicklung erstklassig sind. Dies gilt auch für Visual Studio für Mac. In dieser Einheit erhalten Sie Informationen über beide Versionen und über ihre Stärken in Bezug auf die Azure-Entwicklung.
+Visual Studio ist eine vollständig ausgewählte und umfassende integrierte Entwicklungsumgebung (IDE) zur nahezu jede Art von Software, die professionelle. Visual Studio verfügt über einen vollständigen Satz von Tools und Features, die speziell auf die Entwicklung von Anwendungen mit Microsoft Azure konzipiert sind. Die enge Integration in Visual Studio bedeutet, dass Azure Tools für Bereitstellung, Debuggen und Entwicklung erstklassiger sind. Dies gilt auch für Visual Studio für Mac. Diese Einheit werden beide vorgestellt.
 
 ## <a name="visual-studio"></a>Visual Studio
 
@@ -12,9 +12,9 @@ Um Visual Studio zu installieren, laden Sie den Installer herunter. Dieser Insta
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio für Mac
 
-Visual Studio für Mac ist eine nativ entworfene und entwickelte IDE für macOS. Sie bietet eine erstklassige Entwicklerumgebung zum Erstellen von Anwendungen für mobile Apps unter Android und iOS, das Internet und .NET Core-Lösungen. Sie ist auch hervorragend für die Erstellung von Anwendungen in Azure geeignet.
+Visual Studio für Mac ist eine nativ entworfene und entwickelte IDE für macOS. Es bietet eine erstklassige Entwicklungsumgebung zum Erstellen von Anwendungen für mobile apps für Android und iOS, Web und .NET Core-Lösungen. Sie ist auch hervorragend für die Erstellung von Anwendungen in Azure geeignet.
 
-Die Basisinstallation von Visual Studio für Mac bietet eine kontextbezogene Integration von Azure-Tools. Wenn Sie z.B. eine Xamarin-App für Android erstellen, bietet die Workload „Verbundene Dienste“ einen Link zum Erstellen eines mobilen Back-Ends für Azure App Service. Für die Erstellung einer Azure-Funktion wird eine Projektvorlage aus der Kategorie „Cloud“ verwendet.
+Die Basisinstallation von Visual Studio für Mac bietet eine kontextbezogene Integration von Azure-Tools. Wenn Sie z.B. eine Xamarin-App für Android erstellen, bietet die Workload „Verbundene Dienste“ einen Link zum Erstellen eines mobilen Back-Ends für Azure App Service. Wenn Sie eine Azure-Funktion erstellen möchten, besteht eine Projektvorlage in der Cloud-Kategorie.
 
 Wenn Sie Tools für Azure-Features und -Funktionen benötigen, die in der Basisinstallation nicht vorhanden sind, ist NuGet die beste Wahl. Der NuGet-Paket-Manager weist zahlreiche Azure-Pakete auf, die die Funktionen und Tools von Visual Studio für Mac erweitern.
 
@@ -25,8 +25,8 @@ Um Visual Studio für Mac zu installieren, laden Sie den Installer herunter. Der
 
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser Einheit haben Sie Visual Studio unter Windows oder macOS installiert.
+In dieser Einheit haben Sie Visual Studio installiert, entweder auf Windows oder MacOS.
 
-Für Windows haben Sie die Workload „Azure-Entwicklung“ im Installer ausgewählt. Damit wurden alle erforderlichen Tools zum Erstellen von Azure-Anwendungen und zum Generieren von Azure-Ressourcen installiert. Sie können auf alle Azure-Ressourcen für Ihr Abonnement über Explorer-Tools oder über Ressourcenverweise zugreifen.
+Für Windows, gewählten Azure-entwicklungsworkload in der Installer-Benutzeroberfläche, die installiert alle erforderlichen Tools zum Erstellen von Azure-Anwendungen und Azure-Ressourcen zu generieren.
 
-Für Visual Studio für Mac sind einige Azure-Tools in die Basisinstallation integriert. Viele weitere Features sind über NuGet verfügbar. Dadurch erhalten Sie auch Zugriff auf Ressourcen und Dienste in Ihrem Azure-Abonnement.
+Im Lieferumfang von Visual Studio für Mac sind einige Azure-Tools die Basisinstallation integriert. Viele weitere Funktionen sind über NuGet verfügbar.

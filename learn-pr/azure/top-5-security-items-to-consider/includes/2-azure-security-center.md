@@ -1,69 +1,70 @@
-One of the biggest problems with security is being able to see all the areas you need to protect and to find vulnerabilities before hackers do. Azure provides a service which makes this much easier called Azure Security Center.
+Eines der größten Probleme mit Sicherheit wird allen Bereichen angezeigt, die Sie benötigen, um zu schützen sowie zum Suchen von Sicherheitslücken vor Hackern. Azure bietet, dass ein Dienst, der dadurch wesentlich einfacher wird Azure Security Center aufgerufen.
 
-## What is Azure Security Center?
+## <a name="what-is-azure-security-center"></a>Was ist Azure Security Center?
 
-Azure Security Center (ASC) is a monitoring service that provides threat protection across all of your services both in Azure, and on-premises. It can:
+Azure Security Center (ASC) ist ein Überwachungsdienst, der Schutz vor Bedrohungen über alle Dienste in Azure und lokalen bereitstellt. Sie können:
 
-- Provide security recommendations based on your configurations, resources, and networks.
-- Monitor security settings across on-premises and cloud workloads and automatically apply required security to new services as they come online.
-- Continuously monitor all your services and perform automatic security assessments to identify potential vulnerabilities before they can be exploited.
-- Use machine learning to detect and block malware from being installed in your services and virtual machines. You can also white-list applications to ensure that only the apps you validate are allowed to execute.
-- Analyze and identify potential inbound attacks and help to investigate threats and any post-breach activity which might have occurred.
-- Just-In-Time access control for ports, reducing your attack surface by ensuring the network only allows traffic you require.
+- Bereitzustellen Sie sicherheitsempfehlungen, die basierend auf Ihrer Konfigurationen, Ressourcen und Netzwerke.
+- Überwachen von Sicherheitseinstellungen für lokale und cloud-Workloads und erforderlichen Sicherheitsmaßnahmen automatisch auf neue Dienste anwenden, wie sie online geschaltet.
+- Kontinuierlich überwachen Sie alle Ihre Dienste aus, und führen Sie die automatische sicherheitsbewertungen, um mögliche Sicherheitsrisiken zu erkennen, bevor sie ausgenutzt werden können.
+- Verwenden Sie für maschinelles lernen zum Erkennen und blockieren Schadsoftware in Ihre Dienste und virtuellen Computern installiert werden. Sie können auch die Positivliste Anwendungen sicherstellen, dass nur die apps, die Sie überprüfen, ausgeführt werden dürfen.
+- Analysieren und potenzielle eingehende Angriffe zu identifizieren und Untersuchen von Bedrohungen und alle Aktivitäten nach einer sicherheitsverletzung die aufgetreten sind.
+- Just-In-Time-Zugriffssteuerung für Ports, die Ihre Angriffsfläche zu verkleinern, indem sichergestellt wird nur für die Netzwerk-Verkehr, die Sie benötigen.
 
-ASC is part of the [Center for Internet Security](https://www.cisecurity.org/cis-benchmarks/) (CIS) recommendations.
+ASC ist Teil der [Center für internetsicherheit](https://www.cisecurity.org/cis-benchmarks/) (CIS) Empfehlungen.
 
-## Activating Azure Security Center
+## <a name="activating-azure-security-center"></a>Aktivieren von Azure Security Center
 
-Given the benefits of ASC, the security team at your company has decided that it be turned on for all subscriptions at your office. You got an email this morning to turn it on for your applications - so let's look at how to do that.
+Azure Security Center bietet einheitliche sicherheitsverwaltung und erweiterten Schutz vor Bedrohungen für Hybrid Cloud-Workloads und wird in zwei Tarifen angeboten: Free und Standard. Im free-Tarif bietet Sicherheitsrichtlinien, Bewertungen und Empfehlungen und den Tarif "Standard" eine Reihe robuste Funktionen, einschließlich Informationen zu Bedrohungen.
 
-1. Open the [Azure portal](https://portal.azure.com?azure-portal=true) and select **Azure Security Center** from the left hand menu, if you don't see it there, you can select **All services** and find **Security Center** in the security section as shown below.
+Das Sicherheitsteam Ihres Unternehmens hat entschieden, dass sie für alle Abonnements am Arbeitsplatz aktiviert werden, wenn die Vorteile von ASC. Heute Morgen haben eine e-Mail, aktivieren Sie ihn für Ihre Anwendungen – wir uns an, die Vorgehensweise.
 
-![Open Azure Security Center](../media-draft/ASC-Menu.png)
+1. Öffnen der [Azure-Portal](https://portal.azure.com?azure-portal=true) , und wählen Sie **Azure Security Center** im linken Menü, wenn es dort nicht angezeigt wird können Sie auswählen **alle Dienste** und  **Security Center** im Abschnitt "Sicherheit" wie unten dargestellt.
 
-2. If you have never opened ASC, the blade will start on the **Getting started** entry which might ask you to upgrade your subscription. Ignore that for now, select **Skip** at the bottom of the page, and then select **Overview**.
-    - This will display the "big security picture" across all the elements available in your subscription.
-    - This has a ton of great information you can explore.
+![Öffnen Sie Azure Security Center](../media-draft/ASC-Menu.png)
 
-3. Next, select **Coverage**, under "Policy and Compliance". This will display what subscription elements are being covered (or not covered) by ACS. Here you can turn on ACS for any subscription you have access to. Try switching between the three coverage areas: "Not covered", "Basic coverage" and "Standard coverage".
+2. Wenn Sie ASC nie geöffnet haben, startet auf das Blatt auf die **Einstieg** -Eintrag in dem Sie ein Upgrade Ihres Abonnements gebeten. Wählen Sie im Moment ignorieren **überspringen** am unteren Rand der Seite, und wählen Sie dann **Übersicht**.
+    - Dadurch wird das "big Sicherheit Bild" auf alle Elemente, die in Ihrem Abonnement verfügbaren angezeigt.
+    - Dies hat eine Menge mit nützlichen Informationen, die Sie untersuchen können.
 
-4. Subscriptions that are not covered will have a prompt to activate ACS. You can press the "Upgrade Now" button to enable ACS for all the resources in the subscription.
+3. Wählen Sie als Nächstes **Coverage**unter "Richtlinie und Kompatibilität". Dadurch wird angezeigt, was die Abonnement-Elemente abgedeckt (oder nicht behandelt), von ACS. Hier können Sie ACS für jedes Abonnement aktivieren, die, denen Sie können zugreifen. Wechseln Sie zwischen den drei Bereichen der Abdeckung: "Nicht abgedeckt", "Basic-Abdeckung" und "Standard-Abdeckung".
 
-![Upgrade Coverage](../media-draft/Upgrade-Now.png)
+4. Eine Aufforderung zum Aktivieren von ACS-Abonnements, die nicht behandelt werden müssen. Drücken Sie die Schaltfläche "Jetzt aktualisieren", um ACS für alle Ressourcen im Abonnement zu aktivieren.
 
-### Free vs. Standard pricing tier
+![Aktualisieren Sie Schutz](../media-draft/Upgrade-Now.png)
 
-While you can use a free Azure subscription tier with ASC, it is limited to assessments and recommendations of Azure resources only. To really leverage ASC, you will need to upgrade to a Standard tier subscription as shown above. You can upgrade your subscription through the "Upgrade Now" button in the **Coverage** blade as noted above. You can also switch to the **Getting Started** blade in the ASC menu which will walk you through changing your subscription level. The pricing and features may change based on the region, you can get a full overview on the [pricing page](https://azure.microsoft.com/en-us/pricing/details/security-center/). 
+### <a name="free-vs-standard-pricing-tier"></a>Kostenlose Visual Studio. Tarif „Standard“
+
+Während Sie eine kostenlose Azure-Abonnement-Ebene mit ASC verwenden können, ist es auf die Bewertung und Empfehlungen von Azure-Ressourcen beschränkt. Um ASC wirklich nutzen zu können, müssen Sie zum upgrade auf ein Standard-Tarif-Abonnement wie oben gezeigt. Sie können Ihr Abonnement über die Schaltfläche "Jetzt aktualisieren" im aktualisieren die **Coverage** auf dem Blatt, wie oben bereits erwähnt. Sie können auch zum Wechseln der **Einstieg** Blatt im Menü "ASC" Ändern von Ihrer Abonnementstufe schrittweise. Preisgestaltung und den Funktionen möglicherweise ändern sich in der Region, können Sie eine vollständige Übersicht über die bei der [Preisseite](https://azure.microsoft.com/en-us/pricing/details/security-center/). 
 
 > [!NOTE]
-> To upgrade a subscription to the Standard tier, you must be assigned the role of Subscription Owner, Subscription Contributor, or Security Admin.
+> Um ein Abonnement auf den Standard-Tarif zu aktualisieren, muss Ihnen die Rolle „Abonnementbesitzer“, „Mitwirkender“ am Abonnement oder „Sicherheitsadministrator“ zugewiesen werden.
 
 > [!IMPORTANT]
-> After the 60-day trial period is over, ASC is priced at **$15/node per month** and will be billed to your account.
+> Nach Ablauf der 60-Tage-Testzeitraum, themennachrichten ASC **15 $/ Knoten pro Monat** und auf Ihr Konto abgerechnet.
 
-## Turning off Azure Security Center
+## <a name="turning-off-azure-security-center"></a>Das Deaktivieren des Azure Security Center
 
-For production systems, you will definitely want to keep Azure Security Center turned on so it can monitor all your resources for threats. However, if you are just playing with ASC and turned it on, you will likely want to disable it to ensure you are not charged. Let's do that now.
+Für Produktionssysteme sollten Sie definitiv zu Azure Security Center aktiviert, so dass sie alle Ihre Ressourcen auf Bedrohungen überwachen kann. Aber wenn Sie sind mit ASC einfach herumgespielt, und es eingeschaltet, möchten Sie wahrscheinlich deaktivieren, um sicherzustellen, dass Sie nicht in Rechnung gestellt werden. Lassen Sie uns dies jetzt tun.
 
-1. Open the [Azure portal](https://portal.azure.com?azure-portal=true) and select **Azure Security Center** from the left hand menu, if you don't see it there, you can select **All services** and find **Security Center** in the security section as shown below.
+1. Öffnen der [Azure-Portal](https://portal.azure.com?azure-portal=true) , und wählen Sie **Azure Security Center** im linken Menü, wenn es dort nicht angezeigt wird können Sie auswählen **alle Dienste** und  **Security Center** im Abschnitt "Sicherheit" wie unten dargestellt.
 
-![Open Azure Security Center](../media-draft/ASC-Menu.png)
+![Öffnen Sie Azure Security Center](../media-draft/ASC-Menu.png)
 
-2. Select **Security Policy** from the left hand menu.
+2. Wählen Sie **Sicherheitsrichtlinie** im linken Menü.
 
-3. Next, select **Edit settings >**, next to the subscription for which you want to downgrade ASC.
+3. Wählen Sie als Nächstes **Einstellungen Bearbeiten >** neben dem Abonnement, für die ASC herabgestuft werden sollen.
 
-4. On the next screen select "Pricing Tier" from the left hand menu.
+4. Wählen Sie auf dem nächsten Bildschirm "Tarif" im linken Menü aus.
 
-5. A new page will appear that looks like the image below. Click on the box on the left that says "Free (for Azure resources only)".
+5. Eine neue Seite wird angezeigt, die wie folgt aussieht. Klicken Sie auf das Feld auf der linken Seite, die besagt "Free (für Azure-Ressourcen nur)".
 
-![Pricing Tier](../media-draft/Pricing-Tier.png)
+![Preisstufe](../media-draft/Pricing-Tier.png)
 
-6. Press the "save" button at the top of the screen.
+6. Drücken Sie die Schaltfläche "Speichern", am oberen Rand des Bildschirms aus.
 
-You have now downgraded your subscription to the free tier of Azure Security Center.
+Sie haben nun Ihr Abonnement für den free-Tarif von Azure Security Center herabgestuft.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-<!-- TODO: need link to module -->
-Congratulations, you have taken your first (and most important) step to securing your application, data and network! <!--If you want to learn more about Azure Security Center, you can go through the **Protect your resources with Azure Security Center** learning module.-->
+<!-- TODO: need link to module --> Herzlichen Glückwunsch! Sie haben den ersten (und am wichtigsten) Schritt zum Schützen der Anwendung, Daten und Netzwerk weitergeleitet. <!--If you want to learn more about Azure Security Center, you can go through the **Protect your resources with Azure Security Center** learning module.-->

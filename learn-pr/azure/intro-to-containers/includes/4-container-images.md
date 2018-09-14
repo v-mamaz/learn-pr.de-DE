@@ -1,6 +1,6 @@
-In der letzten Einheit haben Sie mit vorgefertigten Containerimages gearbeitet, um einfache Docker-Vorgänge durchzuführen. In dieser Einheit erstellen Sie benutzerdefinierte Containerimages, übermitteln diese mithilfe von Push an eine öffentliche Containerregistrierung und führen Container über diese Images aus.
+Hier erstellen Sie benutzerdefinierte containerimages, diese Images per Push an einen öffentlichen Container Registry übertragen, und führt dann Container aus dieser Images.
 
-Containerimages können manuell oder mit einer sogenannten Dockerfile erstellt werden, um den Vorgang zu automatisieren. Es wird empfohlen, eine Dockerfile zu verwenden, aber in dieser Einheit werden beide Methode veranschaulicht. Sie sollen verstehen, wie der manuelle Vorgang funktioniert, damit Sie wissen, was bei der Automatisierung mit einer Dockerfile abläuft.
+Container-Images können manuell erstellt werden, oder verwenden eine dockerfile-Datei auf um den Prozess zu automatisieren. Die bevorzugte Methode ist eine dockerfile-Datei verwenden, aber diese Einheit wird in beide Richtungen zeigen. Eignen, die mit den manuellen Prozess können Sie besser zu verstehen, was geschieht, wenn Sie eine dockerfile-Datei für die Automatisierung zu verwenden.
 
 ## <a name="manual-image-creation"></a>Manuelle Imageerstellung
 
@@ -11,9 +11,9 @@ Wenn Sie ein Containerimage manuell erstellen, werden die folgenden Aktionen dur
 - Sie passen den Container an, indem Sie Software installieren und Konfigurationen ändern.
 - Erfassen des Containers in einem neuen Image mit dem Befehl `docker capture`.
 
-In diesem ersten Beispiel starten Sie eine Instanz eines Containers, in dem Python ausgeführt wird, erstellen eine Hallo Welt-Anwendung und erfassen den Container in einem neuen Image.
+In diesem ersten Beispiel Sie Starten einer Instanz eines Containers, auf denen Python ausgeführt wird, eine "Hello World"-Anwendung erstellen und dann den Container auf ein neues Image zu erfassen.
 
-Führen Sie zunächst einen Container über das NGINX-Image aus. Dieser Befehl unterscheidet sich etwas von den Befehlen, die Sie in den vorherigen Einheiten ausgeführt haben. Weil Sie eine Terminalsitzung mit dem ausgeführten Container starten möchten, werden die Argumente `-t` und `-i` einbezogen. In Kombination weisen diese Argumente Docker an, ein Pseudoterminal zuzuweisen, das weiter ausgeführt wird. D.h., die Argumente `-t` und `-i` erstellen eine interaktive Sitzung mit dem ausführten Container.
+Führen Sie zunächst einen Container über das NGINX-Image aus. Dieser Befehl unterscheidet sich etwas von den Befehlen, die Sie in den vorherigen Einheiten ausgeführt haben. Weil Sie eine Terminalsitzung mit dem ausgeführten Container starten möchten, werden die Argumente `-t` und `-i` einbezogen. Diese Argumente weisen zusammen Docker zuweisen eine Pseudo-terminal, die in einem ausgeführten Zustand bleibt. D.h., die Argumente `-t` und `-i` erstellen eine interaktive Sitzung mit dem ausführten Container.
 
 Dann geben Sie an,dass das `python`-Containerimage verwendet werden soll und dass der Prozess, der im Container ausgeführt werden soll, `bash` ist.
 
@@ -21,13 +21,13 @@ Dann geben Sie an,dass das `python`-Containerimage verwendet werden soll und das
 docker run --name python-demo -ti python bash
 ```
 
-Nachdem der Befehl ausgeführt wurde, sollte Ihre Terminalsitzung zum Pseudoterminal des Containers wechseln. Dieses erkennen Sie an der Terminalaufforderung, die sich etwa wie folgt geändert haben sollte:
+Nachdem der Befehl ausgeführt wurde, sollte Ihre Terminalsitzung zum Pseudoterminal des Containers wechseln. Dies kann von der Eingabeaufforderung "terminal" angesehen werden, wodurch die in etwa wie folgt geändert haben soll:
 
-```bash
+```output
 root@d8ccada9c61e:/#
 ```
 
-Jetzt arbeiten Sie im Container. Sie werden feststellen, dass das Arbeiten in einem Container sich kaum vom Arbeiten in einem virtuellen oder physischen System unterscheidet. Sie können z.B. Dateien auflisten, erstellen und löschen, Software installieren und Konfigurationen anpassen. In diesem Beispiel wird ein Python-basiertes Hallo Welt-Skript erstellt. Führen Sie dazu den folgenden Befehl aus:
+Jetzt arbeiten Sie im Container. Sie können auflisten, erstellen und Löschen von Dateien, Software installieren, und nehmen Sie konfigurationsänderungen vor. Bei diesem einfachen Beispiel wird ein Python-basiertes "Hello World"-Skript erstellt. Führen Sie dazu den folgenden Befehl aus:
 
 ```bash
 echo 'print("Hello World!")' > hello.py
@@ -41,11 +41,11 @@ python hello.py
 
 Das erzeugt die folgende Ausgabe:
 
-```bash
+```output
 Hello World!
 ```
 
-Wenn das Skript wie erwartet ausgeführt wird, können Sie den Container über den Befehl `exit` verlassen:
+Wenn Sie zufrieden sind, die das Skript wie erwartet funktioniert, beenden Sie den Container durch Eingabe `exit`:
 
 ```bash
 exit
@@ -57,9 +57,9 @@ Verwenden Sie im Terminal Ihres lokalen Systems den Befehl `docker ps`, um alle 
 docker ps
 ```
 
-Beachten Sie, dass nichts ausgeführt wird. Wenn Sie `exit` in den ausgeführten Container eingegeben haben, wurde der Bash-Prozess abgeschlossen, wodurch der Container angehalten wurde. Dies entspricht dem erwarteten Verhalten und ist in Ordnung.
+Beachten Sie, dass nichts ausgeführt wird. Wenn Sie `exit` in den ausgeführten Container eingegeben haben, wurde der Bash-Prozess abgeschlossen, wodurch der Container angehalten wurde. Dies ist das erwartete Verhalten.
 
-```bash
+```output
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 ```
 
@@ -69,9 +69,9 @@ Verwenden Sie `docker ps` erneut, und schließen Sie das `-a`-Argument mit ein. 
 docker ps -a
 ```
 
-Beachten Sie, dass ein Container mit dem Namen *python-demo* den Status *Beendet* aufweist. Dieser Container ist die angehaltene Instanz des Containers, den Sie gerade beendet haben.
+Beachten Sie, dass ein Container mit dem Namen *python-demo* den Status *Beendet* aufweist. Dieser Container ist der angehaltenen Instanz des Containers, die Sie gerade beendet wurden.
 
-```bash
+```output
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
 cf6ac8e06fd9        python              "bash"              27 seconds ago      Exited (0) 12 seconds ago                       python-demo
 ```
@@ -82,9 +82,9 @@ Verwenden Sie den `docker commit`-Befehl, um ein neues Containerimage aus diesem
 docker commit python-demo python-custom
 ```
 
-Nach Abschluss des Befehls sollten Sie eine Ausgabe ähnlich der folgenden erhalten:
+Nach Abschluss des Befehls sehen Sie eine Ausgabe ähnlich der folgenden:
 
-```bash
+```output
 sha256:91a0cf9aa9857bebcd7ebec3418970f97f043e31987fd4a257c8ac8c8418dc38
 ```
 
@@ -96,7 +96,7 @@ docker images
 
 Sie sollten nun das benutzerdefinierte Python-Image sehen.
 
-```bash
+```output
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 python-custom       latest              1f231e7127a1        6 seconds ago       922MB
 python              latest              638817465c7d        24 hours ago        922MB
@@ -110,15 +110,15 @@ Führen Sie einen Container über das neue Image aus. Sie müssen auch angeben, 
 docker run python-custom python hello.py
 ```
 
-Der Container wird gestartet, und er gibt die Meldung „Hallo, Welt“ aus. Der Python-Prozess ist dann abgeschlossen, und der Container wird angehalten.
+Der Container startet und die Meldung "Hello World" auszugeben. Der Python-Prozess ist dann abgeschlossen, und der Container wird angehalten.
 
-```bash
+```output
 Hello World!
 ```
 
 ## <a name="automated-image-creation"></a>Automatische Imageerstellung
 
-Im letzten Abschnitt wurde ein Containerimage manuell erstellt. Obwohl diese Methode für eine einmalige oder experimentelle Imageerstellung bestens geeignet ist, ist sie in einer Produktionsumgebung nicht tolerierbar. Die Erstellung eines Containerimages kann mithilfe einer *Dockerfile* und des `docker build`-Befehls automatisiert werden. Der *docker build*-Befehl startet im Wesentlichen einen Container, führt die in der *Dockerfile* enthaltenen Anweisungen aus und erfasst anschließend die Ergebnisse für ein neues Containerimage.
+Im letzten Abschnitt erstellen Sie ein containerimage manuell. Diese Methode für die einmalige oder experimentelle Erstellung funktioniert, zwar ist es nicht dauerhaften in einer produktionsumgebung. Die Erstellung eines Containerimages kann mithilfe einer *Dockerfile* und des `docker build`-Befehls automatisiert werden. Die *Docker Build* Befehl startet einen Container, führt die Anweisungen finden Sie der *dockerfile-Datei*, und anschließend die Ergebnisse in einem neuen containerimage erfasst.
 
 Erstellen Sie eine Datei namens *Dockerfile*, und geben Sie folgenden Text ein:
 
@@ -140,9 +140,9 @@ Verwenden Sie den `docker build`-Befehl, um ein neues Containerimage mithilfe de
 docker build -t python-dockerfile .
 ```
 
-Eine Ausgabe ähnlich der folgenden sollte angezeigt werden.
+Folgendes sollte angezeigt werden.
 
-```bash
+```output
 Sending build context to Docker daemon  2.048kB
 Step 1/4 : FROM python
  ---> 638817465c7d
@@ -170,7 +170,7 @@ docker images
 
 Sie sollten nun das benutzerdefinierte Image sehen.
 
-```bash
+```output
 REPOSITORY          TAG                 IMAGE ID            CREATED              SIZE
 python-dockerfile   latest              98c39b91770f        About a minute ago   922MB
 python              latest              638817465c7d        26 hours ago         922MB
@@ -187,7 +187,7 @@ docker run python-dockerfile
 
 Nachdem Sie den Befehl ausgeführt haben, sollte die Containerausgabe angezeigt werden.
 
-```bash
+```output
 Hello World!
 ```
 
@@ -215,9 +215,9 @@ docker login
 docker push <account name>/python-dockerfile
 ```
 
-Sobald das Containerimage in Docker Hub hochgeladen wurde, wird Ihnen eine Ausgabe ähnlich der folgenden angezeigt:
+Während der Container-Image auf Docker Hub hochgeladen wird, wird eine Ausgabe wie folgt angezeigt:
 
-```bash
+```output
 The push refers to repository [docker.io/account/python-dockerfile]
 f39073ca4d5a: Pushed
 9dfcec2738a9: Pushed
@@ -232,8 +232,6 @@ ce6466f43b11: Mounted from account/python
 3b10514a95be: Mounted from account/python
 ```
 
-Das Containerimage wird nun in Docker Hub gespeichert, und Sie können von jedem Gerät mit Internetverbindung über `docker pull` oder `docker run` auf dieses zugreifen.
+Das containerimage wird jetzt im Docker-Hub gespeichert und kann von jedem Computer mit Internetverbindung mit zugegriffen werden `docker pull` oder `docker run`.
 
-## <a name="summary"></a>Zusammenfassung
-
-In dieser Einheit haben Sie zwei Containerimages erstellt. Das erste wurde manuell erstellt, das zweite über eine Dockerfile.
+Sie haben nun zwei containerimages erstellt. Das erste wurde manuell erstellt, das zweite über eine Dockerfile.

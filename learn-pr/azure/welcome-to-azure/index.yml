@@ -1,31 +1,35 @@
 ### YamlMime:Module
 uid: learn.welcome-to-azure
-title: Welcome to Azure
-summary: Get started with Azure by creating and configuring your first VM in the cloud.
-cardDescription: Get started with Azure by creating your first VM in the cloud.
-iconUrl: http://via.placeholder.com/120x120
-achievement: learn.placeholder.badge
-levels:
-- beginner
-roles:
-- developer
-- administrator
-- solution-architect
-products:
-- azure
 metadata:
-  title: Welcome to Azure
-  description: Get started with Azure by creating your first VM in the cloud.
+  title: Willkommen bei Azure
+  description: 'Erste Schritte mit Azure, durch das Erstellen Ihres ersten virtuellen Computers in der Cloud.'
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Willkommen bei Azure
+summary: Erste Schritte mit Azure erstellen und konfigurieren Ihren ersten virtuellen Computer in der Cloud.
 abstract: |
-  * Start building the foundational skills you need to change the world or land the job of your dreams. 
-  * Learn what Microsoft Azure is and how it relates to cloud computing.
-  * See how easy it is to launch your first virtual machine, add a web server, and scale up your server when you need more power.
-
-  This was written by a group of people who are passionate about the potential technology has to change people's lives. We hope our passion helps you build the skills you need to be successful with the cloud.
+  In diesem Modul lernen Sie Folgendes:
+  - Starten Sie die grundlegenden Kenntnisse, die die Welt verändern oder die Aufgabe des Ihre Träume weitergeleitet werden sollen. 
+  - Erfahren Sie, was ist Microsoft Azure und wie es bezieht sich auf cloud-computing.
+  - Sehen, wie einfach es ist, starten Sie Ihren ersten virtuellen Computer, einen Webserver fügen Sie hinzu, und skalieren Sie des Servers ein, wenn Sie mehr Leistung benötigen.
+prerequisites: Keine
+iconUrl: /learn/achievements/welcome-to-azure.svg
+levels:
+  - beginner
+roles:
+  - developer
+  - administrator
+  - solution-architect
+products:
+  - azure
 units:
-- learn.welcome-to-azure.1-introduction
-- learn.welcome-to-azure.2-what-is-azure
-- learn.welcome-to-azure.3-create-a-vm
-- learn.welcome-to-azure.4-add-web-server
-- learn.welcome-to-azure.5-scale-up
-- learn.welcome-to-azure.6-summary
+  - learn.welcome-to-azure.1-introduction
+  - learn.welcome-to-azure.2-what-is-azure
+  - learn.welcome-to-azure.3-create-a-vm
+  - learn.welcome-to-azure.4-add-web-server
+  - learn.welcome-to-azure.5-scale-up
+  - learn.welcome-to-azure.6-summary
+achievement: learn.welcome-to-azure.badge

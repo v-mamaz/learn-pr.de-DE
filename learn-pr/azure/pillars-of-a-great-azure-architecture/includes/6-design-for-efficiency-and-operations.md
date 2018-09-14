@@ -1,36 +1,36 @@
-Your organization has moved a majority of their systems to the cloud, but are now seeing cost increases in areas they didn't expect. After some observation, you realize you're inefficient across your environment, and are still doing manual operational work. 
+Ihre Organisation hat einen Großteil der Systeme in die Cloud verschoben, jedoch entstehen jetzt Kostensteigerungen in Bereichen, die sie nicht erwarten haben. Nach einer gewissen Zeit der Beobachtung stellen Sie fest, dass Sie in Ihrer Umgebung ineffizient sind und immer noch manuelle operative Arbeit leisten. 
 
-Here, we'll take a look at some ways they can eliminate waste and improve operational efficiencies.
+Hier werfen wir einen Blick darauf, wie Sie die Vergeudung von Ressourcen vermeiden und die betriebliche Effizienz verbessern können.
 
-## Importance of efficiency and operations
+## <a name="importance-of-efficiency-and-operations"></a>Wichtigkeit der Effizienz und Vorgänge
 
-Efficiency is focused on identifying and eliminating waste within your environment. When looking at cloud spending, this waste typically comes in the form of provisioning more capacity than demand requires. There are operational costs that go along with this as well. These operational costs show up as wasted time and increased error. Focusing on these as you design your architecture will help you identify and eliminate waste across your environment.
+Die Effizienz konzentriert sich auf die Identifizierung und Beseitigung von der Vergeudung von Ressourcen in Ihrer Umgebung. Wenn Sie die Cloudausgaben untersuchen, erfolgt diese Verschwendung von Ressourcen in der Regel in Form von Bereitstellung von mehr Kapazität als die Nachfrage erfordert. Damit sind auch Betriebskosten verbunden. Diese Betriebskosten zeigen sich als Zeitverlust und erhöhte Fehleranfälligkeit. Wenn Sie sich beim Entwurf Ihrer Architektur auf diese Aspekte konzentrieren, können Sie die Vergeudung von Ressourcen in Ihrer gesamten Umgebung identifizieren und vermeiden.
 
-The cloud is a pay-as-you-go service, so you want to only pay for the services you're using. That is why the cloud is great for building your applications. You only pay for the resources that you use.
+Die Cloud ist ein Dienst mit nutzungsbasierter Bezahlung, sodass Sie nur für die Dienste zahlen möchten, die Sie verwenden. Aus diesem Grund eignet die Cloud sich hervorragend für das Erstellen von Anwendungen. Sie zahlen nur für die Ressourcen, die Sie verwenden.
 
-Waste can show up in several ways. Let's look at a few examples:
+Die Vergeudung von Ressourcen kann sich auf verschiedene Weise zeigen. Sehen wir uns einige Beispiele an:
 
-* A virtual machine that is always 90% idle
-* Paying for a license included in a virtual machine when a license is already owned
-* Retaining infrequently accessed data on a storage medium optimized for frequent access
-* Manually repeating the build of a non-production environment
+* Einen virtuellen Computer, der immer zu 90 % im Leerlauf ist.
+* Kosten für eine Lizenz, die in einem virtuellen Computer enthalten ist, wenn bereits eine andere Lizenz vorhanden ist.
+* Aufbewahrung selten abgerufener Daten auf einem Speichermedium, das für häufigen Zugriff optimiert ist.
+* Manuelle Wiederholung der Erstellung einer Nichtproduktionsumgebung.
 
-In each of these cases, more money is being spent than it should, and each presents an opportunity to optimize cost reduction.
+In jedem dieser Fälle wird mehr Geld als erforderlich ausgegeben, und jedes einzelne Szenario bietet die Möglichkeit, die Kostensenkung zu optimieren.
 
-Operationally, it's important to have a robust monitoring strategy. This can not only help you identify areas of waste, but will aid in troubleshooting issues and optimizing the performance of your application. A multilayered approach is essential. Gathering data points from components at every layer will give you the ability to alert when values are outside of acceptable values, and will allow you to track spending over time.
+Für den Betrieb ist es wichtig, eine robuste Überwachungsstrategie zu verfolgen. Dies kann Ihnen nicht nur helfen, Verschwendungsbereiche zu identifizieren, sondern Sie auch bei der Fehlersuche und der Optimierung der Leistung Ihrer Anwendung unterstützen. Ein Ansatz, der mehrere Ebenen berücksichtigt, ist unerlässlich. Das Sammeln von Datenpunkten aus Komponenten auf jeder Ebene gibt Ihnen die Möglichkeit, eine Warnung auszusprechen, wenn Werte außerhalb akzeptabler Werte liegen, und ermöglicht es Ihnen, die Ausgaben im Lauf der Zeit nachzuverfolgen.
 
-## Efficiency best practices
+## <a name="efficiency-best-practices"></a>Bewährte Methoden für Effizienz
 
-There are several ways to optimize your environment and maximize efficiency. A great place to start is to look at cost optimization steps like sizing virtual machines properly and deallocating virtual machines that aren't in use. Now that you are paying for what you use, you want to be sure that you aren't wasting any of these resources.
+Es gibt verschiedene Möglichkeiten zum Optimieren der Umgebung und Maximieren der Effizienz. Ein guter Ausgangspunkt ist es, sich mit Kostenoptimierungsschritten wie der richtigen Dimensionierung virtueller Computer und der Aufhebung der Zuordnung nicht verwendeter virtueller Computer zu befassen. Da Sie jetzt für das, was Sie verwenden, bezahlen, möchten Sie sicher sein, dass Sie keine dieser Ressourcen verschwenden.
 
-Where possible, you want to look at moving off IaaS and onto PaaS services. PaaS services typically cost less than IaaS, and typically bring reduced operational costs along as well. With PaaS services, you don’t have to worry about patching or maintaining VMs because those activities are typically handled by the cloud provider. Not all applications can be moved to PaaS, but with the cost savings that are there with PaaS services, it's certainly something worth considering.
+Wenn möglich, sollten Sie sich mit der Umstellung von IaaS- auf PaaS-Dienste befassen. PaaS-Dienste kosten in der Regel weniger als IaaS und bringen zumeist auch geringere Betriebskosten mit sich. Mit PaaS-Diensten müssen Sie sich keine Sorgen um das Patching oder die Wartung von virtuellen Computern machen, da diese Aktivitäten in der Regel vom Cloudanbieter ausgeführt werden. Nicht alle Anwendungen können auf PaaS umgestellt werden, aber mit den Kosteneinsparungen, die durch PaaS-Dienste erzielt werden, ist dies sicherlich eine Überlegung wert.
 
-## Operational best practices
+## <a name="operational-best-practices"></a>Bewährte Methoden für den Betrieb
 
-Automate as much as possible. The human element is costly, injecting time and error into operational activities. You can use automation to build, deploy, and administer resources. By automating common activities, you can eliminate the delay in waiting for a human to intervene.
+Automatisieren Sie so weit wie möglich. Das menschliche Element ist kostspielig, da es Zeit und Fehler in die operativen Aktivitäten einbringt. Mit Automatisierung können Sie Ressourcen erstellen, bereitstellen und verwalten. Durch die Automatisierung allgemeiner Aktivitäten können Sie die Verzögerung beim Warten auf das Eingreifen eines Menschen beseitigen.
 
-Throughout your architecture, you want to have a thorough monitoring, logging, and instrumentation system. This will always give you the capability to see what’s going on. It will ensure you know when something is not right before your users are impacted. With a comprehensive approach, you'll be able to identify performance issues, cost inefficiencies, correlate events, and gain a greater ability to troubleshoot issues.
+In Ihrer gesamten Architektur benötigen Sie ein umfassendes Überwachungs-, Protokollierungs- und Instrumentierungssystem. Dies gibt Ihnen immer die Möglichkeit, zu sehen, was geschieht. So wird sichergestellt, dass Sie wissen, wenn etwas nicht stimmt, bevor Ihre Benutzer betroffen sind. Mit einem umfassenden Ansatz können Sie Leistungsprobleme und Kostenineffizienzen identifizieren, Ereignisse korrelieren und mehr Möglichkeiten zur Fehlerbehebung nutzen.
 
-Lastly, modern architectures should be designed with DevOps and continuous integration in mind. This will give you the ability to automate deployments using infrastructure as code, automate application testing, and build new environments as needed. DevOps is as much cultural as it is technical, but can bring many benefits to organizations that choose to go down this path.
+Schließlich sollten moderne Architekturen mit Blick auf DevOps und Continuous Integration entworfen werden. Dies gibt Ihnen die Möglichkeit, Implementierungen mithilfe der Infrastruktur als Code zu automatisieren, Anwendungstests zu automatisieren und bei Bedarf neue Umgebungen zu erstellen. DevOps ist ebenso kulturell wie technisch, kann aber Unternehmen, die sich für diesen Weg entscheiden, viele Vorteile bringen.
 
-Efficiency is about identifying and eliminating waste within your environment. With cloud computing, you're paying for what you use, so you want to make sure you aren't wasting resources. To help ensure efficiency, try to automate as much as possible, move systems from IaaS to PaaS, and design your architectures with DevOps in mind. 
+Bei der Effizienz geht es darum, Verschwendung von Ressourcen in Ihrer Umgebung zu identifizieren und zu vermeiden. Bei Cloud Computing zahlen Sie für das, was Sie nutzen, daher möchten Sie sicherstellen, dass Sie keine Ressourcen verschwenden. Um die Effizienz zu gewährleisten, versuchen Sie, so weit wie möglich zu automatisieren, verschieben Sie Systeme aus IaaS in PaaS, und entwerfen Sie Ihre Architekturen unter Berücksichtigung von DevOps. 

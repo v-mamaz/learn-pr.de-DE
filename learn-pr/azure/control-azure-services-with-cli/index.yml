@@ -1,40 +1,37 @@
 ### YamlMime:Module
 uid: learn.control-azure-services-with-cli
 metadata:
-  title: Control Azure services with the CLI
-  description: Install the Azure CLI locally and use it to manage Azure resources.
+  title: Steuern von Azure-Diensten mit der CLI
+  description: 'Installieren Sie die Azure CLI lokal, und verwenden Sie sie zum Verwalten Ihrer Azure-Ressourcen.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Control Azure services with the CLI
-summary: Install the Azure CLI locally and use it to manage Azure resources.
-abstract: | 
-  In this module, you will:
-  - Install the Azure CLI on Linux, macOS, and/or Windows
-  - Connect to an Azure subscription using the Azure CLI
-  - Create Azure resources using the Azure CLI
+title: Steuern von Azure-Diensten mit der CLI
+summary: 'Installieren Sie die Azure CLI lokal, und verwenden Sie sie zum Verwalten Ihrer Azure-Ressourcen.'
+abstract: |
+  In diesem Modul lernen Sie Folgendes:
+  - Installieren der Azure CLI auf Linux, macOS und/oder Windows
+  - Herstellen einer Verbindung mit einem Azure-Abonnement mithilfe der Azure CLI
+  - Erstellen von Azure-Ressourcen mit der Azure CLI
 prerequisites: |
-  - Experience with a command-line interface, such as PowerShell or Bash
-  - Knowledge of basic Azure concepts, such as resource groups
-  - Experience administering Azure resources using the Azure portal
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
-levels: 
-- beginner
-roles: 
-- developer
-products: 
-- azure
-- azure-clis
+  - Erfahrung mit einer Befehlszeilenschnittstelle wie PowerShell oder Bash
+  - Kenntnisse der grundlegenden Azure-Konzepte, z.B. Ressourcengruppen
+  - Erfahrung beim Verwalten von Azure-Ressourcen über das Azure-Portal
+iconUrl: /learn/achievements/control-azure-services-with-cli.svg
+levels:
+  - beginner
+roles:
+  - developer
+products:
+  - azure
+  - azure-clis
 units:
-#TODO: None of these units have a knowledge task or task validation component (need to add somewhere so users don't get marked complete solely by viewing the pages).
-- learn.control-azure-services-with-cli.1-introduction
-- learn.control-azure-services-with-cli.2-what-is-the-azure-cli
-- learn.control-azure-services-with-cli.3-exercise-install-and-run-the-azure-cli
-- learn.control-azure-services-with-cli.4-work-with-the-cli
-- learn.control-azure-services-with-cli.5-exercise-create-website-using-the-cli
-- learn.control-azure-services-with-cli.6-summary
+  - learn.control-azure-services-with-cli.1-introduction
+  - learn.control-azure-services-with-cli.2-what-is-the-azure-cli
+  - learn.control-azure-services-with-cli.3-exercise-install-and-run-the-azure-cli
+  - learn.control-azure-services-with-cli.4-work-with-the-cli
+  - learn.control-azure-services-with-cli.5-exercise-create-website-using-the-cli
+  - learn.control-azure-services-with-cli.6-summary
 achievement: learn.control-azure-services-with-cli.badge

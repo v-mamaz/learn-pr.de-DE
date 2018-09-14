@@ -1,45 +1,45 @@
-Now that we have an app, we need an Azure storage account to work with. We created one using the Azure portal in the **Create an Azure storage account** module. Let's use the Azure CLI this time.
+Nun, da es sich um eine app verfügen, benötigen wir arbeiten mit Azure Storage-Konto an. Wir erstellt haben, diesen mithilfe der Azure-Portal in der **erstellen Sie ein Azure Storage-Konto** Modul. Der Azure-Befehlszeilenschnittstelle verwenden wir dieses Mal.
 
 <!-- Activate the sandbox -->
 [!include[](../../../includes/azure-sandbox-activate.md)]
 
-## Use the Azure CLI to create an Azure storage account
+## <a name="use-the-azure-cli-to-create-an-azure-storage-account"></a>Verwenden Sie die Azure CLI zum Erstellen von Azure Storage-Konto
 
-We will use the `az storage account create` command to create a new storage account. It takes several parameters which we either need to supply (or should) to configure it the way we want.
+Wir verwenden die `az storage account create` Befehl aus, um ein neues Speicherkonto erstellen. Es dauert mehrere Parameter, die wir bereitstellen möchten (oder sollten) sie können Sie konfigurieren sollten.
 
 > [!div class="mx-tableFixed"]
-> | Option | Description |
+> | Option | Beschreibung |
 > |--------|-------------|
-> | `--name` | A **Storage account name**. The name will be used to generate the public URL used to access the data in the account. It must be unique across all existing storage account names in Azure. It must be 3 to 24 characters long and can contain only lowercase letters and numbers. |
-> | `--resource-group` | Use <rgn>[Sandbox resource group name]</rgn> to place the storage account into the free sandbox. |
-> | `--location` | Select a location near you. |
-> | `--kind` | This determines the storage account _type_. Options include BlobStorage, Storage, and StorageV2. |
-> | `--sku` | This decides the storage account performance and replication model. Options include Premium_LRS, Standard_GRS, Standard_LRS, Standard_RAGRS, and Standard_ZRS. |
-> | `--access-tier` | The **Access tier** is only used for Blob storage, available options are Cool and Hot. The **Hot Access Tier** is ideal for frequently accessed data, and the **Cool Access Tier** is better for infrequently accessed data. Note that this only sets the _default_ value - when you create a Blob, you can set a different value for the data. |
+> | `--name` | Ein **speicherkontonamen**. Der Name wird zum Generieren der öffentlichen URL für den Zugriff auf die Daten im Konto verwendet werden. Sie müssen für alle vorhandenen speicherkontonamen in Azure eindeutig sein. Er muss 3 bis 24 Zeichen lang sein und darf nur Kleinbuchstaben und Ziffern enthalten. |
+> | `--resource-group` | Verwendung <rgn>[Ressourcengruppennamen Sandkasten]</rgn> , das Speicherkonto, das in der kostenlosen Sandbox zu platzieren. |
+> | `--location` | Wählen Sie einen Standort in Ihrer Nähe, (siehe unten). |
+> | `--kind` | Dadurch wird bestimmt, das Speicherkonto _Typ_. Unter anderem `BlobStorage`, `Storage`, und `StorageV2`. |
+> | `--sku` | Diese entscheidet Konto Leistungs- und Speichermodell. Unter anderem `Premium_LRS`, `Standard_GRS`, `Standard_LRS`, `Standard_RAGRS`, und `Standard_ZRS`. |
+> | `--access-tier` | Die **Zugriffsebene** ist nur für Blob-Speicher verwendet wird, werden die verfügbaren Optionen sind [`Cool` | `Hot`]. Die **heiße Zugriffsebene** eignet sich ideal für häufig verwendete Daten und die **kalte Zugriffsebene** ist besser für selten genutzte Daten. Beachten Sie, dass dies nur die _Standard_ Wert&mdash;, wenn Sie einen Blob erstellt haben, können Sie einen anderen Wert für die Daten festlegen. |
     
-Use the above table to craft a command line in the Cloud Shell on the right to create the account.
-- Use a unique name, we recommend something like "photostore" with your initials and a random number. You will get an error if it's not unique.
-- Normally you would create a new resource group to hold your app resources, in this case use the Sandbox resource group.
-- Use "Standard_LRS" for the **sku**, this will use standard storage with local replication which is fine for this example.
-- Use "Cold" for the **Access Tier**.
+Verwenden Sie in der obigen Tabelle, erstellen Sie eine Befehlszeile in der Cloud Shell auf der rechten Seite, um das Konto erstellen.
+- Verwenden Sie einen eindeutigen Namen. Es wird empfohlen, etwa "Photostore" mit Ihren Initialen und eine zufällige Zahl. Sie erhalten einen Fehler, wenn er nicht eindeutig ist.
+- Normalerweise würden Sie eine neue Ressourcengruppe, um Ihre app-Ressourcen enthalten, aber in diesem Fall verwenden Sie die Sandbox-Ressourcengruppe erstellen.
+- Verwenden Sie "Standard_LRS" für die **Sku**. Diese wird verwenden Standardspeicher mit lokale Replikation, die für dieses Beispiel ausreichend.
+- Verwenden von "Kalt" für die **Zugriff auf die Ebene**.
 
-### Selecting a location
+### <a name="selecting-a-location"></a>Auswählen eines Orts
 <!-- Resource selection -->
 [!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-### Example command
+### <a name="example-command"></a>Beispielbefehl
 
-```bash
+```azurecli
 az storage account create \
         --name <name> \
         --resource-group <rgn>[Sandbox resource group name]</rgn> \
         --location <region> \
         --kind StorageV2 \
         --sku Standard_LRS \ 
-        --access-tier Cold
+        --access-tier Cool
 ```
 
 > [!TIP]
-> If you are interested in exploring the options for the storage account, make sure to go through the **Create an Azure storage account** where we go through them in depth.
+> Wenn Sie Informationen zu die Optionen für das Speicherkonto sind, stellen Sie sicher, durchlaufen die **erstellen Sie ein Azure Storage-Konto** , in denen wir Sie ausführlich wechseln.
 
-It will take a few minutes to deploy the account. While Azure is working on that, let's explore the APIs we'll use with this account.
+Es dauert einige Minuten, bis das Konto bereitstellen. Während es sich bei Azure an, die arbeitet, sehen wir uns auf die APIs, die wir für dieses Konto verwendet werden.

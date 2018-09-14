@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-services-features.3-create-an-azure-account
-title: Azure account options
+title: Azure-Kontooptionen
 metadata:
-  title: Azure account options
-  description: Azure account options
+  title: Azure-Kontooptionen
+  description: Azure-Kontooptionen
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

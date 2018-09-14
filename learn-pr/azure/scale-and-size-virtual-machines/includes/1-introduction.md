@@ -1,12 +1,12 @@
-Azure gives you the tools you need to manage the size and number of your virtual machines. 
+Azure bietet Ihnen die Tools, die Sie die Größe und Anzahl der virtuellen Computer zu verwalten müssen. 
 
-Suppose you work at a company that sells children’s toys online. You web server runs on an Azure virtual machine. Much of your demand is seasonal and predictable; for example, the load on your server increases before major holidays. Demand will sometimes spike without warning; for example, the unexpected success of a movie can drive demand for related toys.
+Angenommen Sie, Sie in einem Unternehmen arbeiten, das die untergeordneten Elemente Toys online verkauft. Ihre Webserver, die auf virtuellen Azure-Computer ausgeführt wird. Viele der Nachfrage nach Ihrer ist saisonale und vorhersagbar. beispielsweise erhöht die Last auf dem Server vor außer an Feiertagen. Bei Bedarf wird manchmal ohne Warnung Spitzen; Der unerwartete Erfolg eines Films kann z. B. bei Bedarf für verwandte Toys steuern.
 
-Your goal is to identify the expected loads throughout the year. You will then create a management plan to ensure your virtual machines have enough CPU, memory, and storage hardware to handle the demand.
+Ihr Ziel ist die erwartete Auslastung im Laufe des Jahres identifizieren. Anschließend erstellen Sie einen Management-Plan, um sicherzustellen, dass Ihre virtuellen Computer ausreichend CPU, Arbeitsspeicher und Speicherhardware, um die Anforderung zu verarbeiten.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
-- Vertically scale virtual machines by resizing
-- Horizontally scale virtual machines using scale sets
-- Configure autoscaling
+In diesem Modul lernen Sie Folgendes:
+- Vertikales Skalieren von virtuellen Computern durch Ändern der Größe
+- Horizontal skalieren virtueller Computer mit skalierungsgruppen
+- Konfigurieren der automatischen Skalierung

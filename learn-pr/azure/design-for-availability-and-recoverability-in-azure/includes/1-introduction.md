@@ -1,16 +1,16 @@
-Your business relies on access to the systems and data that make it run. If something happened to cause a loss of availability, even for a short period of time, it could be disastrous for the bottom line. Every minute that your customers or your internal workers don’t have access to what they need results in a loss of revenue. It is our job to make sure that doesn’t happen.
+Ihr Unternehmen stützt sich für den Zugriff auf die Systeme und Daten, die sie ausführen. Um einen Verlust der Verfügbarkeit, sogar für einen kurzen Zeitraum dazu führen, dass etwas geschehen, möglich es für die Quintessenz verheerende. Einmal pro Minute, dass Ihre Kunden oder Ihre interne Mitarbeiter, was nicht zugreifen können, benötigen sie führt zu einem Verlust der Umsatz. Es ist unsere Aufgabe sicherzustellen, die nicht der Fall ist.
 
-As we learn about architecting our cloud solutions to be highly available and to have the capability to recover from localized and widespread issues, we'll see how one fictional Azure customer puts these principles to work:
+Wie wir erfahren Sie mehr über unsere Cloud-Lösungen mit hoher Verfügbarkeit und die Möglichkeit zur Wiederherstellung nach lokalisiert und weit verbreitete Probleme gestalten, sehen wir ein fiktives Azure Kunden setzt diese Prinzipien arbeiten:
 
-Lamna Healthcare is a national healthcare provider. Their IT organization has recently started to move the majority of their IT systems to Azure. They have a mixture of custom apps, open-source apps, and off-the-shelf applications, with varying architectures and technology platforms. We'll learn what they need to do to migrate to the cloud while keeping their systems and data secure.
+Lamna Healthcare ist ein nationaler Anbieter für Gesundheitsdienstleistungen. Die IT-Organisation des Unternehmens hat vor Kurzem damit angefangen, einen Großteil des IT-Systems in Azure zu verschieben. Sie verfügen über eine Mischung von benutzerdefinierten apps, Open Source-Anwendungen und handelsüblichen Anwendungen mit unterschiedlichen Architekturen und Technologieplattformen. Erfahren, was sie tun, um in die Cloud migrieren und die Sicherheit ihrer Systeme und Daten zu schützen.
 
 > [!NOTE]
-> The concepts discussed in this module are not all-inclusive, but represent some of the important considerations when building a solution on the cloud. Microsoft publishes a broad set of patterns, guidelines, and examples on designing applications on Azure. It's highly recommended that you look through the content in the [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) as you start planning and designing your architecture.
+> In diesem Modul werden nicht alle Konzepte beschrieben, aber einige der wichtigsten, die für das Erstellen einer Lösung in der Cloud hilfreich sein können. Microsoft bietet verschiedene Muster, Richtlinien und Beispiele zum Entwerfen von Anwendungen in Azure an. Es wird dringend empfohlen, dass Sie über den Inhalt sehen die [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) schon während der Planung und Entwerfen der Architektur.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul lernen Sie Folgendes:
 
-- Leverage Azure services to design a highly available application
-- Incorporate Azure disaster recovery capabilities into your architecture
-- Back up and restore on Azure to protect your application from data loss or corruption
+- Nutzen von Azure-Diensten zum Entwerfen einer hochverfügbaren Anwendung
+- Funktionen für die Azure-notfallwiederherstellung in Ihrer Architektur integrieren
+- Sichern und Wiederherstellen in Azure, um den Schutz Ihrer Anwendung vor datenbeschädigung oder-Verlust

@@ -1,51 +1,51 @@
-In this unit, you will learn how to work with blades in the Azure portal user interface (UI).
+In dieser Einheit lernen Sie, wie Sie auf der Benutzeroberfläche des Azure-Portals mit Blättern arbeiten.
 
-## Working with blades
+## <a name="working-with-blades"></a>Arbeiten mit Blättern
 
-1. In a browser, navigate to [https://portal.azure.com](https://portal.azure.com?azure-portal=true), and sign in.
+1. Navigieren Sie in einem Browser zu [https://portal.azure.com](https://portal.azure.com?azure-portal=true), und melden Sie sich an.
 
-2. Let's start by creating a resource. In the left-hand pane, click **Create a resource**.
+2. Erstellen Sie zunächst eine Ressource. Klicken Sie im linken Bereich auf **Ressource erstellen**.
 
-3. The **New** blade displays a list of categories of items to create on the left-hand side, with the **Get started** option selected. This is like the "Favorites" menu, with some of the most common options visible. Under **Get started**, you have the option to create resources such as a Windows Server 2016 VM, an Ubuntu Server VM, a web app, a SQL database, and so on. Each of these items includes a quickstart tutorial.
+3. Das Blatt **Neu** zeigt links eine Liste mit Kategorien von Elementen an, in der die Option **Erste Schritte** ausgewählt ist. Die Benutzeroberfläche ähnelt dem Menü „Favoriten“ und stellt einige der am häufigsten verwendeten Optionen bereit. Unter **Erste Schritte** haben Sie die Möglichkeit, Ressourcen wie eine Windows Server 2016-VM, eine Ubuntu Server-VM, eine Web-App, eine SQL-Datenbank usw. zu erstellen. Jedes dieser Elemente umfasst ein Schnellstarttutorial.
 
-4. Click **Quickstart tutorial** under Windows Server 2016 VM. This lists the Windows VM tutorials. Close this new tab to return to the Azure portal.
+4. Klicken Sie unter „Windows Server 2016 VM“ (Virtueller Windows Server 2016-Computer) auf **Schnellstarttutorial**. Damit werden die Tutorials zu Windows-VMs aufgeführt. Schließen Sie diese neue Registerkarte, um zum Azure-Portal zurückzukehren.
 
-## Viewing resources
+## <a name="viewing-resources"></a>Anzeigen von Ressourcen
 
-1. Under Azure Marketplace, click **Compute** to show more compute options, such as Red Hat Enterprise, Reserved VM instances, Web app for Containers, and so on. This list is a subset of the entire range of computing resources available.
+1. Klicken Sie unter „Azure Marketplace“ auf **Compute**, um weitere Computeoptionen wie z.B. Red Hat Enterprise, reservierte VM-Instanzen und Web-Apps für Container anzuzeigen. Diese Liste ist eine Teilmenge der den gesamten Bereich der COMPUTE-Ressourcen verfügbar sind.
 
-2. To the right of **Featured**, click **See all** to see the full range of available resources. The full list of VMs now appears.
+2. Klicken Sie rechts neben **Empfohlen** auf **Alle anzeigen**, um alle verfügbaren Ressourcen anzuzeigen. Die vollständige Liste mit virtuellen Computern wird angezeigt.
 
-3. Under **Recommended**, click **Windows Server**. The **Windows Server** blade appears.
+3. Klicken Sie unter **Empfohlen** auf **Windows Server**. Das Blatt **Windows Server** wird angezeigt.
 
-4. To the right of the **Pin** icon, click the **Maximize** icon. The Windows Server blade now fills the screen, except for the left-hand pane. Scroll down the list to see the other Windows Server images available.
+4. Klicken Sie jetzt neben dem **Nadelsymbol** auf das **Symbol zum Maximieren**. Das Blatt „Windows Server“ nimmt jetzt bis auf den linken Navigationsbereich den gesamten Bildschirm ein. Scrollen Sie in der Liste nach unten, um weitere verfügbare Windows Server-Images anzuzeigen.
 
-    ![Maximize button in the Azure blade](../media-draft/6-maximize-button.png)
+    ![Schaltfläche „Maximieren“ auf dem Azure-Blatt](../media-draft/6-maximize-button.png)
 
-5. Click the **X** at the top right-hand corner to close the **Windows Server** blade.
+5. Klicken Sie rechts oben auf das **X**, um das Blatt **Windows Server** zu schließen.
 
-## Filtering results
+## <a name="filtering-results"></a>Filtern von Ergebnissen
 
-1. To refine this list further, on the **Compute** blade, click **Filter**. The **Filter** blade now appears.
+1. Klicken Sie auf dem Blatt **Compute** auf **Filter**, um diese Liste anzupassen. Das Blatt **Filter** wird angezeigt.
 
-    ![Filter button in the Azure Marketplace](../media-draft/6-filter.png)
+    ![Schaltfläche „Filter“ im Azure Marketplace](../media-draft/6-filter.png)
 
-2. Select the filter option for **Virtual Machine Images**, and then click **Done**.
+2. Aktivieren Sie die Filteroption für **VM-Images**, und klicken Sie anschließend auf **Fertig**.
 
-3. Click the **X** in the top right-hand corner of the **Filter** blade.
+3. Klicken Sie rechts oben auf dem Blatt **Filter** auf das **X**.
 
-1. On the **Compute** blade, look down the list of available VM images and then, at the bottom, click **Load More**.
+1. Sehen Sie sich auf dem Blatt **Compute** die Liste der verfügbaren VM-Images an, und klicken Sie dann unten auf **Weitere laden**.
 
-1. Continue to click **Load More** a few times to appreciate just how many types of VMs Azure provides.
+1. Klicken Sie noch mehrere Male auf **Weitere laden**, um sich einen Überblick darüber zu verschaffen, wie viele verschiedene Arten von virtuellen Computern von Azure bereitgestellt werden.
 
-1. Click the **X** at the top right-hand corner to close the **Compute** blade.
+1. Klicken Sie rechts oben auf das **X**, um das Blatt **Compute** zu schließen.
 
-1. Click the **X** at the top right-hand corner to close the **Marketplace** blade.
+1. Klicken Sie rechts oben auf das **X**, um das Blatt **Marketplace** zu schließen.
 
-1. Click the **X** at the top right-hand corner to close the **New** blade.
+1. Klicken Sie rechts oben auf das **X**, um das Blatt **Neu** zu schließen.
 
-The default dashboard now appears.
+Jetzt wird das Standarddashboard angezeigt.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this unit, you connected to the Azure portal, signed in, and then discovered how blades work to present UI information. In the next exercise, you will view and configure additional settings in Azure.
+In dieser Übung haben Sie eine Verbindung mit dem Azure-Portal hergestellt und dann erfahren, wie Blätter funktionieren, um Informationen auf der Benutzeroberfläche anzuzeigen. In der nächsten Übung zeigen Sie zusätzliche Einstellungen in Azure an und konfigurieren sie.

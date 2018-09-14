@@ -1,57 +1,55 @@
-Cloud computing is renting resources such as storage space or CPU cycles on another company’s computers, paying only for what you use. The company providing these services is referred to as a cloud provider, with examples being Microsoft, Amazon, and Google.
+Beim Cloud Computing handelt es sich um das Mieten von Ressourcen, z.B. Speicherplatz oder CPU-Zyklen, auf den Computern eines anderen Unternehmens, bei dem Sie nur für wirklich genutzte Ressourcen zahlen. Das Unternehmen, das diese Dienste anbietet, wird als Cloudanbieter bezeichnet, z.B. Microsoft, Amazon und Google.
 
-![Image of cloud providers](../media/2-cloud-providers.png)
+![Image Cloudanbieter](../media/2-cloud-providers.png)
 
-The cloud provider is responsible for the physical hardware required to execute your work, and for keeping it up to date. The computing services offered tend to vary by cloud provider. However, typically they include:
+Der Cloudanbieter ist für die physische Hardware verantwortlich, die für das Ausführen Ihrer Arbeiten notwendig ist. Außerdem hält er diese auf dem neuesten Stand. Die angebotenen Computingdienste unterscheiden sich je nach Cloudanbieter. Allerdings umfassen sie in der Regel:
 
-- Compute power, such as Windows and Linux virtual machines
-- Storage, such as object storage
-- Applications, such as NoSQL or SQL database applications
-- Networking, such as setting up virtual networks for your virtual machines
-- Analytics, such as visualizing telemetry, and performance data
+- Computeleistung, z.B. virtuelle Windows- und Linux-Computer
+- Speicher, z.B. Objektspeicher
+- Anwendungen, z.B. NoSQL- oder SQL-Datenbankanwendungen
+- Netzwerke, z.B. Einrichten virtueller Netzwerke für Ihre virtuellen Computer
+- Analytics, z.B. Visualisierung von Telemetrie- und Leistungsdaten
 
-## Cloud computing services
+## <a name="cloud-computing-services"></a>Cloud Computing-Dienste
 
-The goal of cloud computing is to make running a business easier and more efficient, whether it's a small start-up or a large enterprise. Every business is unique and has different needs. To meet those needs, cloud computing providers offer a wide range of services.
-You need to have a basic understanding of some of the services it provides. Let's briefly discuss the two most common services that all cloud providers offer &ndash; compute power and storage.
+Das Ziel von Cloud Computing besteht darin, die Unternehmensführung zu vereinfachen und effizienter zu gestalten, egal ob für kleine Start-ups oder große Konzerne. Jedes Unternehmen ist einzigartig und hat unterschiedliche Anforderungen. Um diese Anforderungen zu erfüllen, bieten die Anbieter von Cloud Computing eine Vielzahl von Diensten.
+Sie benötige grundlegende Kenntnisse von einigen der bereitgestellten Dienste. Wir gehen kurz auf die beiden häufigsten Dienste ein, die alle Cloudanbieter bereitstellen &ndash; Computeleistung und Speicher.
 
 :::row:::
     :::column:::
-        ![Compute power gauge](../media/2-compute-power.png)
+        ![Maßstab Computeleistung](../media/2-compute-power.png)
     :::column-end:::
-	:::column span="3":::
-        **Compute power**
+    :::column span="3"::: **Computeleistung**
 
-You're using compute power everyday, whether you know it or not. If you're sending an email, browsing a website, or even checking the weather on your mobile device, there’s hardware doing computer processing work behind the scenes.
+Sie nutzen Computeleistung jeden Tag – ob Sie es wissen oder nicht. Wenn Sie eine E-Mail senden, auf einer Website surfen oder auf dem Mobilgerät nach dem Wetter sehen, verarbeitet im Hintergrund Hardware diese Vorgänge.
 
-When you build solutions using cloud computing, you can choose how you want work to be done based on your resources and needs. For example, if you want to have more control and responsibility over maintenance, you could create a virtual machine, or VM. A VM looks like a physical computer running Windows or Linux. With the cloud, you can have a VM ready within minutes, not days or weeks.
+Beim Erstellen von Lösungen mit Cloud Computing können Sie gemäß Ihren Ressourcen und Bedürfnissen entscheiden, wie Sie arbeiten möchten. Wenn Sie beispielsweise mehr Steuerung und Verantwortung über die Wartung haben möchten, können Sie einen virtuellen Computer (virtual machine, VM) erstellen. Eine VM ähnelt einem physischen Computer, auf dem Windows oder Linux ausgeführt wird. Dank der Cloud ist Ihre VM innerhalb von Minuten verfügbar, es dauert keine Tage oder sogar Wochen.
 
-VMs are a great start. But containers and serverless computing are two concepts you'll want to learn more about.
+Virtuelle Computer sind ein sehr guter Anfang. Container und serverloses Computing sind jedoch zwei Konzepte, über die Sie mehr erfahren sollten.
 
-Containers are one of the hottest technology trends in the last few years, with the open source project, Docker, being one of the leading platforms for managing containers. Docker containers provide an efficient, lightweight approach to application deployment because they allow different components of the application to be deployed independently into different containers. Multiple containers can reside on a single machine, and containers can be moved between machines. The extreme portability of the container makes it very easy for applications to be deployed in multiple environments—either on-premises or in the cloud—often with no changes to the application.
+Container sind einer der beliebtesten Technologietrends der letzten Jahre, und das Open Source-Projekt Docker ist eine der führenden Plattformen für die Verwaltung von Containern. Docker-Container bieten einen effizienten, einfachen Ansatz für die Bereitstellung einer Anwendung, da sie die unabhängige Bereitstellung verschiedener Komponenten der Anwendung in verschiedene Container unterstützen. Mehrere Container können sich an einem einzigen Computer befinden, und sie können zwischen Computern verschoben werden. Durch die hohe Portabilität der Container können Anwendungen sehr einfach in mehreren Umgebungen bereitgestellt werden – entweder lokal oder in der Cloud. Oftmals sind keine Änderungen der Anwendung notwendig.
 
-Serverless computing is another hot trend. With serverless computing, you don't need to worry about provisioning and maintaining servers. Serverless computing enables you to focus solely on how your application behaves. As an example, you can build a serverless process that automatically sends an email confirmation after a customer makes an online purchase.
+Das serverlose Computing ist ein weiterer angesagter Trend. Dank dem serverlosen Computing müssen Sie sich keine Gedanken über die Bereitstellung und Wartung von Servern machen. Durch das serverlose Computing können Sie sich ausschließlich auf das Verhalten Ihrer Anwendung konzentrieren. Sie können z.B. einen serverlosen Prozess erstellen, der automatisch eine E-Mail-Bestätigung sendet, wenn ein Kunde einen Onlinekauf getätigt hat.
 
         :::column-end:::
 :::row-end:::
  :::row:::
     :::column:::
-        ![Storage gauge](../media/2-storage.png)
+        ![Maßstab Speicher](../media/2-storage.png)
     :::column-end:::
-	:::column span="3":::
-        **Storage**
+    :::column span="3"::: **Speicher**
 
-Most devices read and/or write data. Here are some examples:
+Die meisten Geräte lesen und/oder schreiben Daten. Hier einige Beispiele:
 
-- Retrieving weather information
-- Taking a picture
-- Sending an email
-- Leaving a voicemail
+- Abrufen von Wetterinformationen
+- Aufnehmen eines Bilds
+- Senden einer E-Mail
+- Hinterlassen einer Mailboxnachricht
 
-In all of these cases, data is either read (like the weather) or written (like taking a picture). The type of data is different in each of these cases.
+In all diesen Fällen werden Daten entweder gelesen (beim Wetter) oder geschrieben (beim Aufnehmen eines Bilds). Der Typ der Daten ist in jedem dieser Fälle unterschiedlich.
 
-Cloud providers typically offer services that can handle all of these types of data. For example, if you wanted to store text, you could use a file on disk or you could take a more structured approach like using a relational database.
+Cloudanbieter stellen in der Regel Dienste bereit, die all diese Datentypen verarbeiten können. Wenn Sie beispielsweise Text speichern möchten, können Sie eine Datei auf dem Datenträger oder einen strukturierteren Ansatz wie eine relationale Datenbank verwenden.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-Every business has different needs and requirements. Cloud computing is **flexible** and **cost efficient**, which can be beneficial to every business, whether it's a small start-up or a large enterprise.
+Jedes Unternehmen hat unterschiedliche Bedürfnisse und Anforderungen. Cloud Computing ist **flexibel** und **kosteneffizient**. Hiervon profitiert jedes Unternehmen, egal ob kleines Start-up oder großer Konzern.

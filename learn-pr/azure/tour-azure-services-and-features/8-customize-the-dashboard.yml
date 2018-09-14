@@ -1,17 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-services-features.8-customize-the-dashboard
-title: Azure Portal dashboards
+title: Dashboards im Azure-Portal
 metadata:
-  title: Azure Portal dashboards
-  description: Azure Portal dashboards
+  title: Dashboards im Azure-Portal
+  description: Dashboards im Azure-Portal
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-# TODO: Consider Azure Portal Interactivity
-# interactive: azure-portal
 azureSandbox: true
 durationInMinutes: 10
 content: |

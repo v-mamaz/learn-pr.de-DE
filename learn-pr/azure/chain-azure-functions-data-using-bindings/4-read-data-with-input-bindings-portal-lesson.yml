@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.chain-azure-functions-data-using-input-output-bindings.4-read-data-with-input-bindings-portal-lesson
 metadata:
-  title: Read data with input bindings
-  description: In this hands-on unit, we'll read data from Azure Cosmos DB in our Azure Function using a Cosmos DB input binding. 
+  title: Lesen von Daten mit eingabebindungen
+  description: In dieser praktische Einheit werden wir Daten aus Azure Cosmos DB in unserem Azure-Funktion lesen und Verwenden einer Cosmos DB-eingabebindung.
   ms.date: 09/24/2018
   author: andrewjbyrne
   ms.author: anbyrne
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Read data with input bindings
+title: Lesen von Daten mit eingabebindungen
 durationInMinutes: 20
 content: |
   [!include[](includes/4-read-data-with-input-bindings-portal-lesson.md)]

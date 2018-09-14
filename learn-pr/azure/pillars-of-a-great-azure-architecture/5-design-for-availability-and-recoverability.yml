@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.pillars-of-a-great-azure-architecture.5-design-for-availability-and-recoverability
-title: Design for availability and recoverability
+title: Entwurf für Verfügbarkeit und Wiederherstellbarkeit
 metadata:
-  title: Design for availability and recoverability
-  description: Design for availability and recoverability
+  title: Entwurf für Verfügbarkeit und Wiederherstellbarkeit
+  description: Entwurf für Verfügbarkeit und Wiederherstellbarkeit
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,33 +13,33 @@ durationInMinutes: 10
 content: |
   [!include[](includes/5-design-for-availability-and-recoverability.md)]
 quiz:
-  title: 'Knowledge check - Design for availability and recoverability'
+  title: 'Wissenstest: Entwurf für Verfügbarkeit und Wiederherstellbarkeit'
   questions:
-  - content: 'Which of the following need to be considered when determing the SLA you can commit to for customers?'
-    choices:
-    - content: 'The SLA you can provide for services you are directly responsible for managing'
-      isCorrect: false
-      incorrectExplanation: 'This is an important consideration when determining the SLA you can commit to for customers, but is not the only correct choice.'
-    - content: 'The SLA of cloud services that you utilize in your architecture'
-      isCorrect: false
-      incorrectExplanation: 'This is an important consideration when determining the SLA you can commit to for customers, but is not the only correct choice.'
-    - content: 'The SLA of networking services for connectivity to dependencies on-premises'
-      isCorrect: false
-      incorrectExplanation: 'This is an important consideration when determining the SLA you can commit to for customers, but is not the only correct choice.'
-    - content: 'All of the above would need to be considered when determining the SLA you can commit to for customers'
-      isCorrect: true
-      correctExplanation: 'All of the above would need to be considered when determining the SLA you can commit to for customers'
-  - content: 'Which of the following would be impacted by your defined RPO?'
-    choices:
-    - content: 'The frequency of database backups'
-      isCorrect: true
-      correctExplanation: 'Since the recovery point objective is concerned with the amount of data loss that is tolerable, the frequency of backups needs to be within this time window and is directly impacted by your defined RPO.'
-    - content: 'The number of regions that data is replicated to'
-      isCorrect: false
-      incorrectExplanation: 'The number of regions that data is replicated to is an important consideration, but is not impacted by your defined RPO.'
-    - content: 'The number of instances in a database cluster'
-      isCorrect: false
-      incorrectExplanation: 'The number of instances in a database cluster can be an important decision, but is not impacted by your defined RPO.'
-    - content: 'The type of load-balancing technology used in your application'
-      isCorrect: false
-      incorrectExplanation: 'The type of load-balancing technology used in your application can be an important decision, but is not impacted by your defined RPO.'
+    - content: 'Welche der folgenden Punkte sind bei der Festlegung der SLA zu berücksichtigen, die Sie Kunden zusichern können?'
+      choices:
+        - content: 'Die SLA, die Sie für Dienste bereitstellen können, für deren Verwaltung Sie direkt zuständig sind.'
+          isCorrect: false
+          incorrectExplanation: 'Dies ist ein wichtiger Aspekt bei der Festlegung der SLA, die Sie Kunden zusichern können. Dies ist aber nicht die einzig richtige Wahl.'
+        - content: 'Die SLA von Clouddiensten, die Sie in Ihrer Architektur nutzen.'
+          isCorrect: false
+          incorrectExplanation: 'Dies ist ein wichtiger Aspekt bei der Festlegung der SLA, die Sie Kunden zusichern können. Dies ist aber nicht die einzig richtige Wahl.'
+        - content: Die SLA von Netzwerkdiensten für die Konnektivität zu lokalen Abhängigkeiten.
+          isCorrect: false
+          incorrectExplanation: 'Dies ist ein wichtiger Aspekt bei der Festlegung der SLA, die Sie Kunden zusichern können. Dies ist aber nicht die einzig richtige Wahl.'
+        - content: 'Alle oben genannten Punkte müssen bei der Festlegung der SLA berücksichtigt werden, die Sie Kunden zusichern können.'
+          isCorrect: true
+          correctExplanation: 'Alle oben genannten Punkte müssen bei der Festlegung der SLA berücksichtigt werden, die Sie Kunden zusichern können.'
+    - content: Welcher der folgenden Punkte würde von Ihrem definierten RPO beeinflusst?
+      choices:
+        - content: Die Häufigkeit der Datenbanksicherungen.
+          isCorrect: true
+          correctExplanation: 'Da es beim Recovery Point Objective um die tolerierbare Menge an Datenverlust geht, muss die Häufigkeit der Sicherungen innerhalb dieses Zeitfensters liegen und wird direkt von Ihrem definierten RPO beeinflusst.'
+        - content: 'Die Anzahl der Regionen, in die Daten repliziert werden.'
+          isCorrect: false
+          incorrectExplanation: 'Die Anzahl der Regionen, in die Daten repliziert werden, ist eine wichtige Überlegung, wird aber von Ihrem definierten RPO nicht beeinflusst.'
+        - content: Die Anzahl der Instanzen in einem Datenbankcluster.
+          isCorrect: false
+          incorrectExplanation: 'Die Anzahl der Instanzen in einem Datenbankcluster kann eine wichtige Entscheidung sein, wird aber von Ihrem definierten RPO nicht beeinflusst.'
+        - content: 'Der Typ der Lastenausgleichstechnologie, der in Ihrer Anwendung verwendet wird.'
+          isCorrect: false
+          incorrectExplanation: 'Der Typ der in Ihrer Anwendung verwendeten Lastausgleichstechnologie kann eine wichtige Entscheidung sein, wird aber nicht von Ihrem definierten RPO beeinflusst.'

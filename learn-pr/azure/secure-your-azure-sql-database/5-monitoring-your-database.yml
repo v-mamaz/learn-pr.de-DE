@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-your-azure-sql-database.5-monitoring-your-database
 metadata:
-  title: Monitoring your database
-  description: Learn to audit operations on your database and use that information with Advanced Threat Monitoring to report security risks and threats.
+  title: Überwachen Ihrer Datenbank
+  description: 'Informationen Sie zum Überwachen von Vorgängen in Ihrer Datenbank, und verwenden diese Informationen mit Advanced Threat-Überwachung, um Bericht von Sicherheitsrisiken und Bedrohungen.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Monitoring your database
+title: Überwachen Ihrer Datenbank
 durationInMinutes: 15
 content: |
   [!include[](includes/5-monitoring-your-database.md)]

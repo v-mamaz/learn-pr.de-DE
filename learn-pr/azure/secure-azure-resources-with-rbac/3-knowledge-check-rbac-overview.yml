@@ -3,52 +3,49 @@ uid: learn.secure-azure-resources-with-rbac.3-knowledge-check-rbac-overview
 metadata:
   title: 'Wissenstest: Was ist RBAC?'
   description: 'Wissenstest: Was ist RBAC?'
-  displayType: one-column
-  ms.openlocfilehash: 973a839a37cfc03f3078519642d2216d4983ef15
-  ms.sourcegitcommit: 850ce909966600e7a8d6f89d8bdebbb621416838
-  ms.translationtype: HT
-  ms.contentlocale: de-DE
-  ms.lasthandoff: 09/03/2018
-  ms.locfileid: "43478876"
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 title: 'Wissenstest: Was ist RBAC?'
 durationInMinutes: 3
-content: 'Wissenstest: Was ist RBAC?'
 quiz:
   title: 'Wissenstest: Was ist RBAC?'
   questions:
-  - content: Eine Rolle in Azure ist eine Sammlung von Berechtigungen.
-    choices:
-    - content: Richtig
-      isCorrect: true
-      correctExplanation: Richtig! Eine Rolle in Azure ist eine Sammlung von Berechtigungen mit einem Namen, den Sie einem Benutzer, einer Gruppe oder einer Anwendung zuweisen können.
-    - content: Falsch
-      isCorrect: false
-      incorrectExplanation: Eine Rolle in Azure ist eine Sammlung von Berechtigungen mit einem Namen, den Sie einem Benutzer, einer Gruppe oder einer Anwendung zuweisen können.
-  - content: Wie lauten die drei Elemente, aus denen eine Rollenzuweisung besteht?
-    choices:
-    - content: Benutzer, Gruppe und Anwendung
-      isCorrect: false
-      correctExplanation: Benutzer, Gruppe und Anwendung sind Sicherheitsprinzipale.
-    - content: Sicherheitsprinzipal, Rolle und Umfang
-      isCorrect: true
-      incorrectExplanation: Richtig! Eine Rollenzuweisung ist der Prozess, in dem eine Rolle zum Zwecke der Zugriffserteilung in einem bestimmten Bereich an einen Sicherheitsprinzipal gebunden wird.
-    - content: Verwaltungsgruppe, Abonnement und Ressourcengruppe
-      isCorrect: false
-      correctExplanation: Verwaltungsgruppen, Abonnement und Ressourcengruppe sind Methoden zum Organisieren Ihrer Azure-Ressourcen und stellen verschiedene Bereiche dar.
-    - content: Besitzer, Mitwirkender und Leser
-      isCorrect: false
-      correctExplanation: Besitzer, Mitwirkender und Leser sind integrierte Rollen in Azure.
-  - content: Was ist die Reihenfolge der Vererbung für Bereiche in Azure?
-    choices:
-    - content: Verwaltungsgruppe, Ressourcengruppe, Abonnement, Ressource
-      isCorrect: false
-      correctExplanation: Dies ist nicht die richtige Reihenfolge.
-    - content: Verwaltungsgruppe, Abonnement, Ressourcengruppe, Ressource
-      isCorrect: true
-      incorrectExplanation: Richtig!
-    - content: Abonnement, Verwaltungsgruppe, Ressourcengruppe, Ressource
-      isCorrect: false
-      correctExplanation: Dies ist nicht die richtige Reihenfolge.
-    - content: Abonnement, Ressourcengruppe, Verwaltungsgruppe, Ressource
-      isCorrect: false
-      correctExplanation: Dies ist nicht die richtige Reihenfolge.
+    - content: Eine Rolle in Azure ist eine Sammlung von Berechtigungen.
+      choices:
+        - content: Richtig
+          isCorrect: true
+          correctExplanation: 'Richtig! Eine Rolle in Azure ist eine Sammlung von Berechtigungen mit einem Namen, den Sie einem Benutzer, einer Gruppe oder einer Anwendung zuweisen können.'
+        - content: Falsch
+          isCorrect: false
+          incorrectExplanation: 'Eine Rolle in Azure ist eine Sammlung von Berechtigungen mit einem Namen, den Sie einem Benutzer, einer Gruppe oder einer Anwendung zuweisen können.'
+    - content: 'Wie lauten die drei Elemente, aus denen eine Rollenzuweisung besteht?'
+      choices:
+        - content: 'Benutzer, Gruppe und Anwendung'
+          isCorrect: false
+          correctExplanation: 'Benutzer, Gruppe und Anwendung sind Sicherheitsprinzipale.'
+        - content: 'Sicherheitsprinzipal, Rolle und Umfang'
+          isCorrect: true
+          incorrectExplanation: 'Richtig! Eine Rollenzuweisung ist der Prozess, in dem eine Rolle zum Zwecke der Zugriffserteilung in einem bestimmten Bereich an einen Sicherheitsprinzipal gebunden wird.'
+        - content: 'Verwaltungsgruppe, Abonnement und Ressourcengruppe'
+          isCorrect: false
+          correctExplanation: 'Verwaltungsgruppen, Abonnement und Ressourcengruppe sind Methoden zum Organisieren Ihrer Azure-Ressourcen und stellen verschiedene Bereiche dar.'
+        - content: 'Besitzer, Mitwirkender und Leser'
+          isCorrect: false
+          correctExplanation: 'Besitzer, Mitwirkender und Leser sind integrierte Rollen in Azure.'
+    - content: Was ist die Reihenfolge der Vererbung für Bereiche in Azure?
+      choices:
+        - content: 'Verwaltungsgruppe, Ressourcengruppe, Abonnement, Ressource'
+          isCorrect: false
+          correctExplanation: Dies ist nicht die richtige Reihenfolge.
+        - content: 'Verwaltungsgruppe, Abonnement, Ressourcengruppe, Ressource'
+          isCorrect: true
+          incorrectExplanation: Richtig!
+        - content: 'Abonnement, Verwaltungsgruppe, Ressourcengruppe, Ressource'
+          isCorrect: false
+          correctExplanation: Dies ist nicht die richtige Reihenfolge.
+        - content: 'Abonnement, Ressourcengruppe, Verwaltungsgruppe, Ressource'
+          isCorrect: false
+          correctExplanation: Dies ist nicht die richtige Reihenfolge.

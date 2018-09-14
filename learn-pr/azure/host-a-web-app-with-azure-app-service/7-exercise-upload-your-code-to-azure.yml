@@ -1,17 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.host-a-web-application-with-azure-app-service.7-exercise-upload-your-code-to-azure
-title: Exercise - Upload your ASP.NET Core application to Azure
+title: Übung – Hochladen Ihrer ASP.NET Core-Anwendung in Azure
 metadata:
-  title: Exercise - Upload your ASP.NET Core application to Azure
-  description: Exercise - Upload your ASP.NET Core application to Azure
+  title: Übung – Hochladen Ihrer ASP.NET Core-Anwendung in Azure
+  description: Übung – Hochladen Ihrer ASP.NET Core-Anwendung in Azure
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-# TODO: Consider Azure Portal Interactivity
-# interactive: azure-portal
 azureSandbox: true
 durationInMinutes: 20
 content: |

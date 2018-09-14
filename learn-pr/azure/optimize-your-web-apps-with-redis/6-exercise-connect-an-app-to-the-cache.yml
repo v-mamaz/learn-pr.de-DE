@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.optimize-web-app-with-redis.6-exercise-connect-an-app-to-the-cache
-title: Connect an app to the cache
+title: Herstellen einer Verbindung zwischen einer App und dem Cache
 metadata:
-  title: Connect an app to the cache
-  description: Connect an app to the cache
+  title: Herstellen einer Verbindung zwischen einer App und dem Cache
+  description: Herstellen einer Verbindung zwischen einer App und dem Cache
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

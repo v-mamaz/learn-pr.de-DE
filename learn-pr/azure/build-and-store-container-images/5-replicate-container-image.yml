@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-container-registry.image-replication
 metadata:
-  title: Replicate a container image to different Azure regions
-  description: Replicate a container image to different Azure regions
+  title: Replizieren eines Containerimages zu verschiedenen Azure-Regionen
+  description: Replizieren eines Containerimages zu verschiedenen Azure-Regionen
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Replicate a container image to different Azure regions
+title: Replizieren eines Containerimages zu verschiedenen Azure-Regionen
 interactive: bash
 azureSandbox: true
 durationInMinutes: 5

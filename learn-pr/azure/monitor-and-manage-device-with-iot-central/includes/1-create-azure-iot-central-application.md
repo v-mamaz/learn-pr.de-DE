@@ -1,33 +1,32 @@
-﻿ In this tutorial, you follow the scenario in which a remote coffee machine is connected to Azure IoT Central for monitoring and management of issues. You can monitor telemetry such as water temperature and humidity, observe the state of your machine, set optimal temperature, receive warranty status, and send commands. When the water temperature of the coffee machine exceeds certain threshold values while your machine is under warranty, Microsoft Flow sends a mobile notification to a remote technician's mobile device. Likewise, if the warranty is expired when the water temperature is outside the expected range, an email from IoT Central is sent to the client’s maintenance department for further action.
+ In diesem Tutorial führen Sie das Szenario, in dem ein remote Kaffeemaschine für Überwachung und Verwaltung von Problemen mit Azure IoT Central verbunden ist. Sie können Telemetriedaten wie Anzahl der Wasser Temperatur- und luftfeuchtigkeitsdaten zu überwachen, beobachten Sie den Zustand des Computers, legen Sie optimale Temperatur, Garantiestatus empfangen und Senden von Befehlen. Wenn die Wassertemperatur der Kaffeemaschine innerhalb des Garantiezeitraums bestimmte Schwellenwerte übersteigt, sendet Microsoft Flow eine Mobiltelefonbenachrichtigung an das Mobilgerät eines Remotetechnikers. Liegt die Wassertemperatur nach Ablauf der Garantie außerhalb des erwarteten Bereichs, wird von IoT Central eine E-Mail an die entsprechende Wartungsabteilung des Kunden gesendet, damit diese entsprechende Maßnahmen ergreifen kann.
 
-To implement the scenario, you begin by creating a device template in Azure IoT Central to define measurements (telemetry and state), settings, properties, and commands. You then connect your coffee machine to Azure IoT Central, followed by configuring rules for maintenance notifications when water temperature is outside the optimal range.
+Um das Szenario zu implementieren, zunächst erstellen Sie eine Gerätevorlage im Azure IoT Central um Messungen (Telemetrie- und Statusdaten), Einstellungen, Eigenschaften und Befehle zu definieren. Anschließend verbinden Sie Ihre Kaffeemaschine mit Azure IoT Central und konfigurieren Regeln für Wartungsbenachrichtigungen, wenn die Wassertemperatur außerhalb des optimalen Bereichs liegt.
 
-In this module, you will to:
-- Create an Azure IoT Central custom application 
-- Create and define your device template
-- Connect your coffee machine to the application
-- Validate your connection and data flow
-- Configure rules for maintenance notifications
+In diesem Modul werden Sie zu:
+- Erstellen einer benutzerdefinierten Azure IoT Central-Anwendung 
+- Erstellen und Definieren Ihrer Gerätevorlage
+- Herstellen einer Verbindung der Anwendung mit Ihren Kaffee-Computer
+- Überprüfen der Verbindung und des Datenflusses
+- Konfigurieren von Regeln für Wartungsbenachrichtigungen
  
-## Sign in to Azure IoT Central
-In this unit, you sign in to IoT Central to create a new custom application. A 7-days trial is sufficient to complete units 1–4. If you wish to complete the optional exercise on using Microsoft Flow to send a mobile notification in unit 5, you need to extend the IoT Central trial to 30 days. The extension is enabled if you have an Azure subscription.  
+## <a name="sign-in-to-azure-iot-central"></a>Anmelden bei Azure IoT Central
+In dieser Einheit melden Sie IoT Central um eine neue benutzerdefinierte Anwendung zu erstellen. Eine 7-Tage-Testversion ist ausreichend Einheiten 1 – 4 ausführen. Wenn Sie die optionale Übung zur Verwendung von Microsoft Flow zum Senden einer benachrichtigungs auf Ihrem Mobilgerät Einheit 5 abschließen möchten, müssen Sie Verlängerung des Testzeitraums IoT Central auf 30 Tage. Die Erweiterung wird aktiviert, wenn Sie ein Azure-Abonnement verfügen.  
 
-1. Navigate to the Azure IoT Central [Application Manager](https://aka.ms/iotcentral) page. 
+1. Navigieren Sie zur Azure IoT Central-Seite [Application Manager](https://aka.ms/iotcentral) (Anwendungs-Manager). 
 
-1. On the sign in page, enter the email address and password that you use to access your Microsoft account.
+1. Geben Sie auf der Anmeldeseite angezeigt den e-Mail-Adresse und das Kennwort, mit denen Sie Zugriff auf Ihr Microsoft-Konto ein.
 
-## Create a new custom application
+## <a name="create-a-new-custom-application"></a>Erstellen einer neuen benutzerdefinierten Anwendung
 
-1. To create a new Azure IoT Central application, choose **New Application**. 
+1. Wählen Sie zum Erstellen einer neuen Azure IoT Central-Anwendung **neue Anwendung**. 
 
-1. On the Create Application page: 
-    * Choose **Free** for the payment plan
-    * Select **Custom Application** as the application template
-    * Choose a friendly application name, such as **Coffee Maker 01**
-    * Azure IoT Central generates a unique URL prefix for you
-    Choose **Create**
+1. Auf der Seite für die Anwendung zu erstellen: 
+    * Wählen Sie **Free** für den Zahlungsplan
+    * Wählen Sie **benutzerdefinierte Anwendung** wie die Application-Vorlage
+    * Wählen Sie einen benutzerfreundlichen Anwendungsnamen, z. B. **Kaffeemaschine 01**
+    * Azure IoT Central generiert ein eindeutige URL-Präfix für Sie wählen **erstellen**
     
    > [!NOTE]
-   > Extending your trial to 30 days is optional, but it is a prerequisite if you wish to complete the exercise on using Microsoft Flow to send a mobile notification in unit 5. The 30-day extension is enabled if you have an Azure subscription. For instruction on enabling the extension, see unit 5 on configuring rules and actions to monitor your coffee machine.
+   > Erweitern Ihre auf 30-Tage-Testversion ist optional, aber es ist eine Voraussetzung, wenn Sie die Übung zur Verwendung von Microsoft Flow zum Senden einer benachrichtigungs auf Ihrem Mobilgerät Einheit 5 abschließen möchten. Die 30-Tage-Erweiterung ist aktiviert, wenn Sie ein Azure-Abonnement verfügen. Anweisungen zum Aktivieren der Erweiterungs finden Sie zum Konfigurieren von Regeln und Aktionen zum Überwachen Ihrer Kaffeemaschine Einheit 5.
 
-In this unit, you created an Azure IoT custom application. You may also have chosen to sign up for an Azure subscription. In the next unit, you will continue to build on the application framework that you created. 
+In dieser Einheit haben Sie eine benutzerdefinierte Azure-IoT-Anwendung erstellt. Möglicherweise haben Sie sich auch für ein Azure-Abonnement registriert. In der nächsten Einheit werden Sie weiterhin auf das Anwendungsframework erstellen, die Sie erstellt haben. 

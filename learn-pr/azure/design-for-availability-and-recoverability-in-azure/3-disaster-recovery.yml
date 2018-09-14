@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-availability-and-recoverability.3-disaster-recovery
-title: Develop a disaster recovery strategy
+title: Entwickeln einer Strategie zur Notfallwiederherstellung
 metadata:
-  title: Develop a disaster recovery strategy
-  description: Develop a disaster recovery strategy
+  title: Entwickeln einer Strategie zur Notfallwiederherstellung
+  description: Entwickeln einer Strategie zur Notfallwiederherstellung
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,27 +13,27 @@ durationInMinutes: 20
 content: |
   [!include[](includes/3-disaster-recovery.md)]
 quiz:
-  title: 'Knowledge Check - Develop a disaster recovery strategy'
+  title: 'Wissenstest: Entwickeln einer Strategie zur Notfallwiederherstellung'
   questions:
-  - content: 'Which of the following can be excluded from your recovery steps in your recovery plan?'
-    choices:
-    - content: 'How to restore backups'
-      isCorrect: false
-      incorrectExplanation: 'The steps needed to restore backups are a critical piece of a recovery plan.'
-    - content: 'How to fail over to replicated systems'
-      isCorrect: false
-      incorrectExplanation: 'The process to fail over to replicated systems is a critical piece of a recovery plan.'
-    - content: 'How to reestablish network connectivity to on-premises or external networks'
-      isCorrect: false
-      incorrectExplanation: 'Network connectivity to on-premises or external networks are often critical pieces of infrastructure. The steps to reestablish after failure are critical pieces of a recovery plan.'
-    - content: 'All of the above are important details to include in a recovery plan.'
-      isCorrect: true
-      correctExplanation: 'All of the above are important details to include in a recovery plan.'
-  - content: 'By storing data on Azure Blob storage, you are fully protected in the event of a disaster.'
-    choices:
-    - content: 'True'
-      isCorrect: false
-      incorrectExplanation: 'Blob storage replication can help you recover from Azure service-level issues, but it will not protect you from localized disasters, such as data loss or corruption.'
-    - content: 'False'
-      isCorrect: true
-      correctExplanation: 'Blob storage replication can help you recover from Azure service-level issues, but it will not protect you from localized disasters, such as data loss or corruption.'
+    - content: Welche der folgenden Punkte können aus den Wiederherstellungsschritten in Ihrem Wiederherstellungsplan ausgeschlossen werden?
+      choices:
+        - content: Wiederherstellen von Sicherungen
+          isCorrect: false
+          incorrectExplanation: Die zum Wiederherstellen von Sicherungen erforderlichen Schritte sind ein wichtiger Teil eines Wiederherstellungsplans.
+        - content: Failover auf replizierte Systeme
+          isCorrect: false
+          incorrectExplanation: Ein Failover auf replizierte Systeme ist ein wichtiger Teil eines Wiederherstellungsplans.
+        - content: Wiederherstellen der Netzwerkkonnektivität mit lokalen oder externen Netzwerken
+          isCorrect: false
+          incorrectExplanation: Über eine Netzwerkverbindung mit einem lokalen oder externen Netzwerken sind häufig die kritischen Teile der Infrastruktur. Die Schritte zum Wiederherstellen nach einem Ausfall werden wichtige Teile eines Wiederherstellungsplans.
+        - content: Keines der genannten sollten in einem Wiederherstellungsplan ausgeschlossen werden.
+          isCorrect: true
+          correctExplanation: Alle oben genannten sind wichtige Details in einem Wiederherstellungsplan eingeschlossen werden sollen.
+    - content: 'Durch das Speichern von Daten in Azure Blob Storage, werden Sie vollständig bei einem Notfall geschützt.'
+      choices:
+        - content: Richtig
+          isCorrect: false
+          incorrectExplanation: 'BLOB Storage-Replikation können Sie die Wiederherstellung von Problemen mit Azure Service Level, aber es wird Sie nicht lokalisierte Systemausfällen, z. B. verlorener oder beschädigter Daten schützt.'
+        - content: Falsch
+          isCorrect: true
+          correctExplanation: 'BLOB Storage-Replikation können Sie die Wiederherstellung von Problemen mit Azure Service Level, aber es wird Sie nicht lokalisierte Systemausfällen, z. B. verlorener oder beschädigter Daten schützt.'

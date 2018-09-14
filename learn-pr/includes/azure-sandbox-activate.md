@@ -1,2 +1,2 @@
 > [!NOTE]
-> Make sure you have activated the Azure Sandbox before proceeding with these instructions.
+> Stellen Sie sicher, dass Sie die Azure-Sandbox, bevor Sie mit diesen Anweisungen aktiviert haben.

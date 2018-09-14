@@ -27,7 +27,7 @@ Wenn Sie über eine Empfängeranwendung verfügen, die Nachrichten in Azure Blob
 
 ## <a name="the-azure-cli-commands-for-creating-a-general-purpose-standard-storage-account"></a>Die Azure CLI-Befehle zum Erstellen eines allgemeinen Standardspeicherkontos
 
-1. Erstellen Sie das Speicherkonto (Allgemein, Version 2) in Ihrer Ressourcengruppe und am selben Speicherort im Azure-Rechenzentrum, an dem Sie die Ressourcengruppe erstellt haben.
+1. Erstellen Sie ein allgemeines V2-Storage-Konto in Ihrer Ressourcengruppe und denselben Azure-Datencenter-Speicherort, den Sie beim Erstellen der Ressourcengruppe verwendet.
 
     ```azurecli
     az storage account create --name <storage account name> --resource-group <resource group name> --location <location> --sku Standard_RAGRS --encryption blob

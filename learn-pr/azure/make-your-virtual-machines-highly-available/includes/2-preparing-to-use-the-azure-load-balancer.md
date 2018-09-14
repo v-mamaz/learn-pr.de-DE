@@ -1,99 +1,101 @@
-Suppose your company wants to see if Azure Load Balancer will support your Enterprise Resource Planning (ERP) application. Your application has a web interface for users and runs on multiple servers. Each server has a local copy of the ERP database, which is synced across all servers.
+Angenommen Sie, Ihr Unternehmen möchte, um festzustellen, ob Ihre Anwendung (Enterprise Resource Planning, ERP) Azure Load Balancer unterstützt. Die Anwendung verfügt über eine Webschnittstelle für Benutzer und auf mehreren Servern ausgeführt wird. Jeder Server hat eine lokale Kopie der ERP-Datenbank auf allen Servern synchronisiert ist.
 
-Here, you will look at how a load balancer can help provide high availability of services. You will identify the difference between the basic and standard load balancer options and see how to create a load balancer for Azure Virtual Machines.
+Hier erfahren Sie wie ein Load Balancer hohe Verfügbarkeit der Dienste sorgt kann. Den Unterschied zwischen den Basic- und standard-Load-Balancer-Optionen ermitteln und Informationen zum Erstellen eines Lastenausgleichs für Azure Virtual Machines.
 
-## What is load balancing?
+## <a name="what-is-load-balancing"></a>Was ist Lastenausgleich?
 
-_Load balancing_ describes various techniques for distributing workloads across multiple devices, such as compute, storage, and networking devices. The goal of load balancing is to optimize the use of multiple resources, to make the most efficient use of these resources as an infrastructure is scaled out, and to ensure services are maintained if some components are unavailable.
+_Lastenausgleich_ beschreibt verschiedene Verfahren zur Verteilung von Workloads auf mehreren Geräten, wie COMPUTE-, Speicher-und und Netzwerk Geräte. Das Ziel des Lastenausgleichs ist die Optimierung der Verwendung mehrerer Ressourcen, um die effizienteste Nutzung dieser Ressourcen zu machen, wie eine Infrastruktur hochskaliert horizontal, und um sicherzustellen, dass Dienste verwaltet werden, wenn einige Komponenten nicht verfügbar sind.
 
-Here, we'll look at Azure's load balancing support for virtual machines (VMs).
+Hier betrachten wir Azure Unterstützung für den Lastenausgleich für virtuelle Computer (VMs).
 
-### What is high availability?
+### <a name="what-is-high-availability"></a>Was ist Hochverfügbarkeit?
 
-High availability (HA) measures the ability of an application or service to remain accessible despite a failure in any system component. Ideally, there will be not be any noticeable loss of service.
+Hoher Verfügbarkeit (HA) Misst die Fähigkeit eines Anwendungs- oder trotz eines Fehlers bei der Systemkomponenten zugänglich bleiben. Im Idealfall werden nicht fallen merkliche Verlust des Diensts.
 
-Load balancing is fundamental to the delivery of HA because it allows multiple VMs to act as a pool of servers. The pool can continue to service requests even if some VMs crash or are taken offline for maintenance.
+Der Lastenausgleich ist für die Bereitstellung von HOCHVERFÜGBARKEIT von grundlegender Wichtigkeit, da mehrere virtuelle Computer als einen Pool mit Servern fungieren kann. Der Pool können weiterhin Service Anforderungen auch wenn einige VMs Absturz oder zur Wartung offline geschaltet werden.
 
-## What is Azure Load Balancer?
+## <a name="what-is-azure-load-balancer"></a>Was ist Azure Load Balancer?
 
-**Azure Load Balancer** is an Azure service that distributes incoming requests across multiple VMs in a pool. It distributes incoming network traffic across a set of healthy VMs and avoids any VM that is not able to respond.
+**Der Azure Load Balancer** ist ein Azure-Dienst, der eingehende Anforderungen auf mehrere virtuelle Computer in einem Pool verteilt. Es verteilt die eingehenden Netzwerkdatenverkehr auf einen Satz von fehlerfreie virtuelle Computer und vermeidet jeden virtuellen Computer, die nicht reagieren kann.
 
- Azure Load Balancer operates at Layer-4 (TCP, UDP) of the OSI 7-layer model. It can be configured to support TCP and UDP application scenarios where the traffic is inbound to Azure VMs, as well as outbound scenarios where other Azure services are passing TCP and UDP traffic out through Azure VMs to external endpoints.
+ Azure-Lastenausgleich arbeitet auf Layer-4 (TCP, UDP) des OSI-Modells Schicht 7. Sie können Unterstützung TCP- und UDP-Anwendungsszenarien, in denen der Datenverkehr auf virtuellen Azure-Computern eingehende als auch ausgehenden Szenarios, in denen andere Azure-Dienste TCP- und UDP-Datenverkehr über Azure-VMs an externe Endpunkte übergeben werden konfiguriert werden.
 
-## Public vs. internal load balancers
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yBWo]
 
-An Azure Load Balancer can be either _public_ or _internal_ depending on the source of incoming requests.
+## <a name="public-vs-internal-load-balancers"></a>Öffentliche und interne Load balancer
 
-A **public load balancer** handles client requests from outside of your Azure infrastructure. The public IP address of the load balancer is automatically configured as the load balancer's front end when you create the public IP and the load balancer resource. The following illustration shows a public load balancer.
+Azure Load Balancer kann es sich um _öffentliche_ oder _interne_ abhängig von der Quelle der eingehenden Anforderungen.
 
-![An illustration showing a public load balancer distributing client requests from the internet to three VMs on a virtual network.](../media-draft/2-public-load-balancer.png)
+Ein **öffentlichen Load Balancers** verarbeitet Clientanforderungen von außerhalb Ihrer Azure-Infrastruktur. Die öffentliche IP-Adresse des Load Balancers wird automatisch als Front-End des Load Balancers konfiguriert, wenn Sie die öffentliche IP-Adresse und der Load Balancer-Ressource erstellen. Die folgende Abbildung zeigt einen öffentlichen Load Balancer.
 
-An **internal load balancer** processes requests from within a virtual network (or through a VPN). It distributes requests to resources within that virtual network. The load balancer, front-end IP addresses, and virtual networks are not directly accessible from the internet. The following illustration shows an architecture containing both a public and internal load balancer. The public load balancer handles external requests while the internal load balancer forwards the requests to the internal VMs and databases for processing.
+![Eine Abbildung zeigt einen öffentlichen Lastenausgleich verteilt Clientanforderungen über das Internet mit drei virtuellen Computern in einem virtuellen Netzwerk.](../media/2-public-load-balancer.png)
 
-![An illustration showing a public load balancer forwarding client requests to an internal load balancer. The internal load balancer then distributes requests to a web tier subnet or database tier subnet based on the type of the request. Both the web tier subnet and the database tier subnet have multiple servers to handle requests.](../media-draft/2-internal-load-balancer.png)
+Ein **internen Load Balancer** verarbeitet Anforderungen von innerhalb eines virtuellen Netzwerks (oder über ein VPN). Anforderungen an Ressourcen innerhalb dieses virtuellen Netzwerks verteilt. Der Load Balancer, Front-End-IP-Adressen und virtuelle Netzwerke sind nicht direkt über das Internet zugegriffen werden. Die folgende Abbildung zeigt eine Architektur mit einem öffentlichen und internen Lastenausgleich. Der öffentliche Load Balancer verarbeitet externe Anforderungen, während der interne Load Balancer die Anforderungen an die interne virtuelle Computer und die Datenbanken für die Verarbeitung weitergeleitet.
 
-## How does Azure Load Balancer work?
+![Eine Abbildung mit einem öffentlichen Load Balancers Weiterleiten von Clientanforderungen an einen internen Load Balancer. Der interne Lastenausgleich verteilt dann Anforderungen an eine Webschicht-Subnetz oder Subnetzes der Datenbankschicht basierend auf dem Typ der Anforderung. Sowohl die Webschicht-Subnetz und dem Subnetz der Datenbankschicht haben mehrere Server zum Verarbeiten von Anforderungen.](../media/2-internal-load-balancer.png)
 
-Azure Load Balancer uses information configured in **rules** and **health probes** to determine how new inbound traffic that is received on a load balancer's **front end** is distributed to VM instances in a **back-end pool**.
+## <a name="how-does-azure-load-balancer-work"></a>Wie funktioniert Azure Load Balancer?
 
-### Front end
+Mit Azure Load Balancer verwendet die Informationen, die im konfigurierten **Regeln** und **Integritätstests** wie die neuen eingehenden Datenverkehr zu ermitteln, die für eines Lastenausgleichs empfangen wird **Front-End** ist an VM-Instanzen verteilt eine **Back-End-Pool**.
 
-The load balancer front end is an IP configuration, containing one or more public IP addresses, that enables access to the load balancer and its applications over the Internet.
+### <a name="front-end"></a>Front-end
 
-### Back end address pool
+Der Load Balancer-Front-End ist eine IP-Konfiguration, die eine oder mehrere öffentliche IP-Adressen, enthält, die Zugriff auf den Load Balancer und der zugehörigen Anwendungen über das Internet ermöglicht.
 
-Virtual machines connect to a load balancer using their virtual network interface card (vNIC). The back-end address pool contains the IP addresses of the vNICs that are connected to the load balancer. If you place all your VMs in an availability set, you can use this to easily add your VMs to a back-end pool when you're configuring the load balancer.
+### <a name="back-end-address-pool"></a>Back-End-Adresspool
 
-### Health probe
+Verbinden Sie virtuelle Computer mit eines Load Balancers mit ihren virtuellen Netzwerkkarte (vNIC). Die Back-End-Adresspool enthält die IP-Adressen der vNICs, die für den Load Balancer verbunden sind. Wenn Sie alle Ihre virtuellen Computer in einer verfügbarkeitsgruppe platzieren, können dies Sie auf einfache Weise Ihre virtuellen Computer an einen Back-End-Pool hinzufügen, wenn Sie den Load Balancer konfigurieren.
 
-Load balancers use _health probes_ to determine which virtual machines can service requests. The load balancer will only distribute traffic to VMs that are available and operational. 
+### <a name="health-probe"></a>Integritätstest
 
-A health probe monitors specific ports on each VM. You can define what type of response corresponds to "health"; for example, you might require an `HTTP 200 Available` response from a web application. By default, a VM will be marked as "unavailable" after two consecutive failures at 15-second intervals.
+Laden Sie die Lastenausgleichsmodule verwenden _Integritätstests_ um zu bestimmen, welche virtuellen Computer die Anforderungen bedienen kann. Der Load Balancer wird nur Datenverkehr zu virtuellen Computern verteilen, die verfügbar und betriebsbereit sein. 
 
-### Load balancer rules
+Ein Integritätstest überwacht bestimmte Ports auf jedem virtuellen Computer. Sie können definieren, welche Art von Antwort die "Integrität"; entspricht benötigen Sie z. B. möglicherweise eine `HTTP 200 Available` Antwort aus einer Webanwendung. Standardmäßig wird ein virtueller Computer als "nicht verfügbar" nach zwei aufeinanderfolgenden Fehlern in 15-Sekunden-Intervallen gekennzeichnet.
 
-Load balancer _rules_ define how traffic is distributed to backend VMs. The goal is to distribute requests fairly across the healthy VMs in the back-end pool.
+### <a name="load-balancer-rules"></a>Lastenausgleichsregeln
 
-Azure Load Balancer uses a hash-based algorithm to rewrite the headers of inbound packets. By default, Load Balancer creates a hash from:
+Lastenausgleich _Regeln_ definieren, wie Datenverkehr an Back-End-VMs verteilt wird. Das Ziel ist, um Anforderungen relativ die fehlerfreie virtuelle Computer im Back-End-Pool zu verteilen.
 
-- Source IP addresses
-- Source ports
-- Destination IP addresses
-- Destination ports
-- IP protocol numbers
+Azure Load Balancer verwendet einen hashbasierten Algorithmus, um die Header der eingehenden Pakete neu zu schreiben. Load Balancer erstellt standardmäßig einen Hash aus:
 
-This mechanism ensures that all packets within a packet client flow are sent to the same backend VM instance. A new flow from a client will use a different randomly allocated source port. This mean that the hash will change, and the load balancer may send this flow to a different back-end endpoint.
+- Quell-IP-Adressen
+- Quellports
+- Ziel-IP-Adressen
+- Zielports
+- IP-Protokollnummern
 
-## Basic vs. Standard Load Balancer SKUs
+Dieser Mechanismus wird sichergestellt, dass alle Pakete in einem Paketfluss der Client mit der gleichen Back-End-VM-Instanz gesendet werden. Nach dem Zufallsprinzip zugewiesen Quellport wird ein neuer Datenfluss von einem Client eine andere verwendet. Bedeutet dies, dass der Hash wird geändert, und der Load Balancer dieser Flow möglicherweise an einen anderen Back-End-Endpunkt sendet.
 
-There are two versions of Azure Load Balancer: **Basic** and **Standard**. They differ in scale, features, and pricing. For example:
+## <a name="basic-vs-standard-load-balancer-skus"></a>Gegenüberstellung von Basic- und Standard Load Balancer-SKUs
 
-- Standard supports HTTPS while Basic does not
-- Pool size can be much larger in Standard
-- Basic is no-cost while Standard is charged based on rules and throughput.
+Es gibt zwei Versionen des Azure Load Balancers: **grundlegende** und **Standard**. Sie unterscheiden sich in der Skalierungsgruppe, Features und Preise. Beispiel:
 
-Standard is a superset of Basic, so any scenario suitable for Basic should also work on Standard. The Basic SKU is generally intended for prototyping and testing while Standard is recommended for production.
+- Standard unterstützt HTTPS Basic jedoch nicht
+- Größe des Pools kann viel größer ist im Standard sein.
+- Basic ist kostenlos, während Standard basierend auf Regeln und der Durchsatz berechnet wird.
 
-## Start the deployment of a basic public load balancer
+Standard ist eine Obermenge von Basic, daher wird jeder geeignete Szenario Basic auf Standard auch funktionieren sollte. SKU "Basic" ist in der Regel als Prototypen getestet vorgesehen, während Standard für die Produktion empfohlen wird.
 
-To create a load-balanced VM system, you need to create the load balancer itself, create a virtual network to contain your virtual machines, and then add VMs to the virtual network.
+## <a name="start-the-deployment-of-a-basic-public-load-balancer"></a>Starten Sie die Bereitstellung einer öffentlichen basic Load balancer-Instanz
 
-To create the load balancer using the Azure portal, you define the following:
+Um ein VM-System mit Lastenausgleich zu erstellen, müssen Sie zum Erstellen des Lastenausgleichs selbst, Erstellen eines virtuellen Netzwerks, Ihrer virtuellen Computer enthalten und fügen Sie dann mit dem virtuellen Netzwerk virtuelle Computer hinzu.
 
-- Load balancer name
-- Type: public or internal
-- SKU: Basic or Standard
-- Public IP address: dynamic or static
-- Resource group and location
+Um den Load Balancer mithilfe der Azure-Portal zu erstellen, definieren Sie die folgenden:
 
-Your back-end VMs will all be connected to the same virtual network, so you need to configure this resource next:
+- Name des Load Balancers
+- Typ: öffentlich oder intern
+- SKU: Basic oder Standard
+- Öffentliche IP-Adresse: dynamisch oder statisch
+- Ressourcengruppe und Standort
 
-- Virtual network name
-- Address space to use, such as 172.20.0.0/16
-- Resource group
-- Name for the subnet to use
-- Address space for the subnet (must be within the main space), such as 172.20.0.0/24
+Ihr Back-End-VMs werden alle mit dem gleichen virtuellen Netzwerk verbunden sein müssen Sie als Nächstes konfigurieren Sie diese Ressource:
 
-You then need to create and deploy your backend VMs and configure them to use your virtual network. You should also place your VMs into the same availability set. Availability sets define the level of fault tolerance across a group of VMs, but for load balancing, they also help you assign your VMs to back-end pools.
+- Name des virtuellen Netzwerks
+- Adressraum an, wie z. B. 172.20.0.0/16
+- Ressourcengruppe
+- Namen für das Subnetz verwenden
+- Adressraum für das Subnetz (innerhalb des Haupt-Bereichs befinden muss), z. B. 172.20.0.0/24
 
-You have now seen how to use Azure Load Balancer as part of a high-availability solution. Next, you will use these steps to deploy your own load balancer.
+Sie müssen zum Erstellen und Bereitstellen von Ihrem Back-End-VMs aus, und konfigurieren, dass sie Ihr virtuelle Netzwerk verwenden. Sie sollten auch Ihre virtuellen Computer in derselben verfügbarkeitsgruppe platzieren. Verfügbarkeitsgruppen definieren des Grads der Fehlertoleranz für eine Gruppe von VMs, aber für den Lastenausgleich, außerdem können Sie Ihre virtuellen Computer zum Back-End-Pools zuweisen.
+
+Sie haben jetzt mit Azure Load Balancer als Teil einer Lösung mit hoher Verfügbarkeit gesehen. Als Nächstes verwenden Sie diese Schritte auf Ihr eigenes Lastenausgleichsmodul bereitstellen.

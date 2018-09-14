@@ -22,7 +22,7 @@ Lassen Sie uns unsere App fertig stellen, indem wir Code zum Hoch- und Herunterl
 
 Um ein Blob hochzuladen, implementieren wir die `BlobStorage.Save`-Methode `GetBlockBlobReference` zum Abrufen von `CloudBlockBlob` aus dem Container. `FilesController.Upload` übergibt den Dateidatenstrom an `Save`, sodass Sie `UploadFromStreamAsync` zum Durchführen des Hochladens mit maximaler Effizienz nutzen können.
 
-Öffnen Sie `BlobStorage.cs` im Editor, und ersetzen Sie `Save` durch folgenden Code:
+Ersetzen Sie im Editor `Save` in `BlobStorage.cs` durch den folgenden Code:
 
 ```csharp
 public Task Save(Stream fileStream, string name)
@@ -61,22 +61,22 @@ Ihre App ist fertig. Stellen Sie sie bereit, und sehen Sie sich an, wie sie funk
 Der App-Name muss global eindeutig sein. Daher müssen Sie für `<your-unique-app-name>` einen eigenen Namen auswählen.
 
 ```azurecli
-az appservice plan create --name blob-exercise-plan --resource-group blob-exercise-group
-az webapp create --name <your-unique-app-name> --plan blob-exercise-plan --resource-group blob-exercise-group
+az appservice plan create --name blob-exercise-plan --resource-group <rgn>[Sandbox resource group name]</rgn>
+az webapp create --name <your-unique-app-name> --plan blob-exercise-plan --resource-group <rgn>[Sandbox resource group name]</rgn>
 CONNECTIONSTRING=$(az storage account show-connection-string --name <your-unique-storage-account-name> --output tsv)
-az webapp config appsettings set --name <your-unique-app-name> --resource-group blob-exercise-group --settings AzureStorageConfig:ConnectionString=$CONNECTIONSTRING AzureStorageConfig:FileContainerName=files
+az webapp config appsettings set --name <your-unique-app-name> --resource-group <rgn>[Sandbox resource group name]</rgn> --settings AzureStorageConfig:ConnectionString=$CONNECTIONSTRING AzureStorageConfig:FileContainerName=files
 ```
 
 Jetzt stellen Sie die App bereit. Mit den folgenden Befehlen wird die Site im Ordner `pub` veröffentlicht, in `site.zip` komprimiert und die ZIP-Datei in App Service bereitgestellt.
 
 > [!NOTE]
-> Stellen Sie sicher, dass Ihre Shell sich im `FileUploader`-Verzeichnis für die folgenden Befehle befindet.
+> Stellen Sie sicher, dass die Shell nach wie vor in den `mslearn-store-data-in-azure/store-app-data-with-azure-blob-storage/src/start` Verzeichnis, bevor Sie die folgenden Befehle ausführen.
 
 ```azurecli
 dotnet publish -o pub
 cd pub
 zip -r ../site.zip *
-az webapp deployment source config-zip --src ../site.zip --name <your-unique-app-name> --resource-group blob-exercise-group
+az webapp deployment source config-zip --src ../site.zip --name <your-unique-app-name> --resource-group <rgn>[Sandbox resource group name]</rgn>
 ```
 
 Öffnen Sie `https://<your-unique-app-name>.azurewebsites.net` in einem Browser, um die ausgeführte App anzuzeigen. Es sollte etwa wie im folgenden Bild aussehen.

@@ -9,33 +9,37 @@ In dieser Übung erstellen Sie einen Service Bus-Namespace, der sowohl eine Wart
 
 ## <a name="create-a-service-bus-namespace"></a>Erstellen eines Service Bus-Namespace
 
+[!include[](../../../includes/azure-sandbox-activate.md)]
+
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
+
 In Azure Service Bus ist ein Namespace ein Container mit einem eindeutigen vollqualifizierten Domänennamen für Warteschlangen, Themen und Relays. Sie müssen zunächst den Namespace erstellen.
 
-Jeder Namespace verfügt außerdem über primäre und sekundäre SAS-Verschlüsselungsschlüssel (Shared Access Signature). Eine sendende oder empfangende Komponente muss diese Schlüssel angeben, wenn sie eine Verbindung herstellt, um Zugriff auf die Objekte im Namespace zu erhalten.
+Jeder Namespace verfügt außerdem über primäre und sekundäre Shared Access Signature-Verschlüsselungsschlüssel. Eine sendende oder empfangende Komponente muss diese Schlüssel angeben, wenn sie eine Verbindung herstellt, um Zugriff auf die Objekte im Namespace zu erhalten.
 
 Führen Sie diese Schritte aus, um einen Service Bus-Namespace mit dem Azure-Portal zu erstellen:
 
-1. Navigieren Sie in einem Browser zum [Azure-Portal](https://portal.azure.com/), und melden Sie sich mit Ihren normalen Anmeldeinformationen für das Azure-Konto an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/?azure-portal=true) an.
 
 1. Klicken Sie im linken Navigationsbereich auf **Alle Dienste**.
 
 1. Scrollen Sie auf dem Blatt **Alle Dienste** nach unten zum Abschnitt **INTEGRATION**, und klicken Sie auf **Service Bus**.
 
-    ![Erstellen eines Service Bus-Namespace](../media-draft/3-create-namespace-1.png)
+    ![Erstellen eines Service Bus-Namespace](../media/3-create-namespace-1.png)
 
 1. Klicken Sie oben links auf dem Blatt **Service Bus** auf **Hinzufügen**.
 
-1. Geben Sie im Textfeld **Name** einen eindeutigen Namen für den Namespace ein. Beispiel: „salesteamapp“ + *Ihre Initialen* + *aktuelles Datum*
+1. Geben Sie im Textfeld **Name** einen eindeutigen Namen für den Namespace ein. Beispiel: „salesteamapp“ + *Ihre Initialen* + *aktuelles Datum*.
 
 1. Wählen Sie in der Dropdownliste **Tarif** die Option **Standard** aus.
 
 1. Wählen Sie in der Dropdownliste **Abonnement** Ihr Abonnement aus.
 
-1. Wählen Sie unter **Ressourcengruppe** die Option **Neu erstellen**, und geben Sie dann **SalesTeamAppRG** ein.
+1. Unter **Ressourcengruppe**Option **vorhandene** , und wählen Sie <rgn>[Ressourcengruppennamen Sandkasten]</rgn>.
 
 1. Wählen Sie in der Dropdownliste **Standort** einen Standort in Ihrer Nähe aus, und klicken Sie dann auf **Erstellen**. Der neue Service Bus-Namespace wird in Azure erstellt.
 
-    ![Erstellen eines Service Bus-Namespace](../media-draft/3-create-namespace-2.png)
+    ![Erstellen eines Service Bus-Namespace](../media/3-create-namespace-2.png)
 
 ## <a name="create-a-service-bus-queue"></a>Erstellen einer Service Bus-Warteschlange
 
@@ -49,7 +53,7 @@ Nachdem Sie nun über einen Namespace verfügen, können Sie eine Warteschlange 
 
 1. Geben Sie auf dem Blatt **Warteschlange erstellen** im Textfeld **Name** den Namen **salesmessages** ein, und klicken Sie dann auf **Erstellen**. Azure erstellt die Warteschlange in Ihrem Namespace.
 
-    ![Erstellen einer Warteschlange](../media-draft/3-create-queue.png)
+    ![Erstellen einer Warteschlange](../media/3-create-queue.png)
 
 ## <a name="create-a-service-bus-topic-and-subscriptions"></a>Erstellen eines Service Bus-Themas und von Abonnements
 
@@ -61,9 +65,9 @@ Führen Sie diese Schritte aus:
 
 1. Geben Sie auf dem Blatt **Thema erstellen** im Textfeld **Name** den Namen **salesperformancemessages** ein, und klicken Sie dann auf **Erstellen**. Azure erstellt das Thema in Ihrem Namespace.
 
-    ![Erstellen eines Themas](../media-draft/3-create-topic.png)
+    ![Erstellen eines Themas](../media/3-create-topic.png)
 
-1. Klicken Sie nach der Erstellung des Themas auf dem Blatt **Service Bus-Namespace** unter **Entitäten** auf **Themen**.
+1. Klicken Sie nach dem Erstellen des Themas auf dem Blatt **Service Bus-Namespace** unter **Entitäten** auf **Themen**.
 
 1. Klicken Sie in der Liste mit den Themen auf **salesperformancemessages** und dann auf **+ Abonnement**.
 

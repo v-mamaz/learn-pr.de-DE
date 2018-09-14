@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.control-azure-services-with-cli.4-work-with-the-cli
-title: Work with the Azure CLI
+title: Arbeiten mit Azure CLI
 metadata:
-  title: Work with the Azure CLI
-  description: Learn the command structure and syntax to work with the Azure CLI
+  title: Arbeiten mit Azure CLI
+  description: Informationen zur Befehlsstruktur und -syntax für die Arbeit mit Azure CLI.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

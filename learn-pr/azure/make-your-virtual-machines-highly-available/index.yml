@@ -1,41 +1,40 @@
 ### YamlMime:Module
 uid: learn.make-your-virtual-machines-highly-available
 metadata:
-  title: Make your virtual machines highly available
-  description: Use Azure Load Balancer as a public load balancer to distribute public inbound traffic across multiple Azure virtual machines. Understand the purpose of a load balancer. Work with Azure Load Balancer in the portal, identify a VM scale set to route traffic to, and monitor your traffic.
+  title: Sicherstellen der Hochverfügbarkeit Ihrer VMs
+  description: 'Verwenden Azure Load Balancer als einen öffentlichen Lastenausgleich öffentliche eingehendes Datenverkehr auf mehrere Azure virtuelle Computer zu verteilen. Verstehen des Zwecks eines Load Balancers. Arbeiten mit Azure Load Balancer im Portal, eine VM-Skalierungsgruppe zum Weiterleiten von Datenverkehr an und überwachen Sie den Datenverkehr zu identifizieren.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Make your virtual machines highly available
-summary: Distribute public inbound traffic across multiple virtual machines with Load Balancer.
+title: Sicherstellen der Hochverfügbarkeit Ihrer VMs
+summary: Verteilen Sie öffentliche eingehendes Datenverkehr auf mehrere virtuelle Computer mit Lastenausgleich.
 abstract: |
-  In this module, you will:
-  - Decide when to use a load balancer
-  - Identify the differences between the basic and standard load balancer editions
-  - Create a new load balancer
-  - Create virtual networks associated with a load balancer
-  - Configure load balancer rules
-  - Configure a load balancer health probe
+  In diesem Modul lernen Sie Folgendes:
+  - Entscheiden Sie, wann verwenden Sie einen Load balancer
+  - Identifizieren Sie die Unterschiede zwischen den Basic- und standard-Load-Balancer-Editionen
+  - Erstellen eines neuen Load Balancers
+  - Erstellen von virtuellen Netzwerken mit einem Load Balancer verbunden sind
+  - Load Balancer-Regeln konfigurieren
+  - Konfigurieren eines Integritätstests für den Lastenausgleich
 prerequisites: |
-  - Experience administering Azure resources using the Azure portal
-  - Experience with Azure Virtual Machines
-  - Some knowledge of virtual-machine networking and public IP addresses
-iconUrl: http://via.placeholder.com/120x120
+  - Erfahrung beim Verwalten von Azure-Ressourcen über das Azure-Portal
+  - Erfahrung mit Azure Virtual Machines
+  - Grundkenntnisse der VM-Netzwerke und öffentliche IP-Adressen
+iconUrl: /learn/achievements/make-your-virtual-machines-highly-available.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- developer
+  - developer
 products:
-- azure
-- azure-virtual-machines
+  - azure
+  - azure-virtual-machines
 units:
-- learn.make-your-virtual-machines-highly-available.1-introduction
-- learn.make-your-virtual-machines-highly-available.2-preparing-to-use-the-azure-load-balancer
-- learn.make-your-virtual-machines-highly-available.3-exercise-preparing-to-use-the-azure-load-balancer
-- learn.make-your-virtual-machines-highly-available.4-configure-a-load-balancer-in-azure
-- learn.make-your-virtual-machines-highly-available.5-exercise–configure-a-load-balancer-in-azure
-- learn.make-your-virtual-machines-highly-available.6-summary
+  - learn.make-your-virtual-machines-highly-available.1-introduction
+  - learn.make-your-virtual-machines-highly-available.2-preparing-to-use-the-azure-load-balancer
+  - learn.make-your-virtual-machines-highly-available.3-exercise-preparing-to-use-the-azure-load-balancer
+  - learn.make-your-virtual-machines-highly-available.4-configure-a-load-balancer-in-azure
+  - learn.make-your-virtual-machines-highly-available.5-exercise-configure-a-load-balancer-in-azure
+  - learn.make-your-virtual-machines-highly-available.6-summary
 achievement: learn.make-your-virtual-machines-highly-available.badge

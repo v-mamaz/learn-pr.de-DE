@@ -2,7 +2,7 @@ Die Lizenzierung ist ein weiterer Bereich, der Ihre Cloudkosten erheblich erhöh
 
 ## <a name="azure-hybrid-benefit-for-windows-server"></a>Azure-Hybridvorteil für Windows Server
 
-Viele Kunden haben in Windows Server-Lizenzen investiert und möchten diese in Azure wiederverwenden. Mit dem Azure-Hybridvorteil können Kunden diese Lizenzen für virtuelle Computer in Azure verwenden. Das bedeutet, dass keine Kosten für die Windows Server-Lizenz entstehen und stattdessen die Linux-Gebühr abgerechnet wird. 
+Viele Kunden haben in Windows Server-Lizenzen investiert und möchten diese in Azure wiederverwenden. Mit dem Azure-Hybridvorteil können Kunden diese Lizenzen für virtuelle Computer in Azure verwenden. Das bedeutet, dass keine Kosten für die Windows Server-Lizenz entstehen und stattdessen die Linux-Gebühr abgerechnet wird.
 
 Ihre Windows-Lizenzen müssen ebenfalls durch Software Assurance abgedeckt sein, um diesen Vorteil nutzen zu können. Es gelten ebenfalls folgende Richtlinien:
 
@@ -31,7 +31,7 @@ Für Azure SQL-Datenbank funktioniert der Azure-Hybridvorteil folgendermaßen:
 
 Die folgende Abbildung zeigt die auf virtuellen Kernen basierenden Optionen, die in jeder Dienstebene mit Azure-Hybridvorteil für SQL Server-Lizenzen verfügbar sind.
 
-![Eine Abbildung mit einem Beispiel, das verdeutlicht, wie Sie den Wert Ihrer vorhandenen SQL-Serverlizenz mithilfe des Azure-Hybridvorteils maximieren können.](../media-drafts/5-sql-tradein-value.png)
+![Eine Abbildung mit einem Beispiel, das verdeutlicht, wie Sie den Wert Ihrer vorhandenen SQL-Serverlizenz mithilfe des Azure-Hybridvorteils maximieren können.](../media/5-sql-tradein-value.png)
 
 Für SQL Server auf virtuellen Azure-Computern funktioniert der Azure-Hybridvorteil folgendermaßen:
 
@@ -49,7 +49,7 @@ Im Folgenden finden Sie die vollständigen Informationen zu jedem Angebot. Wenn 
 
 Wenn Sie einen Kunden im Rahmen eines Enterprise Agreements und bereits über eine Investition in SQL Server-Lizenzen verfügen und diese durch die Verschiebung von Ressourcen in Azure frei geworden sind, können Sie **Bring Your Own License**-Images (BYOL) über den Azure Marketplace bereitstellen, um diese nicht verwendeten Lizenzen zu nutzen und Ihre Kosten für virtuelle Azure-Computer zu reduzieren. Dies war zuvor bereits möglich, indem ein virtueller Windows-Computer bereitgestellt und SQL Server manuell auf diesem installiert wurde. Dieses Verfahren erleichtert jedoch den Erstellungsprozess durch die Verwendung von durch Microsoft zertifizierten Images. Suchen Sie im Marketplace nach **BYOL**, um diese Images zu finden.
 
-![BYOL für SQL Server in Azure](../media-drafts/5-byol-sql-server.png)
+![Screenshot des Azure-Portal mit BYOL-Optionen für SQL Server.](../media/5-byol-sql-server.png)
 
 > [!IMPORTANT]
 > Ein Enterprise Agreement-Abonnement ist erforderlich, um diese zertifizierten BYOL-Images zu verwenden.
@@ -58,12 +58,12 @@ Wenn Sie einen Kunden im Rahmen eines Enterprise Agreements und bereits über ei
 
 Vielen Benutzern ist nicht bekannt, dass SQL Server Developer Edition ein kostenloses Produkt ist, das jedoch **nicht für Produktionszwecke** gedacht ist. Developer Edition enthält die gleichen Features wie Enterprise Edition, für Nicht-Produktionsworkloads können Sie jedoch erheblich an Lizenzierungskosten einsparen.
 
-Suchen Sie im Azure Marketplace nach SQL Server-Images für Developer Edition, und verwenden Sie diese für Entwicklungs- oder Testzwecke, um in diesen Fällen zusätzliche Kosten für SQL Server zu vermeiden. 
+Suchen Sie im Azure Marketplace nach SQL Server-Images für Developer Edition, und verwenden Sie diese für Entwicklungs- oder Testzwecke, um in diesen Fällen zusätzliche Kosten für SQL Server zu vermeiden.
 
 > [!TIP]
 > Vollständige Informationen zur Lizenzierung finden Sie in den [Preisinformationen](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance).
 
-## <a name="use-constrained-instance-sizes-for-database-workloads"></a>Verwenden von eingeschränkten Instanzgrößen für Datenbankworkloads 
+## <a name="use-constrained-instance-sizes-for-database-workloads"></a>Verwenden von eingeschränkten Instanzgrößen für Datenbankworkloads
 
 Viele Kunden haben hohe Anforderungen an Arbeitsspeicher, Speicherplatz oder E/A-Bandbreite, besitzen jedoch wenige CPU-Kerne. Auf Grundlage dieser Anforderungen hat Microsoft die beliebtesten Größen für virtuelle Computer (DS, ES, GS und MS) in neuen Größen zur Verfügung gestellt, durch die die Anzahl der virtuellen CPUs auf die Hälfte oder sogar ein Viertel der ursprünglichen Größe des virtuellen Computers eingeschränkt wird, während gleich viel Arbeitsspeicher, Speicherplatz und E/A-Bandbreite beibehalten bleibt.
 
@@ -74,4 +74,4 @@ Viele Kunden haben hohe Anforderungen an Arbeitsspeicher, Speicherplatz oder E/A
 | Standard_GS5      | 32 | 448    | 64 | 80.000 IOPS oder 2 GB/s   |           |           |
 | Standard_GS5-8    | **8**  | 448    | 64 | 80.000 IOPS oder 2 GB/s   | 75 % niedriger | 42 % niedriger |
 
-Da Datenbankprodukte wie SQL Server und Oracle pro CPU lizenziert werden, können Kunden die Lizenzierungskosten um bis zu 75 % senken und dennoch weiterhin die hohe Leistung nutzen, die ihre Datenbanken benötigen. 
+Da Datenbankprodukte wie SQL Server und Oracle pro CPU lizenziert werden, können Kunden die Lizenzierungskosten um bis zu 75 % senken und dennoch weiterhin die hohe Leistung nutzen, die ihre Datenbanken benötigen.

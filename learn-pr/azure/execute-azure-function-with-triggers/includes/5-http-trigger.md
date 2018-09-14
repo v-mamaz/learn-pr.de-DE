@@ -1,47 +1,45 @@
-An HTTP request is a common operation on most platforms and devices. Whether it's a request to look up a word in a dictionary or to get the local weather, we send HTTP requests all the time. Azure Functions allows us to quickly create a piece of logic to execute when an HTTP request is received.
+Eine HTTP-Anforderung ist ein gängiger Vorgang auf den meisten Plattformen und Geräten. Ob mit der Anforderung ein Wort in einem Wörterbuch nachgeschlagen oder der lokale Wetterbericht aufgerufen werden soll, wir senden ständig HTTP-Anforderungen. Azure Functions ermöglicht es uns, schnell ein Stück Logik zu erstellen, das beim Empfangen einer HTTP-Anforderung ausgeführt wird.
 
-Here, you'll learn how to create and invoke an Azure function using an HTTP trigger. You'll also explore some of the customization options that are available.
+Hier erfahren Sie, wie eine Azure-Funktion mit einem HTTP-Trigger erstellt und ausgelöst wird. Darüber hinaus untersuchen Sie einige der verfügbaren Anpassungsoptionen.
 
-## What is an HTTP trigger?
+## <a name="what-is-an-http-trigger"></a>Was ist ein HTTP-Trigger?
 
-An HTTP trigger is a trigger that executes a function when it receives an HTTP request. HTTP triggers have many capabilities and customizations, including:
+Ein HTTP-Trigger ist ein Trigger, der eine Funktion ausführt, wenn er eine HTTP-Anforderung empfängt. HTTP-Trigger weisen viele Funktionen und Anpassungen auf, Beispiele:
 
-- Provide authorized access by supplying keys.
-- Restrict which HTTP verbs are supported.
-- Return data back to the caller.
-- Receive data through query string parameters or through the request body.
-- Support URL route templates to modify the function URL.
+- Sie stellen autorisierten Zugriff durch die Angabe von Schlüsseln bereit.
+- Sie beschränken, welche HTTP-Verben unterstützt werden.
+- Sie geben Daten an den Aufrufer zurück.
+- Sie empfangen Daten über Abfragezeichenfolgen-Parameter oder den Anforderungstext.
+- Sie unterstützen URL-Routenvorlagen zum Ändern der Funktions-URL.
 
-When you create an HTTP trigger, select a programming language, provide a trigger name, and select an Authorization level.
+Wenn Sie einen HTTP-Trigger erstellen, wählen Sie eine Programmiersprache aus, geben einen Triggernamen an und wählen eine Autorisierungsstufe aus.
 
-## What is an HTTP trigger Authorization level?
+## <a name="what-is-an-http-trigger-authorization-level"></a>Was ist eine HTTP-Triggerautorisierungsstufe?
 
-An HTTP trigger Authorization level is a flag that indicates if an incoming HTTP request needs an API key for authentication reasons.
+Eine HTTP-Triggerautorisierungsstufe ist ein Flag, das angibt, ob eine eingehende HTTP-Anforderung zur Authentifizierung einen API-Schlüssel benötigt.
 
-There are three Authorization levels:
+Es gibt drei Autorisierungsstufen:
 
-1. Function
-2. Anonymous
-3. Admin
+1. Funktion
+2. Anonym
+3. Administrator
 
-The **Function** and **Admin** levels are "key" based. To send an HTTP request, you must supply a key for authentication. There are two types of keys: *function* and *host*. The differences between the two keys are their scope. *Function* keys are specific to a function. *Host* keys apply to all functions inside the entire Azure Functions application. If your Authorization level is set to **Function**, you can use either a *function* or a *host* key. If your Authorization level is set to **Admin**, you must supply a *host* key.
+Die Stufen **Funktion** und **Administrator** sind schlüsselbasiert. Um eine HTTP-Anforderung senden zu können, müssen Sie einen Schlüssel für die Authentifizierung angeben. Es gibt zwei Arten von Schlüsseln: *Funktion* und *Host*. Der Unterschied zwischen den beiden Schlüsseln ist ihr Bereich. Schlüssel mit dem Typ *Funktion* gelten für eine Funktion. Schlüssel mit dem Typ *Host* gelten für alle Funktionen innerhalb der vollständigen Azure Functions-Anwendung. Wenn Ihre Autorisierungsstufe auf **Funktion** festgelegt ist, können Sie einen Schlüssel mit dem Typ *Funktion* oder *Host* verwenden. Wenn Ihre Autorisierungsstufe auf **Administrator** festgelegt ist, geben Sie einen Schlüssel mit dem Typ *Host* an.
 
-The **Anonymous** level means that there's no authentication required. We use this level in our exercise.
+Die Stufe **Anonym** bedeutet, dass keine Authentifizierung erforderlich ist. In unserer Übung verwenden wir diese Stufe.
 
-## How to create an HTTP trigger
+## <a name="how-to-create-an-http-trigger"></a>Erstellen eines HTTP-Triggers
 
-Just like a timer trigger, you can create an HTTP trigger through the Azure portal. Inside your Azure function, you select **HTTP trigger** from the list of predefined trigger types. Then you enter the logic that you want to execute and make any customizations like restricting the use of certain HTTP verbs.
+Sie können einen HTTP-Trigger wie einen Zeitgebertrigger über das Azure-Portal erstellen. Wählen Sie in Ihrer Azure-Funktion die Option **HTTP-Trigger** aus der Liste der vordefinierten Triggertypen aus. Geben Sie dann die Logik ein, die Sie ausführen möchten, und nehmen Sie Anpassungen vor, wie z.B. die Verwendung bestimmter HTTP-Verben einzuschränken.
 
-One setting that's important to understand is **Request parameter name**. This setting is a string that represents the name of the parameter that contains the information about an incoming HTTP request. By default, the name of the parameter is *req*.
+Eine Einstellung, die Sie kennen sollten, ist **Anforderungsparametername**. Diese Einstellung ist eine Zeichenfolge, die den Namen des Parameters darstellt, der die Informationen über eine eingehende HTTP-Anforderung enthält. Standardmäßig ist der Name des Parameters *req*.
 
-## How to invoke an HTTP trigger
+## <a name="how-to-invoke-an-http-trigger"></a>Aufrufen eines HTTP-Triggers
 
-To invoke an HTTP trigger, you send an HTTP request to the URL for your function. To get this URL, go to the code page for your function and select the **Get function URL** link.
+Um einen HTTP-Trigger aufzurufen, senden Sie eine HTTP-Anforderung an die URL für Ihre Funktion. Wechseln Sie zum Abrufen dieser URL zur Codepage für Ihre Funktion, und wählen Sie den Link **Funktions-URL abrufen** aus.
 
-![Screenshot of the Azure portal showing a Functions App blade with the app's Get function URL button highlighted.](../media/5-function-url.png)
+![Screenshot des Azure-Portal mit einer Funktionen-App auf dem Blatt mit der app Schaltfläche "Get-Funktion-URL" hervorgehoben.](../media/5-function-url.png)
 
-After you have the URL for your function, you can send HTTP requests. If your function receives data, remember that you can use either query string parameters or supply the data through the request body.
+Sobald Sie über die URL für Ihre Funktion verfügen, können Sie HTTP-Anforderungen senden. Wenn Ihre Funktion Daten empfängt, denken Sie daran, dass Sie entweder Abfragezeichenfolgen-Parameter verwenden oder die Daten über den Anforderungstext bereitstellen können.
 
-## Summary
-
-An HTTP trigger invokes an Azure function when it receives an HTTP request to its function URL. HTTP triggers allow you to receive data and return data back to the caller.
+Ein HTTP-Trigger ruft eine Azure-Funktion beim Empfang einer HTTP-Anforderung an der Funktions-URL auf. Über HTTP-Trigger können Sie Daten empfangen und Daten an den Aufrufer zurückgegeben.

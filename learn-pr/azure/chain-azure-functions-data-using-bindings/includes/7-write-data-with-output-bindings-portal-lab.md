@@ -1,60 +1,59 @@
-In our last exercise, we implemented a scenario to look up bookmarks in an Azure Cosmos DB database. We configured an input binding to read data from our bookmarks collection. But just reading data is boring, so let's do more. Let's expand the scenario to include writing. Consider the following flowchart.
+In unserem letzten Übung implementiert haben wir ein Szenario zum Nachschlagen von Lesezeichen in einer Azure Cosmos DB-Datenbank. Wir konfiguriert eine eingabebindung zum Lesen von Daten in die Auflistung von Lesezeichen. Aber bloße Lesen von Daten ist langweilig, lassen Sie uns mehr tun. Erweitern wir das Szenario aus, um das Schreiben von aufzunehmen. Betrachten Sie das folgende Flussdiagramm.
 
-![Flow diagram showing process of adding a bookmark in our Cosmos DB back-end](../media-draft/add-bookmark-flow-small.png)
+![Flussdiagramm der Prozess des Hinzufügens eines Lesezeichens in unsere Cosmos DB Back-end](../media-draft/add-bookmark-flow-small.png)
 
-In this scenario, we'll receive requests to add bookmarks to our list. The requests pass in the desired key, or ID, along with the bookmark URL. As you can see in the flow chart, we'll respond with an error if the key already exists in our back-end.
+In diesem Szenario erhalten Sie Anforderungen zum Hinzufügen von Lesezeichen unserer Liste. Die Anforderungen in den gewünschten Schlüssel oder eine ID zusammen mit der Lesezeichen-URL zu übergeben. Wie Sie im Flussdiagramm sehen können, werden wir mit einem Fehler reagieren, wenn der Schlüssel bereits in unserem Back-End vorhanden ist.
 
-If the key that was passed to us is *not* found, we'll add the new bookmark to our database. We could stop there, but let's do a little more.
+Wenn der Schlüssel, der uns übergeben wurde *nicht* gefunden wird, werden wir das neue Lesezeichen mit unserer Datenbank hinzufügen. Wir können hier aufhören, sondern führen wir ein wenig mehr.
 
-Notice another step in the flowchart? So far we haven't done much with the data that we receive in terms of processing. We move what we receive into a database. However, in a real solution, it is possible that we'd probably process the data in some fashion. We can decide to do all processing in the same function, but in this lab we'll show a pattern that offloads further processing to another component or piece of business logic.
+Beachten Sie, dass ein weiterer Schritt im Flussdiagramm? Bisher nicht getan haben wir viel mit den Daten durchgeführt, die wir im Hinblick auf die Verarbeitung zu erhalten. Wir verschieben, was wir in einer Datenbank erhalten. In einer realen Lösung ist es jedoch möglich, dass wir wahrscheinlich die Daten auf irgendeine Weise verarbeitet. Wir können Sie die gesamte Verarbeitung in die gleiche Funktion, aber in dieser Übungseinheit, die wir ein Muster zeigen werde, die lagert der weiteren Verarbeitung in eine andere Komponente oder Teil der Geschäftslogik.
 
-What might be a good example of this offloading of work in our bookmarks scenario? Well what if we send the new bookmark to a QR code generation service? That service would, in turn, generate a QR code for the URL, store the image in blob storage, and add the address of the qr image back into the entry in our bookmarks collection. Calling a service to generate a qr image is time consuming so, rather than wait for the result, we hand it off to a function and let it take care of this asynchronously.
+Was könnte ein gutes Beispiel für diese Abladung der Arbeit in unserem Szenario Lesezeichen sein? Und was geschieht, wenn wir das neue Lesezeichen an einen QR-Code generieren-Dienst senden? Diesen Dienst würde, wiederum einen QR-Code für die URL zu generieren, speichern Sie das Abbild im Blob-Speicher und die Adresse des QR-Images wieder auf den Eintrag in der Sammlung von Lesezeichen hinzufügen. Aufrufen eines Diensts, um ein QR-Image zu generieren ist zeitaufwändig also stattdessen als das Ergebnis zu warten, wir an eine Funktion übergeben, und sie diese asynchron Probleme zu umgehen.
 
-Just as Azure Functions supports input bindings for different integration sources, it also has a set of output bindings templates to make it easy for you to write data to data sources. Output bindings are also configured in the *function.json* file.  As we'll see in this exercise, we can configure our function to work with multiple data sources and services.
-
+Genau, wie Sie Azure Functions eingabebindungen für die Integration mit anderen Datenquellen unterstützt, hat es auch einen Satz von Ausgabe Bindungen Vorlagen, die Ihnen das Schreiben von Daten zu anderen Datenquellen erleichtern. Ausgabebindungen konfigurierte sind auch in der *"Function.JSON"* Datei.  In dieser Übung sehen, können wir unsere-Funktion zum Arbeiten mit mehreren Datenquellen und -Dienste konfigurieren.
 
 > [!IMPORTANT]
-> This exercise builds on the exercise in the last unit, namely, it uses the same Azure Cosmos DB database and input binding. If you haven't worked through that unit, we recommend doing so before proceeding  with this lab.
+> In dieser Übung erstellt, in der Übung in der letzten Einheit, d. h., sie verwendet dieselbe Azure Cosmos DB-Datenbank und -eingabebindung. Wenn Sie über diese Einheit gearbeitet haben, wird empfohlen, auf diese Weise vor dem Fortfahren mit dieser Übung.
 
-## Create an HTTP_triggered Function
+## <a name="create-an-httptriggered-function"></a>Erstellen einer HTTP_triggered-Funktion
 
-1. Make sure you are signed in to the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true) with the same Azure account you've used throughout this module.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/?azure-portal=true) an.
 
-2. In the Azure portal, navigate to the function app you created in this module.
+2. Navigieren Sie im Azure-Portal zur Funktions-app, die Sie in diesem Modul erstellt haben.
 
-3. Expand your function app, then hover over the functions collection and select the Add (**+**) button next to **Functions**. This action starts the function creation process. The following animation illustrates this action.
+3. Erweitern Sie Ihre Funktionen-app dann zeigen Sie auf die Auflistung von Funktionen aus, und aktivieren Sie das Hinzufügen (**+**) neben **Funktionen**. Diese Aktion wird der Prozess der Funktion gestartet. Die folgende Animation veranschaulicht dieses Aktion.
 
-![Animation of the plus sign appearing when the user hovers over the functions menu item.](../media-draft/func-app-plus-hover-small.gif)
+![Die Animation von dem Pluszeichen (+) angezeigt wird, wenn der Benutzer auf das Menüelement Funktionen zeigt.](../media-draft/func-app-plus-hover-small.gif)
 
-4. The page shows us the current set of supported triggers. Select **HTTP trigger**, which is the first entry in the following screenshot.
+4. Die Seite zeigt uns, den aktuellen Satz von unterstützten Trigger. Wählen Sie **HTTP-Trigger**, dies ist der erste Eintrag im folgenden Screenshot.
 
-![Screenshot of part of the trigger template selection UI, with the TTP trigger displayed first, in the top left of the image.](../media-draft/trigger-templates-small.PNG)
+![Screenshot des Teils der Trigger Vorlagenauswahl-Benutzeroberfläche mit dem TTP-Trigger zuerst angezeigt, in der oberen linken Seite des Bilds.](../media-draft/trigger-templates-small.PNG)
 
-5. Fill out the **New Function** dialog that appears to the right  using the following values.
+5. Füllen Sie die **neue Funktion** mithilfe der folgenden Werte rechts angezeigten Dialogfeld.
 
-|Field  |Value  |
+|Feld  |Wert  |
 |---------|---------|
-|Language     | **JavaScript**        |
+|Sprache     | **JavaScript**        |
 |Name     |   [!INCLUDE [func-name-add](./func-name-add.md)]     |
-| Authorization level | **Function** |
+| Autorisierungsstufe | **Function** |
 
-5. Select **Create** to create our function, which opens the index.js file in the code editor and displays a default implementation of the HTTP-triggered function.
+5. Wählen Sie **erstellen** unserer Funktion zu erstellen, die der Datei "Index.js" im Code-Editor geöffnet und zeigt eine Standardimplementierung der per HTTP ausgelöste Funktion.
 
-In this exercise, we'll speed up things by using the *code* and *configuration* from the previous unit as a starting point.
+In dieser Übung werden beschleunigen wir Dinge unter Verwendung der *Code* und *Konfiguration* aus der vorherigen Einheit als Ausgangspunkt.
 
-6. Replace all code in index.js with the code from the following snippet and click **Save** to save this change. 
+6. Ersetzen Sie alle Code in "Index.js", mit dem Code aus den folgenden Codeausschnitt und auf **speichern** um diese Änderung zu speichern. 
 
 [!code-javascript[](../code/find-bookmark-single.js)]
 
-If this code looks familiar, that's because it's the implementation of our [!INCLUDE [func-name-find](./func-name-find.md)] function. As you would expect, the function won't work until we define the same bindings.  
+Wenn dieser Code vertraut aussieht, das ist, da es sich um die Implementierung ist unsere [!INCLUDE [func-name-find](./func-name-find.md)] Funktion. Wie zu erwarten ist, funktioniert die Funktion nicht, bis wir die gleichen Bindungen definieren.  
 
-7. Open the *function.json* file from the [!INCLUDE [func-name-find](./func-name-find.md)] function. You'll find it by opening the **View files** menu to the right of the code editor.
+7. Öffnen der *"Function.JSON"* -Datei aus dem [!INCLUDE [func-name-find](./func-name-find.md)] Funktion. Sie finden es durch Öffnen der **Ansichtsdateien** Menü auf der rechten Seite im Code-Editor.
 
-8. Copy the entire contents of this file.
+8. Kopieren Sie den gesamten Inhalt dieser Datei.
 
-9. Open the *function.json* file from the [!INCLUDE [func-name-add](./func-name-add.md)] function.
+9. Öffnen der *"Function.JSON"* -Datei aus dem [!INCLUDE [func-name-add](./func-name-add.md)] Funktion.
 
-10. Replace the contents of this file with the content you copied from the *function.json* file associated with the [!INCLUDE [func-name-find](./func-name-find.md)] function. When you're done, your function.json should contain the following JSON.
+10. Ersetzen Sie den Inhalt dieser Datei mit dem Inhalt, die Sie kopiert haben, aus der *"Function.JSON"* gleichnamige Datei aus der [!INCLUDE [func-name-find](./func-name-find.md)] Funktion. Wenn Sie fertig sind, sollte Ihre "Function.JSON" den folgenden JSON-Code enthalten.
 
 ```json
 {
@@ -84,119 +83,119 @@ If this code looks familiar, that's because it's the implementation of our [!INC
 }
 ```
 
-11. Make sure to **Save** all changes.
+11. Stellen Sie sicher, dass **speichern** alle Änderungen.
 
-In the preceding steps, we configured bindings for our new function by copying binding definitions from another. We could, of course, created a new binding through the UI, but it is good to understand that this alternative is available to you.
+In den vorherigen Schritten konfiguriert wir für unsere neue Funktion Bindungen durch Bindungsdefinitionen von einem anderen kopieren. Wir könnten natürlich erstellt eine neue Bindung über die Benutzeroberfläche, aber es ist gut zu wissen, dass diese Alternative für Sie verfügbar ist.
 
-## Try it out
+## <a name="try-it-out"></a>Ausprobieren
 
-1. As usual, click **</> Get function URL** at the top right, select **default (Function key)**, and then click **Copy** to copy the function's URL.
+1. Wie üblich, klicken Sie auf **<> / Get Funktions-URL** wählen Sie oben rechts, **Standard (Funktionstaste)**, und klicken Sie dann auf **Kopie** , kopieren Sie die Funktion der URL.
 
-2. Paste the function URL you copied into your browser's address bar. Add the query string value `&id=docs` to the end of this URL and press the `Enter` key on your keyboard to execute the request. All going well, you should see a response that includes a URL to that resource.
+2. Fügen Sie die Funktions-URL, die Sie in der Adressleiste des Browsers kopiert haben. Fügen Sie den Wert der Abfragezeichenfolge `&id=docs` am Ende der URL hinzu, und drücken Sie die Taste `Enter` auf Ihrer Tastatur, um die Anforderung auszuführen. Alle hier auch eine Antwort angezeigt werden soll, die eine URL für diese Ressource enthält.
 
-So, where are we at? Well, so far we've really just replicated what we did in the previous lab. But that's ok. We're copying what we did in the last lab to serve as a starting point for this one. We'll work on the new stuff next, namely, writing to our database. For that, we'll need an *output binding*.
+Sind, in dem wir bei? Nun, haben bisher wir eigentlich nur repliziert, was wir in der vorherigen Lektion haben. Aber das ist in Ordnung. Wir sind kopieren, was wir im letzten dienen als Ausgangspunkt für dieses Lab getan haben. Wir arbeiten auf die neue Dinge dann nämlich in unserer Datenbank geschrieben. Dafür müssen wir eine *ausgabebindung*.
 
-## Define Azure Cosmos DB output binding
+## <a name="define-azure-cosmos-db-output-binding"></a>Definieren Sie Azure Cosmos DB-ausgabebindung
 
-Rather than define a new output binding by going through the user interface, we'll create this binding by updating the configuration file, *function.json*, by hand. 
+Stattdessen als eine neue ausgabebindung mithilfe der Benutzeroberfläche zu definieren, erstellen wir diese Bindung durch die XML-Konfigurationsdatei aktualisieren *"Function.JSON"*, manuell. 
 
-1. Open the **function.json** file for this function in the editor by selecting it in the **View files** list.
+1. Öffnen der **"Function.JSON"** -Datei für diese Funktion im Editor, indem Sie ihn im Auswählen der **Ansichtsdateien** Liste.
 
-2. Copy the binding with the name `bookmark` in that file.
+2. Kopieren Sie die Bindung mit dem Namen `bookmark` in dieser Datei.
 
-3. Place your cursor directly after the closing curly bracket, right before the closing square bracket. Add a comma `,` and then paste the copy of the binding here. Your *function.json* config should now look like the following.
+3. Platzieren Sie den Cursor direkt nach der schließenden geschweiften Klammer unmittelbar vor das schließende eckige Klammer ein. Fügen Sie ein Komma `,` und fügen Sie die Kopie der Bindung hier. Ihre *"Function.JSON"* Konfiguration sollte nun wie folgt aussehen.
 
 [!code-json[](../code/config-new-entry.json?highlight=22-31)]
 
-4. Edit the binding we pasted, with the following changes.
+4. Bearbeiten Sie die Bindung, die wir eingefügt, mit den folgenden Änderungen haben an.
 
 
-|Property   |Old value  |New value  |
+|Eigenschaft   |Alter Wert  |Neuer Wert  |
 |---------|---------|---------|
-|name     |   bookmark      |  **newbookmark**       |
+|name     |   Lesezeichen      |  **newbookmark**       |
 |direction     |   in      |   **out**      |
-|id     |      {id}   |   **delete this property. It does not exist for the output binding.**      |
+|id     |      {id}   |   **Löschen Sie diese Eigenschaft an. Es ist nicht für die ausgabebindung vorhanden.**      |
 
-When you make these changes, you end up with a file that looks like the following JSON.
+Wenn Sie diese Änderungen vornehmen, erhalten Sie eine Datei, die den folgenden JSON-Code aussieht.
 
 [!code-json[](../code/config-q-complete.json?highlight=22-30)]
 
-That was just a demo of how you can also create bindings directly in the configuration file. In this example, it makes sense because we are reusing the properties from another binding, namely, the `databaseName`, `collectionName` and `connection` that we already configured for our Cosmos DB input binding.
+Das war nur eine Demo, wie Sie Bindungen auch direkt in der Konfigurationsdatei erstellen können. In diesem Beispiel ist es sinnvoll, da wir die Eigenschaften aus einer anderen Bindung, nämlich Wiederverwenden der `databaseName`, `collectionName` und `connection` , dass wir bereits konfiguriert haben, für unsere Cosmos DB-eingabebindung.
 
 > [!NOTE]
-> The actual value of `connection` in the preceding JSON file will be whatever name your connection was given when it was created.
+> Der tatsächliche Wert der `connection` in der obigen JSON-Datei, einen beliebigen Namen, die die Verbindung wurde bei der Erstellung angegeben werden.
 
-Before we update our code, let's add one more binding that will enable us to post messages to a queue.
+Bevor wir den Code aktualisieren, fügen Sie eine weitere Bindung, mit denen Nachrichten an eine Warteschlange veröffentlichen kann.
 
-## Define Azure Queue Storage output binding
+## <a name="define-azure-queue-storage-output-binding"></a>Definieren Sie Azure Queue Storage-ausgabebindung
 
-Azure Queue storage is a service for storing messages that can be accessed from anywhere in the world. A single message can be up to 64 KB and a queue can contain millions of messages up to the total capacity limit of the storage account in which it is defined. The following diagram shows at a high level how a queue will be used in our scenario.
+Azure Queue Storage ist ein Dienst zum Speichern von Nachrichten, die von überall auf der Welt zugegriffen werden können. Eine einzelne Nachricht kann bis zu 64 KB sein und eine Warteschlange kann Millionen von Nachrichten bis zur Kapazitätsgrenze des Speicherkontos, in dem sie definiert ist, insgesamt enthalten. Das folgende Diagramm zeigt auf hoher Ebene, wie eine Warteschlange in diesem Szenario verwendet werden.
 
-![Diagram showing concept of a storage queue and two functions pushing and popping messages onto the queue.](../media-draft/q-logical-small.png)
+![Das Diagramm zeigt Konzept einer Speicherwarteschlange und zwei Funktionen mithilfe von Push übertragen und Nachrichten in der Warteschlange entfernt.](../media-draft/q-logical-small.png)
 
-Here we can see that our new function, [!INCLUDE [func-name-add](./func-name-add.md)], adds messages to a queue. Another function, for example a fictitious function called *gen-qr-code*, will pop messages from the same queue and process the request.  Since we write, or *push*, messages to the queue from [!INCLUDE [func-name-add](./func-name-add.md)], we'll add a new  output binding to our solution. Let's create the binding through the UI this time.
+Hier sehen wir, dass unsere neue Funktion [!INCLUDE [func-name-add](./func-name-add.md)], einer Warteschlange Nachrichten hinzugefügt. Wird aufgerufen, eine andere Funktion, z. B. eine fiktive Funktion *Gen-qr-Code*, pop-Nachrichten aus derselben Warteschlange und die Anforderung verarbeitet wird.  Da wir schreiben, oder *Push*, Nachrichten an die Warteschlange von [!INCLUDE [func-name-add](./func-name-add.md)], unsere Lösung eine neue ausgabebindung hinzugefügt. Erstellen wir die Bindung über die Benutzeroberfläche dieser Zeit.
 
-1. Select **Integrate** in the function menu on the left to open the integration tab.
+1. Wählen Sie **integrieren** in der Funktion im Menü auf der linken Seite auf die Registerkarte "Integration" zu öffnen.
 
-2. Select **+ New Output** under the **Outputs** column. A list of all possible output binding types is displayed.
+2. Wählen Sie **+ neue Ausgabe** unter der **Ausgaben** Spalte. Eine Liste von allen Bindungstypen für mögliche Ausgabe wird angezeigt.
 
-3. Click on **Azure Queue Storage** from the list and then the **Select** button. This action opens the Azure Queue Storage output configuration page.
+3. Klicken Sie auf **Azure Queue Storage** aus der Liste und klicken Sie dann die **wählen** Schaltfläche. Diese Aktion öffnet die Konfigurationsseite für Azure Queue Storage-Ausgabe.
 
-Next, we'll set up a storage account connection. This is where our queue will be hosted.
+Als Nächstes müssen wir eine speicherkontoverbindung einrichten. Dies ist, in dem unsere Warteschlange gehostet wird.
 
-4. In the field named **Storage account connection** on this page, click on *new* to the right of the empty field. This action opens the **Storage Account** selection dialog. 
+4. Im Feld mit dem Namen **speicherkontoverbindung** klicken Sie auf dieser Seite auf *neue* rechts neben das Feld leer. Diese Aktion öffnet den **Speicherkonto** Dialogfeld "Auswahl". 
 
-5. When we started this module and created our function app, a storage account was also created at that time. It will be listed in this dialog, so go ahead and select it. The **Storage account connection** field is populated with the name of a connection. If you want to see the connection string value, click on **show value**.
+5. Wenn wir dieses Modul gestartet und unsere Funktions-app erstellt, wurde ein Speicherkonto auch zu diesem Zeitpunkt erstellt. In diesem Dialogfeld aufgeführt, also fahren Sie fort und wählen Sie ihn. Die **speicherkontoverbindung** Feld wird aufgefüllt, mit dem Namen der Verbindung. Wenn der Wert der Verbindungszeichenfolge angezeigt werden sollen, klicken Sie auf **Wert anzeigen**.
 
-6. Although we could leave all other fields on this page with their default values, let's change the following to lend more meaning to the properties.
+6. Obwohl wir alle anderen Felder auf dieser Seite mit ihren Standardwerten lassen kann, ändern wir Folgendes ein, um weitere Bedeutung für die Eigenschaften zu verleihen.
 
 
-|Property  |Old value  |New value  | Description |
+|Eigenschaft  |Alter Wert  |Neuer Wert  | Beschreibung |
 |---------|---------|---------|---------|
-|Queue name     |    outqueue     |  **bookmarks-post-process**      | This is the name of the queue we are using to place bookmarks into so that they can be processed further by another function. |
-| Message parameter name    |  outputQueueItem       |   **newmessage**      | This is the binding property we'll use in code. |
+|Warteschlangenname     |    outqueue     |  **bookmarks-post-process**      | Dies ist der Name der Warteschlange platziert verwenden wir Lesezeichen, damit sie verarbeitet werden können weiter von einer anderen Funktion. |
+| Name des Meldungsparameters    |  outputQueueItem       |   **newmessage**      | Dies ist die Binding-Eigenschaft, die wir in Code verwenden. |
 
 
-7. Remember to click **Save** to save your changes.
+7. Klicken Sie auf **speichern** zum Speichern der Änderungen.
 
-## Update function implementation
+## <a name="update-function-implementation"></a>Implementierung der Update-Funktion
 
-We now have all our bindings set up for the [!INCLUDE [func-name-add](./func-name-add.md)] function. It's time to use them in our function.
+Wir haben jetzt alle unsere Bindungen festgelegt wird, für die [!INCLUDE [func-name-add](./func-name-add.md)] Funktion. Es ist Zeit, die sie in unserer Funktion zu verwenden.
 
-1.  Click on our function, [!INCLUDE [func-name-add](./func-name-add.md)], to open up *index.js* in the code editor.
+1.  Klicken Sie auf unserer Funktion [!INCLUDE [func-name-add](./func-name-add.md)], öffnen Sie *"Index.js"* im Code-Editor.
 
-2. Replace all code in index.js with the code from the following snippet.
+2. Ersetzen Sie alle Code in "Index.js", mit dem Code aus den folgenden Codeausschnitt:
 
 [!code-javascript[](../code/add-bookmark.js)]
 
-Let's breakdown what this code does.
+Lassen Sie uns Aufschlüsselung der Funktionsweise dieses Codes.
 
-* Since this function changes our data, we expect the HTTP request to be a POST and the bookmark data to be part of the request body.
-* Our Cosmos DB input binding attempts to retrieve a document, or bookmark, using the `id` that we receive. If it finds an entry, the `bookmark` object will be set. The `if(bookmark)` condition checks whether an entry was found.
-* Adding to the database is a simple as setting the `context.bindings.newbookmark` binding parameter to the new bookmark entry, which we have created as a JSON string.
-* Posting a message to our queue is as simple as setting the  `context.bindings.newmessage parameter`.
+* Da diese Funktion auf unsere Daten ändert, erwarten wir einen Beitrag und die Lesezeichen-Daten als Teil der Anforderungstext ist die HTTP-Anforderung.
+* Unsere Cosmos DB-eingabebindung wird versucht, ein Dokument oder Lesezeichen abzurufen mithilfe der `id` , die wir erhalten. Wenn es sich um einen Eintrag, findet die `bookmark` Objekt festgelegt. Die `if(bookmark)` Bedingung überprüft, ob ein Eintrag gefunden wurde.
+* Das Hinzufügen von in die Datenbank ist einfach wie das Festlegen der `context.bindings.newbookmark` bindenden Parameter auf den neuen Lesezeicheneintrag, das wir als JSON-Zeichenfolge erstellt haben.
+* Veröffentlichen einer Nachricht an unsere Warteschlange ist so einfach wie das Festlegen der `context.bindings.newmessage parameter`.
 
 > [!NOTE]
-> The only task we performed was to create a queue binding. We never created the queue explicitly. You are witnessing the power of bindings! As the following callout says, the queue is automatically created for you if it doesn't exist!
+> Die einzige Aufgabe, die wir durchgeführt wurde, eine Bindung für die Warteschlange zu erstellen. Wir haben nie explizit die Warteschlange. Sie werden die Leistungsfähigkeit von Bindungen unmittelbare! Wie die folgende Legende angezeigt wird, wird die Warteschlange automatisch für Sie erstellt, wenn er nicht vorhanden ist!
 
-![Screenshot calling out that the queue will be auto-created.](../media-draft/q-auto-create-small.png)
+![Bildschirmabbildung von Aufrufen von darauf hin, dass die Warteschlange wird automatisch-erstellt.](../media-draft/q-auto-create-small.png)
 
-So, that's it - let's see our work in action in the next section.
+Also das ist schon alles – sehen wir uns unsere Arbeit in Aktion im nächsten Abschnitt.
 
-## Try it out
+## <a name="try-it-out"></a>Ausprobieren
 
-Now that we have multiple output bindings, our testing becomes a little trickier. Whereas in previous labs we were content to test by sending an HTTP request and a query string, we'll want to perform an HTTP Post this time. We also need to check whether messages are making it into a queue.
+Nun, wir mehrere ausgabebindungen haben, wird die für unsere Tests ein wenig schwieriger. Während in vorherigen Labs wir Inhalt Waren durch Senden einer HTTP-Anforderung und eine Abfragezeichenfolge getestet, sollten wir dieses Mal führen Sie eine HTTP-Post. Wir müssen auch überprüfen, ob Nachrichten es in eine Warteschlange machen.
 
-1.  With our function, [!INCLUDE [func-name-add](./func-name-add.md)], selected in the Function Apps portal, click on the Test menu item on the far left to expand it.
+1.  Mit unserer Funktion [!INCLUDE [func-name-add](./func-name-add.md)], klicken Sie mit der im Portal Funktions-Apps aktiviert ist, auf das Menüelement "Test" ganz links um ihn zu erweitern.
 
-2. Select the **Test** menu item and verify that you have the test panel open. The following screenshot shows what it should look like. 
+2. Wählen Sie die **testen** Menü Element aus, und überprüfen Sie, ob Sie den Testbereich zu öffnen. Der folgende Screenshot zeigt, wie es aussehen sollte. 
 
-![Screenshot showing the function Test Panel expanded.](../media-draft/test-panel-open-small.png)
+![Screenshot mit der Funktion Testbereich erweitert.](../media-draft/test-panel-open-small.png)
 
 > [!IMPORTANT]
-> Make sure **POST** is selected in the HTTP method dropdown.
+> Stellen Sie sicher, dass **POST** in der Dropdownliste "HTTP-Methode" ausgewählt ist.
 
-3. Replace the content of the request body with the following JSON payload.
+3. Ersetzen Sie den Inhalt des Anforderungstexts mit der folgenden JSON-Nutzlast ein.
 
 ```json
   {
@@ -205,13 +204,13 @@ Now that we have multiple output bindings, our testing becomes a little trickier
   }
   ```
 
-4. Click **Run** at the bottom of the test panel. 
+4. Klicken Sie auf **ausführen** am unteren Rand der Testbereich. 
 
-5. Verify that the *Output* window displays the "Bookmark already exists." message as shown in the following diagram. 
+5. Überprüfen Sie, ob die *Ausgabe* Fenster wird angezeigt, die "Lesezeichen ist bereits vorhanden." Meldung wie im folgenden Diagramm dargestellt. 
 
-![Screenshot showing Test Panel and result of a failed test.](../media-draft/test-exists-small.png)
+![Screenshot der Bereich zu testen und das Ergebnis eines fehlgeschlagenen Tests.](../media-draft/test-exists-small.png)
 
-6. Now replace the Request body with the following payload. 
+6. Ersetzen Sie jetzt den Anforderungstext mit der folgenden Nutzlast. 
 
 ```json
   {
@@ -219,34 +218,34 @@ Now that we have multiple output bindings, our testing becomes a little trickier
       "URL": "https://www.github.com"
   }
   ```
-7. Click **Run** at the bottom of the test panel.
+7. Klicken Sie auf **ausführen** am unteren Rand der Testbereich.
 
-8. Verify the that *Output* box displays the "bookmark added" message as shown in the following diagram.
+8. Stellen Sie sicher, dass *Ausgabe* im werden die Meldung "Lesezeichen hinzugefügt" angezeigt, wie im folgenden Diagramm dargestellt.
 
-![Screenshot showing Test Panel and result of a successful test.](../media-draft/test-success-small.png)
+![Screenshot der Bereich zu testen und das Ergebnis der Test erfolgreich war.](../media-draft/test-success-small.png)
 
-Congratulations! The [!INCLUDE [func-name-add](./func-name-add.md)] works as designed, but what about that queue operation we had in the code? Well, let's go see if something was written to a queue.
+Herzlichen Glückwunsch! Die [!INCLUDE [func-name-add](./func-name-add.md)] funktioniert wie vorgesehen, aber wie sieht es mit dieser Warteschlangenvorgang im Code werden musste? Gut, sehen wir, wenn etwas in eine Warteschlange geschrieben wurde.
 
-### Verify that a message is written to our queue
+### <a name="verify-that-a-message-is-written-to-our-queue"></a>Stellen Sie sicher, dass eine Nachricht an unsere Warteschlange geschrieben wird
 
-Azure Queue Storage queues are hosted in a storage account. You selected the storage account in this exercise  already when creating the output binding. 
+Azure Queue Storage-Warteschlangen werden in einem Speicherkonto gehostet. Auswahl der Storage-Konto in dieser Übung bereits beim Erstellen der ausgabebindung. 
 
-1. In the main search box in the Azure portal, type *storage accounts* and in the search results select **Storage accounts** under the *Services* category. This is illustrated in the following screenshot. 
+1. Geben Sie im Hauptmenü Search im Azure-Portal *Speicherkonten* wird daraufhin in die Suche auf **Speicherkonten** unter der *Services* Kategorie. Dies wird im folgenden Screenshot veranschaulicht. 
 
-![Screenshot showing search results for Storage Account in the main search box.](../media-draft/search-for-sa-small.png)
+![Screenshot mit der Suchergebnisse für Storage-Konto in das Suchfeld für die wichtigsten.](../media-draft/search-for-sa-small.png)
 
-2. In the list of storage accounts that are returned, select the storage account you used to create the **newmessage** output binding. The storage account settings are displayed in the main window the portal.
+2. Wählen Sie in der Liste der Speicherkonten, die zurückgegeben werden, die Storage-Konto, das Sie zum Erstellen der **Newmessage** ausgabebindung. Die Einstellungen des Storage-Kontos werden im Hauptfenster angezeigt im Portal.
 
-3. Select the **Queues** item from the Services list. This displays a list of queues hosted by this storage account. Verify that the **bookmarks-post-process** queue exists, as shown in the following screenshot.
+3. Wählen Sie die **Warteschlangen** Element aus der Liste der Dienste. Dies zeigt eine Liste der Warteschlangen, die von diesem Storage-Konto gehostet wird. Überprüfen Sie, ob die **Lesezeichen-Post-Process** Warteschlange vorhanden ist, wie im folgenden Screenshot gezeigt.
 
-![Screenshot showing our queue in the list of queues hosted by this storage account](../media-draft/q-in-list-small.png)
+![Screenshot mit unserer Warteschlange in der Liste der Warteschlangen, die von diesem Storage-Konto gehostet wird](../media-draft/q-in-list-small.png)
 
-4. Click on **bookmarks-post-process** to open the queue. The messages that are in the queue are displayed in a list. If all went according to plan, the message we posted when we added a bookmark to our database should be in the queue and will look like the following entry. 
+4. Klicken Sie auf **Lesezeichen-Post-Process** zum Öffnen der Warteschlange. Die Nachrichten, die in der Warteschlange befinden, werden in einer Liste angezeigt. Wenn alle plangemäß verlaufen ist, sollte die Meldung, die wir veröffentlicht, wenn wir ein Lesezeichen mit unserer Datenbank hinzugefügt in der Warteschlange und sieht wie der folgende Eintrag. 
 
-![Screenshot showing our message in the queue](../media-draft/message-in-q-small.png)
+![Screenshot mit der Nachricht in der Warteschlange](../media-draft/message-in-q-small.png)
 
-In this example, you can see that the message was given a unique ID and the **MESSAGE TEXT** field displays our bookmark in JSON string format.
+In diesem Beispiel können Sie sehen, dass die Nachricht eine eindeutige ID zugewiesen wurde und die **MELDUNGSTEXT** Feld wird unsere Lesezeichen in einem JSON-Format angezeigt.
 
-5. You can test the function further by changing the request body in the Test panel with new id/url sets and running the function. Watch this queue to see more messages arrive. You can also look at the database to verify new entries have been added. 
+5. Sie können weiter die Funktion testen, ändern den Text der Anforderung im Bereich "Tests" mit neuen Id-Url und die Funktion ausführen. Sehen Sie sich diese Warteschlange, um weitere Nachrichten eintreffen anzuzeigen. Sie können auch suchen in der Datenbank überprüfen wurden neue Einträge hinzugefügt. 
 
-In this lab, we expanded our knowledge of bindings to output bindings, writing data to our Azure Cosmos DB. We went further and added another output binding to post messages to an Azure queue. This demonstrates the true power of bindings to help you shape and move data from incoming sources to a variety of destinations. We haven't written any database code or had to manage connection strings ourselves. Instead, we configured bindings declaratively and let the platform take care of securing connections, scaling our function and scaling our connections.
+In dieser Übungseinheit erhalten erweitert wir unseren Erkenntnissen der Bindungen auf ausgabebindungen Schreiben von Daten in Azure Cosmos DB-. Ging noch weiter, und wir hinzugefügt, eine andere Ausgabe Binden an die Nachrichten an eine Azure-Warteschlange zu senden. Dieses Beispiel veranschaulicht die wahre Leistungsstärke von Bindungen können Sie die Form, und Verschieben von Daten aus der eingehenden Quellen mit einer Vielzahl von Zielen. Wir noch nicht geschriebene Datenbankcode oder Verbindungszeichenfolgen selbst verwalten mussten. Stattdessen wir Bindungen konfiguriert deklarativ und die Plattform kümmert sich Sichern der Verbindungen, skalieren unsere-Funktion und unsere Verbindungen skalieren lassen.

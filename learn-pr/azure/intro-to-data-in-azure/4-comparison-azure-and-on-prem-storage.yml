@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-data-in-azure.4-comparison-azure-and-on-prem-storage
-title: Vergleich zwischen Azure-Speicher und lokalem Speicher
+title: Vergleich zwischen Azure-Datenspeicher und auf lokalen Speicher
 metadata:
-  title: Vergleich zwischen Azure-Speicher und lokalem Speicher
-  description: Vergleich zwischen Azure-Speicher und lokalem Speicher
-  ms.openlocfilehash: c2af8af8188168ff8f1257293132e041703be76b
-  ms.sourcegitcommit: bf091e3a389138b59573865ca54775e38a4ffa1f
-  ms.translationtype: HT
-  ms.contentlocale: de-DE
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43153995"
+  title: Vergleich zwischen Azure-Datenspeicher und auf lokalen Speicher
+  description: Vergleich zwischen Azure-Datenspeicher und auf lokalen Speicher
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 durationInMinutes: 5
-content: '[!include[](includes/4-comparison-azure-and-on-prem-storage.md)]'
+content: |
+  [!include[](includes/4-comparison-azure-and-on-prem-storage.md)]

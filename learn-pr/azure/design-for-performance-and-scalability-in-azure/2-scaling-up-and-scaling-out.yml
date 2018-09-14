@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-performance-and-scalability.2-scaling-up-and-scaling-out
-title: Scaling up and scaling out
+title: Zentrales und horizontales Hochskalieren
 metadata:
-  title: Scaling up and scaling out
-  description: In this unit we'll discuss how to leverage scaling up and scaling out in your architecture
+  title: Zentrales und horizontales Hochskalieren
+  description: 'In dieser Einheit wird beschrieben, wie Sie das zentrale und horizontale Hochskalieren in Ihrer Architektur verwenden.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,47 +13,47 @@ durationInMinutes: 5
 content: |
   [!include[](includes/2-scaling-up-and-scaling-out.md)]
 quiz:
-  title: 'Knowledge check - Scaling up and scaling out'
+  title: 'Wissenstest: zentrales und horizontales Hochskalieren'
   questions:
-  - content: 'Which is the most accurate description of scaling out?'
-    choices:
-    - content: 'Increasing the amount of resources of an instance'
-      isCorrect: false
-      incorrectExplanation: 'Increasing the amount of resources of a single instance is a description for scaling up'
-    - content: 'Increasing the number of instances serving requests'
-      isCorrect: true
-      correctExplanation: 'This is correct. Scaling out increases the number of instances service requests.'
-    - content: 'Adding additional storage to a virtual machine'
-      isCorrect: false
-      incorrectExplanation: 'Adding additional storage is not an example of scaling out.'
-    - content: 'Reaching the maximum level of scale for your application'
-      isCorrect: false
-      incorrectExplanation: 'Reaching the maximum level of scale for your application can be addressed by scaling out, but is not an accurate description of scaling out.'
-  - content: 'Which is the most accurate description of scaling down?'
-    choices:
-    - content: 'Decreasing the number of instances serving requests'
-      isCorrect: false
-      incorrectExplanation: 'Decreasing the number of instances serving requets is scaling in'
-    - content: 'Taking ownership of how your application scales'
-      isCorrect: false
-      incorrectExplanation: 'Taking ownership of how your application scales is not scaling down.'
-    - content: 'Decreasing the amount of resources of an instance'
-      isCorrect: true
-      correctExplanation: 'Scaling down is the reduction of resources that a single instance has available.'
-    - content: 'Not yet reaching the maximum level of scale for your application'
-      isCorrect: false
-      incorrectExplanation: 'This is not a description of scaling down.'
-  - content: 'Which of the following is NOT a consideration when building a scaling strategy into your application?'
-    choices:
-    - content: 'The backup retention policies for your instances'
-      isCorrect: true
-      correctExplanation: 'While it is importatnt to define the backup retention policies, it is unrelated to the ability of your application to scale.'
-    - content: 'State management of your application'
-      isCorrect: false
-      incorrectExplanation: 'State management is important to consider when building a scaling strategy. The ability to scale well will depend on the ability to store user state outside of the individual instances to ensure user experience is not broken as additional instances are added and removed.'
-    - content: 'Startup time of your instances'
-      isCorrect: false
-      incorrectExplanation: 'Startup time is an important consideration in a scaling strategy. As the time to start an instance increases, the more time you need to allow for your application to scale.'
-    - content: 'Automating the scaling of your instances based on some metric or schedule'
-      isCorrect: false
-      incorrectExplanation: 'Scaling automation is an important piece of a scaling strategy. As you automate your scaling capabilities you willll have greater ability to handle fluctuations in user load without manual intervention or poor user experience.'
+    - content: Welcher der folgenden Punkte beschreibt das horizontale Hochskalieren am besten?
+      choices:
+        - content: die Bereitstellung zusätzlicher Ressourcen für eine Instanz
+          isCorrect: false
+          incorrectExplanation: Die Bereitstellung zusätzlicher Ressourcen für eine einzelne Instanz beschreibt das zentrale Hochskalieren.
+        - content: 'die Bereitstellung zusätzlicher Instanzen, die Anforderungen verarbeiten'
+          isCorrect: true
+          correctExplanation: 'Dies ist die richtige Antwort. Beim horizontalen Hochskalieren werden zusätzliche Instanzen bereitgestellt, die Anforderungen verarbeiten.'
+        - content: das Hinzufügen zusätzlichen Speichers zu einem virtuellen Computer
+          isCorrect: false
+          incorrectExplanation: Das Hinzufügen zusätzlichen Speichers ist kein Beispiel für das horizontale Hochskalieren.
+        - content: das Erreichen der maximalen Skalierungsstufe Ihrer Anwendung
+          isCorrect: false
+          incorrectExplanation: Dem Erreichen der maximalen Skalierungsstufe Ihrer Anwendung können Sie zwar durch horizontales Hochskalieren entgegenwirken. Dies ist jedoch keine präzise Beschreibung der horizontalen Hochskalierung.
+    - content: Welche der folgenden Punkte beschreibt das zentrale Herunterskalieren am besten?
+      choices:
+        - content: 'das Reduzieren der Instanzen, die Anforderungen verarbeiten'
+          isCorrect: false
+          incorrectExplanation: 'Das Reduzieren der Instanzen, die Anforderungen verarbeiten, wird als horizontales Herunterskalieren bezeichnet.'
+        - content: das Festlegen des Besitzers einer Skalierungsstrategie
+          isCorrect: false
+          incorrectExplanation: Beim Festlegen des Besitzers einer Skalierungsstrategie handelt es sich nicht um zentrales Herunterskalieren.
+        - content: das Reduzieren der Ressourcen einer Instanz
+          isCorrect: true
+          correctExplanation: 'Beim zentralen Herunterskalieren handelt es sich um die Reduzierung der Ressourcen, die in einer einzelnen Instanz verfügbar sind.'
+        - content: 'der Zustand, in dem die maximale Skalierungsstufe Ihrer Anwendung noch nicht erreicht ist'
+          isCorrect: false
+          incorrectExplanation: Damit wird nicht das zentrale Herunterskalieren beschrieben.
+    - content: Welcher der folgenden Aspekte spielt beim Umsetzen einer Skalierungsstrategie für Ihre Anwendung KEINE Rolle?
+      choices:
+        - content: die Richtlinien für die Aufbewahrung von Sicherungen Ihrer Instanzen
+          isCorrect: true
+          correctExplanation: 'Es ist zwar wichtig, die Richtlinien für die Aufbewahrung von Sicherungen zu definieren, diese haben jedoch nichts mit der Skalierbarkeit Ihrer Anwendung zu tun.'
+        - content: die Zustandsverwaltung Ihrer Anwendung
+          isCorrect: false
+          incorrectExplanation: 'Es ist wichtig, die Zustandsverwaltung beim Erstellen einer Skalierungsstrategie zu berücksichtigen. Die Skalierbarkeit hängt von der Fähigkeit zum Speichern des Benutzerzustands außerhalb der einzelnen Instanzen ab, denn damit wird sichergestellt, dass die Benutzerfreundlichkeit beim Hinzufügen und Entfernen von Instanzen nicht beeinträchtigt wird.'
+        - content: die Startzeit der Instanzen
+          isCorrect: false
+          incorrectExplanation: 'Die Startzeit ist ein wichtiger Aspekt bei einer Skalierungsstrategie. Je länger die Startzeit, umso mehr Zeit wird für die Skalierung einer Anwendung benötigt.'
+        - content: das Automatisieren der Instanzenskalierung auf Grundlage einer Metrik oder eines Zeitplans
+          isCorrect: false
+          incorrectExplanation: Die Skalierungsautomatisierung ist ein wichtiger Aspekt bei einer Skalierungsstrategie. Durch die Skalierungsautomatisierung ergeben sich mehr Möglichkeiten für den Umgang mit Schwankungen bei der Benutzerauslastung ohne manuellen Eingriff oder Beeinträchtigung der Benutzerfreundlichkeit.

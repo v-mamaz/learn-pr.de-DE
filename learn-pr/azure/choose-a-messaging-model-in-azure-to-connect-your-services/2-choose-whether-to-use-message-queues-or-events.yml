@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-messaging-model.2-choose-whether-to-use-message-queues-or-events
-title: Choose whether to use messages or events
+title: 'Wählen Sie aus, ob Nachrichten oder Ereignisse verwendet werden sollen.'
 metadata:
-  title: Choose whether to use messages or events
-  description: Choose whether to use messages or events
+  title: 'Wählen Sie aus, ob Nachrichten oder Ereignisse verwendet werden sollen.'
+  description: 'Wählen Sie aus, ob Nachrichten oder Ereignisse verwendet werden sollen.'
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,13 +13,12 @@ durationInMinutes: 10
 content: |
   [!include[](includes/2-choose-whether-to-use-message-queues-or-events.md)]
 quiz:
-  title: "Messaging models"
+  title: Wissenstest
   questions:
-  - content: "In your distributed application you have a web service that authenticates users. When a user logs on, the web service must communicate with a desktop application that runs on all users' computers to display the status of that user as \"Online\". True or false: This is an example of a message in a distributed application."
-    choices:
-    - content: "True"
-      incorrectExplanation: "Sorry, this is an example of an event in a distributed application. The communication is routed to all subscribers and the publisher has no knowledge or preference on how the communication is handled by a subscriber, nor even any knowledge of how many subscribers there are, if any."
-      isCorrect: false
-    - content: "False"
-      correctExplanation: "Correct! This would be an event notification which would trigger an action. This is a perfect case of using an event."
-      isCorrect: true
+    - content: 'Nehmen wir an, dass Sie eine verteilte Anwendung mit einem Webdienst haben, die Benutzer authentifiziert. Wenn ein Benutzer anmeldet, kommuniziert der Webdienst mit allen von den Clientanwendungen den Status "Online" angezeigt. Wahr oder falsch: Dies ist ein Beispiel einer Nachricht in einer verteilten Anwendung.'
+      choices:
+        - content: Richtig
+          isCorrect: false
+        - content: Falsch
+          correctExplanation: 'Nachrichten enthalten in der Regel die unformatierten Daten selbst, z. B. eine Mediendatei an. In diesem Fall senden wir ein einfaches Datenelement, die den Status eines Benutzers darstellt. Darüber hinaus senden wir die Daten als Antwort auf eine Aktion, die perfekte Situation, um für die Verwendung eines Ereignisses ist.'
+          isCorrect: true

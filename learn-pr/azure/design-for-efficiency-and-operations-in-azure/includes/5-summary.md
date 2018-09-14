@@ -1,20 +1,20 @@
-We started out by talking about how to ensure you are in control of your consumption as well as optimize it. Here are some of the key aspects that were covered:
+Zu Beginn wurde erläutert, wie Sie sicherstellen können, dass Sie Ihren Verbrauch kontrollieren und optimieren können. Nachfolgend werden einige der wichtigsten Aspekte zusammengefasst, die bereits erläutert wurden:
 
-- Tracking cloud spend: the importance of gathering and looking at cloud consumption data to understand your cloud spend.
-- Organizing to optimize: the relevance of a subscription and resource group hierarchy and how tags can further help provide various dimensions.
-- There are several possibilities to optimize IaaS costs: right-sizing, reducing runtime hours, and compute cost discounts.
-- Some examples were shown to optimize PaaS costs: for example, using Azure SQL Database elastics pools to optimize Azure SQL costs or Azure Blob storage tiering to optimize Azure Storage costs.
+- Nachverfolgen von Cloudausgaben: die Bedeutung des Sammelns und Analysierens von Daten zur Cloudnutzung für das Nachverfolgen von Cloudausgaben
+- Optimieren durch Organisation: die Bedeutung einer Hierarchie für Abonnements und Ressourcengruppen und das Bereitstellen von verschiedenen Dimensionen mithilfe von Tags.
+- Die verschiedenen Möglichkeiten zum Optimieren von IaaS-Kosten: Bestimmen der richtigen Größe, Reduzieren der Ausführungszeiten und Rabatte auf Computekosten
+- Beispiele zum Optimieren von PaaS-Kosten: Verwenden von Pools für elastische Datenbanken mit Azure SQL-Datenbank zum Optimieren der Kosten für Azure SQL oder von Speicherebenen von Azure Blob zum Optimieren der Kosten für Azure Storage.
 
-Next, we covered the operational insights you could gain from understanding and implementing monitoring and analytics. We determined that there are various levels on which we can apply monitoring.
+Anschließend wurden die Einblicke in den Betrieb beschrieben, die Sie durch das Verstehen und Implementieren von Überwachung und Analysen erhalten. Es wurde erläutert, dass es verschiedene Ebenen gibt, auf denen die Überwachung angewendet werden kann.
 
-- Monitoring is the act of collecting and analyzing data to determine the performance, health, and availability of your business application and the resources that it depends on.
-- There are various depths of monitoring. Core monitoring covers aspects close to the Azure platform such as activity logging, cloud services health, and metrics and diagnostics.
-- Deep infrastructure monitoring allows you to gather information besides what the Azure fabric can provide. For typical IaaS workloads, we can monitor at the network or operating system level.
-- Deep application monitoring takes it even further by gathering metrics and diagnostics information close to the application, allowing you to identity performance issues, usage trends, and overall availability information.
+- Unter Überwachung versteht man das Erfassen und Analysieren von Daten, um die Leistung, Integrität und Verfügbarkeit Ihrer Geschäftsanwendung und der Ressourcen, von denen sie abhängt, zu bestimmen.
+- Es gibt verschiedene Überwachungsstufen. Die Kernüberwachung deckt sämtliche Aspekte ab, die im Zusammenhang mit der Azure-Plattform stehen, z.B. die Aktivitätsprotokollierung, die Integrität von Clouddiensten, Metriken und Diagnosen.
+- Mithilfe der umfassenden Infrastrukturüberwachung können Sie Informationen außerhalb der Azure-Fabric-Ebene sammeln. Bei regulären IaaS-Workloads kann die Überwachung auf Netzwerk- oder Betriebssystemebene stattfinden.
+- Bei der umfassenden Anwendungsüberwachung geht man sogar noch einen Schritt weiter und sammelt sämtliche Metrik- und Diagnoseinformationen, die im Zusammenhang mit der Anwendung stehen. So können Sie Probleme mit der Leistung, Nutzungstrends und Informationen zur allgemeinen Verfügbarkeit erkennen.
 
-We wrapped up by discussing that there are various ways to automate tasks to improve your operational capabilities. Here are some of the key things we covered:
+Schließlich wurde erläutert, dass es verschiedene Möglichkeiten gibt, Aufgaben zu automatisieren und die Funktionen für Ihre Organisation zu verbessern. Nachfolgend werden einige der wichtigsten Punkte zusammengefasst, die thematisiert wurden:
 
-- **Automating the deployment of resources can take two different approaches:** imperative (scripting) or declarative (templates).
-- **After the VM is deployed, we can look at how to customize it.** Either by using custom images and thus remove the need for customization in the first place. Or by running a script post deployment.
-- **Automation of Azure tasks:** Azure Automation can help with installing updates or shutting down virtual machines on a schedule.
-- **Automation lab environments:** Azure DevTest Labs takes automation one step further by providing an easy-to-use interface that allows you to use various automation capabilities like images or shutting down VMs without having to worry about the actual implementation of those tasks.
+- **Zwei Ansätze zum Automatisieren der Bereitstellung von Ressourcen:** der imperative Ansatz (Skripterstellung) und der deklarative Ansatz (Vorlagen).
+- **Nach der Bereitstellung des virtuelle Computer kann geprüft werden, wie dieser angepasst werden kann.** Einerseits können Sie benutzerdefinierte Images verwenden und so vermeiden, dass überhaupt Anpassungen notwendig sind. Andererseits können Sie nach der Bereitstellung ein Skript ausführen.
+- **Automatisieren von Azure-Aufgaben:** Azure Automation leistet Unterstützung beim Installieren von Updates oder beim geplanten Herunterfahren von virtuellen Computern.
+- **Automatisieren von Laborumgebungen:** Azure DevTest Labs geht im Hinblick auf die Automatisierung einen Schritt weiter und stellt eine einfach zu verwendende Schnittstelle bereit, die es Ihnen ermöglicht, verschiedene Automatisierungsfunktionen wie Images oder das Herunterfahren von virtuellen Computern zu verwenden, ohne sich Sorgen machen zu müssen, wie diese Aufgaben implementiert werden.

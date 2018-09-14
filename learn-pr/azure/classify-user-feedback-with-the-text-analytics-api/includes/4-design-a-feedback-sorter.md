@@ -1,50 +1,48 @@
-Let's put our knowledge of Text Analytics to work in a practical solution. Our solution will focus on Sentiment Analysis  of text documents. Let's set the context by describing the problem we want to tackle. 
+Können wir unser Wissen Analyse von Text in eine praktische Lösung arbeiten. Unsere Lösung konzentriert sich auf die Standpunktanalyse von Textdokumenten. Wir legen Sie den Kontext durch die Beschreibung des Problems, die wir in Angriff zu nehmen möchten.
 
-## Manage customer feedback more efficiently
+## <a name="manage-customer-feedback-more-efficiently"></a>Feedback von Kunden effizienter verwalten
 
-Social media is active with talk of your company's product. Your feedback email alias is also active with customers eager to share their opinion of your product.
+Soziale Medien ist aktiv, etwas über Ihren Produkten. Ihr Feedback-e-Mail-Alias ist auch aktiv mit Kunden, die ihrer Meinung nach Ihres Produkts zu teilen.
 
-As is the case with any new startup, you live by the mantra of listening to your customers. However, the success of your product has made keeping this promise easier said than done. It's a good problem but a problem all the same. 
+Wie bei jedem neuen Start der Fall ist, befinden Sie durch die IT-Mantra der Überwachung für Ihre Kunden. Allerdings hat der Erfolg Ihres Produkts das beibehalten dieser Zusage einfacher gesagt als getan. Es ist ein guter Problem jedoch ein Problem über die gleichen.
 
-The team can't keep up with the volume of feedback anymore. They need help sorting the feedback so that issues can be managed as efficiently as possible. As the lead developer in the organization, you have been asked to build a solution. 
+Das Team kann nicht mit der Menge an Feedback nicht mehr Schritt halten. Sie benötigen Sie Hilfe, sortieren das Feedback, damit Probleme möglichst effizient verwaltet werden können. Als der leitende Entwickler in der Organisation wurden Sie gebeten, eine Lösung zu erstellen.
 
-Let's look at some high-level requirements:
+Sehen wir uns einige allgemeinen Voraussetzungen an:
 
-
-|Requirement  | Details  |
+|Anforderung  | Details  |
 |---------|---------|
-|Categorize feedback so we can react to it.     |   Not all feedback is equal. Some is glowing testimony. Other feedback is scathing criticism from a frustrated customer.  Perhaps you can't tell what the customer wants in other cases. <br/><br/>At a minimum, having an indication of the sentiment, or tone, of feedback would help us categorize it.     |
-|The solution should scale up or down to meet demand.    |   We're a startup. Fixed costs are difficult to justify and we haven't figured out  the exact pattern of feedback traffic. We'll need a solution that can tackle bursts of activity, but cost as little as possible during quiet times. <br/><br/> A serverless architecture billed on a consumption plan is a good candidate in this case.     |
-| Produce a Minimal Viable Product (MVP), but make the solution adaptable.    | Today we want to categorize feedback so we can apply our limited resources to the feedback that matters. If a customer is frustrated, we want to know immediately and start chatting to them.  In the future, we'll enhance this solution to do more. One idea for a new feature is to examine key phrases in feedback to detect pain points before they reach critical mass with our customers.   Another idea is to automate responses back to customers who are either positive or neutral. Even though they love us, we want them to know we are still listening to their feedback. <br/><br/>A solution that offers a plug-and-play architecture is a good fit here. We could, for example, use queues as a form of factory line. You perform one task, then place the result into a queue for the next part of the system to pick it up and process.   |
-|Deliver quickly.     |   We've all heard this one before! Remember, this solution is an MVP and we want to test it with our scenario quickly. To deliver at speed and with quality will mean writing less code. <br/><br/> Taking advantage of the Text Analytics API means we don't have to train a model to detect sentiment.  Using Azure Functions and binding to queues declaratively reduces the amount of code we have to write.  A serverless solution also means we don't have to worry about server management.   |
+|Kategorisieren Sie Feedback, damit wir darauf reagieren können.     |   Nicht alle Feedback entspricht. Einige zeugt leuchtendes. Ihre Rückmeldung ist Kritik, die von einem frustrierten Kunden bissigem.  Sie können nicht vielleicht feststellen, was der Kunde in anderen Fällen will. <br/><br/>Mindestens würden mit Angabe der Stimmung oder Ton, Feedback von uns es kategorisieren helfen.     |
+|Die Lösung muss hoch- oder herunterskaliert bedarfsorientiert skaliert werden.    |   Wir sind ein Startup. Feste Kosten sind schwer zu rechtfertigen, und wir nicht wissen, das genaue Muster der Feedback-Datenverkehr. Wir benötigen eine Lösung, die Bursts von Aktivität, aber die Kosten so wenig wie möglich während Ruhezeiten meistern können. <br/><br/> Eine serverlose Architektur, die in Rechnung gestellt, in einem Verbrauchsplan ist ein guter Kandidat in diesem Fall aus.     |
+| Erstellen Sie eine minimale geeignete Product (MVP), aber stellen Sie die Lösung angepasst.    | Heute möchten wir Feedback zu kategorisieren, damit wir unsere begrenzten Ressourcen auf das Feedback anwenden können, die wichtig ist. Wenn ein Kunde frustriert ist, möchten wir sofort zu wissen, und Ihnen zu chatten.  In Zukunft werden wir diese Lösung mehr verbessern. Eine Idee für ein neues Feature besteht darin, überprüfen Sie wichtige Begriffe in einem Feedback Problempunkte, die erkennen, bevor sie kritische Masse mit unseren Kunden erreichen.   Als weitere Idee ist, Rückgabe von Antworten an Kunden zu automatisieren, die entweder positiv oder neutral sind. Obwohl sie uns gern, möchten wir sie wissen, dass wir ihr Feedback weiterhin überwacht werden. <br/><br/>Eine Lösung, die eine Plug & Play Architektur bietet ist sehr gut. Wir könnten Sie z. B. Warteschlangen als eine Form der Factory Zeile verwenden. Sie führen eine Aufgabe und platzieren Sie das Ergebnis in eine Warteschlange für den nächsten Teil des Systems, wenn Sie die Datei und Prozess auszuwählen.   |
+|Bereitstellen Sie schnell.     |   Wir haben alle eine vor gehört. Beachten Sie, dass diese Lösung arbeitet als MVP und schnell mit diesem Szenario getestet werden soll. Um die Geschwindigkeit und Qualität bedeutet weniger Code schreiben. <br/><br/> Nutzen der Textanalyse-API bedeutet, dass wir nicht zum Trainieren eines Modells, um Stimmung erkennen.  Mithilfe von Azure Functions und binden deklarativ an Warteschlangen reduziert die Menge an Code geschrieben haben.  Eine serverlose Projektmappe bedeutet auch, dass wir keine Server-Verwaltung kümmern.   |
 
-Our proposed solution for each requirement in the preceding table offers a glimpse into how to map requirements to solutions.  Let's now see  what a solution might look like based on Azure.
+Unsere vorgeschlagene Lösung für die einzelnen Anforderungen in der obigen Tabelle gibt einen Einblick in das Zuordnen von Anforderungen zu Lösungen.  Jetzt überprüfen wir eine Lösung könnte folgendermaßen aussehen auf Basis von Azure.
 
-## A solution based on Azure Functions, Azure Queue Storage, and Text Analytics API
+## <a name="a-solution-based-on-azure-functions-azure-queue-storage-and-text-analytics-api"></a>Eine Lösung auf Grundlage von Azure Functions, Azure Queue Storage und Textanalyse-API
 
-The following diagram is a design proposal for a solution. It uses three core components of Azure - Azure Queue Storage, Azure Functions, and Microsoft Cognitive Services on Azure.
+Im folgende Diagramm ist ein Entwurfsvorschlag für eine Lösung. Es verwendet drei Kernkomponenten von Azure – Microsoft Cognitive Services, Azure Queue Storage und Azure Functions in Azure.
 
-![Conceptual diagram of a feedback sorting architecture.](../media-draft/proposed-solution.PNG)
+![Konzeptionelle Darstellung der Architektur sortieren Feedback.](../media/proposed-solution.PNG)
 
-The idea is that text documents containing user feedback are placed into a queue that we've named *new-feedback-q* in the preceding diagram. The arrival of a text document into the queue triggers, or starts, an Azure Function. The function reads the new documents from the input queue and sends them for analysis to the Text Analytics API. Based on the results that the API returns, the document is placed into an output queue for further processing.
+Die Idee ist, dass Textdokumente, Feedback von Benutzern in einer Warteschlange platziert werden, die wir mit dem Namen haben *Feedback-Q* in der obigen Abbildung. Der Eingang einer Nachricht, die mit dem Textdokument in die Warteschlange wird auslösen, oder starten, Ausführung. Die Funktion liest Nachrichten, die neue Dokumente aus der Eingabewarteschlange und sendet diese zur Analyse der Textanalyse-API. Basierend auf den Ergebnissen, die die API gibt zurück, wird eine neue Nachricht, die mit dem Dokument in eine Ausgabewarteschlange zur weiteren Verarbeitung platziert.
 
-The result we get back for each document is a sentiment score. The output queues are used to store feedback sorted into positive, neutral, and negative. Hopefully the negative queue will always be empty! :-)   Once we've bucketed each incoming piece of feedback into an output queue based on sentiment, you can imagine adding logic to take action on the messages in each queue. 
+Das Ergebnis, das wir für jedes Dokument erhalten wird, einen stimmungswert zwischen. Die Ausgabe-Warteschlangen werden verwendet, um Feedback zu positiven, neutral und negative sortiert zu speichern. Hoffentlich wird die negative Warteschlange immer leer sein. :-)   Sobald wir jede eingehende in zahlreichen rückmeldungen in einer Ausgabewarteschlange basierend auf Stimmung Buckets zugeordnet haben, können Sie sich vorstellen, Logik, um die Nachrichten in jeder Warteschlange Aktionen hinzufügen.
 
-Let's look at a flowchart next to see what the function logic needs to do.
+Wir sehen uns ein Flussdiagramm weiter, um finden, was die Funktionslogik tun muss.
 
-![Flowchart of the logic inside the Azure function to sort text documents by sentiment into output queues.](../media-draft/flow.PNG)
+![Flussdiagramm der Logik innerhalb der Azure-Funktion zum Sortieren von Textdokumenten Stimmung in Ausgabe Warteschlangen.](../media/flow.PNG)
 
-Our logic is like a router. It takes text input and routes it to an output queue based on the sentiment score of the text. We have a dependency on Text Analytics API. While the logic seems trivial, this function will remove the need for people on the team to analyze feedback manually.
+Unsere Logik ist wie ein Router. Es akzeptiert eine Texteingabe und leitet sie an einer Ausgabewarteschlange basierend auf dem stimmungswert des Texts. Wir setzen voraus, auf die Textanalyse-API. Während die Logik einfach scheint, entfernt dieser Funktion müssen für Personen im Team Feedback manuell analysieren.
 
-## Steps to implement our solution
+## <a name="steps-to-implement-our-solution"></a>Schritte zur Implementierung unserer Lösung
 
-To implement the solution described in this unit, we'll need to complete the following steps.
+Um die in dieser Einheit beschriebene Lösung zu implementieren, müssen wir die folgenden Schritte ausführen.
 
-1. Create a function app to host our solution.
+1. Erstellen Sie eine Funktions-app zum Hosten unserer Lösung.
 
-1. Look for sentiment in incoming feedback messages using the Text Analytics API. We'll use our access key from the preceding exercise and write some code to send the requests.
+1. Suchen Sie nach der Stimmung im eingehenden feedbacknachrichten, die mit der Textanalyse-API. Wir verwenden unsere Zugriffsschlüssel aus der vorherigen Übung und Schreiben von Code zum Senden der Anforderungen.
 
-1. Post feedback to processing queues based on sentiment.
+1. Senden Sie Feedback für die Verarbeitung von Warteschlangen basierend auf die Stimmungslage.
 
-
-Let's move on to creating our function and function app. 
+Betrachten wir nun unsere Funktions-app erstellen.

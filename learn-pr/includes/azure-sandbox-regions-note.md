@@ -1,5 +1,5 @@
-Pick from one of these locations available to the Azure Sandbox:
+Wählen Sie einen dieser Speicherorte verfügbar mit der Azure-Sandbox:
 
 - Region A
 - Region B
-- Region C
+- Bereich C

@@ -20,11 +20,11 @@ Finden Sie zunächst heraus, welches Betriebssystem Sie verwenden, und befolgen 
 
 1. Ziehen Sie „Visual Studio Code.app“ in den Ordner „Programme“. Dadurch wird die Datei im Launchpad verfügbar.
 
-1. Fügen Sie Visual Studio Code zu Ihrem Dock hinzu, indem Sie mit der rechten Maustaste auf das Symbol und dann auf „Optionen > Im Dock belassen“.
+1. Visual Studio Code mit der rechten Maustaste auf das Symbol und die Auswahl der Option Ihrer Dock hinzufügen > im Dock beibehalten.
 
 ### <a name="linux--debian-and-ubuntu"></a>Linux – Debian und Ubuntu
 
-1. Laden Sie das [DEB-Paket (64-Bit)](https://go.microsoft.com/fwlink/?LinkID=760868) herunter, und installieren Sie es entweder über das grafische Softwarecenter (falls verfügbar) oder über die Befehlszeile (ersetzen Sie `<file>` durch den Namen der heruntergeladenen DEB-Datei):
+1. Herunterladen und Installieren der [Deb-Paket (64-Bit)](https://go.microsoft.com/fwlink/?LinkID=760868) über die grafische Softwarecenter, sofern diese verfügbar ist oder über die Befehlszeile ausführen (ersetzen `<file>` mit dem Deb-Dateinamen, die Sie heruntergeladen haben):
 
     ```bash
     sudo dpkg -i <file>.deb
@@ -80,4 +80,4 @@ Finden Sie zunächst heraus, welches Betriebssystem Sie verwenden, und befolgen 
 
     ![Screenshot von Visual Studio Code, der die Registerkarte „Erweiterungen“ mit der in den Suchergebnissen hervorgehobenen Azure App Service-Erweiterung darstellt.](../media/3-install-azure-extension.png)
 
-Dadurch wird die Erweiterung installiert. Sie können nun Ihr Azure-Abonnement verknüpfen, Web-Apps, mobile Apps oder API-Apps entwickeln und diese in Azure App Service bereitstellen.
+Dadurch wird die Erweiterung installiert. Sie nun können eine Verbindung mit Ihrem Azure-Abonnement, und eine Web-, Mobile oder API-app für Azure App Service bereitstellen.

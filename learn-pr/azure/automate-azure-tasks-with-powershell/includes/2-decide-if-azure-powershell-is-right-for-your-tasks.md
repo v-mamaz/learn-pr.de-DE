@@ -1,12 +1,12 @@
-Stellen Sie sich vor, Sie müssen ein Tool zur Verwaltung der Azure-Ressourcen auswählen, die Sie zum Testen Ihres CRM-Systems (Customer Relationship Management) verwenden. Die wichtigsten Vorgänge, die Sie ausführen müssen, sind das Erstellen von Ressourcengruppen und das Bereitstellen von virtuellen Computern.
+Stellen Sie sich vor, Sie müssen ein Tool zur Verwaltung der Azure-Ressourcen auswählen, die Sie zum Testen Ihres CRM-Systems (Customer Relationship Management) verwenden. Die Tests müssen Sie Ressourcengruppen erstellen und Bereitstellen von virtuellen Computern (VMs).
 
-Sie benötigen ein Tool, das einerseits von Administratoren leicht erlernt werden kann, aber gleichzeitig leistungsstark genug ist, um die Installation und Einrichtung mehrerer virtueller Computer zu automatisieren oder eine komplette Anwendungsumgebung per Skript zu erstellen. Es gibt viele Tools auf dem Markt. Sie müssen das finden, das sich am besten für Ihre Mitarbeiter und Ihre Aufgaben eignet.
+Sie möchten etwas, das ist einfach für Administratoren, um zu erfahren, aber leistungsstark genug ist, Automatisieren der Installation und Einrichtung der mehrere virtuelle Computer oder ein Skript eine vollständige anwendungsumgebung. Es gibt viele Tools auf dem Markt. Sie müssen das finden, das sich am besten für Ihre Mitarbeiter und Ihre Aufgaben eignet.
 
 ## <a name="what-tools-are-available"></a>Welche Tools sind verfügbar?
-Azure bietet drei Verwaltungstools zur Auswahl: 
+Azure stellt drei Verwaltungstools zur Auswahl bereit:
 
-- Das Azure-Portal 
-- Azure CLI
+- Das Azure-Portal
+- Die Azure CLI
 - Azure PowerShell
 
 All diese Tools bieten in etwa das gleiche Maß an Steuerung: Jede Aufgabe, die Sie mit einem Tool ausführen können, können Sie wahrscheinlich auch mit den anderen beiden erledigen. Alle drei sind plattformübergreifend und können unter Windows, macOS und Linux ausgeführt werden. Sie unterscheiden sich in der Syntax und den Setupanforderungen sowie darin, ob sie die Automatisierung unterstützen.
@@ -21,7 +21,7 @@ Das Portal bietet keine Möglichkeit, sich wiederholende Aufgaben zu automatisie
 ## <a name="what-is-the-azure-cli"></a>Was ist die Azure CLI?
 Die Azure CLI ist ein plattformübergreifendes Befehlszeilenprogramm, über das Sie eine Verbindung mit Azure herstellen und Verwaltungsbefehle für Azure-Ressourcen ausführen können. Zum Erstellen eines virtuellen Computers würden Sie beispielsweise einen Befehl wie den folgenden verwenden:
 
-```bash
+```azurecli
 az vm create \
   --resource-group CrmTestingResourceGroup \
   --name CrmUnitTests \
@@ -34,7 +34,7 @@ Die Azure CLI ist auf zwei Arten verfügbar: über Azure Cloud Shell in einem Br
 ## <a name="what-is-azure-powershell"></a>Was ist Azure PowerShell?
 Azure PowerShell ist ein Modul, das Sie zu Windows PowerShell oder PowerShell Core hinzufügen, um eine Verbindung mit Ihrem Azure-Abonnement herzustellen und Ihre Ressourcen zu verwalten. Azure PowerShell erfordert PowerShell. PowerShell bietet Dienste wie Shellfenster, Befehlsanalyse usw. Azure PowerShell fügt die Azure-spezifischen Befehle hinzu.
 
-Azure PowerShell stellt z.B. den Befehl **New-AzureRmVM** bereit, der einen virtuellen Computer in Ihrem Azure-Abonnement erstellt. Um diesen Befehl zu verwenden, starten Sie die PowerShell-Anwendung und geben einen Befehl wie den folgenden ein:
+Beispielsweise bietet der Azure PowerShell die **New-AzureRmVM** -Befehl, der einen virtuellen Computer in Ihrem Azure-Abonnement für Sie erstellt. Um diesen Befehl zu verwenden, starten Sie die PowerShell-Anwendung und geben einen Befehl wie den folgenden ein:
 
 ```powershell
 New-AzureRmVm `

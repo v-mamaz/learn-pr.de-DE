@@ -14,7 +14,7 @@ Bei Apps, die einen bekannten Satz an Containern mit hartcodierten oder vorkonfi
 
 Die Bereitstellung einer ASP.NET Core-App wird abgeschlossen, indem Sie Code zum Verwenden von Azure Blob Storage hinzufügen. Bei dieser Übung geht es nicht um das Entwerfen einer Organisation und eines Benennungsschemas, sondern um das Kennenlernen der Blob Storage-API. Dennoch finden Sie hier einen kurzen Überblick über die App und die Art der Datenspeicherung:
 
-![Screenshot der FileUploader-Web-App](../media-drafts/fileuploader-with-files.PNG)
+![Screenshot der FileUploader-Web-App](../media/4-fileuploader-with-files.PNG)
 
 Unsere App funktioniert wie ein freigegebener Ordner, der Dateiuploads akzeptiert und diese zum Download zur Verfügung stellt. Sie verwendet keine Datenbank zum Organisieren von Blobs, sondern bereinigt die Namen von hochgeladenen Dateien und verwendet diese direkt als Blobnamen. Alle hochgeladenen Dateien werden in einem einzigen Container gespeichert.
 
@@ -22,15 +22,16 @@ Der Code, mit dem wir beginnen, lässt sich kompilieren und ausführen, aber die
 
 Nun richten wir die Speicherinfrastruktur für unsere App ein.
 
-### <a name="resource-group-and-storage-account"></a>Ressourcengruppe und Speicherkonto
+### <a name="storage-account"></a>Speicherkonto
 
-Zuerst erstellen wir eine Ressourcengruppe, die alle Ressourcen in dieser Übung enthalten soll. Diese Gruppe werden wir am Ende löschen, um alle erstellten Elemente zu bereinigen. Wir erstellen auch das Speicherkonto, in dem unsere App Blobs speichern soll.
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-Verwenden Sie das Azure Cloud Shell-Terminal, um die Ressourcengruppe und das Speicherkonto zu erstellen, indem Sie die folgenden Azure CLI-Befehle ausführen. Sie müssen einen eindeutigen Namen für das Speicherkonto angeben. Notieren Sie sich diesen Namen, da Sie in später benötigen. Die Auswahl von „`eastus`“ für den Standort ist beliebig.
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
+
+Verwenden Sie die Azure Cloud Shell-Terminal, um ein Speicherkonto erstellen. Sie müssen einen eindeutigen Namen für das Speicherkonto angeben. Notieren Sie sich diesen Namen, da Sie in später benötigen.
 
 ```console
-az group create --name blob-exercise-group --location eastus
-az storage account create --name <your-unique-storage-account-name> --resource-group blob-exercise-group --location eastus --kind StorageV2
+az storage account create --name <your-unique-storage-account-name> --resource-group <rgn>[Sandbox resource group name]</rgn> --location <location-name> --kind StorageV2
 ```
 
 > [!NOTE]

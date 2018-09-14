@@ -1,42 +1,37 @@
-In order to connect to a data source we have to configure an *input binding*. This binding will make it possible to write minimal code to create a message. You don't have to write code for tasks such as opening a storage connection. The Azure Functions runtime and binding take care of those tasks for you.
+Verbindungsherstellung mit einer Datenquelle, wir haben so konfigurieren Sie, eine *eingabebindung*. Diese Bindung wird minimale Code zum Erstellen einer Nachricht schreiben können. Sie müssen keinen Code für Aufgaben wie das Öffnen einer speicherverbindung zu schreiben. Die Azure Functions-Laufzeit und die Bindung sorgt diese Aufgaben für Sie.
 
-## Input binding types
+## <a name="input-binding-types"></a>Typen der eingabebindung
 
-There are multiple types of input, however not all types support both input and output. You'll use them anytime you want to ingest data of that type. Here, we'll look at the types that support input bindings and when to use them.
+Es gibt mehrere Arten von Eingaben, jedoch nicht alle Typen unterstützt sowohl ein- und Ausgabe. Sie verwenden diese, wann immer Sie zum Erfassen von Daten dieses Typs möchten. Hier ist betrachten die Typen wir, die eingabebindungen und deren Verwendung unterstützen.
 
-- **Blob Storage**
-    The blob storage bindings allow you to read from a blob.
+- **BLOB-Speicher** Blob Storage-Bindungen ermöglichen es Ihnen, die aus einem Blob zu lesen.
 
-- **Cosmos DB**
-    The Azure Cosmos DB input binding uses the SQL API to retrieve one or more Azure Cosmos DB documents and passes them to the input parameter of the function. The document ID or query parameters can be determined based on the trigger that invokes the function.
+- **COSMOS DB** der Azure Cosmos DB-eingabebindung verwendet die SQL-API, eine oder mehrere Azure Cosmos DB-Dokumente und übergibt sie an den Eingabeparameter der Funktion. Die Dokument-ID oder die Abfrageparameter können basierend auf dem Trigger, der die Funktion aufruft, ermittelt werden.
 
-- **Microsoft Graph**
-    Microsoft Graph input bindings allow you to read files from OneDrive, read data from Excel, and get auth tokens so you can interact with any Microsoft Graph API.
-- **Mobile Apps**
-    The Mobile Apps input binding loads a record from a mobile table endpoint and passes it into your function.
+- **Microsoft Graph** Eingabe Microsoft Graph-Bindungen ermöglichen es Ihnen, Dateien aus OneDrive zu lesen, Lesen von Daten aus Excel und Authentifizierungstoken zu erhalten, damit Sie mit jeder Microsoft Graph-API interagieren können.
+- **Mobile Apps** das Mobile Apps-eingabebindung lädt einen Datensatz aus einem mobilen tabellenendpunkt und übergibt ihn an Ihre Funktion.
 
-- **Table storage**
-    You can read data and work with Azure Table storage.
+- **Tabellenspeicher** können Sie Daten lesen und mit Azure Table Storage arbeiten.
 
-## How to create an input binding?
+## <a name="how-to-create-an-input-binding"></a>Vorgehensweise: erstellen eine eingabebindung?
 
-In order to define a binding an input, you must define the `direction` as `in`.
-The parameters for each type of binding may differ, those are well documented in [Microsoft's Documentation](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings#supported-bindings?azure-portal=true)
+Um eine Bindung definieren eine Eingabe, müssen Sie definieren die `direction` als `in`.
+Die Parameter für jeden Typ der Bindung können abweichen, diese sind gut dokumentiert [Microsoft Dokumentation](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings#supported-bindings?azure-portal=true)
 
-## What is a binding expression?
+## <a name="what-is-a-binding-expression"></a>Was ist einem Bindungsausdruck?
 
-A binding expression is specialized text in function.json, function parameters, or code that is evaluated when the function is invoked to yield a value. For example, you can use a binding expression to get the current time or retrieve a value from app settings.
+Ein Bindungsausdruck ist spezialisierte Textvorlagen in "Function.JSON", Parameter oder Code, der ausgewertet wird, wenn die Funktion aufgerufen wird, um einen Wert zu ergeben. Beispielsweise können Sie einen Bindungsausdruck, der die aktuelle Uhrzeit abzurufen oder einen Wert aus der app-Einstellungen abrufen.
 
-### Types of binding expressions
+### <a name="types-of-binding-expressions"></a>Arten von Bindungsausdrücken
 
-- App settings
-- Trigger file name
-- Trigger metadata
-- JSON payloads
-- New GUID
-- Current date and time
-- Binding expressions
+- App-Einstellungen
+- Name der triggerdatei
+- Metadaten für Trigger
+- JSON-Nutzlasten
+- Neue GUID
+- Aktuelles Datum und Uhrzeit
+- Bindungsausdrücke
 
-Most expressions are identified by wrapping them in curly braces. However, app setting binding expressions are identified differently from other binding expressions: they are wrapped in percent signs rather than curly braces. For example if the blob output binding path is `%Environment%/newblob.txt` and the Environment app setting value is Development, a blob will be created in the Development container.
+Die meisten Ausdrücke sind von geschweiften Klammern umschlossen. Allerdings Bindungsausdrücke für app-Einstellung werden anders dargestellt als andere Bindungsausdrücke: sie werden in Prozentzeichen anstatt von geschweiften Klammern umschlossen. Beispielsweise ist der Pfad der blobausgabebindung `%Environment%/newblob.txt` und die Umgebung app-Einstellungswert ist die Entwicklung, ein Blob im Container Entwicklung erstellt werden.
 
-Input bindings allow us to connect our function to a data source. There are several types of data sources we can connect to and the parameters for each vary. We can use binding expressions in the function.json, function parameters or code, to resolve values from various sources.
+Eingabebindungen können wir unsere-Funktion mit einer Datenquelle verbinden. Es gibt verschiedene Typen von Datenquellen, die, denen wir auf eine Verbindung herstellen können, und die Parameter für jedes aus. Wir können Bindungsausdrücke in "Function.JSON", Parameter oder Code verwenden, um Werte aus verschiedenen Quellen zu beheben.

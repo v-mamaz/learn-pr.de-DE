@@ -1,26 +1,26 @@
-Queues hold messages - packets of data whose shape is known to the sender application and receiver application. The sender creates the queue and adds a message. The receiver retrieves a message, processes it, and then deletes the message from the queue. The following illustration shows a typical flow of this process.
+Warteschlangen speichern Nachrichten – die Datenpakete, deren Form der absenderanwendung und die empfängeranwendung bekannt ist. Der Sender erstellt die Warteschlange und fügt eine Nachricht hinzu. Der Empfänger empfängt eine Nachricht, verarbeitet sie und löscht dann die Nachricht aus der Warteschlange. Die folgende Abbildung zeigt einen typischen Fluss dieses Prozesses.
 
-![An illustration showing a typical message flow through the Azure Queue.](../media/6-message-flow.png)
+![Abbildung eines typischen Nachrichtenflusses durch die Azure-Warteschlange.](../media/6-message-flow.png)
 
-Notice that `get` and `delete` are separate operations. This arrangement handles potential failures in the receiver and implements a concept called _at-least-once delivery_. After the receiver gets a message, that message remains in the queue but is invisible for 30 seconds. If the receiver crashes or experiences a power failure during processing, then it will never delete the message from the queue. After 30 seconds, the message will reappear in the queue and another instance of the receiver can process it to completion.
+Beachten Sie, dass `get` und `delete` separate Vorgänge sind. In dieser Anordnung werden potenzielle Ausfälle im Empfänger behandelt und ein Konzept namens _at-least-once-delivery_ implementiert. Nachdem der Empfänger eine Nachricht erhalten hat, verbleibt die Nachricht in der Warteschlange, ist jedoch 30 Sekunden lang unsichtbar. Wenn der Empfänger abstürzt oder dort während der Verarbeitung ein Stromausfall auftritt, wird die Nachricht dadurch niemals aus der Warteschlange entfernt. Nach 30 Sekunden wird die Nachricht erneut in der Warteschlange angezeigt, und eine andere Instanz des Empfängers kann sie abschließend verarbeiten.
 
-## The Azure Storage Client Library for .NET
+## <a name="the-azure-storage-client-library-for-net"></a>Die Azure-Speicherclientbibliothek für .NET
 
-The **Azure Storage Client Library for .NET** provides types to represent each of the objects you need to interact with:
+Die **Azure-Speicherclientbibliothek für .NET** bietet Typen zur Darstellung aller Objekte, mit denen Sie interagieren müssen:
 
-- `CloudStorageAccount` represents your Azure storage account.
-- `CloudQueueClient` represents Azure Queue storage.
-- `CloudQueue` represents one of your queue instances.
-- `CloudQueueMessage` represents a message.
+- `CloudStorageAccount` stellt Ihr Azure-Speicherkonto dar.
+- `CloudQueueClient` stellt Ihre Azure-Warteschlange dar.
+- `CloudQueue` stellt eine Ihrer Warteschlangeninstanzen dar.
+- `CloudQueueMessage` stellt eine Nachricht dar.
 
-You will use these classes to get programmatic access to your queue. The library has both synchronous and asynchronous methods; you should prefer to use the asynchronous versions to avoid blocking the client app.
+Sie verwenden diese Klassen zum programmgesteuerten Zugriff auf Ihre Warteschlange. Die Bibliothek enthält synchrone und asynchrone Methoden; Sie sollten die asynchronen Versionen verwenden, um ein Blockieren der Client-App zu vermeiden.
 
 > [!NOTE]
-> The Azure Storage Client Library for .NET is available in the **WindowsAzure.Storage** NuGet package. You can install it through an IDE, Azure CLI, or through PowerShell `Install-Package WindowsAzure.Storage`.
+> Die Azure-Speicherclientbibliothek für .NET finden Sie im **WindowsAzure.Storage**-NuGet-Paket. Sie können sie über eine IDE, die Azure-Befehlszeilenschnittstelle oder PowerShell `Install-Package WindowsAzure.Storage` installieren.
 
-## How to connect to a queue
+## <a name="how-to-connect-to-a-queue"></a>Herstellen einer Verbindung mit einer Warteschlange
 
-To connect to a queue, you first create a `CloudStorageAccount` with your connection string. The resulting object can then create a `CloudQueueClient`, which in turn can open a `CloudQueue` instance. The basic code flow is shown below.
+Um eine Verbindung mit einer Warteschlange herzustellen, erstellen Sie zunächst ein `CloudStorageAccount` mit Ihrer Verbindungszeichenfolge. Das resultierende Objekt kann dann einen `CloudQueueClient` erstellen, der wiederum eine `CloudQueue`-Instanz öffnen kann. Der grundlegende Codefluss ist unten dargestellt.
 
 ```csharp
 CloudStorageAccount account = CloudStorageAccount.Parse(connectionString);
@@ -30,15 +30,15 @@ CloudQueueClient client = account.CreateCloudQueueClient();
 CloudQueue queue = client.GetQueueReference("myqueue");
 ```
 
-Creating a `CloudQueue` doesn't necessarily mean the _actual_ storage queue exists. However, you can use this object to create, delete, and check for an existing queue. As mentioned above, all methods support both synchronous and asynchronous versions, but we will only be using the `Task`-based asynchronous versions.
+Das Erstellen einer `CloudQueue` bedeutet nicht unbedingt, dass die _tatsächliche_ Speicherwarteschlange vorhanden ist. Allerdings können Sie mit diesem Objekt eine Warteschlange erstellen, löschen und prüfen, ob eine Warteschlange vorhanden ist. Wie oben erwähnt, unterstützen alle Methoden sowohl synchrone als auch asynchrone Versionen, aber wir verwenden nur die `Task`-basierten asynchronen Versionen.
 
-## How to create a queue
+## <a name="how-to-create-a-queue"></a>Erstellen von Warteschlangen
 
-You will use a common pattern for queue creation: the sender application should always be responsible for creating the queue. This keeps your application more self-contained and less dependent on administrative set-up. 
+Sie verwenden ein allgemeines Muster für die Warteschlangenerstellung: Die Senderanwendung sollte immer für das Erstellen der Warteschlange verantwortlich sein. Auf diese Weise bleibt Ihre Anwendung eigenständiger und ist weniger abhängig vom Administratorsetup. 
 
-To make the creation simple, the client library exposes a `CreateIfNotExistsAsync` method that will create the queue if necessary, or return `false` if the queue already exists. 
+Um die Erstellung zu vereinfachen, macht die Clientbibliothek eine `CreateIfNotExistsAsync`-Methode verfügbar, die ggf. die Warteschlange erstellt oder `false` zurückgibt, wenn die Warteschlange bereits vorhanden ist. 
 
-Typical code is shown below.
+Der typische Code wird im Folgenden gezeigt.
 
 ```csharp
 CloudQueue queue;
@@ -48,13 +48,13 @@ await queue.CreateIfNotExistsAsync();
 ```
 
 > [!NOTE]
-> You must have `Write` or `Create` permissions for the storage account to use this API. This is always true if you use the **Access Key** security model, but you can lock down permissions to the account with other approaches that will only allow read operations against the queue.
+> Sie benötigen `Write`- oder `Create`-Berechtigungen, damit das Speicherkonto diese API verwenden kann. Dies ist bei Verwendung des **Zugriffsschlüssel**-Sicherheitsmodells immer zutreffend, aber Sie können Berechtigungen für das Konto mit anderen Ansätzen sperren, die nur Lesevorgänge für die Warteschlange zulassen.
 
-## How to send a message
+## <a name="how-to-send-a-message"></a>Senden einer Nachricht
 
-To send a message, you instantiate a `CloudQueueMessage` object. The class has a few overloaded constructors that load your data into the message. We will use the constructor that takes a `string`. After creating the message, you use a `CloudQueue` object to send it.
+Um eine Nachricht zu senden, instanziieren Sie ein `CloudQueueMessage`-Objekt. Die Klasse verfügt über einige überladene Konstruktoren, die Ihre Daten in die Nachricht laden. Wir verwenden den Konstruktor, der einen `string` entgegennimmt. Nach dem Erstellen der Nachricht senden Sie sie mit einem `CloudQueue`-Objekt.
 
-Here's a typical example:
+Hier sehen Sie ein typisches Beispiel:
 
 ```csharp
 var message = new CloudQueueMessage("your message here");
@@ -66,11 +66,11 @@ await queue.AddMessageAsync(message);
 ```
 
 > [!NOTE]
-> While the total queue size can be up to 500 TB, the individual messages in it can only be up to 64 KB in size (48 KB when using Base64 encoding). If you need a larger payload you can combine queues and blobs – passing the URL to the actual data (stored as a Blob) in the message. This approach would allow you to enqueue up to 200 GB for a single item.
+> Die gesamte Warteschlangengröße kann bis zu 500TB betragen, die einzelnen Nachrichten darin können nur bis zu 64KB groß sein (48KB bei Base64-Codierung). Wenn Sie eine größere Nutzlast benötigen, können Sie Warteschlangen und Blobs kombinieren – übergeben Sie die URL den (als Blob gespeicherten) eigentlichen Daten in der Nachricht. Mit diesem Ansatz könnten Sie bis zu 200GB für ein einzelnes Element in die Warteschlange einreihen.
 
-## How to receive and delete a message
+## <a name="how-to-receive-and-delete-a-message"></a>Empfangen und Löschen einer Nachricht
 
-In the receiver, you get the next message, process it, and then delete it after processing succeeds. Here's a simple example:
+Im Empfänger erhalten Sie die nächste Nachricht, verarbeiten sie und löschen sie nach erfolgreicher Verarbeitung. Hier ist ein einfaches Beispiel:
 
 ```C#
 CloudQueue queue;
@@ -87,4 +87,4 @@ if (message != null)
 }
 ```
 
-Let's now apply this new knowledge to our application!
+Lassen Sie uns jetzt dieses neuen Wissen auf unsere Anwendung anwenden!

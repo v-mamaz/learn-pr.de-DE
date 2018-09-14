@@ -1,73 +1,74 @@
-Every function must have one, and only one, trigger binding. It defines how our code is triggered to run. In addition to a trigger, we can define bindings that connect us to data sources. If you remember from our diagram of the solution, we want to send messages to three queues. So, we'll define those connections as output bindings in our function. We could create those bindings through the **Output binding** UI. However, to save time, we'll edit the config file directly.
+Jede Funktion muss es sich um einen und nur einen Trigger haben. Es wird definiert, wie unser Code ausgelöst wird, führen Sie. Zusätzlich zu einem Trigger können wir die Bindungen definieren, die uns die Verbindungen zu Datenquellen herstellen. Wenn Sie in unserem Diagramm der Lösung vergessen haben, Senden von Nachrichten an drei Warteschlangen werden sollten. Daher müssen wir diese Verbindungen als ausgabebindungen in unserer Funktion definieren. Wir konnten diese Bindungen durch Erstellen der **Ausgabebindung** Benutzeroberfläche. Allerdings um Zeit zu sparen bearbeiten wir die Config-Datei direkt.
 
-1. Select our function, [!INCLUDE [func-name-discover](./func-name-discover.md)], in the Function Apps portal.
+1. Wählen Sie unsere-Funktion, [!INCLUDE [func-name-discover](./func-name-discover.md)], in der Funktions-Apps-Portal.
 
-1. Expand the **View files** menu on the right of the screen.
+1. Erweitern Sie die **Ansichtsdateien** im Menü auf der rechten Seite des Bildschirms.
 
-1. Under the **View files** tab, select **function.json** to open the config file in the editor.
+1. Unter den **Ansichtsdateien** Registerkarte **"Function.JSON"** auf die Config-Datei im Editor zu öffnen.
 
-1. Replace the entire content of the config file with the following JSON. 
+1. Ersetzen Sie den gesamten Inhalt der Config-Datei mit den folgenden JSON-Code.
 
 [!code-json[](../code/function.json)]
 
-We've added three new bindings to the config.
+Wir haben drei neue Bindungen auf die Konfiguration hinzugefügt.
 
-- Each new binding is of type `queue`. These bindings are for the three queues that we'll populate with our feedback messages to once we know the sentiment of the feedback.
-- Each binding has a direction defined as `out`, since we'll post messages to these queues.
-- Each binding uses the same connection to our storage account.
-- Each binding has a unique `queueName` and `name`.
+- Jede neue Bindung ist vom Typ `queue`. Diese Bindungen sind für die drei Warteschlangen, die wir mit unserem feedbacknachrichten an auffüllen müssen, sobald wir wissen, dass die Stimmung des Feedbacks.
+- Jede Bindung hat eine Richtung, definiert als `out`, da wir Nachrichten an diese Warteschlangen senden müssen.
+- Jede Bindung wird die Verbindung mit unserem Speicherkonto verwendet.
+- Jede Bindung hat einen eindeutigen `queueName` und `name`.
 
-Posting a message to a queue is as easy as saying, for example,  `context.bindings.negativeFeedbackQueueItem = "<message>"`.
+Veröffentlichen einer Nachricht an eine Warteschlange ist beispielsweise so einfach wie selbstverständlich `context.bindings.negativeFeedbackQueueItem = "<message>"`.
 
-## Update implementation to sort feedback into queues based on sentiment score
+## <a name="update-implementation-to-sort-feedback-into-queues-based-on-sentiment-score"></a>Update-Implementierung, die Feedback in Warteschlangen basierend auf dem stimmungswert sortieren
 
-The goal of our feedback sorter is to sort feedback into three buckets, positive, neutral, and negative. So far, we have our input queue, our code to call Text Analytics API, and we've defined our output queues. In this section, we'll add the logic to move messages into those queues based on sentiment.
+Das Ziel der unsere Feedback-Sortierer ist Feedback in drei Buckets, die positive, neutral und negative sortiert. Bisher haben wir unsere Eingabewarteschlange, unser Code zum Aufrufen der Textanalyse-API, und wir haben unsere Warteschlangen Ausgabe definiert. In diesem Abschnitt fügen wir die Logik zum Verschieben von Nachrichten in diese Warteschlangen basierend auf Stimmung.
 
-1. Navigate to our function, [!INCLUDE [func-name-discover](./func-name-discover.md)], and  open `index.js` in the code editor again.
+1. Navigieren Sie zu unserer Funktion [!INCLUDE [func-name-discover](./func-name-discover.md)], und öffnen Sie `index.js` im Code-Editor erneut.
 
-1. Replace the implementation with the following update.
+1. Ersetzen Sie die Implementierung durch das folgende Update an.
+
 [!code-javascript[](../code/discover-sentiment+sort.js?highlight=25-48)]
 
-We've added the highlighted code to our implementation. The code parses the response from the Text Analytics API cognitive service. Based on the sentiment score, the message is forwarded to one of or three output queues. The code to post the message is just setting the correct binding parameter.
+Wir haben unsere Implementierung den hervorgehobenen Code hinzugefügt. Der Code analysiert die Antwort der cognitive Services-Textanalyse-API. Basierend auf dem stimmungswert, wird die Nachricht an eine der weitergeleitet oder drei Warteschlangen ausgegeben. Der Code zum Veröffentlichen der Nachricht wird nur den korrekte Bindungsparameter festlegen.
 
-## Try it out
+## <a name="try-it-out"></a>Ausprobieren
 
-To test the updated implementation, we'll head back to the Storage Explorer. 
+Um die aktualisierte Implementierung zu testen, müssen wir zurück an den Storage-Explorer navigieren.
 
-1. Navigate to your resource group in the **Resource Groups** section of the portal.
+1. Navigieren Sie zu Ihrer Ressourcengruppe in der **Ressourcengruppen** -Abschnitt des Portals.
 
-1. Select the resource group used in this lesson.
+1. Wählen Sie die Ressourcengruppe, die in dieser Lektion verwendet.
 
-1. In the **Resource group** panel that opens, locate the Storage Account entry and select it.
-![Screenshot storage account selected in the Resource Group window.](../media-draft/select-storage-account.png)
+1. In der **Ressourcengruppe** Bereich, der geöffnet wird, suchen Sie den Storage-Konto-Eintrag, und wählen Sie ihn.
+    ![Bildschirmabbildung von Storage-Konto in das Fenster für die Ressourcengruppe ausgewählt.](../media/select-storage-account.png)
 
-1. Select **Storage Explorer (preview)** from the left menu of the Storage Account main window.  This action opens the Azure Storage Explorer inside the portal. Your screen should look like the following screenshot at this stage.
-![Screenshot of storage explorer showing our storage account, with one queue currently.](../media-draft/storage-explorer-menu-inputq.png)
+1. Wählen Sie **Storage-Explorer (Vorschau)** im linken Menü des Hauptfensters Storage-Konto.  Dadurch wird Azure Storage-Explorer im Portal geöffnet. Ihr Bildschirm sollte zu diesem Zeitpunkt wie im folgenden Screenshot aussehen.
+    ![Screenshot des Storage-Explorer mit unserem Speicherkonto mit dem derzeit eine Warteschlange.](../media/storage-explorer-menu-inputq.png)
 
-We have one queue listed under the **Queues** collection. This queue is [!INCLUDE [input-q](./q-name-input.md)],  the input queue we defined in the preceding test section of the module.
+Wir haben eine Warteschlange aufgeführt, unter dem **Warteschlangen** Auflistung. Diese Warteschlange ist [!INCLUDE [input-q](./q-name-input.md)], die Eingabewarteschlange, die wir im vorherigen Abschnitt des Moduls definiert.
 
-1. Select [!INCLUDE [input-q](./q-name-input.md)] in the left-hand menu to see the data explorer for this queue. As expected, the queue had no data. Let's add a message to the queue using the **Add Message** command at the top of the window. 
+1. Wählen Sie [!INCLUDE [input-q](./q-name-input.md)] im linken Menü auf der Daten-Explorer für diese Warteschlange finden Sie unter. Erwartungsgemäß funktioniert, mussten die Warteschlange keine Daten. Fügen Sie eine Nachricht an die Warteschlange mithilfe der **Nachricht hinzufügen** -Befehls am oberen Rand des Fensters.
 
-1. In the **Add Message** dialog, enter "I'm having fun with this exercise!" into the **Message text** field and click **OK** at the bottom of the dialog. 
+1. In der **Nachricht hinzufügen** Dialogfeld Geben Sie "Ich bin spielerisch mit dieser Übung!" in der **Meldungstext** ein, und klicken Sie auf **OK** am unteren Rand des Dialogfelds.
 
-1. The message is displayed in the data window for [!INCLUDE [input-q](./q-name-input.md)]. After a few seconds, click **Refresh** at the top of the data view to refresh the view of the queue. Observe that the message disappears after a while. So, where did it go?
+1. Die Meldung wird angezeigt, in das Fenster für [!INCLUDE [input-q](./q-name-input.md)]. Klicken Sie nach einigen Sekunden auf **aktualisieren** am oberen Rand der Datensicht, um die Ansicht der Warteschlange zu aktualisieren. Beachten Sie, dass die Nachricht nach einer Weile wird nicht mehr angezeigt. Daher kopiert, in denen sie?
 
-1. Right-click on the **QUEUES** collection in the left-hand menu. Observe that a *new* queue has appeared.
-![Screenshot of Storage Explorer with showing a new queue has been created in the collection. The queue has one message.](../media-draft/sa-new-output-q.png)
+1. Mit der rechten Maustaste auf die **WARTESCHLANGEN** Auflistung im linken Menü. Beachten Sie, dass eine *neue* Warteschlange wird angezeigt.
+    ![Screenshot des Storage-Explorer mit der eine neue Warteschlange wurde in der Auflistung erstellt. Die Warteschlange weist eine Nachricht an.](../media/sa-new-output-q.png)
 
-The queue [!INCLUDE [positive-q](./q-name-positive.md)] was automatically created when a message was posted to it for the first time. With Azure Functions queue output bindings, you don't have to manually create the output queue before posting to it! Now that we see an incoming message has been sorted by our function into [!INCLUDE [positive-q](./q-name-positive.md)], let's see where the following messages land.
+Die Warteschlange [!INCLUDE [positive-q](./q-name-positive.md)] wurde automatisch erstellt, wenn eine Nachricht zum ersten Mal an sie zurückgesendet wurde. Mit Azure Functions-Warteschlangen-ausgabebindungen müssen Sie keine die Ausgabewarteschlange vor der erneuten Bereitstellung, manuell zu erstellen! Nun, wir sehen eine eingehende Nachricht wurde von unseren-Funktion in sortiert [!INCLUDE [positive-q](./q-name-positive.md)], sehen wir uns an, in denen Folgendes Land Nachrichten.
 
-5. Using the same steps as above, add the following messages to [!INCLUDE [input-q](./q-name-input.md)].
+1. Mithilfe der gleichen Schritte wie oben beschrieben, die folgenden Nachrichten hinzufügen [!INCLUDE [input-q](./q-name-input.md)].
 
-- "I like broccoli!"
-- "Microsoft is a company"
+- "Ich like Broccoli!"
+- "Microsoft ist ein Unternehmen."
 
-6. Click **Refresh** until [!INCLUDE [input-q](./q-name-input.md)] is empty once again. This process might take a few moments and require several refreshes.
+1. Klicken Sie auf **aktualisieren** bis [!INCLUDE [input-q](./q-name-input.md)] wieder leer ist. Dieser Vorgang kann einige Zeit in Anspruch nehmen und erfordern mehrere aktualisiert.
 
-1. Right-click on the **QUEUES** collection and observe two more queues appearing. The queues are named [!INCLUDE [neutral-q](./q-name-neutral.md)] and [!INCLUDE [negative-q](./q-name-negative.md)]. This might take a few seconds, so continue refreshing the **QUEUES** collection until new queues. When complete, your queue list should look like the following.
+1. Mit der rechten Maustaste auf die **WARTESCHLANGEN** Sammlung, und beobachten Sie zwei weitere Warteschlangen angezeigt werden. Die Warteschlangen heißen [!INCLUDE [neutral-q](./q-name-neutral.md)] und [!INCLUDE [negative-q](./q-name-negative.md)]. Dies kann einige Sekunden dauern, daher weiterhin aktualisiert die **WARTESCHLANGEN** Auflistung bis neue Warteschlangen. Nach Abschluss des Vorgangs sollte Ihre Warteschlangenliste wie folgt aussehen.
 
-![Screenshot of Storage Explorer menu showing four queues in the QUEUES collection.](../media-draft/sa-final-q-list.png)
+![Screenshot des Storage-Explorers im Menü mit vier Warteschlangen in der WARTESCHLANGEN-Sammlung.](../media/sa-final-q-list.png)
 
-Click on each queue in the list to see whether they have messages. If you added the suggested messages, you should see one message in [!INCLUDE [positive-q](./q-name-positive.md)], [!INCLUDE [neutral-q](./q-name-neutral.md)], and [!INCLUDE [negative-q](./q-name-negative.md)].
+Klicken Sie auf jede Warteschlange in der Liste aus, um festzustellen, ob sie Nachrichten verfügen. Wenn Sie die vorgeschlagenen Nachrichten hinzugefügt haben, sollten Sie sehen, dass eine Nachricht in [!INCLUDE [positive-q](./q-name-positive.md)], [!INCLUDE [neutral-q](./q-name-neutral.md)], und [!INCLUDE [negative-q](./q-name-negative.md)].
 
-Congratulations! We now have a working feedback sorter! As messages arrive in the input queue, our function uses the Text Analytics API service to get a sentiment score. Based on that score, the function forwards the messages to the appropriate queue. While it seems like the function processes only one queue item at a time, the Azure Functions runtime will actually read batches of queue items and spin up other instances of our function to process them in parallel. 
+Herzlichen Glückwunsch! Wir verfügen jetzt über eine funktionierende Feedback Sortierer! Beim Eintreffen von Nachrichten in der Eingabewarteschlange verwendet unsere-Funktion den Textanalyse-API-Dienst, um einen stimmungswert zwischen abzurufen. Die Funktion basierend auf dieses Ergebnis, leitet die Nachrichten an die entsprechende Warteschlange weiter. Während es z. B. die Funktion Prozesse nur ein Element zu einem Zeitpunkt scheint, Azure Functions-Laufzeit tatsächlich Batches von Warteschlangenelementen liest und richten Sie andere Instanzen von unserer Funktion parallel verarbeiten.

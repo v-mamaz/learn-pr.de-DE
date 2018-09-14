@@ -4,6 +4,8 @@ Bevor Sie die richtige Azure-Technologie auswählen können, müssen Sie die ges
 
 Zunächst müssen Sie wissen, ob für die Kommunikation **Nachrichten** oder **Ereignisse** gesendet werden. Das ist eine wichtige Entscheidung, die Ihnen dabei hilft, einen entsprechenden Azure-Dienst zu finden.
 
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yuaw]
+
 ## <a name="what-is-a-message"></a>Was ist eine Nachricht?
 In der Terminologie von verteilten Anwendungen weisen **Nachrichten** folgende Merkmale auf:
 

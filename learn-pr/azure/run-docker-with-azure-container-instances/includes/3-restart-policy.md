@@ -20,9 +20,9 @@ Wenn Sie die Richtlinie für den Neustart in der Praxis sehen möchten, erstelle
 
 Führen Sie den Beispielcontainer mit dem folgenden `az container create`-Befehl aus:
 
-```azureclu
+```azurecli
 az container create \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name mycontainer-restart-demo \
     --image microsoft/aci-wordcount:latest \
     --restart-policy OnFailure
@@ -34,7 +34,7 @@ Sie können den Status des Containers mit dem Befehl `az container show` überpr
 
 ```azurecli
 az container show \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name mycontainer-restart-demo \
     --query containers[0].instanceView.currentState.state
 ```
@@ -42,12 +42,12 @@ az container show \
 Sobald der Status des Beispielcontainers **Beendet** lautet, können Sie die Taskausgabe in den Containerprotokollen anzeigen. Führen Sie den Befehl **az container logs** aus, um die Ausgabe des Skripts anzuzeigen:
 
 ```azurecli
-az container logs --resource-group myResourceGroup --name mycontainer-restart-demo
+az container logs --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer-restart-demo
 ```
 
 Ausgabe:
 
-```bash
+```json
 [('the', 990),
  ('and', 702),
  ('of', 628),

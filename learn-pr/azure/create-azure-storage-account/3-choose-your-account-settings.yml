@@ -4,11 +4,11 @@ title: Auswählen der Kontoeinstellungen
 metadata:
   title: Auswählen der Kontoeinstellungen
   description: Auswählen der Kontoeinstellungen
-  ms.openlocfilehash: 2b4b0b6fa5cf2ea927065e28f0e634d4719a5c8b
-  ms.sourcegitcommit: c07e11980180ae35cb3485548f81e16152d77781
-  ms.translationtype: HT
-  ms.contentlocale: de-DE
-  ms.lasthandoff: 09/02/2018
-  ms.locfileid: "43471884"
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 durationInMinutes: 7
-content: '[!include[](includes/3-choose-your-account-settings.md)]'
+content: |
+  [!include[](includes/3-choose-your-account-settings.md)]

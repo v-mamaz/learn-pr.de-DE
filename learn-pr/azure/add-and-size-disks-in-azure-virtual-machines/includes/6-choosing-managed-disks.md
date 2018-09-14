@@ -1,44 +1,49 @@
-Applications and services often need to scale with demand. For virtual machines, this means scaling out, or creating additional instances. Creating disks for new instances manually can place a burden on Azure administrators. Instead, we can use **managed disks** to reduce the administration required to create new disks.
+Anwendungen und Dienste müssen häufig nach Bedarf skaliert werden. Bei virtuellen Computern bedeutet dies horizontales hochskalieren oder das Erstellen zusätzlicher Instanzen an. Erstellen von Datenträgern für neue Instanzen können manuell eine Belastung für Azure-Administratoren platzieren. Wir können stattdessen **verwaltete Datenträger** reduzieren Sie die Verwaltung erforderlich, um neue Datenträger erstellen.
 
-Managed disks handle storage for you "behind the scenes". You specify the disk type and the size of disk you need, and Azure creates and manages the disk for you. 
+Handle-Datenträgern für Sie "hinter den Kulissen" verwaltet. Geben Sie den Datenträger und die Größe des Datenträgers, die Sie benötigen, und Azure erstellt und verwaltet die Datenträger für Sie. 
 
-When you're using managed disks, another disk type is available for you to use called **standard SSD**.
+Wenn Sie verwaltete Datenträger verwenden, einen anderen Datenträgertyp kann Sie mit dem Namen **standard-SSD**.
 
-## Standard SSDs
+## <a name="standard-ssds"></a>Standard-SSDs
 
-If you recall, with unmanaged disks, you can choose from two types of disk: standard hard disk drives (HDDs) and premium solid-state drives (SSDs).
+Wenn Sie sich, mit nicht verwalteten Datenträgern erinnern können Sie über zwei verschiedene Datenträgertypen: standard Festplattenlaufwerke (HDDs), und Premium Solid-State-Laufwerken (SSDs).
 
-When you use managed disks, you can choose a third type of disk: standard SSDs. This disk type sits between standard HDDs and premium SSDs from a performance and cost perspective.
+Wenn Sie verwaltete Datenträger verwenden, können Sie einen dritten Typ des Datenträgers: standard, SSDs. Dieser Datenträgertyp befindet sich zwischen standard HDDs und SSDs mit Premium hinsichtlich der Leistung und Kosten.
 
-You can use standard SSDs with any VM size, including VM sizes that don't support premium storage. In fact, using standard SSDs is the only way to use SSDs with those VMs.
+Sie können standardmäßige SSDs verwenden, mit jeder VM-Größe, einschließlich der VM-Größen, die nicht Storage Premium unterstützen. In der Tat ist die Verwendung von standard-SSDs die einzige Möglichkeit zur Verwendung von SSDs mit diesen VMs.
 
-## Managed disks in availability sets
+## <a name="managed-disks-in-availability-sets"></a>Verwaltete Datenträger in Verfügbarkeitsgruppen
 
-Sometimes you use several VMs to host your application to handle increased load.
+In einigen Fällen verwenden Sie mehrere virtuelle Computer zum Hosten der Anwendung aus, um die ansteigende Last zu bewältigen.
 
-You can put your VMs into an **availability set** to reduce the chances of customers experiencing an outage. Using an availability set, your VMs are spread across fault domains. A fault domain is a logical group of underlying hardware that shares a common power source and network switch, similar to a rack within an on-premises data center. As you create VMs within an availability set, the Azure platform automatically distributes your VMs across these fault domains. This separation in the Azure data center guarantees that there's no single point of failure for all the VMs in the availability set.
+Sie können Ihre virtuellen Computer in Platzieren einer **verfügbarkeitsgruppe** reduzieren die Wahrscheinlichkeit, dass Kunden, die bei einem Ausfall. Verwenden eine verfügbarkeitsgruppe, werden Ihre virtuellen Computer über Fehlerdomänen hinweg verteilt. Eine Fehlerdomäne ist eine logische Gruppe von zugrunde liegender Hardware, der gemeinsam eine Stromquelle und einen Netzwerkswitch, ähnlich einem Rack in einem lokalen Rechenzentrum. Wenn Sie VMs in einer Verfügbarkeitsgruppe erstellen, werden Ihre VMs von der Azure-Plattform automatisch auf diese Fehlerdomänen verteilt. Durch diese Trennung in der Azure-Datencenter wird sichergestellt, dass kein single Point of Failure für alle virtuellen Computer in der verfügbarkeitsgruppe vorhanden ist.
 
-When you use managed disks, Azure automatically makes sure that each VHD is placed into the same fault domain as its VM. This guarantee removes the possibility that the storage account configuration may include a single point of failure. There's no way to guarantee this separation when you use unmanaged disks.
+Wenn Sie verwaltete Datenträger verwenden, erstellt Azure automatisch sicher, dass jede virtuelle Festplatte in der gleichen Fehlerdomäne als einem virtuellen Computer platziert wird. Diese Garantie wird entfernt, die Möglichkeit, dass die Konfiguration des Speicherkontos, eine einzelne Fehlerquelle enthalten kann. Es ist keine Möglichkeit, diese Trennung zu gewährleisten, wenn Sie nicht verwaltete Datenträger verwenden.
 
-## Choosing managed disks
+## <a name="choosing-managed-disks"></a>Auswählen von verwalteten Datenträgern
 
-**Do you want to control storage accounts in your subscription?**
+Es gibt einige Aspekte, die die Entscheidung, ob der Datenträger Ihrer virtuellen Computer als verwaltete Datenträger anstelle von nicht verwalteten Datenträgern erstellen beeinträchtigen können.
 
-Managed disks are easy to administer, but you may feel that you can optimize storage or manage costs better by keeping control of storage accounts.
+**Möchten Sie die Kontrolle über die Storage-Konten in Ihrem Abonnement?**
 
-**Do you need to use standard SSDs?** 
+Verwaltete Datenträger sind leicht zu verwaltende, aber Sie fühlen sich möglicherweise, dass Sie Speicher optimieren können, oder Verwalten von Kosten, die eine bessere Kontrolle des Storage-Konten.
 
-If you want to use SSDs with a VM size that does not support premium storage, you have to choose managed disks.
+**Möchten Sie die standard-SSDs verwenden?** 
 
-**Are the VMs in an availability set?** 
+Wenn Sie möchten die SSDs mit einer VM-Größe zu verwenden, die Storage Premium nicht unterstützt, müssen Sie verwaltete Datenträger auswählen.
 
-It is highly recommended to use managed disks to optimize resilience if your VMs are members of an availability set.
+**Sind die virtuellen Computer in einer verfügbarkeitsgruppe?** 
 
-## Migrating to managed disks
+Es wird dringend empfohlen, verwaltete Datenträger verwenden, um die Stabilität zu optimieren, wenn Ihre VMs einer verfügbarkeitsgruppe angehören.
 
-You can convert your unmanaged disks to managed disks at any time using one of these two methods:
+## <a name="migrating-to-managed-disks"></a>Migrieren zu managed disks
 
-- Using the Azure portal. On the Disks page of your virtual machine's settings, you'll find the **Migrate to managed disks** tool. This process will stop the VM, migrate the disks, and then restart the VM for you. You'll experience an interruption in service from the VM while the conversion takes place.
-- Using Azure PowerShell. You can use the `ConvertTo-AzureRmVMManagedDisk` cmdlet to perform the migration. If you choose this method, you must stop and start the VM yourself.
+Sie können Ihre nicht verwalteten Datenträger in verwaltete Datenträger konvertieren, zu einem beliebigen Zeitpunkt mit einer dieser beiden Methoden:
 
-Managed disks reduce the administrative workload and have some features, such as standard SSDs, that aren't available for unmanaged disks.
+- Über das Azure-Portal. Klicken Sie auf der Seite Datenträger der VM Einstellungen finden Sie die **Migrieren zu managed Disks** Tool. Dieser Prozess beenden des virtuellen Computers, migrieren die Datenträger, und wiederholen Sie den virtuellen Computer für Sie. Es werden eine dienstunterbrechung auf dem virtuellen Computer auftreten, während die Konvertierung stattfindet.
+- Verwenden von Azure PowerShell. Sie können die `ConvertTo-AzureRmVMManagedDisk` Cmdlet, um die Migration auszuführen. Wenn Sie diese Methode auswählen, müssen Sie beenden und starten den virtuellen Computer selbst.
+  
+> [!Note]
+> Bedenken Sie, dass die Migration von nicht verwalteten Datenträgern in verwaltete Datenträger nicht rückgängig gemacht werden. Darüber hinaus wird das ursprüngliche Speicherkonto des virtuellen Computers nicht automatisch gelöscht. Sie müssen so löschen Sie die ursprüngliche VHD-Blobs, um unerwünschte Kosten zu vermeiden. 
+
+Verwaltete Datenträger der Verwaltungsaufwand reduziert, und haben einige Funktionen, z. B. standard SSDs zu, die nicht für nicht verwaltete Datenträger zur Verfügung stehen.

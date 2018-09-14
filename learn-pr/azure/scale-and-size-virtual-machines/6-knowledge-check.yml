@@ -1,38 +1,38 @@
 ### YamlMime:ModuleUnit
 uid: learn.scale-and-size-virtual-machines.6-knowledge-check
-title: "Knowledge check: Scale and size virtual machines"
+title: 'Wissenstest: Skalierung und virtuelle Computer der Größe'
 durationInMinutes: 3
-
 metadata:
-  title: "Knowledge check: Scale and size virtual machines"
-  description: Questions about scaling and sizing virtual machines in Azure.
-
+  title: 'Wissenstest: Skalierung und virtuelle Computer der Größe'
+  description: Fragen zur Skalierung und Größe von virtuellen Computern in Azure.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 quiz:
-  title: "Knowledge check: Scale and size virtual machines"
+  title: 'Wissenstest: Skalierung und virtuelle Computer der Größe'
   questions:
- 
-  - content: "True or false: when using virtual machine scale sets with autoscale, the autoscale rules can be configured to change the _size_ of the virtual machines in your scale set."
-    choices:
-    - content: "True"
-      isCorrect: false
-    - content: "False"
-      isCorrect: true
-      correctExplanation: "Autoscale changes the number of instances in your scale set, it does not change the size of the instances."
-
-  - content: "What is typically the most important criterion to use when choosing a _type_ for your virtual machine?"
-    choices:
-    - content: "Your workload; that is, the kind of operations you expect the virtual machine to perform most often."
-      isCorrect: true
-      correctExplanation: "Virtual machine _type_ describes the mix of CPU, GPU, memory, storage, and networking bandwidth allocated to a VM. Your goal is to find the best match of resources for your workload."
-    - content: "The brand of the underlying hardware."
-      isCorrect: false
-    - content: "The operating systems and images that the type supports."
-      isCorrect: false
-       
-  - content: "Suppose you work for a government department responsible for severe-weather alerts. You can achieve the performance you need using one large VM or two small VMs with a load balancer. Which configuration is likely to be a better choice?"
-    choices:
-    - content: "One VM"
-      isCorrect: false
-    - content: "Two VMs and a load balancer"
-      isCorrect: true
-      correctExplanation: "Multiple VMs is appropriate because it provides redundancy. If one of the VMs crashes, the other can continue to service requests."
+    - content: '"True" oder "false": Wenn Sie VM-skalierungsgruppen mit der automatischen Skalierung verwenden, können der Regeln zur automatischen Skalierung konfiguriert werden, zum Ändern der _Größe_ der virtuellen Computer in Ihrer Skalierungsgruppe festgelegt.'
+      choices:
+        - content: Richtig
+          isCorrect: false
+        - content: Falsch
+          isCorrect: true
+          correctExplanation: Für die automatische Skalierung ändert sich die Anzahl der Instanzen in Ihrer Skalierungsgruppe. Er ändert nicht die Größe der Instanzen.
+    - content: 'Was ist in der Regel das wichtigste Kriterium verwenden, wenn Sie auswählen, sind ein _Typ_ für Ihren virtuellen Computer?'
+      choices:
+        - content: 'Ihre Workload; die Art von Vorgängen erwarten Sie, also den virtuellen Computer auf den meisten Fällen führen.'
+          isCorrect: true
+          correctExplanation: 'VM _Typ_ wird beschrieben, die Kombination aus CPU, GPU, Arbeitsspeicher, Speicher und Netzwerkbandbreite zu einem virtuellen Computer zugeordnet. Ihr Ziel ist die beste Übereinstimmung der Ressourcen für Ihre Workload zu finden.'
+        - content: Die Marke der zugrunde liegenden Hardware.
+          isCorrect: false
+        - content: 'Die Betriebssysteme und Images, die der Typ unterstützt.'
+          isCorrect: false
+    - content: 'Angenommen Sie, Sie arbeiten für eine Government-Abteilung für unwettern geschützt Warnungen verantwortlich. Sie können die Leistung erzielen, die Sie mit einer großen virtuellen Computer oder zwei kleine virtuelle Computer mit einem Load Balancer benötigen. Welche Konfiguration ist wahrscheinlich eine bessere Wahl?'
+      choices:
+        - content: Ein virtueller Computer
+          isCorrect: false
+        - content: Zwei virtuelle Computer und einen Load balancer
+          isCorrect: true
+          correctExplanation: 'Eine Konfiguration mit mehreren virtuellen Computern ist geeignet, da sie Redundanz bereitstellt. Wenn einer der VMs abstürzt, kann der andere Dienst weiterhin Anforderungen verarbeiten.'

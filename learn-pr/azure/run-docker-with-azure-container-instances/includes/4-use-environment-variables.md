@@ -9,22 +9,22 @@ Erstellen Sie mithilfe des Befehls `az Azure Cosmos DB create` die Azure Cosmos 
 Die Ausführung dieses Befehls kann einige Minuten dauern:
 
 ```azurecli
-COSMOS_DB_ENDPOINT=$(az cosmosdb create --resource-group myResourceGroup --name aci-cosmos --query documentEndpoint -o tsv)
+COSMOS_DB_ENDPOINT=$(az cosmosdb create --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-cosmos --query documentEndpoint -o tsv)
 ```
 
 Rufen Sie als Nächstes mit dem Befehl `az cosmosdb list-keys` den Azure Cosmos DB-Verbindungsschlüssel ab, und speichern Sie ihn in einer Variablen namens *COSMOS_DB_DB_MASTERKEY*:
 
 ```azurecli
-COSMOS_DB_MASTERKEY=$(az cosmosdb list-keys --resource-group myResourceGroup --name aci-cosmos --query primaryMasterKey -o tsv)
+COSMOS_DB_MASTERKEY=$(az cosmosdb list-keys --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-cosmos --query primaryMasterKey -o tsv)
 ```
 
 ## <a name="deploy-a-container-instance"></a>Bereitstellen einer Containerinstanz
 
-Führen Sie den Befehl `az container create` aus, um eine Azure-Containerinstanz zu erstellen. Beachten Sie, dass zwei Umgebungsvariablen erstellt werden: `COSMOS_DB_ENDPOINT` und `COSMOS_DB_ENDPOINT`. Diese Variablen enthalten die Werte, die für die Verbindung mit der Azure Cosmos DB-Instanz benötigt werden:
+Führen Sie den Befehl `az container create` aus, um eine Azure-Containerinstanz zu erstellen. Beachten Sie, dass zwei Umgebungsvariablen erstellt werden, `COSMOS_DB_ENDPOINT` und `COSMOS_DB_ENDPOINT`. Diese Variablen enthalten die Werte, die für die Verbindung mit der Azure Cosmos DB-Instanz benötigt werden:
 
 ```azurecli
 az container create \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name aci-demo \
     --image microsoft/azure-vote-front:cosmosdb \
     --ip-address Public \
@@ -35,10 +35,10 @@ az container create \
 Rufen Sie nach Abschluss der Containererstellung mithilfe des Befehls `az container show` die IP-Adresse ab:
 
 ```azurecli
-az container show --resource-group myResourceGroup --name aci-demo --query ipAddress.ip --output tsv
+az container show --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-demo --query ipAddress.ip --output tsv
 ```
 
-Navigieren Sie in einem Browser zur IP-Adresse des Containers. Daraufhin sollte die folgende Anwendung angezeigt werden. Bei der Abgabe einer Stimme wird die Stimme in der Azure Cosmos DB-Instanz gespeichert.
+Öffnen Sie einen Browser, und navigieren Sie zur IP-Adresse des Containers. Die folgende Anwendung sollte angezeigt werden. Bei der Abgabe einer Stimme wird die Stimme in der Azure Cosmos DB-Instanz gespeichert.
 
 ![Azure-Abstimmungsanwendung mit zwei Wahlmöglichkeiten: Katzen oder Hunde](../media-draft/azure-vote.png)
 
@@ -49,12 +49,12 @@ In der vorherigen Übung wurde ein Container mit Verbindungsinformationen für A
 Wenn Sie beispielsweise mit dem Befehl `az container show` Informationen zu dem Container abrufen, der in der vorherigen Übung erstellt wurde, stehen die Umgebungsvariablen als Klartext zur Verfügung:
 
 ```azurecli
-az container show --resource-group myResourceGroup --name aci-demo --query containers[0].environmentVariables
+az container show --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-demo --query containers[0].environmentVariables
 ```
 
 Beispielausgabe:
 
-```bash
+```json
 [
   {
     "name": "COSMOS_DB_ENDPOINT",
@@ -75,7 +75,7 @@ Führen Sie das folgende Beispiel aus, um einen Container mit dem Namen *aci-dem
 
 ```azurecli
 az container create \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name aci-demo-secure \
     --image microsoft/azure-vote-front:cosmosdb \
     --ip-address Public \
@@ -86,12 +86,12 @@ az container create \
 Wenn der Container nun mit dem Befehl `az container show` zurückgegeben wird, werden die Umgebungsvariablen nicht angezeigt:
 
 ```azurecli
-az container show --resource-group myResourceGroup --name aci-demo-secure --query containers[0].environmentVariables
+az container show --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-demo-secure --query containers[0].environmentVariables
 ```
 
 Beispielausgabe:
 
-```bash
+```json
 [
   {
     "name": "COSMOS_DB_ENDPOINT",

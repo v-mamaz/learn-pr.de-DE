@@ -1,55 +1,55 @@
-Let's assume you're running a website and an attacker gained access to your database. The attacker gained access to a dbo account in the attack and can perform any operation on the database. A dbo account can access and manipulate information such as metadata and perform all levels of access. 
+Nehmen wir an, dass Sie eine Website und ein Angreifer, die sich bereits Zugriff auf Ihre Datenbank ausführen. Der Angreifer erlangt Zugriff auf ein Konto Dbo im Angriff und jeder Vorgang in der Datenbank ausführen. Ein Dbo-Konto kann Zugriff auf und Bearbeiten von Informationen wie z. B. Metadaten und führen Sie alle Ebenen des Zugriffs.
 
-If the attacker only gained access to a regular user account, then they could only access tables, views, stored procedures, and other objects defined for that user account. For example, if a website accessing a database was compromised due to a SQL injection attack, then the attacker would be limited in what they could do. 
+Wenn der Angreifer nur Zugriff auf ein normales Benutzerkonto erlangt, kann dann nur Tabellen, Sichten, gespeicherte Prozeduren und anderen Objekten definiert, die für dieses Benutzerkonto Zugriff auf. Z. B. wenn eine Website, die Zugriff auf eine Datenbank aufgrund eines SQL Injection-Angriffs kompromittiert wurde, würde der Angreifer beschränkt werden in was sie tun könnten.
 
-In case a security breach happens, it helps to reduce the impact of the breach. Let's look at how to restrict access to the SQL Azure database at the user layer.
+Für den Fall, dass eine sicherheitsverletzung der Fall ist, unterstützt er um die Auswirkungen der sicherheitsverletzung zu verringern. Sehen wir uns zum Einschränken des Zugriffs auf die SQL Azure-Datenbank auf der Benutzerebene an.
 
-## Reduce the attack surface of the database
+## <a name="reduce-the-attack-surface-of-the-database"></a>Reduzieren der Angriffsfläche der Datenbank
 
-To reduce the impact of any security breach, you restrict the surface area of the attack. If you're connecting to your database using a dbo or administrator account and an attacker gets access to the database, the attacker will have access to perform all operations on the database. Access could include querying the database metadata, determining what data is available and/or sensitive, and exploiting this information. 
+Um die Auswirkungen jeder sicherheitsverletzung zu reduzieren, schränken Sie die Oberfläche des Angriffs. Wenn Sie eine Verbindung herstellen mit Ihrer Datenbank, die mit einem Konto Dbo oder Administrator, und ein Angreifer Zugriff auf die Datenbank erhält, hat der Angreifer Zugriff auf alle Vorgänge für die Datenbank ausführen. Zugriff kann gehören, Abfragen der Datenbankmetadaten, bestimmen, welche Daten verfügbar und/oder sensible ist und Ausnutzen dieser Informationen.
 
-You avoid this security risk by creating database users that have restricted permissions. We'll use the term least-privilege here, as the users should only have access to the tables, views, stored procedures, and other entities needed to do their work. 
+Sie vermeiden dieses Sicherheitsrisiko durch Erstellen von Datenbankbenutzern, die über eingeschränkte Berechtigungen haben. Wir verwenden den Begriff mit minimalprivilegien hier, wie die Benutzer nur Zugriff auf die Tabellen, Sichten, gespeicherte Prozeduren und anderen Entitäten, die für die Arbeit benötigt haben sollen.
 
-## Create a database user
+## <a name="create-a-database-user"></a>Erstellen eines Datenbankbenutzers
 
-To create a user with reduced privileges, you'll create a database user and then associate that user with the database. Let's create a SQL Server user and give the user permissions to the database. 
+Um einen Benutzer mit eingeschränkten Rechten zu erstellen, Sie erstellen einen Datenbankbenutzer und klicken Sie dann die Datenbank, Benutzer zuordnen. SQL Server-Benutzer erstellen, und geben Sie die Benutzerberechtigungen in der Datenbank.
 
 > [!Note]
-> There are thirteen (13) types of users in SQL Server. If you need to create another type of database user, use the appropriate link to find out the right syntax. See [Create a database user](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/create-a-database-user?view=sql-server-2017). 
+> Es gibt 13 (13) Typen von Benutzern in SQL Server. Wenn Sie eine andere Art von Datenbankbenutzer erstellen müssen, verwenden Sie den entsprechenden Link, um zu ermitteln, die richtige Syntax. Finden Sie unter [Erstellen eines Datenbankbenutzers](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/create-a-database-user?view=sql-server-2017).
 
-Preferred practice is to create the user at a database level. This step prevents user permissions from going outside the boundaries of the database that you are trying to protect. 
+Bevorzugte Methode ist, um den Benutzer auf Datenbankebene zu erstellen. Dieser Schritt wird verhindert, dass Benutzerberechtigungen innerhalb der Grenzen der Datenbank, die Sie schützen möchten.
 
-1. First, select the database.
-2. Then, create the user using the following query: 
-   
+1. Wählen Sie zuerst die Datenbank ein.
+2. Erstellen Sie dann den Benutzer über die folgende Abfrage aus:
+
    ```sql
    CREATE USER MyWebAppUser WITH PASSWORD = '<YourSuperStrongPassword>';
    ```
-   
-   The previous query creates the user *MyWebUser*. By default the user will not have access to any tables, views, or stored procedures.  
-   
-3. Now, create appropriate permissions for the user by adding them to roles such as db_datareader and db_datawriter.
-   
-   The db_datareader role will allow the user access to all user tables and views within the database. Likewise, the db_datawriter role will allow the user access to read, write, update, and delete rows in the database. 
-   
+
+   Die vorherige Abfrage wird der Benutzer erstellt *MyWebUser*. Standardmäßig wird der Benutzer nicht nicht auf alle Tabellen, Sichten oder gespeicherte Prozeduren zugreifen.
+
+3. Nun erstellen Sie entsprechende Berechtigungen für den Benutzer, indem sie Rollen wie z. B. Db_datareader und Db_datawriter hinzugefügt.
+
+   Die Rolle "Db_datareader" ermöglicht den Benutzerzugriff auf alle Benutzertabellen und Sichten in der Datenbank. Ebenso wird die Rolle "Db_datawriter" ermöglichen den Benutzerzugriff auf das Lesen, schreiben, aktualisieren, und Löschen von Zeilen in der Datenbank.
+
    ```sql
    ALTER ROLE db_datareader ADD MEMBER MyWebAppUser;
    ALTER ROLE db_datawriter ADD MEMBER MyWebAppUser;
    ```
 
-You can deny a user's access to other elements within the database using the DENY operator. Here you're denying the user MyWebAppUser the ability to select data from the Customers table.
+Sie können den Benutzerzugriff auf andere Elemente innerhalb der Datenbank mithilfe des DENY-Operators verweigern. Hier sind Sie dem Benutzer MyWebAppUser die Möglichkeit, auswählen von Daten aus der Customers-Tabelle verweigern.
 
 ```sql
-DENY SELECT ON Customers TO MyWebAppUser; 
+DENY SELECT ON Customers TO MyWebAppUser;
 ```
 
-You can also use the GRANT permission to explicitly give permissions to a user or role.
+Sie können auch die GRANT-Berechtigung explizit gewähren einem Benutzer oder Rolle verwenden.
 
 ```sql
 GRANT SELECT ON Customers TO MyWebAppUser;
 ```
 
-You'll continue to refine the operations on the database in order to get the user to the level of access needed. Instead of a user, you can create a role with the minimum permissions needed and then add the user to the role. 
+Sie werden weiterhin die Vorgänge in der Datenbank zu optimieren, um den Benutzer auf die Ebene des Zugriffs erforderlich zu erhalten. Anstelle eines Benutzers können Sie eine Rolle mit den mindestens erforderlichen Berechtigungen erstellen, und klicken Sie dann den Benutzer zur Rolle hinzufügen.
 
-If you have multiple users that have the same permissions, you could create those users as part of the role. The user will have access only to things that they need, once all the access permissions have been granted or denied. 
-If an attacker gains access to the database through the newly created user, they will only see and execute the same data and operations the user can. Locking down user access greatly reduces the surface area of attack on the database. 
+Wenn Sie mehrere Benutzer, die die gleichen Berechtigungen verfügen verfügen, können Sie diese Benutzer als Teil der Rolle erstellen. Der Benutzer hat nur Zugriff auf Dinge, die sie benötigen, nachdem alle Zugriffsberechtigungen erteilt oder verweigert wurden.
+Wenn ein Angreifer Zugriff auf die Datenbank durch den neu erstellten Benutzer erhält, werden sie nur finden Sie unter und führen Sie die gleichen Daten und Vorgänge, die der Benutzer kann. Sperren des Benutzerzugriffs erheblich verringert die Oberfläche der Angriff auf die Datenbank.

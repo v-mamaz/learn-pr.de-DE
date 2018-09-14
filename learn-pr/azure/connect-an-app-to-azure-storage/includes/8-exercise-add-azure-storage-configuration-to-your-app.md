@@ -1,23 +1,22 @@
-::: zone pivot="csharp"
-Let's add support to our .NET core application to retrieve a connection string from a configuration file. We'll start by adding the necessary plumbing to manage configuration in a JSON file.
+::: Zone Pivot = "Csharp" Unterstützung lassen Sie uns auf unsere .NET Core-Anwendung zum Abrufen einer Verbindungszeichenfolge aus einer Konfigurationsdatei hinzufügen. Wir beginnen, indem Sie die erforderlichen Grundlagen zur Verwaltung der Konfiguration in eine JSON-Datei hinzufügen.
 
-## Create a JSON configuration file
+## <a name="create-a-json-configuration-file"></a>Erstellen einer JSON-Konfigurationsdatei
 
-1. Make sure you are in the correct working directory for your project.
+1. Stellen Sie sicher, dass das richtige Arbeitsverzeichnis für das Projekt ist.
 
-1. Use the `touch` tool on the command line to create a file named **appsettings.json**.
+1. Verwenden der `touch` Tool in der Befehlszeile zum Erstellen einer Datei mit dem Namen **"appSettings.JSON"**.
 
     ```bash
     touch appsettings.json
     ```
 
-1. Open the project with the interactive editor, if you are working locally, use your editor of choice - we recommend **Visual Studio Code** which is an extensible cross-platform IDE. The following commands are for the Cloud Shell editor, but are very similar to VS Code.
-    
+1. Öffnen Sie das Projekt in einem interaktiven Editor ein. Wenn Sie lokal arbeiten, verwenden Sie Editor Ihrer Wahl. Es wird empfohlen **Visual Studio Code**, d.h., dass einer erweiterbaren Plattform-IDE. Die folgenden Befehle sind für die Cloud Shell-Editor jedoch Visual Studio Code sehr ähnlich.
+
     ```bash
     code .
     ```
 
-1. Select the **appsettings.json** file in the editor and add the following text. Save the file - in the online editor, there is a menu in the top right corner which has common file operations.
+1. Wählen Sie die **"appSettings.JSON"** Datei im Editor, und fügen Sie den folgenden Text hinzu. Speichern Sie die Datei. Im online-Editor ist es ein Menü in der oberen rechten Ecke, die häufiger Dateivorgänge ein.
 
     ```json
     {
@@ -25,9 +24,9 @@ Let's add support to our .NET core application to retrieve a connection string f
     }
     ```
 
-1. Next, select the project file (**PhotoSharingApp.csproj**) to open it in the editor.
+1. Wählen Sie als Nächstes die Projektdatei (**PhotoSharingApp.csproj**), die sie im Editor zu öffnen.
 
-1. Add the following configuration block to include the new file in the project and copy it to the output folder. This ensures that the app configuration file is placed in the output directory when the app is compiled/built.
+1. Fügen Sie den folgenden Konfigurationsblock, um die neue Datei in das Projekt einfügen, und kopieren Sie ihn in den Ausgabeordner. Dadurch wird sichergestellt, dass die App-Konfigurationsdatei in das Ausgabeverzeichnis aufgenommen wird, wenn die App kompiliert/erstellt wird.
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk">
@@ -40,32 +39,32 @@ Let's add support to our .NET core application to retrieve a connection string f
     </Project>
     ```
 
-1. Save the file. (Make sure you do this or you will lose the change when you add the package below!)
+1. Speichern Sie die Datei. (Stellen Sie sicher, dass Sie dies tun, oder Sie verlieren die Änderung auf, wenn Sie das folgende Paket hinzufügen.)
 
-## Add support to read a JSON configuration file
+## <a name="add-support-to-read-a-json-configuration-file"></a>Hinzufügen von Unterstützung zum Lesen einer JSON-Konfigurationsdatei
 
-A .NET Core application requires additional NuGet packages to read a JSON configuration file.
+Eine .NET Core-Anwendung erfordert zusätzliche NuGet-Pakete in einer JSON-Konfigurationsdatei zu lesen.
 
-1. In the command prompt section of the window, add a reference to the  **Microsoft.Extensions.Configuration.Json** NuGet package.
+1. Fügen Sie im Abschnitt Eingabeaufforderung des Fensters einen Verweis auf die **"Microsoft.Extensions.Configuration.JSON"** NuGet-Paket.
 
     ```bash
     dotnet add package Microsoft.Extensions.Configuration.Json
     ```
 
-## Add code to read the configuration file
+## <a name="add-code-to-read-the-configuration-file"></a>Hinzufügen von Code zum Lesen der Konfigurationsdatei
 
-Now that we have added the required libraries to enable reading configuration, we need to enable that functionality within our console application.
+Nachdem wir nun die erforderlichen Bibliotheken hinzugefügt haben, um das Lesen der Konfiguration zu ermöglichen, müssen wir diese Funktionalität in unserer Konsolenanwendung aktivieren.
 
-1. Select **Program.cs** in the editor.
+1. Wählen Sie **"Program.cs"** im Editor.
 
-1. At the top of the file, a **using System;** line is present. Underneath that line, add the following lines of code:
+1. Am Anfang der Datei befindet sich die Zeile **using System;**. Fügen Sie unter dieser Zeile die folgenden Codezeilen hinzu:
 
     ```csharp
     using Microsoft.Extensions.Configuration;
     using System.IO;
     ```
 
-1. Replace the contents of the **Main** method with the following code. This code initializes the configuration system to read from the **appsettings.json** file.
+1. Ersetzen Sie den Inhalt von der **Main** Methode durch den folgenden Code. Dieser Code initialisiert das Konfigurationssystem zum Lesen der Datei **appsettings.json**.
 
     ```csharp
     var builder = new ConfigurationBuilder()
@@ -75,7 +74,7 @@ Now that we have added the required libraries to enable reading configuration, w
     var configuration = builder.Build();
     ```
 
-Your **Program.cs** file should now look like the following:
+Ihre Datei **Program.cs** sollte jetzt wie folgt aussehen:
 
 ```csharp
 using System;
@@ -100,54 +99,54 @@ namespace PhotoSharingApp
 
 ::: zone-end
 
-::: zone-pivot="javascript"
+::: zone pivot="javascript"
 
-Let's add support to our Node.js application to retrieve a connection string from a configuration file. We'll start by adding the necessary plumbing to manage configuration from our JavaScript file.
+Fügen Sie Unterstützung für unsere Node.js-Anwendung, die eine Verbindungszeichenfolge aus einer Konfigurationsdatei abzurufen. Wir beginnen, indem Sie die erforderlichen Grundlagen zum Verwalten der Konfiguration von der JavaScript-Datei hinzufügen.
 
-## Create a .env configuration file
+## <a name="create-a-env-configuration-file"></a>Erstellen einer env-Konfigurationsdatei
 
-1. Make sure you are in the correct working directory for your project.
+1. Stellen Sie sicher, dass das richtige Arbeitsverzeichnis für das Projekt ist.
 
-1. Use the `touch` tool on the command line to create a file named **.env**.
+1. Verwenden der `touch` Tool in der Befehlszeile zum Erstellen einer Datei mit dem Namen **env**.
 
     ```bash
     touch .env
     ```
 
-1. Open the project with the interactive editor, if you are working locally, use your editor of choice - we recommend **Visual Studio Code** which is an extensible cross-platform IDE. The following commands are for the Cloud Shell editor, but are very similar to VS Code.
+1. Öffnen des Projekts mit der interaktiven Editor, wenn Sie lokal arbeiten verwenden-Editor Ihrer Wahl – es wird empfohlen **Visual Studio Code** d.h., dass einer erweiterbaren Plattform-IDE. Die folgenden Befehle sind für die Cloud Shell-Editor, aber Visual Studio Code sehr ähnlich sind.
     
     ```bash
     code .
     ```
 
-1. Select the **.env** file in the editor and add the following text. Save the file - in the online editor, there is a menu in the top right corner which has common file operations.
+1. Wählen Sie die **env** Datei im Editor, und fügen Sie den folgenden Text hinzu. Speichern Sie die Datei - online-Editor müssen Sie ein Menü vorhanden ist, in der oberen rechten Ecke die häufiger Dateivorgänge verfügt.
 
     ```
     AZURE_STORAGE_CONNECTION_STRING=<value>
     ```
 
     > [!TIP]
-    > The **AZURE_STORAGE_CONNECTION_STRING** value is a hard-coded environment variable used for Storage APIs to look up access keys. You can use your own name if you prefer - but you must supply the name to the when you create the `BlobService` object.
+    > Die **AZURE_STORAGE_CONNECTION_STRING** Wert ist eine hartcodierte Umgebungsvariable zum Storage-APIs, um Zugriffstasten zu suchen. Sie können Ihre eigenen Namen verwenden, wenn gewünscht, aber Sie müssen den Namen angeben, wann Sie erstellen die `BlobService` Objekt.
 
-1. Save the file.
+1. Speichern Sie die Datei.
 
-## Add support to read an environment configuration file
+## <a name="add-support-to-read-an-environment-configuration-file"></a>Hinzufügen von Unterstützung zum Lesen der Datei zum Konfigurieren einer Umgebung
 
-Node.js apps can include support to read from the **.env** file by adding the **dotenv** package.
+Node.js-apps zählen die Unterstützung zum Lesen aus der **env** Datei durch Hinzufügen der **Dotenv** Paket.
 
-1. In the command prompt section of the window, add a dependency to the  *dotenv** package.
+1. Fügen Sie im Abschnitt Eingabeaufforderung des Fensters eine Abhängigkeit zu der *Dotenv**-Pakets mit `npm`.
 
     ```bash
-    node install dotenv --save
+    npm install dotenv --save
     ```
 
-## Add code to read the configuration file
+## <a name="add-code-to-read-the-configuration-file"></a>Hinzufügen von Code zum Lesen der Konfigurationsdatei
 
-Now that we have added the required libraries to enable reading configuration, we need to enable that functionality within our application.
+Nun, da wir die erforderlichen Bibliotheken zum Lesen der Konfiguration aktivieren hinzugefügt haben, müssen wir diese Funktionalität in unserer Anwendung zu aktivieren.
 
-1. Select *index.js** in the editor.
+1. Wählen Sie *"Index.js"** im Editor.
 
-1. At the top of the file, a **#!/usr/bin/env node** line is present. Underneath that line, add a `require` statement to load the **dotenv** package. This will make environment variables defined in our **.env** file available to the program.
+1. Am Anfang der Datei eine **#! / Usr/Bin/Env Knoten** Zeile vorhanden ist. Unterhalb dieser Zeile Hinzufügen einer `require` Anweisung beim Laden der **Dotenv** Paket. Dies veranlasst die Umgebungsvariablen, die unserer **env** Datei des Programms zur Verfügung.
 
     ```javascript
     #!/usr/bin/env node
@@ -156,34 +155,34 @@ Now that we have added the required libraries to enable reading configuration, w
     ```
 ::: zone-end
 
-## Add the connection string to the configuration file
+## <a name="add-the-connection-string-to-the-configuration-file"></a>Fügen Sie die Verbindungszeichenfolge in die Konfigurationsdatei
 
-Now we need to get the storage account connection string and place it into the configuration for our app.
+Nun müssen wir die Verbindungszeichenfolge für das Speicherkonto abrufen und in die Konfiguration für die App einfügen.
 
-1. Sign in to the [Azure Portal](https://portal.azure.com/?azure-portal=true).
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/?azure-portal=true)an.
 
-1. Navigate to your storage account. You can use the **All Resources** section to find the storage account, or search by name from the _search box_ at the top of the portal window. 
+1. Navigieren Sie zum Speicherkonto. Können Sie die **alle Ressourcen** Abschnitt, um das Storage-Konto zu suchen, oder eine Suche anhand des Namens aus der _Suchfeld_ am oberen Rand des portalfensters.
 
-1. Select the **Access Keys** blade of the storage account in the portal.
+1. Wählen Sie die **Zugriffsschlüssel** auf dem Blatt des Speicherkontos im Portal.
 
-1. Copy the **key1** Connection string.
+1. Kopieren der **"Key1"** Verbindungszeichenfolge.
 
-1. Paste in the contents of the access key you copied from the portal as the value for the connection string configuration variable.
+1. Fügen Sie den Inhalt des Zugriffsschlüssels, die Sie als Wert für die Konfiguration verbindungszeichenfolgenvariablen aus dem Portal kopiert haben.
 
-Your configuration should now look similar to the following:
+Die Konfiguration sollte nun etwa wie folgt aussehen:
 
 ::: zone pivot="csharp"
-    ```json
-    {
-        "StorageAccountConnectionString": "DefaultEndpointsProtocol=https;AccountName=[account-name];AccountKey=[account-key];EndpointSuffix=core.windows.net"
-    }
-    ```
+```json
+{
+    "StorageAccountConnectionString": "DefaultEndpointsProtocol=https;AccountName=[account-name];AccountKey=[account-key];EndpointSuffix=core.windows.net"
+}
+```
 ::: zone-end
 
-::: zone-pivot="javascript"
-    ```
-    AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=https;AccountName=[account-name];AccountKey=[account-key];EndpointSuffix=core.windows.net
-    ```
+::: zone pivot="javascript"
+```
+AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=https;AccountName=[account-name];AccountKey=[account-key];EndpointSuffix=core.windows.net
+```
 ::: zone-end
 
-Now that we have that all wired up, we can start adding code to use our storage account.
+Nun, wir haben, dass alle verbunden, beginnen wir, Hinzufügen von Code, um unserem Speicherkonto zu verwenden.

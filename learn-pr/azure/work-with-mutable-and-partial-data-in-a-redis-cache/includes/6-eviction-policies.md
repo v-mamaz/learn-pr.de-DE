@@ -1,29 +1,29 @@
-Memory is the most critical resource for Redis because it's an in-memory database. You can run into problems when you begin adding data that exceeds the amount of memory available. Redis supports eviction policies, which indicate how data should be handled when you run out of memory.
+Speicher ist die wichtigste Ressource für Azure Redis Cache, da es sich um eine speicherinterne Datenbank handelt. Sie können Probleme auftreten, wenn Sie damit beginnen, Daten hinzufügen, die die Menge des verfügbaren Arbeitsspeichers überschreitet. Azure Redis Cache unterstützt entfernungsrichtlinien, die angeben, wie Daten behandelt werden sollen, wenn nicht Arbeitsspeicher genügend.
 
-Here, you'll set an eviction policy to determine what your data should do when you exceed the maximum amount of memory.
+Legen Sie hier eine Entfernungsrichtlinie, um zu bestimmen, was Ihre Daten ausführen soll, wenn Sie die Höchstmenge an Arbeitsspeicher überschreiten.
 
-## What is an eviction policy?
+## <a name="what-is-an-eviction-policy"></a>Was ist eine Entfernungsrichtlinie?
 
-An eviction policy is a plan that determines how your data should be managed when you exceed the maximum amount of memory available. For example, using an eviction policy, you could tell Redis to delete a random key to make room for the new data being inserted.
+Eine Entfernungsrichtlinie ist einem Plan, der bestimmt, wie Ihre Daten verwaltet werden sollen, wenn Sie die Höchstmenge des verfügbaren Arbeitsspeichers überschreiten. Beispielsweise können über eine Entfernungsrichtlinie, Sie Azure Redis Cache löschen Sie einen zufälligen Schlüssel, um Platz für das Einfügen von neuen Daten zu schaffen teilen.
 
-### Types of eviction policies
+### <a name="types-of-eviction-policies"></a>Typen von entfernungsrichtlinien
 
-There are six different eviction policies provided by Redis. All of these values perform an action when you attempt to insert data when you're out of memory.
+Es gibt sechs verschiedene entfernungsrichtlinien, die von Azure Redis Cache bereitgestellt. Alle diese Werte ausführen eine Aktion, wenn Sie versuchen, Daten einfügen, wenn Sie nicht genügend Arbeitsspeicher sind.
 
-* **noeviction:** No eviction policy. Returns an error message if you attempt to insert data.
+* **"noeviction":** keine Entfernungsrichtlinie. Gibt eine Fehlermeldung zurück, wenn Sie versuchen, Daten einzufügen.
 
-* **allkeys-lru:** Removes the least recently used key.
+* **AllKeys-Lru:** entfernt den am längsten nicht verwendeten Schlüssel.
 
-* **allkeys-random:** Removes a random key.
+* **AllKeys-random:** einen zufälligen Schlüssel entfernt.
 
-* **volatile-lru:** Removes the least recently used key out of all the keys with an expiration set.
+* **Volatile-Lru:** entfernt den am längsten nicht verwendeten Schlüssel aus der alle Schlüssel mit einem Satz Ablauf.
 
-* **volatile-ttl:** Removes the key with the shortest time to live based on the expiration set for it.
+* **Volatile-Ttl:** entfernt, die der Schlüssel mit der kürzesten Zeit die Gültigkeitsdauer auf des Ablaufs Grundlage für ihn festgelegt.
 
-* **volatile-random:** Removes a random key that has an expiration set.
+* **Volatile-random:** entfernt einen zufälligen Schlüssel mit einer Ablaufzeit festlegen.
 
-## How to set an eviction policy
+## <a name="how-to-set-an-eviction-policy"></a>Wie Sie eine Entfernungsrichtlinie festlegen
 
-Azure provides a simple drop-down menu to set the eviction policy for a Redis Cache. Select **Advanced Settings** and use the **maxmemory-policy** drop-down menu.
+Azure bietet ein einfache Dropdown-Menü zum Festlegen von der Entfernungsrichtlinie für Azure Redis Cache. Wählen Sie **Erweiterte Einstellungen**, und verwenden Sie die **Maxmemory-Policy** Dropdown-Menü.
 
-Since memory is critical to a Redis cache, there is support for eviction policies. An eviction policy determines what should be done with existing data when you're out of memory and attempt to insert new data.
+Da Speicher für Azure Redis Cache wichtig ist, ist Unterstützung für entfernungsrichtlinien. Eine Entfernungsrichtlinie bestimmt, was mit vorhandenen Daten ausgeführt werden soll, wenn Sie nicht genügend Arbeitsspeicher und versucht, neue Daten einfügen.

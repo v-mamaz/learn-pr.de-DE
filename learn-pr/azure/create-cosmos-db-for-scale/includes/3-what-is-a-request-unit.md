@@ -1,4 +1,4 @@
-Als Nächstes betrachten wir den Datendurchsatz in unserer Datenbank. Dies ist wichtig, um sicherzustellen, dass wir die Anzahl von Transaktionen für unsere Geschäftsanforderungen verarbeiten können. Anforderungen an den Durchsatz sind nicht immer konsistent. Beispielsweise können Sie eine Einkaufswebsite erstellen, die während der Verkäufe oder Ferien skaliert werden muss. Zu Beginn schätzen wir die Anforderungen an den Datenbankdurchsatz.
+Nächste betrachten wir die Daten in der gesamten für Ihre Datenbank. Angemessenen Durchsatz ist wichtig, sicherzustellen, dass Sie die Anzahl von Transaktionen für Ihre geschäftlichen Anforderungen verarbeiten können. Anforderungen an den Durchsatz sind nicht immer konsistent. Beispielsweise können Sie eine Einkaufswebsite erstellen, die während der Verkäufe oder Ferien skaliert werden muss. Beginnen wir Informationen zu anforderungseinheiten und Schätzen der durchsatzanforderungen wie.
 
 ## <a name="what-is-database-throughput"></a>Was ist der Datenbankdurchsatz? 
 
@@ -41,4 +41,4 @@ Wenn Sie ein Konto erstellen, können Sie ein Minimum von 400 RU/s oder ein Maxi
 
 ## <a name="summary"></a>Zusammenfassung
 
-Sie wissen nun, wie Sie den Durchsatz für Azure Cosmos DB mithilfe von Anforderungseinheiten einschätzen und festlegen. Anforderungseinheiten können jederzeit geändert werden, und die Einstellung auf 1.000 RU/s bei der Erstellung eines Kontos stellt sicher, dass Ihre Datenbank später skaliert werden kann.
+Sie nun wissen, wie zum schätzen und Bereich Durchsatz für Azure Cosmos DB mithilfe von anforderungseinheiten und eine entsprechende Auswahl treffen können, wenn Sie eine neue Azure Cosmos DB-Sammlung zu erstellen. Anforderungseinheiten können jederzeit geändert werden, aber auf 1000 RU/s bei der Erstellung eines Kontos wird sichergestellt, dass es sich bei Ihrer Datenbank später skalieren kann.

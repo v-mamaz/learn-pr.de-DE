@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.host-a-web-application-with-azure-app-service.2-create-a-web-app-in-the-azure-portal
-title: Create a web app in the Azure portal
+title: Erstellen einer Web-app im Azure-portal
 metadata:
-  title: Create a web app in the Azure portal
-  description: Create a web application in the Azure portal
+  title: Erstellen einer Web-app im Azure-portal
+  description: Erstellen Sie eine Webanwendung im Azure-portal
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

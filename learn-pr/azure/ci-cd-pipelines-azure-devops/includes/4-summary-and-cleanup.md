@@ -1,27 +1,27 @@
-You've successfully created a CI/CD pipeline for your custom application using Azure DevOps projects. 
+Sie haben erfolgreich eine CI/CD-Pipeline für Ihre benutzerdefinierte Anwendung, die mit Azure DevOps-Projekten erstellt. 
 
-## Clean up resources
+## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
 
-When you're done working with this CI/CD pipeline, you can delete all resources created during the tutorial.
+Wenn Sie fertig sind arbeiten mit diesem CI/CD-Pipeline, können Sie alle während des Tutorials erstellte Ressourcen löschen.
 
-1. From the Azure portal, browse to `Resource Groups` and click on `VstsResourceGroup-LearnCluster-xxxx` where xxx is random groups of letters and numbers  
-![LearnClusterRG](/media-draft/4-learnclusterrg.png)
+1. Navigieren Sie im Azure-Portal zu `Resource Groups` und klicken Sie auf `VstsResourceGroup-LearnCluster-xxxx` Xxx ist, in dem zufälligen Gruppen von Buchstaben und Zahlen  
+![LearnClusterRG](../media-drafts/4-learnclusterrg.png)
 
-2. Click on the DevOps project named `Learn`  
-![Learn Link](/media-draft/4-learnlink.png)
+2. Klicken Sie auf das DevOps-Projekt mit dem Namen `Learn`  
+![Link "Details"](../media-drafts/4-learnlink.png)
 
-3. Click on `Delete`  
-![Delete](/media-draft/4-deleteproj.png)
+3. Klicken Sie auf `Delete`.  
+![Löschen](../media-drafts/4-deleteproj.png)
 
-4. Click on `Yes`  
-![Yes](/media-draft/4-yes.png)
+4. Klicken Sie auf `Yes`.  
+![Ja](../media-drafts/4-yes.png)
 
-This will delete all resource created in Azure.
+Hierdurch werden alle Ressourcen in Azure erstellt wurde gelöscht.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this tutorial, you learned how to:
+In diesem Tutorial haben Sie Folgendes gelernt:
 > [!div class="checklist"]
-> * Create an Azure DevOps project
-> * Replace the sample app in the Azure DevOps project with your own
-> * Customize the Buld and Release pipelines
+> * Erstellen eines Azure DevOps-Projekts
+> * Ersetzen Sie die Beispiel-app in das Azure DevOps-Projekt durch Ihre eigenen
+> * Passen Sie den Build und Release-pipelines

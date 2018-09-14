@@ -1,88 +1,84 @@
-In dieser Übung erstellen Sie über das Azure-Portal ein Speicherkonto für eine Web-App, mit der fiktive Surfberichte für Südkalifornien bereitgestellt werden.
+In dieser Einheit verwenden Sie das Azure-Portal, um ein Speicherkonto zu erstellen, die für eine fiktive southern California Surf Bericht Web-app geeignet ist.
 
-## <a name="design-goals"></a>Entwurfsziele
-
-Auf einer Website mit Surfberichten können Benutzer Fotos und Videos von den Surfbedingungen an Stränden hochladen. Andere Personen können sich diese Inhalte ansehen und sich dann für einen geeigneten Strand zum Surfen entscheiden. Sie verfolgen die folgenden Ziele im Hinblick auf die Features und das Design:
+Die Berichtsserver-Website durchsuchen ermöglicht Benutzern das Hochladen von Fotos und Videos mit ihren lokalen Beach Bedingungen. Andere Personen können sich diese Inhalte ansehen und sich dann für einen geeigneten Strand zum Surfen entscheiden. Sie verfolgen die folgenden Ziele im Hinblick auf die Features und das Design:
 
 - Videoinhalte müssen schnell geladen werden.
 - Die Website muss mit unerwarteten Lastspitzen beim Upload umgehen können.
 - Veraltete Inhalte werden entfernt, wenn sich die Surfbedingungen ändern. Damit wird sichergestellt, dass immer die aktuellen Bedingungen auf der Website angezeigt werden.
 
-Sie entscheiden sich für eine Implementierung, die hochgeladene Inhalte in einer Azure Queue Storage-Warteschlange für die Verarbeitung puffert und diese anschließend zur Speicherung in Azure Blob Storage verschiebt. Sie benötigen nun ein Speicherkonto, das sowohl Warteschlangen als auch Blobs aufnehmen kann, während Inhalte mit niedriger Latenz übertragen werden.
+Sie entscheiden sich für eine Implementierung, die hochgeladene Inhalte in einer Azure Queue Storage-Warteschlange für die Verarbeitung puffert und diese anschließend zur Speicherung in Azure Blob Storage verschiebt. Sie benötigen ein Speicherkonto, das sowohl Warteschlangen und Blobs aufnehmen kann, während der Übermittlung von niedriger Latenz beim Zugriff auf Ihre Inhalte.
 
-## <a name="exercise-steps"></a>Schritte in dieser Übung
+## <a name="use-the-azure-portal-to-create-a-storage-account"></a>Verwenden Sie zum Erstellen eines Speicherkontos im Azure-portal
 
-### <a name="launch-the-blade"></a>Aufrufen des Blatts
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-1. Rufen Sie in Ihrem Webbrowser das [Azure-Portal](https://portal.azure.com?azure-portal=true) auf, und melden Sie sich bei Ihrem Konto an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/?azure-portal=true)an.
 
-1. Klicken Sie in der linken Randleiste auf **Ressource erstellen**.
+1. Oben links im Azure-Portal wählen **erstellen Sie eine Ressource**.
 
-1. Klicken Sie auf die Überschrift **Storage** im Azure Marketplace.
+1. Wählen Sie im Auswahlbereich, der angezeigt wird, **Storage**.
 
-1. Klicken Sie auf **Speicherkonto**. Im Portal wird das Blatt **Speicherkonto erstellen** angezeigt.
+1. Wählen Sie auf der rechten Seite dieses Bereichs **Speicherkonto – Blob, Datei, Tabelle, Warteschlange**.
+
+    ![Screenshot des Azure-Portal mit dem Erstellen der Blatt einer Ressource mit der Kategorie "Speicher" und hervorgehobener Option für Storage-Konto.](..\media\5-portal-storage-select.png)
 
 ### <a name="configure-the-basic-options"></a>Konfigurieren der grundlegenden Optionen
 
-1. Klicken Sie oben auf dem Blatt auf die Registerkarte **Basics** (Grundeinstellungen).
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-1. **Abonnement:** Wählen Sie eines Ihrer Abonnements aus.
+Klicken Sie unter **PROJEKTDETAILS**:
 
-1. **Ressourcengruppe:** Erstellen Sie eine neue Ressourcengruppe mit dem Namen **SurfReportResourceGroup**.
+1. Wählen Sie das entsprechende **Abonnement** aus.
 
-1. **Speicherkontoname:** Geben Sie einen global eindeutigen Wert ein, der sich beispielsweise aus `surfreport`, Ihren Initialen und einer Zahl zusammensetzt.
+1. Wählen Sie die vorhandene Ressourcengruppe <rgn>[Ressourcengruppennamen Sandkasten]</rgn> aus der Dropdown-Liste.
 
- 1. **Speicherort:** Wählen Sie **USA, Westen** aus.
+    > [!NOTE]
+    > Dieser kostenlose Ressourcengruppe wurde von Microsoft als Teil der Learning-Umgebung bereitgestellt. Wenn Sie ein Konto für eine reale Anwendung erstellen, möchten Sie erstellen eine neue Ressourcengruppe in Ihrem Abonnement aus, um alle Ressourcen für die app zu speichern.
 
-    Begründung: Die Anwendung ist für Benutzer in Südkalifornien vorgesehen. Zur Minimierung der Latenz beim Laden von Videos sollten die Blobs in der Nähe dieser Benutzer gehostet werden. Daher ist **USA, Westen** in diesem Fall eine gute Wahl.
+Klicken Sie unter **INSTANZDETAILS**:
 
-1. **Bereitstellungsmodell:** Wählen Sie **Resource Manager** aus.
-    
-    Begründung: **Resource Manager** ist geeignet, da Sie damit eine Ressourcengruppe verwenden können, um beispielsweise die Web-App und das Speicherkonto für die Anwendung zu verwalten.
+1. Geben Sie einen **speicherkontonamen**. Der Name wird zum Generieren der öffentlichen URL für den Zugriff auf die Daten im Konto verwendet werden. Sie müssen für alle vorhandenen speicherkontonamen in Azure eindeutig sein. Er muss 3 bis 24 Zeichen lang sein und darf nur Kleinbuchstaben und Ziffern enthalten.
 
-1. **Leistung:** Wählen Sie **Standard** aus.
+1. Wählen Sie eine **Speicherort** Nähe Sie. 
 
-    Begründung: Sie können die Option **Premium** nicht auswählen, da hierdurch nur Seitenblobs für das Speicherkonto verwendet werden können. Sie benötigen für Ihre Videos jedoch Blockblobs und zur Pufferung Warteschlangen. Beides ist nur verfügbar, wenn Sie die Option **Standard** auswählen.
+1. Lassen Sie die **Bereitstellungsmodell** als _RM_. Dies ist die bevorzugte Methode für alle ressourcenbereitstellungen in Azure und ermöglicht Ihnen, alle zugehörigen Ressourcen für Ihre app zu gruppieren einer _Ressourcengruppe_ zur einfacheren Verwaltung.
 
-1. **Kontoart:** Wählen Sie **StorageV2 (general purpose v2)** (StorageV2 (allgemein, Version 2)) aus.
+1. Wählen Sie _Standard_ für die **Leistung** Option. Diese entscheidet sich der Datenträger-Speichertyp zum Speichern der Daten im Speicherkonto verwendet. Standard verwendet herkömmliche-Festplatten und Premium Solid State Drives (SSD) für einen schnelleren Zugriff. Beachten Sie jedoch, dass Premium nur unterstützt _Seitenblobs_ und Sie müssen blockiert, Blobs, die für Ihre Videos und eine Warteschlange für die Pufferung – beide sind nur verfügbar, mit der _Standard_ Option.
 
-    Begründung: **StorageV2 (general purpose v2)** (StorageV2 (allgemein, Version 2)) ist hier die richtige Wahl. Sie benötigen sowohl Blobs als auch eine Warteschlange. Die Option **Blob-Speicher** kann daher nicht verwendet werden. Für diese Anwendung ergäben sich beim Auswählen des Kontotyps **Speicher (Allgemein v1)** keine Vorteile, da hierdurch die Anzahl der verfügbaren Features beschränkt würde. Außerdem wäre es unwahrscheinlich, dass Sie so die Kosten für die erwartete Arbeitsauslastung reduzieren können.
+1. Wählen Sie _StorageV2 (Allgemein, Version 2)_ für die **Kontoart**. Dies ermöglicht den Zugriff auf die neuesten Features und Preise. Blob Storage-Konten haben insbesondere Weitere Optionen, die mit diesem Konto verfügbar. Sie benötigen eine Mischung aus Blobs und eine Warteschlange, sodass die _Blob-Speicher_ Option funktioniert nicht. Für diese Anwendung, es gäbe keine Vorteile beim Auswählen einer _Speicher (Allgemein v1)_ -Konto, da, die die Features, Sie einschränken würden zugreifen können und wäre es unwahrscheinlich, dass die Kosten für die erwartete arbeitsauslastung zu reduzieren.
 
-1. **Replikation:** Wählen Sie **Lokal redundanter Speicher (LRS)** aus.
+1. Lassen Sie die **Replikation** als _lokal redundanter Speicher (LRS)_. Daten in Azure Storage-Konten werden stets repliziert, um hochverfügbarkeit sicherzustellen – mit dieser Option können Sie auswählen, wie weit Sie entfernt die Replikation erfolgt entsprechend Ihrer Anforderungen an die Dauerhaftigkeit. In unserem Fall die Bilder und Videos schnell sind veraltet und werden vom Standort entfernt. Die Zusatzkosten globaler Redundanz würden hier zu keinem Mehrwert führen. Wenn es durch einen Notfall zu einem Datenverlust käme, könnten Sie die Website mit neuen Benutzerinhalten neu starten.
 
-    Begründung: Die Bilder und Videos veralten schnell und werden dann von der Website entfernt. Die Zusatzkosten globaler Redundanz würden hier zu keinem Mehrwert führen. Wenn es durch einen Notfall zu einem Datenverlust käme, könnten Sie die Website mit neuen Benutzerinhalten neu starten.
-
-1. **Zugriffsebene (Standard)**: Wählen Sie **Hot** (Heiße Ebene) aus.
+1. Legen Sie die **Zugriffsebene** zu _"heiß"_. Diese Einstellung wird nur für Blob Storage verwendet. Die **heiße Zugriffsebene** eignet sich ideal für häufig verwendete Daten und die **kalte Zugriffsebene** ist besser für selten genutzte Daten. Beachten Sie, dass dies nur die _Standard_ -Wert: Wenn Sie ein Blob erstellen können Sie festlegen einen anderen Wert für die Daten. In diesem Fall möchten wir die Videos, die schnell geladen werden, daher Sie die Option für hohe Leistung für Ihre Blobs verwenden.
    
-    Begründung: Videos sollen schnell geladen werden. Daher muss die Hochleistungsoption für Blobs ausgewählt werden.
-   
-Auf dem folgenden Screenshot werden alle vorgenommenen Einstellungen für die Registerkarte **Basics** (Grundeinstellungen) angezeigt.
+Auf dem folgenden Screenshot werden alle vorgenommenen Einstellungen für die Registerkarte **Basics** (Grundeinstellungen) angezeigt. Beachten Sie, dass die Ressourcengruppe, Abonnements und Namen unterschiedliche Werte.
 
-![Screenshot des Blatts „Speicherkonto erstellen“ mit ausgewählter Registerkarte **Basics** (Grundlagen)](../media-drafts/5-create-storage-account-basics.png)
+![Screenshot: Erstellen einer Storage-Konto auf dem Blatt mit den ** Grundlagen ** Registerkarte ausgewählt.](../media/5-create-storage-account-basics.png)
 
 ### <a name="configure-the-advanced-options"></a>Konfigurieren der erweiterten Optionen
 
-1. Klicken Sie oben auf dem Blatt auf die Registerkarte **Erweitert**.
+1. Klicken Sie auf die **weiter: Erweitert >** Schaltfläche zum Verschieben der **erweitert** Registerkarte, oder wählen Sie die **erweitert** Registerkarte am oberen Rand des Bildschirms.
 
-1. **Sichere Übertragung erforderlich:** Wählen Sie **Aktiviert** aus.
+1. Die **sichere Übertragung erforderlich** Einstellung steuert, ob **HTTP** für die REST-APIs verwendet, um Zugriff auf Daten in das Speicherkonto verwendet werden kann. Wenn diese Option auf _aktiviert_ erzwingt, dass alle Clients zur Verwendung von SSL (**HTTPS**). In den meisten Fällen möchten diese Einstellung auf _aktiviert_ wie die Verwendung von HTTPS über das Netzwerk wird als bewährte Methode betrachtet.
 
-    Begründung: HTTPS-Übertragungen gehören in der Regel zu den Best Practices.
+    > [!WARNING]
+    > Wenn diese Option aktiviert ist, wird es einige zusätzlichen Einschränkungen erzwungen. Azure Files-Dienst-Verbindungen ohne Verschlüsselung schlägt fehl, einschließlich Szenarien für die Verwendung von SMB 2.1 oder 3.0 unter Linux. Da es sich bei Azure-Speicher SSL für benutzerdefinierte Domänennamen nicht unterstützt, kann nicht diese Option mit einem benutzerdefinierten Domänennamen verwendet werden.
 
-1. **Virtuelle Netzwerke:** Wählen Sie **Deaktiviert** aus.
+1. Legen Sie die **virtuelle Netzwerke** option _keine_. Diese Option können Sie das Speicherkonto in ein Azure virtual Network zu isolieren. Öffentlichen Zugriff auf das Internet verwendet werden soll. Unsere Inhalte ist öffentlich, und Sie müssen, um den Zugriff aus öffentlichen Clients zu ermöglichen.
 
-    Begründung: Der Inhalt ist öffentlich verfügbar. Sie müssen daher den Zugriff über öffentliche Clients zulassen.
+1. Lassen Sie die **Data Lake-Speicher Gen2** option _deaktiviert_. Dies ist für big Data-Anwendungen, die nicht auf dieses Modul relevant sind.
 
 Auf dem folgenden Screenshot werden alle vorgenommenen Einstellungen für die Registerkarte **Erweitert** angezeigt.
 
-![Screenshot des Blatts „Speicherkonto erstellen“ mit ausgewählter Registerkarte **Erweitert**](../media-drafts/5-create-storage-account-advanced.png)
+![Screenshot des Blatts „Speicherkonto erstellen“ mit ausgewählter Registerkarte **Erweitert**](../media/5-create-storage-account-advanced.png)
 
 ### <a name="create"></a>Erstellen
 
-1. Klicken Sie unten auf dem Blatt auf **Überprüfen + erstellen**.
+1. Sie können untersuchen, die **Tags** Einstellungen bei Bedarf. Dies können Sie Schlüssel/Wert-Paare, mit dem Konto für Ihre Kategorisierung zuordnen und eine Funktion, die für alle Azure-Ressource verfügbar ist.
 
-1. Klicken Sie auf dem nächsten Bildschirm unten auf dem Blatt auf **Erstellen**.
+1. Klicken Sie auf **überprüfen + erstellen** zur Überprüfung der Einstellungen. Dies ist eine schnelle Überprüfung die Optionen, um sicherzustellen, dass alle erforderlichen Felder ausgewählt werden. Wenn Probleme vorliegen, werden diese hier angezeigt. Nachdem Sie die Einstellungen überprüft haben, klicken Sie auf **erstellen** das Storage-Konto bereitstellen.
 
-1. Warten Sie, bis die Ressource erstellt wurde.
+Es dauert einige Minuten, bis das Konto bereitstellen. Während es sich bei Azure an, die arbeitet, sehen wir uns auf die APIs, die wir für dieses Konto verwendet werden.
 
 ### <a name="verify"></a>Überprüfen
 
@@ -90,13 +86,16 @@ Auf dem folgenden Screenshot werden alle vorgenommenen Einstellungen für die Re
 
 1. Suchen Sie das neue Speicherkonto in der Liste, um zu überprüfen, ob die Erstellung erfolgreich war.
 
-### <a name="clean-up"></a>Bereinigen
+<!-- Cleanup sandbox -->
+[!include[](../../../includes/azure-sandbox-cleanup.md)]
+
+Wenn Sie in Ihrem eigenen Abonnement arbeiten, können Sie die folgenden Schritte im Azure-Portal die Ressourcengruppe und alle zugehörigen Ressourcen zu löschen.
 
 1. Klicken Sie in der linken Randleiste auf den Link **Ressourcengruppen**.
 
-1. Suchen Sie **SurfReportResourceGroup** in der Liste.
+1. Suchen Sie die Ressourcengruppe aus, die Sie in der Liste erstellt haben.
 
-1. Klicken Sie mit der rechten Maustaste auf den Eintrag **SurfReportResourceGroup**, und wählen Sie aus dem Kontextmenü **Ressourcengruppe löschen** aus.
+1. Mit der rechten Maustaste auf den Ressourceneintrag für die Gruppe aus, und wählen Sie **Ressourcengruppe löschen** aus dem Kontextmenü. Klicken Sie auf "..." Menu-Elements auf der rechten Seite des Eintrags, um das gleiche Kontextmenü zu erhalten.
 
 1. Geben Sie den Namen der Ressourcengruppe in das Bestätigungsfeld ein.
 
@@ -104,4 +103,4 @@ Auf dem folgenden Screenshot werden alle vorgenommenen Einstellungen für die Re
 
 ## <a name="summary"></a>Zusammenfassung
 
-Sie haben ein Speicherkonto erstellt und die zugehörigen Einstellungen an Ihre geschäftlichen Anforderungen angepasst. Beispielsweise haben Sie für das Rechenzentrum die Region „USA, Westen“ ausgewählt, weil Ihre Kunden sich in erster Linie in Südkalifornien befinden. Dieser Ablauf ist typisch: Zunächst analysieren Sie Ihre Daten und Ziele, und anschließend konfigurieren Sie die entsprechenden Optionen für das Speicherkonto.
+Sie haben ein Speicherkonto erstellt und die zugehörigen Einstellungen an Ihre geschäftlichen Anforderungen angepasst. Sie können z. B. ein Rechenzentrum USA (Westen) ausgewählt haben, weil Ihre Kunden sich in erster Linie in Südkalifornien befanden. Dies ist ein typischer Ablauf: zunächst analysieren Ihrer Daten und die Ziele, und die Optionen für das Storage-Konto entsprechend konfigurieren.

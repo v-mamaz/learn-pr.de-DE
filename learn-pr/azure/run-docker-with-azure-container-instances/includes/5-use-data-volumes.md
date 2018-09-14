@@ -9,7 +9,7 @@ Bevor Sie eine Azure-Dateifreigabe in Azure Container Instances einbinden, müss
 ```azurecli
 ACI_PERS_STORAGE_ACCOUNT_NAME=mystorageaccount$RANDOM
 
-az storage account create --resource-group myResourceGroup --name $ACI_PERS_STORAGE_ACCOUNT_NAME --location eastus --sku Standard_LRS
+az storage account create --resource-group <rgn>[Sandbox resource group name]</rgn> --name $ACI_PERS_STORAGE_ACCOUNT_NAME --sku Standard_LRS
 ```
 
 Führen Sie den folgenden Befehl aus, um die Verbindungszeichenfolge für das Speicherkonto in einer Umgebungsvariablen mit dem Namen *AZURE_STORAGE_CONNECTION_STRING* zu platzieren. Diese Umgebungsvariable kann von der Azure CLI gelesen und für speicherbezogene Vorgänge verwendet werden:
@@ -31,14 +31,14 @@ Um eine Azure-Dateifreigabe als Volume in Azure Container Instances bereitzustel
 Wenn Sie das oben angegebene Skript verwendet haben, wurde der Name des Speicherkontos mit einem zufälligen Wert am Ende erstellt. Um die endgültige Zeichenfolge (einschließlich des zufälligen Teils) abzufragen, verwenden Sie die folgenden Befehle:
 
 ```azurecli
-STORAGE_ACCOUNT=$(az storage account list --resource-group myResourceGroup --query "[?contains(name,'$ACI_PERS_STORAGE_ACCOUNT_NAME')].[name]" --output tsv)
+STORAGE_ACCOUNT=$(az storage account list --resource-group <rgn>[Sandbox resource group name]</rgn> --query "[?contains(name,'$ACI_PERS_STORAGE_ACCOUNT_NAME')].[name]" --output tsv)
 echo $STORAGE_ACCOUNT
 ```
 
 Der Freigabename ist bereits bekannt (aci-share-demo), daher verbleibt nur der Speicherkontoschlüssel, der mit dem folgenden Befehl gesucht werden kann:
 
 ```azurecli
-STORAGE_KEY=$(az storage account keys list --resource-group myResourceGroup --account-name $STORAGE_ACCOUNT --query "[0].value" --output tsv)
+STORAGE_KEY=$(az storage account keys list --resource-group <rgn>[Sandbox resource group name]</rgn> --account-name $STORAGE_ACCOUNT --query "[0].value" --output tsv)
 echo $STORAGE_KEY
 ```
 
@@ -48,7 +48,7 @@ Um eine Azure-Dateifreigabe als Volume in einem Container bereitzustellen, geben
 
 ```azurecli
 az container create \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name aci-demo-files \
     --image microsoft/aci-hellofiles \
     --ports 80 \
@@ -62,19 +62,18 @@ az container create \
 Nachdem der Container erstellt wurde, rufen Sie die öffentliche IP-Adresse ab:
 
 ```azurecli
-az container show --resource-group myResourceGroup --name aci-demo-files --query ipAddress.ip -o tsv
+az container show --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-demo-files --query ipAddress.ip -o tsv
 ```
 
 Öffnen Sie einen Browser, und navigieren Sie zur IP-Adresse des Containers. Es wird ein einfaches Formular angezeigt. Geben Sie Text ein, und klicken Sie auf **Senden**. Dadurch wird eine Datei in der Azure-Dateifreigabe mit dem hier eingegebenen Text als Textkörper erstellt.
 
 ![Beispiel für eine Azure Container Instances-Dateifreigabe](../media-draft/files-ui.png)
 
-Zur Überprüfung können Sie im Azure-Portal zur Dateifreigabe navigieren und die Datei herunterladen.
+Zur Überprüfung können Sie zur Dateifreigabe im Azure-Portal navigieren und die Datei herunterladen.
 
 ![Beispieltextdatei mit Inhalten – Demoanwendung](../media-draft/sample-text.png)
 
 Wenn es sich bei den Inhalten, die in der Azure-Dateifreigabe gespeichert sind, um wertvolle Dateien und Daten handelt, kann diese Freigabe auf einer neuen Containerinstanz erneut bereitgestellt werden, um zustandsbehaftete Daten verfügbar zu machen.
-
 
 ## <a name="summary"></a>Zusammenfassung
 

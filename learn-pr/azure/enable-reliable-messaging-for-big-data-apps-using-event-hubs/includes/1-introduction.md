@@ -5,7 +5,7 @@ Angenommen, Sie arbeiten in einer Bank in der Abteilung für Kreditkarten. Sie s
 An Wochenenden und Feiertagen ist Ihr System ggf. besonders stark ausgelastet. Daher sollte es in der Lage sein, Durchsätze effizient und genau zu verarbeiten. Es handelt sich hierbei um Transaktionen, bei denen der kleinste Fehler enorme Auswirkungen haben kann.
 
 Azure Event Hubs kann große Mengen an Transaktionen empfangen und verarbeiten. Außerdem kann der Dienst so konfiguriert werden, dass bei Bedarf auf dynamische Weise eine horizontale Skalierung durchgeführt wird, um höhere Durchsätze zu verarbeiten.
-In diesem Modul erfahren Sie, wie Sie Event Hubs mit Ihrer Anwendung verbinden und auf zuverlässige Weise hohe Transaktionsvolumen verarbeiten können.
+In diesem Modul erfahren Sie, wie Sie Event Hubs mit Ihrer Anwendung verbinden und zuverlässig hohe Transaktionsvolumen verarbeiten können.
 
 ## <a name="learning-objectives"></a>Lernziele
 
@@ -13,10 +13,10 @@ In diesem Modul wird Folgendes thematisiert:
 
 - Erstellen eines Event Hubs mit Azure CLI
 - Konfigurieren von Anwendungen zum Senden oder Empfangen von Nachrichten über einen Event Hub
-- Bewerten der Leistung eines Event Hubs über das Azure-Portal
+- Prüfen der Leistung eines Event Hubs über das Azure-Portal
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-- Erfahrung im Erstellen und Verwalten von Ressourcen über das Azure-Portal
+- Erfahrung im Erstellen und Verwalten von Ressourcen über das Azure-Portal.
 - Erfahrung im Umgang mit der Azure CLI 2.0 für die Registrierung in Azure und zum Erstellen von Ressourcen
 - Grundlegende Kenntnisse zu Big Data-Konzepten wie Streaming und Ereignisverarbeitung

@@ -1,70 +1,70 @@
-Lamna Healthcare recently experienced a significant outage to a customer-facing web application. An engineer was granted full access to a resource group containing the production web application. This person accidentally deleted the resource group and all child resources, including the database hosting live customer data. 
+Bei Lamna Healthcare ist vor Kurzem bei einer Kunden betreffenden Webanwendung ein erheblicher Ausfall aufgetreten. Einem Techniker wurde Vollzugriff auf eine Ressourcengruppe gewährt, die die Produktionswebanwendung enthält. Dieser hat versehentlich die Ressourcengruppe mit allen untergeordneten Ressourcen sowie die Datenbank gelöscht, in der aktive Kundendaten gehostet werden. 
 
-Fortunately, the application source code and resources were available in source control and regular database backups were running automatically on a schedule. Therefore the service was reinstated relatively easily. Here, we will explore how this outage could have been avoided by utilizing capabilities on Azure to protect the access to infrastructure.
+Zum Glück waren Anwendungsquellcode und Ressourcen in der Quellcodeverwaltung verfügbar und die Datenbank wurde regelmäßig nach einem Zeitplan automatisch gesichert. Daher konnte der Dienst relativ einfach wiederhergestellt werden. Hier untersuchen wir nun, wie dieser Ausfall mithilfe der Funktionen in Azure zum Schutz des Zugriffs auf die Infrastruktur hätte vermieden werden können.
 
-## Criticality of infrastructure
+## <a name="criticality-of-infrastructure"></a>Bedeutung der Infrastruktur
 
-Cloud infrastructure is becoming a critical piece of many businesses. It is critical to ensure people and processes have only the rights they need to get their job done. Assigning incorrect access can result in data loss, data leakage, or cause services to become unavailable. 
+Die Cloudinfrastruktur ist inzwischen ein wichtiger Bestandteil vieler Unternehmen. Dabei muss darauf geachtet werden, dass Benutzer und Prozesse nur die Rechte erhalten, die sie benötigen, um ihre Arbeit zu erledigen. Zuweisen von falsch kann keine Daten verloren gehen, Datenlecks oder dazu führen, dass Dienste nicht mehr verfügbar ist. 
 
-System administrators can be responsible for a large number of users, systems, and permission sets. So correctly granting access can quickly become unmanageable and can lead to a 'one size fits all' approach. This approach can reduce the complexity of administration, but makes it far easier to inadvertently grant more permissive access than required.
+Systemadministratoren können für eine große Anzahl von Benutzern, Systeme zuständig und Berechtigungssätze. Daher kann die ordnungsgemäße Zuweisung von Zugriffsberechtigungen schnell unüberschaubar werden und eine Universallösung zur Folge haben. Damit wird die Verwaltung zwar unkomplizierter, es ist jedoch wesentlich einfacher, versehentlich einen freizügigeren Zugriff als erforderlich zu gewähren.
 
-## Role-based access control
+## <a name="role-based-access-control"></a>Rollenbasierte Zugriffssteuerung
 
-Role-based access control (RBAC) offers a slightly different approach. Roles are defined as collections of access permissions. Security principals are mapped to roles directly or through group membership. Separating security principals, access permissions, and resources provides simplified access management and more fine-grained control.
+Hier bietet die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) ein etwas anderes Konzept. Rollen werden als Sammlungen von Zugriffsberechtigungen definiert. Sicherheitsprinzipale werden Rollen direkt oder über eine Gruppenmitgliedschaft zugeordnet. Die Trennung von Sicherheitsprinzipalen, Zugriffsberechtigungen und Ressourcen ermöglicht eine einfachere Verwaltung und differenziertere Steuerung.
 
-On Azure, users, groups, and roles are all stored in Azure Active Directory (Azure AD). The Azure Resource Manager API uses role-based access control to secure all resource access management within Azure.
+In Azure werden Benutzer, Gruppen und Rollen in Azure Active Directory (Azure AD) gespeichert. Bei der Azure Resource Manager-API wird die rollenbasierte Zugriffssteuerung verwendet, um die Verwaltung des Zugriffs auf alle Ressourcen innerhalb von Azure zu gewährleisten.
 
-![ACL-based access](../media-draft/ACL_Based_Access.png)
+![ACL-basierter Zugriff](../media-draft/ACL_Based_Access.png)
 
 <!-- ![Role-based access control](../media-draft/Role_Based_Access.png)
  -->
 
-### Roles and management groups
+### <a name="roles-and-management-groups"></a>Rollen und -Verwaltungsgruppen
 
-Roles are sets of permissions, like "Read-only" or "Contributor", that users can be granted to access an Azure service instance. Roles can be granted at the individual service instance level, but they also flow down the Azure Resource Manager hierarchy. Roles assigned at a higher scope, like an entire subscription, are inherited by child scopes, like service instances. 
+Rollen sind bestimmte Berechtigungen, z. B. "Schreibgeschützt" oder "Mitwirkender", dass Benutzer den Zugriff auf ein Azure-Dienst-Instanz erteilt werden können. Rollen können auf der jeweiligen Instanz Dienstebene erteilt werden, aber diese auch in der Azure Resource Manager-Hierarchie ausgetauscht. Rollen, die auf einer höheren Ebene zugewiesen werden, wie etwa ein ganzes Abonnement, werden an untergeordnete Ebenen, wie etwa Dienstinstanzen, vererbt. 
 
-Management groups are an additional hierarchical level recently introduced into the RBAC model. Management groups add the ability to group subscriptions together and apply policy at an even higher level.
+Bei Verwaltungsgruppen handelt es sich um eine zusätzliche hierarchische Ebene, die vor Kurzem beim RBAC-Modell eingeführt wurde. Verwaltungsgruppen bieten die zusätzliche Möglichkeit, Abonnements zu gruppieren und Richtlinien auf einer noch höheren Ebene anzuwenden.
 
-The ability to flow roles through an arbitrarily defined subscription hierarchy also allows administrators to grant temporary access to an entire environment for authenticated users. For example, an auditor may require temporary read-only access to all subscriptions.
+Dank der Möglichkeit der Weitergabe von Rollen in einer beliebig definierten Abonnementhierarchie können Administratoren authentifizierten Benutzern auch vorübergehenden Zugriff auf eine ganze Umgebung gewähren. Dies ist beispielsweise möglich, wenn ein Prüfer temporären schreibgeschützten Zugriff auf alle Abonnements benötigt.
 
-![Management groups](../media-draft/management_groups.png)
+![Verwaltungsgruppen](../media-draft/management_groups.png)
 
-### Privileged Identity Management
+### <a name="privileged-identity-management"></a>Privileged Identity Management
 
-In addition to managing Azure resource access with RBAC, a comprehensive approach to infrastructure protection should consider including the ongoing auditing of role members as their organization changes and evolves. Azure AD Privileged Identity Management (PIM) is an additional paid-for offering that provides oversight of role assignments, self-service, and just-in-time role activation and Azure AD & Azure resource access reviews.
+Bei einem umfassenden Konzept zum Schutz der Infrastruktur sollte neben der Verwaltung des Zugriffs auf Azure-Ressourcen mittels RBAC mit Änderung und Weiterentwicklung der Organisation die Einbindung einer laufenden Überwachung von Rollenmitgliedern in Betracht gezogen werden. Azure AD Privileged Identity Management (PIM) ist ein zusätzliches kostenpflichtiges Angebot, das einen Überblick über Rollenzuweisungen, die Aktivierung von Self-Service- und Just-In-Time-Rollen sowie die Überprüfung des Zugriffs auf Azure AD- und Azure-Ressourcen bereitstellt.
 
-![Privileged identity management](../media-draft/PIM_Dashboard.png)
+![Privileged Identity Management](../media-draft/PIM_Dashboard.png)
 
-## Providing identities to services
+## <a name="providing-identities-to-services"></a>Bereitstellen von Identitäten für Dienste
 
-It's often valuable for services to have identities. Often times, and against best practices, credential information is embedded in configuration files. With no security around these configuration files, anyone with access to the systems or repositories can access these credentials and risk exposure.
+Für Dienste ist es oft nützlich, eine Identität zu besitzen. Anmeldeinformationen sind entgegen allen bewährten Methoden häufig in Konfigurationsdateien enthalten. Wenn für diese Konfigurationsdateien keine Sicherheitsrichtlinien gelten, kann jeder Benutzer mit Zugriff auf die Systeme oder Repositorys auf diese Anmeldeinformationen zugreifen und stellt somit ein potenzielles Risiko dar.
 
-Azure AD addresses this problem through two methods: service principals and managed service identities.
+Azure AD löst dieses Problem durch zwei Methoden:-Prinzipale und verwalteten Identitäten für Azure-Dienste.
 
-### Service principals
+### <a name="service-principals"></a>Dienstprinzipale
 
-To understand service principals, it's useful to first understand the words **identity** and **principal** as they are used in Identity management world.
+Um Dienstprinzipale zu verstehen, ist es sinnvoll, Sie zuerst verstehen, die Wörter **Identität** und **principal** Identity Management-Welt verwendet wird.
 
-An **identity** is just a thing that can be authenticated. Obviously this includes users with username and password, but it can also include applications or other servers, which might authenticate with secret keys or certificates. As a bonus definition, an **account** is data associated with an identity.
+Eine **Identität** ist lediglich etwas, das authentifiziert werden kann. Offensichtlich eingeschlossen sind Benutzer mit Benutzername und Kennwort, aber er kann auch enthalten, Anwendungen oder anderen Servern, die mit geheimen Schlüsseln oder Zertifikaten authentifiziert werden können. Hierzu eine zusätzliche Definition: Bei einem **Konto** handelt es sich um Daten, die einer Identität zugeordnet sind.
 
-A **principal** is an identity acting with certain roles or claims. Often it is not useful to consider identity and principal separately, but think of using 'sudo' on a bash prompt or on Windows using "run as Administrator". In both of those cases, you are still logged in as the same identity as before, but you've changed the role under which you are executing.
+Ein **Prinzipal** ist eine Identität mit bestimmten Rollen oder Ansprüchen. Häufig ist es nicht sinnvoll, sich Identität und Prinzipal getrennt vorzustellen, sondern zu überlegen, „sudo“ über eine Bash-Eingabeaufforderung oder „Als Administrator ausführen“ unter Windows zu verwenden. In beiden Fällen Sie immer noch angemeldet sind als die gleiche Identität wie vor, aber Sie haben die Rolle, die unter der Sie ausgeführt werden geändert.
 
-So a **Service Principal** is literally named. It is an identity that is used by a service or application. Like other identities, it can be assigned roles. 
+Ein **Dienstprinzipal** trägt somit seinen Namen zurecht. Er stellt eine Identität dar, die von einem Dienst oder einer Anwendung verwendet wird. Wie andere Identitäten können sie Rollen zugewiesen werden. 
 
-For example, Lamna Healthcare can assign its deployment scripts to run authenticated as a service principal. If that is the only identity that has permission to perform destructive actions, Lamna will have gone a long way toward making sure they don't have a repeat of the accidental resource deletion.
+Bei Lamna Healthcare können beispielsweise die eigenen Bereitstellungsskripts zugewiesen werden, sodass sie authentifiziert als Dienstprinzipal ausgeführt werden. Wenn dies die einzige Identität ist mit der Berechtigung zur Ausführung schädlicher Aktionen, wird Lamna aktiv sind einen wichtiger Beitrag, um sicherzustellen, dass sie nicht über eine Wiederholung des Löschvorgangs versehentlich Ressourcen verfügen.
 
-### Managed Service Identities
+### <a name="managed-identities-for-azure-resources"></a>Verwaltete Identitäten für Azure-Ressourcen
 
-The creation of service principals can be a tedious process, and there are a lot of touch points that can make maintaining them difficult. Manage Service Identities (MSI) are much easier and will do most of the work for you. 
+Die Erstellung von dienstprinzipalen kann eine mühsame Angelegenheit, und es gibt viele Berührungspunkte, die Verwaltung schwierig machen können. Verwalten von Identitäten für Azure-Ressourcen sehr viel einfacher sind, und die meiste Arbeit für Sie erledigt werden.
 
-An MSI can be instantly created for any Azure service that supports it (the list is constantly growing). When you create an MSI for a service, you are creating an account on the Azure Active Directory tenant. Azure infrastructure will automatically take care of authenticating the service and managing the account. You can then use that account like any other AD account including securely letting the authenticated service access other Azure resources.
+Eine verwaltete Identität kann sofort für alle Azure-Dienste erstellt werden, die es unterstützt (die Liste nimmt ständig zu). Wenn Sie eine verwaltete Identität für einen Dienst erstellen, erstellen Sie ein Konto in Azure AD-Mandanten. Die Azure-Infrastruktur übernimmt automatisch die Authentifizierung des Diensts und die Verwaltung des Kontos. Danach können Sie dieses Konto wie jedes andere AD-Konto verwenden und beispielsweise dafür sorgen, dass der authentifizierte Dienst sicher auf andere Azure-Ressourcen zugreift.
 
-Lamna Healthcare takes their identity management a step further and uses MSIs for all supported services that need the ability to perform infrastructure management and deployments.
+Lamna Healthcare geht ihre identitätsverwaltung einen Schritt weiter und verwaltete Identitäten verwendet, für alle unterstützten Dienste, die die Fähigkeit zum Ausführen der infrastrukturverwaltung und Bereitstellungen zu benötigen.
 
-## Infrastructure protection at Lamna Healthcare
+## <a name="infrastructure-protection-at-lamna-healthcare"></a>Infrastrukturschutz bei Lamna Healthcare
 
-We've seen how Lamna Healthcare has addressed issues from their incident where infrastructure was inadvertently deleted. They've used role-based access control to better manage the security of their infrastructure, and are using managed service identities to keep their credentials out of code and ease administration of the identities needed for their services.
+Wir haben gesehen,wie bei Lamna Healthcare die Probleme ab dem Vorfall angegangen wurden, bei dem versehentlich Infrastruktur gelöscht wurde. Sie rollenbasierte Zugriffssteuerung verwendet haben, um die Sicherheit ihrer Infrastruktur besser zu verwalten und zu ihren Anmeldeinformationen aus Code und einfache Verwaltung der Identitäten für ihre Dienste erforderlichen verwaltete Identitäten verwenden.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-To ensure the availability and integrity of infrastructure, it's important to properly secure your infrastructure. Properly using features such as RBAC and managed service identities will help protect your Azure environment from unauthorized or unintended access, and will enhance the identity security capabilities in your architecture.
+Um die Verfügbarkeit und Integrität der Infrastruktur sicherzustellen, muss die Infrastruktur entsprechend geschützt werden. Ordnungsgemäß mithilfe von Funktionen wie RBAC und die verwaltete Identitäten hilft beim Schutz Ihrer Azure-Umgebung vor nicht autorisierten oder unerwünschten Zugriff, und verbessern Sie die Identity-Sicherheitsfunktionen in Ihrer Architektur.

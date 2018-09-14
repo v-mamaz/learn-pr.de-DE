@@ -1,17 +1,17 @@
-Now we want to complete the application by writing code to read the next message in the queue, process it, and delete it from the queue. 
+Jetzt möchten wir schließen Sie die Anwendung, indem Sie das Schreiben von Code aus, um die nächste Nachricht in der Warteschlange zu lesen, verarbeiten und löschen sie aus der Warteschlange. 
 
-We're going to place this code into the same application and execute it when you don't pass any parameters, however in our news service scenario, we would really place this code into our middle-tier servers to process the stories.
+Wir binden diesen Code in die gleiche Anwendung ein und führen ihn aus, wenn Sie keine Parameter übergeben. Aber in unserem Nachrichtenservice-Szenario fügen wir diesen Code unseren Servern auf mittlerer Ebene zu, um die Meldungen weiterzuverarbeiten.
 
-## Dequeue a message
+## <a name="dequeue-a-message"></a>Entfernen einer Nachricht aus der Warteschlange
 
-Let's add a new method that retrieves the next message from the queue.
+Lassen Sie uns eine neue Methode hinzufügen, die die nächste Nachricht aus der Warteschlange abruft.
 
-1. Switch to the `QueueApp` folder in the Cloud Shell and type `code .` to open the online editor.
+1. Wechseln Sie in der Cloud Shell zum Ordner `QueueApp` und geben Sie `code .` ein, um den Online-Editor zu öffnen.
  
-1. Open the `Program.cs` source file.
+1. Öffnen Sie die Quelldatei `Program.cs`.
 
-1. Create a static method in the `Program` class named `ReceiveArticleAsync` that takes no parameters and returns a `Task<string>`. We'll use this method to pull a news article from the queue and return it.
-    - Go ahead and add the `async` keyword to the method since we'll be using some asynchronous `Task`-based methods.
+1. Erstellen Sie eine statische Methode in der `Program`-Klasse mit dem Namen `ReceiveArticleAsync`, die keine Parameter verwendet und `Task<string>` zurückgibt. Wir nutzen diese Methode, um eine Nachrichtenmeldung der Warteschlange zu entnehmen und zurückzugeben.
+    - Fahren Sie fort, indem Sie das Schlüsselwort `async` der Methode hinzufügen, da wir einige asynchrone, auf `Task` basierende Methoden verwenden werden.
 
     ```csharp
     static async Task<string> ReceiveArticleAsync()
@@ -34,14 +34,14 @@ Let's add a new method that retrieves the next message from the queue.
     }
     ```
     
-1. In your `ReceiveArticleAsync` method, call the new `GetQueue` method to retrieve your queue reference and assign it to a variable.
+1. Rufen Sie in Ihrer `ReceiveArticleAsync`-Methode die neue `GetQueue`-Methode auf, um Ihren Warteschlangenverweis abzurufen und ihn einer Variablen zuzuweisen.
 
-1. Next, call the `ExistsAsync` method on the `CloudQueue` object; this will return whether the queue has been created. If we attempt to retrieve a message from a non-existent queue, the API will throw an exception.
-    - This method is asynchronous so use `await` to get the return value.
-    - You should already have the `async` keyword on the `ReceiveArticleAsync` method, but if not add it now.
+1. Rufen Sie als Nächstes die `ExistsAsync`-Methode für das `CloudQueue`-Objekt auf, die zurückgibt, ob die Warteschlange erstellt wurde. Wenn wir versuchen, eine Nachricht aus einer nicht vorhandenen Warteschlange abzurufen, löst die API eine Ausnahme aus.
+    - Diese Methode ist asynchron, weshalb Sie `await` verwenden, um den Rückgabewert abzurufen.
+    - Das Schlüsselwort `async` sollte bereits für die `ReceiveArticleAsync`-Methode vorhanden sein. Falls nicht, fügen Sie es jetzt hinzu.
 
 
-1. Add an `if` block that uses the return value from `ExistsAsync`. We'll add our code to read a value from the queue into the block. Add a final return string to the method that indicates no value was read. Your method should be looking something like this:
+1. Fügen Sie einen `if`-Block hinzu, der den Rückgabewert von `ExistsAsync` verwendet. Wir fügen unseren Code hinzu, um einen Wert aus der Warteschlange in den Block einzulesen. Fügen Sie eine abschließende Rückgabezeichenfolge zur Methode hinzu, die angibt, dass kein Wert gelesen wurde. Ihre Methode sollte in etwa so aussehen:
 
 ```csharp
 static async Task<string> ReceiveArticleAsync()
@@ -56,13 +56,13 @@ static async Task<string> ReceiveArticleAsync()
 }
 ```
 
-1. Call `GetMessageAsync` on the `CloudQueue` object to get the first `CloudQueueMessage` from the queue. The return value will be `null` if the queue is empty.
+1. Rufen Sie `GetMessageAsync` für das `CloudQueue`-Objekt auf, um die erste `CloudQueueMessage` aus der Warteschlange abzurufen. Der zurückgegebene Wert ist `null`, wenn die Warteschlange leer ist.
 
-1. If it's non-null, use the `AsString` property on the `CloudQueueMessage` object to get the contents of the message.
+1. Falls nicht NULL, verwenden Sie die `AsString`-Eigenschaft für das `CloudQueueMessage`-Objekt, um den Inhalt der Nachricht abzurufen.
 
-1. Call `DeleteMessageAsync` on the `CloudQueue` object to delete the message from the queue.
+1. Rufen Sie `DeleteMessageAsync` für das `CloudQueue`-Objekt auf, um die Nachricht aus der Warteschlange zu löschen.
 
-The final method implementation should resemble:
+Die letzte Implementierung der Methode sollte so aussehen:
 
 ```csharp
 static async Task<string> ReceiveArticleAsync()
@@ -84,17 +84,17 @@ static async Task<string> ReceiveArticleAsync()
 }
 ```
 
-## Call the ReceiveArticleAsync method
+## <a name="call-the-receivearticleasync-method"></a>Aufrufen der ReceiveArticleAsync-Methode
 
-Finally, let's add support to invoke our new method. We'll do this when we don't pass any parameters into the program.
+Abschließend fügen wir noch Unterstützung zum Aufrufen unserer neuen Methode hinzu. Dies erfolgt, wenn wir keine Parameter an das Programm übergeben.
 
-1. Locate the `Main` method and specifically the `if` block you added earlier to look for parameters.
+1. Navigieren Sie zur `Main`-Methode und insbesondere zum `if`-Block, den Sie zuvor hinzugefügt haben, um nach Parametern zu suchen.
 
-1. Add an `else` condition and call the `ReceiveArticleAsync` method. 
+1. Fügen Sie eine `else`-Bedingung hinzu, und rufen die `ReceiveArticleAsync`-Methode auf. 
 
-1. Since it's asynchronous, we would normally want to use `await`, however as explained earlier that doesn't work in all versions of C# - so just use the `Result` property to get the return value and print it to the console window.
+1. Da sie asynchron ist, würden wir normalerweise `await` verwenden. Wie jedoch bereits erläutert, funktioniert das nicht in allen Versionen von C#. Nutzen Sie also einfach die `Result`-Eigenschaft, um den Rückgabewert abzurufen und ihn im Konsolenfenster auszugeben.
 
-Your code should look something like:
+Ihr Code sollte ungefähr wie folgt aussehen:
 
 ```csharp
 if (args.Length > 0)
@@ -108,14 +108,17 @@ else
 }
 ```
 
-## Execute the application
+## <a name="execute-the-application"></a>Ausführen der Anwendung
 
-The code is now complete. It can now send and retrieve messages. To test it, use `dotnet run` and pass parameters to send messages, and leave off parameters to read a single message.
+Der Code ist nun vollständig. Er kann jetzt Nachrichten senden und abrufen. Um ihn zu testen, verwenden Sie `dotnet run`, und übergeben Sie Parameter, um Nachrichten zu senden, und lassen Sie Parameter weg, um eine einzelne Nachricht zu lesen.
 
-If you want to test when a queue doesn't exist, you can delete the queue (and all the data) with the Azure CLI. Make sure to replace the `<connection-string>` parameter (or set the environment variable).
+Falls Sie testen möchten, wenn keine Warteschlange vorhanden ist, können Sie die Warteschlange (und alle Daten) mit der Azure CLI löschen. Ersetzen Sie unbedingt den Parameter `<connection-string>` (oder legen Sie die Umgebungsvariable fest).
 
 ```azurecli
 az storage queue delete --name newsqueue --connection-string <connection-string> 
 ```
 
-The next time you add a message, the queue should be re-created.
+Beim nächsten Hinzufügen einer Nachricht muss die Warteschlange neu erstellt werden.
+
+> [!NOTE]
+> Der Löschvorgang erfolgt asynchron. Wenn sie nicht abgeschlossen wurde beim Versuch, die die Warteschlange erneut zu erstellen, erhalten Sie möglicherweise eine Ausnahme.

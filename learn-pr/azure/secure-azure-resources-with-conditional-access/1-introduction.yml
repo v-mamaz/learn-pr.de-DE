@@ -2,14 +2,13 @@
 uid: learn.secure-access-azure-ad-multi-factor-authentication.1-introduction
 metadata:
   title: Einführung
-  description: Schützen des Zugriffs auf Ressourcen mit Azure AD, bedingtem Zugriff und Azure Multi-Factor Authentication
-  displayType: one-column
-  ms.openlocfilehash: 99cefef29938e6b3da0a326aad9929239067cd99
-  ms.sourcegitcommit: bb4b1f9e2a7399769ff84199f018abd14a3e73aa
-  ms.translationtype: HT
-  ms.contentlocale: de-DE
-  ms.lasthandoff: 09/01/2018
-  ms.locfileid: "43454223"
+  description: 'Schützen des Zugriffs auf Ressourcen mit Azure AD, bedingtem Zugriff und Azure Multi-Factor Authentication'
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 title: Einführung
-durationInMinutes: 5
-content: '[!include[](includes/1-introduction.md)]'
+durationInMinutes: 3
+content: |
+  [!include[](includes/1-introduction.md)]

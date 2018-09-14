@@ -1,8 +1,12 @@
-In dieser Übung erstellen wir eine Azure-Funktion, die alle 20 Sekunden mithilfe eines Zeitgebertriggers aufgerufen wird.
+In dieser Einheit erstellen wir eine Azure-Funktionen-app, die aufgerufen wird, dass Sie alle 20 Sekunden, die über einen Trigger mit Timer.
 
-## <a name="create-an-azure-function"></a>Erstellen einer Azure-Funktion
+## <a name="create-an-azure-function-app"></a>Erstellen einer Azure-Funktionen-app
 
-Erstellen Sie zuerst eine Azure-Funktion im Portal.
+[!include[](../../../includes/azure-sandbox-activate.md)]
+
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
+
+Wir erstellen zunächst eine Azure-Funktions-app im Portal.
 
 1. Melden Sie sich im [Azure-Portal](https://portal.azure.com?azure-portal=true) an.
 
@@ -12,13 +16,13 @@ Erstellen Sie zuerst eine Azure-Funktion im Portal.
 
 1. Wechseln Sie zu **Funktionen-App**. Sie können optional auch die Suchleiste verwenden, um die Vorlage zu finden.
 
-    ![Auswählen von „Funktionen-App“](../media-drafts/4-click-function-app.png)
+    ![Screenshot: Blatt „Ressource erstellen“ im Azure-Portal mit hervorgehobener Funktions-App.](../media/4-click-function-app.png)
 
-1. Geben Sie einen eindeutigen **App-Namen** ein.
+1. Geben Sie einen global eindeutigen **Anwendungsnamen**.
 
-1. Wählen Sie ein **Abonnement** aus.
+1. Wählen Sie ein **Abonnement**aus.
 
-1. Erstellen Sie eine neue **Ressourcengruppe**.
+1. Wählen Sie den vorhandenen **Ressourcengruppe** <rgn>[Ressourcengruppennamen Sandkasten]</rgn>.
 
 1. Wählen Sie **Windows** als Ihr **Betriebssystem** aus.
 
@@ -34,17 +38,17 @@ Erstellen Sie zuerst eine Azure-Funktion im Portal.
 
 ## <a name="create-a-timer-trigger"></a>Erstellen eines Zeitgebertriggers
 
-Wir erstellen nun in unserer Azure-Funktion einen Zeitgebertrigger.
+Jetzt werden wir einen Trigger mit Timer in unserer Funktion zu erstellen.
 
-1. Nachdem die Azure-Funktion erstellt wurde, wählen Sie im linken Navigationsbereich **Alle Ressourcen** aus.
+1. Nachdem die Funktion erstellt wird, wählen Sie **alle Ressourcen** im linken Navigationsbereich.
 
-1. Wählen Sie Ihre Azure-Funktion aus.
+1. Suchen Sie, und wählen Sie die Funktion.
 
-1. Zeigen Sie auf dem neuen Blatt auf **Funktionen**, und wählen Sie das Pluszeichen (+) aus.
+1. Zeigen Sie auf dem neuen Blatt auf **Funktionen**, und klicken Sie auf das Pluszeichen (+).
 
-    ![Auf „Funktionen“ zeigen und Pluszeichen auswählen](../media-drafts/4-hover-function.png)
+    ![Screenshot: Blatt „Funktions-App“ im Azure-Portal mit hervorgehobenem Pluszeichen (+) im Untermenü „Funktionen“](../media/4-hover-function.png)
 
-1. Wählen Sie **Zeitgeber** aus.
+1. Klicken Sie auf **Zeitgeber**.
 
 1. Wählen Sie **CSharp** als Sprache aus.
 
@@ -52,33 +56,33 @@ Wir erstellen nun in unserer Azure-Funktion einen Zeitgebertrigger.
 
 ## <a name="configure-the-timer-trigger"></a>Konfigurieren des Zeitgebertriggers
 
-Wir haben eine Azure-Funktion mit Logik zum Ausgeben einer Meldung im Protokollfenster. Wir stellen den Zeitplan des Zeitgebers so ein, dass er alle 20 Sekunden ausgeführt wird.
+Wir haben eine Azure-Funktionen-app mit Logik, um eine Meldung an das Protokollfenster ausgeben. Wir stellen den Zeitplan des Zeitgebers so ein, dass er alle 20 Sekunden ausgeführt wird.
 
 1. Wählen Sie **Integrieren** aus.
 
 1. Geben Sie den folgenden Wert in das Feld **Zeitplan** ein:
 
-    ```
+    ```log
     */20 * * * * *
     ```
 
-1. Wählen Sie **Speichern** aus.
+1. Klicken Sie auf **Speichern**.
 
 ## <a name="start-the-timer"></a>Starten des Zeitgebers
 
 Nachdem wir den Zeitgeber konfiguriert haben, können wir ihn starten.
 
-1. Wählen Sie **TimerTriggerCSharp1** aus. 
+1. Wählen Sie **TimerTriggerCSharp1** aus.
 
     > [!NOTE]
     > **TimerTriggerCSharp1** ist ein Standardname. Er wird beim Erstellen des Zeitgebers automatisch generiert.
 
-1. Klicken Sie auf **Ausführen**. 
+1. Klicken Sie auf **Run** (Ausführen).
 
 An diesem Punkt sollte im Protokollfenster alle 20 Sekunden eine Meldung angezeigt werden.
 
 ## <a name="clean-up"></a>Bereinigen
 
-Um sicherzustellen, dass Sie für diese Funktion keine Gebühren anfallen, wählen Sie über das Protokollfenster **Anhalten** aus, um den Zeitgeber anzuhalten.
+Klicken Sie über dem Protokollfenster auf **Anhalten**, und halten Sie den Zeitgeber an, um sicherzustellen, dass für diese Funktion keine Gebühren anfallen.
 
-![Anhalten](../media-drafts/4-pause-timer.png)
+![Screenshot: Protokollausgabebereich der Funktions-App mit hervorgehobener Schaltfläche „Anhalten“](../media/4-pause-timer.png)

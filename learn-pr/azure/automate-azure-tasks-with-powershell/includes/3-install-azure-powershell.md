@@ -1,40 +1,40 @@
-Suppose you have chosen Azure PowerShell as your automation solution. Your administrators prefer to run their scripts locally rather than in the Azure Cloud Shell. The team uses machines that run Linux, macOS, and Windows. You need to get Azure PowerShell working on all their devices. 
+Angenommen, Sie verwenden Azure PowerShell als Automatisierungslösung. Ihre Administratoren führen Skripts lieber lokal als in Azure Cloud Shell aus. Sie verwenden Computer, auf denen Linux, macOS oder Windows ausgeführt wird. Azure PowerShell muss auf all diesen Geräten funktionieren. 
 
-## What must be installed?
-We'll go through the actual installation instructions in the next unit, but let's look at the two components which make up Azure PowerShell.
+## <a name="what-must-be-installed"></a>Was muss installiert werden?
+Die eigentliche Installationsanleitung folgt im nächsten Teil. Betrachten wir jedoch zunächst die beiden Komponenten, aus denen Azure PowerShell besteht.
 
-- **The base PowerShell product** This comes in two variants: PowerShell on Windows, and PowerShell Core on macOS and Linux.
-- **The Azure PowerShell module** This extra module must be installed to add the Azure-specific commands to PowerShell.
-
-> [!NOTE]
-> PowerShell is included with Windows (but might have an update available). You will need to install PowerShell Core on Linux and macOS.
-
-Once the base product is installed, you then add the Azure PowerShell module to your installation.
-
-## How to install PowerShell Core
-On both Linux and macOS, you use a package manager to install PowerShell Core. The recommended package manager differs by OS and distribution.
+- **Das PowerShell-Basisprodukt** ist in zwei Varianten verfügbar: PowerShell für Windows und PowerShell Core für macOS und Linux.
+- **Das spezielle Azure PowerShell-Modul** muss installiert werden, um PowerShell die Azure-spezifischen Befehle hinzuzufügen.
 
 > [!NOTE]
-> PowerShell Core is available in the Microsoft repository, so you'll first need to add that repository to your package manager.
+> PowerShell ist im Lieferumfang von Windows enthalten. Allerdings müssen Sie ggf. ein Update ausführen. Installieren Sie für Linux und macOS PowerShell Core.
 
-### Linux
-On Linux, the package manager will change based on the Linux distribution you choose.
+Sobald das Basisprodukt installiert ist, fügen Sie Ihrer Installation das Azure PowerShell-Modul hinzu.
 
-| Distribution(s)  | Package manager |
+## <a name="how-to-install-powershell-core"></a>Installieren von PowerShell Core
+Verwenden Sie unter Linux und macOS einen Paket-Manager, um PowerShell Core zu installieren. Der empfohlene Paket-Manager unterscheidet sich je nach Betriebssystem und Distribution.
+
+> [!NOTE]
+> PowerShell Core ist im Microsoft-Repository verfügbar, sodass Sie zuerst dieses Repository dem Paket-Manager hinzufügen müssen.
+
+### <a name="linux"></a>Linux
+Unter Linux unterscheidet sich der Paket-Manager je nach Distribution.
+
+| Distribution(en)  | Paket-Manager |
 |------------------|-----------------|
 | Ubuntu, Debian   | `apt-get`       |
-| Red Hat, CentOS  | `yum`           |
+| Red Hat/CentOS  | `yum`           |
 | OpenSUSE         | `zypper`        |
 | Fedora           | `dnf`           |
 
-### Mac
-On macOS, you will use `Homebrew` to install PowerShell Core.
+### <a name="mac"></a>Mac
+Verwenden Sie unter macOS `Homebrew`, um PowerShell Core zu installieren.
 
-## How to install Azure PowerShell
-Once you have PowerShell installed, the preferred installation method for the Azure PowerShell module is to use the `Install-Module` command from within PowerShell. You'll need elevated privileges to install modules.
+## <a name="how-to-install-azure-powershell"></a>Installieren von Azure PowerShell
+Nachdem Sie PowerShell installiert haben, wird empfohlen, das Azure PowerShell-Modul in PowerShell mit dem Befehl `Install-Module` zu installieren. Für die Installation von Modulen benötigen Sie erhöhte Rechte.
 
-- On Windows you must run PowerShell as an administrator
-- On Linux and macOS, you will use the `sudo` command to obtain elevated privileges
+- Unter Windows müssen Sie PowerShell als Administrator ausführen.
+- Unter Linux und macOS müssen Sie mit dem Befehl `sudo` erhöhte Rechte erwerben.
 
-## Summary
-On Windows, PowerShell is built-in, but you must install the Azure PowerShell module. On Linux and macOS, you must install both PowerShell Core and the Azure PowerShell module. In the next section, you will go through the detailed installation steps for some common platforms.
+## <a name="summary"></a>Zusammenfassung
+Unter Windows ist PowerShell bereits integriert, Sie müssen jedoch das Azure PowerShell-Modul installieren. Unter Linux und macOS müssen Sie sowohl PowerShell Core als auch das Azure PowerShell-Modul installieren. Der nächste Abschnitt behandelt die einzelnen Installationsschritte auf einigen gängigen Plattformen.

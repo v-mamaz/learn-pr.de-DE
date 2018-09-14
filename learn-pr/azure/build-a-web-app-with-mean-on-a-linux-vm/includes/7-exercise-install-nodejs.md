@@ -1,38 +1,33 @@
-In this unit, you will install Node.js - the **N** in the MEAN acronym - on an Azure-hosted Ubuntu Linux virtual machine. Node.js will serve as our runtime for handling our HTTP traffic and hosting our web application.
+In dieser Einheit installieren Sie Node.js (das **N** im Akronym MEAN) auf einem virtuellen Ubuntu Linux-Computer, der in Azure gehostet wird. Node.js wird als Runtime verwendet, über die der HTTP-Datenverkehr verarbeitet und unsere Webanwendung gehostet wird.
 
-## Connect to the VM
+## <a name="install-nodejs"></a>Installieren von Node.js
 
-In order to install Node.js, you have to connect to the VM using **ssh**. If you aren't still connected to your VM, run the following command. Substitute your admin username and your VM's public IP address from above for the `<vm-admin-username>` and `<vm-public-ip>` placeholders.
+1. **Wenn Sie per immer noch mit Ihrem virtuellen Computer aus der vorherigen Übung sind**, SSH in.
 
-```bash
-ssh <vm-admin-username>@<vm-public-ip>
-```
+    ```bash
+    ssh <vm-admin-username>@<vm-public-ip>
+    ```
 
-## Install Node.js
-
-> [!Important]
-> Ubuntu provides an unofficial package called **Node.js-legacy**. This package is not maintained by Node.js and is outdated.
-
-1. Register the Node.js package repository, so **apt-get** can find the right package to install on your virtual machine.
+1. Registrieren Sie das Node.js-Paketrepository, damit **apt-get** das richtige Paket zur Installation auf Ihrem virtuellen Computer finden kann.
 
     ```bash
     curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
     ```
 
-1. Install the Node.js package on your Linux system.
+1. Installieren Sie das Node.js-Paket auf Ihrem Linux-System.
 
     ```bash
     sudo apt-get install -y Node.js
     ```
 
-1. Verify the Node.js installation succeeded by running the following simple Node.js command.
+1. Überprüfen Sie mit dem folgenden Befehl, ob die Installation von Node.js erfolgreich war.
 
     ```bash
     node -v
     ```
 
-    The output should be something like `v8.11.4`, with the version reflecting the latest Node.js version that's available when you install the package.
+    Die Ausgabe sollte etwa so wie in `v8.11.4` aussehen und die aktuelle Version von Node.js enthalten, die Sie bei der Installation angegeben haben.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-With Node.js installed on your virtual machine, we can start building a web application that it will be responsible for running.
+Sie haben Node.js auf Ihrem virtuellen Computer installiert. Nun können Sie eine Webanwendung erstellen, die vom virtueller Computer ausgeführt wird.

@@ -1,25 +1,24 @@
-::: zone pivot="csharp"
-Let's add code to retrieve the connection string from configuration and use it to connect to the Azure storage account.
+::: Zone Pivot = "Csharp" Fügen Sie Code zum Abrufen der Verbindungszeichenfolge aus der Konfiguration und Verbindung mit Azure Storage-Konto verwenden.
 
-## Retrieve the connection string
+## <a name="retrieve-the-connection-string"></a>Abrufen der Verbindungszeichenfolge
 
-1. Select **Program.cs** to open it in the code editor.
+1. Wählen Sie **"Program.cs"** um ihn im Code-Editor zu öffnen.
 
-1. Add a `using` statement at the top of the file to reference the `Microsoft.WindowsAzure.Storage` namespace:
+1. Hinzufügen einer `using` -Anweisung am Anfang der Datei auf den `Microsoft.WindowsAzure.Storage` Namespace:
 
     ```csharp
     using Microsoft.WindowsAzure.Storage;
     ```
-1. At the end of the `Main` method, add the following line to retrieve the Azure storage account connection string from the configuration file. The passed _key_ must match the name used in your **appsettings.json** file.
+1. Am Ende der `Main` -Methode, die folgende Zeile zum Abrufen der Verbindungszeichenfolge des Azure Storage-Konto aus der Konfigurationsdatei hinzufügen. Der übergebene _Schlüssel_ muss mit dem Namen übereinstimmen, die in verwendet Ihre **"appSettings.JSON"** Datei.
 
     ```csharp
     var connectionString = configuration["StorageAccountConnectionString"];
     ```
 
-## Create a blob client
+## <a name="create-a-blob-client"></a>Erstellen eines Blobclients
 
-1. Use the static `CloudStorageAccount.TryParse` method to create a `CloudStorageAccount` object - it takes the connection string and an `out` parameter to return the created object. It returns a `bool` value indicating whether it successfully parsed the string.
-    - If it fails, output a message to the console and return from the method.
+1. Verwenden Sie die statische `CloudStorageAccount.TryParse` Methode zum Erstellen einer `CloudStorageAccount` Objekt – dauert die Verbindungszeichenfolge und einem `out` Parameter, um das erstellte Objekt zurückzugeben. Gibt eine `bool` Wert, der angibt, ob sie erfolgreich die Zeichenfolge analysiert.
+    - Schlägt fehl, wird eine Nachricht an die Konsole, und von der Methode zurückgegeben.
 
     ```csharp
     if (!CloudStorageAccount.TryParse(connectionString, 
@@ -30,27 +29,27 @@ Let's add code to retrieve the connection string from configuration and use it t
     }
     ```
 
-1. Use the returned `CloudStorageAccount` object to create a blob client.
+1. Verwenden Sie das zurückgegebene `CloudStorageAccount` Objekt, das ein Blob-Dienstclient zu erstellen.
 
     ```csharp
     var blobClient = storageAccount.CreateCloudBlobClient();
     ```
 
-1. Next, use the blob client to retrieve a reference to a container named "photoblobs". Much like the account names, the Blob container names must be lowercase and composed of letters and numbers.
+1. Als Nächstes verwenden Sie die Blob-Dienstclient, um einen Verweis auf einen Container namens "Photoblobs" abzurufen. Z. B. Kontonamen, müssen die Blob-Containernamen viel aus Buchstaben und Zahlen und Kleinbuchstaben sein.
 
     ```csharp
     var blobContainer = blobClient.GetContainerReference("photoblobs");
     ```
 
-1. Use the `CreateIfNotExistsAsync` method to create the container. This returns a `bool` indicating whether the container was created. Store this in a variable named `created`.
-    - Notice that this is an **async** method - that means it will perform an actual network call.
-    - You will need to use the `await` keywords to get the `bool` result.
+1. Verwenden der `CreateIfNotExistsAsync` Methode, um den Container zu erstellen. Dies gibt eine `bool` , der angibt, ob der Container erstellt wurde. Dies in einer Variablen mit dem Namen Store `created`.
+    - Beachten Sie, dass dies eine **Async** -Methode: Das bedeutet, sie führt einen tatsächliche Netzwerk-Aufruf.
+    - Sie benötigen, verwenden Sie die `await` Schlüsselwörter zum Abrufen der `bool` Ergebnis.
 
     ```csharp
     bool created = await blobContainer.CreateIfNotExistsAsync();
     ```
 
-1. Because we are using the `await` keyword, go ahead and change the signature for the `Main` method to be `async` and return a `Task`.
+1. Aufgrund von der `await` -Schlüsselwort, fahren Sie fort, und ändern Sie die Signatur für die `Main` Methode werden `async` und Zurückgeben einer `Task`.
 
     ```csharp
     static async Task Main(string[] args)
@@ -59,15 +58,15 @@ Let's add code to retrieve the connection string from configuration and use it t
     }
     ```
 
-1. Finally, output whether we created the Blob container.
+1. Abschließend, ob wir den Blob-Container erstellt.
 
     ```csharp
     Console.WriteLine(created ? "Created the Blob container" : "Blob container already exists.");
     ```
 
-1. Save the file.
+1. Speichern Sie die Datei.
 
-The final file should look like this if you'd like to check your work.
+Die endgültige Datei sollte wie folgt aussehen, wenn Sie Ihre Arbeit überprüfen möchten.
 
 ```csharp
 using System;
@@ -106,11 +105,11 @@ namespace PhotoSharingApp
 }
 ```
 
-## Use C# 7.1 to build our app
+## <a name="use-c-71-to-build-our-app"></a>Verwenden Sie zum Erstellen unserer app c# 7.1
 
-Support for `async` and `await` on `Main` methods was added to C# 7.1. This might not be the default version of the compiler you are using. Let's make sure we use that version of the compiler by setting it in our configuration file.
+Unterstützung für `async` und `await` auf `Main` Methoden c# 7.1 hinzugefügt wurde. Dies möglicherweise nicht die Standardversion des Compilers, die Sie verwenden. Stellen Sie sicher, dass wir diese Version des Compilers verwenden, indem Sie ihn in der Konfigurationsdatei festlegen.
 
-1. Open the `PhotoSharingApp.csproj` and add `<LangVersion>7.1</LangVersion>` to the `PropertyGroup` that specifies the `TargetFramework`. It should look like this when you're finished:
+1. Öffnen der `PhotoSharingApp.csproj` und fügen `<LangVersion>7.1</LangVersion>` auf die `PropertyGroup` , der angibt der `TargetFramework`. Es sollte, wenn Sie fertig sind, wie folgt aussehen:
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk">
@@ -123,11 +122,11 @@ Support for `async` and `await` on `Main` methods was added to C# 7.1. This migh
     </Project>
     ```
 
-1. Save the file.
+1. Speichern Sie die Datei.
 
-## Run the app
+## <a name="run-the-app"></a>Ausführen der App
 
-1. Build and run the application. **Note:** make sure you're in the correct working directory.
+1. Erstellen Sie die Anwendung, und führen Sie sie aus. **Hinweis:** sicherzustellen, dass Sie in das richtige Arbeitsverzeichnis sind.
 
     ```bash
     dotnet run
@@ -135,14 +134,13 @@ Support for `async` and `await` on `Main` methods was added to C# 7.1. This migh
 
 ::: zone-end
 
-::: zone-pivot="javascript"
-Let's add code to connect to the Azure storage account using our stored connection string. The Azure client library will automatically use the **AZURE_STORAGE_CONNECTION_STRING** environment variable to get the connection string.
+::: Zone Pivot = "Javascript" Fügen Sie Code zum Verbinden mit Azure Storage-Konto mithilfe unserer gespeicherte Verbindungszeichenfolge. Die Azure-Client-Bibliothek verwendet automatisch die **AZURE_STORAGE_CONNECTION_STRING** Umgebungsvariable beim Abrufen der Verbindungszeichenfolge.
 
-## Create a blob client
+## <a name="create-a-blob-client"></a>Erstellen eines Blobclients
 
-1. Open **index.js** in the code editor.
+1. Open **"Index.js"** im Code-Editor.
 
-1. Start by including the **azure-storage** module. Store the module in a variable named **storage**.
+1. Starten Sie dazu die **Azure Storage-** Modul. Das Modul in einer Variablen mit dem Namen Store **Storage**.
 
     ```javascript
     #!/usr/bin/env node
@@ -151,25 +149,25 @@ Let's add code to connect to the Azure storage account using our stored connecti
     const storage = require('azure-storage');
     ```
 
-1. Next, right after that, use the **storage** object to create the `BlobService` object and store it in a global named **blobService**. Remember, these are light-weight objects representing access to the storage account.
+1. Direkt danach verwenden Sie als Nächstes die **Storage** zu erstellenden Objekts der `BlobService` Objekt aus, und speichern Sie sie in einen globalen Namen **BlobService**. Denken Sie daran, diese einfache Objekte, die Zugriff auf das Speicherkonto darstellt.
 
     ```javascript
     const blobService = storage.createBlobService();
     ```
 
-1. Add a constant to represent the container we want to create. We'll name the container "photoblobs".
+1. Fügen Sie eine Konstante, um den Container darstellt, die, den wir erstellen möchten. Den Container nennen "Photoblobs".
 
     ```javascript
     const containerName = 'photoblobs';
     ```
 
-## Create a container
+## <a name="create-a-container"></a>Erstellen eines Containers
 
-We can use the `BlobService` object to work with blob APIs in Azure storage. As mentioned before, all the APIs that make network calls are asynchronous to keep the app responsive. The `createContainerIfNotExists` method is one such method. We'll use _promises_ to handle the callback which contains the response.
+Wir können die `BlobService` Objekt, das Arbeiten mit Blob-APIs im Azure-Speicher. Wie bereits erwähnt, sind alle APIs, die Netzwerk-Aufrufe asynchron, um die app reaktionsfähig gehalten wird. Die `createContainerIfNotExists` Methode ist eine dieser Methoden. Wir verwenden _verspricht_ zum Behandeln des Rückrufs, der die Antwort enthält.
 
-1. Use `util.promisify` to take the callback version of `createContainerIfNotExists` and turn it into a promise-returning method.
-    - Since the callback method is on an object, make sure to add a `bind` call at the end to connect it to that context.
-    - Assign the return value to a constant at the top of the file named `createContainerAsync` as shown below.
+1. Verwenden `util.promisify` die Rückruf-Version der auszuführenden `createContainerIfNotExists` und schalten Sie ihn in eine Methode, die Zusage zurückgibt.
+    - Da die Callback-Methode für ein Objekt ist, stellen Sie sicher, Hinzufügen einer `bind` am Ende für die Verbindung mit diesen Kontext aufgerufen.
+    - Weisen Sie den Rückgabewert einer Konstanten am Anfang der Datei mit dem Namen `createContainerAsync`, wie unten dargestellt.
 
 ```javascript
 const storage = require('azure-storage');
@@ -180,12 +178,12 @@ const createContainerAsync = util.promisify(blobService.createContainerIfNotExis
 const containerName = 'photoblobs';
 ```
 
-1. Remove the "Hello, World!" output from `main()`.
+1. Entfernen Sie die "Hello, World!" Ausgabe von `main()`.
 
-1. Call your new `createContainerAsync` promise.
-    - Pass it the **containerName** constant.
-    - Apply the `await` keyword to the call.
-    - Wrap the call in a `try` / `catch` construct and output any error.
+1. Rufen Sie Ihre neue `createContainerAsync` versprechen.
+    - Übergeben sie die **ContainerName** Konstanten.
+    - Anwenden der `await` -Schlüsselwort auf den Aufruf.
+    - Binden Sie den Aufruf in eine `try`  /  `catch` erstellen und ein Fehler ausgegeben.
 
     ```javascript
     try {
@@ -196,7 +194,7 @@ const containerName = 'photoblobs';
     }
     ```
     
-1. The `createContainerAsync` promise returns the first value from the underlying `createContainerIfNotExists` which is the container result. This includes information on whether the container was created or not. Capture the result in a variable and output whether the container was created based on the `result.created` property.
+1. Die `createContainerAsync` Promise gibt den ersten Wert aus der zugrunde liegenden `createContainerIfNotExists`, dies ist das Ergebnis des Containers. Dies umfasst Informationen, ob der Container oder nicht erstellt wurde. Das Ergebnis in einer Variablen zu erfassen und Ausgabe basierend gibt an, ob der Container erstellt wurde, auf die `result.created` Eigenschaft.
 
     ```javascript
     try {
@@ -213,11 +211,11 @@ const containerName = 'photoblobs';
     }
     ```
 
-1. Finally, decorate the `main` function with the `async` keyword.
+1. Schließlich können die `main` -Funktion mit den `async` Schlüsselwort.
         
-1. Save the file.
+1. Speichern Sie die Datei.
 
-The final file should look like this if you'd like to check your work.
+Die endgültige Datei sollte folgendermaßen aussehen, wenn Sie Ihre Arbeit überprüfen möchten.
 
 ```javascript
 #!/usr/bin/env node
@@ -250,9 +248,9 @@ async function run() {
 run();
 ```
 
-## Run the app
+## <a name="run-the-app"></a>Ausführen der App
 
-1. Build and run the application. **Note:** make sure you're in the correct working directory.
+1. Erstellen Sie die Anwendung, und führen Sie sie aus. **Hinweis:** sicherzustellen, dass Sie in das richtige Arbeitsverzeichnis sind.
 
     ```bash
     node index.js
@@ -260,23 +258,23 @@ run();
 
 ::: zone-end
 
-It should report that the blob container was created. If you run it a second time, it should tell you it already exists.
+Es sollten melden, dass der Blob-Container erstellt wurde. Wenn Sie ein zweites Mal ausführen, sollten sie Ihnen mitteilen, dass sie bereits vorhanden ist.
 
-To verify the container:
+Um den Container zu überprüfen:
 
-1. Sign in to the [Azure Portal](https://portal.azure.com/?azure-portal=true).
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/?azure-portal=true)an.
 
-1. Navigate to your storage account. You can use the **All Resources** section to find the storage account, or search by name from the _search box_ at the top of the portal window. 
+1. Navigieren Sie zum Speicherkonto. Können Sie die **alle Ressourcen** Abschnitt erfahren das Speicherkonto oder die Suche anhand des Namens aus der _Suchfeld_ am oberen Rand des portalfensters. 
 
-1. Select the **Blobs** entry of the storage account in the **Blob services** section.
+1. Wählen Sie die **Blobs** Eintrag des Speicherkontos, das die **Blobdienste** Abschnitt.
 
-1. You should see your **photoblobs** container in the Blobs panel. You can delete the container through the "..." menu on the right hand side of the entry to try re-creating it with your app.
+1. Daraufhin sollte Ihre **Photoblobs** Container im Bedienfeld "Blobs". Sie können den Container über das Menü "..." auf der rechten Seite des Eintrags, versuchen es neu erstellen, mit der app löschen.
 
 > [!NOTE]
-> The container will disappear from the portal very quickly, but it takes a few minutes to actually delete. You will get an error response from Azure while it is being deleted if you attempt to recreate it.
+> Der Container nicht mehr auf das Portal sehr schnell, aber es dauert einige Minuten, bis Sie tatsächlich gelöscht. Sie erhalten eine Fehlerantwort von Azure, während sie gelöscht wird gerade, wenn Sie versuchen, erneut erstellen.
 
-## Delete the app
-If you decide you don't want to keep the application source code in your Cloud Shell environment, you can use the following command to remove the folder and all the contents.
+## <a name="delete-the-app"></a>Löschen Sie die app
+Wenn Sie sich, dass Sie nicht den Quellcode der Anwendung in Ihrer Cloud Shell-Umgebung beibehalten möchten entscheiden, können Sie den folgenden Befehl aus, um den Ordner und alle Inhalte zu entfernen.
 
 ```bash
 rm -r PhotoSharingApp/
