@@ -59,7 +59,3 @@ Der Blobtrigger ist nun aktiviert und wartet auf Aktivität. Erstellen Sie ein B
 1. Klicken Sie auf **Hochladen**.
 
 1. Wechseln Sie zurück zur Registerkarte der Azure-Funktion, und suchen Sie in den Ausgabeprotokollen nach einer Meldung, die anzeigt, dass die Datei hochgeladen wurde.
-
-## <a name="pause-the-function"></a>Anhalten der Funktion
-
-Sie können über dem Protokollfenster auf **Anhalten** klicken, um sicherzustellen, dass keine Gebühren für zusätzliche Anforderungen anfallen.

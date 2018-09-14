@@ -1,10 +1,10 @@
-In dieser Einheit erfahren Sie, wie Sie eine Azure-Funktion erstellen, die alle 20 Sekunden mithilfe eines Zeitgebertriggers aufgerufen wird.
+In dieser Einheit erstellen wir eine Azure-Funktionen-app, die aufgerufen wird, dass Sie alle 20 Sekunden, die über einen Trigger mit Timer.
 
-## <a name="create-an-azure-function"></a>Erstellen einer Azure-Funktion
+## <a name="create-an-azure-function-app"></a>Erstellen einer Azure-Funktionen-app
 
-Erstellen Sie zuerst eine Azure-Funktion im Portal.
+Wir erstellen zunächst eine Azure-Funktions-app im Portal.
 
-1. Melden Sie sich im [Azure-Portal](https://portal.azure.com?azure-portal=true) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com?azure-portal=true) an.
 
 1. Klicken Sie im linken Navigationsbereich auf **Ressource erstellen**.
 
@@ -14,7 +14,7 @@ Erstellen Sie zuerst eine Azure-Funktion im Portal.
 
     ![Screenshot: Blatt „Ressource erstellen“ im Azure-Portal mit hervorgehobener Funktions-App.](../media/4-click-function-app.png)
 
-1. Geben Sie einen eindeutigen **App-Namen** ein.
+1. Geben Sie einen global eindeutigen **Anwendungsnamen**.
 
 1. Wählen Sie ein **Abonnement** aus.
 
@@ -34,11 +34,11 @@ Erstellen Sie zuerst eine Azure-Funktion im Portal.
 
 ## <a name="create-a-timer-trigger"></a>Erstellen eines Zeitgebertriggers
 
-Wir erstellen nun in unserer Azure-Funktion einen Zeitgebertrigger.
+Jetzt werden wir einen Trigger mit Timer in unserer Funktion zu erstellen.
 
-1. Nachdem die Azure-Funktion erstellt wurde, wählen Sie im linken Navigationsbereich **Alle Ressourcen** aus.
+1. Nachdem die Funktion erstellt wird, wählen Sie **alle Ressourcen** im linken Navigationsbereich.
 
-1. Wählen Sie Ihre Azure-Funktion aus.
+1. Suchen Sie, und wählen Sie die Funktion.
 
 1. Zeigen Sie auf dem neuen Blatt auf **Funktionen**, und klicken Sie auf das Pluszeichen (+).
 
@@ -52,7 +52,7 @@ Wir erstellen nun in unserer Azure-Funktion einen Zeitgebertrigger.
 
 ## <a name="configure-the-timer-trigger"></a>Konfigurieren des Zeitgebertriggers
 
-Wir haben eine Azure-Funktion mit Logik zum Ausgeben einer Meldung im Protokollfenster. Wir stellen den Zeitplan des Zeitgebers so ein, dass er alle 20 Sekunden ausgeführt wird.
+Wir haben eine Azure-Funktionen-app mit Logik, um eine Meldung an das Protokollfenster ausgeben. Wir stellen den Zeitplan des Zeitgebers so ein, dass er alle 20 Sekunden ausgeführt wird.
 
 1. Wählen Sie **Integrieren** aus.
 

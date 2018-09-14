@@ -5,11 +5,6 @@ achievements:
   iconUrl: http://via.placeholder.com/120x120
   title: Modulplatzhalterabzeichen
   summary: Zusammenfassung zur Beispielmodultrophäe
-- uid: learn.sample-module-cloudshell.badge
-  type: badge
-  title: Beispielmodul mit CloudShell-Abzeichen
-  summary: Abzeichen für das Modul „Beispielmodul mit CloudShell“.
-  iconUrl: http://via.placeholder.com/120x120
 - uid: learn.build-a-serverless-web-app.badge
   type: badge
   title: Abzeichen für das Erstellen einer serverlosen Web-App
@@ -35,11 +30,11 @@ achievements:
   title: Erstellen von serverloser Logik mit Azure Functions
   summary: Erstellen von serverloser Logik mit Azure Functions
   iconUrl: ./achievements/create-serverless-logic-with-functions.svg
-- uid: learn.host-a-web-application-with-azure-web-apps.badge
+- uid: learn.host-a-web-application-with-azure-app-service.badge
   type: badge
   title: Abzeichen für das Hosten einer Webanwendung mit Azure-Web-Apps
   summary: Zusammenfassung zum Abzeichen für das Hosten einer Webanwendung mit Azure-Web-Apps
-  iconUrl: ./achievements/host-a-web-application-with-azure-web-apps.svg
+  iconUrl: ./achievements/host-a-web-application-with-azure-app-service.svg
 - uid: learn.publish-azure-web-app-with-visual-studio.badge
   type: badge
   title: Veröffentlichen einer Azure-Web-App mit Visual Studio für Windows oder Mac
@@ -445,10 +440,15 @@ achievements:
   title: Der Mojifier
   summary: Mojifier-Abzeichen
   iconUrl: http://via.placeholder.com/120x120
+- uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.badge
+  type: badge
+  title: Arbeiten Sie mit änderbaren und partielle Daten in einem Redis-cache
+  summary: Arbeiten Sie mit änderbaren und partielle Daten in einem Redis-cache
+  iconUrl: http://via.placeholder.com/120x120
 metadata:
-  ms.openlocfilehash: 5ad9855bc63fb4471b5d1dd8d4547ae9682043b8
-  ms.sourcegitcommit: 46c8d35790efaafa6a4637f7688482e3a754d7f3
+  ms.openlocfilehash: 6fb7eae33cfdc918378b74f1837a113a152c996e
+  ms.sourcegitcommit: 7de323416e472639edcff135bfc7d47bd5715256
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44256672"
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44372204"
