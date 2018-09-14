@@ -1,0 +1,5 @@
+Redis Cache kann die Leistung und Skalierbarkeit von Systemen verbessern, die häufig auf Datenbanken zugreifen. Die Leistung wird durch vorübergehendes Kopieren häufig verwendeter Daten in einen schnellen Speicher verbessert, der sich in der Nähe der Anwendung befindet. Im Fall von Redis Cache liegt dieser als In-Memory-Struktur vor und muss nicht von einer Datenbank vom Datenträger geladen werden.
+
+# <a name="cleanup"></a>Bereinigen
+
+Durch das Ausführen von Redis Cache fallen Kosten für Ihr Abonnement an. Zur Vermeidung von Kosten sollten Sie diesen entfernen. Eine besonders einfache Möglichkeit hierfür besteht darin, die Ressourcengruppe zu löschen, in der dieser erstellt wurde. Beachten Sie jedoch, dass beim Löschen einer Ressourcengruppe alle darin enthaltenen Ressourcen gelöscht werden. Wenn Sie sich nicht für diese Möglichkeit entscheiden, müssen Sie den Cache selbst löschen.
