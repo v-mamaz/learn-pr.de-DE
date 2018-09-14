@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 956d5f0df8ae53859636ab7c504dcbed80a8a908
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 3e0eb03a0737fd9ba6bd938e4715fa17e33a3386
+  ms.sourcegitcommit: 4d3d995e220b696d35237a19740a6d619134d6ca
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44245204"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45536918"
 title: Erstellen einer skalierbaren Azure Cosmos DB-Datenbank
 summary: Erfahren Sie, wie Sie für Azure Cosmos DB Konten, Datenbanken und Sammlungen erstellen, die sich skalieren lassen, wenn Ihre Anwendung wächst.
 abstract: >
@@ -27,7 +27,7 @@ abstract: >
 
   - Erstellen einer Datenbank und einer Sammlung in Azure Cosmos DB
 prerequisites: Keine
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/create-cosmos-db-for-scale.svg
 levels:
 - beginner
 roles:

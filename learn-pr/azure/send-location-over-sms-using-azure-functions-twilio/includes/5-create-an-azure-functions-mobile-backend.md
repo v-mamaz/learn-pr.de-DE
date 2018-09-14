@@ -8,11 +8,11 @@ An diesem Punkt ruft die App den Benutzerstandort ab und ist bereit, an eine Azu
 
 1. Geben Sie dem Projekt den Namen „ImHere.Functions“, und klicken Sie dann auf **OK**.
 
-    ![Dialogfeld „Neues Projekt hinzufügen“](../media-drafts/5-add-new-functions-project.png)
+    ![Dialogfeld „Neues Projekt hinzufügen“](../media/5-add-new-functions-project.png)
 
 1. Behalten Sie im Konfigurationsdialogfeld **Neues Projekt** die Functions-Version *Azure Functions v1 (.NET Framework)* bei. Wählen Sie *HTTP-Trigger* aus, behalten Sie für das Speicherkonto die Einstellung *Speicheremulator* bei, und legen Sie die Zugriffsrechte auf *Anonym* fest. Klicken Sie dann auf **OK**.
 
-    ![Dialogfeld zur Azure Functions-Projektkonfiguration](../media-drafts/5-configure-trigger.png)
+    ![Dialogfeld zur Azure Functions-Projektkonfiguration](../media/5-configure-trigger.png)
 
 Das neue Projekt wird erstellt und enthält die Standardfunktion `Function1`.
 
@@ -52,7 +52,7 @@ Wenn Daten an die Azure-Funktion gesendet werden, werden Sie als JSON gesendet. 
 
 1. Geben Sie dem Projekt den Namen „ImHere.Data“, und klicken Sie dann auf **OK**.
 
-    ![Dialogfeld „Neues Projekt hinzufügen“](../media-drafts/5-add-new-net-standard-project.png)
+    ![Dialogfeld „Neues Projekt hinzufügen“](../media/5-add-new-net-standard-project.png)
 
 1. Löschen Sie die automatisch generierte Datei „Class1.cs“.
 
@@ -71,7 +71,7 @@ Wenn Daten an die Azure-Funktion gesendet werden, werden Sie als JSON gesendet. 
 
 1. Fügen Sie den Projekten `ImHere.Functions` und `ImHere` einen Verweis auf dieses Projekt hinzu, indem Sie mit der rechten Maustaste auf das Projekt und anschließend auf *Hinzufügen > Verweis* klicken. Wählen Sie in der Struktur links *Projekte* aus, und aktivieren Sie dann das Feld neben *ImHere.Data*.
 
-    ![Konfigurieren von Projektverweisen](../media-drafts/5-configure-project-references.png)
+    ![Konfigurieren von Projektverweisen](../media/5-configure-project-references.png)
 
 ## <a name="read-the-data-sent-to-the-function"></a>Lesen der an die Funktion gesendeten Daten
 
@@ -127,7 +127,7 @@ Funktionen können mit einem lokalen Speicherkonto und einer lokalen Azure Funct
 
 1. Wählen Sie im Menü *Debuggen* die Option *Ohne Debuggen starten* aus. Die lokale Azure Functions-Runtime wird in einem Konsolenfenster gestartet und startet Ihre Funktion. Hierbei wird auf einem verfügbaren Port auf `localhost` gelauscht.
 
-    ![Lokal ausgeführte Azure-Funktion](../media-drafts/5-function-running-locally.png)
+    ![Lokal ausgeführte Azure-Funktion](../media/5-function-running-locally.png)
 
 1. Notieren Sie den Port, auf dem die Funktion lauscht. Sie benötigen diese Angabe in der nächsten Einheit, um die mobile App zu testen. In der Abbildung unten lauscht die Funktion auf Port **7071**.
 

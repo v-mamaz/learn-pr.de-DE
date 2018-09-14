@@ -1,4 +1,4 @@
-An diesem Punkt ist die mobile App vollständig und kann den Benutzerstandort und die Liste der Telefonnummern an eine Azure-Funktion senden, die die Daten deserialisieren kann. In dieser Einheit binden Sie die Azure-Funktion an Twilio, um SMS-Nachrichten zu senden.
+An diesem Punkt ist die mobile App vollständig und kann den Benutzerstandort und die Liste der Telefonnummern an eine Azure-Funktion senden, die die Daten deserialisieren kann. In dieser Einheit binden Sie die Azure-Funktion an Twilio, um SMS zu senden.
 
 Azure Functions kann mit anderen Diensten verbunden werden, entweder mit Diensten in Azure oder mit Drittanbieterdiensten. Diese Verbindungen – sogenannte Bindungen – liegen in zwei Formen vor: als Eingabe- und Ausgabebindungen. Eingabebindungen stellen Daten für Ihre Funktion bereit, Ausgabebindungen empfangen Daten von Ihrer Funktion und senden sie an einen anderen Dienst. Weitere Informationen erhalten Sie in der [Dokumentation zu Azure Functions-Bindungen](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings).
 
@@ -33,7 +33,7 @@ Um SMS-Nachrichten über Twilio zu senden, wird eine Ausgabebindung benötigt, d
 
     Wenn Sie ein Twilio-Konto erstellen, wird Ihnen eine Telefonnummer zugewiesen, über die Sie Nachrichten senden können. Sie finden diese Telefonnummer im Twilio-Dashboard **Phone Numbers** (Telefonnummern). Wählen Sie auf der Twilio-Website die Auslassungspunkte im unteren Bereich des links angezeigten Menüs aus. Wählen Sie dann *SUPER NETWORK > Phone Numbers* (SUPERNETZWERK > Telefonnummern) aus. Sie können dieses Dashboard mithilfe des Stecknadelsymbols an das Menü im linken Bereich anheften. Ihre Twilio-Nummer befindet sich unterhalb von *Manage Numbers > Active Numbers* (Nummern verwalten > Aktive Nummern). Eventuell in der Nummer vorhandene Leerzeichen müssen entfernt werden.
 
-    ![Ermitteln Ihrer Twilio-Nummer](../media-drafts/7-twilio-find-number.png)
+    ![Ermitteln Ihrer Twilio-Nummer](../media/7-twilio-find-number.png)
 
     ```cs
     [TwilioSms(AccountSidSetting = "TwilioAccountSid",
@@ -130,15 +130,15 @@ public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLeve
 
 1. Klicken Sie auf die Schaltfläche **Standort senden**. Wenn die SMS-Nachricht erfolgreich gesendet wurde, wird eine Meldung in der Xamarin.Forms-App angezeigt, die den erfolgreichen Versand des Standorts bestätigt.
 
-    ![Die Xamarin.Forms-App zeigt an, dass der Standort gesendet wurde.](../media-drafts/7-ui-location-sent.png)
+    ![Die Xamarin.Forms-App zeigt an, dass der Standort gesendet wurde.](../media/7-ui-location-sent.png)
 
 1. In den Konsolenprotokollen für die Azure-Funktion wird angezeigt, dass die Nachricht erstellt und gesendet wurde. Wenn es zu Fehlern kommt (beispielsweise, weil die Nummer im falschen Format vorliegt), werden diese hier protokolliert.
 
-    ![Die Konsole der Azure-Funktion zeigt an, dass die Nachricht gesendet wurde.](../media-drafts/7-function-message-sent.png)
+    ![Die Konsole der Azure-Funktion zeigt an, dass die Nachricht gesendet wurde.](../media/7-function-message-sent.png)
 
 1. Überprüfen Sie Ihr Telefon auf Nachrichten. Folgen Sie dem Link in der Nachricht, um Ihren Standort anzuzeigen.
 
-    ![SMS-Nachricht, die auf einem Mobiltelefon empfangen wird](../media-drafts/7-message-received.png)
+    ![SMS-Nachricht, die auf einem Mobiltelefon empfangen wird](../media/7-message-received.png)
 
 ## <a name="summary"></a>Zusammenfassung
 

@@ -50,6 +50,9 @@ In all diesen Fällen werden Daten entweder gelesen (beim Wetter) oder geschrieb
 
 Cloudanbieter stellen in der Regel Dienste bereit, die all diese Datentypen verarbeiten können. Wenn Sie beispielsweise Text speichern möchten, können Sie eine Datei auf dem Datenträger oder einen strukturierteren Ansatz wie eine relationale Datenbank verwenden.
 
+    :::column-end:::
+:::row-end:::
+
 ## <a name="summary"></a>Zusammenfassung
 
 Jedes Unternehmen hat unterschiedliche Bedürfnisse und Anforderungen. Cloud Computing ist **flexibel** und **kosteneffizient**. Hiervon profitiert jedes Unternehmen, egal ob kleines Start-up oder großer Konzern.

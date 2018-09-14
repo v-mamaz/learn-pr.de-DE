@@ -10,4 +10,5 @@ Dieses Modul führt Sie schrittweise durch die Grundlagen von Deep Learning. Am 
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
+<!---TODO: Update for sandbox?--->
 - Azure-Abonnement mit Zugriff auf VMs der D-Serie 

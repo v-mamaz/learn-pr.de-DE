@@ -219,7 +219,7 @@ Im Folgenden finden Sie den vollständigen Code für diese Seite.
 
 Führen Sie die App aus, um die neue Benutzeroberfläche anzuzeigen. Wenn Sie die Bindung an diesem Punkt überprüfen möchten, können Sie dies tun, indem Sie Breakpoints zu den Eigenschaften oder der `SendLocation`-Methode hinzuzufügen.
 
-![Die Benutzeroberfläche der neuen App](../media-drafts/3-new-ui.png)
+![Die Benutzeroberfläche der neuen App](../media/3-new-ui.png)
 
 ## <a name="summary"></a>Zusammenfassung
 

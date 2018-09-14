@@ -19,4 +19,3 @@ In diesem Modul lernen Sie Folgendes:
 - Erfahrung mit einer Befehlszeilenschnittstelle wie PowerShell oder Bash
 - Kenntnisse der grundlegenden Azure-Konzepte, z.B. Ressourcengruppen
 - Erfahrung beim Verwalten von Azure-Ressourcen über das Azure-Portal
-- 

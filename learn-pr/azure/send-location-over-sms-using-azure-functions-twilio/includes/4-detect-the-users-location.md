@@ -8,7 +8,7 @@ Alle mobilen Plattformen schützen Benutzerinformationen und Hardware, wie z.B. 
 
 1. Navigieren Sie zur Registerkarte **Funktionen**, und überprüfen Sie die Funktion *Standort*.
 
-    ![Die Registerkarte „UWP-Funktionen“](../media-drafts/4-uwp-location-capability.png)
+    ![Die Registerkarte „UWP-Funktionen“](../media/4-uwp-location-capability.png)
 
 > Je nachdem, ob Sie Android oder iOS unterstützen möchten, müssen die Berechtigungen unterschiedlich konfiguriert werden. Dies wird ausführlich in der [Dokumentation zu Xamarin.Essentials-Geolocation](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=android#getting-started) beschrieben.
 
@@ -20,13 +20,13 @@ Es kann entweder der letzte bekannte oder der aktuelle Standort ermittelt werden
 
 1. Rufen Sie in der `SendLocation`-Methode die statische `GetLastKnownLocationAsync`-Methode in der `Geolocation`-Klasse im `Xamarin.Essentials`-Namespace auf.
 
-    ```cs
+    ```csharp
     Location location = await Geolocation.GetLastKnownLocationAsync();
     ```
 
 1. Aktualisieren Sie die `Message`-Eigenschaft mit dem Standort des Benutzers, falls dieser ermittelt werden konnte.
 
-    ```cs
+    ```csharp
     if (location != null)
     {
         Message = $"Location found: {location.Latitude}, {location.Longitude}.";
@@ -35,7 +35,7 @@ Es kann entweder der letzte bekannte oder der aktuelle Standort ermittelt werden
 
 Im Folgenden finden Sie den vollständigen Code für diese Methode.
 
-```cs
+```csharp
 async Task SendLocation()
 {
     Location location = await Geolocation.GetLastKnownLocationAsync();
@@ -49,9 +49,9 @@ async Task SendLocation()
 
 Führen Sie die App aus, und klicken Sie auf die Schaltfläche **Standort senden**, um den Standort auf der Benutzeroberfläche anzuzeigen.
 
-![Die ausgeführte App, die den Standort des Benutzers anzeigt](../media-drafts/4-running-app-showing-location.png)
+![Die ausgeführte App, die den Standort des Benutzers anzeigt](../media/4-running-app-showing-location.png)
 
-> Diese App verwendet den letzten bekannten Standort. Wenn Sie in einer App mit Produktionsqualität den exakten aktuellen Standort mit einem Timeout erhalten möchten und dieser nicht ohne Zeitüberschreitung gefunden wird, nutzen Sie den zuletzt bekannten Standort. Weitere Informationen dazu erhalten Sie unter [Xamarin.Essentials Geolocation-Dokumentation](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=uwp#using-geolocation). Diese App verfügt nicht über eine Fehlerbehandlung. In einer App mit Produktionsqualität müssen Sie alle Ausnahmen, die auftreten, behandeln, z.B. wenn der Standort nicht verfügbar war.
+> Diese App verwendet den letzten bekannten Standort. Wenn Sie in einer App mit Produktionsqualität den exakten aktuellen Standort mit einem Timeout erhalten möchten und dieser nicht ohne Zeitüberschreitung gefunden wird, nutzen Sie den zuletzt bekannten Standort. Weitere Informationen dazu erhalten Sie unter [Xamarin.Essentials Geolocation-Dokumentation](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=uwp#using-geolocation). Diese App verfügt nicht über Möglichkeiten zur Fehlerbehandlung. In einer App mit Produktionsqualität müssen Sie alle Ausnahmen, die auftreten, behandeln, z.B. wenn der Standort nicht verfügbar war.
 
 ## <a name="summary"></a>Zusammenfassung
 

@@ -29,7 +29,7 @@ Die Warteschlange in Azure kann sich von den sendenden und empfangenden Komponen
 
 Verwenden Sie beim Senden einer Nachricht an eine Warteschlange beispielsweise die `QueueClient.SendAsync()`-Methode mit dem Schlüsselwort `await`.
 
-## <a name="write-code-that-sends-to-queues"></a>Schreiben von Code für das Senden an Warteschlangen 
+## <a name="write-code-that-sends-to-queues"></a>Schreiben von Code für das Senden an Warteschlangen
 
 Für alle Sende- oder Empfangskomponenten sollten Sie die folgenden `using`-Anweisungen allen Codedateien hinzufügen, mit denen eine Service Bus-Warteschlange aufgerufen wird:
 
@@ -66,4 +66,3 @@ Führen Sie Ihre Verarbeitungsschritte aus. Rufen Sie dann im Nachrichtenhandler
 ```C#
 await queueClient.CompleteAsync(message.SystemProperties.LockToken);
 ```
-    

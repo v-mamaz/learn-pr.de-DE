@@ -5,7 +5,7 @@ Installieren Sie die Azure CLI auf Ihrem lokalen Computer, und führen Sie dann 
 
 ::: zone pivot="linux"
 
-### <a name="linux"></a>Linux
+## <a name="linux"></a>Linux
 
 Hier installieren Sie die Azure CLI unter **Ubuntu Linux** mit dem Advanced Packaging Tool (**apt**) und der Bash-Befehlszeile.
 
@@ -37,7 +37,7 @@ Hier installieren Sie die Azure CLI unter **Ubuntu Linux** mit dem Advanced Pack
 
 ::: zone pivot="macos"
 
-### <a name="macos"></a>macOS
+## <a name="macos"></a>macOS
 
 Hier installieren Sie die Azure CLI mit dem Homebrew-Paket-Manager unter macOS.
 
@@ -60,7 +60,7 @@ Hier installieren Sie die Azure CLI mit dem Homebrew-Paket-Manager unter macOS.
 
 ::: zone pivot="windows"
 
-### <a name="windows"></a>Windows
+## <a name="windows"></a>Windows
 
 Hier installieren Sie die Azure CLI mit dem Microsoft Installer (MSI) unter Windows.
 

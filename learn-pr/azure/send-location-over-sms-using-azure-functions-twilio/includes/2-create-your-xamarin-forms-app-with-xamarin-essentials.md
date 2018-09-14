@@ -14,7 +14,7 @@ Die zu erstellende Anwendung ist eine plattformübergreifende mobile App, die mi
 
 1. Klicken Sie auf **OK**.
 
-    ![Dialogfeld „Neue Projektmappe“](../media-drafts/2-new-solution-dialog.png)
+    ![Dialogfeld „Neue Projektmappe“](../media/2-new-solution-dialog.png)
 
 1. Wählen Sie im Dialogfeld **Neue plattformübergreifende App** die Vorlage *Leere App* aus.
 
@@ -26,7 +26,7 @@ Die zu erstellende Anwendung ist eine plattformübergreifende mobile App, die mi
 
 1. Klicken Sie auf **OK**.
 
-    ![Dialogfeld zum Konfigurieren der neuen Projektmappe](../media-drafts/2-configure-solution-dialog.png)
+    ![Dialogfeld zum Konfigurieren der neuen Projektmappe](../media/2-configure-solution-dialog.png)
 
 Visual Studio erstellt zwei Projekte für Sie: eine UWP-App namens `ImHere.UWP` und eine .NET Standard-Bibliothek `ImHere`. Xamarin.Forms-Apps setzen umfassen zwei Bestandteile – mindestens ein plattformspezifisches App-Projekt und (mindestens) eine .NET Standard-Bibliothek. Die plattformspezifischen App-Projekte enthalten den plattformspezifischen Code, der zum Ausführen einer App auf der jeweiligen Plattform benötigt wird. Diese Projekte starten anschließend eine Xamarin.Forms-App, die in einer plattformübergreifenden .NET Standard-Bibliothek definiert ist. Sie entwickeln Ihre App in plattformübergreifendem Code, und zur Laufzeit werden alle erstellten Benutzerschnittstellen in die relevanten plattformspezifischen Benutzeroberflächenkomponenten übersetzt.
 
@@ -44,7 +44,7 @@ Die UWP-, Android- und iOS-Plattformen bieten zahlreiche ähnliche Funktionen, d
 
 1. Klicken Sie auf die Schaltfläche **Installieren**, um das NuGet-Paket zu installieren. Sie müssen die Lizenz akzeptieren, um den Vorgang fortzusetzen.
 
-    ![Hinzufügen des NuGet-Pakets „Xamarin.Essentials“ zu allen Projekten in der Projektmappe](../media-drafts/2-add-essentials-nuget.png)
+    ![Hinzufügen des NuGet-Pakets „Xamarin.Essentials“ zu allen Projekten in der Projektmappe](../media/2-add-essentials-nuget.png)
 
     > Wenn Sie dieses Modul lokal ausführen und Android als Zielplattform verwenden möchten, müssen Sie einige zusätzliche Einrichtungsschritte ausführen. Weitere Informationen finden Sie in der [Dokumentation für die ersten Schritte mit Xamarin.Essentials](https://docs.microsoft.com/xamarin/essentials/get-started?context=xamarin%2Fios&tabs=windows%2Candroid).
 
@@ -54,11 +54,11 @@ Die UWP-, Android- und iOS-Plattformen bieten zahlreiche ähnliche Funktionen, d
 
 1. Legen Sie die Buildkonfiguration auf **Debuggen**, die Plattform auf **x86** und das Gerät für die Ausführung auf **Lokaler Computer** fest.
 
-    ![Festlegen der x86-Debugkonfiguration zur Ausführung auf dem lokalen Gerät](../media-drafts/2-debug-configuration.png)
+    ![Festlegen der x86-Debugkonfiguration zur Ausführung auf dem lokalen Gerät](../media/2-debug-configuration.png)
 
 1. Beginnen Sie mit dem Debuggen der App.
 
-    ![App bei der Ausführung](../media-drafts/2-debuging-app.png)
+    ![App bei der Ausführung](../media/2-debuging-app.png)
 
 ## <a name="summary"></a>Zusammenfassung
 

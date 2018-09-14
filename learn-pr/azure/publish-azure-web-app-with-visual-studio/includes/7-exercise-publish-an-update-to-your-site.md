@@ -1,4 +1,4 @@
-Ihre Web-App "Alpine Ski House" wird jetzt ausgeführt, Sie müssen die App jetzt jedoch Ihrem Chef präsentieren. Hierzu werden Sie die Site aktualisieren und diese Updates in Azure veröffentlichen.
+Ihre Web-App „Alpine Ski House“ wird jetzt ausgeführt, Sie müssen die App jetzt jedoch Ihrem Chef präsentieren. Hierzu werden Sie die Site aktualisieren und diese Updates in Azure veröffentlichen.
 
 ## <a name="update-your-web-app"></a>Aktualisieren Ihrer Web-App
 

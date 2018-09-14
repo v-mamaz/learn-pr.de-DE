@@ -2,7 +2,7 @@
 uid: learn.run-docker-containers-aci.4-use-environment-variables
 metadata:
   title: Festlegen von Umgebungsvariablen
-  description: Festlegen von Umgebungsvariablen in Azure Container Instances
+  description: Legen Sie Umgebungsvariablen in Azure Container Instances fest.
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark

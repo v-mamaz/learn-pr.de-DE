@@ -12,7 +12,7 @@ Die wahre Leistungsstärke von Microsoft Custom Vision Service ist die Leichtigk
 
 1. Öffnen Sie mit dem Befehl **Ansicht** > **Integriertes Terminal** in Visual Studio Code ein integriertes Terminalfenster. Führen Sie dann den folgenden Befehl in dem integrierten Terminal aus, um die von der App benötigten Pakete zu laden:
 
-    ```
+    ```console
     npm install
     ```
 
@@ -50,7 +50,7 @@ Die wahre Leistungsstärke von Microsoft Custom Vision Service ist die Leichtigk
 
 1. Kehren Sie zu dem integrierten Terminal in Visual Studio Code zurück, und führen Sie den folgenden Befehl zum Starten der App aus:
 
-    ```
+    ```console
     npm start
     ```
 

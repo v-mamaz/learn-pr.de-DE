@@ -29,7 +29,7 @@ Als Nächstes verwenden Sie Azure CLI zum Erstellen einer Ressourcengruppe und a
 1. Wenn Sie über viele Elemente in der Gruppe verfügen, können Sie nach den Rückgabewerten filtern, indem Sie eine `--query`-Option hinzufügen. Testen Sie den folgenden Befehl:
 
     ```azurecli
-    az group list --query '[?name == popupResGroup]'
+    az group list --query "[?name == 'popupResGroup']"
     ```
 
     Die Abfrage wird mit **JMESPath** formatiert, was eine standardmäßige Abfragesprache für JSON-Abfragen ist. Weitere Informationen über diese leistungsstarke Filtersprache finden Sie unter <http://jmespath.org/>. Im Modul **Verwalten von virtuellen Computern mit Azure CLI** werden Abfragen ausführlicher behandelt.

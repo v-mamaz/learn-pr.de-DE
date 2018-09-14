@@ -27,7 +27,7 @@ Ausfüllen und Speichern des folgenden Bereitstellungsschemas als „parameter_f
 }
 ```
 
-Eine Liste mit verfügbaren VM-Größen finden Sie [hier](https://azure.microsoft.com/en-us/global-infrastructure/services/?WT.mc_id=blog-learning-abornst).
+Eine Liste mit verfügbaren VM-Größen finden Sie [hier](https://azure.microsoft.com/global-infrastructure/services/?WT.mc_id=blog-learning-abornst).
 
 
 ### <a name="create-a-resource-group-for-your-dsvm-in-a-region-of-your-choice"></a>Erstellen Sie in einer Region Ihrer Wahl eine Ressourcengruppe für Ihre DSVM-Instanz:
@@ -50,7 +50,7 @@ $ az vm open-port -g [[NAME OF RESOURCE GROUP]] -n [[HOSTNAME OF DSVM]] --port 2
 $ az vm open-port -g [[NAME OF RESOURCE GROUP]] -n [[HOSTNAME OF DSVM]] --port 8888 --priority 901
 ```
 
-Port 8888 ist der Standardport für Jupyter-Notebooks. Eine ausführliche Anleitung zum Öffnen von Ports finden Sie [hier](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/nsg-quickstart-portal?WT.mc_id=blog-medium-abornst).
+Port 8888 ist der Standardport für Jupyter-Notebooks. Eine ausführliche Anleitung zum Öffnen von Ports finden Sie [hier](https://docs.microsoft.com/azure/virtual-machines/windows/nsg-quickstart-portal?WT.mc_id=blog-medium-abornst).
  
 ## <a name="step-3-connect-to-the-dsvm-with-the-azure-shell"></a>Schritt 3: Herstellen einer Verbindung mit der DSVM-Instanz über Azure Shell 
  
