@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-a-windows-vm-in-azure.5-exercise-connect-to-a-windows-vm-using-rdp
-title: <span data-ttu-id="f0156-101">Verbindungsherstellung mit einem virtuellen Windows-Computer über RDP</span><span class="sxs-lookup"><span data-stu-id="f0156-101">Connect to a Windows virtual machine using RDP</span></span>
+title: <span data-ttu-id="37ed3-101">Herstellen einer Verbindung mit einem virtuellen Windows-Computer mit RDP</span><span class="sxs-lookup"><span data-stu-id="37ed3-101">Connect to a Windows virtual machine using RDP</span></span>
 metadata:
-  title: <span data-ttu-id="f0156-102">Verbindungsherstellung mit einem virtuellen Windows-Computer über RDP</span><span class="sxs-lookup"><span data-stu-id="f0156-102">Connect to a Windows virtual machine using RDP</span></span>
-  description: <span data-ttu-id="f0156-103">Verbindungsherstellung mit einem virtuellen Windows-Computer über RDP</span><span class="sxs-lookup"><span data-stu-id="f0156-103">Connect to a Windows virtual machine using RDP</span></span>
+  title: <span data-ttu-id="37ed3-102">Herstellen einer Verbindung mit einem virtuellen Windows-Computer mit RDP</span><span class="sxs-lookup"><span data-stu-id="37ed3-102">Connect to a Windows virtual machine using RDP</span></span>
+  description: <span data-ttu-id="37ed3-103">Herstellen einer Verbindung mit einem virtuellen Windows-Computer mit RDP</span><span class="sxs-lookup"><span data-stu-id="37ed3-103">Connect to a Windows virtual machine using RDP</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark

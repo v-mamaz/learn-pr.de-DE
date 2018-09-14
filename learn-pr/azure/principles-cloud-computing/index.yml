@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 3e88191c2ab201e2245d83a6be8a8500bb87151f
-  ms.sourcegitcommit: 7de323416e472639edcff135bfc7d47bd5715256
+  ms.openlocfilehash: dec32f47f14b4a911424f7a02e62f4bed5249be9
+  ms.sourcegitcommit: 4d3d995e220b696d35237a19740a6d619134d6ca
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/11/2018
-  ms.locfileid: "44371881"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45537638"
 title: Prinzipien des Cloud Computings
 summary: Lernen Sie die grundlegenden Konzepte des Cloud Computings kennen, und erfahren Sie, wie Ihr Unternehmen davon profitieren kann.
 abstract: >
@@ -25,7 +25,7 @@ abstract: >
 
   - Bestimmen des für Sie am besten geeigneten Modells zur Cloudbereitstellung
 prerequisites: Keine
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/principles-cloud-computing.svg
 levels:
 - beginner
 roles:
