@@ -1,4 +1,4 @@
-In dieser Übung erstellen Sie eine Azure-Funktion, die den Namen und die Größe eines Blobs beim Erstellen oder Aktualisieren anzeigt. 
+In dieser Einheit erfahren Sie, wie Sie eine Azure-Funktion erstellen, die den Namen und die Größe eines Blobs beim Erstellen oder Aktualisieren anzeigt.
 
 ## <a name="create-a-blob-trigger"></a>Erstellen eines Blobtriggers
 
@@ -6,13 +6,11 @@ Verwenden Sie wieder Ihre vorhandene Azure Functions-Anwendung und fügen Sie ei
 
 1. Melden Sie sich im [Azure-Portal](https://portal.azure.com?azure-portal=true) an.
 
-1. Zeigen Sie auf **Funktionen**, und wählen Sie das Pluszeichen (+) aus.
-
-    ![Auf „Funktionen“ zeigen und Pluszeichen auswählen](../media-drafts/4-hover-function.png)
+1. Zeigen Sie auf **Funktionen**, und klicken Sie auf das Pluszeichen (+).
 
 1. Klicken Sie auf **Benutzerdefinierte Funktion** und anschließend auf **Blobtrigger**.
 
-1. Wählen Sie **C#** als Sprache aus. 
+1. Wählen Sie **C#** als Sprache aus.
 
 1. Behalten Sie für **Name** den Standardwert bei.
 
@@ -64,6 +62,4 @@ Der Blobtrigger ist nun aktiviert und wartet auf Aktivität. Erstellen Sie ein B
 
 ## <a name="pause-the-function"></a>Anhalten der Funktion
 
-Um sicherzustellen, dass keine Gebühren für zusätzliche Anforderungen anfallen, können Sie über dem Protokollfenster auf **Anhalten** klicken.
-
-![Anhalten der Funktion](../media-drafts/4-pause-timer.png)
+Sie können über dem Protokollfenster auf **Anhalten** klicken, um sicherzustellen, dass keine Gebühren für zusätzliche Anforderungen anfallen.

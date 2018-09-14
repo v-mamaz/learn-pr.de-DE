@@ -3,10 +3,10 @@ Stellen Sie sich vor, Sie müssen ein Tool zur Verwaltung der Azure-Ressourcen a
 Sie benötigen ein Tool, das einerseits von Administratoren leicht erlernt werden kann, aber gleichzeitig leistungsstark genug ist, um die Installation und Einrichtung mehrerer virtueller Computer zu automatisieren oder eine komplette Anwendungsumgebung per Skript zu erstellen. Es gibt viele Tools auf dem Markt. Sie müssen das finden, das sich am besten für Ihre Mitarbeiter und Ihre Aufgaben eignet.
 
 ## <a name="what-tools-are-available"></a>Welche Tools sind verfügbar?
-Azure bietet drei Verwaltungstools zur Auswahl: 
+Azure stellt drei Verwaltungstools zur Auswahl bereit: 
 
 - Das Azure-Portal 
-- Azure CLI
+- Die Azure CLI
 - Azure PowerShell
 
 All diese Tools bieten in etwa das gleiche Maß an Steuerung: Jede Aufgabe, die Sie mit einem Tool ausführen können, können Sie wahrscheinlich auch mit den anderen beiden erledigen. Alle drei sind plattformübergreifend und können unter Windows, macOS und Linux ausgeführt werden. Sie unterscheiden sich in der Syntax und den Setupanforderungen sowie darin, ob sie die Automatisierung unterstützen.
