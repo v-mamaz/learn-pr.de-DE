@@ -2,7 +2,7 @@ Der [Azure Bot Service](https://azure.microsoft.com/en*us/services/bot*service/)
 
 ## <a name="learning-objectives"></a>Lernziele
 
-In diesem Modul lernen Sie Folgendes:
+In diesem Modul wird Folgendes thematisiert:
 
 - Erstellen eines Bots für die Azure-Web-App zum Hosten eines Bots
 - Erstellen einer Wissensdatenbank, Auffüllen dieser Datenbank mit Daten und Herstellen einer Verbindung mit dem Bot

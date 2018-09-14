@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.communicate-between-applications-with-azure-queue-storage.8-exercise-implement-dequeue
+title: Abrufen einer Nachricht aus der Warteschlange
+metadata:
+  title: Abrufen einer Nachricht aus der Warteschlange
+  description: Abrufen einer Nachricht aus der Warteschlange
+  ms.openlocfilehash: 384ef2458c85dd7f4ccd13ae19ea8cab2f34cb30
+  ms.sourcegitcommit: a29274a7a22a1b88016cd49c067921557992c945
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43316444"
+interactive: bash-editor
+durationInMinutes: 10
+content: '[!include[](includes/8-exercise-implement-dequeue.md)]'
