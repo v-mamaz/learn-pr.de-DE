@@ -1,4 +1,4 @@
-::: Zone Pivot = "Csharp" Fügen Sie Code zum Abrufen der Verbindungszeichenfolge aus der Konfiguration und Verbindung mit Azure Storage-Konto verwenden.
+::: zone pivot="csharp" Fügen Sie Code zum Abrufen der Verbindungszeichenfolge aus der Konfiguration und Verbindung mit Azure Storage-Konto verwenden.
 
 ## <a name="retrieve-the-connection-string"></a>Abrufen der Verbindungszeichenfolge
 
@@ -134,7 +134,7 @@ Unterstützung für `async` und `await` auf `Main` Methoden c# 7.1 hinzugefügt 
 
 ::: zone-end
 
-::: Zone Pivot = "Javascript" Fügen Sie Code zum Verbinden mit Azure Storage-Konto mithilfe unserer gespeicherte Verbindungszeichenfolge. Die Azure-Client-Bibliothek verwendet automatisch die **AZURE_STORAGE_CONNECTION_STRING** Umgebungsvariable beim Abrufen der Verbindungszeichenfolge.
+::: zone pivot="javascript" Fügen Sie Code zum Verbinden mit Azure Storage-Konto mithilfe unserer gespeicherte Verbindungszeichenfolge. Die Azure-Client-Bibliothek verwendet automatisch die **AZURE_STORAGE_CONNECTION_STRING** Umgebungsvariable beim Abrufen der Verbindungszeichenfolge.
 
 ## <a name="create-a-blob-client"></a>Erstellen eines Blobclients
 
