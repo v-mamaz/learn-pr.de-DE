@@ -1,4 +1,4 @@
-::: Zone Pivot = "Csharp" Unterstützung lassen Sie uns auf unsere .NET Core-Anwendung zum Abrufen einer Verbindungszeichenfolge aus einer Konfigurationsdatei hinzufügen. Wir beginnen, indem Sie die erforderlichen Grundlagen zur Verwaltung der Konfiguration in eine JSON-Datei hinzufügen.
+::: zone pivot="csharp" Unterstützung lassen Sie uns auf unsere .NET Core-Anwendung zum Abrufen einer Verbindungszeichenfolge aus einer Konfigurationsdatei hinzufügen. Wir beginnen, indem Sie die erforderlichen Grundlagen zur Verwaltung der Konfiguration in eine JSON-Datei hinzufügen.
 
 ## <a name="create-a-json-configuration-file"></a>Erstellen einer JSON-Konfigurationsdatei
 
