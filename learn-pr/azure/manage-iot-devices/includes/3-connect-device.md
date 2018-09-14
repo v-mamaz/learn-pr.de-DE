@@ -1,84 +1,77 @@
-Capturing of weather data is an important task as weather can effect everything
-from traffic patterns to how HVAC systems in retail stores are operated. In this
-exercise, you will be harnessing the online Raspberry Pi simulator to capture
-simulated weather data and capture said data via the Azure IoT Hub.
+Das Erfassen von Wetterdaten ist eine wichtige Aufgabe, weil das Wetter vieles beeinflusst – von Verkehrsmustern bis hin zum Betrieb von Heizungs-, Lüftungs- und Klimasystemen im Einzelhandel. In dieser Übung verwenden Sie den Raspberry Pi-Onlinesimulator, um simulierte Wetterdaten zu erfassen und diese Daten über Azure IoT Hub zu speichern.
 
-While this exercise is being conducted in a simulated environment, the
-application running on the simulated device can be transferred to a real device
-in future.
+Wenngleich diese Übung in einer simulierten Umgebung durchgeführt wird, kann die auf dem simulierten Gerät ausgeführte Anwendung später auf ein echtes Gerät übertragen werden.
 
-## Create an IoT hub
+## <a name="create-an-iot-hub"></a>Erstellen eines IoT Hubs
 
-1. Sign in to the [Azure portal](https://portal.azure.com/).
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an.
 
-1. Select **Create a resource** \> **Internet of Things** \> **IoT Hub**.
+1. Wählen Sie **Ressource erstellen**\>**Internet der Dinge (IoT)**\>**IoT Hub** aus.
 
-![Screenshot of Azure portal navigation to IoT Hub](../media-draft/fa40d1bc51bc4490f657e3c1a8371b5b.png)
+![Screenshot der Navigation zu IoT Hub im Azure-Portal](../media-draft/fa40d1bc51bc4490f657e3c1a8371b5b.png)
 
-1. In the **IoT hub** pane, enter the following information for your IoT hub:
+1. Geben Sie im Bereich **IoT Hub** die folgenden Informationen für Ihren IoT Hub ein:
 
- - **Subscription**: Choose the subscription that you want to use to create this IoT hub.
- - **Resource group**: Create a resource group to host the IoT hub or use an existing one. For more information, see [Use resource groups to manage your Azure resources](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal).
- - **Region**: Select the closest location to you.
- - **Name**: Create a name for your IoT hub. If the name you enter is available, a green check mark appears.
+ - **Abonnement**: Wählen Sie das Abonnement aus, das Sie zum Erstellen dieses IoT-Hubs verwenden möchten.
+ - **Ressourcengruppe**: Erstellen Sie eine Ressourcengruppe zum Hosten des IoT Hubs, oder verwenden Sie eine vorhandene Ressourcengruppe. Weitere Informationen finden Sie unter [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal).
+ - **Region**: Wählen Sie den nächstgelegenen Standort aus.
+ - **Name**: Erstellen Sie einen Namen für Ihren IoT-Hub. Wenn der eingegebene Name verfügbar ist, wird ein grünes Häkchen angezeigt.
 
 > [!IMPORTANT]
-> The IoT hub will be publicly discoverable as a DNS endpoint, so make sure to avoid any sensitive information while naming it.
+> Der IoT Hub wird öffentlich als DNS-Endpunkt ermittelbar sein, sodass Sie beim Benennen die Verwendung von sensiblen Informationen vermeiden sollten.
 
-   ![IoT Hub basics window](./../media-draft/dbb7319388673b8ee0e0b407536156c0.png)
+   ![Fenster mit IoT Hub-Grundeinstellungen](./../media-draft/dbb7319388673b8ee0e0b407536156c0.png)
 
-1.  Select **Next: Size and scale** to continue creating your IoT hub.
+1.  Klicken Sie auf **Nächster Schritt: Größe festlegen und skalieren**, um die Erstellung Ihres IoT-Hubs fortzusetzen.
 
-1.  Choose your **Pricing and scale tier**. For this article, select the **F1 - Free** tier if it's still available on your subscription. For more information, see the [Pricing and scale tier](https://azure.microsoft.com/pricing/details/iot-hub/).
+1.  Wählen Sie eine Option für **Tarif und Skalierung** aus. Legen Sie für diesen Artikel den Tarif **F1 – Free** fest, wenn er für Ihr Abonnement noch verfügbar ist. Weitere Informationen hierzu finden Sie unter [Tarif und Skalierung](https://azure.microsoft.com/pricing/details/iot-hub/).
 
-   ![IoT Hub size and scale window](../media-draft/b506eb3293fa4aa9d4785ad498fc476c.png)
+   ![Fenster für IoT Hub-Größe und -Skalierung](../media-draft/b506eb3293fa4aa9d4785ad498fc476c.png)
 
-1.  Select **Review + create**.
+1.  Klicken Sie auf **Überprüfen + erstellen**.
 
-1.  Review your IoT hub information, then click **Create**. Your IoT hub might take a few minutes to create. You can monitor the progress in the **Notifications** pane.
+1.  Überprüfen Sie die Informationen zum IoT-Hub, und klicken Sie auf **Erstellen**. Die Erstellung des IoT Hubs kann mehrere Minuten dauern. Sie können den Fortschritt im Bereich **Benachrichtigungen** überwachen.
 
-Now that you have created an IoT hub, locate the important information that you use to connect devices and applications to your IoT hub.
+Nachdem Sie nun einen IoT Hub erstellt haben, können Sie nach den wichtigen Informationen suchen, die Sie zum Herstellen einer Verbindung für Geräte und Anwendungen mit Ihrem IoT Hub nutzen.
 
-In your IoT hub navigation menu, open **Shared access policies**. Select the **iothubowner** policy, and then copy the **Connection string---primary key** of your IoT hub. For more information, see [Control access to IoT Hub](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security).
+Öffnen Sie in Ihrem IoT Hub-Navigationsmenü die Option  **	Richtlinien für gemeinsamen Zugriff**. Wählen Sie die Richtlinie **iothubowner** aus, und kopieren Sie die **Verbindungszeichenfolge – Primärschlüssel** Ihres IoT Hub. Weitere Informationen finden Sie unter [Verwalten des Zugriffs auf IoT Hub](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security).
 
 > [!NOTE]
-> You do not need this iothubowner connection string for this set-up tutorial. However, you may need it for some of the tutorials or different IoT scenarios after you complete this set-up.
+> Die Verbindungszeichenfolge „iothubowner“ wird für dieses Tutorial nicht benötigt. Sie benötigen sie allerdings unter Umständen für einige Tutorials oder andere IoT-Szenarios, nachdem Sie diese Einrichtung abgeschlossen haben.
 
-![Get your IoT hub connection string](../media-draft/a4b41e6ea46ccbef653c411a9829610c.png)
+![Abrufen der IoT Hub-Verbindungszeichenfolge](../media-draft/a4b41e6ea46ccbef653c411a9829610c.png)
 
-## Register a device in the IoT hub for your device
+## <a name="register-a-device-in-the-iot-hub-for-your-device"></a>Registrieren eines Geräts beim IoT Hub für Ihr Gerät
 ------------------------------------------------
 
-1.  In your IoT hub navigation menu, open **IoT devices**, then click **Add** to register a device in your IoT hub.
+1.  Öffnen Sie in Ihrem IoT Hub-Navigationsmenü die Option **IoT-Geräte**, und klicken Sie auf **Hinzufügen**, um ein Gerät in Ihrem IoT Hub zu registrieren.
 
-   ![Add a device in the IoT Devices of your IoT hub](../media-draft/ee5f177abcf06b86dd007fce3b8448ad.png)
+   ![Hinzufügen eines Geräts im Bereich „IoT-Geräte“ Ihres IoT Hubs](../media-draft/ee5f177abcf06b86dd007fce3b8448ad.png)
 
-1.  Enter a **Device ID** for the new device. Device IDs are case sensitive.
+1.  Geben Sie eine **Geräte-ID** für das neue Gerät ein. Bei Geräte-IDs wird die Groß-/Kleinschreibung beachtet.
 
 > [!IMPORTANT]
-> The device ID may be visible in the logs collected for customer support and troubleshooting, so make sure to avoid any sensitive information while naming it.
+> Diese Geräte-ID ist unter Umständen in den Protokollen sichtbar, die für den Kundensupport und die Problembehandlung erfasst werden. Stellen Sie also sicher, dass Sie beim Benennen keine sensiblen Informationen verwenden.
 
-1.  Click **Save**.
+1.  Klicken Sie auf **Speichern**.
 
-1.  After the device is created, open the device from the list in the **IoT
-    devices** pane.
+1.  Öffnen Sie das Gerät nach der Erstellung in der Liste im Bereich **IoT-Geräte**.
 
-1.  Copy the **Connection string---primary key** to use later.
+1.  Kopieren Sie **Verbindungszeichenfolge – Primärschlüssel** zur späteren Verwendung.
 
-   ![Get the device connection string](../media-draft/fba4413dcb652be92a6ab0f6bb638561.png)
+   ![Abrufen der Geräte-Verbindungszeichenfolge](../media-draft/fba4413dcb652be92a6ab0f6bb638561.png)
 
-## Run a sample application on Pi web simulator
+## <a name="run-a-sample-application-on-pi-web-simulator"></a>Ausführen einer Beispielanwendung im Pi-Websimulator
 
-1. In coding area, make sure you are working on the default sample application. Replace the placeholder in Line 15 with the Azure IoT hub device connection string.
+1. Stellen Sie im Codingbereich sicher, dass Sie mit der Standard-Beispielanwendung arbeiten. Ersetzen Sie den Platzhalter in Zeile 15 durch die Verbindungszeichenfolge für das Azure IoT Hub-Gerät.
 
-    ![Replace the device connection string](../media-draft/92ea2c31d42f5b939fb5512e7220e957.png)
+    ![Ersetzen der Verbindungszeichenfolge für das Gerät](../media-draft/92ea2c31d42f5b939fb5512e7220e957.png)
 
-2.  Click **Run** or type npm start to run the application.
+2.  Klicken Sie auf **Ausführen**, oder geben Sie „npm start“ ein, um die Anwendung auszuführen.
 
-You should see the following output that shows the sensor data and the messages
-that are sent to your IoT hub
+Sie sollten die folgende Ausgabe sehen, die die Sensordaten und Nachrichten zeigt, die an Ihren IoT Hub gesendet werden.
 
-   ![Output - sensor data sent from Raspberry Pi to your IoT hub](../media-draft/96b28d30e317b04347abb0d613738117.png)
+   ![Ausgabe: Von Raspberry Pi an Ihren IoT Hub gesendete Sensordaten](../media-draft/96b28d30e317b04347abb0d613738117.png)
 
 <!--Reference links
 https://docs.microsoft.com/azure/iot-hub/iot-hub-raspberry-pi-web-simulator-get-started-->

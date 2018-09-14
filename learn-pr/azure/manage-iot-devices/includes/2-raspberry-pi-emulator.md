@@ -1,44 +1,26 @@
-Raspberry Pi boards have garnered much interest of late for testing theories or
-event making cool things. While the cost on this boards are quite low, some may
-be interested in testing out the Raspberry Pi functionality before investing in
-one.
+Raspberry Pi-Boards sind neuerdings sehr beliebt, um Theorien zu testen oder um coole Dinge zu entwickeln. Die Kosten für diese Boards sind recht niedrig, aber möglicherweise möchten Sie die Raspberry Pi-Funktionalität dennoch testen, bevor Sie in ein solches Board investieren.
 
-Microsoft has built an online Raspberry Pi simulator allowing users to control
-the emulated hardware via code. The emulator portrays a graphic of a Raspberry
-Pi connected to a temperature, humidity, pressure sensor, and a red LED via
-breadboard allowing circuits to be wired together. The displayed side panel
-allows users to enter Node.js JavaScript code to control the LED and collect
-dummy data from the simulated sensor.
+Microsoft hat einen Raspberry Pi-Onlinesimulator entwickelt, mit dem Benutzer die emulierte Hardware per Code steuern können. Der Emulator zeigt eine Grafik eines Raspberry Pi-Boards, der über ein Lochraster an einen Temperatur-, Feuchtigkeits- und Drucksensor sowie eine rote LED angeschlossen ist, sodass die Schaltkreise verbunden werden können. Die angezeigte Seitenleiste ermöglicht dem Benutzer die Eingabe von Node.js-JavaScript-Code, um die LED zu steuern und Dummydaten von den simulierten Sensoren zu erfassen.
 
-At first run, the simulator operates a sample temperature capture program which
-is displayed via the command line. The same sample application can also be run
-on a real Pi as the simulator is designed to allow people to test code before
-transferring it to a real device.
+Im ersten Durchlauf führt der Simulator ein einfaches Programm zur Temperaturerfassung aus, das über die Befehlszeile angezeigt wird. Die Beispielanwendung kann auch auf einem echten Pi-Board ausgeführt werden, weil der Simulator das Testen von Code ermöglicht, bevor dieser auf ein echtes Gerät übertragen wird.
 
-## Web simulator
+## <a name="web-simulator"></a>Websimulator
 
-There are three areas in the web simulator:
+Der Websimulator umfasst drei Bereiche:
 
-1.  Assembly area - The default circuit is that a Pi connects with a BME280
-    sensor and an LED. The area is locked in preview version so currently you
-    cannot do customization.
+1.  Assembly-Bereich: In der Standardschaltung stellt das Pi-Board eine Verbindung mit einem BME280-Sensor und einer LED her. Der Bereich ist in der Vorschauversion gesperrt, daher sind zurzeit keine Anpassungen möglich.
 
-2.  Coding area - An online code editor for you to code with Raspberry Pi. The
-    default sample application helps to collect sensor data from BME280 sensor
-    and sends to your Azure IoT Hub. The application is fully compatible with
-    real Pi devices.
+2.  Codingbereich: Ein Online-Code-Editor zum Codieren mit Raspberry Pi. Mit der Standard-Beispielanwendung können Sie Sensordaten von einem BME280-Sensor erfassen und diese an Azure IoT Hub senden. Die Anwendung ist vollständig mit echten Pi-Geräten kompatibel.
 
-3.  Integrated console window - It shows the output of your code. At the top of
-    this window, there are three buttons.
+3.  Integriertes Konsolenfenster: Hier wird die Ausgabe des Codes angezeigt. Oben im Fenster werden drei Schaltflächen angezeigt.
 
-    -   **Run** - Run the application in the coding area.
+    -   **Ausführen:** Hiermit wird die Anwendung im Codingbereich ausgeführt.
 
-    -   **Reset** - Reset the coding area to the default sample application.
+    -   **Zurücksetzen:** Hiermit wird der Codingbereich auf die Standard-Beispielanwendung zurückgesetzt.
 
-    -   **Fold/Expand** - On the right side there is a button for you to
-        fold/expand the console window.
+    -   **Minimieren/Maximieren**: Auf der rechten Seite befindet sich eine Schaltfläche, mit der Sie das Konsolenfenster minimieren/maximieren können.
 
-[Overview image of Pi online simulator](./../media-draft/image1.png)
+[Übersicht über den Pi-Onlinesimulator](./../media-draft/image1.png)
 
 <!-- Reference links 
 -   Online Raspberry Pi Emulator:

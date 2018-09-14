@@ -1,83 +1,82 @@
-Let's update our function implementation to call the Text Analytics API service and get back a sentiment score.
+Aktualisieren wir unsere Funktionsimplementierung zum Aufruf des Textanalyse-API-Diensts und zum Abrufen einer Stimmungsbewertung.
 
-1. Select our function, [!INCLUDE [func-name-discover](./func-name-discover.md)], in the Function Apps portal.
+1. Wählen Sie im Funktions-Apps-Portal unsere Funktion [!INCLUDE [func-name-discover](./func-name-discover.md)] aus.
 
-1. Expand the **View files** menu on the right of the screen.
+1. Erweitern Sie auf der rechten Bildschirmseite das Menü **Dateien anzeigen**.
 
-1. Under the **View files** tab, select **index.js** to open the code file in the editor.
+1. Klicken Sie auf der Registerkarte **Dateien anzeigen** auf **index.json**, um die Codedatei im Editor zu öffnen.
 
-1. Replace the entire content of the code file with the following JavaScript.
+1. Ersetzen Sie den gesamten Inhalt der Codedatei durch den folgenden JavaScript-Code.
 
 [!code-javascript[](../code/discover-sentiment-sort.js?highlight=7)]
 
-Let's look at what's happening in this code:
+Sehen wir uns an, was in diesem Code geschieht:
 
-- To call the text analytics service, set `accessKey`, highlighted in the code snippet, to the key you saved earlier.
-- Update `uri` to the region from which you obtained your access key, if that region is different than *westus* shown in this example.
-- At the bottom of the code file, we've defined a `documents` array. This array is the payload we send to the Text Analytics service. 
-- The `documents` array has a single entry in this case, which is the queue message that triggered our function. Although we only have one document in our array, it doesn't mean that our solution can only handle one message at a time. The Azure Functions runtime retrieves and processes messages in batches, calling several instances of our function *in parallel*. Currently, the default batch size is 16 and the maximum batch size is 32.
-- The `id` must be unique within the array. The `language` property specifies the language of the document text.  
-- We then call our method `get_sentiments`, which uses the HTTPS module to make the call to Text Analytics API. Notice that we pass our subscription, or access, key in the header of every request.
-- When the service returns, our `response_handler` is called and we log the response to the console using `context.log` 
+- Um den Textanalysedienst aufzurufen, legen Sie `accessKey` (im Codeausschnitt hervorgehoben) auf den zuvor gespeicherten Schlüssel fest.
+- Aktualisieren Sie `uri` mit der Region, aus der Sie Ihren Zugriffsschlüssel abgerufen werden – sofern diese von der Region *USA, Westen* in diesem Beispiel abweicht.
+- Am Ende der Codedatei haben wir ein `documents`-Array definiert. Dieses Array ist die Nutzlast, die wir an den Textanalysedienst senden. 
+- Das `documents`-Array enthält in diesem Fall einen einzelnen Eintrag: die Warteschlangennachricht, die unsere Funktion ausgelöst hat. Wenngleich wir nur über ein Dokument in unserem Array verfügen, bedeutet dies nicht, dass unsere Lösung nur jeweils eine Nachricht verarbeiten kann. Die Azure Functions-Runtime führt Abruf und Verarbeitung von Nachrichten in Batches durch, hierbei werden verschiedene Instanzen unserer Funktion  *parallel* aufgerufen. Aktuell beträgt die standardmäßige Batchgröße 16 und die maximal zulässige Batchgröße 32.
+- Die `id` muss innerhalb des Arrays eindeutig sein. Die `language`-Eigenschaft gibt die Sprache des Dokumenttexts an.  
+- Anschließend rufen wir unsere Methode `get_sentiments` auf, die das HTTPS-Modul zum Aufrufen der Textanalyse-API verwendet. Beachten Sie, dass wir unseren Abonnement- oder Zugriffsschlüssel im Header jeder Anforderung übergeben.
+- Bei Rückgabe durch den Dienst wird `response_handler` aufgerufen, und die Antwort wird unter Verwendung von `context.log` an die Konsole ausgegeben. 
 
-## Try it out
+## <a name="try-it-out"></a>Testen
 
-Before we look at sorting into queues, let's take what we have for a test run. 
+Bevor wir uns mit der Sortierung in Warteschlangen befassen, führen wir mit den vorhandenen Daten zunächst einen Testlauf aus. 
 
-1.  With our function, [!INCLUDE [func-name-discover](./func-name-discover.md)], selected in the Function Apps portal, click on the Test menu item on the far left to expand it.
+1.  Klicken Sie bei ausgewählter Funktion [!INCLUDE [func-name-discover](./func-name-discover.md)] im Funktionen-Apps-Portal auf das ganz links angezeigte Menüelement für Tests, um es zu erweitern.
 
-2. Select the **Test** menu item and verify that you have the test panel open. The following screenshot shows what it should look like. 
+2. Wählen Sie das Menüelement **Test** aus, und überprüfen Sie, ob der Testbereich geöffnet ist. Der folgende Screenshot zeigt, wie der Bildschirm aussehen sollte. 
 
-![Screenshot showing the function Test Panel expanded.](../media-draft/test-panel-open-small.png)
+![Screenshot mit erweitertem Bereich für den Funktionstest](../media-draft/test-panel-open-small.png)
 
-3. Add a string of text into the request body as shown in the screenshot. 
+3. Fügen Sie wie im Screenshot gezeigt eine Textzeichenfolge in den Anforderungstext ein. 
 
-1.  Click **Run** at the bottom of the test panel.
+1.  Klicken Sie unten im Testbereich auf **Ausführen**.
 
-1. Make sure the **Logs** tab is expanded at the bottom left of the main screen, under the code editor. 
+1. Stellen Sie sicher, dass die Registerkarte **Protokolle** im linken unteren Bereich des Hauptbildschirms (unter dem Code-Editor) erweitert ist. 
 
-1. Verify that the **Logs** tab displays log information that the function completed. The window will also display the response from the Text Analytics API call. 
+1. Überprüfen Sie, ob die Registerkarte **Protokolle** anzeigt, dass die Funktion ausgeführt wurde. Das Fenster zeigt außerdem die Antwort des Aufrufs der Textanalyse-API an. 
 
-![Screenshot showing Test Panel and result of a successful test.](../media-draft/sentiment-response-log1.png)
+![Screenshot mit Anzeige des Testbereichs und dem Ergebnis eines erfolgreichen Tests](../media-draft/sentiment-response-log1.png)
 
-Congratulations! The [!INCLUDE [func-name-discover](./func-name-discover.md)] works as designed. In  this example, we passed in a very upbeat message and received a score of over 0.98. Try changing the message to something less optimistic, rerun the test and note the response.
+Herzlichen Glückwunsch! [!INCLUDE [func-name-discover](./func-name-discover.md)] arbeitet wie vorgesehen. In diesem Beispiel haben wir eine sehr positive Nachricht übergeben und eine Bewertung von über 0,98 erhalten. Ändern Sie die Nachricht ab, sodass sie weniger optimistisch ist, führen Sie den Test erneut aus, und beachten Sie die Antwort.
 
-## Try it out again (optional)
+## <a name="try-it-out-again-optional"></a>Nochmals testen (optional)
 
-Let's repeat the test. This time, instead of using the Test window of the portal, we'll actually place a message into the input queue and watch what happens. 
+Wiederholen wir den Test. Dieses Mal verwenden wir jedoch nicht das Testfenster im Portal, sondern platzieren eine Nachricht in der Eingabewarteschlange und beobachten, was geschieht. 
 
-1. Navigate to your resource group in the **Resource Groups** section of the portal.
+1. Navigieren Sie im Portalabschnitt **Ressourcengruppen** zu Ihrer Ressourcengruppe.
 
-1. Select the resource group used in this lesson.
+1. Wählen Sie die in dieser Lektion verwendete Ressourcengruppe aus.
 
-1. In the **Resource group** panel that appears, locate the Storage 
-Account entry and select it.
+1. Daraufhin öffnet sich der Bereich **Ressourcengruppe**. Wählen Sie hier den Eintrag „Speicherkonto“ aus.
 
-![Screenshot storage account selected in the Resource Group window.](../media-draft/select-storage-account.png)
+![Screenshot mit ausgewähltem Speicherkonto im Fenster „Ressourcengruppe“](../media-draft/select-storage-account.png)
 
-1. Select **Storage Explorer (preview)** from the left menu of the Storage Account main window.  This action opens the Azure Storage Explorer inside the portal. Your screen should look like the following screenshot at this stage. 
+1. Klicken Sie im linken Menü des Hauptfensters für das Speicherkonto auf **Storage-Explorer (Vorschau)**.  Daraufhin wird im Portal der Azure Storage-Explorer geöffnet. Der Bildschirm sollte nun wie im folgenden Screenshot aussehen. 
 
-![Screenshot of storage explorer showing our storage account, with no queues currently.](../media-draft/sa-no-queue.png)
+![Screenshot des Storage-Explorers mit unserem Speicherkonto, derzeit ohne Warteschlange](../media-draft/sa-no-queue.png)
 
-As you can see, we don't have any queues in this storage account yet, so let's fix that.
+Wie Sie sehen können, enthält dieses Speicherkonto aktuell keine Warteschlangen. Lassen Sie uns das ändern.
 
-1. If you remember from earlier in this lesson, we named the queue associated with our trigger **new-feedback-q**. Right-click on the **Queues** item in the storage explorer and select *Create Queue*.
+1. Falls Sie sich erinnern, haben wir zu einem früheren Zeitpunkt in dieser Lektion die unserem Trigger zugeordnete Warteschlange mit dem Namen **new-feedback-q** versehen. Klicken Sie im Storage-Explorer mit der rechten Maustaste auf das Element **Warteschlangen**, und wählen Sie *Warteschlange erstellen* aus.
 
-1. In the dialog that opens, enter **new-feedback-q** and click **OK**. We now have our input queue. 
+1. Geben Sie im nun geöffneten Dialogfeld **new-feedback-q** ein, und klicken Sie auf **OK**. Jetzt verfügen wir über eine Eingabewarteschlange. 
 
-1. Select the new queue in the left-hand menu to see the data explorer for this queue. As expected, the queue is empty. Let's add a message to the queue using the **Add Message** command at the top of the window.
+1. Wählen Sie im linken Menü die neue Warteschlange aus, um den Daten-Explorer für diese Warteschlange anzuzeigen. Wie zu erwarten, ist die Warteschlange leer. Als Nächstes fügen wir der Warteschlange mithilfe des Befehls **Nachricht hinzufügen** am oberen Rand des Fensters eine Nachricht hinzu.
 
-1. In the **Add Message** dialog, enter "This message came from our input queue, new-feedback-q" into the **Message text** field and click **OK** at the bottom of the dialog. 
+1. Geben Sie im Dialogfeld **Nachricht hinzufügen** den Text „Diese Nachricht kam von unserer Eingabewarteschlange new-feedback-q“ in das Feld **Nachrichtentext** ein, und klicken Sie unten im Dialogfeld auf **OK**. 
 
-1. Observe the message, similar to the message in the following screenshot, in the data explorer.
-![Screenshot of storage explorer showing our storage account, with the message we created in the queue.](../media-draft/message-in-input-queue.png)
+1. Beobachten Sie die Nachricht, die der im folgenden Screenshot ähnelt, im Daten-Explorer.
+![Screenshot des Storage-Explorers mit Anzeige unseres Speicherkontos und der in der Warteschlange erstellten Nachricht](../media-draft/message-in-input-queue.png)
 
-1. After a few seconds, click **Refresh** to refresh the view of the queue. Observe that the queue is empty once again. Something must have read the message from the queue. 
+1. Klicken Sie nach einigen Sekunden auf **Aktualisieren**, um die Ansicht der Warteschlange zu aktualisieren. Beachten Sie, dass die Warteschlange wieder leer ist. Die Nachricht in der Warteschlange muss gelesen worden sein. 
 
-1. Navigate back to our function in the portal and open the **Monitor** tab. Select the newest message and in the list. Observe that our function processed the queue message we had posted to the new-feedback-q.
+1. Navigieren Sie zurück zu unserer Funktion im Portal, und öffnen Sie die Registerkarte **Überwachung**. Wählen Sie die neueste Meldung in der Liste aus. Beachten Sie, dass unsere Funktion die Warteschlangennachricht verarbeitet hat, die wir an „new-feedback-q“ gesendet haben.
 
-![Screenshot of Monitor dashboard showing an entry that tells us that our function processed the queue message that we posted to new-feedback-q.](../media-draft/message-in-monitor.png)
+![Screenshot des Überwachungsdashboards mit Anzeige eines Eintrags, der uns darüber informiert, dass unsere Funktion die in „new-feedback-q“ platzierte Nachricht verarbeitet hat](../media-draft/message-in-monitor.png)
 
-In this test, we did a complete round trip of posting something into our queue and then seeing the function process it.
+In diesem Test haben wir einen vollständigen Durchlauf ausgeführt, indem wir eine Nachricht in unsere Warteschlange eingereiht und dann gesehen haben, wie die Funktion die Nachricht verarbeitet.
 
-We're making progress with our solution! Our function is now doing something useful. It's receiving text from our input queue and then calling out to the Text Analytics API service to get a sentiment score.  We've also learned how to test our function through the Azure portal and the Storage Explorer. In the next exercise, we'll see how easy it is to write to queues using output bindings.
+Wir machen Fortschritte mit unserer Lösung! Unsere Funktion erfüllt jetzt einen Nutzen. Sie empfängt Text von unserer Eingabewarteschlange und ruft dann den Textanalyse-API-Dienst auf, um eine Bewertung abzurufen.  Darüber hinaus haben wir gelernt, wie wir unsere Funktion über das Azure-Portal und den Storage-Explorer testen. In der nächsten Übung sehen wir uns an, wie einfach es ist, mithilfe von Ausgabebindungen Schreibvorgänge in Warteschlangen durchzuführen.

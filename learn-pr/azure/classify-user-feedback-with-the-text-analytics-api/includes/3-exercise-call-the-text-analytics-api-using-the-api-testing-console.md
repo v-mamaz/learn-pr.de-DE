@@ -1,105 +1,105 @@
-To see the Text Analytics API in action, let's make some calls using  the built-in API testing console tool located in the online reference documentation. Before we do that, we'll need an access key to make those calls. 
+Um die Textanalyse-API in Aktion zu sehen, führen wir einige Aufrufe mit der integrierten API-Testkonsole aus der Onlinereferenzdokumentation durch. Hierzu müssen wir aber zunächst einen Zugriffsschlüssel erstellen, um diese Aufrufe durchführen zu können. 
 
-## Create an access key
+## <a name="create-an-access-key"></a>Erstellen eines Zugriffsschlüssels
 
-Every call to Text Analytics API requires a subscription key. Often called an access key, it is used to validate that you have access to make the call. We'll use the Azure portal to grab a key. 
+Für jeden Aufruf der Textanalyse-API ist ein Abonnementschlüssel erforderlich. Dieser wird häufig als Zugriffsschlüssel bezeichnet und dient der Überprüfung, ob Sie über Zugriff für den Aufruf verfügen. Wir verwenden das Azure-Portal zum Abrufen eines Schlüssels. 
 
-1. Sign in to the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true) with your Azure account.
+1. Melden Sie sich unter [https://portal.azure.com](https://portal.azure.com?azure-portal=true) mit Ihrem Azure-Konto beim Azure-Portal an.
 
-1.  Click **+ Create a resource**
+1.  Klicken Sie auf **+ Ressource erstellen**.
 
-1.  Under Azure Marketplace, select **AI + Machine Learning** to display a list of available APIs. Click on **See all** in the top right of the page to see the entire list of Cognitive Services APIs. 
+1.  Wählen Sie unter „Azure Marketplace“ die Option **AI + Machine Learning** aus, um eine Liste der verfügbaren APIs anzuzeigen. Klicken Sie oben rechts auf **Alle anzeigen**, um die gesamte Liste mit den Cognitive Services-APIs anzuzeigen. 
 
-1. Find **Text Analytics** in the list of Cognitive Services and select it. 
-![Screenshot of AI and Machine Learning pane, showing the Text Analytics API selected in the list.](../media-draft/select-text-analytics.PNG)
+1. Suchen Sie in der Liste nach **Textanalyse**, und wählen Sie die API aus. 
+![Screenshot der Liste im Bereich „AI + Machine Learning“ mit ausgewählter Textanalyse-API](../media-draft/select-text-analytics.PNG)
 
-1. In the create page that opens, enter the following values into each field.
+1. Geben Sie auf der jetzt geöffneten Seite für die Erstellung die folgenden Werte in jedes Feld ein.
 
 
-|Property  | Value  | Description  |
+|Eigenschaft  | Wert  | Beschreibung  |
 |---------|---------|---------|
-|Name     |    MyTextAnalyticsAPIAccount     |  The name of the Cognitive Services account. We recommend using a descriptive name. Valid characters are `a-z`, `0-9`, and `-`.    |
-|Subscription     |  Your subscription       |   The subscription under which this new Cognitive Services API account with **Text Analytics API** is created.      |
-|Location     |  West US       |  Choose a [region](https://azure.microsoft.com/regions/) near you.       |
-|Pricing tier     | **F0 Free**     |   The cost of your Cognitive Services account depends on the actual usage and the options you choose. We recommend selecting the free tier for our purposes here.      |
-|Resource group     |  Create a new resource group and call it [!INCLUDE [resource-group-note](./rg-name.md)]       |  Name for the new resource group in which to create your Cognitive Services Text Analytics API account.       |
+|Name     |    MyTextAnalyticsAPIAccount     |  Der Name des Cognitive Services-Kontos. Es wird empfohlen, einen beschreibenden Namen zu verwenden. Gültige Zeichen sind `a-z`, `0-9` und `-`.    |
+|Abonnement     |  Ihr Abonnement       |   Das Abonnement, unter dem dieses neue Cognitive Services-API-Konto mit **Textanalyse-API** erstellt wird.      |
+|Standort     |  USA, Westen       |  Wählen Sie eine [Region](https://azure.microsoft.com/regions/) in Ihrer Nähe.       |
+|Tarif     | **F0 Free**     |   Die Kosten für Ihr Cognitive Services-Konto hängen von der tatsächlichen Nutzung und den ausgewählten Optionen ab. Es wird empfohlen, zu unseren Zwecken den Tarif „Free“ auszuwählen.      |
+|Ressourcengruppe     |  Erstellen Sie eine neue Ressourcengruppen mit dem Namen [!INCLUDE [resource-group-note](./rg-name.md)].       |  Name für die neue Ressourcengruppe, in der Sie Ihr Cognitive Services-Konto für die Textanalyse-API erstellen.       |
 
 
 [!INCLUDE [resource-group-note](./rg-notice.md)]
 
-Here's a screenshot of what the **Create** page looks like when you've completed it.
+Hier sehen Sie einen Screenshot der Seite **Erstellen**, nachdem Sie alle Werte angegeben haben.
 
-![Screenshot of user interface for creating a Text Analytics account with all fields filled out with values suggested in preceding table.](../media-draft/create-text-analytics-account.PNG)
+![Screenshot der Benutzeroberfläche zum Erstellen eines Textanalyse-API-Kontos, bei dem alle Felder mit den vorgeschlagenen Werten aus der vorstehenden Tabelle ausgefüllt wurden](../media-draft/create-text-analytics-account.PNG)
 
-6. Select **Create** at the bottom of the page to start the account creation process.  Watch for a notification that the deployment is in progress. You'll then get a notification that the account has been deployed successfully to your resource group.
+6. Wählen Sie unten auf der Seite **Erstellen** aus, um das Konto zu erstellen.  Warten Sie auf eine Benachrichtigung, dass die Bereitstellung durchgeführt wird. Sie erhalten anschließend eine Benachrichtigung, dass das Konto erfolgreich in Ihrer Ressourcengruppe bereitgestellt wurde.
 
-![Deployment succeeded notification with a Go to resource button and a Pin to dashboard button.](../media-draft/deploy-resource-group-success.PNG)
+![Benachrichtigung über erfolgreiche Bereitstellung mit einer Schaltfläche „Zur Ressource wechseln“ und einer Schaltfläche „An Dashboard anheften“](../media-draft/deploy-resource-group-success.PNG)
 
-Now that we have our Cognitive Services account, let's find the access key so we can start calling the API. 
+Nun, da wir über ein Cognitive Services-Konto verfügen, werden wir den Zugriffsschlüssel abrufen, damit wird mit dem Aufruf der API beginnen können. 
 
-7. Click on the **Go to resource** button on the *Deployment succeeded* notification. This action opens the account Quickstart. 
+7. Klicken Sie in der Benachrichtigung *Bereitstellung erfolgreich* auf **Zu Ressource wechseln**. Hierdurch wird der Schnellstart zum Konto geöffnet. 
 
-1. Select the **Keys** menu item from the menu on the left, or in the *Grab your keys* section of the quickstart.  This action opens the **Manage keys** page.
+1. Wählen Sie im Menü links oder im Abschnitt *Schlüssel abrufen* des Schnellstarts die Option **Schlüssel** aus.  Hierdurch wird die Seite **Schlüssel verwalten** geöffnet.
 
-1. Copy one of the keys using the copy button. 
+1. Kopieren Sie einen der Schlüssel über die Schaltfläche zum Kopieren. 
 
-![Manage keys user interface showing the name of the Cognitive Services account and the Key 1 and Key 2 entries.](../media-draft/manage-keys.PNG)
+![Benutzeroberfläche zum Verwalten von Schlüsseln mit Anzeige des Cognitive Services-Kontos und den Einträgen für Schlüssel 1 und Schlüssel 2](../media-draft/manage-keys.PNG)
 
 > [!IMPORTANT]
-> Always keep your access keys save and never share them. 
+> Bewahren Sie Ihre Zugriffsschlüssel immer sicher auf, und geben Sie diese niemals weiter. 
 
-10. Store this key for the rest of this module. We'll use it shortly to make API calls from the testing console and throughout the rest od the module.
+10. Speichern Sie diesen Schlüssel für die verbleibenden Abschnitte in diesem Modul. Wir benötigen diesen Schlüssel für die API-Aufrufe von der Testkonsole sowie in den verbleibenden Abschnitten des Moduls.
 
-Now that we have our key we can head over to the testing console and take the API for a spin.
+Nun, da wir über unseren Schlüssel verfügen, können wir zur Testkonsole wechseln und die API aufrufen.
 
-## Call the API from the testing console
+## <a name="call-the-api-from-the-testing-console"></a>Aufrufen der API von der Testkonsole
 
-1. Navigate to the [Text Analytics API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7?azure-portal=true) reference documentation in your favorite browser.
+1. Navigieren Sie in Ihrem bevorzugten Browser zur Referenzdokumentation der [Textanalyse-API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7?azure-portal=true).
 
-The landing page displays a menu on the left and content to the right. The menu lists the POST methods you can call on the Text Analytics API. These endpoints are **Detect Language**, **Entities**, **Key Phrases**, and **Sentiment**.  To call one of these operations, we need to do a few things.
-- Select the method we want to call.
-- Select a testing console that matches the region or location we selected earlier in this lesson. 
-- Add the access key that we saved earlier in the lesson to each call.
+Auf der Landing Page wird links ein Menü und rechts Inhalt angezeigt. Im Menü werden die POST-Methoden aufgelistet, die Sie für die Textanalyse-API aufrufen können. Diese Endpunkte sind **Sprachenerkennung**, **Entitäten**, **Schlüsselbegriffe** und **Stimmung**.  Um einen dieser Vorgänge aufzurufen, müssen Sie zunächst einige Schritte ausführen.
+- Wählen Sie die Methode aus, die Sie aufrufen möchten.
+- Wählen Sie eine Testkonsole aus, die der Region oder dem Standort entspricht, der zu einem früheren Zeitpunkt in dieser Lektion ausgewählt wurde. 
+- Fügen Sie jedem Aufruf den Zugriffsschlüssel hinzu, den Sie zu einem früheren Zeitpunkt in dieser Lektion gespeichert haben.
 
-2. Front the left menu, select **Sentiment**. This selection opens the Sentiment documentation to the right. As the documentation shows, we'll be making a REST call in the following format:
+2. Wählen Sie im Menü links die Option **Stimmung** aus. Durch diese Auswahl wird auf der rechten Seite die zugehörige Dokumentation geöffnet. Wie die Dokumentation zeigt, führen wir einen REST-Aufruf im folgenden Format aus:
 
 `https://[location].api.cognitive.microsoft.com/text/analytics/v2.0/sentiment` 
 
-We'll pass in our subscription key, or access key, in the **ocp-Apim-Subscription-Key** header.
+Wir übergeben unseren Abonnementschlüssel (oder Zugriffsschlüssel) im Header **ocp-Apim-Subscription-Key**.
 
-## Make some API calls
+## <a name="make-some-api-calls"></a>Ausführen einiger API-Aufrufe
 
-1. Select a region from the list on this page that matches the location we picked when creating our Cognitive Services account earlier in this lesson.  For example, if we chose *West US* earlier when creating the account, then select it here as follows.
-![Screenshot of Text Analytics API reference site with Sentiment menu item selected, followed by West US.](../media-draft/select-testing-console-region.png)
+1. Wählen Sie auf dieser Seite eine Region aus, die dem Standort entspricht, der beim Erstellen des Cognitive Services-Kontos zu einem früheren Zeitpunkt in dieser Lektion ausgewählt wurde.  Wenn Sie beim Erstellen des Kontos beispielsweise *USA, Westen* ausgewählt haben, dann wählen Sie hier ebenfalls diese Region aus.
+![Screenshot der Referenzwebsite zur Textanalyse-API mit ausgewähltem Menüelement „Stimmung“ und der Region „USA, Westen“](../media-draft/select-testing-console-region.png) 
 
-1.  The next page that opens is a live, interactive, API console.  Paste the access key you saved earlier into the field on the page labeled **Ocp-Apim-Subscription-Key**. Notice that the key is written automatically into the HTTP request window as a header value.
+1.  Die als nächste geöffnete Seite ist eine interaktive API-Livekonsole.  Fügen Sie den zuvor gespeicherten Zugriffsschlüssel in das Feld auf der Seite **Ocp-Apim-Subscription-Key** ein. Beachten Sie, dass der Schlüssel automatisch als Headerwert in das HTTP-Anforderungsfenster geschrieben wird.
 
-1. Scroll to the bottom of the page and click **Send**. Let's break down what happens by looking at this screen in detail.
+1. Scrollen Sie auf der Seite nach unten, und klicken Sie auf **Senden**. Sehen wir uns diesen Bildschirm genauer an, um zu verstehen, was passiert.
 
-In the Headers section of the user interface, we set the access, or subscription, key in the header of our request.
+Im Headerabschnitt der Benutzeroberfläche wird der Zugriffs- oder Abonnementschlüssel im Header unserer Anforderung festgelegt.
 
-![Screenshot of headers section.](../media-draft/2-marker.PNG)
+![Screenshot des Headerabschnitts](../media-draft/2-marker.PNG)
 
-Next we have the request body section which  holds a **documents** array. Each document in the array as three properties. The properties are *"language"*, *"id"*, *"text"*. The *"id"* is a number in this example, but can be anything you want as long as it's unique in the documents array. In this example we're also passing in documents written in three different languages. Over 15 languages are supported in the Sentiment feature of the Text Analytics API. For more info, check out [Supported languages in the Text Analytics API](https://docs.microsoft.com//azure/cognitive-services/text-analytics/text-analytics-supported-languages). The maximum size of a single document is 5,000 characters and one request can have up to 1,000 documents. 
+Als Nächstes folgt der Abschnitt mit dem Anforderungstext, der ein Array aus **Dokumenten** enthält. Jedes Dokument im Array verfügt über drei Eigenschaften. Diese Eigenschaften sind *language*, *id* und *text*. Die Eigenschaft *id* ist in diesem Beispiel eine Zahl, könnte aber ein beliebiger Wert sein, solange dieser im Dokumentarray eindeutig ist. In diesem Beispiel übergeben wir Dokumente, die in drei unterschiedlichen Sprachen geschrieben sind. Das Stimmungsfeature der Textanalyse-API unterstützt mehr als 15 Sprachen. Weitere Informationen finden Sie unter [Unterstützte Sprachen in der Textanalyse-API](https://docs.microsoft.com//azure/cognitive-services/text-analytics/text-analytics-supported-languages). Ein einzelnes Dokument kann maximal 5.000 Zeichen enthalten, und eine einzelne Anforderung kann bis zu 1.000 Dokumente umfassen. 
 
-![Screenshot of Request Body section](../media-draft/3-marker.PNG)
+![Screenshot des Abschnitts mit dem Anforderungstext](../media-draft/3-marker.PNG)
 
-The complete request, including the headers and the request URL are displayed in the next section. In this example, you can see that the requests are routed to a URL that begin with `westus`. The URL differs depending on the region you selected.  
+Die vollständige Anforderung – einschließlich von Headern und Anforderungs-URL – wird im nächsten Abschnitt angezeigt. In diesem Beispiel können Sie sehen, dass die Anforderungen an eine URL geroutet werden, die mit `westus` beginnt. Die URL unterscheidet sich je nach ausgewählter Region.  
 
-![Section number four.](../media-draft/4-marker.PNG) 
-![Section number five.](../media-draft/5-marker.PNG) 
+![Abschnitt 4](../media-draft/4-marker.PNG) 
+![Abschnitt 5](../media-draft/5-marker.PNG) 
 
-Then we have info about the response. In the example, we see that the request was a success and code `200` was returned. We can also see that the round trip took 38 ms.
+Dann liegen Informationen zur Antwort vor. Im Beispiel war die Anforderung erfolgreich und hat den Code `200` zurückgegeben. Außerdem wird angezeigt, dass der Roundtrip 38 ms gedauert hat.
 
-![Section number five.](../media-draft/6-marker.PNG)  
+![Abschnitt 5](../media-draft/6-marker.PNG)  
 
-Finally, we see the response to our request. The response holds the insight the Text Analytics API had about our documents. An array of documents is returned to us, without the original text. We get back an *"id"* and *"score"* for each document. The API returns a numeric score between 0 and 1. Scores close to 1 indicate positive sentiment, while scores close to 0 indicate negative sentiment. A score of 0.5 indicates the lack of sentiment, a neutral statement. In this example,  we have two pretty positive documents and one negative document. 
-![Section number five.](../media-draft/7-marker.PNG)  
+Schließlich wird die Antwort für unsere Anforderung angezeigt. Die Antwort enthält die Erkenntnisse zu unseren Dokumenten, die mit der Textanalyse-API gewonnen wurden. Es wird ein Array aus Dokumenten an uns zurückgegeben, ohne den ursprünglichen Text. Für jedes Dokument wird *id* (ID) und *score* (Bewertung) zurückgegeben. Die API gibt einen numerischen Wert zwischen 0 und 1 zurück. Werte nahe 1 zeigen eine positive Stimmung an, Werte nahe 0 zeigen eine negative Stimmung an. Eine Bewertung von 0,5 weist auf keine Stimmung hin, der Text ist neutral. In diesem Beispiel haben wir zwei deutlich positive Dokumente und ein negatives Dokument. 
+![Abschnitt 5](../media-draft/7-marker.PNG)  
 
-Congratulations! You've made your first call to the Text Analytics API without writing a line of code. Feel free to stay in the console and try out more calls. Here are some suggestions:
+Herzlichen Glückwunsch! Sie haben Ihren ersten Aufruf der Textanalyse-API ausgeführt, ohne auch nur eine Codezeile zu schreiben. Sie können gerne noch ein bisschen probieren und weitere Aufrufe ausführen. Hier einige Vorschläge:
 
-- Change the documents in section number 2 and see what the API returns. 
-- Try the other methods, **Detect Language**, **Entities** and **Key Phrases**, using the same  subscription key.
-- Try to make a call from a different region with your subscription and observe what happens. 
+- Ändern Sie die Dokumente in Abschnitt 2, und beobachten Sie, was die API zurückgibt. 
+- Probieren Sie mit demselben Abonnementschlüssel die anderen Methoden aus: **Sprachenerkennung**, **Entitäten** und **Schlüsselbegriffe**.
+- Versuchen Sie, einen Aufruf aus einer anderen Region mit Ihrem Abonnement auszuführen, und beobachten Sie, was passiert. 
 
-The API testing console is a great way to explore the capabilities of this API. Now that you've explored for yourself, let's move on to putting this intelligence into a real-world scenario.
+Die API-Testkonsole ist eine hervorragende Möglichkeit, die Funktionalität dieser API zu erkunden. Wenn Sie genügend probiert haben, lassen Sie uns diese Erkenntnisse in einem Szenario aus der Praxis umsetzen.
