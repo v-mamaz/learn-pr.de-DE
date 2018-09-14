@@ -21,7 +21,7 @@ Das Portal bietet keine Möglichkeit, sich wiederholende Aufgaben zu automatisie
 ## <a name="what-is-the-azure-cli"></a>Was ist die Azure CLI?
 Die Azure CLI ist ein plattformübergreifendes Befehlszeilenprogramm, über das Sie eine Verbindung mit Azure herstellen und Verwaltungsbefehle für Azure-Ressourcen ausführen können. Zum Erstellen eines virtuellen Computers würden Sie beispielsweise einen Befehl wie den folgenden verwenden:
 
-```bash
+```azurecli
 az vm create \
   --resource-group CrmTestingResourceGroup \
   --name CrmUnitTests \

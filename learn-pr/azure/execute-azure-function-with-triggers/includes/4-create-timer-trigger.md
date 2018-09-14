@@ -1,4 +1,4 @@
-In dieser Übung erstellen wir eine Azure-Funktion, die alle 20 Sekunden mithilfe eines Zeitgebertriggers aufgerufen wird.
+In dieser Einheit erfahren Sie, wie Sie eine Azure-Funktion erstellen, die alle 20 Sekunden mithilfe eines Zeitgebertriggers aufgerufen wird.
 
 ## <a name="create-an-azure-function"></a>Erstellen einer Azure-Funktion
 
@@ -12,7 +12,7 @@ Erstellen Sie zuerst eine Azure-Funktion im Portal.
 
 1. Wechseln Sie zu **Funktionen-App**. Sie können optional auch die Suchleiste verwenden, um die Vorlage zu finden.
 
-    ![Auswählen von „Funktionen-App“](../media-drafts/4-click-function-app.png)
+    ![Screenshot: Blatt „Ressource erstellen“ im Azure-Portal mit hervorgehobener Funktions-App.](../media/4-click-function-app.png)
 
 1. Geben Sie einen eindeutigen **App-Namen** ein.
 
@@ -40,11 +40,11 @@ Wir erstellen nun in unserer Azure-Funktion einen Zeitgebertrigger.
 
 1. Wählen Sie Ihre Azure-Funktion aus.
 
-1. Zeigen Sie auf dem neuen Blatt auf **Funktionen**, und wählen Sie das Pluszeichen (+) aus.
+1. Zeigen Sie auf dem neuen Blatt auf **Funktionen**, und klicken Sie auf das Pluszeichen (+).
 
-    ![Auf „Funktionen“ zeigen und Pluszeichen auswählen](../media-drafts/4-hover-function.png)
+    ![Screenshot: Blatt „Funktions-App“ im Azure-Portal mit hervorgehobenem Pluszeichen (+) im Untermenü „Funktionen“](../media/4-hover-function.png)
 
-1. Wählen Sie **Zeitgeber** aus.
+1. Klicken Sie auf **Zeitgeber**.
 
 1. Wählen Sie **CSharp** als Sprache aus.
 
@@ -58,7 +58,7 @@ Wir haben eine Azure-Funktion mit Logik zum Ausgeben einer Meldung im Protokollf
 
 1. Geben Sie den folgenden Wert in das Feld **Zeitplan** ein:
 
-    ```
+    ```log
     */20 * * * * *
     ```
 
@@ -68,17 +68,18 @@ Wir haben eine Azure-Funktion mit Logik zum Ausgeben einer Meldung im Protokollf
 
 Nachdem wir den Zeitgeber konfiguriert haben, können wir ihn starten.
 
-1. Wählen Sie **TimerTriggerCSharp1** aus. 
+1. Wählen Sie **TimerTriggerCSharp1** aus.
 
     > [!NOTE]
     > **TimerTriggerCSharp1** ist ein Standardname. Er wird beim Erstellen des Zeitgebers automatisch generiert.
 
-1. Klicken Sie auf **Ausführen**. 
+1. Klicken Sie auf **Ausführen**.
 
 An diesem Punkt sollte im Protokollfenster alle 20 Sekunden eine Meldung angezeigt werden.
 
 ## <a name="clean-up"></a>Bereinigen
+<!---TODO: Update for sandbox?--->
 
-Um sicherzustellen, dass Sie für diese Funktion keine Gebühren anfallen, wählen Sie über das Protokollfenster **Anhalten** aus, um den Zeitgeber anzuhalten.
+Klicken Sie über dem Protokollfenster auf **Anhalten**, und halten Sie den Zeitgeber an, um sicherzustellen, dass für diese Funktion keine Gebühren anfallen.
 
-![Anhalten](../media-drafts/4-pause-timer.png)
+![Screenshot: Protokollausgabebereich der Funktions-App mit hervorgehobener Schaltfläche „Anhalten“](../media/4-pause-timer.png)

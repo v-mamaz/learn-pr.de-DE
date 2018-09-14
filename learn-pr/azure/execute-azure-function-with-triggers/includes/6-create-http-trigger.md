@@ -1,4 +1,4 @@
-In dieser Übung erstellen wir eine Azure-Funktion, die eine HTTP-Anforderung mit einer einzelnen Zeichenfolge akzeptiert. Die Funktion gibt eine Zeichenfolge an den Aufrufer zurück, die angibt, ob der Vorgang erfolgreich war.
+In dieser Übung erfahren Sie, wie Sie eine Azure-Funktion erstellen, die eine HTTP-Anforderung mit einer einzelnen Zeichenfolge akzeptiert. Die Funktion gibt eine Zeichenfolge an den Aufrufer zurück, die angibt, ob der Vorgang erfolgreich war.
 
 ## <a name="create-an-http-trigger"></a>Erstellen eines HTTP-Triggers
 
@@ -6,19 +6,17 @@ Verwenden Sie Ihre vorhandene Azure Functions-Anwendung, und fügen Sie einen HT
 
 1. Melden Sie sich im [Azure-Portal](https://portal.azure.com?azure-portal=true) an.
 
-1. Zeigen Sie auf **Funktionen**, und wählen Sie das Pluszeichen (+) aus.
+1. Zeigen Sie auf **Funktionen**, und klicken Sie auf das Pluszeichen (+).
 
-    ![Zeigen auf „Funktionen“ und Auswählen des Pluszeichens](../media-drafts/4-hover-function.png)
+1. Klicken Sie auf **HTTP-Trigger**.
 
-1. Wählen Sie **HTTP-Trigger** aus.
-
-1. Wählen Sie **C#** als Sprache aus. 
+1. Wählen Sie **C#** als Sprache aus.
 
 1. Behalten Sie für **Name** den Standardwert bei.
 
 1. Legen Sie die **Autorisierungsstufe** auf **Anonym** fest.
 
-1. Klicken Sie auf **Erstellen**.
+1. Wählen Sie **Erstellen** aus.
 
 1. Werfen Sie einen kurzen Blick auf den automatisch generierten Code, um sich ein Bild von den Abläufen zu verschaffen. Der *req*-Parameter stellt die eingehende Anforderung dar und enthält einen *name*-Parameter. Wir überprüfen, ob *name* einen Wert hat. Wenn dies der Fall ist, geben wir einen Gruß zurück. Andernfalls geben wir eine Fehlermeldung zurück.
 
@@ -47,7 +45,6 @@ Wir haben jetzt unsere Funktions-URL in unsere Zwischenablage kopiert. Nun geben
 1. Drücken Sie die EINGABETASTE, um die Anforderung zu senden.
 
 ## <a name="clean-up"></a>Bereinigen
+<!---TODO: Update for sandbox?--->
 
-Um sicherzustellen, dass für diese Funktion keine Gebühren anfallen, wählen Sie über dem Protokollfenster **Anhalten** aus.
-
-![Anhalten](../media-drafts/4-pause-timer.png)
+Klicken Sie über dem Protokollfenster auf **Anhalten**, um sicherzustellen, dass für diese Funktion keine Gebühren anfallen.

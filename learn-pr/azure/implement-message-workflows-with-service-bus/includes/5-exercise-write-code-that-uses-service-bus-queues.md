@@ -46,7 +46,7 @@ Beide Werte können im Azure-Portal in Form einer vollständigen Verbindungszeic
 
 1. Klicken Sie in der Liste mit den Richtlinien auf **RootManageSharedAccessKey**.
 
-1. Klicken Sie rechts vom Textfeld **Primäre Verbindungszeichenfolge** auf die Schaltfläche **Klicken Sie zum Kopieren**.
+1. Klicken Sie rechts vom Textfeld **Primäre Verbindungszeichenfolge** auf die Schaltfläche **Click to copy** \(Zum Kopieren klicken).
 
 1. Wechseln Sie zu **Visual Studio Code**.
 
