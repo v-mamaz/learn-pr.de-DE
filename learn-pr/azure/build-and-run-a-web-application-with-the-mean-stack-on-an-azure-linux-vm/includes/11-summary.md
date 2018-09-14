@@ -1,6 +1,0 @@
-<span data-ttu-id="71249-101">In diesem Modul haben Sie einen neuen virtuellen Ubuntu Linux-Computer (virtual machine, VM) in Azure erstellt.</span><span class="sxs-lookup"><span data-stu-id="71249-101">In this module, you created a new Ubuntu Linux virtual machine in Azure.</span></span> <span data-ttu-id="71249-102">Über diese neue Linux-VM haben Sie den MEAN-Stapel für die Webentwicklung installiert:</span><span class="sxs-lookup"><span data-stu-id="71249-102">Using this new Linux VM, you installed the MEAN stack for web development:</span></span>
-
-- <span data-ttu-id="71249-103">MongoDB für einen Datenspeicher</span><span class="sxs-lookup"><span data-stu-id="71249-103">MongoDB for a data store.</span></span>
-- <span data-ttu-id="71249-104">Express für Webanforderungsrouting</span><span class="sxs-lookup"><span data-stu-id="71249-104">Express for web request routing.</span></span>
-- <span data-ttu-id="71249-105">AngularJS für clientseitige Webanwendungsfunktionalität</span><span class="sxs-lookup"><span data-stu-id="71249-105">AngularJS for client-side web application functionality.</span></span>
-- <span data-ttu-id="71249-106">Node.js für serverseitige Webanwendungsfunktionalität</span><span class="sxs-lookup"><span data-stu-id="71249-106">Node.js for server-side web application functionality.</span></span>
