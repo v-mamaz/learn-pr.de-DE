@@ -2,24 +2,28 @@
 uid: principles-cloud-computing
 metadata:
   title: Prinzipien des Cloud Computings
-  description: Lernen Sie die grundlegenden Konzepte des Cloud Computings kennen, und warum Ihr Unternehmen davon profitieren kann.
+  description: Lernen Sie die grundlegenden Konzepte des Cloud Computings kennen, und erfahren Sie, wie Ihr Unternehmen davon profitieren kann.
   ms.date: 09/24/2018
-  ms.openlocfilehash: 11d73eff33b33397cbcebd62b0a1187be478d873
-  ms.sourcegitcommit: d6a4ffb95924e4af3bd445aaf263f34253735861
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ec20c633dd9e87b05fb8b11dde49b09ff43152f0
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/02/2018
-  ms.locfileid: "43459369"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233933"
 title: Prinzipien des Cloud Computings
-summary: Lernen Sie die grundlegenden Konzepte des Cloud Computings kennen, und warum Ihr Unternehmen davon profitieren kann.
+summary: Lernen Sie die grundlegenden Konzepte des Cloud Computings kennen, und erfahren Sie, wie Ihr Unternehmen davon profitieren kann.
 abstract: >
   In diesem Modul lernen Sie Folgendes:
 
-  - Einführung in gängige Cloud Computing-Dienste
+  - Kennenlernen gängiger Cloud Computing-Dienste
 
-  - Vorteile des Cloud Computings
+  - Kennenlernen der Vorteile des Cloud Computings
 
-  - Ermitteln des für Sie am besten geeigneten Cloudbereitstellungsmodells
+  - Bestimmen des für Sie am besten geeigneten Modells zur Cloudbereitstellung
 prerequisites: Keine
 iconUrl: http://via.placeholder.com/120x120
 levels:
@@ -32,8 +36,8 @@ roles:
 - solution-architect
 products:
 - azure
-- azurePortal
-- resourceManager
+- azure-portal
+- azure-resource-manager
 units:
 - principles-cloud-computing.1-motivation
 - principles-cloud-computing.2-what-is-cloud-computing
