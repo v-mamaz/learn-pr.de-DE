@@ -1,0 +1,46 @@
+### YamlMime:ModuleUnit
+uid: learn.design-a-great-azure-architecture.2-pillars-of-a-great-azure-architecture
+title: Säulen einer guten Azure-Architektur
+metadata:
+  title: Säulen einer guten Azure-Architektur
+  description: Säulen einer guten Azure-Architektur
+  ms.openlocfilehash: c4176cffe883e5d023d0b57c2198b558ab71eab0
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43790521"
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-pillars-of-a-great-azure-architecture.md)]
+quiz:
+  title: 'Wissenstest: Säulen einer guten Azure-Architektur'
+  questions:
+  - content: Welches der folgenden Szenarien wäre ein Beispiel für etwas, das Sie in der Sicherheitssäule behandeln können?
+    choices:
+    - content: Definieren einer Richtlinie für die Sicherung virtueller Computer.
+      isCorrect: false
+      incorrectExplanation: Die Sicherungsrichtlinie für virtuelle Computer ist wichtig, fällt jedoch nicht unter die Sicherheitssäule.
+    - content: Aktivieren von Multi-Factor Authentication für alle Administratorkonten.
+      isCorrect: true
+      correctExplanation: Das Aktivieren von Multi-Factor Authentication ist ein gutes Beispiel für etwas, das Sie als Teil der Sicherheitssäule behandeln können.
+    - content: Auswerten Ihrer Cloudausgaben, um Bereiche für Kosteneinsparungen zu identifizieren.
+      isCorrect: false
+      incorrectExplanation: Es ist wichtig, Bereiche zu identifizieren, in denen Sie die Kosten senken können, aber dies fällt nicht unter die Sicherheitssäule.
+    - content: Wechseln zu einem Dienst mit automatischer Skalierung, um auf Schwankungen der Last dynamisch reagieren zu können.
+      isCorrect: false
+      incorrectExplanation: Die Verwendung der automatischen Skalierung zur Bewältigung von Lastschwankungen bietet große Vorteile, fällt aber nicht unter die Sicherheitssäule.
+  - content: Welches der folgenden Szenarien wäre ein Beispiel für etwas, das Sie in der Verfügbarkeits- und Wiederherstellbarkeitssäule behandeln können?
+    choices:
+    - content: Definieren einer Richtlinie für die Sicherung virtueller Computer.
+      isCorrect: true
+      correctExplanation: Das Definieren einer Richtlinie für VM-Sicherungen ist eine Aktivität, die sich auf die Wiederherstellbarkeit konzentriert. Sie fällt deshalb unter diese Säule.
+    - content: Aktivieren von Multi-Factor Authentication für alle Administratorkonten.
+      isCorrect: false
+      incorrectExplanation: Das Aktivieren von Multi-Factor Authentication ist ein gutes Beispiel für etwas, das Sie als Teil der Sicherheitssäule behandeln können, aber es fällt nicht unter die Verfügbarkeits- und Wiederherstellbarkeitssäule.
+    - content: Auswerten Ihrer Cloudausgaben, um Bereiche für Kosteneinsparungen zu identifizieren.
+      isCorrect: false
+      incorrectExplanation: Es ist wichtig, Bereiche zu identifizieren, in denen Sie die Kosten senken können, aber dies fällt nicht unter die Verfügbarkeits- und Wiederherstellbarkeitssäule.
+    - content: Wechseln zu einem Dienst mit automatischer Skalierung, um auf Schwankungen der Last dynamisch reagieren zu können.
+      isCorrect: false
+      incorrectExplanation: Die Verwendung der automatischen Skalierung zur Bewältigung von Lastschwankungen bietet große Vorteile, fällt aber nicht unter die Verfügbarkeits- und Wiederherstellbarkeitssäule.
