@@ -1,0 +1,25 @@
+### YamlMime:LearningPath
+uid: learn.deploy-a-website-to-azure-with-managed-hosting
+title: Bereitstellen einer Website in Azure mithilfe von verwaltetem Hosting
+summary: Mit Web-Apps in Azure können Sie Ihre Website einfach veröffentlichen und verwalten, ohne mit den zugrunde liegenden Server-, Speicher- oder Netzwerkressourcen arbeiten zu müssen. Stattdessen können Sie sich auf die Features Ihrer Website konzentrieren und sich darauf verlassen, dass die robuste Azure-Plattform sicheren Zugriff auf Ihre Website ermöglicht.
+cardDescription: Mit Web-Apps in Azure können Sie Ihre Website einfach veröffentlichen und verwalten, ohne mit den zugrunde liegenden Server-, Speicher- oder Netzwerkressourcen arbeiten zu müssen. Stattdessen können Sie sich auf die Features Ihrer Website konzentrieren und sich darauf verlassen, dass die robuste Azure-Plattform sicheren Zugriff auf Ihre Website ermöglicht.
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+prerequisites: Keine
+metadata:
+  title: Bereitstellen einer Website in Azure mithilfe von verwaltetem Hosting
+  description: Mit Web-Apps in Azure können Sie Ihre Website einfach veröffentlichen und verwalten, ohne mit den zugrunde liegenden Server-, Speicher- oder Netzwerkressourcen arbeiten zu müssen. Stattdessen können Sie sich auf die Features Ihrer Website konzentrieren und sich darauf verlassen, dass die robuste Azure-Plattform sicheren Zugriff auf Ihre Website ermöglicht.
+  ms.openlocfilehash: a9bed41e8a9bbdfe7720c34bdaac9e5be8e136c6
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40441664"
+modules:
+- learn.sample-module-cloudshell
+achievement: learn.deploy-a-website-to-azure-with-managed-hosting.trophy
