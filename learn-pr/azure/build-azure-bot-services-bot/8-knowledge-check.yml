@@ -1,0 +1,108 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.8-knowledge-check
+title: Überprüfen Sie Ihre Kenntnisse
+metadata:
+  title: Überprüfen Sie Ihre Kenntnisse
+  description: Vergewissern Sie sich, dass Sie die erforderlichen Schritte zum Erstellen eines Chatbots mit dem Azure Bot Service verstanden haben.
+  ms.openlocfilehash: a0a5ba530b5e6b2432bef896ffbb0532027096e1
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43826228"
+durationInMinutes: 10
+quiz:
+  title: Erstellen von neuronalen Netzwerken mit TensorFlow und der Data Science Virtual Machine von Azure
+  questions:
+  - content: Was wurde alles erstellt, als der Azure-Web-App-Bot bereitgestellt wurde?
+    choices:
+    - content: Ein Botdienst.
+      isCorrect: false
+      incorrectExplanation: Ein Botdienst wurde erstellt, aber noch etwas anderes.
+    - content: Eine Web-App.
+      isCorrect: false
+      incorrectExplanation: Eine Web-App wurde erstellt, aber noch etwas anderes.
+    - content: Ein Botdienst und eine Web-App.
+      isCorrect: true
+    - content: Es wurde noch nichts bereitgestellt.
+      isCorrect: false
+      incorrectExplanation: Eine Bereitstellung erfolgte in diesem Schritt.
+  - content: Was wird mit QnA Maker erstellt?
+    choices:
+    - content: Ein Dienst, der eine Reihe von Fragen entgegennimmt und beantwortet.
+      isCorrect: true
+    - content: Ein Dienst zum Beantworten von Fragen.
+      isCorrect: false
+      incorrectExplanation: QnA Maker hilft bei der Beantwortung von Fragen, aber er kann noch mehr.
+    - content: Ein Dienst, der neue Antworten auf Fragen generiert.
+      isCorrect: false
+      incorrectExplanation: QnA Maker generiert keine neue Antworten, gibt aber Antworten, die er kennt.
+    - content: Ein Bot.
+      isCorrect: false
+      incorrectExplanation: QnA Maker kann mit einem Bot verknüpft werden, erstellt aber keinen.
+  - content: Welche Möglichkeiten stehen Ihnen in QnA Maker zum Auffüllen Ihrer Wissensdatenbank zur Verfügung?
+    choices:
+    - content: Sie können Ihre Wissensdatenbank nur manuell auffüllen.
+      isCorrect: false
+      incorrectExplanation: Sie könnten die Wissensdatenbank manuell auffüllen, aber es gibt weitere Möglichkeiten.
+    - content: Mit einer Textdatei.
+      isCorrect: false
+      incorrectExplanation: Eine Textdatei ist nicht die einzige Möglichkeit zum Auffüllen der Wissensdatenbank.
+    - content: Mit einer URL.
+      isCorrect: false
+      incorrectExplanation: Eine URL ist nicht die einzige Möglichkeit zum Auffüllen der Wissensdatenbank.
+    - content: Mit einer Textdatei oder URL.
+      isCorrect: true
+  - content: Welche Schritte sind erforderlich, um QnA Maker in Ihren Anwendungen zu verwenden?
+    choices:
+    - content: Speichern.
+      isCorrect: false
+      incorrectExplanation: Sie müssen nicht speichern, jedoch sind andere Schritte erforderlich.
+    - content: Speichern und trainieren.
+      isCorrect: false
+      incorrectExplanation: Training ist wichtig, doch was müssen Sie sonst noch tun, um den Dienst zu nutzen?
+    - content: Speichern, trainieren und veröffentlichen.
+      isCorrect: true
+    - content: Veröffentlichen.
+      isCorrect: false
+      incorrectExplanation: Leider können Sie nicht direkt veröffentlichen.
+  - content: Welches weitere Paket außer den Bot Framework-Paketen ist erforderlich, um RESTful-Dienste zu erstellen und zu nutzen?
+    choices:
+    - content: Restify
+      isCorrect: true
+    - content: Express
+      isCorrect: false
+      incorrectExplanation: Express wird als vollständiges Webframework verwendet, nicht einfach nur zum Erstellen von RESTful-Diensten.
+    - content: Swagger
+      isCorrect: false
+      incorrectExplanation: Swagger wird verwendet, um Ihre APIs anzugeben, zu erstellen und zu testen, nicht einfach nur zum Erstellen von RESTful-Diensten.
+    - content: Babel
+      isCorrect: false
+      incorrectExplanation: Babel wird verwendet, um neue Versionen von JavaScript für Browser zu kompilieren, die die neue Syntax möglicherweise nicht unterstützen.
+  - content: In welchem Abschnitt des Azure-Portals für den Web-App-Bot fügen Sie die QnA Maker-Einstellungen hinzu?
+    choices:
+    - content: Alle App-Diensteinstellungen.
+      isCorrect: false
+      incorrectExplanation: Mit dieser Einstellung können Sie Einstellungen im App-Dienst ändern, der der Web-App zugeordnet ist.
+    - content: Anwendungseinstellungen.
+      isCorrect: true
+      correctExplanation: Prima. Fahren Sie mit dem nächsten Teil der Aufgabe fort.
+    - content: Erstellen.
+      isCorrect: false
+      incorrectExplanation: In diesem Abschnitt können Sie den Code für den Bot anzeigen und abrufen.
+    - content: Kanäle.
+      isCorrect: false
+      incorrectExplanation: In diesem Abschnitt können Sie den Bot verschiedenen Diensten anschließen, damit sie mit dem Bot interagieren können.
+  - content: Zu welchem Abschnitt im Azure-Portal müssten Sie wechseln, um Ihren Bot zu Microsoft Teams hinzuzufügen?
+    choices:
+    - content: Alle App-Diensteinstellungen.
+      isCorrect: false
+      incorrectExplanation: Diese Einstellung erlaubt Ihnen Änderungen.
+    - content: Anwendungseinstellungen.
+      isCorrect: false
+      incorrectExplanation: Mit dieser Einstellung können Sie bestimmte Einstellungen für die Webanwendung festlegen.
+    - content: Erstellen.
+      isCorrect: false
+      incorrectExplanation: In diesem Abschnitt können Sie den Code für den Bot anzeigen und abrufen.
+    - content: Kanäle
+      isCorrect: true

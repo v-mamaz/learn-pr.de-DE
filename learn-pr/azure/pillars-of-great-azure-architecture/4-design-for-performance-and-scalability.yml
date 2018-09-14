@@ -1,0 +1,46 @@
+### YamlMime:ModuleUnit
+uid: learn.pillars-of-a-great-azure-architecture.4-design-for-performance-and-scalability
+title: Entwurf für Leistung und Skalierbarkeit
+metadata:
+  title: Entwurf für Leistung und Skalierbarkeit
+  description: Entwurf für Leistung und Skalierbarkeit
+  ms.openlocfilehash: d93c587d35c6431d152bfcf9c7688d3f86dfff0e
+  ms.sourcegitcommit: e90461bc6f88bca3b53183b476553633f93990a3
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "44044992"
+durationInMinutes: 15
+content: >
+  [!include[](includes/4-design-for-performance-and-scalability.md)]
+quiz:
+  title: 'Wissenstest: Entwurf für Leistung und Skalierbarkeit'
+  questions:
+  - content: Welches der folgenden Szenarien ist ein Beispiel für zentrales Hochskalieren?
+    choices:
+    - content: Aktualisieren Ihrer Anwendung zur Verwendung eines Warteschlangendiensts.
+      isCorrect: false
+      incorrectExplanation: Die Einbindung eines Warteschlangendienstes in Ihre Anwendung kann eine intelligente architektonische Entscheidung sein, ist aber kein Beispiel für zentrales Hochskalieren.
+    - content: Hinzufügen weiterer Webserver zu einer Webfarm.
+      isCorrect: false
+      incorrectExplanation: Das Hinzufügen weiterer Webserver zu einer Webfarm ist ein Beispiel für horizontales Hochskalieren.
+    - content: Hinzufügen eines weiteren virtuellen Computers zu einem Datenbankcluster.
+      isCorrect: false
+      incorrectExplanation: Das Hinzufügen eines weiteren virtuellen Computers zu einem Datenbankcluster ist kein Beispiel für zentrales Hochskalieren.
+    - content: Aktualisieren eines virtuellen Computers auf eine größere Größe.
+      isCorrect: true
+      correctExplanation: Durch das Ändern eines virtuellen Computers in eine größere Größe erhöhen sich die Ressourcen, die für die Instanz verfügbar sind. Dies ist ein Beispiel für zentrales Hochskalieren.
+  - content: Welches der folgenden Szenarien ist ein Beispiel für horizontales Hochskalieren?
+    choices:
+    - content: Aktualisieren eines virtuellen Computers auf eine größere Größe.
+      isCorrect: false
+      incorrectExplanation: Durch das Ändern eines virtuellen Computers in eine größere Größe erhöhen sich die Ressourcen, die für die Instanz verfügbar sind. Dies ist ein Beispiel für zentrales Hochskalieren.
+    - content: Hinzufügen zusätzlichen Speichers zu einem virtuellen Computer.
+      isCorrect: false
+      incorrectExplanation: Das Hinzufügen von mehr Speicher zu einem virtuellen Computer ist kein Beispiel für horizontales Hochskalieren.
+    - content: Hinzufügen weiterer Webserver zu einer Webfarm.
+      isCorrect: true
+      correctExplanation: Das Hinzufügen weiterer Webserver zu einer Webfarm ist ein Beispiel für horizontales Hochskalieren.
+    - content: Replizieren von Sicherungen in eine andere Region.
+      isCorrect: false
+      incorrectExplanation: Das Replizieren von Sicherungen in eine andere Region bezieht sich nicht auf die Skalierung von Ressourcen.
