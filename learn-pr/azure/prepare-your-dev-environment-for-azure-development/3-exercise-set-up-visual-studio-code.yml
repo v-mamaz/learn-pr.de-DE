@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.prepare-azure-dev-environment.3-exercise-set-up-visual-studio-code
-title: <span data-ttu-id="cb9e7-101">Installieren Sie Visual Studio Code und die Azure App Service-Erweiterung</span><span class="sxs-lookup"><span data-stu-id="cb9e7-101">Install Visual Studio Code and the Azure App Service extension</span></span>
+title: <span data-ttu-id="66376-101">Installieren von Visual Studio Code und der Azure App Service-Erweiterung</span><span class="sxs-lookup"><span data-stu-id="66376-101">Install Visual Studio Code and the Azure App Service extension</span></span>
 metadata:
-  title: <span data-ttu-id="cb9e7-102">Installieren Sie Visual Studio Code und die Azure App Service-Erweiterung</span><span class="sxs-lookup"><span data-stu-id="cb9e7-102">Install Visual Studio Code and the Azure App Service extension</span></span>
-  description: <span data-ttu-id="cb9e7-103">Installieren Sie Visual Studio Code und die Azure App Service-Erweiterung</span><span class="sxs-lookup"><span data-stu-id="cb9e7-103">Install Visual Studio Code and the Azure App Service extension</span></span>
+  title: <span data-ttu-id="66376-102">Installieren von Visual Studio Code und der Azure App Service-Erweiterung</span><span class="sxs-lookup"><span data-stu-id="66376-102">Install Visual Studio Code and the Azure App Service extension</span></span>
+  description: <span data-ttu-id="66376-103">Installieren von Visual Studio Code und der Azure App Service-Erweiterung</span><span class="sxs-lookup"><span data-stu-id="66376-103">Install Visual Studio Code and the Azure App Service extension</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark

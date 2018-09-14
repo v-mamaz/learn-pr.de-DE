@@ -1,8 +1,8 @@
 ### YamlMime:ModuleUnit
 uid: learn.run-docker-containers-aci.3-restart-policy
 metadata:
-  title: <span data-ttu-id="4379d-101">Steuern des Neustartverhaltens von Azure Container Instances</span><span class="sxs-lookup"><span data-stu-id="4379d-101">Control Azure Container Instances restart behavior</span></span>
-  description: <span data-ttu-id="4379d-102">Steuern des Neustartverhaltens von Containerinstanzen</span><span class="sxs-lookup"><span data-stu-id="4379d-102">Control Container Instances restart behavior.</span></span>
+  title: <span data-ttu-id="57848-101">Steuern des Neustartverhaltens von Azure Container Instances</span><span class="sxs-lookup"><span data-stu-id="57848-101">Control Azure Container Instances restart behavior</span></span>
+  description: <span data-ttu-id="57848-102">Steuern Sie das Neustartverhalten von Container Instances.</span><span class="sxs-lookup"><span data-stu-id="57848-102">Control Container Instances restart behavior.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
@@ -14,7 +14,7 @@ metadata:
   ms.contentlocale: de-DE
   ms.lasthandoff: 09/10/2018
   ms.locfileid: "44309098"
-title: <span data-ttu-id="4379d-103">Steuern des Neustartverhaltens</span><span class="sxs-lookup"><span data-stu-id="4379d-103">Control restart behavior</span></span>
+title: <span data-ttu-id="57848-103">Steuern des Neustartverhaltens</span><span class="sxs-lookup"><span data-stu-id="57848-103">Control restart behavior</span></span>
 interactive: bash
 azureSandbox: true
 durationInMinutes: 6
