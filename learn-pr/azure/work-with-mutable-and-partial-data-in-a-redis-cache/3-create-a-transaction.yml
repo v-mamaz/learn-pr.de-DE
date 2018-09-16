@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.3-create-a-transaction
+title: <span data-ttu-id="cb6a5-101">Erstellen einer Transaktion in Redis</span><span class="sxs-lookup"><span data-stu-id="cb6a5-101">Create a transaction in Redis</span></span>
+metadata:
+  title: <span data-ttu-id="cb6a5-102">Erstellen einer Transaktion in Redis</span><span class="sxs-lookup"><span data-stu-id="cb6a5-102">Create a transaction in Redis</span></span>
+  description: <span data-ttu-id="cb6a5-103">Erstellen einer Transaktion in Redis</span><span class="sxs-lookup"><span data-stu-id="cb6a5-103">Create a transaction in Redis</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d8d2e0d19980a65722a1050171b9a1a62336d249
+  ms.sourcegitcommit: 4605f6af0037078761ef50cac6879711c7319635
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44349923"
+interactive: bash
+azureSandbox: true
+durationInMinutes: 15
+content: '[!include[](includes/3-create-a-transaction.md)]'

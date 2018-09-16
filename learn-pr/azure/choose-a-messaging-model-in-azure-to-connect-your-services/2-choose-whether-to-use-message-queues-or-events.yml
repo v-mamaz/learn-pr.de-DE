@@ -1,31 +1,30 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-messaging-model.2-choose-whether-to-use-message-queues-or-events
-title: <span data-ttu-id="d26dd-101">Wählen Sie aus, ob Nachrichten oder Ereignisse verwendet werden sollen.</span><span class="sxs-lookup"><span data-stu-id="d26dd-101">Choose whether to use messages or events</span></span>
+title: <span data-ttu-id="eaa53-101">Wählen Sie aus, ob Nachrichten oder Ereignisse verwendet werden sollen.</span><span class="sxs-lookup"><span data-stu-id="eaa53-101">Choose whether to use messages or events</span></span>
 metadata:
-  title: <span data-ttu-id="d26dd-102">Wählen Sie aus, ob Nachrichten oder Ereignisse verwendet werden sollen.</span><span class="sxs-lookup"><span data-stu-id="d26dd-102">Choose whether to use messages or events</span></span>
-  description: <span data-ttu-id="d26dd-103">Wählen Sie aus, ob Nachrichten oder Ereignisse verwendet werden sollen.</span><span class="sxs-lookup"><span data-stu-id="d26dd-103">Choose whether to use messages or events</span></span>
+  title: <span data-ttu-id="eaa53-102">Wählen Sie aus, ob Nachrichten oder Ereignisse verwendet werden sollen.</span><span class="sxs-lookup"><span data-stu-id="eaa53-102">Choose whether to use messages or events</span></span>
+  description: <span data-ttu-id="eaa53-103">Wählen Sie aus, ob Nachrichten oder Ereignisse verwendet werden sollen.</span><span class="sxs-lookup"><span data-stu-id="eaa53-103">Choose whether to use messages or events</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 00474301121987cab2098cdfa80cb15e98a4a36f
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: ad6bbe8fd8948defa6a0ec287782dd55146981df
+  ms.sourcegitcommit: 5130ac6e16956e1cd182c3d5f2721b881a186c63
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44245969"
+  ms.lasthandoff: 09/12/2018
+  ms.locfileid: "44503035"
 durationInMinutes: 10
 content: >
   [!include[](includes/2-choose-whether-to-use-message-queues-or-events.md)]
 quiz:
-  title: <span data-ttu-id="d26dd-104">Messagingmodelle</span><span class="sxs-lookup"><span data-stu-id="d26dd-104">Messaging models</span></span>
+  title: <span data-ttu-id="eaa53-104">Wissenstest</span><span class="sxs-lookup"><span data-stu-id="eaa53-104">Knowledge check</span></span>
   questions:
-  - content: "<span data-ttu-id=\"d26dd-105\">In Ihrer verteilten Anwendung haben Sie einen Webdienst, der Benutzer authentifiziert.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d26dd-105\">In your distributed application you have a web service that authenticates users.</span></span> <span data-ttu-id=\"d26dd-106\">Wenn sich ein Benutzer anmeldet, muss der Webdienst mit einer Desktopanwendung kommunizieren, die auf den Computern aller Benutzer ausgeführt wird, um den „Online“-Status des Benutzers anzuzeigen.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d26dd-106\">When a user logs on, the web service must communicate with a desktop application that runs on all users' computers to display the status of that user as \"Online\".</span></span> <span data-ttu-id=\"d26dd-107\">Wahr oder falsch: Dies ist ein Beispiel einer Nachricht in einer verteilten Anwendung.</span><span class=\"sxs-lookup\"><span data-stu-id=\"d26dd-107\">True or false: This is an example of a message in a distributed application.</span></span>"
+  - content: '<span data-ttu-id="eaa53-105">Angenommen, Sie verwenden eine verteilte Anwendung mit einem Webdienst, der Benutzer authentifiziert.</span><span class="sxs-lookup"><span data-stu-id="eaa53-105">Suppose you have a distributed application with a web service that authenticates users.</span></span> <span data-ttu-id="eaa53-106">Wenn sich ein Benutzer anmeldet, kommuniziert der Webdienst mit allen Clientanwendungen, um den Status „Online“ anzuzeigen.</span><span class="sxs-lookup"><span data-stu-id="eaa53-106">When a user logs on, the web service communicates with all of the client applications to display the status of "Online".</span></span> <span data-ttu-id="eaa53-107">Wahr oder falsch: Dies ist ein Beispiel einer Nachricht in einer verteilten Anwendung.</span><span class="sxs-lookup"><span data-stu-id="eaa53-107">True or false: This is an example of a message in a distributed application.</span></span>'
     choices:
-    - content: <span data-ttu-id="d26dd-108">Wahr</span><span class="sxs-lookup"><span data-stu-id="d26dd-108">True</span></span>
-      incorrectExplanation: <span data-ttu-id="d26dd-109">Dies ist leider ein Beispiel eines Ereignisses in einer verteilten Anwendung.</span><span class="sxs-lookup"><span data-stu-id="d26dd-109">Sorry, this is an example of an event in a distributed application.</span></span> <span data-ttu-id="d26dd-110">Die Kommunikation wird an alle Abonnenten und Herausgeber weitergeleitet, und der Herausgeber weiß nicht, wie die Kommunikation durch einen Abonnenten abgewickelt wird und hat auch keine Präferenzen diesbezüglich. Er weiß auch nicht, wie viele Abonnenten es ggf. gibt.</span><span class="sxs-lookup"><span data-stu-id="d26dd-110">The communication is routed to all subscribers and the publisher has no knowledge or preference on how the communication is handled by a subscriber, nor even any knowledge of how many subscribers there are, if any.</span></span>
+    - content: <span data-ttu-id="eaa53-108">Wahr</span><span class="sxs-lookup"><span data-stu-id="eaa53-108">True</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="d26dd-111">Falsch</span><span class="sxs-lookup"><span data-stu-id="d26dd-111">False</span></span>
-      correctExplanation: <span data-ttu-id="d26dd-112">Richtig!</span><span class="sxs-lookup"><span data-stu-id="d26dd-112">Correct!</span></span> <span data-ttu-id="d26dd-113">Dies wäre eine Ereignisbenachrichtigung, die eine Aktion auslösen würde.</span><span class="sxs-lookup"><span data-stu-id="d26dd-113">This would be an event notification which would trigger an action.</span></span> <span data-ttu-id="d26dd-114">Dies ist die perfekte Situation, um ein Ereignis zu verwenden.</span><span class="sxs-lookup"><span data-stu-id="d26dd-114">This is a perfect case of using an event.</span></span>
+    - content: <span data-ttu-id="eaa53-109">Falsch</span><span class="sxs-lookup"><span data-stu-id="eaa53-109">False</span></span>
+      correctExplanation: <span data-ttu-id="eaa53-110">Nachrichten enthalten in der Regel die Rohdaten selbst, z.B. eine Mediendatei.</span><span class="sxs-lookup"><span data-stu-id="eaa53-110">Messages typically contain the raw data itself, for example, a media file.</span></span> <span data-ttu-id="eaa53-111">In diesem Fall senden wir ein einfaches Datenelement, das den Status eines Benutzers darstellt.</span><span class="sxs-lookup"><span data-stu-id="eaa53-111">In this situation, we're sending a simple piece of data that represents the status of a user.</span></span> <span data-ttu-id="eaa53-112">Außerdem senden wir die Daten als Reaktion auf eine Aktion, was ein perfekter Fall für die Verwendung eines Ereignisses ist.</span><span class="sxs-lookup"><span data-stu-id="eaa53-112">Also, we're sending the data in response to an action, which is a perfect case for using an event.</span></span>
       isCorrect: true

@@ -1,19 +1,57 @@
 ### YamlMime:ModuleUnit
 uid: learn.caching-and-performance-azure-storage-and-disks.7-summary
-title: <span data-ttu-id="382e6-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="382e6-101">Summary</span></span>
+title: <span data-ttu-id="5f027-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="5f027-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="382e6-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="382e6-102">Summary</span></span>
-  description: <span data-ttu-id="382e6-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="382e6-103">Summary</span></span>
+  title: <span data-ttu-id="5f027-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="5f027-102">Summary</span></span>
+  description: <span data-ttu-id="5f027-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="5f027-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: ce5e1852bec8bd2fae48d5abc05ccc41c6ddd368
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: f6881334f17eb655d566bd0a97a3186fb2951c9c
+  ms.sourcegitcommit: 5130ac6e16956e1cd182c3d5f2721b881a186c63
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44233219"
+  ms.lasthandoff: 09/12/2018
+  ms.locfileid: "44503477"
 durationInMinutes: 3
-content: '[!include[](includes/7-summary.md)]'
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: '<span data-ttu-id="5f027-104">Wissenstest: Caching und Leistung in Azure Storage und auf Datenträgern</span><span class="sxs-lookup"><span data-stu-id="5f027-104">Knowledge check: Caching and performance in Azure storage and disks</span></span>'
+  questions:
+  - content: <span data-ttu-id="5f027-105">Welche Option zum Zwischenspeichern ist eine gute Wahl für schreibintensive Vorgänge wie das Speichern von Protokolldateien?</span><span class="sxs-lookup"><span data-stu-id="5f027-105">Which caching option is a good choice for write-heavy operations such as storing log files?</span></span>
+    choices:
+    - content: <span data-ttu-id="5f027-106">Schreibgeschützt</span><span class="sxs-lookup"><span data-stu-id="5f027-106">Read-only</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="5f027-107">Das schreibgeschützte Zwischenspeichern eignet sich gut für Datenträger, einschließlich TempDB-Daten.</span><span class="sxs-lookup"><span data-stu-id="5f027-107">Read-only caching works well for data disks, including TempDB data.</span></span> <span data-ttu-id="5f027-108">Allerdings wird die Leistung schreibintensiver Vorgänge nicht verbessert, und es kann sogar zu einer geringfügigen Abnahme der Leistung führen.</span><span class="sxs-lookup"><span data-stu-id="5f027-108">However, it does not improve performance of write-heavy operations and may even cause a slight decrease in performance.</span></span>
+    - content: <span data-ttu-id="5f027-109">Lesen/Schreiben</span><span class="sxs-lookup"><span data-stu-id="5f027-109">Read/write</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="5f027-110">Dies ist eine gute Option, wenn Ihre Anwendung das Schreiben von zwischengespeicherten Daten auf persistente Datenträger bei Bedarf ordnungsgemäß verarbeitet.</span><span class="sxs-lookup"><span data-stu-id="5f027-110">This is a good option if your app properly handles writing cached data to persistent disks when needed.</span></span>
+    - content: <span data-ttu-id="5f027-111">Keine</span><span class="sxs-lookup"><span data-stu-id="5f027-111">None</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="5f027-112">Schreibintensive Vorgänge profitieren in der Regel nicht von der Zwischenspeicherung.</span><span class="sxs-lookup"><span data-stu-id="5f027-112">Write-heavy operations generally do not benefit from caching.</span></span> <span data-ttu-id="5f027-113">„Keine“ ist wahrscheinlich die beste Wahl für einen für Protokolldateien reservierten Datenträger.</span><span class="sxs-lookup"><span data-stu-id="5f027-113">'None' is probably the best choice for a disk dedicated to log files.</span></span>
+  - content: <span data-ttu-id="5f027-114">Für welche Art von Datenträger startet Azure den virtuellen Computer neu, um den Cachetyp zu ändern?</span><span class="sxs-lookup"><span data-stu-id="5f027-114">For which type of disk does Azure restart the VM in order to change caching type?</span></span>
+    choices:
+    - content: <span data-ttu-id="5f027-115">Daten</span><span class="sxs-lookup"><span data-stu-id="5f027-115">Data</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="5f027-116">Durch Ändern der Cacheeinstellung eines Datenträgers wird der Zieldatenträger getrennt und erneut angefügt. Der virtuelle Computer wird jedoch nicht neu gestartet.</span><span class="sxs-lookup"><span data-stu-id="5f027-116">Changing the cache setting of a data disk detaches and reattaches the target disk but does not restart the VM.</span></span>
+    - content: <span data-ttu-id="5f027-117">Betriebssystem</span><span class="sxs-lookup"><span data-stu-id="5f027-117">Operating system (OS)</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="5f027-118">Für das Ändern der Cacheeinstellung des Betriebssystemdatenträgers ist ein Neustart des virtuellen Computers erforderlich.</span><span class="sxs-lookup"><span data-stu-id="5f027-118">Changing the cache setting of the OS disk requires a VM restart.</span></span>
+    - content: <span data-ttu-id="5f027-119">Temporär</span><span class="sxs-lookup"><span data-stu-id="5f027-119">Temporary</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="5f027-120">Sie können die Cacheoptionen auf einem temporären Datenträger nicht ändern.</span><span class="sxs-lookup"><span data-stu-id="5f027-120">You can't change caching options on a temporary disk.</span></span>
+    - content: <span data-ttu-id="5f027-121">Zonenredundanter Speicher (ZRS)</span><span class="sxs-lookup"><span data-stu-id="5f027-121">Zone-redundant storage (ZRS)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="5f027-122">Ein Storage Premium-Konto unterstützt ZRS nicht.</span><span class="sxs-lookup"><span data-stu-id="5f027-122">A premium storage account doesn't support ZRS.</span></span>
+  - content: <span data-ttu-id="5f027-123">Angenommen, Sie verwenden Azure PowerShell zum Verwalten eines virtuellen Computers.</span><span class="sxs-lookup"><span data-stu-id="5f027-123">Suppose you are using Azure PowerShell to manage a VM.</span></span> <span data-ttu-id="5f027-124">Sie verfügen über ein lokales Objekt, das den virtuellen Computer darstellt, und Sie haben mehrere Aktualisierungen an diesem lokalen Objekt vorgenommen.</span><span class="sxs-lookup"><span data-stu-id="5f027-124">You have a local object that represents the VM and you've made several updates to that local object.</span></span> <span data-ttu-id="5f027-125">Welches PowerShell-Cmdlet würden Sie verwenden, um diese lokalen Änderungen auf den eigentlichen virtuellen Computer anzuwenden?</span><span class="sxs-lookup"><span data-stu-id="5f027-125">Which PowerShell cmdlet would you use to apply those local changes to the actual VM?</span></span>
+    choices:
+    - content: <span data-ttu-id="5f027-126">Update-AzureRmVM</span><span class="sxs-lookup"><span data-stu-id="5f027-126">Update-AzureRmVM</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="5f027-127">Dieses Cmdlet aktualisiert den Zustand eines virtuellen Azure-Computers mit dem Zustand eines Objekts eines virtuellen Computers.</span><span class="sxs-lookup"><span data-stu-id="5f027-127">This cmdlet updates the state of an Azure virtual machine to the state of a virtual machine object.</span></span>
+    - content: <span data-ttu-id="5f027-128">Set-AzureRmVM</span><span class="sxs-lookup"><span data-stu-id="5f027-128">Set-AzureRmVM</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="5f027-129">New-AzureRmVM</span><span class="sxs-lookup"><span data-stu-id="5f027-129">New-AzureRmVM</span></span>
+      isCorrect: false
