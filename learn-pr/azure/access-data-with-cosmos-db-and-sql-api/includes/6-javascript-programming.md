@@ -22,15 +22,12 @@ Außerdem wird empfohlen, Batchvorgänge in gespeicherten Prozeduren auszuführe
 
 Bei dem folgenden Beispiel handelt es sich um eine einfache gespeicherten HelloWorld-Prozedur, die den aktuellen Kontext abruft und eine Antwort sendet, die „Hello, World“ anzeigt. Beachten Sie, dass gespeicherte Prozeduren genauso wie Azure Cosmos DB-Dokumente einen ID-Wert aufweisen.
 
-```java
-var helloWorldStoredProc = {
-    id: "helloWorld",
-    serverScript: function () {
-        var context = getContext();
-        var response = context.getResponse();
+```javascript
+function helloWorld() {
+    var context = getContext();
+    var response = context.getResponse();
 
-        response.setBody("Hello, World");
-    }
+    response.setBody("Hello, World");
 }
 ```
 
@@ -40,25 +37,23 @@ Mithilfe von benutzerdefinierten Funktionen (UDFs) ist es möglich, die Grammati
 
 In einer Anwendung für den Onlineeinzelhandel sollten benutzerdefinierte Funktionen verwendet werden, um die Umsatzsteuer für eine Bestellung zu ermitteln oder einen Rabatt auf ein Produkt oder eine Bestellung anzuwenden.
 
-## <a name="user-defined-function-example"></a>Beispiel zu benutzerdefinierten Funktionen
+## <a name="user-defined-function-example"></a>Beispiel für eine benutzerdefinierte Funktion
 
-Im folgenden Beispiel wird eine benutzerdefinierte Funktion erstellt, um anhand der Gesamtsumme einer Bestellung Rabatte zu berechnen. Anschließend wird die geänderte Bestellsumme zurückgegeben:
+Das folgende Beispiel erstellt eine benutzerdefinierte Funktion zur Berechnung der Steuer auf ein Produkt in einem fiktiven Unternehmen auf Basis der Produktkosten:
 
-```java
-var discountUdf = {
-    id: "discount",
-    serverScript: function discount(orderTotal) {
+```javascript
+function producttax(price) {
+    if (price == undefined) 
+        throw 'no input';
 
-        if(orderTotal == undefined) 
-            throw 'no input';
+    var amount = parseFloat(price);
 
-        if (orderTotal < 50) 
-            return orderTotal * 0.9;
-        else if (orderTotal < 100) 
-            return orderTotal * 0.8;
-        else
-            return orderTotal * 0.7;
-    }
+    if (amount < 1000) 
+        return amount * 0.1;
+    else if (amount < 10000) 
+        return amount * 0.2;
+    else
+        return amount * 0.4;
 }
 ```
 
@@ -87,54 +82,56 @@ Nachfolgend wird erläutert, wie Sie eine gespeicherte Prozedur erstellen, die D
 
 1. Klicken Sie im Daten-Explorer auf **Neue gespeicherte Prozedur**. Nennen Sie diese gespeicherte Prozedur *createDocuments*, und klicken Sie auf **Speichern** und dann auf **Ausführen**.
 
-    ```java
-    var createDocumentStoredProc = {
-        id: "createMyDocument",
-        productid: "5"
-        serverScript: function createMyDocument(documentToCreate) {
-            var context = getContext();
-            var collection = context.getCollection();
-    
-            var accepted = collection.createDocument(collection.getSelfLink(),
-                  documentToCreate,
-                  function (err, documentCreated) {
-                      if (err) throw new Error('Error' + err.message);
-                      context.getResponse().setBody(documentCreated.id)
-                  });
-            if (!accepted) return;
-        }
-    }
-    ```
+```javascript
+function createMyDocument(id, productid, name, description, price) {
+    var context = getContext();
+    var collection = context.getCollection();
 
-<!--TODO: Need to fix code above.-->
+    var doc = {
+        "id": id,
+        "productId": productid,
+        "description": description,
+        "price": price    
+    };
 
-2. Geben Sie den Partitionsschlüsselwert *3* ein, und klicken Sie dann auf **Ausführen**.
+    var accepted = collection.createDocument(collection.getSelfLink(),
+        doc,
+        function (err, documentCreated) {
+            if (err) throw new Error('Error' + err.message);
+            context.getResponse().setBody(documentCreated)
+        });
+    if (!accepted) return;
+}
+```
 
-    Der Daten-Explorer zeigt das neu erstellte Dokument an. 
+2. Fügen Sie Parameterwerte für die ID, die Produkt-ID, den Namen, die Beschreibung und den Preis in dieser Reihenfolge hinzu, und klicken Sie dann auf **Ausführen**.
+
+    Der Daten-Explorer zeigt anschließend das neu erstellte Dokument an. 
 
 ## <a name="create-a-user-defined-function"></a>Erstellen einer benutzerdefinierten Funktion
 
 Nun erstellen wir eine benutzerdefinierte Funktion im Daten-Explorer.
 
-Klicken Sie im Daten-Explorer auf **Neue benutzerdefinierte Funktion**. Kopieren Sie den folgenden Code in das Fenster, geben Sie der benutzerdefinierten Funktion den Namen *Steuer*, und klicken Sie auf **Speichern**. Die benutzerdefinierte Funktion kann zwar nicht über das Portal ausgeführt werden, aber sie wird in einem späteren Modul verwendet.
+Klicken Sie im Daten-Explorer auf **Neue benutzerdefinierte Funktion**. Kopieren Sie den folgenden Code in das Fenster, geben Sie der benutzerdefinierten Funktion den Namen *producttax*, und klicken Sie auf **Speichern**.
 
-```java
-function userDefinedFunction(){
-    var taxUdf = {
-        id: "tax",
-        serverScript: function tax(income) {
+```javascript
+function producttax(price) {
+    if (price == undefined) 
+        throw 'no input';
 
-            if(income == undefined) 
-                throw 'no input';
+    var amount = parseFloat(price);
 
-            if (income < 1000) 
-                return income * 0.1;
-            else if (income < 10000) 
-                return income * 0.2;
-            else
-                return income * 0.4;
-        }
-    }
+    if (amount < 1000) 
+        return amount * 0.1;
+    else if (amount < 10000) 
+        return amount * 0.2;
+    else
+        return amount * 0.4;
 }
 ```
 
+Nachdem Sie die benutzerdefinierte Funktion definiert haben, können Sie sie für die Sammlung ausführen, indem Sie die folgende Abfrage ausführen:
+
+```sql
+SELECT c.id, c.productId, c.price, udf.producttax(c.price) AS producttax FROM c
+```

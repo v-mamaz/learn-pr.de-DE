@@ -1,6 +1,6 @@
-Stellen Sie sich vor, Sie arbeiten für ein Unternehmen, das Datenverarbeitung und -speicherung für Verkehrsüberwachungskameras betreibt. Die Videodatenströme werden analysiert, kategorisiert und verarbeitet, um Gesichter und Kfz-Kennzeichen zu bestimmten Zeiten zu identifizieren. Die Informationen werden in Azure Data Lake hochgeladen, und es wird ein durchsuchbarer Index für die Strafverfolgung generiert.
+Stellen Sie sich vor, Sie arbeiten für ein Unternehmen, das Videodatenverarbeitung und Musteranalyse betreibt. Sie erstellen eine neue Prototypplattform, um das Videomaterial von Verkehrsüberwachungskameras zu verarbeiten, Trends zu analysieren und verwertbare Daten für Verkehrsfluss- und Straßenverbesserungen bereitzustellen. 
 
-Diese Videodatenströme verwenden verschiedene Codecs und Auflösungen. Für die anfängliche Verarbeitung und die Codierung in einem gängigen Videoformat müssen Sie verschiedene Windows-basierte proprietäre Softwarepakete ausführen. Weil regelmäßig neue Formate veröffentlicht werden, ist es vorteilhaft, die Videoverarbeitung auf virtuellen Computern (VMs) durchzuführen. Die proprietären Pakete können so hinzugefügt und aktualisiert werden, ohne das gesamte System anzuhalten.
+Um Ihre Algorithmen zu verbessern, haben Sie mit mehreren neuen Städten Vereinbarungen getroffen, um die Daten ihrer Verkehrsüberwachungskameras zu erfassen. Allerdings liegen nicht alle Videodaten im gleichen Format vor, und viele der Formate haben nur Windows-Codecs zur Decodierung der Daten. Aus diesem Grund haben Sie sich entschieden, virtuelle Computer (VMs) zu verwenden, um die Erstverarbeitung auszuführen. Anschließend pushen Sie die Daten für die Verarbeitung in einem Standardformat in Azure Functions. Mit dieser Vorgehensweise können Sie neue Datenformate dynamisch einführen, ohne das gesamte System zu beenden.
 
 Azure bietet eine robuste Hostinglösung für virtuelle Computer, die Ihren Anforderungen gerecht wird. Sehen wir uns an, wie Sie virtuelle Windows-Computer in Azure erstellen und mit ihnen arbeiten.
 
@@ -8,7 +8,7 @@ Azure bietet eine robuste Hostinglösung für virtuelle Computer, die Ihren Anfo
 
 In diesem Modul lernen Sie Folgendes:
 
-- Kenntnis der Optionen, die für virtuelle Computer in Azure zur Verfügung stehen
+- Grundlagen über die Optionen, die für virtuelle Computer in Azure zur Verfügung stehen
 - Erstellen eines virtuellen Windows-Computers über das Azure-Portal
 - Stellen Sie mithilfe von Remotedesktop eine Verbindung zu einem ausgeführten virtuellen Computer her.
 - Installieren Sie die Software, und ändern Sie mithilfe des Azure-Portals die Netzwerkkonfiguration auf einem virtuellen Computer.

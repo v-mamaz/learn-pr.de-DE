@@ -1,8 +1,8 @@
 Angenommen, Sie müssen für die Entwicklungs-, Technik- und Marketingteams den Zugriff auf Ressourcen in Azure verwalten. Sie haben bereits erste Zugriffsanforderungen erhalten und müssen schnell herausfinden, wie die Zugriffsverwaltung bei Ressourcen in Azure funktioniert.
 
-## <a name="what-is-rbac"></a>Was ist RBAC?
+## <a name="what-is-rbac"></a>Was ist die RBAC?
 
-Bei der rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) handelt es sich um ein Autorisierungssystem, das auf [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) basiert und eine differenzierte Verwaltung des Zugriffs auf Ressourcen in Azure ermöglicht. Azure bietet viele Ressourcen, wobei sich einige Beispiele auf virtuelle Computer, Websites, Netzwerke und Speicher beziehen.
+Bei der rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) handelt es sich um ein Autorisierungssystem, das auf Azure Resource Manager basiert und eine differenzierte Verwaltung des Zugriffs auf Ressourcen in Azure ermöglicht. Azure bietet viele Ressourcen, wobei sich einige Beispiele auf virtuelle Computer, Websites, Netzwerke und Speicher beziehen.
 
 ## <a name="what-can-i-do-with-rbac"></a>Welche Möglichkeiten bietet RBAC?
 
@@ -38,14 +38,14 @@ Eine *Rollendefinition* ist eine Sammlung von Berechtigungen. Gelegentlich wird 
 
 ![Rollendefinition](../media-draft/2-rbac-role-definition.png)
 
-Azure umfasst mehrere [integrierte Rollen](/azure/role-based-access-control/built-in-roles), die Sie verwenden können. Im Folgenden werden vier grundlegende integrierte Rollen aufgeführt:
+Azure umfasst mehrere integrierte Rollen, die Sie verwenden können. Im Folgenden werden vier grundlegende integrierte Rollen aufgeführt:
 
 - Besitzer: Verfügen über vollständigen Zugriff auf alle Ressourcen, einschließlich des Rechts, den Zugriff an andere Personen zu delegieren.
 - Mitwirkende: Können alle Arten von Azure-Ressourcen erstellen und verwalten, aber keinen anderen Personen Zugriff gewähren.
 - Leser: Können vorhandene Azure-Ressourcen anzeigen.
 - Benutzerzugriffsadministratoren: Können den Benutzerzugriff auf Azure-Ressourcen verwalten.
 
-Wenn die integrierten Rollen den Ansprüchen Ihrer Organisation nicht entsprechen, können Sie Ihre eigenen [benutzerdefinierten Rollen](/azure/role-based-access-control/custom-roles) erstellen.
+Wenn die integrierten Rollen den besonderen Ansprüchen Ihrer Organisation nicht genügen, können Sie Ihre eigenen benutzerdefinierten Rollen erstellen.
 
 ### <a name="3-scope-where"></a>3. Bereich (wo)
 

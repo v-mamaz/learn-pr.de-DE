@@ -12,7 +12,7 @@ Zuerst wird ein neues Verzeichnis für First Up Consultants, in dem ohne Auswirk
    1. ORGANISATIONSNAME: `First Up Consultants`
    1. NAME DER ANFANGSDOMÄNE: `firstupconsultants<XXXX>.onmicrosoft.com`
 
-1. Warten Sie, bis das Verzeichnis erstellt wurde. Klicken Sie auf den Link, um in das neue Verzeichnis zu wechseln, oder klicken Sie oben im Fenster auf **Directory and subscription filter** (Verzeichnis- und Abonnementfilter), und wählen Sie das neu erstellte Verzeichnis aus.
+1. Warten Sie, bis das Verzeichnis erstellt wurde. Klicken Sie auf den Link, um in das neue Verzeichnis zu wechseln, oder klicken Sie oben im Fenster auf **Verzeichnis- und Abonnementfilter**, und wählen Sie das neu erstellte Verzeichnis aus.
 
 ## <a name="get-trial-licenses"></a>Erhalten von Testlizenzen
 
@@ -32,7 +32,9 @@ Die Lizenz muss mit einem Benutzer getestet werden. Isabella Simonsen, ein Mitgl
 
 1. Erstellen Sie einen Benutzer namens **Isabella Simonsen** mit dem folgenden Benutzernamen:
 
-   * `Isabella@firstupconsultants<XXXX>.onmicrosoft.com`
+   `Isabella@firstupconsultants<XXXX>.onmicrosoft.com`
+
+   Ordnen Sie die Domäne nach dem @-Zeichen der Domäne zu, die Sie im Abschnitt *Erstellen eines Verzeichnisses* oben erstellt haben.
 
 1. Aktivieren Sie das Kontrollkästchen **Kennwort anzeigen** für den Benutzer. Notieren Sie sich das Kennwort, damit Sie es später beim Testen verwenden können.
 

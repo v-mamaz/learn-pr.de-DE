@@ -2,7 +2,9 @@ Bei First Up Consultants wurde Ihnen Zugriff auf das Azure-Abonnement für das M
 
 ## <a name="list-role-assignments-for-yourself"></a>Liste von Rollenzuweisungen für Sie selbst
 
-Führen Sie die folgenden Schritte aus, um zu sehen, welche Rollen Ihnen derzeit zugewiesen sind.
+Führen Sie die folgenden Schritte aus, um zu sehen, welche Rollen Ihnen zurzeit zugewiesen sind.
+
+1. Navigieren Sie zum [Azure-Portal](https://portal.azure.com/?azure-portal=true).
 
 1. Klicken Sie in der Navigationsliste auf **Azure Active Directory**.
 

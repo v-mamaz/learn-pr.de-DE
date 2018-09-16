@@ -31,6 +31,7 @@ WHERE p.id ="1"
         "category": "Women's Clothing",
         "manufacturer": "Contoso Sport",
         "description": "Quick dry crew neck t-shirt",
+        "price": "14.99",
         "shipping": {
             "weight": 1,
             "dimensions": {
@@ -39,11 +40,11 @@ WHERE p.id ="1"
                 "depth": 1
             }
         },
-        "_rid": "glAZAJFm0VsBAAAAAAAAAA==",
-        "_self": "dbs/glAZAA==/colls/glAZAJFm0Vs=/docs/glAZAJFm0VsBAAAAAAAAAA==/",
-        "_etag": "\"00006000-0000-0000-0000-5b71be760000\"",
+        "_rid": "iAEeANrzNAAJAAAAAAAAAA==",
+        "_self": "dbs/iAEeAA==/colls/iAEeANrzNAA=/docs/iAEeANrzNAAJAAAAAAAAAA==/",
+        "_etag": "\"00003a02-0000-0000-0000-5b9208440000\"",
         "_attachments": "attachments/",
-        "_ts": 1534180982
+        "_ts": 1536297028
     }
 ]
 ```
@@ -96,22 +97,22 @@ FROM Products.shipping
 
 ```
 [
-{
-    "weight": 1,
-    "dimensions": {
-        "width": 6,
-        "height": 8,
-        "depth": 1
+    {
+        "weight": 1,
+        "dimensions": {
+            "width": 6,
+            "height": 8,
+            "depth": 1
+        }
+    },
+    {
+        "weight": 2,
+        "dimensions": {
+            "width": 8,
+            "height": 11,
+            "depth": 3
+        }
     }
-},
-{
-    "weight": 1,
-    "dimensions": {
-        "width": 6,
-        "height": 8,
-        "depth": 1
-    }
-}
 ]
 ```
 
@@ -200,9 +201,9 @@ In der folgenden Abfrage werden die Produkt-IDs der einzelnen Produkte zurückge
         }
     ]
 
-## <a name="geospatial-queries"></a>Räumliche Abfragen
+## <a name="geospatial-queries"></a>Geoabfragen
 
-Sie können räumliche Abfragen mithilfe von GeoJSON-Punkten durchführen. Wenn Sie die Koordinaten in der Datenbank verwenden, können Sie die Entfernung zwischen zwei Punkten berechnen und ermitteln, ob sich ein Punkt, ein Polygon oder ein LineString-Element innerhalb eines anderen Punkts, Polygons oder LineString-Elements befindet.
+Sie können Geoabfragen mithilfe von GeoJSON-Punkten ausführen. Wenn Sie die Koordinaten in der Datenbank verwenden, können Sie die Entfernung zwischen zwei Punkten berechnen und ermitteln, ob sich ein Punkt, ein Polygon oder ein LineString-Element innerhalb eines anderen Punkts, Polygons oder LineString-Elements befindet.
 
 Hierdurch kann der Benutzer für Produktkatalogdaten seine Standortinformationen eingeben und prüfen, ob es innerhalb eines Radius von 80 Kilometern ein Geschäft gibt, in dem der gesuchte Artikel verfügbar ist. 
 

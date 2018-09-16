@@ -2,9 +2,9 @@ Die integrierte Entwicklungsumgebung von Eclipse (IDE) wird von vielen Entwickle
 
 ## <a name="eclipse"></a>Eclipse
 
-Eclipse ist die IDE, die von Java-Entwicklern am häufigsten verwendet wird. Die Entwicklungsumgebung ist sehr vielseitig und enthält eine erweiterbare Plug-In-Architektur, die verwendet werden kann, um andere Sprachen als Java zu unterstützen. Den Großteil der Eclipse-Benutzer stellen zwar Java-Entwickler dar, Eclipse wird jedoch auch für C++, Python, C und Ruby verwendet. Es werden jährlich Updates veröffentlicht, um die IDE modern und auf dem neuesten Stand zu halten.
+Eclipse ist eine sehr vielseitige Entwicklungsumgebung mit einer erweiterbaren Plug-In-Architektur, die zur Unterstützung anderer Sprachen als Java verwendet werden kann. Auch wenn die Mehrheit der Eclipse-Benutzer Java-Entwickler sind, kann Eclipse auch zum Erstellen von Anwendungen mit C++, Python, C und Ruby verwendet werden. Es werden jährlich Updates für Eclipse veröffentlicht, um die IDE modern und auf dem neuesten Stand zu halten.
 
-Eclipse wird für große Unternehmens-Apps verwendet, von denen viele wahrscheinlich Verbindungen zu Microsoft Azure-Diensten und anderen Produkten benötigen.
+Eclipse eignet sich für große Unternehmens-Apps, von denen viele wahrscheinlich Verbindungen mit Microsoft Azure-Diensten und anderen Produkten benötigen.
 
 ## <a name="azure-toolkit-for-eclipse"></a>Azure-Toolkit für Eclipse
 
@@ -14,7 +14,7 @@ Das Toolkit enthält Vorlagen für die Integration von Docker-Containern, HDInsi
 
 ## <a name="installation-of-eclipse-with-azure-tooling"></a>Installieren von Eclipse mit Azure-Tools
 
-Eclipse wird unter Windows, macOS und Linux unterstützt. Beim Installationsvorgang wird auf allen Plattformen der Eclipse-Installer verwendet. Dabei gibt es lediglich beim allgemeinen Verfahren für Installationen Unterschiede.
+Eclipse wird unter Windows, macOS und Linux unterstützt. Beim Installationsvorgang wird auf allen Plattformen der Eclipse-Installer verwendet. Dabei gibt es lediglich beim allgemeinen Verfahren für Installationen Unterschiede zwischen den Plattformen.
 
 Die Installation von Eclipse für Java oder Java EE ist auf allen Plattformen einfach, dabei gilt die übliche Vorgehensweise für Installationen auf der entsprechenden Plattform. Der Installer fordert den Benutzer ebenfalls dazu auf, die zu installierenden Pakete nach Zielsprache und -frameworks auszuwählen.
 
@@ -26,6 +26,6 @@ Es ist ein Open Source-Toolkit, das in GitHub gehostet wird. Das Toolkit wird re
 
 ## <a name="summary"></a>Zusammenfassung
 
-In diesem Abschnitt haben Sie erfahren, wie einfach es ist, mit Eclipse und dem Azure-Toolkit in die Java-Entwicklung einzusteigen. Nach der Installation stellt das Toolkit eine Vielzahl von einfach zu bedienenden Vorlagen und Features bereit, um die Integration von Azure einfacher und effizienter zu gestalten.
+In diesem Abschnitt haben Sie erfahren, wie einfach und problemlos es ist, mit Eclipse und dem Azure-Toolkit in die Java-Entwicklung einzusteigen. Nach der Installation stellt das Toolkit eine Vielzahl von einfach zu verwendenden Vorlagen und Features bereit, um die Integration von Azure einfach und effizient zu gestalten.
 
-Eclipse und das Azure-Toolkit werden regelmäßig aktualisiert und ermöglichen eine stabile und effiziente Entwicklung von Java-Anwendungen mit Cloudintegration.
+Sowohl Eclipse als auch das Azure-Toolkit werden regelmäßig aktualisiert. Zusammen bieten sie eine robuste und effiziente Möglichkeit, Java-Anwendungen mit Cloudintegration zu schreiben.

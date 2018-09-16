@@ -1,4 +1,4 @@
-Es ist üblich, eine bestimmte Logik in festgelegten Intervallen auszuführen. Stellen Sie sich vor, Sie haben einen Blog und stellen fest, dass Ihre Abonnenten die neuesten Beiträge nicht lesen. Also entscheiden sie sich dafür, einmal pro Woche eine E-Mail zu senden, um sie an Ihren Blog zu erinnern. Sie implementieren diese Logik mit einer Azure-Funktion mit _Timertrigger_, damit Ihre Funktion wöchentlich aufgerufen wird.
+Es ist üblich, eine bestimmte Logik in festgelegten Intervallen auszuführen. Stellen Sie sich vor, Sie haben einen Blog und stellen fest, dass Ihre Abonnenten die neuesten Beiträge nicht lesen. Also entscheiden Sie sich dafür, ein Mal pro Woche eine E-Mail zu senden, um sie an Ihren Blog zu erinnern. Sie implementieren diese Logik mit einer Azure Funktions-App mit einem _Timertrigger_, damit Ihre Funktion wöchentlich aufgerufen wird.
 
 ## <a name="what-is-a-timer-trigger"></a>Was ist ein Timertrigger?
 
@@ -46,8 +46,8 @@ Wenn Sie alle Felder zusammensetzen, bedeutet der Ausdruck „in der ersten Seku
 
 ## <a name="how-to-create-a-timer-trigger"></a>Erstellen eines Timertriggers
 
-Ein Zeitgebertrigger kann vollständig im Azure-Portal erstellt werden. Wählen Sie in Ihrer Azure-Funktion **Zeitgebertrigger** aus der Liste der vordefinierten Triggertypen aus. Geben Sie die Logik ein, die Sie ausführen möchten. Geben Sie einen **Zeitstempel-Parameternamen** und den **CRON-Ausdruck** an.
+Ein Timertrigger kann vollständig im Azure-Portal erstellt werden. Wählen Sie in Ihrer Azure Funktions-App **Timertrigger** aus der Liste der Triggervorlagen aus. Geben Sie die Logik ein, die Sie ausführen möchten. Geben Sie einen **Zeitstempel-Parameternamen** und den **CRON-Ausdruck** an.
 
-## <a name="summary"></a>Zusammenfassung
+In diesem Modul konzentrieren wir uns auf das Portal, aber es ist auch möglich, Trigger programmgesteuert mit den Kerntools, Visual Studio oder VS-Code zu erstellen.
 
-Ein Zeitgebertrigger ruft eine Azure-Funktion nach einem einheitlichen Zeitplan auf. Um den Zeitplan für einen Zeitgebertrigger zu definieren, erstellen Sie einen *CRON-Ausdruck*. Dabei handelt es sich um eine Zeichenfolge, die eine Zeitangabe darstellt.
+Ein Timertrigger ruft eine Azure Funktions-App nach einem einheitlichen Zeitplan auf. Um den Zeitplan für einen Timertrigger zu definieren, erstellen Sie einen *CRON-Ausdruck*. Dabei handelt es sich um eine Zeichenfolge, die eine Zeitangabe darstellt.

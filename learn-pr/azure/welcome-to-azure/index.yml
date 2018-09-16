@@ -1,8 +1,8 @@
 ### YamlMime:Module
 uid: learn.welcome-to-azure
-title: Welcome to Azure
-summary: Get started with Azure by creating and configuring your first VM in the cloud.
-cardDescription: Get started with Azure by creating your first VM in the cloud.
+title: Willkommen bei Azure
+summary: Führen Sie erste Schritte mit Azure aus, indem Sie Ihren ersten virtuellen Computer in der Cloud erstellen und konfigurieren.
+cardDescription: Führen Sie erste Schritte mit Azure aus, indem Sie Ihren ersten virtuellen Computer in der Cloud erstellen.
 iconUrl: http://via.placeholder.com/120x120
 achievement: learn.placeholder.badge
 levels:
@@ -14,14 +14,20 @@ roles:
 products:
 - azure
 metadata:
-  title: Welcome to Azure
-  description: Get started with Azure by creating your first VM in the cloud.
-abstract: |
-  * Start building the foundational skills you need to change the world or land the job of your dreams. 
-  * Learn what Microsoft Azure is and how it relates to cloud computing.
-  * See how easy it is to launch your first virtual machine, add a web server, and scale up your server when you need more power.
-
-  This was written by a group of people who are passionate about the potential technology has to change people's lives. We hope our passion helps you build the skills you need to be successful with the cloud.
+  title: Willkommen bei Azure
+  description: Führen Sie erste Schritte mit Azure aus, indem Sie Ihren ersten virtuellen Computer in der Cloud erstellen.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b725b0c2ad3ffa71860f04525ce600d43e7a4c0d
+  ms.sourcegitcommit: ad17bb250e03f76b1e355f923ed7f0836497b66e
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/12/2018
+  ms.locfileid: "44495448"
+abstract: "* Beginnen Sie mit dem Erwerb der grundlegenden Kenntnisse, die Sie benötigen, um die Welt zu verändern oder den Job Ihrer Träume zu bekommen. \n* Erfahren Sie, was Microsoft Azure ist und welche Beziehung zu Cloud Computing besteht.\n* Erfahren Sie, wie einfach es ist, Ihren ersten virtuellen Computer zu starten, einen Webserver hinzuzufügen und Ihren Server zentral hochzuskalieren, wenn Sie mehr Leistung benötigen.\n"
 units:
 - learn.welcome-to-azure.1-introduction
 - learn.welcome-to-azure.2-what-is-azure

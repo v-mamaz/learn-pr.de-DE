@@ -1,14 +1,14 @@
-You've heard buzzwords about the cloud &mdash; _scale_, _elasticity_, _microservices_. Perhaps you've seen other companies be successful with the cloud and wondered how it might impact your career. Did you know that 90% of the Fortune 500 run on Azure?
+Sie haben bereits die Schlagworte &mdash; _Skalierung_, _Elastizität_ und _Microservices_ über die Cloud gehört. Vielleicht haben Sie gesehen, wie andere Unternehmen mit der Cloud erfolgreich sind und sich gefragt, wie sich das auf Ihre Karriere auswirken könnte. Wussten Sie, dass 90 % der Fortune 500-Unternehmen in Azure ausgeführt werden?
 
-The cloud helps power your everyday life, and it’s often present in ways you don't even realize. To keep up with today's ever-changing digital world, you need to understand what the cloud is and how you can make the most of it. Understanding cloud technology can help align your career to this exciting revolution.
+Die Cloud hilft, Ihren Alltag zu meistern, und sie ist oft auf eine Weise präsent, die Sie nicht einmal bemerken. Um mit der sich ständig verändernden digitalen Welt von heute Schritt zu halten, müssen Sie verstehen, was die Cloud ist und wie Sie das Beste aus ihr machen können. Das Verständnis der Cloudtechnologie kann Ihnen helfen, Ihre Karriere auf diese spannende Revolution auszurichten.
 
-Spend part of your lunch hour with us. You'll create your first virtual machine on Azure and configure it to run a basic web site.
+In weniger als der Zeit, die für das Mittagessen benötigt wird, erstellen Sie Ihren ersten virtuellen Computer in Azure und konfigurieren ihn für die Ausführung einer einfachen Website.
 
-To begin your cloud journey, you'll:
+Ihr Weg in die Cloud beginnt mit den folgenden Aktionen:
 
-* Learn what Microsoft Azure is and how it relates to cloud computing.
-* Use Azure Cloud Shell to launch a Windows or Linux virtual machine.
-* Configure your virtual machine to run a basic web server.
-* Scale up your server to give you more compute power.
+* Erfahren Sie, was Microsoft Azure ist und welche Beziehung zu Cloud Computing besteht.
+* Verwenden Sie Azure Cloud Shell, um einen virtuellen Windows- oder Linux-Computer zu starten.
+* Konfigurieren Sie Ihren virtuellen Computer für die Ausführung eines einfachen Webservers.
+* Skalieren Sie Ihren Server zentral hoch, um mehr Computeleistung zu erhalten.
 
-Let's start with a brief look at cloud computing on Azure.
+Beginnen wir mit einem kurzen Blick auf Cloud Computing in Azure.

@@ -9,23 +9,22 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 00474301121987cab2098cdfa80cb15e98a4a36f
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: ad6bbe8fd8948defa6a0ec287782dd55146981df
+  ms.sourcegitcommit: 5130ac6e16956e1cd182c3d5f2721b881a186c63
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44245969"
+  ms.lasthandoff: 09/12/2018
+  ms.locfileid: "44503035"
 durationInMinutes: 10
 content: >
   [!include[](includes/2-choose-whether-to-use-message-queues-or-events.md)]
 quiz:
-  title: Messagingmodelle
+  title: Wissenstest
   questions:
-  - content: 'In Ihrer verteilten Anwendung haben Sie einen Webdienst, der Benutzer authentifiziert. Wenn sich ein Benutzer anmeldet, muss der Webdienst mit einer Desktopanwendung kommunizieren, die auf den Computern aller Benutzer ausgeführt wird, um den „Online“-Status des Benutzers anzuzeigen. Wahr oder falsch: Dies ist ein Beispiel einer Nachricht in einer verteilten Anwendung.'
+  - content: 'Angenommen, Sie verwenden eine verteilte Anwendung mit einem Webdienst, der Benutzer authentifiziert. Wenn sich ein Benutzer anmeldet, kommuniziert der Webdienst mit allen Clientanwendungen, um den Status „Online“ anzuzeigen. Wahr oder falsch: Dies ist ein Beispiel einer Nachricht in einer verteilten Anwendung.'
     choices:
     - content: Wahr
-      incorrectExplanation: Dies ist leider ein Beispiel eines Ereignisses in einer verteilten Anwendung. Die Kommunikation wird an alle Abonnenten und Herausgeber weitergeleitet, und der Herausgeber weiß nicht, wie die Kommunikation durch einen Abonnenten abgewickelt wird und hat auch keine Präferenzen diesbezüglich. Er weiß auch nicht, wie viele Abonnenten es ggf. gibt.
       isCorrect: false
     - content: Falsch
-      correctExplanation: Richtig! Dies wäre eine Ereignisbenachrichtigung, die eine Aktion auslösen würde. Dies ist die perfekte Situation, um ein Ereignis zu verwenden.
+      correctExplanation: Nachrichten enthalten in der Regel die Rohdaten selbst, z.B. eine Mediendatei. In diesem Fall senden wir ein einfaches Datenelement, das den Status eines Benutzers darstellt. Außerdem senden wir die Daten als Reaktion auf eine Aktion, was ein perfekter Fall für die Verwendung eines Ereignisses ist.
       isCorrect: true

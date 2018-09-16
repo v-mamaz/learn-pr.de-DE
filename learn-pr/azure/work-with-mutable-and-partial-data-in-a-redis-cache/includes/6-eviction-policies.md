@@ -1,29 +1,29 @@
-Memory is the most critical resource for Redis because it's an in-memory database. You can run into problems when you begin adding data that exceeds the amount of memory available. Redis supports eviction policies, which indicate how data should be handled when you run out of memory.
+Speicher ist die kritischste Ressource für Redis, da es sich um eine In-Memory-Datenbank handelt. Sie können auf Probleme stoßen, wenn Sie anfangen, Daten hinzuzufügen, die den verfügbaren Speicherplatz überschreiten. Redis unterstützt Entfernungsrichtlinien, die angeben, wie mit Daten umgegangen werden soll, wenn der Speicherplatz knapp wird.
 
-Here, you'll set an eviction policy to determine what your data should do when you exceed the maximum amount of memory.
+Hier legen Sie eine Entfernungsrichtlinie fest, um anzugeben, wie mit Ihren Daten vorgegangen werden soll, wenn Sie den maximalen Speicherplatz überschreiten.
 
-## What is an eviction policy?
+## <a name="what-is-an-eviction-policy"></a>Was ist eine Entfernungsrichtlinie?
 
-An eviction policy is a plan that determines how your data should be managed when you exceed the maximum amount of memory available. For example, using an eviction policy, you could tell Redis to delete a random key to make room for the new data being inserted.
+Eine Entfernungsrichtlinie ist ein Plan, der bestimmt, wie Ihre Daten verwaltet werden sollen, wenn Sie den maximal verfügbaren Speicherplatz überschreiten. Mit einer Entfernungsrichtlinie können Sie Redis beispielsweise anweisen, einen zufälligen Schlüssel zu löschen, um Platz für die neuen Daten zu schaffen, die eingefügt werden.
 
-### Types of eviction policies
+### <a name="types-of-eviction-policies"></a>Typen von Entfernungsrichtlinien
 
-There are six different eviction policies provided by Redis. All of these values perform an action when you attempt to insert data when you're out of memory.
+Von Redis werden sechs verschiedene Entfernungsrichtlinien bereitgestellt. Alle diese Werte führen eine Aktion aus, wenn Sie versuchen, Daten einzufügen, obwohl nicht genügend Arbeitsspeicher vorhanden ist.
 
-* **noeviction:** No eviction policy. Returns an error message if you attempt to insert data.
+* **noeviction:** Keine Entfernungsrichtlinie. Gibt eine Fehlermeldung zurück, wenn Sie versuchen, Daten einzufügen.
 
-* **allkeys-lru:** Removes the least recently used key.
+* **allkeys-lru:** Entfernt den am längsten nicht verwendeten Schlüssel.
 
-* **allkeys-random:** Removes a random key.
+* **allkeys-random:** Entfernt einen zufälligen Schlüssel.
 
-* **volatile-lru:** Removes the least recently used key out of all the keys with an expiration set.
+* **volatile-lru:** Entfernt den am längsten nicht verwendeten Schlüssel aller Schlüssel, für die ein Ablauf festgelegt ist.
 
-* **volatile-ttl:** Removes the key with the shortest time to live based on the expiration set for it.
+* **volatile-ttl:** Entfernt den Schlüssel mit der kürzesten Gültigkeitsdauer basierend auf dem für ihn festgelegten Ablauf.
 
-* **volatile-random:** Removes a random key that has an expiration set.
+* **volatile-random:** Entfernt einen zufälligen Schlüssel, für den ein Ablauf festgelegt ist.
 
-## How to set an eviction policy
+## <a name="how-to-set-an-eviction-policy"></a>Festlegen einer Entfernungsrichtlinie
 
-Azure provides a simple drop-down menu to set the eviction policy for a Redis Cache. Select **Advanced Settings** and use the **maxmemory-policy** drop-down menu.
+Azure bietet ein einfaches Dropdownmenü zum Festlegen der Entfernungsrichtlinie für einen Redis Cache. Wählen Sie **Erweiterte Einstellungen** aus, und verwenden Sie das **maxmemory-policy**-Dropdownmenü.
 
-Since memory is critical to a Redis cache, there is support for eviction policies. An eviction policy determines what should be done with existing data when you're out of memory and attempt to insert new data.
+Da Speicher für einen Redis Cache von entscheidender Bedeutung ist, ist Unterstützung für Entfernungsrichtlinien verfügbar. Eine Entfernungsrichtlinie bestimmt, was mit vorhandenen Daten geschehen soll, wenn der Speicherplatz knapp ist und dennoch versucht wird, neue Daten einzufügen.

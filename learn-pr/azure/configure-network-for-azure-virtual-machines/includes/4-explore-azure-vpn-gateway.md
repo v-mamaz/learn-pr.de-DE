@@ -1,14 +1,14 @@
-Wenn Sie Ihre lokale Umgebung in Azure integrieren möchten, müssen Sie eine verschlüsselte Verbindung erstellen können. Die Verbindung kann entweder über das öffentliche Internet oder über einen dedizierten Link hergestellt werden. Hier beschäftigen wir uns mit dem Azure-VPN-Gateway, das einen Endpunkt für eingehende Verbindungen aus lokalen Umgebungen bereitstellt.
+Wenn Sie Ihre lokale Umgebung in Azure integrieren möchten, müssen Sie eine verschlüsselte Verbindung erstellen können. Die Verbindung kann über das Internet oder über einen dedizierten Link hergestellt werden. Hier beschäftigen wir uns mit dem Azure VPN Gateway, das einen Endpunkt für eingehende Verbindungen aus lokalen Umgebungen bereitstellt.
 
 Sie haben ein virtuelles Azure-Netzwerk eingerichtet und müssen sicherstellen, dass sämtliche Datenübertragungen von Azure sowie zwischen virtuellen Azure-Netzwerken verschlüsselt werden. Außerdem müssen Sie wissen, wie Sie virtuelle Netzwerke zwischen Regionen und Abonnements verbinden.
 
-## <a name="describe-a-vpn-gateway"></a>Beschreiben eines VPN-Gateways
+## <a name="what-is-a-vpn-gateway"></a>Was ist ein VPN Gateway?
 
-Ein Azure-VPN-Gateway stellt einen Endpunkt für eingehende verschlüsselte Verbindungen bereit, die von lokalen Standorten aus über das Internet mit Azure hergestellt werden. Es kann auch verschlüsselten Datenverkehr zwischen virtuellen Azure-Netzwerken über das dedizierte Netzwerk von Microsoft senden, das Azure-Rechenzentren in verschiedenen Regionen miteinander verbindet. Mit dieser Konfiguration können Sie virtuelle Computer und Dienste in unterschiedlichen Regionen sicher miteinander verknüpfen.
+Azure VPN Gateway stellt einen Endpunkt für eingehende verschlüsselte Verbindungen bereit, die von lokalen Standorten aus über das Internet mit Azure hergestellt werden. Es kann auch verschlüsselten Datenverkehr zwischen virtuellen Azure-Netzwerken über das dedizierte Netzwerk von Microsoft senden, das Azure-Datencenter in verschiedenen Regionen miteinander verbindet. Mit dieser Konfiguration können Sie virtuelle Computer und Dienste in unterschiedlichen Regionen sicher miteinander verknüpfen.
 
-Ein virtuelles Netzwerk kann jeweils nur über ein einzelnes VPN-Gateway verfügen. Alle Verbindungen mit diesem VPN-Gateway teilen sich die verfügbare Netzwerkbandbreite.
+Ein virtuelles Netzwerk kann jeweils nur über ein einzelnes VPN-Gateway verfügen. Alle Verbindungen mit diesem VPN Gateway teilen sich die verfügbare Netzwerkbandbreite.
 
-Innerhalb jedes Gateways für virtuelle Netzwerke befinden sich mindestens zwei virtuelle Computer. Diese virtuellen Computer wurden in einem speziellen, von Ihnen angegebenen Subnetz bereitgestellt – dem sogenannten _Gatewaysubnetz_. Sie enthalten Routingtabellen für Verbindungen mit anderen Netzwerken sowie spezifische Gatewaydienste. Diese virtuellen Computer und das Gatewaysubnetz ähneln einem gehärteten Netzwerkgerät. Sie müssen diese virtuellen Computer nicht direkt konfigurieren und sollten im Gatewaysubnetz keine zusätzlichen Ressourcen bereitstellen.
+Innerhalb jedes Gateways für virtuelle Netzwerke befinden sich mindestens zwei virtuelle Computer. Diese virtuellen Computer wurden in einem speziellen, von Ihnen angegebenen Subnetz bereitgestellt: dem sogenannten _Gatewaysubnetz_. Sie enthalten Routingtabellen für Verbindungen mit anderen Netzwerken sowie spezifische Gatewaydienste. Diese virtuellen Computer und das Gatewaysubnetz ähneln einem gehärteten Netzwerkgerät. Sie müssen diese virtuellen Computer nicht direkt konfigurieren und sollten im Gatewaysubnetz keine zusätzlichen Ressourcen bereitstellen.
 
 Die Erstellung eines Gateways für virtuelle Netzwerke kann eine Weile dauern. Berücksichtigen Sie dies bei Ihrer Planung. Wenn Sie ein Gateway für virtuelle Netzwerke erstellen, werden im Rahmen des Bereitstellungsprozesses die virtuellen Gatewaycomputer generiert und im Gatewaysubnetz bereitgestellt. Diese virtuellen Computer verfügen über die Einstellungen, die Sie für das Gateway konfigurieren.
 
@@ -24,7 +24,7 @@ Kommen wir zu den Faktoren, die bei der Planung Ihres VPN-Gateways zu berücksic
 
 ## <a name="plan-a-vpn-gateway"></a>Planen eines VPN-Gateways
 
-Bei der Planung eines VPN-Gateways sind drei Architekturen zu berücksichtigen:
+Bei der Planung eines VPN Gateways sind drei Architekturen zu berücksichtigen:
 
 - Point-to-Site über das Internet
 - Site-to-Site über das Internet
@@ -93,7 +93,7 @@ Berücksichtigen Sie die folgenden Faktoren, wenn Sie Ihre VPN-Gateways entwerfe
 
     Es dürfen nicht zwei Hosts mit der gleichen IP-Adresse an unterschiedlichen Standorten vorhanden sein, da es in diesem Fall nicht möglich ist, Datenverkehr zwischen diesen beiden Hosts weiterzuleiten und eine Netzwerk-zu-Netzwerk-Verbindung herzustellen.
 
-- VPN-Gateways benötigen Sie ein Gatewaysubnetz namens **GatewaySubnet**
+- VPN-Gateways benötigen ein Gatewaysubnetz namens **GatewaySubnet**
 
     Das Gateway muss diesen Namen besitzen, da es sonst nicht funktioniert. Außerdem darf es keine anderen Ressourcen enthalten.
 

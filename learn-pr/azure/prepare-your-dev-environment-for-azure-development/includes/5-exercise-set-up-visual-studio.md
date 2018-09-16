@@ -1,4 +1,4 @@
-In dieser Einheit installieren Sie Visual Studio auf Ihrem Windows- oder macOS-Computer. Unter Windows muss die Workload „Azure-Entwicklung“ installiert werden. In Visual Studio für Mac können Sie durch den integrierten Workflow „Verbundene Dienste“ Apps für Azure App Service erstellen. Am Ende der Einheit können Sie mit dem Erstellen von Anwendungen und deren Veröffentlichung in Azure beginnen.
+In dieser Einheit installieren Sie Visual Studio auf Ihrem Windows- oder macOS-Computer. Unter Windows muss die Workload „Azure-Entwicklung“ installiert werden. Mit Visual Studio für Mac können Sie durch den integrierten Workflow „Verbundene Dienste“ Apps für Azure App Service erstellen. Am Ende der Einheit können Sie mit dem Erstellen von Anwendungen und deren Veröffentlichung in Azure beginnen.
 
 ## <a name="exercise-steps"></a>Schritte
 

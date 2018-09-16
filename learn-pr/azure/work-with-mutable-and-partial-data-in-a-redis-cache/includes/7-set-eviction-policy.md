@@ -1,15 +1,15 @@
-Here you'll add an eviction policy to our Azure Redis Cache.
+Hier fügen Sie dem Azure Redis Cache eine Entfernungsrichtlinie hinzu.
 
-## Set an eviction policy
+## <a name="set-an-eviction-policy"></a>Festlegen einer Entfernungsrichtlinie
 
-To set an eviction policy in Azure, we simply use a drop-down menu in the portal.
+Um eine Entfernungsrichtlinie in Azure festzulegen, verwenden wir einfach ein Dropdownmenü im Portal.
 
-1. Open your Redis Cache in the Azure portal.
+1. Öffnen Sie Ihren Redis Cache im Azure-Portal.
 
-1. Select the **Advanced settings** blade.
+1. Wählen Sie das Blatt **Erweiterte Einstellungen** aus.
 
-1. Use the **maxmemory-policy** drop-down menu and select **allkeys-random**.
+1. Verwenden Sie das **maxmemory-policy**-Dropdownmenü, und wählen Sie **allkeys-random** aus.
 
-1. Click **Save**. 
+1. Klicken Sie auf **Speichern**. 
 
-At this point, if you run out of memory, Redis will select a random key to delete to make room for your new data.
+Wenn Ihnen nun der Speicherplatz ausgeht, wählt Redis einen zufälligen Schlüssel zum Löschen aus, um Platz für Ihre neuen Daten zu schaffen.

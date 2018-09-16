@@ -1,10 +1,9 @@
-Great work! With your first virtual machine under your belt, you now have a sense of how Azure works and how easy it is to bring up a system, configure some software, and tear everything down when it's no longer needed.
+Gut gemacht! Mit Ihrem ersten virtuellen Computer im Gepäck haben Sie jetzt ein Gefühl dafür bekommen, wie Azure funktioniert und wie einfach es ist, ein System aufzusetzen, Software zu konfigurieren und alles zu bereinigen, wenn es nicht mehr benötigt wird.
 
-Azure provides services that can help transform the way your organization delivers new features to your users in ways you simply can't do without the power of the cloud.
+Azure stellt Dienste zur Verfügung, die dazu beitragen können, die Art und Weise, wie Ihr Unternehmen Benutzern neue Features zur Verfügung stellt, so zu verändern, wie es ohne die Leistungsfähigkeit der Cloud einfach nicht möglich wäre.
 
-## Continue your Azure journey
+## <a name="continue-your-azure-journey"></a>Setzen Sie Ihre Azure-Reise fort
 
-Microsoft Learn provides learning paths based on your role and interests.
+Microsoft Learn bietet Azure-Lernpfade basierend auf Ihrer Rolle und Ihren Interessen.
 
-A great next step is to check out the
-[Cloud foundations](/learn/paths/cloud-foundations/) learning path. You'll learn the fundamental concepts behind cloud computing and how Azure services such as compute, storage, networking, and security can help you unlock the power of the cloud and create that next great breakthrough idea.
+Ein guter nächster Schritt ist die Beschäftigung mit dem Lernpfad [Grundlagen zur Cloud](/learn/paths/cloud-foundations/). Sie lernen die grundlegenden Konzepte hinter Cloud Computing kennen und wie Azure-Dienste wie Compute, Storage, Netzwerk und Sicherheit Ihnen helfen können, die Leistungsfähigkeit der Cloud zu erschließen und die nächste große bahnbrechende Idee zu entwickeln.

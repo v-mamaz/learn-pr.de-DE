@@ -1,12 +1,12 @@
-Suppose you run a social networking site for professionals. You're allowing your users to upload their headshot images to be posted on their profile. To reduce workload on the web server, you want to create a serverless backend using Azure Functions to process this data. You want to create an image thumbnail and then save it off to permanent storage. 
+Angenommen, Sie betreiben ein soziales Netzwerk für Berufstätige. Sie erlauben Ihren Benutzern, ihre Portraitbilder hochzuladen, um sie in ihrem Profil zu veröffentlichen. Um die Workload auf dem Webserver zu verringern, möchten Sie ein serverloses Back-End mit Azure Functions zur Verarbeitung dieser Daten erstellen. Sie möchten eine Miniaturansicht des Bilds erstellen und diese dann im permanenten Speicher speichern. 
 
-The power of Azure Functions comes largely from the integrations if offers with a range of data sources and services. These integrations are defined with bindings. Using bindings, developers interact with other data sources and services without worrying about how the data flows to and from their function.
+Die Leistungsfähigkeit von Azure Functions beruht weitgehend auf der möglichen Integration in eine Vielzahl von Datenquellen und Diensten. Diese Integrationen werden mit Bindungen definiert. Mithilfe von Bindungen interagieren Entwickler mit anderen Datenquellen und Diensten, ohne sich Gedanken darüber machen zu müssen, wie die Daten in ihre Funktion und aus ihrer Funktion fließen.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul wird Folgendes thematisiert:
 
-- Explore what types of data sources can be accessed through bindings
-- Read data from Azure Cosmos DB using Azure Functions
-- Store data in Azure Cosmos DB using Azure Functions
-- Send messages to Azure Queue Storage using Azure Functions
+- Untersuchen, auf welche Typen von Datenquellen über Bindungen zugegriffen werden kann
+- Lesen von Daten aus Azure Cosmos DB mithilfe von Azure Functions
+- Speichern von Daten in Azure Cosmos DB mithilfe von Azure Functions
+- Senden von Nachrichten an Azure Queue Storage mit Azure Functions

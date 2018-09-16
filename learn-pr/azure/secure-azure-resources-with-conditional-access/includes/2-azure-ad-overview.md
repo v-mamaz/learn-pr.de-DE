@@ -18,4 +18,4 @@ Eine Richtlinie für bedingten Zugriff setzt sich wie folgt zusammen:
 
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser Einheit haben Sie die Grundlagen von Azure AD kennengelernt und erfahren, welche Features zum Sichern des Zugriffs auf Anwendungen zur Verfügung stehen. Nun, da Sie die Grundlagen kennen, können wir mit den ersten Schritten mit Azure AD beginnen. Der Rest dieses Moduls enthält praktische Übungen zum Aktivieren und Testen von Multi-Factor Authentication mithilfe des bedingten Zugriffs.
+In dieser Einheit haben Sie die Grundlagen von Azure AD kennengelernt und erfahren, welche Features zum Sichern des Zugriffs auf Anwendungen zur Verfügung stehen. Da Sie nun die Grundlagen kennen, können wir mit den ersten Schritten mit Azure AD beginnen. Der Rest dieses Moduls enthält praktische Übungen zum Aktivieren und Testen von Multi-Factor Authentication mithilfe des bedingten Zugriffs.

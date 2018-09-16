@@ -1,42 +1,37 @@
-In order to connect to a data source we have to configure an *input binding*. This binding will make it possible to write minimal code to create a message. You don't have to write code for tasks such as opening a storage connection. The Azure Functions runtime and binding take care of those tasks for you.
+Um eine Verbindung mit einer Datenquelle herzustellen, müssen wir eine *Eingabebindung* konfigurieren. Durch diese Bindung können Sie mit minimalem Programmieraufwand eine Nachricht erstellen. Sie müssen keinen Code für Aufgaben wie das Öffnen einer Speicherverbindung schreiben. Die Azure Functions-Laufzeit und -Bindung nehmen Ihnen diese Aufgaben ab.
 
-## Input binding types
+## <a name="input-binding-types"></a>Eingabebindungstypen
 
-There are multiple types of input, however not all types support both input and output. You'll use them anytime you want to ingest data of that type. Here, we'll look at the types that support input bindings and when to use them.
+Es gibt mehrere Eingabetypen, jedoch nicht alle Typen unterstützen sowohl Ein- als auch Ausgabe. Sie können sie immer dann verwenden, wenn Sie Daten dieses Typs erfassen möchten. Hier untersuchen wir die Typen, die Eingabebindungen unterstützen, und die Frage, wann sie verwendet werden.
 
-- **Blob Storage**
-    The blob storage bindings allow you to read from a blob.
+- **Blobspeicher**: Die Blobspeicherbindungen ermöglichen es Ihnen, aus einem Blob zu lesen.
 
-- **Cosmos DB**
-    The Azure Cosmos DB input binding uses the SQL API to retrieve one or more Azure Cosmos DB documents and passes them to the input parameter of the function. The document ID or query parameters can be determined based on the trigger that invokes the function.
+- **Azure Cosmos DB**: Die Azure Cosmos DB-Eingabebindung verwendet die SQL-API, um mindestens ein Azure Cosmos DB-Dokument abzurufen und an den Eingabeparameter der Funktion zu übergeben. Die Dokument-ID oder die Abfrageparameter können basierend auf dem Trigger, der die Funktion aufruft, ermittelt werden.
 
-- **Microsoft Graph**
-    Microsoft Graph input bindings allow you to read files from OneDrive, read data from Excel, and get auth tokens so you can interact with any Microsoft Graph API.
-- **Mobile Apps**
-    The Mobile Apps input binding loads a record from a mobile table endpoint and passes it into your function.
+- **Microsoft Graph**: Microsoft Graph-Eingabebindungen ermöglichen es Ihnen, Dateien aus OneDrive und Daten aus Excel zu lesen und Authentifizierungstoken abzurufen, damit Sie mit jeder Microsoft Graph-API interagieren können.
+- **Mobile Apps**: Die Mobile Apps-Eingabebindung lädt einen Datensatz aus einem mobilen Tabellenendpunkt und übergibt ihn an die Funktion.
 
-- **Table storage**
-    You can read data and work with Azure Table storage.
+- **Table Storage**: Sie können Daten lesen und mit Azure Table Storage arbeiten.
 
-## How to create an input binding?
+## <a name="how-to-create-an-input-binding"></a>Wie wird eine Eingabebindung erstellt?
 
-In order to define a binding an input, you must define the `direction` as `in`.
-The parameters for each type of binding may differ, those are well documented in [Microsoft's Documentation](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings#supported-bindings?azure-portal=true)
+Um eine Bindung als eine Eingabe zu definieren, müssen Sie die `direction` als `in` definieren.
+Die Parameter für jeden Typ von Bindung können unterschiedlich sein. Diese sind in der [Dokumentation von Microsoft](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings#supported-bindings?azure-portal=true) gut dokumentiert.
 
-## What is a binding expression?
+## <a name="what-is-a-binding-expression"></a>Was ist ein Bindungsausdruck?
 
-A binding expression is specialized text in function.json, function parameters, or code that is evaluated when the function is invoked to yield a value. For example, you can use a binding expression to get the current time or retrieve a value from app settings.
+Ein Bindungsausdruck stellt spezialisierten Text in „function.json“, Funktionsparameter oder Code dar. Diese Elemente werden beim Aufruf der Funktion ausgewertet, um einen Wert zu erhalten. Beispielsweise können Sie einen Bindungsausdruck verwenden, um die aktuelle Uhrzeit oder einen Wert aus den App-Einstellungen abzurufen.
 
-### Types of binding expressions
+### <a name="types-of-binding-expressions"></a>Typen von Bindungsausdrücken
 
-- App settings
-- Trigger file name
-- Trigger metadata
-- JSON payloads
-- New GUID
-- Current date and time
-- Binding expressions
+- App-Einstellungen
+- Name der Triggerdatei
+- Metadaten für Trigger
+- JSON-Nutzlasten
+- Neue GUID
+- Aktuelles Datum und Uhrzeit
+- Bindungsausdrücke
 
-Most expressions are identified by wrapping them in curly braces. However, app setting binding expressions are identified differently from other binding expressions: they are wrapped in percent signs rather than curly braces. For example if the blob output binding path is `%Environment%/newblob.txt` and the Environment app setting value is Development, a blob will be created in the Development container.
+Die meisten Ausdrücke werden identifiziert, indem sie in geschweifte Klammern eingeschlossen werden. Bindungsausdrücke für App-Einstellungen werden jedoch anders dargestellt als andere Bindungsausdrücke: Sie werden in Prozentzeichen anstatt in geschweifte Klammern eingeschlossen. Wenn der Pfad der Blobausgabebindung z.B. `%Environment%/newblob.txt` ist und die App-Einstellung „Environment“ den Wert „Development“ aufweist, wird ein Blob im Container „Development“ erstellt.
 
-Input bindings allow us to connect our function to a data source. There are several types of data sources we can connect to and the parameters for each vary. We can use binding expressions in the function.json, function parameters or code, to resolve values from various sources.
+Über Eingabebindungen können wir unsere-Funktion mit einer Datenquelle verbinden. Es gibt verschiedene Typen von Datenquellen, mit denen wir eine Verbindung herstellen können, und die Parameter für jeden einzelnen Typ sind unterschiedlich. Wir können Bindungsausdrücke in der Datei „function.json“, in Funktionsparametern oder im Code verwenden, um Werte aus verschiedenen Quellen aufzulösen.

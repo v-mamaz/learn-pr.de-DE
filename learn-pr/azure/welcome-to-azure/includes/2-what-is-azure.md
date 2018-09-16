@@ -1,26 +1,26 @@
-Azure is Microsoft's cloud computing platform. But before we go further, let's define briefly what cloud computing is.
+Azure ist die Plattform von Microsoft für Cloud Computing. Aber bevor wir fortfahren, möchten wir kurz definieren, was Cloud Computing ist.
 
-## What is cloud computing?
+## <a name="what-is-cloud-computing"></a>Was ist Cloud Computing?
 
-Cloud computing is the delivery of computing services over the Internet using a **pay-as-you-go** pricing model. Put another way, it's a way to rent compute power and storage from someone else's data center.
+Cloud Computing ist die Bereitstellung von Computingdiensten über das Internet mit einem **nutzungsbasierten** Preismodell. Anders ausgedrückt, handelt es sich um eine Möglichkeit, Computeleistung und Speicher aus dem Datencenter eines Drittanbieters zu mieten.
 
-Instead of maintaining CPUs and storage in your data center, you rent them for the time that you need them. You can treat cloud resources like you would your resources in your own data center. When you're done using them, you just give them back. You're billed only for what you use.
+Anstatt CPUs und Speicher in Ihrem Datencenter zu verwalten, mieten Sie diese Ressourcen für die Zeit, die Sie sie benötigen. Sie können Cloudressourcen wie Ihre Ressourcen in Ihrem eigenen Datacenter behandeln. Wenn Sie mit der Verwendung fertig sind, geben Sie sie einfach zurück. Sie zahlen nur für wirklich genutzte Ressourcen.
 
-While this is all great, the real value of the cloud is that it enables you to quickly solve your toughest business challenges and bring cutting edge solutions to your users.
+Obwohl dies alles großartig ist, besteht der wahre Wert der Cloud darin, dass sie es Ihnen ermöglicht, Ihre schwierigsten geschäftlichen Herausforderungen schnell zu lösen und Ihren Benutzern innovative Lösungen anzubieten.
 
-## What can I do on Azure?
+## <a name="what-can-i-do-on-azure"></a>Was kann ich in Azure machen?
 
-Azure provides over 100 services that enable you to do everything from running your existing applications on virtual machines to exploring new software paradigms such as intelligent bots and mixed reality.
+Azure bietet mehr als 100 Dienste, mit denen Sie alles machen können: vom Ausführen Ihrer vorhandenen Anwendungen auf virtuellen Computern bis zum Untersuchen neuer Softwaremodelle wie intelligenter Bots und Mixed Reality.
 
-Many teams start exploring the cloud by moving their existing applications to virtual machines that run in Azure. While migrating your existing apps to VMs is a great start, the cloud is more than just "a different place to run your VMs".
+Viele Teams beginnen mit der Erkundung der Cloud, indem sie ihre vorhandenen Anwendungen auf virtuelle Computer verschieben, die in Azure ausgeführt werden. Während die Migration Ihrer vorhandenen Apps auf virtuelle Computer ein guter Anfang ist, ist die Cloud mehr als nur „ein anderer Ort, um Ihre virtuellen Computer auszuführen“.
 
-For example, Azure provides AI and machine-learning services that can naturally communicate with your users through vision, hearing, and speech. It also provides storage solutions that dynamically grow to accommodate massive amounts of data. Azure services enable solutions that are simply not feasible without the power of the cloud.
+Azure stellt z.B. Dienste für KI und Machine Learning bereit, die durch Sehen, Hören und Sprechen auf natürliche Weise mit Ihren Benutzern kommunizieren können. Darüber hinaus bietet Azure Speicherlösungen, die dynamisch wachsen, um große Datenmengen bewältigen zu können. Azure-Dienste ermöglichen Lösungen, die ohne die Leistungsfähigkeit der Cloud einfach nicht realisierbar sind.
 
 > [!TIP]
-> Have you ever attended a hackathon? A hackathon is an event where people from all disciplines get together and use technology to tackle tough business problems. Rather than laying cable and racking servers, you can use Azure as an efficient and low-cost way to let your team explore new ideas. Thousands of innovations are driven by experimentation on Azure. Later, be sure to check the case study discussing how [Study123 expanded learning from school to anywhere](https://microsoft.github.io/techcasestudies/azure%20functions/2017/07/19/Study123AzureFunctions.html) with Azure Functions and Media Services.
+> Haben Sie jemals an einem Hackathon teilgenommen? Ein Hackathon ist eine Veranstaltung, bei der sich Menschen aller Disziplinen treffen und mit Hilfe von Technologien schwierige Geschäftsprobleme lösen. Anstatt Kabel zu verlegen und Server in Racks einzubauen, können Sie Azure als effizienten und kostengünstigen Weg nutzen, um Ihr Team neue Ideen entdecken zu lassen. Tausende von Innovationen werden durch das Experimentieren in Azure unterstützt. Später sollten Sie sich die Fallstudie ansehen, in der besprochen wird, wie [Study123 das Lernen von der Schule auf einen beliebigen Ort ausgedehnt hat](https://microsoft.github.io/techcasestudies/azure%20functions/2017/07/19/Study123AzureFunctions.html) (mit Azure Functions und Media Services).
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-Cloud computing enables you to rent compute power and storage instead of buying physical assets such as CPUs and storage.
+Cloud Computing ermöglicht es Ihnen, Computeleistung und Speicher zu mieten, anstatt physische Ressourcen wie CPUs und Speicher zu kaufen.
 
-Azure is Microsoft's cloud computing platform, and it provides many kinds of services that go well beyond what you can do with commodity hardware. These services range from cost-efficient virtual machines and storage that you manage to complete software solutions that we host and manage for you.
+Azure ist die Cloud Computing-Plattform von Microsoft und bietet viele Arten von Diensten, die weit über das hinausgehen, was Sie mit herkömmlicher Hardware erreichen können. Diese Dienste reichen von kostengünstigen virtuellen Computern und Speicher, die bzw. den Sie verwalten, bis hin zu vollständigen Softwarelösungen, die wir für Sie hosten und verwalten.

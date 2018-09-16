@@ -10,9 +10,9 @@ Da Sie wissen, dass Ihre Benutzer sich anmelden und über das MyApps-Portal auf 
 
 1. Navigieren Sie zu https://myapps.microsoft.com.
 
-1. Melden Sie sich mit dem Benutzerkonto an, das in Einheit 2 erstellt wurde.
+1. Melden Sie sich mit dem Benutzerkonto an, das in Einheit 3 erstellt wurde.
 
-   * Beachten Sie, dass Sie ohne Multi-Factor Authentication beim Portal angemeldet sind.
+   * Beachten Sie, dass Sie ohne Multi-Factor Authentication am Portal angemeldet sind.
 
 1. Navigieren Sie im gleichen Browserfenster zu https://portal.azure.com.
 

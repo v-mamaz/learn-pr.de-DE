@@ -1,4 +1,4 @@
-Hochverfügbarkeit (High Availability, HA) stellt sicher, dass Ihre Architektur Fehler behandeln kann. Stellen Sie sich vor, Sie sind für ein System verantwortlich, das immer voll funktionsfähig sein muss. Fehler können und werden auftreten. Wie also stellen Sie sicher, dass Ihr System online bleiben kann, wenn etwas schief geht? Wie gehen Sie mit Wartungsereignissen um?
+Hochverfügbarkeit (High Availability, HA) stellt sicher, dass Ihre Architektur Fehler behandeln kann. Stellen Sie sich vor, Sie sind für ein System verantwortlich, das immer voll funktionsfähig sein muss. Fehler können und werden auftreten. Wie also stellen Sie sicher, dass Ihr System online bleiben kann, wenn etwas schief geht? Wie gehen Sie mit Wartungsereignissen um? 
 
 Hier können Sie sich über Hochverfügbarkeit informieren, die Anforderungen an die Hochverfügbarkeit von Anwendungen auswerten und erfahren, wie die Azure-Plattform Hochverfügbarkeit bietet und Lösungen zur Erreichung Ihrer Verfügbarkeitsziele bereitstellt.
 
@@ -12,7 +12,7 @@ Die Hochverfügbarkeit eines Diensts erfordert in der Regel eine hohe Verfügbar
 
 ## <a name="evaluate-high-availability-for-your-architecture"></a>Auswerten von Hochverfügbarkeit für Ihre Architektur
 
-Es gibt drei Schritte für die Auswertung einer Anwendung für Hochverfügbarkeit:
+Es gibt drei Schritte für die Auswertung einer Anwendung für Hochverfügbarkeit: 
 
 1. Bestimmen der Vereinbarung zum Servicelevel Ihrer Anwendung
 1. Auswerten der HA-Funktionen der Anwendung
@@ -81,10 +81,10 @@ Azure besitzt drei Lastenausgleichstechnologie-Dienste, die sich in ihren Mögli
 
 Eine dieser Technologien oder eine Kombination aller drei Azure-Lastausgleichstechnologien kann sicherstellen, dass Sie über die notwendigen Optionen verfügen, um eine hochverfügbare Lösung zur Weiterleitung des Netzwerkdatenverkehrs durch Ihre Anwendung zu entwerfen.
 
-![Screenshot](../media-draft/AzLBOptions.png)
+![Optionen des Azure-Lastenausgleichs](../media-draft/AzLBOptions.png)
 
 ### <a name="paas-ha-capabilities"></a>PaaS-HA-Funktionen
 
 PaaS-Dienste verfügen über integrierte Hochverfügbarkeit. Dienste wie Azure SQL-Datenbank, Azure App Service und Azure Service Bus umfassen Funktionen für Hochverfügbarkeit und stellen sicher, dass Fehler einer einzelnen Komponente des Diensts für Ihre Anwendung unkritisch sind. Die Verwendung von PaaS-Diensten ist eine der besten Möglichkeiten, um sicherzustellen, dass Ihre Architektur hochverfügbar ist.
 
-Wenn Sie für Hochverfügbarkeit planen, müssen Sie die SLA verstehen, die Sie Ihren Kunden zusichern. Werten Sie dann sowohl die HA-Funktionen Ihrer Anwendung als auch die HA-Funktionen und SLAs abhängiger Systeme aus. Sobald diese bekannt sind, verwenden Sie Azure-Funktionen wie Verfügbarkeitsgruppen, Verfügbarkeitszonen und verschiedene Lastausgleichstechnologien, um Ihrer Anwendung HA-Funktionen hinzuzufügen. Alle PaaS-Dienste, für deren Verwendung Sie sich entscheiden, verfügen über integrierte HA-Funktionen.
+Wenn Sie für Hochverfügbarkeit planen, müssen Sie die SLA verstehen, die Sie Ihren Kunden zusichern. Werten Sie dann sowohl die HA-Funktionen Ihrer Anwendung als auch die HA-Funktionen und SLAs abhängiger Systeme aus. Nachdem diese bekannt sind, verwenden Sie Azure-Funktionen wie Verfügbarkeitsgruppen, Verfügbarkeitszonen und verschiedene Lastausgleichstechnologien, um Ihrer Anwendung HA-Funktionen hinzuzufügen. Alle PaaS-Dienste, für deren Verwendung Sie sich entscheiden, verfügen über integrierte HA-Funktionen.
