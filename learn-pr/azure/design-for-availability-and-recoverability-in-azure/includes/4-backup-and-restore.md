@@ -37,7 +37,7 @@ Für vier unterschiedliche Produkte und Dienste kann Azure Backup zum Erstellen 
 * **Azure Backup Server** ähnelt Data Protection Manager, wird aber im Rahmen eines Azure-Abonnements lizenziert und benötigt keine System Center-Lizenz. Azure Backup Server unterstützt die gleichen Funktionen wie Data Protection Manager, mit Ausnahme der lokalen Bandsicherung und Integration in andere System Center-Produkte.
 * **Azure IaaS-VM-Sicherung** ist ein nutzungsbereites Sicherungs- und Wiederherstellungsfeature von Azure Virtual Machines. Für die VM-Sicherung werden Sicherungen für virtuelle Windows- und Linux-Computer ein Mal pro Tag unterstützt. Sie unterstützt die Wiederherstellung einzelner Dateien, vollständiger Datenträger und vollständiger virtueller Computer und kann auch anwendungskonsistente Sicherungen ausführen. Einzelne Anwendungen können für Sicherungsvorgänge aktiviert werden und ihre Dateisystemressourcen in einen konsistenten Zustand versetzen, bevor die Momentaufnahme erstellt wird.
 
-![Azure Backup](../media-draft/azure-backup.png)
+![Azure Backup](../media/azure-backup.png)
 
 Azure Backup kann den Nutzen erhöhen und einen Beitrag zur Sicherungs- und Wiederherstellungsstrategie für IaaS- und lokale Anwendungen nahezu jeder Größe und Form leisten.
 

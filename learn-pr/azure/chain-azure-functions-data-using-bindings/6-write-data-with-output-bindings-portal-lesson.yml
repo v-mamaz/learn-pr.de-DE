@@ -8,12 +8,12 @@ metadata:
   ms.author: anbyrne
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 4f3035c244f49ff431456e4f36862aba5a649c5c
-  ms.sourcegitcommit: 4605f6af0037078761ef50cac6879711c7319635
+  ms.openlocfilehash: 8f05eb4dd3cbe9119bc09f67f09d70ddae85feb8
+  ms.sourcegitcommit: b7b4489eb7352bcc722ed6c2ff27b70dd212e9c5
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/11/2018
-  ms.locfileid: "44350058"
+  ms.lasthandoff: 09/14/2018
+  ms.locfileid: "45620847"
 title: Schreiben von Daten mit Ausgabebindungen
-durationInMinutes: 10
+durationInMinutes: 3
 content: '[!include[](includes/6-write-data-with-output-bindings-portal-lesson.md)]'

@@ -15,6 +15,8 @@ Der Advisor stellt Empfehlungen zu Kosten in den folgenden Bereichen bereit:
 1. **Ändern der Größe oder Herunterfahren von wenig genutzten virtuellen Computern.**
     Damit wird die Verwendung Ihres virtuellen Computers 14 Tage lang überwacht, und es werden virtuelle Computer mit geringer Auslastung ermittelt. Virtuelle Computer, deren durchschnittliche CPU-Auslastung höchstens 5 Prozent und deren durchschnittliche Netzwerkauslastung höchstens 7 MB über einen Zeitraum von mindestens vier Tagen beträgt, gelten als virtuelle Computer mit unterdurchschnittlicher Auslastung. Der Schwellenwert für die durchschnittliche CPU-Auslastung ist um bis zu 20 Prozent anpassbar. Durch die Ermittlung dieser virtuellen Computer können Sie deren Größe an einen kleineren Instanztyp anpassen, wodurch Sie Ihre Kosten reduzieren.
 
+[!include[](../../../includes/azure-sandbox-activate.md)]
+
 Sehen wir uns an, wo Sie Azure Advisor im Portal finden. Melden Sie sich zuerst am [Azure-Portal](https://portal.azure.com?azure-portal=true) an. Klicken Sie auf **Alle Dienste**. In der Kategorie **Verwaltungstools** wird daraufhin **Advisor** angezeigt. Sie können auch `Advisor` im Filterfeld eingeben, um nur nach diesem Dienst zu filtern.
 
 Klicken Sie auf „Advisor“. Sie werden dann zum Advisor-Dashboard weitergeleitet, auf dem alle Empfehlungen für Ihr Abonnement angezeigt werden. Für jede Empfehlungskategorie wird ein Feld angezeigt.
