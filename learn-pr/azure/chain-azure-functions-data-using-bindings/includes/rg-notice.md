@@ -1,2 +1,0 @@
-> [!TIP]
-> In diesem Modul werden wir Azure-Ressourcen erstellen. Es wird empfohlen, diese Ressourcen in einer Ressourcengruppe zu platzieren, damit Sie sie später leicht entfernen können. Wie Sie sehen werden, empfehlen wir, für dieses Modul eine Ressourcengruppe mit dem Namen [!INCLUDE [resource-group-name](./rg-name.md)] zu erstellen.  Später, wenn Sie bereit sind, diese Ressourcen zu entfernen, können Sie dem Abschnitt [Ressourcen bereinigen](../8-summary.yml##clean-up-resources) am Ende des Moduls folgen.
