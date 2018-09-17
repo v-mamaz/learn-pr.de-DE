@@ -2,22 +2,30 @@
 uid: learn.secure-your-azure-virtual-machine-disks
 metadata:
   title: Schützen Ihrer Azure VM-Datenträger
-  description: Erkunden Sie die Optionen in Azure zum Verschlüsseln von ruhenden Daten, und vergleichen Sie Azure Disk Encryption (ADE) mit der Speicherdienstverschlüsselung (Storage Service Encryption, SSE). Verwenden Sie die Azure-Portal- und PowerShell-Befehle und -Skripts zum Verschlüsseln von Betriebssystem- und Daten-Datenträgern auf vorhandenen VMs. Verwenden Sie ARM-Vorlagen (Azure Resource Manager), um sicherzustellen, dass die neue bereitgestellten VMs automatisch verschlüsselt werden.
+  description: Erkunden Sie die Optionen in Azure zum Verschlüsseln von ruhenden Daten, und vergleichen Sie Azure Disk Encryption (ADE) mit der Speicherdienstverschlüsselung (Storage Service Encryption, SSE). Verwenden Sie die Azure-Portal- und PowerShell-Befehle und -Skripts zum Verschlüsseln von (Betriebssystem-)Datenträgern auf vorhandenen VMs. Verwenden Sie Azure Resource Manager-Vorlagen, um sicherzustellen, dass die neu bereitgestellten VMs automatisch verschlüsselt werden.
   ms.date: 09/24/2018
-  ms.openlocfilehash: a99f3a48f6f464da0925da7b970784df24a5511e
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 15f2470a3447740cdf8e774c449baecfd88f4709
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43827418"
-title: Schützen Ihrer Azure VM-Datenträger
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44240881"
+title: Schützen Ihrer Azure-VM-Datenträger
 summary: Verwenden Sie Azure Disk Encryption (ADE) zum Verschlüsseln von Betriebssystem- und Daten-Datenträgern auf vorhandenen und neuen VMs.
 abstract: >
   In diesem Modul wird Folgendes thematisiert:
-    - Bestimmen der optimalen Verschlüsselungsmethode für Ihre VM
-    - Verschlüsseln vorhandener VM-Datenträger mithilfe des Azure-Portals
-    - Verschlüsseln vorhandener VM-Datenträger mit PowerShell
-    - Bearbeiten von ARM-Vorlagen, um die Datenträgerverschlüsselung für neue VMs zu automatisieren
+
+  - Bestimmen der optimalen Verschlüsselungsmethode für Ihre VM
+
+  - Verschlüsseln vorhandener VM-Datenträger mithilfe des Azure-Portals
+
+  - Verschlüsseln vorhandener VM-Datenträger mit PowerShell
+
+  - Bearbeiten von Azure Resource Manager-Vorlagen, um die Datenträgerverschlüsselung für neue VMs zu automatisieren
 prerequisites: Keine
 iconUrl: http://via.placeholder.com/120x120
 levels:
