@@ -10,6 +10,8 @@ Sie entscheiden sich für eine Implementierung, die hochgeladene Inhalte in eine
 
 ## <a name="use-the-azure-portal-to-create-a-storage-account"></a>Erstellen eines Speicherkontos über das Azure-Portal
 
+[!include[](../../../includes/azure-sandbox-activate.md)]
+
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/?azure-portal=true)an.
 
 1. Klicken Sie oben links im Azure-Portal auf **Ressource erstellen**.
@@ -21,6 +23,8 @@ Sie entscheiden sich für eine Implementierung, die hochgeladene Inhalte in eine
     ![Screenshot des Azure-Portals mit dem Blatt „Ressourcengruppe erstellen“, der Kategorie „Storage“ und der hervorgehobenen Option „Speicherkonto“](..\media\5-portal-storage-select.png)
 
 ### <a name="configure-the-basic-options"></a>Konfigurieren der grundlegenden Optionen
+
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
 Führen Sie unter **PROJEKTDETAILS** die folgenden Aktionen aus:
 
@@ -49,7 +53,7 @@ Führen Sie unter **INSTANZDETAILS** die folgenden Aktionen aus:
    
 Auf dem folgenden Screenshot werden alle vorgenommenen Einstellungen für die Registerkarte **Basics** (Grundeinstellungen) angezeigt. Beachten Sie, dass für die Ressourcengruppe, das Abonnement und den Namen unterschiedliche Werte festgelegt werden.
 
-![Screenshot des Blatts „Speicherkonto erstellen“ mit ausgewählter Registerkarte **Basics** (Grundeinstellungen)](../media-drafts/5-create-storage-account-basics.png)
+![Screenshot des Blatts „Speicherkonto erstellen“ mit ausgewählter Registerkarte **Basics** (Grundeinstellungen)](../media/5-create-storage-account-basics.png)
 
 ### <a name="configure-the-advanced-options"></a>Konfigurieren der erweiterten Optionen
 
@@ -66,7 +70,7 @@ Auf dem folgenden Screenshot werden alle vorgenommenen Einstellungen für die Re
 
 Auf dem folgenden Screenshot werden alle vorgenommenen Einstellungen für die Registerkarte **Erweitert** angezeigt.
 
-![Screenshot des Blatts „Speicherkonto erstellen“ mit ausgewählter Registerkarte **Erweitert**](../media-drafts/5-create-storage-account-advanced.png)
+![Screenshot des Blatts „Speicherkonto erstellen“ mit ausgewählter Registerkarte **Erweitert**](../media/5-create-storage-account-advanced.png)
 
 ### <a name="create"></a>Erstellen
 
