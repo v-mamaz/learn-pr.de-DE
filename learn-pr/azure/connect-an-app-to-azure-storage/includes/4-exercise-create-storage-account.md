@@ -1,33 +1,33 @@
-Now that we have an app, we need an Azure storage account to work with. We created one using the Azure portal in the **Create an Azure storage account** module. Let's use the Azure CLI this time.
+Nachdem wir nun über eine App verfügen, benötigen wir ein Azure-Speicherkonto, mit dem wir arbeiten können. Im Modul **Erstellen eines Azure-Speicherkontos** haben wir ein Speicherkonto über das Azure-Portal erstellt. Diesmal verwenden wir die Azure-Befehlszeilenschnittstelle.
 
 <!-- Activate the sandbox -->
 [!include[](../../../includes/azure-sandbox-activate.md)]
 
-## Use the Azure CLI to create an Azure storage account
+## <a name="use-the-azure-cli-to-create-an-azure-storage-account"></a>Erstellen eines Azure-Speicherkontos mithilfe der Azure-Befehlszeilenschnittstelle
 
-We will use the `az storage account create` command to create a new storage account. It takes several parameters which we either need to supply (or should) to configure it the way we want.
+Wir verwenden den Befehl `az storage account create`, um ein neues Speicherkonto zu erstellen. Dieser Befehl verfügt über mehrere Parameter, die wir angeben müssen (oder sollten), um die gewünschte Konfiguration zu erhalten.
 
 > [!div class="mx-tableFixed"]
-> | Option | Description |
+> | Option | Beschreibung |
 > |--------|-------------|
-> | `--name` | A **Storage account name**. The name will be used to generate the public URL used to access the data in the account. It must be unique across all existing storage account names in Azure. It must be 3 to 24 characters long and can contain only lowercase letters and numbers. |
-> | `--resource-group` | Use <rgn>[Sandbox resource group name]</rgn> to place the storage account into the free sandbox. |
-> | `--location` | Select a location near you. |
-> | `--kind` | This determines the storage account _type_. Options include BlobStorage, Storage, and StorageV2. |
-> | `--sku` | This decides the storage account performance and replication model. Options include Premium_LRS, Standard_GRS, Standard_LRS, Standard_RAGRS, and Standard_ZRS. |
-> | `--access-tier` | The **Access tier** is only used for Blob storage, available options are Cool and Hot. The **Hot Access Tier** is ideal for frequently accessed data, and the **Cool Access Tier** is better for infrequently accessed data. Note that this only sets the _default_ value - when you create a Blob, you can set a different value for the data. |
+> | `--name` | Ein **Speicherkontoname**. Der Name wird zum Generieren der öffentlichen URL verwendet, über die auf die Daten im Konto zugegriffen wird. Der Speicherkontoname muss in Azure eindeutig sein. Er muss 3 bis 24 Zeichen lang sein und darf nur Kleinbuchstaben und Ziffern enthalten. |
+> | `--resource-group` | Verwenden Sie <rgn>[Name der Sandbox-Ressourcengruppe]</rgn>, um das Speicherkonto in der kostenlosen Sandbox zu platzieren. |
+> | `--location` | Wählen Sie einen Ort in Ihrer Nähe aus. |
+> | `--kind` | Diese Angabe bestimmt den _Typ_ des Speicherkontos. Mögliche Optionen sind unter anderem „BlobStorage“, „Storage“ und „StorageV2“. |
+> | `--sku` | Diese Angabe bestimmt die Leistung und das Replikationsmodell des Speicherkontos. Mögliche Optionen sind unter anderem „Premium_LRS“, „Standard_GRS“, „Standard_LRS“, „Standard_RAGRS“ und „Standard_ZRS“. |
+> | `--access-tier` | Die **Zugriffsebene** ist nur für Blob Storage relevant. Mögliche Optionen: „Kalte Ebene“ und „Heiße Ebene“. Die **heiße Zugriffsebene** ist ideal für häufig verwendete Daten. Die **kalte Zugriffsebene** eignet sich hingegen besser für selten genutzte Daten. Beachten Sie, dass dadurch nur der _Standardwert_ festgelegt wird: Bei der Bloberstellung können Sie einen anderen Wert für die Daten festlegen. |
     
-Use the above table to craft a command line in the Cloud Shell on the right to create the account.
-- Use a unique name, we recommend something like "photostore" with your initials and a random number. You will get an error if it's not unique.
-- Normally you would create a new resource group to hold your app resources, in this case use the Sandbox resource group.
-- Use "Standard_LRS" for the **sku**, this will use standard storage with local replication which is fine for this example.
-- Use "Cold" for the **Access Tier**.
+Erstellen Sie anhand der obigen Tabelle eine Befehlszeile in Cloud Shell auf der rechten Seite, um das Konto zu erstellen.
+- Verwenden Sie einen eindeutigen Namen – beispielsweise „photostore“ mit Ihren Initialen und einer Zufallszahl. Ist der Name nicht eindeutig, tritt ein Fehler auf.
+- Normalerweise wird eine neue Ressourcengruppe für die Ressourcen der einer erstellt. In diesem Fall verwenden wir jedoch die Sandbox-Ressourcengruppe.
+- Legen Sie die **SKU** auf „Standard_LRS“ fest, um Standardspeicher mit lokaler Replikation zu verwenden, was für dieses Beispiel vollkommen ausreicht.
+- Legen Sie die **Zugriffsebene** auf „Kalte Ebene“ fest.
 
-### Selecting a location
+### <a name="selecting-a-location"></a>Auswählen eines Standorts
 <!-- Resource selection -->
 [!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-### Example command
+### <a name="example-command"></a>Beispielbefehl
 
 ```bash
 az storage account create \
@@ -40,6 +40,6 @@ az storage account create \
 ```
 
 > [!TIP]
-> If you are interested in exploring the options for the storage account, make sure to go through the **Create an Azure storage account** where we go through them in depth.
+> Ausführlichere Informationen zu Speicherkontooptionen finden Sie bei Interesse unter **Erstellen eines Azure-Speicherkontos**.
 
-It will take a few minutes to deploy the account. While Azure is working on that, let's explore the APIs we'll use with this account.
+Die Bereitstellung des Kontos dauert einige Minuten. In der Zwischenzeit können wir uns die APIs ansehen, die mit diesem Konto verwendet werden.

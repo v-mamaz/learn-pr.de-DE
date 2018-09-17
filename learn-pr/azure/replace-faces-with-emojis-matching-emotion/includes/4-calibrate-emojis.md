@@ -1,33 +1,33 @@
-We can’t pass an image of the emoji to the Face API to get it’s emotion because, well because it’s not human. So for each emoji, I needed a human proxy, me.
+Wir können an die Gesichtserkennungs-API kein Bild des Emojis übergeben, um dessen Emotion zu ermitteln, da es sich dabei nicht um ein menschliches Gesicht handelt. Für jedes Emoji war also ein menschlicher Ersatz (ich) erforderlich.
 
-I took pictures of myself _accurately_ mimicking each emoji, and used the _emotional point_ for that image as the proxy for the emoji. To keep things interesting I also chose people from my team and associated them with emojis as well, like so:
+Ich habe daher Bilder von mir aufgenommen, auf denen ich jedes Emoji _exakt_ nachstelle, und habe den _emotionalen Punkt_ für dieses Bild als Ersatz für das Emoji verwendet. Darüber hinaus habe ich Mitglieder meines Teams ausgewählt und sie ebenfalls Emojis zugeordnet:
 
-![Team Moji](/media-drafts/team.jpg)
+![Emoji-Team](/media-drafts/team.jpg)
 
-For the emoji of love eyes (😍) I chose a picture of my wife ❤️. In memory of [Stephen Hawking](https://en.wikipedia.org/wiki/Stephen_Hawking) I picked a picture of him to represent 🤔.
+Für das Emoji mit den Herzaugen (😍) habe ich ein Bild von meiner Frau verwendet (❤️). Zur Darstellung von 🤔 habe ich im Gedenken an [Stephen Hawking](https://en.wikipedia.org/wiki/Stephen_Hawking) ein Bild von ihm gewählt.
 
-You can see the list of proxy images for each emoji in the `bin/proxy-images` folder in the sample code associated with this tutorial.
+Die Liste mit den Ersatzbildern für die einzelnen Emojis finden Sie im Beispielcode zu diesem Tutorial im Ordner `bin/proxy-images`.
 
-In this chapter you will generate a key so you can use the Azure Face API and then use the Face API to calibrate all the emojies using proxied images of me.
+In diesem Kapitel generieren Sie einen Schlüssel, um die Gesichtserkennungs-API verwenden zu können, und verwenden anschließend die Gesichtserkennungs-API, um alle Emojis mit Ersatzbildern von mir zu kalibrieren.
 
-## Generate an Azure Face API Key
+## <a name="generate-an-azure-face-api-key"></a>Generieren eines Schlüssels für die Gesichtserkennungs-API von Azure
 
 <!-- To make calls to the Azure Face API we will need a special authorization key.
 
 We are going to create one using the `az` CLI. -->
 
-To use the Azure Face API we need a special authentication key, head over to https://azure.microsoft.com/try/cognitive-services/ and signup to trial the Face API.
+Um die Gesichtserkennungs-API von Azure verwenden zu können, benötigen wir einen speziellen Authentifizierungsschlüssel. Navigieren Sie daher zu https://azure.microsoft.com/try/cognitive-services/, und registrieren Sie sich für eine Testversion der Gesichtserkennungs-API.
 
-![Team Moji](/media-drafts/4.calibrating-emojis.get-face-api.png)
+![Emoji-Team](/media-drafts/4.calibrating-emojis.get-face-api.png)
 
-> TODO: Find az commands to create faceAPI and grab keys
+> TODO: Ermitteln von az-Befehlen zum Erstellen der Gesichtserkennungs-API und Abrufen von Schlüsseln
 
 <!-- > NOTE the Azure Face API doesn't return the emotion information by default, we need to switch on this behavior by setting some query parameters, like so:
 > https://westeurope.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=false&returnFaceLandmarks=false&returnFaceAttributes=emotion -->
 
-## Setup the environment variables
+## <a name="setup-the-environment-variables"></a>Einrichten der Umgebungsvariablen
 
-The calibration script needs to know your Face API URL and Key in order to make the correct calls, rather than hardcoding these in the script we are going to use environment varialbes, run these commands in the terminal you expect to run the application in:
+Für das Kalibrierungsskript müssen die URL und der Schlüssel der Gesichtserkennungs-API angegeben werden, um die korrekten Aufrufe ausführen zu können. Anstelle einer Hartcodierung im Skript verwenden wir Umgebungsvariablen. Führen Sie die folgenden Befehle in dem Terminal aus, in dem Sie voraussichtlich die Anwendung ausführen:
 
 ```bash
 FACE_API_URL=<the-face-api-url>
@@ -37,21 +37,21 @@ FACE_API_KEY=<your-face-api-key>
 <!-- > NOTE
 > Don't forget to add the query param returnFaceAttributes=emotion to ensure the Face API returns emotion as well -->
 
-## Create some proxy images for emojis
+## <a name="create-some-proxy-images-for-emojis"></a>Erstellen einiger Ersatzbilder für Emojis
 
-I've provided all the proxy images myself, but feel free to generate your own!
+Ich habe alle Ersatzbilder bereitgestellt – Sie können aber gerne eigene erstellen.
 
-For each emoji in the `bin/proxy-images` folder, take a picture of yourself mimicking that emoji and replace the image with your image.
+Nehmen Sie für jedes Emoji im Ordner `bin/proxy-images` ein Foto von sich selbst auf, auf dem Sie das Emoji nachstellen, und ersetzen Sie das Bild durch Ihr eigenes.
 
-## Try it out
+## <a name="try-it-out"></a>Ausprobieren
 
-Now comes the fun part! We are going to run each of the images in the `bin/proxy-images` through the Face API to calculate an emotional point for that emoji in _emotional space_, run:
+Nun kommt der spaßige Teil! Wir schicken jedes der Bilder aus `bin/proxy-images` durch die Gesichtserkennungs-API, um einen emotionalen Punkt für das Emoji im _emotionalen Raum_ zu berechnen:
 
 ```bash
 node bin/calibrate.js
 ```
 
-The output of this command should look something like so:
+Die Ausgabe dieses Befehls sollte in etwa wie folgt aussehen:
 
 ```json
 ...
@@ -76,6 +76,6 @@ Processing 😆
 }
 ```
 
-It will first print out the emoji's it is processing and then finally print out to the console an array which defines the `EmotivePoint` of all the emoji's. This is the same format as the array in `shared/mojis.ts`.
+Als Erstes werden die verarbeiteten Emojis ausgegeben. Danach folgt ein Array, das `EmotivePoint` für alle Emojis definiert. Das Format entspricht dabei dem Format des Arrays in `shared/mojis.ts`.
 
-If you changed some of the proxied images then copy the output of this script to the relevant section of `mojis.ts`
+Falls Sie Ersatzbilder geändert haben, kopieren Sie die Ausgabe dieses Skripts in den entsprechenden Abschnitt von `mojis.ts`.

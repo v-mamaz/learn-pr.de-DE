@@ -1,93 +1,92 @@
-After creating an Azure DevOps project, the first thing everyone ask is how do you replace the sample app with your own app? It's quite simple and in this unit, you will learn two ways to do it.
+Nach der Erstellung eines Azure DevOps-Projekts stellt sich natürlich die Frage, wie sich die Beispiel-App durch eine eigene App ersetzen lässt. In dieser Einheit lernen Sie zwei einfache Methoden dafür kennen.
 
-1. Replacing the code in the VSTS git repository with your real code
+1. Ersetzen des Codes im VSTS-Git-Repository durch Ihren eigenen Code
 
-2. Pointing your build pipeline to an external git repo holding your real code
+2. Verweisen Ihrer Buildpipeline auf ein externes Git-Repository mit Ihrem eigenen Code
 
-## Replacing code in VSTS git repository
+## <a name="replacing-code-in-vsts-git-repository"></a>Ersetzen des Codes im VSTS-Git-Repository
 
-One simple way is by cloning the git repo in VSTS onto your hard drive, replacing everything with your own code, uploading back to VSTS and voila. Your code will now be built and deployed through the CI/CD pipeline.
+Eine Möglichkeit besteht darin, einfach das Git-Repository in VSTS auf Ihrer Festplatte zu klonen, alles durch Ihren eigenen Code zu ersetzen und es anschließend wieder in VSTS hochzuladen. Daraufhin wird Ihr Code über die CI/CD-Pipeline erstellt und bereitgestellt.
 
-For this unit, you will start by downloading and storing the source code to the node.js app onto your hard drive.
+In dieser Einheit laden Sie zunächst den Quellcode der Node.js-App herunter und speichern ihn auf Ihrer Festplatte.
 
-1. Download the source code from <https://abelsharedblob.blob.core.windows.net/microsoftlearn/MicrosoftLearnDevOps.zip>
+1. Herunterladen des Quellcodes von <https://abelsharedblob.blob.core.windows.net/microsoftlearn/MicrosoftLearnDevOps.zip>
 
-2. Extract the contents of MicrosoftLearnDevOps.zip somewhere on your hard drive. For this example `C:\users\abel\Downloads\MicrosoftLearnDevOps` was used  
-![Unzipped Directory](/media-draft/2-unzippedfolder.png)
+2. Extrahieren Sie den Inhalt von „MicrosoftLearnDevOps.zip“ an einem beliebigen Ort auf Ihrer Festplatte. In diesem Beispiel wurde `C:\users\abel\Downloads\MicrosoftLearnDevOps` verwendet.  
+![Entzipptes Verzeichnis](/media-draft/2-unzippedfolder.png)
 
-Next, you need to clone the repo onto your hard drive and replace the sample app with the real node.js app. This unit assumes you already have git installed on your computer.
+Als Nächstes müssen Sie das Repository auf Ihrer Festplatte klonen und die Beispiel-App durch Ihre eigene Node.js-App ersetzen. In dieser Einheit wird davon ausgegangen, dass Git bereits auf Ihrem Computer installiert ist.
 
-1. From Azure portal browse to your Azure DevOps Project and click on the code repository link.  
+1. Navigieren Sie im Azure-Portal zu Ihrem Azure DevOps-Projekt, und klicken Sie auf den Link zum Coderepository.  
 ![](/media-draft/2-browsetorepolink.png)
 
-2. Click on Clone and copy the url for the git repo in the upper right-hand side.  
-![Copy Clone Url](/media-draft/2-copycloneurl.png)  
-This will copy the repo url to your clipboard
+2. Klicken Sie auf „Klonen“, und kopieren Sie die URL für das Git-Repository (in der rechten oberen Ecke).  
+![Kopieren der Klon-URL](/media-draft/2-copycloneurl.png)  
+Daraufhin wird die Repository-URL in die Zwischenablage kopiert.
 
-3. Clone the repo to your hard drive  
+3. Klonen des Repositorys auf Ihrer Festplatte  
 ![Git Clone](/media-draft/2-gitclone.png)  
-In this example the repo was cloned to C:\Users\abel\Source\TripleCrown\DevOps
+In diesem Beispiel wurde das Repository in „C:\Users\abel\Source\TripleCrown\DevOps“ geklont.
 
-4. Delete everything from your local repo except for the `.git` directory  
-![Delete Repo of Everything](/media-draft/2-deleterepoofeverything.png)
+4. Löschen Sie alles aus Ihrem lokalen Repository (mit Ausnahme des Verzeichnisses `.git`).  
+![Löschen aller Inhalte aus dem Repository](/media-draft/2-deleterepoofeverything.png)
 
-5. Copy the source code for the downloaded node.js app into the repo folder  
-![Replaced Code](/media-draft/2-replacedeverything.png)
+5. Kopieren Sie den Quellcode für die heruntergeladene Node.js-App in den Repositoryordner.  
+![Ersetzter Code](/media-draft/2-replacedeverything.png)
 
-6. Add all the changes to your local repo by typing `git add *` from the command line  
-![Git Add All](/media-draft/2-gitaddall.png)
+6. Fügen Sie Ihrem lokalen Repository sämtliche Änderungen hinzu, indem Sie `git add *` über die Befehlszeile eingeben.  
+![Git: Alles hinzufügen](/media-draft/2-gitaddall.png)
 
-7. Commit changes to your local repo by typing `git commit -m "replace sample app with real code"`  
-![Git Commit](/media-draft/2-gitcommit.png)
+7. Geben Sie `git commit -m "replace sample app with real code"` ein, um die Änderungen an Ihrem lokalen Repository zu committen.  
+![Git: Committen](/media-draft/2-gitcommit.png)
 
-8. Push changes back to the git repo in VSTS with `git push`  
-![Git Push](/media-draft/2-gitpush.png)
+8. Pushen Sie Änderungen mithilfe von `git push` wieder an das Git-Repository in VSTS.  
+![Git: Pushen](/media-draft/2-gitpush.png)
 
-9. After pushing changes back to VSTS, this should send the real app code through the build  
-![Build Kicked Off](/media-draft/2-buildkickedoff.png)  
-![Build in Action](/media-draft/2-buildinaction.png)
- and release pipeline all the way to azure  
- ![Release Running](/media-draft/2-releaserunning.png)
+9. Nach dem Pushen der Änderungen an VSTS sollte der Code Ihrer eigenen App den Buildvorgang durchlaufen.  
+![Buildvorgang gestartet](/media-draft/2-buildkickedoff.png)  
+![Buildvorgang in Aktion](/media-draft/2-buildinaction.png) und Releasepipeline bis Azure  
+ ![Releasevorgang](/media-draft/2-releaserunning.png)
 
- After the deployment finishes, you can verify the real app was deployed by going back to the Azure portal
+ Nach Abschluss der Bereitstellung können Sie sich im Azure-Portal vergewissern, dass Ihre eigene App bereitgestellt wurde.
 
- 1. Go to the Azure portal, browse to your Azure DevOps project, and click on your deployed app on the right-hand side  
- ![Launch Sample App Link](/media-draft/2-launchapp.png)
+ 1. Navigieren Sie im Azure-Portal zu Ihrem Azure DevOps-Projekt, und klicken Sie auf der rechten Seite auf Ihre bereitgestellte App.  
+ ![Link zum Starten der Beispiel-App](/media-draft/2-launchapp.png)
 
- 2. This launches the running app in your browser  
- ![App Running](/media-draft/2-apprunning.png)
+ 2. Daraufhin wird die ausgeführte App in Ihrem Browser gestartet.  
+ ![Ausgeführte App](/media-draft/2-apprunning.png)
 
-## Using external git repo
+## <a name="using-external-git-repo"></a>Verwenden eines externen Git-Repositorys
 
-Another way to swap out the sample app with your real app code is by pointing the build pipeline to an external git repository that holds your app code. For this example, upload the real app code to a github repository.
+Eine weitere Möglichkeit, die Beispiel-App durch Ihren eigenen App-Code zu ersetzen, besteht darin, die Buildpipeline auf ein externes Git-Repository mit Ihrem App-Code zu verweisen. In diesem Beispiel laden Sie Ihren eigenen App-Code in ein GitHub-Repository hoch.
 
-After uploading the real code to github, do the following to point the build pipeline to this github repository
+Gehen Sie anschließend wie folgt vor, um die Buildpipeline auf dieses GitHub-Repository zu verweisen:
 
-1. From the Azure portal, browse to your Azure DevOps project and click on the build link  
-![Build Link](/media-draft/2-buildlink.png)
+1. Navigieren Sie im Azure-Portal zu Ihrem Azure DevOps-Projekt, und klicken Sie auf den Build-Link.  
+![Build-Link](/media-draft/2-buildlink.png)
 
-2. This takes you to the build pipelines, click your build pipeline and then `Edit`  
-![Click Edit Build](/media-draft/2-clickeditbuildlink.png)
+2. Dadurch gelangen Sie zu den Buildpipelines. Klicken Sie dort auf Ihre Buildpipeline und anschließend auf `Edit`.  
+![Klicken auf „Build bearbeiten“](/media-draft/2-clickeditbuildlink.png)
 
-3. This takes you to the build editor, click on `Get sources`  
-![Click Get Source](/media-draft/2-clickgetsource.png)
+3. Dadurch gelangen Sie zum Build-Editor. Klicken Sie auf `Get sources`.  
+![Klicken auf „Get sources“ (Quellen abrufen)](/media-draft/2-clickgetsource.png)
 
-4. This takes you to the Select a source page. Notice how you can not only use VSTS Git, but also GitHub, GitHub Enterprise, Subversion, Bitbucket Cloud, and any external Git based repo for the build pipeline. For this exercise, select GitHub  
-![Select GitHub](/media-draft/2-selectgithub.png)
+4. Dadurch gelangen Sie zur Seite zum Auswählen einer Quelle. Beachten Sie, dass Sie für die Buildpipeline nicht nur VSTS-Git, sondern auch GitHub, GitHub Enterprise, Subversion, Bitbucket Cloud sowie jedes andere externe Repository auf Git-Basis verwenden können. Wählen Sie für diese Übung „GitHub“ aus.  
+![Auswählen von GitHub](/media-draft/2-selectgithub.png)
 
-5. This takes you to the GitHub connection page. Either use OAuth or a Personal Access Token to connect with your GitHub account
+5. Dadurch gelangen Sie zur GitHub-Verbindungsseite. Verwenden Sie entweder OAuth oder ein persönliches Zugriffstoken, um eine Verbindung mit Ihrem GitHub-Konto herzustellen.
 
-6. Select the github repo holding the real app code and click `Save & queue`  
-![Save and Queue](/media-draft/2-saveandqueue.png)
+6. Wählen Sie das GitHub-Repository mit Ihrem eigenen App-Code aus, und klicken Sie auf `Save & queue`.  
+![Speichern und in Warteschlange einreihen](/media-draft/2-saveandqueue.png)
 
-7. Click the `Save & queue` button  
+7. Klicken Sie auf die Schaltfläche `Save & queue`.  
 ![](/media-draft/2-saveandqueuedialog.png)
 
-8. This action saves and kicks off the build, sending the real app code hosted in GitHub through our build and release pipelines all the way to Azure  
-![Build Running](/media-draft/2-buildrunning.png)
+8. Daraufhin wird ein Speichervorgang ausgeführt und der Buildvorgang gestartet, sodass Ihr eigener, in GitHub gehosteter App-Code unsere Build- und Releasepipelines bis Azure durchläuft.  
+![Ausgeführter Buildvorgang](/media-draft/2-buildrunning.png)
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this unit, you learned two different ways to replace the sample code in the DevOps project with real app code. This can be done either by replacing the code in the VSTS git repo, or by linking the build pipeline with another external repo which holds your app code.
+In dieser Einheit haben Sie zwei Möglichkeiten kennengelernt, um den Beispielcode des DevOps-Projekts durch eigenen App-Code zu ersetzen: Sie können entweder den Code im VSTS-Git-Repository ersetzen oder die Buildpipeline mit einem anderen externen Repository verknüpfen, in dem sich Ihr App-Code befindet.
 
-Next learn how to customize the build and release pipelines.
+Als Nächstes erfahren Sie, wie Sie die Build- und Releasepipelines anpassen.

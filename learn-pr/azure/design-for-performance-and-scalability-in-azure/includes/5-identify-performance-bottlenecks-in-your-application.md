@@ -1,82 +1,82 @@
-End users are expecting more from their applications. They want to have a great user experience and not be impacted by performance issues. How do you integrate performance bottleneck identification into your architecture? In this unit, we will look at both processes and tools that can help ensure that your application performs well, and help you track down why if it doesn't.
+Endbenutzer erwarten mehr von ihren Anwendungen. Sie erwarten eine besonders hohe Benutzerfreundlichkeit und möchten nicht durch Leistungsprobleme beeinträchtigt werden. Wie lässt sich die Erkennung von Leistungsengpässen in Ihre Architektur integrieren? In dieser Einheit betrachten wir Prozesse und Tools, mit deren Hilfe Sie eine optimale Leistung Ihrer Anwendung sicherstellen und bei Bedarf die Ursache einer Leistungsbeeinträchtigung ermitteln können.
 
-## Importance of requirements
+## <a name="importance-of-requirements"></a>Die Bedeutung von Anforderungen
 
-Before we talk about performance, it's important to talk about requirements. In theory, we could keep improving scalability and performance further and further without end. At some point, however, more improvement is prohibitively expensive, difficult, and doesn't have enough business impact to be worthwhile. 
+Bevor wir uns über die Leistung unterhalten, sollten wir über Anforderungen sprechen. Theoretisch könnten wir Skalierbarkeit und Leistung ohne Ende immer weiter verbessern. Ab einem bestimmten Punkt wird die Verbesserung jedoch unbezahlbar, schwierig und wirkt sich nicht mehr genügend auf den Geschäftsbetrieb aus. 
 
-Our **non-functional requirements** help us find that point. These particular requirements don't tell us what our app must *do*. Instead, they tell us what quality levels it must meet. As examples, we can define these non-functional requirements to tell us:
+Unsere **nicht funktionsbezogenen Anforderungen** helfen uns dabei, diesen Punkt zu finden. Diese speziellen Anforderungen sagen nichts darüber aus, was unsere App *tun* muss. Vielmehr geben sie Aufschluss darüber, welche Qualitätsstufen unsere App erreichen muss. Diese nicht funktionsbezogenen Anforderungen können beispielsweise für folgende Angaben definiert werden:
 
-- How fast a transaction must return under a given load.
-- How many simultaneous connections we need to support before we start returning errors.
-- In the event of server failure, what is the maximum amount of time our application is allowed be down before a back-up is online.
+- Geschwindigkeit, mit der eine Transaktion unter einer gegebenen Last Ergebnisse zurückgeben muss.
+- Anzahl gleichzeitiger Verbindungen, die wir unterstützen müssen, bevor ein Fehler zurückgegeben wird.
+- Maximale Zeitdauer, für die unsere Anwendung bei einem Serverfehler nicht verfügbar sein darf, bevor eine Sicherung online geschaltet wird.
 
-Defining these requirements in advance of building your solution is critical to ensure that the application meets expectations but doesn't require more effort or expend more money than necessary. We can also plan our monitoring and operations rules around these non-functional requirements. 
+Es ist wichtig, diese Anforderungen vor dem Erstellen einer Lösung zu definieren, um sicherzustellen, dass die Anwendung die Erwartungen erfüllt, jedoch keinen größeren Aufwand erfordert oder mehr Geld kostet als nötig. Wir können auch unsere Überwachungs- und Betriebsregeln unter Einbeziehung dieser nicht funktionsbezogenen Anforderungen planen. 
 
-Discuss requirements with your stakeholders or customers, document them, and communicate them broadly to ensure that everyone agrees on what "good performance" means.
+Besprechen Sie Anforderungen mit Ihren Projektbeteiligten oder Kunden, dokumentieren Sie sie, und machen Sie sie allgemein bekannt, um sicherzustellen, dass alle wissen, was mit „guter Leistung“ gemeint ist.
 
-## DevOps and application performance
+## <a name="devops-and-application-performance"></a>DevOps und Anwendungsleistung
 
-The idea behind DevOps is that we don't have development and infrastructure silos in our organization. Instead, they work together to effectively build, deploy, monitor, and maintain apps in streamlined process.
+Hinter DevOps verbirgt sich die Vorstellung, dass wir keine Entwicklungs- und Infrastruktursilos in unserer Organisation haben. Vielmehr findet eine Zusammenarbeit statt, um Apps in einem optimierten Prozess effektiv zu erstellen, bereitzustellen, zu überwachen und zu verwalten.
 
-The planning, development, testing, and monitoring is carried out in an iterative approach. Performance and quality of our application become a part of our software development life cycle, rather than an afterthought as we deploy into a live environment. The following illustration shows where opportunities for collaboration exist in the software development lifecycle.
+Planung, Entwicklung, Tests und Überwachung werden in einem iterativen Ansatz durchgeführt. Leistung und Qualität unserer Anwendung werden Teil unseres Softwareentwicklungs-Lebenszyklus und sind nicht mehr nur ein Nebenaspekt bei der Bereitstellung in einer Live-Umgebung. In der folgenden Abbildung werden Gelegenheiten für die Zusammenarbeit im Softwareentwicklungs-Lebenszyklus dargestellt.
 
-![An illustration showing the steps of a software lifecycle arranged into a loop to show how each stage feeds into the next.](../media/5-devops-cycle.png)
+![Abbildung der als Schleife dargestellten Schritte eines Softwarelebenszyklus, um zu veranschaulichen, wie jede Phase in die jeweils nächste Phase übergeht.](../media/5-devops-cycle.png)
 
-This approach aligns with a DevOps concept called "shifting left". In other words, bring your quality control checks earlier into your deployment and release process. This allows you to catch end-user impacting issues earlier in the process. As we operate in a continuous cycle, we limit the amount of manual interaction and automate as much as possible. 
+Dieser Ansatz entspricht einem DevOps-Konzept mit der Bezeichnung „Shift Left“. Dieser besagt, dass die Qualitätslenkungsprüfungen früher im Bereitstellungs- und Freigabeprozess erfolgen müssen. Dadurch können Sie Probleme, die sich auf den Endbenutzer auswirken, früher im Prozess auffangen. Da wir in einem fortlaufenden Zyklus arbeiten, begrenzen wir die Anzahl manueller Eingriffe und automatisieren so viel wie möglich. 
 
-One way we make performance part of our DevOps process is to carry out performance or load tests to validate that the application meets the non-functional requirements prior to a deployment into production.
+Eine Möglichkeit, wie wir die Leistung zu einem Teil unseres DevOps-Prozesses machen können, besteht darin, vor der Bereitstellung in einer Produktionsumgebung Leistungs- oder Auslastungstests durchzuführen, um zu prüfen, ob die Anwendung den nicht funktionsbezogenen Anforderungen entspricht.
 
-Ideally, we could carry out performance and load tests in an environment that is exactly like production while not impacting our actual production servers. When leveraging the cloud, you fully have this ability. You can automate the creation of a production-like environment, perform testing, and then destroy the environment to minimize cost. This approach to automation can provide reassurance that your application can handle the scale you require now, as well as respond to future growth.
+Im Idealfall können wir Leistungs- und Auslastungstests in einer Umgebung durchführen, die exakt der Produktionsumgebung entspricht, jedoch keine Auswirkungen auf die eigentlichen Produktionsserver hat. Wenn Sie die Cloud nutzen, haben Sie genau diese Möglichkeit. Sie können die Erstellung einer mit der Produktionsumgebung vergleichbaren Umgebung automatisieren, Tests durchführen und anschließend die Umgebung zerstören, um Kosten zu sparen. Mit diesem Automatisierungsansatz können Sie dafür sorgen, dass Ihre Anwendung nicht nur Ihren aktuellen Anforderungen gewachsen, sondern auch für zukünftiges Wachstum gerüstet ist.
 
-Application performance monitoring becomes a core part of this. If we're running performance and load tests on our application or want to keep our production performance in check, we want to understand what parts of our application may be performing non-optimally. Let's take a look at some ways to do this.
+Die Überwachung der Anwendungsleistung wird zum zentralen Teil dieses Ansatzes. Wenn wir Leistungs- und Auslastungstests für unsere Anwendung durchführen oder unsere Produktionsleistung unter Kontrolle halten möchten, müssen wir wissen, welche Teile unserer Anwendung möglicherweise nicht optimal funktionieren. Betrachten wir nun einige Möglichkeiten, die uns hierzu zur Verfügung stehen.
 
-## Performance monitoring options in Azure
+## <a name="performance-monitoring-options-in-azure"></a>Möglichkeiten für die Leistungsüberwachung in Azure
 
-Monitoring is the act of collecting and analyzing data to determine the performance, health, and availability of your business application and associated resources.
+Überwachung ist das Erfassen und Analysieren von Daten, um die Leistung, Integrität und Verfügbarkeit Ihrer Geschäftsanwendung und der jeweiligen Ressourcen zu bestimmen.
 
-We want to be kept informed that our application is running smoothly. Proactive notifications can be used to inform about critical issues that arise. There are many layers of monitoring to consider, mainly the infrastructure layer and the application layer.
+Wir möchten darüber informiert werden, ob unsere Anwendung reibungslos ausgeführt wird. Proaktive Benachrichtigungen können verwendet werden, um über kritische Probleme zu informieren, die auftreten können. Es gibt viele Überwachungsebenen, die berücksichtigt werden müssen, in erster Linie die Infrastrukturebene und die Anwendungsebene.
 
-### Azure Monitor
+### <a name="azure-monitor"></a>Azure Monitor
 
-Azure Monitor provides a single management point for infrastructure-level logs and monitoring for most of your Azure services. It collects metrics, activity logs, and diagnostic logs and more. Azure Monitor provides us with a range of features including:
+Azure Monitor stellt einen zentralen Verwaltungspunkt für Protokolle auf Infrastrukturebene sowie für die Überwachung der meisten Ihrer Azure-Dienste bereit. Die Lösung erfasst Metriken, Aktivitäts- und Diagnoseprotokolle und vieles mehr. Azure Monitor bietet eine Reihe von Features. Dazu zählen unter anderem folgende:
 
-- Azure alerts to proactively notify or take action on any breaches to metrics or activities arising.
-- Use Azure Dashboards to combine many monitoring sources into one view of our application.
+- Azure-Warnungen, um proaktiv über Verstöße gegen Metriken oder Aktivitäten zu informieren oder entsprechende Maßnahmen zu ergreifen
+- Verwendung von Azure-Dashboards, um verschiedene Überwachungsquellen in einer zentralen Ansicht der Anwendung zu vereinen
 
-Azure Monitor is the place to start for all your near real-time resource metric insights. Many Azure resources will start outputting metrics automatically once deployed. For example, Azure Web App instances will output compute and application request metrics. Metrics from Application Insights are also collated here in addition to VM host diagnostic metrics. VM guest diagnostic metrics will also appear once you opt in.
+Azure Monitor ist der Ausgangspunkt für sämtliche Einblicke in Ressourcenmetriken nahezu in Echtzeit. Viele Azure-Ressourcen beginnen nach der Bereitstellung automatisch mit der Ausgabe von Metriken. Azure-Web-App-Instanzen geben beispielsweise Metriken für Compute- und Anwendungsanforderungen aus. Neben VM-Host-Diagnosemetriken werden hier auch Metriken aus Application Insights sortiert. Und auch VM-Gast-Diagnosemetriken werden angezeigt, nachdem Sie sich angemeldet haben.
 
-### Log Analytics
+### <a name="log-analytics"></a>Log Analytics
 
-Centralized logging can help you uncover hidden issues that may be difficult to track down. With Log Analytics you can query and aggregate data across logs. This cross-source correlation can help you identify issues or performance problems that may not be evident when looking at logs or metrics individually. The following illustration shows how Log Analytics acts as a central hub for monitoring data. Log Analytics receives monitoring data from your Azure resources and makes it available to consumers for analysis or visualization.
+Mithilfe der zentralen Protokollierung können Sie versteckte Probleme aufdecken, die möglicherweise schwierig aufzuspüren sind. Mit Log Analytics können Sie Daten protokollübergreifend abfragen und aggregieren. Dank dieser quellenübergreifenden Korrelation können Sie Probleme oder Leistungsengpässe erkennen, die bei Betrachtung einzelner Protokolle oder Metriken möglicherweise nicht offensichtlich sind. In der folgenden Abbildung wird veranschaulicht, wie Log Analytics als zentraler Hub für die Datenüberwachung fungiert. Log Analytics empfängt Überwachungsdaten von Ihren Azure-Ressourcen und stellt sie Consumern zur Analyse oder Visualisierung zur Verfügung.
 
-![An illustration showing the role of Log Analytics in resource monitoring.](../media/5-log-analytics.png)
+![Abbildung der Rolle von Log Analytics bei der Ressourcenüberwachung.](../media/5-log-analytics.png)
 
-You can collate a wide range of data sources, security logs, Azure activity logs, server, network, and application logs. You can also push on-premises System Center Operations Manager data to Log Analytics in hybrid deployment scenarios and have Azure SQL Database send diagnostic information directly into Log Analytics for detailed performance monitoring.
+Sie können eine Vielzahl von Datenquellen, Sicherheitsprotokollen, Azure-Aktivitätsprotokollen, Servern, Netzwerken und Anwendungsprotokollen sortieren. Ferner können Sie in Hybridbereitstellungsszenarien lokale System Center Operations Manager-Daten an Log Analytics pushen und dafür sorgen, dass Azure SQL-Datenbank Diagnoseinformationen zur detaillierten Leistungsüberwachung direkt an Log Analytics sendet.
 
-Centralized logging can be massively beneficial for troubleshooting all types of scenarios, including performance issues. It's a key part of a good monitoring strategy for any architecture.
+Die zentralisierte Protokollierung kann für die Problembehandlung bei allen Arten von Szenarios, auch bei Leistungsproblemen, extrem vorteilhaft sein. Sie ist ein wichtiger Bestandteil einer guten Überwachungsstrategie für jede Architektur.
 
-## Application performance management
+## <a name="application-performance-management"></a>Steuerung der Anwendungsleistung
 
-Deep application issues are often tricky to track down. This is where integrating telemetry into an application by using an application performance management solution (APM) to track down low-level application performance and behavior can be beneficial. This telemetry can include individual page request times, exceptions within your application, and even custom metrics to track business logic. This telemetry can provide a wealth of insight into what is going on within your application.
+Tiefliegende Anwendungsprobleme sind oft schwierig aufzuspüren. Hier kann die Integration von Telemetrie in eine Anwendung mithilfe einer APM-Lösung (Application Performance Management, Steuerung der Anwendungsleistung) zum Aufspüren schlechter Anwendungsleistung und ungünstigem Anwendungsverhalten vorteilhaft sein. Diese Telemetriedaten können einzelne Seitenanforderungszeiten, Ausnahmen in Ihrer Anwendung und sogar benutzerdefinierte Metriken zur Überwachung von Geschäftslogiken enthalten. Ferner können diese Telemetriedaten eine Fülle von Einblicken in die Abläufe in Ihrer Anwendung bieten.
 
-On Azure, Application Insights is a service that provides this deep application performance management. You install a small instrumentation package in your application, and set up an Application Insights resource in the Microsoft Azure portal. The instrumentation monitors your app and sends telemetry data to the portal.
+Bei Azure ist Application Insights ein Dienst, der diese ausführliche Steuerung der Anwendungsleistung ermöglicht. Sie installieren ein kleines Instrumentierungspaket in Ihrer Anwendung und richten eine Application Insights-Ressource im Microsoft Azure-Portal ein. Die Instrumentierung überwacht Ihre App und sendet Telemetriedaten an das Portal.
 
-Telemetry from the host environments, such as performance counters, Azure diagnostics, and Docker logs, can be ingested. You can also set up web tests that periodically send synthetic requests to your web service. You could even configure your application to send custom events and metrics that you write yourself in the client or server code. For example, application-specific events such as items sold or games won.
+Telemetriedaten aus Hostumgebungen (etwa Leistungsindikatoren, Azure-Diagnosen und Docker-Protokolle) können erfasst werden. Sie können auch Webtests einrichten, die in regelmäßigen Abständen synthetische Anforderungen an den Webdienst senden. Sie können Ihre Anwendung sogar so konfigurieren, dass benutzerdefinierte Ereignisse und Metriken gesendet werden, die Sie selbst in den Client- oder Servercode schreiben. Beispielsweise anwendungsspezifische Ereignisse wie verkaufte Artikel oder gewonnene Spiele.
 
-Application Insights stores its data in a common repository, and metrics are shared with Azure Monitor. It can take advantage of shared functionality such as alerts, dashboards, and deep analysis with the Log Analytics query language.
+Application Insights speichert die eigenen Daten in einem gemeinsamen Repository, und Metriken werden für Azure Monitor freigegeben. Sie können gemeinsame Funktionen wie Warnungen, Dashboards und umfassende Analysen mit der Log Analytics-Abfragesprache nutzen.
 
-A common pattern used in determining the availability of a web application is the health endpoint monitoring pattern. This pattern is used to monitor web applications and associated back-end services, to ensure that they're available and performing correctly. The pattern is implemented by querying a particular uri. The endpoint checks on the status of many components, including the back-end services that the app depends on, rather than just the availability of the front end itself. This acts as a service-level health check that returns an indication of the overall health of the service.
+Das Muster für die Überwachung der Integrität von Endpunkten ist eine gängige Lösung für die Ermittlung der Verfügbarkeit einer Webanwendung. Es wird zur Überwachung von Webanwendungen und entsprechenden Back-End-Diensten verwendet, um sicherzustellen, dass sie verfügbar sind und einwandfrei funktionieren. Das Muster wird durch Abfragen eines bestimmten URI implementiert. Der Endpunkt überprüft nicht nur die Verfügbarkeit des Front-Ends, sondern auch den Status zahlreicher Komponenten (einschließlich der Back-End-Dienste, von denen die App abhängig ist). Dies dient als Integritätsprüfung auf Dienstebene und gibt Aufschluss über die allgemeine Integrität des Diensts.
 
-Use an APM solution such as Application Insights to gain a deep understanding of your application and correlate activity across your application. This can help you understand how a specific action works in the client browser, on the server, and through to downstream services. It will also provide insight into trends, provide notifications when there is a problem, and help identify where the problem is and how to fix it, before your users are aware.
+Verwenden Sie eine APM-Lösung wie Application Insights, um ausführliche Informationen zu Ihrer Anwendung zu erhalten und Aktivitäten in der gesamten Anwendung zu korrelieren. Diese Lösung kann dabei hilfreich sein, die Funktionsweise einer bestimmten Aktion im Clientbrowser, auf dem Server und in den Downstreamdiensten nachzuvollziehen. Darüber hinaus liefert sie Informationen zu Trends, stellt bei Problemen Benachrichtigungen bereit und hilft beim Aufspüren und Beheben des Problems, bevor Benutzer es bemerken.
 
-## Performance monitoring at Lamna Healthcare
+## <a name="performance-monitoring-at-lamna-healthcare"></a>Leistungsüberwachung bei Lamna Healthcare
 
-Lamna Healthcare has implemented a web-based patient booking system using virtual machines and an Azure SQL database across two Azure regions. They've decided to use the VM Agent and Log Analytics to monitor the performance of the underlying front-end virtual machines.
+Bei Lamna Healthcare wurde ein webbasiertes Patientenbuchungssystem mit virtuellen Computern und einer Azure SQL-Datenbank in zwei Azure-Regionen implementiert. Es wurde entschieden, zur Überwachung der Leistung der zugrunde liegenden virtuellen Front-End-Computer den VM-Agent und Log Analytics zu verwenden.
 
-They use Azure Monitor to understand the performance of their Azure SQL databases and capture key performance metrics including CPU % and deadlocks.
+Azure Monitor wird verwendet, um Informationen zur Leistung der Azure SQL-Datenbanken abzurufen und wichtige Leistungsmetriken wie prozentuale CPU-Auslastung und Deadlocks zu erfassen.
 
-Application Insights has been configured to capture availability and telemetry information. The team has changed their new booking functionality to send custom event telemetry to Application Insights. The team now has an approach to understanding the volume of business-related events taking place, and they can get much better insight into what's going on within their application.
+Application Insights wurde so konfiguriert, dass Informationen zur Verfügbarkeit und Telemetrie erfasst werden. Das Team hat die neue Buchungsfunktion so geändert, dass benutzerdefinierte Telemetriedaten an Application Insights gesendet werden. So verfügt das Team nun über ein Konzept zur Ermittlung von Informationen zum Umfang geschäftlicher Ereignisse und erhält damit bessere Einblicke in die Abläufe der eigenen Anwendung.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-We've taken a look at some processes, tools, and best practices to help you track down performance issues and ensure that your application is performing at its best. Let's wrap up what we've learned throughout this module.
+Wir haben einige Prozesse, Tools und bewährte Methoden zum Aufspüren von Leistungsproblemen sowie zum Sicherstellen einer optimalen Funktionsweise Ihrer Anwendung betrachtet. Fassen wir zum Schluss zusammen, welche Kenntnisse wir in diesem Modul erworben haben.

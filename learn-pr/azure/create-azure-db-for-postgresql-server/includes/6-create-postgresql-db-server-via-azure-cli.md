@@ -1,42 +1,44 @@
-You decide to create an Azure Database for PostgreSQL to store routes captured from runners' fitness devices. Based on historic captured data volumes, you know your server storage requirements should be set at 20 GB. To support your processing requirements, you need compute Gen 5 support with 1 vCore. You also know that you require a retention period of 15 days for data backups.
+Sie entscheiden sich für die Erstellung einer Azure Database for PostgreSQL-Instanz, um Routen zu speichern, die durch Fitnessgeräte von Läufern erfasst wurden. Aufgrund des Verlaufs der Erfassung von Datenvolumes wissen Sie, dass für Ihren Serverspeicher mindestens 20 GB benötigt werden. Zur Unterstützung Ihrer Verarbeitungsanforderungen ist die Unterstützung von Compute Gen 5 mit einem virtuellen Kern erforderlich. Außerdem wissen Sie, dass für Datensicherungen eine Aufbewahrungsdauer von 15 Tagen erforderlich ist.
 
 > [!TIP]
-> All of the exercises you do in Microsoft Learn are free, but once you start exploring on your own, you will need an Azure subscription. If you don't have one yet, take a couple of minutes and create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+> Alle Übungen in Microsoft Learn sind kostenlos. Wenn Sie jedoch eigenständig weitere Funktionen nutzen möchten, benötigen Sie ein Azure-Abonnement. Wenn Sie noch nicht über ein Abonnement verfügen, können Sie in wenigen Minuten ein [kostenloses Konto](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) erstellen.
 
-Let's begin.
+Legen wir los.
 
-Sign in to [the Azure portal](https://portal.azure.com?azure-portal=true).
+Melden Sie sich beim [Azure-Portal](https://portal.azure.com?azure-portal=true) an.
 
-Recall that you'll need to start an Azure Cloud Shell session. Select the Cloud Shell icon at the top of the screen to start the session.
+Zur Erinnerung: Sie müssen eine Azure Cloud Shell-Sitzung starten. Klicken Sie auf das Cloud Shell-Symbol am oberen Bildschirmrand, um die Sitzung zu starten.
 
-If you don't already have a storage account to use with Cloud Shell, you'll need to create one with first access. The portal interface will step you through the process of creating a storage account.
+![Cloud Shell-Schaltfläche](../media-draft/cloud-shell-button.png)
 
-This lab uses `bash` as the command-line environment.
+Wenn Sie noch nicht über ein Speicherkonto für die Verwendung mit Cloud Shell verfügen, müssen Sie beim ersten Zugriff eines erstellen. Die Portaloberfläche führt Sie Schritt für Schritt durch die Speicherkontoerstellung.
 
-1. Select the subscription you'll use to create the server.
+In diesem Lab wird `bash` als Befehlszeilenumgebung verwendet.
 
-    If you have several subscriptions, make sure you activate the appropriate subscription with the following command, replacing the zeros with your subscription identifier.
+1. Wählen Sie das Abonnement aus, das Sie zum Erstellen des Servers verwenden möchten.
+
+    Wenn Sie über mehrere Abonnements verfügen, verwenden Sie den folgenden Befehl, um das richtige Abonnement zu aktivieren. Ersetzen Sie dabei die Nullen durch Ihre Abonnement-ID.
 
     ``` bash
     az account set --subscription "00000000-0000-0000-0000-000000000000"
     ```
 
-    Recall, you can list all your subscriptions using the `az account list --output table` command. Pick the subscription identifier from this list that you'd like to use.
+    Zur Erinnerung: Mithilfe des Befehls `az account list --output table` können Sie alle Ihre Abonnements auflisten. Wählen Sie die gewünschte Abonnement-ID aus dieser Liste aus.
 
-1. If you haven't already done so in a previous unit, create a resource group. You'll run the following command.
+1. Erstellen Sie eine Ressourcengruppe, sofern Sie nicht bereits eine in einer vorherigen Einheit erstellt haben. Führen Sie den folgenden Befehl aus.
 
     ```bash
     az group create --name <resource_group_name> --location <location>
     ```
 
     > [!Note]
-    > You can retrieve a list of all locations using this command `az account list-locations`. Select the `displayName` or `name` value and use it for the `<location>` parameter.
+    > Mithilfe des Befehls `az account list-locations` können Sie eine Liste mit allen Standorten abrufen. Verwenden Sie den Wert `displayName` oder `name` für den Parameter `<location>`.
 
-1. You're now ready to run the `az postgres server create` command.
+1. Nun können Sie den Befehl `az postgres server create` ausführen.
 
-    Keep in mind you want to set your server storage size at 20 GB, compute Gen 5 support with 1 vCore and a retention period of 15 days for data backups.
+    Denken Sie daran, dass Sie die Speichergröße des Servers auf 20 GB festlegen, Compute Gen 5-Unterstützung mit einem virtuellen Kern konfigurieren und für Datensicherungen eine Aufbewahrungsdauer von 15 Tagen festlegen möchten.
 
-    There are several parameters that you'll specify:
+    Dazu geben Sie mehrere Parameter an:
 
     - `--resource-group <resource_group_name>`
     - `--name <new_server_name>`
@@ -48,15 +50,15 @@ This lab uses `bash` as the command-line environment.
     - `--backup-retention <days>`
     - `--version <version_number>`
 
-    See if you can write the command and complete the parameters without looking at the solution below. Replace the values in `<>` with your own values.
+    Versuchen Sie, den Befehl und die Parameter zu erstellen, ohne sich die weiter unten bereitgestellte Lösung anzusehen. Ersetzen Sie die Werte in `<>` durch Ihre eigenen Werte.
 
     > [!NOTE]
-    > You can retrieve a list of all locations using this command `az account list-locations`. Select the `displayName` or `name` value and use it for the `<location>` parameter.
+    > Mithilfe des Befehls `az account list-locations` können Sie eine Liste mit allen Standorten abrufen. Verwenden Sie den Wert `displayName` oder `name` für den Parameter `<location>`.
 
     ```bash
     az postgres server create --resource-group <resource_group_name> --name <unique_server_name>  --location "UK West" --admin-user <server_admin_login_id> --admin-password <server_admin_password> --sku-name B_Gen5_1 --storage-size 20480 --backup-retention 15 --version 10
     ```
 
-You'll see the system take a few moments to process the information when executed. A Java Script Object Notation (JSON) string that describes the server is returned if the server was created. An error message is displayed if the server isn't created. You'll use this error information to review and fix your command parameters.
+Die Verarbeitung der Informationen dauert einen Moment. Wenn der Server erstellt wurde, wird eine JSON-Zeichenfolge (Java Script Object Notation) zurückgegeben, die den Server beschreibt. Wurde der Server nicht erstellt, wird eine Fehlermeldung angezeigt. Anhand der Fehlerinformationen können Sie Ihre Befehlsparameter überprüfen und korrigieren.
 
-You've successfully created a PostgreSQL server using the Azure CLI. In the next unit, you'll see how to configure your server's security settings.
+Sie haben erfolgreich einen PostgreSQL-Server mithilfe der Azure-Befehlszeilenschnittstelle erstellt. In der nächsten Einheit erfahren Sie, wie Sie die Sicherheitseinstellungen Ihres Servers konfigurieren.

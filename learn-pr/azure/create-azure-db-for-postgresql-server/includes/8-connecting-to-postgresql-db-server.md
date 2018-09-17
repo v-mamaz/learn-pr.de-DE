@@ -1,66 +1,68 @@
-Lets' assume you're using an on-premises PostgreSQL database. You're managing all security aspects and locked down all access to your servers using the standard PostgreSQL server level firewall rules. You now have a good understanding of how to configure the same server level firewall rules in Azure.
+Angenommen, Sie arbeiten mit einer lokalen PostgreSQL-Datenbank. Sie verwalten sämtliche Sicherheitsaspekte und haben den gesamten Zugriff auf Ihre Server mit den standardmäßigen Firewallregeln auf PostgreSQL-Serverebene gesperrt. Sie wissen, wie Sie die gleichen Firewallregeln auf Serverebene in Azure konfigurieren.
 
-You now have the chance to connect to one of the previous Azure Databases for PostgreSQL servers you created using `psql`.
+Nun haben Sie die Möglichkeit, mithilfe von `psql` eine Verbindung mit einem der zuvor erstellten Azure Database for PostgreSQL-Server herzustellen.
 
-## Allow Azure service access
+## <a name="allow-azure-service-access"></a>Zulassen des Zugriffs für Azure-Dienste
 
-Before we begin. You'll have to allow access to Azure services if you want to use PowerShell and `psql` to connect to your server. Recall, that you can allow access in two ways.
+Vorbereitung: Sie müssen den Zugriff auf Azure-Dienste zulassen, wenn Sie mithilfe von PowerShell und `psql` eine Verbindung mit Ihrem Server herstellen möchten. Zur Erinnerung: Zugriff kann auf zwei Arten zugelassen werden.
 
-Your first option is to enable **Allow access to Azure services**. Allowing access will create a firewall rule even though the rule isn't entered in the list of custom rules you create.
+Die erste Möglichkeit besteht darin, **Zugriff auf Azure-Dienste erlauben** zu aktivieren. Wenn Sie den Zugriff zulassen, wird eine Firewallregel erstellt. Diese wird jedoch nicht in die Liste mit den benutzerdefinierten Regeln aufgenommen, die Sie erstellen.
 
-Your second option is to create a firewall rule that allows access to all IP addresses. The rule will include the IP address for the client running PowerShell that you'll use to execute `psql` from.
+Die zweite Möglichkeit besteht darin, eine Firewallregel zu erstellen, die den Zugriff auf alle IP-Adressen zulässt. Die Regel enthält die IP-Adresse für den Client, auf dem PowerShell ausgeführt wird und von dem aus Sie `psql` ausführen.
 
-You also need to disable the **Enforce SSL connection**.
+Darüber hinaus müssen Sie **SSL-Verbindung erzwingen** deaktivieren.
 
-Let's begin.
+Legen wir los.
 
-Sign in to [the Azure portal](https://portal.azure.com?azure-portal=true). Navigate to the server resource for which you would like to create a firewall rule.
+Melden Sie sich beim [Azure-Portal](https://portal.azure.com?azure-portal=true) an. Navigieren Sie zu der Serverressource, für die Sie eine Firewallregel erstellen möchten.
 
-Select the **Connection Security** option to open the connection security blade to the right.
+Wählen Sie die Option **Verbindungssicherheit** aus, um auf der rechten Seite das entsprechende Blatt zu öffnen.
 
-![Screenshot of the Azure portal showing the Connection security section of the PostgreSQL database resource blade.](../media-draft/7-db-security-settings.png)
+![Sicherheitseinstellungen für die PostgreSQL-Datenbank](../media-draft/7-db-security-settings.png)
 
-Recall, you want to allow access to PowerShell clients running `psql`.
+Zur Erinnerung: Sie möchten den Zugriff auf PowerShell-Clients zulassen, auf denen `psql` ausgeführt wird.
 
-You can choose to either:
+Verwenden Sie eines der folgenden Verfahren:
 
-- Set **Allow access to Azure services** to **ON**
-- Set **Enforce SSL connection** to **DISABLED**
-- Click the **Save** button to save your changes
+- Legen Sie **Zugriff auf Azure-Dienste erlauben** auf **EIN** fest.
+- Legen Sie **SSL-Verbindung erzwingen** auf **DEAKTIVIERT** fest.
+- Klicken Sie auf die Schaltfläche **Speichern**, um die Änderungen zu speichern.
 
-Or, you can add a firewall rule to allow access to all IP addresses by adding a firewall rule. Use the following values:
+Oder: Fügen Sie eine Firewallregel hinzu, um den Zugriff auf alle IP-Adressen zuzulassen. Verwenden Sie folgende Werte:
 
-- Rule Name: `AllowAll`
-- Start IP: `0.0.0.0`
-- End IP: `255.255.255.255`
-- Set **Enforce SSL connection** to **DISABLED**
-- Click the **Save** button to save your changes
+- Regelname: `AllowAll`
+- Start-IP: `0.0.0.0`
+- End-IP: `255.255.255.255`
+- Legen Sie **SSL-Verbindung erzwingen** auf **DEAKTIVIERT** fest.
+- Klicken Sie auf die Schaltfläche **Speichern**, um die Änderungen zu speichern.
 
 > [!Warning]
-> Creating this firewall rule will allow any IP address on the Internet to attempt to connect to your server. Even though clients will not be able access the server without the username and password, enable this rule with caution and make sure you understand the security implications. In production environments, you'll only allow access to specific client IP addresses.
+> Wenn Sie diese Firewallregel erstellen, kann über jede IP-Adresse im Internet versucht werden, eine Verbindung mit Ihrem Server herzustellen. Ohne Benutzername und Kennwort können Clients zwar nicht auf den Server zugreifen, aktivieren Sie diese Regel aber dennoch mit Bedacht und nur, wenn Sie verstehen, was das für die Sicherheit bedeutet. In Produktionsumgebungen lassen Sie den Zugriff nur für bestimmte Client-IP-Adressen zu.
 
-For the next steps, you'll start an Azure Cloud Shell session. This lab uses `bash` as the command-line environment.
+Für die nächsten Schritte benötigen wir eine Azure Cloud Shell-Sitzung. In diesem Lab wird `bash` als Befehlszeilenumgebung verwendet.
 
-- Open the Cloud Shell from the Azure portal. Go to [Azure portal](https://portal.azure.com?azure-portal=true) and click the Open Cloud Shell button:
+- Öffnen Sie Cloud Shell über das Azure-Portal. Klicken Sie im [Azure-Portal](https://portal.azure.com?azure-portal=true) auf die Schaltfläche „Cloud Shell öffnen“:
 
-- In case you have several subscriptions, check to make sure you're using the correct subscription when asked. You can also run the following command to set the active subscription. Remember to replace the zeros with your subscription identifier.
+  ![Cloud Shell-Schaltfläche](../media-draft/cloud-shell-button.png)
+
+- Sollten Sie über mehrere Abonnements verfügen, vergewissern Sie sich, dass Sie das richtige Abonnement verwenden, wenn Sie dazu aufgefordert werden. Sie können auch den folgenden Befehl ausführen, um das aktive Abonnement festzulegen. Vergessen Sie nicht, die Nullen durch Ihre Abonnement-ID zu ersetzen.
 
    ```bash
    az account set --subscription 00000000-0000-0000-0000-000000000000
    ```
 
-- Connect psql to your server using the following command:
+- Verbinden Sie psql mithilfe des folgenden Befehls mit Ihrem Server:
 
   ```bash
   psql --host=<server-name>.postgres.database.azure.com --username=<admin-user>@<server-name> --dbname=postgres
   ```
 
-   Recall, `server-name`, and `admin-user` are the values you chose for the administrator account when you created the server. `postgres` is the default management database every PostgreSQL server is created with. You'll be prompted for the password you provided when you created the server.
+   `server-name` und `admin-user` sind die Werte, die Sie beim Erstellen des Servers für Ihr Administratorkonto ausgewählt haben. `postgres` ist die standardmäßige Verwaltungsdatenbank, mit der jeder PostgreSQL-Server erstellt wird. Sie werden zur Eingabe des Kennworts aufgefordert, das Sie beim Erstellen des Servers angegeben haben.
 
-- Once successfully connected, execute the `\l` command to list all databases.
+- Führen Sie nach erfolgreicher Verbindungsherstellung den Befehl `\l` aus, um alle Datenbanken aufzulisten.
 
-   This command will result in two or more default databases returned from.
+   Daraufhin werden mindestens zwei Standarddatenbanken zurückgegeben.
 
-- When you're finished executing psql operations on your server, execute the command `\q` to quit `psql`.
+- Wenn Sie auf Ihrem Server keine weiteren psql-Vorgänge mehr ausführen möchten, führen Sie den Befehl `\q` aus, um `psql` zu beenden.
 
-- Finally, to exit Cloud Shell, execute the command `exit`.
+- Führen Sie abschließend den Befehl `exit` aus, um Cloud Shell zu beenden.
