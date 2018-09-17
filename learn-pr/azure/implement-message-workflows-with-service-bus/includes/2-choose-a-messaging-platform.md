@@ -8,7 +8,7 @@ Hier erfahren Sie mehr über die in Azure verfügbaren Kommunikationsplattformen
 
 ## <a name="decide-between-messages-and-events"></a>Entscheiden zwischen Nachrichten und Ereignissen
 
-Nachrichten und Ereignisse sind beides **Datagramme**: Pakete von Daten, die von einer Komponente an eine andere gesendet werden. Sie unterscheiden sich auf eine Art und Weise, die zunächst subtil erscheint, aber erhebliche Unterschiede dabei bewirken kann, wie Sie Ihre Anwendung gestalten. 
+Nachrichten und Ereignisse sind beides **Datagramme**: Pakete von Daten, die von einer Komponente an eine andere gesendet werden. Sie unterscheiden sich auf eine Art und Weise, die zunächst subtil erscheint, aber erhebliche Unterschiede dabei bewirken kann, wie Sie Ihre Anwendung gestalten.
 
 ### <a name="messages"></a>Nachrichten
 
@@ -23,13 +23,14 @@ In der neuen Architektur von Contoso Slices würden bei der Eingabe einer Pizzab
 Ein Ereignis löst eine Benachrichtigung darüber aus, dass etwas passiert ist. Ereignisse sind einfacher als Nachrichten und werden am häufigsten für die Broadcastkommunikation verwendet.
 
 Ereignisse weisen folgende Merkmale auf:
+
 * Das Ereignis kann an mehrere Empfänger oder an gar keine Empfänger gesendet werden.
 * Ereignisse sollen sich meist „weit verbreiten“ oder weisen eine große Anzahl von Abonnenten für jeden Herausgeber auf.
 * Der Herausgeber des Ereignisses hat keine Erwartungen hinsichtlich der Aktion, die eine empfangende Komponente ausführt.
 
 Unsere Pizzakette würde wahrscheinlich Ereignisse verwenden, um Benutzer mittels Benachrichtigungen über Statusänderungen zu informieren. Die Statusänderungsereignisse könnten an Azure Event Grid, dann an Azure Functions und anschließend an Azure Notification Hubs gesendet werden, um eine vollständig _serverlose_ Lösung zu erreichen.
 
-Hierbei handelt es sich um einen wesentlichen Unterschied zwischen Ereignissen und Nachrichten, da Kommunikationsplattformen in der Regel entweder Ereignisse oder Nachrichten verarbeiten. Service Bus wurde für die Verarbeitung von Nachrichten entwickelt. Wenn Sie Ereignisse senden möchten, würden Sie sich wahrscheinlich für Event Grid entscheiden. 
+Hierbei handelt es sich um einen wesentlichen Unterschied zwischen Ereignissen und Nachrichten, da Kommunikationsplattformen in der Regel entweder Ereignisse oder Nachrichten verarbeiten. Service Bus wurde für die Verarbeitung von Nachrichten entwickelt. Wenn Sie Ereignisse senden möchten, würden Sie sich wahrscheinlich für Event Grid entscheiden.
 
 Azure verfügt zwar auch über Azure Event Hubs, diese Lösung wird jedoch am häufigsten für eine bestimmte Art von Kommunikation mit hohem Datenfluss für Analysen verwendet. Wenn unsere Pizzaöfen beispielsweise mit vernetzten Sensoren ausgestattet wären, könnten wir Event Hubs in Verbindung mit Azure Stream Analytics verwenden, um nach Mustern bei Temperaturänderungen zu suchen, die auf einen unerwünschten Brand oder Komponentenverschleiß hindeuten.
 
@@ -41,11 +42,11 @@ Azure Service Bus kann Nachrichten auf drei verschiedene Arten austauschen: übe
 
 Eine **Warteschlange** ist ein einfacher temporärer Speicherort für Nachrichten. Eine sendende Komponente fügt der Warteschlange eine Nachricht hinzu. Eine Zielkomponente ruft die Nachricht am Anfang der Warteschlange ab. Unter normalen Umständen wird jede Nachricht von nur einem Empfänger empfangen.
 
-![Azure Service Bus-Warteschlange](../media-draft/2-service-bus-queue.png)
+![Azure Service Bus-Warteschlange](../media/2-service-bus-queue.png)
 
 Warteschlangen entkoppeln die Quell- und Zielkomponenten, um die Zielkomponenten von hohen Anforderungen zu isolieren. 
 
-In Spitzenzeiten können Nachrichten schneller eintreffen, als die Zielkomponenten sie verarbeiten können. Da Quellkomponenten nicht direkt mit dem Ziel verbunden sind, ist die Quelle nicht betroffen, und die Warteschlange wächst. Zielkomponenten entfernen Nachrichten aus der Warteschlange, sobald sie in der Lage sind, diese zu verarbeiten. Wenn die Anforderungen abnehmen, können die Zielkomponenten aufholen, und die Warteschlange verkürzt sich. 
+In Spitzenzeiten können Nachrichten schneller eintreffen, als die Zielkomponenten sie verarbeiten können. Da Quellkomponenten nicht direkt mit dem Ziel verbunden sind, ist die Quelle nicht betroffen, und die Warteschlange wächst. Zielkomponenten entfernen Nachrichten aus der Warteschlange, sobald sie in der Lage sind, diese zu verarbeiten. Wenn die Anforderungen abnehmen, können die Zielkomponenten aufholen, und die Warteschlange verkürzt sich.
 
 Eine Warteschlange reagiert auf diese Weise auf hohe Anforderungen, ohne dass dem System Ressourcen hinzugefügt werden müssen. Bei Nachrichten, die relativ schnell verarbeitet werden müssen, kann das Hinzufügen zusätzlicher Instanzen Ihrer Zielkomponente jedoch dazu führen, dass diese die Last teilen können. Jede Nachricht würde nur von einer Instanz verarbeitet. Dies ist eine effiziente Möglichkeit, Ihre gesamte Anwendung zu skalieren und dabei nur Ressourcen für die Komponenten hinzuzufügen, die diese tatsächlich benötigen.
 
@@ -55,7 +56,7 @@ Ein **Thema** ähnelt einer Warteschlange, kann jedoch über mehrere Abonnements
 
 Themen werden für den Basic-Tarif nicht unterstützt.
 
-![Azure Service Bus-Thema](../media-draft/2-service-bus-topic.png)
+![Azure Service Bus-Thema](../media/2-service-bus-topic.png)
 
 ### <a name="what-is-a-relay"></a>Was ist ein Relay?
 
@@ -96,20 +97,21 @@ Für Warteschlangen gilt:
 
 #### <a name="choose-service-bus-queues-if"></a>Verwenden Sie Service Bus-Warteschlangen, wenn Folgendes zutrifft:
 
-- Sie benötigen eine At-Most-Once-Zustellungsgarantie.
-- Sie benötigen eine FIFO-Garantie.
-- Sie müssen Nachrichten in Transaktionen gruppieren.
-- Sie möchten Nachrichten empfangen, ohne die Warteschlange abzufragen.
-- Sie benötigen rollenbasierten Warteschlangenzugriff.
-- Sie müssen Nachrichten mit einer Größe von 64 bis 256 KB verarbeiten.
-- Die Warteschlangengröße liegt unter 80 GB.
-- Sie möchten Nachrichtenbatches veröffentlichen und nutzen können.
+* Sie benötigen eine At-Most-Once-Zustellungsgarantie.
+* Sie benötigen eine FIFO-Garantie.
+* Sie müssen Nachrichten in Transaktionen gruppieren.
+* Sie möchten Nachrichten empfangen, ohne die Warteschlange abzufragen.
+* Sie benötigen rollenbasierten Warteschlangenzugriff.
+* Sie müssen Nachrichten mit einer Größe von 64 bis 256 KB verarbeiten.
+* Die Warteschlangengröße liegt unter 80 GB.
+* Sie möchten Nachrichtenbatches veröffentlichen und nutzen können.
 
 #### <a name="choose-queue-storage-if"></a>Verwenden Sie Queue Storage, wenn Folgendes zutrifft:
-- Sie benötigen eine einfache Warteschlange ohne besondere zusätzliche Anforderungen.
-- Sie benötigen serverseitige Protokolle aller Nachrichten, die die Warteschlange passieren.
-- Sie gehen davon aus, dass die Größe der Warteschlange 80 GB überschreitet.
-- Sie möchten den Verarbeitungsfortschritt einer Nachricht innerhalb der Warteschlange nachverfolgen.
+
+* Sie benötigen eine einfache Warteschlange ohne besondere zusätzliche Anforderungen.
+* Sie benötigen serverseitige Protokolle aller Nachrichten, die die Warteschlange passieren.
+* Sie gehen davon aus, dass die Größe der Warteschlange 80 GB überschreitet.
+* Sie möchten den Verarbeitungsfortschritt einer Nachricht innerhalb der Warteschlange nachverfolgen.
 
 Die Komponenten einer verteilten Anwendung können zwar direkt kommunizieren, durch die Verwendung einer Zwischenkommunikationsplattform wie Azure Service Bus oder Azure Event Grid lässt sich jedoch häufig die Zuverlässigkeit dieser Kommunikation verbessern.
 
