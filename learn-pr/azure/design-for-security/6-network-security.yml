@@ -1,0 +1,46 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.6-network-security
+title: <span data-ttu-id="aab4d-101">Netzwerksicherheit</span><span class="sxs-lookup"><span data-stu-id="aab4d-101">Network security</span></span>
+metadata:
+  title: <span data-ttu-id="aab4d-102">Netzwerksicherheit</span><span class="sxs-lookup"><span data-stu-id="aab4d-102">Network security</span></span>
+  description: <span data-ttu-id="aab4d-103">In dieser Einheit wird erörtert, wie Sie Ihre Netzwerkinfrastruktur schützen.</span><span class="sxs-lookup"><span data-stu-id="aab4d-103">In this unit we'll discuss how to secure your network infrastructure</span></span>
+  ms.openlocfilehash: 290415bd679f608fec17d276d64dff967d9252bb
+  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43728361"
+durationInMinutes: 5
+content: >
+  [!include[](includes/6-network-security.md)]
+quiz:
+  title: '<span data-ttu-id="aab4d-104">Wissenstest: Netzwerksicherheit</span><span class="sxs-lookup"><span data-stu-id="aab4d-104">Knowledge Check - Network security</span></span>'
+  questions:
+  - content: <span data-ttu-id="aab4d-105">Welche der folgenden Übertragungen können mit Azure-NSGs abgesichert werden?</span><span class="sxs-lookup"><span data-stu-id="aab4d-105">Azure NSGs can be used to secure communication between which of the following?</span></span>
+    choices:
+    - content: <span data-ttu-id="aab4d-106">Übertragungen zwischen virtuellen Computern und dem Internet</span><span class="sxs-lookup"><span data-stu-id="aab4d-106">Communication between virtual machines and the internet</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="aab4d-107">Mit NSGs kann diese Übertragung zwar abgesichert werden, doch dies ist nicht die einzige richtige Antwortmöglichkeit.</span><span class="sxs-lookup"><span data-stu-id="aab4d-107">NSGs can be used to secure this communication flow, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="aab4d-108">Übertragungen zwischen virtuellen Computern innerhalb eines VNet</span><span class="sxs-lookup"><span data-stu-id="aab4d-108">Communication between virtual machines within a VNet</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="aab4d-109">Mit NSGs kann diese Übertragung zwar abgesichert werden, doch dies ist nicht die einzige richtige Antwortmöglichkeit.</span><span class="sxs-lookup"><span data-stu-id="aab4d-109">NSGs can be used to secure this communication flow, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="aab4d-110">Übertragungen zwischen Systemen in einem lokalen Netzwerk</span><span class="sxs-lookup"><span data-stu-id="aab4d-110">Communication with systems in an on-premises network</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="aab4d-111">Mit NSGs kann diese Übertragung zwar abgesichert werden, doch dies ist nicht die einzige richtige Antwortmöglichkeit.</span><span class="sxs-lookup"><span data-stu-id="aab4d-111">NSGs can be used to secure this communication flow, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="aab4d-112">Alle oben genannten Möglichkeiten</span><span class="sxs-lookup"><span data-stu-id="aab4d-112">All of the above</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="aab4d-113">Mit NSGs können alle der oben genannten Übertragungen abgesichert werden.</span><span class="sxs-lookup"><span data-stu-id="aab4d-113">NSGs can be used to secure all of the above communication flows.</span></span>
+  - content: <span data-ttu-id="aab4d-114">Welche der folgenden Methoden eignet sich nicht zum Schutz von Diensten mit Internetzugriff vor Netzwerkangriffen?</span><span class="sxs-lookup"><span data-stu-id="aab4d-114">Which of the following is not a method of protecting internet facing services from network attacks?</span></span>
+    choices:
+    - content: <span data-ttu-id="aab4d-115">Azure DDoS</span><span class="sxs-lookup"><span data-stu-id="aab4d-115">Azure DDoS</span></span>
+      isCorrect: false
+      incorrectExplanation: '<span data-ttu-id="aab4d-116">Mit Azure DDoS können mit dem Internet verbundene Dienste vor einem DoS-Angriff geschützt werden.</span><span class="sxs-lookup"><span data-stu-id="aab4d-116">Azure DDoS can be used to protect your internet facing services from a DoS attack.</span></span> '
+    - content: <span data-ttu-id="aab4d-117">Azure Application Gateway-WAF</span><span class="sxs-lookup"><span data-stu-id="aab4d-117">Azure Application Gateway WAF</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="aab4d-118">Mit Application Gateway-WAF können mit dem Internet verbundene Dienste vor XSS-Angriffen und SQL Injection geschützt werden.</span><span class="sxs-lookup"><span data-stu-id="aab4d-118">Application Gateway WAF can be used to protect your internet facing services from attacks such as XSS and SQL injection.</span></span>
+    - content: <span data-ttu-id="aab4d-119">Azure Disk Encryption</span><span class="sxs-lookup"><span data-stu-id="aab4d-119">Azure Disk Encryption</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="aab4d-120">Mit Azure Disk Encryption werden die VHDs eines virtuellen Computers geschützt, falls diese ohne Berechtigung zugänglich gemacht werden. Der Dienst bietet aber keinen Schutz vor Netzwerkangriffen.</span><span class="sxs-lookup"><span data-stu-id="aab4d-120">Azure Disk Encryption protects your virtual machine VHDs from exposure, but does not provide protection from network based attacks.</span></span>
+    - content: <span data-ttu-id="aab4d-121">Virtuelles Netzwerkgerät</span><span class="sxs-lookup"><span data-stu-id="aab4d-121">A network virtual appliance</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="aab4d-122">Virtuelle Netzwerkgeräte stellen anpassbaren Netzwerkzugriffsschutz für Ressourcen bereit, die mit dem Internet verbunden sind.</span><span class="sxs-lookup"><span data-stu-id="aab4d-122">Network virtual appliances can provide customized network protection for your internet facing resources.</span></span>

@@ -2,24 +2,37 @@
 uid: learn.secure-azure-resources-with-rbac
 metadata:
   title: Sichern Ihrer Azure-Ressourcen mit rollenbasierter Zugriffssteuerung (RBAC)
-  description: Erfahren Sie, wie Sie RBAC zum Verwalten von Zugriff auf Ressourcen in Azure verwenden können.
-  ms.openlocfilehash: 83cc58636ac7e4b7e779d20deb86a48252b4e795
-  ms.sourcegitcommit: bb4b1f9e2a7399769ff84199f018abd14a3e73aa
+  description: Die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) ist ein System, das eine präzise Zugriffsverwaltung für Ressourcen in Azure ermöglicht. Mithilfe von RBAC können Sie Aufgaben in Ihrem Team verteilen und Benutzern nur den Zugriff gewähren, den sie zur Ausführung ihrer Aufgaben benötigen. In diesem Modul erfahren Sie, wie Sie RBAC zum Verwalten von Zugriff auf Ressourcen in Azure verwenden können.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 42288a93878ebcffe236cdeef8e4078265d9e231
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/01/2018
-  ms.locfileid: "43455636"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44244660"
 title: Sichern Ihrer Azure-Ressourcen mit rollenbasierter Zugriffssteuerung (RBAC)
-summary: Erfahren Sie, wie Sie RBAC zum Verwalten von Zugriff auf Ressourcen in Azure verwenden können.
-abstract: Die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) ist ein System, das eine präzise Zugriffsverwaltung für Ressourcen in Azure ermöglicht. Mithilfe von RBAC können Sie Aufgaben in Ihrem Team verteilen und Benutzern nur den Zugriff gewähren, den sie zur Ausführung ihrer Aufgaben benötigen. In diesem Modul erfahren Sie, wie Sie RBAC zum Verwalten von Zugriff auf Ressourcen in Azure verwenden können.
-cardDescription: Erfahren Sie, wie Sie RBAC zum Verwalten von Zugriff auf Ressourcen in Azure verwenden können.
+summary: Erfahren Sie, wie Sie die RBAC zum Verwalten des Zugriffs auf Ressourcen in Azure verwenden können.
+abstract: >
+  In diesem Modul lernen Sie Folgendes:
+
+  - Überprüfen des Zugriffs auf Ressourcen für sich selbst und andere
+
+  - Gewähren des Zugriffs auf Ressourcen
+
+  - Anzeigen von Aktivitätsprotokollen für RBAC-Änderungen
+prerequisites: >
+  - Kenntnisse der grundlegenden Azure-Konzepte wie dem Azure-Portal und Ressourcengruppen
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
 roles:
 - administrator
 products:
-- Azure
+- azure
 units:
 - learn.secure-azure-resources-with-rbac.1-introduction
 - learn.secure-azure-resources-with-rbac.2-rbac-overview

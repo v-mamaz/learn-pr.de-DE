@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.5-exercise-configure-applications-to-send-or-receive-messages-through-an-event-hub
-title: <span data-ttu-id="e9999-101">Konfigurieren von Anwendungen zum Senden oder Empfangen von Nachrichten über einen Event Hub</span><span class="sxs-lookup"><span data-stu-id="e9999-101">Configure applications to send or receive messages through an Event Hub</span></span>
+title: '<span data-ttu-id="f8c3f-101">Übung: Konfigurieren von Anwendungen zum Senden oder Empfangen von Nachrichten über einen Event Hub</span><span class="sxs-lookup"><span data-stu-id="f8c3f-101">Exercise - Configure applications to send or receive messages through an Event Hub</span></span>'
 metadata:
-  title: <span data-ttu-id="e9999-102">Konfigurieren von Anwendungen zum Senden oder Empfangen von Nachrichten über einen Event Hub</span><span class="sxs-lookup"><span data-stu-id="e9999-102">Configure applications to send or receive messages through an Event Hub</span></span>
-  description: <span data-ttu-id="e9999-103">Konfigurieren von Anwendungen zum Senden oder Empfangen von Nachrichten über einen Event Hub</span><span class="sxs-lookup"><span data-stu-id="e9999-103">Configure applications to send or receive messages through an Event Hub</span></span>
-  ms.openlocfilehash: 28d21d21388a71eea65893daeb7f6d2a374c8e64
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: '<span data-ttu-id="f8c3f-102">Übung: Konfigurieren von Anwendungen zum Senden oder Empfangen von Nachrichten über einen Event Hub</span><span class="sxs-lookup"><span data-stu-id="f8c3f-102">Exercise - Configure applications to send or receive messages through an Event Hub</span></span>'
+  description: <span data-ttu-id="f8c3f-103">Konfigurieren von Anwendungen zum Senden oder Empfangen von Nachrichten über einen Event Hub</span><span class="sxs-lookup"><span data-stu-id="f8c3f-103">Configure applications to send or receive messages through an Event Hub</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: e80e64b5b76a501e334bb018a08e9e9e30b17bc9
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43831229"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44248298"
 durationInMinutes: 10
 content: '[!include[](includes/5-exercise-configure-applications-to-send-or-receive-messages-through-an-event-hub.md)]'
