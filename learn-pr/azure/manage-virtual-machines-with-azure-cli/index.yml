@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 4d3dc8892a96d81bad9d39db35d07300d7b6dbba
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 6e96847c7a7164a2caeff2b26d213269c4a7946a
+  ms.sourcegitcommit: 4d3d995e220b696d35237a19740a6d619134d6ca
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44233287"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45537939"
 title: Verwalten von virtuellen Computern mit der Azure CLI
 summary: Erfahren Sie, wie Sie mit der plattformübergreifenden Azure-Befehlszeilenschnittstelle (CLI) virtuelle Computer in Azure erstellen, starten und beenden sowie andere Verwaltungsaufgaben im Zusammenhang mit virtuellen Computern ausführen.
 abstract: >
@@ -27,7 +27,7 @@ abstract: >
 
   - Herstellen einer Verbindung mit einer aktiven VM über SSH und die Azure CLI
 prerequisites: Keine
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/manage-virtual-machines-with-azure-cli.svg
 levels:
 - beginner
 roles:
