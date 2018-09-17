@@ -1,17 +1,17 @@
-Angenommen, Sie entwickeln eine Anwendung zur Finanzverwaltung für neue Startupunternehmen. Sie möchten sicherstellen, dass alle ihre Kundendaten geschützt sind, daher haben Sie sich entschieden, ADE durchgängig für alle Betriebssystem- und Daten-Datenträger auf den Servern einzusetzen, auf denen die Anwendung gehostet ist. Im Rahmen Ihrer Complianceanforderungen müssen Sie außerdem selbst für die Verwaltung Ihrer eigenen Verschlüsselungsschlüssel zuständig sein.
+Angenommen, Sie entwickeln eine Anwendung zur Finanzverwaltung für neue Startupunternehmen. Sie möchten sicherstellen, dass all ihre Kundendaten geschützt sind. Daher haben Sie sich entschieden, Azure Disk Encryption (ADE) durchgängig für alle (Betriebssystem-)Datenträger auf den Servern einzusetzen, auf denen die Anwendung gehostet ist. Im Rahmen Ihrer Complianceanforderungen müssen Sie außerdem selbst für die Verwaltung Ihrer eigenen Verschlüsselungsschlüssel zuständig sein.
 
-In dieser Übungseinheit verschlüsseln Sie Datenträger auf vorhandenen Windows-VMs und verwalten die Verschlüsselungsschlüssel mithilfe Ihres eigenen Azure Key Vaults.
+In dieser Einheit verschlüsseln Sie Datenträger auf vorhandenen Windows-VMs und verwalten die Verschlüsselungsschlüssel mithilfe Ihrer eigenen Azure Key Vault-Instanz.
 
 > [!IMPORTANT] 
-> Bei dieser Übung wird davon ausgegangen, dass Azure PowerShell auf Ihrem Computer installiert ist; Informationen zum Installieren von Azure PowerShell finden Sie unter [Installieren von Azure PowerShell unter Windows mit PowerShellGet](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-6.7.0).
+> Bei dieser Übung wird davon ausgegangen, dass Azure PowerShell auf Ihrem Computer installiert ist. Informationen zum Installieren von Azure PowerShell finden Sie unter [Installieren von Azure PowerShell unter Windows mit PowerShellGet](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-6.7.0).
 
 ## <a name="prepare-the-environment"></a>Vorbereiten der Umgebung
 
-Wir beginnen, indem wir eine Windows-VM in einer neuen Ressourcengruppe bereitstellen und dann der VM einen Daten-Datenträger hinzufügen.
+Wir beginnen, indem wir eine Windows-VM in einer neuen Ressourcengruppe bereitstellen und dann der VM einen Datenträger hinzufügen.
 
-### <a name="deploy-windows-vm-using-azure-portal"></a>Bereitstellen eines virtuellen Windows-Computers über das Azure-Portal
+### <a name="deploy-windows-vm-using-the-azure-portal"></a>Bereitstellen eines virtuellen Windows-Computers über das Azure-Portal
 
-Hier verwenden Sie das Azure-Portal, um einen virtuellen Windows-Computer zu erstellen und bereitzustellen. Definieren Sie zunächst die grundlegenden Informationen über den virtuellen Computer:
+Hier verwenden Sie das Azure-Portal, um einen virtuellen Windows-Computer zu erstellen und bereitzustellen. Definieren Sie zunächst die grundlegenden Informationen für den virtuellen Computer:
 
 1. Navigieren Sie im Browser zum [Azure-Portal](http://portal.azure.com), und melden Sie sich mit Ihren normalen Anmeldeinformationen an.
 
@@ -29,7 +29,7 @@ Hier verwenden Sie das Azure-Portal, um einen virtuellen Windows-Computer zu ers
 
 1. Wählen Sie im Feld **Abonnement** Ihr Azure-Abonnement aus.
 
-1. Wählen Sie unter **Ressourcengruppe** **Neu erstellen** aus, und geben Sie im Feld **moneyapprg** ein.
+1. Klicken Sie unter **Ressourcengruppe** auf die Option **Neu erstellen**. Geben Sie im Feld **moneyapprg** ein.
 
 1. Wählen Sie in der Dropdownliste **Standort** eine Region in Ihrer Nähe aus.
 
@@ -40,9 +40,9 @@ Hier verwenden Sie das Azure-Portal, um einen virtuellen Windows-Computer zu ers
 > [!IMPORTANT]
 > Beachten Sie, dass ADE im Basic-Tarif nicht unterstützt wird.
 
-1. Wählen Sie auf dem Blatt **Größe auswählen** eine **Standard**-SKU aus, z. B. **B1s**, und klicken Sie dann auf **Auswählen**.
+1. Wählen Sie auf dem Blatt **Größe auswählen** eine **Standard**-SKU aus, z.B. **B1s**. Klicken Sie dann auf **Auswählen**.
 
-1. Klicken Sie auf dem Blatt **Einstellungen** in der Liste **Öffentliche Eingangsports hinzufügen** auf **RDP**, scrollen Sie dann nach unten, und klicken Sie auf **OK**.
+1. Klicken Sie auf dem Blatt **Einstellungen** in der Liste **Öffentliche Eingangsports hinzufügen** auf **RDP**. Scrollen Sie anschließend nach unten, und klicken Sie auf **OK**.
 
 1. Klicken Sie auf dem Blatt **Erstellen** auf **Erstellen**.
 
@@ -66,19 +66,19 @@ Hier verwenden Sie das Azure-Portal, um einen virtuellen Windows-Computer zu ers
 
 1. Warten Sie, bis der Datenträger erstellt wurde, bevor Sie fortfahren.
 
-1. Klicken Sie auf dem Blatt **Datenträger** auf **Speichern**. Beachten Sie, dass der Verschlüsselungsstatus des Datenträgers aktuell **_Nicht aktiviert_** ist.
+1. Klicken Sie auf dem Blatt **Datenträger** auf **Speichern**. Beachten Sie, dass der Verschlüsselungsstatus des Datenträgers aktuell **Nicht aktiviert** ist.
 
-## <a name="configure-disk-encryption-pre-requisites"></a>Voraussetzungen zum Konfigurieren der Datenträgerverschlüsselung
+## <a name="configure-disk-encryption-prerequisites"></a>Konfigurieren der erforderlichen Komponenten für die Datenträgerverschlüsselung
 
-Sie verwenden jetzt das Konfigurationsskript für die Voraussetzungen zum Konfigurieren der Azure-Datenträgerverschlüsselung, um alle Voraussetzungen für die Datenträgerverschlüsselung zu konfigurieren. Durch dieses Skript wird ein Key Vault in der gleichen Region wie Ihre VM erstellt und vorbereitet.
+Mit dem Konfigurationsskript konfigurieren Sie im Folgenden alle Komponenten, die für die Datenträgerverschlüsselung mittels Azure Disk Encryption erforderlich sind. Durch dieses Skript wird ein Schlüsseltresor in der gleichen Region, in der sich auch die VM befindet, erstellt und vorbereitet.
 
-### <a name="prepare-the-azure-disk-encryption-prerequisite-setup-script"></a>Vorbereiten des Setupskripts für Azure Disk Encryption – Voraussetzungen
+### <a name="prepare-the-azure-disk-encryption-prerequisite-setup-script"></a>Vorbereiten des Einrichtungsskripts für erforderliche Komponenten von Azure Disk Encryption
 
-1. Navigieren Sie zur GitHub-Seite [Azure Disk Encryption Prerequisite Setup Script](https://github.com/Azure/azure-powershell/blob/master/src/ResourceManager/Compute/Commands.Compute/Extension/AzureDiskEncryption/Scripts/AzureDiskEncryptionPreRequisiteSetup.ps1) (Setupskript für Azure Disk Encryption – Voraussetzungen).
+1. Navigieren Sie zur GitHub-Seite [Azure Disk Encryption Prerequisite Setup Script](https://github.com/Azure/azure-powershell/blob/master/src/ResourceManager/Compute/Commands.Compute/Extension/AzureDiskEncryption/Scripts/AzureDiskEncryptionPreRequisiteSetup.ps1) (Einrichtungsskript für erforderliche Komponenten von Azure Disk Encryption).
 
-1. Klicken Sie auf der GibHub-Seite auf **Raw** (unformatiert).
+1. Klicken Sie auf der GibHub-Seite auf **Raw** (Unformatiert).
 
-1. Verwenden Sie STRG+A, um den gesamten Text auf der Seite auszuwählen, und anschließend STRG+C, um den gesamten Text auf der Seite in die Zwischenablage zu kopieren.
+1. Drücken Sie STRG+A, um den gesamten Text auf der Seite auszuwählen, und anschließend STRG+C, um den gesamten Text auf der Seite in die Zwischenablage zu kopieren.
 
 1. Klicken Sie auf Ihrem Computer auf **Start**, und suchen Sie dann nach **Windows PowerShell ISE**.
 
@@ -102,23 +102,23 @@ Sie verwenden jetzt das Konfigurationsskript für die Voraussetzungen zum Konfig
 
 1. Geben Sie im Feld **Dateiname** **ADEPrereqScript.ps1** ein, und klicken Sie auf **Speichern**.
 
-### <a name="run-the-azure-disk-encryption-prerequisite-setup-script"></a>Ausführen des Setupskripts für Azure Disk Encryption – Voraussetzungen
+### <a name="run-the-azure-disk-encryption-prerequisite-setup-script"></a>Ausführen des Einrichtungsskripts für die erforderlichen Komponenten von Azure Disk Encryption
 
-1. Geben Sie im Bereich der PowerShell ISE-Konsole den folgenden Befehl ein, und drücken Sie die **EINGABETASTE**:
+1. Geben Sie im PowerShell ISE-Konsolenbereich den folgenden Befehl ein, und drücken Sie die **EINGABETASTE**:
 
    ```console
    cd <path to your folder containing ADEPrereqScript.ps1>
    ```
 
-1. Geben Sie im Bereich der PowerShell ISE-Konsole den folgenden Befehl ein, und drücken Sie die **EINGABETASTE**:
+1. Geben Sie im PowerShell ISE-Konsolenbereich den folgenden Befehl ein, und drücken Sie die **EINGABETASTE**:
 
    ```powershell
    Set-ExecutionPolicy Unrestricted
    ```
 
-   Wenn ein Dialogfeld **Ausführungsrichtlinie ändern** angezeigt wird, klicken Sie entweder auf **Alle ja** oder auf **Ja** (wenn die Option _Alle ja_ nicht angezeigt wird).
+   Wenn das Dialogfeld **Ausführungsrichtlinie ändern** angezeigt wird, klicken Sie entweder auf **Ja, alle** oder auf **Ja** (wenn die Option _Ja, alle_ nicht angezeigt wird).
 
-1. Geben Sie im Bereich der PowerShell ISE-Konsole den folgenden Befehl ein, und drücken Sie die **EINGABETASTE**:
+1. Geben Sie im PowerShell ISE-Konsolenbereich den folgenden Befehl ein, und drücken Sie die **EINGABETASTE**:
 
    ```powershell
    Login-AzureRmAccount
@@ -130,29 +130,29 @@ Sie verwenden jetzt das Konfigurationsskript für die Voraussetzungen zum Konfig
 
 1. Klicken Sie in der PowerShell ISE auf **Datei** und dann auf **Ausführen**.
 
-1. Geben Sie im Konsolenfenster an der Aufforderung **resourceGroupName:** **moneyapprg** ein, und drücken Sie die **EINGABETASTE**.
+1. Geben Sie im Konsolenbereich nach der Eingabeaufforderung **resourceGroupName:** **moneyapprg** ein. Drücken Sie anschließend die **EINGABETASTE**.
 
-1. Geben Sie im Konsolenfenster an der Aufforderung **keyVaultName:** **moneyappkv** ein, und drücken Sie die **EINGABETASTE**.
+1. Geben Sie im Konsolenfenster nach der Eingabeaufforderung **keyVaultName:** **moneyappkv** ein. Drücken Sie anschließend die **EINGABETASTE**.
 
-1. Geben Sie im Konsolenfenster an der Aufforderung **location:** den Speicherort ein, den Sie beim Erstellen Ihrer VM verwendet haben.
+1. Geben Sie im Konsolenfenster nach der Eingabeaufforderung **location:** den Speicherort ein, den Sie beim Erstellen Ihrer VM verwendet haben.
 
 1. Fügen Sie im Konsolenfenster an der Aufforderung **subscriptionId:** Ihre Abonnement-ID ein.
 
-1. Der **moneyappkv**-Schlüsseltresor wird jetzt erstellt. Wenn dieser Vorgang abgeschlossen ist, wählen Sie den Zusammenfassungstext aus (grün dargestellt), und kopieren Sie ihn in Editor.
+1. Der **moneyappkv**-Schlüsseltresor wird jetzt erstellt. Wenn dieser Vorgang abgeschlossen ist, wählen Sie den Zusammenfassungstext aus (grün dargestellt), und kopieren Sie ihn in den Editor.
 
 1. Drücken Sie die **EINGABETASTE**, um fortzufahren.
 
-1. Geben Sie im Konsolenfenster an der Aufforderung **aadAppName:** **moneyapp** ein, und drücken Sie die **EINGABETASTE**.
+1. Geben Sie im Konsolenbereich nach der Eingabeaufforderung **aadAppName:** **moneyapp** ein. Drücken Sie anschließend die **EINGABETASTE**.
 
-1. Die Azure AD-Anwendung **moneyapp** wird jetzt erstellt. Wenn dieser Vorgang abgeschlossen ist, wählen Sie den Zusammenfassungstext aus (grün dargestellt), und kopieren Sie ihn in Editor.
+1. Die Azure AD-Anwendung **moneyapp** wird jetzt erstellt. Wenn dieser Vorgang abgeschlossen ist, wählen Sie den Zusammenfassungstext aus (grün dargestellt), und kopieren Sie ihn in den Editor.
 
 1. Drücken Sie die **EINGABETASTE**, um fortzufahren.
 
 ### <a name="encrypt-your-vm-disks-with-powershell"></a>Verschlüsseln Ihrer VM-Datenträger mit PowerShell
 
-Überprüfen Sie den Verschlüsselungsstatus der Betriebssystem- und Daten-Datenträger:
+Überprüfen Sie den Verschlüsselungsstatus der (Betriebssystem-)Datenträger wie folgt:
 
-1. Geben Sie im PowerShell ISE-Konsolenfenster den folgenden Befehl ein, und drücken Sie die EINGABETASTE:
+1. Geben Sie im PowerShell ISE-Konsolenbereich den folgenden Befehl ein, und drücken Sie die **EINGABETASTE**:
 
     ```powershell
     $vmName = 'moneyappsvr01'
@@ -161,17 +161,17 @@ Sie verwenden jetzt das Konfigurationsskript für die Voraussetzungen zum Konfig
     > [!NOTE]
     > Der Name der VM muss in einfache Anführungszeichen eingeschlossen sein.
 
-1. Geben Sie im PowerShell ISE-Skriptfenster den folgenden Befehl ein, und drücken Sie die EINGABETASTE:
+1. Geben Sie im PowerShell ISE-Skriptbereich den folgenden Befehl ein, und drücken Sie die **EINGABETASTE**:
 
     ```powershell
     Set-AzureRmVMDiskEncryptionExtension -ResourceGroupName $resourceGroupName -VMName $vmName -AadClientID $aadClientID -AadClientSecret $aadClientSecret -DiskEncryptionKeyVaultUrl $diskEncryptionKeyVaultUrl -DiskEncryptionKeyVaultId $keyVaultResourceId -VolumeType All
     ```
 
-1. Klicken Sie im Dialogfeld **Enable AzureDiskEncryption on the VM** (Azure-Datenträgerverschlüsselung für die VM aktivieren) auf **Ja**, und achten Sie auf die Nachricht, dass der Abschluss der Verschlüsselung 10–15 Minuten in Anspruch nehmen kann.
+1. Klicken Sie im Dialogfeld **Enable AzureDiskEncryption on the VM** (Azure-Datenträgerverschlüsselung für die VM aktivieren) auf **Ja**. Sie werden in einer Nachricht darauf hingewiesen, dass der Abschluss der Verschlüsselung 10 bis 15 Minuten in Anspruch nehmen kann.
 
 >[!IMPORTANT]
-> Warten Sie auf den Abschluss des Befehls, bevor Sie mit dieser Übung fortfahren
+> Warten Sie auf den Abschluss des Befehls, bevor Sie mit dieser Übung fortfahren.
 
 ### <a name="verify-the-encryption-status-of-your-vm-disks"></a>Überprüfen des Verschlüsselungsstatus Ihrer VM-Datenträger
 
-Wechseln Sie zum Azure-Portal, und beachten Sie auf dem Blatt **Datenträger** für **moneyappsvr01**, dass der Datenträger-Verschlüsselungsstatus für die Betriebssystem- und Daten-Datenträger jetzt **Aktiviert** ist.
+Wechseln Sie zum Azure-Portal. Beachten Sie auf dem Blatt **Datenträger** für **moneyappsvr01**, dass als Verschlüsselungsstatus für die (Betriebssystem-)Datenträger jetzt **Aktiviert** festgelegt ist.

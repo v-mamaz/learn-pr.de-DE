@@ -9,21 +9,18 @@ Der `[command]` identifiziert den Azure-Bereich, den Sie steuern möchten. Sie k
 Sie können eine Liste der Befehle, Unterbefehle und Parameter anzeigen, indem Sie einen Teilbefehl eingeben. Wenn Sie beispielsweise „`az`“ in der Befehlszeile eingeben, erhalten Sie einen Hilfebildschirm auf der obersten Ebene. Mit der Eingabe von „`az vm`“ erhalten Sie alle Unterbefehle für virtuelle Computer. Dieser Ansatz bietet eine hervorragende Möglichkeit, das Azure CLI-Tool zu erkunden.
 
 > [!NOTE]
-> Wir verwenden den im Browser gehosteten Azure Cloud Shell-Dienst, um mit der Azure CLI zu arbeiten. Wenn Sie lieber auf Ihrem lokalen Computer arbeiten, können Sie alle hier erläuterten Befehle auch über die Befehlszeile ausführen, indem Sie die [Azure CLI installieren](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+> Wir verwenden den im Browser gehosteten Azure Cloud Shell-Dienst, um mit der Azure CLI zu arbeiten. Wenn Sie lieber auf Ihrem lokalen Computer arbeiten, können Sie alle hier erläuterten Befehle auch über die Befehlszeile ausführen, indem Sie die [Azure CLI installieren](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Diese Aufgabe wurde bereits im Modul **Steuern von Azure-Diensten mit der Azure CLI** behandelt.
 
-## <a name="log-in-to-azure"></a>Anmelden an Azure
+## <a name="login-to-azure"></a>Anmelden bei Azure
 
-Wenn Sie mit der Azure CLI arbeiten, müssen Sie sich zunächst bei Ihrem Azure-Konto anmelden. Dies erfolgt über den `login`-Befehl. Wenn Sie Cloud Shell verwenden, können Sie sich mithilfe einer Schaltfläche bei Azure anmelden.
+Wenn Sie mit der Azure CLI arbeiten, müssen Sie sich in der Regel zunächst bei Ihrem Azure-Konto anmelden. Hierzu nutzen Sie den Befehl `az login`. Mit diesem wird ein Browserfenster geöffnet, in dem Sie das Microsoft-Konto auswählen können, das Sie verwenden möchten. Da Sie hier aber die Azure-Sandbox verwenden, ist dieser Schritt nicht erforderlich, und Sie müssen die Azure-Sandbox aktivieren.
 
-```azurecli
-az login
-```
-
-Dieser Befehl startet ein Browserfenster und ermöglicht Ihnen die Auswahl des Microsoft-Kontos, das Sie verwenden möchten.
+<!-- Activate the sandbox -->
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
 ## <a name="working-with-subscriptions"></a>Arbeiten mit Abonnements
 
-In diesem Modul arbeiten wir in einem temporären Abonnement, das für Übungszwecke erstellt wurde. Normalerweise verwenden Sie aber ein Abonnement aus Ihrem eigenen Konto. Wenn Sie über mehrere Abonnements verfügen, können Sie mit der `az account list --output table`-Anweisung eine formatierte Liste der Abonnements abrufen.
+In diesem Modul arbeiten Sie mit einem temporären Abonnement. Normalerweise verwenden Sie aber ein Abonnement Ihres eigenen Kontos. Wenn Sie über mehrere Abonnements verfügen, können Sie mit der `az account list --output table`-Anweisung eine formatierte Liste der Abonnements abrufen.
 
 ```
 Name                                  CloudName    SubscriptionId                        State    IsDefault

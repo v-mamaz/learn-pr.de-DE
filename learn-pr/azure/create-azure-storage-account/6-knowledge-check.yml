@@ -5,16 +5,21 @@ durationInMinutes: 3
 metadata:
   title: 'Wissenstest: Erstellen eines Speicherkontos'
   description: Fragen zu den Eigenschaften und der Erstellung eines Speicherkontos.
-  ms.openlocfilehash: ab689dd2ef9802ce036ec683909b291c3b342370
-  ms.sourcegitcommit: c07e11980180ae35cb3485548f81e16152d77781
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: e406c0e7cf2b81a7cae86ee7ea4ef715994e3c29
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/02/2018
-  ms.locfileid: "43471303"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44237027"
 quiz:
   title: 'Wissenstest: Erstellen eines Speicherkontos'
   questions:
-  - content: 'Angenommen Sie verfügen über zwei Videodateien, die als BLOBs gespeichert sind. Eines der Videos ist unternehmenskritisch. Für dieses Video ist eine Replikationsrichtlinie erforderlich, die mehrere Kopien in verschiedenen Rechenzentren erstellt. Das andere Videos ist nicht unternehmenskritisch. Für dieses Video reicht eine lokale Replikationsrichtlinie aus. Richtig oder falsch: Zur Erfüllung der Einschränkungen müssen sich die zwei BLOBs in separaten Speicherkonten befinden.'
+  - content: 'Angenommen Sie verfügen über zwei Videodateien, die als BLOBs gespeichert sind. Eines der Videos ist unternehmenskritisch. Für dieses Video ist eine Replikationsrichtlinie erforderlich, die mehrere Kopien in verschiedenen Rechenzentren erstellt. Das andere Videos ist nicht unternehmenskritisch. Für dieses Video reicht eine lokale Replikationsrichtlinie aus. Richtig oder falsch: Zur Erfüllung der Einschränkungen müssen sich die zwei Blobs in separaten Speicherkonten befinden.'
     choices:
     - content: Richtig
       isCorrect: true
@@ -27,14 +32,14 @@ quiz:
       isCorrect: false
     - content: Er muss innerhalb Ihres Azure-Abonnements eindeutig sein.
       isCorrect: false
-    - content: Global eindeutig
+    - content: Er muss global eindeutig sein.
       isCorrect: true
       correctExplanation: Der Name des Speicherkontos wird als Teil des URI für den API-Zugriff verwendet, er muss folglich global eindeutig sein.
   - content: Wann würden Sie in einem typischen Projekt Ihr Speicherkonto bzw. Ihre Speicherkonten erstellen?
     choices:
     - content: Zu Beginn, während der Einrichtung des Projekts.
       isCorrect: true
-      correctExplanation: Speicherkonten sind in der Regel die Lebensdauer eines Projekts über stabil. Sie werden für gewöhnlich zu Beginn eines Projekts erstellt.
+      correctExplanation: Speicherkonten sind in der Regel über die Lebensdauer eines Projekts hinweg stabil. Sie werden für gewöhnlich zu Beginn eines Projekts erstellt.
     - content: Nach der Bereitstellung, wenn das Projekt ausgeführt wird.
       isCorrect: false
     - content: Am Ende, während der Ressourcenbereinigung.

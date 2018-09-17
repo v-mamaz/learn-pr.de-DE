@@ -25,9 +25,9 @@ Um eine Anwendung für das Empfangen von Nachrichten von einen Event Hub zu konf
 
 Wenn Sie über eine Empfängeranwendung verfügen, die Nachrichten in Azure Blob Storage speichert, müssen Sie auch zunächst ein Speicherkonto einrichten.
 
-## <a name="the-azure-cli-commands-for-creating-a-general-purpose-standard-storage-account"></a>Die Azure CLI-Befehle zum Erstellen eines allgemeinen Standardspeicherkontos
+## <a name="the-azure-cli-commands-for-creating-a-general-purpose-standard-storage-account"></a>Die Azure CLI-Befehle zum Erstellen eines universellen Standardspeicherkontos
 
-1. Erstellen Sie das Speicherkonto (Allgemein, Version 2) in Ihrer Ressourcengruppe und am selben Speicherort im Azure-Rechenzentrum, an dem Sie die Ressourcengruppe erstellt haben.
+1. Erstellen Sie ein universelles Speicherkonto (Version 2) in Ihrer Ressourcengruppe, und nutzen Sie denselben Standort des Azure-Rechenzentrums, an dem Sie die Ressourcengruppe erstellt haben.
 
     ```azurecli
     az storage account create --name <storage account name> --resource-group <resource group name> --location <location> --sku Standard_RAGRS --encryption blob

@@ -1,29 +1,35 @@
 ### YamlMime:Module
 uid: learn.secure-access-azure-ad-multi-factor-authentication
 metadata:
-  title: Secure your Azure resources with conditional access
-  description: Many organizations want to increase their security posture, but they want to balance this requirement with ease of access for their users. Azure AD provides a mechanism to support this balance in conditional access. Organizations can require compensating controls like Azure Multi-Factor Authentication (MFA) in specific circumstances. Learn how to use conditional access with Azure Active Directory.
+  title: Schützen von Azure-Ressourcen durch bedingten Zugriff
+  description: Viele Organisationen möchten zwar ihren Sicherheitsstatus erhöhen, allerdings soll diese Anforderung in einem ausgeglichenen Verhältnis zu einer erleichterten Bedienung für Benutzer stehen. Azure AD bietet einen Mechanismus, um diese Balance für den bedingten Zugriff zu unterstützen. Unter bestimmten Umständen können Organisationen ausgleichende Steuerungsmaßnahmen wie Azure Multi-Factor Authentication (MFA) erfordern. Erfahren Sie, wie Sie den bedingten Zugriff in Azure Active Directory verwenden.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Secure your Azure resources with conditional access
-summary: Many organizations want to increase their security posture, but they want to balance this requirement with ease of access for their users. Azure AD provides a mechanism to support this balance in conditional access. Organizations can require compensating controls like Azure Multi-Factor Authentication (MFA) in specific circumstances. Learn how to use conditional access with Azure Active Directory.
-abstract: |
-  In this module, you will:
-  - Create a test user and a user group
-  - Enable a conditional access policy that requires Multi-Factor Authentication (MFA)
-prerequisites: |
-  - Knowledge of basic Azure concepts, such as resource groups and subscriptions
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: 0abf0fe8d2cb4f78a1d69996359da8cc2dfaef80
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44244184"
+title: Schützen von Azure-Ressourcen durch bedingten Zugriff
+summary: Viele Organisationen möchten zwar ihren Sicherheitsstatus erhöhen, allerdings soll diese Anforderung in einem ausgeglichenen Verhältnis zu einer erleichterten Bedienung für Benutzer stehen. Azure AD bietet einen Mechanismus, um diese Balance für den bedingten Zugriff zu unterstützen. Unter bestimmten Umständen können Organisationen ausgleichende Steuerungsmaßnahmen wie Azure Multi-Factor Authentication (MFA) erfordern. Erfahren Sie, wie Sie den bedingten Zugriff in Azure Active Directory verwenden.
+abstract: >
+  In diesem Modul lernen Sie Folgendes:
+
+  - Erstellen eines Testbenutzers und einer Benutzergruppe
+
+  - Aktivieren einer Richtlinie für bedingten Zugriff, die die mehrstufige Authentifizierung (MFA) erfordert
+prerequisites: >
+  - Kenntnisse der grundlegenden Azure-Konzepte wie Ressourcengruppen und Abonnements
 iconUrl: http://via.placeholder.com/120x120
-levels: 
+levels:
 - intermediate
-roles: 
+roles:
 - administrator
-products: 
+products:
 - azure-active-directory
 units:
 - learn.secure-access-azure-ad-multi-factor-authentication.1-introduction

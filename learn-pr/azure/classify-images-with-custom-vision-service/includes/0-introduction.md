@@ -2,7 +2,7 @@ Bei [Microsoft Cognitive Services](https://azure.microsoft.com/services/cognitiv
 
 ### <a name="learning-objectives"></a>Lernziele
 
-In diesem Modul wird Folgendes thematisiert:
+In diesem Modul lernen Sie Folgendes:
 
 - Erstellen eines Custom Vision Service-Projekts
 - Trainieren eines Custom Vision Service-Modells mit gekennzeichneten Bildern
@@ -11,7 +11,8 @@ In diesem Modul wird Folgendes thematisiert:
 
 ### <a name="prerequisites"></a>Voraussetzungen  
 
-<!---TODO: Need links here and better verbiage--->
+<!---TODO: Need links here and better verbiage; is Microsoft account needed?--->
+
 - Ein [Microsoft-Konto](https://account.microsoft.com/account)
 - Visual Studio Code
 - Node.js

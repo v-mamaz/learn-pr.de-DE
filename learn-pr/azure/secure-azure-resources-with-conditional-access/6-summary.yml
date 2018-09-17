@@ -3,19 +3,23 @@ uid: learn.secure-access-azure-ad-multi-factor-authentication.6-summary
 metadata:
   title: Zusammenfassung
   description: Zusammenfassung
-  displayType: one-column
-  ms.openlocfilehash: 254fbb2d71f03aa6048c4fab026724c2bb8c2077
-  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: e304ba65bbe39c289f95bc5bb300256a6554bdb1
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/03/2018
-  ms.locfileid: "43477174"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44246530"
 title: Zusammenfassung
 durationInMinutes: 10
 content: >
   [!include[](includes/6-summary.md)]
 quiz:
-  title: 'Quiz: Azure Active Directory und bedingter Zugriff'
+  title: 'Wissenstest: Azure Active Directory und bedingter Zugriff'
   questions:
   - content: Azure AD ist nur ein AD DS-Domänencontroller, der in Azure ausgeführt wird.
     choices:

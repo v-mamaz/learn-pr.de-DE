@@ -4,37 +4,50 @@ Mit der folgenden grundlegenden Konfiguration erhalten Sie einen Überblick dar�
 
 ## <a name="your-e-commerce-site-at-a-glance"></a>Ihre E-Commerce-Website auf einen Blick
 
-In einer [n-schichtigen Architektur](https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/n-tier) wird eine Anwendung in mindestens zwei logische Schichten aufgeteilt. Höhere Schichten können dabei auf Dienste niedrigerer Schichten zugreifen. Umgekehrt sollte dies jedoch nicht möglich sein.
+Größere Unternehmenssysteme bestehen häufig aus miteinander verbundenen Anwendungen und Diensten, die interagieren. Möglicherweise verfügen Sie über ein Front-End-System, das dafür zuständig ist, einen Bestand anzuzeigen und Kunden die Möglichkeit bietet, eine Bestellung aufzugeben. Dieses System kommuniziert unter Umständen mit einer Vielzahl von Webdiensten, um Bestandsdaten bereitzustellen, Benutzerprofile zu verwalten, Kreditkartendaten zu verarbeiten und die Bestellabwicklung anzufordern.
 
-Schichten sind im Idealfall wiederverwendbar und werden dazu verwendet, unterschiedliche Aufgaben voneinander zu trennen. Eine Schichtenarchitektur vereinfacht außerdem die Wartung, da Schichten unabhängig voneinander geändert oder ersetzt werden können. Zusätzlich können neue Schichten bei Bedarf eingefügt werden.
+Es gibt verschiedene Strategien und Muster, die von Softwarearchitekten und Entwicklern eingesetzt werden, um diese komplexen Systeme einfacher zu entwerfen, zu erstellen, zu verwalten und zu warten. Wir werfen nun einen Blick auf einige dieser Ansätze und beginnen mit _lose gekoppelten Architekturen_.
 
-Unter einer _dreischichtigen_ Architektur wird eine n-schichtige Anwendung mit drei Schichten verstanden. Auch für Ihre E-Commerce-Webanwendung wird eine dreischichtige Architektur verwendet:
+### <a name="benefits-of-a-loosely-coupled-architecture"></a>Vorteile einer lose gekoppelten Architektur
+
+<!-- TOOD: verify video -->
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE2yHrc]
+
+### <a name="using-an-n-tier-architecture"></a>Verwenden einer n-schichtigen Architektur
+
+Zur Erstellung lose gekoppelter Systeme kann ein _n-schichtiges_ Architekturmuster verwendet werden.
+
+In einer [n-schichtigen Architektur](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/n-tier) wird eine Anwendung in mindestens zwei logische Schichten aufgeteilt. Höhere Schichten können dabei auf Dienste niedrigerer Schichten zugreifen. Umgekehrt sollte dies jedoch nicht möglich sein.
+
+Schichten sind im Idealfall wiederverwendbar und werden dazu verwendet, unterschiedliche Aufgaben voneinander zu trennen. Eine Schichtenarchitektur verringert auch den Wartungsaufwand. Schichten können unabhängig voneinander geändert oder ersetzt werden können. Zusätzlich können neue Schichten bei Bedarf eingefügt werden.
+
+Unter einer _dreischichtigen_ Anwendung wird eine n-schichtige Anwendung mit drei Schichten verstanden. Auch für Ihre E-Commerce-Webanwendung wird eine dreischichtige Architektur verwendet:
 
 * Die **Webschicht** stellt über einen Browser die Webschnittstelle für Ihre Benutzer bereit.
 * In der **Logikschicht** wird die Geschäftslogik ausgeführt.
 * Die **Datenschicht** enthält Datenbanken und andere Speicher, die Produktinformationen und Kundenbestellungen enthalten.
 
-Nachfolgend sehen Sie ein Diagramm. Interessant ist hier der Ablauf, der bei den Benutzern beginnt und bei der Datenschicht endet.
+Auf der folgenden Abbildung wird der Weg der Benutzeranforderung vom Benutzer bis zur Datenschicht dargestellt.
 
-![Eine grundlegende dreischichtige Webanwendung](../media-draft/three-tier.png)
+![Abbildung mit dreischichtiger Architektur, in der jede Schicht auf einem dedizierten virtuellen Computer gehostet wird](../media/2-three-tier.png)
 
-Wenn der Benutzer auf die Schaltfläche zum Aufgeben der Bestellung klickt, wird die Anforderung zusammen mit der Adresse des Benutzers und den Zahlungsinformationen an die Webschicht gesendet. Die Webschicht übergibt diese Informationen der Logikschicht, in der die Zahlungsinformationen überprüft werden und eine Bestandsprüfung durchgeführt wird. Mithilfe der Logikschicht kann die Bestellung anschließend in der Datenschicht gespeichert werden, damit später die Auftragsabwicklung eingeleitet werden kann.
+Wenn der Benutzer auf die Schaltfläche zum Aufgeben der Bestellung klickt, wird die Anforderung zusammen mit der Adresse des Benutzers und den Zahlungsinformationen an die Webschicht gesendet. Die Webschicht übergibt diese Informationen der Logikschicht, in der die Zahlungsinformationen überprüft werden und eine Bestandsprüfung durchgeführt wird. Mithilfe der Logikschicht kann die Bestellung anschließend in der Datenschicht gespeichert werden, damit später die Bestellabwicklung eingeleitet werden kann.
 
 ## <a name="your-e-commerce-site-running-on-azure"></a>Ihre E-Commerce-Website in Azure
 
 Azure bietet mehrere Möglichkeiten zum Hosten Ihrer Webanwendungen, die von vollständig vorkonfigurierten Umgebungen, in denen Ihr Code gehostet wird, bis hin zu virtuellen Computern reichen, die Sie selbst konfigurieren, anpassen und verwalten.
 
-Angenommen, Sie möchten Ihre E-Commerce-Website auf virtuellen Computern betreiben. In Ihrer Testumgebung in Azure könnte dies etwa wie folgt aussehen.
+Angenommen, Sie möchten Ihre E-Commerce-Website auf virtuellen Computern betreiben. In Ihrer Testumgebung in Azure könnte dies etwa wie folgt aussehen. Auf der folgenden Abbildung wird eine Architektur mit drei Schichten dargestellt, die auf virtuellen Computern ausgeführt werden. Zusätzlich sind Sicherheitsfeatures aktiviert, durch die eingehende Anforderungen eingeschränkt werden. 
 
-![Eine grundlegende dreischichtige Webanwendung in Azure](../media-draft/test-deployment.png)
+![Abbildung mit dreischichtiger Architektur, in der jede Schicht auf einem eigenständigen virtuellen Computer gehostet wird Jeder virtuelle Computer befindet sich in einem eigenständigen virtuellen Netzwerk und verfügt über eine eigene IP-Adresse. Jedes virtuelle Netzwerk verfügt über eine Netzwerksicherheitsgruppe, in der offene Ports aufgeführt sind.](../media/2-test-deployment.png)
 
 Im Folgenden erhalten Sie einen Überblick über die einzelnen Komponenten.
 
-## <a name="what-is-an-azure-region"></a>Was ist eine Azure-Region?
+### <a name="what-is-an-azure-region"></a>Was ist eine Azure-Region?
 
 Eine _Region_ ist ein Azure-Rechenzentrum an einem bestimmten geografischen Standort. Beispiele für Regionen sind „USA, Osten“, „USA, Westen“ und „Europa, Norden“. Wie Sie sehen, wird die Anwendung in der Region „USA, Osten“ ausgeführt.
 
-## <a name="what-is-a-virtual-network"></a>Was ist ein virtuelles Netzwerk?
+### <a name="what-is-a-virtual-network"></a>Was ist ein virtuelles Netzwerk?
 
 Ein _virtuelles Netzwerk_ ist ein logisch isoliertes Netzwerk in Azure. Wenn Sie bereits Netzwerke in Hyper-V, VMware oder in anderen öffentlichen Clouds eingerichtet haben, sind Sie sicherlich mit virtuellen Azure-Netzwerken vertraut.
 

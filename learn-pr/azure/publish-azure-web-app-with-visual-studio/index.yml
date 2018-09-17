@@ -4,16 +4,20 @@ metadata:
   title: Veröffentlichen einer Azure-Web-App mit Visual Studio für Windows oder Mac
   description: Mit Azure App Service veröffentlichen und aktualisieren Sie Web-Apps in kürzester Zeit direkt über Visual Studio. Im Folgenden erfahren Sie, wie Sie die erforderlichen Tools installieren, eine auf ASP.NET basierende Webanwendung erstellen und diese in Azure veröffentlichen. Abschließend lernen Sie, wie Sie Änderungen an der App vornehmen. Außerdem wird demonstriert, dass Änderungen ganz einfach erneut in Azure veröffentlicht werden können.
   ms.date: 09/24/2018
-  ms.openlocfilehash: 1995d2b4e21237e7c76e11fd242fba6f1f127983
-  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: df784799919150d3d0e631224a64899b82fd7834
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43846907"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44234681"
 title: Veröffentlichen einer Azure-Web-App mit Visual Studio für Windows oder Mac
 summary: Mit den Veröffentlichungsfeatures von Visual Studio 2017 für PC oder Mac stellen Sie eine auf ASP.NET basierende und in Azure gehostete Webanwendung bereit und verwalten diese.
 abstract: >
-  In diesem Modul wird Folgendes thematisiert:
+  In diesem Modul
 
   - erstellen Sie eine ASP.NET-Web-App in Visual Studio 2017 für PC oder Mac,
 

@@ -1,0 +1,40 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.5-encryption
+title: Verschlüsselung
+metadata:
+  title: Verschlüsselung
+  description: In dieser Einheit erörtern wir, wie Sie die Verschlüsselung verwenden, um Ihre Architektur zu schützen.
+  ms.openlocfilehash: e446c39aa1726711a142b3e1ec715f95b39fdfdc
+  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43729058"
+durationInMinutes: 5
+content: >
+  [!include[](includes/5-encryption.md)]
+quiz:
+  title: 'Wissenstest: Verschlüsselung'
+  questions:
+  - content: Nur virtuelle Windows-Computer können Azure Disk Encryption verwenden.
+    choices:
+    - content: Richtig
+      isCorrect: false
+      incorrectExplanation: Azure Disk Encryption ist sowohl für virtuelle Windows- als auch Linux-Computer verfügbar.
+    - content: Falsch
+      isCorrect: true
+      correctExplanation: Azure Disk Encryption ist sowohl für virtuelle Windows- als auch Linux-Computer verfügbar.
+  - content: Welcher der folgenden Faktoren spielt bei der Ermittlung der Datenklassifizierung eine Rolle?
+    choices:
+    - content: Risikostufe für Kunden, falls Daten ohne Berechtigung zugänglich gemacht werden
+      isCorrect: true
+      correctExplanation: Die Risikostufe für Kunden im Fall einer unberechtigten Veröffentlichung von Daten ist ein wesentlicher Klassifizierungsfaktor.
+    - content: Datentransportmethode
+      isCorrect: false
+      incorrectExplanation: Die Datentransportmethode spielt eine Rolle, nachdem Daten klassifiziert wurden. Sie ist aber kein Faktor bei der Ermittlung der Klassifizierung.
+    - content: Ob die Daten auf virtuellen Computern oder in einer Datenbank gespeichert werden
+      isCorrect: false
+      incorrectExplanation: Der Speicherort kann zwar von der Klassifizierung der Daten abhängen, ist aber kein Faktor bei der Bestimmung der Klassifizierung.
+    - content: Menge der gespeicherten Daten
+      isCorrect: false
+      incorrectExplanation: Die Menge der gespeicherten Daten ist für die Klassifizierung nicht relevant.

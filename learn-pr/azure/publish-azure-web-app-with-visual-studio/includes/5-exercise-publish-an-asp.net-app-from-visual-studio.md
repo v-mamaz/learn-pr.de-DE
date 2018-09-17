@@ -60,9 +60,9 @@ Sie verfügen nun über eine lokal ausgeführte ASP.NET Core-Webanwendung. In di
 
     ![Veröffentlichen des Ergebnisses](../media-draft/5-PublishResult.png)
 
-1. Herzlichen Glückwunsch, Ihre ASP.NET Core-Webanwendung ist nun veröffentlicht und online verfügbar. Sie können die endgültige URL für Ihre Website in der kompilierten Ausgabe und auch auf der Veröffentlichungsseite in Visual Studio sehen.
+1. Herzlichen Glückwunsch, Ihre ASP.NET Core-Webanwendung ist nun veröffentlicht und online verfügbar. Sie können die endgültige URL für Ihre Website in der Buildausgabe und auch auf der Veröffentlichungsseite in Visual Studio sehen.
 
-    ![Veröffentlichen des Ergebnisses](../media-draft/5-PublishPage.png)
+    ![Ergebnis der Veröffentlichung](../media-draft/5-PublishPage.png)
 
 1. Um Ihre Website zu testen, öffnen Sie die angegebene URL.
 

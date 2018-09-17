@@ -4,14 +4,14 @@ Es gibt mehrere Tools, die ein Speicherkonto erstellen. In der Regel hängt Ihre
 
 Zu den verfügbaren Tools zählen:
 
-- Portal
-- Befehlszeilenschnittstelle (CLI)
+- das Azure-Portal
+- die Azure-Befehlszeilenschnittstelle (CLI)
 - Azure PowerShell
-- Verwaltung einer Clientbibliothek
+- Verwaltungsbibliotheken für Clients
 
-Das Portal bietet eine GUI mit QuickInfos für jede Einstellung. Dadurch ist es einfach zu bedienen und bietet hilfreiche Informationen zu den Optionen.
+Das Portal bietet eine GUI mit Erklärungen für jede Einstellung. Dadurch ist es einfach zu bedienen und bietet hilfreiche Informationen zu den Optionen.
 
-Die anderen Tools unterstützen alle die Automatisierung. Mit der CLI und Azure PowerShell können Sie Skripts schreiben, während die Verwaltungsbibliotheken das Integrieren einer Erstellung in eine Client-App ermöglichen.
+Die anderen Tools unterstützen alle die Automatisierung. Mit der Azure CLI und Azure PowerShell können Sie Skripts schreiben, während mit Verwaltungsbibliotheken der Erstellungsvorgang in Client-Apps integriert werden kann.
 
 ## <a name="how-to-choose-a-tool"></a>Auswählen eines Tools
 

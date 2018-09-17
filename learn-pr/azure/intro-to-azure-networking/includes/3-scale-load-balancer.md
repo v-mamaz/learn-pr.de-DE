@@ -17,7 +17,7 @@ Unter _Resilienz_ wird die Fähigkeit eines Systems verstanden, auch bei anormal
 Zu diesen Bedingungen zählen
 
 - Naturkatastrophen,
-- geplante und ungeplante Systemwartungen, bei denen Software- oder Sicherheitspatches durchgeführt werden,
+- geplante und ungeplante Systemwartungen, bei denen Softwareupdates oder Sicherheitspatches durchgeführt werden,
 - Lastspitzen beim Website-Datenverkehr
 - und von Angreifern ausgehende Bedrohungen wie verteilte Denial-of-Service-Angriffe (DDoS).
 
@@ -27,15 +27,15 @@ Angenommen, Ihr Marketingteam möchte einen Blitzverkauf organisieren, um eine n
 
 Ein _Lastenausgleich_ verteilt den Datenverkehr gleichmäßig auf die einzelnen Systeme in einem Pool. Dadurch können Sie leichter Hochverfügbarkeit und Resilienz gewährleisten.
 
-Angenommen, Sie fügen allen Schichten jeweils gleich konfigurierte virtuelle Computer hinzu. Die Idee besteht darin, über zusätzliche Systeme zu verfügen, falls eines ausfällt oder zu viele Benutzeranforderungen gleichzeitig verarbeitet werden müssen.
+Angenommen, Sie fügen allen Schichten zusätzliche, jeweils gleich konfigurierte virtuelle Computer hinzu. Die Idee besteht darin, über zusätzliche Systeme zu verfügen, falls eines ausfällt oder zu viele Benutzeranforderungen gleichzeitig verarbeitet werden müssen.
 
 Problematisch ist hier, dass jeder virtueller Computer über eine eigene IP-Adresse verfügt. Außerdem besteht keine Möglichkeit, den Datenverkehr zu verteilen, falls ein System ausfällt oder ausgelastet ist. Es stellt sich daher die Frage, wie die virtuellen Computer so verbunden werden, dass Benutzer den Eindruck haben, mit nur einem System zu interagieren.
 
 Die Lösung besteht im Einsatz eines Lastenausgleichs, der den Datenverkehr verteilt. Der Lastenausgleich wird für die Benutzer zum Einstiegspunkt. Diese wissen nicht (und müssen auch nicht wissen), welches System vom Lastenausgleich dazu bestimmt wird, die Anforderung entgegenzunehmen.
 
-Nachfolgend sehen Sie ein Diagramm.
+Auf der folgenden Abbildung ist die Rolle eines Lastenausgleichs dargestellt.
 
-![Lastenausgleich zum Verteilen von Datenverkehr zwischen virtuellen Computern](../media-draft/load-balancer.png)
+![Abbildung mit der Webschicht einer dreischichtigen Architektur Die Webschicht verfügt über mehrere virtuelle Computer, mit denen Benutzeranforderungen verarbeitet werden. Ein Lastenausgleich verteilt Benutzeranforderungen an mehrere virtuelle Computer.](../media/3-load-balancer.png)
 
 Wie Sie sehen, empfängt der Lastenausgleich die Benutzeranforderung. Anschließend wird diese an einen der virtuellen Computer in der Webschicht weitergeleitet. Wenn der virtuelle Computer nicht verfügbar ist oder nicht mehr reagiert, leitet der Lastenausgleich keinen Datenverkehr mehr an diesen weiter. Stattdessen wird der Datenverkehr an einen der antwortenden Server weitergeleitet.
 
@@ -51,9 +51,9 @@ Sie können Lastenausgleichssoftware zwar durchaus manuell in einem virtuellen C
 
 Azure Load Balancer bietet eine Lösung für diese Herausforderung, da Sie bei der Nutzung dieses Diensts keine Infrastruktur oder Software verwalten müssen. Diese Aufgabe wird Ihnen von Azure abgenommen.
 
-Im folgenden Diagramm sehen Sie, dass allen Schichten jeweils mehrere virtuelle Computer zugeordnet sind. Jede Schicht enthält eine Azure Load Balancer-Instanz, die den Datenverkehr auf die virtuellen Computer im Pool aufteilt.
+Auf der folgenden Abbildung wird die Rolle von Azure-Lastenausgleichen in einer mehrschichtigen Architektur dargestellt.
 
-![Lastenausgleich für die Verteilung von Datenverkehr auf unterschiedliche virtuelle Computer mithilfe von Azure Load Balancer](../media-draft/azure-load-balancer.png)
+![Abbildung mit der Webschicht einer dreischichtigen Architektur Die Webschicht verfügt über mehrere virtuelle Computer, mit denen Benutzeranforderungen verarbeitet werden. Ein Lastenausgleich verteilt Benutzeranforderungen an mehrere virtuelle Computer.](../media/3-azure-load-balancer.png)
 
 ## <a name="what-about-dns"></a>Wie sieht es mit dem Einsatz von DNS aus?
 
@@ -63,14 +63,14 @@ Ein Domänenname wie contoso.com könnte beispielsweise der IP-Adresse 40.65.106
 
 Sie können entweder Ihren DNS-Server oder Azure DNS, ein Hostingdienst für DNS-Domänen innerhalb der Azure-Infrastruktur, verwenden.
 
-Mit dem folgenden Diagramm erhalten Sie einen Überblick über Azure DNS. Wenn der Benutzer contoso.com aufruft, leitet Azure DNS den Datenverkehr an den Lastenausgleich weiter.
+Auf der folgenden Abbildung wird Azure DNS dargestellt. Wenn der Benutzer contoso.com aufruft, leitet Azure DNS den Datenverkehr an den Lastenausgleich weiter.
 
-![Verwenden von Azure DNS zum Zuweisen eines DNS-Namens](../media-draft/dns.png)
+![Abbildung mit Azure DNS vor einem Lastenausgleich](../media/3-dns.png)
 
 ## <a name="summary"></a>Zusammenfassung
 
 Mit dem eingerichteten Lastenausgleich haben Sie die Hochverfügbarkeit und Resilienz Ihrer E-Commerce-Website erhöht. Wenn Sie nun Wartungsarbeiten durchführen oder Lastspitzen auftreten, kann der Lastenausgleich den Datenverkehr an ein anderes verfügbares System weiterleiten.
 
-Sie können zwar einen eigenen Lastenausgleich in einem virtuellen Computer konfigurieren. Der Einsatz von **Azure Load Balancer** bietet jedoch den Vorteil, dass sich der Unterhaltungsaufwand verringert, da Sie keine Infrastruktur und Software warten müssen.
+Sie können zwar einen eigenen Lastenausgleich in einem virtuellen Computer konfigurieren. Der Einsatz von Azure Load Balancer bietet jedoch den Vorteil, dass sich der Unterhaltungsaufwand verringert, da Sie keine Infrastruktur und Software warten müssen.
 
 Mit DNS werden Anzeigenamen den zugehörigen IP-Adressen zugeordnet. Domain Name System ist daher mit einem Telefonbuch vergleichbar, in dem die Namen von Personen oder Unternehmen Telefonnummern zugeordnet werden. Sie können entweder Ihren eigenen DNS-Server oder Azure DNS verwenden.

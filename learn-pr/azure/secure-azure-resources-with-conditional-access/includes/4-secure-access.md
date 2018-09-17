@@ -1,6 +1,6 @@
-In der vorherigen Übung haben wir zum Testen unserer Lösung Testlizenzen aktiviert bzw. ein Verzeichnis, einen Benutzer und eine Gruppe erstellt. In dieser Übung erstellen wir die Regel für bedingten Zugriff, sodass für den Zugriff auf das Azure-Portal Multi-Factor Authentication erforderlich ist.
+In der vorherigen Übung haben wir zum Testen unserer Lösung Testlizenzen aktiviert bzw. ein Verzeichnis, einen Benutzer und eine Gruppe erstellt. In dieser Einheit erstellen wir die Regel für bedingten Zugriff, sodass für den Zugriff auf das Azure-Portal Multi-Factor Authentication erforderlich ist.
 
-## <a name="enable-conditional-access-based-multi-factor-authentication"></a>Aktivieren von Multi-Factor Authentication mit bedingtem Zugriff
+## <a name="enable-conditional-access-based-multi-factor-authentication"></a>Aktivieren von MFA mit bedingtem Zugriff
 
 Durch den bedingten Zugriff können Administratoren konfigurieren, was sie zulassen und was nicht. Sie können gleichzeitig mehrere Regeln verwenden, um den Zugriff auf Ressourcen zu gewähren oder zu verweigern. Hier ist die Regel, die wir erstellen müssen:
 

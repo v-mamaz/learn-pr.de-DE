@@ -1,0 +1,46 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.3-identity-management
+title: Identitätsverwaltung
+metadata:
+  title: Identitätsverwaltung
+  description: In dieser Einheit wird erörtert, wie Sie Ihre Identitäten schützen.
+  ms.openlocfilehash: acc1d50c7c4faba78100c8d839be764863552383
+  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43728718"
+durationInMinutes: 5
+content: >
+  [!include[](includes/3-identity-management.md)]
+quiz:
+  title: 'Wissenstest: Identitätsverwaltung'
+  questions:
+  - content: Welcher der folgenden ist kein Faktor der mehrstufigen Authentifizierung?
+    choices:
+    - content: Ein Fingerabdruckscanner auf einem mobilen Gerät
+      isCorrect: false
+      incorrectExplanation: Biometrische Elemente wie Fingerabdruckscans können für die mehrstufige Authentifizierung als Komponenten verwendet werden.
+    - content: Ein von der Azure Authenticator-Anwendung generiertes Token
+      isCorrect: false
+      incorrectExplanation: Token, die von Anwendungen und Funkfernbedienungen generiert werden, können für die mehrstufige Authentifizierung als Komponenten verwendet werden.
+    - content: Ein Kennwort
+      isCorrect: false
+      incorrectExplanation: Kennwörter können für die mehrstufige Authentifizierung als Komponenten verwendet werden.
+    - content: Ihre Schuhgröße
+      isCorrect: true
+      correctExplanation: Ihre Schuhgröße kann nicht für die mehrstufige Authentifizierung verwendet werden.
+  - content: Welche der folgenden Aussagen beschreibt KEINEN Vorteil, den SSO bietet?
+    choices:
+    - content: Erhöhte Komplexität beim Zuweisen von Berechtigungen für Benutzer
+      isCorrect: true
+      correctExplanation: SSO kann die Komplexität beim Zuweisen von Benutzerberechtigungen reduzieren.
+    - content: Weniger IDs und Kennwörter, die sich Benutzer merken müssen
+      isCorrect: false
+      incorrectExplanation: Ein wesentlicher Vorteil von SSO ist die Tatsache, dass sich Benutzer weniger IDs und Kennwörter merken müssen.
+    - content: Niedrigerer administrativer Aufwand, wenn Benutzer Rollen ändern oder eine Organisation verlassen
+      isCorrect: false
+      incorrectExplanation: SSO verringert den Verwaltungsaufwand zum Aktualisieren oder Deaktivieren von Zugriffsberechtigungen, wenn Benutzer Rollen ändern oder eine Organisation verlassen. Dies ist ein wichtiger Vorteil von SSO.
+    - content: Gewährleistung einer anwendungsübergreifenden, konsistenten Kennwortrichtlinie
+      isCorrect: false
+      incorrectExplanation: Mit SSO verfügen Benutzer über genau eine Kennwortrichtlinie für alle Konten. Dies ist ein wichtiger Vorteil von SSO.

@@ -1,50 +1,59 @@
 Es gibt drei verschiedene Cloudbereitstellungsmodelle. Ein Cloudbereitstellungsmodell definiert, wo Ihre Daten gespeichert werden und wie Ihre Kunden mit dem Modell interagieren: Wie gelangen sie zu dem Modell? Und wo werden die Anwendungen ausgeführt? Welches Modell verwendet wird, hängt auch davon ab, wie viel von Ihrer eigenen Infrastruktur Sie verwalten möchten oder müssen.
 
-Hier lernen Sie die verschiedenen Arten von Bereitstellungsmethoden für Ihre Cloud Computing-Ressourcen kennen. 
+Hier lernen Sie die verschiedenen Arten von Bereitstellungsmethoden für Ihre Cloud Computing-Ressourcen kennen.
 
-## <a name="public-cloud"></a>Öffentliche Cloud
+<!-- TODO: Verify video -->
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE2yEv7]
 
-Dies ist das am häufigsten verwendete Bereitstellungsmodell. In diesem Fall verfügen Sie über keine lokale Hardware, die verwaltet oder auf dem neuesten Stand gehalten werden muss. Alles wird auf der Hardware Ihres Cloudanbieters ausgeführt. In einigen Fällen können Sie zusätzliche Kosten sparen, indem Sie Computing-Ressourcen für andere Cloudbenutzer freigeben. 
+:::row:::
+    :::column:::
+        ![Symbol für öffentliche Cloud](../media/4-public-cloud.png)
+    :::column-end:::
+    :::column span="3"::: **Öffentliche Cloud**
 
-### <a name="advantages"></a>Vorteile
+Dies ist das am häufigsten verwendete Bereitstellungsmodell. In diesem Fall verfügen Sie über keine lokale Hardware, die verwaltet oder auf dem neuesten Stand gehalten werden muss. Alles wird auf der Hardware Ihres Cloudanbieters ausgeführt. In einigen Fällen können Sie zusätzliche Kosten sparen, indem Sie Computingressourcen für andere Cloudbenutzer freigeben.
 
-- Hohe Skalierbarkeit: Sie müssen für die Skalierung keinen neuen Server kaufen
+Folgende Vorteile ergeben sich aus der Nutzung der öffentlichen Cloud:
+
+- Hohe Skalierbarkeit: Sie müssen für die Skalierung keinen neuen Server kaufen.
 - Nutzungsbasierte Bezahlung: Sie zahlen nur für wirklich genutzte Ressourcen
-- Sie sind für die Wartung oder Aktualisierung der Hardware nicht verantwortlich
+- Sie sind nicht für die Wartung oder Aktualisierung der Hardware verantwortlich. :::column-end:::
+  :::row-end:::
+:::row:::
+   :::column:::
+        ![Symbol für private Cloud](../media/4-private-cloud.png)
+    :::column-end:::
+    :::column span="3"::: **Private Cloud**
 
-### <a name="disadvantages"></a>Nachteile
+Im Fall einer privaten Cloud erstellen Sie eine Cloudumgebung in Ihrem eigenen Rechenzentrum und stellen Self-Service-Zugriff auf Computeressourcen für Benutzer in Ihrer Organisation bereit. Für Ihre Benutzer entsteht der Eindruck, mit einer öffentlichen Cloud zu interagieren. Dabei sind Sie jedoch weiterhin für den Kauf und die Wartung von Hardware sowie für angebotene Softwaredienste verantwortlich.
 
-- Höhere Sicherheitsrisiken
-- Gemeinsam genutzte Hardware
+Zu den Gründen, die gegen die private Cloud sprechen, gehören folgende:
 
-## <a name="private-cloud"></a>Private Cloud
+- Die Hardware für die Inbetriebsetzung und Wartung muss gekauft werden.
+- Zur Nutzung privater Clouds sind IT-Qualifikationen und -Fachkenntnisse erforderlich, die rar sind.
+:::column-end:::
+:::row-end:::
+ :::row:::
+    :::column:::
+        ![Symbol für Hybrid Cloud](../media/4-hybrid-cloud.png)
+    :::column-end:::
+    :::column span="3"::: **Hybrid Cloud**
 
-Dies bezieht sich in der Regel auf ein lokales Rechenzentrum, das von Ihrem Unternehmen unterstützt wird. Es hat keine Verbindung zu Diensten, die in der Cloud ausgeführt werden. Ein Beispiel hierfür wäre ein Unternehmen, das nichts in die Cloud migriert hat und dies nicht plant.
+In einer Hybrid Cloud werden öffentliche und private Clouds kombiniert, wodurch Sie Anwendungen an den am besten geeigneten Standorten ausführen können. Beispielsweise haben Sie die Möglichkeit, eine in der öffentlichen Cloud gehostete Website mit einer hochsicheren Datenbank zu verbinden, die sich in Ihrer privaten Cloud (oder in einem lokalen Rechenzentrum) befindet.
 
-### <a name="advantages"></a>Vorteile
+Dies ist hilfreich, wenn Sie beispielsweise einige Daten aus rechtlichen Gründen nicht in der Cloud speichern können. Sie verfügen z.B. möglicherweise über Daten, die öffentlich nicht verfügbar gemacht werden dürfen (z.B. medizinische Daten). Ein weiteres Beispiel ist mindestens eine Anwendung, die auf alter Hardware, nicht aktualisierbarer Hardware ausgeführt wird. In diesem Fall können Sie das alte System weiter lokal ausführen und es zur Autorisierung oder Speicherung mit der öffentlichen Cloud verbinden.
 
-- Erhöhte Sicherheit, da sich alles im Netzwerk Ihres Unternehmens befindet
-- Keine gemeinsam genutzte Hardware/Ressourcen
+Folgende Vorteile ergeben sich aus der Nutzung einer Hybrid Cloud gegenüber einer privaten Cloud:
 
-### <a name="disadvantages"></a>Nachteile
+- Sie können Systeme, die veraltete Hardware oder ein veraltetes Betriebssystem verwenden, weiterhin betreiben und auf diese zugreifen.
+- Anwendungen können lokal oder in der Cloud ausgeführt werden, was für Flexibilität sorgt.
 
-- Die Hardware für das Startup und die Wartung muss gekauft werden
-- Erfordert IT-Kenntnisse
+Folgende Punkte müssen jedoch bedacht werden:
 
-## <a name="hybrid-cloud"></a>Hybrid Cloud
-
-Dies ist eine Kombination aus dem lokalen, von Ihrem Unternehmen unterstützten Rechenzentrum und der öffentlichen Cloud. Die zwei Clouds sind miteinander verbunden und können Daten hin und her übertragen. Dies ist hilfreich, wenn Sie einige Daten nicht in die Cloud setzen können (möglicherweise aus rechtlichen Gründen). Sie verfügen z.B. möglicherweise über Daten, die öffentlich nicht verfügbar gemacht werden dürfen (z.B. medizinische Daten). Ein weiteres Beispiel ist mindestens eine Anwendung, die auf alter Hardware, nicht aktualisierbarer Hardware ausgeführt wird. In diesem Fall können Sie das alte System weiter lokal ausführen und es zur Autorisierung oder Speicherung mit der öffentlichen Cloud verbinden.
-
-### <a name="advantages"></a>Vorteile
-
-- Sie können Systeme, die veraltete Hardware oder ein veraltetes Betriebssystem verwenden, am Laufen und zugänglich halten
-- Flexibilität bei lokal oder in der Cloud ausgeführten Daten
-
-### <a name="disadvantages"></a>Nachteile
-
-- Kann teurer als die Auswahl eines Bereitstellungsmodells sein
-- Die Einrichtung und Verwaltung ist komplizierter
+- Eine Hybrid Cloud kann teurer als ein einzelnes Bereitstellungsmodell sein.
+- Die Einrichtung und Verwaltung einer Hybrid Cloud kann komplizierter sein. :::column-end:::
+  :::row-end:::
 
 ## <a name="summary"></a>Zusammenfassung
 
-Cloud Computing ist flexibel und bietet Ihnen verschiedene Möglichkeiten der Bereitstellung. In der Regel hängt Ihre Bereitstellung von Ihrem Budget sowie von Ihren Anforderungen an Sicherheit, Skalierbarkeit und Wartung ab.
+Cloud Computing ist flexibel und bietet Ihnen verschiedene Möglichkeiten der Bereitstellung. Welches Cloudbereitstellungsmodell Sie auswählen, hängt von Ihrem Budget und von Ihren Anforderungen an Sicherheit, Skalierbarkeit und Wartung ab.

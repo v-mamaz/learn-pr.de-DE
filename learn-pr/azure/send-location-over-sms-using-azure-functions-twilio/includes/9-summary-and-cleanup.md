@@ -1,6 +1,7 @@
 Sie haben erfolgreich eine plattformübergreifende mobile App mit Xamarin und eine Azure-Funktion mit einer Twilio-Bindung erstellt.
 
-## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
+## <a name="clean-up"></a>Bereinigen
+<!---TODO: Update for sandbox?--->
 
 Nachdem Sie die Arbeit an dieser Azure Functions-Anwendung abgeschlossen haben, können Sie alle Ressourcen löschen, die während des Tutorials im Azure-Portal erstellt wurden.
 
@@ -25,6 +26,7 @@ Nachdem Sie die Arbeit an dieser Azure Functions-Anwendung abgeschlossen haben, 
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Artikel haben Sie Folgendes gelernt:
+
 - Erstellen einer plattformübergreifenden Xamarin.Forms-App, die Xamarin.Essentials nutzt
 - Erstellen einer plattformübergreifenden Benutzeroberfläche mit XAML zusammen mit Anwendungslogik in einem ViewModel sowie Binden der ViewModel-Eigenschaften an die Benutzeroberfläche
 - Erfassen des Benutzerstandorts

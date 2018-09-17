@@ -9,8 +9,8 @@ Visual Studio bietet eine nützliche Erweiterung für Azure Cosmos DB, mit der S
 In diesem Modul lernen Sie Folgendes:  
 
 - Erstellen einer Anwendung zum Speichern und Abfragen von Daten in Azure Cosmos DB
-- Verwenden Sie das integrierte Terminal in Visual Studio Code, um schnell eine Konsolenanwendung zu erstellen.
-- Fügen Sie mithilfe der Azure Cosmos DB-Erweiterung für Visual Studio Code die Azure Cosmos DB-Funktionalität hinzu.
+- Verwenden des integrierten Terminals in Visual Studio Code zum schnellen Erstellen einer Konsolenanwendung
+- Hinzufügen von Azure Cosmos DB-Funktionalität mit der Azure Cosmos DB-Erweiterung für Visual Studio Code
 
 ## <a name="prerequisites"></a>Voraussetzungen
 

@@ -1,23 +1,26 @@
 ### YamlMime:Module
 uid: learn.access-data-with-cosmos-db-and-sql-api
 metadata:
-  title: Hinzufügen von Daten und Abfragedaten in der Datenbank
-  description: Erfahren Sie, wie Sie Daten in Ihrer Azure Cosmos DB-Datenbank hinzufügen und abfragen können.
+  title: Einfügen und Abfragen von Daten in Ihrer Azure Cosmos DB-Datenbank
+  description: Erfahren Sie, wie Sie Ihrer Azure Cosmos DB-Datenbank Daten hinzufügen und Daten in dieser abfragen können.
   ms.date: 09/24/2018
-  ms.openlocfilehash: 10ef397701f204939f030b81b6abee473305d9f3
-  ms.sourcegitcommit: b85a83cbc1a0ae3e2681c4859e999a8296eb4e61
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: f8f9903a46e4c6aa423d0268afa272878793c7fc
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/04/2018
-  ms.locfileid: "43531285"
-title: Hinzufügen von Daten und Abfragedaten in der Datenbank
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44239859"
+title: Einfügen und Abfragen von Daten in Ihrer Azure Cosmos DB-Datenbank
 summary: Erfahren Sie, wie Sie Ihrer Datenbank Daten hinzufügen und Daten in Azure Cosmos DB abfragen können.
 abstract: >
   In diesem Modul lernen Sie Folgendes:
     - Erstellen von Produktkatalogdokumenten im Daten-Explorer
     - Durchführen von Azure Cosmos DB-Abfragen
     - Erstellen und Ausführen von Vorgängen für Ihre Dokumente mithilfe von gespeicherten Prozeduren
-cardDescription: Erfahren Sie, wie Sie Daten in Ihrer Datenbank hinzufügen und abfragen können.
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
@@ -27,9 +30,10 @@ products:
 - azure
 units:
 - learn.access-data-with-cosmos-db-and-sql-api.1-introduction
-- learn.access-data-with-cosmos-db-and-sql-api.2-add-data
-- learn.access-data-with-cosmos-db-and-sql-api.3-query-types
-- learn.access-data-with-cosmos-db-and-sql-api.4-run-queries
-- learn.access-data-with-cosmos-db-and-sql-api.5-javascript-programming
-- learn.access-data-with-cosmos-db-and-sql-api.6-summary
+- learn.access-data-with-cosmos-db-and-sql-api.2-setup-cosmosdb
+- learn.access-data-with-cosmos-db-and-sql-api.3-add-data
+- learn.access-data-with-cosmos-db-and-sql-api.4-query-types
+- learn.access-data-with-cosmos-db-and-sql-api.5-run-queries
+- learn.access-data-with-cosmos-db-and-sql-api.6-javascript-programming
+- learn.access-data-with-cosmos-db-and-sql-api.7-summary
 achievement: learn.access-data-with-cosmos-db-and-sql-api.badge
