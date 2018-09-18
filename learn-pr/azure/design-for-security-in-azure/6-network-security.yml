@@ -1,46 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.6-network-security
-title: Network security
+title: Netzwerksicherheit
 metadata:
-  title: Network security
-  description: In this unit we'll discuss how to secure your network infrastructure
+  title: Netzwerksicherheit
+  description: In dieser Einheit wird erörtert, wie Sie Ihre Netzwerkinfrastruktur schützen.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 90be1e461ce19e0bd7a18e869397db2d0ab3abfa
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44240752"
 durationInMinutes: 5
-content: |
+content: >
   [!include[](includes/6-network-security.md)]
 quiz:
-  title: 'Knowledge Check - Network security'
+  title: 'Wissenstest: Netzwerksicherheit'
   questions:
-  - content: 'Azure NSGs can be used to secure communication between which of the following?'
+  - content: Welche der folgenden Übertragungen können mit Azure-NSGs abgesichert werden?
     choices:
-    - content: 'Communication between virtual machines and the internet'
+    - content: Übertragungen zwischen virtuellen Computern und dem Internet
       isCorrect: false
-      incorrectExplanation: 'NSGs can be used to secure this communication flow, but this is not the only correct choice.'
-    - content: 'Communication between virtual machines within a VNet'
+      incorrectExplanation: Mit NSGs kann diese Übertragung zwar abgesichert werden, doch dies ist nicht die einzige richtige Antwortmöglichkeit.
+    - content: Übertragungen zwischen virtuellen Computern innerhalb eines VNET
       isCorrect: false
-      incorrectExplanation: 'NSGs can be used to secure this communication flow, but this is not the only correct choice.'
-    - content: 'Communication with systems in an on-premises network'
+      incorrectExplanation: Mit NSGs kann diese Übertragung zwar abgesichert werden, doch dies ist nicht die einzige richtige Antwortmöglichkeit.
+    - content: Übertragungen zwischen Systemen in einem lokalen Netzwerk
       isCorrect: false
-      incorrectExplanation: 'NSGs can be used to secure this communication flow, but this is not the only correct choice.'
-    - content: 'All of the above'
+      incorrectExplanation: Mit NSGs kann diese Übertragung zwar abgesichert werden, doch dies ist nicht die einzige richtige Antwortmöglichkeit.
+    - content: Alle oben genannten Möglichkeiten sind zutreffend.
       isCorrect: true
-      correctExplanation: 'NSGs can be used to secure all of the above communication flows.'
-  - content: 'Which of the following is not a method of protecting internet facing services from network attacks?'
+      correctExplanation: Mit NSGs können alle der oben genannten Übertragungen abgesichert werden.
+  - content: Welche der folgenden ist keine Methode zum Schutz von Diensten mit Internetzugriff vor Netzwerkangriffen?
     choices:
-    - content: 'Azure DDoS'
+    - content: Azure DDoS
       isCorrect: false
-      incorrectExplanation: 'Azure DDoS can be used to protect your internet facing services from a DoS attack. '
-    - content: 'Azure Application Gateway WAF'
+      incorrectExplanation: 'Mit Azure DDoS können mit dem Internet verbundene Dienste vor einem DoS-Angriff geschützt werden. '
+    - content: Azure Application Gateway-WAF
       isCorrect: false
-      incorrectExplanation: 'Application Gateway WAF can be used to protect your internet facing services from attacks such as XSS and SQL injection.'
-    - content: 'Azure Disk Encryption'
+      incorrectExplanation: Mit Application Gateway-WAF können mit dem Internet verbundene Dienste vor XSS-Angriffen und Einschleusung von SQL-Befehlen geschützt werden.
+    - content: Azure Disk Encryption
       isCorrect: true
-      correctExplanation: 'Azure Disk Encryption protects your virtual machine VHDs from exposure, but does not provide protection from network based attacks.'
-    - content: 'A network virtual appliance'
+      correctExplanation: Mit Azure Disk Encryption werden die VHDs eines virtuellen Computers geschützt, falls diese ohne Berechtigung zugänglich gemacht werden. Der Dienst bietet aber keinen Schutz vor Netzwerkangriffen.
+    - content: Virtuelles Netzwerkgerät
       isCorrect: false
-      incorrectExplanation: 'Network virtual appliances can provide customized network protection for your internet facing resources.'
+      incorrectExplanation: Virtuelle Netzwerkgeräte stellen anpassbaren Netzwerkzugriffsschutz für Ressourcen bereit, die mit dem Internet verbunden sind.

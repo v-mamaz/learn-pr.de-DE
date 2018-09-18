@@ -1,40 +1,45 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.2-defense-in-depth
-title: Defense in depth
+title: Tiefgehende Verteidigung
 metadata:
-  title: Defense in depth
-  description: In this unit we'll discuss how to practice defense in depth
+  title: Tiefgehende Verteidigung
+  description: In dieser Einheit wird erörtert, wie Sie die tiefgehende Verteidigung verwenden.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 577b11fddc545e411822c986a2da706bb8701025
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44240682"
 durationInMinutes: 5
-content: |
+content: >
   [!include[](includes/2-defense-in-depth.md)]
 quiz:
-  title: 'Knowledge Check - Defense in depth'
+  title: 'Wissenstest: Mehrstufige Verteidigung'
   questions:
-  - content: 'Which of the following would be an appropriate tactic to apply to a defense in depth security strategy?'
+  - content: Welche der folgenden wäre eine geeignete Taktik, um eine Sicherheitsstrategie mit tiefgehender Verteidigung anzuwenden?
     choices:
-    - content: 'Deallocating virtual machines when not in use'
+    - content: Aufheben der Zuweisung nicht verwendeter virtueller Computer
       isCorrect: false
-      incorrectExplanation: 'This can be an effective tactic to reduce costs, but it not a tactic for a security strategy.'
-    - content: 'Setting up alerts for CPU percentage exceeds 90%'
+      incorrectExplanation: Hiermit sparen Sie zwar möglicherweise effektiv Kosten, jedoch eignet sich diese Taktik nicht für eine Sicherheitsstrategie.
+    - content: Einrichten von Benachrichtigungen für CPU-Prozentsatz über 90%
       isCorrect: false
-      incorrectExplanation: 'This may be a valuable monitoring metric to identify performance issues in your application, but is not a tactic in a security strategy.'
-    - content: 'Storing connection strings in a configuration file'
+      incorrectExplanation: Hierdurch erhalten Sie zwar möglicherweise eine wertvolle Überwachungsmetrik, mit der sich Leistungsprobleme in Ihrer Anwendung identifizieren lassen, jedoch eignet sich diese Taktik nicht für eine Sicherheitsstrategie.
+    - content: Speichern von Verbindungszeichenfolgen in einer Konfigurationsdatei
       isCorrect: false
-      incorrectExplanation: 'Storing connection strings in a configuration file is a security risk and is not a tactic in a security strategy.'
-    - content: 'Enforcing MFA for all administrative level accounts'
+      incorrectExplanation: Hierdurch schaffen Sie ein Sicherheitsrisiko. Es handelt sich nicht um eine Taktik für eine Sicherheitsstrategie.
+    - content: Erzwingen der MFA für alle Administratorkonten
       isCorrect: true
-      correctExplanation: 'Enforcing MFA for all administrative level accounts adds an extra layer of protection for highly privliged accounts and is an effective tactic as part of a defense in depth security strategy.'
-  - content: 'By moving to the cloud, my architecture is fully secure and I can hand off all security responsibilities to my cloud provider.'
+      correctExplanation: Hierdurch führen Sie eine zusätzliche Schutzebene für Konten mit weitreichenden Berechtigungen ein. Diese Taktik eignet sich gut für eine mehrschichtige Sicherheitsstrategie.
+  - content: Durch den Wechsel in die Cloud ist meine Architektur vollständig sicher und ich kann meinem Cloudanbieter alle Sicherheitsaufgaben übergeben.
     choices:
-    - content: 'True'
+    - content: Wahr
       isCorrect: false
-      incorrectExplanation: 'Moving to the cloud does offload some responsibilities to the cloud provider, but a model of shared responsibility is still in effect.'
-    - content: 'False'
+      incorrectExplanation: Durch einen Wechsel in die Cloud können Sie zwar einige Verantwortlichkeiten an den Cloudanbieter abgeben, jedoch gilt nach wie vor das Prinzip der gemeinsamen Verantwortung.
+    - content: Falsch
       isCorrect: true
-      correctExplanation: 'Moving to the cloud does offload some responsibilities to the cloud provider, but a model of shared responsibility is still in effect.'
+      correctExplanation: Durch einen Wechsel in die Cloud können Sie zwar einige Verantwortlichkeiten an den Cloudanbieter abgeben, jedoch gilt nach wie vor das Prinzip der gemeinsamen Verantwortung.

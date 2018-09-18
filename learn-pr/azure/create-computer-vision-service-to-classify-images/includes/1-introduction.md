@@ -1,13 +1,13 @@
-End users often post content that may be inappropriate for work in their personal online interactions. As a lead developer at Contoso Beverage Distribution, you are responsible for building and maintaining a line-of-business app that lets your frontline distributors scan and upload images of store shelves where they are restocking. 
+Endbenutzer veröffentlichen oft Inhalte in ihren persönlichen Onlineinteraktionen, die für die Arbeit ungeeignet sind. Als leitender Entwickler bei Contoso Beverage Distribution sind Sie für den Aufbau und die Pflege einer Branchenanwendung verantwortlich, mit der Ihre Vertriebspartner Bilder von Ladenregalen scannen und hochladen können, in denen sie ihre Bestände auffüllen. 
 
-You need to validate that any images posted by users respect the content rules set by your company. Your goals are clear; the company doesn't want inappropriate content posted to company sites. Given the advancements in Artificial Intelligence, you decide that rewriting this app to include Computer Vision will proactively prevent these types of incidents from occurring. The service you create will identify images and provide many other functionalities to fulfill your company's needs.
+Sie müssen überprüfen, ob alle von Benutzern geposteten Bilder die von Ihrem Unternehmen festgelegten Inhaltsregeln einhalten. Ihre Ziele sind klar: Das Unternehmen möchte nicht, dass unangemessene Inhalte auf den Websites des Unternehmens veröffentlicht werden. Angesichts der Fortschritte in der Künstlichen Intelligenz entscheiden Sie, dass das Umschreiben dieser App mit maschinellem Sehen proaktiv verhindert, dass solche Vorfälle auftreten. Der von Ihnen erstellte Dienst identifiziert Bilder und bietet viele andere Funktionen, um die Anforderungen Ihres Unternehmens zu erfüllen.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul lernen Sie Folgendes:
 
-- Create a Computer Vision API service
-- Analyze an image and identify its content
-- Generate thumbnails
-- Extract printed text
-- Convert handwritten words into text
+- Erstellen eines Maschinelles Sehen-API-Diensts
+- Analysieren eines Bilds und Identifizieren von dessen Inhalt
+- Generieren von Miniaturansichten
+- Extrahieren von gedrucktem Text
+- Konvertieren von handschriftlichen Wörtern in Text

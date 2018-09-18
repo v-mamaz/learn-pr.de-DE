@@ -1,28 +1,41 @@
 ### YamlMime:Module
 uid: learn.make-your-virtual-machines-highly-available
 metadata:
-  title: Make your virtual machines highly available
-  description: Use Azure Load Balancer as a public load balancer to distribute public inbound traffic across multiple Azure virtual machines. Understand the purpose of a load balancer. Work with Azure Load Balancer in the portal, identify a VM scale set to route traffic to, and monitor your traffic.
+  title: Sicherstellen der Hochverfügbarkeit Ihrer VMs
+  description: Verwenden Sie Azure Load Balancer als öffentlichen Lastenausgleich, um öffentlichen eingehenden Datenverkehr auf mehrere Azure-VMs zu verteilen. Verstehen des Zwecks eines Lastenausgleichs Arbeiten Sie mit Azure Load Balancer im Portal, identifizieren Sie eine VM-Skalierungsgruppe, zu der Datenverkehr weitergeleitet werden kann, und überwachen Sie den Datenverkehr.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Make your virtual machines highly available
-summary: Distribute public inbound traffic across multiple virtual machines with Load Balancer.
-abstract: |
-  In this module, you will:
-  - Decide when to use a load balancer
-  - Identify the differences between the basic and standard load balancer editions
-  - Create a new load balancer
-  - Create virtual networks associated with a load balancer
-  - Configure load balancer rules
-  - Configure a load balancer health probe
-prerequisites: |
-  - Experience administering Azure resources using the Azure portal
-  - Experience with Azure Virtual Machines
-  - Some knowledge of virtual-machine networking and public IP addresses
+  ms.openlocfilehash: 44610f9c9a3f6e1b651d68d1dbfa52cfb5e29c5f
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232171"
+title: Sicherstellen der Hochverfügbarkeit Ihrer VMs
+summary: Verteilen Sie öffentlichen eingehenden Datenverkehr mit dem Lastenausgleich auf mehrere virtuelle Computer.
+abstract: >
+  In diesem Modul lernen Sie Folgendes:
+
+  - Entscheiden, wann ein Lastenausgleich verwendet werden sollte
+
+  - Bestimmen der Unterschiede zwischen den Load Balancer-Editionen „Basic“ und „Standard“
+
+  - Erstellen eines neuen Lastenausgleichs
+
+  - Erstellen virtueller Netzwerke, die einem Lastenausgleich zugeordnet sind
+
+  - Konfigurieren von Regeln für den Lastenausgleich
+
+  - Konfigurieren eines Integritätstests für den Lastenausgleich
+prerequisites: >
+  - Erfahrung beim Verwalten von Azure-Ressourcen über das Azure-Portal
+
+  - Erfahrung mit Azure Virtual Machines
+
+  - Grundkenntnisse der VM-Netzwerke und öffentlicher IP-Adressen
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - intermediate

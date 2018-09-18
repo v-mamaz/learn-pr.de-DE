@@ -1,7 +1,7 @@
-You have now learned the basics of working with containers. You have installed Docker, which lets you create and run images on your local Windows, MacOS, or Linux computer. Then you learned some basic Docker commands. And finally, you created your own images and learned how to store them in Docker Hub.
+Sie haben nun die Grundlagen der Arbeit mit Containern erfahren. Sie haben Docker installiert, sodass Sie Images auf dem lokalen Windows-, MacOS- oder Linux-Computer erstellen und ausführen können. Dann haben Sie einige grundlegende Docker-Befehle gelernt. Schließlich haben Sie Ihre eigenen Images erstellt und gelernt, wie sie im Docker-Hub gespeichert werden.
 
-## Additional resources
+## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-- [Learn more about Docker](https://www.docker.com/)
-- [Learn about Docker for Azure](https://docs.docker.com/docker-for-azure/)
-- [Learn more about Docker Hub](https://hub.docker.com/)
+- [Weitere Informationen zu Docker](https://www.docker.com/)
+- [Weitere Informationen zu Docker für Azure](https://docs.docker.com/docker-for-azure/)
+- [Weitere Informationen zu Docker-Hub](https://hub.docker.com/)

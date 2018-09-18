@@ -1,123 +1,123 @@
-Let's assume that you're currently using an on-premise PostgreSQL relational database using flexible data types and geospatial support. Your company is looking at expanding, requiring the database to scale. As an alternative to investing in additional hardware, you are tasked with finding an optimal cloud-hosted database offering and you have decided to use an Azure Database for PostgreSQL server.
+Nehmen wir an, dass Sie derzeit eine lokale relationale PostgreSQL-Datenbank mit flexiblen Datentypen und Unterstützung von Geodaten nutzen. Ihr Unternehmen möchte expandieren, sodass die Datenbank skaliert werden muss. Als Alternative zur Investition in zusätzliche Hardware werden Sie beauftragt, ein optimales cloudgehostetes Datenbankangebot zu suchen, und Sie haben sich entschieden, einen Azure Database for PostgreSQL-Server verwenden.
 
-## What is an Azure Database for PostgreSQL server?
+## <a name="what-is-an-azure-database-for-postgresql-server"></a>Was ist ein Azure Database for PostgreSQL-Server?
 
-The PostgreSQL server is a central administration point for one or more databases. The PostgreSQL service in Azure is a managed resource that provides performance guarantees, and provides access and features at the server level.
+Die PostgreSQL-Server ist ein zentraler Verwaltungspunkt für eine oder mehrere Datenbanken. Der PostgreSQL-Dienst in Azure ist eine verwaltete Ressource, die Leistungsgarantien und Zugriff sowie Funktionen auf Serverebene bietet.
 
-An **Azure Database for PostgreSQL** server is the parent _resource_ for a database. A _resource_ is a manageable item that is available through Azure. Creating this resource allows you to configure your server instance.
+Ein **Azure Database for PostgreSQL**-Server ist die übergeordnete _Ressource_ für eine Datenbank. Eine _Ressource_ ist ein verwaltbares Element, das über Azure verfügbar ist. Wenn Sie diese Ressource erstellen, können Sie die Serverinstanz konfigurieren.
 
-### What is an Azure Database for PostgreSQL server resource?
+### <a name="what-is-an-azure-database-for-postgresql-server-resource"></a>Was ist eine Azure Database for PostgreSQL-Serverressource?
 
-An Azure Database for PostgreSQL server resource is a container with strong lifetime implications for your server and databases. If the server resource is deleted, all databases are also deleted. Keep in mind that all resources belonging to the parent are hosted in the same region.
+Eine Azure Database for PostgreSQL-Serverressource ist ein Container, der eng mit der Lebensdauer Ihrer Server und Datenbanken verbunden ist. Wenn die Serverressource gelöscht wird, werden alle Datenbanken ebenfalls gelöscht. Bedenken Sie, dass alle Ressourcen, die zum übergeordneten Element gehören, in der gleichen Region gehostet werden.
 
-The server resource name is used to define the server endpoint name. For example, if the resource name is **mypgsqlserver** then the server name becomes **mypgsqlserver.postgres.database.azure.com**
+Der Serverressourcenname wird verwendet, um den Serverendpunktnamen zu definieren. Wenn der Ressourcenname z.B. **mypgsqlserver** ist, dann lautet der Name des Servers **mypgsqlserver.postgres.database.azure.com**.
 
-The server resource also provides the __connection scope__ for management policies that apply to its database. For example, login, firewall, users, roles, and configuration.
+Die Serverressource stellt außerdem den __Verbindungsbereich__ für Verwaltungsrichtlinien bereit, die auf ihre Datenbank angewendet werden. Beispiele: Anmeldung, Firewall, Benutzer, Rollen und Konfiguration.
 
-Just like the open-source version of PostgreSQL, the server is available in several versions and allows for the installation of extensions. You'll choose which server version to install.
-
-> [!NOTE]
-> Extensions allow for bundling multiple SQL objects together in a single package that can be loaded or removed with a single command. An example of >an extension is ```chkpass```, which provides a data type for auto-encrypted passwords.
-
-## Pricing tiers
-
-The Azure Database for PostgreSQL provides you with the option to choose from three pricing tiers based on parameters such as compute power and storage.
-
-### Basic
-
-The **Basic** tier is ideal for workloads that requires light compute and I/O performance. In this tier, you have access to the following hardware:
-
-- Compute Gen 4 CPUs base on Intel E5-2673 v3 (Haswell) 2.4-GHz processors available as either a 1 or 2 vCore configuration
-- Compute Gen 5 CPUs base on Intel E5-2673 v4 (Broadwell) 2.3-GHz processors available as either a 1 or 2 vCore configuration
-- Storage up to 1 TB
-- Locally redundant backup
-
-You'll use a specific pricing tier setting to illustrate support of a specific scenario when you create an example server later. Keep in mind that for production servers, you'll choose a pricing tier to match your environment.
-
-### General Purpose
-
-The **General Purpose** tier is ideal for most business workloads requiring balanced compute and memory with scalable I/O throughput. In this tier, you have access to the following hardware:
-
-- Compute Gen 4 CPUs base on Intel E5-2673 v3 (Haswell) 2.4-GHz processors available in 2, 4, 8, 18, 32 vCore configurations
-- Compute Gen 5 CPUs base on Intel E5-2673 v4 (Broadwell) 2.3-GHz processors available in 2, 4, 8, 18, 32 vCore configurations
-- Storage up to 4 TB
-- Locally redundant backup
-- Geographically redundant backup
-
-### Memory Optimized
-
-The **Memory Optimized** tier is ideal for high-performance database workloads requiring in-memory performance for faster transaction processing and higher concurrency. In this tier, you have access to the following hardware:
-
-- Compute Gen 5 CPUs base on Intel E5-2673 v4 (Broadwell) 2.3-GHz processors available in 2, 4, 8, 16 vCore configurations
-- Storage up to 4 TB
-- Locally redundant backup
-- Geographically redundant backup
-
-## Steps to create an Azure Database for PostgreSQL server
-
-You'll typically create an Azure Database for PostgreSQL server using the Azure portal. Let's look at the steps you'll take.
-
-First you'll sign into the Azure portal, and then you'll click **Create a resource**.
-
-You'll select **Databases** and **Azure Database for PostgreSQL**. You can also use the Search functionality to find this category.
-
-The portal will display a PostgreSQL server configuration screen, also called a blade, you make your selection.
-
-![Screenshot of the Azure portal showing the creation blade for a new PostgreSQL database.](../media-draft/4-create-blade.png)
-
-You'll need to give a value to all the items in the blade, so let's have a look at each.
-
-### Server name
-
-Recall, earlier we mentioned that you'll create a server resource. The server name is the item that specifies this resource. As a result, you'll have to choose a unique name for the server. The server name must be all lowercase and can have numbers and hyphens.
-
-Let's say you want to name the server _Adventure Works Tracking_. You would then set up the name as ```adventure-works-tracking```. If you try to create a server with the same name that already exists, you'll get an error to that effect.
-
-### Subscription
-
-The subscription field is used for billing. You'll pick a specific subscription in case you have more than one subscription available.
-
-### Resource group
-
-You'll use a resource group to manage all the resources related to your server. You can create a new resource group or reuse an existing resource group.
-
-### Source
-
-You can create a server either from scratch by choosing the _Blank_ default option or from an existing backup. The Backup option will give the opportunity restore a geo-backup of an existing Azure Database for PostgreSQL server.
-
-### Server admin login name
-
-You create the server admin user. Choose a login name to use as an administrator login for the new server. The admin login name can't be azure_superuser, azure_pg_admin, admin, administrator, root, guest, or public. It can't start with pg_. Remember or write down this name for future use.
-
-### Password
-
-You choose a password to use with the above administrator login name. Your password must include characters from three of the following categories: English uppercase letters, English lowercase letters, numbers (0 through 9), and non-alphanumeric characters (!, $, #, %, etc.). Remember or write down this password for future use.
-
-### Confirm password
-
-Retype the password as confirmation.
-
-### Location
-
-The location option allows you to specify where the server is created physically. Choose the geographical location closest to you. In a real-world scenario, the location should be the location closest to the majority of your users.
-
-### Version
-
-You can specify the version of PostgreSQL to use. Microsoft aims to support the current version and two previous versions of PostgreSQL. You'll choose a version that matches your production environment.
+Genau wie die Open-Source-Version von PostgreSQL ist der Server in mehreren Versionen verfügbar und lässt die Installation von Erweiterungen zu. Sie wählen die zu installierende Serverversion aus.
 
 > [!NOTE]
-> For more information, see the following sources:
-> - [Supported PostgreSQL Database Versions](https://docs.microsoft.com/azure/postgresql/concepts-supported-versions)
-> - [Versioning Policy](https://www.postgresql.org/support/versioning/)
+> Durch Erweiterungen können mehrere SQL-Objekte zu einem einzigen Paket gebündelt und über einen einzigen Befehl geladen oder entfernt werden. Ein Beispiel für eine Erweiterung ist ```chkpass```, wodurch ein Datentyp für automatisch verschlüsselte Kennwörter bereitgestellt wird.
 
-### Pricing tier
+## <a name="pricing-tiers"></a>Tarife
 
-You'll choose a pricing tier that will support your server's workload. Recall, you have three tiers to choose from. As we saw earlier, each of these tiers allows you to configure the compute and storage options. For example, here is an example with the Basic price tier selected, a Gen 5 compute and a 25-day backup retention period.
+Azure Database for PostgreSQL bietet Ihnen die Option, basierend auf Parametern wie Computeleistung und Speicher aus drei Tarifen auszuwählen.
 
-![Screenshot of the Azure portal showing the database pricing tier for a new PostgreSQL database.](../media-draft/4-azure-db-pricing-tier.png)
+### <a name="basic"></a>Basic
 
-All that is left now is to review the values you entered, make any notes you may need for later, and click the create button to create the server.
+Der **Basic**-Tarif ist ideal für Workloads, die wenig Compute- und E/A-Leistung erfordern. In diesem Tarif haben Sie Zugriff auf folgende Hardware:
 
-Deploying the server takes a couple of minutes. You'll receive a notification when the deployment is complete. From the notification, you can navigate to the newly created server.
+- Compute Gen 4 CPUs auf Basis von Intel E5-2673 v3 (Haswell) 2,4-GHz-Prozessoren, entweder als 1- oder 2-V-Kern-Konfiguration verfügbar
+- Compute Gen 5 CPUs auf Basis von Intel E5-2673 v4 (Broadwell) 2,3-GHz-Prozessoren, entweder als 1- oder 2-V-Kern-Konfiguration verfügbar
+- Speicher bis zu 1TB
+- Lokal redundante Sicherung
 
-You've now seen the steps you take to create an Azure Database for PostgreSQL. In the next unit, you'll have to opportunity to create your own Azure Database for PostgreSQL server.
+Wenn Sie später einen Beispielserver erstellen, werden Sie eine bestimmte Tarifeinstellung verwenden, um die Unterstützung eines bestimmten Szenarios zu veranschaulichen. Bedenken Sie, für Produktionsserver einen Tarif auszuwählen, der Ihrer Umgebung entspricht.
+
+### <a name="general-purpose"></a>Universell
+
+Der Tarif **Universell** ist für die meisten Unternehmensworkloads mit gängigen Compute- und Arbeitsspeicheranforderungen und skalierbarem E/A-Durchsatz ideal. In diesem Tarif haben Sie Zugriff auf folgende Hardware:
+
+- Compute Gen 4 CPUs auf Basis von Intel E5-2673 v3 (Haswell) 2,4-GHz-Prozessoren, verfügbar in 2-, 4-, 8-, 18-, 32-V-Kern-Konfiguration
+- Compute Gen 5 CPUs auf Basis von Intel E5-2673 v4 (Broadwell) 2,3-GHz-Prozessoren, verfügbar in 2-, 4-, 8-, 18-, 32-V-Kern-Konfiguration
+- Speicher bis zu 4TB
+- Lokal redundante Sicherung
+- Geografisch redundante Sicherung
+
+### <a name="memory-optimized"></a>Arbeitsspeicheroptimiert
+
+Der Tarif **Arbeitsspeicheroptimiert** ist für Hochleistungs-Datenbankworkloads ideal, für die In-Memory-Leistung erforderlich ist, um eine schnellere Transaktionsverarbeitung und höhere Parallelität zu erzielen. In diesem Tarif haben Sie Zugriff auf folgende Hardware:
+
+- Compute Gen 5 CPUs auf Basis von Intel E5-2673 v4 (Broadwell) 2,3-GHz-Prozessoren, verfügbar in 2-, 4-, 8-, 16-V-Kern-Konfiguration
+- Speicher bis zu 4TB
+- Lokal redundante Sicherung
+- Geografisch redundante Sicherung
+
+## <a name="steps-to-create-an-azure-database-for-postgresql-server"></a>Schritte zum Erstellen eines Azure Database for PostgreSQL-Servers
+
+In der Regel erstellen Sie einen Azure Database for PostgreSQL-Server über das Azure-Portal. Wir betrachten nun diese Schritte.
+
+Zuerst melden Sie sich beim Azure-Portal an und klicken auf **Ressource erstellen**.
+
+Wählen Sie **Datenbanken** und **Azure Database for PostgreSQL** aus. Sie können auch die Suchfunktion verwenden, um diese Kategorie zu finden.
+
+Das Portal zeigt einen PostgreSQL-Server-Konfigurationsbildschirm an, auch Blatt genannt, und Sie nehmen die Auswahl vor.
+
+![Blatt für die Erstellung des PostgreSQL-Servers im Azure-Portal](../media-draft/4-create-blade.png)
+
+Da Sie für alle Elemente auf dem Blatt einen Wert eingeben müssen, werden wir sie im einzelnen betrachten.
+
+### <a name="server-name"></a>Servername
+
+Erinnern Sie sich? Weiter oben wurde erwähnt, dass Sie eine Serverressource erstellen werden. Der Servername ist das Element, das diese Ressource angibt. Daher müssen Sie einen eindeutigen Namen für den Server auswählen. Der Servername darf nur Kleinbuchstaben und kann Zahlen und Bindestrichen enthalten.
+
+Angenommen, Sie möchten den Server _Adventure Works Tracking_ nennen. Sie würden dann den Namen als ```adventure-works-tracking``` festlegen. Wenn Sie versuchen, einen Server mit einem bereits vorhandenen Namen zu erstellen, erhalten Sie eine Fehlermeldung.
+
+### <a name="subscription"></a>Abonnement
+
+Das Abonnementfeld wird zur Abrechnung verwendet. Sie müssen ein bestimmtes Abonnement auswählen, falls Sie über mehrere Abonnements verfügen.
+
+### <a name="resource-group"></a>Ressourcengruppe
+
+Sie verwenden eine Ressourcengruppe, um alle Ressourcen im Zusammenhang mit dem Server zu verwalten. Sie können eine neue Ressourcengruppe erstellen oder eine vorhandene Ressourcengruppe wiederverwenden.
+
+### <a name="source"></a>Quelle
+
+Sie können entweder die Standardoption _Leer_ auswählen, um von Grund auf einen Server zu erstellen, oder einen Server aus einer vorhandenen Sicherung erstellen. Die Sicherungsoption bietet die Gelegenheit zum Wiederherstellen einer Geosicherung eines vorhandenen Azure Database for PostgreSQL-Servers.
+
+### <a name="server-admin-login-name"></a>Anmeldename des Serveradministrators
+
+Sie erstellen den Serveradministratorbenutzer. Wählen Sie einen Anmeldenamen aus, der als Administratoranmeldung für den neuen Server verwendet wird. Der Administratoranmeldename darf nicht „azure_superuser“, „azure_pg_admin“, „admin“, „administrator“, „root“, „guest“ oder „public“ lauten. Er darf auch nicht mit „pg_“ beginnen. Prägen Sie sich den Namen für die spätere Verwendung ein, bzw. notieren Sie ihn.
+
+### <a name="password"></a>Kennwort
+
+Wählen Sie ein Kennwort für den obigen Anmeldenamen für Administratoren aus. Das Kennwort muss Zeichen aus drei der folgenden Kategorien enthalten: englische Großbuchstaben, englische Kleinbuchstaben, Zahlen (0–9) und nicht alphanumerische Zeichen (!, $, #, % usw.). Prägen Sie sich das Kennwort für die spätere Verwendung ein, bzw. notieren Sie es.
+
+### <a name="confirm-password"></a>Kennwort bestätigen
+
+Geben Sie das Kennwort zur Bestätigung erneut ein.
+
+### <a name="location"></a>Speicherort
+
+Mit der Option „Speicherort“ können Sie angeben, wo der Server physisch erstellt wird. Wählen Sie den für Sie nächstgelegenen geografischen Standort aus. In einem realen Szenario sollte der Speicherort der Speicherort sein, der für die Mehrzahl der Benutzer am nächsten liegt.
+
+### <a name="version"></a>Version
+
+Sie können die zu verwendende PostgreSQL-Version angeben. Microsoft unterstützt in der Regel die aktuelle Version von PostgreSQL und zwei Vorgängerversionen. Wählen Sie eine Version aus, die Ihrer Produktionsumgebung entspricht.
+
+> [!NOTE]
+> Weitere Informationen finden Sie im folgenden Abschnitt:
+> - [Unterstützte PostgreSQL-Datenbankversionen](https://docs.microsoft.com/azure/postgresql/concepts-supported-versions)
+> - [Versioning policy (Versionsrichtlinie)](https://www.postgresql.org/support/versioning/)
+
+### <a name="pricing-tier"></a>Tarif
+
+Wählen Sie einen Tarif aus, der die Workload Ihres Servers unterstützt. Denken Sie daran, Sie haben drei Tarife zur Auswahl. Wie wir gesehen haben, können Sie mit jedem dieser Tarife die Compute- und Speicheroptionen konfigurieren. In diesem Beispiel ist der Basic-Tarif mit Gen 5-Compute und einer Beibehaltungsdauer der Sicherung von 25 Tagen ausgewählt.
+
+![Tarif](../media-draft/4-azure-db-pricing-tier.png)
+
+Jetzt müssen Sie nur noch die Werte überprüfen, die Sie eingegeben haben, notieren, was Sie möglicherweis später verwenden müssen, und auf die Erstellungsschaltfläche klicken, um den Server zu erstellen.
+
+Das Bereitstellen des Servers dauert einige Minuten. Sie erhalten eine Benachrichtigung, wenn die Bereitstellung abgeschlossen ist. Von der Benachrichtigung können Sie zum neu erstellten Server navigieren.
+
+Sie haben nun die Schritte kennengelernt, mit denen Sie eine Azure Database for PostgreSQL erstellen. In der nächsten Einheit können Sie Ihren eigenen Azure Database for PostgreSQL-Server erstellen.

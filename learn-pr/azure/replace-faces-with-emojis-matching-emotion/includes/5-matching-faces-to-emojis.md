@@ -1,32 +1,32 @@
-In the last chapter we learnt that `shared/mojis.ts` file has a list of emojis and their emotional points.
+Im letzten Kapitel wurde beschrieben, dass die Datei `shared/mojis.ts` über eine Liste mit Emojis und die zugehörigen emotionalen Punkte verfügt.
 
-In this chapter we will learn about the rest of the code that we will use to map a face to an emoji.
+In diesem Kapitel wird der Rest des Codes beschrieben, den wir verwenden, um ein Gesicht einem Emoji zuzuordnen.
 
-You will learn how to:
+Sie lernen Folgendes:
 
-1. Create a script where you pass in a URL of an image of a face.
-2. Calculate the emotional point of any faces in the image.
-3. Map the faces in the image to the closest emojis
+1. Erstellen eines Skripts zum Übergeben einer URL zum Bild eines Gesichts
+2. Berechnen des emotionalen Punkts von Gesichtern im Bild
+3. Zuordnen der Gesichter im Bild zu den naheliegendsten Emojis
 
-Eventually we will be implementing this functionally as a Slack command, but for now we are going to start with a simple node script that you can run on the comand line, like so:
+Abschließend implementieren wir dies in Bezug auf die Funktion dann als Slack-Befehl. Jetzt starten wir aber mit einem einfachen Node-Skript, das Sie in der Befehlszeile ausführen können:
 
 ```bash
 node bin/mojify.js <url-of-image-with-face>
 ```
 
-## Debugging TypeScript
+## <a name="debugging-typescript"></a>Debuggen von TypeScript
 
-We are writing in TypeScript but executing JavaScript. This makes debugging hard as we would have to set breakpoints and debug in the transpiled JavaScript files which can be hard to read.
+Wir schreiben in TypeScript, aber die Ausführung erfolgt per JavaScript. Dies erschwert das Debuggen, da wir Breakpoints setzen und in den transpilierten JavaScript-Dateien debuggen müssen, die ggf. schwierig zu lesen sind.
 
-What we ideally want is to write _and_ debug in TypeScript.
+Idealerweise sollte das Schreiben _und_ Debuggen in TypeScript erfolgen.
 
-The good news is that it's possible with vs code with just a little bit of configuration.
+Die gute Nachricht ist, dass dies mit VS Code bei nur geringem Konfigurationsaufwand möglich ist.
 
-Open up the `launch.json` file by using the command paletee `Ctrl+P > Debug: Open launch.json`
+Öffnen Sie die Datei `launch.json`, indem Sie die Befehlspalette verwenden: `Ctrl+P > Debug: Open launch.json`.
 
-> TODO: Image
+> TODO: Bild
 
-Add in a configuration option like so:
+Fügen Sie wie folgt eine Konfigurationsoption hinzu:
 
 ```json
 {
@@ -48,11 +48,11 @@ Add in a configuration option like so:
 }
 ```
 
-Now in the debug menu you will see an option called `Mojify` this will run the mojify script passing in a URL as the argument. You will be able to set breakpoints in the TypeScript file and inspect variables directly from there.
+Im Menü für das Debuggen wird jetzt die Option `Mojify` angezeigt, mit der das mojify-Skript ausgeführt und eine URL als Argument übergeben wird. Sie können in der TypeScript-Datei Breakpoints setzen und darin direkt Variablen untersuchen.
 
-## Open up `bin/mojis.ts`
+## <a name="open-up-binmojists"></a>Öffnen Sie `bin/mojis.ts`.
 
-The file is already scaffolded with all the required imports, like so:
+Das Gerüst für die Datei mit allen erforderlichen Importen steht bereits:
 
 ```typescript
 require("dotenv").config();
@@ -60,17 +60,17 @@ import fetch from "node-fetch";
 import { EmotivePoint, Face, Rect } from "../shared/models";
 ```
 
-`dotenv` is a helper package which loads up the contents of a .env file in the root of your project as environment variables, useful for development.
+`dotenv` ist ein Hilfsprogrammpaket, mit dem der Inhalt einer ENV-Datei im Stamm Ihres Projekts in Form von Umgebungsvariablen geladen wird. Dies ist hilfreich für die Entwicklung.
 
-`node-fetch` we use to make http requests to the Azure Face API.
+Wir verwenden `node-fetch`, um HTTP-Anforderungen an die Azure-Gesichtserkennungs-API zu senden.
 
-`EmotivePoint` is a helper class that describes a point in _emotional space_ - we will be discussing this in more details below.
+`EmotivePoint` ist eine Hilfsklasse, mit der ein Punkt im _emotionalen Raum_ beschrieben wird. Hierauf gehen wir weiter unten näher ein.
 
-`Rect` is a helper class to describe a rectangle shape, we use this to describe the position of a face in an image.
+`Rect` ist eine Hilfsklasse zum Beschreiben einer rechteckigen Form. Wir nutzen sie, um die Position eines Gesichts in einem Bild zu beschreiben.
 
-`Face` is a helper utility class which combines the rectangle and emotive point informatoin about a face in an image.
+`Face` ist eine Hilfsprogrammklasse, mit der die Informationen zum Rechteck und emotionalen Punkt eines Gesichts in einem Bild kombiniert werden.
 
-In the middle of the file you should see some stub functions, like so:
+Im mittleren Bereich der Datei sollten einige Stub-Funktionen angezeigt werden:
 
 ```typescript
 async function getFaces(imageUrl) {
@@ -82,9 +82,9 @@ async function createMojifiedImage(imageUrl, faces) {
 }
 ```
 
-These are the functions you will be fleshing out in this lecture and the next
+Hierbei handelt es sich um die Funktionen, die Sie in dieser und der nächsten Lektion gestalten.
 
-At the end of the file you should see this code
+Am Ende der Datei sollte dieser Code angezeigt werden:
 
 ```typescript
 async function main() {
@@ -96,18 +96,18 @@ async function main() {
 main();
 ```
 
-## Add the environment variables
+## <a name="add-the-environment-variables"></a>Hinzufügen der Umgebungsvariablen
 
-We are going to call the Face API so we need to use those secret keys and urls we generated before, add this to the top of the file under the imports:
+Da wir die Gesichtserkennungs-API aufrufen, müssen wir die zuvor generierten geheimen Schlüssel und URLs verwenden und oben in der Datei unter den Importen hinzufügen:
 
 ```typescript
 const API_URL = process.env["FACE_API_URL"];
 const API_KEY = process.env["FACE_API_KEY"];
 ```
 
-## Call the Face API with the provided image and get a response
+## <a name="call-the-face-api-with-the-provided-image-and-get-a-response"></a>Aufrufen der Gesichtserkennungs-API mit dem angegebenen Bild und Erhalten einer Antwort
 
-To make a reques to the Face API we add this code to the top of the `getFaces` function
+Wir fügen diesen Code oben in der Funktion `getFaces` hinzu, um eine Anforderung an die Gesichtserkennungs-API zu senden.
 
 ```typescript
 let response = await fetch(API_URL, {
@@ -122,27 +122,27 @@ let resp = await response.json();
 console.log(resp);
 ```
 
-The code above uses the `fetch` command to send a `POST` request to the Face API.
+Im obigen Code wird der Befehl `fetch` verwendet, um eine `POST`-Anforderung an die Gesichtserkennungs-API zu senden.
 
-We pass the `API_KEY` in the header so the Face API knows the request comes from us, otherwise the request is rejected.
+Wir übergeben den `API_KEY` im Header, damit die Gesichtserkennungs-API über unsere Anforderung informiert ist. Andernfalls wird die Anforderung abgelehnt.
 
-We pass the `imageUrl` we want the Face API to analyse in the body.
+Wir übergeben die `imageUrl`, die von der Gesichtserkennungs-API im Text analysiert werden soll.
 
-We then get the responce from the API request and print it out.
+Anschließend erhalten wir die Antwort von der API-Anforderung und geben sie aus.
 
-If you now run the script with
+Bei Ausführung des Skripts mit:
 
 ```bash
 node bin/mojify.js <path-to-image>
 ```
 
-It should print out the json responce returned from passing that image to the face API.
+Die JSON-Antwort, die beim Übergeben dieses Bilds an die Gesichtserkennungs-API zurückgegeben wurde, sollte ausgegeben werden.
 
-## Parse the responce
+## <a name="parse-the-responce"></a>Analysieren der Antwort
 
-To calculate the emojis ee need to convert each face returned in the responce from the API to an instance of a `Face` class.
+Zum Berechnen von Emojis müssen Sie jedes Gesicht, das in der Antwort von der API zurückgegeben wird, in eine Instanz einer `Face`-Klasse konvertieren.
 
-We add this code just after the code to call the API in the `getFaces` fucntion:
+Wir fügen diesen Code direkt nach dem Aufrufen der API in der Funktion `getFaces` hinzu:
 
 ```typescript
 let faces = [];
@@ -156,20 +156,20 @@ for (let f of resp) {
 return faces;
 ```
 
-- We loop through each face returned in the responce.
-- We generate an `EmotivePoint`, a `Rect` and a `Face` from the returned json.
-- Creating the `Face` instance matches the face to an emoji
-- To see which emoji was matched we print out the `mojiicon`.
+- Wir durchlaufen die einzelnen Gesichter, die in der Antwort zurückgegeben werden.
+- Wir generieren aus dem zurückgegebenen JSON-Code die Elemente `EmotivePoint`, `Rect` und `Face`.
+- Durch die Erstellung der `Face`-Instanz wird das Gesicht mit einem Emoji abgeglichen.
+- Um zu ermitteln, für welches Emoji sich die Übereinstimmung ergeben hat, geben wir das `mojiicon`-Element aus.
 
-## Try it out
+## <a name="try-it-out"></a>Testen
 
-Now if you run the script it should:
+Wenn Sie das Skript jetzt ausführen, sollte Folgendes durchgeführt werden:
 
-- Pass the provided image through the Face API and calculate the emotion.
-- Match emotions to emojis.
-- Print the emojis to the terminal.
+- Übergeben des bereitgestellten Bilds über die Gesichtserkennungs-API und Berechnen der Emotion
+- Abgleichen der Emotionen mit Emojis
+- Ausgeben der Emojis im Terminal
 
-Like so:
+Beispiel:
 
 ```bash
 node bin/mojify.js <path-to-image>

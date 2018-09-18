@@ -2,13 +2,13 @@ Der erste Schritt auf dem Weg zu Ihrer neuen Website ist das Vorbereiten Ihrer E
 
 ## <a name="prepare-your-development-environment"></a>Vorbereiten Ihrer Entwicklungsumgebung
 
-Visual Studio 2017 enthält zwei Workloads, die Sie für das Erstellen, Veröffentlichen und Bereitstellen Ihrer Website in Azure benötigen. Diese Workloads enthalten alle Vorlagen für Ihre ASP.NET-Website und ermöglichen, Ihre Anwendung mit Azure zu verbinden und dort bereitzustellen.
+Visual Studio 2017 enthält zwei Workloads, die Sie für das Erstellen, Veröffentlichen und Bereitstellen Ihrer Website in Azure benötigen. Diese Workloads enthalten alle Vorlagen für Ihre ASP.NET-Website und ermöglichen, eine Verbindung Ihrer Website mit Azure herzustellen und sie dort bereitzustellen.
 
 Stellen Sie sicher, dass Sie folgende Workloads installiert haben:
 
 - ASP.NET und Webentwicklung
 
-Die Workload für die Webentwicklung in Visual Studio 2017 wurde dafür entwickeln, Ihre Produktivität beim Entwickeln von Webanwendungen mithilfe von ASP.NET und standardbasierten Technologien wie HTML und JavaScript zu maximieren.
+Die Workload für die Webentwicklung in Visual Studio 2017 wurde dafür entwickelt, Ihre Produktivität beim Entwickeln von Webanwendungen mithilfe von ASP.NET und standardbasierten Technologien wie HTML und JavaScript zu maximieren.
 
 - Azure-Entwicklung
 

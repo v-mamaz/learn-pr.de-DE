@@ -1,19 +1,19 @@
-In the MEAN stack, the **E** represents the Express component. Express is a web server framework that's built for Node.js. It will handle our request routing and helper system. It's designed to simplify building web applications that are hosted on the Node.js runtime. While the core of Express is routing, it also helps web applications work with HTTP cookies and request query string data.
+Innerhalb des MEAN-Stapels steht das **E** für die Express-Komponente. Express ist ein Webserverframework für Node.js. Es behandelt unser Anforderungsrouting und Hilfsprogramm. Es wurde entwickelt, um das Erstellen von Webanwendungen zu vereinfachen, die auf der Node.js-Runtime gehostet werden. Bei Express steht zwar das Routing im Vordergrund, jedoch unterstützt das Framework Webanwendungen auch im Zusammenhang mit HTTP-Cookies und den Daten der Abfragezeichenfolgen von Anforderungen.
 
-## Express version
+## <a name="express-version"></a>Express-Version
 
-Because Express is a Node.js web application framework, we need to have Node.js and the node package manager installed.
+Da Express ein Node.js-Webanwendungsframework ist, müssen Node.js und Knotenpaket-Manager (npm) installiert werden.
 
-At the time of this writing, the Express version is `4.16.0`.
+Die aktuelle Express-Version ist `4.16.0`.
 
-## How to install Express
+## <a name="how-to-install-express"></a>Installieren von Express
 
-The installation is as simple as running the following command:
+Die Installation ist so einfach wie das Ausführen des folgenden Befehls:
 
    ```bash
    npm install express
    ```
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-With Express installed, we have a shortcut path to responding to HTTP requests. We can quickly set up request routing and handlers for handling API and web page response data.
+Durch die Installation von Express können Sie nun besonders leicht auf HTTP-Anforderungen antworten. Außerdem können Sie das Routing von Anforderungen sowie Handler zur Verarbeitung von API- und Webseiten-Antwortdaten in kurzer Zeit einrichten.

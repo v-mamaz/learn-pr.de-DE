@@ -1,23 +1,23 @@
-At this point, the application is a functional gallery that allows you to upload and view images. In this module, you learn how to use the Computer Vision API from Microsoft Cognitive Services to generate captions for uploaded images and save the captions with the image metadata in Azure Cosmos DB.
+An diesem Punkt hat die Anwendung den Status einer funktionierenden Galerie, die Ihnen das Hochladen und Anzeigen von Bildern ermöglicht. In diesem Modul wird beschrieben, wie Sie die Maschinelles Sehen-API von Microsoft Cognitive Services verwenden, um Titel für hochgeladene Bilder zu generieren und diese mit den Bildmetadaten in Azure Cosmos DB zu speichern.
 
-## Create a Computer Vision account
+## <a name="create-a-computer-vision-account"></a>Erstellen eines Kontos vom Typ „Maschinelles Sehen“
 
-Microsoft Cognitive Services is a collection of services that are available to developers to make their applications more intelligent. The Computer Vision API is a serverless service that processes images using advanced algorithms and returns information about each image. It has a free tier that provides up to 5,000 API calls per month.
+Microsoft Cognitive Services ist eine Sammlung von Diensten, mit denen Entwickler ihre Anwendungen um intelligente Funktionen und Features erweitern können. Die Maschinelles Sehen-API ist ein serverloser Dienst, der Bilder mithilfe von erweiterten Algorithmen verarbeitet und Informationen zu jedem Bild zurückgibt. Sie verfügt über einen kostenlosen Tarif, in dem bis zu 5.000 API-Aufrufe pro Monat möglich sind.
 
-1. Ensure you're still signed into Cloud Shell. If you aren't, select **Enter focus mode** to open a Cloud Shell window. 
+1. Stellen Sie sicher, dass Sie noch in Cloud Shell angemeldet sind. Klicken Sie andernfalls auf die Option **Enter focus mode** (Fokusmodus aktivieren), um ein Cloud Shell-Fenster zu öffnen. 
 
-1. Create a new Cognitive Services account of type **ComputerVision** with a unique name in your resource group. For the free tier, use **F0** as the SKU. If you already have an existing Computer Vision account, you may need to create a Standard account (S1), which may incur some costs.
+1. Erstellen Sie in Ihrer Ressourcengruppe ein neues Cognitive Services-Konto vom Typ **ComputerVision** mit einem eindeutigen Namen. Verwenden Sie für den kostenlosen Tarif **F0** als SKU. Falls Sie bereits über ein vorhandenes Konto vom Typ „Maschinelles Sehen“ verfügen, müssen Sie ggf. ein Standard-Konto (S1) erstellen. Hierfür können jedoch Kosten anfallen.
 
     ```azurecli
     az cognitiveservices account create -g first-serverless-app -n <computer vision account name> --kind ComputerVision --sku F0 -l westcentralus
     ```
 
 
-## Create function app settings for Computer Vision URL and key
+## <a name="create-function-app-settings-for-computer-vision-url-and-key"></a>Erstellen von Funktions-App-Einstellungen für die Maschinelles Sehen-API und den Schlüssel
 
-To call the Computer Vision API, a URL and key are required.
+Sie benötigen eine URL und einen Schlüssel, um die Maschinelles Sehen-API aufrufen zu können.
 
-1. Get the Computer Vision API key and URL and save them in Bash variables.
+1. Rufen Sie den Schlüssel und die URL für die Maschinelles Sehen-API ab, und speichern Sie diese Angaben in Bash-Variablen.
 
     ```azurecli
     export COMP_VISION_KEY=$(az cognitiveservices account keys list -g first-serverless-app -n <computer vision account name> --query key1 --output tsv)
@@ -26,49 +26,49 @@ To call the Computer Vision API, a URL and key are required.
     export COMP_VISION_URL=$(az cognitiveservices account show -g first-serverless-app -n <computer vision account name> --query endpoint --output tsv)
     ```
 
-1. Create app settings named **COMP_VISION_KEY** and **COMP_VISION_URL**, respectively, in the function app.
+1. Erstellen Sie in der Funktions-App App-Einstellungen mit den Namen **COMP_VISION_KEY** und **COMP_VISION_URL**.
 
     ```azurecli
     az functionapp config appsettings set -n <function app name> -g first-serverless-app --settings COMP_VISION_KEY=$COMP_VISION_KEY COMP_VISION_URL=$COMP_VISION_URL -o table
     ```
 
-## Call the Computer Vision API from the ResizeImage function
+## <a name="call-the-computer-vision-api-from-the-resizeimage-function"></a>Aufrufen der Maschinelles Sehen-API über die ResizeImage-Funktion
 
-In the following steps, you modify the **ResizeImage** function to call the Computer Vision API to describe each uploaded image and save the description in Azure Cosmos DB.
+Wenn Sie die folgenden Schritte ausführen, ändern Sie die **ResizeImage**-Funktion, um die Maschinelles Sehen-API aufzurufen, um hochgeladene Bilder zu beschreiben und die Beschreibung in Azure Cosmos DB zu speichern.
 
-1. Open your function app in the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. Öffnen Sie Ihre Funktions-App im [Azure-Portal](https://portal.azure.com/?azure-portal=true).
 
 ::: zone pivot="csharp"
-1. (C#) Using the left navigation, locate the **ResizeImage** function and open its code window.
+1. (C#) Verwenden Sie den Navigationsbereich auf der linken Seite, um nach der Funktion **ResizeImage** zu suchen und das zugehörige Codefenster zu öffnen.
 
-1. (C#) Replace the code with the contents of the [**/csharp/ResizeImage/run-module5.csx**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/ResizeImage/run-module5.csx) file. This code uses `HttpClient` to call the Computer Vision API and save its result in Azure Cosmos DB.
+1. (C#) Ersetzen Sie den Code durch den Inhalt der Datei [**/csharp/ResizeImage/run-module5.csx**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/ResizeImage/run-module5.csx). In diesem Code wird `HttpClient` verwendet, um die Maschinelles Sehen-API aufzurufen und das Ergebnis in Azure Cosmos DB zu speichern.
 
 ::: zone-end
 
 ::: zone pivot="javascript"
-1. (JavaScript) This function requires the `axios` package from npm to make an HTTP call to the Computer Vision API. To install the npm package, click on the function app name on the left navigation and click **Platform features**.
+1. (JavaScript) Für diese Funktion wird das `axios`-Paket aus npm benötigt, um einen HTTP-Aufruf an die Maschinelles Sehen-API zu senden. Klicken Sie zum Installieren des npm-Pakets im linken Navigationsbereich erst auf den Namen der Funktions-App und dann auf **Plattformfeatures**.
 
-1. (JavaScript) Click **Console** to reveal a console window.
+1. (JavaScript) Klicken Sie auf **Konsole**, um ein Konsolenfenster anzuzeigen.
 
-1. (JavaScript) Run the command `npm install axios` in the console. It may take a few minutes to complete the operation.
+1. (JavaScript) Führen Sie den Befehl `npm install axios` in der Konsole aus. Es kann einige Minuten dauern, bis der Vorgang abgeschlossen ist.
 
-1. (JavaScript) Click on the function name (**ResizeImage**) in the left navigation to reveal the function. Replace all of the **index.js** file with the contents of the [**/javascript/ResizeImage/index-module5.js**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/javascript/ResizeImage/index-module5.js) file.
+1. (JavaScript) Klicken Sie im Navigationsbereich auf der linken Seite auf den Funktionsnamen (**ResizeImage**), um die Funktion anzuzeigen. Ersetzen Sie den Inhalt der **index.js**-Datei durch den Inhalt der Datei [**/javascript/ResizeImage/index-module5.js**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/javascript/ResizeImage/index-module5.js).
 
 ::: zone-end
 
-1. Click **Logs** below the code window to expand the Logs panel.
+1. Klicken Sie unter dem Codefenster auf **Protokolle**, um den Protokollbereich zu erweitern.
 
-1. Click **Save**. Check the Logs panel to ensure the function is successfully saved and there are no errors.
+1. Klicken Sie auf **Speichern**. Überprüfen Sie den Protokollbereich, um sicherzustellen, dass die Funktion erfolgreich gespeichert wird und keine Fehler aufgetreten sind.
 
 
-## Test the application
+## <a name="test-the-application"></a>Testen der Anwendung
 
-1. Open the application in a browser. 
+1. Öffnen Sie die Anwendung in einem Browser. 
 
-1. Select an image file and upload it.
+1. Wählen Sie eine Bilddatei aus, und laden Sie sie hoch.
 
-1. After a few seconds, the thumbnail of the new image should appear on the page. Point to the image to see the description that's generated by Computer Vision.
+1. Nach einigen Sekunden sollte die Miniaturansicht des neuen Bilds auf der Seite angezeigt werden. Zeigen Sie auf das Bild, um die von der Maschinelles Sehen-API generierte Beschreibung anzuzeigen.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this unit, you learned how to automatically generate captions for each uploaded image using Microsoft Cognitive Services Computer Vision API. Next, you learn how to add authentication to the application using Azure App Service authentication.
+In dieser Einheit haben Sie erfahren, wie Sie mithilfe der Maschinelles Sehen-API von Microsoft Cognitive Services die automatische Generierung von Bildtiteln für hochgeladene Bilder verwenden können. Als Nächstes wird beschrieben, wie Sie der Anwendung mithilfe der Azure App Service-Authentifizierung eine Authentifizierung hinzufügen.

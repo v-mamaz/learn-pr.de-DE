@@ -1,24 +1,24 @@
-You've successfully created a full-featured, serverless application using Azure services.
+Sie haben mithilfe von Azure-Diensten eine serverlose Anwendung mit vollem Funktionsumfang erstellt.
 
-## Clean up
+## <a name="clean-up"></a>Bereinigen
 <!---TODO: Update for sandbox--->
 
-When you are done working with this application, you can use the following command to delete all resources created during the tutorial:
+Wenn Sie die Arbeit mit dieser Anwendung beendet haben, können Sie mit dem folgenden Befehl alle im Tutorial erstellten Ressourcen löschen:
 
 ```azurecli
 az group delete --name first-serverless-app
 ```
 
-Type `y` when prompted.  
+Geben Sie `y` ein, wenn Sie dazu aufgefordert werden.  
 
-## Next steps
+## <a name="next-steps"></a>Nächste Schritte
 
-In this module, you learned how to:
-  - Configure Azure Blob storage to host a static website and uploaded images.
-  - Upload images to Azure Blob storage using Azure Functions.
-  - Resize images using Azure Functions.
-  - Store image metadata in Azure Cosmos DB. 
-  - Use the Cognitive Services Computer Vision API to auto-generate image captions.
-  - Use Azure Active Directory to secure the web app by authenticating users.
+In diesem Artikel haben Sie Folgendes gelernt:
+  - Konfigurieren von Azure Blob Storage zum Hosten einer statischen Website und von hochgeladenen Bildern
+  - Hochladen von Bildern in Azure Blob Storage mit Azure Functions
+  - Ändern der Größe von Bildern mit Azure Functions
+  - Speichern von Imagemetadaten in Azure Cosmos DB 
+  - Verwenden der Maschinelles Sehen-API von Cognitive Services zum automatischen Generieren von Bildtiteln
+  - Nutzen von Azure Active Directory zum Schützen der Web-App durch das Authentifizieren von Benutzern.
 
-To learn how to connect even more services to Functions, continue to the [Functions with Logic Apps](https://docs.microsoft.com/azure/azure-functions/functions-twitter-email) tutorial.
+Fahren Sie mit dem Tutorial [Erstellen einer Funktion, die in Azure Logic Apps integriert ist](https://docs.microsoft.com/azure/azure-functions/functions-twitter-email) fort, wenn Sie noch mehr Dienste mit Functions verbinden möchten.

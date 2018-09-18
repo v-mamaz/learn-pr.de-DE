@@ -1,12 +1,12 @@
-You're the system architect for a law firm. The firm has asked you to migrate key systems to Azure. Systems include the database of case histories, currently hosted by an on-premises SQL server and accessed from a desktop application. The SQL server also runs some custom in-house services to perform database maintenance. You've decided that a solution based on Azure virtual machines (VMs) will allow you to host your SQL server and continue using your custom services. You'll create an Azure virtual hard disk based on the contents of your existing on-premises server to ease migration.
+Sie sind der Systemarchitekt für eine Anwaltskanzlei. Das Unternehmen hat Sie beauftragt, wichtige Systeme zu Azure zu migrieren. Zu den Systemen zählen die Datenbank der Fallverläufe, die derzeit von einem lokalen SQL-Server gehostet werden, und auf die über eine Desktopanwendung zugegriffen wird. Der SQL-Server führt auch einige benutzerdefinierte interne Dienste zur Datenbankwartung aus. Sie haben herausgefunden, dass Sie mit einer auf virtuellen Azure-Computern (VMs) basierenden Lösung Ihren SQL-Server hosten und Ihre benutzerdefinierten Dienste weiterhin nutzen können. Um die Migration zu erleichtern, erstellen Sie auf Basis der Inhalte Ihres vorhandenen lokalen Servers eine virtuelle Azure-Festplatte.
 
-In this module, you'll learn how to architect the optimal disk configuration for the VMs you create in Azure. You'll create virtual hard disks through the Azure portal and add them to VMs to create fully functional compute resources.
+In diesem Modul erfahren Sie, wie Sie die optimale Datenträgerkonfiguration für die virtuellen Computer zusammenstellen, die Sie in Azure erstellen. Sie erstellen virtuelle Festplatten über das Azure-Portal und fügen sie virtuellen Computern hinzu, um voll funktionsfähige Computeressourcen zu erstellen.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul lernen Sie Folgendes:
 
-- Create a VM in the Azure portal
-- Create operating system disks and data disks in Azure VMs
-- Choose between and create standard and premium disks
-- Choose between and create unmanaged and managed disks
+- Erstellen eines virtuellen Computers im Azure-Portal
+- Erstellen von Betriebssystem-Datenträgern und Datenträgern für Daten in Azure-VMs
+- Auswählen zwischen Standard- und Premium-Datenträgern und deren Erstellen
+- Auswählen zwischen nicht verwalteten und verwalteten Datenträgern und deren Erstellen

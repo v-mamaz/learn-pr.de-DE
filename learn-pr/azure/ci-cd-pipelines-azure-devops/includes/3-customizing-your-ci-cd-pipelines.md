@@ -1,87 +1,87 @@
-The out of the box experience with an Azure DevOps Project creates build and release pipelines that make sense for the technologies picked. For this module, you created a build and release pipeline that makes sense for a node.js app running in a container hosted in a Kubernetes cluster. 
+Über die bereitgestellte Benutzeroberfläche für ein Azure DevOps-Projekt werden Build- und Releasepipelines erstellt, die für die gewählten Technologiekomponenten sinnvoll sind. Für dieses Modul haben Sie eine Build- und Releasepipeline erstellt, die für eine Node.js-App geeignet ist, bei der die Ausführung in einem per Kubernetes-Cluster gehosteten Container erfolgt. 
 
-Often times we need to customize the build and release pipelines to do specific things for our project. The build and release pipelines in VSTS are 100% customizable. You can make the pipelines do whatever you need it to do.
+Es ist häufig der Fall, dass wir die Build- und Releasepipelines anpassen müssen, um für ein Projekt bestimmte Anforderungen zu erfüllen. Die Build- und Releasepipelines in VSTS sind zu 100% anpassbar. Sie können die Pipelines so festlegen, wie Sie dies benötigen.
 
-In this unit, learn how to customize your build and release pipelines.
+In dieser Einheit wird beschrieben, wie Sie Ihre Build- und Releasepipelines anpassen.
 
-## Customize the build pipeline
+## <a name="customize-the-build-pipeline"></a>Anpassen der Buildpipeline
 
-The build engine in VSTS is just a task runner, doing one task, after another. To customize the build, you just add or remove tasks and fill out the correct parameters for the task.
+Die Build-Engine in VSTS ist lediglich eine Aufgabenausführung, über die eine Aufgabe nach der anderen ausgeführt wird. Zum Anpassen des Builds können Sie einfach Aufgaben hinzufügen und entfernen und die richtigen Parameter für die Aufgabe einfügen.
 
-Out of the box, VSTS comes with about 100 tasks that you can use. If you need to do something that doesn't exist out of the box, check the marketplace where there are over 700 build and release tasks ready to be downloaded and used. You also have the ability to write your own custom tasks.
+Standardmäßig verfügt VSTS über ca. 100 Aufgaben, die Sie verwenden können. Falls Sie eine Aufgabe durchführen müssen, die nicht standardmäßig vorhanden ist, werden Sie ggf. auf dem Marketplace fündig. Er enthält über 700 Build- und Releaseaufgaben, die heruntergeladen und genutzt werden können. Außerdem haben Sie die Möglichkeit, eigene benutzerdefinierte Aufgaben zu schreiben.
 
-For this unit, you will customize the build pipeline by installing the marketplace tasks WhiteSource Bolt to do security scanning of our code.
+Für diese Einheit passen Sie die Buildpipeline an, indem Sie die Marketplace-Aufgaben installieren (WhiteSource-Bolt), um für den Code einen Sicherheitsscan durchzuführen.
 
-1. Browse to the Azure DevOps Project in the Azure portal and click on the build definition link  
-![Build Link](/media-draft/3-buildlink.png)
+1. Navigieren Sie im Azure-Portal zum Azure DevOps-Projekt, und klicken Sie auf den Link für die Builddefinition.  
+![Build-Link](/media-draft/3-buildlink.png)
 
-2. This takes you to the build pipelines page. Click on the build and select `Edit`  
-![Edit Build](/media-draft/3-editbuild.png)
+2. Sie gelangen zur Seite mit den Buildpipelines. Klicken Sie auf den Build, und wählen Sie `Edit`.  
+![Bearbeiten des Builds](/media-draft/3-editbuild.png)
 
-3. This takes you to the build definition. Click on the `+` to add a task to Agent Job 1  
-![Add Task](/media-draft/3-addtask.png)
+3. Sie gelangen zur Builddefinition. Klicken Sie auf das Pluszeichen (`+`), um Agent-Auftrag 1 eine Aufgabe hinzuzufügen.  
+![Hinzufügen der Aufgabe](/media-draft/3-addtask.png)
 
-4. In the text field, type `bolt` and click `Get it free`  
-![Get it free](/media-draft/3-getitfree.png)
+4. Geben Sie im Textfeld `bolt` ein, und klicken Sie auf `Get it free`.  
+![Get it free (Kostenlos)](/media-draft/3-getitfree.png)
 
-5. This takes you to the WhiteSource Bolt Marketplace page. Click `Get it free`  
-![Get White Source Bolt Free](/media-draft/3-getwhitesourceboltfree.png)
+5. Sie gelangen zur Marketplace-Seite für „WhiteSource-Bolt“. Klicken Sie auf `Get it free`.  
+![White Source-Bolt – Kostenlos](/media-draft/3-getwhitesourceboltfree.png)
 
-6. Choose your VSTS organization and then click `Install`  
-![Install](/media-draft/3-install.png)
+6. Wählen Sie Ihre VSTS-Organisation aus, und klicken Sie dann auf `Install`.  
+![Installieren](/media-draft/3-install.png)
 
-7. Activate WhiteSource Bolt by following the directions here <https://www.whitesourcesoftware.com/whitesource_bolt_visualstudio_2017/#activate>
+7. Aktivieren Sie den WhiteSource-Bolt, indem Sie die hier angegebene Anleitung verwenden: <https://www.whitesourcesoftware.com/whitesource_bolt_visualstudio_2017/#activate>.
 
-8. Go back to your Azure portal with the DevOps project loaded and click the build pipeline link  
-![Build Pipeline Link](/media-draft/3-buildpipelinelink.png)
+8. Wechseln Sie zurück zu Ihrem Azure-Portal mit dem geladenen DevOps-Projekt, und klicken Sie auf den Link für die Buildpipeline.  
+![Buildpipeline-Link](/media-draft/3-buildpipelinelink.png)
 
-9. Select your build and click `Edit`  
-![Edit Build](/media-draft/3-editbuild.png)
+9. Wählen Sie Ihren Build aus, und klicken Sie auf `Edit`.  
+![Bearbeiten des Builds](/media-draft/3-editbuild.png)
 
-10. Click the `+` Add a task to Agent job 1, type in `bolt` in the search field and click `Add`  
-![Add Bolt](/media-draft/3-addbolt.png)
+10. Klicken Sie auf „`+` Add a task to Agent job 1“, geben Sie `bolt` in das Suchfeld ein, und klicken Sie auf `Add`.  
+![Hinzufügen des Bolts](/media-draft/3-addbolt.png)
 
-11. This adds the WhiteSource Bolt task to the bottom of the task list, drag it to the top  
-![Bolt at Top](/media-draft/3-boltattop.png)
+11. Die WhiteSource-Boltaufgabe wird unten in der Aufgabenliste hinzugefügt. Ziehen Sie sie an den Anfang.  
+![Bolt am Anfang der Liste](/media-draft/3-boltattop.png)
 
-12. Click `Save & queue` and select `Save & queue`  
-![Save and Queue](/media-draft/3-saveandqueue.png)
+12. Klicken Sie auf `Save & queue`, und wählen Sie `Save & queue`.  
+![Speichern und Einreihen in Warteschlange](/media-draft/3-saveandqueue.png)
 
-13. Click `Save & queue`  
-![Save and Queue Dialog](/media-draft/3-saveandqueuedialog.png)
+13. Klicken Sie auf `Save & queue`.  
+![Dialogfeld für Speichern und Einreihen in die Warteschlange](/media-draft/3-saveandqueuedialog.png)
 
-This saves the modified build pipeline and queues the build. After the build finishes, looking at the build `WhiteSource Bolt Build Report`, you can see the source code was scanned by WhiteSource Bolt looking for security vulnerabilities.
+Die geänderte Buildpipeline wird gespeichert, und der Build wird in die Warteschlange eingereiht. Wenn Sie sich nach Abschluss des Buildvorgangs den Build `WhiteSource Bolt Build Report` ansehen, erkennen Sie, dass der Quellcode vom WhiteSource-Bolt gescannt wurde, um nach Sicherheitsrisiken zu suchen.
 
-![Build report](/media-draft/3-buildreport.png)
+![Buildbericht](/media-draft/3-buildreport.png)
 
-## Customize the release pipeline
+## <a name="customize-the-release-pipeline"></a>Anpassen der Releasepipeline
 
-Like the build, the release pipeline is task runner and can be customized the same way. For this unit, you will add a web performance test at the end of the release. This will verifying that your app is deployed and running successfully in the Kubernetes cluster.
+Wie der Build auch, ist die Releasepipeline eine Aufgabenausführung, die auf die gleiche Weise angepasst werden kann. Für diese Einheit fügen Sie am Ende des Release einen Webleistungstest hinzu. Hiermit wird überprüft, ob Ihre App bereitgestellt und im Kubernetes-Cluster erfolgreich ausgeführt wird.
 
-1. Browse to the DevOps project in the Azure Portal and click on the link for the release pipeline  
-![Release Link](/media-draft/3-releaselink.png)
+1. Navigieren Sie im Azure-Portal zum DevOps-Projekt, und klicken Sie auf den Link für die Releasepipeline.  
+![Link für Release](/media-draft/3-releaselink.png)
 
-2. This takes you to the release pipeline page. Click your release pipeline and click on `Edit`  
-![Edit Release Pipeline](/media-draft/3-editreleasepipeline.png)
+2. Sie gelangen auf die Seite für Releasepipelines. Klicken Sie auf Ihre Releasepipeline und dann auf `Edit`.  
+![Bearbeiten der Releasepipeline](/media-draft/3-editreleasepipeline.png)
 
-3. Click on the tasks in your release `Dev` stage  
-![Release Stage](/media-draft/3-releasestage.png)
+3. Klicken Sie in der Releasestufe `Dev` auf die Aufgaben.  
+![Releasestufe](/media-draft/3-releasestage.png)
 
-4. Click on the `+` Add a task to Phase1, type `web test` in the search field and click `Add` for the Cloud-based Web Performance Test task  
-![Add Web Test](/media-draft/3-addwebtest.png)
+4. Klicken Sie auf `+` (Add a task to Phase1), geben Sie im Suchfeld `web test` ein, und klicken Sie für die Aufgabe „Cloud-based Web Performance Test“ auf `Add`.  
+![Hinzufügen eines Webtests](/media-draft/3-addwebtest.png)
 
-5. Edit the Quick Web Performance Test task by clicking on it and adding the url to your app in the Website URL (to find the url, go to the Azure portal DevOps project page and on the right-hand side, right-click your sample app external endpoint and copy link) and then for TestName, enter in `Ping Test`  
-![Copy URL](/media-draft/3-copyurl.png)  
-![Edit Web Test Task](/media-draft/3-editwebtesttask.png)
+5. Bearbeiten Sie die Aufgabe „Quick Web Performance Test“, indem Sie darauf klicken und die URL Ihrer App in der Website-URL hinzufügen. (Ermitteln Sie die URL, indem Sie im Azure-Portal rechts auf der Seite mit dem DevOps-Projekt mit der rechten Maustaste auf Ihren externen Endpunkt der Beispiel-App klicken und den Link kopieren.) Geben Sie als „TestName“ dann `Ping Test` ein.  
+![Kopieren der URL](/media-draft/3-copyurl.png)  
+![Bearbeiten der Webtestaufgabe](/media-draft/3-editwebtesttask.png)
 
-6. Click `Save`  
-![Save Release](/media-draft/3-saverelease.png)
+6. Klicken Sie auf `Save`.  
+![Speichern des Release](/media-draft/3-saverelease.png)
 
-Now, when you run a release, after deploying the new helm package, a web test is run hitting the app url successfully.
+Wenn Sie jetzt einen Release ausführen, wird nach dem Bereitstellen des neuen Helm-Pakets ein Webtest durchgeführt, um zu überprüfen, ob die App-URL korrekt ist.
 
-![Web Test](/media-draft/3-webtest.png)
+![Webtest](/media-draft/3-webtest.png)
 
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this unit, you learned how to customize your build and release pipelines. You also learned how to install and use tasks from the Marketplace.
+In dieser Einheit wurde beschrieben, wie Sie Ihre Build- und Releasepipelines anpassen. Außerdem haben Sie erfahren, wie Sie Aufgaben auf dem Marketplace installieren und verwenden.

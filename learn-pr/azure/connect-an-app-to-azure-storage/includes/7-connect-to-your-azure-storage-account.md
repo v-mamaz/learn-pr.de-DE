@@ -1,40 +1,40 @@
-You have added the required client libraries to your application and are ready to connect to your Azure storage account.
+Sie haben Ihrer Anwendung die erforderlichen Clientbibliotheken hinzugefügt und können eine Verbindung mit Ihrem Azure-Speicherkonto herstellen.
 
-To work with data in a storage account, your app will need two pieces of data:
+Für Ihre App werden zwei Datenelemente benötigt, um mit Daten in einem Speicherkonto arbeiten zu können:
 
-1. [An access key](#access-key)
-1. [The REST API endpoint](#rest-endpoint)
+1. [Ein Zugriffsschlüssel](#access-key)
+1. [Der REST-API-Endpunkt](#rest-endpoint)
 
 <a name="access-key"></a>
 
-## Security access keys
+## <a name="security-access-keys"></a>Sicherheitszugriffsschlüssel
 
-Each storage account has two unique _access keys_ that are used to secure the storage account. If your app needs to connect to multiple storage accounts, then your app will require an access key for each storage account.
+Jedes Speicherkonto verfügt über zwei eindeutige _Zugriffsschlüssel_, die zum Schützen des Speicherkontos verwendet werden. Wenn Ihre App mit mehreren Speicherkonten eine Verbindung herstellen muss, benötigt sie für jedes Speicherkonto einen Zugriffsschlüssel.
 
-![An illustration showing an application connected to two different storage accounts in the cloud. Each storage account is accessible with a unique key.](..\media\6-multiple-accounts.png)
+![Eine Abbildung einer Anwendung, die mit zwei verschiedenen Speicherkonten in der Cloud verbunden ist. Auf jedes Speicherkonto kann mit einem eindeutigen Schlüssel zugegriffen werden.](..\media\6-multiple-accounts.png)
 
 <a name="rest-endpoint"></a>
 
-## REST API endpoint
+## <a name="rest-api-endpoint"></a>REST-API-Endpunkt
 
-In addition to access keys for authentication to storage accounts, your app will need to know the storage service endpoints to issue the REST requests. 
+Zusätzlich zu Zugriffsschlüsseln für die Authentifizierung gegenüber Speicherkonten muss Ihre App über die Information verfügen, welche Speicherdienstendpunkte für die REST-Anforderungen ausgegeben werden sollen. 
 
-The REST endpoint is a combination of your storage account _name_, the data type, and a known domain. For example:
+Der REST-Endpunkt ist eine Kombination aus dem _Namen_ Ihres Speicherkontos, des Datentyps und einer bekannten Domäne. Beispiel:
 
-| Data type | Example endpoint |
+| Datentyp | Beispiel für einen Endpunkt |
 |-----------|------------------|
 | Blobs     | `https://[name].blob.core.windows.net/` |
-| Queues    | `https://[name].queue.core.windows.net/` |
-| Table     | `https://[name].table.core.windows.net/` |
-| Files     | `https://[name].file.core.windows.net/` |
+| Warteschlangen    | `https://[name].queue.core.windows.net/` |
+| Tabelle     | `https://[name].table.core.windows.net/` |
+| Dateien     | `https://[name].file.core.windows.net/` |
 
-If you have a custom domain tied to Azure, then you can also create a custom domain URL for the endpoint.
+Wenn Sie eine benutzerdefinierte Domäne mit Azure verknüpft haben, können Sie auch eine benutzerdefinierte Domänen-URL für den Endpunkt erstellen.
 
-## Connection strings
+## <a name="connection-strings"></a>Verbindungszeichenfolgen
 
-The simplest way to handle this information is to use a **storage account connection string** A connection string provides all needed connectivity information in a single text string.
+Die einfachste Möglichkeit zum Verarbeiten dieser Informationen ist die Verwendung einer **Verbindungszeichenfolge für das Speicherkonto**. Eine Verbindungszeichenfolge enthält alle erforderlichen Konnektivitätsinformationen in nur einer Textzeichenfolge.
 
-Azure Storage connection strings look similar to the example below but with the access key and account name of your specific storage account:
+Azure Storage-Verbindungszeichenfolgen ähneln dem folgenden Beispiel – abgesehen von Zugriffsschlüssel und Kontoname, die für Ihr Speicherkonto spezifisch sind:
 
 ```
 DefaultEndpointsProtocol=https;AccountName={your-storage};
@@ -42,29 +42,29 @@ DefaultEndpointsProtocol=https;AccountName={your-storage};
    EndpointSuffix=core.windows.net
 ```
 
-## Security
+## <a name="security"></a>Sicherheit
 
-Access keys are critical to providing access to your storage account and as a result, should not be given to any system or person that you do not wish to have access to your storage account. Access keys are the equivalent of a username and password to access your computer.
+Zugriffsschlüssel sind entscheidend für den Zugriff auf Ihr Speicherkonto und dürfen daher nicht für Systeme oder Personen bereitgestellt werden, die keinen Zugriff auf Ihr Speicherkonto haben sollen. Zugriffsschlüssel entsprechen dem Benutzernamen und dem Kennwort, die zum Zugriff auf Ihren Computer erforderlich sind.
 
-Typically, storage account connectivity information is stored within an environment variable, database, or configuration file.
+Informationen zur Speicherkonto-Konnektivität werden in der Regel in einer Umgebungsvariablen, Datenbank oder Konfigurationsdatei gespeichert.
 
 > [!IMPORTANT]
-> It is important to note that storing this information in a configuration file can be dangerous if you include that file in source control and store it in a public repository. This is a common mistake and means that anyone can browse your source code in the public repository and see your storage account connection information.
+> Beachten Sie unbedingt, dass das Speichern dieser Informationen in einer Konfigurationsdatei gefährlich sein kann, wenn Sie diese Datei in die Quellcodeverwaltung einbeziehen und in einem öffentlichen Repository speichern. Dies ist ein häufiger Fehler und bedeutet, dass jeder Ihren Quellcode im öffentlichen Repository durchsuchen und Ihre Speicherkonto-Verbindungsinformationen finden kann.
 
-Each storage account has two access keys. The reason for this is to allow keys to be rotated (regenerated) periodically as part of security best practice in keeping your storage account secure. This process can be done from the Azure portal or the Azure CLI / PowerShell command line tool.
+Jedes Speicherkonto verfügt über zwei Zugriffsschlüssel. Dies ermöglicht eine Rotation (neue Generierung) der Schlüssel in regelmäßigen Abständen als Teil der bewährten Sicherheitsmethode zum Schutz Ihres Speicherkontos. Dieser Prozess kann über das Azure-Portal, die Azure CLI oder das PowerShell-Befehlszeilentool durchgeführt werden.
 
-Rotating a key will invalidate the original key value immediately and will revoke access to anyone who obtained the key inappropriately. With support for two keys, you can rotate keys without causing downtime in your applications that use them. Your app can switch to using the alternate access key, while the other key is regenerated. If you have multiple apps using this storage account, they should all use the same key to support this technique. Here's the basic idea:
+Bei der Rotation eines Schlüssels wird der ursprüngliche Schlüsselwert sofort ungültig und jeder Person, die den Schlüssel unberechtigterweise erhalten hat, wird der Zugriff entzogen. Bei der Unterstützung von zwei Schlüsseln können Sie die Schlüsselrotation ohne Ausfallzeiten in den Anwendungen, die die Schlüssel verwenden, durchführen. Während ein Schlüssel neu generiert wird, kann Ihre App zur Verwendung des anderen Zugriffsschlüssels wechseln. Wenn mehrere Ihrer Apps dieses Speicherkonto nutzen, sollten sie alle denselben Schlüssel verwenden, um diese Technik zu unterstützen. Die grundlegende Idee lautet wie folgt:
 
-1. Update the connection strings in your application code to reference the secondary access key of the storage account.
-2. Regenerate the primary access key for your storage account using the Azure portal or command line tool.
-3. Update the connection strings in your code to reference the new primary access key.
-4. Regenerate the secondary access key in the same manner.
+1. Aktualisieren Sie die Verbindungszeichenfolgen im Anwendungscode, damit sie auf den sekundären Zugriffsschlüssel des Speicherkontos verweisen.
+2. Generieren Sie den primären Zugriffsschlüssel für Ihr Speicherkonto neu, indem Sie das Azure-Portal oder ein Befehlszeilentool verwenden.
+3. Aktualisieren Sie die Verbindungszeichenfolgen in Ihrem Code, um auf den neuen primären Zugriffsschlüssel zu verweisen.
+4. Generieren Sie den sekundären Zugriffsschlüssel auf die gleiche Weise neu.
 
 > [!TIP]
-> It's highly recommended that you periodically rotate your access keys to ensure they remain private - just like changing your passwords. If you are using the key in a server application, you can use an **Azure Key Vault** to store the access key for you. Key Vaults include support to synchronize directly to the Storage Account and automatically rotate the keys periodically. Using a Key Vault provides an additional layer of security so your app never has to work directly with an access key.
+> Es wird dringend empfohlen, Ihre Zugriffsschlüssel regelmäßig zu rotieren, um sicherzustellen, dass sie privat bleiben (vergleichbar mit dem Ändern Ihrer Kennwörter). Wenn Sie den Schlüssel in einer Serveranwendung nutzen, können Sie einen **Azure Key Vault** verwenden, um den Zugriffsschlüssel zu speichern. Key Vaults (Schlüsseltresore) verfügen über Unterstützung für das direkte Synchronisieren mit dem Speicherkonto und das regelmäßige automatische Rotieren der Schlüssel. Die Verwendung eines Schlüsseltresors sorgt für eine zusätzliche Sicherheitsebene, da für die App niemals direkt ein Zugriffsschlüssel verwendet werden muss.
 
-### Shared access signatures (SAS)
+### <a name="shared-access-signatures-sas"></a>Shared Access Signatures (SAS)
 
-Access keys are the easiest approach to authenticating access to a storage account, however they provide full access to anything in the storage account - similar to a root password on a computer. 
+Zugriffsschlüssel sind der einfachste Ansatz zum Authentifizieren des Zugriffs auf ein Speicherkonto, aber sie ermöglichen den vollständigen Zugriff auf alle Daten des Speicherkontos – wie beim Stammkennwort eines Computers. 
 
-Storage accounts offer a separate authentication mechanism called _shared access signatures_ that support expiration and limited permissions for scenarios where you need to grant limited access. You should use this approach when you are allowing other users to read and write data to your storage account. There are links to our documentation on this advanced topic at the end of the module.
+Für Speicherkonten ist der separate Authentifizierungsmechanismus _Shared Access Signatures_ verfügbar, mit dem der Ablauf und eingeschränkte Berechtigungen für Szenarios unterstützt werden, in denen Sie eingeschränkten Zugriff gewähren müssen. Sie sollten diesen Ansatz verwenden, wenn Sie anderen Benutzern für Ihr Speicherkonto das Lesen und Schreiben von Daten erlauben möchten. Am Ende des Moduls sind Links zu unserer Dokumentation zu diesem anspruchsvolleren Thema angegeben.

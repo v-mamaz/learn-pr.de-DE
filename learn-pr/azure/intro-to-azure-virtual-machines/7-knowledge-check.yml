@@ -1,36 +1,41 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-azure-virtual-machines.7-knowledge-check
-title: Knowledge check
+title: Wissenstest
 metadata:
-  title: Knowledge check
-  description: Knowledge check
+  title: Wissenstest
+  description: Wissenstest
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 54ce7dfa4c2f3a2d7b7d2d4c112f79aad7d2eb9c
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44236466"
 durationInMinutes: 3
 quiz:
-  title: 'Azure Virtual Machine'
+  title: Virtueller Azure-Computer
   questions:
-  - content: 'Suppose you want to run a network appliance on a virtual machine. Which workload option will you choose?'
+  - content: Nehmen wir an, Sie möchten ein Netzwerkgerät auf einem virtuellen Computer ausführen. Welche Workloadoption wählen Sie?
     choices:
-    - content: General purpose
+    - content: Allgemeiner Zweck
       isCorrect: false
-    - content: Compute optimized
+    - content: Computeoptimiert
       isCorrect: true
-    - content: Memory optimized
+    - content: Arbeitsspeicheroptimiert
       isCorrect: false
-    - content: Storage optimized
+    - content: Speicheroptimiert
       isCorrect: false
-  - content: 'Assume you want to deploy a copy of an existing Azure virtual machine. Which option will you choose to complete the job?'
+  - content: Nehmen wir an, Sie möchten eine Kopie eines vorhandenen virtuellen Azure-Computers bereitstellen. Welche Option wählen Sie zum Abschließen des Auftrags?
     choices:
     - content: PowerShell
       isCorrect: false
-    - content: Resource Manager Templates
+    - content: Resource Manager-Vorlagen
       isCorrect: true
     - content: Azure CLI
       isCorrect: false
-    - content: Azure Client SDK
+    - content: Azure Client-SDK
       isCorrect: false

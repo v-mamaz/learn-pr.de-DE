@@ -1,14 +1,14 @@
-Every system, architecture, and application needs to be designed with security in mind. A denial of service attack prevents you from doing business. Defacement of your website damages your reputation. And a data breach is perhaps worst of all. It can ruin hard-earned trust and cause significant personal and financial harm. As administrators, developers, and IT management, we all must work to guarantee the security of our systems. 
+Alle Systeme, Architekturen und Anwendungen müssen unter Berücksichtigung von Sicherheitsaspekten entworfen werden. Ein Denial-of-Service-Angriff verhindert Ihre Geschäftsaktivitäten. Eine Verunstaltung Ihrer Website schädigt Ihren Ruf. Und eine Datensicherheitsverletzung ist möglicherweise das Schlimmste. Sie kann hart verdientes Vertrauen ruinieren und bedeutenden persönlichen und finanziellen Schaden verursachen. Als Administratoren, Entwickler und IT-Verwaltung müssen wir alle daran arbeiten, die Sicherheit unserer Systeme zu gewährleisten. 
 
-Let's say you work for shipping and logistics company Contoso Shipping. Contoso Shipping is in the process of moving a lot of their infrastructure to the cloud. Several physical servers in their datacenter are moving over to Azure virtual machines. The current plans involve a hybrid solution, with some of the servers remaining on-premises, but they will need a secure, high-quality connection between the new virtual machines and the existing network.
+Stellen Sie sich vor, Sie arbeiten für das Transport- und Logistikunternehmen Contoso Shipping. Contoso verlagert gerade einen Großteil seiner Infrastruktur in die Cloud. Mehrere physische Server in seinem Rechenzentrum wechseln zu Azure-VMs. Die aktuellen Pläne umfassen eine Hybridlösung, bei der einige der Server lokal verbleiben, aber sie benötigen eine sichere Verbindung von hoher Qualität zwischen den neuen virtuellen Computern und dem vorhandenen Netzwerk.
 
-Additionally, Contoso Shipping has some out-of-network devices that are part of its operations. They are using network-enabled sensors in their trucks that send data to Azure Event Hubs. And delivery drivers use mobile apps to get route maps and record signatures for receipt of shipments. These devices and apps must be securely authenticated before data can be sent to or from them.
+Darüber hinaus verfügt Contoso Shipping außerhalb des Netzwerks über einige Geräte, die Teil der Geschäftsabläufe sind. In seinen LKWs werden netzwerkfähige Sensoren eingesetzt, die Daten an Azure Event Hub senden. Außerdem verwenden die Auslieferungsfahrer mobile Apps, um Straßenkarten abzurufen und Unterschriften zur Bestätigung des Empfangs von Lieferungen aufzuzeichnen. Diese Geräte und Apps müssen sicher authentifiziert werden, bevor Daten an sie oder von ihnen gesendet werden können.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul lernen Sie Folgendes:
 
-- Learn how security responsibility is shared with Azure
-- Learn how identity management provides protection, even outside your network
-- Learn how encryption capabilities built in to Azure can protect your data
-- Learn how to protect your network and virtual networks
+- Teilen der Verantwortung für die Sicherheit mit Azure
+- Bereitstellen von Schutz durch die Identitätsverwaltung auch außerhalb Ihres Netzwerks
+- Schützen Ihrer Daten durch die in Azure integrierten Verschlüsselungsfunktionen
+- Schützen Ihres Netzwerk und Ihrer virtuellen Netzwerke

@@ -1,20 +1,19 @@
-In this module, you've seen what Azure Database for PostgreSQL offering looks like. You saw how to create an Azure Database for PostgreSQL using the Azure portal as well as Azure CLI.
+In diesem Modul haben Sie erfahren, was Azure Database for PostgreSQL Ihnen bietet. Sie haben erfahren, wie eine Instanz von Azure Database for PostgreSQL über das Azure-Portal oder die Azure CLI erstellt wird.
 
-You looked at the configuration options available to configure a PostgreSQL server-level firewall rule and enforce SSL connections. Finally, you saw how to connect to an Azure Database for PostgreSQL server using _psql_ in Azure Cloud Shell
+Sie haben die verfügbaren Optionen zur Konfiguration einer PostgreSQL-Firewallregel auf Serverebene und zum Erzwingen von SSL-Verbindungen kennen gelernt. Abschließend erfuhren Sie, wie die Verbindung mit einem Azure Database for PostgreSQL-Server in Azure Cloud Shell mit _psql_ hergestellt wird.
 
-## Clean up
-
+## <a name="clean-up"></a>Bereinigen
 <!---TODO: Update for sandbox?--->
 
-All that is left now is for you to clean up the resources you created in the labs. Remember the server will generate a monthly charge even though you may not use it. If you create resources for testing purposes, an easy way to get rid of them all is to delete the Resource Group they are part of.
+Jetzt müssen Sie nur noch die in den Labs erstellten Ressourcen bereinigen. Denken Sie daran, dass der Server auch dann eine monatliche Gebühr generiert, wenn Sie ihn nicht verwenden. Wenn Sie Ressourcen zu Testzwecken erstellen, können Sie diese ohne großen Aufwand entfernen, indem Sie die Ressourcengruppe löschen, zu der diese gehören.
 
 > [!NOTE]
-> Recall, a resource group is a collection of resources that share the same lifecycle, permissions, and policies. These actions will delete all resources allocated within this resource group, including all data you may have added to the databases on the server you created.
+> Zur Erinnerung: Eine Ressourcengruppe ist eine Sammlung von Ressourcen, die in Bezug auf Lebenszyklus, Berechtigungen und Richtlinien gleich sind. Diese Aktionen löschen alle Ressourcen in dieser Ressourcengruppe, einschließlich aller Daten, die Sie möglicherweise den Datenbanken auf dem Server, die Sie erstellt haben, hinzugefügt haben.
 
-- Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true).
+- Melden Sie sich beim [Azure-Portal](https://portal.azure.com?azure-portal=true) an.
 
-- In the left menu, select **Resource groups** to view all resource groups currently in use for your account.
+- Wählen Sie im linken Menü **Ressourcengruppen** aus, um alle Ressourcengruppen anzuzeigen, die derzeit für Ihr Konto verwendet werden.
 
-- Click on the name of the resource group you created and click on the **Delete resource group** button in the toolbar near the top.
+- Klicken Sie auf den Namen der Ressourcengruppe, die Sie erstellt haben, und klicken Sie in der Symbolleiste im oberen Bereich auf die Schaltfläche **Ressourcengruppe löschen**.
 
-- You'll a dialog box titled **Are you sure you want to delete `<resource_group_name>`** prompting you to type in the name of the resource group to confirm deletion. Confirm the resource group name and click the Delete button at the bottom.
+- In einem Dialogfeld mit dem Titel **Möchten Sie `<resource_group_name>` löschen?** werden Sie aufgefordert, den Namen der Ressourcengruppe einzugeben, um den Löschvorgang zu bestätigen. Bestätigen Sie den Namen der Ressourcengruppe, und klicken Sie unten auf die Schaltfläche „Löschen“.
