@@ -1,61 +1,61 @@
-Your server needs enough resources to handle daily demand. A typical strategy is to choose a VM size at creation that is sufficient for typical workloads and then resize it when demand changes.
+Ihr Server benötigt genügend Ressourcen, um tägliche Anforderungen zu verarbeiten. Es ist üblich, beim Erstellen einer VM die Größe auszuwählen, die für Standardarbeitsauslastungen ausreicht, und diese bei Bedarf anzupassen.
 
-In the toy company scenario, this strategy would be useful to manage resources for your medium-term growth. You can increase the size of your VM to handle the added demand as your business grows.
+Im Spielzeugunternehmensszenario wäre diese Strategie hilfreich, um Ressourcen für das mittelfristige Wachstum zu verwalten. Sie können die Größe Ihrer VM erhöhen, um die zusätzliche Nachfrage zu decken, wenn Ihr Unternehmen wächst.
 
-## What is virtual machine size?
+## <a name="what-is-virtual-machine-size"></a>VM-Größe
 
-The _size_ of a virtual machine is a measure of its CPU, memory, disk, and expected network bandwidth. Virtual machines are available in a predetermined number of sizes. For example, the **Standard_F32s_v2** size has 32 virtual CPUs, 64 GiB of memory, a 256 GiB local SSD, and 14,000 of Mbps expected network bandwidth.
+Die _Größe_ einer VM ist ein Messwert für CPU, Arbeitsspeicher, Datenträger und erwartete Netzwerkbandbreite. VMs sind in einer festgelegten Anzahl von Größen verfügbar. So hat beispielsweise die Größe **Standard_F32s_v2** 32 virtuelle CPUs, 64 GiB Arbeitsspeicher, eine lokale SSD mit 256 GiB und 14.000 Mbit/s erwartete Netzwerkbandbreite.
 
-When you create a new virtual machine in Azure, you must choose a size. Larger sizes cost more. The goal is to choose a size that can handle your workload without configuring more power than you need.
+Wenn Sie eine neue VM in Azure erstellen, müssen Sie eine Größe auswählen. Je größer die VM ist, umso mehr kostet sie. Das Ziel besteht darin, eine Größe auszuwählen, die Ihre Arbeitsauslastung bewältigen kann, ohne mehr Leistung zu konfigurieren, als Sie benötigen.
 
-## What is virtual machine type?
+## <a name="what-is-virtual-machine-type"></a>VM-Typ
 
-The _type_ of a virtual machine is the workload for which the VM has been optimized. For example, some VMs are targeted at CPU-intensive tasks like hosting a web server. Others are intended for storage-focused jobs like running a database.
+Der _Typ_ einer VM ist die Arbeitsauslastung, für die die VM optimiert wurde. Einige VMs sind beispielsweise auf CPU-intensive Aufgaben wie das Hosten eines Webservers ausgerichtet. Andere sind für speicherorientierte Aufträge wie das Ausführen einer Datenbank konzipiert.
 
-There are _types_ that correspond to each core hardware component in a modern computer: **compute**, **memory**, **storage**, and **GPU**. There's also a **general purpose** type if you need a balanced combination of resources. The following table lists the types and the VM sizes that are part of that type along with a brief description of the target workload.
+Es gibt _Typen_, die jeder Hardwarekernkomponenten in einem modernen Computer entsprechen: **Compute**, **Arbeitsspeicher**, **Speicher** und **GPU**. Es gibt auch einen **universellen** Typ, falls Sie eine ausgewogene Kombination von Ressourcen benötigen. Die folgende Tabelle enthält die VM-Typen und deren jeweiligen Größen und bietet eine kurze Beschreibung der Zielarbeitsauslastung.
 
-|Type|Sizes|Description|
+|Typ|Größen|Beschreibung|
 |---|---|---|
-|General purpose|B, Ds_v3, D_v3, some DS_v2, some D_v2, A_v2|General purpose machines have a balanced CPU to memory ratio. General purpose machines are good for testing or development servers, also small to medium database, or low to medium traffic web servers.|
-|Compute optimized|Fs_v2, Fs, F|Compute optimized virtual machines have a higher CPU to memory ratio than general purpose machines, for tasks that require extra processing power, such as application servers, network appliances, or medium traffic web servers.|
-|Memory optimized|Es_v3, E_v3, M, GS, G, some DS_v2, some D_v2|Memory optimized virtual machines have a high memory to CPU ratio. These machines are good for relational database servers, servers that require or perform a lot of caching, or perform in-memory analytics.|
-|Storage optimized|Ls|These virtual machines are configured for high disk throughput and IO operations to suit Big Data, SQL, and NoSQL databases.|
-|GPU|NV, NC, NC_v2, NC_v3, ND|GPU virtual machines are specialized for tasks such as heavy duty graphic rendering or video editing, also model training and inferencing (ND series) with deep learning. You can choose single or multiple GPUs for these machines.|
-|High performance compute|H|The fastest, most powerful CPUs are available in these virtual machines. You can also add high-throughput network interfaces (RDMA).|
+|Universell|B, Ds_v3, D_v3, einige DS_v2, einige D_v2, A_v2|Universelle VMs zeichnen sich durch ein ausgewogenes Verhältnis zwischen CPU und Arbeitsspeicher aus. Universelle VMs eignen sich gut zum Testen oder Entwickeln von Servern, kleinen bis mittleren Datenbanken oder Webservern mit geringem bis mittlerem Datenverkehr.|
+|Computeoptimiert|Fs_v2, Fs, F|Bei computeoptimierten VMs ist im Vergleich zu universellen VMs die CPU-Leistung besser als die Arbeitsspeicherleistung. Diese VMs eignen sich für Aufgaben, die zusätzliche Verarbeitungsleistung erfordern, z.B. für Anwendungsserver, Netzwerkgeräte oder Webserver mittlerer Auslastung.|
+|Arbeitsspeicheroptimiert|Es_v3, E_v3, M, GS, G, einige DS_v2, einige D_v2|Arbeitsspeicheroptimierte VMs haben eine bessere Arbeitsspeicherleistung als CPU-Leistung. Diese VMs eignen sich für relationale Datenbankserver, Server, die viel Zwischenspeicherung erfordern oder ausführen, oder In-Memory-Analysen durchführen.|
+|Speicheroptimiert|Ls|Diese VMs sind für hohen Datenträgerdurchsatz und E/A-Vorgänge konfiguriert, um Big Data-, SQL- und NoSQL-Datenbanken zu unterstützen.|
+|GPU-optimiert|NV, NC, NC_v2, NC_v3, ND|GPU-optimierte VMs eignen sich für folgende Aufgaben: anspruchsvolles Grafikrendering, grafikintensive Videobearbeitung, Modelltraining und Rückschlüsse (ND-Serie) mit Deep Learning. Sie können für diese VMs eine GPU oder mehrere GPUs auswählen.|
+|High Performance Computing|H|In diesen VMs sind die schnellsten und leistungsfähigsten CPUs verfügbar. Sie können auch Netzwerkschnittstellen für hohen Durchsatz (RDMA) hinzufügen.|
 
-## Clusters
+## <a name="clusters"></a>Cluster
 
-The physical server hardware in Azure regions is grouped together into clusters. Each cluster can support several different virtual machine sizes based on the physical hardware.
+Die physische Serverhardware in Azure-Regionen wird in Cluster zusammengefasst. Jeder Cluster unterstützt je nach physischer Hardware mehrere verschiedene VM-Größen.
 
-When you create a virtual machine and choose a specific size, the virtual machine is provisioned to an appropriate hardware cluster for that size. Although you can resize virtual machines after creation, the resizing options may be limited by the hardware cluster chosen for the initial size.
+Wenn Sie eine VM erstellen und eine bestimmte Größe auswählen, wird die VM in einem für diese Größe geeigneten Hardwarecluster bereitgestellt. Sie können die Größe von VMs zwar nach dem Erstellen ändern, doch möglicherweise sind die Größenanpassungsoptionen durch den für die ursprüngliche Größe ausgewählten Hardwarecluster eingeschränkt.
 
-## What is vertical scaling?
+## <a name="what-is-vertical-scaling"></a>Was ist vertikales Skalieren?
 
-_Vertical scaling_ is the process of changing the _size_ of a virtual machine. You can _scale up_ by choosing a more powerful size to handle increased demand or _scale down_ to allocate fewer resources and reduce costs. The following illustration shows an example of changing the size of a virtual machine.
+Als _vertikales Skalieren_ wird das Ändern der _Größe_ einer VM bezeichnet. Sie können durch Auswahl einer leistungsfähigeren Größe _zentral hochskalieren_, um die steigende Nachfrage zu verarbeiten, oder _zentral herunterskalieren_, um weniger Ressourcen zuzuweisen und Kosten zu senken. Die folgende Abbildung zeigt ein Beispiel für die Größenänderung einer VM.
 
-![An illustration showing scaling up and scaling down of a virtual machine to change the performance capabilities.](../media/2-ScaleUpDown.png)
+![Abbildung, in der das zentrale Hoch- und Herunterskalieren einer VM zum Ändern der Leistungsfähigkeit veranschaulicht wird.](../media/2-ScaleUpDown.png)
 
-You can resize a VM using the Azure portal, Azure PowerShell, or the Azure command-line interface (CLI).
+Sie können die Größe einer VM im Azure-Portal, mit Azure PowerShell oder über die Azure CLI ändern.
 
-### Resize in the portal
+### <a name="resize-in-the-portal"></a>Ändern der Größe im Portal
 
-In the Azure portal, you can resize a virtual machine by selecting the virtual machine, clicking the **Size** entry, and selecting an entry from the **Choose a size** blade. 
+Im Azure-Portal können Sie die Größe einer VM ändern, indem Sie die VM auswählen, auf den Eintrag **Größe** klicken und einen Eintrag auf dem Blatt **Größe auswählen** auswählen. 
 
-If the virtual machine is running at the time, the available sizes you can select from will depend on the available sizes in your region. You will only see resize options compatible with the same hardware cluster that the virtual machine is currently running on; this is sometimes called a *size family*. If you choose a new size while the virtual machine is running, the VM will be restarted automatically to apply the new size.
+Wenn die VM zu diesem Zeitpunkt ausgeführt wird, hängen die verfügbaren Größen von Ihrer Region ab. Es werden nur Größenanpassungsoptionen angezeigt, die mit dem Hardwarecluster kompatibel sind, in dem die VM aktuell ausgeführt wird. Das wird auch als *Größenfamilie* bezeichnet. Wenn Sie eine neue Größe auswählen, während die VM ausgeführt wird, wird die VM automatisch neu gestartet, um die neue Größe anzuwenden.
 
-If the size you are looking for is not visible in the portal when the virtual machine is running, then you can shut down the virtual machine to see more options. When the machine is in the **stopped (deallocated)** state, you will be able to select sizes from other hardware in the same region.
+Wenn die gesuchte Größe bei VM-Ausführung im Portal nicht angezeigt wird, fahren Sie die VM herunter, um weitere Optionen anzuzeigen. Wenn die VM den Status **Beendet (Zuordnung aufgehoben)** hat, können Sie Größen aus anderer Hardware in der gleichen Region auswählen.
 
-### Resize with PowerShell
+### <a name="resize-with-powershell"></a>Ändern der Größe mit PowerShell
 
-You can use PowerShell to perform vertical scaling interactively or with scripts. Scripts are good for complex scenarios; for example, if you need to resize several VMs at once. They are also convenient if you need to perform the resize during non-working hours to avoid user disruption.
+Sie können PowerShell verwenden, um interaktiv oder mit Skripten vertikal zu skalieren. Skripte eignen sich für komplexe Szenarien, z.B. wenn Sie die Größe mehrerer VMs gleichzeitig ändern möchten. Sie sind auch praktisch, um die Größenänderung außerhalb der Betriebszeit auszuführen, um Störungen beim Benutzer zu vermeiden.
 
-The following cmdlet lists VM sizes of the same size-family as the current hardware:
+Das folgende Cmdlet listet VM-Größen der gleichen Größenfamilie als aktuelle Hardware auf:
 
 ```PowerShell
 Get-AzureRmVMSize -ResourceGroupName "myResourceGroup" -VMName "MyVM"
 ```
 
-If the desired size is displayed, use the following cmdlet to change the virtual machine size:
+Wenn die gewünschte Größe angezeigt wird, ändern Sie die Größe der VM mit dem folgenden Cmdlet:
 
 ```PowerShell
 $vm = Get-AzureRmVM -ResourceGroupName "myResourceGroup" -VMName "MyVM"
@@ -63,7 +63,7 @@ $vm.HardwareProfile.VmSize = "<newVMsize>"
 Update-AzureRmVM -VM $vm -ResourceGroupName "myResourceGroup"
 ```
 
-If the desired size is not displayed with the machine running, use the following commands to deallocate the virtual machine, resize the machine, and start the machine again:
+Wenn die gewünschte Größe bei ausgeführter VM nicht angezeigt wird, können Sie mit den folgenden Befehlen die VM freigeben, die VM-Größe ändern und die VM erneut starten:
 
 ```PowerShell
 Stop-AzureRmVM -ResourceGroupName "myResourceGroup" -Name "MyVM" -Force
@@ -73,4 +73,4 @@ Update-AzureRmVM -VM $vm -ResourceGroupName "myResourceGroup"
 Start-AzureRmVM -ResourceGroupName "myResourceGroup" -Name "MyVM"
 ```
 
-Virtual machines in Azure can be resized as needed to increase performance or decrease costs. Performing the resize manually, either with the portal or a script, is useful to handle gradual business growth or when you know about a change in demand ahead-of-time. In the toy-company scenario, they could scale up before a holiday to handle the spike in demand and then scale down afterward.
+VMs in Azure können bei Bedarf skaliert werden, um die Leistung zu erhöhen oder Kosten zu senken. Das manuelle Ändern der Größe – im Portal oder mit einem Skript – ist nützlich, um ein ständiges Unternehmenswachstum zu bewältigen, oder wenn Sie im Voraus wissen, dass sich die Nachfrage ändern wird. Im Spielzeugunternehmensszenario könnten Sie durch zentrales Hochskalieren vor einem Feiertag den Nachfrageanstieg bewältigen und danach wieder zentral herunterskalieren.

@@ -1,39 +1,39 @@
-TheMojifier is a Slack _slash_ command which replaces peoples faces in images with emojis matching their emotion, like so:
+Mojifier ist ein Slack-_Schrägstrich_-Befehl, der die Gesichter von Personen in Bildern durch Emojis ersetzt, die ihren Emotionen entsprechen:
 
-![Example image](/media-drafts/example-mojify-image.png)
+![Beispielbild](/media-drafts/example-mojify-image.png)
 
-It's designed to work from Slack as a custom command, you can name the command how you want, for this document I've named it `mojify`.
+Der Befehl ist so konzipiert, dass er von Slack aus als benutzerdefinierter Befehl ausgeführt werden kann. Sie können den Befehl beliebig benennen. In diesem Beispiel heißt er `mojify`.
 
-To execute the commmand type `/mojify <image to mojify>`, like so:
+Um den Befehlstyp auszuführen, geben Sie `/mojify <image to mojify>` ein:
 
-![Example Image](/media-drafts/9.slack-type-mojify.png)
+![Beispielbild](/media-drafts/9.slack-type-mojify.png)
 
-The mojifier then:
+Mojifier führt daraufhin folgende Aktionen aus:
 
-1.  Calculates the emotion of any people in the image.
-2.  Matches emotions to emojis.
-3.  Replaces the faces with emojis.
-4.  Posts the image back to Twitter as a reply.
+1.  Berechnen der Emotionen von Personen im Bild
+2.  Zuordnen von Emotionen zu Emojis
+3.  Ersetzen von Gesichtern durch Emojis
+4.  Posten des Bilds auf Twitter als Antwort
 
-It’s written using TypeScript and several Azure technologies including [Azure Functions](https://azure.microsoft.com/services/functions/&WT.mc_id=mojifier-sandbox-ashussai) and [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/?WT.mc_id=mojifier-sandbox-ashussai)
+Mojifier wurde mit TypeScript und verschiedenen Azure-Technologien geschrieben, darunter [Azure Functions](https://azure.microsoft.com/services/functions/&WT.mc_id=mojifier-sandbox-ashussai) und [Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/?WT.mc_id=mojifier-sandbox-ashussai).
 
-In this tutorial I’m going to explain how TheMojifier was made and show you how to create your own Slack command using Azure technologies.
+In diesem Tutorial erfahren Sie, wie Mojifier entwickelt wurde, und wie Sie Ihren eigenen Slack-Befehl mit Azure-Technologien erstellen.
 
-> TODO, where will this be now?
-> All the code for Mojifier is available on [GitHub](https://github.com/jawache/mojifier)
+> Wo wird TODO nun angezeigt?
+> Der gesamte Code für Mojifier ist unter [GitHub](https://github.com/jawache/mojifier) verfügbar.
 
-# Requirements
+# <a name="requirements"></a>Anforderungen
 
-To build the mojifier, we need to use several Azure services.
+Um Mojifier zu erstellen, benötigen Sie unterschiedliche Azure-Dienste.
 
-## Azure Cognitive Services
+## <a name="azure-cognitive-services"></a>Azure Cognitive Services
 
-Azure Cognitive Services are a set of high-level APIs you can use to add advanced AI functionality into your application quickly. If you can make an HTTP request, you can use Cognitive Services.
+Azure Cognitive Services umfasst eine Reihe von leistungsstarken APIs, mit denen Sie Ihrer Anwendung schnell erweiterte KI-Funktionen hinzufügen können. Wenn Sie eine HTTP-Anforderung erstellen können, können Sie Cognitive Services verwenden.
 
-[More info](https://azure.microsoft.com/services/cognitive-services/?WT.mc_id=mojifier-sandbox-ashussai)
+[Weitere Informationen](https://azure.microsoft.com/services/cognitive-services/?WT.mc_id=mojifier-sandbox-ashussai)
 
-## Azure Functions
+## <a name="azure-functions"></a>Azure Functions
 
-As powerful as Logic Apps are sometimes you need to write business logic using the full expressiveness of a programming language. Azure Functions is a technology that lets you host snippets of code that can respond to events or HTTP requests, Azure handles all of the scaling issues for you and you only pay for what you use.
+So leistungsstark wie Logic Apps ist, müssen Sie Geschäftslogik ggf. mit der gesamten Leistungsfähigkeit einer Programmiersprache schreiben. Azure Functions ist eine Technologie, mit der Sie Codeausschnitte hosten können, die auf Ereignisse oder HTTP-Anforderungen reagieren. Azure kümmert sich um die gesamte Skalierung, und Sie bezahlen nur die tatsächlich genutzten Ressourcen.
 
-[More info](https://azure.microsoft.com/services/functions/&WT.mc_id=mojifier-sandbox-ashussai)
+[Weitere Informationen](https://azure.microsoft.com/services/functions/&WT.mc_id=mojifier-sandbox-ashussai)
