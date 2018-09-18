@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.4-infrastructure-protection
+title: <span data-ttu-id="c1ac0-101">Infrastrukturschutz</span><span class="sxs-lookup"><span data-stu-id="c1ac0-101">Infrastructure protection</span></span>
+metadata:
+  title: <span data-ttu-id="c1ac0-102">Infrastrukturschutz</span><span class="sxs-lookup"><span data-stu-id="c1ac0-102">Infrastructure protection</span></span>
+  description: <span data-ttu-id="c1ac0-103">In dieser Einheit wird erläutert, wie Sie den Zugriff auf Ihre Infrastruktur schützen.</span><span class="sxs-lookup"><span data-stu-id="c1ac0-103">In this unit we'll discuss how to protect access to your infrastructure</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 7e3ae661daa936a8a31deb39e64638df7f34d1b3
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44241243"
+durationInMinutes: 5
+content: >
+  [!include[](includes/4-infrastructure-protection.md)]
+quiz:
+  title: '<span data-ttu-id="c1ac0-104">Wissenstest: Infrastrukturschutz</span><span class="sxs-lookup"><span data-stu-id="c1ac0-104">Knowledge Check - Infrastructure protection</span></span>'
+  questions:
+  - content: <span data-ttu-id="c1ac0-105">Auf welche der folgenden Bereiche kann die rollenbasierte Zugriffssteuerung nicht angewendet werden?</span><span class="sxs-lookup"><span data-stu-id="c1ac0-105">Role-based access control can be applied to all but which of the following scopes?</span></span>
+    choices:
+    - content: <span data-ttu-id="c1ac0-106">Abonnement</span><span class="sxs-lookup"><span data-stu-id="c1ac0-106">Subscription</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="c1ac0-107">RBAC kann auf den Abonnementbereich angewendet werden.</span><span class="sxs-lookup"><span data-stu-id="c1ac0-107">RBAC can be applied to the subscription scope.</span></span>
+    - content: <span data-ttu-id="c1ac0-108">Ressourcengruppe</span><span class="sxs-lookup"><span data-stu-id="c1ac0-108">Resource group</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="c1ac0-109">RBAC kann auf den Ressourcengruppenbereich angewendet werden.</span><span class="sxs-lookup"><span data-stu-id="c1ac0-109">RBAC can be applied to the resource group scope.</span></span>
+    - content: <span data-ttu-id="c1ac0-110">Linux-Dateisystem</span><span class="sxs-lookup"><span data-stu-id="c1ac0-110">Linux filesystem</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="c1ac0-111">RBAC kann nur auf Azure-Ressourcen angewendet werden.</span><span class="sxs-lookup"><span data-stu-id="c1ac0-111">RBAC can only be applied to Azure resources.</span></span> <span data-ttu-id="c1ac0-112">Linux-Dateisysteme gehören nicht zu dem Bereich, der mit Azure RBAC gesichert werden kann.</span><span class="sxs-lookup"><span data-stu-id="c1ac0-112">Linux filesystems are not within the scope that can be secured with Azure RBAC.</span></span>
+    - content: <span data-ttu-id="c1ac0-113">Ressource</span><span class="sxs-lookup"><span data-stu-id="c1ac0-113">Resource</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="c1ac0-114">RBAC kann direkt auf Ressourcen angewendet werden.</span><span class="sxs-lookup"><span data-stu-id="c1ac0-114">RBAC can be applied directly to resources.</span></span>
+  - content: <span data-ttu-id="c1ac0-115">Eine verwaltete Dienstidentität kann einem virtuellen Computer zugewiesen werden, damit dieser über Berechtigungen verfügt, andere virtuelle Computer zu starten und zu beenden.</span><span class="sxs-lookup"><span data-stu-id="c1ac0-115">A managed service identity could be assigned to a virtual machine to give it rights to start and stop other virtual machines.</span></span>
+    choices:
+    - content: <span data-ttu-id="c1ac0-116">Wahr</span><span class="sxs-lookup"><span data-stu-id="c1ac0-116">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="c1ac0-117">Eine verwaltete Dienstidentität ist eine Methode zum Zuweisen einer Identität zu Diensten.</span><span class="sxs-lookup"><span data-stu-id="c1ac0-117">Managed service identity is a method of assigning an identity to services.</span></span> <span data-ttu-id="c1ac0-118">Durch diese Zuweisung kann RBAC-Zugriff zum Verwalten von Azure-Diensten gewährt werden, beispielsweise zum Starten und Beenden von virtuellen Computern.</span><span class="sxs-lookup"><span data-stu-id="c1ac0-118">Through this assignment, RBAC acces can be granted to manage Azure services, such as starting and stopping virtual machines.</span></span>
+    - content: <span data-ttu-id="c1ac0-119">Falsch</span><span class="sxs-lookup"><span data-stu-id="c1ac0-119">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="c1ac0-120">Eine verwaltete Dienstidentität ist eine Methode zum Zuweisen einer Identität zu Diensten.</span><span class="sxs-lookup"><span data-stu-id="c1ac0-120">Managed service identity is a method of assigning an identity to services.</span></span> <span data-ttu-id="c1ac0-121">Durch diese Zuweisung kann RBAC-Zugriff zum Verwalten von Azure-Diensten gewährt werden, beispielsweise zum Starten und Beenden von virtuellen Computern.</span><span class="sxs-lookup"><span data-stu-id="c1ac0-121">Through this assignment, RBAC acces can be granted to manage Azure services, such as starting and stopping virtual machines.</span></span>

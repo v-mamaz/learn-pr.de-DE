@@ -1,0 +1,3 @@
+## <a name="activate-azure-sandbox"></a><span data-ttu-id="f7fa4-101">Aktivieren von Azure-Sandbox</span><span class="sxs-lookup"><span data-stu-id="f7fa4-101">Activate Azure Sandbox</span></span>
+
+<span data-ttu-id="f7fa4-102">Für die die Übungen in diesem Modul haben wir eine kostenlose Azure-Sandbox eingerichtet.</span><span class="sxs-lookup"><span data-stu-id="f7fa4-102">We have setup a free Azure sandbox to complete the exercises in this module.</span></span> <span data-ttu-id="f7fa4-103">Klicken Sie zum Einstieg auf **Azure-Sandbox aktivieren**, falls noch nicht erfolgt.</span><span class="sxs-lookup"><span data-stu-id="f7fa4-103">To get started, click **Activate Azure sandbox** if you have not done so already.</span></span>
