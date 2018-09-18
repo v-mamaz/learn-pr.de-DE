@@ -1,55 +1,55 @@
-In real life, it's assumed that you will connect Azure IoT Central to a real device or in this case, a real coffee machine. But for the purpose of this unit, you connect a Node.js application, representing a physical/real coffee machine, to the Azure IoT Central application. As a result of this connection, telemetry measurements from the coffee machine is sent to IoT Central for monitoring and analysis.
+In der Praxis würden Sie Azure IoT Central wahrscheinlich mit einem echten Gerät (in diesem Fall: mit einer echten Kaffeemaschine) verbinden. Im Rahmen dieser Einheit verbinden Sie dagegen eine Node.js-Anwendung, die eine physische/echte Kaffeemaschine darstellt, mit der Azure IoT Central-Anwendung. Über diese Verbindung werden Telemetriemessungen der Kaffeemaschine zur Überwachung und Analyse an IoT Central gesendet.
 
-![Coffee machine](../images/3-coffee-machine.png) 
+![Kaffeemaschine](../images/3-coffee-machine.png) 
 
-## Add the coffee machine in IoT Central 
-To add your coffee machine to your application, you use the **Connected Coffee Maker** device template you created in the previous unit.
+## <a name="add-the-coffee-machine-in-iot-central"></a>Hinzufügen der Kaffeemaschine in IoT Central 
+Um die Kaffeemaschine zu Ihrer Anwendung hinzuzufügen, verwenden Sie die Gerätevorlage **Connected Coffee Maker**, die Sie in der vorherigen Einheit erstellt haben.
 
-1. To add a new device, choose **Device Explorer** in the left navigation menu.
+1. Klicken Sie im linken Navigationsmenü auf **Device Explorer**, um ein neues Gerät hinzuzufügen:
 
-	To start connecting your coffee machine, choose **+ New**, then **Real**. When you're finished, you see a list of devices you've created using the same Connected Coffee Maker template.
+    Klicken Sie zum Herstellen einer Verbindung für die Kaffeemaschine auf **+ Neu** und anschließend auf **Real**. Daraufhin wird eine Liste mit Geräten angezeigt, die Sie unter Verwendung der Vorlage „Connected Coffee Maker“ (Verbundene Kaffeemaschine) erstellt haben.
    
-    *	The Connected Coffee Maker is added to the list when you choose + New, then Real. 
-    *	The Connected Coffee Maker (Simulate) is automatically created by IoT Central for testing purposes. 
+    *   Die verbundene Kaffeemaschine wird der Liste hinzugefügt, wenn Sie auf „+ Neu“ und anschließend auf „Real“ klicken. 
+    *   Die simulierte verbundene Kaffeemaschine wird von IoT Central automatisch zu Testzwecken erstellt. 
 
-1.	Optionally, you can differentiate the newly added coffee machine by appending the word “Real” in its name. To rename your new device, choose the device and edit the name in the name field. 
+1.  Zur Unterscheidung können Sie den Namen der neu hinzugefügten Kaffeemaschine optional mit dem Suffix „Real“ versehen. Klicken Sie zum Umbenennen des neuen Geräts auf das Gerät, und bearbeiten Sie den Namen im Namensfeld. 
 
-    ![Coffee machine](../images/3-connect-device-a.png) 
+    ![Kaffeemaschine](../images/3-connect-device-a.png) 
 
-    Note the location of **Connect this device** for connecting your coffee machine in the next section. For now the screen displays "Missing Data", this is because you haven't connected to the coffee machine. The real telemetry begins to populate the screen once the connection is made. 
+    Beachten Sie die Position von **Connect this device** (Dieses Gerät verbinden) für die Verbindungsherstellung mit Ihrer Kaffeemaschine im nächsten Abschnitt. Vorerst wird jedoch angezeigt, dass Daten fehlen. Das liegt daran, dass Sie noch keine Verbindung mit der Kaffeemaschine hergestellt haben. Der Bildschirm wird mit echten Telemetriedaten gefüllt, sobald die Verbindung hergestellt wurde. 
  
-## Get connection string for the coffee machine from your application
-You embed the connection string for your real coffee machine in the code that runs on the device. The connection string enables the coffee machine to connect securely to your Azure IoT Central application. Every device instance has a unique connection string. Here is how to find the connection string for a device instance in your application:
+## <a name="get-connection-string-for-the-coffee-machine-from-your-application"></a>Abrufen der Verbindungszeichenfolge für die Kaffeemaschine aus Ihrer Anwendung
+Die Verbindungszeichenfolge für Ihre echte Kaffeemaschine wird in den Code eingebettet, der auf dem Gerät ausgeführt wird. Mit der Verbindungszeichenfolge kann die Kaffeemaschine eine sichere Verbindung mit Ihrer Azure IoT Central-Anwendung herstellen. Jede Geräteinstanz besitzt eine eindeutige Verbindungszeichenfolge. So finden Sie die Verbindungszeichenfolge für eine Geräteinstanz in Ihrer Anwendung:
 
-1.	On the device screen for your Connected Coffee Machine Real, choose **Connect this device**.
+1.  Klicken Sie im Gerätebildschirm für Ihre echte verbundene Kaffeemaschine auf **Connect this device** (Dieses Gerät verbinden).
 
-1.	On the **Connect** page, copy the **Primary connection string**, and save it. You use this value in the client application that runs on the device.
+1.  Kopieren Sie auf der Seite **Verbinden** den Wert für **Primäre Verbindungszeichenfolge**, und speichern Sie ihn. Dieser Wert wird in der auf dem Gerät ausgeführten Clientanwendung verwendet.
 
-## Create a Node.js application
-The following steps show you how to create a client application that implements the coffee machine you added to the application.
-1. Install [Node.js](https://nodejs.org/) version 4.0.x or later on your machine. Node.js is available for a wide variety of operating systems.
+## <a name="create-a-nodejs-application"></a>Erstellen einer Node.js-Anwendung
+In den folgenden Schritten wird gezeigt, wie Sie eine Clientanwendung zur Implementierung der Kaffeemaschine erstellen, die Sie der Anwendung hinzugefügt haben.
+1. Installieren Sie auf Ihrem Computer mindestens die Version 4.0.x von [Node.js](https://nodejs.org/). Node.js ist für eine Vielzahl von Betriebssystemen verfügbar.
 
-1. Create a folder called coffee-maker on your machine. Navigate to that folder in your command-line environment.
+1. Erstellen Sie auf Ihrem Computer den Ordner „coffee-maker“. Navigieren Sie in der Befehlszeilenumgebung zu diesem Ordner.
 
-1. To initialize your Node.js project, run the following commands:
+1. Führen Sie die folgenden Befehle aus, um das Node.js-Projekt zu initialisieren:
     ```cmd/sh
     npm init
     ```
     > [!NOTE]
-    > The init script prompts you to enter project properties. For this exercise, using the default values is sufficient and recommended. 
-1. To install the necessary packages, run the following command:
+    > Das Initialisierungsskript fordert Sie zur Eingabe von Projekteigenschaften auf. Verwenden Sie für diese Übung die Standardwerte. 
+1. Führen Sie den folgenden Befehl aus, um die erforderlichen Pakete zu installieren:
     ```cmd/sh
     npm install azure-iot-device azure-iot-device-mqtt --save
     ```
 
-1. Using a text editor, create a file called coffeeMaker.js in the coffee-maker folder.
+1. Erstellen Sie im Ordner „coffee-maker“ mithilfe eines Text-Editors eine Datei namens „coffeeMaker.js“.
 
-1. Copy and paste the code into your coffeeMaker.js file and **Save**.
+1. Kopieren Sie den Code in die Datei „coffeeMaker.js“, und klicken Sie auf **Speichern**.
 
-    The code, representing the real coffee machine in this unit, is written in Node.js. You begin by establishing connection with the application, then you send initial properties to Azure IoT Central, synchronize the settings, register two command handlers for Maintenance and Brewing, and finally start the timer for sending the telemetry information every second.
+    Der Code, der in dieser Einheit die echte Kaffeemaschine darstellt, ist in Node.js geschrieben. Sie stellen zunächst eine Verbindung mit der Anwendung her, senden die ersten Eigenschaften an Azure IoT Central, synchronisieren die Einstellungen, registrieren zwei Befehlshandler für Wartung und Brühvorgang und starten schließlich den Timer, sodass Telemetriedaten im Sekundentakt gesendet werden.
 
     > [!NOTE]
-    > Update the placeholder `{your device connection string}`. 
+    > Aktualisieren Sie den Platzhalter `{your device connection string}`. 
 
 
     ```js
@@ -81,7 +81,7 @@ The following steps show you how to create a client application that implements 
 
     // Send device simulated telemetry measurements
     function sendTelemetry() 
-    {	
+    {   
         // Simulate the telemetry values
         var temperature = optimalTemperature + (Math.random() * 4) - 2;
         var humidity = 20 + (Math.random() * 80);
@@ -324,12 +324,12 @@ The following steps show you how to create a client application that implements 
 
     ```
 
-1.  Update the placeholder {your device connection string} with your device connection string. You copied this value from the connection details page when you added your real device. 
+1.  Ersetzen Sie den Platzhalter „{your device connection string}“ durch die Verbindungszeichenfolge Ihres Geräts. Diesen Wert haben Sie auf der Seite mit den Verbindungsdetails kopiert, als Sie Ihr echtes Gerät hinzugefügt haben. 
 
-## Run your Node.js application
+## <a name="run-your-nodejs-application"></a>Ausführen der Node.js-Anwendung
 ```cmd/sh
 node coffeeMaker.js
 ```
 
-## Summary
-In this unit, you connected your coffee machine to Azure IoT Central and began sending data for monitoring and analysis. You achieved the connectivity by first acquiring a connection string from IoT Central, followed by configuring the string in the coffee machine.
+## <a name="summary"></a>Zusammenfassung
+In dieser Einheit haben Sie Ihre Kaffeemaschine mit Azure IoT Central verbunden und damit begonnen, Daten zur Überwachung und Analyse zu senden. Zur Verbindungsherstellung haben Sie zuerst eine Verbindungszeichenfolge aus IoT Central abgerufen und sie anschließend für die Kaffeemaschine konfiguriert.

@@ -1,61 +1,61 @@
-It's important to include storage performance considerations in your architecture. Just like network latency, poor performance at the storage layer can impact your end-users' experience. How would you optimize your data storage? What things do you need to consider to ensure that you're not introducing storage bottlenecks into your architecture? Here, we'll take a look at how to optimize your storage performance in your architecture.
+Es ist wichtig, Überlegungen zur Speicherleistung in Ihrer Architektur zu berücksichtigen. Genau wie die Netzwerklatenz kann eine schlechte Leistung auf Speicherebene die Endbenutzererfahrung beeinträchtigen. Wie können Sie Ihren Datenspeicher optimieren? Welche Aspekte müssen Sie berücksichtigen, um sicherzustellen, dass Sie in der Architektur keine Speicherengpässe verursachen? Hier sehen wir uns an, wie Sie die Speicherleistung in Ihrer Architektur optimieren können.
 
-## Optimize virtual machine storage performance
+## <a name="optimize-virtual-machine-storage-performance"></a>Optimieren der Speicherleistung für virtuelle Computer
 
-Let's first take a look at optimizing storage for virtual machines. Disk storage plays a critical role in the performance of your virtual machines, and selecting the right disk type for your application is an important decision.
+Zuerst untersuchen wir das Optimieren von Speicher für virtuelle Computer. Datenträgerspeicher spielt eine wichtige Rolle in Bezug auf die Leistung Ihrer virtuellen Computer, und die Wahl des richtigen Datenträgertyps für Ihre Anwendung ist eine wichtige Entscheidung.
 
-Different applications are going to have different storage requirements. Your application may be sensitive to latency of disk reads and writes or it may require the ability to handle a large number of input/output operations per second (IOPS) or greater overall disk throughput.
+Unterschiedliche Anwendungen haben unterschiedliche Speicheranforderungen. Ihre Anwendung reagiert möglicherweise empfindlich auf die Latenz von Lese- und Schreibvorgängen auf dem Datenträger, oder sie erfordert die Fähigkeit, eine große Anzahl von Eingabe-/Ausgabevorgänge pro Sekunde (IOPS) oder einen größeren Datenträger-Gesamtdurchsatz verarbeiten zu können.
 
-When building an IaaS workload, which type of disk should you use? There are four options:
+Welchen Typ von Datenträger sollten Sie beim Erstellen einer IaaS-Workload verwenden? Es gibt vier Optionen:
 
-- **Local SSD storage** - Each VM has a temporary disk that is backed by local SSD storage. The size of this disk varies depending on the size of the virtual machine. Since this disk is local SSD, the performance is high, but data may be lost during a maintenance event or a redeployment of the VM. This disk is only suitable for temporary storage of data that you do not need permanently. This disk is great for the page or swap file, and for things like tempdb in SQL Server. There is no charge for this storage. It's included in the cost of the VM.
+- **Lokaler SSD-Speicher:** Jeder virtuelle Computer verfügt über einen temporären Datenträger, der auf lokalem SSD-Speicher basiert. Die Größe dieses Datenträgers hängt von der Größe des virtuellen Computers ab. Da dies ein lokaler SSD-Datenträger ist, ist die Leistung zwar hoch, bei einer Wartung oder erneuten Bereitstellung des virtuellen Computers gehen jedoch möglicherweise Daten verloren. Dieser Datenträger ist nur für die temporäre Speicherung von Daten geeignet, die Sie nicht dauerhaft benötigen. Dieser Datenträger eignet sich hervorragend für Auslagerungsdateien und beispielsweise für „tempdb“ in SQL Server. Für diesen Speicher fallen keine Gebühren an. Er ist in den Kosten für den virtuellen Computer enthalten.
 
-- **Standard storage HDD** - This is spindle disk storage and may fit well where your application is not bound by inconsistent latency or lower levels of throughput. A dev/test workload where guaranteed performance isn't needed is a great use case for this disk type.
+- **HDD-Standardspeicher:** Dies ist ein Spindel-Datenträgerspeicher, und er ist möglicherweise gut geeignet, wenn inkonsistente Wartezeit oder ein geringerer Durchsatz keinen Einfluss auf Ihre Anwendung haben. Eine Dev/Test-Workload, für die keine garantierte Leistung benötigt wird, ist ein hervorragender Anwendungsfall für diesen Datenträgertyp.
 
-- **Standard storage SSD** - This is SSD backed storage and has the low latency of SSD but lower levels of throughput. A non-production web server would be a good use case for this disk type.
+- **SSD-Standardspeicher:** Dies ist ein SSD-gestützter Speicher mit der geringen Wartezeit von SSD, aber geringerem Durchsatz. Ein nicht für die Produktion verwendeter Webserver wäre ein guter Anwendungsfall für diesen Datenträgertyp.
 
-- **Premium storage SSD** - This SSD backed storage is well-suited for those workloads that are going into production, require the greatest reliability and demand consistent low latency, or need high levels of throughput and IOPS. Since these disks have greater performance and reliability capabilities, they are recommended for all production workloads.
+- **Storage Premium-SSD:** Dieser SSD-gestützte Speicher eignet sich gut für Workloads in der Produktion, die höchste Zuverlässigkeit, konsistent niedrige Wartezeit oder hohen Durchsatz und hohe IOPS-Werte erfordern. Da diese Datenträger höhere Leistung und Zuverlässigkeit bieten, werden sie für alle Produktionsworkloads empfohlen.
 
-Premium storage can attach only to specific virtual machine (VM) sizes. Premium storage capable sizes are designated with an "s" in the name, for example D2**s**_v3 or Standard_F2**s**_v2. Any virtual machine type (with or without an "s" in the name) can attach standard storage HDD or SSD drives.
+Storage Premium kann nur virtuellen Computern bestimmter Größe angefügt werden. Größen für Storage Premium haben ein „s“ im Namen – etwa „D2**s**_v3“ oder „Standard_F2**s**_v2“. Jeder Art von virtuellem Computer (mit oder ohne „s“ im Namen) können HDD- oder SSD-Laufwerke als Standardspeicher angefügt werden.
 
-Disks can be striped using a striping technology (such as Storage Spaces Direct on Windows or mdadm on Linux) to increase the throughput and IOPS by spreading disk activity across multiple disks. Using disk striping allows you to really push the limits of performance for disks, and is often seen in high-performance database systems and other systems with intensive storage requirements.
+Auf alle Datenträger können Stripingtechnologien (wie „Direkte Speicherplätze“ unter Windows oder „mdadm“ unter Linux) angewendet werden, um den Durchsatz und die IOPS-Werte zu erhöhen, indem die Datenträgeraktivität auf mehrere Datenträger verteilt wird. Über Datenträgerstriping können Sie die Leistung für Datenträger enorm steigern. Es wird häufig in Hochleistungs-Datenbanksystemen und anderen Systemen mit hohen Speicheranforderungen verwendet.
 
-When relying on virtual machine workloads, you'll need to evaluate the performance requirements of your application to determine the underlying storage you'll provision for your virtual machines.
+Wenn Sie auf die Workloads virtueller Computer angewiesen sind, müssen Sie die Leistungsanforderungen Ihrer Anwendung bewerten, um den zugrunde liegenden Speicher zu bestimmen, den Sie für Ihre virtuellen Computer bereitstellen müssen.
 
-## Optimize storage performance for your application
+## <a name="optimize-storage-performance-for-your-application"></a>Optimieren der Speicherleistung für Ihre Anwendung
 
-While you can use differing storage technologies to improve the raw disk performance, you can also address the performance of access to data at the application layer. Let's take a look at a few ways you can do this.
+Sie können unterschiedliche Speichertechnologien zum Verbessern der Leistung der RAW-Datenträger verwenden, Sie können aber auch die Leistung beim Zugriff auf Daten auf Anwendungsebene beeinflussen. Sehen wir uns einige dafür geeignete Möglichkeiten an.
 
-### Caching
+### <a name="caching"></a>Caching
 
-A common approach to improve application performance is to integrate a caching layer between your application and your data store. A cache typically stores data in memory and allows for fast retrieval. This data can be frequently accessed data, data you specify from a database, or temporary data such as user state. You'll have control over the type of data stored, how often it refreshes, and when it expires. By co-locating this cache in the same region as your application and database, you'll reduce the overall latency between the two. Pulling data out of the cache will almost always be faster than retrieving the same data from a database, so by using a caching layer you can substantially improve the overall performance of your application. The following illustration shows how an application retrieves data from a database, stores it in a cache, and uses the cached value as needed.
+Eine gängige Methode zum Verbessern der Anwendungsleistung ist, eine Cachingebene zwischen Ihrer Anwendung und Ihrem Datenspeicher zu integrieren. Ein Cache speichert Daten in der Regel im Arbeitsspeicher und ermöglicht schnelles Abrufen. Bei diesen Daten kann es sich um häufig verwendete Daten, um Daten aus einer Datenbank oder um temporäre Daten wie etwa den Benutzerstatus handeln. Sie steuern, welche Art von Daten gespeichert wird, wie oft die Daten aktualisiert werden und wann sie ablaufen. Wenn Sie diesen Cache in der gleichen Region implementieren wie die Anwendung und die Datenbank, verringert sich die Gesamtwartezeit zwischen den beiden. Das Abrufen von Daten aus dem Cache ist fast immer schneller als das Abrufen der gleichen Daten aus einer Datenbank. Mit einer Cachingebene können Sie also die Gesamtleistung der Anwendung erheblich verbessern. In der folgenden Abbildung wird veranschaulicht, wie eine Anwendung Daten aus einer Datenbank abruft, sie in einem Cache speichert und den zwischengespeicherten Wert nach Bedarf verwendet.
 
-![An illustration showing that retrieving data from cache is faster than retrieving from a database.](../media/4-cache.png)
+![Abbildung, in der veranschaulicht wird, dass das Abrufen von Daten aus dem Cache schneller ist als das Abrufen aus einer Datenbank.](../media/4-cache.png)
 
-Azure Redis Cache is a caching service on Azure. It's based upon the open-source Redis cache. Azure Redis Cache is a fully managed service offering by Microsoft. You select the performance tier that you require and configure your application to use the service.
+Azure Redis Cache ist ein Cachedienst in Azure. Er basiert auf dem Open-Source-Redis-Cache. Azure Redis Cache ist ein vollständig verwaltetes Dienstangebot von Microsoft. Sie wählen die Leistungsstufe aus, die Sie benötigen, und konfigurieren Ihre Anwendung zur Verwendung des Diensts.
 
-### Polyglot persistence
+### <a name="polyglot-persistence"></a>Mehrsprachige Persistenz
 
-Polyglot persistence is the usage of different data storage technologies to handle your storage requirements.
+Mehrsprachige Persistenz ist die Verwendung unterschiedlicher Datenspeichertechnologien, um Ihre Speicheranforderungen zu erfüllen.
 
-Consider an e-commerce example. You may store application assets in a blob store, product reviews and recommendations in a NoSQL store, and user profile or account data in a SQL database. The following illustration shows how an application might use multiple data storage techniques to store different types of data.
+Betrachten wir ein Beispiel aus dem E-Commerce-Bereich. Sie können Anwendungsressourcen in einem Blobspeicher, Produktbewertungen und Empfehlungen in einem NoSQL-Speicher und Benutzerprofil- bzw. Kontodaten in einer SQL-­Datenbank speichern. In der folgenden Abbildung wird veranschaulicht, wie eine Anwendung mehrere Datenspeichertechniken verwenden kann, um unterschiedliche Arten von Daten zu speichern.
 
-![An illustration showing usage of different data storage methods within the same application to increase performance and reduce cost.](../media/4-polyglotpersistence.png)
+![Abbildung, in der die Verwendung verschiedener Datenspeichermethoden in der gleichen Anwendung veranschaulicht wird, um eine höhere Leistung und geringere Kosten zu erreichen.](../media/4-polyglotpersistence.png)
 
-This is important, as different data stores are designed for certain use cases, or may be more accessible because of cost. As an example, storing blobs in a SQL database may be costly and slower to access than directly from a blob store.
+Dies ist wichtig, da verschiedene Datenspeicher für bestimmte Anwendungsfälle vorgesehen oder aufgrund der Kosten besser geeignet sind. Der Zugriff auf in einer SQL-Datenbank gespeicherte Blobs kann beispielsweise teurer und langsamer sein als der direkte Zugriff über einen Blobspeicher.
 
-Using many backing stores increases solution complexity. Consider how you meet your non-functional requirements across those data stores, and how service degradation impacts your overall application. Also consider how data is kept consistent between those data stores. 
+Durch die Verwendung vieler Sicherungsspeicher erhöht sich die Komplexität der Lösung. Bedenken Sie, wie Sie die nicht funktionsbezogenen Anforderungen für solche Datenspeicher erfüllen können und welche Auswirkungen eine Dienstbeeinträchtigung auf die Anwendung insgesamt hat. Berücksichtigen Sie auch, wie Daten zwischen diesen Datenspeichern konsistent bleiben. 
 
-**Eventual Consistency** often provides a good balance, but several different consistency models are available, depending on the service.
+**Letztliche Konsistenz** bietet häufig einen guten Ausgleich, allerdings sind abhängig vom Dienst mehrere verschiedene Modelle verfügbar.
 
-Eventual consistency means that replica data stores will eventually converge if there are no further writes. If a write is made to one of the data stores, reads from another may provide slightly out-of-date data. Eventual consistency enables higher scale because there is a low latency for reads and writes, rather than waiting to check if information is consistent across all stores.
+Letztliche Konsistenz bedeutet, dass Replikatdatenspeicher letztendlich konvergieren, wenn keine weiteren Schreibvorgänge auftreten. Wenn ein Schreibvorgang in einem der Datenspeicher vorgenommen wird, können Lesevorgänge aus einem anderen Datenspeicher zu geringfügig veralteten Daten führen. Letztliche Konsistenz ermöglicht eine höhere Skalierung, da die Wartezeit für Lese- und Schreibvorgänge gering ist. Es muss nicht überprüft werden, ob Informationen in allen Speichern konsistent sind.
 
-## Lamna Healthcare example
+## <a name="lamna-healthcare-example"></a>Lamna Healthcare-Beispiel
 
-Lamna Healthcare's patient booking system is hosted across two Azure regions, West Europe and Australia East. They're using virtual machines as the front-end nodes to deploy their website, and have Azure SQL DB deployed in West Europe as primary and Australia East as a readable secondary. Their front-end nodes don't require high levels of disk throughput, but do require consistent latency performance and production reliability and have used Premium SSD backed storage.
+Das Patientenbuchungssystem von Lamna Healthcare wird in zwei Azure-Regionen gehostet: „Europa, Westen“ und „Australien, Osten“. Sie verwenden virtuelle Computer als Front-End-Knoten, um ihre Website bereitzustellen, und haben Azure SQL-Datenbank in „Europa, Westen“ als primäres und in „Australien, Osten“ als lesbares sekundäres Replikat bereitgestellt. Für ihre Front-End-Knoten ist kein hoher Datenträgerdurchsatz erforderlich, jedoch eine konsistente Wartezeit und Zuverlässigkeit für die Produktion. Dafür wird SSD Premium-gestützter Speicher verwendet.
 
-They are hosting an Azure Redis Cache locally in each Azure region to store the common user requests and availability of doctors. Caching has been implemented to optimize the performance of the most common data read activities observed on the application.
+Sie hosten eine lokale Azure Redis Cache-Instanz in jeder Azure-Region, um die allgemeinen Benutzeranforderungen und die Verfügbarkeit der Ärzte zu speichern. Caching wurde implementiert, um die Leistung der am häufigsten auftretenden Datenleseaktivitäten, die in der Anwendung ermittelt wurden, zu optimieren.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-We've covered a few examples of how you can improve storage performance in your infrastructure layer by choosing the right disk architecture and at the application level through the use of caching and selecting the right data platform for your data. A properly architected solution will ensure that access to data performs as well as possible. Now let's take a look at how we can identify performance issues in an architecture.
+In diesem Artikel wurden einige Beispiele dazu behandelt, wie Sie die Speicherleistung in Ihrer Infrastrukturebene durch die Wahl der richtigen Datenträgerarchitektur und auf Anwendungsebene durch die Verwendung von Caching und die Wahl der richtigen Datenplattform für Ihre Daten verbessern können. Durch eine Lösung mit geeigneter Architektur wird sichergestellt, dass die Leistung beim Zugriff auf Daten möglichst hoch ist. Nun betrachten wir, wie Leistungsprobleme in einer Architektur identifiziert werden können.

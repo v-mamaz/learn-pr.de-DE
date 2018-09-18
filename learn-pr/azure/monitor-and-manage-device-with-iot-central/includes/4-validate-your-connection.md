@@ -1,54 +1,53 @@
-You’ve now worked with both the Azure IoT Central application and connected the coffee machine to Azure IoT Central. You are well on your way to begin to monitor and manage your remote coffee machine. In this unit, you take a moment to validate your setup and connection by using the Connected Coffee Maker template that you defined earlier. You update the optimal temperature in settings, run commands to check for the state of your machine, and view your connected coffee machine in the dashboard. 
+Sie haben nun sowohl die Azure IoT Central-Anwendung verwendet als auch die Kaffeemaschine mit Azure IoT Central verbunden. Das heißt, Sie können bald mit der Überwachung und Verwaltung Ihrer Remote-Kaffeemaschine beginnen. In dieser Einheit überprüfen Sie Ihr Setup und die Verbindung unter Verwendung der zuvor definierten Vorlage „Connected Coffee Maker“ (Verbundene Kaffeemaschine). Sie aktualisieren die optimale Temperatur in den Einstellungen, führen Befehle zur Überprüfung des Zustands der Maschine aus und sehen sich Ihre verbundene Kaffeemaschine auf dem Dashboard an. 
 
-## Update settings to sync your application with the coffee machine
+## <a name="update-settings-to-sync-your-application-with-the-coffee-machine"></a>Aktualisieren von Einstellungen, um Ihre Anwendung mit der Kaffeemaschine zu synchronisieren
 
-On the Settings page, you send configuration data to the coffee machine from your application. 
+Auf der Seite „Einstellungen“ senden Sie Konfigurationsdaten von Ihrer Anwendung an die Kaffeemaschine. 
 
-In this scenario, change the optimal temperature and choose **Update**. 
- When the setting is changed, the setting is marked as pending in the UI until the coffee machine acknowledges that it has responded to the setting change. 
+In diesem Szenario ändern Sie die optimale Temperatur und klicken anschließend auf **Aktualisieren**. Die geänderte Einstellung wird auf der Benutzeroberfläche als ausstehend markiert, bis die Kaffeemaschine bestätigt, dass sie auf die Einstellungsänderung reagiert hat. 
 
 > [!NOTE]
-> Successful updates in the setting indicate data flow and validate your  connection. The telemetry measurements will respond to the update in Optimal  Temperature. You can observe the change on the Measurements page. 
+> Die erfolgreiche Einstellungsänderung zeigt, dass der Datenfluss und somit die Verbindung funktioniert. Die Telemetriemessungen reagieren auf die Aktualisierung der optimalen Temperatur. Die Änderung kann auf der Seite mit den Messungen beobachtet werden. 
 
-## Run commands on the coffee machine 
-Navigate to the **Commands** page for the following exercise. To validate the commands setup, you remotely run commands on the coffee machine from IoT Central. If successful, confirmation messages are sent from the coffee machine.
+## <a name="run-commands-on-the-coffee-machine"></a>Ausführen von Befehlen für die Kaffeemaschine 
+Navigieren Sie für die folgende Übung zur Seite **Befehle**. Zur Überprüfung des Befehlssetups führen Sie über IoT Central Remotebefehle für die Kaffeemaschine aus. Nach erfolgreicher Ausführung sendet die Kaffeemaschine Bestätigungsmeldungen.
 
-1. Start Brewing remotely by choosing **Run**. 
+1. Klicken Sie auf **Ausführen**, um per Remotezugriff einen Brühvorgang zu starten. 
     
-    The coffee machine will start if these three conditions are satisfied:
-    - Cup detected
-    - Not in maintenance
-    - Not brewing already  
+    Die Kaffeemaschine startet den Vorgang, wenn die drei folgenden Bedingungen erfüllt sind:
+    - Tasse erkannt
+    - Nicht im Wartungsmodus
+    - Noch kein Brühvorgang gestartet  
 
     > [!NOTE]
-    > When you've successfully started brewing, the state of the machine changes to yellow as indicated in Measurements > State. 
+    > Nach erfolgreichem Start des Brühvorgangs wechselt der Zustand der Maschine unter „Measurements“ (Messungen) > „State“ (Zustand) zu Gelb. 
     
-    Look for confirmation messages in the console log on the coffee machine. 
+    Prüfen Sie das Konsolenprotokoll der Kaffeemaschine auf Bestätigungsmeldungen. 
 
-    ![Run commands](../images/4-commands-brewing.png)
+    ![Auszuführende Befehle](../images/4-commands-brewing.png)
 
-1. Set Maintenance Mode by choosing **Run**. The coffee machine will set to maintenance if it's *not* already in maintenance.
+1. Klicken Sie auf **Ausführen**, um den Wartungsmodus festzulegen. Die Kaffeemaschine wird in den Wartungsmodus versetzt, sofern Sie sich *nicht* bereits im Wartungsmodus befindet.
     
-    Look for confirmation messages in the console log on the coffee machine. 
+    Prüfen Sie das Konsolenprotokoll der Kaffeemaschine auf Bestätigungsmeldungen. 
 
     > [!NOTE]
-    > As in real life when the technician takes the machine offline to perform necessary repairs before switching it back online, the coffee machine continues to stay in the maintenance mode until you reboot the client code.
+    > Die Kaffeemaschine bleibt im Wartungsmodus, bis Sie den Clientcode neu starten – genau wie in der Realität, wenn ein Techniker die Maschine offline schaltet, um Reparaturen durchzuführen, und sie anschließend wieder online schaltet.
 
-    ![Run commands](../images/4-commands-maintenance.png)
+    ![Auszuführende Befehle](../images/4-commands-maintenance.png)
 
-1. It's recommended that you run the Node.js application no more than 60 minutes or so to prevent the application from sending you unwanted notifications/emails. Stopping the application when you're not working on the tutorial also prevents you from exhausting the daily message quota.
+1. Es empfiehlt sich, die Node.js-Anwendung nicht länger als etwa 60 Minuten auszuführen, um zu verhindern, dass Sie von der Anwendung unerwünschte Benachrichtigungen/E-Mails erhalten. Außerdem empfiehlt es sich, die Anwendung zu beenden, um das tägliche Nachrichtenkontingent nicht aufzubrauchen, wenn Sie nicht an dem Tutorial arbeiten.
 
-## View the coffee machine in the dashboard
-Navigate to the **Dashboard** page where you can collectively see the relevant information about your coffee machine. For the following exercise, turn on **Design Mode** to configure your dashboard. Whenever you are finished, choose **Save**.
+## <a name="view-the-coffee-machine-in-the-dashboard"></a>Anzeigen der Kaffeemaschine auf dem Dashboard
+Navigieren Sie zur Seite **Dashboard**. Hier laufen die relevanten Informationen zu Ihrer Kaffeemaschine zusammen. Aktivieren Sie für die folgende Übung den **Entwurfsmodus**, um Ihr Dashboard zu konfigurieren. Klicken Sie abschließend auf **Speichern**.
 
-1. Choose **Line Chart** and enter the title as Telemetry to see the telemetry measurements. Choose **Past 30 minutes** for **Time Range**.
+1. Klicken Sie auf **Liniendiagramm**, und geben Sie als Titel die Zeichenfolge „Telemetrie“ ein, um die Telemetriedaten anzuzeigen. Wählen Sie unter **Zeitbereich** die **letzten 30 Minuten** aus.
 
-    ![Viewing the dashboard](../images/4-dashboard-a.png)
+    ![Anzeigen des Dashboards](../images/4-dashboard-a.png)
 
-1. Choose **Settings and Properties** and enter the title as Device Properties. In **Add/Remove**, choose Coffee Makers Max Temperature, Coffee Makers Min Temperature, Device Warranty Expired. 
+1. Klicken Sie auf **Settings and Properties** (Einstellungen und Eigenschaften), und geben Sie als Titel die Zeichenfolge „Geräteeigenschaften“ ein. Wählen Sie unter **Hinzufügen/Entfernen** die Optionen für die höchste und niedrigste Kaffeemaschinentemperatur sowie die Option für die abgelaufene Gerätegarantie aus. 
 
-1. Choose **Settings and Properties** and enter the title as Optimal Temperature. In **Add/Remove**, choose Optimal  Temperature. 
+1. Klicken Sie auf **Settings and Properties** (Einstellungen und Eigenschaften), und geben Sie als Titel die Zeichenfolge „Optimal Temperature“ (Optimale Temperatur) ein. Wählen Sie unter **Hinzufügen/Entfernen** die Option „Optimal Temperature“ (Optimale Temperatur) aus. 
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-In this unit, you spent some time to validate the connection between the coffee machine and Azure IoT Central. You achieved validation by updating the optimal temperature, running the commands. Finally you set up the dashboard to monitor your machine in one place by defining the information you'd like to see about your coffee machine. These validation steps are necessary before moving on to other tasks in the next unit. 
+In dieser Einheit haben Sie die Verbindung zwischen der Kaffeemaschine und Azure IoT Central überprüft. Hierzu haben Sie durch Ausführen der entsprechenden Befehle die optimale Temperatur aktualisiert. Zum Schluss haben Sie außerdem das Dashboard eingerichtet, um Ihre Kaffeemaschine an einem zentralen Ort überwachen zu können. Dabei haben Sie definiert, welche Informationen zu Ihrer Kaffeemaschine angezeigt werden sollen. Diese Überprüfungsschritte sind erforderlich, bevor Sie mit den anderen Aufgaben in der nächsten Einheit fortfahren. 

@@ -1,57 +1,57 @@
-Often, the success of a services company is directly related to the service level agreements (SLA) the company has with its customers. Your customers expect the services you provide always to be available and their data kept safe. This is something that Microsoft takes very seriously. Azure provides tools you can use to manage availability, data security, and monitoring, so you know your services are always available for your customers.
+Häufig steht der Erfolg eines Dienstleistungsunternehmens im unmittelbaren Zusammenhang mit den Vereinbarungen zum Servicelevel (SLAs), die das Unternehmen mit seinen Kunden schließt. Ihre Kunden erwarten, dass die von Ihnen bereitgestellten Dienste immer zur Verfügung stehen und ihre Daten sicher aufbewahrt werden. Dies nimmt Microsoft sehr ernst. Azure bietet Tools, mit denen Sie die Verfügbarkeit, Datensicherheit und Überwachung verwalten können. So können Sie sicher sein, dass Ihre Dienste stets für Ihre Kunden verfügbar sind.
 
-Administration of an Azure VM isn't limited to managing the operating system or software that runs on the VM. It helps to know which services Azure provides that ensure service availability and support automation. These services help you to plan your organization's business continuity and disaster recovery strategy.
+Die Verwaltung eines virtuellen Azure-Computers ist nicht auf die Verwaltung des Betriebssystems oder einer Software begrenzt, die auf dem virtuellen Computer ausgeführt wird. Es ist hilfreich zu wissen, welche Dienste Azure anbietet, die Dienstverfügbarkeit sicherstellen und Automatisierung unterstützen. Diese Dienste unterstützen Sie bei der Planung der Business Continuity & Disaster Recovery-Strategie (BCDR) Ihrer Organisationen.
 
-Here, we'll cover an Azure service that helps you improve VM availability, streamlines VM management tasks, and keeps your VM data backed up and safe. Let's start by defining availability.
+In diesem Artikel wird der Azure-Dienst behandelt, mit dem Sie die Verfügbarkeit virtueller Computer verbessern, Aufgaben zur Verwaltung virtueller Computer optimieren und die Daten Ihrer virtuellen Computer sichern und schützen können. Definieren wir zunächst einmal die Verfügbarkeit.
 
-## What is availability?
+## <a name="what-is-availability"></a>Was ist Verfügbarkeit?
 
-Availability is the percentage of time a service is available for use.
+Verfügbarkeit ist der Anteil der Zeit, in dem ein Dienst für die Verwendung verfügbar ist.
 
-Let's assume you have a website and you want your customers to be able to access information at all times. Your expectation is 100% availability concerning website access.
+Nehmen wir an, Sie betreiben eine Website, auf deren Informationen Ihre Kunden jederzeit zugreifen können sollen. Ihre Erwartung bezüglich des Websitezugriffs liegt bei einer Verfügbarkeit von 100 %.
 
-### Why do I need to think about availability when using Azure?
+### <a name="why-do-i-need-to-think-about-availability-when-using-azure"></a>Warum muss bei der Verwendung von Azure die Verfügbarkeit berücksichtigt werden?
 
-Azure VMs run on physical servers hosted within Microsoft's data centers. As with most physical devices, there's a chance that there could be a failure. If the physical server fails, the virtual machines hosted on that server will also fail. If this happens, Azure will move the VM to a healthy host server automatically. However, this self-healing migration could take several minutes, during which, the application(s) hosted on that VM will not be available.
+Virtuelle Azure-Computer werden auf physischen Servern ausgeführt, die in Rechenzentren von Microsoft gehostet werden. Wie bei den meisten physischen Geräten besteht das Risiko eines Ausfalls. Wenn der physische Server ausfällt, fallen auch die auf diesem Server gehosteten virtuellen Computer aus. In diesem Fall migriert Azure die jeweilige VM automatisch zu einem fehlerfreien Hostserver. Diese Selbstreparaturmigration könnte allerdings einige Minuten dauern. In diesem Zeitraum sind die Anwendungen, die auf dieser VM gehostet werden, nicht verfügbar.
 
-The VMs could also be affected by periodic updates initiated by Azure itself. These maintenance events range from software updates to hardware upgrades and are required to improve platform reliability and performance. These events usually are performed without impacting any guest VMs, but sometimes the virtual machines will be rebooted to complete an update or upgrade.
+Die VMs könnten zudem durch regelmäßige Updates, die von Azure selbst initiiert werden, betroffen sein. Diese Wartungsereignisse reichen von Softwareupdates bis hin zu Hardwareaufrüstungen und sind notwendig, um die Zuverlässigkeit und Leistung der Plattform zu verbessern. Diese Ereignisse erfolgen in der Regel ohne Beeinträchtigung von virtuellen Gastcomputern, doch gelegentlich werden die virtuellen Computer zur Ausführung eines Updates oder Upgrades neu gestartet.
 
 > [!NOTE]
-> Microsoft does not automatically update your VM's OS or software. You have complete control and responsibility for that. However, the underlying software host and hardware are periodically patched to ensure reliability and high performance at all times.
+> Microsoft aktualisiert das Betriebssystem oder die Software Ihrer virtuellen Computer nicht automatisch. Die vollständige Kontrolle und Zuständigkeit liegt in Ihren Händen. Der zugrunde liegende Softwarehost und die Hardware werden in regelmäßigen Abständen gepatcht, um jederzeit Zuverlässigkeit und eine hohe Leistung sicherzustellen.
 
-To ensure your services aren't interrupted and avoid a single point of failure, it's recommended to deploy at least two instances of each VM. This feature is called an _availability set_.
+Es wird empfohlen, mindestens zwei Instanzen von jedem virtuellen Computer bereitzustellen, um sicherzustellen, dass Ihre Dienste nicht unterbrochen werden, und um einen Single Point of Failure zu vermeiden. Dieses Feature wird als _Verfügbarkeitsgruppe_ bezeichnet.
 
-### What is an availability set?
+### <a name="what-is-an-availability-set"></a>Was ist eine Verfügbarkeitsgruppe?
 
-An **availability set** is a logical feature used to ensure that a group of related VMs are deployed so that they aren't all subject to a single point of failure and not all upgraded at the same time during a host operating system upgrade in the data center. VMs placed in an availability set should perform an identical set of functionalities and have the same software installed.
+Eine **Verfügbarkeitsgruppe** ist ein logisches Feature, das sicherstellt, dass eine Gruppe von verwandten virtuellen Computern bereitgestellt wird, damit nicht für alle ein Single Point of Failure gilt und nicht für alle virtuellen Computer im Rechenzentrum gleichzeitig ein Hostbetriebssystemupgrade durchgeführt wird. Virtuelle Computer in einer Verfügbarkeitsgruppe sollten einen identischen Satz von Funktionen ausführen, und die gleiche Software sollte installiert sein.
 
 > [!TIP]
-> Microsoft offers a 99.95% external connectivity service level agreement (SLA) for multiple-instance VMs deployed in an availability set. That means that for the SLA to apply, there must be at least two instances of the VM deployed within an availability set. 
+> Microsoft bietet für VMs mit mehreren Instanzen, die in einer Verfügbarkeitsgruppe bereitgestellt werden, eine Vereinbarung zum Servicelevel (SLA) mit einer Verfügbarkeit externer Konnektivität von 99,95 %. Das bedeutet, dass für die SLA mindestens zwei Instanzen der VM, die innerhalb einer Verfügbarkeitsgruppe bereitgestellt wird, vorhanden sein müssen. 
 
-You can create availability sets through the Azure portal in the disaster recovery section. Also, you can build them using Resource Manager templates, or any of the scripting or API tools. When you place VMs into an availability set, Azure guarantees to spread them across **Fault Domains** and **Update Domains**.
+Sie können über das Azure-Portal im Abschnitt „Notfallwiederherstellung“ Verfügbarkeitsgruppen erstellen. Darüber hinaus können Sie sie mithilfe von Resource Manager-Vorlagen oder Skripterstellungs- oder API-Tools erstellen. Wenn Sie virtuelle Computer in einer Verfügbarkeitsgruppe platzieren, garantiert Azure, dass diese auf **Fehlerdomänen** und **Updatedomänen** verteilt werden.
 
-#### What is a fault domain?
+#### <a name="what-is-a-fault-domain"></a>Was ist eine Fehlerdomäne?
 
-A fault domain is a logical group of hardware in Azure that shares a common power source and network switch. You can think of it as a rack within an on-premises datacenter. The first two VMs in an availability set will be provisioned into two different racks so that if the network or the power failed in a rack, only one VM would be affected. Fault domains are also defined for managed disks attached to VMs.
+Eine Fehlerdomäne ist eine logische Gruppe von Hardwarekomponenten in Azure, die eine Stromquelle und einen Netzwerkswitch gemeinsam nutzen. Sie können sich diese als Rack in einem lokalen Rechenzentrum vorstellen. Die ersten beiden VMs in einer Verfügbarkeitsgruppe werden in zwei unterschiedlichen Racks bereitgestellt, damit nur eine VM betroffen ist, wenn das Netzwerk oder die Stromversorgung in einem Rack ausfällt. Fehlerdomänen werden auch für verwaltete Datenträger, die an VMs angefügt sind, definiert.
 
-![Fault domains](../media/5-fault-domains.png)
+![Fehlerdomänen](../media/5-fault-domains.png)
 
-#### What is an update domain?
+#### <a name="what-is-an-update-domain"></a>Was ist eine Updatedomäne?
 
-An update domain is a logical group of hardware that can undergo maintenance or be rebooted at the same time. Azure will automatically place availability sets into update domains to minimize the impact when the Azure platform introduces host operating system changes. Azure then processes each update domain one at a time.
+Eine Updatedomäne ist eine logische Hardwaregruppe, die zur gleichen Zeit gewartet oder neu gestartet werden kann. Azure platziert automatisch Verfügbarkeitsgruppen in Updatedomänen, um die Auswirkungen zu minimieren, wenn die Azure-Plattform Änderungen am Hostbetriebssystem einführt. Azure verarbeitet anschließend jeweils eine Updatedomäne.
 
-Availability sets are a powerful feature to ensure the services running in your VMs are always available to your customers. However, they aren't foolproof. What if something happens to the data or the software running on the VM itself? For that, we'll need to look at other disaster recovery and backup techniques.
+Verfügbarkeitsgruppen stellen ein leistungsstarkes Feature dar, um sicherzustellen, dass die auf Ihren VMs ausgeführten Dienste immer für Ihre Kunden zur Verfügung stehen. Diese sind jedoch nicht zu 100 % sicher. Was geschieht, wenn ein Fehler bei den Daten oder der Software auf dem virtuellen Computer selbst auftritt? Hierfür müssen wir uns andere Notfallwiederherstellungs- und Sicherungsmethoden ansehen.
 
-## Failover across locations
+## <a name="failover-across-locations"></a>Failover zwischen Standorten
 
-You can also replicate your infrastructure across sites to handle regional failover. **Azure Site Recovery**  replicates workloads from a primary site to a secondary location. If an outage happens at your primary site, you can fail over to a secondary location. This failover allows users to continue to access your applications without interruption. You can then fail back to the primary location once it's up and running again. Azure Site Recovery is about replication of virtual or physical machines; it keeps your workloads available in an outage.
+Sie können Ihre Infrastruktur auch zwischen Standorten replizieren, um regionale Failover durchzuführen. **Azure Site Recovery** repliziert Workloads von einem primären Standort an einem sekundären Standort. Bei einem Ausfall am primären Standort können Sie ein Failover an einem sekundären Standort ausführen. Durch ein solches Failover können Benutzer ohne Unterbrechung auf Ihre Anwendungen zugreifen. Sie können dann ein Failback zum primären Standort ausführen, sobald dieser wieder betriebsbereit ist. Azure Site Recovery dient zur Replikation von virtuellen oder physischen Computern und sorgt dafür, dass Ihre Workloads bei einem Ausfall weiterhin verfügbar sind.
 
-While there are many attractive technical features to Site Recovery, there are at least two significant business advantages:
+Site Recovery weist eine Vielzahl von ausgefeilten technischen Features auf, darunter sind jedoch mindestens zwei bedeutende geschäftliche Vorteile zu beachten:
 
-1. Site Recovery enables the use of Azure as a destination for recovery, thus eliminating the cost and complexity of maintaining a secondary physical datacenter.
+1. Mithilfe von Site Recovery kann Azure als Ziel für die Wiederherstellung verwendet werden, wodurch die Kosten für die Verwaltung eines sekundären physischen Rechenzentrums und deren Komplexität wegfallen.
 
-2. Site Recovery makes it incredibly simple to test failovers for recovery drills without impacting production environments. This makes it easy to test your planned or unplanned failovers. After all, you don’t have a good disaster recovery plan if you’ve never tried to failover.
+2. Site Recovery macht es einfach, Failover im Hinblick auf Wiederherstellungsroutinen zu testen, ohne Produktionsumgebungen zu beeinträchtigen. Dies vereinfacht das Testen Ihrer geplanten oder ungeplanten Failover. Zu einem guten Notfallwiederherstellungsplan gehört ein Testfailover.
 
-The recovery plans you create with Site Recovery can be as simple or as complex as your scenario requires. They can include custom PowerShell scripts, Azure Automation runbooks, or manual intervention steps. You can leverage the recovery plans to replicate workloads to Azure, easily enabling new opportunities for migration, temporary bursts during surge periods, or development and testing of new applications.
+Mit Site Recovery können je nach Szenario einfache oder komplexe Wiederherstellungspläne erstellt werden. Diese können benutzerdefinierte PowerShell-Skripts, Azure Automation-Runbooks oder Schritte für manuelle Eingriffe enthalten. Anhand der Wiederherstellungspläne können Sie Workloads in Azure replizieren, um mühelos neue Möglichkeiten für die Migration, für temporäre Bursts in Spitzenzeiten oder für Entwicklungen und Tests für neue Anwendungen zu erschließen.
 
-Azure Site Recovery works with Azure resources, or Hyper-V, VMware, and physical servers in your on-premises infrastructure and can be a key part of your organization’s business continuity and disaster recovery (BCDR) strategy by orchestrating the replication, failover, and recovery of workloads and applications if the primary location fails.
+Azure Site Recovery ist mit Azure-Ressourcen oder Hyper-V, VMware und physischen Servern in Ihrer lokalen Infrastruktur kompatibel und kann eine wichtige Rolle in der BCDR-Strategie (Business Continuity & Disaster Recovery) Ihrer Organisation übernehmen, indem beim Ausfall des primären Standorts die Replikation, das Failover und die Wiederherstellung von Workloads und Anwendungen orchestriert werden.
