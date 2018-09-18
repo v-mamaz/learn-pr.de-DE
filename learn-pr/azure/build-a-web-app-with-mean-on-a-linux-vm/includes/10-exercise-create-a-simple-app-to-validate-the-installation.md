@@ -1,19 +1,19 @@
-In this unit, you're going to create a simple AngularJS application hosted in Node.js and use Express for routing. On the back end, MongoDB will serve as your data store. The application is a book database, where you will be able to list, add, and delete books.
+In dieser Übung erstellen Sie eine einfache, in Node.js gehostete AngularJS-Anwendung und verwenden Express für das Routing. Auf dem Back-End dient Ihnen MongoDB als Datenspeicher. Die Anwendung ist eine Buchdatenbank, in der Sie Bücher auflisten, hinzufügen und löschen können.
 
 > [!Important]
-> This is a simple application. Its purpose is to test the newly installed MEAN stack. This application is not sufficiently secure or ready for production use.
+> Dies ist eine einfache Anwendung. Sie dient zum Testen des neu installierten MEAN-Stapels. Diese Anwendung ist weder ausreichend sicher noch bereit für die Produktion.
 
-## Connect to the VM
+## <a name="connect-to-the-vm"></a>Herstellen der Verbindung mit der VM
 
-If you aren't still connected to your VM, run the following command. Substitute your admin username and your VM's public IP address from above for the `<vm-admin-username>` and `<vm-public-ip>` placeholders.
+Wenn die Verbindung mit Ihrer VM noch nicht besteht, müssen Sie den folgenden Befehl ausführen. Ersetzen Sie die Platzhalter `<vm-admin-username>` und `<vm-public-ip>` durch Ihren Administratornamen und die öffentliche IP-Adresse der zuvor erwähnten VM.
 
 ```bash
 ssh <vm-admin-username>@<vm-public-ip>
 ```
 
-## Create the back end
+## <a name="create-the-back-end"></a>Erstellen des Back-Ends
 
-1. Create a folder structure for your new sample application with the following command.
+1. Erstellen Sie mit dem folgenden Befehl eine Ordnerstruktur für die neue Beispielanwendung.
 
     ```bash
     mkdir ~/Books
@@ -21,52 +21,52 @@ ssh <vm-admin-username>@<vm-public-ip>
     mkdir ~/Books/public
     ```
 
-    In your admin user's home location, you created a folder called "Books" to contain your project's app and its dependencies. Within that folder, you created an "app" folder to contain all your application resources and scripts. Finally, we will also create a "public" folder to hold all of the client-side files that will be served up directly to appropriate HTTP requests.
+    Am Hauptstandort Ihres Administratorbenutzers haben Sie einen Ordner namens „Books“ erstellt, der die App Ihres Projekts und deren Abhängigkeiten enthält. In diesem Ordner haben Sie einen Ordner „app“ erstellt, der alle Ihre Anwendungsressourcen und Skripts enthält. Schließlich erstellen wir auch einen „public“-Ordner zum Speichern aller clientseitigen Dateien, die direkt auf entsprechende HTTP-Anforderungen hin bereitgestellt werden.
 
-1. Install **Express** to handle routing of your HTTP requests, to decide what content to return to a user of your web application.
+1. Installieren Sie **Express** zur Verarbeitung des Routings Ihrer HTTP-Anforderungen, wobei entschieden wird, welche Inhalte an einen Benutzer Ihrer Webanwendung zurückgegeben werden.
 
-    Run the following command to add Express as a package for your web application to use.
+    Führen Sie den folgenden Befehl zum Hinzufügen von Express als Paket für Ihre zu verwendende Webanwendung aus.
 
       ```bash
       npm install express
       ```
 
-1. Install **Mongoose** to help relay your book data between MongoDB and the HTTP request routing.
+1. Installieren Sie **Mongoose** zur Unterstützung des Weiterleitens Ihrer Buchdaten zwischen MongoDB und dem HTTP-Anforderungsrouting.
 
-    The book information will be queried via REST API requests. To simplify the transfer of data in and out of MongoDB to our API, we will use Mongoose. Mongoose is a schema-based system for modeling data. We will be using it in our sample application to keep our data models consistent through the various GET, POST, and DELETE HTTP requests.
+    Die Buchinformationen werden über REST-API-Anforderungen abgefragt. Um die Übertragung von Daten in MongoDB und heraus an unsere API zu vereinfachen, verwenden wir Mongoose. Mongoose ist ein schemabasiertes System für die Modellierung von Daten. Wir werden es in unserer Beispielanwendung verwenden, um unsere Datenmodelle über die verschiedenen GET-, POST- und DELETE-HTTP-Anforderungen hinweg konsistent zu halten.
 
-    Run the following command to add Mongoose as a package for your web application to use.
+    Führen Sie den folgenden Befehl zum Hinzufügen von Mongoose als Paket für Ihre zu verwendende Webanwendung aus.
 
       ```bash
       npm install mongoose
       ```
 
-1. Install **body-parser** to pre-process JSON request data for use in our Express routing.
+1. Installieren Sie **body-parser**, um JSON-Anforderungsdaten für die Verwendung in unserem Express-Routing vorzuverarbeiten.
 
-    On the back end, `body-parser` will serve as a middleware between Node.js and Express for parsing incoming JSON request data.
+    Auf dem Back-End dient `body-parser` als Middleware zwischen Node.js und Express zum Analysieren der eingehenden JSON-Anforderungsdaten.
 
-    Run the following command to add `body-parser` as a package for your web application to use.
+    Führen Sie den folgenden Befehl zum Hinzufügen von `body-parser` als Paket für Ihre zu verwendende Webanwendung aus.
 
       ```bash
       npm install body-parser
       ```
 
     > [!TIP]
-    > When installing multiple npm packages, you can include them all in a single command such as this:
+    > Wenn Sie mehrere npm-Pakete installieren, können Sie alle in einen einzigen Befehl wie diesen einschließen:
     >
     > ```bash
     > npm install express mongoose body-parser
     > ```
 
-1. Create the data model back end for your books web application using Mongoose.
+1. Erstellen Sie das Datenmodell-Back-End für Ihre Bücherwebanwendung mithilfe von Mongoose.
 
-    1. In the **app** folder within your **Books** application folder, create a new JavaScript file called **model.js** to contain your book's Mongoose-based data model.
+    1. Erstellen Sie im Ordner **app** Ihres Anwendungsordners **Books** eine neue JavaScript-Datei namens **model.js**, die das Mongoose-basierte Datenmodell Ihrer Bücher enthält.
 
         ```bash
         nano ~/Books/app/model.js
         ```
 
-    1. Paste the following code into this new file to create our book schema using Mongoose.
+    1. Fügen Sie zum Erstellen unseres Buchschemas mithilfe von Mongoose den folgenden Code in diese neue Datei ein.
 
         ```javascript
         var mongoose = require('mongoose');
@@ -85,19 +85,19 @@ ssh <vm-admin-username>@<vm-public-ip>
         ```
 
         > [!TIP]
-        > To save the current file in **nano**, you need to press **Ctrl**+**O**. To exit **nano**, you need to press **Ctrl**+**X**.
+        > Drücken Sie zum Speichern der aktuellen Datei in **nano** **STRG**+**O**. Drücken Sie zum Beenden von **nano** **STRG**+**X**.
 
-        This code is connecting to a database called "Books" on the local VM's MongoDB server. It then creates a database document called "Book" with the schema defined by the `bookSchema` variable.
+        Dieser Code stellt eine Verbindung mit einer Datenbank namens „Books“ auf dem MongoDB-Server des lokalen virtuellen Computers her. Er erstellt dann ein Datenbankdokument namens „Book“ mit dem von der `bookSchema`-Variablen definierten Schema.
 
-1. Create the Express routes for the application to handle the various HTTP requests.
+1. Erstellen Sie die Express-Routen für die Anwendung zur Verarbeitung der verschiedenen HTTP-Anforderungen.
 
-    1. Within the **app** folder, create a new JavaScript file called **routes.js**.
+    1. Erstellen Sie im Ordner **app** eine neue JavaScript-Datei namens **routes.js**.
 
         ```bash
         nano ~/Books/app/routes.js
         ```
 
-    1. Paste the following code into this new file to establish the routes using Express.
+    1. Fügen Sie den folgenden Code in diese neue Datei ein, um die Routen mit Express herzustellen.
 
         ```javascript
         var path = require('path');
@@ -140,19 +140,19 @@ ssh <vm-admin-username>@<vm-public-ip>
         module.exports = routes;
         ```
 
-        This code will create four routes for our application. The first three specify what to do when someone sends an API GET, POST, or DELETE request to the `/book` resource. The last one is a catch-all route to send the requester to the index page.
+        Dieser Code erstellt vier Routen für die Anwendung. Die ersten drei geben an, was zu tun ist, wenn jemand eine API-GET-, POST- oder DELETE-Anforderung an die `/book`-Ressource sendet. Die letzte ist eine alles abfangende Route, die die anfordernde Person zur Indexseite leitet.
 
-        Express can serve up HTTP responses directly in the route handling code, or it can serve up static content from files. We are doing both in this sample web application. We respond with JSON data for book API requests and with HTML data direct from the index.html file.
+        Express kann HTTP-Antworten direkt an den Routenverarbeitungscode leiten oder statischen Inhalt aus Dateien bereitstellen. In dieser Beispielwebanwendung wird beides durchgeführt. Wir antworten mit JSON-Daten auf Buch-API-Anforderungen und mit HTML-Daten direkt aus der Datei „index.html“.
 
-1. Create a **server.js** file in the **Books** folder to configure the Node.js hosting (using the Express routes).
+1. Erstellen Sie eine **server.js**-Datei im Ordner **Books**, um das Node.js-Hosting zu konfigurieren (mit den Express-Routen).
 
-    1. Back in the application root **Books** folder, create a new JavaScript file called **server.js**.
+    1. Erstellen Sie zurück im Anwendungsstammordner **Books** eine neue JavaScript-Datei namens **server.js**.
 
         ```bash
         nano ~/Books/server.js
         ```
 
-    1. Paste the following code into this new file to configure your web application and start listening to the default HTTP port.
+    1. Fügen Sie zum Konfigurieren Ihrer Webanwendung und Starten der Überwachung des HTTP-Standardports den folgenden Code in diese neue Datei ein.
 
         ```javascript
         var express = require('express');
@@ -167,17 +167,17 @@ ssh <vm-admin-username>@<vm-public-ip>
         });
         ```
 
-        This code creates the web application itself. It will serve static files from a folder named **public** (created next) and will use the routes defined in the previous step.
+        Dieser Code erstellt die Webanwendung selbst. Er stellt statische Dateien aus einem Ordner mit dem Namen **public** (als Nächstes erstellt) bereit und verwendet die im vorherigen Schritt definierten Routen.
 
-1. Create the front-end HTML and client-side JavaScript application.
+1. Erstellen Sie die Front-End-HTML- und die clientseitige JavaScript-Anwendung.
 
-    1. Within the **public** content folder, create a new JavaScript file called **script.js**.
+    1. Erstellen Sie im **public**-Inhaltsordner eine neue JavaScript-Datei namens **script.js**.
 
         ```bash
         nano ~/Books/public/script.js
         ```
 
-    1. Paste the following code into this new file to configure your client-side web application to handle communicating with your web server.
+    1. Fügen Sie zum Konfigurieren Ihrer clientseitigen Webanwendung den folgenden Code zum Durchführen der Kommunikation mit dem Webserver in diese neue Datei ein.
 
         ```javascript
         var app = angular.module('myApp', []);
@@ -224,15 +224,15 @@ ssh <vm-admin-username>@<vm-public-ip>
         });
         ```
 
-        This client-side AngularJS code creates a new angular application `myApp` containing one controller `myCtrl`. When the application is run in the viewer's browser, it will issue an HTTP GET request to retrieve the list of books in the database.
+        Dieser clientseitige AngularJS-Code erstellt eine neue angular-Anwendung `myApp` mit einem Controller `myCtrl`. Wenn die Anwendung im Browser des Betrachters ausgeführt wird, wird eine HTTP-GET-Anforderung zum Abrufen der Bücherliste in der Datenbank ausgegeben.
 
-    1. Also within the **public** content folder, create a new HTML file called **index.html**.
+    1. Erstellen Sie im Inhaltsordner **public** auch eine neue HTML-Datei namens **index.html**.
 
         ```bash
         nano ~/Books/public/index.html
         ```
 
-    1. Paste the following markup into this new file to set up your web application's HTML user interface.
+    1. Fügen Sie das folgende Markup in diese neue Datei ein, um die HTML-Benutzeroberfläche Ihrer Webanwendung einzurichten.
 
         ```html
         <!doctype html>
@@ -285,31 +285,31 @@ ssh <vm-admin-username>@<vm-public-ip>
         </html>
         ```
 
-        This code will create a simple HTML form with four fields to submit new book data and a table to display all the books already stored in the database. The various `ng-` HTML attributes will wire up the AngularJS code to the UI.
+        Dieser Code erstellt ein einfaches HTML-Formular mit vier Feldern zum Übermitteln von neuen Buchdaten und einer Tabelle zum Anzeigen aller Bücher, die bereits in der Datenbank gespeichert sind. Die verschiedenen `ng-`-HTML-Attribute verknüpfen den AngularJS-Code mit der Benutzeroberfläche.
 
-1. Test the full books web application.
+1. Testen Sie die vollständige Bücherwebanwendung.
 
-    1. Start the application with Node.js with the following command.
+    1. Starten Sie die Anwendung mit dem folgenden Befehl mit Node.js.
 
         ```bash
         sudo node ~/Books/server.js
         ```
 
-        This will start the back end of our application, which will then start listening on port 80 for incoming HTTP requests.
+        Dadurch wird das Back-End der Anwendung gestartet, das dann an Port 80 auf eingehende HTTP-Anforderungen lauscht.
 
-    1. Test the application functionality.
+    1. Testen Sie die Anwendungsfunktionalität.
 
-        Open your preferred browser, and navigate to the public IP address of your Azure VM as the URL.
+        Öffnen Sie Ihren bevorzugten Browser, und navigieren Sie zur öffentlichen IP-Adresse Ihrer Azure-VM als URL.
 
         ```bash
         http://<vm-public-ip>
         ```
 
-        If everything is in order, you should see a screen similar to this:
+        Wenn alles in Ordnung ist, sehen Sie etwa folgenden Bildschirm:
 
-        The following screenshot displays the user interface to submit book details for storage in the MongoDB database.
+        Der folgende Screenshot zeigt die Benutzeroberfläche zum Übermitteln von Buchdetails zur Speicherung in der MongoDB-Datenbank.
 
 
-        ![Screenshot of a web browser showing the data-entry form to add a book.](../media-draft/10-book-page.png)
+        ![Screenshot eines Webbrowsers mit dem Dateneingabeformular zum Hinzufügen eines Buchs.](../media-draft/10-book-page.png)
 
-    You should now be able to submit books to save to the MongoDB database. As well, you can see the full list of books loaded from the database.
+    Sie sollten jetzt Bücher zum Speichern in der MongoDB-Datenbank übermitteln können. Außerdem sehen Sie die vollständige Liste der aus der Datenbank geladenen Bücher.

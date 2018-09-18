@@ -1,154 +1,154 @@
-In this exercise, let's assume your company runs a Simple Mail Transfer Protocol (SMTP) email server. You want to migrate this server into Azure. You want the SMTP server to store incoming messages for your own domain in a folder called "Drop" on a dedicated VHD.
+In dieser Übung wird angenommen, dass Ihr Unternehmen einen SMTP-E-Mail-Server (Simple Mail Transfer Protocol) verwendet. Sie möchten diesen Server zu Azure migrieren. Sie möchten eingehende Nachrichten für Ihre eigene Domäne auf dem SMTP-Server in einem Ordner namens „Drop“ auf einer dedizierten VHD speichern.
 
-The goal of the exercise is to create a Windows virtual machine (VM) and attach a new virtual hard disk (VHD) called "Incoming" to store the "Drop" directory.
+Das Ziel dieser Übung ist, einen virtuellen Windows-Computer (VM) zu erstellen und eine neue virtuelle Festplatte (VHD) namens „Incoming“ für das Verzeichnis „Drop“ anzufügen.
 
-## Sign in to Azure
+## <a name="sign-in-to-azure"></a>Anmelden bei Azure
 <!---TODO: Need update for sanbox?--->
 
-1. Sign in to the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/?azure-portal=true) an.
 
-## Create a Windows VM in the Azure portal
+## <a name="create-a-windows-vm-in-the-azure-portal"></a>Erstellen einer Windows-VM im Azure-Portal
 
-To create a VM to host the SMTP server with its data drives, follow these steps:
+Um eine VM zum Hosten des SMTP-Servers mit den Datenlaufwerken zu erstellen, gehen Sie folgendermaßen vor:
 
-1. Choose **Create a resource** in the upper left corner of the Azure portal.
+1. Wählen Sie im Azure-Portal oben links **Ressource erstellen** aus.
 
-1. In the search box above the list of Azure Marketplace resources, search for and select **Windows Server 2016 Datacenter**, and then choose **Create**.
+1. Suchen Sie im Suchfeld oberhalb der Liste der Azure Marketplace-Ressourcen nach **Windows Server 2016 Datacenter**, und wählen Sie dann **Erstellen** aus.
 
-1. In the **Basics** pane that opens to the right, enter the following property values. 
+1. Geben Sie im Bereich **Grundlagen**, der auf der rechten Seite geöffnet wird, die folgenden Eigenschaftswerte ein. 
 
 
-|Property  |Value  |Notes  |
+|Eigenschaft  |Wert  |Hinweise  |
 |---------|---------|---------|
 |Name     |   **MailSenderVM**      |         |
-|VM disk type     |  **Standard HDD**       |   Select this value from the dropdown.      |
-|User name     |  **mailmaster**       |         |
-|Password     |  The password must be at least 12 characters long and meet the [defined complexity requirements](https://docs.microsoft.com/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm).       | Make sure to remember this user name and password because we'll use them throughout the module.         |
-|Subscription     |  Choose your subscription.       |  Select this value from the dropdown.       |
-|Resource group     |  Select **Create new**, and then type **MailInfrastructure**.       |  We'll gather all resource used in this module into one resource group.       |
-|Location     |   A location near you.      | Select this value from the dropdown.        |
+|VM-Datenträgertyp     |  **HDD Standard**       |   Wählen Sie diesen Wert aus der Dropdownliste aus.      |
+|Benutzername     |  **mailmaster**       |         |
+|Kennwort     |  Das Kennwort muss mindestens zwölf Zeichen lang sein und die [definierten Anforderungen an die Komplexität](https://docs.microsoft.com/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm) erfüllen.       | Sie müssen sich diesen Benutzernamen und das Kennwort merken, da beides im gesamten Modul verwendet wird.         |
+|Abonnement     |  Wählen Sie Ihr Abonnement aus.       |  Wählen Sie diesen Wert aus der Dropdownliste aus.       |
+|Ressourcengruppe     |  Klicken Sie auf **Neu erstellen**, und geben Sie dann **MailInfrastructure** ein.       |  Wir sammeln alle Ressourcen, die in diesem Modul verwendet werden, in einer Ressourcengruppe.       |
+|Standort     |   Ein Standort in Ihrer Nähe.      | Wählen Sie diesen Wert aus der Dropdownliste aus.        |
 
-4. Select **OK** at the bottom of the **Basics** page to continue to the **Size** configuration pane.
+4. Wählen Sie unten auf der Seite **Grundlagen** die Option **OK** aus, um mit dem Konfigurationsbereich **Größe** fortzufahren.
 
-1. In the **Size** configuration pane, search for and select **B1ms**, and then click **Select**.
+1. Suchen Sie im Konfigurationsbereich **Größe** nach **B1ms**, und wählen Sie sie aus, und klicken Sie dann auf **Auswählen**.
 
-1. In the **Settings** pane, under **Use managed disks**, click **No**. We'll discuss managed disks later in this module.
+1. Klicken Sie im Bereich **Einstellungen** unter **Verwaltete Datenträger verwenden** auf **Nein**. Verwaltete Datenträger werden später in diesem Modul erörtert.
 
-1. In the **Select public inbound ports** dropdown list, select **RDP (3389)**. We'll use this port to remote into our VM after it's created.
+1. Wählen Sie in der Dropdownliste **Öffentliche Eingangsports hinzufügen** den Port **RDP (3389)** aus. Wir verwenden diesen Port für den Remotezugriff auf die VM, nachdem sie erstellt wurde.
 
-1. Leave all the other settings at their default, and then click **OK**.
+1. Behalten Sie für alle anderen Einstellungen die Standardwerte bei, und klicken Sie dann auf **OK**.
 
-1. In the **Create** pane, review the configuration.
+1. Prüfen Sie im Bereich **Erstellen** die Konfiguration.
 
-1. When you have reviewed the configuration,  select **Create**. Azure creates and starts the new VM.
+1. Wenn Sie die Konfiguration geprüft haben, wählen Sie **Erstellen** aus. Azure erstellt und startet die neue VM.
 
 > [!TIP]
-> Creating your VM and deploying it in Azure can take a few minutes. You can watch the progress in the **Notifications** hub. Azure will display a notification dialog when it finishes.
+> Das Erstellen Ihrer VM und deren Bereitstellung in Azure kann einige Minuten dauern. Sie können den Fortschritt im Hub **Benachrichtigungen** überwachen. Beim Abschluss zeigt Azure ein Benachrichtigungsdialogfeld an.
 
-## Add an empty data disk to our VM
+## <a name="add-an-empty-data-disk-to-our-vm"></a>Hinzufügen eines leeren Datenträgers zur VM
 
-We're going to name the disk stores the "Drop" directory for your SMTP server "Incoming". Let's add a new empty disk to the server using the following steps:
+Wir nennen den Datenträger, auf dem das Verzeichnis „Drop“ für den SMTP-Server gespeichert wird, „Incoming“. Fügen Sie mit den folgenden Schritten dem Server einen neuen leeren Datenträger hinzu:
 
-1. In the navigation on the left, under **FAVORITES**, select **Virtual machines**.
+1. Wählen Sie im Navigationsbereich auf der linken Seite unter **FAVORITEN** die Option **Virtuelle Computer** aus.
 
-1. In the list of VMs, select **MailSenderVM**.
+1. Wählen Sie in der Liste der VMs **MailSenderVM** aus.
 
-1. Under **SETTINGS** of the **MailSenderVM** configuration menu on the left, select **Disks**.
+1. Wählen Sie auf der linken Seite im Konfigurationsmenü von **MailSenderVM** unter **EINSTELLUNGEN** die Option **Datenträger** aus.
 
-1. Under **Data disks**, select **Add data disk**.
+1. Wählen Sie unter **Datenträger** die Option **Datenträger hinzufügen** aus.
 
-1. In the **Attach unmanaged disks** pane, set the following properties.
+1. Legen Sie im Bereich **Nicht verwaltete Datenträger anfügen** die folgenden Eigenschaften fest.
 
 
-|Property  |Value  |Notes  |
+|Eigenschaft  |Wert  |Hinweise  |
 |---------|---------|---------|
 |Name     |   **MailSenderVMIncoming**      |         |
-|Source type     |  **New (empty disk)**       |   Select this value from the dropdown.       |
-|Account type     |  **Standard HDD**       |  Select this value from the dropdown.        |
+|Quelltyp     |  **Neu (leerer Datenträger)**       |   Wählen Sie diesen Wert aus der Dropdownliste aus.       |
+|Kontotyp     |  **HDD Standard**       |  Wählen Sie diesen Wert aus der Dropdownliste aus.        |
 
 
-6. To the left of the **Storage container** field, select **Browse**.
+6. Wählen Sie links neben dem Feld **Speichercontainer** die Option **Durchsuchen** aus.
 
-1. In the list of storage accounts, search for the storage account whose name begins with **mailinfrastructure** and select it.
+1. Suchen Sie in der Liste der Speicherkonten nach dem Speicherkonto, dessen Name mit **mailinfrastructure** beginnt, und wählen Sie es aus.
 
-1. In the list of containers, click **vhds** and then choose **Select**.
+1. Klicken Sie in der Liste der Container auf **VHDs**, und wählen Sie dann **Auswählen** aus.
 
-1. Back on the **Attach unmanaged disk** screen, select **OK**.
+1. Wählen Sie auf dem Bildschirm **Nicht verwalteten Datenträger anfügen** die Option **OK** aus.
 
-1. Back on the **MailSenderVM - Disks** screen, select **Save**.
+1. Wählen Sie auf dem Bildschirm **MailSenderVM – Datenträger** die Option **Speichern** aus.
 
-We've now defined a disk called **MainSenderVMIncoming**. To use the disk, we'll first need to partition and format it when we log into the VM. 
+Wir haben jetzt einen Datenträger namens **MainSenderVMIncoming** definiert. Um den Datenträger zu verwenden, müssen wir ihn zunächst partitionieren und formatieren, wenn wir uns bei der VM anmelden. 
 
-## Partition and format a data disk
+## <a name="partition-and-format-a-data-disk"></a>Partitionieren und Formatieren eines Datenträgers
 
-As with physical disks, initiate and format a partition on a VHD before it can be used.
+Wie bei physischen Datenträgern müssen Sie auf einer VHD eine Partition initialisieren und formatieren, bevor sie verwendet werden kann.
 
-### Log into our Windows VM using RDP
+### <a name="log-into-our-windows-vm-using-rdp"></a>Anmelden bei der Windows-VM über RDP
 
-1. In the **MailSenderVM** virtual machine main screen, select **Overview**.
+1. Wählen Sie auf dem Hauptbildschirm des virtuellen Computers **MailSenderVM** die Option **Übersicht** aus.
 
-1. Select **Connect** from the top left of the overview screen.
+1. Wählen Sie auf dem Übersichtsbildschirm oben links **Verbinden** aus.
 
-1. In the **Connect to virtual machine** dialog that opens on the right, select **Download to RDP File**.
+1. Wählen Sie im Dialogfeld **Herstellen einer Verbindung mit dem virtuellen Computer** auf der rechten Seite **RDP-Datei herunterladen** aus.
 
-   ![Screenshot of the "Connect to virtual machine" dialog with the "Download RDP file" button highlighted.](../media-draft/download-rdp.png)
+   ![Screenshot des Dialogfelds „Herstellen einer Verbindung mit dem virtuellen Computer“ mit hervorgehobener Schaltfläche „RDP-Datei herunterladen“.](../media-draft/download-rdp.png)
 
-4. A file called **MailSenderVM.rdp** is downloaded to your local `Downloads` folder. This file is the remote desktop configuration file for the MailSenderVM virtual machine. Open the file to start the connection process.
+4. Eine Datei namens **MailSenderVM.rdp** wird in Ihren lokalen Ordner `Downloads` heruntergeladen. Diese Datei ist die Datei mit der Remotedesktopkonfiguration für den virtuellen Computer „MailSenderVM“. Öffnen Sie die Datei, um die Verbindung herzustellen.
 
-1. In the **Remote Desktop Connection** dialog, click **Connect**.
+1. Klicken Sie im Dialogfeld **Remotedesktopverbindung** auf **Verbinden**.
 
-1. In the **Windows Security** dialog, click **Use another account**.
+1. Klicken Sie im Dialogfeld **Windows-Sicherheit** auf **Anderes Konto verwenden**.
 
-1. In the **Username** textbox, type **mailmaster**.
+1. Geben Sie im Textfeld **Benutzername** den Text **mailmaster** ein.
 
-1. In the **Password** textbox, type the password you entered for this user name in this exercise. 
+1. Geben Sie im Textfeld **Kennwort** das Kennwort ein, das Sie in dieser Übung für diesen Benutzernamen eingegeben haben. 
 
-1. In the **Remote Desktop Connection** dialog, click **Yes**.
+1. Klicken Sie im Dialogfeld **Remotedesktopverbindung** auf **Ja**.
 
-A remote desktop session to the virtual machine is now started. It might take a few moments to sign in for the first time. When sign-in is finished, the **Server Manager** tool will be displayed on the screen.
+Eine Remotedesktopsitzung mit dem virtuellen Computer wird gestartet. Die erste Anmeldung kann einige Minuten dauern. Wenn die Anmeldung abgeschlossen ist, wird das Tool **Server-Manager** auf dem Bildschirm angezeigt.
 
-### Partition and format our data disk using Server Manager
+### <a name="partition-and-format-our-data-disk-using-server-manager"></a>Partitionieren und Formatieren des Datenträgers mit dem Server-Manager
 
-1. When **Server Manager** is displayed, select **File and Storage Services** in the navigation on the left.
+1. Wenn **Server-Manager** angezeigt wird, wählen im Navigationsbereich auf der linken Seite **Datei- und Speicherdienste** aus.
 
-1. Under **Volumes**, select **Disks**.
+1. Wählen Sie unter **Volumes** die Option **Datenträger** aus.
 
-1. In the list of disks, disk **0** is the operating system disk and disk **1** is the temporary disk. Select disk **2**, which is the new VHD you just added.
+1. In der Liste der Datenträger ist der Datenträger **0** der Betriebssystemdatenträger, und der Datenträger **1** ist der temporäre Datenträger. Wählen Sie den Datenträger **2** aus. Dies ist die VHD, die Sie gerade hinzugefügt haben.
 
-1. At the top of the **VOLUMES** pane, select **TASKS** followed by **New Volume...**. The menu is in the top right of the screen as follows.
+1. Wählen Sie oben im Bereich **VOLUMES** die Option **AUFGABEN** und dann **Neues Volume** aus. Das Menü befindet sich oben rechts auf dem Bildschirm.
 
-   ![Screenshot of "TASKS" menu expanded to reveal three menu items. They are "New Volume...", "Rescan Storage", and "Refresh".](../media-draft/tasks-menu.png)
+   ![Screenshot des erweiterten Menüs „AUFGABEN“ mit drei Menüelementen. Es sind: „Neues Volume“, „Speicher neu einlesen“ und „Aktualisieren“.](../media-draft/tasks-menu.png)
 
 
-1. In the **New Volume** wizard, click **Next**.
+1. Klicken Sie im Assistenten **Neues Volume** auf **Weiter**.
 
-1. In the **Select server and disk** page, select **MailSenderVM** and **Disk 2**, and then click **Next**.
+1. Wählen Sie auf der Seite **Server und Datenträger auswählen** die Einträge **MailSenderVM** und **Datenträger 2** aus, und klicken Sie dann auf **Weiter**.
 
-1. In the **Offline or Uninitiated Disk** dialog, click **OK**.
+1. Klicken Sie im Dialogfeld **Datenträger offline oder nicht initialisiert** auf **OK**.
 
-1. In the **Specify the size of the volume** page, click **Next**.
+1. Klicken Sie auf der Seite **Geben Sie die Größe des Volumes an** auf **Weiter**.
 
-1. In the **Assign a drive letter** page, select **F:** followed by **Next**.
+1. Wählen Sie auf der Seite **Einen Laufwerkbuchstaben zuweisen** den Buchstaben **F:** und dann **Weiter** aus.
 
-1. In the **Select file system settings** page, in the **Volume label** textbox, type **Incoming** and then select **Next**.
+1. Geben Sie auf der Seite **Dateisystemeinstellungen auswählen** im Textfeld **Volumebezeichnung** den Namen **Incoming** ein, und wählen Sie dann **Weiter** aus.
 
-1. In the **Confirm selections** page, select **Create**. Windows initiates the disk and formats the new partition.
+1. Wählen Sie auf der Seite **Auswahl bestätigen** die Option **Erstellen** aus. Windows initialisiert den Datenträger und formatiert die neue Partition.
 
-1. In the **Completion** page, select **Close**.
+1. Wählen Sie auf der Seite **Abschluss** die Option **Schließen** aus.
 
-Let's have a look at our new disk volume in File Explorer. 
-1. Open **File Explorer**.
+Sehen wir uns das neue Datenträgervolume im Datei-Explorer an. 
+1. Öffnen Sie den **Datei-Explorer**.
 
-1. In the navigation in the left, click **This PC** and then double-click **Incoming (F:)**.
+1. Klicken Sie im Navigationsbereich auf der linken Seite auf **Dieser PC**, und doppelklicken Sie dann auf **Incoming (F:)**.
 
-1. Select **Home**, and then **New Folder**.
+1. Wählen Sie **Start** und dann **Neuer Ordner** aus.
 
-1. Type **Drop** and then press Enter.
+1. Geben Sie **Drop** ein, und drücken Sie dann die EINGABETASTE.
 
-We now have a new volume created on our VHD called **Incoming**, and we've created a folder called **Drop** on that volume.  
+Wir haben jetzt auf der VHD ein neues Volume namens **Incoming** und auf dem Volume einen Ordner namens **Drop** erstellt.  
 
-1. Close Windows Explorer.
+1. Schließen Sie Windows-Explorer.
 
-1. On the **Task Bar**, click the **Start** button, click the **Power** button, and then click **Disconnect**.
+1. Klicken Sie auf der **Taskleiste** auf die Schaltfläche **Start**, klicken Sie auf die Schaltfläche **Ein/Aus**, und klicken Sie dann auf **Trennen**.
 
-Congratulations! You've successfully created a Windows VM, attached a new VHD, created a volume on that VHD and added a folder to that volume. If you recall, the disk type we used for the new VHD was a **Standard HDD**. In the next unit, we'll learn the differences between standard and premium storage. 
+Herzlichen Glückwunsch! Sie haben erfolgreich eine Windows-VM erstellt, eine neue VHD angefügt, auf der VHD ein Volume erstellt und dem Volume einen Ordner hinzugefügt. Der Datenträgertyp, den wir für die neue VHD verwendet haben, war **HDD Standard**. In der nächsten Einheit lernen Sie die Unterschiede zwischen Standardspeicher und Storage Premium kennen. 

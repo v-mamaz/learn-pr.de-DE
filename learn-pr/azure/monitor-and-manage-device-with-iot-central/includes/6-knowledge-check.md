@@ -1,16 +1,16 @@
-You’ve successfully completed the end-to-end scenario of connecting a remote coffee machine to Azure IoT Central to monitor and manage the machine as maintenance issues arise.
+Sie haben das End-to-End-Szenario zum Herstellen einer Verbindung einer Remotekaffeemaschine mit Azure IoT Central zum Überwachen und Verwalten der Maschine bei auftretenden Wartungsproblemen erfolgreich durchlaufen.
 
-## Next steps
+## <a name="next-steps"></a>Nächste Schritte
 
-In this tutorial, you learned how to:
+In diesem Tutorial haben Sie Folgendes gelernt:
 > [!div class="checklist"]
-> * Create an Azure IoT Central custom application
-> * Create and define your device template
-> * Connect your coffee machine to the application
-> * Validate your connection and data flow
-> * Configure rules for maintenance notifications
+> * Erstellen einer benutzerdefinierten Azure IoT Central-Anwendung
+> * Erstellen und Definieren Ihrer Gerätevorlage
+> * Verbinden Ihrer Kaffeemaschine mit der Anwendung
+> * Überprüfen der Verbindung und des Datenflusses
+> * Konfigurieren von Regeln für Wartungsbenachrichtigungen
 
-To learn more about Azure IoT Central: 
+Hier finden Sie weitere Informationen zu Azure IoT Central: 
 
 > [!div class="nextstepaction"]
-> [Azure IoT Central Documentation](https://docs.microsoft.com/en-us/azure/iot-central/)
+> [Azure IoT Central-Dokumentation](https://docs.microsoft.com/en-us/azure/iot-central/)

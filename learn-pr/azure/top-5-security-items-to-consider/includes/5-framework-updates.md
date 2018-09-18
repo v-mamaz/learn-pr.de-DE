@@ -1,55 +1,55 @@
-Many developers consider the frameworks and libraries they use to build their software with to be primarily decided by features or personal preference. However, the framework that you choose is an important decision, not only from a design and functionality perspective but also from a _security_ perspective. Choosing a framework with modern security features and keeping it up to date is one of the best ways to ensure your apps are secure.
+Viele Entwickler entscheiden sich in erster Linie aufgrund von Features oder persönlichen Vorlieben für die Frameworks und Bibliotheken, die sie verwenden, um ihre Software zu erstellen. Das gewählte Framework ist jedoch eine wichtige Entscheidung, nicht nur im Hinblick auf Design und Funktionalität, sondern auch aus einer _Sicherheitsperspektive_. Eine der besten Möglichkeiten, die Sicherheit von Apps zu gewährleisten, ist, ein Framework mit modernen Sicherheitsfeatures auszuwählen und auf dem neuesten Stand zu halten.
 
-## Choose your framework carefully
+## <a name="choose-your-framework-carefully"></a>Sorgfältiges Auswählen des Frameworks
 
-The most important factor regarding security when choosing a framework is how well supported it is. The best frameworks have stated security arrangements and are supported by large communities who improve and test the framework. No software is 100% bug-free or totally secure, but when a vulnerability is identified, we want to be certain that it will be closed or have a workaround provided quickly.
+Bei der Auswahl eines Frameworks ist der wichtigste Faktor in Bezug auf Sicherheit, wie gut es unterstützt wird. Die besten Frameworks haben Sicherheitsvorkehrungen festgelegt und werden von großen Communitys unterstützt, die das Framework verbessern und testen. Keine Software ist vollkommen fehlerfrei oder sicher, aber wenn ein Sicherheitsrisiko identifiziert wurde, möchten wir darauf vertrauen können, dass es schnell behoben wird oder eine Problemumgehung bereitgestellt wird.
 
-Often "well supported" is synonymous with "modern". Older frameworks tend to either be replaced or eventually fade in popularity. Even if you have significant experience with or or many apps written in an older framework, you'll be better off choosing a modern library that has the features you need. Modern frameworks tend to build on the lessons learned by earlier iterations which makes choosing them for new apps a form of threat surface reduction. You will have one less app to worry about if a vulnerability is discovered in the older framework that your legacy applications are written in.
+Häufig ist „gut unterstützt“ ein Synonym für „modern“. Ältere Frameworks werden entweder nach und nach ersetzt oder büßen an Beliebtheit ein. Auch wenn Sie über umfassende Erfahrung mit einem älteren Framework oder über viele Apps verfügen, die darin geschrieben wurden, profitieren Sie von einer modernen Bibliothek, die alle benötigten Features bietet. Moderne Frameworks nutzen die aus früheren Iterationen gewonnenen Erkenntnisse. Wenn sie für neue Apps ausgewählt werden, kann damit die Angriffsfläche verringert werden. Sie müssen sich um eine App weniger sorgen, wenn ein Sicherheitsrisiko im älteren Framework ermittelt wird, in dem Ihre älteren Anwendungen geschrieben wurden.
 
 <!-- TODO: add link; Should we be pointing to other modules? -->
 <!--
 For more information on secure design and reducing threat surface, please see [Design For Security in Azure](../../design-for-security-in-azure/index.yml).
 -->
 
-## Keep your framework updated
+## <a name="keep-your-framework-updated"></a>Aktualisieren Ihres Frameworks
 
-Software development frameworks, such as Java Spring and .NET Core release updates and new versions regularly. These updates include new features, removal of old features, and often security fixes or improvements. When we allow our frameworks to become out of date, it creates "technical debt". The further out of date we get, the harder and riskier it will be to bring our code up to the latest version. In addition, much like the initial framework choice, staying on older versions of the framework open you up to more security threats which have been fixed in newer releases of the framework.
+Für Frameworks für die Softwareentwicklung wie Java Spring und .NET Core werden regelmäßig Updates und neue Versionen veröffentlicht. Diese Updates enthalten neue Features, entfernen alte Features und bieten oft Sicherheitsfixes oder Verbesserungen. Wenn wir unsere Frameworks nicht auf dem aktuellen Stand halten, entstehen „technische Schulden“. Je älter die Frameworks werden, desto schwieriger und riskanter wird es, unseren Code auf die neueste Version zu aktualisieren. Ähnlich wie durch die ursprüngliche Entscheidung für ein Framework entstehen durch die Nutzung älterer Versionen des Frameworks weitere Sicherheitsrisiken, die in neueren Versionen des Frameworks behoben wurden.
 
-As an example, from 2016-2017, [over 30 vulnerabilities](https://www.cvedetails.com/product/6117/Apache-Struts.html?vendor_id=45) were found in the Apache Struts framework. These were quickly addressed by the development team, but some companies didn't apply the patches and [paid the price in the form of a data breach](https://www.zdnet.com/article/equifax-confirms-apache-struts-flaw-it-failed-to-patch-was-to-blame-for-data-breach/). **Make sure to keep your frameworks and libraries up to date**.
+Beispielsweise wurden von 2016 bis 2017 [mehr als 30 Sicherheitsrisiken](https://www.cvedetails.com/product/6117/Apache-Struts.html?vendor_id=45) im Apache Struts-Framework gefunden. Diese wurden umgehend vom Entwicklungsteam behandelt. Einige Unternehmen haben die Patches jedoch nicht angewendet und [haben den Preis in Form einer Datenpanne bezahlt](https://www.zdnet.com/article/equifax-confirms-apache-struts-flaw-it-failed-to-patch-was-to-blame-for-data-breach/). **Achten Sie darauf, dass Ihre Frameworks und Bibliotheken auf dem neuesten Stand bleiben**.
 
-### How do I update my framework?
+### <a name="how-do-i-update-my-framework"></a>Wie kann ich mein Framework aktualisieren?
 
-Some frameworks, like Java or .NET, require an install and tend to release on a known cadence. It's a good idea to watch for new releases and plan to make a branch of your code to try it out when it's released. As an example, .NET Core maintains a [release notes page](https://github.com/dotnet/core/tree/master/release-notes) which you can check to find the latest versions available.
+Einige Frameworks, z.B. Java oder .NET, erfordern eine Installation und veröffentlichen in der Regel nach einem bekannten Zeitplan. Es ist eine gute Idee, auf neue Versionen zu achten und einen Branch des Codes zu erstellen, um sie auszuprobieren, sobald sie freigegeben wurden. Beispielsweise gibt es für .NET Core eine [Seite für Anmerkungen zu Versionen](https://github.com/dotnet/core/tree/master/release-notes), die Sie auf die neuesten verfügbaren Versionen überprüfen können.
 
-More specialized libraries such as JavaScript frameworks, or .NET components can be updated through a package manager. **NPM** and **Bower** are popular choices for web projects and are supported by most IDEs or build tools. In .NET, we use **NuGet** to manage our component dependencies. Much like updating the core framework, branching your code, updating the components and testing is a good technique to validate a new version of a dependency.
+Spezialisiertere Bibliotheken wie JavaScript-Frameworks oder .NET-Komponenten können über einen Paket-Manager aktualisiert werden. **NPM** und **Bower** sind häufig verwendete Optionen für Webprojekte und werden von den meisten IDEs oder Buildtools unterstützt. In .NET verwenden wir **NuGet**, um Komponentenabhängigkeiten zu verwalten. Wie das Aktualisieren des Kernframeworks sind das Branchen Ihres Codes, das Aktualisieren der Komponenten und das Testen ein gutes Verfahren, um eine neue Version einer Abhängigkeit zu überprüfen.
 
 > [!NOTE]
-> The `dotnet` command-line tool has an `add package` and `remove package` option to add or remove NuGet packages but doesn't have a corresponding `update package` command. However, it turns out you can run `dotnet add package <package-name>` in your project and it will automatically _upgrade_ the package to the latest version. This is an easy way to update dependencies without having to open the IDE.
+> Das `dotnet`-Befehlszeilentool verfügt über die Optionen `add package` und `remove package` zum Hinzufügen oder Entfernen von NuGet-Paketen, jedoch nicht über einen entsprechenden `update package`-Befehl. Allerdings können Sie `dotnet add package <package-name>` in Ihrem Projekt ausführen, und das Paket wird automatisch auf die neueste Version _aktualisiert_. Dies ist eine einfache Möglichkeit, Abhängigkeiten zu aktualisieren, ohne die IDE zu öffnen.
 
-## Take advantage of built-in security
+## <a name="take-advantage-of-built-in-security"></a>Nutzen der integrierten Sicherheit
 
-Always check to see what security features your frameworks offer. **Never** roll your own security if there's a standard technique or capability built in. In addition, rely on proven algorithms and workflows because these have often been scrutinized by a lot of experts, critiqued and strengthened so you can be assured that they are reliable and secure.
+Überprüfen Sie immer, welche Sicherheitsfeatures Ihre Frameworks bieten. Setzen Sie **nie** eigene Sicherheitsfunktionen ein, wenn es ein Standardverfahren oder eine integrierte Funktion gibt. Vertrauen Sie zudem auf bewährte Algorithmen und Workflows, da diese häufig von vielen Experten geprüft und verbessert wurden. Dadurch können Sie darauf bauen, dass sie zuverlässig und sicher sind.
 
-The .NET Core framework has countless security features, here are a few core starting places in the documentation.
-* [Authentication -Identity Management](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/index?view=aspnetcore-2.1)
-* [Authorization](https://docs.microsoft.com/en-us/aspnet/core/security/authorization/index?view=aspnetcore-2.1)
-* [Data Protection](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/index?view=aspnetcore-2.1)
-* [Secure Configuration](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/configuration/index?view=aspnetcore-2.1)
-* [Security Extensibility APIs](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/extensibility/index?view=aspnetcore-2.1)
+Das .NET Core-Framework verfügt über zahlreiche Sicherheitsfeatures, über die Sie sich beispielsweise in folgenden Abschnitten der Dokumentation informieren können.
+* [Authentifizierung und Identitätsverwaltung](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/index?view=aspnetcore-2.1)
+* [Autorisierung](https://docs.microsoft.com/en-us/aspnet/core/security/authorization/index?view=aspnetcore-2.1)
+* [Schutz von Daten](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/index?view=aspnetcore-2.1)
+* [Sichere Konfiguration](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/configuration/index?view=aspnetcore-2.1)
+* [Erweiterbarkeits-APIs für Sicherheit](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/extensibility/index?view=aspnetcore-2.1)
 
-Each one of these features was written by experts in their field, and then battered with tests to ensure that it works as intended, and only as intended. Other frameworks offer similar features - check with the vendor that provides the framework to find out what they have in each category.
+Jedes dieser Features wurde von Experten auf dem jeweiligen Gebiet geschrieben und dann umfassend getestet, um sicherzustellen, dass es ausschließlich wie beabsichtigt funktioniert. Andere Frameworks bieten ähnliche Features. Informieren Sie sich beim Anbieter des Frameworks über die verfügbaren Funktionen in jeder Kategorie.
 
 > [!WARNING]
-> Writing your own security code, instead of using those provided by your framework, is not only wasting time, it's less secure.
+> Wenn Sie Ihren eigenen Sicherheitscode schreiben, statt den von Ihrem Framework bereitgestellten zu verwenden, verschwenden Sie Zeit und erreichen weniger Sicherheit.
 
 
-## Azure Security Center
+## <a name="azure-security-center"></a>Azure Security Center
 
-When using Azure to host your web applications Security Center will warn you if your frameworks are out of date as part of the recommendations tab.  Don't forget to look there from time to time to see if there are any warnings related to your apps.
+Wenn Sie Azure zum Hosten Ihrer Webanwendungen verwenden, werden Sie von Security Center auf der Registerkarte mit Empfehlungen gewarnt, wenn Ihre Frameworks veraltet sind.  Vergessen Sie nicht, diese Registerkarte von Zeit zu Zeit zu prüfen, um festzustellen, ob es Warnungen im Zusammenhang mit Ihren Apps gibt.
 
-![Azure Security Center recommending a framework upgrade.](../media-draft/ASCFramework.png)
+![Azure Security Center empfiehlt ein Frameworkupgrade.](../media-draft/ASCFramework.png)
 
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-Whenever possible, choose a modern framework to build your apps, always use the built-in security features, and make sure you keep it up to date. These simple rules will help to ensure your application starts on a solid foundation.
+Wählen Sie nach Möglichkeit ein modernes Framework zum Erstellen von Apps aus, verwenden Sie immer die integrierten Sicherheitsfeatures, und halten Sie es auf dem neuesten Stand. Mit diesen einfachen Regeln können Sie sicherstellen, dass Ihre Anwendung auf einer soliden Grundlage gestartet wird.

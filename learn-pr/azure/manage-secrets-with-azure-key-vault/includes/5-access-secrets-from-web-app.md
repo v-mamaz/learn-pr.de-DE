@@ -1,4 +1,4 @@
-Sie haben erfahren, wie MSI eine Identität für Ihre Anwendung zur Authentifizierung erstellt. Erstellen Sie nun eine App, die diese Identität verwendet, um auf Geheimnisse im Tresor zuzugreifen.
+Sie haben erfahren, wie verwaltete Identitäten für Azure-Ressourcen eine Identität für Ihre Anwendung zur Authentifizierung erstellen. Erstellen Sie nun eine App, die diese Identität verwendet, um auf Geheimnisse im Tresor zuzugreifen.
 
 ## <a name="reading-secrets-in-an-aspnet-core-app"></a>Lesen von Geheimnissen in einer ASP.NET Core-App
 
@@ -9,7 +9,7 @@ Die offizielle Key Vault-Clientbibliothek für .NET Core ist die `KeyVaultClient
 > [!TIP]
 > Unabhängig davon, mit welchem Framework und welcher Sprache Sie Ihre App erstellen, sollten Sie die Werte von Geheimnissen speichern oder diese beim App-Start in den Speicher laden – es sei denn, ein bestimmter Grund spricht dagegen. Es ist unnötig langsam und teuer, Geheimnisse bei Bedarf direkt aus dem Tresor zu lesen.
 
-`AddAzureKeyVault` benötigt nur den Tresornamen als Eingabe, den Sie aus Ihrer lokalen App-Konfiguration abrufen können. Außerdem erfolgt die Verarbeitung der MSI-Authentifizierung automatisch &mdash; beim Einsatz in einer App, die für Azure App Service mit aktiviertem MSI bereitgestellt ist, wird der MSI-Tokendienst erkannt und zur Authentifizierung verwendet. Dieser Ablauf eignet sich für die meisten Szenarien und umfasst alle Best Practices, deswegen gehen wir genauso in dieser Übung vor.
+`AddAzureKeyVault` benötigt nur den Tresornamen als Eingabe, den Sie aus Ihrer lokalen App-Konfiguration abrufen können. Außerdem erfolgt die Verarbeitung der Authentifizierung verwalteter Identitäten automatisch. Beim Einsatz in einer App, die für Azure App Service mit aktivierten verwalteten Identitäten bereitgestellt ist, wird der Tokendienst für verwaltete Identitäten erkannt und zur Authentifizierung verwendet. Dieser Ablauf eignet sich für die meisten Szenarien und umfasst alle bewährten Methode. Deswegen gehen wir genauso in dieser Übung vor.
 
 ## <a name="handling-secrets-in-an-app"></a>Verarbeiten von Geheimnissen in einer App
 
@@ -71,9 +71,10 @@ namespace KeyVaultDemoApp
                     var vaultUrl = $"https://{builtConfig["VaultName"]}.vault.azure.net/";
 
                     // Load all secrets from the vault into configuration. This will automatically
-                    // authenticate to the vault using MSI. If MSI is not available, it will
-                    // check if Visual Studio and/or the Azure CLI are installed locally and
-                    // see if they are configured with credentials that can access the vault.
+                    // authenticate to the vault using a managed identity. If a managed identity
+                    // is not available, it will check if Visual Studio and/or the Azure CLI are
+                    // installed locally and see if they are configured with credentials that can
+                    // access the vault.
                     config.AddAzureKeyVault(vaultUrl);
                 })
                 .UseStartup<Startup>();

@@ -1,10 +1,11 @@
 In diesem Modul haben Sie gelernt, wie Sie einen virtuellen Windows-Computer unter Verwendung des Azure-Portals erstellen. Anschließend haben Sie eine Verbindung mit der öffentlichen IP-Adresse dieses virtuellen Computers hergestellt und ihn über RDP verwaltet. Sie haben erfahren, wie RDP in Azure eine ähnliche Oberfläche bereitstellt wie bei der interaktiven Anmeldung bei einem physischen Computer.
 
-Sie haben gelernt, dass RDP eine Interaktion mit dem Betriebssystem und der Software des virtuellen Computers ermöglicht, während das Portal eine Konfiguration der virtuellen Hardware und der Konnektivität erlaubt. Wenn eine Befehlszeile oder eine skriptfähige Umgebung bevorzugt gewesen wäre, hätten wir auch PowerShell oder die Azure CLI verwenden können.
+Sie haben gelernt, dass RDP eine Interaktion mit dem Betriebssystem und der Software des virtuellen Computers ermöglicht, während das Portal eine Konfiguration der virtuellen Hardware und der Konnektivität ermöglicht. Wenn Sie eine Befehlszeile oder eine skriptfähige Umgebung bevorzugt hätten, hätten wir auch PowerShell oder die Azure CLI verwenden können.
 
-## <a name="clean-up-the-resources"></a>Bereinigen der Ressourcen
+## <a name="clean-up"></a>Bereinigen
+<!---TODO: Update for sandbox?--->
 
-Sie bezahlen für virtuelle Computer, während diese ausgeführt werden und für den verwendeten Speicherplatz. Wenn Sie virtuelle Computer nicht verwenden, sollten sie diese immer beenden und deren Zuordnung aufheben. Außerdem empfiehlt es sich, nicht mehr benötigte Ressourcen zu löschen. Um alle von Ihnen erstellte Ressourcen zu entfernen, können Sie diese entweder nacheinander löschen, oder löschen Sie einfach die gesamte Ressourcengruppe.
+Sie bezahlen für virtuelle Computer, während diese ausgeführt werden, und für den verwendeten Speicherplatz. Wenn Sie virtuelle Computer nicht verwenden, sollten sie diese immer beenden und deren Zuordnung aufheben. Außerdem empfiehlt es sich, nicht mehr benötigte Ressourcen zu löschen. Um alle von Ihnen erstellte Ressourcen zu entfernen, können Sie diese entweder nacheinander löschen oder einfach die gesamte Ressourcengruppe löschen.
 
 1. Melden Sie sich beim Azure-Portal an.
 

@@ -1,17 +1,17 @@
-Suppose you work as a network manager at a global pharmaceutical company that sequences genes to create formulas for proprietary and commercially confidential medicines. These formulas are used by your manufacturing plants around the world. The company wants to implement Microsoft Azure and transfer part of its gene sequencing functions into cloud-based virtual machines. The gene sequencing results need to be available to several regions around the world. Data processing is currently carried out in on-premises datacenters, with virtual private networking (VPN) used to connect the datacenters in each region.
+Angenommen, Sie arbeiten als Netzwerk-Manager in einem globalen pharmazeutischen Unternehmen, das mittels Gensequenzierung Formeln für proprietäre und vertrauliche Medikamente entwickelt. Diese Formeln werden von Ihren Produktionsanlagen auf der ganzen Welt verwendet. Um agiler zu werden, möchte das Unternehmen Microsoft Azure implementieren und einen Teil der Gensequenzierung auf virtuelle Computer in der Cloud auslagern. Die Ergebnisse der Datenverarbeitung müssen in mehreren Regionen auf der ganzen Welt verfügbar sein. Aktuell findet diese Verarbeitung in lokalen Rechenzentren statt, und mit den Rechenzentren in den einzelnen Regionen besteht eine VPN-Verbindung (virtuelles privates Netzwerk).
 
-You've been tasked to assess how Microsoft Azure implements networking and to identify whether it will provide suitable security for the transfer of data. Secure data transfer is required between your on-premises datacenter and Microsoft Azure, and between Microsoft Azure regions. You'll use Azure Virtual Network, Azure VPN Gateway, and Azure ExpressRoute technologies.
+Sie wurden damit beauftragt zu ermitteln, wie Netzwerkfunktionen von Microsoft Azure implementiert werden und ob die Sicherheit für die Übertragung von Daten zwischen Ihrem lokalen Rechenzentrum und Microsoft Azure sowie zwischen Microsoft Azure-Regionen für Ihre Zwecke angemessen ist. Sie verwenden Azure Virtual Network, Azure VPN Gateway und Azure ExpressRoute.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-By the end of this module, you will be able to:
+In diesem Modul lernen Sie Folgendes:
 
-- Describe Azure Virtual Network
-- Describe Azure VPN Gateway
-- Describe Azure ExpressRoute
+- Beschreiben von Azure Virtual Network
+- Beschreiben von Azure VPN Gateway
+- Beschreiben von Azure ExpressRoute
 
-## Prerequisites
+## <a name="prerequisites"></a>Voraussetzungen
 
-- Experience of creating Azure virtual machines
-- Thorough understanding of on-premises networking
+- Erfahrung mit der Erstellung virtueller Azure-Computer
+- Umfassende Kenntnisse über lokale Netzwerke
 - Azure PowerShell

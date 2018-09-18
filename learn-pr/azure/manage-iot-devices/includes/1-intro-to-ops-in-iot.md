@@ -1,31 +1,12 @@
 <!--Video script: It began with Personal Digital Assistants, then smartphones and now everything from smart watches to smart thermostats are connecting people with more information than ever before. Once limited to just PCs, the Internet now allows anything that has valuable information to go online. How does this trend have the potential to impact all aspects of IT professional’s role? More importantly, how can IT professionals prepare for the Internet of Things?-->
 
-Improving your hard skills is just one of the steps necessary for success in
-this changing technological landscape. Gone are the days of getting years
-between new product releases as the Internet of Things allows for sweeping
-changes across industries. IT professionals will be required to possibly prepare
-quarterly, if not more frequent, updates to all company assets connected to
-their network.
+Ihre Kenntnisse zu vertiefen ist nur einer der erforderlichen Schritte, um in dieser sich wandelnden technologischen Landschaft Erfolg zu haben. Vorbei sind die Zeiten, in denen Jahre zwischen neuen Produktreleases vergingen. Denn das Internet der Dinge (Internet of Things, IoT) ermöglicht in den verschiedensten Branchen weitreichende Veränderungen. IT-Experten müssen nun in der Lage sein, für alle Unternehmensressourcen, die mit dem Netzwerk verbunden sind, möglicherweise vierteljährlich, wenn nicht gar häufiger Updates vorzubereiten.
 
-The amount of data that the Internet of Things can capture will create a unique
-opportunity for IT Operations. Businesses will be looking to IT Ops to help them
-understand what data to collect and help them unleash the full potential of that
-data. As an example, IoT can be harnessed to capture and run predictive
-analytics on data from heart monitors alerting users when they’re at risk of a
-heart episode. These same heart monitors could possibly collect information
-enabling doctors to make more informed treatment plans for their patients.
+Die Menge der Daten, die das Internet der Dinge erfassen kann, schafft eine einzigartige Chance für IT-Betriebe. Unternehmen werden sich dann an IT-Betriebe wenden, damit sie ihnen bei der Entscheidung helfen, welche Daten erfasst werden sollen, und ihnen helfen, das volle Potenzial dieser Daten auszuschöpfen. So kann das IoT beispielsweise genutzt werden, um Daten von Herzmonitoren zu erfassen und Predictive Analytics für diese auszuführen, die Anwender warnen, wenn Herzprobleme drohen. Diese Herzmonitore könnten zudem Informationen sammeln, mit deren Hilfe Ärzte ihren Patienten fundiertere Behandlungspläne vorstellen können.
 
-The greatest IoT opportunity for IT Operations is data security. Taking the time
-to update your network security knowledge and skills could enable your
-organization to understand the IT Operations role in addressing potential
-security breaches. Security positions are already in high demand and the need
-for experienced data security professionals will increase more companies deploy
-Internet of Things solutions.
+Die ideale Einsatzmöglichkeit von IoT für IT-Betriebe ist die Datensicherheit. Je mehr Zeit Ihre Organisation aufwendet, Kenntnisse und Fähigkeiten im Bereich der Netzwerksicherheit zu erweitern, desto besser kann sie die Rolle der IT-Betriebe bei der Bewältigung potenzieller Sicherheitslücken definieren. Auf dem Stellenmarkt besteht bereits eine hohe Nachfrage im Bereich Sicherheit und der Bedarf an versierten Datensicherheitsexperten steigt, je mehr Unternehmen IoT-Lösungen bereitstellen.
 
-Internet of Things has created virtually unlimited possibilities across all
-industries, not just a select few. IoT will lead to unprecedented opportunities
-for any IT professional willing to embrace the technology and become an
-authority in it.
+Das Internet der Dinge bietet nicht nur für eine ausgewählte Gruppe, sondern für alle Branchen nahezu unbegrenzte Möglichkeiten. Es bietet noch nie dagewesene Möglichkeiten für IT-Fachleute, die bereit sind, sich in die Technologie einzuarbeiten und sich auf diese zu spezialisieren.
 
 <!--Reference links: 
 

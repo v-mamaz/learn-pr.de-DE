@@ -1,126 +1,126 @@
-Microsoft Azure is a continually expanding set of cloud services that help your organization meet your current and future business challenges. Azure gives you the freedom to build, manage, and deploy applications on a massive global network using your favorite tools and frameworks. Let's take a quick tour of the high-level services Azure offers.
+Microsoft Azure ist ein Portfolio mit Clouddiensten, das kontinuierlich erweitert wird und Ihre Organisation dabei unterstützt, aktuelle und zukünftige geschäftliche Herausforderungen zu bewältigen. Mit Azure können Sie Anwendungen in einem umfassenden globalen Netzwerk mit Ihren bevorzugten Tools und Frameworks erstellen, verwalten und bereitstellen. Verschaffen wir uns nun einen Überblick über die allgemeinen Dienste, die Azure bereitstellt.
 
-## Azure services
+## <a name="azure-services"></a>Azure-Dienste
 
-Azure provides a vast range of cloud-based services, with features added and enhanced every month. 
+Azure bietet eine große Bandbreite cloudbasierter Dienste, denen jeden Monat neue und erweiterte Features hinzugefügt werden. 
 
-![Azure services](../media-draft/2-image204.png)
+![Azure-Dienste](../media-draft/2-image204.png)
 
-Let's take a closer look at a few of the more commonly-used features: 
+Sehen wir uns einige häufig verwendete Features genauer an: 
 
 - [Compute](#compute-services)
-- [Networking ](#networking-services)
+- [Netzwerk](#networking-services)
 - [Storage](#storage-services)
 - [Mobile](#mobil-services)
-- [Databases](#database-services)
+- [Datenbanken](#database-services)
 - [Web](#web-services)
 
 <a name="compute-services"></a>
 
-### Compute
+### <a name="compute"></a>Compute
 
-Compute services are one of the primary reasons why companies move to the Azure platform. Azure provides a range of options for hosting applications and services including:
+Computedienste sind einer der Hauptgründe, aus denen Unternehmen auf die Azure-Plattform umsteigen. Azure bietet eine Vielzahl von Optionen zum Hosten von Anwendungen und Diensten:
 
-![IaaS, PaaS, and FaaS comparison](../media/2-iaas-paas-faas.png)
+![IaaS, PaaS und FaaS im Vergleich](../media/2-iaas-paas-faas.png)
 
-Here are some examples of IaaS, PaaS, and FaaS in Azure.
+Hier sind einige Beispiele für IaaS, PaaS und FaaS in Azure.
 
-|  Type  |  Service name             | Service function                                                         |
+|  Typ  |  Dienstname             | Funktion des Diensts                                                         |
 |--------|---------------------------|--------------------------------------------------------------------------|
-| IaaS   | Azure Virtual Machines    | Windows or Linux VMs hosted in Azure                                     | 
-| IaaS   | Azure Kubernetes Service  | Enables management of a cluster of VMs that run containerized services   |
-| PaaS   | Azure Service Fabric      | Distributed systems platform. Runs in Azure or on-premises               |
-| PaaS   | Azure Batch               | Managed service for parallel and high-performance computing applications |
-| PaaS   | Azure Cloud Services      | Managed service for running cloud applications                           |
-| FaaS   | Azure Container Instances | Provides containers without requiring VM provision or higher services    |
-| FaaS   | Azure Functions           | Managed FaaS service                                                     |
+| IaaS   | Azure Virtual Machines    | In Azure gehostete Windows- oder Linux-VMs                                     | 
+| IaaS   | Azure Kubernetes Service  | Ermöglicht die Verwaltung eines Clusters aus VMs, die Dienste in Containern ausführen   |
+| PaaS   | Azure Service Fabric      | Plattform für verteilte Systeme. Wird in Azure oder lokal ausgeführt.               |
+| PaaS   | Azure Batch               | Verwalteter Dienst für parallele und hochleistungsfähige Computinganwendungen. |
+| PaaS   | Azure Cloud Services      | Verwalteter Dienst zum Ausführen von Cloudanwendungen                           |
+| FaaS   | Azure Container Instances | Stellt Container bereit, ohne VMs oder höherwertige Dienste zu erfordern    |
+| FaaS   | Azure Functions           | Verwalteter FaaS-Dienst                                                     |
 
 <a name="network-services"></a>
 
-### Networking
+### <a name="networking"></a>Netzwerk
 
-Linking compute resources and providing access to applications is the key function of Azure networking. Networking functionality in Azure includes a range of options to connect the outside world to services and features in the global Microsoft Azure datacenters.
+Das Verknüpfen von Computeressourcen und Ermöglichen des Zugriffs auf Anwendungen sind die Hauptfunktionen von Azure-Netzwerken. Die Netzwerkfunktionen in Azure umfassen eine Reihe von Optionen, um die Außenwelt mit Diensten und Features in den globalen Microsoft Azure-Rechenzentren zu verbinden.
 
-Azure networking facilities have the following features:
+Die Azure-Netzwerkfunktionen bieten folgende Features:
 
-|  Service name             | Service function                                                                     |
+|  Dienstname             | Funktion des Diensts                                                                     |
 | -------------             | -------------                                                                        |
-| Azure Virtual Network     | Connects VMs to incoming Virtual Private Network (VPN) connections                   |
-| Azure Load Balancer       | Balances inbound and outbound connections to applications or service endpoints       |
-| Azure Application Gateway | Optimizes app server farm delivery while increasing application security             |
-| Azure VPN Gateway         | Accesses Azure Virtual Networks through high-performance VPN gateways                |
-| Azure DNS                 | Provides ultra-fast DNS responses and ultra-high domain availability                 |
-| Azure Content Delivery Network  | Delivers high-bandwidth content to customers globally                          |
-| Azure DDoS Protection     | Protects Azure-hosted applications from distributed denial of service (DDOS) attacks |
-| Azure Traffic Manager     | Distributes network traffic across Azure regions worldwide                           |
-| Azure ExpressRoute        | Connects to Azure over high-bandwidth dedicated secure connections                   |
-| Azure Network Watcher     | Monitors and diagnoses network issues using scenario-based analysis                  |
-| Azure Firewall            | Implements high-security, high-availability firewall with unlimited scalability      |
-| Azure Virtual WAN         | Creates a unified wide area network (WAN), connecting local and remote sites         |
+| Azure Virtual Network     | Verknüpfen von VMs mit eingehenden VPN-Verbindungen (virtuelles privates Netzwerk)                   |
+| Azure Load Balancer       | Gleichmäßige Verteilung ein- und ausgehender Verbindungen auf Anwendungen oder Dienstendpunkte       |
+| Azure Application Gateway | Optimieren der Bereitstellung von App-Serverfarmen und gleichzeitiges Erhöhen der Anwendungssicherheit             |
+| Azure VPN Gateway         | Zugriff auf Azure Virtual Networks über hochleistungsfähige VPN-Gateways                |
+| Azure DNS                 | Bereitstellen von ultraschnellen DNS-Antworten und ultrahoher Domänenverfügbarkeit                 |
+| Azure Content Delivery Network  | Inhaltsbereitstellung mit hoher Bandbreite für Kunden auf der ganzen Welt                          |
+| Azure DDoS Protection     | Schützen von in Azure gehosteten Anwendungen vor DDoS-Angriffen (Distributed Denial of Service) |
+| Azure Traffic Manager     | Verteilen des Netzwerkdatenverkehrs über Azure-Regionen weltweit                           |
+| Azure ExpressRoute        | Dedizierte sichere Verbindungen mit Azure mit hoher Bandbreite                   |
+| Azure Network Watcher     | Überwachen und Diagnostizieren von Netzwerkproblemen mithilfe von szenariobasierten Analysen                  |
+| Azure Firewall            | Implementieren einer Firewall mit hoher Sicherheit und Verfügbarkeit sowie unbegrenzter Skalierbarkeit      |
+| Azure Virtual WAN         | Erstellen eines einheitlichen WAN, über das lokale und Remotestandorte verbunden werden         |
 
 <a name="storage-services"></a>
 
-### Storage
+### <a name="storage"></a>Speicher
 
-Azure provides four main types of storage services. These services are:
+Azure bietet vier wesentliche Arten von Speicherdiensten. Folgende Dienste stehen zur Verfügung:
 
-- **Azure Blob storage** - provides storage for very large objects, such as video files or bitmaps
-- **Azure File storage** - creates file shares that you can access and manage like a file server
-- **Azure Queue storage** - implements a store for queuing and reliably delivering messages between applications
-- **Azure Table storage** - consists of a NoSQL store that hosts unstructured data independent of any schema
+- **Azure Blob Storage** bietet Speicher für sehr große Objekte wie Videodateien oder Bitmaps.
+- **Azure File Storage** erstellt Dateifreigaben, deren Verwaltung und Zugriff genauso wie bei einem Dateiserver funktioniert.
+- **Azure Queue Storage** implementiert einen Speicher für Warteschlangen und die zuverlässige Übermittlung von Nachrichten zwischen Anwendungen.
+- **Azure Table Storage** besteht aus einem NoSQL-Speicher, der unstrukturierte Daten unabhängig von einem Schema hostet.
 
-Each of these services shares common characteristics, which are:
+All diese Dienste weisen die folgenden gemeinsamen Merkmale auf:
 
-- Durable and highly available with redundancy and replication.
-- Secure through automatic encryption and role-based access control.
-- Scalable with virtually unlimited storage.
-- Managed, handling maintenance and any critical problems for you.
-- Accessible from anywhere in the world over HTTP or HTTPS.
+- Dauerhaft und hochverfügbar durch Redundanz- und Replikationsfunktionen.
+- Sicher dank automatischer Verschlüsselung und rollenbasierter Zugriffssteuerung.
+- Skalierbar dank praktisch unbegrenzter Speichermenge.
+- Verwaltung sowie und Behandlung aller kritischen Probleme werden für Sie übernommen.
+- Zugriff von jedem Ort der Welt über HTTP oder HTTPS möglich.
 
 <a name="mobile-services"></a>
 
-### Mobile
+### <a name="mobile"></a>Mobile
 
-Azure enables developers to create engaging iOS, Android, and Windows apps quickly and easily in a wide range of languages using their choice of development environment. Features that used to take time and increase project risks, such as adding corporate sign-in and then connecting to on-premises resources such as SAP, Oracle, SQL Server, and SharePoint, are now simple to include.
+Azure ermöglicht Entwicklern, mit einer Vielzahl von Sprachen und in der Entwicklungsumgebung ihrer Wahl schnell und einfach ansprechende iOS-, Android- und Windows-Apps zu erstellen. Features, die bisher viel Zeit kosteten und das Projektrisiko erhöhten, z.B. das Hinzufügen von Unternehmensanmeldungen und Herstellen von Verbindungen mit lokalen Ressourcen wie SAP, Oracle, SQL Server und SharePoint, lassen sich jetzt ganz einfach integrieren.
 
-Other features of this service include:
+Dieser Dienst bietet zudem folgende Features:
 
-- Offline data synchronization.
-- Connectivity to on-premises data.
-- Broadcasting push notifications.
-- Autoscaling to match business needs.
+- Offlinedatensynchronisierung.
+- Konnektivität zu lokalen Daten.
+- Übertragen von Pushbenachrichtigungen.
+- Automatische Skalierung zum Erfüllen sich verändernder Geschäftsanforderungen.
 
 <a name="database-services"></a>
 
-### Databases
+### <a name="databases"></a>Datenbanken
 
-Azure provides multiple database services to store a wide variety of data types and volumes. And with global connectivity, this data is available to users instantly.
+Azure bietet mehrere Datenbankdienste, um eine Vielzahl von Datentypen und Datenvolumen zu speichern. Und dank der globalen Konnektivität sind diese Daten für Benutzer sofort verfügbar.
 
-|  Service name              | Service function                                                                                |
+|  Dienstname              | Funktion des Diensts                                                                                |
 | -------------              | -------------                                                                                   |
-| Azure Cosmos DB            | Globally distributed database that supports NoSQL options                                       |
-| Azure SQL Database         | Fully managed relational database with auto-scale, integral intelligence, and robust security    |
-| Azure Database for MySQL   | Fully managed and scalable MySQL relational database with high availability and security        |
-| Azure Database for PostgreSQL   | Fully managed and scalable PostgreSQL relational database with high availability and security   |
-| SQL Server on VMs          | Host enterprise SQL Server apps in the cloud                                                    |
-| Azure SQL Data Warehouse   | Fully managed data warehouse with integral security at every level of scale at no extra cost    |
-| Azure Database Migration Service    | Migrates your databases to the cloud with no application code changes                  |
-| Azure Redis Cache          | Caches frequently used and static data to reduce data and application latency                   |
-| Azure Database for MariaDB | Fully managed and scalable MySQL relational database with high availability and security        |
+| Azure Cosmos DB            | Global verteilte Datenbank, die NoSQL-Optionen unterstützt.                                       |
+| Azure SQL-Datenbank         | Vollständig verwaltete relationale Datenbank mit automatischer Skalierung, integrierten intelligenten Funktionen und stabiler Sicherheit.    |
+| Azure Database for MySQL   | Vollständig verwaltete und skalierbare relationale MySQL-Datenbank mit hoher Verfügbarkeit und Sicherheit        |
+| Azure Database for PostgreSQL   | Vollständig verwaltete und skalierbare relationale PostgreSQL-Datenbank mit hoher Verfügbarkeit und Sicherheit   |
+| SQL Server auf virtuellen Computern          | Hosten von SQL Server-Unternehmens-Apps in der Cloud                                                    |
+| Azure SQL Data Warehouse   | Vollständig verwaltetes Data Warehouse mit integrierter Sicherheit in jeder Größenordnung ohne Zusatzkosten    |
+| Azure Database Migration Service    | Migrieren Ihrer Datenbanken in die Cloud, ohne Änderungen am Anwendungscode vorzunehmen                  |
+| Azure Redis Cache          | Zwischenspeichern von häufig verwendeten und statischen Daten, um die Latenz für Daten und Anwendungen zu reduzieren                   |
+| Azure Database for MariaDB | Vollständig verwaltete und skalierbare relationale MySQL-Datenbank mit hoher Verfügbarkeit und Sicherheit        |
 
 <a name="web-services"></a>
 
-### Web
+### <a name="web"></a>Web
 
-Web services in Azure include the following facilities:
+Webdienste in Azure umfassen die folgenden Funktionen:
 
-| Service Name | Description |
+| Name des Diensts | Beschreibung |
 |--------------|-------------|
-| Azure App Service | Quickly create powerful cloud apps for web and mobile. |
-| Azure Notification Hubs |Send push notifications to any platform from any back end. |
-| Azure API Management | Publish APIs to developers, partners, and employees securely and at scale. |
-| Azure Search | Fully managed search as a service. |
-| Web Apps feature of Azure App Service | Create and deploy mission-critical web apps at scale. |
-| Azure SignalR Service | Add real-time web functionalities easily. |
+| Azure App Service | Schnelle Erstellung von leistungsstarken Cloud-Apps für Web- und Mobilgeräte |
+| Azure Notification Hubs |Senden von Pushbenachrichtigungen an jede Plattform und von jedem Back-End aus |
+| Azure API Management | Sicheres Veröffentlichen von APIs für Entwickler, Partner und Mitarbeiter im erforderlichen Umfang |
+| Azure Search | Vollständig verwaltete SaaS-Lösung (Search-as-a-Service) |
+| Web-Apps-Funktion von Azure App Service | Erstellen und Bereitstellen von unternehmenskritischen Web-Apps nach Maß |
+| Azure SignalR Service | Einfaches Hinzufügen von Echtzeit-Webfunktionen |
 
-Now that we've identified some of the areas that might interest a company looking to migrate to Azure let's look at what it takes to use the services and features.
+Nachdem wir einige Bereiche entdeckt haben, die für ein Unternehmen, das zu Azure wechseln möchte, von Interesse sein können, sehen wir uns an, welche Voraussetzungen zur Verwendung der Dienste und Funktionen erfüllt sein müssen.

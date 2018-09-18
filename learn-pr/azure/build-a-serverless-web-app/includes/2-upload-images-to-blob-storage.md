@@ -1,10 +1,10 @@
-Bei der von Ihnen erstellten Anwendung handelt es sich um eine Fotogalerie. Es wird clientseitiger JavaScript-Code verwendet, um APIs zum Hochladen und Anzeigen von Bildern aufzurufen. In diesem Modul erstellen Sie eine API, indem Sie eine serverlose Funktion verwenden, mit der eine URL mit zeitlicher Beschränkung zum Hochladen eines Bilds generiert wird. Die Webanwendung nutzt die generierte URL zum Hochladen eines Bilds in Blob Storage mit der [Blob Storage-REST-API](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api).
+Bei der von Ihnen erstellten Anwendung handelt es sich um eine Fotogalerie. Es wird clientseitiger JavaScript-Code verwendet, um APIs zum Hochladen und Anzeigen von Bildern aufzurufen. In dieser Einheit erstellen Sie eine API, indem Sie eine serverlose Funktion verwenden, mit der eine URL mit zeitlicher Beschränkung zum Hochladen eines Bilds generiert wird. Die Webanwendung nutzt diese URL zum Hochladen eines Bilds in Blob Storage mit der [Blob Storage-REST-API](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api).
 
 ## <a name="create-a-blob-storage-container-for-images"></a>Erstellen eines Blob Storage-Containers für Bilder
 
 Für die Anwendung ist ein separater Speichercontainer erforderlich, um Bilder hochladen und hosten zu können.
 
-1. Stellen Sie sicher, dass Sie noch bei der Azure Cloud Shell (Bash) angemeldet sind. Wählen Sie andernfalls die Option **Enter focus mode** (Fokusmodus aktivieren), um ein Cloud Shell-Fenster zu öffnen.
+1. Stellen Sie sicher, dass Sie noch bei der Azure Cloud Shell (Bash) angemeldet sind. Wählen Sie andernfalls die Option **Enter focus mode** (Fokusmodus aktivieren) aus, um ein Cloud Shell-Fenster zu öffnen.
 
 1.  Erstellen Sie unter Ihrem Speicherkonto einen neuen Container mit dem Namen **images**, der über öffentlichen Zugriff auf alle Blobs verfügt.
 
@@ -18,7 +18,7 @@ Azure Functions ist ein Dienst zum Ausführen serverloser Funktionen. Eine serve
 
 Eine Azure Functions-App ist ein Container für mindestens eine serverlose Funktion.
 
-- Erstellen Sie eine neue Azure Functions-App mit einem eindeutigen Namen in der Ressourcengruppe **first-serverless-app**, die Sie zuvor erstellt haben. Azure Functions-Apps erfordern ein Speicherkonto. In diesem Tutorial verwenden Sie das vorhandene Speicherkonto.
+- Erstellen Sie eine neue Azure Functions-App mit einem eindeutigen Namen in der Ressourcengruppe **first-serverless-app**, die Sie zuvor erstellt haben. Azure Functions-Apps erfordern ein Speicherkonto. In dieser Einheit verwenden Sie das vorhandene Speicherkonto, das Sie in der letzten Einheit erstellt haben.
 
     ```azurecli
     az functionapp create -n <function app name> -g first-serverless-app -s <storage account name> -c westcentralus
@@ -28,18 +28,17 @@ Eine Azure Functions-App ist ein Container für mindestens eine serverlose Funkt
 
 Um ein Bild sicher in Blob Storage hochzuladen, richtet die Fotogalerie-Web-App eine HTTP-Anforderung an die serverlose Funktion, damit eine zeitlich begrenzte URL generiert wird. Die Funktion wird per HTTP-Anforderung ausgelöst und verwendet das Azure Storage SDK, um die sichere URL zu generieren und zurückzugeben.
 
-1. Nachdem die Funktionen-App erstellt wurde, können Sie im Azure-Portal über das Feld **Suchen** danach suchen. Klicken Sie auf die App, um sie zu öffnen.
+1. Nachdem die Funktions-App erstellt wurde, können Sie im [Azure-Portal](https://portal.azure.com/?azure-portal=true) über das Feld **Suchen** danach suchen. Klicken Sie auf die App, um sie zu öffnen.
 
-    ![Öffnen der Funktionen-App](../media/2-search-function-app.png)
+    ![Öffnen der Funktions-App](../media/2-search-function-app.png)
 
-
-1. Zeigen Sie im Fenster „Funktionen-App“ im linken Navigationsbereich auf **Funktionen**, und klicken Sie auf das Pluszeichen (+), um eine neue serverlose Funktion zu erstellen.
+1. Zeigen Sie im Fenster der Funktions-App im linken Navigationsbereich auf **Funktionen**, und klicken Sie auf das Pluszeichen (+), um eine neue serverlose Funktion zu erstellen.
 
     ![Erstellen einer neuen Funktion](../media/2-new-function.png)
 
 1. Klicken Sie auf **Benutzerdefinierte Funktion**, um eine Liste mit Funktionsvorlagen anzuzeigen.
 
-1. Suchen Sie nach der Vorlage **HttpTrigger**, und klicken Sie auf die gewünschte Sprache (C# oder JavaScript).
+1. Suchen Sie nach der Vorlage **HttpTrigger**, und klicken Sie auf C# oder JavaScript.
 
 1. Verwenden Sie die folgenden Werte, um eine Funktion zu erstellen, mit der eine URL für das Hochladen in ein Blob generiert wird:
 
@@ -47,37 +46,33 @@ Um ein Bild sicher in Blob Storage hochzuladen, richtet die Fotogalerie-Web-App 
     | --- | --- | ---|
     | **Sprache** | C# oder JavaScript | Wählen Sie die Sprache aus, die Sie verwenden möchten. |
     | **Name Ihrer Funktion** | GetUploadUrl | Geben Sie diesen Namen genau wie hier angezeigt ein, damit die Anwendung die Funktion ermitteln kann. |
-    | **Autorisierungsstufe** | Anonym | Lässt den schnellen Zugriff auf die Funktion zu. |
+    | **Autorisierungsstufe** | Anonym | Lässt den öffentlichen Zugriff auf die Funktion zu. |
 
     ![Eingeben der Einstellungen für eine neue Funktion, die per HTTP ausgelöst wird](../media/2-new-function-httptrigger.png)
 
 1. Klicken Sie auf **Erstellen**, um die Funktion zu erstellen.
 
 ::: zone pivot="csharp"
-1. **C#** 
-
-    Wenn der Quellcode der Funktion angezeigt wird, ersetzen Sie den gesamten Inhalt der Datei **run.csx** durch den Inhalt der Datei [**csharp/GetUploadUrl/run.csx**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/GetUploadUrl/run.csx).
+1. (C#) Wenn der Quellcode der Funktion angezeigt wird, ersetzen Sie den gesamten Inhalt der Datei **run.csx** durch den Inhalt der Datei [**csharp/GetUploadUrl/run.csx**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/GetUploadUrl/run.csx).
 
 ::: zone-end
 
 ::: zone pivot="javascript"
-1. **JavaScript** 
+1. (JavaScript) Für diese Funktion ist das `azure-storage`-Paket von npm erforderlich. Das Paket generiert das SAS-Token (Shared Access Signature), das zum Erstellen der sicheren URL erforderlich ist. Klicken Sie zum Installieren des npm-Pakets im linken Navigationsbereich auf die Funktionen-App und dann auf **Plattformfeatures**.
 
-    1. (JavaScript) Für diese Funktion ist das `azure-storage`-Paket von npm erforderlich. Das Paket generiert das SAS-Token (Shared Access Signature), das zum Erstellen der sicheren URL erforderlich ist. Klicken Sie zum Installieren des npm-Pakets im linken Navigationsbereich auf die Funktionen-App und dann auf **Plattformfeatures**.
+1. (JavaScript) Klicken Sie auf **Konsole**, um ein Konsolenfenster anzuzeigen.
 
-    1. (JavaScript) Klicken Sie auf **Konsole**, um ein Konsolenfenster anzuzeigen.
+    ![Öffnen eines Konsolenfensters](../media/2-open-console.jpg)
 
-        ![Öffnen eines Konsolenfensters](../media/2-open-console.jpg)
+1. (JavaScript) Vergewissern Sie sich, dass **d:\home\site\wwwroot** das aktuelle Verzeichnis ist, indem Sie den Befehl `cd d:\home\site\wwwroot` ausführen.
 
-    1. (JavaScript) Vergewissern Sie sich, dass **d:\home\site\wwwroot** das aktuelle Verzeichnis ist, indem Sie den Befehl `cd d:\home\site\wwwroot` ausführen.
+1. (JavaScript) Führen Sie den Befehl `npm init -y` aus, um eine leere Datei mit dem Namen **package.json** zu erstellen.
 
-    1. (JavaScript) Führen Sie den Befehl `npm init -y` aus, um eine leere Datei mit dem Namen **package.json** zu erstellen.
+1. (JavaScript) Führen Sie den Befehl `npm install --save azure-storage` in der Konsole aus, um das Paket zu installieren. Speichern Sie das Paket als **package.JSON**. Es kann einige Minuten dauern, bis der Vorgang abgeschlossen ist.
 
-    1. (JavaScript) Führen Sie den Befehl `npm install --save azure-storage` in der Konsole aus, um das Paket zu installieren. Speichern Sie das Paket als **package.JSON**. Es kann einige Minuten dauern, bis der Vorgang abgeschlossen ist.
+1. (JavaScript) Klicken Sie im linken Navigationsbereich auf die Funktion (**GetUploadUrl**), um sie anzuzeigen. Ersetzen Sie den gesamten Inhalt der Datei **index.js** durch den Inhalt der Datei [**javascript/GetUploadUrl/index.js**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/javascript/GetUploadUrl/index.js).
 
-    1. (JavaScript) Klicken Sie im linken Navigationsbereich auf die Funktion (**GetUploadUrl**), um sie anzuzeigen. Ersetzen Sie den gesamten Inhalt der Datei **index.js** durch den Inhalt der Datei [**javascript/GetUploadUrl/index.js**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/javascript/GetUploadUrl/index.js).
-    
-        ![Inhalt von „index.js“ nach der Aktualisierung](../media/2-paste-js.jpg)
+    ![Inhalt von „index.js“ nach der Aktualisierung](../media/2-paste-js.jpg)
 
 ::: zone-end
 
@@ -85,10 +80,10 @@ Um ein Bild sicher in Blob Storage hochzuladen, richtet die Fotogalerie-Web-App 
 
 1. Klicken Sie auf **Speichern**. Überprüfen Sie den Protokollbereich, um sicherzustellen, dass die Funktion erfolgreich kompiliert wird.
 
-Mit der Funktion wird eine sog. SAS-URL (Shared Access Signature) generiert, die zum Hochladen einer Datei in Blob Storage genutzt wird. Die SAS-URL ist nur für kurze Zeit gültig und lässt nur das Hochladen einer einzelnen Datei zu. Die Dokumentation zu Blob Storage enthält weitere Informationen zur [Verwendung von Shared Access Signatures](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1).
+Mit der Funktion wird eine SAS-URL (Shared Access Signature) generiert, die zum Hochladen einer Datei in Blob Storage genutzt wird. Die SAS-URL ist nur für kurze Zeit gültig und lässt nur das Hochladen einer einzelnen Datei zu. Die Dokumentation zu Blob Storage enthält weitere Informationen zur [Verwendung von Shared Access Signatures](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1).
 
 
-## <a name="add-an-environment-variable-for-the-storage-connection-string"></a>Hinzufügen einer Umgebungsvariablen für die Speicher-Verbindungszeichenfolge
+## <a name="add-an-environment-variable-for-the-storage-connection-string"></a>Hinzufügen einer Umgebungsvariablen für die Speicherverbindungszeichenfolge
 
 Für die erstellte Funktion wird eine Verbindungszeichenfolge für das Speicherkonto benötigt, damit die SAS-URL generiert werden kann. Anstatt die Verbindungszeichenfolge im Text der Funktion hartzucodieren, kann sie als Anwendungseinstellung gespeichert werden. Auf Anwendungseinstellungen kann von allen Funktionen der Funktionen-App in Form von Umgebungsvariablen zugegriffen werden.
 
@@ -152,17 +147,18 @@ Da das Front-End der Funktion in Blob Storage gehostet wird, verfügt es über e
 
 1. Klicken Sie auf **Speichern**.
 
-1. **C#**:
+::: zone pivot="csharp"
+1. (C#) Navigieren Sie zurück zur Funktion `GetUploadUrl`, und wählen Sie die Registerkarte **Integrieren** aus.
 
-   1. (C#) Navigieren Sie zurück zur Funktion `GetUploadUrl`, und wählen Sie die Registerkarte **Integrieren** aus.
+1. (C#) Wählen Sie unter **Ausgewählte HTTP-Methoden** die Option **OPTIONS**.
 
-   1. (C#) Wählen Sie unter **Ausgewählte HTTP-Methoden** die Option **OPTIONS**.
+    **GET**, **POST** und **OPTIONS** sollten jeweils ausgewählt sein. Für CORS wird die **OPTIONS**-Methode verwendet, die für C#-Funktionen nicht standardmäßig ausgewählt ist.  
 
-      **GET**, **POST** und **OPTIONS** sollten jeweils ausgewählt sein. Für CORS wird die **OPTIONS**-Methode verwendet, die für C#-Funktionen nicht standardmäßig ausgewählt ist.  
+1. (C#) Klicken Sie auf **Speichern**.
 
-   1. (C#) Klicken Sie auf **Speichern**.
+::: zone-end
 
-1. Navigieren Sie im Azure-Portal zur Funktionen-App. Klicken Sie auf die Registerkarte **Übersicht**. Klicken Sie auf **Neu starten**, um sicherzustellen, dass die Änderungen für CORS wirksam werden.
+1. Navigieren Sie im Azure-Portal zur Funktions-App. Klicken Sie auf die Registerkarte **Übersicht**. Klicken Sie auf **Neu starten**, um sicherzustellen, dass die Änderungen für CORS wirksam werden.
 
 ## <a name="configure-cors-in-the-storage-account"></a>Konfigurieren von CORS im Speicherkonto
 
@@ -267,7 +263,6 @@ Sie können sich vergewissern, ob ein Bild erfolgreich hochgeladen wurde, indem 
     ```azurecli
     az storage blob delete-batch -s images --account-name <storage account name>
     ```
-
 
 ## <a name="summary"></a>Zusammenfassung
 

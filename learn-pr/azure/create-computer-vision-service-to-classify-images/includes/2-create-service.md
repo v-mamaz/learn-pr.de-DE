@@ -1,22 +1,22 @@
-In this unit, you will create a Computer Vision API service using the Azure CLI.
+In dieser Einheit erstellen Sie einen Maschinelles Sehen-API-Dienst mithilfe der Azure CLI.
 
-# Exercise: Create a Computer Vision service
+# <a name="exercise-create-a-computer-vision-service"></a>Übung: Erstellen eines Maschinelles Sehen-Diensts
 
-[Computer Vision](/azure/cognitive-services/computer-vision/home) is part of [Azure Cognitive Services](/azure/cognitive-services/welcome), which is a complete set of machine learning algorithms available as a service for anyone to use. Instead of generating enough data to train a model from scratch, we make available pre-trained models for anyone to use.
+[Maschinelles Sehen](/azure/cognitive-services/computer-vision/home) ist Teil von [Microsoft Cognitive Services](/azure/cognitive-services/welcome), einer vollständigen Sammlung von Algorithmen für maschinelles Lernen, die als Dienst für alle Benutzer verfügbar ist. Anstatt genügend Daten zu generieren, um ein Modell von Grund auf neu zu trainieren, stellen wir vortrainierte Modelle für jedermann zur Verfügung.
 
-Among the many services available, we provide services that can handle voice, image, video, search, language, and more.
+Unter den vielen verfügbaren Diensten bieten wir Dienste an, die Sprache, Bilder, Videos, Suchen und mehr verarbeiten können.
 
-In this exercise, we're going to focus on creating the necessary service that will allow us to handle images. After this exercise, you will be able to create an API endpoint that will be able to identify images.
+In dieser Übung konzentrieren wir uns darauf, den erforderlichen Dienst zu erstellen, der es uns ermöglicht, Bilder zu verarbeiten. Nach dem Abschluss dieser Übung können Sie einen API-Endpunkt erstellen, der Bilder identifizieren kann.
 
-# Create a Computer Vision API service
+# <a name="create-a-computer-vision-api-service"></a>Erstellen eines Maschinelles Sehen-API-Diensts
 
-Before you create your Computer Vision API service, you need a *resource group* to deploy it to. A resource group is a logical collection into which all Azure resources are deployed and managed.
+Bevor Sie den Maschinelles Sehen-API-Dienst erstellen können, benötigen Sie eine *Ressourcengruppe* für die Bereitstellung. Eine Azure-Ressourcengruppe ist eine logische Sammlung, in der alle Azure-Ressourcen bereitgestellt und verwaltet werden.
 
 ```azurecli
 az group create --name ComputerVisionRG --location westus2
 ```
 
-Once you've created the resource group, create the service with the `az cognitiveservices account create` command and the name of your service. 
+Nachdem Sie die Ressourcengruppe erstellt haben, erstellen Sie den Dienst mit dem Befehl `az cognitiveservices account create` und dem Namen Ihres Diensts. 
 
 ```azurecli
 az cognitiveservices account create --kind ComputerVision -l westus2 -n ComputerVisionService --sku F0 -g ComputerVisionRG

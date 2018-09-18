@@ -22,7 +22,7 @@ Lassen Sie uns unsere App fertig stellen, indem wir Code zum Hoch- und Herunterl
 
 Um ein Blob hochzuladen, implementieren wir die `BlobStorage.Save`-Methode `GetBlockBlobReference` zum Abrufen von `CloudBlockBlob` aus dem Container. `FilesController.Upload` übergibt den Dateidatenstrom an `Save`, sodass Sie `UploadFromStreamAsync` zum Durchführen des Hochladens mit maximaler Effizienz nutzen können.
 
-Öffnen Sie `BlobStorage.cs` im Editor, und ersetzen Sie `Save` durch folgenden Code:
+Öffnen Sie `Save` im Editor, und ersetzen Sie `BlobStorage.cs` durch folgenden Code:
 
 ```csharp
 public Task Save(Stream fileStream, string name)
@@ -67,10 +67,10 @@ CONNECTIONSTRING=$(az storage account show-connection-string --name <your-unique
 az webapp config appsettings set --name <your-unique-app-name> --resource-group blob-exercise-group --settings AzureStorageConfig:ConnectionString=$CONNECTIONSTRING AzureStorageConfig:FileContainerName=files
 ```
 
-Jetzt stellen Sie die App bereit. Mit den folgenden Befehlen wird die Site im Ordner `pub` veröffentlicht, in `site.zip` komprimiert und die ZIP-Datei in App Service bereitgestellt.
+Jetzt stellen Sie die App bereit. Mit den folgenden Befehlen wird die Website im Ordner `pub` veröffentlicht, in `site.zip` komprimiert und die ZIP-Datei in App Service bereitgestellt.
 
 > [!NOTE]
-> Stellen Sie sicher, dass Ihre Shell sich im `FileUploader`-Verzeichnis für die folgenden Befehle befindet.
+> Stellen Sie sicher, dass Ihre Shell sich im `mslearn-store-data-in-azure/store-app-data-with-azure-blob-storage/src/start`-Verzeichnis für die folgenden Befehle befindet.
 
 ```azurecli
 dotnet publish -o pub

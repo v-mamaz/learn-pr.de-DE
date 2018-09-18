@@ -1,10 +1,11 @@
 In diesem Modul haben Sie gelernt, wie Sie mithilfe des Azure-Portals einen virtuellen Linux-Computer erstellen. Anschließend haben Sie eine Verbindung mit der öffentlichen IP-Adresse dieses virtuellen Computers hergestellt und ihn mit einer SSH-Verbindung verwaltet. 
 
-Sie haben gelernt, dass SSH eine Interaktion mit dem Betriebssystem und der Software des virtuellen Computers ermöglicht, während das Portal eine Konfiguration der virtuellen Hardware und der Konnektivität ermöglicht. Wenn eine Befehlszeile oder eine skriptfähige Umgebung bevorzugt gewesen wäre, hätten wir auch PowerShell oder die Azure CLI verwenden können.
+Sie haben gelernt, dass SSH eine Interaktion mit dem Betriebssystem und der Software des virtuellen Computers ermöglicht, während das Portal eine Konfiguration der virtuellen Hardware und der Konnektivität ermöglicht. Wenn Sie eine Befehlszeile oder eine skriptfähige Umgebung bevorzugt hätten, hätten wir auch PowerShell oder die Azure CLI verwenden können.
 
-## <a name="clean-up-the-resources"></a>Bereinigen der Ressourcen
+## <a name="clean-up"></a>Bereinigen
+<!---TODO: Update for sandbox?--->
 
-Sie bezahlen für virtuelle Computer, während diese ausgeführt werden und für den verwendeten Speicherplatz. Wenn Sie virtuelle Computer nicht benutzen, sollten Sie diese immer beenden und deren Zuordnung aufheben. Außerdem ist es ratsam, nicht mehr benötigte Ressourcen zu löschen. Um alle von Ihnen erstellte Ressourcen zu entfernen, können Sie diese entweder nacheinander oder die gesamte Ressourcengruppe löschen.
+Sie bezahlen für virtuelle Computer, während diese ausgeführt werden, und für den verwendeten Speicherplatz. Wenn Sie virtuelle Computer nicht benutzen, sollten Sie diese immer beenden und deren Zuordnung aufheben. Außerdem ist es ratsam, nicht mehr benötigte Ressourcen zu löschen. Um alle von Ihnen erstellten Ressourcen zu entfernen, können Sie diese entweder nacheinander löschen oder die gesamte Ressourcengruppe löschen:
 
 1. Melden Sie sich beim Azure-Portal an.
 

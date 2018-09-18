@@ -1,21 +1,21 @@
-We've covered a lot of topics in this module, but rightfully so, as security is such an important part of any architecture. Let's review what we've covered.
+Wir haben in diesem Modul einen Großteil der Themen behandelt. Sicherheit spielt jedoch in jeder Architektur eine sehr große Rolle. Sehen wir uns an, welche Themen wir bisher behandelt haben.
 
-### Defense in depth
+### <a name="defense-in-depth"></a>Tiefgehende Verteidigung
 
-We've talked through how to approach security in your architecture through defense in depth. Looking only at firewalls or antimalware alone isn't enough to slow down attackers. Use a layered approach and address security at each layer.
+Wir haben besprochen, wie Sicherheit in Ihrer Architektur mithilfe eines mehrschichtigen Sicherheitsansatzes gewährleistet werden kann. Zum Ausbremsen von Angreifern reicht es nicht aus, nur Firewalls und Antischadsoftware zu nutzen. Verwenden Sie einen mehrschichtigen Ansatz, und sorgen Sie in jeder Schicht für Sicherheit.
 
-### Identity management
+### <a name="identity-management"></a>Identitätsverwaltung
 
-We've talked through identity management, and how identity becomes an integral piece of the architectural puzzle. Azure AD has a number of features and capabilities to improve the identity security story for your environment.
+Wir haben bereits die Identitätsverwaltung besprochen und wie Identität zu einem integralen Bestandteil der Architektur wird. Azure AD verfügt über eine Reihe von Features und Funktionen zur Verbesserung der Identitätssicherheit für Ihre Umgebung.
 
-### Infrastructure protection
+### <a name="infrastructure-protection"></a>Infrastrukturschutz
 
-Protecting the access to your infrastructure ensures that the resources you create are administered by only those who should be administering them.
+Durch den Schutz des Zugriffs auf Ihre Infrastruktur wird sichergestellt, dass die von Ihnen erstellten Ressourcen nur von Benutzern verwaltet werden, die dazu berechtigt sind.
 
-### Encryption
+### <a name="encryption"></a>Verschlüsselung
 
-Encryption is often the last layer of defense against access to your data. By using encryption, you make your data unreadable to anyone without the decryption keys. You should identify and classify your data, then align with encryption requirements from your business and any regulations your organization must adhere to.
+Verschlüsselung stellt häufig die letzte Verteidigungsebene gegen den Zugriff auf Ihre Daten dar. Mithilfe der Verschlüsselung werden Ihre Daten für alle Benutzer unlesbar gemacht, die nicht über die Entschlüsselungsschlüssel verfügen. Sie sollten Ihre Daten identifizieren und klassifizieren und anschließend an Verschlüsselungsanforderungen Ihres Unternehmens sowie an einzuhaltenden Bestimmungen Ihrer Organisation ausrichten.
 
-### Network security
+### <a name="network-security"></a>Netzwerksicherheit
 
-Finally, we talked through securing your network. We looked at ways to secure traffic flow between applications and the internet. We described some ways to secure traffic flow amongst applications. And we wrapped up by looking at how to secure traffic flow between users and an application.
+Abschließend haben wir über das Schützen Ihres Netzwerks gesprochen. Wir haben uns Möglichkeiten zum Schlüssen des Datenverkehrsflusses zwischen Anwendungen und Internet angeschaut. Es wurden einige Methoden zum anwendungsübergreifenden Schutz des Datenverkehrsflusses erläutert. Und am Ende haben wir geschaut, wie ein Datenverkehrsfluss zwischen Benutzern und einer Anwendung geschützt werden kann.

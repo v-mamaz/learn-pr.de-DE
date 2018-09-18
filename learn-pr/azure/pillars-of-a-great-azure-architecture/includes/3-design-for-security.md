@@ -1,47 +1,47 @@
-Your healthcare organization stores personal and potentially sensitive client data. A security incident could expose this sensitive data, which could cause personal embarrassment or financial harm. How do you ensure the integrity of their data and ensure your systems are secure? 
+Ihre Organisation aus dem Gesundheitswesen speichert persönliche und potenziell vertrauliche Patientendaten. Ein Sicherheitsvorfall könnte diese sensiblen Daten offenlegen, was zu Peinlichkeiten oder finanziellem Schaden führen könnte. Wie stellen Sie die Integrität ihrer Daten sicher und gewährleisten, dass Ihre Systeme sicher sind? 
 
-Here, we'll talk about how to approach the security of an architecture.
+Hier wird erläutert, wie wir die Sicherheit einer Architektur angehen können.
 
-## What should I protect?
+## <a name="what-should-i-protect"></a>Was sollte ich schützen?
 
-The data your organization stores is at the heart of your securable assets. This data could be sensitive data about customers, financial information about your organization, or critical line-of-business data supporting your organization. Along with data, securing the infrastructure it exists on, and the identities we use to access it, are also critically important.
+Die Daten, die Ihr Unternehmen speichert, bilden das Herzstück Ihrer zu sichernden Ressourcen. Diese Daten können sensible Daten über Kunden, Finanzinformationen über Ihr Unternehmen oder kritische LOB-Daten sein, die Ihr Unternehmen unterstützen. Neben den Daten ist auch die Sicherung der Infrastruktur, in der sie vorhanden sind, und der Identitäten, mit denen wir auf sie zugreifen, von entscheidender Bedeutung.
 
-Your data may be subject to additional legal and regulatory requirements depending on where you are located, the type of data you are storing, or the industry that your application operates in. For instance, in the healthcare industry in the US, there is a law called the Health Insurance Portability and Accountability Act (HIPAA). Organizations that store data that is in scope for this law are required to ensure certain safeguards are in place. In Europe, the General Data Protection Regulation (GDPR) lays out the rules of how personal data is protected, and defines individuals' rights related to stored data. Some countries require that certain types of data do not leave their borders.
+Ihre Daten können zusätzlichen gesetzlichen und regulatorischen Anforderungen unterliegen, je nachdem, wo Sie sich befinden, welche Art von Daten Sie speichern oder in welcher Branche Ihre Anwendung verwendet wird. Beispielsweise gibt es in den USA im Gesundheitswesen ein Gesetz namens Health Insurance Portability and Accountability Act (HIPAA). Unternehmen, die Daten speichern, die in den Anwendungsbereich dieses Gesetzes fallen, sind verpflichtet, bestimmte Sicherheitsvorkehrungen zu treffen. In Europa legt die Datenschutz-Grundverordnung (DSGVO) die Regeln für den Schutz personenbezogener Daten fest und definiert die Rechte des Einzelnen in Bezug auf gespeicherte Daten. Einige Länder verlangen, dass bestimmte Arten von Daten ihre Grenzen nicht überschreiten.
 
-When a security breach occurs, there can be substantial impacts to the finances and reputation of both organizations and customers. This breaks down the trust customers are willing to instill in your organization, and can impact its long-term health.
+Wenn eine Sicherheitsverletzung eintritt, kann dies erhebliche Auswirkungen auf die Finanzen und den Ruf von Unternehmen und Kunden haben. Dies erschüttert das Vertrauen, das die Kunden bereit sind, in Ihr Unternehmen zu investieren, und kann sich auf seine langfristige Geschäftsentwicklung auswirken.
 
-## Defense in depth
+## <a name="defense-in-depth"></a>Tiefgehende Verteidigung
 
-A multilayered approach to securing your environment will increase the security posture of your environment. Commonly known as _defense in depth_, we can break down the layers as follows:
+Ein Ansatz mit mehreren Ebenen zur Absicherung Ihrer Umgebung erhöht die Sicherheitslage Ihrer Umgebung. Die Ebenen der sog. _tiefgehenden Verteidigung_ können wir wie folgt aufschlüsseln:
 
-* Data
-* Applications
-* VM/compute
-* Networking
-* Perimeter
-* Policies & access
-* Physical security
+* Daten
+* Anwendungen
+* VM/Compute
+* Netzwerk
+* Umkreis
+* Richtlinien und Zugriff
+* Physische Sicherheit
 
-Each layer focuses on a different area where attacks can happen and creates a depth of protection, should one layer fail or be bypassed by an attacker. If we were to just focus on one layer, an attacker would have unfettered access to your environment should they get through this layer. Addressing security in layers increases the work an attacker must do to gain access to your systems and data. Each layer will have different security controls, technologies, and capabilities that will apply. When identifying the protections to put in place, cost will often be of concern, and will need to be balanced with business requirements and overall risk to the business.
+Jede Ebene konzentriert sich auf einen anderen Bereich, in dem Angriffe möglich sind, und schafft eine gewisse Schutzwirkung, sollte eine Ebene ausfallen oder von einem Angreifer umgangen werden. Wenn wir uns nur auf eine Ebene konzentrieren würden, hätte ein Angreifer ungehinderten Zugriff auf Ihre Umgebung, wenn er diese Ebene passieren würde. Die Behandlung der Sicherheit in Ebenen erhöht den Aufwand, den ein Angreifer treiben muss, um Zugang zu Ihren Systemen und Daten zu erhalten. Jede Ebene verfügt über unterschiedliche Sicherheitskontrollen, Technologien und Funktionen, die gelten. Bei der Ermittlung der zu errichtenden Schutzmaßnahmen sind die Kosten oft von Belang und müssen mit den Geschäftsanforderungen und dem Gesamtrisiko für das Unternehmen in Einklang gebracht werden.
 
-![Security layers](../media-draft/security-layers.png)
+![Sicherheitsebenen](../media-draft/security-layers.png)
 
-There is no single security system, control, or technology that will fully protect your architecture. Security is more than just technology, it's also about people and processes. Creating an environment that looks holistically at security, and making it a requirement by default will help ensure your organization is as secure as possible.
+Es gibt kein einziges Sicherheitssystem, keine einzige Kontrolle oder Technologie, die Ihre Architektur vollständig schützt. Sicherheit ist mehr als nur Technologie, es geht auch um Menschen und Prozesse. Die Schaffung einer Umgebung, die die Sicherheit ganzheitlich betrachtet und standardmäßig zur Anforderung erklärt, trägt dazu bei, dass Ihr Unternehmen so sicher wie möglich ist.
 
-## Common attacks
+## <a name="common-attacks"></a>Gängige Angriffe
 
-At each layer, there are some common attacks that you will want to protect against. These are not all-inclusive, but can give you an idea of how each layer can be attacked and what types of protections you may need to look at.
+Auf jeder Ebene gibt es einige gängige Angriffstypen, vor denen Sie sich schützen müssen. Diese sind nicht allumfassend, können Ihnen aber eine Vorstellung davon vermitteln, wie jede Ebene angegriffen werden kann und welche Arten von Schutz Sie berücksichtigen müssen.
 
-* **Data layer**: Encryption key exposure or using weak encryption can leave your data vulnerable should unauthorized access occur.
-* **Application layer**: Malicious code injection and execution are the hallmarks of application-layer attacks. Common attacks include SQL injection and cross-site scripting (XSS).
-* **VM/compute layer**: Malware is a common method of attacking an environment, which involves executing malicious code to compromise a system. Once malware is present on a system, further attacks leading to credential exposure and lateral movement throughout the environment can occur.
-* **Networking layer**: Unnecessary open ports to the Internet are a common method of attack. These could include leaving SSH or RDP open to virtual machines. When open, these could allow brute-force attacks against your systems as attackers attempt to gain access.
-* **Perimeter layer**: Denial-of-service (DoS) attacks are often seen at this layer. These attacks attempt to overwhelm network resources, forcing them to go  offline or making them incapable of responding to legitimate requests.
-* **Policies & access layer**: This is where authentication occurs for your application. This could include modern authentication protocols such as OpenID Connect, OAuth, or Kerberos-based authentication such as Active Directory. Exposed credentials are a risk here and it's important to limit the number of identities permissions of identities. We also want to have monitoring in place to look for possible compromised accounts, such as logins coming from unusual places.
-* **Physical layer**: Unauthorized access to facilities through methods such as door drafting and theft of security badges can be seen at this layer.
+* **Datenebene**: Die Offenlegung von Verschlüsselungsschlüsseln oder die Verwendung einer schwachen Verschlüsselung können Ihre Daten anfällig machen, falls ein unbefugter Zugriff erfolgt.
+* **Anwendungsebene**: Die Einschleusung und Ausführung von bösartigem Code ist das Markenzeichen von Angriffen auf Anwendungsebene. Gängige Angriffe umfassen die SQL-Einschleusung und Cross-Site Scripting (XSS).
+* **VM/Computeebene**: Schadsoftware ist eine gängige Methode, um eine Umgebung anzugreifen, bei der bösartiger Code ausgeführt wird, um ein System zu gefährden. Sobald Schadsoftware auf einem System vorhanden ist, können weitere Angriffe auftreten, die zu einer Offenlegung von Berechtigungen und einer Seitwärtsbewegung in der gesamten Umgebung führen.
+* **Netzwerkebene**: Unnötige geöffnete Ports zum Internet sind eine gängige Angriffsmethode. Dazu könnte es gehören, SSH oder RDP für virtuelle Computer geöffnet zu lassen. Wenn diese geöffnet sind, können Brute-Force-Angriffe auf Ihre Systeme ermöglicht werden, wenn Angreifer versuchen, Zugriff zu erlangen.
+* **Umkreisebene**: Denial-of-Service-Angriffe (DoS-Angriffe) treten häufig auf dieser Ebene auf. Diese Angriffe versuchen, Netzwerkressourcen zu überfordern, zwingen sie, offline zu gehen, oder machen sie unfähig, auf berechtigte Anforderungen zu reagieren.
+* **Richtlinien- und Zugriffsebene**: Hier erfolgt die Authentifizierung für Ihre Anwendung. Dazu gehören ggf. moderne Authentifizierungsprotokolle wie OpenID Connect, OAuth oder Kerberos-basierte Authentifizierung wie Active Directory. Offengelegte Anmeldeinformationen stellen hier ein Risiko dar, und es ist wichtig, die Anzahl der Identitätsberechtigungen von Identitäten zu begrenzen. Wir möchten auch Überwachung einrichten, um nach möglichen kompromittierten Konten zu suchen, wie z.B. Anmeldungen, die von ungewöhnlichen Orten kommen.
+* **Physische Ebene**: Unbefugter Zutritt zu Einrichtungen durch Methoden wie unberechtigte Verwendung von Sicherheitscodes und Diebstahl von Sicherheitsausweisen ist auf dieser Ebene zu finden.
 
-## Shared security responsibility
+## <a name="shared-security-responsibility"></a>Gemeinsame Verantwortung für die Sicherheit
 
-Revisiting the model of shared responsibility, we can reframe this in the context of security. Depending on the type of service you select, some security protections will be built in to the service, while others will remain your responsibility. Careful evaluation of the services and technologies you select will be necessary, to ensure you are providing the proper security controls for your architecture.
+Wenn wir das Modell der gemeinsamen Verantwortung erneut aufgreifen, können wir es im Zusammenhang mit Sicherheit neu fassen. Je nach Art des von Ihnen gewählten Diensts werden einige Sicherheitsvorkehrungen in den Dienst integriert, während andere in Ihrer Verantwortung verbleiben. Eine sorgfältige Bewertung der von Ihnen gewählten Dienste und Technologien ist unerlässlich, um sicherzustellen, dass Sie die richtigen Sicherheitskontrollen für Ihre Architektur bereitstellen.
 
-![Shared security responsibilities](../media-draft/shared_responsibilities.png)
+![Gemeinsame Verantwortung für die Sicherheit](../media-draft/shared_responsibilities.png)

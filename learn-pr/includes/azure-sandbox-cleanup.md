@@ -1,5 +1,5 @@
-## Clean up
+## <a name="clean-up"></a>Bereinigen
 
-Although the Azure Sandbox will clean up your resources automatically for you when you are finished with this module, it is best practice at the end of a project to identify whether or not you still need the resources you created during it. Resources left running can cost you money. 
+Obwohl die Sandbox Ihre Ressourcen automatisch für Sie bereinigt, wenn Sie mit diesem Modul fertig sind, empfiehlt es sich, am Ende eines Projekts zu identifizieren, ob Sie die Ressourcen weiterhin benötigen, die Sie im Modul erstellt haben. Ressourcen, die aktiv bleiben, können Sie Geld kosten. 
 
-To remove all the resources that you created, you can delete them one-by-one, or just delete the resource group. Deleting a resource group will delete all the resources in the group.
+Um alle von Ihnen erstellten Ressourcen zu entfernen, können Sie diese entweder nacheinander löschen oder einfach die gesamte Ressourcengruppe löschen. Durch Löschen der Ressourcengruppe werden alle Themen, Warteschlangen, Namespaces und sonstigen in der Gruppe enthaltenen Ressourcen gelöscht.

@@ -30,7 +30,7 @@ Funktionen sind eine zentrale Komponente des serverlosen Computings, aber auch e
 
 ## <a name="drawbacks-of-a-serverless-compute-solution"></a>Nachteile einer serverlosen Computinglösung
 
-Serverloses Computing ist nicht immer die geeignete Lösung für das Hosten Ihrer Geschäftslogik. Nachstehend sind einige Merkmale von Funktionen aufgeführt, die Ihre Entscheidung zum Hosten Ihrer Dienste mit serverlosem Computing beeinflussen könnten. 
+Serverloses Computing ist nicht immer die geeignete Lösung für das Hosten Ihrer Geschäftslogik. Nachstehend sind einige Merkmale von Funktionen aufgeführt, die Ihre Entscheidung zum Hosten Ihrer Dienste mit serverlosem Computing beeinflussen könnten.
 
 ### <a name="execution-time"></a>Ausführungszeit
 

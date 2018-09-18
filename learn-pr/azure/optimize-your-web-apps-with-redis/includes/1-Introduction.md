@@ -1,17 +1,17 @@
-You work at a company that tracks professional sports statistics and provides an API to query results. It helps fans track and review games and scores, both live and historical. Users can also request team statistics using a natural language search, such as, "How many times has John Smith hit a home run against a left-handed pitcher?"
+Angenommen, Sie arbeiten für ein Unternehmen, das Statistiken von professionellen Sportlern nachverfolgt und eine API bereitstellt, um Ergebnisse abzufragen. Dadurch können Fans aktuelle und vergangene Spiele und Spielstände nachverfolgen und prüfen. Außerdem können die Benutzer über Suchen mit natürlicher Sprache Teamstatistiken abfragen. Beispiel: „Wie viele Tore hat Max Mustermann in der Nationalmannschaft bereits geschossen?“
 
-During times of peak demand, such as during playoffs, response time of your service slows down because the back-end service doesn't have the capacity to meet demand. You want to improve performance for your users and reduce the workload on your back-end and data storage services. Your metrics show that 50% to 80% of the data returned is for read-only or recently requested values. Implementing a cache of commonly used data could improve performance and reduce latency.
+In Spitzenzeiten (z.B. während einer Fußballweltmeisterschaft) verlängert sich die Antwortzeit Ihres Diensts, da der Back-End-Dienst nicht über die nötigen Kapazitäten verfügt, um die erhöhte Anzahl an Abfragen zu verarbeiten. Sie sollten die Leistung für Ihre Benutzer verbessern und die Workload in Ihren Back-End- und Datenspeicherdiensten reduzieren. Anhand Ihrer Daten lässt sich erkennen, dass 50 bis 80 % der zurückgegebenen Daten für schreibgeschützte oder kürzlich angeforderte Werte zurückgegebenen werden. Wenn Sie einen Cache für häufig verwendete Daten implementieren, kann die Leistung ggf. verbessert und die Latenz reduziert werden.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul lernen Sie Folgendes:
 
-- Describe what a Redis cache is and how you can use it for your business needs
-- Create a design and plan to use a Redis cache
-- Provision a Redis cache in Azure
-- Connect an application to the cache
+- Beschreiben der Funktions- und Verwendungsweise von Redis Cache entsprechend Ihrer Unternehmensanforderungen
+- Erstellen eines Entwurfs und Planen der Verwendung von Redis Cache
+- Bereitstellen einer Redis Cache-Instanz in Azure
+- Herstellen einer Verbindung zwischen einer Anwendung und dem Cache
 
-## Prerequisites
+## <a name="prerequisites"></a>Voraussetzungen
 
-- Experience with app development
-- Experience using data in apps
+- Erfahrungen mit der Entwicklung von Apps
+- Erfahrungen mit dem Verwenden von Daten in Apps

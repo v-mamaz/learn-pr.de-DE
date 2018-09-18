@@ -1,29 +1,29 @@
-In this unit, you will extract handwriting from an image with the Computer Vision API service that we created previously.
+In dieser Einheit extrahieren Sie handschriftliche Angaben aus einem Bild mit dem Maschinelles Sehen-API-Dienst, den Sie zuvor erstellt haben.
 
-# Extracting the handwriting from an image
+# <a name="extracting-the-handwriting-from-an-image"></a>Extrahieren von handschriftlichen Angaben aus einem Bild
 
-Execute the `az cognitiveservices account keys list` command to retrieve a key used to authenticate against the API. Store the output of that command within the `key` variable.
+Führen Sie den Befehl `az cognitiveservices account keys list` aus, um einen Schlüssel zum Authentifizieren bei der API abzurufen. Speichern Sie die Ausgabe dieses Befehls in der Variablen `key`.
 
 ```azurecli
 key=$(az cognitiveservices account keys list -g ComputerVisionRG --name ComputerVisionService --query key1 -o tsv)
 ```
 
-Execute a `curl` command to do an HTTP request against the Computer Vision API and reuse the previously declared variable `key`.
+Führen Sie einen `curl`-Befehl aus, um eine HTTP-Anforderung an die Maschinelles Sehen-API zu richten und die zuvor deklarierte Variable `key` wiederzuverwenden.
 
-The image we're going to be using for handwriting recognition is a picture of this note board.
+Das Bild, das wir für die Handschrifterkennung verwenden werden, ist ein Bild dieses Notizblocks.
 
-![Picture of a handwriting sample on a note](../media/6-handwriting.jpg)
+![Handschrift](../images/handwriting.jpg)
 
 ```azurecli
 curl -H "Ocp-Apim-Subscription-Key: $key" -H "Content-Type: application/json" "https://westus2.api.cognitive.microsoft.com/vision/v1.0/recognizeText?handwriting=true" -d "{\"url\":\"https://docs.microsoft.com/en-us/learn/modules/create-computer-vision-service/handwriting.jpg\"}" -D -
 ```
 
-The command above will output the headers. Copy the `Operation-Location` header value into the command below.
+Der Befehl oben gibt die Header aus. Kopieren die `Operation-Location`-Headerwerte in den Befehl unten.
 
 ```azurecli
 curl -H "Ocp-Apim-Subscription-Key: $key" "<Operation-Location>"
 ```
 
-You will now receive a JSON file containing the result of the handwriting recognition request.
+Sie erhalten nun eine JSON-Datei, die das Ergebnis der Handschrifterkennungsanforderung enthält.
 
-Experiment with other images to get different results by changing the URL used in the sample above.
+Experimentieren Sie mit anderen Bildern, um ein anderes Ergebnis zu erhalten, indem Sie die URL ändern, die im Beispiel oben verwendet wird.

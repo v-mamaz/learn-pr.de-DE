@@ -1,13 +1,13 @@
-As a PostgreSQL user, you may already know the benefits of PostgreSQL. You plan to use **Azure Database for PostgreSQL** and you want to make sure you'll have access to the same benefits as your on-premise server before moving to the cloud.
+Als PostgreSQL-Benutzer sind Ihnen die Vorteile von PostgreSQL vielleicht bereits bekannt. Sie planen den Einsatz von **Azure Database for PostgreSQL** und möchten sicherstellen, dass Sie vor der Umstellung auf die Cloud in den Genuss der gleichen Vorteile wie auf Ihrem lokalen Server kommen.
 
-Azure Database for PostgreSQL is a relational database service in the Microsoft cloud. The server software is based on the community version of the open-source PostgreSQL database engine. Your familiarity with tools and expertise with PostgreSQL is applicable when using Azure Database for PostgreSQL.
+Azure Database for PostgreSQL ist ein relationaler Datenbankdienst in der Cloud. Die Serversoftware basiert auf der Communityversion der Open-Source-Datenbank-Engine von PostgreSQL. Ihre Vertrautheit mit Tools und Ihr Fachwissen im Umgang mit PostgreSQL kommen bei der Verwendung von Azure Database for PostgreSQL zum Tragen.
 
-Moreover, Azure Database for PostgreSQL delivers the following benefits:
+Azure Database for PostgreSQL bietet außerdem die folgenden Vorteile:
 
-- Built-in high availability compared to on-premises resources. There is no additional configuration, replication, or cost required to make sure your applications are always available.
-- Simple and flexible pricing. You have predictable performance based on a selected pricing tier choice that includes software patching, automatic backups, monitoring, and security.
-- Scale up or down as needed within seconds. You can scale compute or storage independently as needed to make sure you adapt your service to match usage.
-- Adjustable automatic backups and point-in-time-restore for up to 35 days.
-- Enterprise-grade security and compliance to protect sensitive data at-rest and in-motion that covers data encryption on disk and SSL encryption between client and server communication.
+- Integrierte hohe Verfügbarkeit im Vergleich zu lokalen Ressourcen. Es fällt kein zusätzlicher Konfigurations-, Replikations- oder Kostenaufwand an, um sicherzustellen, dass Ihre Anwendungen stets verfügbar sind.
+- Einfache und flexible Preisgestaltung. Sie erhalten eine vorhersehbare Leistung auf Grundlage eines ausgewählten Tarifs, der das Patchen von Software, automatische Sicherungen, Überwachung und Sicherheit vorsieht.
+- Zentrales Hoch- oder Herunterskalieren je nach Bedarf binnen Sekunden. Sie können Compute- oder Speicherressourcen nach Bedarf unabhängig voneinander skalieren, um sicherzustellen, dass Sie Ihren Dienst an die Nutzung anpassen.
+- Anpassbare automatische Sicherungen und Point-in-Time-Wiederherstellung für bis zu 35 Tage.
+- Erstklassige Sicherheit und Konformität zum Schutz sensibler Daten im Ruhezustand und während der Übertragung, die Datenverschlüsselung auf dem Datenträger und SSL-Verschlüsselung der Client- und Serverkommunikation einschließt.
 
-These benefits should help make your decision to go from om-premise PostgeSQL to Azure Database for PostgreSQL simple.
+Diese Vorteile sollten helfen, Ihnen die Entscheidung für einen Umstieg von lokalem PostgreSQL zu Azure Database for PostgreSQL zu erleichtern.

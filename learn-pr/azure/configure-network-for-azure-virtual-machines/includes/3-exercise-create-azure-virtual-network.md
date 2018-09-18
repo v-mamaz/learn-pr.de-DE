@@ -1,111 +1,105 @@
-In this exercise, you will create a virtual network in Microsoft Azure. You will then create two virtual machines and use the virtual network to connect the virtual machines to each other and to the Internet.
+In dieser Übung erstellen Sie in Microsoft Azure ein virtuelles Netzwerk. Anschließend erstellen Sie zwei virtuelle Computer und verwenden das virtuelle Netzwerk, um die virtuellen Computer miteinander und mit dem Internet zu verbinden.
 
-Before you begin this unit, you will need to log into [Azure Cloud Shell](https://shell.azure.com) with your trial subscription credentials. We will use Azure CLI via Azure Cloud Shell to create the resource groups, virtual networks, and virtual machines.
+Vor Beginn dieser Einheit müssen Sie sich mit den Anmeldeinformationen Ihres Testabonnements bei [Azure Cloud Shell](https://shell.azure.com) anmelden. Wir verwenden Azure Cloud Shell, um die Ressourcengruppen, die virtuellen Netzwerke und die virtuellen Computer zu erstellen.
 
-## Create a resource group
+## <a name="create-a-resource-group"></a>Erstellen einer Ressourcengruppe
 
-1. In the **Welcome to Azure Cloud Shell** window, click **Bash (Linux)**.
+1. Klicken Sie im Fenster **Welcome to Azure Cloud Shell** (Willkommen bei Azure Cloud Shell) auf **PowerShell (Linux)**.
 
-1. In the **you have no storage mounted** window, click **Create Storage**.
+1. Klicken Sie im Fenster **You have no storage mounted** (Sie haben keinen Speicher bereitgestellt) auf **Speicher erstellen**.
 
-1. In the Azure PowerShell command-line prompt, type the following code and press Enter. Replace the `<myResourceGroup>` value with a descriptive name to make it easy to remember when you clean up any resources created later. You'll use this name through the reset of this lab.
+1. Geben Sie an der Azure PowerShell-Eingabeaufforderung den folgenden Code ein, und drücken Sie die EINGABETASTE.
 
-    ```bash
-    az group create --name <myResourceGroup> --location eastus
+    ```PowerShell
+    az group create --name myResourceGroup --location eastus
     ```
 
-## Create a virtual network
+## <a name="create-a-virtual-network"></a>Erstellen eines virtuellen Netzwerks
 
-1. To create a virtual network, enter the following command and press Enter. Replace the `<myVirtualNetwork>` value with a descriptive name to make it easy to remember
+1. Geben Sie den folgenden Befehl ein, und drücken Sie die EINGABETASTE, um ein virtuelles Netzwerk zu erstellen.
 
-    ```bash
-    az network vnet create --name <myVirtualNetwork> --resource-group <myResourceGroup> --subnet-name default
+    ```PowerShell
+    az network vnet create --name myVirtualNetwork --resource-group myResourceGroup --subnet-name default
     ```
 
-## Create two virtual machines
+## <a name="create-two-virtual-machines"></a>Erstellen von zwei virtuellen Computern
 
-1. To create the first virtual machine, execute the following command to create a Windows VM with a public IP address that is accessible over port 3389 (Remote Desktop). Name the VM `dataProcStage1`:
+1. Erstellen Sie den ersten virtuellen Computer. Führen Sie dazu den folgenden Befehl aus, um einen virtuellen Windows-Computer mit einer öffentlichen IP-Adresse zu erstellen, auf die über den Port 3389 (Remotedesktop) zugegriffen werden kann:
 
-    ```bash
-    az vm create --name dataProcStage1 --resource-group <myResourceGroup> --admin-username "DataAdmin" --image Win2016Datacenter
+    ``` PowerShell
+    az vm create --name dataProcessingStage1 --resource-group MyResourceGroup --admin-username "DataAdmin"--image Win2016Datacenter
     ```
 
-1. Supply values for your password at the prompts. Remeber to write this password down as you'll need it later to access the server.
+1. Geben Sie an den Eingabeaufforderungen Werte für Ihr Kennwort ein.
 
-1. You'll now create the second VM. This VM will not have a public IP adderss. Execute the following command to create a Windows VM **without** a public IP address using an empty string. Name the VM `dataProcStage2`:
+1. Führen Sie den folgenden Befehl aus, um einen virtuellen Windows-Computer ohne öffentliche IP-Adresse zu erstellen:
 
-    ```bash
-    az vm create -n dataProcStage2 -g <myResourceGroup> --public-ip-address "" --admin-username "DataAdmin" --image Win2016Datacenter
+    ```PowerShell
+    az vm create -n dataProcessingStage2 -g MyResourceGroup --public-ip-address '' --admin-username "DataAdmin"--image Win2016Datacenter
     ```
 
-1. When completed, the output from the second command will return a value for publicIpAddress.  
+1. Nach Abschluss des Vorgangs enthält die Ausgabe des zweiten Befehls einen Wert für „publicIpAddress“.
 
-## Connect to dataProcStage1 using Remote Desktop
+## <a name="connect-to-dataprocessingstage1-using-remote-desktop"></a>Herstellen einer Remotedesktopverbindung mit „dataProcessingStage1“
 
-1. On your client computer, press the Windows key and type RDP.
+1. Drücken Sie auf Ihrem Clientcomputer die Windows-Taste, und geben Sie „RDP“ ein.
 
-1. Ensure that **Remote Desktop Connection** app is selected, and then press Enter.
+1. Vergewissern Sie sich, dass die App **Remotedesktopverbindung** ausgewählt ist, und drücken Sie die EINGABETASTE.
 
-1. In the **Remote Desktop Connection** dialog box, in the **Computer** field, enter the value of `dataProcStage1`'s PublicIPAddress, and then click **Connect**.
-    
-    Instructions to get remote ip if not written down
+1. Geben Sie im Dialogfeld **Remotedesktopverbindung** im Feld **Computer** den Wert von „dataProcessingStage1PublicIPAddress“ ein, und klicken Sie anschließend auf **Verbinden**.
 
-1. In the **Do you trust this remote connection?** dialog box, click **Connect**.
+1. Klicken **Sie im Dialogfeld mit der Frage, ob Sie dieser Remoteverbindung**vertrauen, auf **Verbinden**.
 
-1. In the **Windows Security** dialog box, enter the user name and password you used when you created `dataProcStage1`. 
+1. Geben Sie im Dialogfeld **Windows-Sicherheit** den Benutzernamen und das Kennwort ein, den bzw. das Sie bei der Erstellung von „dataProcessingStage1“ verwendet haben.
 
-    Have to change profiles here
+1. Klicken Sie im Dialogfeld **Remotedesktopverbindung** auf **OK**.
 
-1. In the **Remote Desktop Connection** dialog box, click **OK**.
+1. Melden Sie sich bei dem Remotecomputer in Azure an.
 
-1. Sign in to the remote computer in Azure.
+1. Klicken Sie in der Meldung **Netzwerke** auf **Nein**.
 
-1. When the **Networks** message appears, click **No**.
+1. Schließen Sie den Server-Manager.
 
-1. Close Server Manager.
+1. Klicken Sie in der Remotesitzung mit der rechten Maustaste auf das Startmenü, und klicken Sie auf **Eingabeaufforderung**.
 
-1. In the remote session, right-click the Windows key and click **Command Prompt**.
-
-1. In the command prompt window, type the following command and press Enter.
+1. Geben Sie im Eingabeaufforderungsfenster den folgenden Befehl ein, und drücken Sie die EINGABETASTE.
 
     ```cmd
-    ping dataProcStage2 -4
+    ping dataProcessingStage2 -4
     ```
 
-1. There should be no response from `dataProcStage2`. This is because by default, Windows Firewall prevents ICMP responses on `dataProcStage2`.
+1. Vom Remotecomputer sollte keine Antwort zurückgegeben werden. Das liegt daran, dass ICMP-Antworten standardmäßig von der Windows-Firewall blockiert werden.
 
-## Connect to dataProcStage2 using Remote Desktop
+## <a name="connect-to-dataprocessingstage2-using-remote-desktop"></a>Herstellen einer Remotedesktopverbindung mit „dataProcessingStage2“
 
-You'll configure the Windows Firewall on `dataProcStage2` using a new remote desktop seesion. However, you'll not able to access `dataProcStage2` from your desktop. Recall, `dataProcStage2` does not have a public IP address. You will using remote desktop from `dataProcStage1` to connect to `dataProcStage2`.
+1. Drücken Sie auf Ihrem Clientcomputer die Windows-Taste, und geben Sie **RDP** ein. Wählen Sie die App **Remotedesktopverbindung** aus, und drücken Sie die EINGABETASTE.
 
-1. On `dataProcStage1`, press the Windows key and type **RDP**. Select the **Remote Desktop Connection** app and press Enter.
+1. Geben Sie im Feld **Computer** den Wert von „dataProcessingStage2PublicIPAddress“ ein, und klicken Sie anschließend auf **Verbinden**.
 
-1. In the **Computer** field, enter `dataProcStage2`, and then click **Connect**. Based on the default network configuration`dataProcStage1` is able to resolve the address for `dataProcStage2` using the computer name.
+1. Klicken **Sie im Dialogfeld mit der Frage, ob Sie dieser Remoteverbindung**vertrauen, auf **Verbinden**.
 
-1. In the **Do you trust this remote connection?** dialog box, click **Connect**.
+1. Geben Sie im Dialogfeld **Windows-Sicherheit** den Benutzernamen und das Kennwort ein, den bzw. das Sie bei der Erstellung von „dataProcessingStage2“ verwendet haben.
 
-1. In the **Windows Security** dialog box, enter the user name and password you used when you created `dataProcStage2`.
+1. Klicken Sie im Dialogfeld **Remotedesktopverbindung** auf **OK**. Melden Sie sich nun bei dem Remotecomputer in Azure an.
 
-1. In the **Remote Desktop Connection** dialog box, click **OK**. You now sign in to the remote computer in Azure.
+1. Klicken Sie in der Meldung **Netzwerke** auf **Nein**.
 
-1. When the **Networks** message appears, click **No**.
+1. Schließen Sie den Server-Manager.
 
-1. Close Server Manager.
+1. Drücken Sie auf „DataProcessingStage2“ die Windows-Taste, geben Sie **Firewall** ein, und drücken Sie die EINGABETASTE. Die Konsole **Windows-Firewall mit erweiterter Sicherheit** wird angezeigt.
 
-1. On `dataProcStage2`, press the Windows key, type **Firewall**, and press Enter. The **Windows Firewall with Advanced Security** console appears.
+1. Klicken Sie im linken Bereich auf **Eingehende Regeln**.
 
-1. In the left-hand pane, click **Inbound Rules**.
+1. Scrollen Sie im rechten Bereich nach unten, klicken Sie mit der rechten Maustaste auf **Datei- und Druckerfreigabe (Echoanforderung – ICMPv4 eingehend)**, und klicken Sie anschließend auf **Regel aktivieren**.
 
-1. In the right-hand pane, scroll down and right-click **File and Printer Sharing (Echo Request - ICMPv4-In)**, and then click **Enable Rule**.
-
-1. Switch back to the `dataProcStage1` console and in the command prompt window, type the following command and press Enter.
+1. Wechseln Sie wieder zur Konsole „dataProcessingStage1“, geben Sie im Eingabeaufforderungsfenster den folgenden Befehl ein, und drücken Sie die EINGABETASTE.
 
     ```cmd
-    ping dataProcStage2 -4
+    ping dataProcessingStage2 -4
     ```
 
-1. `dataProcStage2` responds with four replies, demonstrating connectivity between the two VMs.
+1. „dataProcessingStage2“ gibt vier Antworten zurück und bestätigt so die Konnektivität zwischen den beiden virtuellen Computern.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-You have successfully created a virtual network, created two VMs that are attached to that virtual network, connected to one of the VMs and shown network connectivity to the other VM within the same virtual network. You can use Azure Virtual Network to connect resources within the Azure network. However, those resources need to be within the same resource group and subscription. Next, we will look at VPN gateways, which enable you to connect virtual network in different resource groups, subscriptions, and even geographical regions.
+Sie haben erfolgreich ein virtuelles Netzwerk und zwei virtuelle Computer erstellt, die an das virtuelle Netzwerk angefügt sind. Darüber hinaus haben Sie eine Verbindung mit einem der virtuellen Computer hergestellt und die Netzwerkkonnektivität mit dem anderen virtuellen Computer im gleichen virtuellen Netzwerk überprüft. Sie können Azure Virtual Network verwenden, um Ressourcen innerhalb des Azure-Netzwerks zu verbinden. Diese Ressourcen müssen sich jedoch innerhalb der gleichen Ressourcengruppe und innerhalb des gleichen Abonnements befinden. Als Nächstes beschäftigen wir uns mit VPN-Gateways. Mit einem VPN-Gateway können Sie virtuelle Netzwerk in unterschiedlichen Ressourcengruppen, Abonnements und sogar geografischen Regionen verbinden.

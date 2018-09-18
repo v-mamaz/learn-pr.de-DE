@@ -12,11 +12,11 @@ Da Sie nun wissen, wie mit Anforderungseinheiten der Datenbankdurchsatz ermittel
 
     Einstellung | Empfohlener Wert | BESCHREIBUNG
     --------|-----------------|-------------
-    Datenbank-ID      | Benutzer         | Geben Sie *Users* als Namen für die neue Datenbank ein. Datenbanknamen müssen zwischen 1 und 255 Zeichen lang sein und dürfen weder /, \\, #, ? noch nachgestellte Leerzeichen enthalten.
-    Sammlungs-ID    | WebCustomers  | Geben Sie *WebCustomers* als Namen für die neue Sammlung ein. Für Sammlungs-IDs gelten dieselben Zeichenanforderungen wie für Datenbanknamen.
+    Datenbank-ID      | Produkte         | Geben Sie *Products* als Namen für die neue Datenbank ein. Datenbanknamen müssen 1 bis 255 Zeichen lang sein und dürfen weder /, \\, #, ? noch nachgestellte Leerzeichen enthalten.
+    Sammlungs-ID    | Kleidung  | Geben Sie *Kleidung* als Namen für die neue Sammlung ein. Für Sammlungs-IDs gelten dieselben Zeichenanforderungen wie für Datenbanknamen.
     Speicherkapazität | Unbegrenzt     | Übernehmen Sie den Standardwert **Unbegrenzt**. Dieser Wert ist die Speicherkapazität der Datenbank, und damit kann Ihre Datenbank nach Bedarf horizontal skaliert werden.
-    Partitionsschlüssel    | UserId        | „UserID“ ist ein guter Partitionsschlüssel für ein Onlinehändlerszenario, da sich viele Abfragen auf die Kunden-ID beziehen.
-    Throughput       |1000 RU        | Ändern Sie den Durchsatz in 1000 Anforderungseinheiten pro Sekunde (RU/s). 1000 ist der Mindestwert für RU/s, den Sie festlegen können, um die automatische Skalierung zu aktivieren.
+    Partitionsschlüssel    | productId        | „productId“ ist ein guter Partitionsschlüssel für ein Onlinehändlerszenario, da sich viele Abfragen auf die Produkt-ID beziehen.
+    Durchsatz       |1000 RU        | Ändern Sie den Durchsatz in 1000 Anforderungseinheiten pro Sekunde (RU/s). 1000 ist der Mindestwert für RU/s, den Sie festlegen können, um die automatische Skalierung zu aktivieren.
     
     Aktivieren Sie erst einmal nicht die Option für den **Durchsatz der Bereitstellungsdatenbank**, und fügen Sie der Sammlung keine eindeutigen Schlüssel hinzu.
     

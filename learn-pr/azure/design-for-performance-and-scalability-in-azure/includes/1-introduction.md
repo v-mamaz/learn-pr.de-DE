@@ -1,16 +1,16 @@
-Whether you're running a public-facing application that has to handle massive amounts of traffic or an internal business API that handles critical data for internal systems, your users expect a system that performs well. Scaling your system to handle load, identifying network bottlenecks, and optimizing your storage performance are important things you can do to ensure your users have the best experience. In this module, we'll talk through details of how to make your application perform at its best.
+Ob Sie nun eine öffentlich zugängliche Anwendung ausführen, die große Mengen Datenverkehr verarbeiten muss, oder eine unternehmensinterne API, die sich um wichtige Daten für interne Systeme kümmert – Ihre Benutzer erwarten ein reibungslos funktionierendes System. Wichtige Maßnahmen für ein optimales Benutzererlebnis sind hierbei das Skalieren des Systems zur Bewältigung der Last, das Identifizieren von Netzwerkengpässen sowie das Optimieren der Speicherleistung. In diesem Modul erhalten Sie detaillierte Informationen darüber, wie Sie Ihre Anwendung optimal ausführen.
 
-As we learn about architecting our cloud solutions for performance and scalability, we'll see how one fictional Azure customer puts these principles to work. Lamna Healthcare is a national healthcare provider with several thousand physicians and clinicians across multiple facilities throughout the country. Their IT organization has recently undertaken an effort to reduce their datacenter footprint and move the majority of their IT systems to Azure. They have a mixture of in-house developed applications, open source, and off-the-shelf applications, with varying architectures and technology platforms. They want to make their journey to the cloud successful, and would like to learn what they need to focus on to help make it possible.
+Sie erhalten Informationen über das Entwickeln von Cloudlösungen für mehr Leistung und Skalierbarkeit und erfahren, wie ein fiktiver Azure-Kunde diese umsetzt. Lamna Healthcare ist ein nationaler Anbieter für Gesundheitsdienstleistungen mit mehreren Tausend niedergelassenen Ärzten und Klinikärzten in verschiedenen Einrichtungen im ganzen Land. Die IT-Abteilung des Unternehmens versucht seit einiger Zeit, den Speicherbedarf ihres Rechenzentrums zu verringern und verlagert daher den Großteil der IT-Systeme in Azure. Das Unternehmen verfügt über eine Mischung aus intern entwickelten, Open-Source- und Standardanwendungen mit jeweils unterschiedlichen Architekturen und Technologieplattformen. Das Verlagern der Daten in die Cloud soll natürlich erfolgreich verlaufen, und das Unternehmen möchte wissen, was es selbst dazu beitragen kann.
 
 > [!NOTE]
-> The concepts discussed in this module are not all-inclusive, but represent some of the important considerations when building a solution on the cloud. Microsoft publishes a broad set of patterns, guidelines, and examples on designing applications on Azure. It is highly recommended that you look through the content in the [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) as you start planning and designing your architecture.
+> In diesem Modul werden nicht alle Konzepte beschrieben, sondern nur die wichtigsten, die für das Erstellen einer Lösung in der Cloud hilfreich sein können. Microsoft bietet verschiedene Muster, Richtlinien und Beispiele zum Entwerfen von Anwendungen in Azure an. Es wird dringend empfohlen, dass Sie sich im [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) informieren, bevor Sie damit beginnen, Ihre Architektur zu planen und zu entwerfen.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul lernen Sie Folgendes:
 
-- Learn how scaling up and scaling out allows you to dynamically adjust capacity to your workload.
-- Learn how to optimize network performance.
-- Learn how to optimize storage and database performance.
+- Informationen zum Hochskalieren und horizontalen Skalieren zur dynamischen Anpassung von Kapazität an Ihre Workload
+- Informationen zum Optimieren der Netzwerkleistung
+- Informationen zum Optimieren der Speicher- und Datenbankleistung
 
-Let's get started!
+Nachfolgend werden die ersten Schritte erläutert.

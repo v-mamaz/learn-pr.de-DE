@@ -1,36 +1,36 @@
 
-[QnA Maker](https://www.qnamaker.ai/) is part of [Azure Cognitive Services](https://www.microsoft.com/cognitive-services/), which is a suite of services and APIs for building intelligent apps backed by artificial intelligence (AI) and machine learning. Rather than code a bot to anticipate every question a user might ask and provide a response, you can connect it to a knowledge base of questions and answers created with QnA Maker. A common usage scenario is to create a knowledge base from an FAQ so the bot can answer domain-specific questions such as "How do I find my Windows product key" or "Where can I download Visual Studio Code?"
+[QnA Maker](https://www.qnamaker.ai/) ist Teil der [Azure Cognitive Services](https://www.microsoft.com/cognitive-services/), einer Sammlung von Diensten und APIs zum Erstellen intelligenter Apps, die durch künstliche Intelligenz (KI) und Machine Learning unterstützt werden. Anstatt einen Bot zu codieren, um alle Fragen vorweg zu nehmen, die ein Benutzer stellen könnte, und eine Antwort bereitzuhalten, können Sie eine Verbindung zwischen ihm und einer Wissensdatenbank herstellen, die mit QnA Maker erstellte Fragen und Antworten enthält. Ein allgemeines Verwendungsszenario ist das Erstellen einer Wissensdatenbank auf Basis eines FAQ, damit der Bot domänenspezifische Fragen beantworten kann, wie z.B.: „Wie finde ich meinen Windows-Produktschlüssel“ oder „Wo kann ich Visual Studio Code herunterladen?“
 
-In this unit, you will use QnA Maker to create a knowledge base containing questions such as "What NFL teams have won the most Super Bowls" and "What is the largest city in the world?" Then, you will deploy the knowledge base in an Azure web app so it can be accessed via an HTTPS endpoint.
+In dieser Einheit erstellen Sie mit QnA Maker eine Wissensdatenbank mit Fragen wie z.B.: „Welche NFL-Teams haben die meisten Super Bowls gewonnen?“ und „Wie heißt die größte Stadt der Welt?“ Anschließend stellen Sie die Wissensdatenbank in einer Azure-Web-App bereit, damit über einen HTTPS-Endpunkt auf sie zugegriffen werden kann.
 
-1. Open the [QnA Maker portal](https://www.qnamaker.ai/) in your browser and sign in with your Microsoft account if you aren't already signed in. Then, click **Create a knowledge base** in the menu bar at the top of the page.
+1. Öffnen Sie das [QnA Maker-Portal](https://www.qnamaker.ai/) in Ihrem Browser, und melden Sie sich mit Ihrem Microsoft-Konto an, wenn Sie nicht bereits angemeldet sind. Klicken Sie dann auf der Menüleiste am oberen Rand der Seite auf **Wissensdatenbank erstellen**.
 
-1. Click **Create a QnA service**.
+1. Klicken Sie auf **Create a QnA service**.
 
-1. Enter a name, such as "qa-factbot-kb", into the **Name** box. This name must be unique within Azure, so make sure a green check mark appears next to it *and* in the **App name** box further down the blade. Select **Use existing** under **Resource group**, and then select the "factbot-rg" resource group that you created when you deployed the Azure web app bot in the prior exercise. Select **F0** and **F** as the pricing tiers. (Both are free tiers that are ideal for experimenting with bots.) Select the location nearest you in both location drop-downs, and then click the **Create** button at the bottom of the blade.
+1. Geben Sie einen Namen wie „qa-factbot-kb“ in das Feld **Name** ein. Dieser Name muss innerhalb von Azure eindeutig sein. Stellen Sie deshalb sicher, dass daneben *und* im Feld **App-Name** weiter unten auf dem Blatt ein grünes Häkchen angezeigt wird. Wählen Sie **Vorhandene verwenden** unter **Ressourcengruppe** und dann die Ressourcengruppe „factbot-rg“ aus, die Sie beim Bereitstellen des Azure-Web-App-Bots in der vorherigen Übung erstellt haben. Wählen Sie **F0** und **F** als Tarife aus. (Beide Tarife sind kostenlos und ideal zum Experimentieren mit Bots.) Wählen Sie in beiden Dropdownlisten für den Standort den Ihnen nächstgelegenen aus, und klicken Sie unten auf dem Blatt auf die Schaltfläche **Erstellen**.
 
-    ![Screenshot of the Azure portal showing the QnA Maker Create blade with configuration values as described.](../media/3-new-qna-maker-service.png)
+    ![Screenshot des Azure-Portals mit dem Blatt „QnA Maker Create“ mit Konfigurationswerten entsprechend der Beschreibung.](../media/3-new-qna-maker-service.png)
 
-1. Click **Resource groups** in the ribbon on the left side of the portal and open the "factbot-rg" resource group. Wait until "Deploying" changes to "Succeeded" at the top of the blade, indicating that the QnA service and the resources associated with it were successfully deployed. Once more, you can click **Refresh** at the top of the blade to refresh the deployment status.
+1. Klicken Sie im Menüband auf der linken Seite des Portals auf **Ressourcengruppen**, und öffnen Sie die Ressourcengruppe „factbot-rg“. Warten Sie, bis „Wird bereitgestellt“ am oberen Rand des Blatts sich in „Erfolgreich“ ändert, um anzuzeigen, dass der QnA-Dienst und die zugehörigen Ressourcen erfolgreich bereitgestellt wurden. Klicken Sie zum Aktualisieren des Bereitstellungsstatus noch einmal am oberen Rand des Blatts auf **Aktualisieren**.
 
-1. Return to the [Create a knowledge base](https://www.qnamaker.ai/Create) page in the QnA Maker portal. Under **Azure QnA service**, select the QnA service name you specified in Step 3. Then, assign the knowledge base a name, such as "Factbot Knowledge Base."
+1. Wechseln Sie zurück zur Seite [Wissensdatenbank erstellen](https://www.qnamaker.ai/Create) im QnA Maker-Portal. Wählen Sie unter **Azure QnA-Dienst** den QnA-Dienstnamen aus, den Sie in Schritt 3 angegeben haben. Weisen Sie der Wissensdatenbank dann einen Namen wie z.B. „Factbot Knowledge Base“ zu.
 
-1. You can enter questions and answers into a QnA Maker knowledge base manually, or you can import them from online FAQs or local files. Supported formats include tab-delimited text files, Microsoft Word documents, Excel spreadsheets, and PDF files.
+1. Sie können Fragen und Antworten manuell in eine QnA Maker-Wissensdatenbank eingeben oder sie aus Online-FAQs oder lokalen Dateien importieren. Zu den unterstützten Formaten gehören Textdateien mit Tabstopptrennzeichen, Microsoft Word-Dokumente, Excel-Kalkulationstabellen und PDF-Dateien.
 
-    To demonstrate, [click here](https://topcs.blob.core.windows.net/public/bots-resources.zip) to download a zip file containing a text file named **Factbot.tsv**, and then copy the file to your computer. Then, scroll down in the QnA Maker portal, click **+ Add file**, and select **Factbot.tsv**. This file contains 20 questions and answers in tab-delimited format.
+    Klicken Sie zur Veranschaulichung [hier](https://topcs.blob.core.windows.net/public/bots-resources.zip), um eine ZIP-Datei mit einer Textdatei namens **Factbot.tsv** herunterzuladen, und kopieren Sie die Datei auf Ihren Computer. Scrollen Sie dann im QnA Maker-Portal nach unten, klicken Sie auf **+ Datei hinzufügen**, und wählen Sie **Factbot.tsv** aus. Diese Datei enthält 20 Fragen und Antworten im Format mit Tabstopptrennzeichen.
 
-1. Click **Create your KB** at the bottom of the page and wait for the knowledge base to be created. It should take less than a minute.
+1. Klicken Sie am unteren Rand der Seite auf **Ihre KB erstellen**, und warten Sie darauf, dass die Wissensdatenbank erstellt wird. Dieser Vorgang dauert normalerweise weniger als eine Minute.
 
-1. Confirm that the questions and answers imported from **Factbot.tsv** appear in the knowledge base. Then, click **Save and train** and wait for training to complete.
+1. Vergewissern Sie sich, dass die aus **Factbot.tsv** importierten Fragen und Antworten in der Wissensdatenbank angezeigt werden. Klicken Sie dann auf **Speichern und trainieren**, und warten Sie, bis das Training abgeschlossen ist.
 
-    ![Screenshot of the Factbot Knowledge Base site showing the loaded knowledge base data.](../media/3-save-and-train.png)
+    ![Screenshot der Factbot Knowledge Base-Website mit den Daten der Wissensdatenbank geladen.](../media/3-save-and-train.png)
 
-1. Click the **Test** button to the right of the **Save and train** button. Type "Hi" into the message box and press **Enter**. Confirm that the response is "Welcome to the QnA Factbot," as shown below.
+1. Klicken Sie auf die Schaltfläche **Testen** rechts neben der Schaltfläche **Speichern und trainieren**. Geben Sie „Hi“ in das Nachrichtenfeld ein, und drücken Sie die **EINGABETASTE**. Vergewissern Sie sich, dass die Antwort wie unten dargestellt „Welcome to the QnA Factbot“ lautet.
 
-    ![Screenshot of a test interaction with the created chat bot.](../media/3-test-kb.png)
+    ![Screenshot einer Testinteraktion mit dem erstellten Chatbot.](../media/3-test-kb.png)
 
-1. Type "What book has sold the most copies?" into the message box and press **Enter**. What is the response?
+1. Geben Sie „What book has sold the most copies?“ (Von welchem Buch wurden die meisten Exemplare verkauft?) in das Nachrichtenfeld ein, und drücken Sie die **EINGABETASTE**. Wie lautet die Antwort?
 
-1. Click the **Test** button again to collapse the Test panel. Then, click **Publish** in the menu at the top of the page and click the **Publish** button at the bottom of the page to publish the knowledge base. *Publishing* makes the knowledge base available at an HTTPS endpoint.
+1. Klicken Sie erneut auf die Schaltfläche **Testen**, um den Bereich „Testen“ zuzuklappen. Klicken Sie dann im Menü am oberen Rand der Seite auf **Veröffentlichen** und am unteren Seitenrand auf die Schaltfläche **Veröffentlichen**, um die Wissensdatenbank zu veröffentlichen. *Veröffentlichen* macht die Wissensdatenbank an einem HTTPS-Endpunkt verfügbar.
 
-Wait for the publication process to complete and confirm that you are told the QnA service has been deployed. With the knowledge base now hosted in an Azure web app of its own, the next step is to deploy a bot that can use it.
+Warten Sie auf den Abschluss des Veröffentlichungsprozesses, und bestätigen Sie, dass Ihnen mitgeteilt wurde, dass der QnA-Dienst bereitgestellt ist. Die Wissensdatenbank wird nun in einer eigenen Azure-Web-App gehostet, und im nächsten Schritt wird ein Bot bereitgestellt, der sie verwenden kann.

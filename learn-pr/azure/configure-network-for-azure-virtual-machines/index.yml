@@ -1,23 +1,30 @@
 ### YamlMime:Module
 uid: learn.configure-the-network-for-your-virtual-machines
 metadata:
-  title: Configure the network for your virtual machines
-  description: You will learn how external services communicate to virtual machines and other Azure resources, either over the internet or by using dedicated private connections. You will cover how to connect your local on-premises networks into Azure using virtual networks, VPN gateways, and Azure ExpressRoute. 
+  title: Konfigurieren des Netzwerks für Ihre virtuellen Computer
+  description: Hier erfahren Sie, wie externe Dienste mit virtuellen Computern und anderen Azure-Ressourcen kommunizieren – entweder über das Internet oder über dedizierte private Verbindungen. Außerdem erfahren Sie, wie Sie Ihre lokalen Netzwerke mithilfe von virtuellen Netzwerken, VPN-Gateways und Azure ExpressRoute mit Azure verbinden.
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Configure the network for your virtual machines
-summary: Learn how to configure networking in a secure way for your Azure virtual machines.
-abstract: |
-  In this module, you will:
-  - Describe Azure Virtual Network
-  - Describe Azure VPN Gateway
-  - Describe Azure ExpressRoute
-prerequisites: None
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: 78f61bb9e823074c2508689547ea12ccea3cbe9d
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44243592"
+title: Konfigurieren des Netzwerks für Ihre virtuellen Computer
+summary: Hier erfahren Sie, wie Sie sichere Netzwerke für Ihre virtuellen Azure-Computer konfigurieren.
+abstract: >
+  In diesem Modul lernen Sie Folgendes:
+
+  - Beschreiben von Azure Virtual Network
+
+  - Beschreiben von Azure VPN Gateway
+
+  - Beschreiben von Azure ExpressRoute
+prerequisites: Keine
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - intermediate

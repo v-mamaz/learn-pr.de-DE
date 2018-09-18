@@ -1,16 +1,16 @@
-Azure is a cloud platform that provides the compute, storage, and networking resources needed to build cloud-hosted applications. As a new user, the Azure Portal is likely to be the primary way you will interact with Azure. The Azure Portal lets you create and manage all your Azure resources. For example, you can set up a new database, increase the compute power of your virtual machines, and monitor your monthly costs. It's also a great learning tool since you can survey all available resources and use guided wizards to create the ones you need.
+Azure ist eine Cloudplattform, die die für die Erstellung cloudbasierter Anwendungen erforderlichen Rechen-, Speicher- und Netzwerkressourcen bereitstellt. Als neuer Benutzer werden Sie wahrscheinlich hauptsächlich über das Azure-Portal mit Azure interagieren. Im Azure-Portal können Sie alle Ihre Azure-Ressourcen erstellen und verwalten. Sie können beispielsweise eine neue Datenbank einrichten, die Rechenleistung Ihrer virtuellen Computer erhöhen und Ihre monatlichen Kosten überwachen. Es ist auch ein großartiges Lerninstrument, da Sie alle verfügbaren Ressourcen auf einen Blick erfassen und geführte Assistenten verwenden können, um benötigte Ressourcen zu erstellen.
 
-Here you will learn how to create an Azure account, sign in to the portal, and navigate the portal interface. You will customize the dashboard, so it is convenient to locate and monitor your most essential services.
+Hier erfahren Sie, wie Sie ein Azure-Konto erstellen, sich beim Portal anmelden und auf der Portaloberfläche navigieren. Sie passen das Dashboard so an, dass Sie Ihre wichtigsten Dienste bequem finden und überwachen können.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul lernen Sie Folgendes:
 
-- Create an Azure account
-- Navigate the Azure portal
-- Customize the dashboard
+- Erstellen eines Azure-Kontos
+- Navigieren im Azure-Portal
+- Anpassen des Dashboards
 
-## Prerequisites
+## <a name="prerequisites"></a>Voraussetzungen
 
-- Knowledge of basic cloud computing terms and concepts
-- A valid credit card to register with Azure
+- Kenntnisse über grundlegende Cloud Computing-Bestimmungen und -Konzepte
+- Gültige Kreditkarte für die Registrierung bei Azure

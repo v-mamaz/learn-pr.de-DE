@@ -1,75 +1,75 @@
-Securing your network from attacks and unauthorized access is an important part of any architecture. Before their environment became too large, Lamna Healthcare took the time to plan out their network infrastructure. Here, we'll take a look at what network security looks like, how to integrate a layered approach into your architecture, and how Azure can help you provide network security for your environment.
+Der Schutz von Netzwerken vor Angriffen und unbefugtem Zugriff ist ein wichtiger Bestandteil jeder Architektur. Bevor die Umgebung zu groß wurde, nahm sich Lamna Healthcare die Zeit, die Netzwerkinfrastruktur zu planen. Hier betrachten wir die Netzwerksicherheit, wie Sie einen mehrstufigen Ansatz in Ihre Architektur integrieren, und wie Sie mit Azure Netzwerksicherheit für Ihre Umgebung gewährleisten.
 
-## What is network security
+## <a name="what-is-network-security"></a>Was ist Netzwerksicherheit?
 
-Network security is protecting the communication of resources within and outside of your network. The goal is to limit exposure at the network layer across your services and systems. By limiting this exposure, you decrease the likelihood that your resources can be attacked. In the focus on network security, efforts can be focused on the following areas:
+Netzwerksicherheit schützt die Kommunikation von Ressourcen innerhalb und außerhalb Ihres Netzwerks. Ziel ist es, das Risiko für Ihre Dienste und Systeme auf Netzwerkebene einzuschränken. Indem Sie das Risiko einschränken, verringern Sie die Wahrscheinlichkeit für einen Angriff auf Ihre Ressourcen. Die Netzwerksicherheit konzentriert sich vor allem auf folgende Bereiche:
 
-- Securing traffic flow between applications and the internet
-- Securing traffic flow amongst applications
-- Securing traffic flow between users and the application
+- Schützen des Datenverkehrs zwischen Anwendungen und Internet
+- Schützen des Datenverkehrs zwischen Anwendungen
+- Schützen des Datenverkehrs zwischen Benutzern und Anwendungen
 
-Securing traffic flow between applications and the internet focuses on limiting exposure outside your network. Network attacks will most frequently start outside your network, so by limiting the internet exposure and securing the perimeter, the risk of being attacked can be reduced.
+Der Schutz des Datenverkehrs zwischen Anwendungen und Internet konzentriert sich darauf, das Risiko außerhalb Ihres Netzwerks einzuschränken. Netzwerkangriffe beginnen meist außerhalb Ihres Netzwerks, sodass durch die Begrenzung des Internetrisikos und den Schutz des Umkreises die Gefahr eines Angriffs reduziert werden kann.
 
-Securing traffic flow amongst applications focuses on  data between applications, their tiers, between different environments, and other services within your network. By limiting exposure between these resources, you reduce the effect a compromised resource can have. This can help reduce further propagation within a network.
+Der Schutz des Datenverkehrs zwischen Anwendungen konzentriert sich auf Daten, die zwischen Anwendungen, deren Schichten, verschiedenen Umgebungen und anderen Diensten in Ihrem Netzwerk übertragen werden. Durch die Einschränkung der Gefährdung zwischen diesen Ressourcen verringern Sie die Auswirkungen einer möglicherweise beschädigten Ressource. Dies kann dazu beitragen, die weitere Verbreitung innerhalb eines Netzwerks zu einzudämmen.
 
-Securing traffic flow between users and the application focuses on securing the network flow for your end users. This limits the exposure your resources have to outside attacks, and provides a secure mechanism for users to utilize your resources. 
+Der Schutz des Datenverkehrs zwischen Benutzern und Anwendungen konzentriert sich auf den Schutz des Netzwerkflusses Ihrer Endbenutzer. Dadurch wird die Gefährdung Ihrer Ressourcen durch Angriffe von außen begrenzt und ein sicherer Mechanismus für Benutzer geschaffen, Ihre Ressourcen zu nutzen. 
 
-## A layered approach to network security
+## <a name="a-layered-approach-to-network-security"></a>Mehrstufiger Netzwerksicherheitsansatz
 
-A common thread throughout this module has been taking a layered approach to security, and this approach is no different at the network layer. It's not enough to just focus on securing the network perimeter, or focusing on the network security between services inside a network. A layered approach provides multiple levels of protection, so that if an attacker gets through one layer, there's further protections in place to limit further attack.
+Ein roter Faden in diesem Modul ist der mehrstufige Sicherheitsansatz – der auch auf Netzwerkebene gilt. Es reicht nicht aus, sich nur dem Schutz des Netzwerkumkreises oder der Netzwerksicherheit zwischen Diensten innerhalb eines Netzwerks zu widmen. Ein mehrstufiger Ansatz bietet mehrere Schutzebenen. Das heißt, wenn ein Angriff eine Ebene passiert, sind weitere Schutzmechanismen vorhanden, um weitere Angriffe einzuschränken.
 
-Let's take a look at how Azure can provide the tools for a layered approach to securing your network footprint.
+Sehen wir uns an, wie Azure Tools für einen mehrstufigen Ansatz zum Schutz Ihres Netzwerks bereitstellen kann.
 
-### Internet protection
+### <a name="internet-protection"></a>Internetschutz
 
-If we start on the perimeter of the network, we're focused on limiting and eliminating attacks from the internet. A great first place to start is to assess the resources that are internet facing, and only allow inbound and outbound communication where necessary. Identify all resources that are allowing inbound network traffic of any type, and ensure they are necessary and restricted to only the ports/protocols required. Azure Security Center is a great place to look for this information, as it will identify internet facing resources that don't have network security groups (NSG) associated with them, as well as resources that are not secured behind a firewall.
+Wenn wir im Umkreis des Netzwerks beginnen, konzentrieren wir uns darauf, Angriffe aus dem Internet einzuschränken und zu eliminieren. Ein guter Ausgangspunkt ist es, die Ressourcen zu bewerten, mit denen das Internet konfrontiert ist, und ein- und ausgehende Kommunikation nur dann zu erlauben, wenn sie erforderlich ist. Identifizieren Sie alle Ressourcen, die eingehenden Netzwerkdatenverkehr jeglicher Art zulassen, und stellen Sie sicher, dass dieser notwendig und auf die erforderlichen Ports/Protokolle beschränkt ist. Das Azure Security Center eignet sich hervorragend, um nach diesen Informationen zu suchen, da es Internetressourcen identifiziert, denen keine Netzwerksicherheitsgruppen (NSG) zugeordnet sind, sowie Ressourcen, die nicht hinter einer Firewall geschützt sind.
 
-To provide inbound protection at the perimeter, there are a couple of ways to do this. Application Gateway is a Layer 7 load balancer that also includes a web application firewall (WAF) to provide advanced security for your HTTP-based services. The WAF is based on rules from the OWASP 3.0 or 2.2.9 core rule sets, and provides protection from common-known vulnerabilities such as cross-site scripting and SQL injection.
+Es gibt mehrere Möglichkeiten, Schutz für eingehenden Datenverkehr im Umkreis zu gewährleisten. Application Gateway ist ein Layer 7-Lastenausgleich, der auch eine Web Application Firewall (WAF) bietet, um erweiterte Sicherheit für Ihre HTTP-basierten Dienste zu bieten. Die WAF basiert auf den Kernregeln von OWASP 3.0 bzw. 2.2.9 und bietet Schutz vor bekannten Sicherheitsrisiken wie Cross-Site-Scripting und Einschleusung von SQL-Befehlen.
 
-![Application Gateway with WAF](../media-draft/appgw-waf.png)
+![Application Gateway mit WAF](../media-draft/appgw-waf.png)
 
-For protection of non-HTTP-based services or for increased customization, network virtual appliances (NVA) can be used to secure your network resources. NVAs are similar to firewall appliances you might find in on-premises networks, and are available from many of the most popular network security vendors. NVAs can provide greater customization of security for those applications that require it, but can come with increased complexity, so careful consideration of requirements is advised.
+Zum Schutz von Diensten, die nicht auf HTTP basieren, oder zur besseren Anpassung können virtuelle Netzwerkappliances zum Schutz Ihrer Netzwerkressourcen eingesetzt werden. Virtuelle Netzwerkappliances sind ähnlich wie Firewallappliances auf lokalen Netzwerken und über viele gängige Anbieter von Netzwerksicherheit erhältlich. Sie können eine bessere Anpassung der Sicherheitsmaßnahmen bieten, die Anwendungen benötigen. Allerdings sind sie ggf. komplexer, sodass eine sorgfältige Berücksichtigung der Anforderungen empfohlen wird.
 
-Any resource exposed to the internet is at risk of being attacked by a denial-of-service attack. These types of attacks attempt to overwhelm a network resource by sending so many requests that the resource becomes slow or unresponsive. To mitigate these attacks, Azure DDoS provides basic protection across all Azure services and enhanced protection for further customization for your resources. DDoS protection blocks attack traffic and forwards the remaining traffic to its intended destination. Within a few minutes of attack detection, you are notified using Azure Monitor metrics.
+Für alle Ressourcen, die im Internet zur Verfügung stehen, besteht die Gefahr eines Denial-of-Service-Angriffs. Bei diesem Angriff wird eine Netzwerkressource überlastet, indem so viele Anforderungen gesendet werden, dass die Ressource langsam oder nicht mehr reagiert. Damit diese Angriffe abgewehrt werden können, bietet Azure DDoS einen Basisschutz für alle Azure-Dienste und einen erweiterten Schutz für weitere Anpassungen Ihrer Ressourcen. DDoS Protection sperrt Angriffsdatenverkehr und leitet den verbleibenden Datenverkehr an das vorgesehene Ziel weiter. Innerhalb weniger Minuten nach Angriffserkennung werden Sie mithilfe der Metriken von Azure Monitor benachrichtigt.
 
 ![DDoS](../media-draft/ddos.png)
 
-### Virtual network security
+### <a name="virtual-network-security"></a>Sicherheit in virtuellen Netzwerken
 
-Once inside a virtual network (VNet), it's important to limit communication between resources to only what is required.
+Es ist wichtig, in einem virtuellen Netzwerk (VNET) die Kommunikation zwischen den Ressourcen auf das erforderliche Maß zu beschränken.
 
-For communication between virtual machines, network security groups (NSG) are a critical piece to restrict unnecessary communication. NSGs operate at layers 3 & 4, and provide a list of allowed and denied communication to and from network interfaces and subnets. NSGs are fully customizable, and give you the ability to fully lock down network communication to and from your virtual machines. By using NSGs, you can isolate applications between environments, tiers, and services.
+Bei der Kommunikation zwischen VMs spielen Netzwerksicherheitsgruppen (NSGs) eine wichtige Rolle, um unnötige Kommunikation zu verhindern. NSGs werden auf den Ebenen 3 und 4 ausgeführt und stellen eine Liste der zulässigen und verweigerten Kommunikation von und zu Netzwerkschnittstellen und Subnetzen bereit. NSGs sind vollständig anpassbar und bieten Ihnen die Möglichkeit, die Netzwerkkommunikation zu und von Ihren VMs vollständig zu sperren. Mit NSGs können Sie Anwendungen zwischen Umgebungen, Ebenen und Diensten isolieren.
 
-![Azure network security groups](../media-draft/azure-network-security.png)
+![Azure-Netzwerksicherheitsgruppen](../media-draft/azure-network-security.png)
 
-To isolate Azure services to only allow communication from virtual networks, use VNet service endpoints. With service endpoints, Azure service resources can be secured to your virtual network. Securing service resources to a virtual network provides improved security by fully removing public internet access to resources, and allowing traffic only from your virtual network. This reduces the attack surface for your environment, reduces the administration required to limit communication between your VNet and Azure services, and provides optimal routing for this communication.
+Verwenden Sie VNET-Dienstendpunkte, um Azure-Dienste zu isolieren, damit nur die Kommunikation aus virtuellen Netzwerken zugelassen wird. Mit Dienstendpunkten können Ressourcen von Azure-Diensten auf Ihr virtuelles Netzwerk beschränkt und so geschützt werden. Das Schützen von Dienstressourcen in einem virtuellen Netzwerk erhöht die Sicherheit, da der Zugriff über das öffentliche Internet auf Ressourcen vollständig verhindert, und nur Datenverkehr aus Ihrem virtuellen Netzwerk zugelassen wird. Dies verringert die Angriffsfläche Ihrer Umgebung, reduziert den Verwaltungsaufwand, um die Kommunikation zwischen Ihren VNET- und Azure-Diensten einzuschränken, und bietet ein optimales Routing für diese Kommunikation.
 
-### Network integration
+### <a name="network-integration"></a>Netzwerkintegration
 
-It's common to have existing network infrastructure that needs to be integrated to provide communication from on-premises networks, or to provide improved communication between services in Azure. There are a few key ways to handle this integration and improve the security of your network.
+Es ist üblich, dass eine vorhandene Netzwerkinfrastruktur integriert werden soll, um die Kommunikation aus lokalen Netzwerken zu ermöglichen, oder um eine verbesserte Kommunikation zwischen den Diensten in Azure zu ermöglichen. Es gibt einige grundlegende Methoden, diese Integration auszuführen, und die Sicherheit Ihres Netzwerks zu verbessern.
 
-Virtual private network (VPN) connections are a common way of establishing secure communication channels between networks, and this is no different when working with virtual networking on Azure. Connection between Azure VNets and an on-premises VPN device is a great way to provide secure communication between your network and your virtual machines on Azure.
+VPN-Verbindungen (virtuelles privates Netzwerk) sind ein gängiger Weg, um sichere Kommunikationskanäle zwischen Netzwerken herzustellen – das ist auch bei virtuellen Netzwerken in Azure nicht anders. Die Verbindung zwischen Azure-VNETs und einem lokalen VPN-Gerät ist eine großartige Möglichkeit, eine sichere Kommunikation zwischen Ihrem Netzwerk und Ihren VMs in Azure bereitzustellen.
 
-To provide a dedicated, private connection between your network and Azure, you can use ExpressRoute. ExpressRoute lets you extend your on-premises networks into the Microsoft cloud over a private connection facilitated by a connectivity provider. With ExpressRoute, you can establish connections to Microsoft cloud services, such as Microsoft Azure, Office 365, and Dynamics 365. This improves the security of your on-premises communication by sending this traffic over the private circuit instead of over the internet. You don't need to allow access to these services for your end users over the internet, and can send this traffic through appliances for further traffic inspection.
+Um eine dedizierte, private Verbindung zwischen Ihrem Netzwerk und Azure herzustellen, lässt sich ExpressRoute verwenden. Mit ExpressRoute können Sie Ihre lokalen Netzwerke über eine private Verbindung, die von einem Konnektivitätsanbieter bereitgestellt wird, auf die Microsoft Cloud ausdehnen. Mit ExpressRoute können Sie Verbindungen zu Microsoft-Clouddiensten herstellen, z.B. Microsoft Azure, Office 365 und Dynamics 365. Dies verbessert die Sicherheit Ihrer lokalen Kommunikation, indem dieser Datenverkehr über die private Leitung anstatt über das Internet übertragen wird. Sie müssen Ihren Endbenutzern den Zugriff auf diese Dienste nicht über das Internet gestatten und können diesen Datenverkehr über Appliances zur weiteren Überprüfung des Datenverkehrs senden.
 
 ![ExpressRoute](../media-draft/expressroute-connection-overview.png)
 
-To easily integrate multiple VNets in Azure, VNet peering establishes a direct connection between designated VNets. Once established, you can use NSGs to provide isolation between resources in the same way you secure resources within a VNet. This integration gives you the ability to provide the same fundamental layer of security across any peered VNets. Communication is only allowed between directly connected VNets.
+Um mehrere VNETs einfach in Azure zu integrieren, stellt das VNET-Peering eine direkte Verbindung zwischen bestimmten VNETs her. Sobald die Verbindung hergestellt ist, können Sie mit NSGs die Isolierung zwischen den Ressourcen genauso einrichten, wie Sie Ressourcen in einem VNET schützen. Diese Integration gibt Ihnen die Möglichkeit, die gleiche grundlegende Sicherheitsebene für alle VNETs mit Peering bereitzustellen. Die Kommunikation ist nur zwischen direkt verbundenen VNETs zulässig.
 
-## Network security at Lamna Healthcare
+## <a name="network-security-at-lamna-healthcare"></a>Netzwerksicherheit bei Lamna Healthcare
 
-Lamna Healthcare has taken advantage of many of these services to build out a secure network infrastructure. Communication between resources is denied by default, and allowed only when required. Inbound connectivity from the internet is enabled only for services that require it; RDP and SSH are not permitted from internet endpoints, only from trusted internal resources.
+Lamna Healthcare hat viele dieser Dienste zum Aufbau einer sicheren Netzwerkinfrastruktur genutzt. Die Kommunikation zwischen den Ressourcen wird standardmäßig verweigert und nur bei Bedarf zugelassen. Eingehende Verbindungen über das Internet sind nur für Dienste aktiviert, die diese benötigen. RDP und SSH werden von Internetendpunkten aus nicht zugelassen, sondern nur von vertrauenswürdigen internen Ressourcen.
 
-To secure their internet facing web services, they place them behind Application Gateways with WAF enabled. This is true both for services running on virtual machines as well as on App Service. By using Application Gateways, they have protection from many of the common vulnerabilities.
+Zum Schützen internetbasierter Webdiensten platziert Lamna Healthcare sie hinter Application Gateways mit aktivierter WAF. Dies gilt sowohl für Dienste, die auf VMs als auch in App Service ausgeführt werden. Application Gateways schützen die Organisation vor den meisten häufigsten Sicherheitsrisiken.
 
-They have DDoS standard enabled, to provide protection for their internet facing endpoints from denial-of-service attacks.
+Der DDoS-Standardschutz ist aktiviert, um die Internetendpunkte vor Denial-of-Service-Angriffen zu schützen.
 
-Through the use of NSGs, they are able to fully isolate communication between application services and between environments. They only allow the necessary communication between services within an environment, and no access is allowed between production and non-production environments.
+Durch die Verwendung von NSGs ist Lamna Healthcare in der Lage, die Kommunikation zwischen Anwendungsdiensten und Umgebungen vollständig zu isolieren. Die Organisation lässt nur die notwendige Kommunikation zwischen Diensten innerhalb einer Umgebung zu, und erlaubt keinen Zugriff zwischen Produktions- und Nicht-Produktionsumgebungen.
 
-To provide dedicated connectivity between their end users and applications in Azure, they have provisioned an ExpressRoute circuit with connectivity to their on-premises network. This keeps their traffic to Azure off the internet and a private connection for their services in Azure to communicate with systems remaining on-premises.
+Um eine dedizierte Konnektivität zwischen Endbenutzern und Anwendungen in Azure zu bieten, hat Lamna Healthcare eine ExpressRoute-Leitung mit Konnektivität zum lokalen Netzwerk bereitgestellt. So wird der Datenverkehr zu Azure nicht über das Internet übertragen, und es wird eine private Verbindung für die Dienste in Azure geschaffen, um mit lokalen Systemen zu kommunizieren.
 
-With this approach, Lamna Healthcare has leveraged Azure services to provide security at multiple layers of their network infrastructure.
+Mit diesem Ansatz hat Lamna Healthcare mithilfe der Azure-Dienste Sicherheit auf mehreren Ebenen in der Netzwerkinfrastruktur des Unternehmens gewährleistet.
 
-## Summary
+## <a name="summary"></a>Zusammenfassung
 
-A layered approach to network security helps reduce your risk of exposure through network-based attacks. Azure provides several services and capabilities to secure your internet facing resource, internal resources, and communication between on-premises networks. These features make it possible to create secure solutions on Azure.
+Mit einem mehrstufigen Ansatz für Netzwerksicherheit können Sie das Gefährdungsrisiko durch netzwerkbasierte Angriffe reduzieren. Azure bietet mehrere Dienste und Funktionen, um Ihre Internetressourcen, interne Ressourcen und die Kommunikation zwischen lokalen Netzwerken zu schützen. Diese Funktionen ermöglichen es, sichere Lösungen in Azure zu erstellen.

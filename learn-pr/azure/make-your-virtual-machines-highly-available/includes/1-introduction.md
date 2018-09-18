@@ -1,17 +1,17 @@
-Azure Load Balancer can help scale your cloud applications and improve the availability of your services.
+Azure Load Balancer kann Ihnen helfen, Ihre Cloudanwendungen zu skalieren und die Verfügbarkeit Ihrer Dienste zu verbessern.
 
-Suppose you work as the server administrator responsible for your on-premises Enterprise Resource Planning (ERP) application. The application is business-critical, and you want to minimize the downtime that results from server failure.
+Angenommen, Sie arbeiten als Serveradministrator, der für Ihre lokale ERP-Anwendung (Enterprise Resource Planning) verantwortlich ist. Die Anwendung ist geschäftskritisch, und Sie möchten Ausfallzeiten, die durch einen Serverausfall entstehen, minimieren.
 
-Your company is looking to take advantage of some of the scalability options in the cloud and wants to determine if the ERP application can be made highly available by adding more servers and load balancing network traffic. Your job is to determine if a load balancer is appropriate for this type of application, and if so, how to deploy and configure the system.
+Ihr Unternehmen möchte einige der Skalierungsmöglichkeiten in der Cloud nutzen und prüfen, ob die ERP-Anwendung durch Hinzufügen weiterer Server und eines Lastenausgleichs des Netzwerkdatenverkehrs hochverfügbar gemacht werden kann. Ihre Aufgabe ist es herauszufinden, ob ein Lastenausgleich für diese Art von Anwendung geeignet ist und falls ja, wie Sie das System bereitstellen und konfigurieren.
 
-Here, you will identify internal and external workloads that are suitable for load balancing. You will learn how to choose between the basic and standard load balancer products. Finally, you will see how to create a load balancer, associate the load balancer with virtual servers, and configure the associated rules and probes.
+Sie identifizieren hier interne und externe Workloads, die für den Lastenausgleich geeignet sind. Sie erfahren, wie Sie zwischen den Load Balancer-Produkten „Basic“ und „Standard“ wählen können. Schließlich wird beschrieben, wie Sie einen Load Balancer erstellen, den Balancer mit virtuellen Servern verknüpfen und die zugehörigen Regeln und Tests konfigurieren.
 
-## Learning objectives:
+## <a name="learning-objectives"></a>Lernziele:
 
-In this module, you will:
-- Decide when to use a load balancer
-- Identify the differences between the basic and standard Load Balancer editions
-- Create a new load balancer
-- Create virtual networks associated with a load balancer
-- Configure load balancer rules
-- Configure a load balancer health probe
+In diesem Modul lernen Sie Folgendes:
+- Entscheiden, wann ein Load Balancer verwendet werden sollte
+- Bestimmen der Unterschiede zwischen den Load Balancer-Editionen „Basic“ und „Standard“
+- Erstellen eines neuen Load Balancers
+- Erstellen virtueller Netzwerke, die einem Load Balancer zugeordnet sind
+- Konfigurieren von Regeln für den Load Balancer
+- Konfigurieren eines Integritätstests für den Load Balancer

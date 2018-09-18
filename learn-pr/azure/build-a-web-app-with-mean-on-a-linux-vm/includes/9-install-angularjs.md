@@ -1,21 +1,21 @@
-AngularJS is a framework for creating clear and succinct dynamic web applications. You use HTML for your content template language, but extend your HTML with data-binding syntax. Using AngularJS for data-binding and dependency-injection helps eliminate much of the code you would otherwise have to write to manage content updates. The updating of your user's content happens within the browser, which allows AngularJS to pair with any server-side hosting technology.
+Bei AngularJS handelt es sich um ein Framework zum Erstellen von übersichtlichen und dynamischen Webanwendungen. Verwenden Sie HTML als Sprache für Inhaltsvorlagen, und verwenden Sie eine Syntax für Datenbindungen als Erweiterung. Wenn Sie AngularJS zur Datenbindung und Dependency Injection verwenden, benötigen Sie einen Großteil des Codes nicht, den Sie andernfalls zum Verwalten von Inhaltsaktualisierungen schreiben müssten. Die Inhalte Ihres Benutzers werden innerhalb des Browser aktualisiert, sodass AngularJS mit jeder beliebigen serverseitigen Hostingtechnologie eine Verbindung herstellen kann.
 
-## Angular.js information
+## <a name="angularjs-information"></a>Informationen zu Angular.js
 
-Because AngularJS is a front-end JavaScript framework, it only needs to be made available to the clients that access the application. This can be achieved in several ways:
+Bei AngularJS handelt es sich um ein Front-End-Framework von JavaScript, das nur den Clients zur Verfügung stehen muss, die auf die Anwendung zugreifen. Es gibt mehrere Möglichkeiten, wie dies erreicht werden kann:
 
-- Reference AngularJS via a content delivery network (CDN).
-- Serve AngularJS from your hosted content as a Node.js package using npm as a package manager.
-- Serve AngularJS from your hosted content as a Bower package.
+- Verweisen Sie über ein Content Delivery Network (CDN) auf AngularJS.
+- Stellen Sie AngularJS über gehosteten Inhalt als Node.js-Paket bereit. Verwenden Sie dabei den Paket-Manager npm.
+- Stellen Sie AngularJS über gehosteten Inhalt als Bower-Paket bereit.
 
-We will be using AngularJS directly from a CDN for this module for simplicity. This passes the script file dependency to the CDN, instead of managing it on our server content directly. This can also improve download speeds based on the speed and geographical distribution of the CDN used for a given resource.
+In diesem Modul wird AngularJS der Einfachheit halber direkt über ein CDN verwendet. Dadurch wird die Abhängigkeit der Skriptdatei an das CDN übergeben und nicht direkt auf dem Serverinhalt verwaltet. Dies kann abhängig von der Geschwindigkeit und der geografischen Verteilung des für eine entsprechende Ressource verwendeten CDN auch die Geschwindigkeit von Downloads erhöhen.
 
 > [!NOTE]
-> AngularJS is the predecessor to Angular, which was a complete rewrite of the web application platform. While many of the concepts are similar between the two versions, they are separate projects now. Angular will have versions of 2.x.y and higher, while AngularJS will have versions ending in 1.x.y. AngularJS is still commonly used for web application scenarios.
+> AngularJS ist der Vorgänger von Angular, einer vollständigen Neuauflage dieser Webanwendungsplattform. Viele Konzepte der beiden Versionen sind zwar ähnlich, aber es handelt sich jetzt um verschiedene Projekte. Für Angular soll es Versionen mit der Nummer 2.x.y und höher geben, während AngularJS mit Versionen mit der Nummer 1.x.y eingestellt wird. AngularJS wird weiterhin häufig in Webanwendungsszenarios verwendet.
 
-## How to install AngularJS via CDN
+## <a name="how-to-install-angularjs-via-cdn"></a>Installieren von AngularJS über ein CDN
 
-You don't really _install_ AngularJS. You just add a reference to the JavaScript file via a script tag in your HTML page. Since AngularJS is critical to any functionality of our web application, we include it within the `<head>` tag like this (as compared to later-loading of JavaScript files toward the end of the `<body>` tag).
+Sie _installieren_ AngularJS nicht wirklich. Sie fügen über ein Skripttag auf Ihrer HTML-Seite einen Verweis auf die JavaScript-Datei hinzu. Da AngularJS für alle Funktionen der Webanwendung sehr wichtig ist, wird es in das Tag `<head>` eingeschlossen (im Vergleich zu späterem Laden von JavaScript-Dateien gegen Ende des Tags `<body>`).
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>

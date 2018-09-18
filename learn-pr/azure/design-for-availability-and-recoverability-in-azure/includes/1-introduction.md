@@ -1,16 +1,14 @@
-Your business relies on access to the systems and data that make it run. If something happened to cause a loss of availability, even for a short period of time, it could be disastrous for the bottom line. Every minute that your customers or your internal workers don’t have access to what they need results in a loss of revenue. It is our job to make sure that doesn’t happen.
+Wenn Sie mindestens eine Komponente Ihrer Infrastruktur verlieren würden, könnte Ihre Architektur dies bewältigen? Wenn Sie Datenverluste oder eine Beschädigung von Identitätsdaten feststellen, könnten Sie die Daten wiederherstellen? Wissen Sie, welche Anforderungen Sie an Ihre Kunden in Bezug auf Systemverfügbarkeit und Notfallwiederherstellung stellen?
 
-As we learn about architecting our cloud solutions to be highly available and to have the capability to recover from localized and widespread issues, we'll see how one fictional Azure customer puts these principles to work:
-
-Lamna Healthcare is a national healthcare provider. Their IT organization has recently started to move the majority of their IT systems to Azure. They have a mixture of custom apps, open-source apps, and off-the-shelf applications, with varying architectures and technology platforms. We'll learn what they need to do to migrate to the cloud while keeping their systems and data secure.
+Angenommen Sie, Sie arbeiten für einen Gesundheitsdienstleister mit mehreren Tausend Ärzte im ganzen Land. Ihre IT-Abteilung hat kürzlich Anstrengungen unternommen, um den Platzbedarf im Datencenter zu verringern und die meisten IT-Systeme in Azure zu verlagern. Sie verwenden eine Mischung aus selbst entwickelten Anwendungen, Open Source- und Standardanwendungen. Jede davon mit unterschiedlichen Architekturen und Technologieplattformen. Sie wünschen sich, dass die Reise in die Cloud zu einem Erfolg wird, und möchten erfahren, was nötig ist, um dies zu erreichen.  
 
 > [!NOTE]
-> The concepts discussed in this module are not all-inclusive, but represent some of the important considerations when building a solution on the cloud. Microsoft publishes a broad set of patterns, guidelines, and examples on designing applications on Azure. It's highly recommended that you look through the content in the [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) as you start planning and designing your architecture.
+> In diesem Modul werden nicht alle Konzepte beschrieben, sondern nur die wichtigsten, die für das Erstellen einer Lösung in der Cloud hilfreich sein können. Microsoft bietet verschiedene Muster, Richtlinien und Beispiele zum Entwerfen von Anwendungen in Azure an. Es wird dringend empfohlen, dass Sie sich im [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) informieren, bevor Sie damit beginnen, Ihre Architektur zu planen und zu entwerfen.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul wird Folgendes thematisiert:
 
-- Leverage Azure services to design a highly available application
-- Incorporate Azure disaster recovery capabilities into your architecture
-- Back up and restore on Azure to protect your application from data loss or corruption
+- Nutzen von Azure-Diensten zum Entwerfen einer hochverfügbaren Anwendung
+- Integrieren von Azure-Notfallwiederherstellungsfunktionen in Ihre Architektur
+- Sichern und Wiederherstellen in Azure zum Schutz Ihrer Anwendung vor Datenbeschädigung oder -verlust
