@@ -24,7 +24,6 @@ Anforderungen und Technologien ändern sich. Für eine lokale Bereitstellung kan
 
 Mit Azure Storage können Sie neue Dienste innerhalb von Minuten flexibel bereitstellen. Dank dieser Flexibilität können Sie Speicher-Back-Ends im Nu ohne nennenswerte Hardwareinvestitionen ändern.
 
-### <a name="other-requirements"></a>Sonstige Anforderungen
-In der folgenden Tabelle werden weitere Aspekte zu allgemeinen Anforderungen beschrieben:
+In der folgenden Illustration werden die Unterschiede zwischen lokalem Speicher und Azure-Datenspeicher veranschaulicht.
 
-![Vergleich](../media-draft/Comparison.png)
+![Illustration mit Vergleich von lokalem Speicher und Azure-Datenspeicher für mehrere häufig vertretene Geschäftsanforderungen.](../media/4-Comparison.png)

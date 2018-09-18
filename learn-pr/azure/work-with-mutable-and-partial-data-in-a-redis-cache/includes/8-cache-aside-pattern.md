@@ -1,37 +1,37 @@
-When building an application, you want to provide a great user experience, and a part of that is quick data retrieval. Retrieving data from a database is typically a slow process and if this data is read often, this could provide a poor user experience. The cache-aside pattern describes how you can implement a cache in conjunction with a database to return the most commonly accessed data as quickly as possible.
+Beim Erstellen einer Anwendung spielt die Servicequalität für Benutzer eine entscheidende Rolle. Hierzu gehören auch schnelle Datenabrufe. Üblicherweise ist das Abrufen von Daten langsam. Bei häufigen Lesezugriffen kann dies die Servicequalität negativ beeinflussen. Das cachefremde Muster (Cache-Aside Pattern) wird angewendet, um einen Cache zusammen mit einer Datenbank so zu implementieren, dass Daten, auf die besonders häufig zugegriffen wird, möglichst schnell zurückgegeben werden.
 
-Here, you'll learn how the cache-aside pattern can be used to ensure your important data is quickly accessible.
+Hier erfahren Sie, wie Sie mithilfe dieses Musters wichtige Daten schnell abfragen können.
 
-## What is the cache-aside pattern?
+## <a name="what-is-the-cache-aside-pattern"></a>Was wird unter dem cachefremden Muster verstanden?
 
-The cache-aside pattern dictates that when you need to retrieve data from a data source, like a relational database, you should first check for the data in your cache. If the data is in your cache, use it. If the data is not in your cache, then query the database, and when you're returning the data back to the user add it to your cache. This will then allow you to access the data from your cache the next time it's needed.
+Das cachefremde Muster gibt vor, dass beim Abrufen von Daten aus einer Datenquelle (beispielsweise aus einer relationalen Datenbank) zunächst die Daten im Cache überprüft werden sollten. Wenn die Daten sich im Cache befinden, sollten sie genutzt werden. Andernfalls sollte die Datenbank abgefragt werden. Wenn anschließend die Daten an den Benutzer gesendet werden, sollten sie dem Cache hinzugefügt werden. Dadurch können Sie auf die Daten im Cache zugreifen, wenn diese beim nächsten Mal benötigt werden.
 
-## When to implement cache-aside pattern?
+## <a name="when-to-implement-cache-aside-pattern"></a>In welchen Fällen sollte das cachefremde Muster implementiert werden?
 
-Reading data from a database is usually a slow process because it involves compilation of a complex query, preparation of a query execution plan, execution of the query, and then preparation of the result. In some cases, this process may read data from the disk as well. There are optimizations that can be done on the database level like having pre-compiling the queries, and loading some of the data in memory. However, execution of the query and preparation of the result will always happen when retrieving data from a database.
+Datenbankabfragen sind in der Regel langsam. Dies liegt daran, dass komplexe Abfragen durchgeführt werden und ein Abfrageausführungsplan vorbereit wird. Anschließend müssen die Abfrage ausgeführt und das Ergebnis vorbereit werden. In einigen Fällen werden bei diesem Vorgang möglicherweise auch Daten vom Datenträger gelesen. Zwar lassen sich auf Datenbankebene Optimierungen vornehmen, bei denen beispielsweise Abfragen vorkompiliert und einige Daten in den Speicher geladen werden. Die Ausführung der Abfrage und die Vorbereitung der Ergebnisse finden jedoch immer erst beim Abruf von Daten aus der Datenbank statt.
 
-We can solve this problem using cache-aside pattern. In the cache-aside pattern, we still have the application and the database, but now we also have a cache. A cache stores its data in memory, so it doesn't have to interact with the file system. Caches also store data in very simple data structures, like key value pairs, so they don't have to execute complex queries to gather data or maintain indexes when writing data. Because of this, a cache is typically more performant than a database. When you use an application, it will try to read data from the cache first. If the requested data is not in the cache, the application will retrieve it from the database, like it always has done. However, then it stores the data in the cache for subsequent requests. Next time when any user requests the data, it will return it from the cache directly.
+Dieses Problem lässt sich mithilfe des cachefremden Musters lösen. Dieses sieht auch weiterhin eine Anwendung und eine Datenbank vor. Zusätzlich ist jedoch auch ein Cache vorhanden. Dieser speichert Daten im Speicher, damit ein Zugriff auf das Dateisystem vermieden wird. Caches speichern Daten in sehr einfachen Datenstrukturen wie z.B. Schlüssel-Wert-Paaren. Dadurch wird verhindert, dass komplexen Abfragen ausgeführt werden, um Daten zu sammeln oder Indizes beim Schreiben von Daten zu verwalten. Ein Cache ist daher üblicherweise leistungsfähiger als eine Datenbank. Wenn Sie eine Anwendung verwenden, versucht diese zunächst, Daten aus dem Cache zu lesen. Wenn sich die angeforderten Daten nicht im Cache befinden, ruft die Anwendung diese wie üblich aus der Datenbank ab. Die Daten werden anschließend allerdings im Cache gespeichert, damit sie für die nachfolgenden Anforderungen bereitstehen. Wenn ein Benutzer beim nächsten Mal die Daten anfordert, werden diese direkt aus dem Cache zurückgegeben.
 
-![Load Data to Cache](../media-draft/cache-aside-set-cache.png)
+![Laden von Daten in den Cache](../media-draft/cache-aside-set-cache.png)
 
-### How to manage updating data
+### <a name="how-to-manage-updating-data"></a>Verwalten von Daten, die aktualisiert werden
 
-When you implement the cache-aside pattern, you introduce a small problem. Since your data is now stored in a cache and a data store, you can run into problems when you try to make an update. For example, to update your data, you would need to update both the cache and the data store.
+Bei der Implementierung des cachefremden Musters stoßen Sie auf ein Problem. Da Ihre Daten nun in einem Cache und in einem Datenspeicher gespeichert werden, können Probleme auftreten, wenn Sie versuchen, eine Aktualisierung vorzunehmen. Wenn Sie beispielsweise Ihre Daten aktualisieren möchten, müssen Sie diesen Vorgang sowohl für den Cache als auch für den Datenspeicher ausführen.
 
-The solution to this problem in the cache-aside pattern is to invalidate the data in the cache. When you update date in your application you should first delete the data in the cache and then make the changes to the data source directly. By doing this, next time the data is requested, it won't be present in the cache, and the process will repeat. 
+Die Lösung dieses Problems besteht innerhalb des cachefremden Musters darin, die Gültigkeit der Daten im Cache aufzuheben. Bei der Aktualisierung von Daten in Ihrer Anwendung sollten Sie zuerst die Daten im Cache löschen und anschließend Änderungen direkt an der Datenquelle vornehmen. Dadurch sind die Daten bei der nächsten Anforderung nicht mehr im Cache, und der Vorgang wiederholt sich. 
 
-![Invalidate Cached Data](../media-draft/cache-aside-invalidate.png)
+![Aufheben der Gültigkeit von zwischengespeicherten Daten](../media-draft/cache-aside-invalidate.png)
 
-## Considerations for using the cache-aside pattern
+## <a name="considerations-for-using-the-cache-aside-pattern"></a>Überlegungen zur Verwendung des cachefremden Musters
 
-Carefully consider which data we should put in the cache. Not all data is suitable to be cached.
+Sie sollten genau überlegen, welche Daten im Cache gespeichert werden. Nicht alle Daten eignen sich hierfür.
 
-- **Lifetime**: For cache-aside to be effective, make sure that the expiration policy matches the access frequency of the data. Making the expiration period too short can cause applications to continually retrieve data from the data store and add it to the cache.
+- **Lebensdauer:** Stellen Sie sicher, dass die Ablaufrichtlinie auf die Häufigkeit des Datenzugriffs abgestimmt ist. Nur so kann das cachefremde Muster wirksam eingesetzt werden. Wenn der festgelegte Ablaufzeitraum zu kurz ist, kann dies dazu führen, dass Anwendungen Daten kontinuierlich aus dem Datenspeicher abrufen und dem Cache hinzufügen.
 
-- **Evicting**: Caches have a limited size compared to typical data stores, and they'll evict data if necessary. Make sure you choose an appropriate eviction policy for your data.
+- **Entfernen von Daten:** Caches weisen im Vergleich zu üblichen Datenspeichern nur eine eingeschränkte Größe auf. Daten müssen daher ggf. entfernt werden. Achten Sie deswegen darauf, eine geeignete Entfernungsrichtlinie für Ihre Daten zu verwenden.
 
-- **Priming**: To make the cache-aside pattern effect, many solutions will prepopulate the cache with data that they think will be accessed often.
+- **Auffüllen des Caches im Vorfeld:** Um das cachefremde Muster effektiv einzusetzen, füllen viele Lösungen den Cache vorab mit Daten auf, die voraussichtlich häufig abgefragt werden.
 
-- **Consistency**: Implementing the Cache-Aside pattern doesn't guarantee consistency between the data store and the cache. Data in a data store can be changed without notifying the cache. This can lead to serious synchronization issues.
+- **Konsistenz:** Durch das Implementieren des cachefremden Musters ist die Konsistenz zwischen dem Datenspeicher und dem Cache nicht garantiert. Daten in einem Datenspeicher können ohne Benachrichtigung des Caches geändert werden. Dies kann zu schwerwiegenden Synchronisierungsproblemen führen.
 
-The cache-aside pattern is useful when you're required to access data frequently from a data source that uses a disk. Using the cache-aside pattern, you'll store important data in a cache to help increase the speed of retrieving it. 
+Das cachefremde Muster ist nützlich, wenn Sie häufig Daten aus einer Datenquelle abfragen müssen, die auf einen Datenträger zurückgreift. Durch die Umsetzung dieses Musters speichern Sie wichtige Daten in einem Cache, um diese schneller abrufen zu können. 

@@ -14,13 +14,13 @@ Azure Backup kann für verschiedene Szenarios verwendet werden, die im Zusammenh
 
 ## <a name="advantages-of-using-azure-backup"></a>Vorteile von Azure Backup
 
-Traditionelle Sicherungslösungen nutzen häufig nicht alle Vorteile der zugrunde liegenden Azure-Plattform. Dadurch entstehen Lösungen, die teuer und ineffizient sind. Entweder umfassen diese Lösungen dann zu viel oder zu wenig bzw. die falsche Art von Speicherplatz, oder sie stellen Sie vor umständliche und langwierige administrative Aufgaben. Azure Backup wurde dafür entwickelt, im Einklang mit anderen Azure-Diensten zu arbeiten, und bietet einige besondere Vorteile.
+Traditionelle Sicherungslösungen nutzen häufig nicht alle Vorteile der zugrunde liegenden Azure-Plattform. Dadurch entstehen Lösungen, die teuer oder ineffizient sind. Entweder umfassen diese Lösungen dann zu viel oder zu wenig bzw. die falsche Art von Speicherplatz, oder sie stellen Sie vor umständliche und langwierige administrative Aufgaben. Azure Backup wurde dafür entwickelt, im Einklang mit anderen Azure-Diensten zu arbeiten, und umfasst einige besondere Vorteile.
 
 - **Automatische Speicherverwaltung.** Azure Backup sorgt im Rahmen eines Modells mit nutzungsbasierter Bezahlung für die automatische Zuteilung und Verwaltung von Sicherungsspeichern. Sie bezahlen nur für das, was Sie tatsächlich nutzen.
 
-- **Unbegrenzte Skalierung.** Azure Backup nutzt die Leistungsfähigkeit und Skalierbarkeit von Azure, um Hochverfügbarkeit bereitzustellen.
+- **Unbegrenzte Skalierung.** Azure Backup verwendet die Funktionen und Skalierbarkeit von Azure, um Hochverfügbarkeit bereitzustellen.
 
-- **Mehrere Speicheroptionen.** Azure Backup bietet lokal redundanten Speicher, in dem sämtliche Kopien von Daten einer Region gespeichert sind, sowie einen georedundanten Speicher, in dem Daten in einer sekundären Region repliziert werden.
+- **Mehrere Speicheroptionen.** Azure Backup umfasst einen lokal redundanten Speicher, in dem sämtliche Kopien von Daten einer Region gespeichert sind, sowie einen georedundanten Speicher, in dem Daten in einer sekundären Region repliziert werden.
 
 - **Unbegrenzte Datenübertragung.** Bei Azure Backup ist die Menge der übertragenen eingehenden und ausgehenden Daten nicht beschränkt. Außerdem fallen bei Azure Backup keine Gebühren für übertragene Daten an.
 
@@ -32,7 +32,7 @@ Traditionelle Sicherungslösungen nutzen häufig nicht alle Vorteile der zugrund
 
 ## <a name="using-azure-backup"></a>Verwenden von Azure Backup
 
-Azure Backup verwendet verschiedene Komponenten, die Sie auf die einzelnen Computern, die Sie sichern möchten, herunterladen bzw. für diese bereitstellen. Die Komponente, die Sie bereitstellen, richtet sich danach, was geschützt werden soll.
+Azure Backup verwendet verschiedene Komponenten, die Sie auf die einzelnen Computer, die Sie sichern möchten, herunterladen bzw. für diese bereitstellen. Die Komponente, die Sie bereitstellen, richtet sich danach, was geschützt werden soll.
 
 - Azure Backup-Agent
 - System Center Data Protection Manager

@@ -1,4 +1,4 @@
-Jetzt ist es an der Zeit, dass unsere App in Azure ausgeführt wird. Wir müssen eine Azure App Service-App erstellen, sie mit der MSI und unserer Tresorkonfiguration einrichten und Code bereitstellen.
+Jetzt ist es an der Zeit, die App in Azure auszuführen. Sie müssen eine Azure App Service-App erstellen, sie mit einer verwalteten Identität und der Tresorkonfiguration einrichten und Code bereitstellen.
 
 ## <a name="create-the-app-service-plan-and-app"></a>Erstellen des App Service-Plans und der App
 
@@ -21,9 +21,9 @@ Folgen Sie zum Bereitstellen in Azure der bewährten App Service-Methode, die Va
 az webapp config appsettings set --name <your-unique-app-name> --resource-group keyvault-exercise-group --settings VaultName=<your-unique-vault-name>
 ```
 
-## <a name="enable-msi"></a>Aktivieren der MSI
+## <a name="enable-managed-identity"></a>Aktivieren der verwalteten Identität
 
-Die MSI wird für eine App mit einer Zeile aktiviert:
+Das Aktivieren der verwalteten Identität für eine App findet in einer Zeile statt:
 
 ```azurecli
 az webapp identity assign --name <your-unique-app-name> --resource-group keyvault-exercise-group
@@ -36,7 +36,7 @@ Kopieren Sie aus der resultierenden JSON-Ausgabe den **principalId**-Wert. „Pr
 Nun müssen Sie Ihrer App Identitätsberechtigungen erteilen, um Geheimnisse aus Ihrem Tresor für die Produktionsumgebung abzurufen und aufzulisten. Verwenden Sie den **principalId**-Wert, den Sie im vorherigen Schritt kopiert haben, als Wert für **object-id** im folgenden Befehl.
 
 ```azurecli
-az keyvault set-policy --name <your-unique-vault-name> --object-id <your-msi-principleid> --secret-permissions get list
+az keyvault set-policy --name <your-unique-vault-name> --object-id <your-managed-identity-principleid> --secret-permissions get list
 ```
 
 ## <a name="deploy-the-app-and-try-it-out"></a>Bereitstellen und Testen der App

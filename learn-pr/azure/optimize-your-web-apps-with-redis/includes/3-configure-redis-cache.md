@@ -1,78 +1,69 @@
-Your sports statistics development team has decided that caching could dramatically improve performance for recently requested data. Your next step is to create and configure an Azure Redis Cache instance.
+Ihr Sportstatistik-Entwicklungsteam hat entschieden, dass Zwischenspeichern die Leistung für zuletzt angeforderte Daten deutlich verbessern könnte. Der nächste Schritt ist das Erstellen und Konfigurieren einer Azure Redis Cache-Instanz.
 
-## Create and configure the Azure Redis Cache instance
+## <a name="create-and-configure-the-azure-redis-cache-instance"></a>Erstellen und Konfigurieren der Azure Redis Cache-Instanz
 
-You can create a Redis cache using the Azure portal, the Azure CLI, or Azure PowerShell. There are several parameters you will need to decide in order to configure the cache properly for your purposes.
+1. Öffnen Sie das [Azure-Portal](https://portal.azure.com/?azure-portal=true) in Ihrem Browser.
 
-### Name
+1. Klicken Sie auf **Ressource erstellen**.
 
-The Redis cache will need a globally unique name. The name has to be unique within Azure because it is used to generate a public-facing URL to connect and communicate with the service.
+1. Suchen Sie nach **Redis Cache**.
 
-The name must be between 1 and 63 characters, composed of numbers, letters, and the '-' character. The cache name can't start or end with the '-' character, and consecutive '-' characters aren't valid.
+1. Klicken Sie auf **Erstellen**.
 
-### Resource Group
+1. Sie können eine Azure Redis Cache-Instanz aus den Datenbankressourcen im Azure-Portal hinzufügen.
 
-The Azure Redis Cache is a managed resource and needs a _resource group_ owner. You can either create a new resource group, or use an existing one in a susbcription you are part of.
+1. Geben Sie einen global eindeutigen Namen an. Der Name muss eine Zeichenfolge mit einer Länge zwischen 1 und 63 Zeichen sein und darf nur Zahlen, Buchstaben und das Zeichen „-“ enthalten. Der Cachename darf weder mit dem Zeichen „-“ beginnen oder enden, noch mehrere aufeinanderfolgende Zeichen vom Typ „-“ enthalten.
 
-### Location
+1. Geben Sie das Abonnement an, unter dem diese neue Azure Redis Cache-Instanz erstellt wird.
 
-You will need to decide where the Redis cache will be physically located by selecting an Azure region. You should always place your cache instance and your application in the same region. Connecting to a cache in a different region can significantly increase latency and reduce reliability. If you are connecting to the cache outside of Azure, then select a location close to where the application consuming the data is running.
+1. Der Name der Ressourcengruppe, in der Ihr Cache erstellt wird. Indem Sie alle Ressourcen für eine App in einer Gruppe zusammenfassen, können Sie diese zusammen verwalten.
 
-> [!IMPORTANT]
-> Put the Redis cache as close to the data _consumer_ as you can.
+1. Platzieren Sie Ihre Cache-Instanz und Ihre Anwendung immer in der gleichen Region/am gleichen Standort. Das Herstellen einer Verbindung mit einem Cache in einer anderen Region kann die Wartezeit beträchtlich erhöhen und die Zuverlässigkeit beeinträchtigen. Wenn Sie die Verbindung mit dem Cache außerhalb von Azure herstellen, wählen Sie einen Standort in der Nähe des Orts aus, an dem die Anwendung, die die Daten nutzt, ausgeführt wird.
 
-### Pricing tier
+    > [!IMPORTANT]
+    > Viel wichtiger als die Nähe des Datenspeichers zum Datennutzer ist die Nähe zum Cache.
 
-As mentioned in the last unit, there are three pricing tiers available for an Azure Redis Cache.
+1. Wählen Sie den Tarif aus. 
+    - Wir empfehlen, für Produktionssysteme immer den Standard- oder Premium-Tarif zu verwenden. Der Basic-Tarif ist ein System mit einem einzelnen Knoten ohne Datenreplikation und ohne SLA. Verwenden Sie mindestens einen C1-Cache. C0-Caches sind nur für einfache Entwicklungs-/Testszenarien vorgesehen, da sie einen freigegebenen CPU-Kern und nur sehr wenig Arbeitsspeicher haben.
 
-- **Basic**: Basic cache ideal for development/testing. Is limited to a single server, 53 GB of memory, and 20,000 connections. There is no SLA for this service tier.
-- **Standard**: Production cache which supports replication and includes an 99.99% SLA. It supports two servers (master/slave), and has the same memory/connection limits as the Basic tier.
-- **Premium**: Enterprise tier which builds on the Standard tier and includes persistence, clustering, and scale-out cache support. This is the highest performing tier with up to 530 GB of memory and 40,000 simultaneous connections.
+    - Beim Premium-Tarif stehen Ihnen zwei Methoden zur Auswahl, um Daten bei der Notfallwiederherstellung beizubehalten:
 
-You can control the amount of cache memory available on each tier - this is selected by choosing a cache level from C0-C6 for Basic/Standard and P0-P4 for Premium. Check the [pricing page](https://azure.microsoft.com/en-us/pricing/details/cache/) for full details.
+        - RDB-Persistenz erstellt regelmäßig eine Momentaufnahme und kann den Cache bei einem Ausfall anhand dieser Momentaufnahme wiederherstellen.
 
-> [!TIP]
-> Microsoft recommends you always use Standard or Premium Tier for production systems. The Basic Tier is a single node system with no data replication and no SLA. Also, use at least a C1 cache. C0 caches are really meant for simple dev/test scenarios since they have a shared CPU core and very little memory.
+            ![Screenshot des Azure-Portals mit den RDB-Persistenzoptionen auf einer neuen Redis Cache-Instanz.](../media/3-redis-persistence-1.png)
 
-The Premium tier allows you to persist data in two ways to provide disaster recovery:
+        - AOF-Persistenz speichert jeden Schreibvorgang in einem Protokoll, das mindestens einmal pro Sekunde gespeichert wird. Dabei entstehen größere Dateien als bei RDB, jedoch ist der Datenverlust geringer.
 
-1. RDB persistence takes a periodic snapshot and can rebuild the cache using the snapshot in case of failure.
+            ![Screenshot des Azure-Portals mit den AOF-Persistenzoptionen auf einer neuen Redis Cache-Instanz.](../media/3-redis-persistence-2.png)
 
-    ![Screenshot of the Azure portal showing the RDB persistence options on a new Redis cache instance.](../media/3-redis-persistence-1.png)
+    - Schützen Sie Ihren Cache mit einem virtuellen Netzwerk.
+      Wenn Sie über einen Redis-Cache mit Premium-Tarif verfügen, können Sie ihn für ein virtuelles Netzwerk in der Cloud bereitstellen. Der Cache wird nur für andere virtuelle Computer und Anwendungen in demselben virtuellen Netzwerk verfügbar sein.
 
-2. AOF persistence saves every write operation to a log that is saved at least once per second. This creates bigger files than RDB but has less data loss.
+    - Verteilen Sie Ihren Cache mit Clustering.
+      Mit Redis-Cache mit Premium-Tarif können Sie Clustering implementieren, um Ihr Dataset automatisch zwischen mehreren Knoten aufzuteilen. Um Clustering zu implementieren, geben Sie eine maximale Anzahl von zehn Shards an. Die Kosten entsprechen den Kosten des ursprünglichen Knotens multipliziert mit der Anzahl von Shards.
 
-    ![Screenshot of the Azure portal showing the AOF persistence options on a new Redis cache instance.](../media/3-redis-persistence-2.png)
+    - Migrieren Sie von Azure Managed Cache Service.
+      Je nach den Features von Managed Cache Service, die Sie verwenden, sind zum Migrieren von Anwendungen, die Azure Managed Cache Service verwenden, zu Azure Redis Cache nur minimale Änderungen an der Anwendung erforderlich. Die APIs sind zwar nicht genau gleich, aber ähnlich. Ein Großteil des vorhandenen Codes, der mit Managed Cache Service auf den Cache zugreift, kann mit minimalen Änderungen wiederverwendet werden.
 
-There are several other settings which are only available to the **Premium** tier.
+## <a name="accessing-the-redis-instance"></a>Zugreifen auf die Redis-Instanz
 
-### Virtual Network support
+Redis unterstützt eine Reihe von [bekannten Befehlen](https://redis.io/commands). Ein Befehl wird in der Regel als `COMMAND parameter1 parameter2 parameter3` ausgegeben.
 
-If you create a premium tier Redis cache, you can deploy it to a virtual network in the cloud. Your cache will be available to only other virtual machines and applications in the same virtual network. This provides a higher level of security when your service and cache are both hosted in Azure, or are connected through an Azure virtual network VPN.
+Im Folgenden sind einige gängige Befehle aufgeführt, die Sie verwenden können:
 
-### Clustering support
-
-With a premium tier Redis cache, you can implement clustering to automatically split your dataset among multiple nodes. To implement clustering, you specify the number of shards to a maximum of 10. The cost incurred is the cost of the original node, multiplied by the number of shards.
-
-## Accessing the Redis instance
-
-Redis supports a set of [known commands](https://redis.io/commands). A command is typically issued as `COMMAND parameter1 parameter2 parameter3`.
-
-Here are some common commands you can use:
-
-| Command | Description |
+| Befehl | Beschreibung |
 |---------|-------------|
-| `ping` | Ping the server. Returns "PONG". |
-| `set [key] [value]` | Sets a key/value in the cache. Returns "OK" on success. |
-| `get [key]` | Gets a value from the cache. |
-| `exists [key]` | Returns '1' if the **key** exists in the cache, '0' if it doesn't. |
-| `type [key]` | Returns the type associated to the value for the given **key**. |
-| `incr [key]` | Increment the given value associated with **key** by '1'. The value must be an integer or double value. This returns the new value. |
-| `incrby [key] [amount]` | Increment the given value associated with **key** by the specified amount. The value must be an integer or double value. This returns the new value. |
-| `del [key]` | Deletes the value associated with the **key**. |
-| `flushdb` | Delete _all_ keys and values in the database. |
+| `ping` | Den Server pingen. Gibt „PONG“ zurück. |
+| `set [key] [value]` | Legt einen Schlüssel/Wert im Cache fest. Gibt bei erfolgreicher Ausführung „OK“ zurück. |
+| `get [key]` | Ruft einen Wert aus dem Cache ab. |
+| `exists [key]` | Gibt „1“ zurück, wenn der **Schlüssel** im Cache vorhanden ist, und andernfalls „0“. |
+| `type [key]` | Gibt den Typ zurück, der dem Wert für den angegebenen **Schlüssel** zugeordnet ist. |
+| `incr [key]` | Den angegebenen Wert, der dem **Schlüssel** zugeordnet ist, um 1 erhöhen. Der Wert muss vom Typ „Integer“ oder „Double“ sein. Gibt den neuen Wert zurück. |
+| `incrby [key] [amount]` | Den angegebenen Wert, der dem **Schlüssel** zugeordnet ist, um den festgelegten Wert erhöhen. Der Wert muss vom Typ „Integer“ oder „Double“ sein. Gibt den neuen Wert zurück. |
+| `del [key]` | Löscht den Wert, der dem **Schlüssel** zugeordnet ist. |
+| `flushdb` | _Alle_ Schlüssel und Werte in der Datenbank löschen. |
 
-Redis has a command-line tool (**redis-cli**) you can use to experiment directly with these commands. Here are some examples.
+Redis verfügt über ein Befehlszeilentool (**redis-cli**), mit dem Sie direkt mit diesen Befehlen experimentieren können. Im Folgenden finden Sie einige Beispiele.
 
 ```output
 > set somekey somevalue
@@ -87,7 +78,7 @@ OK
 (string) 0
 ```
 
-Here's an example of working with the `INCR` commands. These are convenient because they provide atomic increments _across multiple applications_ that are using the cache.
+Hier sehen Sie ein Beispiel zur Verwendung der `INCR`-Befehle. Diese Befehle sind praktisch, da sie unteilbare Inkremente _für mehrere Anwendungen_ bereitstellen, die den Cache verwenden.
 
 ```output
 > set counter 100
@@ -100,17 +91,17 @@ OK
 (integer)
 ```
 
-### Adding an expiration time to values
+### <a name="adding-an-expiration-time-to-values"></a>Hinzufügen einer Ablaufzeit zu Werten
 
-Caching is important because it allows us to store commonly used values in memory. However, we also need a way to expire values when they are stale. In Redis this is done by applying a _time to live_ (TTL) to a key.
+Die Zwischenspeicherung ist wichtig, da sie uns das Speichern von häufig verwendeten Werten im Arbeitsspeicher ermöglicht. Wir müssen jedoch auch in der Lage sein, eine Ablaufzeit für veraltete Werte festzulegen. In Redis wird dazu eine _Gültigkeitsdauer_ (Time To Live, TTL) auf einen Schlüssel angewendet.
 
-When the TTL elapses, the key is automatically deleted, exactly as if the DEL command were issued. Here are some notes on TTL expirations.
+Nach Ablauf der TTL wird der Schlüssel genau wie bei der Ausgabe des DEL-Befehls automatisch gelöscht. Im Folgenden finden Sie einige Hinweise zum TTL-Ablauf.
 
-- Expirations can be set using seconds or milliseconds precision.
-- The expire time resolution is always 1 millisecond.
-- Information about expires are replicated and persisted on disk, the time virtually passes when your Redis server remains stopped (this means that Redis saves the date at which a key will expire).
+- Ablaufzeiten können mit Sekunden- oder Millisekundengenauigkeit festgelegt werden.
+- Die Auflösung der Ablaufzeit ist immer 1 Millisekunde.
+- Informationen zum Ablauf werden repliziert und dauerhaft auf dem Datenträger gespeichert. Die Zeit verstreicht gewissermaßen, während Ihr Redis-Server angehalten bleibt (d. h. Redis speichert das Datum, an dem ein Schlüssel abläuft).
 
-Here is an example of an expiration:
+Hier sehen Sie ein Beispiel für einen Ablauf:
 
 ```output
 > set counter 100
@@ -124,13 +115,13 @@ OK
 (nil)
 ```
 
-## Accessing a Redis cache from a client
+## <a name="accessing-a-redis-cache-from-a-client"></a>Zugreifen auf einen Redis Cache von einem Client
 
-When connecting to an Azure Redis Cache instance, clients need the host name, port, and an access key for the cache. You can retrieve this information in the Azure portal through the **Settings > Access Keys** page. 
+Wenn Sie eine Verbindung mit einer Azure Redis Cache-Instanz herstellen, benötigen Clients den Hostnamen, den Port und einen Zugriffsschlüssel für den Cache. Sie können diese Informationen im Azure-Portal auf der Seite **Einstellungen > Zugriffsschlüssel** abrufen. 
 
-- The host name is the public Internet address of your cache, which was created using the name of the cache. For example `sportsresults.redis.cache.windows.net`.
+- Der Hostname ist die öffentliche Internetadresse Ihres Caches, die mit dem Namen des Caches erstellt wurde. Beispiel: `sportsresults.redis.cache.windows.net`.
 
-- The access key acts as a password for your cache. There are two keys created: primary and secondary. You can use either key, two are provided in case you need to change the primary key. You can switch all of your clients to the secondary key, and regenerate the primary key. This would block any applications using the original primary key. Microsoft recommends periodically regenerating the keys - much like you would your personal passwords.
+- Der Zugriffsschlüssel fungiert als Kennwort für Ihren Cache. Zwei Schlüssel werden erstellt: ein Primärschlüssel und ein Sekundärschlüssel. Sie können beide Schlüssel verwenden. Zwei Schlüssel werden für den Fall bereitgestellt, dass Sie den Primärschlüssel ändern müssen. Sie können alle Clients auf den Sekundärschlüssel umstellen und den Primärschlüssel erneut generieren. In diesem Fall werden alle Anwendungen blockiert, die den ursprünglichen Primärschlüssel verwenden. Microsoft empfiehlt, die Schlüssel wie persönliche Kennwörter in regelmäßigen Abständen erneut zu generieren.
 
 > [!WARNING]
-> Your access keys should be considered confidential information, treat them like you would a password. Anyone who has an access key can perform any operation on your cache!
+> Die Zugriffsschlüssel sollten als vertrauliche Informationen behandelt und wie Kennwörter geschützt werden. Jede Person mit einem Zugriffsschlüssel kann beliebige Vorgänge in Ihrem Cache durchführen.

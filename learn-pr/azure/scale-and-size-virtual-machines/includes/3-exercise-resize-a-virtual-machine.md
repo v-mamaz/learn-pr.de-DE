@@ -1,58 +1,58 @@
-In this exercise, you will create a virtual machine and then resize it using the portal and Azure PowerShell.
+In dieser Übung erstellen Sie einen virtuellen Computer und ändern seine Größe. Dazu verwenden Sie das Portal und Azure PowerShell.
 
-## Create a VM
+## <a name="create-a-vm"></a>Erstellen eines virtuellen Computers
 
-1. In your web browser, navigate to the [Azure Portal](https://portal.azure.com?azure-portal=true) and sign into your account.
+1. Navigieren Sie in Ihrem Webbrowser zum [Azure-Portal](https://portal.azure.com?azure-portal=true), und melden Sie sich bei Ihrem Konto an.
 
-1. In the Azure portal, create a new resource. In the **New** blade, type **virtual machine** in the search box, and then press ENTER.
+1. Erstellen Sie im Azure-Portal eine neue Ressource. Geben Sie auf dem Blatt **Neu** die Zeichenfolge **virtueller Computer** in das Suchfeld ein, und drücken Sie die EINGABETASTE.
 
-1. In the **Everything** blade, under **Results**, click **Windows Server 2016 Datacenter**.
+1. Klicken Sie auf dem Blatt **Alles** unter **Ergebnisse** auf **Windows Server 2016 Datacenter**.
 
-1. In the **Windows Server 2016 Datacenter** blade, click **Create**.
+1. Klicken Sie auf dem Blatt **Windows Server 2016 Datacenter** auf **Erstellen**.
 
-1. In the **Basics** blade, complete the details using the following information, and then click **OK**.
+1. Geben Sie auf dem Blatt **Grundlagen** die folgenden Informationen ein, und klicken Sie anschließend auf **OK**:
 
-    |Setting|Value|
+    |Einstellung|Wert|
     |---|---|
     |Name|DB01|
-    |Username|LocalAdmin|
-    |Password and Confirm password|Adm1nPa$$word|
-    |Resource group|ExerciseRG|
-    |Location|Central US|
+    |Benutzername|LocalAdmin|
+    |Kennwort und Kennwortbestätigung|Adm1nPa$$word|
+    |Ressourcengruppe|ExerciseRG|
+    |Standort|USA, Mitte|
 
-1. On the **Choose a size** blade, select **D2s_v3**, and then click **Select**.
+1. Wählen Sie auf dem Blatt **Größe auswählen** die Option **D2s_v3** aus, und klicken Sie anschließend auf **Auswählen**.
 
-1. On the **Settings** blade, under **Select public inbound ports** select **HTTP**, **HTTPS**, and **RDP (3389)**, under **Boot diagnostics** click **Disabled**, leave all other settings at the default value, and then click **OK**.
+1. Wählen Sie auf dem Blatt **Einstellungen** unter **Öffentliche Eingangsports hinzufügen** die Optionen **HTTP**, **HTTPS** und **RDP (3389)** aus, klicken Sie unter **Startdiagnose** auf **Deaktiviert**, behalten Sie bei allen anderen Einstellungen die Standardwerte bei, und klicken Sie anschließend auf **OK**.
 
-1. On the **Create** blade, click **Create**.
+1. Klicken Sie auf dem Blatt **Erstellen** auf **Erstellen**.
 
-1. Wait until the deployment is complete before continuing the exercise.
+1. Warten Sie, bis die Bereitstellung abgeschlossen ist, bevor Sie mit der Übung fortfahren.
 
-## Resize using the portal
+## <a name="resize-using-the-portal"></a>Ändern der Größe über das Portal
 
-1. In the Azure portal, browse to the ExerciseRG resource group, and in the **ExerciseRG** blade, click the **DB01** virtual machine object.
+1. Navigieren Sie im Azure-Portal zur Ressourcengruppe „ExerciseRG“, und klicken Sie auf dem Blatt **ExerciseRG** auf das VM-Objekt **DB01**.
 
-1. On the **DB01** blade, click **Size**. Note the currently highlighted size is the size you selected when creating the virtual machine.
+1. Klicken Sie auf dem Blatt **DB01** auf **Größe**. Hinweis: Die aktuell hervorgehobene Größe ist die Größe, die Sie beim Erstellen des virtuellen Computers ausgewählt haben.
 
-1. On the **Choose a size** blade, try to find the **F2s_v2** size - it should not be available in the list of sizes because the VM is currently running and that size is from a different family. Close the **Choose a size** blade.
+1. Suchen Sie auf dem Blatt **Größe auswählen** nach der Größe **F2s_v2**. Sie sollte in der Größenliste nicht verfügbar sein, da der virtuelle Computer momentan ausgeführt wird und die Größe zu einer anderen Familie gehört. Schließen Sie das Blatt **Größe auswählen**.
 
-1. In the **DB01** blade, click **Stop**. In the **Stop this virtual machine** dialog box, click **Yes**, and wait for the virtual machine status to show **Stopped (deallocated)**.
+1. Klicken Sie auf dem Blatt **DB01** auf **Beenden**. Klicken Sie im Dialogfeld zum **Beenden des virtuellen Computers**auf **Ja**, und warten Sie, bis der virtuelle Computer den Status **Beendet (Zuordnung aufgehoben)** hat.
 
-1. On the **DB01** blade, click **Size**. On the **Choose a size** blade, select **F2s_v2** and then click **Select**. Notice the notification about resizing the virtual machine.
+1. Klicken Sie auf dem Blatt **DB01** auf **Größe**. Wählen Sie auf dem Blatt **Größe auswählen** die Option **F2s_v2** aus, und klicken Sie anschließend auf **Auswählen**. Beachten Sie die Benachrichtigung zur Größenänderung für den virtuellen Computer.
 
-1. On the **DB01** blade, click **Overview**, then click **Start**.
+1. Klicken Sie auf dem Blatt **DB01** auf **Übersicht** und anschließend auf **Starten**.
 
-## Resize using PowerShell
+## <a name="resize-using-powershell"></a>Ändern der Größe mithilfe von PowerShell
 
-1. In the Azure portal, open the Cloud Shell.
+1. Öffnen Sie Cloud Shell im Azure-Portal.
 
-1. Use the following cmdlet to get the list of available virtual machine sizes.
+1. Verwenden Sie das folgende Cmdlet, um die Liste mit den verfügbaren VM-Größen abzurufen.
 
     ```PowerShell
     Get-AzureRmVMSize -ResourceGroupName ExerciseRG -VMName DB01
     ```
 
-1. Use the following cmdlet to resize the virtual machine to an F4s_v2 size.
+1. Verwenden Sie das folgende Cmdlet, um die Größe des virtuellen Computers in „F4s_v2“ zu ändern.
 
     ```PowerShell
     $vm = Get-AzureRmVM -ResourceGroupName ExerciseRG -VMName DB01
@@ -60,6 +60,6 @@ In this exercise, you will create a virtual machine and then resize it using the
     Update-AzureRmVM -VM $vm -ResourceGroupName ExerciseRG
     ```
 
-1. Click the Refresh button in the DB01 blade while you are waiting for the PowerShell command to complete - you should notice that the virtual machine is restarting to accommodate the change in size.
+1. Klicken Sie auf dem Blatt „DB01“ auf die Schaltfläche „Aktualisieren“, während Sie darauf warten, dass die Ausführung des PowerShell-Befehls abgeschlossen wird. Sie sollten sehen, dass der virtuelle Computer neu gestartet wird, um die Größenänderung zu implementieren.
 
-In this exercise, you created a virtual machine and resized it with two different tools. A good tip to keep in mind is that the target size may not be available while the virtual machine is running; stopping the virtual machine lets you choose more sizes.
+In dieser Übung haben Sie einen virtuellen Computer erstellt und seine Größe mit zwei verschiedenen Tools geändert. Tipp: Denken Sie daran, dass die Zielgröße möglicherweise nicht verfügbar ist, solange der virtuelle Computer ausgeführt wird. Nach Beendigung des virtuellen Computers stehen mehr Größen zur Auswahl.

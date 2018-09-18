@@ -76,7 +76,8 @@ Starten Sie PowerShell, und wechseln Sie zum Verzeichnis, in dem Sie die Skriptd
 
 Die Ausführung des Skripts kann einige Minuten dauern. Wenn sie abgeschlossen ist, stellen Sie sicher, dass es erfolgreich ausgeführt wurde:
 
-1. Melden Sie sich in einem Browser beim Azure-Portal an.
+<!---TODO: Update for sandbox?--->
+1. Melden Sie sich in einem Browser beim [Azure-Portal](https://portal.azure.com/?azure-portal=true) an.
 
 1. Klicken Sie im linken Navigationsbereich auf **Ressourcengruppen**.
 

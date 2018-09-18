@@ -1,6 +1,6 @@
 Bevor Sie eine Verbindung der Datenbank mit Ihrer App herstellen, sollten Sie überprüfen, ob Sie eine Verbindung zu ihr herstellen, ihr eine einfache Tabelle hinzufügen und mit Beispieldaten arbeiten können.
 
-Wir verwalten die Infrastruktur, Softwareupdates und Patches für Ihre Azure SQL-Datenbank. Darüber hinaus können Sie Ihre Azure SQL-Datenbank wie jede andere SQL Server-Installation behandeln. Sie können z.B. Visual Studio, SQL Server Management Studio oder andere Tools zum Verwalten von Azure SQL-Datenbank verwenden.
+Wir verwalten die Infrastruktur, Softwareupdates und Patches für Ihre Azure SQL-Datenbank. Darüber hinaus können Sie Ihre Azure SQL-Datenbank wie jede andere SQL Server-Installation behandeln. Sie können z.B. Visual Studio, SQL Server Management Studio, SQL Server Operations Studio oder andere Tools zum Verwalten von Azure SQL-Datenbank verwenden.
 
 Wie Sie auf die Datenbank zugreifen und die Verbindung zwischen ihr und Ihrer App herstellen, bleibt Ihnen überlassen. Aber um ein wenig Erfahrung in der Arbeit mit Ihrer Datenbank zu sammeln, stellen Sie hier direkt aus dem Portal eine Verbindung mit ihr her, erstellen eine Tabelle und führen einige grundlegende CRUD-Vorgänge aus. Sie lernen Folgendes:
 
@@ -31,8 +31,6 @@ Hierzu öffnen Sie Cloud Shell, und verwenden Sie das `az`-Hilfsprogramm zum Auf
 
 1. Klicken Sie im Portal im oberen Bereich auf **Cloud Shell**.
 
-    ![Öffnen von Cloud Shell](../media-draft/open-cloud-shell.png)
-
 1. Die von Ihnen ausgeführten `az`-Befehle erfordern den Namen Ihrer Ressourcengruppe und den Namen Ihres logischen Azure SQL-Servers. Um sich das Eintippen zu ersparen, führen Sie diesen `azure configure`-Befehl aus, um sie als Standardwerte anzugeben.
     Ersetzen Sie `contoso-logistics` durch den Namen Ihres logischen Azure SQL-Servers.
 
@@ -45,7 +43,7 @@ Hierzu öffnen Sie Cloud Shell, und verwenden Sie das `az`-Hilfsprogramm zum Auf
     ```azurecli
     az sql db list
     ```
-    Sie sehen einen großen JSON-Block als Ausgabe. 
+    Sie sehen einen großen JSON-Block als Ausgabe.
 
 1. Da wir nur die Datenbanknamen benötigen, führen Sie den Befehl ein zweites Mal aus. Reichen Sie die Ausgabe diesmal an `jq` weiter, um nur die Namensfelder auszugeben.
     ```azurecli
@@ -64,7 +62,7 @@ Hierzu öffnen Sie Cloud Shell, und verwenden Sie das `az`-Hilfsprogramm zum Auf
     ```
     **Logistics** ist Ihre Datenbank. Wie SQL Server enthält **master** Servermetadaten wie Anmeldekonten und Systemkonfigurationseinstellungen.
 
-1. Führen Sie diesen `az sql db show`-Befehl aus, um Details über die **Logistics**-Datenbank zu erhalten.
+1. Führen Sie diesen `az sql db show`-Befehl aus, um Details zur **Logistics**-Datenbank zu erhalten.
 
     ```azurecli
     az sql db show --name Logistics
@@ -136,14 +134,14 @@ Beachten Sie, dass CRUD für **Create (Erstellen)**, **Read (Lesen)**, **Update 
     name
     --------------------------------------------------------------------------------------------------------------------------------
     Drivers
-    
+
     (1 rows affected)
     ```
 
 1. Führen Sie diese `INSERT`-T-SQL-Anweisung aus, um der Tabelle eine Beispielzeile hinzuzufügen. Dies ist der **Create**-Vorgang.
 
     ```sql
-    INSERT INTO Drivers (DriverID, LastName, FirstName, OriginCity) VALUES (123, 'Orton', 'Erick', 'Springfield');
+    INSERT INTO Drivers (DriverID, LastName, FirstName, OriginCity) VALUES (123, 'Zirne', 'Laura', 'Springfield');
     GO
     ```
 
@@ -166,14 +164,14 @@ Beachten Sie, dass CRUD für **Create (Erstellen)**, **Read (Lesen)**, **Update 
     DriverID
     -----------
             123
-    
+
     (1 rows affected)
     ```
 
 1. Führen Sie diese `UPDATE`-T-SQL-Anweisung aus, um den Herkunftsort für den Fahrer mit der `DriverID` „123“ von „Springfield“ in „Springfield, OR“ zu ändern. Dies ist der **Update**-Vorgang.
 
     ```sql
-    UPDATE Drivers SET OriginCity='Springfield, OR' WHERE DriverID=123;
+    UPDATE Drivers SET OriginCity='Springfield, AK' WHERE DriverID=123;
     GO
     ```
 
@@ -189,7 +187,7 @@ Beachten Sie, dass CRUD für **Create (Erstellen)**, **Read (Lesen)**, **Update 
     DELETE FROM Drivers WHERE DriverID=123;
     GO
     ```
-    
+
     ```console
     (1 rows affected)
     ```
@@ -206,7 +204,7 @@ Beachten Sie, dass CRUD für **Create (Erstellen)**, **Read (Lesen)**, **Update 
     ```console
     -----------
               0
-    
+
     (1 rows affected)
     ```
 

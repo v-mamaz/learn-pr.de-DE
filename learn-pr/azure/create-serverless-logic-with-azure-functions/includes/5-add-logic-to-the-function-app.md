@@ -1,6 +1,7 @@
 Lassen Sie uns wir mit unserem Zahnradsteuerungs-Beispiel fortfahren und die Logik für den Temperaturdienst hinzufügen. Insbesondere werden wir Daten von einer HTTP-Anforderung empfangen.
 
 ## <a name="function-requirements"></a>Anforderungen an die Funktion
+
 Zuerst müssen wir einige Anforderungen an unsere Logik definieren:
 
 - Temperaturen von 0 bis 25 sollen mit **OK** gekennzeichnet werden.
@@ -13,29 +14,27 @@ Wie in der vorherigen Einheit bereits erläutert wurde, verfügt Azure über Vor
 
 1. Melden Sie sich mit Ihrem Azure-Konto beim [Azure-Portal](https://portal.azure.com?azure-portal=true) an.
 
-1. Wählen Sie durch Auswahl von **Alle Ressourcen** im linken Menü die Ressourcengruppe aus, die Sie in der ersten Übung erstellt haben, und wählen Sie dann **escalator-functions-group** aus.
+2. Wählen Sie durch Auswahl von **Alle Ressourcen** im linken Menü die Ressourcengruppe aus, die Sie in der ersten Übung erstellt haben, und wählen Sie dann **escalator-functions-group** aus.
 
-1. Die Ressourcen für die Gruppe werden angezeigt. Greifen Sie durch Auswahl von **escalator-functions-xxxxxxx** (auch durch das Blitzsymbol gekennzeichnet) auf die Funktions-App zu, die Sie in der vorherigen Übung erstellt haben.
+3. Die Ressourcen für die Gruppe werden angezeigt. Klicken Sie auf den Namen der Funktions-App, die Sie in der vorherigen Übung erstellt haben, indem Sie das Element **escalator-functions-xxxxxxx** (auch durch das Blitzsymbol gekennzeichnet) auswählen.
 
-  ![Screenshot von „Alle Ressourcen“ im Portal mit Hervorhebung von „escalator-functions-group“ und der von uns erstellten Funktions-App.](../media-draft/5-access-function-app.png)
+  ![Screenshot: Das hervorgehobene Blatt „Alle Ressourcen“ sowie die von Ihnen erstellten Funktions-App „escalator“ im Azure-Portal.](../media/5-access-function-app.png)
 
-1. Das linke Menü enthält den Namen Ihrer Funktions-App und ein Untermenü mit drei Punkten: *Funktionen*, *Proxys* und *Slots*.  Um unsere erste Funktion zu erstellen, bewegen Sie den Mauszeiger in der Navigationsstruktur über **Funktion**, und klicken Sie auf die dann angezeigte Schaltfläche **+**.
+4. Im linken Menü wird der Name Ihrer Funktions-App und ein Untermenü mit den folgenden drei Elementen angezeigt: *Funktionen*, *Proxys* und *Slots*.  Klicken Sie auf **Funktionen**, und klicken Sie dann am oberen Rand der angezeigten Seite auf **Neue Funktion**.
 
-  ![Screenshot mit Pluszeichen, wenn Sie den Mauszeiger über den Menüpunkt „Funktionen“ bewegen, der, wenn darauf geklickt wird, die Funktionserstellung startet.](../media-draft/5-function-add-button.png)
+  ![Screenshot: Funktionsliste für die Funktions-App im Azure-Portal, wobei das Menüelement „Funktionen“ und die Schaltfläche „Neue Funktion“ hervorgehoben sind.](../media/5-function-add-button.png)
 
-1. Klicken Sie auf dem Bildschirm „Schnellstart“ im Abschnitt **Selbstständig einsteigen** auf den Link **Benutzerdefinierte Funktion** (siehe den folgenden Screenshot).
- 
-  ![Screenshot des Bildschirms „Schnellstart“ mit hervorgehobener Schaltfläche „Benutzerdefinierte Funktion“.](../media-draft/5-custom-function.png)
+5. Klicken Sie auf dem Bildschirm „Schnellstart“ im Abschnitt **Get started on your own** (Selbstständig einsteigen) auf den Link **Benutzerdefinierte Funktion** (wie im folgenden Screenshot). Wenn der Bildschirm „Schnellstart“ nicht angezeigt wird, klicken Sie am oberen Rand der Seite auf den Link **Go to the quickstart** (Zum Schnellstart wechseln).
 
-1. Wählen Sie in der Liste der auf dem Bildschirm angezeigten Vorlagen die JavaScript-Implementierung der HTTP-Triggervorlage aus, wie im folgenden Screenshot gezeigt.
+  ![Screenshot: Das Blatt „Schnellstart“ im Azure-Portal mit der hervorgehobenen Schaltfläche „Benutzerdefinierte Funktion“ im Abschnitt „Selbstständig einsteigen“.](../media/5-custom-function.png)
 
-  ![Screenshot der Vorlagenliste mit Hervorhebung von HTTP-Trigger und der Option „JavaScript“.](../media-draft/5-httptrigger-template.png)
+6. Wählen Sie wie im folgenden Screenshot gezeigt die **JavaScript**-Implementierung der Vorlage **HTTP-Trigger** aus der auf dem Bildschirm angezeigten Liste von Vorlagen aus.
 
-1.  Geben Sie **DriveGearTemperatureService** in das Feld „Name“ des eingeblendeten Dialogfelds **Neue Funktion** ein. Belassen Sie die Autorisierungsstufe auf „Funktion“, und klicken Sie auf die Schaltfläche **Erstellen**, um die Funktion zu erstellen.
+7. Geben Sie **DriveGearTemperatureService** in das Feld „Name“ des nun angezeigten Dialogfelds **Neue Funktion** ein. Belassen Sie die Autorisierungsstufe auf „Funktion“, und klicken Sie auf die Schaltfläche **Erstellen**, um die Funktion zu erstellen.
 
-  ![Screenshot des Formulars „Neue Funktion“ mit hervorgehobenem Feld „Name“ und festgelegtem Wert „DriveGearTemperatureService“](../media-draft/5-create-httptrigger-form.png)
+  ![Screenshot: Das Azure-Portal mit den neuen Funktionsoptionen für HTTP-Trigger, das Feld für die Sprache ist auf JavaScript und der Name ist auf DriveGearTemperatureService festgelegt.](../media/5-create-httptrigger-form.png)
 
-1. Wenn die Erstellung Ihrer Funktion abgeschlossen ist, öffnet sich der Code-Editor mit dem Inhalt der Codedatei *index.js*. Der Standardcode, den die Vorlage für uns generiert hat, wird im folgenden Codeausschnitt aufgeführt.
+8. Nach Abschluss der Funktionserstellung wird der Code-Editor mit dem Inhalt der Codedatei *index.js* geöffnet. Der Standardcode, den die Vorlage für uns generiert hat, wird im folgenden Codeausschnitt aufgeführt.
 
 ```javascript
 module.exports = function (context, req) {
@@ -59,7 +58,7 @@ module.exports = function (context, req) {
 
 Unsere-Funktion erwartet einen Namen, der entweder über die Abfragezeichenfolge der HTTP-Anforderung oder als Teil des Anforderungstexts übergeben wird. Die Funktion antwortet mit der Meldung **Hello, {Name}**, die den in der Anforderung gesendeten Namen wiedergibt.
 
-Auf der rechten Seite der Quellansicht sehen Sie zwei Registerkarten. Unter **Datei anzeigen** werden der Code und Konfigurationsdatei Ihrer Funktion aufgelistet.  Wählen Sie **function.json** aus, um die Konfiguration der Funktion anzuzeigen, die in etwa so aussehen sollte: 
+Auf der rechten Seite der Quellansicht sehen Sie zwei Registerkarten. Auf der Registerkarte **Datei anzeigen** werden der Code und die Konfigurationsdatei Ihrer Funktion aufgelistet.  Wählen Sie **function.json** aus, um die Konfiguration der Funktion anzuzeigen, die in etwa wie folgt aussehen sollte:
 
 ```javascript
 {
@@ -90,20 +89,21 @@ Diese Konfiguration deklariert, dass die Funktion ausgeführt wird, sobald sie e
 >- <https://en.wikipedia.org/wiki/CURL>
 >- <https://curl.haxx.se/docs/>
 
-Zum Testen der Funktion können Sie über die Befehlszeile mit cURL eine HTTP-Anforderung an die Funktions-URL senden. Um die Endpunkt-URL der Funktion zu finden, kehren Sie zu Ihrem Funktionscode zurück, und wählen Sie den Link **Funktions-URL abrufen** aus (siehe den folgenden Screenshot). Speichern Sie diesen Link vorübergehend.  
+Zum Testen der Funktion können Sie über die Befehlszeile mit cURL eine HTTP-Anforderung an die Funktions-URL senden. Um die Endpunkt-URL der Funktion zu finden, kehren Sie zu Ihrem Funktionscode zurück, und klicken Sie wie im folgenden Screenshot gezeigt auf den Link **Funktions-URL abrufen**. Speichern Sie diesen Link vorübergehend.
 
- ![Screenshot des Code-Editors im Abschnitt „Funktionen-Apps“ des Portals. Der Befehl „Funktions-URL“ ist rechts oben markiert.](../media-draft/5-get-function-url.png)
+ ![Screenshot: Der Funktionen-Editor im Azure-Portal mit der hervorgehobenen Schaltfläche „Funktions-URL abrufen“.](../media/5-get-function-url.png)
 
 ### <a name="securing-http-triggers"></a>Schützen von HTTP-Triggern
-Mit HTTP-Triggern können Sie API-Schlüssel verwenden, um unbekannte Aufrufer zu blockieren, indem Sie verlangen, dass der Schlüssel bei jeder Anforderung vorhanden ist. Wenn Sie eine Funktion erstellen, wählen Sie die _Autorisierungsstufe_. Standardmäßig ist diese auf „Funktion“ festgelegt, was einen funktionsspezifischen API-Schlüssel erfordert. Sie kann aber auch auf „Admin“ festgelegt werden, um einen globalen „Master“-Schlüssel zu verwenden, oder auf „Anonym“, um anzugeben, dass kein Schlüssel benötigt wird. Sie können die Autorisierungsstufe auch nach dem Erstellen über die Funktionseigenschaften ändern.
+
+Mit HTTP-Triggern können Sie API-Schlüssel verwenden, um unbekannte Aufrufer zu blockieren, indem Sie verlangen, dass der Schlüssel bei jeder Anforderung vorhanden ist. Beim Erstellen einer Funktion wählen Sie die _Autorisierungsstufe_ aus. Standardmäßig ist diese auf „Funktion“ festgelegt, was einen funktionsspezifischen API-Schlüssel erfordert. Sie kann aber auch auf „Administrator“ festgelegt werden, um einen globalen „Hauptschlüssel“ zu verwenden, oder auf „Anonym“, um anzugeben, dass kein Schlüssel benötigt wird. Sie können die Autorisierungsstufe auch nach dem Erstellen über die Funktionseigenschaften ändern.
 
 Da wir bei der Erstellung dieser Funktion „Funktion“ angegeben haben, müssen wir beim Senden der HTTP-Anforderung den Schlüssel angeben. Sie können ihn als Parameter mit einer Abfragezeichenfolge mit dem Namen `code` oder als HTTP-Header (bevorzugt) mit dem Namen `x-functions-key` senden.
 
 Funktions- und Masterschlüssel finden Sie im Abschnitt **Verwalten**, wenn die Funktion erweitert wird. Standardmäßig sind sie ausgeblendet, sodass Sie sie einblenden müssen.
 
-1. Erweitern Sie Ihre Funktion, und wählen Sie den Abschnitt **Verwalten** aus. Zeigen Sie den standardmäßigen Funktionsschlüssel an, und kopieren Sie ihn in die Zwischenablage.
+1. Erweitern Sie Ihre Funktion, und wählen Sie den Abschnitt **Verwalten** aus. Zeigen Sie den Standardfunktionsschlüssel an, und kopieren Sie ihn in die Zwischenablage.
 
-![Blatt zum Abrufen des Funktionsschlüssels aus dem Azure-Portal](../media-draft/5-get-function-key.png)
+![Screenshot: Blatt „Verwalten“ im Azure-Portal mit hervorgehobenem eingeblendeten Funktionsschlüssel.](../media/5-get-function-key.png)
 
 1. Formatieren Sie anschließend einen cURL-Befehl mit der URL Ihrer Funktion und dem Funktionsschlüssel.
 
@@ -112,9 +112,9 @@ Funktions- und Masterschlüssel finden Sie im Abschnitt **Verwalten**, wenn die 
     - Achten Sie darauf, dass Sie die URL durch Ihre eigene ersetzen.
     - Übergeben Sie den Funktionsschlüssel als den Headerwert `x-functions-key`.
 
-```bash
-curl --header "Content-Type: application/json" --header "x-functions-key: VCWjWkBTvWBsnvw0TlbIbtsav3P3J80m/PKe8WclH0C3RSmvG4Sy8w==" --request POST --data "{\"name\": \"Azure Function\"}" https://<your-url-here>/api/DriveGearTemperatureService
-```
+    ```bash
+    curl --header "Content-Type: application/json" --header "x-functions-key: <your-function-key>" --request POST --data "{\"name\": \"Azure Function\"}" https://<your-url-here>/api/DriveGearTemperatureService
+    ```
 
 Die Funktion antwortet mit dem Text `"Hello Azure Function"`.
 
@@ -124,7 +124,7 @@ Als Nächstes fügen wir die Logik zur Funktion hinzu, die die empfangenen Tempe
 
 Unsere Funktion erwartet ein Array von Temperaturmesswerten. Der folgende JSON-Codeausschnitt ist ein Beispiel für den Anforderungstext, den wir an unsere Funktion senden. Jeder `reading`-Eintrag verfügt über ID, Zeitstempel und Temperatur.
 
-```javascript
+```json
 {
     "readings": [
         {
@@ -146,7 +146,7 @@ Unsere Funktion erwartet ein Array von Temperaturmesswerten. Der folgende JSON-C
 }
 ```
 
-Als Nächstes ersetzen wir den Standardcode in unserer Funktion durch den folgenden Code, der unsere Geschäftslogik implementiert. 
+Als Nächstes ersetzen wir den Standardcode in unserer Funktion durch den folgenden Code, der unsere Geschäftslogik implementiert.
 
 1. Öffnen Sie die Datei **index.js**, und ersetzen Sie sie durch den folgenden Code.
 
@@ -155,7 +155,7 @@ module.exports = function (context, req) {
     context.log('Drive Gear Temperature Service triggered');
     if (req.body && req.body.readings) {
         req.body.readings.forEach(function(reading) {
-            
+
             if(reading.temperature<=25) {
                 reading.status = 'OK';
             } else if (reading.temperature<=50) {
@@ -193,14 +193,36 @@ In diesem Fall verwenden wir den Bereich **Test** im Portal, um unsere Funktion 
 
 1. Öffnen Sie das Fenster **Test** im rechten Flyoutmenü.
 
-1. Fügen Sie die obige Beispielanforderung in das Feld für den Anforderungstext ein. 
+1. Fügen Sie die Beispielanforderung in das Feld für den Anforderungstext ein.
 
-1. Wählen Sie **Ausführen** aus, und zeigen Sie die Antwort im Ausgabebereich an. Um Protokollmeldungen anzuzeigen, öffnen Sie die Registerkarte **Protokolle** im Flyoutmenü unten auf der Seite. Der folgende Screenshot zeigt eine Beispielantwort im Ausgabebereich und Meldungen im Bereich **Protokolle**.
+    ```json
+    {
+        "readings": [
+            {
+                "driveGearId": 1,
+                "timestamp": 1534263995,
+                "temperature": 23
+            },
+            {
+                "driveGearId": 3,
+                "timestamp": 1534264048,
+                "temperature": 45
+            },
+            {
+                "driveGearId": 18,
+                "timestamp": 1534264050,
+                "temperature": 55
+            }
+        ]
+    }
+    ```
 
-![Screenshot der Registerkarten „Test“ und „Protokolle“ auf der Benutzeroberfläche „Funktionen“ im Portal. Eine Beispielantwort der Funktion wird im Ausgabebereich auf der Registerkarte „Test“ angezeigt.](../media-draft/5-portal-testing.png)
+1. Klicken Sie auf **Ausführen**, und zeigen Sie die Antwort im Ausgabebereich an. Um Protokollmeldungen anzuzeigen, öffnen Sie die Registerkarte **Protokolle** im Flyoutmenü unten auf der Seite. Im folgenden Screenshot wird eine Beispielantwort im Ausgabebereich und Nachrichten im Bereich **Protokolle** angezeigt.
+
+![Screenshot: Blatt „Funktionen-Editor“ im Azure-Portal mit den angezeigten Registerkarten „Test“ und „Protokolle“. Eine Beispielantwort der Funktion wird im Ausgabebereich angezeigt.](../media/5-portal-testing.png)
 
 Im Ausgabebereich sehen Sie, dass unser Statusfeld korrekt zu jedem Messwert hinzugefügt wurde.
 
-Sie können auch auf dem Dashboard **Monitor** prüfen, ob die Anforderung in Application Insights protokolliert wurde.
+Sie können auch auf dem **Dashboard „Monitor“** prüfen, ob die Anforderung in Application Insights protokolliert wurde.
 
-![Screenshot von Teilen des Dashboards „Monitor“ mit einer Erfolgsmeldung unserer Funktion.](../media-draft/5-app-insights.png)
+![Screenshot: Die vorherigen Testergebnisse im Dashboard „Monitor“ im Azure-Portal.](../media/5-app-insights.png)

@@ -10,17 +10,17 @@ Wählen Sie das DTU-Modell aus, wenn Sie erst anfangen oder eine einfache vorkon
 
 Azure Cloud Shell erleichtert den Einstieg in die Arbeit mit Datenbanken. Über Cloud Shell können Sie auf Azure CLI zugreifen, um Informationen über Azure-Ressourcen abzurufen. Cloud Shell bietet auch viele andere allgemeine Hilfsprogramme, z.B. `sqlcmd`, damit Sie sofort mit Ihrer neuen Datenbank arbeiten können.
 
-## <a name="cleanup"></a>Bereinigen
+## <a name="clean-up"></a>Bereinigen
 
-Sie können mehr mit der Installation der Azure SQL-Datenbank herumexperimentieren. Wenn Sie fertig sind, besteht die einfachste Möglichkeit zum Löschen der Datenbank darin, die übergeordnete Ressourcengruppe zu löschen.
+<!---TODO: Update for sandbox?--->
+
+Experimentieren Sie gerne weiter mit der Installation der Azure SQL-Datenbank. Wenn Sie fertig sind, besteht die einfachste Möglichkeit zum Löschen der Datenbank darin, die übergeordnete Ressourcengruppe zu löschen.
 
 1. Klicken Sie im Azure-Portal auf **Ressourcengruppen**.
 
 1. Wählen Sie **logistics-db-rg** aus.
 
 1. Klicken Sie auf **Ressourcengruppe löschen**.
-
-    ![Löschen der Ressourcengruppe](../media-draft/delete-rg.png)
 
 1. Geben Sie „logistics-db-rg“ in der Eingabeaufforderung ein, und klicken Sie auf **Löschen**.
 

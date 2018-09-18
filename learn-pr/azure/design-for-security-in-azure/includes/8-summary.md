@@ -18,4 +18,4 @@ Verschlüsselung stellt häufig die letzte Verteidigungsebene gegen den Zugriff 
 
 ### <a name="network-security"></a>Netzwerksicherheit
 
-Abschließend haben wir über das Schützen Ihres Netzwerks gesprochen. Wir haben uns Möglichkeiten zum Schlüssen des Datenverkehrsflusses zwischen Anwendungen und Internet angeschaut. Es wurden einige Methoden zum anwendungsübergreifenden Schutz des Datenverkehrsflusses erläutert. Und am Ende haben wir geschaut, wie ein Datenverkehrsfluss zwischen Benutzern und einer Anwendung geschützt werden kann.
+Abschließend haben wir über das Sichern Ihres Netzwerks gesprochen. Wir haben uns Möglichkeiten zum Sichern des Datenverkehrsflusses zwischen Anwendungen und dem Internet angeschaut. Es wurden einige Methoden zur anwendungsübergreifenden Sicherung des Datenverkehrsflusses erläutert. Und am Ende haben wir geschaut, wie ein Datenverkehrsfluss zwischen Benutzern und einer Anwendung gesichert werden kann.

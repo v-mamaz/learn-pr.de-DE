@@ -3,13 +3,18 @@ uid: learn.classify-user-feedback-with-the-text-analytics-api.3-exercise-call-th
 metadata:
   title: 'Übung: Aufrufen der Textanalyse-API über die Onlinetestkonsole'
   description: In dieser Einheit führen wir mithilfe der API-Onlinetestkonsole echte Aufrufe an den Stimmungsendpunkt der Textanalyse-API durch, ohne eine Codezeile schreiben zu müssen.
-  displayType: two-column
-  ms.openlocfilehash: 9d3a1052df26d0a8906d995bf0aabfbf608ebdfc
-  ms.sourcegitcommit: 46c8d35790efaafa6a4637f7688482e3a754d7f3
+  ms.date: 09/24/2018
+  author: AndrewJByrne
+  ms.author: anbyrne
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 33d03b80bc6bc5a4f39041ce543e425f00773584
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44257424"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45775345"
 title: 'Übung: Aufrufen der Textanalyse-API über die Onlinetestkonsole'
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/3-exercise-call-the-text-analytics-api-using-the-api-testing-console.md)]'

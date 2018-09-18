@@ -1,4 +1,4 @@
-Die **Data Science Virtual Machine** für Linux ist das Image eines virtuellen Computers, das Ihnen den Einstieg in Data Science erleichtert. Dabei sind zahlreiche Tools bereits erstellt, installiert und konfiguriert, damit Sie so schnell wie möglich beginnen können. Der NVIDIA-GPU-Treiber, NVIDIA CUDA und die NVIDIA CUDA Deep Neural Network-Bibliothek (cuDNN) sind ebenso enthalten wie Jupyter und TensorFlow. Alle vorinstallierten Frameworks sind sowohl GPU- als auch CPU-fähig.
+**Data Science Virtual Machine** für Linux ist ein Image eines virtuellen Computers, das Ihnen den Einstieg in Data Science erleichtert. Dabei sind zahlreiche Tools bereits erstellt, installiert und konfiguriert, damit Sie so schnell wie möglich beginnen können. Der NVIDIA-GPU-Treiber, NVIDIA CUDA und die NVIDIA CUDA Deep Neural Network-Bibliothek (cuDNN) sind ebenso enthalten wie Jupyter und TensorFlow. Alle vorinstallierten Frameworks sind sowohl GPU- als auch CPU-fähig.
 
 ## <a name="learning-objectives"></a>Lernziele
 
@@ -11,8 +11,9 @@ In diesem Modul lernen Sie Folgendes:
 
 ### <a name="prerequisites"></a>Voraussetzungen
 <!---TODO: This is really long, need to make more concise and also add to index.yml--->
+<!---TODO: Update for free sandbox.--->
 
-Für dieses Modul benötigen Sie ein Azure-Abonnement und einen Xfce-Remotedesktopclient. Ausführlichere Informationen hierzu finden Sie im Abschnitt „Voraussetzungen“. Wenn Sie kein Azure-Abonnement besitzen, können Sie ein [kostenloses Konto](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) erstellen, bevor Sie beginnen.
+Für dieses Modul benötigen Sie ein Azure-Abonnement und einen Xfce-Remotedesktopclient.
 
  1. Ein **Microsoft Azure-Konto**: Für dieses Modul benötigen Sie ein gültiges und aktives Azure-Konto. Wenn Sie kein Konto haben, können Sie sich für eine [kostenlose Testversion](https://azure.microsoft.com/free/) registrieren.
 

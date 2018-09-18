@@ -1,111 +1,111 @@
-As your company deals with highly sensitive data and has large amounts of information it will store in Azure, there are some concerns about the security and reliability of connections over the public Internet. The company isn't willing to migrate wholesale to Azure unless it can demonstrate higher levels of connectivity, security, and reliability.
+Da Ihr Unternehmen mit vertraulichen Daten arbeitet und große Mengen an Informationen in Azure speichern möchte, gibt es Bedenken hinsichtlich der Sicherheit und Zuverlässigkeit von Verbindungen über das öffentliche Internet. Das Unternehmen ist nur dann zu einer vollständigen Migration zu Azure bereit, wenn es dadurch ein höheres Maß an Zuverlässigkeit, Sicherheit und Konnektivität erreicht.
 
-Here, we'll go beyond connections that run over the Internet to dedicated lines direct into the Azure datacenters.
+In diesem Teil lassen wir Verbindungen über das öffentliche Internet hinter uns und gehen auf dedizierte Direktverbindungen mit Azure-Rechenzentren ein.
 
-## Azure ExpressRoute
+## <a name="azure-expressroute"></a>Azure ExpressRoute
 
-Microsoft Azure ExpressRoute enables organizations to extend their on-premises networks into the Microsoft Cloud over a private connection implemented by a connectivity provider. This arrangement means that the connectivity to the Azure datacenters doesn't go over the Internet but across a dedicated link. ExpressRoute also facilitates efficient connections with other Microsoft cloud-based services, such as Office 365 and Dynamics 365.
+Mit Microsoft Azure ExpressRoute können Organisationen ihre lokalen Netzwerke über eine private Verbindung, die von einem Konnektivitätsanbieter implementiert wird, auf die Microsoft Cloud erweitern. In diesem Szenario wird die Verbindung mit den Azure-Rechenzentren nicht über das Internet, sondern über eine dedizierte Verbindung hergestellt. ExpressRoute ermöglicht auch effiziente Verbindungen mit anderen cloudbasierten Microsoft-Diensten wie Office 365 und Dynamics 365.
 
-Advantages that ExpressRoute provides include:
+ExpressRoute bietet unter anderem folgende Vorteile:
 
-- Faster speeds, from 50 Mbps to 10 Gbps, with dynamic bandwidth scaling
+- Höhere Geschwindigkeit (zwischen 50 MBit/s und 10 GBit/s) mit dynamischer Bandbreitenskalierung
 
-- Lower latency
+- Geringere Wartezeit
 
-- Greater reliability though built-in peering
+- Höhere Zuverlässigkeit durch integriertes Peering
 
-- Highly secure
+- Hohe Sicherheit
 
-ExpressRoute brings a number of further benefits, such as:
+Weitere Vorteile von ExpressRoute:
 
-- Connectivity to all supported Azure services
+- Konnektivität mit allen unterstützten Azure-Diensten
 
-- Global connectivity to all regions (requires premium add-on)
+- Globale Konnektivität mit allen Regionen (Premium-Add-On erforderlich)
 
-- Dynamic routing over Border Gateway Protocol
+- Dynamisches Routing über Border Gateway Protocol
 
-- Service-level agreements (SLAs) for connection uptime
+- Vereinbarungen zum Servicelevel (Service Level Agreements, SLAs) für Verbindungsverfügbarkeit
 
-- Quality of Service (QoS) for Skype for Business
+- Quality of Service (QoS) für Skype for Business
 
-Additionally, there's the ExpressRoute premium add-on, which offers benefits such as increased route limits, global service connectivity, and increased virtual network links per circuit.
+Das Premium-Add-On für ExpressRoute bietet zudem weitere Vorteile wie etwa höhere Routengrenzwerte, globale Dienstkonnektivität und mehr Verbindungen virtueller Netzwerke pro Verbindung.
 
-## ExpressRoute connectivity models
+## <a name="expressroute-connectivity-models"></a>ExpressRoute-Konnektivitätsmodelle
 
-Connections into ExpressRoute can be through the following mechanisms:
+Für ExpressRoute-Verbindungen stehen folgende Mechanismen zur Verfügung:
 
-- IP VPN network (any-to-any)
+- IP-basiertes VPN (Any-to-Any-Netzwerk)
 
-- Virtual cross-connection through an Ethernet exchange
+- Virtuelle Querverbindung über einen Ethernet-Exchange
 
-- Point-to-point Ethernet connection
+- Point-to-Point-Ethernet-Verbindung
 
- ExpressRoute capabilities and features are all identical across all of the above connectivity models.
+ Die ExpressRoute-Funktionen und -Features sind für alle oben genannten Konnektivitätsmodelle identisch.
 
-### What is layer 3 connectivity?
+### <a name="what-is-layer-3-connectivity"></a>Was ist Layer 3-Konnektivität?
 
-Microsoft uses an industry-standard dynamic routing protocol (BGP) to exchange routes between your on-premises network, your instances in Azure, and Microsoft public addresses. We establish multiple BGP sessions with your network for different traffic profiles.
+Microsoft nutzt ein Branchenstandardprotokoll für dynamisches Routing (BGP), um Routen zwischen Ihrem lokalen Netzwerk, Ihren Instanzen in Azure und öffentlichen Microsoft-Adressen auszutauschen. Wir richten für Ihr Netzwerk mehrere BGP-Sitzungen für unterschiedliche Datenverkehrsprofile ein.
 
-### Any-to-any (IPVPN) networks
+### <a name="any-to-any-ipvpn-networks"></a>Any-to-Any-Netzwerke (IPVPN)
 
-IPVPN providers typically provide connectivity between branch offices and your corporate datacenter over managed layer 3 connections. With ExpressRoute, the Azure datacenters appear as if they were another branch office.
+IPVPN-Anbieter stellen die Konnektivität zwischen Zweigstellen und dem Rechenzentrum Ihres Unternehmens in der Regel über verwaltete Layer 3-Verbindungen bereit. Mit ExpressRoute können die Azure-Rechenzentren wie eine weitere Zweigstelle verwendet werden.
 
-### Virtual cross-connection through an Ethernet Exchange
+### <a name="virtual-cross-connection-through-an-ethernet-exchange"></a>Virtuelle Querverbindung über einen Ethernet-Exchange
 
-If your organization is co-located with a cloud exchange facility, you request cross-connections to the Microsoft Cloud though your provider's Ethernet exchange. These cross-connections to the Microsoft Cloud can operate at either layer 2 or layer 3 managed connections, as in the networking OSI model.
+Wenn sich Ihre Organisation am gleichen Ort befindet wie eine Cloud Exchange-Einrichtung, fordern Sie Querverbindungen mit der Microsoft Cloud über den Ethernet-Exchange Ihres Anbieters an. Diese Querverbindungen mit der Microsoft Cloud können wie im OSI-Netzwerkmodell als Layer 2- oder verwaltete Layer 3-Verbindungen verwendet werden.
 
-### Point-to-point Ethernet connection
+### <a name="point-to-point-ethernet-connection"></a>Point-to-Point-Ethernet-Verbindung
 
-Point-to-point Ethernet links can provide layer 2 or managed layer 3 connections between your on-premises datacenters or offices to the Microsoft Cloud.
+Point-to-Point-Ethernet-Verbindungen können Layer 2- oder verwaltete Layer 3-Verbindungen zwischen Ihren lokalen Rechenzentren oder Filialen und der Microsoft Cloud bereitstellen.
 
-## How ExpressRoute works
+## <a name="how-expressroute-works"></a>Funktionsweise von ExpressRoute
 
-Azure ExpressRoute uses a combination of ExpressRoute circuits and routing domains to provide high-bandwidth connectivity to the Microsoft Cloud.
+Azure ExpressRoute verwendet eine Kombination von ExpressRoute-Verbindungen und Routingdomänen, um Konnektivität mit hoher Bandbreite mit der Microsoft Cloud bereitzustellen.
 
-### What are ExpressRoute circuits
+### <a name="what-are-expressroute-circuits"></a>Was sind ExpressRoute-Verbindungen?
 
-An ExpressRoute circuit is the logical connection between your on-premises infrastructure and the Microsoft Cloud. A connectivity provider implements that connection, although some organizations use multiple connectivity providers for redundancy reasons. Each circuit has a fixed bandwidth of either 50, 100, 200 Mbps or 500 Mbps, or 1 Gbps or 10 Gbps, and each of those circuits map to a connectivity provider and a peering location. In addition, each ExpressRoute circuit has default quotas and limits.
+Eine ExpressRoute-Verbindung ist die logische Verbindung zwischen Ihrer lokalen Infrastruktur und der Microsoft Cloud. Diese Verbindung wird von einem Konnektivitätsanbieter implementiert. Aus Redundanzgründen verwenden einige Organisationen mehrere Konnektivitätsanbieter. Jede Verbindung verfügt über eine feste Bandbreite von 50, 100, 200 oder 500 MBit/s bzw. 1 oder 10 GBit/s, und jede dieser Verbindungen ist einem Konnektivitätsanbieter und einem Peeringstandort zugeordnet. Darüber hinaus gelten für jede ExpressRoute-Verbindung Standardkontingente und -grenzwerte.
 
-An ExpressRoute circuit isn't equivalent to a network connection or a network device. Each circuit is defined by a GUID, called a _service_ or _s-key_. This s-key provides the connectivity link between Microsoft, your connectivity provider, and your organization - it isn't a cryptographic secret. Each s-key has a one-to-one mapping to an Azure ExpressRoute circuit.
+Eine ExpressRoute-Verbindung ist nicht das Gleiche wie eine Netzwerkverbindung oder ein Netzwerkgerät. Jede Verbindung wird durch eine GUID (_Service_ oder _Dienstschlüssel_) definiert. Dieser Dienstschlüssel stellt die Konnektivitätsverbindung zwischen Microsoft, Ihrem Konnektivitätsanbieter und Ihrer Organisation bereit. Es handelt sich dabei aber nicht um ein kryptografisches Geheimnis. Für jeden Dienstschlüssel besteht eine 1: 1-Zuordnung zu einer Azure ExpressRoute-Verbindung.
 
-Each circuit can have up to three peerings, which are a pair of BGP sessions that are configured for redundancy. They are:
+Jede Verbindung kann über bis zu drei Peerings (aus Redundanzgründen konfiguriertes BGP-Sitzungspaar) verfügen. Sie lauten wie folgt:
 
-- Azure private
-- Azure public
+- Privates Azure-Peering
+- Öffentliches Azure-Peering
 - Microsoft
 
-### Routing domains
+### <a name="routing-domains"></a>Routingdomänen
 
-ExpressRoute circuits then map to routing domains, with each ExpressRoute circuit having multiple routing domains. These domains are the same as the three peerings listed above. In an active-active configuration, each pair of routers would have each routing domain configured identically, thus providing high availability. The Azure public and Azure private peering names represent the IP addressing schemes.
+ExpressRoute-Verbindungen werden anschließend Routingdomänen zugeordnet. Die einzelnen ExpressRoute-Verbindungen verfügen dabei jeweils über mehrere Routingdomänen. Diese Domänen sind identisch mit den oben aufgeführten drei Peerings. In einer Aktiv-Aktiv-Konfiguration ist jede Routingdomäne für jedes Routerpaar identisch konfiguriert, was für Hochverfügbarkeit sorgt. Die Namen für öffentliches und privates Azure-Peering stellen die IP-Adressierungsschemas dar.
 
-#### Azure private peering
+#### <a name="azure-private-peering"></a>Privates Azure-Peering
 
-Azure private peering connects to Azure compute services such as virtual machines and cloud services that are deployed with a virtual network. As far as security goes, the private peering domain is simply an extension of your on-premises network into Azure. You then enable bidirectional connectivity between that network and any Azure virtual networks, making the Azure VM IP addresses visible within your internal network.
-
-> [!NOTE]
-> You can connect only one virtual network to the private peering domain.
-
-#### Azure public peering
-
-Azure public peering enables private connections to services that are available on public IP addresses, such as Azure Storage, Azure SQL databases, and Azure web services. With public peering, you can connect to those service public IP addresses without your traffic being routed over the Internet. Connectivity is always from your WAN to Azure, not the other way around. This is also an all-or-nothing approach, as you can't select the services for which you want public peering enabled.
+Beim privaten Azure-Peering wird eine Verbindung mit Azure-Computediensten (etwa mit virtuellen Computern und Clouddiensten) hergestellt, die mit einem virtuellen Netzwerk bereitgestellt wurden. In puncto Sicherheit ist die private Peeringdomäne einfach eine Erweiterung Ihres lokalen Netzwerks in Azure. Sie aktivieren dann die bidirektionale Konnektivität zwischen diesem Netzwerk und virtuellen Azure-Netzwerken, wodurch die IP-Adressen des virtuellen Azure-Computers in Ihrem internen Netzwerk sichtbar werden.
 
 > [!NOTE]
-> For Azure PaaS services, it's recommended to use Microsoft peering rather than public peering.
+> Sie können nur ein virtuelles Netzwerk mit der privaten Peeringdomäne verbinden.
 
-#### Microsoft peering
+#### <a name="azure-public-peering"></a>Öffentliches Azure-Peering
 
-Microsoft peering supports connections to cloud-based SaaS offerings, such as Office 365 and Dynamics 365. This peering option provides bi-directional connectivity between your company's WAN and Microsoft cloud services.
+Öffentliches Azure-Peering ermöglicht private Verbindungen mit Diensten, die über öffentliche IP-Adressen verfügbar sind. Hierzu zählen beispielsweise Azure Storage, Azure SQL-Datenbanken und Azure-Webdienste. Bei Verwendung von öffentlichem Peering können Sie eine Verbindung mit den öffentlichen IP-Adressen dieser Dienste herstellen, ohne dass Ihr Datenverkehr über das Internet geleitet wird. Die Konnektivität verläuft immer von Ihrem WAN zu Azure, nicht umgekehrt. Darüber hinaus handelt es sich hierbei um einen Alles-oder-Nichts-Ansatz, da Sie nicht auswählen können, für welche Dienste das öffentliche Peering aktiviert werden soll.
 
-### ExpressRoute health
+> [!NOTE]
+> Bei Azure-PaaS-Diensten ist das Microsoft-Peering dem öffentlichen Peering vorzuziehen.
 
-As with most features in Microsoft Azure, you can monitor ExpressRoute connections to ensure that they are performing satisfactorily. Monitoring includes coverage of the following areas:
+#### <a name="microsoft-peering"></a>Microsoft-Peering
 
-- Availability
-- Connectivity to virtual networks
-- Bandwidth utilization
+Microsoft-Peering unterstützt Verbindungen mit cloudbasierten SaaS-Angeboten wie Office 365 und Dynamics 365. Diese Peering-Option bietet bidirektionale Konnektivität zwischen dem WAN Ihres Unternehmens und den Clouddiensten von Microsoft.
 
-The key tool for this monitoring activity is Network Performance Monitor, particularly NPM for ExpressRoute.
+### <a name="expressroute-health"></a>ExpressRoute-Integrität
 
-## Summary
+Wie bei den meisten Features in Microsoft Azure können Sie die ExpressRoute-Verbindungen überwachen, um sich zu vergewissern, dass sie zufriedenstellend funktionieren. Die Überwachung umfasst folgende Aspekte:
 
-Azure ExpressRoute is used to create private connections between Azure datacenters and infrastructure on your premises or in a colocation environment. ExpressRoute connections don't go over the public Internet, and they offer more reliability, faster speeds, and lower latencies than typical Internet connections.
+- Verfügbarkeit
+- Konnektivität mit virtuellen Netzwerken
+- Bandbreitennutzung
+
+Das zentrale Tool für diese Überwachung ist der Netzwerkleistungsmonitor (Network Performance Monitor, NPM) für ExpressRoute.
+
+## <a name="summary"></a>Zusammenfassung
+
+Mit Azure ExpressRoute können Sie private Verbindungen zwischen Azure-Datencentern und einer Infrastruktur in Ihrer lokalen Umgebung oder in einer Housingumgebung erstellen. ExpressRoute-Verbindungen werden nicht über das öffentliche Internet hergestellt und zeichnen sich im Vergleich zu herkömmlichen Internetverbindungen durch eine höhere Zuverlässigkeit und Geschwindigkeit sowie durch kürzere Wartezeiten aus.

@@ -8,7 +8,7 @@ So sieht der typische Workflow für Apps aus, die Azure Blob Storage verwenden:
 
 ## <a name="configure-your-connection-string"></a>Konfigurieren der Verbindungszeichenfolge
 
-Bevor Sie Code schreiben, benötigen Sie die Verbindungszeichenfolge für das von Ihnen verwendete Speicherkonto.
+Bevor Sie Ihre App ausführen, benötigen Sie die Verbindungszeichenfolge für das zu verwendende Speicherkonto. Sie können jede beliebige Verwaltungsschnittstelle von Azure zum Abrufen verwenden, einschließlich des Azure-Portals, der Azure CLI oder Azure PowerShell. Am Ende dieses Moduls wird die Azure CLI beim Einrichten der Web-App zum Ausführen des Codes verwendet, um die Verbindungszeichenfolge für das zuvor erstellte Speicherkonto abzurufen.
 
 Diese enthält den Kontoschlüssel. Der Kontoschlüssel gilt als geheim und sollte sicher aufbewahrt werden. Hier speichern wir die Verbindungszeichenfolge in einer App Service-Anwendungseinstellung. App Service-Anwendungseinstellungen sind ein sicherer Ort für Anwendungsgeheimnisse. Dieser Ansatz unterstützt jedoch keine lokale Entwicklung und ist keine robuste, eigenständige End-to-End-Lösung.
 
@@ -49,15 +49,13 @@ Das Aufrufen von `CreateIfNotExistsAsync` für einen `CloudBlobContainer` ist di
 
 Klonen Sie zuerst die Start-App aus GitHub. Führen Sie im Cloud Shell-Terminal den folgenden Befehl aus, um eine Kopie des Quellcodes zu erstellen und im Editor zu öffnen:
 
-**TODO update to final repo URL**
-
 ```console
-git clone https://github.com/nickwalkmsft/FileUploader.git
-cd FileUploader
+git clone https://github.com/MicrosoftDocs/mslearn-store-data-in-azure.git
+cd mslearn-store-data-in-azure/store-app-data-with-azure-blob-storage/src/start
 code .
 ```
 
-Öffnen Sie die Datei `Controllers/FilesController.cs`. Hier gibt es nichts zu tun, aber wir werfen einen kurzen Blick darauf, was die App macht.
+Öffnen Sie die Datei `Controllers/FilesController.cs` im Editor. Hier gibt es nichts zu tun, aber wir werfen einen kurzen Blick darauf, was die App macht.
 
 Dieser Controller implementiert eine API mit drei Aktionen:
 
@@ -80,13 +78,13 @@ So wird sichergestellt, dass Sie die neueste Version der Blob Storage-Clientbibl
 
 ### <a name="configure"></a>Konfigurieren
 
-Die Konfigurationswerte, die wir für die Ausführung der App benötigen, sind die Verbindungszeichenfolge des Speicherkontos und der Name des Containers, den die App für die Speicherung von Dateien verwenden wird. In dieser Einheit führen wir die App nur in Azure App Service aus. Dabei befolgen wir die bewährten Vorgehensweisen für App Service und speichern die Werte in den Anwendungseinstellungen von App Service. Das machen wir, wenn wir die App Service-Instanz erstellen, weshalb wir im Moment nichts zu tun haben.
+Die erforderlichen Konfigurationswerte sind die Verbindungszeichenfolge des Speicherkontos und der Name des Containers, den die App für die Speicherung von Dateien verwenden wird. In diesem Modul führen wir die App nur in Azure App Service aus. Dabei befolgen wir die bewährten Vorgehensweisen für App Service und speichern die Werte in den Anwendungseinstellungen von App Service. Das machen wir, wenn wir die App Service-Instanz erstellen, weshalb wir im Moment nichts erledigen müssen.
 
 Wenn es zum *Einsatz* der Konfiguration kommt, enthält unsere Einsteiger-App bereits die von uns benötigten Einstellungen. Der `IOptions<AzureStorageConfig>`-Konstruktorparameter in `BlobStorage` hat zwei Eigenschaften: die Speicherkonto-Verbindungszeichenfolge und den Namen des Containers, in dem die App Blobs speichert. In der `ConfigureServices`-Methode von `Startup.cs` gibt es einen Code, der die Werte aus der Konfiguration lädt, wenn die App startet.
 
 ### <a name="initialize"></a>Initialisieren
 
-Öffnen Sie `Models/BlobStorage.cs`. Fügen Sie die folgenden `using`-Anweisungen am Anfang der Datei hinzu, um sie für den Code vorzubereiten, den Sie während der Übung hinzufügen werden.
+Öffnen Sie `Models/BlobStorage.cs` im Editor. Fügen Sie die folgenden `using`-Anweisungen am Anfang der Datei hinzu, um sie für den Code vorzubereiten, den Sie während der Übung hinzufügen werden.
 
 ```csharp
 using System.Linq;

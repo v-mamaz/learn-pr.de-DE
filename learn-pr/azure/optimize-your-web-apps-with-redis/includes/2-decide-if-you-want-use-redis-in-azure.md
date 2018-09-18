@@ -58,7 +58,7 @@ Dieser Cache bietet Ihnen einen Redis Cache mit _**einzelnem Knoten**_. Das voll
 
 ### <a name="standard-cache"></a>Cachetarif „Standard“
 
-Der Standard-Cache bietet Architekturen mit _**mehreren Knoten**_. Redis repliziert einen Cache in einer Primär-/Sekundärkonfiguration mit zwei Knoten. Azure verwaltet die Replikation zwischen den beiden Knoten. Dies ist ein produktionsbereiter Cache mit Master/Slave-Replikation.
+Der Standard-Cache bietet Architekturen mit _**mehreren Knoten**_. Redis repliziert einen Cache in einer Primär-/Sekundärkonfiguration mit zwei Knoten. Azure verwaltet die Replikation zwischen den beiden Knoten. Dies ist ein produktionsbereiter Cache mit Replikation zwischen übergeordnetem und untergeordnetem Server.
 
 ### <a name="premium-tier"></a>Premium-Tarif
 

@@ -1,18 +1,18 @@
-Security is currently top-of-mind for most people working in IT, and this is especially true when it comes to software. It seems we are constantly hearing about companies and governments that we entrusted our private data to, being compromised. When this happens - either maliciously or accidentally, it costs them customers and, ultimately money.
+Sicherheit hat derzeit für die meisten IT-Mitarbeiter die oberste Priorität – dies gilt insbesondere für Software. Regelmäßig hören wir von Datendiebstahl bei Unternehmen und Behörden, denen wir unsere privaten Daten anvertraut haben. Wenn dieser Fall eintritt – böswillig oder versehentlich –, kostet das Unternehmen und Behörden ihre Kunden und letztlich auch Geld.
 
-Did you know that the most common cause of data breaches is poor security in software? It's true.  This means that the pressure is on for software developers to be more diligent than ever. But where do they start? This module is the start of your journey into the world of application security, with the top five defenses for web applications. Learn how to secure your web applications on Azure and protect your apps against the most common and dangerous web application attacks.
+Wussten Sie, dass die häufigste Ursache für Datenpannen unzureichende Softwaresicherheit ist? Das ist wahr.  Das heißt, Softwareentwickler standen noch nie unter so großem Druck, effiziente Sicherheitsvorkehrungen zu entwickeln. Doch wo müssen sie ansetzen? Dieses Modul dient als Einführung in das Thema Anwendungssicherheit und zeigt die fünf besten Schutzmechanismen für Webanwendungen. Erfahren Sie, wie Sie Ihre Webanwendungen in Azure sichern und Ihre Apps vor den häufigsten und gefährlichsten Angriffen auf Webanwendungen schützen können.
 
-## Learning objectives
+## <a name="learning-objectives"></a>Lernziele
 
-In this module, you will:
+In diesem Modul lernen Sie Folgendes:
 
-* Use Azure Security Center
-* Verify your application's inputs and outputs
-* Store your secrets into Key Vault
-* Ensure you are using the latest version of your framework, and its security features
-* Validate that your program dependencies and libraries are safe to use
+* Verwenden von Azure Security Center
+* Überprüfen der Eingaben und Ausgaben Ihrer Anwendung
+* Speichern Ihrer Geheimnisse in Key Vault
+* Sicherstellen, dass Sie die neueste Version Ihres Frameworks und dessen Sicherheitsfunktionen verwenden
+* Überprüfen, ob die Verwendung Ihrer Programmabhängigkeiten und Bibliotheken sicher ist
 
-## Prerequisites
+## <a name="prerequisites"></a>Voraussetzungen
 
-* Learners should be experienced web developers.
-* Learners should have access to Azure.
+* Das Modul richtet sich an erfahrene Webentwickler.
+* Die Teilnehmer benötigen Zugriff auf Azure.

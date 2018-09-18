@@ -56,7 +56,7 @@ Zum Training des Modells gehört etwas mehr als nur die Ausführung eines Python
 
     *Bilder im Ordner „Hot_dog“*
 
-    Überprüfen Sie außerdem, ob der Ordner eine Textdatei mit dem Namen **retrained_labels_hotdog.txt** enthält. In dieser Datei sind die Unterverzeichnisse angegeben, in denen die Trainingsbilder enthalten sind. Sie wird von dem Python-Skript verwendet, mit dem das Modell trainiert wird. Vom Skript werden die Dateien in den jeweiligen in der Textdatei (der Name der Textdatei ist ein Parameter, der an das Skript übergeben wird) angegebenen Unterverzeichnissen einzeln benannt und zum Trainieren des Netzwerks verwendet.
+    Überprüfen Sie außerdem, ob der Ordner eine Textdatei mit dem Namen **retrained_labels_hotdog.txt** enthält. In dieser Datei sind die Unterverzeichnisse angegeben, in denen die Trainingsbilder enthalten sind. Sie wird von dem Python-Skript verwendet, mit dem das Modell trainiert wird. Vom Skript werden die Dateien in den jeweiligen in der Textdatei angegebenen Unterverzeichnissen einzeln benannt und zum Trainieren des Netzwerks verwendet (der Name der Textdatei ist ein Parameter, der an das Skript übergeben wird).
 
 1. Öffnen Sie ein zweites Terminalfenster, und navigieren Sie zum Ordner „notebooks/tensorflow-for-poets-2“. Das ist derselbe Ordner, der bereits im ersten Terminalfenster geöffnet ist. Verwenden Sie anschließend den folgenden Befehl, um [TensorBoard](https://www.tensorflow.org/programmers_guide/summaries_and_tensorboard) aufzurufen – hierbei handelt es sich um eine Reihe von Tools, mit denen Sie TensorFlow-Modelle visualisieren und sich einen Überblick über den Transfer-Learning-Prozess verschaffen können:
 

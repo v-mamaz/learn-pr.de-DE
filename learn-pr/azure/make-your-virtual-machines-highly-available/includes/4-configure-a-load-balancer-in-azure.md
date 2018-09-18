@@ -1,28 +1,28 @@
-Before the load balancer will function correctly, you must configure settings that control the load balancer's behavior. Here, you will look at configuring the network, health probe, security rules, load-balancing rules, and server pool.
+Damit der Lastenausgleich korrekt funktioniert, müssen Sie vorab Einstellungen konfigurieren, die das Verhalten des Lastenausgleichs steuern. In diesem Artikel werden wir uns mit der Konfiguration des Netzwerks, des Integritätstests, der Sicherheits- und Lastenausgleichsregeln sowie des Serverpools befassen.
 
-## Steps for configuring a basic public load balancer
+## <a name="steps-to-configure-a-basic-public-load-balancer"></a>Schritte zum Konfigurieren eines öffentlichen Load Balancer Basic
 
-The following is an overview of the main configuration steps for a basic public load balancer. The steps for a standard load balancer and for an internal load balancer will be similar.
+Im Folgenden finden Sie eine Übersicht über die wichtigsten Konfigurationsschritte für einen öffentlichen Load Balancer Basic. Die Vorgehensweise für einen Load Balancer Standard und einen internen Load Balancer ist ähnlich.
 
-### Backend servers
+### <a name="backend-servers"></a>Back-End-Server
 
-First, you need to configure your backend VM pool. The VMs should be in the same availability set and have their own public IP address (although this will not actually be used by your public endpoints).
+Zunächst müssen Sie Ihren Back-End-VM-Pool konfigurieren. Die VMs sollten in derselben Verfügbarkeitsgruppe enthalten sein und über eine eigene öffentliche IP-Adresse verfügen (obwohl diese nicht wirklich von Ihren öffentlichen Endpunkten verwendet wird).
 
-You must create a new virtual network and define a subnet for the VM pool to use.
+Sie müssen ein neues virtuelles Netzwerk (VNET) erstellen und ein Subnetz für den zu verwendenden VM-Pool definieren.
 
- When you have multiple VMs providing the same services, you should use a **network security group (NSG)** to ensure that the same firewall rules are in place across the VM pool (although this is not part of the actual load-balancing process). For example, for VMs hosting web applications, you will need to create inbound security rules on port 80 for HTTP or port 8080 for HTTPS.
+Falls mehrere VMs die gleichen Dienste bereitstellen, sollten Sie – obwohl dies nicht direkt zum Lastenausgleich gehört – eine **Netzwerksicherheitsgruppe (NSG)** verwenden, um sicherzustellen, dass im gesamten VM-Pool die gleichen Firewallregeln angewendet werden. Für VMs, die Webanwendungen hosten, müssen Sie beispielsweise Eingangssicherheitsregeln am Port 80 für HTTP bzw. Port 8080 für HTTPS erstellen.
 
-### Public IP address
+### <a name="public-ip-address"></a>Öffentliche IP-Adresse
 
-When you create a public basic load balancer using the portal, the **public IP address** is automatically configured as the load balancer's front end.
+Wenn Sie einen öffentlichen Load Balancer Basic im Portal erstellen, wird die **öffentliche IP-Adresse** automatisch als Front-End des Lastenausgleichs konfiguriert.
 
-Part of the configuration of the load balancer is the **back-end address pool**, containing the IP addresses of each VM's virtual NICs that are connected to the load balancer and used to distribute traffic to the VMs. 
+Teil der Konfiguration des Lastenausgleichs ist der **Back-End-Adresspool**. Dieser enthält die IP-Adressen der virtuellen Netzwerkkarten aller VMs, die mit dem Lastenausgleich verbunden sind und zum Verteilen des Datenverkehrs auf die VMs verwendet werden. 
 
-### Health probe
+### <a name="health-probe"></a>Integritätstest
 
-The health probe dynamically adds or removes VMs from the load balancer rotation based on their response to health checks.
-By default, there are 15 seconds between probe attempts. After two consecutive probe failures, a VM is considered unhealthy.
+Basierend auf der Antwort der VMs auf Integritätsüberprüfungen werden die VMs beim Integritätstest dynamisch zur Lastenausgleichsrotation hinzugefügt oder aus ihr entfernt.
+Das Standardintervall zwischen Testversuchen beträgt 15 Sekunden. Nach zwei aufeinander folgenden Testfehlern wird eine VM als fehlerhaft eingestuft.
 
-### Rules
+### <a name="rules"></a>Regeln
 
-The load balancer rule specifies the port that the front end is listening on, and the port used to send traffic to the backend.
+Die Lastenausgleichsregel gibt den Port an, an dem das Front-End lauscht, und den Port, der zum Senden von Datenverkehr an das Back-End verwendet wird.

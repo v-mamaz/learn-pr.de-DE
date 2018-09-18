@@ -1,7 +1,7 @@
 In diesem Modul haben Sie erfahren, wie Azure Blob Storage zum Speichern von Webanwendungsdaten verwendet wird. Wir haben Tipps für die Entwicklung einer Strategie zur Verwendung von Blob Storage in einer Web-App und des Azure Storage SDK für .NET Core zum Schreiben und Lesen von Blobs diskutiert. Die von uns erstellte App akzeptiert von Benutzern hochgeladene Dateien, speichert sie in Blob Storage und stellt sie zum Download bereit.
 
-## <a name="cleanup"></a>Bereinigen
-<!---TODO: Do we need to include cleanup for the free education tier?--->
+## <a name="clean-up"></a>Bereinigen
+<!---TODO: Update for sandbox?--->
 
 Um Ihr Azure-Abonnement zu bereinigen, führen Sie die folgenden Schritte in Azure Cloud Shell aus, um die Ressourcengruppe zu löschen, die alle in diesem Modul erstellten Ressourcen enthält.
 
@@ -9,7 +9,7 @@ Um Ihr Azure-Abonnement zu bereinigen, führen Sie die folgenden Schritte in Azu
 az group delete --name blob-exercise-group --yes --no-wait
 ```
 
-Löschen Sie zum Bereinigen Ihres Cloud Shell-Speichers das Verzeichnis `FileUploader`.
+Löschen Sie zum Bereinigen Ihres Cloud Shell-Speichers das Verzeichnis `mslearn-store-data-in-azure`.
 
 ## <a name="further-reading"></a>Weitere nützliche Informationen
 

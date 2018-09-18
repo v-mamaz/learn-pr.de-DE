@@ -2,7 +2,7 @@
 
 Die Data Science Virtual Machine für Linux ist das Image eines virtuellen Computers, das Ihnen den Einstieg in Data Science erleichtert. Dabei sind zahlreiche Tools bereits erstellt, installiert und konfiguriert, damit Sie so schnell wie möglich beginnen können. Der NVIDIA-GPU-Treiber, [NVIDIA CUDA](https://developer.nvidia.com/cuda-downloads), und die [NVIDIA CUDA Deep Neural Network](https://developer.nvidia.com/cudnn)-Bibliothek (cuDNN) sind ebenso enthalten wie [Jupyter](http://jupyter.org/), einige Jupyter-Beispielnotebooks und [TensorFlow](https://www.tensorflow.org/). Alle vorinstallierten Frameworks sind sowohl GPU- als auch CPU-fähig. In dieser Einheit erstellen Sie eine Instanz der Data Science Virtual Machine (DSVM) für Linux in Azure.
 
-1. Öffnen Sie das [Azure-Portal](https://portal.azure.com/?azure-portal=true) in Ihrem Browser. Wenn Sie gefragt werden, ob Sie sich anmelden möchten, melden Sie sich mit Ihrem Microsoft-Konto an.
+1. Öffnen Sie das [Azure-Portal](https://portal.azure.com/?azure-portal=true) in Ihrem Browser.
 
 1. Klicken Sie im Menü auf der linken Seite des Portals auf **Ressource erstellen**, und geben Sie dann „data science“ (ohne Anführungszeichen) in das Suchfeld ein. Wählen Sie **Data Science Virtual Machine for Linux (Ubuntu)** in der Ergebnisliste aus.
 
@@ -18,9 +18,7 @@ Die Data Science Virtual Machine für Linux ist das Image eines virtuellen Compu
 
     ![Auswählen einer VM-Größe](../media-draft/1-create-data-science-vm-2.png)
 
-1. Aktivieren Sie auf dem Blatt **Einstellungen** in der Liste der eingehenden Ports **SSH (22)**, damit Clients über das [Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell)-Protokoll (SSH) auf Port 22 eine Verbindung mit dem virtuellen Computer herstellen können. Klicken Sie dann auf **OK**.
-
-    ![Erstellen des virtuellen Computers](../media-draft/1-create-data-science-vm-3.png)
+1. Behalten Sie auf dem Blatt **Einstellungen** die Standardwerte bei, und klicken Sie auf **OK**.
 
 1. Überprüfen Sie auf dem Blatt **Erstellen** die Optionen, die Sie für den virtuellen Computer ausgewählt haben, und klicken Sie auf **Erstellen**, um den Prozess der Erstellung des virtuellen Computers zu starten.
 

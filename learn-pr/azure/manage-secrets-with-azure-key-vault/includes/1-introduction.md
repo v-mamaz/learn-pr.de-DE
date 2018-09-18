@@ -12,9 +12,8 @@ Das Preisgeben von Datenbank-Verbindungszeichenfolgen, API-Schlüsseln oder Dien
 
 ## <a name="learning-objectives"></a>Lernziele
 
-In diesem Modul lernen Sie Folgendes:
-
-- Verstehen, welche Arten von Informationen in Azure Key Vault gespeichert werden können
-- Erstellen eines Azure Key Vault-Stores
-- Authentifizieren bei Azure Key Vault
-- Zugreifen auf Geheimnisse in Azure Key Vault
+  In diesem Modul lernen Sie Folgendes:
+    - Arten von Informationen, die in Azure Key Vault gespeichert werden können
+    - Erstellen einer Azure Key Vault-Instanz, die Sie zum Speichern der Konfigurationswerte von Geheimnissen verwenden können
+    - Aktivieren des sicheren Zugriffs auf den Tresor aus einer Azure App Service-Web-App mithilfe von verwalteten Identitäten für Azure-Ressourcen
+    - Implementieren einer Webanwendung, die Geheimnisse aus dem Tresor abruft

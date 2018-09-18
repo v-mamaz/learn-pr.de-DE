@@ -1,8 +1,10 @@
-Im Rahmen dieses Moduls stellen Sie eine einfache Web-App bereit, die eine HTML-basierte Benutzeroberfläche darstellt. Mit einem serverlosen Back-End kann die Anwendung Bilder hochladen und automatisch Bildtitel abrufen, die diese beschreiben.
+Im Rahmen dieses Moduls stellen Sie eine einfache Web-App bereit, die über eine HTML-basierte Benutzeroberfläche verfügt. Mit einem serverlosen Back-End kann die Anwendung Bilder hochladen und automatisch beschreibende Bildtitel generieren.
 
 ![Ausführen der Web-App](../media/0-app-screenshot-finished.png)
 
 Im folgenden Diagramm sind die Azure-Dienste aufgeführt, die von der Anwendung verwendet werden.
+
+![Diagramm der Lösungsarchitektur](../media/0-architecture.jpg)
 
 1. Azure Blob Storage stellt statischen Webinhalt (HTML, CSS, JS) bereit und speichert Bilder.
 2. Azure Functions verwaltet das Hochladen von Bildern, die Größenänderung und die Speicherung von Metadaten.
@@ -10,20 +12,10 @@ Im folgenden Diagramm sind die Azure-Dienste aufgeführt, die von der Anwendung 
 4. Azure Logic Apps ruft Bildtitel von der Maschinelles Sehen-API von Cognitive Services ab.
 5. Azure Active Directory wird zum Verwalten der Benutzerauthentifizierung verwendet.
 
-![Diagramm der Lösungsarchitektur](../media/0-architecture.jpg)
-
-In dieser Einheit lernen Sie Folgendes:
-> [!div class="checklist"]
-> * Konfigurieren von Azure Blob Storage zum Hosten einer statischen Website und von hochgeladenen Bildern
-> * Hochladen von Bildern in Azure Blob Storage mit Azure Functions
-> * Ändern der Größe von Bildern mit Azure Functions
-> * Speichern von Bildmetadaten in Azure Cosmos DB
-> * Verwenden der Maschinelles Sehen-API von Cognitive Services zum automatischen Generieren von Bildtiteln
-> * Nutzen von Azure Active Directory zum Schützen der Web-App durch das Authentifizieren von Benutzern
-
-Azure Blob Storage ist ein kostengünstiger und extrem skalierbarer Dienst, der zum Hosten von statischen Dateien verwendet werden kann. Für dieses Tutorial verwenden Sie den Dienst zum Bereitstellen von statischem Inhalt (z.B. HTML, JavaScript, CSS) für die von Ihnen erstellte Web-App.
+Azure Blob Storage ist ein kostengünstiger und extrem skalierbarer Dienst, der zum Hosten von statischen Dateien verwendet werden kann. In diesem Modul verwenden Sie Blob Storage, um statische Inhalte (z.B. HTML, JavaScript oder CSS) für die Web-App bereitzustellen, die Sie erstellen.
 
 ## <a name="create-an-azure-storage-account"></a>Erstellen eines Azure-Speicherkontos
+<!---TODO: Update for sandbox?--->
 
 Ein Azure-Speicherkonto ist eine Azure-Ressource, mit der Sie Tabellen, Warteschlangen, Dateien, Blobs (Objekte) und VM-Datenträger speichern können.
 
@@ -35,7 +27,7 @@ Ein Azure-Speicherkonto ist eine Azure-Ressource, mit der Sie Tabellen, Wartesch
     az group create -n first-serverless-app -l westcentralus
     ```
 
-1. Der statische Inhalt (HTML-, CSS- und JavaScript-Dateien) für dieses Tutorial wird in Blob Storage gehostet. Für Blob Storage ist ein Speicherkonto erforderlich. Erstellen Sie ein Speicherkonto (Allgemein V2) in der Ressourcengruppe. Ersetzen Sie `<storage account name>` durch einen eindeutigen Namen.
+1. Der statische Inhalt (HTML-, CSS- und JavaScript-Dateien) für dieses Tutorial wird in Blob Storage gehostet. Für Blob Storage ist ein Speicherkonto erforderlich. Erstellen Sie ein Speicherkonto vom Typ „General-purpose v2“(GPv2) in der Ressourcengruppe. Ersetzen Sie `<storage account name>` durch einen eindeutigen Namen.
 
     ```azurecli
     az storage account create -n <storage account name> -g first-serverless-app --kind StorageV2 -l westcentralus --https-only true --sku Standard_LRS
@@ -54,7 +46,7 @@ Ein Azure-Speicherkonto ist eine Azure-Ressource, mit der Sie Tabellen, Wartesch
 
 ## <a name="upload-the-web-application"></a>Hochladen der Web-App
 
-1. Die Quelldateien für die Anwendung, die Sie in diesem Tutorial erstellen, befinden sich in einem [GitHub-Repository](https://github.com/Azure-Samples/functions-first-serverless-web-application). Stellen Sie sicher, dass Sie sich in Cloud Shell in Ihrem Basisverzeichnis befinden, und klonen Sie dieses Repository.
+1. Die Quelldateien für die Anwendung, die Sie in diesem Tutorial erstellen, befinden sich in einem [GitHub-Repository](https://github.com/Azure-Samples/functions-first-serverless-web-application). Navigieren Sie in Cloud Shell zu Ihrem Basisverzeichnis, und klonen Sie dieses Repository.
 
     ```azurecli
     cd ~
@@ -63,7 +55,7 @@ Ein Azure-Speicherkonto ist eine Azure-Ressource, mit der Sie Tabellen, Wartesch
 
     Das Repository wird in `/home/<username>/functions-first-serverless-web-application` geklont.
 
-1. Die clientseitige Webanwendung befindet sich im Ordner **www** und wird mit dem JavaScript-Framework „Vue.js“ erstellt. Wechseln Sie in den Ordner, und führen Sie **npm**-Befehle aus, um die Anwendungsabhängigkeiten zu installieren und die Anwendung zu erstellen. Es kann mehrere Minuten dauern, bis der letzte dieser Befehle abgeschlossen ist.
+1. Die clientseitige Webanwendung befindet sich im Ordner **www** und wird mit dem JavaScript-Framework „Vue.js“ erstellt. Öffnen Sie den Ordner **www**, und führen Sie **npm**-Befehle aus, um die Anwendungsabhängigkeiten zu installieren und die Anwendung zu erstellen. Es kann mehrere Minuten dauern, bis der letzte dieser Befehle abgeschlossen ist.
 
     ```azurecli
     cd ~/functions-first-serverless-web-application/www
@@ -80,11 +72,11 @@ Ein Azure-Speicherkonto ist eine Azure-Ressource, mit der Sie Tabellen, Wartesch
     az storage blob upload-batch -s . -d \$web --account-name <storage account name>
     ```
 
-1. Öffnen Sie die URL des primären Endpunkts für statische Storage-Websites in einem Webbrowser, um die Anwendung anzuzeigen.
+1. Öffnen Sie die URL des primären Endpunkts der statischen Websites in einem Webbrowser, um die Anwendung anzuzeigen.
 
     ![Startseite der ersten serverlosen Web-App](../media/1-app-screenshot-new.png)
 
 
 ## <a name="summary"></a>Zusammenfassung
 
-In dieser Einheit haben Sie eine Ressourcengruppe mit dem Namen **first-serverless-app** erstellt, die ein Speicherkonto enthält. Der statische Inhalt für Ihre Web-App wird in einem Blobcontainer namens **$web** im Speicherkonto gespeichert, und der Inhalt wird öffentlich zur Verfügung gestellt. Als Nächstes erfahren Sie, wie Sie eine serverlose Funktion zum Hochladen von Bildern in Blob Storage aus dieser Anwendung verwenden.
+In dieser Einheit haben Sie eine Ressourcengruppe mit dem Namen **first-serverless-app** erstellt, die ein Speicherkonto enthält. Der statische Inhalt für Ihre Web-App wird in einem Blobcontainer namens **$web** im Speicherkonto gespeichert, und der Inhalt wird öffentlich zur Verfügung gestellt. Als Nächstes erfahren Sie, wie Sie eine serverlose Funktion zum Hochladen von Bildern in Blob Storage aus dieser Webanwendung verwenden.

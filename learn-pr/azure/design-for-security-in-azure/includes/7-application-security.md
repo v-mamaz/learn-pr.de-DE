@@ -1,14 +1,14 @@
-Im Vergleich zu üblichen lokalen Bereitstellungen bietet das Hosten von Anwendungen auf einer Cloudplattform mehrere Vorteile. Im Rahmen des Cloudmodells der gemeinsamen Verantwortung liegen Sicherheitsaspekte auf Ebene des physischen Netzwerks sowie auf Gebäude- und Hostingebene in der Verantwortung des Cloudanbieters. Für einen Angreifer würde sich die Kompromittierung der Plattform auf dieser Ebene kaum lohnen, da dessen Aufwand erheblichen Investitionen und umfassenden Erkenntnissen des Anbieters gegenübersteht, der seine Infrastruktur auf diese Weise sichert und überwacht.
+Im Vergleich zu üblichen lokalen Bereitstellungen bietet das Hosten von Anwendungen auf einer Cloudplattform mehrere Vorteile. Im Rahmen des Cloudmodells „Shared Responsibility“ (gemeinsame Verantwortung) unterliegen Sicherheitsaspekte auf der Ebene des physischen Netzwerks sowie auf der Gebäude- und Hostebene der Verantwortung des Cloudanbieters. Für einen Angreifer würde sich die Kompromittierung der Plattform auf dieser Ebene kaum lohnen, da dessen Aufwand erheblichen Investitionen und umfassenden Erkenntnissen des Anbieters gegenübersteht, der seine Infrastruktur auf diese Weise sichert und überwacht.
 
 Angreifer sind daher vielmehr an der Ausnutzung von Sicherheitsrisiken interessiert, die durch Kunden der Cloudplattform auf der Anwendungsebene eingeführt werden. Durch den Einsatz einer PaaS-Strategie (Platform-as-a-Service) zum Hosten von Anwendungen müssen Kunden darüber hinaus ihre Ressourcen nicht mehr zum Verwalten der Betriebssystemsicherheit aufwenden. Stattdessen können diese zur Härtung von Anwendungscode und Überwachung von Identitäten im Zusammenhang mit dem Zugriff auf Anwendungen eingesetzt werden. In dieser Einheit erfahren Sie, wie die Anwendungssicherheit über das Anwendungsdesign verbessert werden kann.
 
 ## <a name="scenario"></a>Szenario
 
-Kunden des Unternehmens Lamna Healthcare müssen über ein Webportal auf ihre vertraulichen Patientenakten zugreifen können. Die Einhaltung des US-amerikanischen HIPAA-Gesetzes (Health Insurance Portability and Accountability Act) ist verpflichtend und setzt das Unternehmen einem erheblichen Risiko für Strafzahlungen aus, falls durch eine Sicherheitsverletzung personenbezogene Daten gestohlen werden. Die Absicherung der Anwendung sowie der personenbezogenen Daten der Patienten ist daher von größter Wichtigkeit.
+Kunden des Unternehmens Lamna Healthcare müssen über ein Webportal auf ihre Patientenakten zugreifen können. Die Einhaltung des US-amerikanischen HIPAA-Gesetzes (Health Insurance Portability and Accountability Act) ist verpflichtend und setzt das Unternehmen einem erheblichen Risiko für Strafzahlungen aus, falls durch eine Sicherheitsverletzung personenbezogene Daten gestohlen werden. Die Absicherung der Anwendung sowie der personenbezogenen Daten der Patienten ist daher von größter Wichtigkeit.
 
 Für Kundenanwendungen sind primär die folgenden Bereiche relevant:
 
-- Sicherer Anwendungsentwurf
+- sicherer Anwendungsentwurf
 - Datensicherheit
 - Identitäts- und Zugriffsverwaltung
 - Sicherheit des Endpunkts
@@ -85,7 +85,7 @@ Bei den meisten, wenn nicht sogar allen Angriffen auf Webanwendungen, sind Kunde
 
 Lamna Healthcare speichert überaus sensible Daten im Zusammenhang mit Patientenakten und greift auf diese Daten zu. Im HIPAA-Gesetz, das 1996 vom US-Kongress erlassen wurde, werden im Zusammenspiel mit einigen weiteren Regulierungen nationale Standards für elektronische Transaktionen von Patientendaten definiert. Diese Standards gelten für Gesundheitsdienstleister und Arbeitgeber. Lamna muss sicherstellen, dass Patienten und berechtigte Dritte, wie z.B. die Ärzte der Patienten, sicher auf die Krankendaten zugreifen können.
 
-Um diese Anforderungen zu erfüllen, hat Lamna Healthcare seine Anwendungen so angepasst, dass alle ruhenden und übertragenen Patientendaten verschlüsselt werden. Mit Transport Layer Security (TLS) werden beispielsweise Daten zwischen der Webanwendung und den Back-End SQL-Datenbanken verschlüsselt. Ruhende Daten werden auch in SQL Server mit Transparent Data Encryption (TDE) verschlüsselt. Dadurch wird sichergestellt, dass selbst bei einer Kompromittierung der Umgebung die Daten ohne die korrekten Entschlüsselungsschlüssel nicht lesbar sind.
+Um diese Anforderungen zu erfüllen, hat Lamna Healthcare seine Anwendungen so angepasst, dass alle ruhenden und übertragenen Patientendaten verschlüsselt werden. Mit Transport Layer Security (TLS) werden beispielsweise Daten zwischen der Webanwendung und den Back-End-SQL-Datenbanken verschlüsselt. Ruhende Daten werden auch in SQL Server mit Transparent Data Encryption (TDE) verschlüsselt. Dadurch wird sichergestellt, dass selbst bei einer Kompromittierung der Umgebung die Daten ohne die korrekten Entschlüsselungsschlüssel nicht lesbar sind.
 
 Zum Verschlüsseln von gespeicherten Daten im Blobspeicher kann die clientseitige Verschlüsselung verwendet werden, um Daten im Speicher zu verschlüsseln, bevor diese in den Speicherdienst geschrieben werden. Bibliotheken, die diese Verschlüsselung unterstützen, sind für .NET, Java und Python verfügbar. Mit diesen können Technologien zur Datenverschlüsselung direkt in Anwendungen integriert werden, wodurch die Datenintegrität erhöht wird.
 
