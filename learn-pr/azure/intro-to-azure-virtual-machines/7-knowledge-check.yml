@@ -1,0 +1,41 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-azure-virtual-machines.7-knowledge-check
+title: <span data-ttu-id="4a862-101">Wissenstest</span><span class="sxs-lookup"><span data-stu-id="4a862-101">Knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="4a862-102">Wissenstest</span><span class="sxs-lookup"><span data-stu-id="4a862-102">Knowledge check</span></span>
+  description: <span data-ttu-id="4a862-103">Wissenstest</span><span class="sxs-lookup"><span data-stu-id="4a862-103">Knowledge check</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 54ce7dfa4c2f3a2d7b7d2d4c112f79aad7d2eb9c
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44236466"
+durationInMinutes: 3
+quiz:
+  title: <span data-ttu-id="4a862-104">Virtueller Azure-Computer</span><span class="sxs-lookup"><span data-stu-id="4a862-104">Azure Virtual Machine</span></span>
+  questions:
+  - content: <span data-ttu-id="4a862-105">Nehmen wir an, Sie möchten ein Netzwerkgerät auf einem virtuellen Computer ausführen.</span><span class="sxs-lookup"><span data-stu-id="4a862-105">Suppose you want to run a network appliance on a virtual machine.</span></span> <span data-ttu-id="4a862-106">Welche Workloadoption wählen Sie?</span><span class="sxs-lookup"><span data-stu-id="4a862-106">Which workload option will you choose?</span></span>
+    choices:
+    - content: <span data-ttu-id="4a862-107">Allgemeiner Zweck</span><span class="sxs-lookup"><span data-stu-id="4a862-107">General purpose</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="4a862-108">Computeoptimiert</span><span class="sxs-lookup"><span data-stu-id="4a862-108">Compute optimized</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="4a862-109">Arbeitsspeicheroptimiert</span><span class="sxs-lookup"><span data-stu-id="4a862-109">Memory optimized</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="4a862-110">Speicheroptimiert</span><span class="sxs-lookup"><span data-stu-id="4a862-110">Storage optimized</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="4a862-111">Nehmen wir an, Sie möchten eine Kopie eines vorhandenen virtuellen Azure-Computers bereitstellen.</span><span class="sxs-lookup"><span data-stu-id="4a862-111">Assume you want to deploy a copy of an existing Azure virtual machine.</span></span> <span data-ttu-id="4a862-112">Welche Option wählen Sie zum Abschließen des Auftrags?</span><span class="sxs-lookup"><span data-stu-id="4a862-112">Which option will you choose to complete the job?</span></span>
+    choices:
+    - content: <span data-ttu-id="4a862-113">PowerShell</span><span class="sxs-lookup"><span data-stu-id="4a862-113">PowerShell</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="4a862-114">Resource Manager-Vorlagen</span><span class="sxs-lookup"><span data-stu-id="4a862-114">Resource Manager Templates</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="4a862-115">Azure CLI</span><span class="sxs-lookup"><span data-stu-id="4a862-115">Azure CLI</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="4a862-116">Azure Client-SDK</span><span class="sxs-lookup"><span data-stu-id="4a862-116">Azure Client SDK</span></span>
+      isCorrect: false

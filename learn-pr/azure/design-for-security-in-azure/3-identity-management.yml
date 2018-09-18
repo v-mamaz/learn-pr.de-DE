@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.3-identity-management
+title: <span data-ttu-id="0d612-101">Identitätsverwaltung</span><span class="sxs-lookup"><span data-stu-id="0d612-101">Identity management</span></span>
+metadata:
+  title: <span data-ttu-id="0d612-102">Identitätsverwaltung</span><span class="sxs-lookup"><span data-stu-id="0d612-102">Identity management</span></span>
+  description: <span data-ttu-id="0d612-103">In dieser Einheit wird erörtert, wie Sie Ihre Identitäten schützen.</span><span class="sxs-lookup"><span data-stu-id="0d612-103">In this unit we'll discuss how to protect your identities</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1a89d586446a028b7544c5a974b94057a6ee1b24
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232471"
+durationInMinutes: 5
+content: >
+  [!include[](includes/3-identity-management.md)]
+quiz:
+  title: '<span data-ttu-id="0d612-104">Wissenstest: Identitätsverwaltung</span><span class="sxs-lookup"><span data-stu-id="0d612-104">Knowledge Check - Identity management</span></span>'
+  questions:
+  - content: <span data-ttu-id="0d612-105">Welcher der folgenden ist kein Faktor der mehrstufigen Authentifizierung?</span><span class="sxs-lookup"><span data-stu-id="0d612-105">Which of the following is not a factor in multi-factor authentication?</span></span>
+    choices:
+    - content: <span data-ttu-id="0d612-106">Ein Fingerabdruckscanner auf einem mobilen Gerät</span><span class="sxs-lookup"><span data-stu-id="0d612-106">A thumbprint scanner on a mobile device</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="0d612-107">Biometrische Elemente wie Fingerabdruckscans können für die mehrstufige Authentifizierung als Komponenten verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="0d612-107">Biometric elements such as thumbprint scans can be used as factors in multi-factor authentication.</span></span>
+    - content: <span data-ttu-id="0d612-108">Ein von der Azure Authenticator-Anwendung generiertes Token</span><span class="sxs-lookup"><span data-stu-id="0d612-108">A token generated from the Azure Authenticator application</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="0d612-109">Token, die von Anwendungen und Funkfernbedienungen generiert werden, können für die mehrstufige Authentifizierung als Komponenten verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="0d612-109">Tokens generated from applications and keyfobs can be used as factors in multi-factor authentication.</span></span>
+    - content: <span data-ttu-id="0d612-110">Ein Kennwort</span><span class="sxs-lookup"><span data-stu-id="0d612-110">A password</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="0d612-111">Kennwörter können für die mehrstufige Authentifizierung als Komponenten verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="0d612-111">Passwords can be used as factors in multi-factor authentication.</span></span>
+    - content: <span data-ttu-id="0d612-112">Ihre Schuhgröße</span><span class="sxs-lookup"><span data-stu-id="0d612-112">Your shoe size</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="0d612-113">Ihre Schuhgröße kann nicht für die mehrstufige Authentifizierung verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="0d612-113">Your shoe size is not something that can be used in multi-factor authentication.</span></span>
+  - content: <span data-ttu-id="0d612-114">Welche der folgenden Aussagen beschreibt KEINEN Vorteil, den SSO bietet?</span><span class="sxs-lookup"><span data-stu-id="0d612-114">Which of the following is NOT a benefit SSO provides?</span></span>
+    choices:
+    - content: <span data-ttu-id="0d612-115">Erhöhte Komplexität beim Zuweisen von Berechtigungen für Benutzer</span><span class="sxs-lookup"><span data-stu-id="0d612-115">Increased complexity assigning permissions to users</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="0d612-116">SSO kann die Komplexität beim Zuweisen von Benutzerberechtigungen reduzieren.</span><span class="sxs-lookup"><span data-stu-id="0d612-116">SSO can reduce the complexity needed to assign permissions to users.</span></span>
+    - content: <span data-ttu-id="0d612-117">Weniger IDs und Kennwörter, die sich Benutzer merken müssen</span><span class="sxs-lookup"><span data-stu-id="0d612-117">Fewer IDs and passwords for users to remember</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="0d612-118">Ein wesentlicher Vorteil von SSO ist die Tatsache, dass sich Benutzer weniger IDs und Kennwörter merken müssen.</span><span class="sxs-lookup"><span data-stu-id="0d612-118">Fewer IDs and passwords for users to remember is a key benefit of SSO.</span></span>
+    - content: <span data-ttu-id="0d612-119">Niedrigerer administrativer Aufwand, wenn Benutzer Rollen ändern oder eine Organisation verlassen</span><span class="sxs-lookup"><span data-stu-id="0d612-119">Lower adminmistration effort when users change roles or leave an organization</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="0d612-120">SSO verringert den Verwaltungsaufwand zum Aktualisieren oder Deaktivieren von Zugriffsberechtigungen, wenn Benutzer Rollen ändern oder eine Organisation verlassen.</span><span class="sxs-lookup"><span data-stu-id="0d612-120">SSO reduces the amount of administration required to update or disable access when users change roles or leave an organization.</span></span> <span data-ttu-id="0d612-121">Dies ist ein wichtiger Vorteil von SSO.</span><span class="sxs-lookup"><span data-stu-id="0d612-121">This is a key benefit of SSO.</span></span>
+    - content: <span data-ttu-id="0d612-122">Gewährleistung einer anwendungsübergreifenden konsistenten Kennwortrichtlinie</span><span class="sxs-lookup"><span data-stu-id="0d612-122">Ensures a consistent password policy across applications</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="0d612-123">Mit SSO verfügen Benutzer über genau eine Kennwortrichtlinie für alle Konten.</span><span class="sxs-lookup"><span data-stu-id="0d612-123">By using SSO, users have a single password policy for all accounts.</span></span> <span data-ttu-id="0d612-124">Dies ist ein wichtiger Vorteil von SSO.</span><span class="sxs-lookup"><span data-stu-id="0d612-124">This is a key benefit of SSO.</span></span>
