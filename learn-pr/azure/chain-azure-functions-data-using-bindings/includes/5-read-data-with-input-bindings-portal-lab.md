@@ -1,81 +1,81 @@
-Imagine we want to create a simple bookmark lookup service. Our service is readonly initially. If a user wants to find an entry, they send a request with the ID of the entry and we return the URL. The following diagram explains the flow.
+Angenommen, wir möchten einen einfachen Bookmark Lookup-Dienst erstellen. Der Dienst ist anfänglich schreibgeschützt. Wenn ein Benutzer nach einem Eintrag suchen möchte, sendet er eine Anforderung mit der ID des Eintrags, und wir geben die URL zurück. Die folgende Abbildung verdeutlicht den Datenfluss.
 
-![Flow diagram showing process of finding a bookmark in our Cosmos DB back-end](../media-draft/find-bookmark-flow-small.png)
+![Flussdiagramm zur Suche nach einem Lesezeichen in unserem Cosmos DB-Back-End](../media-draft/find-bookmark-flow-small.png)
 
-When a user sends us a request with some text, we try to find an entry in our back-end database that contains this text as a key or Id. We return a result that indicates whether we found the entry or not.
+Wenn ein Benutzer uns eine Anforderung mit entsprechendem Text sendet, versuchen wir, einen Eintrag in unserer Back-End-Datenbank zu finden, der diesen Text als Schlüssel oder ID enthält. Wir geben ein Ergebnis zurück, das angibt, ob wir den Eintrag gefunden haben.
 
-We need to store data somewhere. In this flowchart, our data store is shown as an Azure Cosmos DB. But, how do we connect to that database from a function and read data? In the world of functions, we configure an *input binding* for that job.  Configuring a binding through the Azure Portal is straightforward. As we'll see shortly, You don't have to write code for tasks such as opening a storage connection. The Azure Functions runtime and binding take care of those tasks for you.
+Irgendwo müssen wir Daten speichern. In diesem Flussdiagramm wird als Datenspeicher Azure Cosmos DB verwendet. Aber wie stellen wir eine Verbindung mit dieser Datenbank über eine Funktion her und lesen Daten? In der Welt der Funktionen konfigurieren wir eine *Eingabebindung* für diesen Auftrag.  Es ist einfach, eine Bindung über das Azure-Portal zu konfigurieren. Wie wir in Kürze sehen werden, müssen Sie keinen Code für Aufgaben wie das Öffnen einer Speicherverbindung schreiben. Die Azure Functions-Laufzeit und -Bindung nehmen Ihnen diese Aufgaben ab.
 
 > [!IMPORTANT]
-> We're going to refer to some resources (database, function, bindings, code) that we create here in our next lab. Please keep these resources around at least until you finish this course.
+> Wir werden auf einige Ressourcen (Datenbank, Funktion, Bindungen, Code) verweisen, die wir hier in unserer nächsten Übungseinheit erstellen. Bitte bewahren Sie diese Ressourcen zumindest bis zum Abschluss dieses Kurses auf.
 
-As was the case for the preceding module, we'll do everything in the Azure portal.
+Wie im vorherigen Modul werden wir alle Aufgaben im Azure-Portal erledigen.
 
-## Create an Azure Cosmos DB 
+## <a name="create-an-azure-cosmos-db"></a>Erstellen einer Azure Cosmos DB 
 
-Sign in to the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true) with your Azure account.
+Melden Sie sich unter [https://portal.azure.com](https://portal.azure.com?azure-portal=true) mit Ihrem Azure-Konto am Azure-Portal an.
 
-### Create a database account
+### <a name="create-a-database-account"></a>Erstellen eines Datenbankkontos
 
-A database account is a container for managing one of more databases. Before we can create a database, we need to create a database account.
+Ein Datenbankkonto ist ein Container für die Verwaltung mindestens einer Datenbank. Bevor wir eine Datenbank erstellen können, müssen wir ein Datenbankkonto erstellen.
 
-1. Select the **Create a resource** button found on the upper left-hand corner of the Azure portal, then select **Databases** > **Azure Cosmos DB**.
+1. Wählen Sie die Schaltfläche **Ressource erstellen** in der oberen linken Ecke des Azure-Portals und dann **Datenbanken** > **Azure Cosmos DB** aus.
 
-2. In the **New account** page, enter the settings for the new Azure Cosmos DB account.
+2. Geben Sie auf der Seite **Neues Konto** die Einstellungen für das neue Azure Cosmos DB-Konto ein.
  
-    Setting|Value|Description
+    Einstellung|Wert|BESCHREIBUNG
     ---|---|---
-    ID|*Enter a unique name*|Enter a unique name to identify this Azure Cosmos DB account. Because *documents.azure.com* is appended to the ID that you provide to create your URI, use a unique but identifiable ID.<br><br>The ID can contain only lowercase letters, numbers, and the hyphen (-) character, and it must contain 3 to 50 characters.
-    API|SQL|The API determines the type of account to create. Azure Cosmos DB provides five APIs to suit the needs of your application: SQL (document database), Gremlin (graph database), MongoDB (document database), Azure Table, and Cassandra, each which currently require a separate account. <br><br>Select **SQL**. At this time, the Azure Cosmos DB trigger, input bindings, and output bindings only work with SQL API and Graph API accounts. 
-    Subscription|*Your subscription*|Select Azure subscription that you want to use for this Azure Cosmos DB account.
-    Resource Group|Use existing<br><br>*Then enter [!INCLUDE [resource-group-name](./rg-name.md)], the resource group we created in an earlier unit for this module's resources.*| We're selecting **Use existing**, because we want to group all resources created for this module under the same resource group.
-    Location|Auto-filled once **Use existing** is set. | Select the geographic location in which to host your Azure Cosmos DB account. Use the location that's closest to your users to give them the fastest access to the data. In this lab,  the location is pre-determined for us as the location set for the existing resource group.
+    ID|*Ein eindeutiger Name*|Geben Sie einen eindeutigen Namen ein, der das Azure Cosmos DB-Konto identifiziert. Da *documents.azure.com* an die ID angefügt wird, die Sie bereitstellen, um Ihren URI zu erstellen, sollten Sie eine eindeutige, aber identifizierbare ID verwenden.<br><br>Die ID darf nur Kleinbuchstaben, Zahlen und einen Bindestrich (-) enthalten, und sie muss zwischen 3 und 50 Zeichen lang sein.
+    API|SQL|Die API bestimmt den Typ des zu erstellenden Kontos. Azure Cosmos DB stellt fünf APIs bereit, die Sie für Ihre Anwendung auswählen können: SQL (Dokumentdatenbank), Gremlin (Diagrammdatenbank), MongoDB (Dokumentdatenbank), Azure Table und Cassandra. Für jede API ist zurzeit ein separates Konto erforderlich. <br><br>Wählen Sie **SQL** aus. Zurzeit funktionieren der Azure Cosmos DB-Trigger, Eingabebindungen und Ausgabebindungen ausschließlich mit SQL- und Graph-API-Konten. 
+    Abonnement|*Ihr Abonnement*|Wählen Sie das Azure-Abonnement aus, das Sie für dieses Azure Cosmos DB-Konto verwenden möchten.
+    Ressourcengruppe|Vorhandene verwenden<br><br>*Geben Sie dann [!INCLUDE [resource-group-name](./rg-name.md)] ein, die Ressourcengruppe, die wir in einer früheren Einheit für die Ressourcen dieses Moduls erstellt haben.*| Wir wählen **Vorhandene verwenden** aus, weil wir alle für dieses Modul erstellten Ressourcen unter derselben Ressourcengruppe zusammenfassen möchten.
+    Standort|Wird automatisch ausgefüllt, sobald **Vorhandene verwenden** festgelegt wurde. | Wählen Sie den geografischen Standort aus, an dem Ihr Azure Cosmos DB-Konto gehostet werden soll. Verwenden Sie einen Standort, der Ihren Benutzern am nächsten liegt, um ihnen einen schnellen Zugriff auf die Daten zu gewähren. In dieser Übungseinheit wird der Standort für uns als der für die vorhandene Ressourcengruppe festgelegte Standort vorgegeben.
     
-Leave all other fields in the **New account** blade at their default values because we're using them in this module.  That includes **Enable geo-redundancy**, **Enable Multi Master**, **Virtual networks**.
+Belassen Sie für alle anderen Felder auf dem Blatt **Neues Konto** die Standardwerte, da wir sie in diesem Modul verwenden.  Dazu gehören **Georedundanz aktivieren**, **Multimaster aktivieren** und **Virtuelle Netzwerke**.
 
-3. Select **Create** to provision and deploy the database account.
+3. Wählen Sie **Erstellen** aus, um das Datenbankkonto bereitzustellen.
 
-4. Deployment can take some time. So, wait for a **Deployment succeeded** message similar to the following message before proceeding.
+4. Die Bereitstellung kann einige Zeit in Anspruch nehmen. Warten Sie also auf eine Meldung vom Typ **Die Bereitstellung war erfolgreich** ähnlich der folgenden Meldung, bevor Sie fortfahren.
 
 <!-- TODO figure out how to center these image -->
 
-![Notification that database account deployment has completed](../media-draft/db-deploy-success.PNG)
+![Benachrichtigung, dass die Datenbankkontobereitstellung erfolgreich war](../media-draft/db-deploy-success.PNG)
 
-5. Congratulations! You've created and deployed your database account!
+5. Herzlichen Glückwunsch! Sie haben Ihr Datenbankkonto erstellt und bereitgestellt.
 
-6. Select **Go to resource** to navigate to the database account in the portal. We'll add a collection to the database next.
+6. Wählen Sie **Zu Ressource wechseln** aus, um im Portal zum Datenbankkonto zu navigieren. Wir werden als nächstes der Datenbank eine Sammlung hinzufügen.
 
-### Add a collection
+### <a name="add-a-collection"></a>Hinzufügen einer Sammlung
 
-In Cosmos DB, a *container* holds arbitrary user-generated entities. In a database the supports SQL API, a document-oriented API, a container is a *collection*. Inside a collection, we store documents. Hopefully all will be clearer once we create a collection and add some documents.
+In Cosmos DB enthält ein *Container* beliebige vom Benutzer generierte Entitäten. In einer Datenbank, die die SQL-API (eine dokumentorientierte API) unterstützt, ist ein Container eine *Sammlung*. In einer Sammlung speichern wir Dokumente. Wahrscheinlich wird alles klarer, wenn wir eine Sammlung erstellen und einige Dokumente hinzufügen.
 
-Let's use the Data Explorer tool in the Azure portal to create a database and collection.
+Wir verwenden das Tool Daten-Explorer im Azure-Portal, um eine Datenbank und eine Sammlung zu erstellen.
 
-1. Click **Data Explorer** > **New Collection**.
+1. Klicken Sie auf **Daten-Explorer** > **Neue Sammlung**.
 
-2. In the **Add collection**, enter the settings for the new collection.
+2. Geben Sie unter **Sammlung hinzufügen** die Einstellungen für die neue Sammlung ein.
 
     >[!TIP]
-    >The **Add Collection** area is displayed on the far right, you may need to scroll right to see it.
+    >Der Bereich **Sammlung hinzufügen** wird ganz rechts angezeigt. Möglicherweise müssen Sie nach rechts scrollen, damit Sie ihn sehen.
 
-    Setting|Suggested value|Description
+    Einstellung|Empfohlener Wert|Beschreibung
     ---|---|---
-    Database ID|[!INCLUDE [cosmos-db-name](./cosmos-db-name.md)]| Database names must contain from 1 through 255 characters, and they cannot contain /, \\, #, ?, or a trailing space.<br><br>You are free to enter whatever you want here, but we suggest [!INCLUDE [cosmos-db-name](./cosmos-db-name.md)] as the name for the new database, and that's what we'll refer to in this unit. |
-    Collection ID|[!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)]|Enter [!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)] as the name for our new collection. Collection IDs have the same character requirements as database names.
-    Storage capacity| Fixed (10 GB)|Use the default value of **Fixed (10 GB)**. This value is the storage capacity of the database.
-    Throughput|400 RU|Change the throughput to 400 request units per second (RU/s). Storage capacity must be set to **Fixed (10 GB)** in order to set throughput to 400 RU/s. If you want to reduce latency, you can scale up the throughput later.
+    Datenbank-ID|[!INCLUDE [cosmos-db-name](./cosmos-db-name.md)]| Datenbanknamen müssen zwischen 1 und 255 Zeichen lang sein und dürfen weder /, \\, #, ? noch nachgestellte Leerzeichen enthalten.<br><br>Sie können hier einen beliebigen Namen eingeben, aber wir schlagen [!INCLUDE [cosmos-db-name](./cosmos-db-name.md)] als Namen für die neue Datenbank vor, und auf diesen Namen beziehen wir uns in dieser Einheit. |
+    Sammlungs-ID|[!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)]|Geben Sie [!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)] als Namen für die neue Sammlung ein. Für Sammlungs-IDs gelten dieselben Zeichenanforderungen wie für Datenbanknamen.
+    Speicherkapazität| Fest (10 GB)|Verwenden Sie den Standardwert **Fest (10 GB)**. Dieser Wert gibt die Speicherkapazität der Datenbank an.
+    Durchsatz|400 RU|Ändern Sie den Durchsatz in 400 Anforderungseinheiten pro Sekunde (RU/s). Die Speicherkapazität muss auf **Fest (10 GB)** festgelegt werden, um den Durchsatz auf 400 RU/s festzulegen. Sie können den Durchsatz später zentral hochskalieren, wenn Sie Wartezeiten verringern möchten.
     
-3. Click **OK**. The Data Explorer displays the new database and collection. So, now we have a database. Inside the database, we've defined a collection. Next we'll add some data, also known as documents.
+3. Klicken Sie auf **OK**. Im Daten-Explorer werden die neue Datenbank und die neue Sammlung angezeigt. Nun verfügen wir also über eine Datenbank. In der Datenbank haben wir eine Sammlung definiert. Im nächsten Schritt fügen wir einige Daten hinzu, die auch als Dokumente bezeichnet werden.
 
-### Add test data
+### <a name="add-test-data"></a>Hinzufügen von Testdaten
 
-We've defined a collection in our database called [!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)], so what are we intending to store in the collection? Well, the idea is to store a URL and ID in each document, like a list of web page bookmarks. 
+Wir haben eine Sammlung namens [!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)] in unserer Datenbank definiert, was also möchten wir in der Sammlung speichern? Nun, die Idee ist, eine URL und eine ID in jedem Dokument zu speichern, also eine Liste von Webseitenlesezeichen. 
 
-We'll add data to our new collection using Data Explorer.
+Sie fügen nun mithilfe des Daten-Explorers der neuen Sammlung Daten hinzu.
 
-1. In Data Explorer, the new database appears in the Collections pane. Expand the [!INCLUDE [cosmos-db-name](./cosmos-db-name.md)] database, expand the [!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)] collection, click **Documents**, and then click **New Document**.
+1. Im Daten-Explorer wird die neue Datenbank im Bereich „Sammlungen“ angezeigt. Erweitern Sie die Datenbank [!INCLUDE [cosmos-db-name](./cosmos-db-name.md)] und die Sammlung [!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)], und klicken Sie auf **Dokumente** und anschließend auf **Neues Dokument**.
   
-2. Now add a document to the collection with the following structure. Each document is schema-less JSON file.
+2. Fügen Sie der Sammlung nun ein Dokument mit der folgenden Struktur hinzu. Jedes Dokument ist eine schemalose JSON-Datei.
 
      ```json
      {
@@ -84,134 +84,134 @@ We'll add data to our new collection using Data Explorer.
      }
      ```
 
-3. Once you've added the json to the **Documents** tab, click **Save**.
+3. Nachdem Sie die JSON-Datei auf der Registerkarte **Dokumente** hinzugefügt haben, klicken Sie auf **Speichern**.
 
-When the document is saved, notice that there are more properties than the ones we added. They all begin with an underline (_rid, _self, _etag, _attachments, _ts). These are properties generated by the system to help manage the document. The following table explains briefly what they are.
+Wenn das Dokument gespeichert wird, beachten Sie, dass mehr Eigenschaften vorhanden sind als die, die wir hinzugefügt haben. Sie beginnen alle mit einem Unterstrich (_rid, _self, _etag, _attachments, _ts). Hierbei handelt es sich um Eigenschaften, die vom System zur Verwaltung des Dokuments generiert werden. In der folgenden Tabelle wird kurz erläutert, worum es sich dabei handelt.
 
 
-|Property  |Description  |
+|Eigenschaft  |Beschreibung  |
 |---------|---------|
-|_rid     |     The resource ID (_rid) is a unique identifier that is also hierarchical per the resource stack on the resource model. It is used internally for placement and navigation of the document resource.    |
-|_self     |   The unique addressable URI for the resource.      |
-|_etag     |   Required for optimistic concurrency control.     |
-|_attachments     |  The addressable path for the attachments resource.       |
-|_ts     |    The timestamp of the last update of this resource.    |
+|_rid     |     Die Ressourcen-ID (_rid) ist ein eindeutiger Bezeichner, der auch gemäß dem Ressourcenstapel für das Ressourcenmodell hierarchisch ist. Sie wird intern für die Platzierung und Navigation der Dokumentressource verwendet.    |
+|_self     |   Der eindeutig adressierbare URI für die Ressource.      |
+|_etag     |   Für die Steuerung der optimistischen Parallelität erforderlich.     |
+|_attachments     |  Der adressierbaren Pfad für die Anlagenressource.       |
+|_ts     |    Der Zeitstempel der letzten Aktualisierung dieser Ressource.    |
  
 
-4. Let's add a few more documents into our collection. For each of the following, use the **New Document** command again to create an entry for each. Don't forget to click ##Save** to capture your additions.
+4. Fügen Sie der Sammlung weitere Dokumente hinzu. Verwenden Sie für jedes der folgenden Elemente den Befehl **Neues Dokument**, um die jeweiligen Einträge zu erstellen. Vergessen Sie nicht, auf ##Speichern** zu klicken, um die Hinzufügungen zu erfassen.
 
 |id  |value  |
 |---------|---------|
-|portal     |  https://portal.azure.com       |
+|Portal     |  https://portal.azure.com       |
 |learn     |   https://docs.microsoft.com/learn |
 |marketplace     |    https://azuremarketplace.microsoft.com/marketplace/apps  |
 |blog | https://azure.microsoft.com/blog |
 
-When you've finished, your collection should look like the following screenshot.
+Wenn Sie fertig sind, sollte Ihre Sammlung wie im folgenden Screenshot dargestellt aussehen.
 
-![Screenshot of the SQL API UI in the portal that shows the list of entries we added to our bookmarks collection.](../media-draft/db-bookmark-coll.PNG)
+![Screenshot der SQL-API-Benutzeroberfläche im Portal mit der Liste der Einträge, die der Lesezeichenauflistung hinzugefügt wurden.](../media-draft/db-bookmark-coll.PNG)
 
-We now have a few entries in our bookmark collection. Our scenario will work as follows. If a request arrives with, for example, "id=docs", we'll look up that ID in our bookmarks collection and return the URL https://docs.microsoft.com/azure. Let's make an Azure function that looks up values in this collection.
+Wir verfügen nun über einige Einträge in der Lesezeichensammlung. Das Szenario funktioniert wie folgt. Wenn z.B. eine Anforderung mit „Id=docs“ eingeht, suchen wir in der Lesezeichensammlung nach dieser ID und geben die URL https://docs.microsoft.com/azure zurück. Erstellen Sie nun eine Azure-Funktion, die nach Werten in dieser Sammlung sucht.
 
-## Create our function
+## <a name="create-our-function"></a>Erstellen der Funktion
 
-1. Navigate to the function app you created in the preceding unit.
+1. Navigieren Sie zu der Funktions-App, die Sie in der vorherigen Einheit erstellt haben.
 
-2. Expand your function app, then hover over the functions collection and select the Add (**+**) button next to **Functions**. This action starts the function creation process. The following animation illustrates this action.
+2. Erweitern Sie die Funktions-App, zeigen Sie auf die Funktionssammlung, und wählen Sie dann die Schaltfläche „Hinzufügen“ (**+**) neben **Funktionen** aus. Durch diese Aktion wird der Vorgang der Funktionserstellung gestartet. Die folgende Animation veranschaulicht diese Aktion.
 
-![Animation of the plus sign appearing when the user hovers over the functions menu item.](../media-draft/func-app-plus-hover-small.gif)
+![Animation des Pluszeichens, das angezeigt wird, wenn der Benutzer mit der Maus auf das Menüelement Funktionen zeigt.](../media-draft/func-app-plus-hover-small.gif)
 
-3. The page shows us the complete set of supported triggers. Select **HTTP trigger**, which is the first entry in the following screenshot.
+3. Die Seite zeigt den vollständigen Satz von unterstützten Triggern an. Wählen Sie **HTTP-Trigger** aus. Dies ist der erste Eintrag im folgenden Screenshot.
 
-![Screenshot of part of the trigger template selection UI, with the TTP trigger displayed first, in the top left of the image.](../media-draft/trigger-templates-small.PNG)
+![Screenshot eines Teils der Benutzeroberfläche zur Auswahl der Triggervorlage, wobei der HTTP-Trigger zuerst angezeigt wird (oben links in der Abbildung).](../media-draft/trigger-templates-small.PNG)
 
-4. Fill out the **New Function** dialog that appears to the right  using the following values.
+4. Füllen Sie das auf der rechten Seite angezeigte Dialogfeld **Neue Funktion** mit den folgenden Werten aus.
 
-|Field  |Value  |
+|Feld  |Wert  |
 |---------|---------|
-|Language     | **JavaScript**        |
+|Sprache     | **JavaScript**        |
 |Name     |   [!INCLUDE [func-name-find](./func-name-find.md)]     |
-| Authorization level | **Function** |
+| Autorisierungsstufe | **Funktion** |
 
-5. Select **Create** to create our function, which opens the index.js file in the code editor and displays a default implementation of the HTTP-triggered function.
+5. Wählen Sie **Erstellen** aus, um unsere Funktion zu erstellen. Die Datei „index.js“ wird im Code-Editor geöffnet und zeigt eine Standardimplementierung der durch HTTP ausgelösten Funktion an.
 
-You can verify what we have done so far by testing our new function as follows:
+Sie können überprüfen, was wir bisher erreicht haben, indem Sie unsere neue Funktion wie folgt testen:
 
-1. In your new function, click **</> Get function URL** at the top right, select **default (Function key)**, and then click **Copy**.
+1. Klicken Sie in der neuen Funktion rechts oben auf **</> Funktions-URL abrufen**, wählen Sie **Standard (Funktionsschlüssel)** aus, und klicken Sie dann auf **Kopieren**.
 
-2. Paste the function URL you copied into your browser's address bar. Add the query string value `&name=<yourname>` to the end of this URL and press the `Enter` key on your keyboard to execute the request. You should see a response similar to the following response returned by the function displayed in your browser.  
+2. Fügen Sie die Funktions-URL, die Sie kopiert haben, in die Adressleiste Ihres Browsers ein. Fügen Sie den Wert der Abfragezeichenfolge `&name=<yourname>` am Ende der URL hinzu, und drücken Sie die Taste `Enter` auf Ihrer Tastatur, um die Anforderung auszuführen. Sie sollten eine Antwort ähnlich der folgenden Antwort sehen, die von der Funktion zurückgegeben und in Ihrem Browser angezeigt wird.  
 
-Now that we have our bare-bones function working, let's turn our attention to reading data from our Azure Cosmos DB, or in our scenario, our [!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)] collection.
+Nachdem unsere Basisfunktion nun funktioniert, sollten wir unsere Aufmerksamkeit auf das Lesen von Daten aus unserer Azure Cosmos DB oder (in unserem Szenario) der Sammlung [!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)] richten.
 
-## Add a Cosmos DB input binding
+## <a name="add-a-cosmos-db-input-binding"></a>Hinzufügen einer Cosmos DB-Eingabebindung
 
-We want to read data from the database we created, so enter input bindings. As you'll see, we can configure a binding that can talk to our database in just a few steps.
+Wir möchten Daten aus der Datenbank lesen, die wir erstellt haben. Geben Sie also Eingabebindungen ein. Wie Sie sehen werden, können wir in wenigen Schritten eine Bindung konfigurieren, die mit unserer Datenbank kommunizieren kann.
 
-1. Select **Integrate** in the function menu on the left to open the integration tab.
+1. Wählen Sie **Integrieren** im Funktionsmenü auf der linken Seite aus, um die Registerkarte „Integration“ zu öffnen.
 
-The template we used created an HTTP trigger and an HTTP output binding for us. Let's add our new Azure Cosmos DB input binding. 
+Die verwendete Vorlage hat einen HTTP-Trigger und eine HTTP-Ausgabebindung für uns erstellt. Fügen Sie die neue Azure Cosmos DB-Eingabebindung hinzu. 
 
-2. Select **+ New Input** under the **Inputs** column. A list of all possible input binding types is displayed.
+2. Wählen Sie **+ neue Eingabe** unter der Spalte **Eingaben** aus. Eine Liste aller möglichen Eingabebindungstypen wird angezeigt.
 
-3. Click on **Azure Cosmos DB** from the list and then the **Select** button. This action opens the Azure Cosmos DB input configuration page.
+3. Klicken Sie in der Liste auf **Azure Cosmos DB**, und klicken Sie dann die Schaltfläche **Auswählen**. Durch diese Aktion wird die Azure Cosmos DB-Eingabekonfigurationsseite geöffnet.
 
-Next, we'll set up a connection to our database.
+Im nächsten Schritt müssen Sie eine Verbindung mit unserer Datenbank einrichten.
 
-4. In the field named **Azure Cosmos DB account connection** on this page, click on *new* to the right of the empty field. This action opens the **Connection** dialog, which already has **Azure Cosmos DB account** and your Azure subscription selected. The only thing left to do is to select a database account id.
+4. Klicken Sie im Feld mit dem Namen **Azure Cosmos DB-Kontoverbindung** auf dieser Seite rechts neben dem leeren Feld auf *Neu*. Durch diese Aktion wird das Dialogfeld **Verbindung** geöffnet, in dem bereits **Azure Cosmos DB-Konto** und Ihr Azure-Abonnement ausgewählt sind. Sie müssen nur noch eine Datenbankkonto-ID auswählen.
 
-5. In the section, **Create a database account**, you had to supply an ID value. Now find that value in the  *Database Account* dropdown and then click **Select**.
+5. Im Abschnitt **Datenbankkonto erstellen** mussten Sie einen ID-Wert angeben. Suchen Sie nun in der Dropdownliste *Datenbankkonto* nach diesem Wert, und klicken Sie dann auf **Auswählen**.
 
-A new connection to the database is configured and is shown in the **Azure Cosmos DB account connection** field. If you're curious about what is actually behind this abstract name, just click *show value* to reveal the connection string.
+Eine neue Verbindung mit der Datenbank wird konfiguriert und im Feld **Azure Cosmos DB-Kontoverbindung** angezeigt. Wenn Sie neugierig sind, was sich tatsächlich hinter diesem abstrakten Name verbirgt, klicken Sie einfach auf *Wert anzeigen*, um die Verbindungszeichenfolge anzuzeigen.
 
-We want to look up a bookmark with a specific ID, so let's tie the ID we receive to the binding.
+Wir möchten nach einem Lesezeichen mit einer bestimmten ID suchen. Verknüpfen Sie die erhaltene ID also mit der Bindung.
 
-7. In the **Document ID (optional)** field, enter `{id}`. This is known as a *binding expression*. The function is triggered by an HTTP request that uses a query string to specify the ID to look up. Since IDs are unique in our collection, the binding will return either 0 (not found) or 1 (found) documents.
+7. Geben Sie im Feld **Dokument-ID (optional)** die Angabe `{id}` ein. Dies wird als ein *Bindungsausdruck* bezeichnet. Die Funktion wird durch eine HTTP-Anforderung ausgelöst, die eine Abfragezeichenfolge verwendet, um die zu suchende ID anzugeben. Da IDs in der Sammlung eindeutig sind, gibt die Bindung 0 (nicht gefunden) oder 1 (gefunden) Dokument(e) zurück.
 
-8. Carefully fill out the remaining fields on this page using the values in the following table. At any time, you can click on the information icon to the right of each field name to learn more about the purpose of each field.
+8. Füllen Sie die verbleibenden Felder auf dieser Seite sorgfältig mit den Werten in der folgenden Tabelle aus. Sie können jederzeit auf das Informationssymbol rechts neben dem jeweiligen Feldnamen klicken, um weitere Informationen zum Zweck der einzelnen Felder zu erhalten.
 
 
-|Setting  |Value  |Description  |
+|Einstellung  |Wert  |Beschreibung  |
 |---------|---------|---------|
-|Document parameter name     |  **bookmark**       |  The name used to identify this binding in your code.      |
-|Database name     |  [!INCLUDE [cosmos-db-name](./cosmos-db-name.md)]       | The database where data will be read. This is the database name we set earlier in this lesson.        |
-|Collection Name     |  [!INCLUDE [cosmos-db-name](./cosmos-coll-name.md)]        | The collection from which we'll read data. This setting was defined earlier in the lesson. |
-|SQL Query (optional)    |   leave blank       |   We are only retrieving one document at a time based on the ID. So, filtering with the Document ID field is a better than using a SQL Query in this instance. We could craft a SQL Query to return one entry (`SELECT * from b where b.ID = {id}`). That query would indeed return a document, but it would return it in a document collection. Our code would have to manipulate a collection unnecessarily. Use the SQL Query approach when you want to get multiple documents.   |
-|Partition key (optional)     |   leave blank      |  We can accept the default here.       |
+|Dokumentparametername     |  **bookmark**       |  Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird.      |
+|Datenbankname     |  [!INCLUDE [cosmos-db-name](./cosmos-db-name.md)]       | Die Datenbank, aus der die Daten gelesen werden. Dies ist der Datenbankname, den wir zuvor in dieser Lektion festgelegt haben.        |
+|Sammlungsname     |  [!INCLUDE [cosmos-db-name](./cosmos-coll-name.md)]        | Die Sammlung, aus der Daten gelesen werden. Diese Einstellung wurde zuvor in dieser Lektion definiert. |
+|SQL-Abfrage (optional)    |   Leer lassen       |   Wir rufen jeweils nur ein Dokument basierend auf der ID ab. Daher ist die Filterung anhand des Dokument-ID-Felds in diesem Fall besser als die Verwendung einer SQL-Abfrage. Wir könnten eine SQL-Abfrage für die Rückgabe eines Eintrags (`SELECT * from b where b.ID = {id}`) erstellen. Diese Abfrage würde tatsächlich ein Dokument zurückgeben, aber es würde in einer Dokumentsammlung zurückgegeben. Unser Code müsste eine Sammlung unnötigerweise bearbeiten. Verwenden Sie den SQL-Abfrageansatz, wenn mehrere Dokumente abgerufen werden sollen.   |
+|Partitionsschlüssel (optional)     |   Leer lassen      |  Sie können die Standardwerte hier übernehmen.       |
 
-9. Click **Save** to save all changes to this binding configuration. Now that we have our binding defined, it's time to use it in our function.
+9. Klicken Sie auf **Speichern**, um alle Änderungen an dieser Bindungskonfiguration zu speichern. Da wir jetzt unsere Bindung definiert haben, ist es an der Zeit, sie in unserer Funktion zu verwenden.
 
-## Update function implementation
+## <a name="update-function-implementation"></a>Aktualisieren der Funktionsimplementierung
 
-1. Click on our function, [!INCLUDE [func-name-find](./func-name-find.md)], to open up *index.js* in the code editor. We've added an input binding to read from our database, so let's update the logic to use this binding.
+1. Klicken Sie auf unsere Funktion ([!INCLUDE [func-name-find](./func-name-find.md)]), um *index.js* im Code-Editor zu öffnen. Wir haben eine Eingabebindung hinzugefügt, um aus unserer Datenbank zu lesen. Lassen Sie uns also die Logik so aktualisieren, dass diese Bindung verwendet wird.
 
-2. Replace all code in index.js with the code from the following snippet.
+2. Ersetzen Sie den gesamten Code in „index.js“ durch den Code im folgenden Codeausschnitt.
 
 [!code-javascript[](../code/find-bookmark-single.js)]
 
-When an HTTP request causes our function to trigger, the `id` query parameter is passed to our Cosmos DB input binding. If it found a document that matches this ID, then the `bookmark` parameter will be set to it. In that case, we construct a response that contains the URL value found in the bookmark document. If no document was found matching this key, we respond with a payload and status code that tells the user the bad news.
+Wenn eine HTTP-Anforderung bewirkt, dass unsere Funktion ausgelöst wird, wird der `id`-Abfrageparameter an unsere Cosmos DB Eingabebindung übergeben. Wenn ein Dokument gefunden wird, das dieser ID entspricht, wird der `bookmark`-Parameter auf dieses festgelegt. In diesem Fall erstellen wir eine Antwort mit dem URL-Wert, der im Lesezeichendokument gefunden wurde. Wenn kein Dokument gefunden wurde, das mit diesem Schlüssel übereinstimmt, reagieren wir mit einer Nutzlast und einen Statuscode, der dem Benutzer die schlechte Nachricht mitteilt.
 
-## Try it out
+## <a name="try-it-out"></a>Testen
 
-1. As usual, click **</> Get function URL** at the top right, select **default (Function key)**, and then click **Copy** to copy the function's URL.
+1. Klicken Sie wie üblich rechts oben auf **</> Funktions-URL abrufen**, wählen Sie **Standard (Funktionsschlüssel)** aus, und klicken Sie dann auf **Kopieren**., um die URL der Funktion zu kopieren.
 
-2. Paste the function URL you copied into your browser's address bar. Add the query string value `&id=docs` to the end of this URL and press the `Enter` key on your keyboard to execute the request. All going well, you should see a response that includes a URL to that resource.
+2. Fügen Sie die Funktions-URL, die Sie kopiert haben, in die Adressleiste Ihres Browsers ein. Fügen Sie den Wert der Abfragezeichenfolge `&id=docs` am Ende der URL hinzu, und drücken Sie die Taste `Enter` auf Ihrer Tastatur, um die Anforderung auszuführen. Wenn alles ordnungsgemäß ist, sollte eine Antwort angezeigt werden, die eine URL zu dieser Ressource enthält.
 
-3. Replace `&id=docs` with `&id=missing` and observe the response.
+3. Ersetzen Sie `&id=docs` durch `&id=missing`, und beobachten Sie die Antwort.
 
-4. Replace the previous query string with `&id=` and observe the response.
+4. Ersetzen Sie die vorherige Abfragezeichenfolge durch `&id=`, und beobachten Sie die Antwort.
 
 >[!TIP]
->You can also test the function using the **Test** tab in the function portal UI. You can add a query parameter or just supply a request body to get the same results as described in te preceding steps.
+>Sie können die Funktion auch mithilfe der Registerkarte **Test** in der Benutzeroberfläche des Funktionsportals testen. Sie können einen Abfrageparameter hinzufügen oder einfach Anforderungstext angeben, um die gleichen Ergebnisse zu erhalten, die in den vorangegangenen Schritten beschrieben wurden.
 
-In this unit, we created our first input binding  manually to read from an Azure Cosmos DB database. The amount of code we wrote to search our database and read data was minimal, thanks to bindings. We did most of our work configuring the binding declaratively and the platform took care of the rest.  
+In dieser Einheit haben wir unsere erste Eingabebindung manuell erstellt, um aus einer Azure Cosmos DB-Datenbank zu lesen. Die Menge an Code, die wir geschrieben haben, um unsere Datenbank zu durchsuchen und Daten zu lesen, war dank Bindungen nur minimal. Der größte Teil unserer Arbeit bestand im deklarativen Konfigurieren der Bindung, und die Plattform hat sich um den Rest gekümmert.  
 
-In the next unit, we'll add more data to our bookmark collection through an Azure Cosmos DB output binding.
+In der nächsten Einheit fügen wir unserer Lesezeichensammlung durch eine Azure Cosmos DB-Ausgabebindung weitere Daten hinzu.
 
 > [!TIP]
-> This unit is not intended to be a tutorial on Azure Cosmos DB. If you would like to dive deeper, here are a few resources to get you started:
+> Diese Einheit ist nicht als Tutorial zu Azure Cosmos DB gedacht. Wenn Sie tiefere Einblicke wünschen, finden Sie hier einige Ressourcen, die Ihnen den Einstieg erleichtern:
 >
->* [Introduction to Azure Cosmos DB: SQL API](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction)
+>* [Einführung in Azure Cosmos DB: SQL-API](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction)
 >
->* [A technical overview of Azure Cosmos DB](https://azure.microsoft.com/blog/a-technical-overview-of-azure-cosmos-db/)
+>* [Technische Übersicht über Azure Cosmos DB](https://azure.microsoft.com/blog/a-technical-overview-of-azure-cosmos-db/)
 >
->* [Azure Cosmos DB documentation](https://docs.microsoft.com/azure/cosmos-db/)
+>* [Dokumentation für Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/)
