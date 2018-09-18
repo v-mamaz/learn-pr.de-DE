@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.configure-the-network-for-your-virtual-machines.3-exercise-create-azure-virtual-network
-title: <span data-ttu-id="86ae0-101">Erstellen eines virtuellen Azure-Netzwerks</span><span class="sxs-lookup"><span data-stu-id="86ae0-101">Create an Azure virtual network</span></span>
+title: <span data-ttu-id="c1898-101">Erstellen eines virtuellen Azure-Netzwerks</span><span class="sxs-lookup"><span data-stu-id="c1898-101">Create an Azure virtual network</span></span>
 metadata:
-  title: <span data-ttu-id="86ae0-102">Erstellen eines virtuellen Azure-Netzwerks</span><span class="sxs-lookup"><span data-stu-id="86ae0-102">Create an Azure virtual network</span></span>
-  description: <span data-ttu-id="86ae0-103">Erstellen eines virtuellen Azure-Netzwerks</span><span class="sxs-lookup"><span data-stu-id="86ae0-103">Create an Azure virtual network</span></span>
+  title: <span data-ttu-id="c1898-102">Erstellen eines virtuellen Azure-Netzwerks</span><span class="sxs-lookup"><span data-stu-id="c1898-102">Create an Azure virtual network</span></span>
+  description: <span data-ttu-id="c1898-103">Erstellen eines virtuellen Azure-Netzwerks</span><span class="sxs-lookup"><span data-stu-id="c1898-103">Create an Azure virtual network</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: f217d91e199af07c4a5aa825c1772968afc49f44
-  ms.sourcegitcommit: 77d39aabc5dc13e25ec2a94c10451ad2ae8d21de
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44327165"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45756186"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 20

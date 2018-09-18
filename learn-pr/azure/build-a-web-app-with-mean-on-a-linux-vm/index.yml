@@ -8,34 +8,35 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: b843d8723ea3b8998f8bf14e80eea00156968ca4
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: b9bacf7e1c4d9dd646e08ca3e02405449db76472
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44244762"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45766097"
 title: Erstellen und Ausführen einer Webanwendung mit dem MEAN-Stapel auf einem virtuellen Linux-Computer in Azure
 summary: Erfahren Sie, wie Sie eine MEAN-basierte Webanwendung auf einem neuen virtuellen Linux-Computer in Azure einrichten.
 abstract: >
   In diesem Modul wird Folgendes thematisiert:
 
-  - Entscheiden, ob der MEAN-Webstapel die richtige Lösung für Sie ist
+  - entscheiden Sie, ob der MEAN-Webstapel die richtige Lösung für Sie ist,
 
-  - Erstellen einer Ubuntu Linux-VM zum Hosten der Web-App
+  - erstellen Sie eine Ubuntu Linux-VM zum Hosten der Web-App
 
-  - Hinzufügen von MongoDB als Datenspeicher für Ihre Web-App
+  - fügen Sie MongoDB als Datenspeicher für Ihre Web-App hinzu
 
-  - Hinzufügen von Node.js als Hostlaufzeit für Ihre Web-App
+  - fügen Sie Node.js als Hostlaufzeit für Ihre Web-App hinzu
 
-  - Hinzufügen von Express als Node.js-Webframework
+  - fügen Sie Express als Node.js-Webframework hinzu
 
   - Hinzufügen von mongooseJS für die Objektmodellierung der MongoDB-Daten
 
   - Erstellen einer einfachen Web-App, um sicherzustellen, dass der MEAN-Stapel funktionsfähig ist
-    - Verfügbarmachen der Webanwendung für die Öffentlichkeit über Ihre VM
+
+  - Verfügbarmachen der Webanwendung für die Öffentlichkeit über Ihre VM
 prerequisites: >
   - Erfahrung im Umgang mit der Bash-Befehlszeilenschnittstelle
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/build-a-web-app-with-mean-on-a-linux-vm.svg
 levels:
 - beginner
 roles:
@@ -43,6 +44,7 @@ roles:
 products:
 - azure
 - azure-virtual-machines
+- azure-cloud-shell
 units:
 - learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.1-introduction
 - learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.2-decide-if-mean-is-right-for-you

@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-data-in-azure.6-summary
-title: <span data-ttu-id="37b70-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="37b70-101">Summary</span></span>
+title: <span data-ttu-id="795e6-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="795e6-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="37b70-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="37b70-102">Summary</span></span>
-  description: <span data-ttu-id="37b70-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="37b70-103">Summary</span></span>
+  title: <span data-ttu-id="795e6-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="795e6-102">Summary</span></span>
+  description: <span data-ttu-id="795e6-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="795e6-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: a2ea8c3498612d1e7c4b02ade1822ab947cb7b84
-  ms.sourcegitcommit: 62416ff619ca53bbda14edfbd05a1d1cf659743b
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/14/2018
-  ms.locfileid: "45582282"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45785103"
 durationInMinutes: 1
 content: '[!include[](includes/6-summary.md)]'
