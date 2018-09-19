@@ -1,0 +1,46 @@
+### YamlMime:Module
+uid: learn.create-linux-vm-in-azure
+metadata:
+  title: Erstellen eines virtuellen Linux-Computers in Azure
+  description: In diesem Modul wird erörtert, wie Sie mithilfe des Azure-Portals einen virtuellen Linux-Computer erstellen.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b81dd92ad5a4e0619c9129521bf2f275e3f30b01
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46338845"
+title: Erstellen eines virtuellen Linux-Computers in Azure
+summary: In diesem Modul wird erörtert, wie Sie mithilfe des Azure-Portals einen virtuellen Linux-Computer erstellen.
+abstract: >
+  In diesem Modul wird Folgendes thematisiert:
+    - Grundlagen über die Optionen, die für virtuelle Computer in Azure zur Verfügung stehen
+    - Erstellen eines virtuellen Linux-Computers mit dem Azure-Portal
+    - Herstellen einer Verbindung mit einem aktiven virtuellen Linux-Computer mithilfe von SSH
+    - Installieren von Software und Ändern der Netzwerkkonfiguration auf einem virtuellen Computer mit dem Azure-Portal
+prerequisites: Keine
+iconUrl: /learn/achievements/create-linux-virtual-machine-in-azure.svg
+levels:
+- beginner
+roles:
+- administrator
+- developer
+products:
+- azure
+- azure-portal
+- azure-virtual-machines
+units:
+- learn.create-linux-vm-in-azure.1-introduction
+- learn.create-linux-vm-in-azure.2-create-a-linux-virtual-machine
+- learn.create-linux-vm-in-azure.3-exercise-generate-ssh-key
+- learn.create-linux-vm-in-azure.4-exercise-create-a-vm
+- learn.create-linux-vm-in-azure.5-connect-to-a-linux-virtual-machine
+- learn.create-linux-vm-in-azure.6-exercise-connect-to-a-linux-vm-using-ssh
+- learn.create-linux-vm-in-azure.7-manage-vm
+- learn.create-linux-vm-in-azure.8-exercise-manage-vm
+- learn.create-linux-vm-in-azure.9-summary
+achievement: learn.create-linux-vm-in-azure.badge

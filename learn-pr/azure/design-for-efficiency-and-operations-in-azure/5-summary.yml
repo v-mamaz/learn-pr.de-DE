@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-efficiency-and-operations.5-summary
+title: <span data-ttu-id="c20b1-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="c20b1-101">Summary</span></span>
+metadata:
+  title: <span data-ttu-id="c20b1-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="c20b1-102">Summary</span></span>
+  description: <span data-ttu-id="c20b1-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="c20b1-103">Summary</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ba91c6c83b40789202e1ae0c9b7d0a4f95744fbf
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46346260"
+durationInMinutes: 5
+content: '[!include[](includes/5-summary.md)]'

@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.control-azure-services-with-cli.3-exercise-install-and-run-the-azure-cli
+title: <span data-ttu-id="8c339-101">Installieren und Ausführen von Azure CLI</span><span class="sxs-lookup"><span data-stu-id="8c339-101">Install and run the Azure CLI</span></span>
+metadata:
+  title: <span data-ttu-id="8c339-102">Installieren und Ausführen von Azure CLI</span><span class="sxs-lookup"><span data-stu-id="8c339-102">Install and run the Azure CLI</span></span>
+  description: <span data-ttu-id="8c339-103">Installieren von Azure CLI auf verschiedenen Plattformen</span><span class="sxs-lookup"><span data-stu-id="8c339-103">Install the Azure CLI on various platforms</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  zone_pivot_groups: platform
+  ms.openlocfilehash: f3b919086769e6691afc4c4eab451a074223afc0
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46338885"
+durationInMinutes: 10
+content: '[!include[](includes/3-exercise-install-and-run-the-azure-cli.md)]'
