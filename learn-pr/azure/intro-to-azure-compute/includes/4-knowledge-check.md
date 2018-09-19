@@ -1,1 +1,0 @@
-<span data-ttu-id="69715-101">Lesen Sie sich die beiden Szenarien mit dem Astronomieteam durch, um Ihr Gedächtnis aufzufrischen, und beantworten Sie die dazugehörigen Fragen.</span><span class="sxs-lookup"><span data-stu-id="69715-101">To help you remember what you've learned, read the two scenarios involving the astronomy team and answer the associated questions.</span></span>
