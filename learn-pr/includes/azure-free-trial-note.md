@@ -1,2 +1,0 @@
-> [!NOTE]
-> <span data-ttu-id="df7fd-101">Wenn Sie kein Azure-Abonnement haben, können Sie ein [kostenloses Konto](https://azure.microsoft.com/free/?azure-portal=true) erstellen, bevor Sie beginnen.</span><span class="sxs-lookup"><span data-stu-id="df7fd-101">If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?azure-portal=true) before you begin.</span></span>
