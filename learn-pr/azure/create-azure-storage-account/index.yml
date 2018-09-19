@@ -1,0 +1,48 @@
+### YamlMime:Module
+uid: learn.create-azure-storage-account
+metadata:
+  title: Erstellen eines Azure-Speicherkontos
+  description: Azure-Speicherkonten bieten Ihnen eine leistungsstarke Möglichkeit zum Organisieren von Daten in der Cloud. Sie erstellen logische Gruppen von verwandten Daten und wenden auf alle Elemente in der Gruppe eine einzelne Richtlinie für die Abrechnung, den Zugriff, den Speicherort usw. an. Hier verwenden Sie Azure-Speicherkonten, um Ihre Azure-Blobs, -Dateien, -Warteschlangen und -Tabellen zu gruppieren und zu verwalten.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d12eebc4b6d95c90a0b5c6a359e0c7efc15d85ba
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46343237"
+title: Erstellen eines Azure-Speicherkontos
+summary: Erstellen Sie ein Azure-Speicherkonto mit den richtigen Optionen für Ihre geschäftlichen Anforderungen.
+abstract: >
+  In diesem Modul wird Folgendes thematisiert:
+
+  - Bestimmen, wie viele Speicherkonten Sie für Ihr Projekt benötigen
+
+  - Bestimmen der entsprechenden Einstellungen für jedes Speicherkonto
+
+  - Erstellen eines Speicherkontos mit dem Azure-Portal
+prerequisites: >
+  - Erfahrung mit dem Azure-Portal
+
+  - Kenntnisse im Umgang mit den Azure-Datendiensten Azure Blob Storage, Azure Files, Queue Storage und Table Storage
+iconUrl: /learn/achievements/create-azure-storage-account.svg
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- azure-storage
+- azure-portal
+units:
+- learn.create-azure-storage-account.1-introduction
+- learn.create-azure-storage-account.2-decide-how-many-storage-accounts-you-need
+- learn.create-azure-storage-account.3-choose-your-account-settings
+- learn.create-azure-storage-account.4-choose-an-account-creation-tool
+- learn.create-azure-storage-account.5-exercise-create-a-storage-account
+- learn.create-azure-storage-account.6-knowledge-check
+- learn.create-azure-storage-account.7-summary
+achievement: learn.create-azure-storage-account.badge

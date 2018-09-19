@@ -1,0 +1,49 @@
+### YamlMime:ModuleUnit
+uid: learn.distribute-data-globally-with-cosmos-db.5-data-consistency-levels
+metadata:
+  title: Auswählen einer Konsistenzebene
+  description: Es wird beschrieben, wie Sie Konsistenzebenen in Azure Cosmos DB verwenden können, um die Hochverfügbarkeit zu erhöhen und die Latenz zu verringern und für Ihre Anwendung die richtige Konsistenzebene zu ermitteln.
+  displayType: one-column
+  ms.openlocfilehash: e90f3d4f444418309010d7c6443cfc1d8138ed93
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340592"
+title: Auswählen einer Konsistenzebene
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-data-consistency-levels.md)]
+quiz:
+  title: Wissensbeurteilung
+  questions:
+  - content: Welche Konsistenzebene ist für die Benutzerdaten einer E-Commerce-Datenbank am besten geeignet? Benutzer müssen sicherstellen, dass ihre Bestellungen alle Artikel enthalten, die sie in ihrem Einkaufswagen platziert haben.
+    choices:
+    - content: Hoch
+      isCorrect: false
+      incorrectExplanation: Die hohe Konsistenz ist nicht für Datenbanken verfügbar, die mehreren Regionen repliziert werden.
+    - content: Begrenzte Veraltung
+      isCorrect: false
+      incorrectExplanation: Bei der begrenzten Veraltung kann es vorkommen, dass nur einige der Artikel des Benutzers im Einkaufswagen angezeigt werden.
+    - content: Sitzung
+      isCorrect: true
+      correctExplanation: Richtig. „Sitzung“ ist die beste Konsistenzeinstellung für Benutzerdaten, die Informationen zum Einkaufswagen enthalten. Mit der Sitzungskonsistenz wird sichergestellt, dass alle Artikel, die vom Benutzer in den Einkaufswagen eingefügt werden, beim Überprüfen des Inhalts angezeigt werden.
+    - content: Präfixkonsistenz
+      isCorrect: false
+      incorrectExplanation: Bei der Präfixkonsistenz kann es vorkommen, dass nur einige der Artikel des Benutzers im Einkaufswagen angezeigt werden.
+    - content: Letztlich
+      isCorrect: false
+      incorrectExplanation: Bei der letztlichen Konsistenz kann es zu einer Situation kommen, in der für einen Einkaufswagen nicht alle Artikel angezeigt werden, die der Benutzer eingefügt hat.
+  - content: Welche Konsistenzebene verbraucht die geringste Menge an Anforderungseinheiten pro Vorgang?
+    choices:
+    - content: Hoch
+      isCorrect: false
+    - content: Begrenzte Veraltung
+      isCorrect: false
+    - content: Sitzung
+      isCorrect: false
+    - content: Präfixkonsistenz
+      isCorrect: false
+    - content: Letztlich
+      isCorrect: true
+      correctExplanation: Für die Kosten eines Lesevorgangs mit letztlicher Konsistenz wird die geringste Anzahl von Anforderungseinheiten pro Sekunde verbraucht.

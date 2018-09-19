@@ -1,0 +1,48 @@
+### YamlMime:Module
+uid: learn.control-azure-services-with-cli
+metadata:
+  title: Steuern von Azure-Diensten mit der CLI
+  description: Installieren Sie die Azure CLI lokal, und verwenden Sie sie zum Verwalten Ihrer Azure-Ressourcen.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 29748ad87922d9a2eb62c100d1b4c692fb213266
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46343522"
+title: Steuern von Azure-Diensten mit der CLI
+summary: Installieren Sie die Azure CLI lokal, und verwenden Sie sie zum Verwalten Ihrer Azure-Ressourcen.
+abstract: >
+  In diesem Modul lernen Sie Folgendes:
+
+  - Installieren der Azure CLI auf Linux, macOS und/oder Windows
+
+  - Herstellen einer Verbindung mit einem Azure-Abonnement mithilfe der Azure CLI
+
+  - Erstellen von Azure-Ressourcen mit der Azure CLI
+prerequisites: >
+  - Erfahrung mit einer Befehlszeilenschnittstelle wie PowerShell oder Bash
+
+  - Kenntnisse der grundlegenden Azure-Konzepte, z.B. Ressourcengruppen
+
+  - Erfahrung beim Verwalten von Azure-Ressourcen über das Azure-Portal
+iconUrl: /learn/achievements/control-azure-services-with-cli.svg
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- azure-clis
+units:
+- learn.control-azure-services-with-cli.1-introduction
+- learn.control-azure-services-with-cli.2-what-is-the-azure-cli
+- learn.control-azure-services-with-cli.3-exercise-install-and-run-the-azure-cli
+- learn.control-azure-services-with-cli.4-work-with-the-cli
+- learn.control-azure-services-with-cli.5-exercise-create-website-using-the-cli
+- learn.control-azure-services-with-cli.6-summary
+achievement: learn.control-azure-services-with-cli.badge
