@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-vms-with-azure-cli-data.6-querying-vms
+title: <span data-ttu-id="2b61d-101">Abfragen von System- und Laufzeitinformationen zum virtuellen Computer</span><span class="sxs-lookup"><span data-stu-id="2b61d-101">Query system and runtime information about the VM</span></span>
+metadata:
+  title: <span data-ttu-id="2b61d-102">Abfragen von System- und Laufzeitinformationen zum virtuellen Computer</span><span class="sxs-lookup"><span data-stu-id="2b61d-102">Query system and runtime information about the VM</span></span>
+  description: <span data-ttu-id="2b61d-103">Erfahren Sie, wie Sie die Azure CLI verwenden, um Informationen zu Ihrem virtuellen Computer abzufragen.</span><span class="sxs-lookup"><span data-stu-id="2b61d-103">Learn how to use the Azure CLI to query information about your virtual machine</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 9ba177cfd3356d6950a6ced971c831f8a8549e1a
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46344737"
+interactive: bash
+azureSandbox: true
+durationInMinutes: 10
+content: '[!include[](includes/6-querying-vms.md)]'

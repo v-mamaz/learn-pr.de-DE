@@ -1,0 +1,46 @@
+### YamlMime:Module
+uid: learn.manage-secrets-with-azure-key-vault
+metadata:
+  title: Verwalten von Geheimnissen in Ihren Server-Apps mit Azure Key Vault
+  description: In diesem Modul lernen Sie, wie Sie eine Key Vault-Instanz erstellen und ein Geheimnis darin speichern. Sie erfahren, wie Sie eine Webanwendung für die Verwendung einer verwalteten Identität konfigurieren, um einen sicheren Zugriff auf den Tresor ohne jegliche Konfiguration zu ermöglichen. Außerdem implementieren Sie eine ASP.NET Core-Webanwendung, die Geheimnisse aus dem Tresor abruft.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 9f29cd60cea73a1d0b1d475f5f7bb38e1c0f55f2
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46342382"
+title: Verwalten von Geheimnissen in Ihren Server-Apps mit Azure Key Vault
+summary: Ihre Anwendung benötigt Dienstkennwörter, Verbindungszeichenfolgen und andere Konfigurationswerte von Geheimnissen, um ihre Aufgabe zu erfüllen. Das Speichern und Verwalten der Werte von Geheimnissen ist risikoreich, und jede Verwendung birgt die Möglichkeit der Preisgabe. Azure Key Vault ermöglicht in Kombination mit verwalteten Identitäten für Azure-Ressourcen den einfachen und sicheren Zugriff auf Konfigurationswerte von Geheimnissen, ohne dass diese Geheimnisse in Ihrer Quellcodeverwaltung oder Konfiguration gespeichert werden müssen.
+abstract: >
+  In diesem Modul lernen Sie Folgendes:
+
+  - Arten von Informationen in Azure Key Vault, die in gespeichert werden können
+
+  - Erstellen einer Azure Key Vault-Instanz, die Sie zum Speichern der Konfigurationswerte von Geheimnissen verwenden können
+
+  - Aktivieren des sicheren Zugriffs auf den Tresor aus einer Azure App Service-Web-App mithilfe von verwalteten Identitäten für Azure-Ressourcen
+
+  - Implementieren einer Webanwendung, die Geheimnisse aus dem Tresor abruft
+prerequisites: Keine
+iconUrl: /learn/achievements/manage-secrets-with-azure-key-vault.svg
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- azure-key-vault
+units:
+- learn.manage-secrets-with-azure-key-vault.1-introduction
+- learn.manage-secrets-with-azure-key-vault.2-what-is-key-vault
+- learn.manage-secrets-with-azure-key-vault.3-creating-vaults-storing-secrets
+- learn.manage-secrets-with-azure-key-vault.4-authentication-with-managed-identities-for-azure-resources
+- learn.manage-secrets-with-azure-key-vault.5-access-secrets-from-web-app
+- learn.manage-secrets-with-azure-key-vault.6-configure-deploy-run-azure
+- learn.manage-secrets-with-azure-key-vault.7-summary
+achievement: learn.manage-secrets-with-azure-key-vault.badge
