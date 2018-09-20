@@ -1,0 +1,42 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-access-azure-ad-multi-factor-authentication.6-summary
+metadata:
+  title: Zusammenfassung
+  description: Zusammenfassung
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d974b53f5c6b22b7a5b4a11fa588d59a38be2560
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46341048"
+title: Zusammenfassung
+durationInMinutes: 5
+content: >
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: Überprüfen Sie Ihre Kenntnisse
+  questions:
+  - content: Azure AD ist im Wesentlichen ein Active Directory Domain Services-Domänencontroller (AD DS), der in Azure ausgeführt wird.
+    choices:
+    - content: Wahr
+      isCorrect: false
+      incorrectExplanation: Azure AD führt viele Funktionen aus, die mit dem herkömmlichen AD DS identisch sind. Es handelt sich um einen mehrinstanzenfähigen, cloudbasierten Verzeichnis- und Identitätsverwaltungsdienst.
+    - content: Falsch
+      isCorrect: true
+      correctExplanation: AD DS ist eine Serverrolle unter Windows Server. Azure AD ist ein cloudbasierter, öffentlicher Verzeichnisdienst für mehrere Kunden.
+  - content: Welche drei Elemente sollten in einer erfolgreichen Richtlinie für bedingten Zugriff enthalten sein?
+    choices:
+    - content: Benutzer oder Gruppe, Anwendung, Uhrzeit
+      isCorrect: false
+      correctExplanation: Die Uhrzeit ist in Regeln für bedingten Zugriff keine Option.
+    - content: Benutzer oder Gruppe, Anwendung, zu erzwingende Steuerung
+      isCorrect: true
+      incorrectExplanation: Durch die Auswahl dieser drei Elemente werden eigenständige und funktionale Regeln für bedingten Zugriff erstellt.
+    - content: Benutzer oder Gruppe, Betriebssystem Linux, zu erzwingendes Steuerelement
+      isCorrect: false
+      correctExplanation: Es werden einige Geräteplattformen unterstützt, Linux derzeit jedoch nicht.

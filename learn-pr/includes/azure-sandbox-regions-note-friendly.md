@@ -1,0 +1,11 @@
+- USA, Westen 2
+- USA, Westen-Mitte
+- USA Süd Mitte
+- USA, Mitte
+- USA, Osten
+- Europa, Westen
+- Asien, Südosten
+- Japan, Osten
+- Brasilien, Süden
+- Australien, Südosten
+- Indien, Mitte

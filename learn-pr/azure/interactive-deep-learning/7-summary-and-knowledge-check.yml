@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.7-summary-and-knowledge-check
+title: Zusammenfassung
+metadata:
+  title: Zusammenfassung
+  description: Zusammenfassung
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2a6f770fc032421778d9b8865ddc2324b1b481e7
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46484035"
+durationInMinutes: 1
+content: >
+  [!include[](includes/7-summary-and-knowledge-check.md)]
+quiz:
+  title: Überprüfen Sie Ihre Kenntnisse
+  questions:
+  - content: Welche der folgenden Antworten beschreibt die Herausforderungen in Bezug auf Abhängigkeiten, die sich bei Verwendung der DSVM für Deep Learning ergeben, am besten?
+    choices:
+    - content: Die DSVM wird in einer Sandbox ausgeführt und bietet keine direkte Unterstützung für das Installieren neuer Pakete.
+      isCorrect: false
+      incorrectExplanation: Die DSVM ist ein virtueller Computer. Sie verfügt über viele vorinstallierte Softwarekomponenten zur Unterstützung der Data Science und des KI-Projekts, aber Sie können frei wählen, was Sie installieren.
+    - content: Die DSVM unterstützt nur Abhängigkeiten von CNTK und Cognitive Services.
+      incorrectExplanation: DSVMs bieten standardmäßig Unterstützung für viele beliebte Frameworks, wie PyTorch, Chainer und Tensorflow.
+      isCorrect: false
+    - content: Bestimmte Deep Learning-Frameworks und -Pakete erfordern verschiedene Umgebungen, GPU-Treiber und Binärdateipakete.
+      isCorrect: true
+      correctExplanation: Die Verwaltung der Abhängigkeiten zwischen allen Frameworks, die Sie für Deep Learning verwenden, kann eine ziemliche Herausforderung darstellen. Die Ausführung eines Docker-Containers, um diese Abhängigkeiten zu gruppieren und zu isolieren, kann hierbei eine Hilfe sein.
+  - content: Angenommen, Sie haben mit Deep Learning in einem Docker-Container experimentiert. Ihre DSVM wird auf einem virtuellen Linux-Computer ausgeführt, der auch über GPUs verfügt. Welchen der folgenden Befehle führen Sie aus, um einen Container mit den erforderlichen Komponenten zur Ausführung von Code auf der GPU bereitzustellen?
+    choices:
+    - content: docker run --useGPU
+      isCorrect: false
+      incorrectExplanation: Der Befehl „docker run“ verfügt nicht über den Parameter „--useGPU“.
+    - content: nvidia-docker run
+      isCorrect: true
+      correctExplanation: Dieser Befehl kann genutzt werden, um einen Container mit Verwendung von GPUs auszuführen.
+    - content: docker-nvidia run
+      isCorrect: false
+      incorrectExplanation: Dieser Befehl ist nicht vorhanden.
