@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.welcome-to-azure.5-scale-up
+title: <span data-ttu-id="cc15a-101">Zentrales Hochskalieren</span><span class="sxs-lookup"><span data-stu-id="cc15a-101">Scale up</span></span>
+metadata:
+  title: <span data-ttu-id="cc15a-102">Zentrales Hochskalieren</span><span class="sxs-lookup"><span data-stu-id="cc15a-102">Scale up</span></span>
+  description: <span data-ttu-id="cc15a-103">Skalieren Sie Ihren virtuellen Computer zentral hoch, um ihm mehr Computeleistung und Arbeitsspeicher zuzuweisen.</span><span class="sxs-lookup"><span data-stu-id="cc15a-103">Scale up your virtual machine to give it more compute power and memory.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  zone_pivot_groups: platform-cloud
+  ms.openlocfilehash: 9f6ec458cb233fe0d035d73d99d46a5de91ce569
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340693"
+interactive: bash
+azureSandbox: true
+durationInMinutes: 4
+content: >
+  [!include[](includes/5-scale-up.md)]
+quiz:
+  title: <span data-ttu-id="cc15a-104">Überprüfen Sie Ihre Kenntnisse</span><span class="sxs-lookup"><span data-stu-id="cc15a-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="cc15a-105">Azure ist:</span><span class="sxs-lookup"><span data-stu-id="cc15a-105">Azure is:</span></span>
+    choices:
+    - content: <span data-ttu-id="cc15a-106">Die Cloud Computing-Plattform von Microsoft, mit der Computeleistung, Speicher und Dienste über das Internet bereitgestellt werden, indem ein Modell mit nutzungsbasierter Bezahlung verwendet wird.</span><span class="sxs-lookup"><span data-stu-id="cc15a-106">Microsoft's cloud computing platform, which provides compute power, storage, and services over the Internet using a pay-as-you-go pricing model.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="cc15a-107">Mit Azure erhalten Sie Zugriff auf reine Computeleistung und Speicher sowie auf Dienste, um neue Softwaremodelle zu erkunden, z.B. intelligente Bots und Mixed Reality.</span><span class="sxs-lookup"><span data-stu-id="cc15a-107">With Azure, you get access to raw compute power and storage, as well as services to help you explore new software paradigms such as intelligent bots and mixed reality.</span></span>
+    - content: <span data-ttu-id="cc15a-108">Ein einzelnes Rechenzentrum in Redmond, Washington.</span><span class="sxs-lookup"><span data-stu-id="cc15a-108">A single data center located in Redmond, Washington.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="cc15a-109">Azure besteht aus Rechenzentren, die auf der ganzen Welt verteilt sind.</span><span class="sxs-lookup"><span data-stu-id="cc15a-109">Azure is made up of data centers distributed throughout the world.</span></span>
+    - content: <span data-ttu-id="cc15a-110">Nur ein „weiterer Ort zum Ausführen Ihrer virtuellen Computer“.</span><span class="sxs-lookup"><span data-stu-id="cc15a-110">Just "a different place to run your virtual machines".</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="cc15a-111">Mit Azure wird nicht nur reine Computeleistung bereitgestellt, z.B. in Form von virtuellen Computern, sondern Sie erhalten auch Zugriff auf viele Dienste, mit denen Sie neue Softwaremodelle erkunden können, z.B. intelligente Bots und Mixed Reality.</span><span class="sxs-lookup"><span data-stu-id="cc15a-111">While Azure provides raw compute power, such as virtual machines, it also provides many services to help you explore new software paradigms such as intelligent bots and mixed reality.</span></span>
+  - content: <span data-ttu-id="cc15a-112">Wann ist es ratsam, Ihre Bereitstellung _horizontal hochzuskalieren_?</span><span class="sxs-lookup"><span data-stu-id="cc15a-112">When might you _scale out_ your deployment?</span></span>
+    choices:
+    - content: <span data-ttu-id="cc15a-113">Wenn eine Anwendung oder ein Dienst eine leistungsfähigere CPU oder mehr Arbeitsspeicher benötigt, um eine schnellere Ausführung zu ermöglichen.</span><span class="sxs-lookup"><span data-stu-id="cc15a-113">When your application or service requires a more powerful CPU or more memory to run faster.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="cc15a-114">In diesem Fall können Sie _zentral hochskalieren_, indem Sie Ihre Anwendung oder Ihren Dienst auf leistungsstärkerer Hardware anordnen.</span><span class="sxs-lookup"><span data-stu-id="cc15a-114">In this case, you might _scale up_ by moving your application or service to more powerful hardware.</span></span>
+    - content: <span data-ttu-id="cc15a-115">Wenn Sie virtuelle Computer hinzufügen, um die Geschwindigkeit Ihrer Anwendung zu erhöhen.</span><span class="sxs-lookup"><span data-stu-id="cc15a-115">When you can add additional virtual machines to speed up your application.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="cc15a-116">Beim horizontalen Hochskalieren werden zusätzliche Systeme hinzugefügt, z.B. virtuelle Computer.</span><span class="sxs-lookup"><span data-stu-id="cc15a-116">Scaling out means adding additional systems, such as virtual machines.</span></span> <span data-ttu-id="cc15a-117">So können Sie beispielsweise viele virtuelle Computer erstellen, die auf genau die gleiche Weise konfiguriert sind, und einen Lastenausgleich verwenden, um die Arbeit darauf zu verteilen.</span><span class="sxs-lookup"><span data-stu-id="cc15a-117">For example, you might create many virtual machines configured in exactly the same way and use a load balancer to distribute work across them.</span></span>
+    - content: <span data-ttu-id="cc15a-118">Wenn Sie überschüssige Kapazität nutzen, die Sie nicht benötigen.</span><span class="sxs-lookup"><span data-stu-id="cc15a-118">When you're using excess capacity that you don't need.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="cc15a-119">In diesem Fall können Sie _horizontal herunterskalieren_, indem Sie Systeme herunterfahren, die Sie derzeit nicht benötigen.</span><span class="sxs-lookup"><span data-stu-id="cc15a-119">In this case, you might _scale in_ by tearing down systems you don't currently need.</span></span>
