@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-availability-and-recoverability.3-disaster-recovery
+title: Entwickeln einer Strategie zur Notfallwiederherstellung
+metadata:
+  title: Entwickeln einer Strategie zur Notfallwiederherstellung
+  description: Entwickeln einer Strategie zur Notfallwiederherstellung
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 3955af1f310742bdb6912d5da07f5004d40287f1
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46338725"
+durationInMinutes: 20
+content: >
+  [!include[](includes/3-disaster-recovery.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: Welche der folgenden Punkte können aus den Wiederherstellungsschritten in Ihrem Wiederherstellungsplan ausgeschlossen werden?
+    choices:
+    - content: Wiederherstellen von Sicherungen
+      isCorrect: false
+      incorrectExplanation: Die zum Wiederherstellen von Sicherungen erforderlichen Schritte sind ein wichtiger Teil eines Wiederherstellungsplans.
+    - content: Failover auf replizierte Systeme
+      isCorrect: false
+      incorrectExplanation: Ein Failover auf replizierte Systeme ist ein wichtiger Teil eines Wiederherstellungsplans.
+    - content: Wiederherstellen der Netzwerkkonnektivität mit lokalen oder externen Netzwerken
+      isCorrect: false
+      incorrectExplanation: Die Netzwerkkonnektivität mit lokalen oder externen Netzwerken ist häufig ein kritischer Bestandteil der Infrastruktur. Die Schritte zur Wiederherstellung nach einem Fehler sind wesentliche Bestandteile eines Wiederherstellungsplans.
+    - content: Keine der oben genannten Möglichkeiten sollte aus einem Wiederherstellungsplan ausgeschlossen werden.
+      isCorrect: true
+      correctExplanation: All diese Prozeduren sind für einen Wiederherstellungsplan erforderlich.
+  - content: 'Wahr oder falsch: Die Datenreplikation und die Datensicherung bezeichnen die gleiche Sache.'
+    choices:
+    - content: Wahr
+      isCorrect: false
+      incorrectExplanation: Die Datenreplikation und die Datensicherung erstellen zwar beide Kopien Ihrer Daten, allerdings unterscheiden sich die Auslastung und der Verbrauch der Kopien so sehr, dass diese als unterschiedliche Konzepte betrachtet werden.
+    - content: Falsch
+      isCorrect: true
+      correctExplanation: Die Replikation erstellt Kopien von Livedaten in Echtzeit oder nahezu in Echtzeit, die während der Ausführung für Failover verwendet werden. Die Sicherung erstellt langlebige, schreibgeschützte Momentaufnahmen von Daten für die Wiederherstellung.

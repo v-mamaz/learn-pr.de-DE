@@ -1,0 +1,62 @@
+### YamlMime:ModuleUnit
+uid: learn.top-5-security-items-to-consider.3-inputs-and-outputs
+title: Eingaben und Ausgaben
+metadata:
+  title: Eingaben und Ausgaben
+  description: Eingaben und Ausgaben
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 6549bf1ac4fb034b3d0e8a4720364725c36d1f12
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340669"
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-inputs-and-outputs.md)]
+quiz:
+  title: Überprüfen Sie Ihre Kenntnisse
+  questions:
+  - content: Welche der folgenden Datenquellen müssen überprüft werden?
+    choices:
+    - content: Daten aus der API eines Drittanbieters
+      isCorrect: false
+      incorrectExplanation: Dies ist nur eine von vielen Quellen, die überprüft werden müssen.
+    - content: Daten des URL-Parameters
+      isCorrect: false
+      incorrectExplanation: Dies ist nur eine von vielen Quellen, die überprüft werden müssen.
+    - content: Vom Benutzer über ein Eingabefeld erfasste Daten
+      isCorrect: false
+      incorrectExplanation: Dies ist nur eine von vielen Quellen, die überprüft werden müssen.
+    - content: Alle oben genannten Möglichkeiten sind zutreffend.
+      isCorrect: true
+      correctExplanation: Alle dieser Datenquellen müssen überprüft werden. Vertrauen Sie niemals Daten, die ggf. geändert wurden.
+  - content: 'Parametrisierte Abfragen (gespeicherte Prozeduren in SQL) sind aus folgenden Gründen eine sichere Wahl für die Kommunikation mit der Datenbank:'
+    choices:
+    - content: Sie sind besser strukturiert als Inline-Datenbankbefehle und daher für Benutzer weniger verwirrend.
+      isCorrect: false
+      incorrectExplanation: Die Organisation des Codes ist nicht der Grund dafür, dass parametrisierte Abfragen sicherer als Inline-SQL sind.
+    - content: Das Skript in der gespeicherten Prozedur ist klar gegliedert und dadurch verständlicher.
+      isCorrect: false
+      incorrectExplanation: Die klare Gliederung des Skripts ist nicht der Grund dafür, dass parametrisierte Abfragen sicherer als Inline-SQL sind.
+    - content: Parametrisierte Abfragen ersetzen Variablen vor dem Ausführen der Abfragen. Dadurch wird verhindert, dass Code anstelle einer Variablen übermittelt wird.
+      isCorrect: true
+  - content: Für welche der folgenden Daten muss die Ausgabe codiert werden?
+    choices:
+    - content: Daten, die in der Datenbank gespeichert werden
+      isCorrect: false
+      incorrectExplanation: Die in der Datenbank gespeicherten Daten müssen überprüft werden, um sicherzustellen, dass die Daten in Ordnung sind, aber wir müssen sie für die Ausgabe nicht codieren.
+    - content: Daten, die auf dem Bildschirm ausgegeben werden sollen
+      isCorrect: true
+      correctExplanation: Daten, die auf dem Bildschirm ausgegeben werden, müssen für die Ausgabe codiert werden. So wird sichergestellt, dass sie niemals als Code interpretiert werden.
+    - content: Daten, die an die API eines Drittanbieters gesendet werden
+      isCorrect: false
+      incorrectExplanation: An die API eines Drittanbieters gesendete Daten müssen überprüft werden, um sicherzustellen, dass die Daten in Ordnung sind, aber wir müssen sie für die Ausgabe nicht codieren.
+    - content: Daten in den URL-Parametern
+      isCorrect: false
+      incorrectExplanation: Daten aus URL-Parametern müssen zwar überprüft werden, bevor sie in unserer Anwendung verwendet werden, aber wir müssen sie für die Ausgabe nicht codieren.
+      correctExplanation: Parameterfelder, die in parametrisierten Abfragen verwendet werden, werden wie Daten behandelt (nicht wie Code), um den Schutz vor Sicherheitsrisiken in Bezug auf Einschleusungen sicherzustellen. Weitere Informationen zur Implementierung von parametrisierten Abfragen finden Sie unter [OWASP Query Parameterization Cheat Sheet]( https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet) (OWASP-Abfragenparametrisierung – Spickzettel).

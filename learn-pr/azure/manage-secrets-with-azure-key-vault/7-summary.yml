@@ -1,0 +1,56 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-secrets-with-azure-key-vault.7-summary
+title: Zusammenfassung
+metadata:
+  title: Zusammenfassung
+  description: Zusammenfassung
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 87634f7fe2239916c3988825ce31307de5a545a0
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46339216"
+durationInMinutes: 3
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: Welche der folgenden Aussagen beschreibt **keinen** Vorteil von Azure Key Vault?
+    choices:
+    - content: Sichere Speicherung privater Benutzerdaten.
+      isCorrect: true
+      correctExplanation: Key Vault dient zum Speichern von Anwendungs- und nicht von Benutzergeheimnissen.
+    - content: Synchronisierung von Anwendungsgeheimnissen zwischen mehreren Instanzen einer Anwendung.
+      isCorrect: false
+    - content: Reduzierung der Notwendigkeit für Anwendungsentwickler, direkt mit Anwendungsgeheimnissen zu arbeiten.
+      isCorrect: false
+    - content: Steuerung des Zugriffs auf Anwendungsgeheimnisse mit zuweisbaren Zugriffsberechtigungen.
+      isCorrect: false
+  - content: Welche dieser Aussagen beschreibt am besten den Authentifizierungs- und Autorisierungsprozess von Azure Key Vault?
+    choices:
+    - content: Anwendungen authentifizieren sich bei einem Tresor mit dem Benutzernamen und Kennwort des Chefentwicklers und haben uneingeschränkten Zugriff auf alle Geheimnisse im Tresor.
+      isCorrect: false
+    - content: Anwendungen und Benutzer authentifizieren sich mit einem Microsoft-Konto bei einem Tresor und sind berechtigt, auf bestimmte Geheimnisse zuzugreifen.
+      isCorrect: false
+    - content: Anwendungen und Benutzer authentifizieren sich mit ihren Azure Active Directory-Identitäten bei einem Tresor und sind berechtigt, Aktionen für alle Geheimnisse im Tresor auszuführen.
+      isCorrect: true
+      correctExplanation: Für die Authentifizierung bei Key Vault werden Azure Active Directory-Identitäten verwendet. Zugriffsrichtlinien werden verwendet, um Aktionen zu autorisieren, die für jedes Geheimnis im Tresor ausgeführt werden.
+    - content: Anwendungen authentifizieren sich bei einem Tresor mit dem Benutzernamen und Kennwort eines Benutzers, der sich bei der Web-App anmeldet, und erhalten Zugriff auf Geheimnisse, deren Besitzer der Benutzer ist.
+      isCorrect: false
+  - content: Wie trägt Azure Key Vault zum Schutz Ihrer Geheimnisse bei, nachdem sie von Ihrer App hochgeladen wurden?
+    choices:
+    - content: Azure Key Vault generiert nach jeder Verwendung automatisch ein neues Geheimnis.
+      isCorrect: false
+    - content: Die Azure Key Vault-Clientbibliothek schützt die von Ihrer Anwendung verwendeten Arbeitsspeicherbereiche, um eine ungewollte Offenlegung von Geheimnissen zu verhindern.
+      isCorrect: false
+    - content: Azure Key Vault verschlüsselt Geheimnisse doppelt, sodass Ihre Anwendung sie bei jeder Verwendung lokal entschlüsseln muss.
+      isCorrect: false
+    - content: Ihre Geheimnisse werden nicht geschützt. Geheimnisse sind ungeschützt, sobald sie von Ihrer Anwendung geladen werden.
+      isCorrect: true
+      correctExplanation: Nachdem Geheimnisse von einer App geladen wurden, sind sie nicht mehr geschützt. Achten Sie darauf, sie weder zu protokollieren noch zu speichern oder in Clientantworten zurückzugeben.

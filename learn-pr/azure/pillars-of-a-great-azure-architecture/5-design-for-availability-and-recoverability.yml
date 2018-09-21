@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.pillars-of-a-great-azure-architecture.5-design-for-availability-and-recoverability
+title: Entwurf für Verfügbarkeit und Wiederherstellbarkeit
+metadata:
+  title: Entwurf für Verfügbarkeit und Wiederherstellbarkeit
+  description: Verfügbarkeits- und wiederherstellbarkeitsorientierter Entwurf
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ce3457feab12a45bbc103e154affbcd13f4a3923
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340269"
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-design-for-availability-and-recoverability.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: Nehmen wir an, dass Sie die Verfügbarkeit Ihres Systems steigern möchten, um eine bessere Vereinbarung zum Servicelevel (SLA) für Ihre Kunden bereitstellen zu können. Welche der folgenden Auswahlmöglichkeiten beschreibt ein Grundprinzip, das Sie verwenden können?
+    choices:
+    - content: Reduzieren des Ziels für die maximale Dauer des zulässigen Datenverlusts
+      isCorrect: false
+      incorrectExplanation: Dies kann die Wiederherstellbarkeit erhöhen, nicht aber die Verfügbarkeit.
+    - content: Verschlüsseln aller ruhenden Daten
+      isCorrect: false
+      incorrectExplanation: Dies kann die Sicherheit erhöhen, nicht aber die Verfügbarkeit.
+    - content: Vermeiden eines Single Point of Failure
+      isCorrect: true
+      correctExplanation: Das Entwerfen im Hinblick auf Verfügbarkeit konzentriert sich auf das Verwalten des Diensts trotz temporärer Bedingungen und lokaler Ausfälle. Das Hinzufügen von Redundanz zum Vermeiden eines Single Point of Failure ist eine wichtige Strategie zum Verbessern der Verfügbarkeit.
+  - content: Welcher der folgenden Punkte würde von Ihrem definierten Recovery Point Objective (RPO) beeinflusst werden?
+    choices:
+    - content: Die Häufigkeit der Datenbanksicherungen.
+      isCorrect: true
+      correctExplanation: Da es beim Recovery Point Objective um die tolerierbare Menge an Datenverlust geht, muss die Häufigkeit der Sicherungen innerhalb dieses Zeitfensters liegen und wird direkt von Ihrem definierten RPO beeinflusst.
+    - content: Die Anzahl der Regionen, in die Daten repliziert werden.
+      isCorrect: false
+      incorrectExplanation: Die Anzahl der Regionen, in die Daten repliziert werden, ist eine wichtige Überlegung, wird aber von Ihrem definierten RPO nicht beeinflusst.
+    - content: Die Anzahl der Instanzen in einem Datenbankcluster.
+      isCorrect: false
+      incorrectExplanation: Die Anzahl der Instanzen in einem Datenbankcluster kann eine wichtige Entscheidung sein, wird aber von Ihrem definierten RPO nicht beeinflusst.
+    - content: Der Typ der Lastenausgleichstechnologie, der in Ihrer Anwendung verwendet wird.
+      isCorrect: false
+      incorrectExplanation: Der Typ der in Ihrer Anwendung verwendeten Lastausgleichstechnologie kann eine wichtige Entscheidung sein, wird aber nicht von Ihrem definierten RPO beeinflusst.

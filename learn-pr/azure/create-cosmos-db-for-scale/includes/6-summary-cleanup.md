@@ -1,0 +1,3 @@
+In diesem Modul haben Sie gelernt, wie Sie ein Azure Cosmos DB-Konto erstellen, dass Sie für reale Szenarien wie Onlinehandel-Apps verwenden können. Wenn Sie eine Datenbank mit einem intelligenten Partitionsschlüssel erstellen, können Sie horizontal skalieren, wenn Ihr Datenspeicherungsbedarf wächst. Sie haben auch den Bedarf an Anforderungseinheiten Ihrer Anwendung kennengelernt und wie Sie ihn während der Kontoerstellung festlegen, sodass Sie den Durchsatz später bei zunehmendem Benutzerbedarf zentral hochskalieren können.
+
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

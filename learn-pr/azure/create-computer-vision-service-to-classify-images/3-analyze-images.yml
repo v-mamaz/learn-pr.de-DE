@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.3-analyze-images
+title: Abrufen von Informationen zu visuellen Inhalten in einem Bild
+metadata:
+  title: Abrufen von Informationen zu visuellen Inhalten in einem Bild
+  description: Abrufen von Informationen zu visuellen Inhalten in einem Bild
+  ms.date: 09/24/2018
+  author: AndrewJByrne
+  ms.author: marouill
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 40be96ec6c8293b9cd5197fab85f3feb0164e052
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340312"
+interactive: bash
+azureSandbox: true
+durationInMinutes: 5
+content: '[!include[](includes/3-analyze-images.md)]'

@@ -1,0 +1,3 @@
+![Auffassung: Compute ist der Mittelpunkt unseres Sonnensystems](../media/5-heading.png)
+
+Azure stellt mehrere Dienste zum Ausführen von Cloudcomputing bereit, die Auswahl des richtigen Diensts hängt jedoch von Ihren Geschäftsanforderungen ab. Denken Sie daran, dass es einige Überlappungen bei den Funktionen gibt. So können Sie z.B. Azure-Container oder Azure Functions im Rahmen einer serverlosen Architektur verwenden. Letztendlich hängt die richtige Entscheidung sowohl von der Dienstfunktion als auch von den Fähigkeiten Ihres Entwicklungsteams ab.

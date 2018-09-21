@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.pillars-of-a-great-azure-architecture.3-design-for-security
+title: Sicherheitsorientierter Entwurf
+metadata:
+  title: Sicherheitsorientierter Entwurf
+  description: Sicherheitsorientierter Entwurf
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1b55aacd394eb8f956c0b0ef45713cdcc57a03b0
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46346044"
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-design-for-security.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: Für welche der folgenden Datentypen sollten möglicherweise Sicherheitsmaßnahmen ergriffen werden?
+    choices:
+    - content: Kundendaten, die persönliche Informationen enthalten.
+      isCorrect: false
+      incorrectExplanation: Es ist wichtig, entsprechende Schutzmaßnahmen für diese Daten bereitzustellen. Dies ist aber nicht die einzige richtige Wahl.
+    - content: Finanzdaten, die Geschäftsvorgänge unterstützen.
+      isCorrect: false
+      incorrectExplanation: Es ist wichtig, entsprechende Schutzmaßnahmen für diese Daten bereitzustellen. Dies ist aber nicht die einzige richtige Wahl.
+    - content: Geistiges Eigentum
+      isCorrect: false
+      incorrectExplanation: Es ist wichtig, entsprechende Schutzmaßnahmen für diese Daten bereitzustellen. Dies ist aber nicht die einzige richtige Wahl.
+    - content: Für alle oben genannten Datentypen sind möglicherweise Sicherheitsmaßnahmen erforderlich.
+      isCorrect: true
+      correctExplanation: Alle oben genannten Datentypen können möglicherweise zusätzliche Sicherheitsvorkehrungen erfordern.
+  - content: Welches der folgenden Szenarios ist ein Beispiel für einen Angriff, der auf Richtlinien- und Zugriffsebene auftreten kann?
+    choices:
+    - content: Offengelegte Anmeldeinformationen, die online gepostet werden.
+      isCorrect: true
+      correctExplanation: Offengelegte Anmeldeinformationen sind ein großes Risiko für eine Organisation und gelten auf Richtlinien- und Zugriffsebene.
+    - content: Ein SYN-Flood-Angriff.
+      isCorrect: false
+      incorrectExplanation: SYN-Flood-Angriffe sind Denial-of-Service-Angriffe, die häufig im Umkreis des Netzwerks auftreten.
+    - content: Ein Angreifer folgt einem Mitarbeiter in ein Rechenzentrum ohne Berechtigung
+      isCorrect: false
+      incorrectExplanation: Es handelt sich um einen Angriff auf physischer Ebene, wenn ein Angreifer einem Mitarbeiter in ein Datencenter folgt.
+    - content: Ransomware, die die Datenträger eines virtuellen Computers verschlüsselt
+      isCorrect: false
+      incorrectExplanation: Ransomwareangriffe sind Angriffe der VM-/Computeebene.
