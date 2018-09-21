@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-secrets-with-azure-key-vault.4-authentication-with-managed-identities-for-azure-resources
+title: <span data-ttu-id="7dcff-101">Authentifizierung bei Key Vault mit verwalteten Identitäten für Azure-Ressourcen</span><span class="sxs-lookup"><span data-stu-id="7dcff-101">Vault authentication with managed identities for Azure resources</span></span>
+metadata:
+  title: <span data-ttu-id="7dcff-102">Authentifizierung bei Key Vault mit verwalteten Identitäten für Azure-Ressourcen</span><span class="sxs-lookup"><span data-stu-id="7dcff-102">Vault authentication with managed identities for Azure resources</span></span>
+  description: <span data-ttu-id="7dcff-103">Authentifizierung bei Key Vault mit verwalteten Identitäten für Azure-Ressourcen</span><span class="sxs-lookup"><span data-stu-id="7dcff-103">Vault authentication with managed identities for Azure resources</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1b51584d19c9a0caeac0aa28e994ef32c91a9cfd
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340661"
+durationInMinutes: 4
+content: >
+  [!include[](includes/4-authentication-with-managed-identities-for-azure-resources.md)]
+quiz:
+  title: <span data-ttu-id="7dcff-104">Überprüfen Sie Ihre Kenntnisse</span><span class="sxs-lookup"><span data-stu-id="7dcff-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="7dcff-105">Wie ändert die Verwendung verwalteter Identitäten für Azure-Ressourcen die Art, in der eine App sich bei Azure Key Vault authentifiziert?</span><span class="sxs-lookup"><span data-stu-id="7dcff-105">How does using managed identities for Azure resources change the way an app authenticates to Azure Key Vault?</span></span>
+    choices:
+    - content: <span data-ttu-id="7dcff-106">Die App verwendet zur Authentifizierung ein Zertifikat anstelle eines Geheimnisses.</span><span class="sxs-lookup"><span data-stu-id="7dcff-106">The app uses a certificate to authenticate instead of a secret.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7dcff-107">Wenn Sie die verwaltete Identität für Ihre Web-App aktivieren, aktiviert Azure speziell für Ihre Anwendung einen eigenständigen REST-Dienst, der Token vergibt.</span><span class="sxs-lookup"><span data-stu-id="7dcff-107">When you enable managed identity on your web app, Azure activates a separate token-granting REST service specifically for use by your app.</span></span> <span data-ttu-id="7dcff-108">Ihre App fordert Token nicht von Azure Active Directory, sondern von diesem Dienst an.</span><span class="sxs-lookup"><span data-stu-id="7dcff-108">Your app will request tokens from this service instead of Azure Active Directory.</span></span>
+    - content: <span data-ttu-id="7dcff-109">Jeder Benutzer der App muss ein Kennwort eingeben.</span><span class="sxs-lookup"><span data-stu-id="7dcff-109">Each user of the app must enter a password.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7dcff-110">Wenn Sie die verwaltete Identität für Ihre Web-App aktivieren, aktiviert Azure speziell für Ihre Anwendung einen eigenständigen REST-Dienst, der Token vergibt.</span><span class="sxs-lookup"><span data-stu-id="7dcff-110">When you enable managed identity on your web app, Azure activates a separate token-granting REST service specifically for use by your app.</span></span> <span data-ttu-id="7dcff-111">Ihre App fordert Token nicht von Azure Active Directory, sondern von diesem Dienst an.</span><span class="sxs-lookup"><span data-stu-id="7dcff-111">Your app will request tokens from this service instead of Azure Active Directory.</span></span>
+    - content: <span data-ttu-id="7dcff-112">Die App fordert Token nicht von Azure Active Directory, sondern von einem Tokendienst an.</span><span class="sxs-lookup"><span data-stu-id="7dcff-112">The app gets tokens from a token service instead of Azure Active Directory.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="7dcff-113">Wenn Sie die verwaltete Identität für Ihre Web-App aktivieren, aktiviert Azure speziell für Ihre Anwendung einen eigenständigen REST-Dienst, der Token vergibt.</span><span class="sxs-lookup"><span data-stu-id="7dcff-113">When you enable managed identity on your web app, Azure activates a separate token-granting REST service specifically for use by your app.</span></span> <span data-ttu-id="7dcff-114">Ihre App fordert Token nicht von Azure Active Directory, sondern von diesem Dienst an.</span><span class="sxs-lookup"><span data-stu-id="7dcff-114">Your app will request tokens from this service instead of Azure Active Directory.</span></span>
+    - content: <span data-ttu-id="7dcff-115">Verwaltete Identitäten werden von Azure Key Vault automatisch erkannt und authentifiziert.</span><span class="sxs-lookup"><span data-stu-id="7dcff-115">Managed identities are automatically recognized by Azure Key Vault and authenticated automatically.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7dcff-116">Wenn Sie die verwaltete Identität für Ihre Web-App aktivieren, aktiviert Azure speziell für Ihre Anwendung einen eigenständigen REST-Dienst, der Token vergibt.</span><span class="sxs-lookup"><span data-stu-id="7dcff-116">When you enable managed identity on your web app, Azure activates a separate token-granting REST service specifically for use by your app.</span></span> <span data-ttu-id="7dcff-117">Ihre App fordert Token nicht von Azure Active Directory, sondern von diesem Dienst an.</span><span class="sxs-lookup"><span data-stu-id="7dcff-117">Your app will request tokens from this service instead of Azure Active Directory.</span></span>
+  - content: <span data-ttu-id="7dcff-118">Welche dieser Anweisungen beschreibt einen wesentlichen Vorteil der Verwendung verwalteter Identitäten zur Authentifizierung einer App bei Key Vault?</span><span class="sxs-lookup"><span data-stu-id="7dcff-118">Which one of these statements describes a primary benefit of using managed identities for Azure resources to authenticate an app to Key Vault?</span></span>
+    choices:
+    - content: <span data-ttu-id="7dcff-119">Die Verwendung verwalteter Identitäten verbessert die Leistung der Anwendung.</span><span class="sxs-lookup"><span data-stu-id="7dcff-119">Using managed identities improves application performance.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7dcff-120">Ihre App authentifiziert sich bei dem von verwalteten Identitäten unterstützten Tokendienst mit einem Geheimnis, das zur Runtime in ihre Umgebungsvariable eingefügt wird.</span><span class="sxs-lookup"><span data-stu-id="7dcff-120">Your app authenticates to a managed identities token service with a secret injected into its environment variables at runtime.</span></span> <span data-ttu-id="7dcff-121">Hierdurch entfällt die Notwendigkeit, während der Konfiguration Geheimnisse zu speichern.</span><span class="sxs-lookup"><span data-stu-id="7dcff-121">This eliminates the need to store secrets during configuration.</span></span>
+    - content: <span data-ttu-id="7dcff-122">Mit verwalteten Identitäten entfällt die Notwendigkeit, während der Konfiguration Geheimnisse zu verarbeiten.</span><span class="sxs-lookup"><span data-stu-id="7dcff-122">Using managed identities eliminates the need to handle secrets during configuration.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="7dcff-123">Ihre App authentifiziert sich bei dem von verwalteten Identitäten unterstützten Tokendienst mit einem Geheimnis, das zur Runtime in ihre Umgebungsvariable eingefügt wird.</span><span class="sxs-lookup"><span data-stu-id="7dcff-123">Your app authenticates to a managed identities token service with a secret injected into its environment variables at runtime.</span></span> <span data-ttu-id="7dcff-124">Hierdurch entfällt die Notwendigkeit, während der Konfiguration Geheimnisse zu speichern.</span><span class="sxs-lookup"><span data-stu-id="7dcff-124">This eliminates the need to store secrets during configuration.</span></span>
+    - content: <span data-ttu-id="7dcff-125">Verwaltete Identitäten können automatisch Azure Key Vault-Berechtigungen gewähren.</span><span class="sxs-lookup"><span data-stu-id="7dcff-125">Managed identities can automatically grant Azure Key Vault permissions.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7dcff-126">Ihre App authentifiziert sich bei dem von verwalteten Identitäten unterstützten Tokendienst mit einem Geheimnis, das zur Runtime in ihre Umgebungsvariable eingefügt wird.</span><span class="sxs-lookup"><span data-stu-id="7dcff-126">Your app authenticates to a managed identities token service with a secret injected into its environment variables at runtime.</span></span> <span data-ttu-id="7dcff-127">Hierdurch entfällt die Notwendigkeit, während der Konfiguration Geheimnisse zu speichern.</span><span class="sxs-lookup"><span data-stu-id="7dcff-127">This eliminates the need to store secrets during configuration.</span></span>

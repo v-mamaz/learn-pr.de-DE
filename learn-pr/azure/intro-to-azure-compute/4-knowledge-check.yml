@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-compute.4-knowledge-check
+title: <span data-ttu-id="2d912-101">Wissensbeurteilung</span><span class="sxs-lookup"><span data-stu-id="2d912-101">Knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="2d912-102">Wissenstest</span><span class="sxs-lookup"><span data-stu-id="2d912-102">Knowledge check</span></span>
+  description: <span data-ttu-id="2d912-103">Wissenstest zum Modul „Einführung in Azure Compute“</span><span class="sxs-lookup"><span data-stu-id="2d912-103">Knowledge check for the 'Introduction to Azure compute' module.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 8a56219bb221c4a1969598fb0a8e8836ae37d168
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46341537"
+durationInMinutes: 2
+content: >
+  [!include[](includes/4-knowledge-check.md)]
+quiz:
+  title: <span data-ttu-id="2d912-104">Überprüfen Sie Ihre Kenntnisse</span><span class="sxs-lookup"><span data-stu-id="2d912-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="2d912-105">Ihr Astronomieteam verfügt über eine Reihe von Bildverarbeitungsanwendungen, die sehr viel Computeleistung und Arbeitsspeicher zum Ausführen benötigen.</span><span class="sxs-lookup"><span data-stu-id="2d912-105">Your astronomy team has a number of image-processing applications that require lots of compute power and memory to run.</span></span> <span data-ttu-id="2d912-106">Sie möchten diese Anwendungen schnell zu Azure migrieren.</span><span class="sxs-lookup"><span data-stu-id="2d912-106">You want to quickly migrate these applications to Azure.</span></span> <span data-ttu-id="2d912-107">Welche der folgenden Optionen würden Sie verwenden?</span><span class="sxs-lookup"><span data-stu-id="2d912-107">Which of the following options should you choose?</span></span>
+    choices:
+    - content: <span data-ttu-id="2d912-108">Azure Kubernetes Service (AKS)</span><span class="sxs-lookup"><span data-stu-id="2d912-108">Azure Kubernetes Service (AKS)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2d912-109">App Service ist vollständig verwaltet und skaliert automatisch.</span><span class="sxs-lookup"><span data-stu-id="2d912-109">App Service is fully managed and scales automatically.</span></span> <span data-ttu-id="2d912-110">So kann sich Ihr Team auf seine Kernkompetenz konzentrieren – Code schreiben.</span><span class="sxs-lookup"><span data-stu-id="2d912-110">This allows your team to focus on what their good at, writing code.</span></span>
+    - content: <span data-ttu-id="2d912-111">Service Fabric</span><span class="sxs-lookup"><span data-stu-id="2d912-111">Service Fabric</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2d912-112">App Service ist vollständig verwaltet und skaliert automatisch.</span><span class="sxs-lookup"><span data-stu-id="2d912-112">App Service is fully managed and scales automatically.</span></span> <span data-ttu-id="2d912-113">So kann sich Ihr Team auf seine Kernkompetenz konzentrieren – Code schreiben.</span><span class="sxs-lookup"><span data-stu-id="2d912-113">This allows your team to focus on what their good at, writing code.</span></span>
+    - content: <span data-ttu-id="2d912-114">App Service</span><span class="sxs-lookup"><span data-stu-id="2d912-114">App Service</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="2d912-115">App Service ist vollständig verwaltet und skaliert automatisch.</span><span class="sxs-lookup"><span data-stu-id="2d912-115">App Service is fully managed and scales automatically.</span></span> <span data-ttu-id="2d912-116">So kann sich Ihr Team auf seine Kernkompetenz konzentrieren – Code schreiben.</span><span class="sxs-lookup"><span data-stu-id="2d912-116">This allows your team to focus on what their good at, writing code.</span></span>
+  - content: <span data-ttu-id="2d912-117">Stellen Sie sich vor, dass Ihr Astronomieteam astronomische Berechnungen vornehmen muss, die Stunden oder sogar Tage in Anspruch nehmen.</span><span class="sxs-lookup"><span data-stu-id="2d912-117">Suppose your astronomy team has come up against astronomical calculations that are taking hours and even days to complete.</span></span> <span data-ttu-id="2d912-118">Die parallele Ausführung macht kaum einen Unterschied.</span><span class="sxs-lookup"><span data-stu-id="2d912-118">Parallel execution does not seem to help much.</span></span> <span data-ttu-id="2d912-119">Für welche der folgenden Optionen sollten Sie sich entscheiden?</span><span class="sxs-lookup"><span data-stu-id="2d912-119">Which of the following options should you choose?</span></span>
+    choices:
+    - content: <span data-ttu-id="2d912-120">Cloud Services</span><span class="sxs-lookup"><span data-stu-id="2d912-120">Cloud Services</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2d912-121">Azure Batch stellt die Skalierung der Auftragsplanung und Computeverwaltung in der Cloud mit der Möglichkeit bereit, bis zu Dutzenden, Hunderten oder Tausenden von virtuellen Computern zu skalieren.</span><span class="sxs-lookup"><span data-stu-id="2d912-121">Azure Batch provides cloud-scale job scheduling and compute management with the ability to scale to tens, hundreds, or thousands of VMs.</span></span>
+    - content: <span data-ttu-id="2d912-122">Azure Batch</span><span class="sxs-lookup"><span data-stu-id="2d912-122">Azure Batch</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="2d912-123">Azure Batch stellt die Skalierung der Auftragsplanung und Computeverwaltung in der Cloud mit der Möglichkeit bereit, Tausende von virtuellen Computern zu skalieren.</span><span class="sxs-lookup"><span data-stu-id="2d912-123">Azure Batch provides cloud-scale job scheduling and compute management with the ability to scale to tens, hundreds, or thousands of VMs.</span></span>
+    - content: <span data-ttu-id="2d912-124">Container Instances</span><span class="sxs-lookup"><span data-stu-id="2d912-124">Container Instances</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2d912-125">Azure Batch stellt die Skalierung der Auftragsplanung und Computeverwaltung in der Cloud mit der Möglichkeit bereit, bis zu Dutzenden, Hunderten oder Tausenden von virtuellen Computern zu skalieren.</span><span class="sxs-lookup"><span data-stu-id="2d912-125">Azure Batch provides cloud-scale job scheduling and compute management with the ability to scale to tens, hundreds, or thousands of VMs.</span></span>

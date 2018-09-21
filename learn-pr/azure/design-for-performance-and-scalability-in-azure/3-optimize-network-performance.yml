@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.3-optimize-network-performance
+title: <span data-ttu-id="6b293-101">Optimieren der Netzwerkleistung</span><span class="sxs-lookup"><span data-stu-id="6b293-101">Optimize network performance</span></span>
+metadata:
+  title: <span data-ttu-id="6b293-102">Optimieren der Netzwerkleistung</span><span class="sxs-lookup"><span data-stu-id="6b293-102">Optimize network performance</span></span>
+  description: <span data-ttu-id="6b293-103">In dieser Einheit wird beschrieben, wie Sie die Netzwerkleistung Ihrer Architektur optimieren.</span><span class="sxs-lookup"><span data-stu-id="6b293-103">In this unit we'll discuss how to optimize network performance for your architecture</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 4cb23a0d62bc62d7dea8842fa6110b1932694feb
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46339829"
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-optimize-network-performance.md)]
+quiz:
+  title: <span data-ttu-id="6b293-104">Überprüfen Sie Ihre Kenntnisse</span><span class="sxs-lookup"><span data-stu-id="6b293-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="6b293-105">Welche der folgenden möglichen Antworten ist die Definition des Begriffs Netzwerklatenz?</span><span class="sxs-lookup"><span data-stu-id="6b293-105">which of the following is the definition of the term network latency?</span></span>
+    choices:
+    - content: <span data-ttu-id="6b293-106">Der im Netzwerk verfügbare Durchsatz</span><span class="sxs-lookup"><span data-stu-id="6b293-106">The amount of throughput available on the network</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6b293-107">Netzwerkdurchsatz ist ein Maß der Netzwerkkapazität.</span><span class="sxs-lookup"><span data-stu-id="6b293-107">Network throughput is a measure of network capacity.</span></span>
+    - content: <span data-ttu-id="6b293-108">Die Zeit, die benötigt wird, um Daten von einer Quelle an ein Ziel zu senden</span><span class="sxs-lookup"><span data-stu-id="6b293-108">The amount of time it takes for information to be sent from a source to a destination</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="6b293-109">Latenz ist ein Maß für die Netzwerkübertragungszeit.</span><span class="sxs-lookup"><span data-stu-id="6b293-109">Latency is a measure of network transit time.</span></span>
+    - content: <span data-ttu-id="6b293-110">Die Gültigkeitsdauer einer Ressource in einem Content Delivery Network</span><span class="sxs-lookup"><span data-stu-id="6b293-110">The TTL of an asset in a content delivery network</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6b293-111">Die Gültigkeitsdauer einer Ressource in einem Content Delivery Network bezieht sich auf die Häufigkeit, mit der die Ressource über die ursprüngliche Quelle aktualisiert wird.</span><span class="sxs-lookup"><span data-stu-id="6b293-111">The TTL of an asseet on a content delivery network relates to how often it is refreshed from the original source.</span></span>
+    - content: <span data-ttu-id="6b293-112">Eine private Verbindung zwischen einem lokalen Netzwerk und Azure</span><span class="sxs-lookup"><span data-stu-id="6b293-112">A private circuit between an on-premises network and Azure</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6b293-113">ExpressRoute ist eine private Verbindung zwischen einem lokalen Netzwerk und Azure, die zwar die Latenz verbessern kann, den Begriff jedoch nicht definiert.</span><span class="sxs-lookup"><span data-stu-id="6b293-113">ExpressRoute is a private circuit between an on-premises network and Azure, and while it can improve latency, it is not a defintion of the term.</span></span>
+  - content: <span data-ttu-id="6b293-114">Stellen Sie sich vor, Ihre Webanwendung wird in der Region „USA, Osten“ gehostet.</span><span class="sxs-lookup"><span data-stu-id="6b293-114">Suppose your web application is hosted in East US.</span></span> <span data-ttu-id="6b293-115">Welche der folgenden Maßnahmen wäre die kostengünstigste Möglichkeit, die Netzwerklatenz für Benutzer weltweit zu optimieren?</span><span class="sxs-lookup"><span data-stu-id="6b293-115">Which of the following would be the most cost-effective way to optimize network latency for users around the world?</span></span>
+    choices:
+    - content: <span data-ttu-id="6b293-116">Bereitstellen von ExpressRoute für alle Benutzer</span><span class="sxs-lookup"><span data-stu-id="6b293-116">Deploy ExpressRoute to each of your users</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6b293-117">ExpressRoute wird pro Netzwerkadresse, nicht pro Benutzer bereitgestellt.</span><span class="sxs-lookup"><span data-stu-id="6b293-117">ExpressRoute is provisioned for a network location, not per user.</span></span>
+    - content: <span data-ttu-id="6b293-118">Verwenden eines Content Delivery Network, durch das Ressourcen und Inhalte näher bei den Benutzern bereitgestellt werden</span><span class="sxs-lookup"><span data-stu-id="6b293-118">Use a content delivery network to place assets and content closer to your users</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="6b293-119">Durch die Verwendung eines Content Delivery Network werden Ressourcen an Speicherorten zwischengespeichert, die den Endbenutzern physisch näher sind, und können somit schneller geladen werden.</span><span class="sxs-lookup"><span data-stu-id="6b293-119">By using a content delivery network, assets are cached at locations that are physically closer to end users and will reduce the amount of time to load them.</span></span> <span data-ttu-id="6b293-120">Dadurch wird die Netzwerklatenz auf kostengünstige Weise für Benutzer weltweit reduziert.</span><span class="sxs-lookup"><span data-stu-id="6b293-120">This will cost-effectively improve network latency for users around the globe.</span></span>
+    - content: <span data-ttu-id="6b293-121">Verwenden von Traffic Manager im leistungsorientierten Routingmodus</span><span class="sxs-lookup"><span data-stu-id="6b293-121">Use Traffic Manager in performance routing mode</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6b293-122">Traffic Manager ist ein DNS-Lastenausgleich, mit dem die Zeit zum Herstellen einer Verbindung mit Ressourcen reduziert werden kann, für den jedoch Webdienste an mehreren Speicherorten gesucht werden müssten, und der nicht die kostengünstigste Möglichkeit zum Lösen dieses Problems darstellt.</span><span class="sxs-lookup"><span data-stu-id="6b293-122">Traffic Manager is a DNS load balancer that can help improve the time to connect to resources, but would also require locating web services in multiple locations and is not the most cost-effective way to address this problem.</span></span>
+    - content: <span data-ttu-id="6b293-123">Bereitstellen weiterer Instanzen in der Region „USA, Osten“ zum Abfangen der zusätzlichen Last, die durch Benutzer erzeugt wird</span><span class="sxs-lookup"><span data-stu-id="6b293-123">Deploy more instances in East US to server the extra user load</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6b293-124">Durch die Bereitstellung weiterer Instanzen kann der Dienst in „USA, Osten“ zwar größere Lasten bewältigen, das Problem der Netzwerklatenz für Benutzer weltweit wird dadurch jedoch nicht behoben.</span><span class="sxs-lookup"><span data-stu-id="6b293-124">Adding more instances will increase the amount of load the service in East US can handle, but will not address the network latency for users distributed globally.</span></span>
