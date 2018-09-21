@@ -1,0 +1,35 @@
+### YamlMime:ModuleUnit
+uid: learn.distribute-data-globally-with-cosmos-db.3-multi-region-write
+metadata:
+  title: Schreiben in mehreren Regionen
+  description: Erfahren Sie, wie Sie mit Azure Cosmos DB Ihre Daten gleichzeitig in mehreren Regionen schreiben können.
+  displayType: one-column
+  ms.openlocfilehash: 516e1abccb14f0cb217689fd1d510c5060e86290
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46341952"
+title: Schreiben in mehreren Regionen
+durationInMinutes: 5
+content: >
+  [!include[](includes/3-multi-region-write.md)]
+quiz:
+  title: Wissenstest
+  questions:
+  - content: 'Wahr oder falsch: Die Vorteile des Schreibens in mehreren Regionen sind verringerte Latenz, unbegrenztes Skalierungspotenzial und verbesserte Verfügbarkeit.'
+    choices:
+    - content: Wahr
+      isCorrect: true
+      correctExplanation: Das Schreiben in mehreren Regionen bietet viele Leistungsvorteile. Beispielsweise ist die Latenz bei Schreibvorgängen geringer als in Nicht-Multimasterkonten.
+    - content: Falsch
+      isCorrect: false
+      incorrectExplanation: Das Schreiben in mehreren Regionen bietet viele Leistungsvorteile. Beispielsweise ist die Latenz bei Schreibvorgängen geringer als in Nicht-Multimasterkonten.
+  - content: Was ist die Standard-Konfliktlösungsrichtlinie in einem Multimasterkonto?
+    choices:
+    - content: „Letzter Schreiber gewinnt“
+      isCorrect: true
+      correctExplanation: Konfliktlösung ist in Cosmos DB integriert und wird auf dem Server in der Datenbank-Engine ausgeführt. „Letzter Schreiber gewinnt“ ist die Standardrichtlinie.
+    - content: Ein benutzerdefiniertes Verfahren
+      isCorrect: false
+      incorrectExplanation: Benutzerdefinierte Verfahren werden unterstützt, aber sie sind nicht der standardmäßige Mechanismus für das Behandeln von Konflikten.

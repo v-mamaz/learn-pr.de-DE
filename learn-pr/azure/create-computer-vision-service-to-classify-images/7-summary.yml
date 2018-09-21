@@ -1,0 +1,53 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.7-summary
+title: Zusammenfassung und Wissenstest
+metadata:
+  title: Zusammenfassung und Wissenstest
+  description: Zusammenfassung und Wissenstest
+  ms.date: 09/24/2018
+  author: AndrewJByrne
+  ms.author: marouill
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 931c47e93c694b823427af0464937d07a5411945
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46339784"
+durationInMinutes: 5
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: Überprüfen Sie Ihre Kenntnisse
+  questions:
+  - content: Bei der Analyse eines Bilds mit der Maschinelles Sehen-API können Sie Typen visueller Features zur Rückgabe angeben.  Welche der folgenden möglichen Antworten ist beim Aufrufen des Vorgangs „Analysieren“ ein gültiger Typ eines visuellen Features?
+    choices:
+    - content: 'Filme '
+      isCorrect: false
+      incorrectExplanation: „Filme“ ist kein gültiger Typ eines visuellen Features.
+    - content: Tiere
+      isCorrect: false
+      incorrectExplanation: „Tiere“ ist kein gültiger Typ eines visuellen Features.
+    - content: Prominente
+      isCorrect: true
+      correctExplanation: Die beiden Typen visueller Features, die Sie angeben können, sind „Prominente“ und „Orientierungspunkte“.
+  - content: Welche der folgenden möglichen Antworten beschreibt, was *intelligentes Zuschneiden* beim Generieren einer Miniaturansicht mit dem `generateThumbnail`-Vorgang bewirkt?
+    choices:
+    - content: Bilder werden von oben links zugeschnitten.
+      isCorrect: false
+      incorrectExplanation: Wenn Sie ein Bild von oben links zuschneiden, entfernen Sie vielleicht einen wichtigen, auch als „relevanten Bereich“ bezeichneten Teil des Bilds.
+    - content: Die Miniaturansicht wird über dem „relevanten Bereich“ zentriert.
+      isCorrect: true
+      correctExplanation: Wenn für den Parameter „smartCropping“ „true“ festgelegt ist, zentriert die API die Miniaturansicht mittels intelligentem Zuschneiden über dem „relevanten Bereich“. Andernfalls wird auf die Mitte zugeschnitten.
+  - content: Sie sind dabei, die Maschinelles Sehen-API in Ihre Lösung zu integrieren. Sie haben ein kognitives Dienstkonto für den Maschinelles Sehen-Dienst in der Region „USA, Osten“ erstellt. Welche der folgenden möglichen Antworten ist die korrekte Adresse für den Zugriff auf den `ocr`-Vorgang?
+    choices:
+    - content: eastus2.api.cognitive.microsoft.com/vision/v2.0/ocr
+      isCorrect: false
+      incorrectExplanation: 'Sie haben sich nicht für einen Zugriffsschlüssel registriert, um Anforderungen über diese Region auszuführen. Zur Erinnerung: Der Endpunkt gibt die Region an, die Sie bei der Registrierung ausgewählt haben, sowie die Dienst-URL und eine in der Anforderung verwendete Ressource.'
+    - content: eastus.api.cognitive.microsoft.com/vision/v2.0/describe
+      isCorrect: false
+      incorrectExplanation: Diese Adresse sendet eine Anforderung an die Entitätenressource.
+    - content: eastus.api.cognitive.microsoft.com/vision/v2.0/ocr
+      isCorrect: true
+      correctExplanation: Der Endpunkt gibt die Region an, die Sie bei der Registrierung ausgewählt haben, sowie die Dienst-URL und eine in der Anforderung verwendete Ressource.

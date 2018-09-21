@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-secrets-with-azure-key-vault.4-authentication-with-managed-identities-for-azure-resources
+title: Authentifizierung bei Key Vault mit verwalteten Identitäten für Azure-Ressourcen
+metadata:
+  title: Authentifizierung bei Key Vault mit verwalteten Identitäten für Azure-Ressourcen
+  description: Authentifizierung bei Key Vault mit verwalteten Identitäten für Azure-Ressourcen
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1b51584d19c9a0caeac0aa28e994ef32c91a9cfd
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340661"
+durationInMinutes: 4
+content: >
+  [!include[](includes/4-authentication-with-managed-identities-for-azure-resources.md)]
+quiz:
+  title: Überprüfen Sie Ihre Kenntnisse
+  questions:
+  - content: Wie ändert die Verwendung verwalteter Identitäten für Azure-Ressourcen die Art, in der eine App sich bei Azure Key Vault authentifiziert?
+    choices:
+    - content: Die App verwendet zur Authentifizierung ein Zertifikat anstelle eines Geheimnisses.
+      isCorrect: false
+      incorrectExplanation: Wenn Sie die verwaltete Identität für Ihre Web-App aktivieren, aktiviert Azure speziell für Ihre Anwendung einen eigenständigen REST-Dienst, der Token vergibt. Ihre App fordert Token nicht von Azure Active Directory, sondern von diesem Dienst an.
+    - content: Jeder Benutzer der App muss ein Kennwort eingeben.
+      isCorrect: false
+      incorrectExplanation: Wenn Sie die verwaltete Identität für Ihre Web-App aktivieren, aktiviert Azure speziell für Ihre Anwendung einen eigenständigen REST-Dienst, der Token vergibt. Ihre App fordert Token nicht von Azure Active Directory, sondern von diesem Dienst an.
+    - content: Die App fordert Token nicht von Azure Active Directory, sondern von einem Tokendienst an.
+      isCorrect: true
+      correctExplanation: Wenn Sie die verwaltete Identität für Ihre Web-App aktivieren, aktiviert Azure speziell für Ihre Anwendung einen eigenständigen REST-Dienst, der Token vergibt. Ihre App fordert Token nicht von Azure Active Directory, sondern von diesem Dienst an.
+    - content: Verwaltete Identitäten werden von Azure Key Vault automatisch erkannt und authentifiziert.
+      isCorrect: false
+      incorrectExplanation: Wenn Sie die verwaltete Identität für Ihre Web-App aktivieren, aktiviert Azure speziell für Ihre Anwendung einen eigenständigen REST-Dienst, der Token vergibt. Ihre App fordert Token nicht von Azure Active Directory, sondern von diesem Dienst an.
+  - content: Welche dieser Anweisungen beschreibt einen wesentlichen Vorteil der Verwendung verwalteter Identitäten zur Authentifizierung einer App bei Key Vault?
+    choices:
+    - content: Die Verwendung verwalteter Identitäten verbessert die Leistung der Anwendung.
+      isCorrect: false
+      incorrectExplanation: Ihre App authentifiziert sich bei dem von verwalteten Identitäten unterstützten Tokendienst mit einem Geheimnis, das zur Runtime in ihre Umgebungsvariable eingefügt wird. Hierdurch entfällt die Notwendigkeit, während der Konfiguration Geheimnisse zu speichern.
+    - content: Mit verwalteten Identitäten entfällt die Notwendigkeit, während der Konfiguration Geheimnisse zu verarbeiten.
+      isCorrect: true
+      correctExplanation: Ihre App authentifiziert sich bei dem von verwalteten Identitäten unterstützten Tokendienst mit einem Geheimnis, das zur Runtime in ihre Umgebungsvariable eingefügt wird. Hierdurch entfällt die Notwendigkeit, während der Konfiguration Geheimnisse zu speichern.
+    - content: Verwaltete Identitäten können automatisch Azure Key Vault-Berechtigungen gewähren.
+      isCorrect: false
+      incorrectExplanation: Ihre App authentifiziert sich bei dem von verwalteten Identitäten unterstützten Tokendienst mit einem Geheimnis, das zur Runtime in ihre Umgebungsvariable eingefügt wird. Hierdurch entfällt die Notwendigkeit, während der Konfiguration Geheimnisse zu speichern.
