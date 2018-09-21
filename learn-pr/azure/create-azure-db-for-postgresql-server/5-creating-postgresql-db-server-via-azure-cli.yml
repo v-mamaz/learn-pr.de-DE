@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.create-azure-db-for-postgresql.creating-postgresql-db-server-via-azure-cli
+title: <span data-ttu-id="4d14c-101">Erstellen eines Azure Database for PostgreSQL-Servers mit der Azure CLI</span><span class="sxs-lookup"><span data-stu-id="4d14c-101">Create an Azure Database for PostgreSQL server using the Azure CLI</span></span>
+metadata:
+  title: <span data-ttu-id="4d14c-102">Erstellen eines Azure Database for PostgreSQL-Servers mit der Azure CLI</span><span class="sxs-lookup"><span data-stu-id="4d14c-102">Create an Azure Database for PostgreSQL server using the Azure CLI</span></span>
+  description: <span data-ttu-id="4d14c-103">Das Erstellen eines einzelnen Azure Database for PostgreSQL-Servers mit dem Azure-Portal ist einfach.</span><span class="sxs-lookup"><span data-stu-id="4d14c-103">Creating a single Azure Database for PostgreSQL server using the Azure portal is easy.</span></span> <span data-ttu-id="4d14c-104">Das Erstellen mehrerer Datenbanken und das Durchführen der laufenden Wartung ausschließlich mit dem Portal kann jedoch mühsam werden.</span><span class="sxs-lookup"><span data-stu-id="4d14c-104">Creating multiple databases and running ongoing maintenance using only the portal may become tedious.</span></span> <span data-ttu-id="4d14c-105">Sie verwenden die Azure CLI, wenn Sie Verwaltungsaufgaben automatisieren möchten.</span><span class="sxs-lookup"><span data-stu-id="4d14c-105">You'll use the Azure CLI when you want to automate management tasks.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ef13f91bd2b6d6b97d2f0e553f7da7dd786bc0d2
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46343222"
+durationInMinutes: 7
+content: '[!include[](includes/5-creating-postgresql-db-server-via-azure-cli.md)]'

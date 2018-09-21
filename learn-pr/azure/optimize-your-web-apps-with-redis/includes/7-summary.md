@@ -1,0 +1,8 @@
+<span data-ttu-id="bb184-101">Redis Cache kann die Leistung und Skalierbarkeit von Systemen verbessern, die häufig auf Datenbanken zugreifen.</span><span class="sxs-lookup"><span data-stu-id="bb184-101">Redis cache can improve the performance and scalability of systems that rely heavily on databases.</span></span> <span data-ttu-id="bb184-102">Die Leistung wird durch vorübergehendes Kopieren häufig verwendeter Daten in einen schnellen Speicher verbessert, der sich in der Nähe der Anwendung befindet.</span><span class="sxs-lookup"><span data-stu-id="bb184-102">Performance is improved by temporarily copying frequently accessed data to fast storage located close to the application.</span></span> <span data-ttu-id="bb184-103">Im Fall von Redis Cache befindet sich dieser schnelle Speicher im Arbeitsspeicher und muss nicht von einer Datenbank vom Datenträger geladen werden.</span><span class="sxs-lookup"><span data-stu-id="bb184-103">With Redis cache, this fast storage is located in-memory with Redis cache instead of being loaded from disk by a database.</span></span>
+
+<!-- Cleanup sandbox -->
+[!include[](../../../includes/azure-sandbox-cleanup.md)]
+
+## <a name="additional-resources"></a><span data-ttu-id="bb184-104">Zusätzliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="bb184-104">Additional resources</span></span>
+
+[<span data-ttu-id="bb184-105">Migrieren vom Managed Cache Service zu Azure Redis Cache</span><span class="sxs-lookup"><span data-stu-id="bb184-105">Migrate from Managed Cache Service to Azure Redis Cache</span></span>](https://docs.microsoft.com/azure/redis-cache/cache-migrate-to-redis)

@@ -1,0 +1,42 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-azure-networking.4-reduce-latency-traffic-manager
+title: <span data-ttu-id="6e5c8-101">Reduzieren der Latenz mit dem Azure Traffic Manager</span><span class="sxs-lookup"><span data-stu-id="6e5c8-101">Reduce latency with Azure Traffic Manager</span></span>
+metadata:
+  title: <span data-ttu-id="6e5c8-102">Reduzieren der Latenz mit dem Azure Traffic Manager</span><span class="sxs-lookup"><span data-stu-id="6e5c8-102">Reduce latency with Azure Traffic Manager</span></span>
+  description: <span data-ttu-id="6e5c8-103">Erfahren Sie, wie der Traffic Manager die Latenz verringern und Resilienz zwischen geografischen Regionen herstellen kann.</span><span class="sxs-lookup"><span data-stu-id="6e5c8-103">Learn how Traffic Manager can reduce latency and create resiliency across geographic regions.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 613ac9817c513c55153429983ab65b679eea183e
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46346020"
+durationInMinutes: 7
+content: >
+  [!include[](includes/4-reduce-latency-traffic-manager.md)]
+quiz:
+  title: <span data-ttu-id="6e5c8-104">Überprüfen Ihrer Kenntnisse</span><span class="sxs-lookup"><span data-stu-id="6e5c8-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="6e5c8-105">Wie verringert der Azure Traffic Manager die Latenz?</span><span class="sxs-lookup"><span data-stu-id="6e5c8-105">How does Azure Traffic Manager reduce latency?</span></span>
+    choices:
+    - content: <span data-ttu-id="6e5c8-106">Er wählt nur die schnellsten Netzwerke zwischen Endpunkten aus.</span><span class="sxs-lookup"><span data-stu-id="6e5c8-106">It chooses only the fastest networks between endpoints.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6e5c8-107">Die Latenz kann einfach verringert werden, indem Sie den Server, der dem Benutzer am nächsten ist, auswählen.</span><span class="sxs-lookup"><span data-stu-id="6e5c8-107">Choosing the server that's closest to the user is a good way to reduce latency.</span></span>
+    - content: <span data-ttu-id="6e5c8-108">Der Traffic Manager wählt den Endpunkt aus, der dem DNS-Server des Benutzers am nächsten ist.</span><span class="sxs-lookup"><span data-stu-id="6e5c8-108">It chooses the endpoint that's closest to the user's DNS server.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="6e5c8-109">Die Latenz kann einfach verringert werden, indem Sie den Server, der dem Benutzer am nächsten ist, auswählen.</span><span class="sxs-lookup"><span data-stu-id="6e5c8-109">Choosing the server that's closest to the user is a good way to reduce latency.</span></span>
+    - content: <span data-ttu-id="6e5c8-110">Ähnlich wie Content Delivery Networks kann dieser Server Inhalt zwischenspeichern.</span><span class="sxs-lookup"><span data-stu-id="6e5c8-110">It caches content, similar to how content delivery networks work.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6e5c8-111">Die Latenz kann einfach verringert werden, indem Sie den Server, der dem Benutzer am nächsten ist, auswählen.</span><span class="sxs-lookup"><span data-stu-id="6e5c8-111">Choosing the server that's closest to the user is a good way to reduce latency.</span></span>
+  - content: <span data-ttu-id="6e5c8-112">Angenommen, Sie leben in England, aber Ihr DNS-Server befindet sich in Italien.</span><span class="sxs-lookup"><span data-stu-id="6e5c8-112">Suppose you live in England, but your DNS server is in Italy.</span></span> <span data-ttu-id="6e5c8-113">Wie leitet Traffic Manager Datenverkehr weiter?</span><span class="sxs-lookup"><span data-stu-id="6e5c8-113">How does Traffic Manager direct traffic?</span></span>
+    choices:
+    - content: <span data-ttu-id="6e5c8-114">Er wählt den Dienst aus, der England am nächsten ist.</span><span class="sxs-lookup"><span data-stu-id="6e5c8-114">It chooses the service that's closest to England.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6e5c8-115">Der Traffic Manager verwendet zum Steuern des Datenverkehrs den _DNS-Server_, der dem Benutzer am nächsten gelegen ist.</span><span class="sxs-lookup"><span data-stu-id="6e5c8-115">Traffic Manager uses the _DNS server_ that's closest to the user, to direct traffic.</span></span>
+    - content: <span data-ttu-id="6e5c8-116">Er wählt den Dienst aus, der Italien am nächsten ist.</span><span class="sxs-lookup"><span data-stu-id="6e5c8-116">It chooses the service that's closest to Italy.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="6e5c8-117">Traffic Manager verwendet zum Lenken des Datenverkehrs den _DNS-Server_, der dem Benutzer am nächsten gelegen ist.</span><span class="sxs-lookup"><span data-stu-id="6e5c8-117">Traffic Manager uses the _DNS server_ that's closest to the user, to direct traffic.</span></span>
