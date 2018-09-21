@@ -1,0 +1,56 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-secrets-with-azure-key-vault.7-summary
+title: <span data-ttu-id="41ad3-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="41ad3-101">Summary</span></span>
+metadata:
+  title: <span data-ttu-id="41ad3-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="41ad3-102">Summary</span></span>
+  description: <span data-ttu-id="41ad3-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="41ad3-103">Summary</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 87634f7fe2239916c3988825ce31307de5a545a0
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46339216"
+durationInMinutes: 3
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: <span data-ttu-id="41ad3-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="41ad3-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="41ad3-105">Welche der folgenden Aussagen beschreibt **keinen** Vorteil von Azure Key Vault?</span><span class="sxs-lookup"><span data-stu-id="41ad3-105">Which of the following is **not** a benefit of Azure Key Vault?</span></span>
+    choices:
+    - content: <span data-ttu-id="41ad3-106">Sichere Speicherung privater Benutzerdaten.</span><span class="sxs-lookup"><span data-stu-id="41ad3-106">Secure storage of private user information.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="41ad3-107">Key Vault dient zum Speichern von Anwendungs- und nicht von Benutzergeheimnissen.</span><span class="sxs-lookup"><span data-stu-id="41ad3-107">Key Vault is intended for storing application secrets, not user secrets.</span></span>
+    - content: <span data-ttu-id="41ad3-108">Synchronisierung von Anwendungsgeheimnissen zwischen mehreren Instanzen einer Anwendung.</span><span class="sxs-lookup"><span data-stu-id="41ad3-108">Synchronizing application secrets among multiple instances of an application.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="41ad3-109">Reduzierung der Notwendigkeit für Anwendungsentwickler, direkt mit Anwendungsgeheimnissen zu arbeiten.</span><span class="sxs-lookup"><span data-stu-id="41ad3-109">Reducing the need for application developers to directly handle application secrets.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="41ad3-110">Steuerung des Zugriffs auf Anwendungsgeheimnisse mit zuweisbaren Zugriffsberechtigungen.</span><span class="sxs-lookup"><span data-stu-id="41ad3-110">Controlling access to application secrets with assignable permissions.</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="41ad3-111">Welche dieser Aussagen beschreibt am besten den Authentifizierungs- und Autorisierungsprozess von Azure Key Vault?</span><span class="sxs-lookup"><span data-stu-id="41ad3-111">Which of these statements best describes Azure Key Vault's authentication and authorization process?</span></span>
+    choices:
+    - content: <span data-ttu-id="41ad3-112">Anwendungen authentifizieren sich bei einem Tresor mit dem Benutzernamen und Kennwort des Chefentwicklers und haben uneingeschränkten Zugriff auf alle Geheimnisse im Tresor.</span><span class="sxs-lookup"><span data-stu-id="41ad3-112">Applications authenticate to a vault with the username and password of the lead developer and have full access to all secrets in the vault.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="41ad3-113">Anwendungen und Benutzer authentifizieren sich mit einem Microsoft-Konto bei einem Tresor und sind berechtigt, auf bestimmte Geheimnisse zuzugreifen.</span><span class="sxs-lookup"><span data-stu-id="41ad3-113">Applications and users authenticate to a vault with a Microsoft account and are authorized to access specific secrets.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="41ad3-114">Anwendungen und Benutzer authentifizieren sich mit ihren Azure Active Directory-Identitäten bei einem Tresor und sind berechtigt, Aktionen für alle Geheimnisse im Tresor auszuführen.</span><span class="sxs-lookup"><span data-stu-id="41ad3-114">Applications and users authenticate to a vault with their Azure Active Directory identities and are authorized to perform actions on all secrets in the vault.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="41ad3-115">Für die Authentifizierung bei Key Vault werden Azure Active Directory-Identitäten verwendet.</span><span class="sxs-lookup"><span data-stu-id="41ad3-115">Authentication to Key Vault uses Azure Active Directory identities.</span></span> <span data-ttu-id="41ad3-116">Zugriffsrichtlinien werden verwendet, um Aktionen zu autorisieren, die für jedes Geheimnis im Tresor ausgeführt werden.</span><span class="sxs-lookup"><span data-stu-id="41ad3-116">Access policies are used to provide authorization for actions that apply to every secret in the vault.</span></span>
+    - content: <span data-ttu-id="41ad3-117">Anwendungen authentifizieren sich bei einem Tresor mit dem Benutzernamen und Kennwort eines Benutzers, der sich bei der Web-App anmeldet, und erhalten Zugriff auf Geheimnisse, deren Besitzer der Benutzer ist.</span><span class="sxs-lookup"><span data-stu-id="41ad3-117">Applications authenticate to a vault with the username and password of a user that signs in to the web app, and is granted access to secrets owned by that user.</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="41ad3-118">Wie trägt Azure Key Vault zum Schutz Ihrer Geheimnisse bei, nachdem sie von Ihrer App hochgeladen wurden?</span><span class="sxs-lookup"><span data-stu-id="41ad3-118">How does Azure Key Vault help protect your secrets after they have been loaded by your app?</span></span>
+    choices:
+    - content: <span data-ttu-id="41ad3-119">Azure Key Vault generiert nach jeder Verwendung automatisch ein neues Geheimnis.</span><span class="sxs-lookup"><span data-stu-id="41ad3-119">Azure Key Vault automatically generates a new secret after every use.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="41ad3-120">Die Azure Key Vault-Clientbibliothek schützt die von Ihrer Anwendung verwendeten Arbeitsspeicherbereiche, um eine ungewollte Offenlegung von Geheimnissen zu verhindern.</span><span class="sxs-lookup"><span data-stu-id="41ad3-120">The Azure Key Vault client library protects regions of memory used by your application to prevent accidental secret exposure.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="41ad3-121">Azure Key Vault verschlüsselt Geheimnisse doppelt, sodass Ihre Anwendung sie bei jeder Verwendung lokal entschlüsseln muss.</span><span class="sxs-lookup"><span data-stu-id="41ad3-121">Azure Key Vault double-encrypts secrets, requiring your app to decrypt them locally every time they're used.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="41ad3-122">Ihre Geheimnisse werden nicht geschützt.</span><span class="sxs-lookup"><span data-stu-id="41ad3-122">It doesn't protect your secrets.</span></span> <span data-ttu-id="41ad3-123">Geheimnisse sind ungeschützt, sobald sie von Ihrer Anwendung geladen werden.</span><span class="sxs-lookup"><span data-stu-id="41ad3-123">Secrets are unprotected once they're loaded by your application.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="41ad3-124">Nachdem Geheimnisse von einer App geladen wurden, sind sie nicht mehr geschützt.</span><span class="sxs-lookup"><span data-stu-id="41ad3-124">Once secrets have been loaded by an app, they are unprotected.</span></span> <span data-ttu-id="41ad3-125">Achten Sie darauf, sie weder zu protokollieren noch zu speichern oder in Clientantworten zurückzugeben.</span><span class="sxs-lookup"><span data-stu-id="41ad3-125">Make sure to not log them, store them, or return them in client responses.</span></span>
