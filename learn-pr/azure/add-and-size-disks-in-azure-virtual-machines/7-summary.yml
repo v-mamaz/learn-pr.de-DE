@@ -1,0 +1,59 @@
+### YamlMime:ModuleUnit
+uid: learn.add-and-size-disks-in-azure-virtual-machines.7-summary
+title: Zusammenfassung
+metadata:
+  title: Zusammenfassung
+  description: Zusammenfassung
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 46789dc6de38bbd51ee4545f692c015b41c0aa7f
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46344564"
+durationInMinutes: 3
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: Überprüfen Sie Ihre Kenntnisse
+  questions:
+  - content: In welchem der folgenden Blobtypen werden Dateien der virtuellen Festplatten (VHDs) in Azure Storage gespeichert?
+    choices:
+    - content: Blockblobs
+      isCorrect: false
+      incorrectExplanation: VHDs werden durch Seitenblobs in Azure Storage unterstützt. Seitenblobs sind geeignet, da sie eine Sammlung von 512 Byte großen Seiten darstellen, die für zufällige Lese- und Schreibvorgänge optimiert sind. Weder Blockblobs noch Anfügeblobs sind für die bei VHDs üblichen zufälligen Lese- und Schreibvorgänge optimiert.
+    - content: Anfügeblobs
+      isCorrect: false
+      incorrectExplanation: VHDs werden durch Seitenblobs in Azure Storage unterstützt. Seitenblobs sind geeignet, da sie eine Sammlung von 512 Byte großen Seiten darstellen, die für zufällige Lese- und Schreibvorgänge optimiert sind. Weder Blockblobs noch Anfügeblobs sind für die bei VHDs üblichen zufälligen Lese- und Schreibvorgänge optimiert.
+    - content: Seitenblobs
+      isCorrect: true
+      correctExplanation: VHDs werden durch Seitenblobs in Azure Storage unterstützt. Seitenblobs sind geeignet, da sie eine Sammlung von 512 Byte großen Seiten darstellen, die für zufällige Lese- und Schreibvorgänge optimiert sind. Weder Blockblobs noch Anfügeblobs sind für die bei VHDs üblichen zufälligen Lese- und Schreibvorgänge optimiert.
+  - content: Welche der folgenden Strategien für die Datenreplikation ist die einzige Option, die von einem Storage Premium-Konto unterstützt wird?
+    choices:
+    - content: Georedundanter Speicher mit Lesezugriff (RA-GRS)
+      isCorrect: false
+      incorrectExplanation: Ein Storage Premium-Konto unterstützt nur lokal redundanten Speicher als Replikationsoption. Beim lokal redundanten Speicher werden drei Kopien der Daten in derselben Region aufbewahrt. Für die regionale Notfallwiederherstellung müssen Sie Ihre VM-Datenträger mit Azure Backup in einer anderen Region sichern. Außerdem ist es erforderlich, ein GRS-Konto (georedundanter Speicher) als Sicherungstresor zu verwenden.
+    - content: Lokal redundanter Speicher (LRS)
+      isCorrect: true
+      correctExplanation: Ein Storage Premium-Konto unterstützt nur lokal redundanten Speicher als Replikationsoption. Beim lokal redundanten Speicher werden drei Kopien der Daten in derselben Region aufbewahrt. Für die regionale Notfallwiederherstellung müssen Sie Ihre VM-Datenträger mit Azure Backup in einer anderen Region sichern. Außerdem ist es erforderlich, ein GRS-Konto (georedundanter Speicher) als Sicherungstresor zu verwenden.
+    - content: Georedundanter Speicher (GRS)
+      isCorrect: false
+      incorrectExplanation: Ein Storage Premium-Konto unterstützt nur lokal redundanten Speicher als Replikationsoption. Beim lokal redundanten Speicher werden drei Kopien der Daten in derselben Region aufbewahrt. Für die regionale Notfallwiederherstellung müssen Sie Ihre VM-Datenträger mit Azure Backup in einer anderen Region sichern. Außerdem ist es erforderlich, ein GRS-Konto (georedundanter Speicher) als Sicherungstresor zu verwenden.
+    - content: Zonenredundanter Speicher (ZRS)
+      isCorrect: false
+      incorrectExplanation: Ein Storage Premium-Konto unterstützt nur lokal redundanten Speicher als Replikationsoption. Beim lokal redundanten Speicher werden drei Kopien der Daten in derselben Region aufbewahrt. Für die regionale Notfallwiederherstellung müssen Sie Ihre VM-Datenträger mit Azure Backup in einer anderen Region sichern. Außerdem ist es erforderlich, ein GRS-Konto (georedundanter Speicher) als Sicherungstresor zu verwenden.
+  - content: Welcher der folgenden Datenträgertypen ist nur für verwaltete Datenträger verfügbar?
+    choices:
+    - content: Standard-Solid State Drives (SSDs)
+      isCorrect: true
+      correctExplanation: Die Auswahl von verwalteten Datenträgern bietet Ihnen die Möglichkeit der Verwendung von Standard-SSDs. Dieser Datenträgertyp liegt unter Leistungs- und Kostenaspekten zwischen Standard-HDDs und Premium-SSDs.
+    - content: Standardfestplattenlaufwerke (HDDs)
+      isCorrect: false
+      incorrectExplanation: Die Auswahl von verwalteten Datenträgern bietet Ihnen die Möglichkeit, Standard-SSDs zu verwenden. Dieser Datenträgertyp liegt unter Leistungs- und Kostenaspekten zwischen Standard-HDDs und Premium-SSDs.
+    - content: Premium-SSDs (Solid State Drives)
+      isCorrect: false
+      incorrectExplanation: Die Auswahl von verwalteten Datenträgern bietet Ihnen die Möglichkeit, Standard-SSDs zu verwenden. Dieser Datenträgertyp liegt unter Leistungs- und Kostenaspekten zwischen Standard-HDDs und Premium-SSDs.

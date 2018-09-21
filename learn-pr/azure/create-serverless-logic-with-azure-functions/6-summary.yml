@@ -1,0 +1,57 @@
+### YamlMime:ModuleUnit
+uid: learn.create-serverless-logic-with-functions.6-summary
+title: Zusammenfassung
+metadata:
+  title: Zusammenfassung
+  description: Zusammenfassung
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: aae90b81a478b5f1ece9708dc528bdae43b8748b
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46339264"
+azureSandbox: true
+durationInMinutes: 3
+content: >
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: Welche der folgenden Aussagen trifft am ehesten auf die serverlose Logik zu?
+    choices:
+    - content: Von Ihnen geschriebener Code, der nicht auf dem Server ausgeführt wird.
+      isCorrect: false
+      incorrectExplanation: Serverlos bedeutet nicht, dass keine Server vorhanden sind. Es bedeutet lediglich, dass sich Entwickler nicht um ihre Server kümmern müssen. Sie werden stattdessen von einem Cloudanbieter wie Azure verwaltet.
+    - content: Von Ihnen geschriebener Code, der auf von Ihnen verwalteten Servern ausgeführt wird.
+      isCorrect: false
+      incorrectExplanation: Serverlos bedeutet nicht, dass keine Server vorhanden sind. Es bedeutet lediglich, dass sich Entwickler nicht um ihre Server kümmern müssen. Sie werden stattdessen von einem Cloudanbieter wie Azure verwaltet.
+    - content: Von Ihnen geschriebener Code, der auf Servern ausgeführt wird, die von einem Cloudanbieter verwaltet werden.
+      isCorrect: true
+      correctExplanation: Serverlos bedeutet nicht, dass keine Server vorhanden sind. Es bedeutet lediglich, dass sich Entwickler nicht um ihre Server kümmern müssen. Sie werden stattdessen von einem Cloudanbieter wie Azure verwaltet.
+  - content: Wie heißt der Container, der Funktionen in eine logische Einheit gruppiert, um die Verwaltung, Bereitstellung und Freigabe von Ressourcen zu vereinfachen?
+    choices:
+    - content: Ressourcengruppe
+      isCorrect: false
+      incorrectExplanation: Eine Funktions-App ist eine Möglichkeit, mit der Sie Ihre Funktionen organisieren und kollektiv verwalten können. Eine Funktions-App besteht aus mehreren individuellen Funktionen, die zusammen vom Azure App Service verwaltet werden. Der Tarif, die kontinuierliche Bereitstellung und die Laufzeitversion sind für alle Funktionen in einer Funktions-App gleich.
+    - content: Funktions-App
+      isCorrect: true
+      correctExplanation: Eine Funktions-App ist eine Möglichkeit, mit der Sie Ihre Funktionen organisieren und kollektiv verwalten können. Eine Funktions-App besteht aus mehreren individuellen Funktionen, die zusammen vom Azure App Service verwaltet werden. Der Tarif, die kontinuierliche Bereitstellung und die Laufzeitversion sind für alle Funktionen in einer Funktions-App gleich.
+    - content: Funktionssammlung
+      isCorrect: false
+      incorrectExplanation: Eine Funktions-App ist eine Möglichkeit, mit der Sie Ihre Funktionen organisieren und kollektiv verwalten können. Eine Funktions-App besteht aus mehreren individuellen Funktionen, die zusammen vom Azure App Service verwaltet werden. Der Tarif, die kontinuierliche Bereitstellung und die Laufzeitversion sind für alle Funktionen in einer Funktions-App gleich.
+  - content: Durch Anfordern eines funktionsspezifischen API-Schlüssels bei jedem Aufruf wird die Funktion vor unbekannten HTTP-Aufrufern geschützt. Welche der folgenden Optionen ist der Namensheader in den HTTP-Anforderungen, die diesen Schlüssel enthalten müssen?
+    choices:
+    - content: x-functions-key
+      isCorrect: true
+      correctExplanation: Die API kann in einer Abfragezeichenfolgenvariablen namens „code“ oder im HTTP-Header „x-functions-key“ enthalten sein.
+    - content: x-requested-with
+      isCorrect: false
+      incorrectExplanation: Die API kann in einer Abfragezeichenfolgenvariablen namens „code“ oder im HTTP-Header „x-functions-key“ enthalten sein.
+    - content: x-csrf-token
+      isCorrect: false
+      incorrectExplanation: Die API kann in einer Abfragezeichenfolgenvariablen namens „code“ oder im HTTP-Header „x-functions-key“ enthalten sein.

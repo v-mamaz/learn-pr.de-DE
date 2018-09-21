@@ -1,0 +1,3 @@
+Sie haben erfahren, wie Sie Azure Functions verwenden, um Dienste für die Geschäftslogik in der Cloud zu hosten. Das ist eine hervorragende Möglichkeit, gehostete Dienste zu Ihrer Lösung hinzuzufügen, die mit Ihrem Unternehmen wachsen können. Sie konzentrieren sich auf den Code in der Sprache Ihrer Wahl – und Azure verwaltet die Infrastruktur. Zum schnellen und einfachen Erstellen von komplexen und stabilen serverlosen Workflows kann Functions in andere Dienste wie Event Grid, GitHub, Twilio, Microsoft Graph und Logic Apps integriert werden.
+
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

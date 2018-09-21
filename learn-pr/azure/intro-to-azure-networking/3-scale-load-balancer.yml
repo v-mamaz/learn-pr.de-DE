@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-azure-networking.3-scale-load-balancer
+title: Skalieren mit dem Azure Load Balancer
+metadata:
+  title: Skalieren mit dem Azure Load Balancer
+  description: Erfahren Sie, wie Azure Load Balancer zu mehr Skalierbarkeit und Resilienz innerhalb einer geografischen Region verhilft.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 749fae4e396cf551df9b15c3a7434e5bcbfdf640
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46345996"
+durationInMinutes: 7
+content: >
+  [!include[](includes/3-scale-load-balancer.md)]
+quiz:
+  title: Überprüfen Ihrer Kenntnisse
+  questions:
+  - content: Welche Aussage über Azure Load Balancer ist richtig?
+    choices:
+    - content: Sie müssen Azure Load Balancer verwenden, wenn Sie Datenverkehr auf Ihre ausgeführten virtuellen Computer in Azure verteilen möchten.
+      isCorrect: false
+      incorrectExplanation: Wenn ein System nicht verfügbar ist, beendet Azure Load Balancer das Senden von Datenverkehr an dieses System. Der Datenverkehr wird dann an einen der reagierenden Server weitergeleitet.
+    - content: Azure Load Balancer funktioniert nur mit Datenverkehr, der auf eine Internetverbindung zurückzuführen ist.
+      isCorrect: false
+      incorrectExplanation: Wenn ein System nicht verfügbar ist, beendet Azure Load Balancer das Senden von Datenverkehr an dieses System. Der Datenverkehr wird dann an einen der reagierenden Server weitergeleitet.
+    - content: Azure Load Balancer verteilt Datenverkehr zwischen ähnlichen Systemen, sodass Ihre Dienste noch hochverfügbarer werden.
+      isCorrect: true
+      correctExplanation: Wenn ein System nicht verfügbar ist, beendet Azure Load Balancer das Senden von Datenverkehr an dieses System. Der Datenverkehr wird dann an einen der reagierenden Server weitergeleitet.
