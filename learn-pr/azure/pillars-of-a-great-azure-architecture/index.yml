@@ -1,0 +1,41 @@
+### YamlMime:Module
+uid: learn.pillars-of-a-great-azure-architecture
+metadata:
+  title: Säulen einer guten Azure-Architektur
+  description: Sie möchten großartige Dinge in Azure gestalten, aber Sie sind sich nicht sicher, was das genau bedeutet. Die Verwendung von Schlüsselprinzipien in Ihrer gesamten Architektur (unabhängig von der Wahl der Technologie) kann Ihnen helfen, Ihre Architektur zu entwerfen, zu erstellen und kontinuierlich zu verbessern.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 783d733f0dccff12fd700fc49cd28dd3a5edc549
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46345665"
+title: Säulen einer guten Azure-Architektur
+summary: Sie möchten großartige Dinge in Azure gestalten, aber Sie sind sich nicht sicher, was das genau bedeutet. Die Verwendung von Schlüsselprinzipien in Ihrer gesamten Architektur (unabhängig von der Wahl der Technologie) kann Ihnen helfen, Ihre Architektur zu entwerfen, zu erstellen und kontinuierlich zu verbessern.
+abstract: >
+  In diesem Modul wird Folgendes thematisiert:
+
+  - Identifizieren der wichtigsten Säulen für die Architektur einer Lösung in der Cloud
+
+  - Anwenden von Schlüsselprinzipien zum Erstellen einer soliden architektonischen Grundlage
+prerequisites: Keine
+iconUrl: /learn/achievements/pillars-of-a-great-azure-architecture.svg
+levels:
+- intermediate
+roles:
+- solution-architect
+products:
+- azure
+units:
+- learn.pillars-of-a-great-azure-architecture.1-introduction
+- learn.pillars-of-a-great-azure-architecture.2-pillars-of-a-great-azure-architecture
+- learn.pillars-of-a-great-azure-architecture.3-design-for-security
+- learn.pillars-of-a-great-azure-architecture.4-design-for-performance-and-scalability
+- learn.pillars-of-a-great-azure-architecture.5-design-for-availability-and-recoverability
+- learn.pillars-of-a-great-azure-architecture.6-design-for-efficiency-and-operations
+- learn.pillars-of-a-great-azure-architecture.7-summary
+achievement: learn.pillars-of-a-great-azure-architecture.badge

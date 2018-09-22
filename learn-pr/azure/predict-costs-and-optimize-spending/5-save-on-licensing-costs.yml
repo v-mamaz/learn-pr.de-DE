@@ -1,0 +1,39 @@
+### YamlMime:ModuleUnit
+uid: learn.predict-costs-and-optimize-spending.5-save-on-licensing-costs
+title: <span data-ttu-id="f8fac-101">Einsparungen bei Lizenzierungskosten</span><span class="sxs-lookup"><span data-stu-id="f8fac-101">Save on licensing costs</span></span>
+metadata:
+  title: <span data-ttu-id="f8fac-102">Einsparungen bei Lizenzierungskosten</span><span class="sxs-lookup"><span data-stu-id="f8fac-102">Save on licensing costs</span></span>
+  description: <span data-ttu-id="f8fac-103">Einsparungen bei Lizenzierungskosten.</span><span class="sxs-lookup"><span data-stu-id="f8fac-103">Save on licensing costs.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 84b17392aac8b66ed9245d50a4a8eccdadfd424e
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340973"
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-save-on-licensing-costs.md)]
+quiz:
+  title: <span data-ttu-id="f8fac-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="f8fac-104">Check your knowledge</span></span>
+  questions:
+  - content: '<span data-ttu-id="f8fac-105">Wahr oder falsch: Wenn Sie bereits über Windows Server-Lizenzen verfügen, müssen Sie für diese erneut in Azure bezahlen.</span><span class="sxs-lookup"><span data-stu-id="f8fac-105">True or false: If you already have Windows Server licenses, you have to pay for them again on Azure.</span></span>'
+    choices:
+    - content: <span data-ttu-id="f8fac-106">Wahr</span><span class="sxs-lookup"><span data-stu-id="f8fac-106">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f8fac-107">Unter bestimmten Umständen können Sie den Hybrid-Vorteil für Windows Server nutzen und nur die Linux-Rate bezahlen.</span><span class="sxs-lookup"><span data-stu-id="f8fac-107">Under certain circumstances, you can utilize the hybrid benefit for Windows Server and pay only the Linux rate.</span></span>
+    - content: <span data-ttu-id="f8fac-108">Falsch</span><span class="sxs-lookup"><span data-stu-id="f8fac-108">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="f8fac-109">Unter bestimmten Umständen können Sie den Hybrid-Vorteil für Windows Server nutzen und nur die Linux-Rate bezahlen.</span><span class="sxs-lookup"><span data-stu-id="f8fac-109">Under certain circumstances, you can utilize the hybrid benefit for Windows Server and pay only the Linux rate.</span></span>
+  - content: '<span data-ttu-id="f8fac-110">Wahr oder falsch: Azure verfügt über geldsparende Optionen für Test- und Entwicklungsserver.</span><span class="sxs-lookup"><span data-stu-id="f8fac-110">True or false: Azure has money-saving options for test and development servers.</span></span>'
+    choices:
+    - content: <span data-ttu-id="f8fac-111">Wahr</span><span class="sxs-lookup"><span data-stu-id="f8fac-111">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="f8fac-112">Durch die Vorteile „Azure Enterprise Dev/Test“ und „Azure Dev/Test Pay-As-You-Go“ erhalten Sie verschiedene Rabatte, insbesondere für Windows-Workloads, sodass Lizenzgebühren und Kosten nur auf Basis der Linux-Rate für virtuelle Computer entstehen.</span><span class="sxs-lookup"><span data-stu-id="f8fac-112">The Azure Enterprise Dev/Test and Azure Pay-As-You-Go Dev/Test benefits give you several discounts, most notably for Windows workloads, eliminating license charges and billing you only at the Linux rate for virtual machines.</span></span> <span data-ttu-id="f8fac-113">Dies gilt ebenfalls für SQL Server und andere Microsoft-Software, die in Visual Studio-Abonnements enthalten ist.</span><span class="sxs-lookup"><span data-stu-id="f8fac-113">This also applies to SQL Server and any other Microsoft software that is covered under a Visual Studio subscription.</span></span>
+    - content: <span data-ttu-id="f8fac-114">Falsch</span><span class="sxs-lookup"><span data-stu-id="f8fac-114">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f8fac-115">Durch die Vorteile „Azure Enterprise Dev/Test“ und „Azure Dev/Test Pay-As-You-Go“ erhalten Sie verschiedene Rabatte, insbesondere für Windows-Workloads, sodass Lizenzgebühren und Kosten nur auf Basis der Linux-Rate für virtuelle Computer entstehen.</span><span class="sxs-lookup"><span data-stu-id="f8fac-115">The Azure Enterprise Dev/Test and Azure Pay-As-You-Go Dev/Test benefits give you several discounts, most notably for Windows workloads, eliminating license charges and billing you only at the Linux rate for virtual machines.</span></span> <span data-ttu-id="f8fac-116">Dies gilt ebenfalls für SQL Server und andere Microsoft-Software, die in Visual Studio-Abonnements enthalten ist.</span><span class="sxs-lookup"><span data-stu-id="f8fac-116">This also applies to SQL Server and any other Microsoft software that is covered under a Visual Studio subscription.</span></span>

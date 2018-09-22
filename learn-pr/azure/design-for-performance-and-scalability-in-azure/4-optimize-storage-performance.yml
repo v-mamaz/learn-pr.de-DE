@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.4-optimize-storage-performance
+title: <span data-ttu-id="83455-101">Optimieren der Speicherleistung</span><span class="sxs-lookup"><span data-stu-id="83455-101">Optimize storage performance</span></span>
+metadata:
+  title: <span data-ttu-id="83455-102">Optimieren der Speicherleistung</span><span class="sxs-lookup"><span data-stu-id="83455-102">Optimize storage performance</span></span>
+  description: <span data-ttu-id="83455-103">In dieser Einheit wird beschrieben, wie Sie die Speicherleistung Ihrer Architektur optimieren.</span><span class="sxs-lookup"><span data-stu-id="83455-103">In this unit we'll discuss how to optimize storage performance for your architecture</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ea8a0e9197d9b3f10960b6978df0c00ab5c80e14
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46346209"
+durationInMinutes: 9
+content: >
+  [!include[](includes/4-optimize-storage-performance.md)]
+quiz:
+  title: <span data-ttu-id="83455-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="83455-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="83455-105">Was ist mehrsprachige Persistenz?</span><span class="sxs-lookup"><span data-stu-id="83455-105">What is polyglot persistence?</span></span>
+    choices:
+    - content: <span data-ttu-id="83455-106">Die Nutzung von Azure SQL-Datenbank zur Speicherung all Ihrer Daten</span><span class="sxs-lookup"><span data-stu-id="83455-106">Using Azure SQL Database to store all of your data</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="83455-107">Das Speichern aller Daten in einer einzelnen Technologie ist nicht die Definition von mehrsprachiger Persistenz.</span><span class="sxs-lookup"><span data-stu-id="83455-107">Storing all data in a single technology is not the definition of polyglot persistence.</span></span>
+    - content: <span data-ttu-id="83455-108">Eine Möglichkeit, Verbindungen für Datenübertragungen aufrechtzuerhalten</span><span class="sxs-lookup"><span data-stu-id="83455-108">A way to keep connections alive for data transfers</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="83455-109">Keepalives sind Methoden für das Aufrechterhalten von Verbindungen für Datenübertragungen und stehen in keinem Zusammenhang mit mehrsprachiger Persistenz.</span><span class="sxs-lookup"><span data-stu-id="83455-109">Keepalives are methods of keeping connections alive for data transfers and are not related to polyglot persistence.</span></span>
+    - content: <span data-ttu-id="83455-110">Die Verwendung unterschiedlicher Speichertechnologien für unterschiedliche Zwecke innerhalb Ihrer Anwendung</span><span class="sxs-lookup"><span data-stu-id="83455-110">The usage of different data storage technologies for different purposes in your application</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="83455-111">Mehrsprachige Persistenz ist die Verwendung verschiedener Datenspeichertechnologien in derselben Anwendung, sodass Sie für jeden Datentyp den besten Ansatz verwenden können.</span><span class="sxs-lookup"><span data-stu-id="83455-111">Polyglot persistence is the usage of different data storage technologies in the same application so you can use the best approach for each type of data.</span></span>
+    - content: <span data-ttu-id="83455-112">Ein Ansatz zur Behandlung von Fehlern bei transienten Daten</span><span class="sxs-lookup"><span data-stu-id="83455-112">An approach to deal with transient data faults</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="83455-113">Obwohl dies beim Umgang mit vorübergehenden Datenfehlern in einer Anwendungsarchitektur von Vorteil ist, steht es in keinem Zusammenhang mit mehrsprachiger Persistenz.</span><span class="sxs-lookup"><span data-stu-id="83455-113">While dealing with transient data faults is beneficial in an application architecture, it is not related to polyglot persistence.</span></span>
+  - content: '<span data-ttu-id="83455-114">Wahr oder falsch: Redis Cache verbessert die Leistung Ihrer Anwendung, indem eine Momentaufnahme der Daten im Arbeitsspeicher gespeichert wird.</span><span class="sxs-lookup"><span data-stu-id="83455-114">True or false: Redis Cache improves the performance of your application by storing a snapshot of data in memory.</span></span>'
+    choices:
+    - content: <span data-ttu-id="83455-115">Wahr</span><span class="sxs-lookup"><span data-stu-id="83455-115">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="83455-116">Redis Cache speichert Anwendungsdaten im Arbeitsspeicher. Dies führt zu schnellen Abrufzeiten und einer Verbesserung der Anwendungsleistung bei häufig verwendeten Daten.</span><span class="sxs-lookup"><span data-stu-id="83455-116">Redis Cache will store application data in memory, leading to fast retrieval times and an improvement in application performance related to frequently accessed data.</span></span>
+    - content: <span data-ttu-id="83455-117">Falsch</span><span class="sxs-lookup"><span data-stu-id="83455-117">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="83455-118">Redis Cache speichert Anwendungsdaten im Arbeitsspeicher. Dies führt zu schnellen Abrufzeiten und einer Verbesserung der Anwendungsleistung bei häufig verwendeten Daten.</span><span class="sxs-lookup"><span data-stu-id="83455-118">Redis Cache will store application data in memory, leading to fast retrieval times and an improvement in application performance related to frequently accessed data.</span></span>
