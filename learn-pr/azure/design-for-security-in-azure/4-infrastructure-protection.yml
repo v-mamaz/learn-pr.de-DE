@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.4-infrastructure-protection
+title: Infrastrukturschutz
+metadata:
+  title: Infrastrukturschutz
+  description: In dieser Einheit wird erläutert, wie Sie den Zugriff auf Ihre Infrastruktur schützen.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0a765eaf5c91cc055266d283760bf94f6ba1efa7
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46340997"
+durationInMinutes: 10
+content: >
+  [!include[](includes/4-infrastructure-protection.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: Auf welche der folgenden Bereiche kann die rollenbasierte Azure-Zugriffssteuerung nicht angewendet werden?
+    choices:
+    - content: Abonnement
+      isCorrect: false
+      incorrectExplanation: Rollenbasierte Zugriffssteuerung kann nur auf Azure-Ressourcen angewendet werden.
+    - content: Ressourcengruppe
+      isCorrect: false
+      incorrectExplanation: Rollenbasierte Zugriffssteuerung kann nur auf Azure-Ressourcen angewendet werden.
+    - content: Linux-Dateisystem
+      isCorrect: true
+      correctExplanation: Rollenbasierte Zugriffssteuerung kann nur auf Azure-Ressourcen angewendet werden.
+    - content: Ressource
+      isCorrect: false
+      incorrectExplanation: Rollenbasierte Zugriffssteuerung kann nur auf Azure-Ressourcen angewendet werden.
+  - content: 'Wahr oder Falsch: Eine verwaltete Identität für Azure-Ressourcen kann einem virtuellen Computer zugewiesen werden, damit dieser über Berechtigungen verfügt, andere virtuelle Computer zu starten und zu beenden.'
+    choices:
+    - content: Wahr
+      isCorrect: true
+      correctExplanation: Verwaltete Identitäten für Azure-Ressourcen stellen eine Methode zum Zuweisen einer Identität zu Diensten dar. Durch diese Zuweisung kann rollenbasierte Zugriffssteuerung zum Verwalten von Azure-Diensten gewährt werden, beispielsweise zum Starten und Beenden von virtuellen Computern?
+    - content: Falsch
+      isCorrect: false
+      incorrectExplanation: Verwaltete Identitäten für Azure-Ressourcen stellen eine Methode zum Zuweisen einer Identität zu Diensten dar. Durch diese Zuweisung kann rollenbasierte Zugriffssteuerung zum Verwalten von Azure-Diensten gewährt werden, beispielsweise zum Starten und Beenden von virtuellen Computern?

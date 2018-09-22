@@ -1,0 +1,24 @@
+Das Ziel von Machine Learning (ML) besteht darin, Merkmale zu finden, mit denen ein Modell trainiert werden kann, um Eingabedaten (etwa Bild-, Zeitreihen- oder Audiodaten) in eine bestimmte Ausgabe (etwa Untertitel, Preiswerte oder Transkriptionen) umzuwandeln. Bei herkömmlicher Data Science werden die Merkmale häufig manuell ausgewählt. Diese manuell erstellten Merkmale werden in einen flachen Lernalgorithmus eingespeist, wie beispielsweise in das in der folgenden Abbildung dargestellte Netzwerk. 
+
+![Canonical-Beispiel eines Deep Neural Network mit Feed Forward.](../media/2-image1.PNG)
+
+Bei Deep Learning (DL) basiert die Extraktion von Merkmalen auf einem Lernprozess. Dabei werden Eingaben als Vektoren dargestellt und mithilfe von einigen intelligenten linearen Algebraoperationen in eine bestimmte Ausgabe umgewandelt.  Die Ausgabe des Modells wird unter Verwendung einer Gleichung (Verlustfunktion) mit der erwarteten Ausgabe abgeglichen. Der Wert, der von der Verlustfunktion für jede Trainingseingabe zurückgegeben wird, dient zur Optimierung des Modells, sodass beim nächsten Mal Merkmale mit einem geringeren Verlustwert extrahiert werden können. Dieser Vorgang wird als *Training* bezeichnet. 
+
+Durch Training lernen diese Algorithmen die leistungsstärksten und geeignetsten Merkmale für das jeweilige Dataset. Sie werden aufgrund der Anzahl der Schichten im Netzwerk als „deep“ (tief) bezeichnet.  
+
+Die Reihe von Matrixoperationen, die wir als Teil der linearen Algebrakomponente berechnen, sind rechenintensiv. Diese Operationen können oft parallel verarbeitet werden. Dies macht sie zu idealen Kandidaten für spezialisierte Berechnungen wie Graphics Processing Units (GPUs), um effizientes Computing bereitzustellen.
+
+Das Einrichten einer Umgebung für Deep Learning ist nicht trivial. Wie sieht das Hardwaresetup aus, trainieren Sie Ihr Modell mit CPUs oder GPUs und wie viel Speicherplatz sollten diese Computer aufweisen? Für das Erstellen und Trainieren eines Deep Learning-Netzwerks muss die richtige Software installiert sein. Sie haben viele verschiedene Deep Learning-Frameworks zur Auswahl, aber Sie müssen auch die Abhängigkeiten zwischen den einzelnen Komponenten berücksichtigen. Nach der aufwändigen Einrichtung finden Sie vielleicht ein großartiges Modell, das für ein anderes Framework erstellt wurde, das Sie gerne testen würden. Sie möchten nicht den Aufwand betreiben, ein neues Deep Learning-Framework mit all seinen Abhängigkeiten auf Ihrem Computer einzurichten. Data Science Virtual Machine kann diese Probleme lösen. 
+
+## <a name="what-is-a-data-science-virtual-machine-dsvm"></a>Was ist Data Science Virtual Machine?
+
+![Infografik zu Data Science Virtual Machine, die zeigt, wie sie mit mehreren gängigen Tools vorinstalliert, konfiguriert und getestet wird, die häufig für Datenanalyse, maschinelles Lernen und KI-Training verwendet werden.](../media/2-image2.PNG)
+
+Data Science Virtual Machine ist ein VM-Image in Azure. In ihm sind viele beliebte Data Science- und Deep Learning-Tools bereits installiert und konfiguriert. Diese Images enthalten gängige Data Science- und Machine Learning-Tools, darunter Microsoft R Server Developer Edition, Microsoft R Open, Anaconda Python, Julia, Jupyter Notebooks, Visual Studio Code, RStudio, xgboost und viele mehr.  Statt auf eigene Faust einen vergleichbaren Arbeitsbereich bereitzustellen, können Sie eine DSVM nutzen. Dies spart Ihnen viel Zeit bei den mit Installation, Konfiguration und Paketverwaltung einhergehenden Prozessen. Nachdem Ihre DSVM bereitgestellt wurde, können Sie sofort mit der Arbeit an Ihrem Data Science-Projekt beginnen.
+
+Die DSVM kann zum Modelltraining mit Deep Learning-Algorithmen auf Basis von GPU-Hardware (Grafikprozessoren) verwendet werden. Durch die VM-Skalierungsfunktionen der Azure-Cloud hilft DSVM Ihnen beim Einsatz von GPU-basierter Hardware in der Cloud nach Bedarf. Sie können zu einem GPU-basierten virtuellen Computer wechseln, wenn Sie große Modelle trainieren oder schnelle Berechnungen benötigen, während Sie den gleichen Betriebssystemdatenträger beibehalten. Die Windows Server 2016-Edition von DSVM enthält vorinstallierte GPU-Treiber und -Frameworks sowie GPU-Versionen der Deep Learning-Frameworks. Unter Linux ist Deep Learning für GPUs sowohl in CentOS- als auch in Ubuntu-DSVMs aktiviert. Sie können die Ubuntu-, CentOS- oder Windows 2016-Edition von Data Science Virtual Machine auch auf CPU-basierten virtuellen Azure-Computern bereitstellen. In diesem Fall werden jedoch die Deep Learning-Frameworks auf den CPU-Modus zurückgesetzt. 
+
+Weitere Informationen dazu, welche Aufgaben Sie mit einer DSVM ausführen können, finden Sie unter [Data Science mit einer Linux Data Science Virtual Machine in Azure](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/linux-dsvm-walkthrough)
+
+
+
