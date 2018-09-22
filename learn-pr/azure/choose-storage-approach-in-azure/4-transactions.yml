@@ -1,0 +1,42 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-storage-approach-in-azure.4-transactions
+metadata:
+  title: Gruppieren mehrerer Vorgänge in einer Transaktion
+  description: Gruppieren mehrerer Vorgänge in einer Transaktion
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 898422fb6f083d12691d5488ef3ea9b6ef596384
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46344127"
+title: Gruppieren mehrerer Vorgänge in einer Transaktion
+durationInMinutes: 5
+content: >
+  [!include[](includes/4-transactions.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: Welche Art von Transaktionsdatenbank-System eignet sich am besten für Produktdaten?
+    choices:
+    - content: OLAP
+      isCorrect: false
+      incorrectExplanation: OLTP-Systeme unterstützen eine große Anzahl von Benutzern, bieten schnelle Reaktionszeiten, verarbeiten große Datenvolumen, sind hochverfügbar und eignen sich besonders für kleine bzw. relativ einfache Transaktionen.
+    - content: OLTP
+      isCorrect: true
+      correctExplanation: OLTP-Systeme unterstützen eine große Anzahl von Benutzern, bieten schnelle Reaktionszeiten, verarbeiten große Datenvolumen, sind hochverfügbar und eignen sich besonders für kleine bzw. relativ einfache Transaktionen.
+  - content: Angenommen, die Vorgänge zur Bestandsaktualisierung und Zahlungsabwicklung erfolgen in derselben Transaktion. Ein Benutzer versucht, eine Gutschrift für den vollen Betrag zu verrechnen und hat die genau gleiche Bestellung gleichzeitig per Handy und Laptop aufgegeben. Die Datenbank im Hintergrund ist eine ACID-konforme Datenbank. Was passiert?
+    choices:
+    - content: Beide Aufträge werden unter Verrechnung der Gutschrift verarbeitet.
+      isCorrect: false
+      incorrectExplanation: Sobald der zweite Auftrag feststellt, dass die Gutschrift bereits verrechnet wurde, wird für die Transaktion ein Rollback ausgeführt.
+    - content: Ein Auftrag wird unter Verrechnung der Gutschrift verarbeitet, während der andere Auftrag den Restbestand der Artikel im Einkaufswagen aktualisiert, ohne den Auftrag abzuwickeln.
+      isCorrect: false
+      incorrectExplanation: Sobald der zweite Auftrag feststellt, dass die Gutschrift bereits verrechnet wurde, wird für die Transaktion ein Rollback ausgeführt.
+    - content: Ein Auftrag wird unter Verrechnung der Gutschrift verarbeitet, der andere wird nicht verarbeitet.
+      isCorrect: true
+      correctExplanation: Sobald der zweite Auftrag feststellt, dass die Gutschrift bereits verrechnet wurde, wird für die Transaktion ein Rollback ausgeführt.

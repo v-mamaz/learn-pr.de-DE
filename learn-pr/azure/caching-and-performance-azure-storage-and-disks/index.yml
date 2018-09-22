@@ -1,0 +1,47 @@
+### YamlMime:Module
+uid: learn.caching-and-performance-azure-storage-and-disks
+metadata:
+  title: Zwischenspeicherung und Leistung bei Azure-Speicherdatenträgern
+  description: Informationen zur Datenträgerleistung in Azure, und wie die Zwischenspeicherung dazu beitragen kann, den Lese- und Schreibzugriff auf den Speicher zu optimieren. Vergleichen Sie die Cachetypen von Azure, und erfahren Sie, wie Sie das Zwischenspeichern aktivieren, um die Leistung von Azure-VM-Datenträgern zu optimieren.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: e2c7f3f112c4cde8b9d4081a90a25a89ed69810d
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46341136"
+title: Zwischenspeicherung und Leistung bei Azure-Speicherdatenträgern
+summary: Daten so schnell wie möglich zu verschieben, ist gut für das Unternehmen. Erfahren Sie mehr über die Datenträgerleistung in Azure, wie das Zwischenspeichern dazu beitragen kann, den Lese- und Schreibzugriff auf den Speicher zu optimieren, und wie Sie das Zwischenspeichern aktivieren können, um die Leistung von Azure VM-Datenträgern zu optimieren.
+abstract: >
+  In diesem Modul lernen Sie Folgendes:
+
+  - Beschreiben der wichtigsten Überlegungen zur Datenträgerleistung in Azure
+
+  - Beschreiben der Auswirkungen des Zwischenspeicherns auf die Datenträgerleistung in Azure
+
+  - Aktivieren und Verwalten von Cacheeinstellungen mit dem Azure-Portal
+
+  - Aktivieren und Verwalten von Cacheeinstellungen mit PowerShell
+prerequisites: Keine
+iconUrl: /learn/achievements/caching-and-performance-azure-storage-and-disks.svg
+levels:
+- intermediate
+roles:
+- developer
+products:
+- azure
+- azure-virtual-machines
+- azure-storage
+units:
+- learn.caching-and-performance-azure-storage-and-disks.1-introduction
+- learn.caching-and-performance-azure-storage-and-disks.2-effect-of-caching-on-disk-performance-in-azure
+- learn.caching-and-performance-azure-storage-and-disks.3-enable-and-configure-azure-vm-disk-cache-by-using-the-azure-portal
+- learn.caching-and-performance-azure-storage-and-disks.4-exercise-enable-and-configure-azure-vm-disk-cache-by-using-the-azure-portal
+- learn.caching-and-performance-azure-storage-and-disks.5-manage-cache-settings-with-powershell
+- learn.caching-and-performance-azure-storage-and-disks.6-exercise-manage-cache-settings-with-powershell
+- learn.caching-and-performance-azure-storage-and-disks.7-summary
+achievement: learn.caching-and-performance-azure-storage-and-disks.badge

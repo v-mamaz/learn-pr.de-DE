@@ -1,0 +1,5 @@
+In diesem Modul haben Sie mehrere Dokumente erstellt, die jeweils ein Produkt in Ihrem Produktkatalog darstellen. Sie haben die verschiedenen für Ihre Daten ausführbaren Abfragetypen kennengelernt und diese anschließend ausgeführt. Außerdem haben Sie gelernt, wie Sie komplexe Vorgänge ausführen und diese mithilfe von gespeicherten Prozeduren und benutzerdefinierten Funktionen auf der Datenbank-Engine speichern. 
+
+Diese Grundlagen bieten Ihnen einen Einblick in die Funktionsweise von Azure Cosmos DB und erläutern, wie Sie diesen Dienst als Basis für umfangreiche Datenbankprojekte (z.B. E-Commerce-Anwendungen) verwenden können, die schnelle Abfragen und das Anzeigen von Daten in einem Katalog erfordern bzw. Vorgänge und Transaktionen für Daten in der Datenbank ausführen.
+
+[!include[](../../../includes/azure-sandbox-cleanup.md)]
