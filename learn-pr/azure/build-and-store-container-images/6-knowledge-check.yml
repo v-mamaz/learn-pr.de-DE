@@ -1,0 +1,57 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-container-registry.knowledge-check
+title: <span data-ttu-id="06dec-101">Wissensbeurteilung</span><span class="sxs-lookup"><span data-stu-id="06dec-101">Knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="06dec-102">Wissenstest</span><span class="sxs-lookup"><span data-stu-id="06dec-102">Knowledge check</span></span>
+  description: <span data-ttu-id="06dec-103">Wissenstest zu Azure Container Registry</span><span class="sxs-lookup"><span data-stu-id="06dec-103">Azure Container Registry knowledge check.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 89fbd644018188c7f24fc6c5fbb5ee129559c6ad
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46343977"
+durationInMinutes: 5
+quiz:
+  title: <span data-ttu-id="06dec-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="06dec-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="06dec-105">Welche der folgenden Aussagen beschreibt keinen Vorteil von Azure Container Registry?</span><span class="sxs-lookup"><span data-stu-id="06dec-105">Which of the following is not a benefit of using Azure Container Registry?</span></span>
+    choices:
+    - content: <span data-ttu-id="06dec-106">Replizieren von Containerimages in vielen Azure-Rechenzentren.</span><span class="sxs-lookup"><span data-stu-id="06dec-106">Replicate container images to many Azure datacenters.</span></span>
+      incorrectExplanation: <span data-ttu-id="06dec-107">Dies ist mit der Georeplikationsfunktion von Azure Container Registry möglich.</span><span class="sxs-lookup"><span data-stu-id="06dec-107">The Azure Container Registry geo-replication feature enables this.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="06dec-108">Abrufen von Containerimages aus Container Registry mithilfe einer beliebigen Docker-Containertechnologie.</span><span class="sxs-lookup"><span data-stu-id="06dec-108">Pull container images from Container Registry using any Docker container-related technology.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="06dec-109">Container Registry kann mit sämtlichen Docker-bezogenen Technologien verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="06dec-109">Container Registry can be used with all Docker-related technology.</span></span>
+    - content: <span data-ttu-id="06dec-110">Bereitstellen von Containerimages zur öffentlichen Verwendung für Pullvorgänge.</span><span class="sxs-lookup"><span data-stu-id="06dec-110">Make container images publicly available for pull operations.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="06dec-111">Container Registry ist eine private Registrierung.</span><span class="sxs-lookup"><span data-stu-id="06dec-111">Container Registry is a private registry.</span></span> <span data-ttu-id="06dec-112">In Container Registry gespeicherte Images sind nicht ohne Authentifizierung zugänglich.</span><span class="sxs-lookup"><span data-stu-id="06dec-112">Images stored in Container Registry cannot be accessed without authentication.</span></span>
+    - content: <span data-ttu-id="06dec-113">Erstellen von Containerimages ohne lokal installierte Docker-Tools.</span><span class="sxs-lookup"><span data-stu-id="06dec-113">Build container images without the need for locally installed Docker tools.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="06dec-114">Containerimages können in der Cloud mit Azure Container Registry Build erstellt werden.</span><span class="sxs-lookup"><span data-stu-id="06dec-114">Container images can be built in the cloud using Azure Container Registry Build.</span></span>
+  - content: <span data-ttu-id="06dec-115">Welche Authentifizierungsmethode wird für Azure Container Registry empfohlen?</span><span class="sxs-lookup"><span data-stu-id="06dec-115">What is the recommended authentication method for Azure Container Registry?</span></span>
+    choices:
+    - content: <span data-ttu-id="06dec-116">Administratorkonto</span><span class="sxs-lookup"><span data-stu-id="06dec-116">Admin account.</span></span>
+      incorrectExplanation: <span data-ttu-id="06dec-117">Es ist zwar möglich, für Azure Container Registry ein Administratorkonto zu erstellen, doch dies ist nicht die empfohlene Authentifizierungsmethode.</span><span class="sxs-lookup"><span data-stu-id="06dec-117">Although an admin account can be created for Azure Container Registry, this is not the recommended authentication method.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="06dec-118">Benutzername und Kennwort</span><span class="sxs-lookup"><span data-stu-id="06dec-118">User name and password.</span></span>
+      incorrectExplanation: <span data-ttu-id="06dec-119">Die Azure-Containerregistrierung kann mit einem Administratorkonto aktiviert werden, wodurch Benutzername und Kennwort vorhanden sind.</span><span class="sxs-lookup"><span data-stu-id="06dec-119">An Azure container registry can be admin-account enabled, which provides a user name and password.</span></span> <span data-ttu-id="06dec-120">Dabei handelt es sich jedoch nicht um die empfohlene Authentifizierungsmethode.</span><span class="sxs-lookup"><span data-stu-id="06dec-120">However, this is not the recommended authentication method.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="06dec-121">Azure-Dienstprinzipal</span><span class="sxs-lookup"><span data-stu-id="06dec-121">Azure service principal.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="06dec-122">Mit Azure-Dienstprinzipalen kann der Zugriff auf Containerimages in Azure Container Registry präzise gesteuert werden.</span><span class="sxs-lookup"><span data-stu-id="06dec-122">Azure service principals provide granular access to container images in Azure Container Registry.</span></span> <span data-ttu-id="06dec-123">Durch die Verwendung eines Dienstprinzipals können schreibgeschützter Zugriff und Vollzugriff auf die Containerregistrierung gewährt werden.</span><span class="sxs-lookup"><span data-stu-id="06dec-123">Using a service principal, read-only and full access can be provided to the container registry.</span></span>
+    - content: <span data-ttu-id="06dec-124">Keine Authentifizierung</span><span class="sxs-lookup"><span data-stu-id="06dec-124">No authentication.</span></span>
+      incorrectExplanation: <span data-ttu-id="06dec-125">Azure Container Registry ist eine private Registrierung, auf die ohne Authentifizierung nicht zugegriffen werden kann.</span><span class="sxs-lookup"><span data-stu-id="06dec-125">Azure Container Registry is a private registry and cannot be accessed without authentication..</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="06dec-126">Georeplikation ist in der Standard-SKU von Container Registry verfügbar.</span><span class="sxs-lookup"><span data-stu-id="06dec-126">Geo-replication is available in the Container Registry Standard SKU.</span></span>
+    choices:
+    - content: <span data-ttu-id="06dec-127">Richtig.</span><span class="sxs-lookup"><span data-stu-id="06dec-127">True.</span></span>
+      incorrectExplanation: <span data-ttu-id="06dec-128">Georeplikation ist nur in der Premium-SKU verfügbar.</span><span class="sxs-lookup"><span data-stu-id="06dec-128">Geo-replication is only available in the Premium SKU.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="06dec-129">Falsch.</span><span class="sxs-lookup"><span data-stu-id="06dec-129">False.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="06dec-130">Georeplikation ist nur in der Premium-SKU verfügbar.</span><span class="sxs-lookup"><span data-stu-id="06dec-130">Geo-replication is only available in the Premium SKU.</span></span>
