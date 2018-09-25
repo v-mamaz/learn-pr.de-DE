@@ -30,7 +30,7 @@ Vergessen Sie nicht, dass Sie die Verbindungszeichenfolge im Azure-Portal im Abs
 Sie können sie auch über die Azure CLI oder PowerShell-Tools abrufen. Verwenden Sie den Azure CLI-Befehl. Denken Sie daran, `<name>` durch den spezifischen Namen des Speicherkontos zu ersetzen, das Sie erstellt haben. Sie können `az storage account list` verwenden, wenn Sie eine Erinnerung benötigen.
 
 ```azurecli
-az storage account show-connection-string --name <name> --resource-group <rgn>[Sandbox resource group name]</rgn>
+az storage account show-connection-string --name <name> --resource-group <rgn>[sandbox resource group name]</rgn>
 ```
 
 Dieser Befehl gibt einen JSON-Block mit Ihrer Verbindungszeichenfolge zurück. Er enthält den Namen und den Kontoschlüssel des Speicherkontos:

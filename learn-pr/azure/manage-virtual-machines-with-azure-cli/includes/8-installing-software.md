@@ -31,7 +31,7 @@ Er wird fehlschlagen, weil der virtuelle Linux-Computer den Port 80 (`http`) dur
 1. Geben Sie Folgendes in Cloud Shell ein, um Port 80 zu öffnen:
 
 ```azurecli
-az vm open-port --port 80 --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM
+az vm open-port --port 80 --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM
 ```
 
 Es dauert einen Moment, die Netzwerkregel hinzuzufügen und den Port über die Firewall zu öffnen. Versuchen Sie `curl` erneut. Dieses Mal sollten Daten zurückgegeben werden. Sie können die Seite auch in einem Browser anzeigen.

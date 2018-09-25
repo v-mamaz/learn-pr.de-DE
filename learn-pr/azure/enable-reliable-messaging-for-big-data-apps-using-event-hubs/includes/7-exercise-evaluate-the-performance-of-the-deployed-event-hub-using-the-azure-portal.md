@@ -2,7 +2,7 @@ In dieser Einheit verwenden Sie das Azure-Portal, um zu überprüfen, ob Ihr Eve
 
 ## <a name="view-event-hub-activity"></a>Anzeigen der Event Hub-Aktivität
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
 
 1. Suchen Sie über die Suchleiste nach Ihrem Event Hub, und öffnen Sie ihn.
 

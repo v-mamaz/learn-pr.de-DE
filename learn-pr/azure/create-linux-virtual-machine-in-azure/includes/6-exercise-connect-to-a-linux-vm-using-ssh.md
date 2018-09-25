@@ -9,7 +9,7 @@ Zum Herstellen der Verbindung eines virtuellen Azure-Computers mit einem SSH-Cli
 
 ### <a name="get-the-public-ip-address"></a>Abrufen der öffentlichen IP-Adresse
 
-1. Stellen Sie im [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) sicher, dass der Bereich **Übersicht** für den zuvor erstellten virtuellen Computer geöffnet ist. Sie finden den virtuellen Computer unter **Alle Ressourcen**, falls Sie diesen öffnen müssen. Im Bereich „Übersicht“ finden Sie zahlreiche Informationen zum virtuellen Computer.
+1. Stellen Sie im [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) sicher, dass der Bereich **Übersicht** für den zuvor erstellten virtuellen Computer geöffnet ist. Sie finden den virtuellen Computer unter **Alle Ressourcen**, falls Sie diesen öffnen müssen. Im Bereich „Übersicht“ finden Sie zahlreiche Informationen zum virtuellen Computer.
 
     - Sie können sehen, ob er ausgeführt wird
     - Sie können ihn beenden oder neu starten
@@ -67,7 +67,7 @@ Alle zusätzlichen Laufwerke, die Sie neu erstellen, müssen initialisiert und f
 
 ## <a name="install-software-onto-the-vm"></a>Installieren von Software auf dem virtuellen Computer
 
-Wie Sie sehen können, erlaubt SSH Ihnen die Arbeit mit dem virtuellen Linux-Computer wie mit einem lokalen Computer. Sie können diesen virtuellen Computer wie jeden anderen Linux-Computer verwalten: Sie können Software installieren, Rollen konfigurieren, Features anpassen und andere alltägliche Aufgaben ausführen. Wir beschäftigen uns hier erst einmal mit dem Installieren der Software.
+Wie Sie sehen können, erlaubt SSH Ihnen die Arbeit mit dem virtuellen Linux-Computer wie mit einem lokalen Computer. Sie können diesen virtuellen Computer wie jeden anderen Linux-Computer verwalten: Software installieren, Rollen konfigurieren, Features anpassen und andere alltägliche Aufgaben durchführen. Wir beschäftigen uns hier erst einmal mit dem Installieren der Software.
 
 Es gibt mehrere Optionen zum Installieren von Software auf dem virtuellen Computer. Zunächst können Sie (wie bereits erwähnt) `scp` zum Kopieren lokaler Dateien von Ihrem Computer auf den virtuellen Computer verwenden. Damit können Sie Daten oder benutzerdefinierte Anwendungen kopieren, die Sie ausführen möchten.
 
@@ -82,7 +82,7 @@ Apache ist in den Standardsoftwarerepositorys von Ubuntu verfügbar. Daher erfol
     ```bash
     sudo apt-get update
     ```
-    
+
 1. Installieren Sie im nächsten Schritt Apache:
 
     ```bash
@@ -116,7 +116,7 @@ Apache ist in den Standardsoftwarerepositorys von Ubuntu verfügbar. Daher erfol
     ```
     > [!NOTE]
     > Die Ausführung dieser Art von Befehlen ist einfach, aber es handelt sich um einen manuellen Prozess. Wenn Sie häufig Software installieren müssen, sollten Sie die Automatisierung des Prozesses mithilfe von Skripts in Betracht ziehen.
-    
-1. Schließlich können wir versuchen, die Standardseite über die öffentliche IP-Adresse abzurufen. Aber obwohl der Webserver auf der VM ausgeführt wird, erhalten Sie keine gültige Verbindung oder Antwort. Kennen Sie den Grund?
+
+1. Abschließend können wir versuchen, die Standardseite über die öffentliche IP-Adresse abzurufen. Aber obwohl der Webserver auf der VM ausgeführt wird, erhalten Sie keine gültige Verbindung oder Antwort. Kennen Sie den Grund?
 
 Wir müssen einen weiteren Schritt ausführen, um mit dem Webserver interagieren zu können. Unser virtuelles Netzwerk blockiert die eingehende Anforderung. Dies ist das Standardverhalten. Wir können dies über die Konfiguration ändern. Dies sehen wir uns als Nächstes an.

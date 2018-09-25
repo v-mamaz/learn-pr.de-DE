@@ -87,7 +87,7 @@ Schließen Sie den Editor über das Kontextmenü „...“.
 1. Führen Sie das Skript aus.
 
     ```powershell
-    .\ConferenceDailyReset.ps1 <rgn>[Sandbox resource group name]</rgn>
+    .\ConferenceDailyReset.ps1 <rgn>[sandbox resource group name]</rgn>
     ```
     
 Die Skriptausführung dauert ein paar Minuten. Vergewissern Sie sich anschließend, dass es erfolgreich ausgeführt wurde. Sehen Sie sich dazu die Ressourcen an, die nun in Ihrer Ressourcengruppe zur Verfügung stehen:

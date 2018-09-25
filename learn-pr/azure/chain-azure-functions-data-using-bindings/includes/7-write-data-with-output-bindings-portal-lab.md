@@ -17,7 +17,7 @@ Azure Functions unterstützt nicht nur Eingabebindungen für verschiedene Integr
 
 ## <a name="create-an-http-triggered-function"></a>Erstellen einer durch HTTP ausgelösten Funktion
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
 
 2. Navigieren Sie im Portal zu der Funktions-App, die Sie in diesem Modul erstellt haben.
 
@@ -37,17 +37,17 @@ Azure Functions unterstützt nicht nur Eingabebindungen für verschiedene Integr
     |Sprache     | **JavaScript**        |
     |Name     |   [!INCLUDE [func-name-add](./func-name-add.md)]     |
     | Autorisierungsstufe | **Funktion** |
-    
+
 6. Wählen Sie **Erstellen** aus, um Ihre Funktion zu erstellen. Durch diese Aktion wird die Datei **index.js** im Code-Editor geöffnet und eine Standardimplementierung der durch HTTP ausgelösten Funktion angezeigt.
 
     > [!NOTE]
     > In dieser Übung nutzen Sie aus Zeitgründen den *Code* und die *Konfiguration* aus der letzten Einheit als Ausgangspunkt.
 
-7. Ersetzen Sie den gesamten Code in der Datei **index.js** durch den Code im folgenden Codeausschnitt. Wählen Sie anschließend **Speichern** aus, um die Änderung zu speichern: 
+7. Ersetzen Sie den gesamten Code in der Datei **index.js** durch den Code im folgenden Codeausschnitt. Wählen Sie anschließend **Speichern** aus, um die Änderung zu speichern:
 
    [!code-javascript[](../code/find-bookmark-single.js)]
 
-   Dieser Code kommt Ihnen vermutlich vertraut vor, was daran liegt, dass es sich um die Implementierung der [!INCLUDE [func-name-find](./func-name-find.md)]-Funktion handelt. Wie zu erwarten, funktioniert die Funktion noch nicht, da die gleichen Bindungen erst noch definiert werden müssen.  
+   Dieser Code kommt Ihnen vermutlich vertraut vor, was daran liegt, dass es sich um die Implementierung der [!INCLUDE [func-name-find](./func-name-find.md)]-Funktion handelt. Wie zu erwarten, funktioniert die Funktion noch nicht, da die gleichen Bindungen erst noch definiert werden müssen.
 
 1. Öffnen Sie die Datei **function.json** über die [!INCLUDE [func-name-add](./func-name-add.md)]-Funktion.
 
@@ -95,7 +95,7 @@ An dieser Stelle ist es Zeit für einen kurzen Rückblick. Bisher haben Sie im W
 
 ## <a name="define-azure-cosmos-db-output-binding"></a>Definieren einer Azure Cosmos DB-Ausgabebindung
 
-Als Nächstes definieren Sie eine neue Ausgabebindung nicht über die Benutzeroberfläche, sondern durch das manuelle Aktualisieren der Konfigurationsdatei *function.json*. 
+Als Nächstes definieren Sie eine neue Ausgabebindung nicht über die Benutzeroberfläche, sondern durch das manuelle Aktualisieren der Konfigurationsdatei *function.json*.
 
 1. Achten Sie darauf, dass die Datei *function.json* für [!INCLUDE [func-name-add](./func-name-add.md)] im Editor geöffnet ist.
 
@@ -134,16 +134,16 @@ Deutlich wird hier, dass die neue Funktion [!INCLUDE [func-name-add](./func-name
 
 1. Wählen Sie im Funktionsmenü auf der linken Seite **Integrieren** aus, um die Registerkarte „Integration“ zu öffnen.
 
-2. Klicken Sie in der Spalte **Ausgaben** auf die Option **+ New Output** (+ Neue Ausgabe).  
+2. Klicken Sie in der Spalte **Ausgaben** auf die Option **+ New Output** (+ Neue Ausgabe).
     Eine Liste aller möglichen Ausgabebindungstypen wird angezeigt.
 
-3. Wählen Sie in der Liste **Azure Queue Storage** und anschließend **Auswählen** aus.  
+3. Wählen Sie in der Liste **Azure Queue Storage** und anschließend **Auswählen** aus.
     Hierdurch wird die Ausgabekonfigurationsseite für Azure Queue Storage geöffnet.
 
    Als Nächstes richten Sie eine Verbindung mit dem Speicherkonto ein. Dort wird Ihre Warteschlange gehostet.
 
-4. Wählen Sie rechts vom Feld **Speicherkontoverbindung** **Neu** aus.  
-   Der Auswahlbereich **Speicherkonto** wird geöffnet. 
+4. Wählen Sie rechts vom Feld **Speicherkontoverbindung** **Neu** aus.
+   Der Auswahlbereich **Speicherkonto** wird geöffnet.
 
 5. Zu Beginn dieses Moduls haben Sie zusammen mit der Funktions-App ein Speicherkonto erstellt. Es wird in diesem Bereich aufgelistet – wählen Sie es aus. Das Feld **Speicherkontoverbindung** wird mit dem Namen einer Verbindung aufgefüllt. Wenn Sie sich den Wert der Verbindungszeichenfolge ansehen möchten, wählen Sie **Wert anzeigen** aus.
 
@@ -186,7 +186,7 @@ Da nun mehrere Ausgabebindungen vorhanden sind, werden die Tests etwas komplizie
 
 1. Wählen Sie bei ausgewählter Funktion [!INCLUDE [func-name-add](./func-name-add.md)] im Funktionen-App-Portal das ganz links angezeigte Menüelement für Tests aus, um es zu erweitern.
 
-2. Wählen Sie das Menüelement **Test** aus, und überprüfen Sie, ob der Testbereich geöffnet ist. Der folgende Screenshot zeigt, wie der Bildschirm aussehen sollte: 
+2. Wählen Sie das Menüelement **Test** aus, und überprüfen Sie, ob der Testbereich geöffnet ist. Der folgende Screenshot zeigt, wie der Bildschirm aussehen sollte:
 
     ![Screenshot mit erweitertem Bereich für den Funktionstest](../media/7-test-panel-open-small.png)
 
@@ -202,13 +202,13 @@ Da nun mehrere Ausgabebindungen vorhanden sind, werden die Tests etwas komplizie
     }
     ```
 
-4. Wählen Sie unten im Testbereich **Ausführen** aus. 
+4. Wählen Sie unten im Testbereich **Ausführen** aus.
 
-5. Überprüfen Sie, ob im Fenster **Ausgabe** die Nachricht „Bookmark already exists“ (Ein Lesezeichen ist bereits vorhanden.) angezeigt wird, wie im folgenden Diagramm dargestellt: 
+5. Überprüfen Sie, ob im Fenster **Ausgabe** die Nachricht „Bookmark already exists“ (Ein Lesezeichen ist bereits vorhanden.) angezeigt wird, wie im folgenden Diagramm dargestellt:
 
     ![Screenshot mit Anzeige des Testbereichs und dem Ergebnis eines fehlgeschlagenen Tests](../media/7-test-exists-small.png)
 
-6. Ersetzen Sie den Inhalt des Anforderungstexts durch die folgende JSON-Nutzlast: 
+6. Ersetzen Sie den Inhalt des Anforderungstexts durch die folgende JSON-Nutzlast:
 
     ```json
     {
@@ -226,27 +226,27 @@ Herzlichen Glückwunsch! [!INCLUDE [func-name-add](./func-name-add.md)] funktion
 
 ### <a name="verify-that-a-message-is-written-to-the-queue"></a>Überprüfen, ob der Warteschlange eine Nachricht hinzugefügt wird
 
-Azure Queue Storage-Warteschlangen werden in einem Speicherkonto gehostet. Sie haben es in dieser Übung bereits beim Erstellen der Ausgabebindung ausgewählt. 
+Azure Queue Storage-Warteschlangen werden in einem Speicherkonto gehostet. Sie haben es in dieser Übung bereits beim Erstellen der Ausgabebindung ausgewählt.
 
-1. Geben Sie im Hauptsuchfeld im Azure-Portal **Speicherkonten** ein. Wählen Sie anschließend in den Suchergebnissen unter **Dienste** den Eintrag **Speicherkonten** aus. 
+1. Geben Sie im Hauptsuchfeld im Azure-Portal **Speicherkonten** ein. Wählen Sie anschließend in den Suchergebnissen unter **Dienste** den Eintrag **Speicherkonten** aus.
 
       ![Screenshot mit Suchergebnissen für das Speicherkonto im Hauptsuchfeld](../media/7-search-for-sa-small.png)
 
-2. Wählen Sie in der Liste der angezeigten Speicherkonten das Speicherkonto aus, das Sie zum Erstellen der Ausgabebindung **newmessage** verwendet haben.  
+2. Wählen Sie in der Liste der angezeigten Speicherkonten das Speicherkonto aus, das Sie zum Erstellen der Ausgabebindung **newmessage** verwendet haben.
    Die Einstellungen des Speicherkontos werden im Hauptfenster des Portals angezeigt.
 
-3. Wählen Sie in der Liste **Dienste** das Element **Warteschlangen** aus.  
+3. Wählen Sie in der Liste **Dienste** das Element **Warteschlangen** aus.
    Es wird eine Liste der Warteschlangen angezeigt, die von diesem Speicherkonto gehostet werden. Überprüfen Sie, ob die Warteschlange **bookmarks-post-process** vorhanden ist, wie auf dem folgenden Screenshot dargestellt:
 
       ![Screenshot mit Warteschlange in der Liste der Warteschlangen, die von diesem Speicherkonto gehostet werden](../media/7-q-in-list-small.png)
 
-4. Wählen Sie **bookmarks-post-process** aus, um die Warteschlange zu öffnen.  
-   Die Nachrichten, die sich in der Warteschlange befinden, werden in einer Liste angezeigt. Wenn alles planmäßig verlaufen ist, enthält die Warteschlange die Nachricht, die Sie beim Hinzufügen eines Lesezeichens zur Datenbank veröffentlicht haben. Die Anzeige sollte folgendermaßen aussehen: 
+4. Wählen Sie **bookmarks-post-process** aus, um die Warteschlange zu öffnen.
+   Die Nachrichten, die sich in der Warteschlange befinden, werden in einer Liste angezeigt. Wenn alles planmäßig verlaufen ist, enthält die Warteschlange die Nachricht, die Sie beim Hinzufügen eines Lesezeichens zur Datenbank veröffentlicht haben. Die Anzeige sollte folgendermaßen aussehen:
 
-    ![Screenshot der Nachricht in der Warteschlange](../media/7-message-in-q-small.png)    
+    ![Screenshot der Nachricht in der Warteschlange](../media/7-message-in-q-small.png)
 
    In diesem Beispiel wurde der Nachricht eine eindeutige ID zugewiesen, und das Feld **NACHRICHTENTEXT** enthält das Lesezeichen im JSON-Zeichenfolgenformat.
 
-5. Sie können die Funktion noch weiter testen, indem Sie im Testbereich innerhalb des Anforderungstexts neue IDs und URLs festlegen und die Funktion ausführen. Beobachten Sie die Warteschlange eine Zeit lang, um zu sehen, wie neue Nachrichten eintreffen. Sie können außerdem einen Blick auf die Datenbank werfen, um zu überprüfen, ob neue Einträge hinzugefügt wurden. 
+5. Sie können die Funktion noch weiter testen, indem Sie im Testbereich innerhalb des Anforderungstexts neue IDs und URLs festlegen und die Funktion ausführen. Beobachten Sie die Warteschlange eine Zeit lang, um zu sehen, wie neue Nachrichten eintreffen. Sie können außerdem einen Blick auf die Datenbank werfen, um zu überprüfen, ob neue Einträge hinzugefügt wurden.
 
 In dieser Aufgabe haben Sie mehr über Bindungen und Ausgabebindungen erfahren und Daten in Ihre Azure Cosmos DB-Datenbank geschrieben. Zusätzlich haben Sie eine weitere Ausgabebindung hinzugefügt und Nachrichten an eine Azure-Warteschlange übermittelt. Dadurch wurde deutlich, wie Sie mit Bindungen Daten von Eingangsquellen an unterschiedliche Ziele weiterleiten. Sie mussten weder Datenbankcode schreiben noch Verbindungszeichenfolgen selbst verwalten. Stattdessen haben Sie Bindungen deklarativ konfiguriert, wodurch die Absicherung der Verbindungen und die Skalierung der Funktion sowie der Verbindungen von der Plattform durchgeführt wurden.

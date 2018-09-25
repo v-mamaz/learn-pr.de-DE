@@ -33,7 +33,7 @@ Hierzu listen Sie mithilfe des Hilfsprogramms `az` Ihre Datenbanken auf und zeig
     Ersetzen Sie `<server-name>` durch den Namen Ihres logischen Azure SQL-Servers. Abhängig von dem Blatt, auf dem Sie sich im Portal befinden, wird hierfür ggf. ein vollqualifizierter Domänenname (<Servername>.database.windows.net) angezeigt. Sie benötigen jedoch nur den logischen Namen ohne das Suffix „.database.windows.net“.
 
     ```azurecli
-    az configure --defaults group=<rgn>[Sandbox resource group name]</rgn> sql-server=<server-name>
+    az configure --defaults group=<rgn>[sandbox resource group name]</rgn> sql-server=<server-name>
     ```
 
 1. Führen Sie `az sql db list` aus, um alle Datenbanken auf dem logischen Azure SQL-Server aufzulisten.

@@ -89,7 +89,7 @@ Führen Sie nach Abschluss der Ausführung den folgenden Befehl aus, um sich die
 
 ```azurecli
 az servicebus topic subscription show \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --namespace-name <namespace-name> \
     --topic-name salesperformancemessages \
     --name Americas \
@@ -176,7 +176,7 @@ Wenn das Programm keine Nachrichten mehr ausgibt, in denen darauf hingewiesen wi
 
 ```azurecli
 az servicebus topic subscription show \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --namespace-name <namespace-name> \
     --topic-name salesperformancemessages \
     --name Americas \

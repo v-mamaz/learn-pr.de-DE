@@ -33,7 +33,7 @@ Verwenden Sie Azure Cloud Shell mit der Azure CLI, um ein Speicherkonto zu erste
 Führen Sie den folgenden Befehl aus, um das Speicherkonto zu erstellen. 
 
 ```azurecli
-az storage account create --name <your-unique-storage-account-name> --resource-group <rgn>[Sandbox resource group name]</rgn> --location eastus --kind StorageV2
+az storage account create --name <your-unique-storage-account-name> --resource-group <rgn>[sandbox resource group name]</rgn> --location eastus --kind StorageV2
 ```
 
 > [!NOTE]

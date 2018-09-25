@@ -16,7 +16,7 @@ Verschiedene Parameter können der API zur Verfügung gestellt werden, um die ri
 
 ## <a name="generate-a-thumbnail"></a>Generieren von Miniaturansichten
 
-In diesem Beispiel wird das folgende Bild verwendet. Sie können den Befehl aber auch mit URLs zu anderen Bildern verwenden. 
+In diesem Beispiel wird das folgende Bild verwendet. Sie können den Befehl aber auch mit URLs zu anderen Bildern verwenden.
 
 ![Bild eines weißen Hunds, der in grünem Gras sitzt.](../media/4-dog.png)
 
@@ -37,7 +37,7 @@ In diesem Beispiel fordern wir den Dienst auf, eine Miniaturansicht zu erstellen
 
 ## <a name="view-the-generated-thumbnail"></a>Anzeigen der generierten Miniaturansicht
 
-Die generierte Miniaturansicht befindet sich in Ihrem Azure Cloud Shell-Speicherkonto. Wir haben die Datei **thumbnail.jpg** genannt. 
+Die generierte Miniaturansicht befindet sich in Ihrem Azure Cloud Shell-Speicherkonto. Wir haben die Datei **thumbnail.jpg** genannt.
 
 Die Cloud Shell in Microsoft Learn bietet keine Möglichkeit, Dateien herunterzuladen, aber Sie können diese Anweisungen befolgen, um die Miniaturansicht über das Azure-Portal herunterzuladen.
 
@@ -48,15 +48,15 @@ Die Cloud Shell in Microsoft Learn bietet keine Möglichkeit, Dateien herunterzu
     ls -l
     ```
 
-    
+
 
 1. Führen Sie den folgenden Befehl zum Verschieben von `thumbnail.jpg` in den Ordner „clouddrive“ aus.
 
     ```azurecli
     mv ~/thumbnail.jpg ~/clouddrive
     ```
-1. Melden Sie sich am [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) mit demselben Konto an, über das Sie die Sandbox aktiviert haben.
-1. Wählen Sie im Bereich **Alle Ressourcen** des Portaldashboards das Speicherkonto aus, dessen Namen mit `cloudshell` beginnt. 
+1. Melden Sie sich am [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit demselben Konto an, über das Sie die Sandbox aktiviert haben.
+1. Wählen Sie im Bereich **Alle Ressourcen** des Portaldashboards das Speicherkonto aus, dessen Namen mit `cloudshell` beginnt.
 1. Wählen Sie im Speicherkontobereich **Storage-Explorer**, **DATEIFREIGABEN** und dann die Dateifreigabe in dieser Sammlung mit dem Namen aus, der mit **cloudshellfiles*** beginnt.
 1. Wählen Sie die Datei *thunbnail.jpg* und dann **Herunterladen** im oberen Menü aus, um das Bild anzuzeigen.
 

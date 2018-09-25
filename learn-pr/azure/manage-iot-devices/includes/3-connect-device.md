@@ -9,7 +9,7 @@ Auf der Grundlage der Features und des Erweiterungsmodells von Azure IoT Hub kö
 
 Um mit dem Sammeln von Daten aus dem Raspberry Pi-Simulator beginnen zu können, müssen Sie zunächst eine IoT Hub-Instanz erstellen.
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
 
 2. Klicken Sie links oben im Azure-Portal auf **Ressource erstellen**.
 
@@ -18,7 +18,7 @@ Um mit dem Sammeln von Daten aus dem Raspberry Pi-Simulator beginnen zu können,
 ![Screenshot der Navigation zu IoT Hub im Azure-Portal](../media/fa40d1bc51bc4490f657e3c1a8371b5b.png)
 
 4. Geben Sie im Bereich **IoT Hub** die folgenden Informationen für Ihre IoT Hub-Instanz ein:
-   
+
    - **Abonnement:** Verwenden Sie für dieses Beispiel das Standardabonnement.
    - **Ressourcengruppe:** Verwenden Sie die vorhandene Ressourcengruppe. Indem Sie alle verwandten Ressourcen in der gleichen Gruppe zusammenfassen, können Sie sie alle zusammen verwalten. Wenn Sie also beispielsweise die Ressourcengruppe löschen, werden alle Ressourcen in dieser Gruppe gelöscht.
    - **Name:** Erstellen Sie einen eindeutigen Namen für Ihre IoT Hub-Instanz. Ist der eingegebene Name verfügbar, wird ein grünes Häkchen angezeigt.
@@ -28,7 +28,7 @@ Um mit dem Sammeln von Daten aus dem Raspberry Pi-Simulator beginnen zu können,
 
     > [!IMPORTANT]
     > Der IoT Hub wird öffentlich als DNS-Endpunkt ermittelbar sein, sodass Sie beim Benennen die Verwendung von sensiblen Informationen vermeiden sollten.
-    
+
     ![Fenster mit IoT Hub-Grundeinstellungen](./../media/dbb7319388673b8ee0e0b407536156c0.png)
 
 1. Klicken Sie auf **Nächster Schritt: Größe festlegen und skalieren**, um die Erstellung Ihres IoT-Hubs fortzusetzen.
@@ -61,7 +61,7 @@ Ein Gerät muss bei Ihrer IoT Hub-Instanz registriert werden, um eine Verbindung
 
     > [!IMPORTANT]
     > Diese Geräte-ID ist unter Umständen in den Protokollen sichtbar, die für den Kundensupport und die Problembehandlung erfasst werden. Stellen Sie also sicher, dass Sie beim Benennen keine sensiblen Informationen verwenden.
-    
+
 3. Klicken Sie auf **Speichern**.
 4. Öffnen Sie das Gerät nach der Erstellung in der Liste im Bereich **IoT-Geräte**.
 5. Kopieren Sie **Verbindungszeichenfolge – Primärschlüssel** zur späteren Verwendung.
@@ -73,7 +73,7 @@ Ein Gerät muss bei Ihrer IoT Hub-Instanz registriert werden, um eine Verbindung
 1. Öffnen Sie den [Azure IoT-Simulator für den Raspberry Pi](https://azure-samples.github.io/raspberry-pi-web-simulator?azure-portal=true).
 1. Ersetzen Sie den Platzhalter in Zeile 15 durch die soeben kopierte Verbindungszeichenfolge für das Azure IoT Hub-Gerät.
 1. Klicken Sie auf die Schaltfläche `Run`, oder geben Sie im Konsolenfenster `npm start` ein, um die Anwendung auszuführen.
-   
+
     ![Ersetzen der Geräte-Verbindungszeichenfolge](../media/Line15.png)
 
 1. Die folgende Ausgabe sollte angezeigt werden, die die Sensordaten und Nachrichten zeigt, die an Ihren IoT Hub gesendet werden.
@@ -82,7 +82,7 @@ Ein Gerät muss bei Ihrer IoT Hub-Instanz registriert werden, um eine Verbindung
 
 ## <a name="read-the-telemetry-from-your-hub"></a>Lesen der Telemetriedaten aus Ihrem Hub
 Nun passiert Folgendes: IoT Hub empfängt die vom simulierten Gerät gesendeten Gerät-zu-Cloud-Nachrichten. Um das zu sehen, schauen wir uns kurz an, wie Azure IoT Hub die eingehenden Daten verarbeitet. Klicken Sie in Ihrer IoT Hub-Instanz unter **Überwachung** auf **Metriken**. Warten Sie ein paar Minuten, bis die Daten eintreffen.
-   
+
 ![IoT Hub-Metriken](../media/HubMetrics.png)
 
 

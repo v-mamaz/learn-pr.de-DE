@@ -2,7 +2,7 @@ In dieser Einheit laden Sie Ihre ASP.NET Core-Anwendung in Azure App Service hoc
 
 ## <a name="create-a-staging-deployment-slot"></a>Erstellen eines Stagingbereitstellungsslots
 
-1. Wechseln Sie zurück zum [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true).
+1. Wechseln Sie zurück zum [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true).
 
 1. Öffnen Sie die zuvor erstellte App Service-Ressource (die Web-App). Sie können sie erneut öffnen, indem Sie unter **Alle Ressourcen** oder in der enthaltenden Ressourcengruppe unter **Ressourcengruppen** nach der App suchen.
 

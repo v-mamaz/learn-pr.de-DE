@@ -61,10 +61,10 @@ Ihre App ist fertig. Stellen Sie sie bereit, und sehen Sie sich an, wie sie funk
 Der App-Name muss global eindeutig sein. Daher müssen Sie für `<your-unique-app-name>` einen eigenen Namen auswählen.
 
 ```azurecli
-az appservice plan create --name blob-exercise-plan --resource-group <rgn>[Sandbox resource group name]</rgn>
-az webapp create --name <your-unique-app-name> --plan blob-exercise-plan --resource-group <rgn>[Sandbox resource group name]</rgn>
+az appservice plan create --name blob-exercise-plan --resource-group <rgn>[sandbox resource group name]</rgn>
+az webapp create --name <your-unique-app-name> --plan blob-exercise-plan --resource-group <rgn>[sandbox resource group name]</rgn>
 CONNECTIONSTRING=$(az storage account show-connection-string --name <your-unique-storage-account-name> --output tsv)
-az webapp config appsettings set --name <your-unique-app-name> --resource-group <rgn>[Sandbox resource group name]</rgn> --settings AzureStorageConfig:ConnectionString=$CONNECTIONSTRING AzureStorageConfig:FileContainerName=files
+az webapp config appsettings set --name <your-unique-app-name> --resource-group <rgn>[sandbox resource group name]</rgn> --settings AzureStorageConfig:ConnectionString=$CONNECTIONSTRING AzureStorageConfig:FileContainerName=files
 ```
 
 Jetzt stellen Sie die App bereit. Mit den folgenden Befehlen wird die Website im Ordner `pub` veröffentlicht, in `site.zip` komprimiert und die ZIP-Datei in App Service bereitgestellt.
@@ -76,7 +76,7 @@ Jetzt stellen Sie die App bereit. Mit den folgenden Befehlen wird die Website im
 dotnet publish -o pub
 cd pub
 zip -r ../site.zip *
-az webapp deployment source config-zip --src ../site.zip --name <your-unique-app-name> --resource-group <rgn>[Sandbox resource group name]</rgn>
+az webapp deployment source config-zip --src ../site.zip --name <your-unique-app-name> --resource-group <rgn>[sandbox resource group name]</rgn>
 ```
 
 Öffnen Sie `https://<your-unique-app-name>.azurewebsites.net` in einem Browser, um die ausgeführte App anzuzeigen. Es sollte etwa wie im folgenden Bild aussehen.

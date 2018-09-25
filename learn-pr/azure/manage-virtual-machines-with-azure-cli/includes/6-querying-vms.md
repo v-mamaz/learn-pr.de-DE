@@ -41,7 +41,7 @@ SampleVM          168.61.54.62         10.0.0.4
 Mit dem Befehl `vm show` können wir detailliertere Informationen zu einem bestimmten virtuellen Computer nach Name oder ID abrufen.
 
 ```azurecli
-az vm show --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM
+az vm show --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM
 ```
 
 Dies gibt einen recht großen JSON-Block mit allen möglichen Informationen zur VM zurück. Dazu gehören angeschlossene Speichergeräte, Netzwerkschnittstellen und alle Objekt-IDs für Ressourcen, mit denen die VM verbunden ist. Auch hier könnten wir zu einem Tabellenformat wechseln, aber dabei entfallen nahezu alle interessanten Daten. Stattdessen können wir auf eine integrierte Abfragesprache für JSON mit dem Namen [JMESPath](http://jmespath.org/) zurückgreifen.
@@ -115,19 +115,19 @@ JMESQuery bietet mehrere andere interessante Abfragefunktionen. Wenn Sie Zeit ha
 Mit einem grundlegenden Verständnis von JMES-Abfragen können wir den Daten Filer hinzufügen, die von Abfragen wie dem `vm show`-Befehl zurückgegeben werden. Zum Beispiel können wir den Benutzernamen des Administrators abrufen:
 
 ```azurecli
-az vm show --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --query "osProfile.adminUsername"
+az vm show --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --query "osProfile.adminUsername"
 ```
 
 Wir können die Größe bestimmen, die unserer VM zugewiesen wird:
 
 ```azurecli
-az vm show --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --query hardwareProfile.vmSize
+az vm show --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --query hardwareProfile.vmSize
 ```
 
 Oder um alle IDs Ihrer Netzwerkschnittstellen abzurufen, können Sie diese Abfrage verwenden:
 
 ```azurecli
-az vm show --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --query "networkProfile.networkInterfaces[].id"
+az vm show --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --query "networkProfile.networkInterfaces[].id"
 ```
 
 Diese Abfragetechnik funktioniert mit jedem Azure CLI-Befehl und kann verwendet werden, um bestimmte Daten über die Befehlszeile abzurufen. Sie ist auch für die Skripterstellung nützlich, denn Sie können z.B. einen Wert aus Ihrem Azure-Account abrufen und in einer Umgebungs- oder Skriptvariablen speichern. Wenn Sie sich entscheiden, sie auf diese Weise zu verwenden, ist der Parameter `--output tsv` (der auf `-o tsv` verkürzt werden kann) ein nützliches Flag, das hinzugefügt werden muss. Dadurch werden die Ergebnisse in mit Tabulatoren getrennten Werten zurückgegeben, die nur die tatsächlichen Datenwerte mit Tabulatortrennzeichen enthalten.
@@ -135,7 +135,7 @@ Diese Abfragetechnik funktioniert mit jedem Azure CLI-Befehl und kann verwendet 
 Beispiel:
 
 ```azurecli
-az vm show --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --query "networkProfile.networkInterfaces[].id" -o tsv
+az vm show --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --query "networkProfile.networkInterfaces[].id" -o tsv
 ```
 
 gibt diesen Text zurück: `/subscriptions/20f4b944-fc7a-4d38-b02c-900c8223c3a0/resourceGroups/2568d0d0-efe3-4d04-a08f-df7f009f822a/providers/Microsoft.Network/networkInterfaces/SampleVMVMNic`

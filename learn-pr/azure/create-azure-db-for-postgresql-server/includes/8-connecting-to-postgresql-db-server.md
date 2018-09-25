@@ -14,7 +14,7 @@ Darüber hinaus müssen Sie die Option **SSL-Verbindung erzwingen** deaktivieren
 
 ### <a name="create-a-firewall-rule"></a>Erstellen einer Firewallregel
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben. 
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
 
 1. Navigieren Sie zu der Serverressource, für die Sie eine Firewallregel erstellen möchten.
 
@@ -48,8 +48,8 @@ Oder: Fügen Sie eine Firewallregel hinzu, um den Zugriff auf alle IP-Adressen z
     ```bash
     psql --host=<server-name>.postgres.database.azure.com --username=<admin-user>@<server-name> --dbname=postgres
     ```
-    
-    Verwenden Sie die Werte, die Sie für `server-name` und `admin-user` gewählt haben. 
+
+    Verwenden Sie die Werte, die Sie für `server-name` und `admin-user` gewählt haben.
 
 1. **postgres** ist die standardmäßige Verwaltungsdatenbank, mit der jeder PostgreSQL-Server erstellt wird. Sie werden zur Eingabe des Kennworts aufgefordert, das Sie beim Erstellen des Servers angegeben haben.
 

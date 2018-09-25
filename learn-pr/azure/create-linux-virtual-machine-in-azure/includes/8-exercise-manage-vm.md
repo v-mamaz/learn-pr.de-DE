@@ -4,7 +4,7 @@ Wenden wir nun eine Netzwerksicherheitsgruppe auf unser Netzwerk an, um ausschli
 
 Aufgrund der Angabe, dass wir SSH-Zugriff benötigen, sollte Azure eine Sicherheitsgruppe für uns erstellt haben. Wir erstellen hier jedoch eine neue Sicherheitsgruppe, damit Sie sich mit dem gesamten Prozess vertraut machen können. Das ist besonders wichtig, wenn Sie Ihr virtuelles Netzwerk _vor_ Ihren virtuellen Computern erstellen möchten. Zur Erinnerung: Sicherheitsgruppen sind _optional_ und werden nicht notwendigerweise zusammen mit dem Netzwerk erstellt.
 
-1. Klicken Sie im [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) auf der linken Randleiste auf die Schaltfläche **Ressource erstellen**, um die Ressourcenerstellung zu starten.
+1. Klicken Sie im [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) auf der linken Randleiste auf die Schaltfläche **Ressource erstellen**, um die Ressourcenerstellung zu starten.
 
 1. Geben Sie **Netzwerksicherheitsgruppe** in das Filterfeld ein, und wählen Sie das entsprechende Element in der Liste aus.
 
@@ -30,14 +30,14 @@ Die Bereitstellung sollte schnell abgeschlossen sein. Danach können wir unserer
 
     - Sämtlicher eingehender Datenverkehr zwischen zwei VNets wird zugelassen. Auf diese Weise können Ressourcen im VNet miteinander kommunizieren.
     - **Testanforderungen** des Azure Load Balancer, um zu überprüfen, ob der virtuelle Computer aktiv ist
-    - Anderer eingehender Datenverkehr wird vollständig unterbunden.  
+    - Anderer eingehender Datenverkehr wird vollständig unterbunden.
 
-    Ausgangsseite:  
+    Ausgangsseite:
     - Sämtlicher interner Netzwerkdatenverkehr im VNet wird zugelassen.
     - Sämtlicher ausgehender Datenverkehr an das Internet wird zugelassen.
     - Anderer ausgehender Datenverkehr wird vollständig unterbunden.
 
-    > [!NOTE]  
+    > [!NOTE]
     > Da diese Standardregeln mit hohen Prioritätswerten festgelegt sind, werden sie _zuletzt_ ausgewertet. Diese Regeln können weder geändert noch gelöscht werden. Sie können die Regeln aber _überschreiben_, indem Sie spezifischere Regeln für Ihren Datenverkehr mit einem niedrigeren Prioritätswert erstellen.
 
 1. Klicken Sie im Bereich **Einstellungen** für die Sicherheitsgruppe auf den Abschnitt **Eingangssicherheitsregeln**.
@@ -126,5 +126,5 @@ Im nächsten Schritt überprüfen wir die Änderung:
 
 Die korrekte Implementierung von Sicherheitsregeln ist nicht immer ganz einfach. Bei der Anwendung dieser neuen Sicherheitsgruppe ist uns ein Fehler unterlaufen: Wir haben unseren SSH-Zugriff verloren. Zur Behebung dieses Problems können Sie der auf das Subnetz angewendeten Sicherheitsgruppe eine weitere Regel hinzufügen, um SSH-Zugriff zuzulassen. Achten Sie darauf, die eingehenden TCP/IP-Adressen für die Regel auf Ihre eigenen Adressen zu beschränken.
 
-> [!WARNING]  
+> [!WARNING]
 > Denken Sie immer daran, für den Administratorzugriff verwendete Ports zu sperren. Noch besser: Erstellen Sie ein VPN, um das virtuelle Netzwerk mit Ihrem privaten Netzwerk zu verbinden, und lassen Sie nur RDP- oder SSH-Anforderungen aus diesem Adressbereich zu. Sie können auch die Standardeinstellung für den von SSH verwendeten Port ändern. Denken Sie aber daran, dass eine Portänderung noch keine ausreichende Angriffsabwehr darstellt. Sie erschwert lediglich die Portermittlung.
