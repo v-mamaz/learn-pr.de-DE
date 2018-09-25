@@ -1,0 +1,1 @@
+<span data-ttu-id="adf68-101">**negative-feedback-queue**</span><span class="sxs-lookup"><span data-stu-id="adf68-101">**negative-feedback-queue**</span></span>
