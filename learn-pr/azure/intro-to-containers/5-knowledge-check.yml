@@ -1,0 +1,53 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-containers.5-knowledge-check
+title: <span data-ttu-id="06b16-101">Wissensbeurteilung</span><span class="sxs-lookup"><span data-stu-id="06b16-101">Knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="06b16-102">Wissenstest</span><span class="sxs-lookup"><span data-stu-id="06b16-102">Knowledge check</span></span>
+  description: '<span data-ttu-id="06b16-103">Wissensbeurteilung: Einführung in Container</span><span class="sxs-lookup"><span data-stu-id="06b16-103">Introduction to containers knowledge check.</span></span>'
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 74497f66a4e10fa17f5b6eee5e8fdb31e6bf806b
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46569962"
+durationInMinutes: 2
+quiz:
+  title: <span data-ttu-id="06b16-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="06b16-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="06b16-105">Welche der folgenden Aussagen beschreibt keinen Vorteil der Containereinführung?</span><span class="sxs-lookup"><span data-stu-id="06b16-105">Which of the following is not a benefit of container adoption?</span></span>
+    choices:
+    - content: <span data-ttu-id="06b16-106">Schnelle Startzeiten</span><span class="sxs-lookup"><span data-stu-id="06b16-106">Fast start times.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="06b16-107">Container können erheblich schneller als virtuelle oder physische Systeme beginnen.</span><span class="sxs-lookup"><span data-stu-id="06b16-107">Containers can start significantly faster than virtual or physical systems.</span></span>
+    - content: <span data-ttu-id="06b16-108">Effiziente Nutzung der Hostressource</span><span class="sxs-lookup"><span data-stu-id="06b16-108">Efficient use of host resource.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="06b16-109">Aufgrund einer gemeinsamen Imagearchitektur können mehrere Container auf einem einzelnen Host ausgeführt werden, während sie Hostressourcen effizient verwenden.</span><span class="sxs-lookup"><span data-stu-id="06b16-109">Due to a shared image architecture, multiple containers can run on a single host, while efficiently utilizing host resources.</span></span>
+    - content: <span data-ttu-id="06b16-110">Integrierte Notfallwiederherstellung</span><span class="sxs-lookup"><span data-stu-id="06b16-110">Built-in disaster recovery.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="06b16-111">Container ändern Notfallwiederherstellungsverfahren grundsätzlich nicht.</span><span class="sxs-lookup"><span data-stu-id="06b16-111">Containers don't inherently change disaster recovery procedures.</span></span>
+    - content: <span data-ttu-id="06b16-112">Ermöglicht native Cloudanwendungsarchitektur</span><span class="sxs-lookup"><span data-stu-id="06b16-112">Enables cloud-native application architecture.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="06b16-113">Container sind nützlich beim Entwickeln von Anwendungen mit einer modernen oder nativen Cloudarchitektur.</span><span class="sxs-lookup"><span data-stu-id="06b16-113">Containers can help to develop applications with a modern or cloud-native architecture.</span></span>
+  - content: <span data-ttu-id="06b16-114">Welcher Befehl zeigt alle (beendeten und ausgeführten) Containerinstanzen an?</span><span class="sxs-lookup"><span data-stu-id="06b16-114">What command will show all container instances (stopped and running)?</span></span>
+    choices:
+    - content: <span data-ttu-id="06b16-115">docker ps</span><span class="sxs-lookup"><span data-stu-id="06b16-115">docker ps</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="06b16-116">Mit diesem Befehl werden nur ausgeführte Container angezeigt.</span><span class="sxs-lookup"><span data-stu-id="06b16-116">This command will only show running containers.</span></span>
+    - content: <span data-ttu-id="06b16-117">docker images</span><span class="sxs-lookup"><span data-stu-id="06b16-117">docker images</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="06b16-118">Mit diesem Befehl werden Containerimages aufgelistet.</span><span class="sxs-lookup"><span data-stu-id="06b16-118">This command lists container images.</span></span>
+    - content: <span data-ttu-id="06b16-119">docker ps -a</span><span class="sxs-lookup"><span data-stu-id="06b16-119">docker ps -a</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="06b16-120">Mit diesem Befehl werden alle ausgeführten und beendeten Container aufgelistet.</span><span class="sxs-lookup"><span data-stu-id="06b16-120">This command will list all running and stopped containers.</span></span>
+  - content: '<span data-ttu-id="06b16-121">Wahr oder falsch: In Produktionsumgebungen sollte die Erstellung von Containerimages mit einer Dockerfile automatisiert werden.</span><span class="sxs-lookup"><span data-stu-id="06b16-121">True or false: in production environments, container image creation should be automated with a Dockerfile.</span></span>'
+    choices:
+    - content: <span data-ttu-id="06b16-122">Wahr</span><span class="sxs-lookup"><span data-stu-id="06b16-122">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="06b16-123">Die Automatisierung ist schneller, leicht wiederholbar und weniger fehleranfällig als die manuelle Erstellung von Images.</span><span class="sxs-lookup"><span data-stu-id="06b16-123">Automation is faster, easily repeatable, and less error prone than manual image creation.</span></span> <span data-ttu-id="06b16-124">Die Automatisierung in Produktionscontainerumgebungen hat sich bewährt.</span><span class="sxs-lookup"><span data-stu-id="06b16-124">Best practice recommends using automation in production container environments.</span></span>
+    - content: <span data-ttu-id="06b16-125">Falsch</span><span class="sxs-lookup"><span data-stu-id="06b16-125">False</span></span>
+      isCorrect: false

@@ -1,0 +1,63 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.11-knowledge-check
+title: <span data-ttu-id="bf20f-101">Wissensbeurteilung</span><span class="sxs-lookup"><span data-stu-id="bf20f-101">Knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="bf20f-102">Wissensbeurteilung</span><span class="sxs-lookup"><span data-stu-id="bf20f-102">Knowledge check</span></span>
+  description: <span data-ttu-id="bf20f-103">Wissensbeurteilung</span><span class="sxs-lookup"><span data-stu-id="bf20f-103">Knowledge check</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 02ccb3234d9a6b89ac6ddbc34f3e4e23b1d1d514
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46511209"
+durationInMinutes: 3
+quiz:
+  title: <span data-ttu-id="bf20f-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="bf20f-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="bf20f-105">Wie viele Zugriffsschlüssel werden für den Zugriff auf Ihr Azure-Speicherkonto bereitgestellt?</span><span class="sxs-lookup"><span data-stu-id="bf20f-105">How many access keys are provided for accessing your Azure storage account?</span></span>
+    choices:
+    - content: <span data-ttu-id="bf20f-106">1</span><span class="sxs-lookup"><span data-stu-id="bf20f-106">1</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bf20f-107">Jedes Speicherkonto verfügt über zwei Zugriffsschlüssel.</span><span class="sxs-lookup"><span data-stu-id="bf20f-107">Each storage account has two access keys.</span></span> <span data-ttu-id="bf20f-108">Auf diese Weise können Sie der bewährten Methode folgen, bei der Sie den von Ihren Anwendungen verwendeten Schlüssel regelmäßig ersetzen, ohne Ausfallzeiten zu verursachen.</span><span class="sxs-lookup"><span data-stu-id="bf20f-108">This lets you follow the best-practice guideline of periodically replacing the key used by your applications without incurring downtime.</span></span>
+    - content: <span data-ttu-id="bf20f-109">2</span><span class="sxs-lookup"><span data-stu-id="bf20f-109">2</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="bf20f-110">Jedes Speicherkonto verfügt über zwei Zugriffsschlüssel.</span><span class="sxs-lookup"><span data-stu-id="bf20f-110">Each storage account has two access keys.</span></span> <span data-ttu-id="bf20f-111">Auf diese Weise können Sie der bewährten Methode folgen, bei der Sie den von Ihren Anwendungen verwendeten Schlüssel regelmäßig ersetzen, ohne Ausfallzeiten zu verursachen.</span><span class="sxs-lookup"><span data-stu-id="bf20f-111">This lets you follow the best-practice guideline of periodically replacing the key used by your applications without incurring downtime.</span></span>
+    - content: <span data-ttu-id="bf20f-112">3</span><span class="sxs-lookup"><span data-stu-id="bf20f-112">3</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bf20f-113">Jedes Speicherkonto verfügt über zwei Zugriffsschlüssel.</span><span class="sxs-lookup"><span data-stu-id="bf20f-113">Each storage account has two access keys.</span></span> <span data-ttu-id="bf20f-114">Auf diese Weise können Sie der bewährten Methode folgen, bei der Sie den von Ihren Anwendungen verwendeten Schlüssel regelmäßig ersetzen, ohne Ausfallzeiten zu verursachen.</span><span class="sxs-lookup"><span data-stu-id="bf20f-114">This lets you follow the best-practice guideline of periodically replacing the key used by your applications without incurring downtime.</span></span>
+    - content: <span data-ttu-id="bf20f-115">4</span><span class="sxs-lookup"><span data-stu-id="bf20f-115">4</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bf20f-116">Jedes Speicherkonto verfügt über zwei Zugriffsschlüssel.</span><span class="sxs-lookup"><span data-stu-id="bf20f-116">Each storage account has two access keys.</span></span> <span data-ttu-id="bf20f-117">Auf diese Weise können Sie der bewährten Methode folgen, bei der Sie den von Ihren Anwendungen verwendeten Schlüssel regelmäßig ersetzen, ohne Ausfallzeiten zu verursachen.</span><span class="sxs-lookup"><span data-stu-id="bf20f-117">This lets you follow the best-practice guideline of periodically replacing the key used by your applications without incurring downtime.</span></span>
+  - content: <span data-ttu-id="bf20f-118">Sie können entweder die REST-API oder die Azure-Clientbibliothek verwenden, um programmgesteuert auf ein Speicherkonto zuzugreifen.</span><span class="sxs-lookup"><span data-stu-id="bf20f-118">You can use either the REST API or the Azure client library to programmatically access a storage account.</span></span> <span data-ttu-id="bf20f-119">Welche der folgenden Antworten steht für den wichtigsten Vorteil bei Verwendung der Clientbibliothek?</span><span class="sxs-lookup"><span data-stu-id="bf20f-119">What is the primary advantage of using the client library?</span></span>
+    choices:
+    - content: <span data-ttu-id="bf20f-120">Kosten</span><span class="sxs-lookup"><span data-stu-id="bf20f-120">Cost</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bf20f-121">Code, der die Clientbibliothek verwendet, ist im Allgemeinen viel kürzer und einfacher als Code, der die REST-API verwendet.</span><span class="sxs-lookup"><span data-stu-id="bf20f-121">Code that uses the client library is generally much shorter and simpler than code that uses the REST API.</span></span> <span data-ttu-id="bf20f-122">Die Clientbibliothek stellt Anforderungen zusammen und analysiert Antworten für Sie.</span><span class="sxs-lookup"><span data-stu-id="bf20f-122">The client library handles assembling requests and parsing responses for you.</span></span>
+    - content: <span data-ttu-id="bf20f-123">Verfügbarkeit</span><span class="sxs-lookup"><span data-stu-id="bf20f-123">Availability</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bf20f-124">Code, der die Clientbibliothek verwendet, ist im Allgemeinen viel kürzer und einfacher als Code, der die REST-API verwendet.</span><span class="sxs-lookup"><span data-stu-id="bf20f-124">Code that uses the client library is generally much shorter and simpler than code that uses the REST API.</span></span> <span data-ttu-id="bf20f-125">Die Clientbibliothek stellt Anforderungen zusammen und analysiert Antworten für Sie.</span><span class="sxs-lookup"><span data-stu-id="bf20f-125">The client library handles assembling requests and parsing responses for you.</span></span>
+    - content: <span data-ttu-id="bf20f-126">Lokalisierung</span><span class="sxs-lookup"><span data-stu-id="bf20f-126">Localization</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bf20f-127">Code, der die Clientbibliothek verwendet, ist im Allgemeinen viel kürzer und einfacher als Code, der die REST-API verwendet.</span><span class="sxs-lookup"><span data-stu-id="bf20f-127">Code that uses the client library is generally much shorter and simpler than code that uses the REST API.</span></span> <span data-ttu-id="bf20f-128">Die Clientbibliothek stellt Anforderungen zusammen und analysiert Antworten für Sie.</span><span class="sxs-lookup"><span data-stu-id="bf20f-128">The client library handles assembling requests and parsing responses for you.</span></span>
+    - content: <span data-ttu-id="bf20f-129">Komfort</span><span class="sxs-lookup"><span data-stu-id="bf20f-129">Convenience</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="bf20f-130">Code, der die Clientbibliothek verwendet, ist im Allgemeinen viel kürzer und einfacher als Code, der die REST-API verwendet.</span><span class="sxs-lookup"><span data-stu-id="bf20f-130">Code that uses the client library is generally much shorter and simpler than code that uses the REST API.</span></span> <span data-ttu-id="bf20f-131">Die Clientbibliothek stellt Anforderungen zusammen und analysiert Antworten für Sie.</span><span class="sxs-lookup"><span data-stu-id="bf20f-131">The client library handles assembling requests and parsing responses for you.</span></span>
+  - content: <span data-ttu-id="bf20f-132">Welche der folgenden Antworten ist eine gute Analogie für die Zugriffsschlüssel eines Speicherkontos?</span><span class="sxs-lookup"><span data-stu-id="bf20f-132">Which of the following is a good analogy for the access keys of a storage account?</span></span>
+    choices:
+    - content: <span data-ttu-id="bf20f-133">IP-Adresse</span><span class="sxs-lookup"><span data-stu-id="bf20f-133">IP Address</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bf20f-134">Der Besitz eines Zugriffsschlüssels identifiziert das Konto und ermöglicht den Zugriff.</span><span class="sxs-lookup"><span data-stu-id="bf20f-134">Possession of an access key identifies the account and grants you access.</span></span> <span data-ttu-id="bf20f-135">Dies ist vergleichbar mit Anmeldeinformationen wie Benutzername und Kennwort.</span><span class="sxs-lookup"><span data-stu-id="bf20f-135">This is very similar to login credentials like a username and password.</span></span>
+    - content: <span data-ttu-id="bf20f-136">REST-Endpunkt</span><span class="sxs-lookup"><span data-stu-id="bf20f-136">REST Endpoint</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bf20f-137">Der Besitz eines Zugriffsschlüssels identifiziert das Konto und ermöglicht den Zugriff.</span><span class="sxs-lookup"><span data-stu-id="bf20f-137">Possession of an access key identifies the account and grants you access.</span></span> <span data-ttu-id="bf20f-138">Dies ist vergleichbar mit Anmeldeinformationen wie Benutzername und Kennwort.</span><span class="sxs-lookup"><span data-stu-id="bf20f-138">This is very similar to login credentials like a username and password.</span></span>
+    - content: <span data-ttu-id="bf20f-139">Benutzername und Kennwort</span><span class="sxs-lookup"><span data-stu-id="bf20f-139">Username and password</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="bf20f-140">Der Besitz eines Zugriffsschlüssels identifiziert das Konto und ermöglicht den Zugriff.</span><span class="sxs-lookup"><span data-stu-id="bf20f-140">Possession of an access key identifies the account and grants you access.</span></span> <span data-ttu-id="bf20f-141">Dies ist vergleichbar mit Anmeldeinformationen wie Benutzername und Kennwort.</span><span class="sxs-lookup"><span data-stu-id="bf20f-141">This is very similar to login credentials like a username and password.</span></span>
+    - content: <span data-ttu-id="bf20f-142">Kryptografiealgorithmus</span><span class="sxs-lookup"><span data-stu-id="bf20f-142">Cryptographic algorithm</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bf20f-143">Der Besitz eines Zugriffsschlüssels identifiziert das Konto und ermöglicht den Zugriff.</span><span class="sxs-lookup"><span data-stu-id="bf20f-143">Possession of an access key identifies the account and grants you access.</span></span> <span data-ttu-id="bf20f-144">Dies ist vergleichbar mit Anmeldeinformationen wie Benutzername und Kennwort.</span><span class="sxs-lookup"><span data-stu-id="bf20f-144">This is very similar to login credentials like a username and password.</span></span>

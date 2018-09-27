@@ -2,19 +2,19 @@
 uid: learn.work-with-nosql-data-in-azure-cosmos-db
 metadata:
   title: Verwenden von NoSQL-Daten in Azure Cosmos DB
-  description: NoSQL-Daten sind eine effiziente Speicheroption für Informationen, die nicht den Anforderungen einer relationalen SQL-Datenbank entsprechen.<br><br>Datenbanken für NoSQL-Daten bieten eine höhere Flexibilität durch vereinfachte Techniken für horizontales Hochskalieren sowie die Möglichkeit zur Feinabstimmung der Anforderungen in puncto Verfügbarkeit und Konsistenz. Azure Cosmos DB bietet darüber hinaus noch zahlreiche weitere Vorteile und stellt Tools und SDKs für die Verwendung Ihrer NoSQL-Daten bereit.<br><br>Erfahren Sie, wie Sie über das Azure-Portal, die Azure Cosmos DB-Erweiterung für Visual Studio Code und das Azure Cosmos DB .NET Core SDK ortsunabhängig mit Ihren NoSQL-Daten arbeiten und Benutzern an jedem Ort der Welt eine hohe Verfügbarkeit bieten können.
+  description: NoSQL-Daten sind eine effiziente Speicheroption für Informationen, die nicht den Anforderungen einer relationalen SQL-Datenbank entsprechen.<br><br>Datenbanken für NoSQL-Daten bieten eine höhere Flexibilität durch vereinfachte Techniken für horizontales Hochskalieren sowie die Möglichkeit zur Feinabstimmung der Anforderungen in puncto Verfügbarkeit und Konsistenz. Azure Cosmos DB bietet darüber hinaus noch zahlreiche weitere Vorteile und stellt Tools und SDKs für die Verwendung Ihrer NoSQL-Daten bereit.<br><br>Erfahren Sie, wie Sie über das Azure-Portal, die Azure Cosmos DB-Erweiterung für Visual Studio Code und das Azure Cosmos DB .NET Core SDK ortsunabhängig mit Ihren NoSQL-Daten arbeiten und Benutzern an jedem Ort der Welt Hochverfügbarkeit bieten können.
   brand: azure
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: ea68e439f14baac1b274c1f235c5c2d317227a09
-  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.openlocfilehash: a8301134448063a316cce153377b039b557f1a81
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/20/2018
-  ms.locfileid: "46483165"
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46567380"
 title: Verwenden von NoSQL-Daten in Azure Cosmos DB
 summary: NoSQL-Daten sind eine effiziente Speicheroption für Informationen, die nicht den Anforderungen einer relationalen SQL-Datenbank entsprechen. Erfahren Sie, wie Sie über das Azure-Portal, die Azure Cosmos DB-Erweiterung für Visual Studio Code und das Azure Cosmos DB .NET Core SDK ortsunabhängig mit Ihren NoSQL-Daten arbeiten und Benutzern an jedem Ort der Welt Hochverfügbarkeit bieten können.
 prerequisites: >
