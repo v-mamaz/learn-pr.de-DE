@@ -53,7 +53,7 @@ Die folgende Tabelle zeigt, wie LINQ-Abfragen in SQL übersetzt werden.
     }
     ```
 
-1. Kopieren Sie den folgenden Code, und fügen Sie ihn vor der `await this.DeleteUserDocument("Users", "WebCustomers", "1");`-Zeile in Ihre **BasicOperations**-Methode ein.
+1. Kopieren Sie den folgenden Code, und fügen Sie ihn vor der `await this.DeleteUserDocument("Users", "WebCustomers", yanhe);`-Zeile in Ihre **BasicOperations**-Methode ein.
 
     ```csharp
     this.ExecuteSimpleQuery("Users", "WebCustomers");
