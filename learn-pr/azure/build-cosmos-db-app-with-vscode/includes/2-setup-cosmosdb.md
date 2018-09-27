@@ -31,7 +31,7 @@ Im Rahmen dieser Einheit installieren Sie die Azure Cosmos DB-Erweiterung für V
 
 1. Geben Sie im Textfeld im oberen Bereich des Bildschirms einen eindeutigen Namen für Ihr Azure Cosmos DB-Konto ein, und drücken Sie die EINGABETASTE. Der Kontoname darf nur Kleinbuchstaben, Zahlen und das Zeichen „-“ enthalten und muss zwischen 3 bis 31 Zeichen lang sein.
 
-1. Klicken Sie als Nächstes auf **SQL (DocumentDB)** > **<rgn>[Sandbox-Ressourcengruppenname]</rgn>**, und wählen Sie einen Standort aus.
+1. Klicken Sie als Nächstes auf **SQL (DocumentDB)** > **<rgn>[Name der Sandboxressourcengruppe]</rgn>**, und wählen Sie einen Standort aus.
 
     [!include[](../../../includes/azure-sandbox-regions-first-mention-note-friendly.md)]
 

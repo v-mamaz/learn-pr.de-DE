@@ -17,7 +17,7 @@ Jeder Namespace verfügt außerdem über primäre und sekundäre Shared Access S
 
 Führen Sie die folgenden Schritte aus, um einen Service Bus-Namespace mit dem Azure-Portal zu erstellen:
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) an.
 
 1. Klicken Sie im linken Navigationsbereich auf **Alle Dienste**.
 
@@ -33,7 +33,7 @@ Führen Sie die folgenden Schritte aus, um einen Service Bus-Namespace mit dem A
 
 1. Wählen Sie in der Dropdownliste **Abonnement** Ihr Abonnement („Concierge-Abonnement“) aus.
 
-1. Wählen Sie unter **Ressourcengruppe** die Option **Vorhandene verwenden** aus, und klicken Sie auf <rgn>[Name der Sandbox-Ressourcengruppe]</rgn>.
+1. Wählen Sie unter **Ressourcengruppe** die Option **Vorhandene verwenden** aus, und klicken Sie auf <rgn>[Name der Sandboxressourcengruppe]</rgn>.
 
 1. Wählen Sie in der Dropdownliste **Standort** nachfolgend einen Standort in Ihrer Nähe aus.
 

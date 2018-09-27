@@ -20,7 +20,7 @@ Erstellen Sie eine Funktions-App, und verbinden Sie sie mit einem Speicherkonto.
 
 Lassen Sie uns eine Funktions-App im Azure-Portal erstellen.
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
 
 1. Klicken Sie links oben im Azure-Portal auf die Schaltfläche **Ressource erstellen** und dann auf **Erste Schritte > Serverlose Funktions-App**, um das Blatt *Erstellen* der Funktions-App zu öffnen. Alternativ können Sie auch die Option **Compute > Funktions-App** wählen, um das gleiche Blatt zu öffnen.
 
@@ -30,7 +30,7 @@ Lassen Sie uns eine Funktions-App im Azure-Portal erstellen.
 
 1. Wählen Sie das Azure-Abonnement aus, in dem die Funktions-App gehostet werden soll.
 
-1. Wählen Sie die vorhandene Ressourcengruppe namens „**<rgn>[Name der Sandbox-Ressourcengruppe]</rgn>**“ aus.
+1. Wählen Sie die vorhandene Ressourcengruppe namens **<rgn>[Name der Sandboxressourcengruppe]</rgn>** aus.
 
 1. Wählen Sie **Windows** als Betriebssystem aus.
 
@@ -51,12 +51,12 @@ Lassen Sie uns eine Funktions-App im Azure-Portal erstellen.
 
 ## <a name="verify-your-azure-function-app"></a>Überprüfen Ihrer Azure-Funktions-App
 
-1. Wählen Sie im linken Menü des Azure-Portals **Ressourcengruppen** aus. Daraufhin sollte eine Ressourcengruppe namens „**<rgn>[Name der Sandbox-Ressourcengruppe]</rgn>**“ in der Liste der verfügbaren Gruppen angezeigt werden.
+1. Wählen Sie im linken Menü des Azure-Portals **Ressourcengruppen** aus. Daraufhin sollte eine Ressourcengruppe namens **<rgn>[Name der Sandboxressourcengruppe]</rgn>** in der Liste der verfügbaren Gruppen angezeigt werden.
 
-  ![Screenshot: Das Blatt „Ressourcengruppen“ im Azure-Portal, auf dem das Menüelement „Ressourcengruppen“ und <rgn>[Name der Sandbox-Ressourcengruppe]</rgn> hervorgehoben sind.](../media/3-resource-group.png)
+  ![Screenshot: Das Blatt „Ressourcengruppen“ im Azure-Portal, auf dem das Menüelement „Ressourcengruppen“ und <rgn>[Name der Sandboxressourcengruppe]</rgn> hervorgehoben sind.](../media/3-resource-group.png)
 
-1. Wählen Sie die Ressourcengruppe „**<rgn>[Name der Sandbox-Ressourcengruppe]</rgn>**“ aus. Es sollte dann eine Ressourcenliste ähnlich der folgenden angezeigt werden.
+1. Wählen Sie die Ressourcengruppe **<rgn>[Name der Sandboxressourcengruppe]</rgn>** aus. Es sollte dann eine Ressourcenliste ähnlich der folgenden angezeigt werden.
 
-  ![Screenshot: Alle Ressourcen in der Gruppe <rgn>[Name der Sandbox-Ressourcengruppe]</rgn> im Azure-Portal, einschließlich der Einträge für App Service-Plan, Speicherkonto, Application Insights-Ressource und App Service.](../media/3-resource-list.png)
+  ![Screenshot: Alle Ressourcen in der Gruppe <rgn>[Name der Sandboxressourcengruppe]</rgn> im Azure-Portal, einschließlich der Einträge für App Service-Plan, Speicherkonto, Application Insights-Ressource und App Service.](../media/3-resource-list.png)
 
 Das als App Service aufgelistete Element mit dem Blitzsymbol ist Ihre neue Funktions-App. Sie können auf sie klicken, um die Details zur neuen Funktion zu öffnen, der eine öffentliche URL zugewiesen ist. Wenn Sie sie in einem Browser öffnen, sollte eine Standardwebseite angezeigt werden, die angibt, dass Ihre Funktions-App ausgeführt wird.

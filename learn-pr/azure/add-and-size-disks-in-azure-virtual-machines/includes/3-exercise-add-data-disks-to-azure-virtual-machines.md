@@ -11,11 +11,11 @@ Ziel dieser Übung ist, einen virtuellen Linux-Computer (VM) zu erstellen und ei
 
 Wir erstellen mithilfe der Azure CLI eine Linux-VM zum Hosten unseres Webservers.
 
-1. Legen Sie zuerst einige Standardeinstellungen für diese Sitzung fest. Als Erstes müssen Sie die _Region_ der VM festlegen. Im Idealfall befindet sich diese in der Nähe Ihrer Klienten. Wählen Sie in diesem Fall die Region aus, die den für die Azure-Sandbox verfügbaren Regionen am nächsten ist.
+1. Legen Sie zuerst einige Standardeinstellungen für diese Sitzung fest. Als Erstes müssen Sie die _Region_ der VM festlegen. Im Idealfall befindet sich diese in der Nähe Ihrer Kunden. Wählen Sie in diesem Fall die Region aus, die den für die Azure-Sandbox verfügbaren Standorten am nächsten ist.
 
     [!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-1. Legen Sie mit dem Befehl `az configure` die gewünschte Standardregion fest. Ersetzen Sie „eastus“ durch diese Region.
+1. Legen Sie mit dem Befehl `az configure` den gewünschte Standardstandort fest. Ersetzen Sie „eastus“ durch diesen Standort.
 
     ```azurecli
     az configure --defaults location=eastus
@@ -23,10 +23,10 @@ Wir erstellen mithilfe der Azure CLI eine Linux-VM zum Hosten unseres Webservers
 
     [!include[](../../../includes/azure-cloudshell-copy-paste-tip.md)]
 
-1. Legen Sie den Standardwert für die Ressourcengruppe auf die vorkonfigurierte Ressourcengruppe fest, die für die Azure Sandbox erstellt wurde: **<rgn>[Ressourcengruppe für die Sandbox]</rgn>**
+1. Legen Sie den Standardwert für die Ressourcengruppe auf die vorkonfigurierte Ressourcengruppe fest, die für die Azure-Sandbox erstellt wurde: **<rgn>[Sandboxressourcengruppe]</rgn>**
 
     ```azurecli
-    az configure --defaults group="<rgn>[Sandbox Resource Group]</rgn>"
+    az configure --defaults group="<rgn>[sandbox Resource Group]</rgn>"
     ```
 
 1. Erstellen Sie als Nächstes mit dem Befehl `vm create` eine neue Ubuntu Linux-VM.
@@ -51,13 +51,13 @@ Wir erstellen mithilfe der Azure CLI eine Linux-VM zum Hosten unseres Webservers
     ```json
     {
         "fqdns": "",
-        "id": "/subscriptions/xxx/resourceGroups/<rgn>[Sandbox resource group]</rgn>/providers/Microsoft.Compute/virtualMachines/support-web-vm01",
+        "id": "/subscriptions/xxx/resourceGroups/<rgn>[sandbox resource group]</rgn>/providers/Microsoft.Compute/virtualMachines/support-web-vm01",
         "location": "eastus",
         "macAddress": "00-0D-3A-18-DE-B4",
         "powerState": "VM running",
         "privateIpAddress": "10.0.0.4",
         "publicIpAddress": "40.76.193.249",
-        "resourceGroup": "<rgn>[Sandbox resource group]</rgn>",
+        "resourceGroup": "<rgn>[sandbox resource group]</rgn>",
         "zones": ""
     }
     ```

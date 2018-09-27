@@ -8,7 +8,7 @@ Microsoft Cognitive Services ist eine Sammlung von Algorithmen für maschinelles
 
 ## <a name="what-is-the-computer-vision-api"></a>Was ist die Maschinelles Sehen-API?
 
-Die Maschinelles Sehen-API stellt Algorithmen für die Verarbeitung von Abbildungen und die Rückgabe von Einblicken bereit. Sie können beispielsweise herausfinden, ob eine Abbildung potenziell anstößige Inhalte aufweist oder mithilfe der API alle Gesichter in einer Abbildung finden. Die API verfügt auch über weitere Funktionen, wie z.B. das Schätzen von dominanten Farben und Akzentfarben, das Kategorisieren des Inhalts von Abbildungen sowie das Beschreiben einer Abbildung in vollständigen Sätzen auf Englisch. Darüber hinaus kann die Maschinelles Sehen-API zur effektiven Darstellung großer Bilder auf intelligente Weise Miniaturansichten generieren.
+Die Maschinelles Sehen-API stellt Algorithmen für die Verarbeitung von Abbildungen und die Rückgabe von Einblicken bereit. Sie können beispielsweise herausfinden, ob eine Abbildung potenziell anstößige Inhalte aufweist oder mithilfe der API alle Gesichter in einer Abbildung finden. Die API verfügt auch über weitere Features, wie z.B. das Schätzen von dominanten Farben und Akzentfarben, das Kategorisieren des Inhalts von Abbildungen sowie das Beschreiben einer Abbildung in vollständigen Sätzen auf Englisch. Darüber hinaus kann die Maschinelles Sehen-API zur effektiven Darstellung großer Bilder auf intelligente Weise Miniaturansichten generieren.
 
 > [!TIP]
 > Die Maschinelles Sehen-API ist weltweit in vielen Regionen verfügbar. Unter [Verfügbare Produkte nach Region](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services&regions=all) können Sie nach der nächstgelegenen Region suchen.
@@ -61,11 +61,11 @@ In diesem Modul führen wir alle Übungen in der Azure CLI mithilfe der integrie
 Die Azure CLI ist das plattformübergreifende Befehlszeilentool von Microsoft zum Verwalten von Azure-Ressourcen. Sie steht für macOS, Linux und Windows sowie unter Verwendung von [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) im Browser zur Verfügung.
 
 > [!IMPORTANT]
-> Es gibt aktuell zwei Versionen der Azure CLI: Azure CLI 1.0 und Azure CLI 2.0. Wir verwenden hier die neueste Version, Azure CLI 2.0, die empfohlen wird, außer wenn Sie ältere Skripts ausführen. Azure CLI 1.0 wird mit dem Befehl `azure` gestartet, und Azure CLI 2.0 mit dem Befehl `az`.
+> Es gibt aktuell zwei Versionen der Azure CLI: Azure CLI 1.0 und Azure CLI 2.0. Wir verwenden hier die neueste Version, Azure CLI 2.0, die empfohlen wird, außer wenn Sie ältere Skripts ausführen. Die Azure CLI 1.0 wird mit dem Befehl `azure` gestartet, und die Azure CLI 2.0 mit dem Befehl `az`.
 
 ## <a name="az-cognitiveservices-commands"></a>„az cognitiveservices“-Befehle
 
-Die Azure CLI enthält den Befehl `cognitiveservices` zum Verwalten von Cognitive Services-Konten in Azure. Wir können verschiedene Unterbefehle bereitstellen, um bestimmte Aufgaben auszuführen. Dies sind die am häufigsten verwendeten:
+Die Azure CLI enthält den Befehl `cognitiveservices` zum Verwalten von Cognitive Services-Konten in Azure. Wir können verschiedene Unterbefehle bereitstellen, um bestimmte Aufgaben auszuführen. Folgende werden am häufigsten verwendeten:
 
 | Unterbefehl | Beschreibung |
 |-------------|-------------|
@@ -82,7 +82,7 @@ Lassen Sie uns nun mithilfe der Azure CLI ein Cognitive Services-Konto.
 
 ## <a name="create-a-cognitive-services-account"></a>Erstellen eines Cognitive Services-Kontos
 
-Für Aufrufe in der Maschinelles Sehen-API benötigen Wir einen API-Zugriffsschlüssel. Damit wir Zugriffsschlüssel abrufen können, benötigen wir ein Cognitive Services-Konto für die Maschinelles Sehen-API. Wir verwenden `az cognitiveservices create` zum Erstellen des Kontos in unserem Abonnement.
+Für Aufrufe in der Maschinelles Sehen-API benötigen wir einen API-Zugriffsschlüssel. Damit wir Zugriffsschlüssel abrufen können, benötigen wir ein Cognitive Services-Konto für die Maschinelles Sehen-API. Wir verwenden `az cognitiveservices create` zum Erstellen des Kontos in unserem Abonnement.
 
  Mit dem Befehl `az cognitiveservices create` wird ein Cognitive Services-Konto in einer Ressourcengruppe erstellt.  Die folgenden fünf Parameter müssen beim Aufrufen dieses Befehls angegeben werden.
 
@@ -91,7 +91,7 @@ Für Aufrufe in der Maschinelles Sehen-API benötigen Wir einen API-Zugriffsschl
 
 | Parameter | Beschreibung |
 |-----------|-------------|
-| `resource-group` | Die Ressourcengruppe, zu der das Cognitive Services-Konto gehört. Verwenden Sie in dieser interaktiven Sandboxsitzung <rgn>[Sandbox-Ressourcengruppenname]</rgn> |
+| `resource-group` | Die Ressourcengruppe, zu der das Cognitive Services-Konto gehört. In dieser interaktiven Sandboxsitzung verwenden Sie <rgn>[Name der Sandboxressourcengruppe]</rgn>. |
 | `kind` | Der API-Name des Cognitive Services-Kontos. |
 | `name` | Der Name des Cognitive Services-Kontos. |
 | `sku` | Die SKU des Cognitive Services-Kontos.|
@@ -106,16 +106,16 @@ az cognitiveservices account create \
 --kind ComputerVision \
 --name ComputerVisionService \
 --sku S1 \
---resource-group <rgn>[Sandbox resource group name]</rgn> \
+--resource-group <rgn>[sandbox resource group name]</rgn> \
 --location [location]
 ```
 
 > [!NOTE]
 > Merken Sie sich den ausgewählten Standort. Sie müssen alle Aufrufe in der API von dieser Region aus durchführen.
 
-Wir haben ein Cognitive Services-Konto für die **Maschinelles Lernen**-API erstellt. Wir haben die SKU *S1* ausgewählte und unserem Konto den Namen **ComputerVisionService** gegeben. Unser Konto gehört zur Ressourcengruppe **<rgn>[Sandbox-Ressourcengruppenname]</rgn>**, und wir rufen die API von dem im Parameter `--location` festgelegten Standort aus auf. 
+Wir haben ein Cognitive Services-Konto für die **Maschinelles Lernen**-API erstellt. Wir haben die SKU *S1* ausgewählt und unserem Konto den Namen **ComputerVisionService** gegeben. Unser Konto gehört zur Ressourcengruppe **<rgn>[Name der Sandboxressourcengruppe]</rgn>**, und wir rufen die API von dem im Parameter `--location` festgelegten Standort aus auf. 
 
-Sobald die Erstellung des Cognitive Services-Kontos durch den Befehl abgeschlossen ist, erhalten Sie eine JSON-Antwort. Diese beinhaltet, dass die Eigenschaft **provisioningState** auf **Erfolgreich** festgelegt ist.
+Sobald die Erstellung des Cognitive Services-Kontos durch den Befehl abgeschlossen ist, erhalten Sie eine Antwort im JSON-Format. Diese beinhaltet, dass die Eigenschaft **provisioningState** auf **Erfolgreich** festgelegt ist.
 
 ## <a name="get-an-access-key"></a>Abrufen eines Zugriffsschlüssels
 
@@ -126,7 +126,7 @@ Sobald wir unser Konto erfolgreich erstellt haben, können wir die Abonnementsch
     ```azurecli
     az cognitiveservices account keys list \
     --name ComputerVisionService \
-    --resource-group <rgn>[Sandbox resource group name]</rgn>
+    --resource-group <rgn>[sandbox resource group name]</rgn>
     ```
     
     Der obige Befehl gibt die Schlüssel zurück, die dem Cognitive Services-Konto **ComputerVisionService** zugeordnet sind, das zu der angegebenen Ressourcengruppe gehört. Zwei Schlüssel werden zurückgegeben, einer davon ist ein Ersatzschlüssel. Die Schlüssel sind schwer zu merken. Daher speichern wir den ersten Schlüssel in einer Variable, die wir für sämtliche Aufrufe in der API verwenden werden.
@@ -136,7 +136,7 @@ Sobald wir unser Konto erfolgreich erstellt haben, können wir die Abonnementsch
     ```azurecli
     key=$(az cognitiveservices account keys list \
     --name ComputerVisionService \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --query key1 -o tsv)
     ```
     
@@ -146,7 +146,7 @@ Sobald wir unser Konto erfolgreich erstellt haben, können wir die Abonnementsch
     In unserem Beispiel wird die Liste der Schlüssel für einen Eintrag mit dem Namen „key1“ abgefragt und das Ergebnis im **TSV**-Format ausgegeben. In diesem Format werden Anführungszeichen um den Zeichenfolgenwert entfernt. Wir weisen das Ergebnis der Variable **Schlüssel** zu.
     
     > [!IMPORTANT]
-    > Dieser Schlüssel wird während des gesamten Moduls verwendet. Sie sollten Ihn daher am besten in einer Variable speichern. Wenn Sie den Wert verlieren oder die Variable gelöscht wird, führen Sie den Befehl erneut zum Festlegen einer Variable aus.  
+    > Dieser Schlüssel wird während des gesamten Moduls verwendet. Sie sollten ihn daher am besten in einer Variable speichern. Wenn Sie den Wert verlieren oder die Variable gelöscht wird, führen Sie den Befehl erneut aus, um die Variable festzulegen.  
 
 3. Führen Sie in Azure Cloud Shell den folgenden Befehl aus, um den Wert unseres Schlüssels anzuzeigen:
 

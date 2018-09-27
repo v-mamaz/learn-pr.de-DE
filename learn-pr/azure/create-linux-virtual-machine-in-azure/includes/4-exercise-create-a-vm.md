@@ -4,7 +4,7 @@ Zur Erinnerung: Wir möchten einen vorhandenen Linux-Server, auf dem Apache ausg
 
 Virtuelle Linux-Computer können über das Azure-Portal, mithilfe der Azure CLI oder unter Verwendung von Azure PowerShell erstellt werden. Die einfachste Methode für Azure-Neulinge ist das Portal, da es Sie Schritt für Schritt durch die Erstellung führt sowie Hinweise und hilfreiche Meldungen bereithält:
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
 
 1. Klicken Sie links oben im Azure-Portal auf **Ressource erstellen**.
 
@@ -24,11 +24,11 @@ Beginnen Sie mit dem Abschnitt **Grundeinstellungen**.
 
 ### <a name="configure-basic-vm-settings"></a>Konfigurieren der Grundeinstellungen für den virtuellen Computer
 
-1. Unter **Abonnement** sollte bereits standardmäßig das Sandbox-Abonnement ausgewählt sein.
+1. Unter **Abonnement** sollte bereits standardmäßig das Sandboxabonnement ausgewählt sein.
 
-1. Unter **Ressourcengruppe** sollte bereits standardmäßig die Ressourcengruppe namens **<rgn>[Sandbox-Ressourcengruppenname]</rgn>** ausgewählt sein.
+1. Unter **Ressourcengruppe** sollte bereits standardmäßig die Ressourcengruppe namens **<rgn>[Name der Sandboxressourcengruppe]</rgn>** ausgewählt sein.
 
-1. Geben Sie im Abschnitt **INSTANZENDETAILS** einen Namen für Ihre Webserver-VM ein (etwa **test-web-eus-vm1**). Dieser Name gibt die Umgebung (**test**), die Rolle (**web**), den Standort (**eus; USA, Osten**), den Dienst (**vm**) und die Instanznummer (**1**) an.
+1. Geben Sie im Abschnitt **INSTANZDETAILS** einen Namen für Ihre Webserver-VM ein (etwa **test-web-eus-vm1**). Dieser Name gibt die Umgebung (**test**), die Rolle (**web**), den Standort (**eus; USA, Osten**), den Dienst (**vm**) und die Instanznummer (**1**) an.
     - Als bewährte Methode empfiehlt sich, Ressourcennamen zu standardisieren, um sofort ihren Zweck ermitteln zu können. Namen für virtuelle Linux-Computer müssen zwischen 1 und 64 Zeichen lang sein und sich aus Zahlen, Buchstaben und Bindestrichen zusammensetzen.
 
     > [!NOTE]

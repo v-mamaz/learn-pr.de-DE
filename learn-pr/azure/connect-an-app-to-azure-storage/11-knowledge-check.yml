@@ -1,0 +1,63 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.11-knowledge-check
+title: Wissensbeurteilung
+metadata:
+  title: Wissensbeurteilung
+  description: Wissensbeurteilung
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 02ccb3234d9a6b89ac6ddbc34f3e4e23b1d1d514
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46511209"
+durationInMinutes: 3
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: Wie viele Zugriffsschlüssel werden für den Zugriff auf Ihr Azure-Speicherkonto bereitgestellt?
+    choices:
+    - content: "1"
+      isCorrect: false
+      incorrectExplanation: Jedes Speicherkonto verfügt über zwei Zugriffsschlüssel. Auf diese Weise können Sie der bewährten Methode folgen, bei der Sie den von Ihren Anwendungen verwendeten Schlüssel regelmäßig ersetzen, ohne Ausfallzeiten zu verursachen.
+    - content: "2"
+      isCorrect: true
+      correctExplanation: Jedes Speicherkonto verfügt über zwei Zugriffsschlüssel. Auf diese Weise können Sie der bewährten Methode folgen, bei der Sie den von Ihren Anwendungen verwendeten Schlüssel regelmäßig ersetzen, ohne Ausfallzeiten zu verursachen.
+    - content: "3"
+      isCorrect: false
+      incorrectExplanation: Jedes Speicherkonto verfügt über zwei Zugriffsschlüssel. Auf diese Weise können Sie der bewährten Methode folgen, bei der Sie den von Ihren Anwendungen verwendeten Schlüssel regelmäßig ersetzen, ohne Ausfallzeiten zu verursachen.
+    - content: "4"
+      isCorrect: false
+      incorrectExplanation: Jedes Speicherkonto verfügt über zwei Zugriffsschlüssel. Auf diese Weise können Sie der bewährten Methode folgen, bei der Sie den von Ihren Anwendungen verwendeten Schlüssel regelmäßig ersetzen, ohne Ausfallzeiten zu verursachen.
+  - content: Sie können entweder die REST-API oder die Azure-Clientbibliothek verwenden, um programmgesteuert auf ein Speicherkonto zuzugreifen. Welche der folgenden Antworten steht für den wichtigsten Vorteil bei Verwendung der Clientbibliothek?
+    choices:
+    - content: Kosten
+      isCorrect: false
+      incorrectExplanation: Code, der die Clientbibliothek verwendet, ist im Allgemeinen viel kürzer und einfacher als Code, der die REST-API verwendet. Die Clientbibliothek stellt Anforderungen zusammen und analysiert Antworten für Sie.
+    - content: Verfügbarkeit
+      isCorrect: false
+      incorrectExplanation: Code, der die Clientbibliothek verwendet, ist im Allgemeinen viel kürzer und einfacher als Code, der die REST-API verwendet. Die Clientbibliothek stellt Anforderungen zusammen und analysiert Antworten für Sie.
+    - content: Lokalisierung
+      isCorrect: false
+      incorrectExplanation: Code, der die Clientbibliothek verwendet, ist im Allgemeinen viel kürzer und einfacher als Code, der die REST-API verwendet. Die Clientbibliothek stellt Anforderungen zusammen und analysiert Antworten für Sie.
+    - content: Komfort
+      isCorrect: true
+      correctExplanation: Code, der die Clientbibliothek verwendet, ist im Allgemeinen viel kürzer und einfacher als Code, der die REST-API verwendet. Die Clientbibliothek stellt Anforderungen zusammen und analysiert Antworten für Sie.
+  - content: Welche der folgenden Antworten ist eine gute Analogie für die Zugriffsschlüssel eines Speicherkontos?
+    choices:
+    - content: IP-Adresse
+      isCorrect: false
+      incorrectExplanation: Der Besitz eines Zugriffsschlüssels identifiziert das Konto und ermöglicht den Zugriff. Dies ist vergleichbar mit Anmeldeinformationen wie Benutzername und Kennwort.
+    - content: REST-Endpunkt
+      isCorrect: false
+      incorrectExplanation: Der Besitz eines Zugriffsschlüssels identifiziert das Konto und ermöglicht den Zugriff. Dies ist vergleichbar mit Anmeldeinformationen wie Benutzername und Kennwort.
+    - content: Benutzername und Kennwort
+      isCorrect: true
+      correctExplanation: Der Besitz eines Zugriffsschlüssels identifiziert das Konto und ermöglicht den Zugriff. Dies ist vergleichbar mit Anmeldeinformationen wie Benutzername und Kennwort.
+    - content: Kryptografiealgorithmus
+      isCorrect: false
+      incorrectExplanation: Der Besitz eines Zugriffsschlüssels identifiziert das Konto und ermöglicht den Zugriff. Dies ist vergleichbar mit Anmeldeinformationen wie Benutzername und Kennwort.

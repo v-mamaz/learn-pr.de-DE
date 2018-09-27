@@ -2,15 +2,15 @@ Azure Container Registry ist ein verwalteter Docker-Registrierungsdienst, der au
 
 Containerimages können unter Verwendung von Container Registry mithilfe von Push/Pull übertragen werden. Hierfür kommt die Docker CLI oder Azure CLI zum Einsatz. Durch die Azure-Portal-Integration können Sie sich die Containerimages in Ihrer Containerregistrierung ansehen und sie so überprüfen. In verteilten Umgebungen kann das Georeplikationsfeature von Container Registry dazu verwendet werden, Containerimages für die lokalisierte Verteilung in mehreren Azure-Rechenzentren bereitzustellen.
 
-Neben dem Speichern von Containerimages können mit ACR Build auch Containerimages in Azure erstellt werden. ACR Build greift auf eine Standard-Dockerfile-Datei zurück, um ein Containerimage in Azure Container Registry zu erstellen und zu speichern. Lokale Docker-Tools sind dabei nicht notwendig. Mit ACR Build können Sie Buildvorgänge bei Bedarf ausführen oder aber für Containerimages vollständig mithilfe von DevOps-Prozessen und -Tools automatisieren.
+Neben dem Speichern von Containerimages können mit Azure Container Registry Tasks auch Containerimages in Azure erstellt werden. ACR Tasks greift auf eine Standard-Dockerfile zurück, um ein Containerimage in Azure Container Registry zu erstellen und zu speichern. Lokale Docker-Tools sind dabei nicht notwendig. Mit ACR Tasks können Sie Buildvorgänge bei Bedarf ausführen oder aber für Containerimages vollständig mithilfe von DevOps-Prozessen und -Tools automatisieren.
 
 ## <a name="learning-objectives"></a>Lernziele
 
 In diesem Modul
 
 - stellen Sie eine Azure-Containerregistrierung bereit,
-- Erstellen eines Containerimage mithilfe eines Azure Container Registry-Builds
-- Bereitstellen des Containers für Azure Container Instances
+- erstellen eines Containerimages mithilfe von Azure Container Registry Tasks,
+- stellen den Container für eine Azure-Containerinstanz bereit.
 - Replizieren des Containerimage für mehrere Azure-Rechenzentren
 
 ## <a name="prerequisites"></a>Voraussetzungen  

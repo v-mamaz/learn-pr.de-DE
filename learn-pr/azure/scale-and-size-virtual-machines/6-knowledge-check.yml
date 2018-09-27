@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.scale-and-size-virtual-machines.6-knowledge-check
+title: 'Wissenstest: Skalieren und Ändern der Größe von virtuellen Computern'
+durationInMinutes: 3
+metadata:
+  title: 'Wissenstest: Skalieren und Ändern der Größe von virtuellen Computern'
+  description: Fragen zum Skalieren und Ändern der Größe von virtuellen Computern in Azure.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a557f46b09baeda7f1cc0b544b07a82be3aff4d2
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46512826"
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: 'Richtig oder falsch: Wenn Sie VM-Skalierungsgruppen mit automatischer Skalierung verwenden, können Regeln für die automatische Skalierung konfiguriert werden, um die _Größe_ der virtuellen Computer in der Skalierungsgruppe zu ändern.'
+    choices:
+    - content: Richtig
+      isCorrect: false
+      incorrectExplanation: Die automatische Skalierung ändert die Anzahl der Instanzen in Ihrer Skalierungsgruppe. Sie ändert nicht die Größe der Instanzen.
+    - content: Falsch
+      isCorrect: true
+      correctExplanation: Die automatische Skalierung ändert die Anzahl der Instanzen in Ihrer Skalierungsgruppe. Sie ändert nicht die Größe der Instanzen.
+  - content: Was ist in der Regel das wichtigste Kriterium bei der Auswahl eines _Typs_ für Ihren virtuellen Computer?
+    choices:
+    - content: Ihre Workload, also die Art von Vorgängen, die der virtuelle Computer wahrscheinlich am häufigsten ausführen wird.
+      isCorrect: true
+      correctExplanation: Der _Typ_ des virtuellen Computers beschreibt die Kombination aus CPU, GPU, Arbeitsspeicher, Speicher und Netzwerkbandbreite, die einem virtuellen Computer zugeordnet ist. Ihr Ziel ist, die zu Ihrer Workload am besten passenden Ressourcen zu finden.
+    - content: Die Marke der zugrunde liegenden Hardware.
+      isCorrect: false
+      incorrectExplanation: Der _Typ_ des virtuellen Computers beschreibt die Kombination aus CPU, GPU, Arbeitsspeicher, Speicher und Netzwerkbandbreite, die einem virtuellen Computer zugeordnet ist. Ihr Ziel ist, die zu Ihrer Workload am besten passenden Ressourcen zu finden.
+    - content: Die Betriebssysteme und Images, die der Typ unterstützt.
+      isCorrect: false
+      incorrectExplanation: Der _Typ_ des virtuellen Computers beschreibt die Kombination aus CPU, GPU, Arbeitsspeicher, Speicher und Netzwerkbandbreite, die einem virtuellen Computer zugeordnet ist. Ihr Ziel ist, die zu Ihrer Workload am besten passenden Ressourcen zu finden.
+  - content: Angenommen, Sie arbeiten für eine Regierungsabteilung, die für Unwetterwarnungen verantwortlich ist. Sie können die benötigte Leistung mit einem großen virtuellen Computer oder zwei kleinen virtuellen Computern mit einem Lastenausgleich erzielen. Welche Konfiguration ist wahrscheinlich die bessere Wahl?
+    choices:
+    - content: Ein virtueller Computer
+      isCorrect: false
+      incorrectExplanation: Eine Konfiguration mit mehreren virtuellen Computern ist besser, da sie Redundanz bietet. Wenn einer der virtuellen Computer abstürzt, kann der andere weiterhin Service Requests verarbeiten.
+    - content: Zwei virtuelle Computer und ein Lastenausgleich
+      isCorrect: true
+      correctExplanation: Eine Konfiguration mit mehreren virtuellen Computern ist besser, da sie Redundanz bietet. Wenn einer der virtuellen Computer abstürzt, kann der andere weiterhin Service Requests verarbeiten.

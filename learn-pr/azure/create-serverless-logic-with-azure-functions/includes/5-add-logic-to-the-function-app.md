@@ -12,9 +12,9 @@ Zuerst müssen wir einige Anforderungen an unsere Logik definieren:
 
 Wie in der vorherigen Einheit bereits erläutert wurde, verfügt Azure über Vorlagen, die Ihnen das Erstellen von Funktionen erleichtern. In dieser Einheit verwenden wir die Vorlage `HttpTrigger`, um den Temperaturdienst zu implementieren.
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) an.
 
-1. Wählen Sie durch Auswahl von **Alle Ressourcen** im linken Menü die Ressourcengruppe aus der ersten Übung und dann **<rgn>[Name der Sandbox-Ressourcengruppe]</rgn>** aus.
+1. Wählen Sie durch Auswahl von **Alle Ressourcen** im linken Menü die Ressourcengruppe aus der ersten Übung und dann **<rgn>[Name der Sandboxressourcengruppe]</rgn>** aus.
 
 1. Daraufhin werden die Ressourcen für die Gruppe angezeigt. Klicken Sie auf den Namen der Funktions-App, die Sie in der vorherigen Übung erstellt haben, indem Sie das Element **escalator-functions-xxxxxxx** (auch durch das Blitzsymbol gekennzeichnet) auswählen.
 

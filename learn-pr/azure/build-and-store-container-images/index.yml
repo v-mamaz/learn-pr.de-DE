@@ -8,22 +8,22 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 05ad4bd74daca52f54c22b0e7f7f5930f08efd4a
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 47da847927a7dfed757aca1ce0c9f3fa91bb9ab5
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46342142"
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46567403"
 title: Erstellen und Speichern von Containerimages mit Azure Container Registry
 summary: Azure Container Registry ist ein verwalteter Docker-Registrierungsdienst, der auf Version 2.0 der Open Source-Docker-Registrierung basiert. Azure Container Registry-Instanzen sind privat und werden in Azure gehostet. Mit ihnen können Sie Images für alle Arten von Containerbereitstellungen erstellen, speichern und verwalten. Erhalten Sie Informationen zum Erstellen und Speichern von Containerimages mit Azure Container Registry.
 abstract: >
   In diesem Modul wird Folgendes thematisiert:
 
-  - stellen Sie eine Azure-Containerregistrierung bereit,
+  - Bereitstellen einer Azure-Containerregistrierung
 
-  - Erstellen eines Containerimages mit Azure Container Registry Build
+  - Erstellen eines Containerimage mithilfe von Azure Container Registry Tasks
 
-  - Bereitstellen des Containers für eine Azure-Containerinstanz
+  - Bereitstellen des Containers in einer Azure-Containerinstanz
 
   - Replizieren des Containerimages für mehrere Azure-Rechenzentren
 prerequisites: Keine

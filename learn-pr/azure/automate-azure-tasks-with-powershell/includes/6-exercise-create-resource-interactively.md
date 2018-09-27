@@ -7,14 +7,14 @@ Probieren Sie die Befehle aus, die Sie zum Erstellen einer VM verwenden.
 
 ## <a name="create-a-linux-vm-with-azure-powershell"></a>Erstellen einer Linux-VM mithilfe von Azure PowerShell
 
-Da wir die Azure-Sandbox verwenden, müssen Sie keine Ressourcengruppe erstellen. Verwenden Sie stattdessen die Ressourcengruppe **<rgn>[Name der Sandbox-Ressourcengruppe]</rgn>**. Achten Sie darüber hinaus auf Speicherorteinschränkungen.
+Da wir die Azure-Sandbox verwenden, müssen Sie keine Ressourcengruppe erstellen. Verwenden Sie stattdessen die Ressourcengruppe **<rgn>[Name der Sandboxressourcengruppe]</rgn>**. Achten Sie darüber hinaus auf Standorteinschränkungen.
 
 Erstellen wir eine neue Azure-VM mit PowerShell.
 
 1. Verwenden Sie das `New-AzureRmVm`-Cmdlet zum Erstellen einer VM.
-    - Verwenden Sie die Ressourcengruppe **<rgn>[Name der Sandbox-Ressourcengruppe]</rgn>**.
-    - Geben Sie der VM einen Namen – verwenden Sie einen aussagekräftigen Namen, der den Zweck der VM, den Speicherort und (wenn es mehr als eine gibt) die Instanznummer angibt. Wir verwenden „testvm-eus-01“ für „Test VM in East US, instance 1“. Sie können auch einen eigenen Namen basierend auf dem VM-Speicherort eingeben.
-    - Wählen Sie in der Azure-Sandbox aus der folgenden Liste einen Speicherort in Ihrer Nähe. Achten Sie darauf, den Wert im folgenden Beispielbefehl zu ändern, wenn Sie ihn kopieren und einfügen.
+    - Verwenden Sie die Ressourcengruppe **<rgn>[Name der Sandboxressourcengruppe]</rgn>**.
+    - Geben Sie der VM einen Namen. Verwenden Sie einen aussagekräftigen Namen, der den Zweck der VM, den Standort und (wenn es mehr als eine gibt) die Instanznummer angibt. Wir verwenden „testvm-eus-01“ für „Test VM in East US, instance 1“. Sie können auch einen eigenen Namen basierend auf dem VM-Speicherort eingeben.
+    - Wählen Sie in der Azure-Sandbox aus der folgenden Liste einen Standort in Ihrer Nähe aus. Achten Sie darauf, den Wert im folgenden Beispielbefehl zu ändern, wenn Sie ihn kopieren und einfügen.
 
         [!include[](../../../includes/azure-sandbox-regions-note.md)]
 
@@ -23,7 +23,7 @@ Erstellen wir eine neue Azure-VM mit PowerShell.
     - Fügen Sie den `-OpenPorts`-Parameter hinzu, und übergeben Sie „22“ als Port – auf diese Weise können wir SSH auf dem Computer verwenden.
  
     ```powershell
-    New-AzureRmVm -ResourceGroupName <rgn>[Sandbox resource group name]</rgn> -Name "testvm-eus-01" -Credential (Get-Credential) -Location "East US" -Image UbuntuLTS -OpenPorts 22
+    New-AzureRmVm -ResourceGroupName <rgn>[sandbox resource group name]</rgn> -Name "testvm-eus-01" -Credential (Get-Credential) -Location "East US" -Image UbuntuLTS -OpenPorts 22
     ```
 
     [!include[](../../../includes/azure-cloudshell-copy-paste-tip.md)]
@@ -31,7 +31,7 @@ Erstellen wir eine neue Azure-VM mit PowerShell.
 1. Der Erstellungsvorgang dauert ein paar Minuten. Nach Abschluss können Sie einen Abfrage durchführen und das VM-Objekt einer Variable (`$vm`) zuweisen.
 
     ```powershell
-    $vm = Get-AzureRmVM -Name "testvm-eus-01" -ResourceGroupName <rgn>[Sandbox resource group name]</rgn>
+    $vm = Get-AzureRmVM -Name "testvm-eus-01" -ResourceGroupName <rgn>[sandbox resource group name]</rgn>
     ```
     
 1. Fragen Sie anschließend den Wert ab, um die Informationen über die VM zu sichern:
@@ -43,8 +43,8 @@ Erstellen wir eine neue Azure-VM mit PowerShell.
     Die Ausgabe sollte folgendermaßen aussehen:
 
     ```output
-    ResourceGroupName : <rgn>[Sandbox resource group name]</rgn>
-    Id                : /subscriptions/xxxxxxxx-xxxx-aaaa-bbbb-cccccccccccc/resourceGroups/<rgn>[Sandbox resource group name]</rgn>/providers/Microsoft.Compute/virtualMachines/testvm-eus-01
+    ResourceGroupName : <rgn>[sandbox resource group name]</rgn>
+    Id                : /subscriptions/xxxxxxxx-xxxx-aaaa-bbbb-cccccccccccc/resourceGroups/<rgn>[sandbox resource group name]</rgn>/providers/Microsoft.Compute/virtualMachines/testvm-eus-01
     VmId              : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
     Name              : testvm-eus-01
     Type              : Microsoft.Compute/virtualMachines
@@ -75,11 +75,14 @@ Erstellen wir eine neue Azure-VM mit PowerShell.
     $vm | Get-AzureRmPublicIpAddress
     ```
 
-1. Über die IP-Adresse können Sie sich mit SSH mit Ihrer VM verbinden. Wenn Sie beispielsweise den Benutzernamen „bob“ verwendet haben und die IP-Adresse „205.22.16.5“ lautet, dann würde sich dieser Befehl mit dem Linux-Rechner verbinden:
+1. Über die IP-Adresse können Sie sich mit SSH mit Ihrer VM verbinden. Wenn Sie beispielsweise den Benutzernamen „bob“ verwendet haben und die IP-Adresse „205.22.16.5“ lautet, dann würde über diesen Befehl eine Verbindung mit dem Linux-Rechner hergestellt werden:
 
-```powershell
-ssh bob@205.22.16.5
-```
+    ```powershell
+    ssh bob@205.22.16.5
+    ```
+
+    Melden Sie sich anschließend ab, indem Sie `exit` eingeben.
+
 
 ## <a name="delete-a-vm"></a>Löschen einer VM
 

@@ -40,14 +40,14 @@ Führen Sie den folgenden Befehl in Cloud Shell aus, um Ihren Tresor zu erstelle
 ```azurecli
 az keyvault create \
     --name <your-unique-vault-name> \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --location eastus
 ```
 
 Nach Abschluss des Vorgangs sehen Sie die JSON-Ausgabe mit einer Beschreibung des neuen Tresors.
 
 > [!TIP]
-> Der Befehl hat die vorab erstellte Ressourcengruppe mit dem Namen **<rgn>[Sandbox Resource Group]</rgn>** verwendet. Wenn Sie mit Ihrem eigenen Abonnement arbeiten, möchten Sie entweder eine neue Ressourcengruppe erstellen oder eine bereits vorhandene verwenden, die Sie zuvor erstellt haben.
+> Der Befehl hat die vorab erstellte Ressourcengruppe mit dem Namen **<rgn>[Name der Sandboxressourcengruppe]</rgn>** verwendet. Wenn Sie mit Ihrem eigenen Abonnement arbeiten, sollten Sie entweder eine neue Ressourcengruppe erstellen oder eine bereits vorhandene verwenden, die Sie zuvor erstellt haben.
 
 ### <a name="add-the-secret"></a>Hinzufügen des Geheimnisses
 

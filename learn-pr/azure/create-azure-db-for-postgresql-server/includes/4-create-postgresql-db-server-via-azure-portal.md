@@ -2,7 +2,7 @@ Im Azure-Portal können Sie PostgreSQL-Datenbankserver verwalten und skalieren. 
 
 [!include[](../../../includes/azure-sandbox-activate.md)]
 
-Melden Sie sich beim [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben. 
+Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
 
 Das Menü zum Erstellen und Verwalten von Azure-Ressourcen wird links angezeigt. Den verbleibenden Bildschirmbereich nimmt das Dashboard ein.
 
@@ -29,7 +29,7 @@ Das Blatt für die Erstellung des PostgreSQL-Servers wird angezeigt (etwa wie in
 
 1. Wählen Sie ein Abonnement aus. Vergewissern Sie sich, dass dieses Feld auf das gewünschte Abonnement festgelegt ist.
 
-1. Sie haben jetzt die Möglichkeit, eine vorhandene Ressourcengruppe zu erstellen oder wiederzuverwenden. Wählen Sie **Vorhandene verwenden** und anschließend „<rgn>[Sandbox-Ressourcengruppenname]</rgn>“ in der Dropdownliste aus. Sie verwenden diese Gruppe für den restlichen Teil dieses Moduls.
+1. Sie haben jetzt die Möglichkeit, eine vorhandene Ressourcengruppe zu erstellen oder wiederzuverwenden. Wählen Sie **Vorhandene verwenden** und anschließend <rgn>[Name der Sandboxressourcengruppe]</rgn> in der Dropdownliste aus. Sie verwenden diese Gruppe für den restlichen Teil dieses Moduls.
 
 1. Wählen Sie die Quelle Ihres neuen Servers aus. Für diese Übung lassen Sie die Option _Leer_. Beachten Sie, dass Sie die Option in _Sicherung_ ändern können, wenn Sie eine vorhandene Serversicherung wiederherstellen möchten.
 

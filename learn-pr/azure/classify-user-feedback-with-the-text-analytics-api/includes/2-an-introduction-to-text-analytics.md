@@ -1,0 +1,19 @@
+Wir alle möchten wissen, was unsere Kunden über unsere Marke, unser Produkt und unsere Botschaft denken. Wie ändert sich ihre Meinung im Laufe der Zeit? Indem Sie sich in den Texten, die Kunden schreiben, die Stimmung ansehen, können Sie einige Erkenntnisse gewinnen. Mit der Standpunktanalyse kann die folgende Frage beantwortet werden: *Was wünschen sich unsere Kunden wirklich?* Sie wird genutzt, um Tweets und andere Inhalte sozialer Netzwerke, Kundenrezensionen und E-Mails zu analysieren.
+
+![Die Stimmung wird aus den Texten extrahiert und auf einer Positiv/Negativ-Skala angezeigt.](../media/sentiment-analysis.png)
+
+ Ein beliebter Ansatz der Standpunktanalyse besteht darin, Machine Learning-Modelle zu trainieren, mit denen die Stimmung erkannt wird. Dies ist jedoch ein komplexer Prozess. Es müssen qualitativ hochwertige Trainingsdaten mit Bezeichnungen vorhanden sein und Features aus diesen Daten erstellt werden. Außerdem muss ein Klassifizierer trainiert und dann verwendet werden, um die Stimmung für neue Texte vorherzusagen. Nicht jedes Unternehmen verfügt über die Mittel und das Wissen, um in die Erstellung von vollständig neuen KI-Lösungen investieren zu können. Daher ist es gut, dass Microsoft und andere Unternehmen dazu in der Lage sind, in modernste Forschung in diesen Bereichen zu investieren. Als Entwickler profitieren wir von ermittelten Erkenntnissen in Form von bereitgestellten APIs, SDKs und Plattformen. Microsoft Cognitive Services ist eines dieser Angebote.
+
+## <a name="azure-cognitive-services"></a>Azure Cognitive Services
+
+Microsoft Cognitive Services besteht aus APIs, SDKs und Diensten. Ziel ist es, Entwickler dabei zu unterstützen, ihre Apps intelligenter, ansprechender und auffindbarer zu machen.
+
+Microsoft Cognitive Services verfügt über intelligente Algorithmen für die Bereiche Bildanalyse, Spracheingabe, Sprache, Einblicke und Wissen sowie Suche. Das entsprechende Angebot finden Sie im [Cognitive Services-Verzeichnis](https://azure.microsoft.com/services/cognitive-services/directory/). Sie können jeden Dienst kostenlos ausprobieren. Wenn Sie sich dafür entscheiden, einen oder mehrere dieser Dienste in Ihre Anwendungen zu integrieren, müssen Sie die Registrierung für ein kostenpflichtiges Abonnement durchführen. Der Dienst, den wir in diesem Modul nutzen, ist die Textanalyse-API, die als Nächstes beschrieben wird.
+
+## <a name="text-analytics-api"></a>Textanalyse-API
+
+Die Textanalyse-API ist ein „Cognitive Service“, mit dem Sie Informationen aus Text extrahieren können. Über den Dienst können Sie Sprache identifizieren, Stimmungen erkennen, Schlüsselbegriffe extrahieren und bekannte Entitäten in Text erkennen. 
+
+In dieser Lektion wird für diese API die Standpunktanalyse vorgestellt. Im Hintergrund wird für den Dienst ein Machine Learning-Klassifizierungsalgorithmus verwendet, um eine Stimmungspunktzahl zwischen 0 und 1 zu generieren. Werte nahe 1 weisen auf positive Stimmung hin, Werte nahe 0 weisen auf negative Stimmung hin. Wenn die Punktzahl im Bereich von 0,5 liegt, weist dies auf keine bzw. eine neutrale Stimmung hin. Um die Implementierungsdetails des Algorithmus müssen Sie sich nicht kümmern. Sie konzentrieren sich auf die Nutzung des Diensts, indem Sie aus Ihrer App Aufrufe an den Dienst senden. Im Folgenden strukturieren Sie eine **POST**-Anforderung, senden sie an den Endpunkt `/sentiment` und erhalten dann eine JSON-Antwort mit einer *Stimmungspunktzahl*.
+
+Sie experimentieren zuerst mit der Textanalyse-API, indem Sie eine Onlinekonsole für API-Tests verwenden. Nachdem wir uns mit der API vertraut gemacht haben, nutzen wir sie in einem Szenario zum Erkennen von Stimmungen in Nachrichten, um diese zur weiteren Verarbeitung zu sortieren.

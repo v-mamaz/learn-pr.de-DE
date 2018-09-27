@@ -72,7 +72,7 @@ Die Ausgabe sieht in etwa wie folgt aus. Notieren Sie sich Folgendes: `username`
 1. Erstellen Sie mit dem Befehl `az keyvault create` eine Azure Key Vault-Instanz.
 
     ```azurecli
-    az keyvault create --resource-group <rgn>[Sandbox resource group name]</rgn> --name $ACR_NAME-keyvault
+    az keyvault create --resource-group <rgn>[sandbox resource group name]</rgn> --name $ACR_NAME-keyvault
     ```
 
 1. Verwenden Sie den Befehl `az keyvault secret set`, um den Benutzernamen für die ACR-Instanz im Tresor speichern. Bei der Nutzung von Dienstprinzipalen würden Sie die App-ID für diesen Wert verwenden. Da Sie hier das Administratorkonto verwenden, speichern Sie den Benutzernamen aus der obigen Abfrage. Geben Sie den folgenden Befehl ein, und vergessen Sie nicht, `<username>` zu ersetzen.
@@ -102,9 +102,9 @@ Führen Sie den folgenden `az container create`-Befehl aus, um eine Containerins
 
 ```azurecli
 az container create \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
-    --name acr-build \
-    --image $ACR_NAME.azurecr.io/helloacrbuild:v1 \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
+    --name acr-tasks \
+    --image $ACR_NAME.azurecr.io/helloacrtasks:v1 \
     --registry-login-server $ACR_NAME.azurecr.io \
     --ip-address Public \
     --location eastus \
@@ -115,7 +115,7 @@ az container create \
 Rufen Sie die IP-Adresse der Azure-Containerinstanz ab.
 
 ```azurecli
-az container show --resource-group  <rgn>[Sandbox resource group name]</rgn> --name acr-build --query ipAddress.ip --output table
+az container show --resource-group  <rgn>[sandbox resource group name]</rgn> --name acr-tasks --query ipAddress.ip --output table
 ```
 
 Öffnen Sie einen Browser, und navigieren Sie zur IP-Adresse des Containers. Wenn alles ordnungsgemäß konfiguriert wurde, sollten jetzt die folgenden Ergebnisse angezeigt werden:

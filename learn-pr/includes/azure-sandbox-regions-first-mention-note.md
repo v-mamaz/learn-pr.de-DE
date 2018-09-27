@@ -1,4 +1,4 @@
-Mit der kostenlosen Sandbox können Sie in einem Teil der globalen Azure-Regionen Ressourcen erstellen. Wählen Sie eine Region in der folgenden Liste aus, wenn Sie Ressourcen erstellen:
+Mit der kostenlosen Sandbox können Sie in einem Teil der globalen Azure-Regionen Ressourcen erstellen. Wählen Sie eine Region aus der folgenden Liste aus, wenn Sie Ressourcen erstellen:
 
 :::row:::
     :::column:::

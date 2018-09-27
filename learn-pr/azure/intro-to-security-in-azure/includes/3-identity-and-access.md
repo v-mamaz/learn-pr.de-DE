@@ -1,4 +1,4 @@
-Früher wurden Unternehmensdaten in erster Linie durch Netzwerkgrenzen, die dazugehörigen Firewalls und physische Zugriffssteuerungen geschützt. Aufgrund der explosionsartig zunehmenden Verbreitung von BYOD (Bring Your Own Device), mobilen Apps und Cloudanwendungen werden Netzwerkgrenzen jedoch immer durchlässiger. 
+Früher wurden Unternehmensdaten in erster Linie durch Netzwerkgrenzen, die dazugehörigen Firewalls und physische Zugriffssteuerungen geschützt. Aufgrund der stark zunehmenden Verbreitung von BYOD (Bring Your Own Device), mobilen Apps und Cloudanwendungen werden Netzwerkgrenzen jedoch immer durchlässiger. 
 
 Die neue primäre Sicherheitsgrenze heißt deshalb „Identität“. Daher sind ordnungsgemäße Authentifizierung und eine sorgfältige Zuweisung von Berechtigungen unverzichtbar, um die Kontrolle über die eigenen Daten nicht zu verlieren.
 
@@ -10,7 +10,7 @@ Je mehr Identitäten ein Benutzer verwalten muss, desto größer ist das Risiko 
 
 Denken Sie nun an den logistischen Aufwand für die Verwaltung all dieser Identitäten. Helpdesks werden beim Bearbeiten von Kontosperrungen und Kennwortzurücksetzungen zusätzlich belastet. Wenn ein Benutzer ein Unternehmen verlässt, kann es zudem schwierig sein, alle seine Identitäten zu finden und zu deaktivieren. Falls eine Identität übersehen wird, könnte der Benutzer weiterhin unerwünschten Zugriff erhalten.
 
-Einmaliges Anmelden (SSO) erfordert nur eine Identität und nur ein Kennwort. Der anwendungsübergreifende Zugriff wird einer einzigen, benutzerspezifischen Identität gewährt, wodurch das Sicherheitsmodell vereinfacht wird. Wenn Benutzer die Rolle wechseln oder ein Unternehmen verlassen, sind Zugriffsänderungen an die einzelne Identität gebunden. So wird der Aufwand für das Ändern oder Deaktivieren von Konten erheblich reduziert. Das einmalige Anmelden für Konten erleichtert Benutzern die Verwaltung ihrer Identitäten und erhöht die Sicherheitsfunktionen in Ihrer Umgebung.
+Das einmalige Anmelden (SSO) erfordert nur eine Identität und nur ein Kennwort. Der anwendungsübergreifende Zugriff wird einer einzigen, benutzerspezifischen Identität gewährt, wodurch das Sicherheitsmodell vereinfacht wird. Wenn Benutzer die Rolle wechseln oder ein Unternehmen verlassen, sind Zugriffsänderungen an die einzelne Identität gebunden. So wird der Aufwand für das Ändern oder Deaktivieren von Konten erheblich reduziert. Das einmalige Anmelden für Konten erleichtert Benutzern die Verwaltung ihrer Identitäten und erhöht die Sicherheitsfunktionen in Ihrer Umgebung.
 
 :::row:::
   :::column:::
@@ -20,7 +20,7 @@ Einmaliges Anmelden (SSO) erfordert nur eine Identität und nur ein Kennwort. De
 
 Azure Active Directory (AAD) ist ein cloudbasierter Identitätsdienst. Er hat eine integrierte Unterstützung für die Synchronisierung mit Ihrem vorhandenen lokalen Active Directory-Verzeichnis oder kann einzeln verwendet werden. Das bedeutet, dass alle Ihre Anwendungen – ob lokal, in der Cloud (einschließlich Office 365) oder mobil – dieselben Anmeldeinformationen verwenden können. Administratoren und Entwickler können den Zugriff auf Daten und Anwendungen mithilfe zentralisierter Regeln und Richtlinien steuern, die in Azure AD konfiguriert sind.
 
-Durch die Nutzung von Azure AD für das einmalige Anmelden haben Sie auch die Möglichkeit, mehrere Datenquellen in Intelligent Security Graph zu kombinieren. Intelligent Security Graph ermöglicht es, Bedrohungsanalysen und Echtzeit-Identitätsschutz für alle Konten in Azure AD bereitzustellen, einschließlich der mit der lokalen AD-Instanz synchronisierten Konten. Durch die Verwendung eines zentralen Identitätsanbieters können Sie die Sicherheitskontrollen, die Berichterstellung, die Benachrichtigungen und die Verwaltung Ihrer Identitätsinfrastruktur zentralisieren.
+Durch die Nutzung von Azure AD für das einmalige Anmelden können Sie auch mehrere Datenquellen in Intelligent Security Graph kombinieren. Intelligent Security Graph ermöglicht es, Bedrohungsanalysen und Echtzeit-Identitätsschutz für alle Konten in Azure AD bereitzustellen, einschließlich der mit der lokalen AD-Instanz synchronisierten Konten. Durch die Verwendung eines zentralen Identitätsanbieters können Sie die Sicherheitskontrollen, die Berichterstellung, die Benachrichtigungen und die Verwaltung Ihrer Identitätsinfrastruktur zentralisieren.
 
 Contoso Shipping integriert die bereits vorhandene Active Directory-Instanz des Unternehmens in Azure AD, um innerhalb der Organisation eine einheitliche Zugriffssteuerung zu implementieren. Auf diese Weise wird auch die Anmeldung bei E-Mail-Programmen und Office 365-Dokumenten erheblich vereinfacht, da dabei eine erneute Authentifizierung nicht erforderlich ist.
   :::column-end:::
@@ -36,7 +36,7 @@ Multi-Factor Authentication (MFA) bietet zusätzliche Sicherheit für Identität
 
 Für die **Authentifizierung mit einem Kennwort** können Sie ein Kennwort oder die Antwort auf eine Sicherheitsfrage verwenden. Für die **Authentifizierung mit einem Gerät** können Sie eine mobile App verwenden, die eine Benachrichtigung empfängt, oder ein Gerät, das Token generiert. Die **Authentifizierung mit persönlichen Merkmalen** erfolgt in der Regel anhand biometrischer Eigenschaften, z.B. über einen Fingerabdruck oder einen Gesichtsscan auf vielen mobilen Geräten.
 
-Die mehrstufige Authentifizierung erhöht die Sicherheit Ihrer Identität, indem sie die Auswirkungen der Offenlegung von Anmeldeinformationen einschränkt. Ein Angreifer, der das Kennwort eines Benutzers hat, benötigt ebenfalls sein Telefon oder einen Scan von seinem Gesicht, um sich vollständig zu authentifizieren. Die Authentifizierung mit einer einzigen Methode ist nicht möglich, und der Angreifer kann diese Anmeldeinformationen nicht zum Authentifizieren verwenden. Die daraus gewonnen Sicherheitsvorteile sind enorm, daher ist es besonders wichtig, die mehrstufige Authentifizierung immer zu nutzen, wo dies möglich ist.
+Die mehrstufige Authentifizierung erhöht die Sicherheit Ihrer Identität, indem sie die Auswirkungen der Offenlegung von Anmeldeinformationen einschränkt. Ein Angreifer, der das Kennwort eines Benutzers besitzt, benötigt ebenfalls sein Telefon oder einen Scan von seinem Gesicht, um sich vollständig zu authentifizieren. Die Authentifizierung mit einer einzigen Methode ist nicht möglich, und der Angreifer kann diese Anmeldeinformationen nicht zum Authentifizieren verwenden. Die daraus gewonnen Sicherheitsvorteile sind enorm, daher ist es besonders wichtig, die mehrstufige Authentifizierung immer zu nutzen, wo dies möglich ist.
 
 Azure AD verfügt über integrierte MFA-Funktionen und lässt sich in andere Drittanbieter-MFA integrieren. Die Verwendung steht jedem Benutzer mit der Rolle „Globaler Administrator“ in Azure AD kostenlos zur Verfügung, da es sich um sehr sensible Konten handelt. Für alle anderen Konten können Sie MFA aktivieren, indem Sie spezielle Lizenzen erwerben und diese dem Konto zuweisen.
 
@@ -58,7 +58,7 @@ Zum Verständnis des Konzepts von Dienstprinzipalen müssen zunächst die Begrif
 
 Eine **Identität** ist lediglich etwas, das authentifiziert werden kann. Hierzu gehören natürlich Benutzer mit Benutzername und Kennwort, aber auch Anwendungen und andere Server, die möglicherweise mit geheimen Schlüsseln oder Zertifikaten authentifiziert werden. Zusätzliche Definition: Bei einem **Konto** handelt es sich um Daten, die einer Identität zugeordnet sind.
 
-Ein **Prinzipal** ist eine Identität mit bestimmten Rollen oder Ansprüchen. In der Regel ist es nicht sinnvoll, sich Identität und Prinzipal getrennt vorzustellen. Aber denken Sie an die Verwendung von „`sudo`“ an einer Bash-Eingabeaufforderung unter Linux oder an „Als Administrator ausführen“ unter Windows. In beiden Fällen bleiben Sie mit derselben Identität wie bisher angemeldet, nehmen jedoch eine andere Rolle an, unter der Sie Befehle ausführen. Gruppen werden häufig auch als Prinzipale betrachtet, da ihnen Rechte zugewiesen werden können.
+Ein **Prinzipal** ist eine Identität mit bestimmten Rollen oder Ansprüchen. In der Regel ist es nicht sinnvoll, sich Identität und Prinzipal getrennt vorzustellen. Aber denken Sie an die Verwendung von „`sudo`“ an einer Bash-Eingabeaufforderung unter Linux oder an „Als Administrator ausführen“ unter Windows. In beiden Fällen bleiben Sie mit derselben Identität wie bisher angemeldet, führen Aktionen jedoch mit einer anderen Rolle aus. Gruppen werden häufig auch als Prinzipale betrachtet, da ihnen Rechte zugewiesen werden können.
 
 Ein **Dienstprinzipal** trägt somit seinen Namen zurecht. Er stellt eine Identität dar, die von einem Dienst oder einer Anwendung verwendet wird. Und genau wie anderen Identitäten können auch ihm verschiedene Rollen zugewiesen werden.
   :::column-end:::
@@ -84,7 +84,6 @@ Identitäten werden Rollen direkt oder über eine Gruppenmitgliedschaft zugeordn
 
 Rollen können auf der jeweiligen Dienstinstanzebene zugewiesen werden, werden jedoch auch in der Azure Resource Manager-Hierarchie nach unten weitergegeben. Rollen, die auf einer höheren Ebene zugewiesen werden (etwa auf Abonnementebene), werden an untergeordnete Ebenen (etwa Dienstinstanzen) vererbt. 
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![Verwaltungsgruppen](../media/3-role-assignment-scope.png)
 
 :::row:::
@@ -93,9 +92,8 @@ Rollen können auf der jeweiligen Dienstinstanzebene zugewiesen werden, werden j
   :::column-end:::
     :::column span="3"::: **Privileged Identity Management**
 
-Bei einem umfassenden Konzept zum Schutz der Infrastruktur sollte neben der Verwaltung des Zugriffs auf Azure-Ressourcen mittels rollenbasierter Zugriffssteuerung mit Änderung und Weiterentwicklung der Organisation die Einbindung einer laufenden Überwachung von Rollenmitgliedern in Betracht gezogen werden. Azure AD Privileged Identity Management (PIM) ist ein zusätzliches kostenpflichtiges Angebot, das einen Überblick über Rollenzuweisungen, die Aktivierung von Self-Service- und Just-In-Time-Rollen sowie die Überprüfung des Zugriffs auf Azure AD- und Azure-Ressourcen bietet.
+Bei einem umfassenden Konzept zum Schutz der Infrastruktur sollte neben der Verwaltung des Zugriffs auf Azure-Ressourcen mittels rollenbasierter Zugriffssteuerung bei Änderungen in der Organisation und bei der Weiterentwicklung der Organisation die Einbindung einer laufenden Überwachung von Rollenmitgliedern in Betracht gezogen werden. Azure AD Privileged Identity Management (PIM) ist ein zusätzliches kostenpflichtiges Angebot, das einen Überblick über Rollenzuweisungen, die Aktivierung von Self-Service- und Just-In-Time-Rollen sowie die Überprüfung des Zugriffs auf Azure AD- und Azure-Ressourcen bietet.
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![Privileged Identity Management](../media/PIM_Dashboard.png)
 
   :::column-end:::

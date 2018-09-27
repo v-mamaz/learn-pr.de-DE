@@ -1,8 +1,8 @@
-In dieser Einheit lernen Sie, wie Sie auf der Benutzeroberfläche des Azure-Portals mit Blättern arbeiten. Sie können entweder ein eigenes Konto verwenden (falls Sie eines haben oder eines erstellt haben) oder die kostenlose Azure-Sandbox verwenden.
+In dieser Einheit lernen Sie, wie Sie auf der Benutzeroberfläche des Azure-Portals mit Blättern arbeiten. Sie können entweder ein eigenes Konto verwenden (falls Sie bereits ein Konto haben oder eines erstellt haben) oder die kostenlose Azure-Sandbox verwenden.
 
-Wenn Sie ein Konto haben (oder eines erstellt haben), melden Sie sich beim [Azure-Portal](https://portal.azure.com?azure-portal=true) mit den Anmeldeinformationen Ihres Kontos an.
+Wenn Sie bereits ein Konto haben (oder eines erstellt haben), melden Sie sich beim [Azure-Portal](https://portal.azure.com?azure-portal=true) mit den Anmeldeinformationen Ihres Kontos an.
 
-Andernfalls aktivieren Sie **die Azur-Sandbox oben**, und melden Sie sich im [Azur-Portal für Sandbox](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) mit demselben Konto an, mit dem Sie die Sandbox aktiviert haben.
+Andernfalls aktivieren Sie die oben aufgeführte **Azure-Sandbox**, und melden Sie sich im [Azure-Portal für die Sandbox](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit demselben Konto an, mit dem Sie die Sandbox aktiviert haben.
 
 ## <a name="working-with-blades"></a>Arbeiten mit Blättern
 

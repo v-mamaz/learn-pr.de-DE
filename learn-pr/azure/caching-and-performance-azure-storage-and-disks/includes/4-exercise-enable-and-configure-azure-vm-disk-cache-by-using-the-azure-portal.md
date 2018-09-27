@@ -18,10 +18,10 @@ In diesem Schritt erstellen wir eine VM mit den folgenden Eigenschaften:
 |-----------------|---------|
 | Image           | **Windows Server 2016 Datacenter** |
 | Name            | **fotoshareVM** |
-| Ressourcengruppe  |   **<rgn>[Name der Sandbox-Ressourcengruppe]</rgn>** |
-| Speicherort        | Siehe unten. |
+| Ressourcengruppe  |   **<rgn>[Name der Sandboxressourcengruppe]</rgn>** |
+| Standort        | Siehe unten. |
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
 
 1. Wählen Sie im Menü in der Randleiste **Ressource erstellen** aus.
 
@@ -31,9 +31,9 @@ In diesem Schritt erstellen wir eine VM mit den folgenden Eigenschaften:
 
 1. Vergewissern Sie sich im Bereich **Grundlagen**, dass das ausgewählte **Abonnement** _Concierge-Abonnement_ ist.
 
-1. Wählen Sie unter **Ressourcengruppe** die Option **Vorhandene verwenden** aus, und klicken Sie auf _<rgn>[Name der Sandbox-Ressourcengruppe]</rgn>_.
+1. Wählen Sie unter **Ressourcengruppe** die Option **Vorhandene verwenden** aus, und klicken Sie auf _<rgn>[Name der Sandboxressourcengruppe]</rgn>_.
 
-1. Geben Sie in **Name der virtuellen Maschine** _fotoshareVM_ ein.
+1. Geben Sie unter **Namen der VM** _fotoshareVM_ ein.
 
 1. Wählen Sie in der Dropdownliste **Speicherort** die nächstgelegene Region aus der folgenden Liste.
 
@@ -83,16 +83,16 @@ Als Nächstes führen wir die Konfiguration des Caches für den für Daten besti
 
 1. Geben Sie im Bereich **Verwalteten Datenträger erstellen** im Feld **Name** den Namen **fotoshareVM-data** ein.
 
-1. Wählen Sie unter **Ressourcengruppe** zuerst **Vorhandene verwenden** und anschließend _<rgn>[Sandbox-Ressourcengruppenname]</rgn>_ aus.
+1. Wählen Sie unter **Ressourcengruppe** zuerst **Vorhandene verwenden** und anschließend _<rgn>[Name der Sandboxressourcengruppe]</rgn>_ aus.
 
-1. Notieren Sie die Standardwerte für die verbleibenden Felder:
+1. Beachten Sie die Standardwerte für die verbleibenden Felder:
     - SSD Premium
     - Größe von 1.023 GB
     - Am gleichen Speicherort wie die VM (kann nicht geändert werden).
     - IOPS-Grenzwert – 5.000
     - Durchsatzbegrenzung (MB/s) – 200
 
-1. Klicken Sie am unteren Rand des Bildschirms auf **Erstellen**. 
+1. Klicken Sie am unteren Rand des Bildschirms auf **Erstellen**.
 
     Warten Sie, bis der Datenträger erstellt wurde, bevor Sie fortfahren.
 

@@ -1,6 +1,6 @@
 Für den MEAN-Komponentenstapel wird ein Server benötigt. Sie können entweder einen Linux-Computer oder einen virtuellen Computer aus Ihrem eigenen Serverbestand verwenden, oder die Konfiguration erfolgt auf einem cloudbasierten virtuellen Computer. In diesem Modul richten wir den Stapel zur Ausführung auf einem virtuellen Ubuntu Linux-Computer ein, der in Azure ausgeführt wird.
 
-In dieser Einheit erstellen Sie einen neuen virtuellen Ubuntu Linux-Computer, der in Azure gehostet wird. Sie könnten Ihre MEAN-Stapelkomponenten auch auf einer vorhandenen VM oder auf einem physischen Hostcomputer installieren. Durch das Erstellen eines neuen virtuellen Computers in dieser Übung können Sie alle Komponenten in einer Azure-Ressourcengruppe zusammenfassen. Dies vereinfacht die Verwaltung und die Bereinigung nach Abschluss der Übungen.
+In dieser Einheit erstellen Sie einen neuen virtuellen Ubuntu Linux-Computer, der in Azure gehostet wird. Sie könnten Ihre MEAN-Stapelkomponenten auch auf einer vorhandenen VM oder auf einem physischen Hostcomputer installieren. Durch das Erstellen eines neuen virtuellen Computers in dieser Übung können Sie alle Komponenten in einer Azure-Ressourcengruppe zusammenfassen. Dies vereinfacht die Verwaltung und die Bereinigung nach Abschluss der Übung.
 
 ## <a name="provision-an-ubuntu-linux-vm"></a>Bereitstellen eines virtuellen Ubuntu Linux-Computers
 
@@ -8,20 +8,20 @@ In dieser Einheit erstellen Sie einen neuen virtuellen Ubuntu Linux-Computer, de
 
 ### <a name="creating-a-resource-group"></a>Erstellen einer Ressourcengruppe
 
-Wenn Sie einen neuen Satz von Ressourcen erstellen, erstellen Sie in der Regel zuerst eine _Ressourcengruppe_, um sie alle zu besitzen. Dieser Schritt ist in der Azure-Sandbox überflüssig, aber wenn Sie in Ihrem eigenen Abonnement arbeiten, erstellen Sie mit dem folgenden Befehl eine Ressourcengruppe an einem Speicherort in Ihrer Nähe.
+Wenn Sie neue Ressourcen erstellen, erstellen Sie in der Regel zuerst eine _Ressourcengruppe_, um alle Ressourcen zu besitzen. Dieser Schritt ist in der Azure-Sandbox überflüssig, aber wenn Sie in Ihrem eigenen Abonnement arbeiten, erstellen Sie mit dem folgenden Befehl eine Ressourcengruppe an einem Standort in Ihrer Nähe.
 
 ```azurecli
 az group create --name <resource-group-name> --location <resource-group-location>
 ```
 
 > [!IMPORTANT]
-> Mit der Azure-Sandbox müssen Sie keine Ressourcengruppe erstellen. Verwenden Sie stattdessen die vorab erstellte Ressourcengruppe mit dem Namen **<rgn>[Sandboxressourcengruppen-Name]</rgn>**.
+> In der Azure-Sandbox müssen Sie keine Ressourcengruppe erstellen. Verwenden Sie stattdessen die vorab erstellte Ressourcengruppe mit dem Namen **<rgn>[Name der Sandboxressourcengruppe]</rgn>**.
 
 1. Führen Sie in der Cloud Shell rechts den folgenden Befehl aus, um eine neue Ubuntu Linux-VM zu erstellen. Ersetzen Sie `<vm-admin-username>` und `<vm-admin-password>` durch Ihren bevorzugten Administratornamen sowie das zugehörige Kennwort.
 
     ```azurecli
     az vm create \
-        --resource-group <rgn>[Sandbox resource group name]</rgn> \
+        --resource-group <rgn>[sandbox resource group name]</rgn> \
         --name MeanDemo \
         --image UbuntuLTS \
         --admin-username <vm-admin-username> \
@@ -42,7 +42,7 @@ az group create --name <resource-group-name> --location <resource-group-location
         "powerState": "VM running",
         "privateIpAddress": "10.0.0.4",
         "publicIpAddress": "<the public IP address of the newly created machine>",
-        "resourceGroup": "<rgn>[Sandbox resource group name]</rgn>",
+        "resourceGroup": "<rgn>[sandbox resource group name]</rgn>",
         "zones": ""
     }
     ```
@@ -63,8 +63,8 @@ az group create --name <resource-group-name> --location <resource-group-location
 
 1. Öffnen Sie Port 80 auf der VM, um bei der neuen Webanwendung, die Sie erstellen werden, eingehenden HTTP-Datenverkehr zuzulassen.
 
-    ``` bash
-    az vm open-port --port 80 --resource-group <rgn>[Sandbox resource group name]</rgn> --name MeanDemo
+    ```azurecli
+    az vm open-port --port 80 --resource-group <rgn>[sandbox resource group name]</rgn> --name MeanDemo
     ```
 
     Durch diesen Befehl wird der HTTP-Port auf Ihrem virtuellen Computer geöffnet, der mit dem Namen „MeanDemo“ erstellt wurde.

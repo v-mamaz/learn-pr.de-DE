@@ -2,9 +2,10 @@ Angenommen, Sie möchten Azure Active Directory bereitstellen und verwenden Rich
 
 ## <a name="launch-lab-and-sign-in-to-the-azure-portal"></a>Starten des Labs und Anmelden beim Azure-Portal
 
-1. Klicken Sie auf den obigen Link **VM-Modus starten**, um das Lab zu starten.
+1. Klicken Sie auf den obigen Link **Lab starten**, um das Lab zu starten.
 
-1. Melden Sie sich beim Azure-Portal als LabAdmin-<XXXXXXX>@triplecrownlabsoutlook.onmicrosoft.com an. Den Benutzernamen und das Kennwort finden Sie oben im Fenster auf der Registerkarte „Ressourcen“.
+> [!NOTE]
+> Nachdem das Lab gestartet wurde, finden Sie die erforderlichen Anmeldeinformationen auf der Registerkarte **Ressourcen** neben den Anweisungen.
 
 ## <a name="create-a-directory"></a>Erstellen eines Verzeichnisses
 
@@ -12,14 +13,14 @@ Zuerst wird ein neues Verzeichnis für First Up Consultants erstellt, in dem ohn
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com?azure-portal=true) an.
 
-1. Klicken Sie im linken Navigationsbereich auf **Ressource erstellen** > **Identität** > **Azure Active Directory**.
+2. Klicken Sie im linken Navigationsbereich auf **Ressource erstellen** > **Identität** > **Azure Active Directory**.
 
-1. Geben Sie auf dem Blatt **Verzeichnis erstellen** die folgenden Werte für **Organisationsname** und **Name der Anfangsdomäne** ein:
+3. Geben Sie auf dem Blatt **Verzeichnis erstellen** die folgenden Werte für **Organisationsname** und **Name der Anfangsdomäne** ein:
 
    1. Organisationsname: `First Up Consultants`
-   1. Name der Anfangsdomäne: `firstupconsultants<XXXXXXX>`, wobei <XXXXXXX> die Zahl ist, die nach dem Benutzernamen auf der Registerkarte **Ressourcen** am oberen Rand des Fensters mit den Anweisungen angezeigt wird.
+   2. Name der Anfangsdomäne: `firstupconsultants<XXXXXXX>`, wobei <XXXXXXX> die Zahl ist, die nach dem Benutzernamen auf der Registerkarte **Ressourcen** am oberen Rand des Fensters mit den Anweisungen angezeigt wird.
 
-1. Warten Sie, bis das Verzeichnis erstellt wurde. Klicken Sie auf den Link, um in das neue Verzeichnis zu wechseln, oder klicken Sie oben im Fenster auf **Verzeichnis- und Abonnementfilter**, und wählen Sie das neu erstellte Verzeichnis aus.
+4. Warten Sie, bis das Verzeichnis erstellt wurde. Klicken Sie auf den Link, um in das neue Verzeichnis zu wechseln, oder klicken Sie oben im Fenster auf **Verzeichnis- und Abonnementfilter**, und wählen Sie das neu erstellte Verzeichnis aus.
 
 ## <a name="get-trial-licenses"></a>Erhalten von Testlizenzen
 

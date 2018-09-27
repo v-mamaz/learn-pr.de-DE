@@ -13,7 +13,7 @@ Verwenden Sie den Befehl `az redis create`, um einen neuen Azure Redis Cache zu 
 > | Parameter | Beschreibung |
 > |-----------|-------------|
 > | `--name`    | Der Cachename muss global eindeutig sein und aus Buchstaben, Zahlen und Bindestrichen bestehen. |
-> | `--resource-group` | Verwenden Sie die vorab erstellte Ressourcengruppe **<rgn>[Name der Sandbox-Ressourcengruppe]</rgn>**, die zur Azure-Sandbox gehört. |
+> | `--resource-group` | Verwenden Sie die vorab erstellte Ressourcengruppe **<rgn>[Name der Sandboxressourcengruppe]</rgn>**, die zur Azure-Sandbox gehört. |
 > | `--location` | Geben Sie den Ort an, an dem sich der Cache befinden soll. Normalerweise würden Sie wahrscheinlich einen Standort in der Nähe der Datenconsumer wählen. In diesem Fall sind Sie auf die in der Azure-Sandbox verfügbaren Standorte beschränkt. Wählen Sie den Standort aus, der Ihnen am nächsten liegt. |
 > | `--size` | Die Größe der Azure Redis Cache-Instanz. Gültige Werte sind [C0, C1, C2, C3, C4, C5, C6, P1, P2, P3, P4]. |
 > | `--sku` | Die Azure Redis Cache SKU. Gültige Werte sind [Basic, Standard, Premium]. |
@@ -33,7 +33,7 @@ Verwenden Sie den Befehl `az redis create`, um einen neuen Azure Redis Cache zu 
 
     az redis create \
         --name "$REDIS_NAME" \
-        --resource-group <rgn>[Sandbox resource group name]</rgn> \
+        --resource-group <rgn>[sandbox resource group name]</rgn> \
         --location eastus \
         --vm-size C0 \
         --sku Basic \
@@ -85,7 +85,7 @@ Rufen Sie die Zugriffsschlüssel über den Befehl `az redis list-keys` ab. Führ
 ```azurecli
 REDIS_KEY=$(az redis list-keys \
     --name "$REDIS_NAME" \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --query primaryKey \
     --output tsv)
 
@@ -164,7 +164,7 @@ Abschließend werden Sie Ihrer Azure Redis Cache-Instanz nun Daten hinzufügen.
     ```azcli
     az redis show \
         --name "$REDIS_NAME" \
-        --resource-group <rgn>[Sandbox resource group name]</rgn> \
+        --resource-group <rgn>[sandbox resource group name]</rgn> \
         --query provisioningState
     ```
 
@@ -180,7 +180,7 @@ Abschließend werden Sie Ihrer Azure Redis Cache-Instanz nun Daten hinzufügen.
 
 Als letzten Schritt überprüfen Sie, ob sich die von Ihnen hinzugefügten Daten in Ihrer Azure Redis Cache-Instanz befinden.
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) mit dem Konto an, über das Sie die Sandbox aktiviert haben.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit dem Konto an, über das Sie die Sandbox aktiviert haben.
 
 1. Suchen Sie Ihre Azure Redis Cache-Instanz, indem Sie auf der linken Randleiste auf **Alle Ressourcen** klicken und über das Filterfeld auf der linken Seite Azure Redis Cache-Instanzen auswählen. Alternativ können Sie auch oben das Suchfeld verwenden und den Namen des Cache eingeben.
 

@@ -38,7 +38,7 @@ Hier verwenden Sie die benutzerdefinierte Skripterweiterung, um IIS remote auf I
 
     ```azurecli
     az vm extension set \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --vm-name myVM \
       --name CustomScriptExtension \
       --publisher Microsoft.Compute \
@@ -46,7 +46,7 @@ Hier verwenden Sie die benutzerdefinierte Skripterweiterung, um IIS remote auf I
       --protected-settings '{"commandToExecute": "powershell -ExecutionPolicy Unrestricted -File configure-iis.ps1"}'
     ```
 
-    Der Vorgang zum Konfigurieren von Nginx, Festlegen von Inhalten auf der Startseite und Starten des Diensts dauert einige Minuten.
+    Der Vorgang zum Konfigurieren von IIS, Festlegen von Inhalten auf der Startseite und Starten des Diensts dauert einige Minuten.
 
     Wenn Sie möchten, können Sie sich in der Zwischenzeit auf einer separaten Browserregisterkarte [das PowerShell-Skript ansehen](https://gist.githubusercontent.com/tpetchel/26f9dab2628a80bf87a33caeed1b6ded/raw/69e5d9250b9dcd7e7eece4b0ea3c3a8cd1b4fcd7/configure-iis.ps1?azure-portal=true). Das Skript installiert IIS und konfiguriert die Startseite so, dass sie eine Begrüßungsnachricht zusammen mit dem Computernamen des virtuellen Computers „myVM“ anzeigt.
 
@@ -55,7 +55,7 @@ Hier verwenden Sie die benutzerdefinierte Skripterweiterung, um IIS remote auf I
     ```azurecli
     az vm open-port \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --port 80
     ```
 
@@ -68,7 +68,7 @@ Da IIS nun eingerichtet ist, können wir die Ausführung überprüfen.
     ```azurecli
     az vm list-ip-addresses \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --query "[].virtualMachine.network.publicIpAddresses[0].ipAddress" \
       --output tsv
     ```
@@ -106,11 +106,11 @@ Sie können Ihre Skripts in Azure Storage oder an einem öffentlichen Speicheror
 
 Hier verwenden Sie die benutzerdefinierte Skripterweiterung, um Nginx remote auf Ihrem virtuellen Computer über Cloud Shell zu konfigurieren. Sie konfigurieren außerdem die Firewall für eingehenden Netzwerkzugriff an Port 80 (HTTP).
 
-1. Führen Sie den Befehl `az vm extension set` in Cloud Shell zum Herunterladen und Ausführen eines Bash-Skripts aus, das Nginx installiert und eine einfache Startseite konfiguriert.
+1. Führen Sie den Befehl `az vm extension set` in Cloud Shell zum Herunterladen und Ausführen eines Bash-Skripts aus, das nginx installiert und eine einfache Startseite konfiguriert.
 
     ```azurecli
     az vm extension set \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --vm-name myVM \
       --name customScript \
       --publisher Microsoft.Azure.Extensions \
@@ -118,7 +118,7 @@ Hier verwenden Sie die benutzerdefinierte Skripterweiterung, um Nginx remote auf
       --protected-settings '{"commandToExecute": "./configure-nginx.sh"}'
     ```
 
-    Der Vorgang zum Konfigurieren von IIS, Festlegen von Inhalten auf der Startseite und Starten des Diensts dauert einige Minuten.
+    Der Vorgang zum Konfigurieren von nginx, Festlegen von Inhalten auf der Startseite und Starten des Diensts dauert einige Minuten.
 
     Wenn Sie möchten, können Sie sich in der Zwischenzeit auf einer separaten Browserregisterkarte [das Bash-Skript ansehen](https://gist.githubusercontent.com/tpetchel/26f9dab2628a80bf87a33caeed1b6ded/raw/69e5d9250b9dcd7e7eece4b0ea3c3a8cd1b4fcd7/configure-nginx.sh?azure-portal=true). Das Skript installiert Nginx und konfiguriert die Startseite so, dass sie eine Begrüßungsnachricht zusammen mit dem Computernamen des virtuellen Computers „myVM“ anzeigt.
 
@@ -127,7 +127,7 @@ Hier verwenden Sie die benutzerdefinierte Skripterweiterung, um Nginx remote auf
     ```azurecli
     az vm open-port \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --port 80
     ```
 
@@ -140,7 +140,7 @@ Da Nginx nun eingerichtet ist, können wir die Ausführung überprüfen.
     ```azurecli
     az vm list-ip-addresses \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --query "[].virtualMachine.network.publicIpAddresses[0].ipAddress" \
       --output tsv
     ```

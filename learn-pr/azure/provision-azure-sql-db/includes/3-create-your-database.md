@@ -65,7 +65,7 @@ Hier richten Sie Ihre Datenbank ein, was das Erstellen des logischen Servers bei
 
 Wenn Sie im Laufe der Zeit bemerken, dass Sie weitere Computeleistung benötigen, um den Anforderungen gerecht zu werden, können Sie die Leistungsoptionen anpassen oder zwischen DTU- und V-Kern-Leistungsmodellen wechseln.
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
 
 1. Klicken Sie im Portal links oben auf **Ressource erstellen**. Wählen Sie **Datenbanken** und dann **SQL-Datenbank** aus.
 
@@ -90,7 +90,7 @@ Wenn Sie im Laufe der Zeit bemerken, dass Sie weitere Computeleistung benötigen
     | ------------ | ----- |
     | **Datenbankname** | **Logistik** |
     | **Abonnement** | Ihr Abonnement |
-    | **Ressourcengruppe** |  Verwenden Sie die vorhandene Gruppe „<rgn>[Name der Sandbox-Ressourcengruppe]</rgn>“. |
+    | **Ressourcengruppe** |  Verwenden Sie die vorhandene Gruppe <rgn>[Name der Sandboxressourcengruppe]</rgn>. |
     | **Quelle auswählen** | **Leere Datenbank** |
     | **Möchten Sie einen Pool für elastische SQL-Datenbanken verwenden?** | **Jetzt nicht** |
     | **Sortierung** | **SQL_Latin1_General_CP1_CI_AS** |

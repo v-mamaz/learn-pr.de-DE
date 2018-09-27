@@ -5,7 +5,7 @@ Wir beginnen mit der offensichtlichsten Aufgabe: der Erstellung eines virtuellen
 
 ## <a name="logins-subscriptions-and-resource-groups"></a>Anmeldungen, Abonnements und Ressourcengruppen
 
-Sie arbeiten in Azure Cloud Shell auf der rechten Seite. Nachdem Sie die Sandbox aktiviert haben, werden Sie mit einem kostenlosen Abonnement, das von Microsoft Learn verwaltet wird, bei Azure angemeldet. Sie müssen sich nicht selbst bei Azure anmelden oder ein Abonnement auswählen. Dies wird für Sie durchgeführt. Außerdem erstellen Sie normalerweise eine _Ressourcengruppe_ für neue Ressourcen. In diesem Modul erstellt die Azure-Sandbox für Sie eine Ressourcengruppe, die verwendet wird, um alle Befehle auszuführen.
+Sie arbeiten in Azure Cloud Shell auf der rechten Seite. Nachdem Sie die Sandbox aktiviert haben, werden Sie mit einem kostenlosen Abonnement, das von Microsoft Learn verwaltet wird, bei Azure angemeldet. Sie müssen sich nicht selbst bei Azure anmelden oder ein Abonnement auswählen. Dies wird für Sie durchgeführt. Außerdem erstellen Sie hier normalerweise eine _Ressourcengruppe_ für neue Ressourcen. In diesem Modul erstellt die Azure-Sandbox für Sie eine Ressourcengruppe, die verwendet wird, um alle Befehle auszuführen.
 
 ## <a name="create-a-linux-vm-with-the-azure-cli"></a>Erstellen eines virtuellen Linux-Computers mit der Azure CLI
 
@@ -32,8 +32,8 @@ Beginnen wir mit dem ersten: `az vm create`. Mit diesem Befehl wird ein virtuell
 > [!div class="mx-tableFixed"]
 > | Parameter | Beschreibung |
 > |-----------|-------------|
-> | `resource-group` | Die Ressourcengruppe, die als Besitzer des virtuellen Computers fungiert. Verwenden Sie **<rgn>[Sandbox Resource Group]</rgn>** (Sandbox-Ressourcengruppe). |
-> | `name` | Der Name des virtuellen Computers – muss innerhalb der Ressourcengruppe eindeutig sein. |
+> | `resource-group` | Die Ressourcengruppe, die als Besitzer des virtuellen Computers fungiert. Verwenden Sie **<rgn>[Sandboxressourcengruppe]</rgn>**. |
+> | `name` | Der Name des virtuellen Computers; muss innerhalb der Ressourcengruppe eindeutig sein. |
 > | `image` | Das Betriebssystemimage, das zum Erstellen des virtuellen Computers verwendet werden soll. |
 > | `location` | Die Region, in der die VM angeordnet wird. Normalerweise liegt die Region in der Nähe des VM-Benutzers. Wählen Sie in dieser Übung in der folgenden Liste einen Standort in Ihrer Nähe aus. |
 
@@ -47,7 +47,7 @@ Darüber hinaus ist es hilfreich, das `--verbose`-Flag hinzuzufügen, um den For
 Wir erstellen nun einen neuen virtuellen Linux-Computer. Führen Sie den folgenden Befehl in Azure Cloud Shell aus, um am Standort „USA, Westen“ einen Debian Linux-Computer zu erstellen. Ändern Sie den Standort, wenn dieser nicht in Ihrer Nähe liegt.
 
 ```azurecli
-az vm create --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --location westus --verbose 
+az vm create --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --location westus --verbose 
 ```
 
 [!include[](../../../includes/azure-cloudshell-copy-paste-tip.md)]

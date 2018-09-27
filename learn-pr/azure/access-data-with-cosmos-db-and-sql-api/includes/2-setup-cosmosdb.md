@@ -8,7 +8,7 @@ Als Erstes müssen wir eine leere Azure Cosmos DB-Datenbank und eine Sammlung er
 
 Wenn Sie Azure schon eine Weile verwenden, stehen Ihnen möglicherweise mehrere Abonnements zur Verfügung. Dies ist häufig bei Entwicklern der Fall, die ein Abonnement für Visual Studio und weitere Unternehmensressourcen haben.
 
-Die Azure Sandbox hat in Cloud Shell bereits das Concierge-Abonnement für Sie ausgewählt, und Sie können mithilfe dieser Schritte die Abonnementeinstellung überprüfen. Wenn Sie Ihr eigenes Abonnement verwenden, können Sie zum Wechseln von Abonnements mit der Azure-Befehlszeilenschnittstelle die folgenden Schritte ausführen.
+Die Azure-Sandbox hat in Cloud Shell bereits das Concierge-Abonnement für Sie ausgewählt, und Sie können mithilfe dieser Schritte die Abonnementeinstellung überprüfen. Wenn Sie Ihr eigenes Abonnement verwenden, können Sie zum Wechseln von Abonnements mit der Azure-Befehlszeilenschnittstelle die folgenden Schritte ausführen.
 
 1. Beginnen Sie, indem Sie die verfügbaren Abonnements auflisten.
 
@@ -37,13 +37,13 @@ Die Azure Sandbox hat in Cloud Shell bereits das Concierge-Abonnement für Sie a
     export NAME="<Azure Cosmos DB account name>"
     ```
 
-1. Legen Sie für die Ressourcengruppe die Verwendung der bereits vorhandenen Sandbox-Ressourcengruppe fest.
+1. Legen Sie die Ressourcengruppe darauf fest, die bereits vorhandene Sandboxressourcengruppe zu verwenden.
 
     ```azurecli
-    export RESOURCE_GROUP="<rgn>[Sandbox resource group name]</rgn>"
+    export RESOURCE_GROUP="<rgn>[sandbox resource group name]</rgn>"
     ```
 
-1. Wählen Sie die Region aus, die Ihnen am nächsten ist, und legen Sie die Umgebungsvariable entsprechen fest (Beispiel: `export LOCATION="EastUS"`).
+1. Wählen Sie die Region aus, die Ihnen am nächsten ist, und legen Sie die Umgebungsvariable entsprechend fest (Beispiel: `export LOCATION="EastUS"`).
 
     [!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
@@ -62,7 +62,7 @@ Die Azure Sandbox hat in Cloud Shell bereits das Concierge-Abonnement für Sie a
 Wenn Sie unter Verwendung Ihres eigenen Abonnements eine Cosmos DB-Datenbank erstellen, sollten Sie eine neue Ressourcengruppe erstellen, die alle zugehörigen Ressourcen enthält.
 
 > [!IMPORTANT]
-> Sie müssen diesen Schritt nicht ausführen, wenn Sie die von Microsoft Learn bereitgestellte Azure Sandbox verwenden. Vergewissern Sie sich stattdessen, dass die obige Variable `RESOURCE_GROUP` auf **<rgn>[Sandbox-Ressourcengruppenname]</rgn>** festgelegt ist.
+> Sie müssen diesen Schritt nicht ausführen, wenn Sie die von Microsoft Learn bereitgestellte Azure-Sandbox verwenden. Vergewissern Sie sich stattdessen, dass die obige Variable `RESOURCE_GROUP` auf **<rgn>[Name der Sandboxressourcengruppe]</rgn>** festgelegt ist.
 
 In Ihrem eigenen Abonnement verwenden Sie den folgenden Befehl, um die Ressourcengruppe zu erstellen. 
 
@@ -75,7 +75,7 @@ az group create --name <name> --location <location>
 1. Erstellen Sie mithilfe des Befehls `cosmosdb create` das Azure Cosmos DB-Konto. Der Befehl verwendet die folgenden Parameter und kann ohne Änderungen ausgeführt werden, wenn Sie die Umgebungsvariablen wie empfohlen festgelegt haben.
     - `--name`: Eindeutiger Name für die Ressource
     - `--kind`: Datenbankart, verwenden Sie _GlobalDocumentDB_.
-    - `--resource-group`: Ressourcengruppe Verwenden Sie **<rgn>[Sandbox-Ressourcengruppe]</rgn>**. Diese sollte der `RESOURCE_GROUP`-Variable zugewiesen werden.
+    - `--resource-group`: Ressourcengruppe Verwenden Sie **<rgn>[Sandboxressourcengruppe]</rgn>**. Diese sollte der `RESOURCE_GROUP`-Variable zugewiesen sein.
 
     ```azurecli
     az cosmosdb create --name $NAME --kind GlobalDocumentDB --resource-group $RESOURCE_GROUP

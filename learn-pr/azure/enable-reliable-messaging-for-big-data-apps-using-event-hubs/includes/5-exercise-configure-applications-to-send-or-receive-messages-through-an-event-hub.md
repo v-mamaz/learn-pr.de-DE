@@ -13,7 +13,7 @@ Die Java-Empfängeranwendung, die Sie in dieser Einheit konfigurieren, speichert
     |Parameter      |Beschreibung|
     |---------------|-----------|
     |--name (erforderlich)  | Ein Name für Ihr Speicherkonto. |
-    |--resource-group (erforderlich)  |Der Ressourcengruppenbesitzer. Wir verwenden die vorab erstellte Ressourcengruppe.|
+    |--resource-group (erforderlich)  |Der Ressourcengruppenbesitzer. Wir verwenden die vorab erstellte Sandboxressourcengruppe.|
     |--location (optional)    |Ein optionaler Standort, wenn Sie das Speicherkonto an einem bestimmten Ort und nicht am Standort der Ressourcengruppe wünschen.|
 
     Geben Sie den Namen des Speicherkontos in eine Variable ein. Dieser darf nur als Kleinbuchstaben und Zahlen mit Bindestrichen als Trennzeichen bestehen. Außerdem muss er in Azure eindeutig sein.

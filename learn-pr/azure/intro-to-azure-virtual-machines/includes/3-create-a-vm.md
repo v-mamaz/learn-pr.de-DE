@@ -21,7 +21,7 @@ Nach der Anmeldung werden zwei Hauptbereiche angezeigt. Der erste ist ein Menü,
 
 Angenommen, Sie möchten einen virtuellen Computer erstellen, auf dem eine WordPress-Website betrieben wird. Das Einrichten einer Website ist nicht schwierig, doch einige Punkte sind zu bedenken. Sie müssen ein Betriebssystem installieren und konfigurieren, eine Website einrichten, eine Datenbank installieren und sich beispielsweise mit Firewalls befassen. In den nächsten Modulen erhalten Sie ausführliche Informationen zum Erstellen eines virtuellen Computers. Hier erstellen Sie allerdings bereits einen virtuellen Computer, um zu sehen, wie einfach dieser Vorgang ist. Nicht alle Optionen werden an dieser Stelle beschrieben. Eine ausführliche Übersicht über die einzelnen Optionen finden Sie in den Modulen zum **Erstellen eines virtuellen Computers**.
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben. 
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
 
 1. Das Menü zum Erstellen und Verwalten von Azure-Ressourcen wird links angezeigt. Den verbleibenden Bildschirmbereich nimmt das Dashboard ein.
 
@@ -48,8 +48,8 @@ Angenommen, Sie möchten einen virtuellen Computer erstellen, auf dem eine WordP
 Zunächst müssen Sie die grundlegenden Parameter des virtuellen Computers für WordPress konfigurieren. Wenn Sie mit einigen Optionen noch nicht vertraut sind, ist das kein Problem. Alle Optionen werden in einem weiteren Modul beschrieben. Sie können die hier verwendeten Werte gerne kopieren.
 
 1. Nutzen Sie die folgenden Werte auf der Registerkarte **Grundlagen**.
-    - Das Abonnement sollte auf _Concierge Subscription_ (Concierge-Abonnement) festgelegt werden.
-    - Wählen Sie für die Region die Option **Vorhandene verwenden** und in der Dropdownliste dann die Option <rgn>[Sandbox resource group name]</rgn> (Sandbox-Ressourcengruppenname).
+    - Das Abonnement sollte auf _Concierge-Abonnement_ festgelegt werden.
+    - Wählen Sie für die Region die Option **Vorhandene verwenden** und in der Dropdownliste dann <rgn>[Name der Sandboxressourcengruppe]</rgn> aus.
     - Geben Sie unter **Name** einen Namen für die VM ein. Verwenden Sie _test-wp1-eus-vm_.
     - Wählen Sie in der folgenden Liste eine **Region** aus, die in Ihrer Nähe liegt.
         [!include[](../../../includes/azure-sandbox-regions-note-friendly.md)]

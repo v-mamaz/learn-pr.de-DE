@@ -10,7 +10,7 @@ Sie erstellen eine Funktion, die startet, sobald sie eine HTTP-Anforderung empf�
 
 Beginnen Sie mit der Erstellung einer Funktions-App, die Sie im gesamten Modul verwenden werden. Mit einer Funktions-App können Sie Funktionen in logischen Einheiten gruppieren. Dies erleichtert die Verwaltung, Bereitstellung und Freigabe von Ressourcen.
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) mit dem Konto an, über das Sie die Sandbox aktiviert haben.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit dem Konto an, über das Sie die Sandbox aktiviert haben.
 
 1. Klicken Sie links oben im Azure-Portal auf die Schaltfläche **Ressource erstellen** und dann auf **Compute** > **Funktions-App**.
 
@@ -18,14 +18,14 @@ Beginnen Sie mit der Erstellung einer Funktions-App, die Sie im gesamten Modul v
 
     | Eigenschaft     | Empfohlener Wert  | Beschreibung  |
     |--------------|------------------|--------------|
-    | **App-Name** | Global eindeutiger Name | Der Name Ihrer neuen Funktions-App. Gültige Zeichen sind `a-z`, `0-9` und `-`.  | 
-    | **Abonnement** | Ihr Abonnement | Das Abonnement, unter dem diese neue Funktions-App erstellt wird. | 
-    | **Ressourcengruppe**|  Klicken Sie auf **Vorhandene verwenden**, und wählen Sie _<rgn>[Sandbox-Ressourcengruppenname]</rgn>_ aus. | Name der Ressourcengruppe, in der die Funktions-App erstellt wird. | 
+    | **App-Name** | Global eindeutiger Name | Der Name Ihrer neuen Funktions-App. Gültige Zeichen sind `a-z`, `0-9` und `-`.  |
+    | **Abonnement** | Ihr Abonnement | Das Abonnement, unter dem diese neue Funktions-App erstellt wird. |
+    | **Ressourcengruppe**|  Klicken Sie auf **Vorhandene verwenden**, und wählen Sie _<rgn>[Name der Sandboxressourcengruppe]</rgn>_ aus. | Name der Ressourcengruppe, in der die Funktions-App erstellt werden soll. |
     | **Betriebssystem** | Windows | Das Betriebssystem, das die Funktions-App hostet.  |
     | **Hosting** |   Verbrauchsplan | Der Hostingplan, der definiert, wie Ihre Ressourcen der Funktionen-App zugewiesen werden Im **Verbrauchstarif „Standard“** werden Ressourcen je nach Bedarf seitens der Funktionen dynamisch hinzugefügt. Beim serverlosen Hostingmodell zahlen Sie nur die Zeit, in der Ihre Funktionen ausgeführt werden.   |
     | **Speicherkonto** |  Global eindeutiger Name |  Der Name des neuen Speicherkontos, das von Ihrer Funktions-App verwendet wird. Speicherkontonamen müssen zwischen 3 und 24 Zeichen lang sein und dürfen nur Zahlen und Kleinbuchstaben enthalten. In diesem Dialogfeld wird das Feld automatisch mit einem eindeutigen Namen gefüllt, der aus dem Namen abgeleitet wird, den Sie der App gegeben haben. Sie können aber auch einen anderen Namen oder sogar ein vorhandenes Konto verwenden. |
     | **Standort** | Treffen Sie in der Liste ein Wahl. | Wählen Sie denjenigen aus, der den nachstehend aufgeführten Standorten am nächsten ist. |
-    
+
     [!include[](../../../includes/azure-sandbox-regions-first-mention-note-friendly.md)]
 
 1. Klicken Sie auf **Erstellen**, um die Funktions-App bereitzustellen.
@@ -42,7 +42,7 @@ Beginnen Sie mit der Erstellung einer Funktions-App, die Sie im gesamten Modul v
 
     >[!TIP]
     >Wenn Sie Ihre Funktions-Apps im Portal nicht finden sollten, können Sie [im Azure-Portal Ihren Favoriten Funktions-Apps hinzufügen](https://docs.microsoft.com/azure/azure-functions/functions-how-to-use-azure-function-app-settings#favorite).
-    
+
 ## <a name="create-a-function"></a>Erstellen einer Funktion
 
 Nun, da Sie über eine Funktions-App verfügen, ist es an der Zeit, eine Funktion zu erstellen. Eine Funktion wird durch einen Trigger aktiviert. In diesem Modul verwenden Sie einen HTTP-Trigger.
@@ -63,7 +63,7 @@ Nun, da Sie über eine Funktions-App verfügen, ist es an der Zeit, eine Funktio
 
 1. Fügen Sie die kopierte Funktions-URL in die Adressleiste einer neuen Registerkarte Ihres Browsers ein.
 
-1. Fügen Sie den Wert der Abfragezeichenfolge `&name=Azure` am Ende dieser URL hinzu, und drücken Sie die EINGABETASTE, um die Anforderung auszuführen. Sie sollten eine Antwort ähnlich der folgenden Antwort sehen, die von der Funktion zurückgegeben und in Ihrem Browser angezeigt wird.  
+1. Fügen Sie den Wert der Abfragezeichenfolge `&name=Azure` am Ende dieser URL hinzu, und drücken Sie die EINGABETASTE, um die Anforderung auszuführen. Sie sollten eine Antwort ähnlich der folgenden Antwort sehen, die von der Funktion zurückgegeben und in Ihrem Browser angezeigt wird.
 
     ```output
     <string xmlns="http://schemas.microsoft.com/2003/10/Serialization/">Hello Azure</string>
@@ -97,7 +97,7 @@ Der gesamte Code befindet sich im Ordner dieser Funktion in der Datei **index.js
 Wie Sie sehen können, verfügt diese Funktion über eine Triggerbindung namens **req** vom Typ `httpTrigger` und eine Ausgabebindung namens **res** vom Typ `HTTP`. Im vorangehenden Code für Ihre Funktion haben Sie gesehen, wie der Zugriff über den **req**-Parameter auf die Nutzlast der eingehenden HTTP-Anforderung erfolgte. Auf ähnliche Weise haben Sie eine HTTP-Antwort gesendet, indem Sie einfach den Parameter **res** festgelegt haben. Bindungen erledigen wirklich einen Großteil der harten Arbeit für uns.
 
 >[!TIP]
->Sie können die Dateien **index.js** und **function.json** anzeigen, indem Sie auf der rechten Seite des Bereichs „Funktion“ im Azure-Portal das Menü **Dateien anzeigen** erweitern.  
+>Sie können die Dateien **index.js** und **function.json** anzeigen, indem Sie auf der rechten Seite des Bereichs „Funktion“ im Azure-Portal das Menü **Dateien anzeigen** erweitern.
 
 ### <a name="explore-binding-types"></a>Erkunden von Bindungstypen
 

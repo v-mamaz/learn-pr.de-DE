@@ -1,0 +1,49 @@
+### YamlMime:ModuleUnit
+uid: learn.make-your-virtual-machines-highly-available.2-preparing-to-use-the-azure-load-balancer
+title: Vorbereitung für die Verwendung von Azure Load Balancer
+metadata:
+  title: Vorbereitung für die Verwendung von Azure Load Balancer
+  description: Vorbereitung für die Verwendung von Azure Load Balancer
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d7aca1982234b34ec8ab8f293d5c15fb15e9c8d0
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46513236"
+durationInMinutes: 5
+content: >
+  [!include[](includes/2-preparing-to-use-the-azure-load-balancer.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: Richtig oder falsch. Azure Load Balancer stellt sicher, dass alle Pakete von einem Client an dieselbe VM-Instanz im Back-End gesendet werden.
+    choices:
+    - content: Richtig
+      isCorrect: true
+      correctExplanation: Azure Load Balancer verwendet einen Hash zum Identifizieren des Clients aus der Quelle und der Ziel-IP-Adresse bzw. des Zielports.
+    - content: Falsch
+      isCorrect: false
+      incorrectExplanation: Azure Load Balancer verwendet einen Hash zum Identifizieren des Clients aus der Quelle und der Ziel-IP-Adresse bzw. des Zielports.
+  - content: 'Aus folgenden Gründen eignet sich die Standard-SKU besser als die Basic-SKU:'
+    choices:
+    - content: Die Standard-SKU kann Datenverkehr an eine VM-Verfügbarkeitsgruppe weiterleiten, die Basic-SKU hingegen nicht.
+      isCorrect: false
+      incorrectExplanation: Sowohl die Basic-SKU als auch die Standard-SKU unterstützen das Weiterleiten von Datenverkehr an eine Verfügbarkeitsgruppe. Allerdings können Standard-SKUs mehr als eine Verfügbarkeitsgruppe verwenden.
+    - content: Die Standard-SKU unterstützt sicheren Datenverkehr (HTTPS).
+      isCorrect: true
+      correctExplanation: Die Basic-SKU kann nur TCP- und HTTP-Datenverkehr schützen, während die Standard-SKU zusätzlich HTTPS-Datenverkehr unterstützt.
+    - content: Die Standard-SKU unterstützt die Überwachung von Integritätstests der VM-Server im Back-End, die Basic-SKU hingegen nicht.
+      isCorrect: false
+      incorrectExplanation: Integritätstests werden in beiden SKUs verwendet und sind eine Voraussetzung zum Einrichten von Azure Load Balancer.
+  - content: Richtig oder falsch. Azure Load Balancer kann für öffentliche Dienste oder für interne Azure-Dienste verwendet werden, die Sie über ein VPN verwenden.
+    choices:
+    - content: Richtig
+      isCorrect: true
+      incorrectExplanation: Azure Load Balancer unterstützt sowohl öffentliche als auch interne Konfigurationen.
+    - content: Falsch
+      isCorrect: false

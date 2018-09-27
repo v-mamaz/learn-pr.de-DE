@@ -6,7 +6,7 @@ Als Nächstes verwenden wir die Azure-Befehlszeilenschnittstelle, um eine Ressou
 
 Wenn Sie Ihren eigenen Computer und Ihr eigenes Azure-Abonnement verwenden, müssen Sie sich zuerst mithilfe des `az login`-Befehls bei Azure anmelden. Mit der Cloud Shell-Umgebung ist dies nicht erforderlich.
 
-Als Nächstes würden Sie normalerweise mit einem Befehl vom Typ `az group create` eine Ressourcengruppe für alle Ihre verwandten Azure-Ressourcen erstellen. Für diese Übungen wurde aber bereits eine Ressourcengruppe für Sie erstellt. Verwenden Sie **<rgn>[Sandbox-Ressourcengruppenname]</rgn>** für Ihre Ressourcengruppe.
+Als Nächstes würden Sie normalerweise mit einem Befehl vom Typ `az group create` eine Ressourcengruppe für alle Ihre verwandten Azure-Ressourcen erstellen. Für diese Übungen wurde aber bereits eine Ressourcengruppe für Sie erstellt. Verwenden Sie **<rgn>[Name der Sandboxressourcengruppe]</rgn>** für Ihre Ressourcengruppe.
 
 1. Mithilfe der Azure-Befehlszeilenschnittstelle können Sie alle Ihre Ressourcengruppen in einer Tabelle auflisten. Es sollte eine Ressourcengruppe vorhanden sein, wenn Sie die kostenlose Azure-Sandbox verwenden.
 
@@ -19,7 +19,7 @@ Als Nächstes würden Sie normalerweise mit einem Befehl vom Typ `az group creat
 1. Im Zuge der Azure-Entwicklung können nach und nach mehrere Ressourcengruppen zusammenkommen. Falls die Gruppenliste mehrere Elemente enthält, können Sie die Rückgabewerte filtern, indem Sie eine Option vom Typ `--query` hinzufügen. Verwenden Sie den folgenden Befehl:
 
     ```azurecli
-    az group list --query "[?name == '<rgn>[Sandbox resource group name]</rgn>']"
+    az group list --query "[?name == '<rgn>[sandbox resource group name]</rgn>']"
     ```
 
     Die Abfrage wird mit **JMESPath** (einer Standardabfragesprache für JSON-Abfragen) formatiert. Weitere Informationen zu dieser leistungsstarken Filtersprache finden Sie unter <http://jmespath.org/>. Im Modul **Verwalten von virtuellen Computern mit Azure CLI** werden Abfragen ausführlicher behandelt.
@@ -38,7 +38,7 @@ Beim Ausführen von Web-Apps mithilfe von Azure App Service zahlen Sie für die 
     [!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
     ```azurecli
-    az appservice plan create --name popupappplan-<unique> --resource-group <rgn>[Sandbox resource group name]</rgn> --location <location>
+    az appservice plan create --name popupappplan-<unique> --resource-group <rgn>[sandbox resource group name]</rgn> --location <location>
     ```
 
     Die Ausführung dieses Befehls kann mehrere Minuten dauern.
@@ -56,7 +56,7 @@ Als Nächstes erstellen Sie die Web-App in Ihrem Serviceplan. Sie können den Co
 1. Erstellen Sie die Web-App, und geben Sie den Namen des zuvor erstellten Plans an. **Der Name der App muss wie der des Plans eindeutig sein.** Ersetzen Sie den `<unique>`-Marker durch Text, damit der Name global eindeutig ist.
 
     ```azurecli
-    az webapp create --name popupwebapp-<unique> --resource-group <rgn>[Sandbox resource group name]</rgn> --plan popupappplan-<unique>
+    az webapp create --name popupwebapp-<unique> --resource-group <rgn>[sandbox resource group name]</rgn> --plan popupappplan-<unique>
     ```
 
 1. Überprüfen Sie, ob die App erfolgreich erstellt wurde, indem Sie alle Apps in einer Tabelle auflisten.
@@ -78,7 +78,7 @@ Als Nächstes erstellen Sie die Web-App in Ihrem Serviceplan. Sie können den Co
 1. Der letzte Schritt besteht im Bereitstellen von Code über ein GitHub-Repository in die Web-App. Sie verwenden hierzu eine einfache PHP-Seite, die im GitHub-Repository „Azure Samples“ verfügbar ist und „HelloWorld!“ anzeigt, wenn sie ausgeführt wird. Stellen Sie sicher, dass Sie den Namen der Web-App verwenden, die Sie erstellt haben.
 
     ```azurecli
-    az webapp deployment source config --name popupwebapp-<unique> --resource-group <rgn>[Sandbox resource group name]</rgn> --repo-url "https://github.com/Azure-Samples/php-docs-hello-world" --branch master --manual-integration
+    az webapp deployment source config --name popupwebapp-<unique> --resource-group <rgn>[sandbox resource group name]</rgn> --repo-url "https://github.com/Azure-Samples/php-docs-hello-world" --branch master --manual-integration
     ```
 
 1. Besuchen Sie Ihre Website nach der Bereitstellung erneut über einen Browser oder cURL.

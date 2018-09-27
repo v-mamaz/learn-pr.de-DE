@@ -5,15 +5,15 @@ Der Daten-Explorer von Azure Cosmos DB ist ein Tool im Azure-Portal, mit dem Sie
 
 ## <a name="add-data-using-the-data-explorer"></a>Hinzufügen von Daten mit dem Daten-Explorer
 
-1. Melden Sie sich beim [Azure-Portal für die Sandbox](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
+1. Melden Sie sich beim [Azure-Portal für die Sandbox](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit demselben Konto an, über das Sie die Sandbox aktiviert haben.
 
     > [!IMPORTANT]
     > Melden Sie sich beim Azure-Portal und der Sandbox mit demselben Konto an.
-    > 
+    >
     > Melden Sie sich beim Azure-Portal über den obigen Link an, um sicherzustellen, dass Sie mit der Sandbox verbunden sind, die Zugriff auf ein Concierge-Abonnement ermöglicht.
 
 1. Klicken Sie auf **Alle Dienste** > **Datenbanken** > **Azure Cosmos DB**. Wählen Sie anschließend Ihr Konto aus, und klicken Sie zuerst auf **Daten-Explorer** und anschließend auf **Im Vollbildmodus öffnen**.
- 
+
    ![Erstellen neuer Dokumente im Daten-Explorer im Azure-Portal](../media/3-azure-cosmosdb-data-explorer-full-screen.png)
 
 2. Klicken Sie im Feld **Vollbildmodus öffnen** auf **Öffnen**.
@@ -74,4 +74,4 @@ Der Daten-Explorer von Azure Cosmos DB ist ein Tool im Azure-Portal, mit dem Sie
 
     Die beiden Dokumente werden im Daten-Explorer auf der Registerkarte **Dokumente** angezeigt.
 
-In dieser Einheit haben Sie Ihrer Datenbank mithilfe des Daten-Explorers zwei Dokumente hinzugefügt, die jeweils ein Produkt in Ihrem Produktkatalog darstellen. Der Daten-Explorer eignet sich sehr gut, um Dokumente zu erstellen, Dokumente zu ändern und sich mit Azure Cosmos DB vertraut zu machen.  
+In dieser Einheit haben Sie Ihrer Datenbank mithilfe des Daten-Explorers zwei Dokumente hinzugefügt, die jeweils ein Produkt in Ihrem Produktkatalog darstellen. Der Daten-Explorer eignet sich sehr gut, um Dokumente zu erstellen, Dokumente zu ändern und sich mit Azure Cosmos DB vertraut zu machen.

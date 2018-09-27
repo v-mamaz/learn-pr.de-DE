@@ -5,7 +5,7 @@ Erstellen wir jetzt eine Azure Redis Cache-Instanz zum Speichern und Zurückgebe
 
 ## <a name="create-a-redis-cache-in-azure"></a>Erstellen einer Redis Cache-Instanz in Azure
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
 
 1. Klicken Sie dann auf **Ressource erstellen**, **Datenbanken** und **Redis Cache**.
 
@@ -21,12 +21,12 @@ Legen Sie die folgenden Einstellungen für den Cache fest.
 
 1. **Abonnement:** Wählen Sie das Concierge-Abonnement aus.
 
-1. **Ressourcengruppe:** Wählen Sie <rgn>[Name der Sandbox-Ressourcengruppe]</rgn> als Ressourcengruppe aus.
+1. **Ressourcengruppe:** Wählen Sie <rgn>[Name der Sandboxressourcengruppe]</rgn> als Ressourcengruppe aus.
 
-1. **Standort**: Normalerweise würden Sie einen Standort in der Nähe Ihres Kunden auswählen, in diesem Fall „East Coast“. Für die Azure-Sandbox können jedoch nur bestimmte Regionen für Ressourcen ausgewählt werden. Wählen Sie einen der folgenden Standorte aus.
-    
+1. **Standort:** Normalerweise würden Sie einen Standort in der Nähe Ihres Kunden auswählen, in diesem Fall „East Coast“.
+
     [!include[](../../../includes/azure-sandbox-regions-note-friendly.md)]
-        
+
 5. **Tarif:** Wählen Sie **Basic C0** aus. Dies ist der niedrigste Tarif, der verwendet werden kann. Für Produktions-Apps werden wahrscheinlich größere Datenmengen und einige der Premium-Features benötigt, z.B. das Clustering. Hierfür wäre die Auswahl eines höheren Tarifs erforderlich.
 
 1. Klicken Sie auf **Erstellen**. Azure erstellt die Redis Cache-Instanz und stellt sie Ihnen bereit.
@@ -49,32 +49,32 @@ Legen Sie die folgenden Einstellungen für den Cache fest.
     ```console
     ping
     ```
-    
+
     ```output
     PONG
     ```
-    
+
     ```console
     set test one
     ```
-    
+
     ```output
     OK
     ```
-    
+
     ```console
     get test
     ```
-    
+
     ```output
     "one"
     ```
-    
+
 Kehren Sie zum Panel **Übersicht** zurück. Verwenden Sie dazu entweder die Breadcrumb-Leiste im oberen Bereich, oder verschieben Sie die Ansicht mithilfe der Scrollleiste wieder nach links.
 
 ## <a name="retrieve-the-access-keys-and-host-name"></a>Abrufen der Zugriffsschlüssel und des Hostnamens
 
-1. Klicken Sie auf **Einstellungen** > **Zugriffsschlüssel**. 
+1. Klicken Sie auf **Einstellungen** > **Zugriffsschlüssel**.
 
 1. Kopieren Sie die **Primäre Verbindungszeichenfolge (StackExchange.Redis)** an einen sicheren Ort. Sie benötigen sie für die nächste Übung.
 

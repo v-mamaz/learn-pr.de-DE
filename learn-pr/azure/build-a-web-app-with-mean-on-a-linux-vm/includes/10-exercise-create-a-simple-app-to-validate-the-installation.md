@@ -51,7 +51,7 @@ Zuerst erstellen wir für Ihre Anwendung den Code, das Skript und die HTML-Datei
     ```
 
     > [!IMPORTANT]
-    > Achten Sie beim Einfügen oder Ändern von Code in einer Datei im Editor darauf, dass Sie anschließend speichern, indem Sie das Menü unter „...“ oder die Tastenkombination (<kbd>STRG+S</kbd> unter Windows und Linux, <kbd>Cmd+S</kbd> unter macOS).
+    > Achten Sie beim Einfügen oder Ändern von Code in einer Datei im Editor darauf, dass Sie anschließend speichern, indem Sie das Menü unter „...“ oder die Tastenkombination (<kbd>STRG+S</kbd> unter Windows und Linux, <kbd>Cmd+S</kbd> unter macOS) verwenden.
 
     Dieser Code stellt eine Verbindung mit einer Datenbank namens „Books“ auf dem MongoDB-Server des lokalen virtuellen Computers her. Er erstellt dann ein Datenbankdokument namens „Book“ mit dem von der `bookSchema`-Variablen definierten Schema.
 
@@ -166,7 +166,7 @@ Zuerst erstellen wir für Ihre Anwendung den Code, das Skript und die HTML-Datei
     });
     ```
 
-    Dieser clientseitige AngularJS-Code erstellt eine neue angular-Anwendung `myApp` mit einem Controller `myCtrl`. Wenn die Anwendung im Browser des Betrachters ausgeführt wird, wird eine HTTP-GET-Anforderung zum Abrufen der Bücherliste in der Datenbank ausgegeben.
+    Dieser clientseitige AngularJS-Code erstellt eine neue Angular-Anwendung `myApp`, die den Controller `myCtrl` enthält. Wenn die Anwendung im Browser des Betrachters ausgeführt wird, wird eine HTTP GET-Anforderung zum Abrufen der Bücherliste in der Datenbank ausgegeben.
 
 5. Erstellen Sie die Benutzeroberfläche für die App. Öffnen Sie die Datei `public/index.html` im Editor, und fügen Sie diesen Code ein:
 
@@ -290,11 +290,7 @@ Zuerst erstellen wir für Ihre Anwendung den Code, das Skript und die HTML-Datei
 
 1. Testen Sie die Anwendungsfunktionalität.
 
-    Öffnen Sie Ihren bevorzugten Browser, und navigieren Sie zur öffentlichen IP-Adresse Ihrer Azure-VM als URL.
-
-    ```bash
-    http://<vm-public-ip>
-    ```
+    Öffnen Sie Ihren bevorzugten Browser, und navigieren Sie zur öffentlichen IP-Adresse Ihrer Azure-VM als URL ([http://X.X.X.X](http://X.X.X.X)).
 
     Wenn alles in Ordnung ist, sehen Sie etwa folgenden Bildschirm:
 

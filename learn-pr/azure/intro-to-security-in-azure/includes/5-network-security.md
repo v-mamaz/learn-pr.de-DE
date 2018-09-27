@@ -22,7 +22,6 @@ Es gibt mehrere Möglichkeiten, Schutz für eingehenden Datenverkehr im Umkreis 
 
 Für alle Ressourcen, die im Internet zur Verfügung stehen, besteht die Gefahr eines Denial-of-Service-Angriffs. Bei diesem Angriff wird eine Netzwerkressource überlastet, indem so viele Anforderungen gesendet werden, dass die Ressource langsam oder gar nicht mehr reagiert. Damit diese Angriffe abgewehrt werden können, bietet Azure DDoS Protection einen Basisschutz für alle Azure-Dienste und einen erweiterten Schutz für weitere Anpassungen Ihrer Ressourcen. Azure DDoS Protection sperrt Angriffsdatenverkehr und leitet den verbleibenden Datenverkehr an das vorgesehene Ziel weiter. Innerhalb weniger Minuten nach Angriffserkennung werden Sie mithilfe der Metriken von Azure Monitor benachrichtigt.
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![DDoS](../media/ddos.png)
 
  :::column-end:::

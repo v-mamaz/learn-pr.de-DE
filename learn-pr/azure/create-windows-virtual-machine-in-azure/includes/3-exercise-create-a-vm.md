@@ -7,7 +7,7 @@ Wie zuvor bereits erwähnt, verarbeitet das Beispielunternehmen Videoinhalte auf
 
 Sie können virtuelle Windows-Computer über das Azure-Portal, die Azure CLI oder Azure PowerShell erstellen. Am einfachsten ist es im Portal, da es Ihnen während der Erstellung der VM alle erforderlichen Informationen, Hinweise und hilfreiche Meldungen zur Verfügung stellt.
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) mit dem Konto an, über das Sie die Sandbox aktiviert haben.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit dem Konto an, über das Sie die Sandbox aktiviert haben.
 
 1. Klicken Sie im Azure-Portal oben links auf **Ressource erstellen**.
 
@@ -27,12 +27,12 @@ Beginnen Sie mit dem Abschnitt **Grundlagen**.
 
 ### <a name="configure-basic-vm-settings"></a>Konfigurieren der Grundeinstellungen für den virtuellen Computer
 
-> [!NOTE]  
+> [!NOTE]
 > Wenn Sie die Einstellungen ändern und anschließend in jedem Freitextfeld die TAB-TASTE drücken, überprüft Azure den Wert automatisch und versieht ihn mit einem grünen Häkchen, wenn die Änderungen akzeptiert werden. Sie können mit der Maus auf Fehlerindikatoren zeigen, um weitere Informationen zu gefundenen Problemen zu erhalten.
 
 1. Wählen Sie das **Abonnement** aus, über das die VM-Stunden abgerechnet werden sollen.
 
-1. Wählen Sie für **Ressourcengruppe** **<rgn>[Sandbox- Ressourcengruppenname]</rgn>** aus.
+1. Wählen Sie für **Ressourcengruppe** **<rgn>[Name der Sandboxressourcengruppe]</rgn>** aus.
 
 1. Geben Sie im Abschnitt **INSTANZENDETAILS** einen Namen für Ihren virtuellen Computer ein (beispielsweise **test-vp-vm2** für „zweiter virtueller Computer zum Testen des Videoprozessors“).
     - Es empfiehlt sich, Ressourcennamen zu standardisieren, um ihren Zweck einfach ermitteln zu können. Die Namen für virtuelle Windows-Computer sind eingeschränkt: Sie müssen zwischen 1 und 15 Zeichen lang sein, dürfen keine Sonderzeichen bzw. Zeichen enthalten, die nicht den ASCII-Richtlinien entsprechen, und müssen in der aktuellen Ressourcengruppe eindeutig sein.

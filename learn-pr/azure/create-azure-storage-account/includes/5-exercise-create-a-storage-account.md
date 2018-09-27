@@ -12,7 +12,7 @@ Zur Erfüllung dieser Anforderungen treffen Sie die Entscheidung, hochgeladenen 
 
 ## <a name="use-the-azure-portal-to-create-a-storage-account"></a>Erstellen eines Speicherkontos über das Azure-Portal
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
 
 1. Klicken Sie oben links im Azure-Portal auf **Ressource erstellen**.
 
@@ -30,16 +30,16 @@ Führen Sie unter **PROJEKTDETAILS** die folgenden Aktionen aus:
 
 1. Wählen Sie das entsprechende **Abonnement** aus.
 
-1. Wählen Sie in der Dropdownliste die vorhandene Ressourcengruppe („**<rgn>[Sandbox resource group name]</rgn>**“ (Sandbox-Ressourcengruppenname)) aus.
+1. Wählen Sie in der Dropdownliste die vorhandene Ressourcengruppe (**<rgn>[Name der Sandboxressourcengruppe]</rgn>**) aus.
 
     > [!NOTE]
-    > Diese kostenlose Ressourcengruppe wurde von Microsoft für das Lernprogramm zur Verfügung gestellt. Wenn Sie ein Konto für eine reale Anwendung erstellen, müssen Sie eine neue Ressourcengruppe in Ihrem Abonnement erstellen, um alle Ressourcen für die App zu speichern.
+    > Diese kostenlose Ressourcengruppe wurde von Microsoft zum Lernen zur Verfügung gestellt. Wenn Sie ein Konto für eine reale Anwendung erstellen, müssen Sie eine neue Ressourcengruppe in Ihrem Abonnement erstellen, um alle Ressourcen für die App zu speichern.
 
 Führen Sie unter **INSTANZDETAILS** die folgenden Aktionen aus:
 
 1. Geben Sie den **Speicherkontonamen** ein. Der Name wird zum Generieren der öffentlichen URL verwendet, über die auf die Daten im Konto zugegriffen wird. Der Name muss unter allen vorhandenen Speicherkontonamen in Azure eindeutig sein. Namen müssen 3 bis 24 Zeichen lang sein und dürfen nur Kleinbuchstaben und Ziffern enthalten.
 
-1. Wählen Sie in der Liste oben einen **Standort** in Ihrer Nähe aus. 
+1. Wählen Sie in der Liste oben einen **Standort** in Ihrer Nähe aus.
 
 1. Übernehmen Sie für _Resource Manager_ die Standardoption **Bereitstellungsmodell**. Dies ist das bevorzugte Modell für die Bereitstellung von Ressourcen in Azure und ermöglicht es Ihnen, alle Ressourcen für Ihre App in einer _Ressourcengruppe_ zu gruppieren, sodass Sie Ressourcen leichter verwalten können.
 
@@ -59,7 +59,7 @@ Auf dem folgenden Screenshot werden alle vorgenommenen Einstellungen für die Re
 
 1. Klicken Sie auf **Next: Advanced >** (Weiter: Erweitert >), um die Registerkarte **Erweitert** aufzurufen, oder klicken Sie am oberen Bildschirmrand auf die Registerkarte **Erweitert**.
 
-1. Legen Sie **Sichere Übertragung erforderlich** auf _Aktiviert_ fest. Mit der Einstellung **Sichere Übertragung erforderlich** wird festgelegt, ob REST-APIs über **HTTP** auf Daten im Speicherkonto zugreifen können. Wenn diese Option _Aktiviert_ ist, müssen alle Clients SSL (**HTTPS**) verwenden. In den meisten Fällen sollte diese Einstellung _Aktiviert_ sein, da die Verwendung von HTTPS für Netzwerkübertragungen als bewährte Methode betrachtet wird. 
+1. Legen Sie **Sichere Übertragung erforderlich** auf _Aktiviert_ fest. Mit der Einstellung **Sichere Übertragung erforderlich** wird festgelegt, ob REST-APIs über **HTTP** auf Daten im Speicherkonto zugreifen können. Wenn diese Option _Aktiviert_ ist, müssen alle Clients SSL (**HTTPS**) verwenden. In den meisten Fällen sollte diese Einstellung _Aktiviert_ sein, da die Verwendung von HTTPS für Netzwerkübertragungen als bewährte Methode betrachtet wird.
 
     > [!WARNING]
     > Wenn diese Option aktiviert ist, werden einige zusätzliche Einschränkungen erzwungen. Unverschlüsselte Verbindungen über den Dienst Azure Files schlagen fehl. Dies gilt auch für Szenarios, in denen SMB 2.1 oder 3.0 unter Linux verwendet wird. Diese Option kann nicht zusammen mit Namen benutzerdefinierter Domänen verwendet werden, da Azure Storage SSL für diese nicht unterstützt.

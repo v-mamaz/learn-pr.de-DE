@@ -14,9 +14,8 @@ Die erste vorgenommene Verschiebung erfolgt von lokalen Datencentern zu Infrastr
 
 Mit der Umstellung auf Platform-as-a-Service (PaaS) wird ein Großteil der Sicherheitsrisiken outgesourct. Auf dieser Ebene kümmert sich Azure um das Betriebssystem und die meisten grundlegenden Softwarekomponenten, z.B. Datenbankverwaltungssysteme. Alle Updates mit den aktuellen Sicherheitspatches werden durchgeführt und können für die Zugriffssteuerung in Azure Active Directory integriert werden. Bei PaaS ergeben sich außerdem viele betriebsbezogene Vorteile. Anstatt für Ihre Umgebungen gesamte Infrastrukturen und Subnetze manuell zu erstellen, können Sie im Azure-Portal „Point-and-Click“ verwenden oder automatisierte Skripts ausführen, um komplexe geschützte Systeme hoch- und herunterzufahren und wie gewünscht zu skalieren. Contoso Shipping verwendet Azure Event Hubs für die Erfassung von Telemetriedaten von Drohnen und LKWs (sowie eine Web-App mit einem Azure Cosmos DB-Back-End mit den mobilen Apps des Unternehmens), die alle Beispiele für PaaS sind.
 
-Bei Software-as-a-Service (SaaS) wird nahezu alles outgesourct. Bei SaaS handelt es sich um Software, die mit einer Internetinfrastruktur ausgeführt wird. Der Code wird vom Anbieter gesteuert, jedoch für die Verwendung durch den Kunden konfiguriert. Wie so viele Unternehmen verwendet auch Contoso Shipping Office 365. Dies ist ein gutes Beispiel für SaaS!
+Bei Software-as-a-Service (SaaS) wird nahezu alles outgesourct. Bei SaaS handelt es sich um Software, die mit einer Internetinfrastruktur ausgeführt wird. Der Code wird vom Anbieter gesteuert, jedoch für die Verwendung durch den Kunden konfiguriert. Wie so viele Unternehmen verwendet auch Contoso Shipping Office 365. Dies ist ein gutes Beispiel für SaaS.
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![shared_responsibility.png](../media/shared_responsibilities.png)
 
 ## <a name="a-layered-approach-to-security"></a>Mehrstufiger Sicherheitsansatz
@@ -25,8 +24,7 @@ Die *tiefgehende Verteidigung* ist eine Strategie, bei der mithilfe zahlreicher 
 
 Sie können sich die tiefgehende Verteidigung wie einen Satz mit konzentrischen Ringen vorstellen, wobei die Daten im Zentrum geschützt werden müssen. Jeder Ring stellt eine zusätzliche Sicherheitsebene für die Daten dar. Dieser Ansatz macht die Abhängigkeit von einer einzelnen Schutzebene überflüssig, verlangsamt einen Angriff und bietet Alarmtelemetrie, auf die automatisch oder manuell reagiert werden kann. Sehen wir uns jede Ebene genauer an.
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
-![Tiefgehende Verteidigung](../media/defense_in_depth_layers_small.PNG)
+![Mehrschichtige Sicherheit](../media/defense_in_depth_layers_small.PNG)
 
 :::row:::
   :::column:::

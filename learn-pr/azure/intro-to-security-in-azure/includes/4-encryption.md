@@ -22,7 +22,6 @@ Sie können auch einen sicheren Kanal (z.B. ein virtuelles privates Netzwerk (VP
 
 Das Verschlüsseln von Daten während der Übertragung schützt die Daten vor externen Beobachtern und bietet einen Mechanismus zur Datenübertragung bei gleichzeitiger Einschränkung des Offenlegungsrisikos. 
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![Verschlüsselung während der Übertragung](../media/encryption-in-transit.png)
 
 
@@ -32,7 +31,6 @@ Ruhende Daten sind Daten, die auf einem physischen Medium gespeichert sind. Das 
 
 Die tatsächlichen verschlüsselten Daten können im Hinblick auf Inhalt, Verwendung und Bedeutung für das Unternehmen variieren. Dies können geschäftskritische Finanzinformationen, geistiges Eigentum des Unternehmens, persönliche Kunden- oder Mitarbeiterdaten in Speichern des Unternehmens und auch die Schlüssel und Geheimnisse sein, die für die Datenverschlüsselung verwendet werden.
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![Verschlüsselung ruhender Daten](../media/encryption-at-rest.png)
 
 ## <a name="encryption-on-azure"></a>Verschlüsselung in Azure

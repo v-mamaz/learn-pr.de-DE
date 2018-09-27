@@ -4,7 +4,7 @@ In dieser Einheit verwenden Sie das Azure-Portal, um eine Web-App zu erstellen.
 
 ## <a name="create-a-web-app"></a>Erstellen einer Web-App
 
-Melden Sie sich beim [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) mit demselben Konto an, über das Sie die Sandbox aktiviert haben.
+Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit demselben Konto an, über das Sie die Sandbox aktiviert haben.
 
 1. Klicken Sie oben im linken Navigationsbereich auf den Link **Ressource erstellen**. Alle Elemente, die Sie in Azure erstellen, werden als „ Ressource“ bezeichnet.
 
@@ -24,7 +24,7 @@ Melden Sie sich beim [Azure-Portal](https://portal.azure.com/triplecrownlabs.onm
 
 ## <a name="use-the-sandbox-resource-group"></a>Verwenden der Sandbox-Ressourcengruppe
 
-Eine Azure-Web-App muss einer Ressourcengruppe angehören. Wählen Sie **Vorhandene verwenden** aus, und klicken Sie auf <rgn>[Sandbox-Ressourcengruppenname]</rgn>.
+Eine Azure-Web-App muss einer Ressourcengruppe angehören. Klicken Sie auf **Vorhandene verwenden**, und wählen Sie <rgn>[Name der Sandboxressourcengruppe]</rgn> aus.
 
 ## <a name="create-an-app-service-plan"></a>Erstellen eines App Service-Plans
 

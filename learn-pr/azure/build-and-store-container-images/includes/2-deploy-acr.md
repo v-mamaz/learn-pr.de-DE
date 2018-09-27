@@ -10,7 +10,7 @@ Wir arbeiten in einer kostenlosen Sandbox, sodass Sie keine eigene Ressourcengru
 In diesem Beispiel wird eine Premium-Registrierungs-SKU bereitgestellt. Die Premium-SKU ist für die Georeplikation erforderlich. Geben Sie den folgenden Befehl in den Cloud Shell-Editor ein.
 
 ```azurecli
-az acr create --resource-group <rgn>[Sandbox resource group name]</rgn> --name <acrName> --sku Premium
+az acr create --resource-group <rgn>[sandbox resource group name]</rgn> --name <acrName> --sku Premium
 ```
 
 Im Folgenden sehen Sie eine Beispielausgabe für eine neue Azure-Containerregistrierung:

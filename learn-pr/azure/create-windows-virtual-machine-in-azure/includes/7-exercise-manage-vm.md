@@ -7,7 +7,7 @@ Aufgrund der Angabe, dass Remotedesktopzugriff benötigt wird, sollte Azure eine
 > [!NOTE]
 > Da es sich hierbei um den zweiten virtuellen Computer handeln _sollte_, sollte bereits eine Sicherheitsgruppe vorhanden sein, die auf unser Netzwerk angewendet werden kann. Wenn dies aber nicht der Fall sein sollte oder andere Regeln für diesen virtuellen Computer gelten, gehen Sie wie folgt vor.
 
-1. Klicken Sie im [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) auf der linken Randleiste auf die Schaltfläche **Ressource erstellen**, um eine neue Ressource zu erstellen.
+1. Klicken Sie im [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) auf der linken Randleiste auf die Schaltfläche **Ressource erstellen**, um eine neue Ressource zu erstellen.
 
 1. Geben Sie „Netzwerksicherheitsgruppe“ in das Filterfeld ein, und wählen Sie das entsprechende Element in der Liste aus.
 
@@ -15,7 +15,7 @@ Aufgrund der Angabe, dass Remotedesktopzugriff benötigt wird, sollte Azure eine
 
 1. Geben Sie einen **Namen** für Ihre Sicherheitsgruppe an. Auch hier empfiehlt sich die Verwendung einer Namenskonvention. Verwenden Sie z.B. „test-vp-nsg2“ für die „zweite Netzwerksicherheitsgruppe zum Testen des Videoprozessors“.
 
-1. Wählen Sie das richtige **Abonnement** aus, und verwenden Sie Ihre bereits vorhandene **Ressourcengruppe** (<rgn>[Name der Sandbox-Ressourcengruppe]</rgn>).
+1. Wählen Sie das richtige **Abonnement** aus, und verwenden Sie Ihre bereits vorhandene **Ressourcengruppe** (<rgn>[Name der Sandboxressourcengruppe]</rgn>).
 
 1. Platzieren Sie sie abschließend am gleichen **Standort** wie den virtuellen Computer bzw. das virtuelle Netzwerk. Dies ist wichtig, da Sie diese Ressource andernfalls nicht anwenden können.
 
@@ -34,7 +34,7 @@ Die Bereitstellung sollte schnell abgeschlossen sein.
     - Der gesamte eingehende Datenverkehr zwischen zwei VNETs wird zugelassen. Auf diese Weise können Ressourcen im VNET miteinander kommunizieren.
     - Azure Load Balancer sendet Testanforderungen, um zu überprüfen, ob die VM aktiv ist.
     - Anderer eingehender Datenverkehr wird vollständig unterbunden.
-    
+
     Ausgangsseite:
     - Der gesamte eingehende Netzwerkdatenverkehr im VNET wird zugelassen.
     - Der gesamte ausgehende Datenverkehr in das Internet wird zugelassen.

@@ -1,0 +1,3 @@
+Hier haben Sie gelernt, wie Sie einen Lastenausgleich als Teil einer Lösung verwenden, um die Hochverfügbarkeit von VMs, die in Azure gehostet werden, zu gewährleisten. Dies beinhaltete den Lastenausgleich selbst, die zugeordneten virtuellen Netzwerke, die Regeln zum Steuern des Ausgleichsalgorithmus und Integritätstests, die bestimmen, welche virtuellen Computer ordnungsgemäß ausgeführt werden.
+
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

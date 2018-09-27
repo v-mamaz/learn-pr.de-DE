@@ -1,0 +1,3 @@
+Sie haben zwei Möglichkeiten kennengelernt, um den Bedarf mit VMs zu decken. Wenn Ihre Auslastung vorhersehbar ist, können Sie über das Portal oder mit Skripten die Größe Ihrer VMs manuell anpassen. Für nicht planbare Bedarfsmuster sind Skalierungsgruppen mit Autoskalierung besser geeignet, um Instanzen automatisch hinzuzufügen und zu entfernen, wenn sich der Bedarf ändert. Mehrere VMs bieten den zusätzlichen Vorteil, dass sie die Verfügbarkeit Ihres Systems erhöhen, denn eine ausgefallene VM stört Ihren Dienst nicht mehr.
+
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

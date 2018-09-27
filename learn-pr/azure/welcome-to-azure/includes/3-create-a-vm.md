@@ -94,9 +94,9 @@ Sie können jede beliebige Verwaltungsschnittstelle von Azure verwenden, einschl
 
 ## <a name="creating-resources-in-azure"></a>Erstellen von Ressourcen in Azure
 
-Normalerweise ist der erste Schritt das Anlegen einer _Ressourcengruppe_, die alle Elemente enthält, die wir erstellen müssen. Dies ermöglicht uns, alle VMs, Datenträger, Netzwerk-Schnittstellen und andere Elemente unserer Lösung als Einheit zu verwalten. Wir erstellen eine Ressourcengruppe, indem wir in der Azure CLI den Befehl `az group create` ausführen. Der Befehl verwendet `--name` zum Vergeben eines eindeutigen Namens in unserem Abonnement und `--location`, um Azure anzugeben, in welcher Region auf der Welt die Ressourcen standardmäßig angesiedelt sein sollen.
+Normalerweise ist der erste Schritt das Anlegen einer _Ressourcengruppe_, die alle Elemente enthält, die wir erstellen müssen. Dies ermöglicht uns, alle VMs, Datenträger, Netzwerk-Schnittstellen und andere Elemente unserer Lösung als Einheit zu verwalten. Wir erstellen eine Ressourcengruppe, indem wir in der Azure CLI den Befehl `az group create` ausführen. Der Befehl verwendet `--name` zum Vergeben eines eindeutigen Namens in unserem Abonnement und `--location`, um Azure zu informieren, in welcher Region auf der Welt die Ressourcen standardmäßig angesiedelt sein sollen.
 
-Da wir uns in der kostenlosen Azure-Sandbox-Umgebung befinden, müssen Sie diesen Schritt nicht durchführen, sondern verwenden stattdessen die vorab erstellte Ressourcengruppe **<rgn>[Ressourcengruppenname]</rgn>**.
+Da wir uns in der kostenlosen Azure-Sandboxumgebung befinden, müssen Sie diesen Schritt nicht durchführen, sondern verwenden stattdessen die vorab erstellte Ressourcengruppe **<rgn>[Ressourcengruppenname]</rgn>**.
 
 ## <a name="choosing-a-location"></a>Auswählen eines Standorts
 
@@ -114,7 +114,7 @@ Nachfolgend wird erläutert, wie Sie Ihre Windows-VM startbereit machen.
     ```azurecli
     az vm create \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --image Win2016Datacenter \
       --size Standard_DS2_v2 \
       --location eastus \
@@ -129,8 +129,8 @@ Nachfolgend wird erläutert, wie Sie Ihre Windows-VM startbereit machen.
 
 Solange Sie warten, können Sie sich den Befehl genauer ansehen, den Sie zuvor ausgeführt haben.
 
-* Die VM hat den Namen **myVM**. Über diesen Namen kann die VM in Azure ermittelt werden. Außerdem handelt es sich um den internen Hostnamen der VM oder den Computernamen.
-* Die Ressourcengruppe bzw. der logische Container der VM wird als **<rgn>[Sandbox-Ressourcengruppenname]</rgn>** bezeichnet.
+* Die VM hat den Namen **myVM**. Über diesen Namen kann die VM in Azure ermittelt werden. Außerdem ist dieser Name auch der interne Hostnamen der VM oder der Computernamen.
+* Die Ressourcengruppe bzw. der logische Container der VM heißt **<rgn>[Name der Sandboxressourcengruppe]</rgn>**.
 * **Win2016Datacenter** gibt das Image der Windows Server 2016-VM an.
 * **Standard_DS2_v2** bezieht sich auf die Größe der VM. Diese Größe bietet zwei virtuelle CPUs und 7 GB Arbeitsspeicher.
 * Über den Benutzernamen und das Kennwort können Sie später eine Verbindung mit der VM herstellen. Sie können beispielsweise über Remotedesktop oder WinRM eine Verbindung herstellen, um mit dem System arbeiten zu können bzw. um dieses zu konfigurieren.
@@ -172,7 +172,7 @@ Nachfolgend wird erläutert, wie Sie Ihre Linux-VM startbereit machen.
     ```azurecli
     az vm create \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --image UbuntuLTS \
       --location eastus \
       --size Standard_DS2_v2 \
@@ -185,9 +185,9 @@ Nachfolgend wird erläutert, wie Sie Ihre Linux-VM startbereit machen.
 
 Solange Sie warten, können Sie sich den Befehl genauer ansehen, den Sie zuvor ausgeführt haben.
 
-* Die VM hat den Namen **myVM**. Über diesen Namen kann die VM in Azure ermittelt werden. Außerdem handelt es sich um den internen Hostnamen der VM oder den Computernamen.
-* Die Ressourcengruppe bzw. der logische Container der VM wird als **<rgn>[Sandbox-Ressourcengruppenname]</rgn>** bezeichnet.
-* **UbuntuLTS** bezeichnet das Image der Ubuntu 16.04 LTS-VM.
+* Die VM hat den Namen **myVM**. Über diesen Namen kann die VM in Azure ermittelt werden. Außerdem ist dieser Name auch der interne Hostnamen der VM oder der Computernamen.
+* Die Ressourcengruppe bzw. der logische Container der VM heißt **<rgn>[Name der Sandboxressourcengruppe]</rgn>**.
+* **UbuntuLTS** gibt das Image der Ubuntu 16.04 LTS-VM an.
 * **Standard_DS2_v2** bezieht sich auf die Größe der VM. Diese Größe bietet zwei virtuelle CPUs und 7 GB Arbeitsspeicher.
 * Über die Option `--generate-ssh-keys` wird ein SSH-Schlüsselpaar erstellt, mit dem Sie sich bei der VM anmelden können.
 

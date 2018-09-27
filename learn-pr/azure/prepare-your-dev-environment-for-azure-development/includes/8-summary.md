@@ -1,0 +1,1 @@
+In diesem Modul haben Sie Ihre Entwicklungsumgebung auf das Erstellen von Apps in Azure vorbereitet. Sie haben die entsprechenden IDEs für Ihr Betriebssystem installiert und die Anforderungen für die Entwicklung erfüllt. Zudem haben Sie die Azure-Integration ermöglicht, um die Veröffentlichung von Inhalten direkt in den Azure-Diensten zu optimieren.

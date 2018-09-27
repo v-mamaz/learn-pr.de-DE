@@ -11,7 +11,7 @@ Zunächst geben wir einige Standardwerte für die Azure CLI in Cloud Shell an. S
 Geben Sie anschließend den folgenden Befehl in die Azure CLI ein, und ersetzen Sie den Standort durch einen Standort in Ihrer Nähe.
 
 ```azurecli
-az configure --defaults group=<rgn>[Sandbox Resource Group]</rgn> location=westus2
+az configure --defaults group=<rgn>[sandbox Resource Group]</rgn> location=westus2
 ```
 
 ## <a name="create-an-event-hubs-namespace"></a>Erstellen eines Event Hubs-Namespace
@@ -40,14 +40,14 @@ Wenn Sie die folgenden Schritte ausführen, können Sie einen Event Hubs-Namespa
     az eventhubs namespace create --name $NS_NAME
     ```
 
-    > [!NOTE] 
+    > [!NOTE]
     > Azure ist beim Namen sehr wählerisch, und die CLI gibt **Ungültige Anforderung** zurück, wenn der Name bereits vorhanden oder ungültig ist. Probieren Sie es mit einem anderen Namen, indem Sie die Umgebungsvariable ändern und den Befehl erneut ausführen.
 
 
 1. Rufen Sie die Verbindungszeichenfolge für Ihren Event Hubs-Namespace mithilfe des folgenden Befehls ab. Sie benötigen diese, wenn Sie Anwendungen zum Senden und Empfangen von Nachrichten über Ihren Event Hub konfigurieren.
 
     ```azurecli
-    az eventhubs namespace authorization-rule keys list --name RootManageSharedAccessKey --namespace-name $NS_NAME 
+    az eventhubs namespace authorization-rule keys list --name RootManageSharedAccessKey --namespace-name $NS_NAME
     ```
 
     > [!div class="mx-tableFixed"]
@@ -99,9 +99,9 @@ Führen Sie die folgenden Schritte aus, um Ihren neuen Event Hub zu erstellen:
 
 ## <a name="view-the-event-hub-in-the-azure-portal"></a>Anzeigen des Event Hubs im Azure-Portal
 
-Als Nächstes wird beschrieben, wie dies im Azure-Portal aussieht. 
+Als Nächstes wird beschrieben, wie dies im Azure-Portal aussieht.
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) mit demselben Konto an, über das Sie die Sandbox aktiviert haben.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit demselben Konto an, über das Sie die Sandbox aktiviert haben.
 
 1. Suchen Sie über die Suchleiste am oberen Rand des Portals nach Ihrem Event Hubs-Namespace.
 

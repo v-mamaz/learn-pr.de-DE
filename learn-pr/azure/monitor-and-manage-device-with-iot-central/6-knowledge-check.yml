@@ -1,0 +1,53 @@
+### YamlMime:ModuleUnit
+uid: learn.monitor-manage-device-with-iotcentral.6-knowledge-check
+metadata:
+  title: Wissensbeurteilung
+  description: Wissensbeurteilung
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 52f6c98fc185520a51d13dc2b059f4ce17b05c35
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570015"
+title: Überprüfen Sie Ihre Kenntnisse
+durationInMinutes: 11
+content: >
+  [!include[](includes/6-knowledge-check.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: Welche Anweisung beschreibt die Informationen in einer Gerätevorlage am besten?
+    choices:
+    - content: Die Hardwarespezifikation eines Geräts, das mit Ihrer Anwendung verbunden ist.
+      isCorrect: false
+      incorrectExplanation: Details zur Hardware werden nicht von einer Gerätevorlage erfasst.
+    - content: Die Daten und Befehle, die ein Gerät mit Ihrer Anwendung austauschen kann.
+      isCorrect: true
+      correctExplanation: Die Vorlage ist eine Spezifikation, die alle potenziellen Informationen und Befehle erfasst, die zwischen Ihrem Code und dem physischen Gerät ausgetauscht werden können.
+    - content: Das Over-the-Wire-Protokoll, über das mit einem Gerät kommuniziert wird.
+      isCorrect: false
+      incorrectExplanation: Das Kommunikationsprotokoll ist nicht Teil von Gerätevorlagen.
+  - content: 'Richtig oder falsch: Sie benötigen ein physisches Gerät, um Ihre IoT Central-Anwendung zu testen.'
+    choices:
+    - content: Richtig
+      isCorrect: false
+      incorrectExplanation: Sie können simulierte Geräte zum Testen verwenden.
+    - content: Falsch
+      isCorrect: true
+      correctExplanation: IoT Central erstellt automatisch ein simuliertes Gerät, wenn Sie eine Gerätevorlage erstellen. Sie können auch benutzerdefinierte Softwaresimulationen programmieren. So können Sie Ihre Anwendung gründlich testen, bevor Sie ein physisches Gerät damit verbinden.
+  - content: Angenommen, Sie verfügen über fünf physische Geräte, die mit IoT Central kommunizieren. Wie viele Verbindungszeichenfolgen hätten Sie?
+    choices:
+    - content: 'Eine: Die Verbindungszeichenfolge wird von allen verbundenen Geräten gemeinsam genutzt.'
+      isCorrect: false
+      incorrectExplanation: Mit gemeinsam genutzten Verbindungszeichenfolgen könnte IoT Central die einzelnen Geräte nicht eindeutig identifizieren.
+    - content: 'Zwei: Eine, die aktiv verwendet wird, und eine zu Sicherungszwecken für den Fall, dass die primäre gefährdet ist.'
+      isCorrect: false
+      incorrectExplanation: Mit gemeinsam genutzten Verbindungszeichenfolgen könnte IoT Central die einzelnen Geräte nicht eindeutig identifizieren.
+    - content: 'Fünf: Jedes Gerät benötigt eine eindeutige Verbindungszeichenfolge.'
+      isCorrect: true
+      correctExplanation: Mit Verbindungszeichenfolgen identifizieren sich Geräte gegenüber IoT Central. Jedes Gerät benötigt also eine eigene.

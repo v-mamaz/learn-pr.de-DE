@@ -28,7 +28,7 @@ az vm image list --publisher Microsoft --output table --all
 
 ## <a name="location-specific-images"></a>Standortspezifische Images
 
-Einige Images sind nur in bestimmten Regionen verfügbar. Fügen Sie das `--location [location]`-Flag zum Befehl hinzu, um die Ergebnisse auf diejenigen einzugrenzen, die in der Region verfügbar sind, in der Sie den virtuellen Computer erstellen möchten. Geben Sie z.B. in Azure Cloud Shell Folgendes ein, um eine Liste der in der Region „`eastus`“ verfügbaren Images abzurufen.
+Einige Images sind nur in bestimmten Regionen verfügbar. Fügen Sie das `--location [location]`-Flag zum Befehl hinzu, um die Ergebnisse auf diejenigen einzugrenzen, die in der Region verfügbar sind, in der Sie den virtuellen Computer erstellen möchten. Geben Sie z.B. in Azure Cloud Shell Folgendes ein, um eine Liste der in der Region `eastus` verfügbaren Images abzurufen.
 
 ```azurecli
 az vm image list --location eastus --output table

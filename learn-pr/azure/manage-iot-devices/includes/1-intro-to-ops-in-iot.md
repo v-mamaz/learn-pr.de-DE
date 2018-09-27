@@ -10,8 +10,8 @@ Das Internet der Dinge bietet nicht nur für eine ausgewählte Gruppe, sondern f
 
  Der Rest dieses Moduls verwendet diese grundlegenden Kenntnisse von IoT und wendet sie auf ein reales Szenario an. Sie interagieren mit dem Raspberry Pi-Onlinesimulator, um simulierte Wetterdaten über Azure IoT Hub zu erfassen.
 
- ##<a name="learning-objectives"></a>Lernziele
- Aufgaben in diesem Modul:
+ ## <a name="learning-objectives"></a>Lernziele
+ In diesem Modul wird Folgendes thematisiert:
   - Einführung in IoT
   - Interagieren mit einem Raspberry Pi-Simulator
   - Konfigurieren von Azure IoT Hub zur Datenerfassung

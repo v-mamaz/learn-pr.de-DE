@@ -53,7 +53,7 @@ Hier finden Sie eine gekürzte Antwort für `eastus`:
 Wir haben beim Erstellen der VM keine Größe angegeben, daher hat Azure eine allgemeine Standardgröße von „`Standard_DS1_v2`“ für uns ausgewählt. Wir können jedoch die Größe mithilfe des `--size`-Parameters im `vm create`-Befehl angeben. Sie können z.B. mit dem folgenden Befehl eine VM mit 16 Kernen erstellen:
 
 ```azurecli
-az vm create --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM2 \
+az vm create --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM2 \
   --image Debian --admin-username aldis --generate-ssh-keys --verbose \
   --size "Standard_DS5_v2"
 ```
@@ -65,7 +65,7 @@ az vm create --resource-group <rgn>[Sandbox resource group name]</rgn> --name Sa
 Wir können die Größe eines vorhandenen virtuellen Computers auch ändern, wenn sich die Workload ändert oder die Größe während der Erstellung falsch festgelegt wurde. Bevor eine Größenänderung angefordert wird, müssen wir überprüfen, ob die gewünschte Größe in dem Cluster vorhanden ist, zu dem unser virtueller Computer gehört. Hierfür können wir den Befehl „`vm list-vm-resize-options`“ verwenden:
 
 ```azurecli
-az vm list-vm-resize-options --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --output table
+az vm list-vm-resize-options --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --output table
 ```
 
 Dieser Befehl gibt eine Liste aller möglichen Größenkonfigurationen zurück, die in der Ressourcengruppe verfügbar sind. Wenn die gewünschte Größe zwar nicht in unserem Cluster, _aber_ in der Region verfügbar ist, können wir die [Zuordnung des virtuellen Computers aufheben](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-deallocate). Dieser Befehl hält den ausgeführten virtuellen Computer an und entfernt ihn aus dem aktuellen Cluster, ohne dass dabei Ressourcen verloren gehen. Dann können wir die Größe ändern. Dadurch wird die VM in einem neuen Cluster neu erstellt, in dem die Größenkonfiguration verfügbar ist.
@@ -76,7 +76,7 @@ Dieser Befehl gibt eine Liste aller möglichen Größenkonfigurationen zurück, 
 Zum Ändern der Größe einer VM verwenden wir den Befehl „`vm resize`“. Beispiel: Nehmen wir an, unsere VM ist für den Task, der auf dieser ausgeführt werden soll, nicht ausreichend ausgelastet. Wir könnten sie auf den Tarif DS3_v2 mit 4 virtuellen Kernen und 14 GB Arbeitsspeicher erhöhen. Geben Sie folgenden Befehl in Cloud Shell ein:
 
 ```azurecli
-az vm resize --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --size Standard_DS3_v2
+az vm resize --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --size Standard_DS3_v2
 ```
 
 Es dauert einige Minuten, bis der Befehl die Ressourcen des virtuellen Computers reduziert hat. Sobald dieser Vorgang abgeschlossen ist, gibt der Befehl eine neue JSON-Konfiguration zurück.

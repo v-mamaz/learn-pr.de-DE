@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.run-docker-containers-aci.7-knowledge-check
+title: Wissensbeurteilung
+metadata:
+  title: Wissensbeurteilung
+  description: Wissensbeurteilung
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 7a426d51049087dfa1f95baced2caf88ad49ebf8
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570042"
+durationInMinutes: 5
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: Welche Neustartrichtlinie eignet sich in der Regel am besten für Aufgaben mit langer Ausführungszeit, die Anforderungen verarbeiten?
+    choices:
+    - content: Always
+      isCorrect: true
+      correctExplanation: Die Neustartrichtlinie **Always** stellt sicher, dass erforderlichen Prozesse weiterhin verfügbar sind, auch wenn ein Neustart erforderlich ist.
+    - content: Never
+      isCorrect: false
+      incorrectExplanation: Die Neustartrichtlinie **Always** stellt sicher, dass erforderlichen Prozesse weiterhin verfügbar sind, auch wenn ein Neustart erforderlich ist.
+    - content: OnFailure
+      isCorrect: false
+      incorrectExplanation: Die Neustartrichtlinie **Always** stellt sicher, dass erforderlichen Prozesse weiterhin verfügbar sind, auch wenn ein Neustart erforderlich ist.
+  - content: 'Richtig oder falsch: Die Werte einer Umgebungsvariablen sind standardmäßig im Azure-Portal und in der Azure CLI-Ausgabe sichtbar.'
+    choices:
+    - content: Richtig
+      isCorrect: true
+      correctExplanation: Umgebungsvariablen sind standardmäßig nicht geschützt, sodass ihre Werte standardmäßig im Azure-Portal und in der Azure CLI-Ausgabe sichtbar sind.
+    - content: Falsch
+      isCorrect: false
+      incorrectExplanation: Umgebungsvariablen sind standardmäßig nicht geschützt, sodass ihre Werte standardmäßig im Azure-Portal und in der Azure CLI-Ausgabe sichtbar sind.
+  - content: Mit welchem Befehl zur Problembehandlung können Containerstartereignisse angezeigt werden?
+    choices:
+    - content: az container logs
+      isCorrect: false
+      incorrectExplanation: Mit dem Befehl `az container logs` werden die Protokolle für einen Container in einer Containergruppe überprüft.
+    - content: az container attach
+      isCorrect: true
+      correctExplanation: Der Befehl `az container attach` dient zum Anzeigen von Containerereignissen und -protokollen. Im Gegensatz dazu zeigt `az container logs` nur die Protokolle, aber keine Startereignisse an.
+    - content: az container exec
+      isCorrect: false
+      incorrectExplanation: Der Befehl `az container exec` führt einen Befehl innerhalb eines ausgeführten Containers einer Containergruppe aus.

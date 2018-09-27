@@ -63,7 +63,7 @@ In diesem Beispiel wird die VM mithilfe einer Azure Resource Manager-Vorlage ers
 ## <a name="create-a-resource-group"></a>Erstellen einer Ressourcengruppe 
 
 > [!IMPORTANT]
-> In der Regel können Sie Ressourcengruppen in einer Region Ihrer Wahl erstellen. Sie erhalten allerdings über die aktuelle Sandbox-Sitzung eine Ressourcengruppe, die Sie verwenden können. Die Ressourcengruppe für diese Sitzung lautet **<rgn>[Name der Sandbox-Ressourcengruppe]</rgn>**.
+> In der Regel können Sie Ressourcengruppen in einer Region Ihrer Wahl erstellen. Sie erhalten allerdings über die aktuelle Sandboxsitzung eine Ressourcengruppe, die Sie verwenden können. Die Ressourcengruppe für diese Sitzung lautet **<rgn>[Name der Sandboxressourcengruppe]</rgn>**.
 
 ## <a name="deploy-the-dsvm-to-your-resource-group"></a>Bereitstellen der DSVM für Ihre Ressourcengruppe
 
@@ -73,7 +73,7 @@ Sie verfügen jetzt über eine Ressourcengruppe und über definierte Parameter f
 
     ```azurecli
     az group deployment create \
-    --resource-group  <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group  <rgn>[sandbox resource group name]</rgn> \
     --template-uri https://raw.githubusercontent.com/Azure/DataScienceVM/master/Scripts/CreateDSVM/Ubuntu/azuredeploy.json \
     --parameters parameter_file.json
     ```
@@ -90,7 +90,7 @@ Sie verfügen jetzt über eine Ressourcengruppe und über definierte Parameter f
     ```azurecli
     az vm get-instance-view \
     --name <HOSTNAME> \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --query instanceView.statuses[1] \
     --output table
     ```
@@ -107,7 +107,7 @@ Standardmäßig ist kein Port der VM geöffnet. Ziel ist es, eine Remoteverbindu
 
     ```azurecli
     az vm open-port \
-    -g <rgn>[Sandbox resource group name]</rgn> \
+    -g <rgn>[sandbox resource group name]</rgn> \
     -n <HOSTNAME> \
     --port 22 \
     --priority 900
@@ -123,7 +123,7 @@ Wie zuvor bereits erwähnt ist das DSVM-Image bei Software, Tools und Beispielen
 
     ```azurecli
     az vm open-port \
-    -g <rgn>[Sandbox resource group name]</rgn> \
+    -g <rgn>[sandbox resource group name]</rgn> \
     -n <HOSTNAME> \
     --port 8888 \
     --priority 901
@@ -137,7 +137,7 @@ Die Ausführung dieses Befehls kann wieder einige Minuten dauern. Wenn der letzt
 
     ```azurecli
     az vm list-ip-addresses \
-    -g <rgn>[Sandbox resource group name]</rgn> \
+    -g <rgn>[sandbox resource group name]</rgn> \
     -n <HOSTNAME> \
     --output table
     ```
