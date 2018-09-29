@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: b0b4a1951f2dbcfa12ffd0c726e9e8930b44259f
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46338488"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47123827"
 title: Auswählen von Cloudtypen und Dienstmodellen in Azure auf Grundlage Ihrer Anforderungen
 summary: 'Azure unterstützt drei Ansätze zur Bereitstellung von Cloudressourcen: die öffentliche Cloud, die private Cloud und die Hybrid Cloud. Durch die Auswahl eines Ansatzes ändern sich für die in Azure bereitgestellten Dienste mehrere Faktoren wie z.B. die anfallenden Kosten, Wartungsanforderungen und Sicherheitsaspekte. In diesem Modul werden alle Optionen vorgestellt. Dadurch können Sie sich unter Berücksichtigung aller relevanten Aspekte für einen bestimmten Ansatz für Ihre Dienste entscheiden. Zusätzlich erhalten Sie eine Übersicht über die von Azure unterstützten Dienstmodelle, mit denen Sie die Dienste ermitteln können, die bei der Planung einer Azure-Bereitstellung als Erstes berücksichtigt werden sollten.'
 abstract: >

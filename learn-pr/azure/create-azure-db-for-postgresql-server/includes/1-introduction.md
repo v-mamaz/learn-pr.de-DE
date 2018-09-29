@@ -9,6 +9,6 @@ Wenn Sie cloudgehostete Datenbankangebote in Betracht ziehen, sind Aspekte wie V
 In diesem Modul lernen Sie Folgendes:
 
 - Erstellen einer Azure Database for PostgreSQL-Instanz mit dem Azure-Portal
-- Erstellen einer Azure Database for PostgreSQL-Instanz mithilfe der Azure-CLI
+- Erstellen einer Azure Database for PostgreSQL mithilfe der Azure-CLI
 - Konfigurieren einer PostgreSQL-Firewallregel auf Serverebene
 - Herstellen einer Verbindung mit dem PostgreSQL-Server mit dem Befehl `psql` in Azure Cloud Shell

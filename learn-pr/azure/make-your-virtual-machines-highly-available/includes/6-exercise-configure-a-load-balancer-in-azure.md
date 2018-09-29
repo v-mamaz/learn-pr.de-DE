@@ -2,7 +2,7 @@ Sie haben die wichtigsten Ressourcen für die Architektur Ihrer Onlinebank erste
 
 Testen Sie den Lastenausgleich nach Abschluss des Setups, indem Sie eine VM aus dem Pool entfernen und überprüfen, ob die Clientanforderungen nicht mehr an diese VM gesendet werden.
 
-Zunächst wird der Back-End-Pool im Lastenausgleich definiert. Dadurch wird festgelegt, wohin eingehende Anforderungen weitergeleitet werden.
+Zunächst wird der Back-End-Pool im Load Balancer definiert. Dadurch wird festgelegt, wohin eingehende Anforderungen weitergeleitet werden.
 
 ## <a name="create-a-backend-address-pool"></a>Erstellen eines Back-End-Adresspools
 

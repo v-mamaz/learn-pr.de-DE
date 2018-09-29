@@ -10,5 +10,5 @@ In diesem Modul
 
 - richten Sie Visual Studio Code ein,
 - richten Visual Studio ein,
-- richten Sie Eclipse für die Entwicklung mit Java ein,
+- richten Sie Eclipse für die Entwicklung mit Java ein und
 - bereiten Sie Ihre IDE für die Entwicklung mit Azure vor.

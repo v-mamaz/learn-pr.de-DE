@@ -16,7 +16,7 @@ Um dieses Szenario zu vereinfachen und uns auf die Storage-APIs konzentrieren zu
     dotnet new console --name PhotoSharingApp
     ```
 
-1. Führen Sie die App aus, um sich zu vergewissern, dass sie ordnungsgemäß erstellt und ausgeführt wird. Es sollte „Hello World!“ in der Konsole angezeigt werden.
+1. Führen Sie die App aus, um sich zu vergewissern, dass sie ordnungsgemäß erstellt und ausgeführt wird. Es sollte „Hello, World!“ in der Konsole angezeigt werden.
 
     ```bash
     cd PhotoSharingApp

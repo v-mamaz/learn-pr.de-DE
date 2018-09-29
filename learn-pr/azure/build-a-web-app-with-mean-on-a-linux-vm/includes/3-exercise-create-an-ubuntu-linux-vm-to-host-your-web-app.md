@@ -8,7 +8,7 @@ In dieser Einheit erstellen Sie einen neuen virtuellen Ubuntu Linux-Computer, de
 
 ### <a name="creating-a-resource-group"></a>Erstellen einer Ressourcengruppe
 
-Wenn Sie neue Ressourcen erstellen, erstellen Sie in der Regel zuerst eine _Ressourcengruppe_, um alle Ressourcen zu besitzen. Dieser Schritt ist in der Azure-Sandbox überflüssig, aber wenn Sie in Ihrem eigenen Abonnement arbeiten, erstellen Sie mit dem folgenden Befehl eine Ressourcengruppe an einem Standort in Ihrer Nähe.
+Wenn Sie neue Ressourcen erstellen, erstellen Sie in der Regel zuerst eine _Ressourcengruppe_, um alle Ressourcen zu besitzen. Dieser Schritt ist in der Azure-Sandbox überflüssig, aber wenn Sie in Ihrem eigenen Abonnement arbeiten, erstellen Sie mit dem folgenden Befehl eine Ressourcengruppe an einem Speicherort in Ihrer Nähe.
 
 ```azurecli
 az group create --name <resource-group-name> --location <resource-group-location>

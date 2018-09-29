@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 068543566bde1d9d8b74ec56d87b2a0505839205
-  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/22/2018
-  ms.locfileid: "46567227"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47124806"
 title: Verwalten von Containern in Azure
 summary: Azure-Containerinstanzen sind die schnellste und einfachste Möglichkeit zum Ausführen von Containern in Azure. Dieser Lernpfad vermittelt Ihnen das Erstellen und Verwalten Ihrer Container, und wie ACI (Azure Container Instances, Azure-Containerinstanzen) verwendet werden kann, um elastische Skalierung für Kubernetes bereitzustellen.
 prerequisites: Keine

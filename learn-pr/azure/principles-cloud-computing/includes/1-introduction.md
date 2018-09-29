@@ -1,6 +1,6 @@
 Wenn Sie das Licht einschalten, möchten Sie einfach, dass das Licht angeht. Sie wissen, dass Sie dafür Strom brauchen, aber in diesem Moment ist es nicht wichtig, wie genau der Strom zur Glühbirne gelangt. Sie denken wahrscheinlich nicht daran, dass Strom in einem Kraftwerk produziert und über das komplexe Netzwerk der Hochspannungsleitungen in Ihre Stadt, an eine Trafostation und schließlich in Ihr Haus geleitet wird.
 
-![Herstellen einer Verbindung mit einem Stecker zur Darstellung der Bereitstellung von Elektrizität](../media/1-heading.png)
+![Einstecken eines Steckers, der das Bereitstellen von Elektrizität darstellt](../media/1-heading.png)
 
 Der Prozess des Lichteinschaltens ist hinter der simplen Schalterbetätigung verborgen. An diesem Punkt wird der Strom zu einem äußerst nützlichen Hilfsmittel. Zum einen bezahlen Sie nur für das, was Sie verbrauchen. Wenn Sie eine Glühbirne kaufen, leisten Sie nicht zugleich eine Vorauszahlung für die voraussichtliche Nutzungsdauer an Ihren Stromanbieter. Stattdessen zahlen Sie für den Strom, den Sie tatsächlich verbrauchen. Zum andern müssen Sie sich keine Gedanken darüber machen, wie Kraftwerke ein Upgrade auf die neueste Technologie durchführen. Schließlich müssen Sie die Stromversorgung nicht skalieren. Wenn die Einwohnerzahl Ihrer Stadt steigt, können Sie z.B. sicher sein, dass Ihr Licht nicht erlischt.
 

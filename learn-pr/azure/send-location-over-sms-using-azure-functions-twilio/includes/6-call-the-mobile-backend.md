@@ -103,7 +103,7 @@ async Task SendLocation()
 1. Um die URL-Generierung zu testen, fügen Sie sie von der Konsole in einem Browser ein. Ihr aktueller Standort sollte angezeigt werden.
 
     > [!TIP]
-    > Der angezeigte Standort ist der Ausführungsort der App und befindet sich in der Nähe des Rechenzentrums, über das der virtuelle Computer ausgeführt wird. Wird diese App auf Ihrem lokalen Gerät ausgeführt, wird Ihr Standort angezeigt.
+    > Der angezeigte Standort ist der Ausführungsort der App und befindet sich in der Nähe des Rechenzentrums, über das der virtuelle Computer ausgeführt wird. Würde diese App auf Ihrem lokalen Gerät ausgeführt, würde Ihr Standort angezeigt werden.
 
 ## <a name="summary"></a>Zusammenfassung
 
