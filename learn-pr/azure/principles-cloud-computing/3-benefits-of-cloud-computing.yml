@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.principles-cloud-computing.3-benefits-of-cloud-computing
-title: <span data-ttu-id="eac15-101">Vorteile des Cloud Computing</span><span class="sxs-lookup"><span data-stu-id="eac15-101">Benefits of cloud computing</span></span>
+title: <span data-ttu-id="6e98b-101">Vorteile des Cloud Computing</span><span class="sxs-lookup"><span data-stu-id="6e98b-101">Benefits of cloud computing</span></span>
 metadata:
-  title: <span data-ttu-id="eac15-102">Vorteile des Cloud Computing</span><span class="sxs-lookup"><span data-stu-id="eac15-102">Benefits of cloud computing</span></span>
-  description: <span data-ttu-id="eac15-103">Vorteile des Cloud Computing</span><span class="sxs-lookup"><span data-stu-id="eac15-103">Benefits of cloud computing</span></span>
+  title: <span data-ttu-id="6e98b-102">Vorteile des Cloud Computing</span><span class="sxs-lookup"><span data-stu-id="6e98b-102">Benefits of cloud computing</span></span>
+  description: <span data-ttu-id="6e98b-103">Vorteile des Cloud Computing</span><span class="sxs-lookup"><span data-stu-id="6e98b-103">Benefits of cloud computing</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: c6abb35dd9c06e430e4faf1c39e482d18cd43fcc
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46341021"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47125958"
 durationInMinutes: 8
 content: '[!include[](includes/3-benefits-of-cloud-computing.md)]'

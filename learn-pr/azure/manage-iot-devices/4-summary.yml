@@ -1,49 +1,49 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-iot-devices.4-summary
 metadata:
-  title: <span data-ttu-id="eb0b6-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="eb0b6-101">Summary</span></span>
-  description: <span data-ttu-id="eb0b6-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="eb0b6-102">Summary</span></span>
+  title: <span data-ttu-id="ab779-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="ab779-101">Summary</span></span>
+  description: <span data-ttu-id="ab779-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="ab779-102">Summary</span></span>
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 266c371394a46c9fc98e164e2a8700ae830e2ea7
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46343302"
-title: <span data-ttu-id="eb0b6-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="eb0b6-103">Summary</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47125735"
+title: <span data-ttu-id="ab779-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="ab779-103">Summary</span></span>
 durationInMinutes: 7
 content: >
   [!include[](includes/4-summary.md)]
 quiz:
-  title: <span data-ttu-id="eb0b6-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="eb0b6-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="ab779-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="ab779-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="eb0b6-105">IoT Hub ist ein Azure-Dienst, mit dem Sie große Mengen von Telemetriedaten von Ihren IoT-Geräten in der Cloud erfassen können, um sie zu speichern oder zu verarbeiten.</span><span class="sxs-lookup"><span data-stu-id="eb0b6-105">IoT Hub is an Azure service that enables you to ingest high volumes of telemetry from your IoT devices into the cloud for storage or processing.</span></span>
+  - content: <span data-ttu-id="ab779-105">IoT Hub ist ein Azure-Dienst, mit dem Sie große Mengen von Telemetriedaten von Ihren IoT-Geräten in der Cloud erfassen können, um sie zu speichern oder zu verarbeiten.</span><span class="sxs-lookup"><span data-stu-id="ab779-105">IoT Hub is an Azure service that enables you to ingest high volumes of telemetry from your IoT devices into the cloud for storage or processing.</span></span>
     choices:
-    - content: <span data-ttu-id="eb0b6-106">Wahr</span><span class="sxs-lookup"><span data-stu-id="eb0b6-106">True</span></span>
+    - content: <span data-ttu-id="ab779-106">Wahr</span><span class="sxs-lookup"><span data-stu-id="ab779-106">True</span></span>
       isCorrect: true
-    - content: <span data-ttu-id="eb0b6-107">Falsch</span><span class="sxs-lookup"><span data-stu-id="eb0b6-107">False</span></span>
+    - content: <span data-ttu-id="ab779-107">Falsch</span><span class="sxs-lookup"><span data-stu-id="ab779-107">False</span></span>
       isCorrect: false
-  - content: '<span data-ttu-id="eb0b6-108">Sie können den kostenlosen Tarif F1 zum Einrichten von IoT Hub verwenden. Dies wird allerdings nur zu Testzwecken empfohlen.</span><span class="sxs-lookup"><span data-stu-id="eb0b6-108">You can use the F1: Free Tier to setup IoT Hub, however it is only recommended for testing.</span></span>'
+  - content: '<span data-ttu-id="ab779-108">Sie können den kostenlosen Tarif F1 zum Einrichten von IoT Hub verwenden. Dies wird allerdings nur zu Testzwecken empfohlen.</span><span class="sxs-lookup"><span data-stu-id="ab779-108">You can use the F1: Free Tier to setup IoT Hub, however it is only recommended for testing.</span></span>'
     choices:
-    - content: <span data-ttu-id="eb0b6-109">Wahr</span><span class="sxs-lookup"><span data-stu-id="eb0b6-109">True</span></span>
+    - content: <span data-ttu-id="ab779-109">Wahr</span><span class="sxs-lookup"><span data-stu-id="ab779-109">True</span></span>
       isCorrect: true
-    - content: <span data-ttu-id="eb0b6-110">Falsch</span><span class="sxs-lookup"><span data-stu-id="eb0b6-110">False</span></span>
+    - content: <span data-ttu-id="ab779-110">Falsch</span><span class="sxs-lookup"><span data-stu-id="ab779-110">False</span></span>
       isCorrect: false
-  - content: <span data-ttu-id="eb0b6-111">Welche der freigegebenen Zugriffsrichtlinien wird nicht standardmäßig erstellt?</span><span class="sxs-lookup"><span data-stu-id="eb0b6-111">Which one of the shared access policies is not created by default?</span></span>
+  - content: <span data-ttu-id="ab779-111">Welche der freigegebenen Zugriffsrichtlinien wird nicht standardmäßig erstellt?</span><span class="sxs-lookup"><span data-stu-id="ab779-111">Which one of the shared access policies is not created by default?</span></span>
     choices:
-    - content: <span data-ttu-id="eb0b6-112">iothubowner</span><span class="sxs-lookup"><span data-stu-id="eb0b6-112">iothubowner</span></span>
+    - content: <span data-ttu-id="ab779-112">iothubowner</span><span class="sxs-lookup"><span data-stu-id="ab779-112">iothubowner</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="eb0b6-113">Diese Richtlinie wird standardmäßig erstellt.</span><span class="sxs-lookup"><span data-stu-id="eb0b6-113">This policy is created by default.</span></span>
-    - content: <span data-ttu-id="eb0b6-114">service</span><span class="sxs-lookup"><span data-stu-id="eb0b6-114">service</span></span>
+      incorrectExplanation: <span data-ttu-id="ab779-113">Diese Richtlinie wird standardmäßig erstellt.</span><span class="sxs-lookup"><span data-stu-id="ab779-113">This policy is created by default.</span></span>
+    - content: <span data-ttu-id="ab779-114">service</span><span class="sxs-lookup"><span data-stu-id="ab779-114">service</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="eb0b6-115">Diese Richtlinie wird standardmäßig erstellt.</span><span class="sxs-lookup"><span data-stu-id="eb0b6-115">This policy is created by default.</span></span>
-    - content: <span data-ttu-id="eb0b6-116">device</span><span class="sxs-lookup"><span data-stu-id="eb0b6-116">device</span></span>
+      incorrectExplanation: <span data-ttu-id="ab779-115">Diese Richtlinie wird standardmäßig erstellt.</span><span class="sxs-lookup"><span data-stu-id="ab779-115">This policy is created by default.</span></span>
+    - content: <span data-ttu-id="ab779-116">device</span><span class="sxs-lookup"><span data-stu-id="ab779-116">device</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="eb0b6-117">Diese Richtlinie wird standardmäßig erstellt.</span><span class="sxs-lookup"><span data-stu-id="eb0b6-117">This policy is created by default.</span></span>
-    - content: <span data-ttu-id="eb0b6-118">registryWrite</span><span class="sxs-lookup"><span data-stu-id="eb0b6-118">registryWrite</span></span>
+      incorrectExplanation: <span data-ttu-id="ab779-117">Diese Richtlinie wird standardmäßig erstellt.</span><span class="sxs-lookup"><span data-stu-id="ab779-117">This policy is created by default.</span></span>
+    - content: <span data-ttu-id="ab779-118">registryWrite</span><span class="sxs-lookup"><span data-stu-id="ab779-118">registryWrite</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="eb0b6-119">Es gibt keine registryWrite-Richtlinie.</span><span class="sxs-lookup"><span data-stu-id="eb0b6-119">There is no such policy as registryWrite.</span></span>
+      correctExplanation: <span data-ttu-id="ab779-119">Es gibt keine registryWrite-Richtlinie.</span><span class="sxs-lookup"><span data-stu-id="ab779-119">There is no such policy as registryWrite.</span></span>

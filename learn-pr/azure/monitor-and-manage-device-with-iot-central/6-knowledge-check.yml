@@ -1,53 +1,53 @@
 ### YamlMime:ModuleUnit
 uid: learn.monitor-manage-device-with-iotcentral.6-knowledge-check
 metadata:
-  title: <span data-ttu-id="2c13c-101">Wissensbeurteilung</span><span class="sxs-lookup"><span data-stu-id="2c13c-101">Knowledge check</span></span>
-  description: <span data-ttu-id="2c13c-102">Wissensbeurteilung</span><span class="sxs-lookup"><span data-stu-id="2c13c-102">Knowledge check</span></span>
+  title: <span data-ttu-id="49de4-101">Wissensbeurteilung</span><span class="sxs-lookup"><span data-stu-id="49de4-101">Knowledge check</span></span>
+  description: <span data-ttu-id="49de4-102">Wissensbeurteilung</span><span class="sxs-lookup"><span data-stu-id="49de4-102">Knowledge check</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 52f6c98fc185520a51d13dc2b059f4ce17b05c35
-  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/22/2018
-  ms.locfileid: "46570015"
-title: <span data-ttu-id="2c13c-103">Überprüfen Sie Ihre Kenntnisse</span><span class="sxs-lookup"><span data-stu-id="2c13c-103">Check your knowledge</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47124680"
+title: <span data-ttu-id="49de4-103">Überprüfen Sie Ihre Kenntnisse</span><span class="sxs-lookup"><span data-stu-id="49de4-103">Check your knowledge</span></span>
 durationInMinutes: 11
 content: >
   [!include[](includes/6-knowledge-check.md)]
 quiz:
-  title: <span data-ttu-id="2c13c-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="2c13c-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="49de4-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="49de4-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="2c13c-105">Welche Anweisung beschreibt die Informationen in einer Gerätevorlage am besten?</span><span class="sxs-lookup"><span data-stu-id="2c13c-105">Which statement best describes the information in a device template?</span></span>
+  - content: <span data-ttu-id="49de4-105">Welche Anweisung beschreibt die Informationen in einer Gerätevorlage am besten?</span><span class="sxs-lookup"><span data-stu-id="49de4-105">Which statement best describes the information in a device template?</span></span>
     choices:
-    - content: <span data-ttu-id="2c13c-106">Die Hardwarespezifikation eines Geräts, das mit Ihrer Anwendung verbunden ist.</span><span class="sxs-lookup"><span data-stu-id="2c13c-106">The hardware specification of a device connected to your application.</span></span>
+    - content: <span data-ttu-id="49de4-106">Die Hardwarespezifikation eines Geräts, das mit Ihrer Anwendung verbunden ist.</span><span class="sxs-lookup"><span data-stu-id="49de4-106">The hardware specification of a device connected to your application.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="2c13c-107">Details zur Hardware werden nicht von einer Gerätevorlage erfasst.</span><span class="sxs-lookup"><span data-stu-id="2c13c-107">Hardware details are not captured by a device template.</span></span>
-    - content: <span data-ttu-id="2c13c-108">Die Daten und Befehle, die ein Gerät mit Ihrer Anwendung austauschen kann.</span><span class="sxs-lookup"><span data-stu-id="2c13c-108">The data and commands a device can exchange with your application.</span></span>
+      incorrectExplanation: <span data-ttu-id="49de4-107">Details zur Hardware werden nicht von einer Gerätevorlage erfasst.</span><span class="sxs-lookup"><span data-stu-id="49de4-107">Hardware details are not captured by a device template.</span></span>
+    - content: <span data-ttu-id="49de4-108">Die Daten und Befehle, die ein Gerät mit Ihrer Anwendung austauschen kann.</span><span class="sxs-lookup"><span data-stu-id="49de4-108">The data and commands a device can exchange with your application.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="2c13c-109">Die Vorlage ist eine Spezifikation, die alle potenziellen Informationen und Befehle erfasst, die zwischen Ihrem Code und dem physischen Gerät ausgetauscht werden können.</span><span class="sxs-lookup"><span data-stu-id="2c13c-109">The template is a specification that captures all the potential information and commands that can be exchanged between your code and the physical device.</span></span>
-    - content: <span data-ttu-id="2c13c-110">Das Over-the-Wire-Protokoll, über das mit einem Gerät kommuniziert wird.</span><span class="sxs-lookup"><span data-stu-id="2c13c-110">The over-the-wire protocol used to communicate with a device.</span></span>
+      correctExplanation: <span data-ttu-id="49de4-109">Die Vorlage ist eine Spezifikation, die alle potenziellen Informationen und Befehle erfasst, die zwischen Ihrem Code und dem physischen Gerät ausgetauscht werden können.</span><span class="sxs-lookup"><span data-stu-id="49de4-109">The template is a specification that captures all the potential information and commands that can be exchanged between your code and the physical device.</span></span>
+    - content: <span data-ttu-id="49de4-110">Das Over-the-Wire-Protokoll, über das mit einem Gerät kommuniziert wird.</span><span class="sxs-lookup"><span data-stu-id="49de4-110">The over-the-wire protocol used to communicate with a device.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="2c13c-111">Das Kommunikationsprotokoll ist nicht Teil von Gerätevorlagen.</span><span class="sxs-lookup"><span data-stu-id="2c13c-111">The communication protocol is not part of a device template.</span></span>
-  - content: '<span data-ttu-id="2c13c-112">Richtig oder falsch: Sie benötigen ein physisches Gerät, um Ihre IoT Central-Anwendung zu testen.</span><span class="sxs-lookup"><span data-stu-id="2c13c-112">True or false: you must have a physical device to test your IoT Central application.</span></span>'
+      incorrectExplanation: <span data-ttu-id="49de4-111">Das Kommunikationsprotokoll ist nicht Teil von Gerätevorlagen.</span><span class="sxs-lookup"><span data-stu-id="49de4-111">The communication protocol is not part of a device template.</span></span>
+  - content: '<span data-ttu-id="49de4-112">Richtig oder falsch: Sie benötigen ein physisches Gerät, um Ihre IoT Central-Anwendung zu testen.</span><span class="sxs-lookup"><span data-stu-id="49de4-112">True or false: you must have a physical device to test your IoT Central application.</span></span>'
     choices:
-    - content: <span data-ttu-id="2c13c-113">Richtig</span><span class="sxs-lookup"><span data-stu-id="2c13c-113">True</span></span>
+    - content: <span data-ttu-id="49de4-113">Richtig</span><span class="sxs-lookup"><span data-stu-id="49de4-113">True</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="2c13c-114">Sie können simulierte Geräte zum Testen verwenden.</span><span class="sxs-lookup"><span data-stu-id="2c13c-114">You can use simulated devices for testing.</span></span>
-    - content: <span data-ttu-id="2c13c-115">Falsch</span><span class="sxs-lookup"><span data-stu-id="2c13c-115">False</span></span>
+      incorrectExplanation: <span data-ttu-id="49de4-114">Sie können simulierte Geräte zum Testen verwenden.</span><span class="sxs-lookup"><span data-stu-id="49de4-114">You can use simulated devices for testing.</span></span>
+    - content: <span data-ttu-id="49de4-115">Falsch</span><span class="sxs-lookup"><span data-stu-id="49de4-115">False</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="2c13c-116">IoT Central erstellt automatisch ein simuliertes Gerät, wenn Sie eine Gerätevorlage erstellen.</span><span class="sxs-lookup"><span data-stu-id="2c13c-116">IoT Central automatically creates a simulated device for you when you create a device template.</span></span> <span data-ttu-id="2c13c-117">Sie können auch benutzerdefinierte Softwaresimulationen programmieren.</span><span class="sxs-lookup"><span data-stu-id="2c13c-117">You can also code custom software simulations.</span></span> <span data-ttu-id="2c13c-118">So können Sie Ihre Anwendung gründlich testen, bevor Sie ein physisches Gerät damit verbinden.</span><span class="sxs-lookup"><span data-stu-id="2c13c-118">These options let you thoroughly test your application before connecting a physical device.</span></span>
-  - content: <span data-ttu-id="2c13c-119">Angenommen, Sie verfügen über fünf physische Geräte, die mit IoT Central kommunizieren.</span><span class="sxs-lookup"><span data-stu-id="2c13c-119">Suppose you have five physical devices communicating with IoT Central.</span></span> <span data-ttu-id="2c13c-120">Wie viele Verbindungszeichenfolgen hätten Sie?</span><span class="sxs-lookup"><span data-stu-id="2c13c-120">How many connection strings would you have?</span></span>
+      correctExplanation: <span data-ttu-id="49de4-116">IoT Central erstellt automatisch ein simuliertes Gerät, wenn Sie eine Gerätevorlage erstellen.</span><span class="sxs-lookup"><span data-stu-id="49de4-116">IoT Central automatically creates a simulated device for you when you create a device template.</span></span> <span data-ttu-id="49de4-117">Sie können auch benutzerdefinierte Softwaresimulationen programmieren.</span><span class="sxs-lookup"><span data-stu-id="49de4-117">You can also code custom software simulations.</span></span> <span data-ttu-id="49de4-118">So können Sie Ihre Anwendung gründlich testen, bevor Sie ein physisches Gerät damit verbinden.</span><span class="sxs-lookup"><span data-stu-id="49de4-118">These options let you thoroughly test your application before connecting a physical device.</span></span>
+  - content: <span data-ttu-id="49de4-119">Angenommen, Sie verfügen über fünf physische Geräte, die mit IoT Central kommunizieren.</span><span class="sxs-lookup"><span data-stu-id="49de4-119">Suppose you have five physical devices communicating with IoT Central.</span></span> <span data-ttu-id="49de4-120">Wie viele Verbindungszeichenfolgen hätten Sie?</span><span class="sxs-lookup"><span data-stu-id="49de4-120">How many connection strings would you have?</span></span>
     choices:
-    - content: '<span data-ttu-id="2c13c-121">Eine: Die Verbindungszeichenfolge wird von allen verbundenen Geräten gemeinsam genutzt.</span><span class="sxs-lookup"><span data-stu-id="2c13c-121">One: the connection string is shared by all connected devices.</span></span>'
+    - content: '<span data-ttu-id="49de4-121">Eine: Die Verbindungszeichenfolge wird von allen verbundenen Geräten gemeinsam genutzt.</span><span class="sxs-lookup"><span data-stu-id="49de4-121">One: the connection string is shared by all connected devices.</span></span>'
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="2c13c-122">Mit gemeinsam genutzten Verbindungszeichenfolgen könnte IoT Central die einzelnen Geräte nicht eindeutig identifizieren.</span><span class="sxs-lookup"><span data-stu-id="2c13c-122">Shared connection strings would not allow IoT Central to uniquely identify each device.</span></span>
-    - content: '<span data-ttu-id="2c13c-123">Zwei: Eine, die aktiv verwendet wird, und eine zu Sicherungszwecken für den Fall, dass die primäre gefährdet ist.</span><span class="sxs-lookup"><span data-stu-id="2c13c-123">Two: one in active use and one backup in case the primary is compromised.</span></span>'
+      incorrectExplanation: <span data-ttu-id="49de4-122">Mit gemeinsam genutzten Verbindungszeichenfolgen könnte IoT Central die einzelnen Geräte nicht eindeutig identifizieren.</span><span class="sxs-lookup"><span data-stu-id="49de4-122">Shared connection strings would not allow IoT Central to uniquely identify each device.</span></span>
+    - content: '<span data-ttu-id="49de4-123">Zwei: Eine, die aktiv verwendet wird, und eine zu Sicherungszwecken für den Fall, dass die primäre gefährdet ist.</span><span class="sxs-lookup"><span data-stu-id="49de4-123">Two: one in active use and one backup in case the primary is compromised.</span></span>'
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="2c13c-124">Mit gemeinsam genutzten Verbindungszeichenfolgen könnte IoT Central die einzelnen Geräte nicht eindeutig identifizieren.</span><span class="sxs-lookup"><span data-stu-id="2c13c-124">Shared connection strings would not allow IoT Central to uniquely identify each device.</span></span>
-    - content: '<span data-ttu-id="2c13c-125">Fünf: Jedes Gerät benötigt eine eindeutige Verbindungszeichenfolge.</span><span class="sxs-lookup"><span data-stu-id="2c13c-125">Five: every device needs a unique connection string.</span></span>'
+      incorrectExplanation: <span data-ttu-id="49de4-124">Mit gemeinsam genutzten Verbindungszeichenfolgen könnte IoT Central die einzelnen Geräte nicht eindeutig identifizieren.</span><span class="sxs-lookup"><span data-stu-id="49de4-124">Shared connection strings would not allow IoT Central to uniquely identify each device.</span></span>
+    - content: '<span data-ttu-id="49de4-125">Fünf: Jedes Gerät benötigt eine eindeutige Verbindungszeichenfolge.</span><span class="sxs-lookup"><span data-stu-id="49de4-125">Five: every device needs a unique connection string.</span></span>'
       isCorrect: true
-      correctExplanation: <span data-ttu-id="2c13c-126">Mit Verbindungszeichenfolgen identifizieren sich Geräte gegenüber IoT Central. Jedes Gerät benötigt also eine eigene.</span><span class="sxs-lookup"><span data-stu-id="2c13c-126">The connection string identifies the device to IoT Central, so each device needs its own.</span></span>
+      correctExplanation: <span data-ttu-id="49de4-126">Mit Verbindungszeichenfolgen identifizieren sich Geräte gegenüber IoT Central. Jedes Gerät benötigt also eine eigene.</span><span class="sxs-lookup"><span data-stu-id="49de4-126">The connection string identifies the device to IoT Central, so each device needs its own.</span></span>

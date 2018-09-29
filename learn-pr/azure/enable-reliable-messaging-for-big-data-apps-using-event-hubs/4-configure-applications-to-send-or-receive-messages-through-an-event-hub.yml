@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.4-configure-applications-to-send-or-receive-messages-through-an-event-hub
-title: <span data-ttu-id="753a1-101">Konfigurieren von Anwendungen zum Senden oder Empfangen von Nachrichten über einen Event Hub</span><span class="sxs-lookup"><span data-stu-id="753a1-101">Configure applications to send or receive messages through an Event Hub</span></span>
+title: <span data-ttu-id="8c030-101">Konfigurieren von Anwendungen zum Senden oder Empfangen von Nachrichten über einen Event Hub</span><span class="sxs-lookup"><span data-stu-id="8c030-101">Configure applications to send or receive messages through an Event Hub</span></span>
 metadata:
-  title: <span data-ttu-id="753a1-102">Konfigurieren von Anwendungen zum Senden oder Empfangen von Nachrichten über einen Event Hub</span><span class="sxs-lookup"><span data-stu-id="753a1-102">Configure applications to send or receive messages through an Event Hub</span></span>
-  description: <span data-ttu-id="753a1-103">Konfigurieren von Anwendungen zum Senden oder Empfangen von Nachrichten über einen Event Hub</span><span class="sxs-lookup"><span data-stu-id="753a1-103">Configure applications to send or receive messages through an Event Hub</span></span>
+  title: <span data-ttu-id="8c030-102">Konfigurieren von Anwendungen zum Senden oder Empfangen von Nachrichten über einen Event Hub</span><span class="sxs-lookup"><span data-stu-id="8c030-102">Configure applications to send or receive messages through an Event Hub</span></span>
+  description: <span data-ttu-id="8c030-103">Konfigurieren von Anwendungen zum Senden oder Empfangen von Nachrichten über einen Event Hub</span><span class="sxs-lookup"><span data-stu-id="8c030-103">Configure applications to send or receive messages through an Event Hub</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 94af9097bf2ee37e91e93d2e51d1d5cc79eb874d
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46343072"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47124122"
 durationInMinutes: 5
 content: '[!include[](includes/4-configure-applications-to-send-or-receive-messages-through-an-event-hub.md)]'

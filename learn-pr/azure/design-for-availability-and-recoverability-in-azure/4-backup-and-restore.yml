@@ -1,45 +1,45 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-availability-and-recoverability.4-backup-and-restore
-title: <span data-ttu-id="34ca9-101">Schützen von Daten durch Sicherung und Wiederherstellung</span><span class="sxs-lookup"><span data-stu-id="34ca9-101">Protect your data with backup and restore</span></span>
+title: <span data-ttu-id="356ec-101">Schützen von Daten durch Sicherung und Wiederherstellung</span><span class="sxs-lookup"><span data-stu-id="356ec-101">Protect your data with backup and restore</span></span>
 metadata:
-  title: <span data-ttu-id="34ca9-102">Schützen von Daten durch Sicherung und Wiederherstellung</span><span class="sxs-lookup"><span data-stu-id="34ca9-102">Protect your data with backup and restore</span></span>
-  description: <span data-ttu-id="34ca9-103">Schützen von Daten durch Sicherung und Wiederherstellung</span><span class="sxs-lookup"><span data-stu-id="34ca9-103">Protect your data with backup and restore</span></span>
+  title: <span data-ttu-id="356ec-102">Schützen von Daten durch Sicherung und Wiederherstellung</span><span class="sxs-lookup"><span data-stu-id="356ec-102">Protect your data with backup and restore</span></span>
+  description: <span data-ttu-id="356ec-103">Schützen von Daten durch Sicherung und Wiederherstellung</span><span class="sxs-lookup"><span data-stu-id="356ec-103">Protect your data with backup and restore</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 5e18a24fb15d47403353af4e7e7b466b6dc9c043
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46338568"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47124446"
 durationInMinutes: 15
 content: >
   [!include[](includes/4-backup-and-restore.md)]
 quiz:
-  title: <span data-ttu-id="34ca9-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="34ca9-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="356ec-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="356ec-104">Check your knowledge</span></span>
   questions:
-  - content: '<span data-ttu-id="34ca9-105">Wahr oder falsch: Alle Azure-Datenspeicheroptionen beinhalten eine automatische Sicherung der Daten?</span><span class="sxs-lookup"><span data-stu-id="34ca9-105">True or false: all Azure data storage options include automatic backup of data?</span></span>'
+  - content: '<span data-ttu-id="356ec-105">Wahr oder falsch: Alle Azure-Datenspeicheroptionen beinhalten eine automatische Sicherung der Daten?</span><span class="sxs-lookup"><span data-stu-id="356ec-105">True or false: all Azure data storage options include automatic backup of data?</span></span>'
     choices:
-    - content: <span data-ttu-id="34ca9-106">Wahr</span><span class="sxs-lookup"><span data-stu-id="34ca9-106">True</span></span>
+    - content: <span data-ttu-id="356ec-106">Wahr</span><span class="sxs-lookup"><span data-stu-id="356ec-106">True</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="34ca9-107">Nicht alle Azure-Datenspeicherprodukte beinhalten eine automatische Sicherung. Bei Azure Blobs ist dies z.B. nicht der Fall.</span><span class="sxs-lookup"><span data-stu-id="34ca9-107">Not all Azure data storage products include automatic backup; for example, Azure Blobs do not.</span></span>
-    - content: <span data-ttu-id="34ca9-108">Falsch</span><span class="sxs-lookup"><span data-stu-id="34ca9-108">False</span></span>
+      incorrectExplanation: <span data-ttu-id="356ec-107">Nicht alle Azure-Datenspeicherprodukte beinhalten eine automatische Sicherung. Bei Azure Blobs ist dies z.B. nicht der Fall.</span><span class="sxs-lookup"><span data-stu-id="356ec-107">Not all Azure data storage products include automatic backup; for example, Azure Blobs do not.</span></span>
+    - content: <span data-ttu-id="356ec-108">Falsch</span><span class="sxs-lookup"><span data-stu-id="356ec-108">False</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="34ca9-109">Die meisten Azure-Dienste bieten integrierte Sicherungsfunktionen, die jedoch nicht immer standardmäßig aktiviert sind.</span><span class="sxs-lookup"><span data-stu-id="34ca9-109">Most Azure services offer integrated backup functionality, but it is not always enabled by default.</span></span> <span data-ttu-id="34ca9-110">Sie können auch Dienste wie den Azure Backup Agent nach Bedarf hinzufügen, um sicherzustellen, dass alle Ihre Daten geschützt sind.</span><span class="sxs-lookup"><span data-stu-id="34ca9-110">You can also add services like Azure Backup Agent as needed to make sure all your data is protected.</span></span>
-  - content: <span data-ttu-id="34ca9-111">Warum ist es wichtig, die Wiederherstellungen regelmäßig zu testen?</span><span class="sxs-lookup"><span data-stu-id="34ca9-111">Why is it important to test restores regularly?</span></span>
+      correctExplanation: <span data-ttu-id="356ec-109">Die meisten Azure-Dienste bieten integrierte Sicherungsfunktionen, die jedoch nicht immer standardmäßig aktiviert sind.</span><span class="sxs-lookup"><span data-stu-id="356ec-109">Most Azure services offer integrated backup functionality, but it is not always enabled by default.</span></span> <span data-ttu-id="356ec-110">Sie können auch Dienste wie den Azure Backup Agent nach Bedarf hinzufügen, um sicherzustellen, dass alle Ihre Daten geschützt sind.</span><span class="sxs-lookup"><span data-stu-id="356ec-110">You can also add services like Azure Backup Agent as needed to make sure all your data is protected.</span></span>
+  - content: <span data-ttu-id="356ec-111">Warum ist es wichtig, die Wiederherstellungen regelmäßig zu testen?</span><span class="sxs-lookup"><span data-stu-id="356ec-111">Why is it important to test restores regularly?</span></span>
     choices:
-    - content: <span data-ttu-id="34ca9-112">Um die Integrität Ihrer Sicherungen zu überprüfen.</span><span class="sxs-lookup"><span data-stu-id="34ca9-112">To validate the integrity of your backups.</span></span>
+    - content: <span data-ttu-id="356ec-112">Um die Integrität Ihrer Sicherungen zu überprüfen.</span><span class="sxs-lookup"><span data-stu-id="356ec-112">To validate the integrity of your backups.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="34ca9-113">Das regelmäßige Testen von Wiederherstellungen ermöglicht es Ihnen, die Integrität Ihrer Sicherungen zu überprüfen. Dies ist aber nicht die einzige richtige Wahl.</span><span class="sxs-lookup"><span data-stu-id="34ca9-113">Testing restores regularly does allow you to validate the integrity of your backups, but this is not the only correct choice.</span></span>
-    - content: <span data-ttu-id="34ca9-114">Um sich mit dem Wiederherstellungsvorgang vertraut zu machen.</span><span class="sxs-lookup"><span data-stu-id="34ca9-114">To become familiar with the restoration process.</span></span>
+      incorrectExplanation: <span data-ttu-id="356ec-113">Das regelmäßige Testen von Wiederherstellungen ermöglicht es Ihnen, die Integrität Ihrer Sicherungen zu überprüfen. Dies ist aber nicht die einzige richtige Wahl.</span><span class="sxs-lookup"><span data-stu-id="356ec-113">Testing restores regularly does allow you to validate the integrity of your backups, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="356ec-114">Um sich mit dem Wiederherstellungsvorgang vertraut zu machen.</span><span class="sxs-lookup"><span data-stu-id="356ec-114">To become familiar with the restoration process.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="34ca9-115">Das regelmäßige Testen von Wiederherstellungen ermöglicht es Ihnen, sich besser mit dem Wiederherstellungsvorgang vertraut zu machen. Dies ist aber nicht die einzige richtige Wahl.</span><span class="sxs-lookup"><span data-stu-id="34ca9-115">Testing restores regularly does allow you to become more familiar with the restoration process, but this is not the only correct choice.</span></span>
-    - content: <span data-ttu-id="34ca9-116">Um Lücken in Ihren Sicherungs- und Wiederherstellungsprozessen einfacher zu identifizieren.</span><span class="sxs-lookup"><span data-stu-id="34ca9-116">To identify gaps in your backup and restore processes.</span></span>
+      incorrectExplanation: <span data-ttu-id="356ec-115">Das regelmäßige Testen von Wiederherstellungen ermöglicht es Ihnen, sich besser mit dem Wiederherstellungsvorgang vertraut zu machen. Dies ist aber nicht die einzige richtige Wahl.</span><span class="sxs-lookup"><span data-stu-id="356ec-115">Testing restores regularly does allow you to become more familiar with the restoration process, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="356ec-116">Um Lücken in Ihren Sicherungs- und Wiederherstellungsprozessen einfacher zu identifizieren.</span><span class="sxs-lookup"><span data-stu-id="356ec-116">To identify gaps in your backup and restore processes.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="34ca9-117">Das regelmäßige Testen von Wiederherstellungen unterstützt Sie dabei, Lücken in Ihren Sicherungs- und Wiederherstellungsprozessen zu identifizieren. Dies ist aber nicht die einzige richtige Wahl.</span><span class="sxs-lookup"><span data-stu-id="34ca9-117">Testing restores regularly does help identify gaps in your backup and restore processes, but this is not the only correct choice.</span></span>
-    - content: <span data-ttu-id="34ca9-118">Alle oben genannten Möglichkeiten.</span><span class="sxs-lookup"><span data-stu-id="34ca9-118">All of the above.</span></span>
+      incorrectExplanation: <span data-ttu-id="356ec-117">Das regelmäßige Testen von Wiederherstellungen unterstützt Sie dabei, Lücken in Ihren Sicherungs- und Wiederherstellungsprozessen zu identifizieren. Dies ist aber nicht die einzige richtige Wahl.</span><span class="sxs-lookup"><span data-stu-id="356ec-117">Testing restores regularly does help identify gaps in your backup and restore processes, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="356ec-118">Alle oben genannten Möglichkeiten.</span><span class="sxs-lookup"><span data-stu-id="356ec-118">All of the above.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="34ca9-119">Alle Antworten sind Vorteile einer regelmäßigen Überprüfung Ihres Wiederherstellungsprozesses.</span><span class="sxs-lookup"><span data-stu-id="34ca9-119">All are benefits of regularly testing your restore process.</span></span>
+      correctExplanation: <span data-ttu-id="356ec-119">Alle Antworten sind Vorteile einer regelmäßigen Überprüfung Ihres Wiederherstellungsprozesses.</span><span class="sxs-lookup"><span data-stu-id="356ec-119">All are benefits of regularly testing your restore process.</span></span>

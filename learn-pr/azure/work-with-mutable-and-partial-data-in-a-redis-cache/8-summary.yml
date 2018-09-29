@@ -1,65 +1,65 @@
 ### YamlMime:ModuleUnit
 uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.8-summary
-title: <span data-ttu-id="d19ad-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="d19ad-101">Summary</span></span>
+title: <span data-ttu-id="1318e-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="1318e-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="d19ad-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="d19ad-102">Summary</span></span>
-  description: <span data-ttu-id="d19ad-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="d19ad-103">Summary</span></span>
+  title: <span data-ttu-id="1318e-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="1318e-102">Summary</span></span>
+  description: <span data-ttu-id="1318e-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="1318e-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 38c0ff8600be568ed7a37ff841cecaee2bb70fed
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46344804"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47126144"
 durationInMinutes: 3
 content: >
   [!include[](includes/8-summary.md)]
 quiz:
-  title: <span data-ttu-id="d19ad-104">Überprüfen Ihrer Kenntnisse</span><span class="sxs-lookup"><span data-stu-id="d19ad-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="1318e-104">Überprüfen Ihrer Kenntnisse</span><span class="sxs-lookup"><span data-stu-id="1318e-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="d19ad-105">Was passiert, wenn bei einem Befehl in einer Redis-Transaktion ein Fehler auftritt?</span><span class="sxs-lookup"><span data-stu-id="d19ad-105">What happens if a command in a Redis transaction fails?</span></span>
+  - content: <span data-ttu-id="1318e-105">Was passiert, wenn bei einem Befehl in einer Redis-Transaktion ein Fehler auftritt?</span><span class="sxs-lookup"><span data-stu-id="1318e-105">What happens if a command in a Redis transaction fails?</span></span>
     choices:
-    - content: <span data-ttu-id="d19ad-106">Wenn der Warteschlange ein Befehl mit einer falschen Syntax hinzugefügt wird, wird die Transaktion automatisch verworfen, wenn Sie versuchen, sie auszuführen.</span><span class="sxs-lookup"><span data-stu-id="d19ad-106">If a command is queued with incorrect syntax, the transaction will be automatically discarded if you try to execute it.</span></span> <span data-ttu-id="d19ad-107">Wenn bei der Ausführung eines Befehls ein Fehler auftritt, wird die Transaktion ganz normal abgeschlossen.</span><span class="sxs-lookup"><span data-stu-id="d19ad-107">If a command fails during execution, the transaction will complete as normal.</span></span>
+    - content: <span data-ttu-id="1318e-106">Wenn der Warteschlange ein Befehl mit einer falschen Syntax hinzugefügt wird, wird die Transaktion automatisch verworfen, wenn Sie versuchen, sie auszuführen.</span><span class="sxs-lookup"><span data-stu-id="1318e-106">If a command is queued with incorrect syntax, the transaction will be automatically discarded if you try to execute it.</span></span> <span data-ttu-id="1318e-107">Wenn bei der Ausführung eines Befehls ein Fehler auftritt, wird die Transaktion ganz normal abgeschlossen.</span><span class="sxs-lookup"><span data-stu-id="1318e-107">If a command fails during execution, the transaction will complete as normal.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="d19ad-108">Fehler bei der Befehlsausführung führen in Redis nicht zum Abbruch der Transaktion.</span><span class="sxs-lookup"><span data-stu-id="d19ad-108">In Redis, commands that fail during execution do not stop a transaction.</span></span> <span data-ttu-id="d19ad-109">Wenn sich in der Warteschlange Befehle mit falscher Syntax befinden, kann die Transaktion nicht ausgeführt werden.</span><span class="sxs-lookup"><span data-stu-id="d19ad-109">Commands queued with incorrect syntax will prevent the transaction from being executed.</span></span>
-    - content: <span data-ttu-id="d19ad-110">Befehle vor dem fehlerhaften Befehl werden ausgeführt, Befehle danach aber nicht mehr.</span><span class="sxs-lookup"><span data-stu-id="d19ad-110">Commands prior to the failing command will still be executed, but those after the failing command will not be.</span></span>
+      correctExplanation: <span data-ttu-id="1318e-108">Fehler bei der Befehlsausführung führen in Redis nicht zum Abbruch der Transaktion.</span><span class="sxs-lookup"><span data-stu-id="1318e-108">In Redis, commands that fail during execution do not stop a transaction.</span></span> <span data-ttu-id="1318e-109">Wenn sich in der Warteschlange Befehle mit falscher Syntax befinden, kann die Transaktion nicht ausgeführt werden.</span><span class="sxs-lookup"><span data-stu-id="1318e-109">Commands queued with incorrect syntax will prevent the transaction from being executed.</span></span>
+    - content: <span data-ttu-id="1318e-110">Befehle vor dem fehlerhaften Befehl werden ausgeführt, Befehle danach aber nicht mehr.</span><span class="sxs-lookup"><span data-stu-id="1318e-110">Commands prior to the failing command will still be executed, but those after the failing command will not be.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="d19ad-111">Die Ausführung nachfolgender Befehle wird durch einen fehlerhaften Befehl in einer Transaktion nicht verhindert.</span><span class="sxs-lookup"><span data-stu-id="d19ad-111">A failing command in a transaction will not prevent later commands from being executed.</span></span>
-    - content: <span data-ttu-id="d19ad-112">Für die gesamte Transaktion wird ein Rollback ausgeführt.</span><span class="sxs-lookup"><span data-stu-id="d19ad-112">The entire transaction will be rolled back.</span></span>
+      incorrectExplanation: <span data-ttu-id="1318e-111">Die Ausführung nachfolgender Befehle wird durch einen fehlerhaften Befehl in einer Transaktion nicht verhindert.</span><span class="sxs-lookup"><span data-stu-id="1318e-111">A failing command in a transaction will not prevent later commands from being executed.</span></span>
+    - content: <span data-ttu-id="1318e-112">Für die gesamte Transaktion wird ein Rollback ausgeführt.</span><span class="sxs-lookup"><span data-stu-id="1318e-112">The entire transaction will be rolled back.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="d19ad-113">Redis unterstützt keine Transaktionsrollbacks.</span><span class="sxs-lookup"><span data-stu-id="d19ad-113">Redis does not support transaction rollbacks.</span></span>
-    - content: <span data-ttu-id="d19ad-114">Die Verbindung wird unterbrochen.</span><span class="sxs-lookup"><span data-stu-id="d19ad-114">The connection will be aborted.</span></span>
+      incorrectExplanation: <span data-ttu-id="1318e-113">Redis unterstützt keine Transaktionsrollbacks.</span><span class="sxs-lookup"><span data-stu-id="1318e-113">Redis does not support transaction rollbacks.</span></span>
+    - content: <span data-ttu-id="1318e-114">Die Verbindung wird unterbrochen.</span><span class="sxs-lookup"><span data-stu-id="1318e-114">The connection will be aborted.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="d19ad-115">Fehlerhafte Befehle führen nicht zum Abbruch einer Redis-Verbindung.</span><span class="sxs-lookup"><span data-stu-id="d19ad-115">Failed commands do not cause a Redis connection to be aborted.</span></span>
-  - content: <span data-ttu-id="d19ad-116">Bei welcher der folgenden Optionen handelt es sich um einen Redis-Befehl für die Verwaltung des Datenablaufs?</span><span class="sxs-lookup"><span data-stu-id="d19ad-116">Which of the following is a Redis command for managing data expiration?</span></span>
+      incorrectExplanation: <span data-ttu-id="1318e-115">Fehlerhafte Befehle führen nicht zum Abbruch einer Redis-Verbindung.</span><span class="sxs-lookup"><span data-stu-id="1318e-115">Failed commands do not cause a Redis connection to be aborted.</span></span>
+  - content: <span data-ttu-id="1318e-116">Bei welcher der folgenden Optionen handelt es sich um einen Redis-Befehl für die Verwaltung des Datenablaufs?</span><span class="sxs-lookup"><span data-stu-id="1318e-116">Which of the following is a Redis command for managing data expiration?</span></span>
     choices:
-    - content: <span data-ttu-id="d19ad-117">DEL</span><span class="sxs-lookup"><span data-stu-id="d19ad-117">DEL</span></span>
+    - content: <span data-ttu-id="1318e-117">DEL</span><span class="sxs-lookup"><span data-stu-id="1318e-117">DEL</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="d19ad-118">„DEL“ dient zum Löschen von Schlüsseln.</span><span class="sxs-lookup"><span data-stu-id="d19ad-118">DEL is used to delete keys.</span></span>
-    - content: <span data-ttu-id="d19ad-119">DISCARD</span><span class="sxs-lookup"><span data-stu-id="d19ad-119">DISCARD</span></span>
+      incorrectExplanation: <span data-ttu-id="1318e-118">„DEL“ dient zum Löschen von Schlüsseln.</span><span class="sxs-lookup"><span data-stu-id="1318e-118">DEL is used to delete keys.</span></span>
+    - content: <span data-ttu-id="1318e-119">DISCARD</span><span class="sxs-lookup"><span data-stu-id="1318e-119">DISCARD</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="d19ad-120">„DISCARD“ dient zum Abbrechen einer noch nicht ausgeführten Transaktion.</span><span class="sxs-lookup"><span data-stu-id="d19ad-120">DISCARD is used to cancel a transaction prior to its execution.</span></span>
-    - content: <span data-ttu-id="d19ad-121">TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="d19ad-121">TIMEOUT</span></span>
+      incorrectExplanation: <span data-ttu-id="1318e-120">„DISCARD“ dient zum Abbrechen einer noch nicht ausgeführten Transaktion.</span><span class="sxs-lookup"><span data-stu-id="1318e-120">DISCARD is used to cancel a transaction prior to its execution.</span></span>
+    - content: <span data-ttu-id="1318e-121">TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="1318e-121">TIMEOUT</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="d19ad-122">„TIMEOUT“ ist kein gültiger Redis-Befehl.</span><span class="sxs-lookup"><span data-stu-id="d19ad-122">TIMEOUT is not a valid Redis command.</span></span>
-    - content: <span data-ttu-id="d19ad-123">EXPIRE</span><span class="sxs-lookup"><span data-stu-id="d19ad-123">EXPIRE</span></span>
+      incorrectExplanation: <span data-ttu-id="1318e-122">„TIMEOUT“ ist kein gültiger Redis-Befehl.</span><span class="sxs-lookup"><span data-stu-id="1318e-122">TIMEOUT is not a valid Redis command.</span></span>
+    - content: <span data-ttu-id="1318e-123">EXPIRE</span><span class="sxs-lookup"><span data-stu-id="1318e-123">EXPIRE</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="d19ad-124">„EXPIRE“ dient zum Festlegen des Ablauftimeouts eines Schlüssels (in Sekunden).</span><span class="sxs-lookup"><span data-stu-id="d19ad-124">EXPIRE is used to set the expiration timeout of a key in seconds.</span></span>
-  - content: <span data-ttu-id="d19ad-125">Ihre Redis Cache-Instanz ist mit der Entfernungsrichtlinie **volatile-ttl** konfiguriert.</span><span class="sxs-lookup"><span data-stu-id="d19ad-125">Your Redis cache is configured with the **volatile-ttl** evicition policy.</span></span> <span data-ttu-id="d19ad-126">Welcher vorhandene Schlüssel wird entfernt, wenn nicht mehr genügend Arbeitsspeicher zur Verfügung steht und Sie einen neuen Schlüssel einfügen?</span><span class="sxs-lookup"><span data-stu-id="d19ad-126">If it runs out of memory and you try to insert a new key, which existing key is removed?</span></span>
+      correctExplanation: <span data-ttu-id="1318e-124">„EXPIRE“ dient zum Festlegen des Ablauftimeouts eines Schlüssels (in Sekunden).</span><span class="sxs-lookup"><span data-stu-id="1318e-124">EXPIRE is used to set the expiration timeout of a key in seconds.</span></span>
+  - content: <span data-ttu-id="1318e-125">Ihre Redis Cache-Instanz ist mit der Entfernungsrichtlinie **volatile-ttl** konfiguriert.</span><span class="sxs-lookup"><span data-stu-id="1318e-125">Your Redis cache is configured with the **volatile-ttl** evicition policy.</span></span> <span data-ttu-id="1318e-126">Welcher vorhandene Schlüssel wird entfernt, wenn nicht mehr genügend Arbeitsspeicher zur Verfügung steht und Sie einen neuen Schlüssel einfügen?</span><span class="sxs-lookup"><span data-stu-id="1318e-126">If it runs out of memory and you try to insert a new key, which existing key is removed?</span></span>
     choices:
-    - content: <span data-ttu-id="d19ad-127">Der Schlüssel, dessen Verwendung am weitesten zurückliegt.</span><span class="sxs-lookup"><span data-stu-id="d19ad-127">The least recently used key.</span></span>
+    - content: <span data-ttu-id="1318e-127">Der Schlüssel, dessen Verwendung am weitesten zurückliegt.</span><span class="sxs-lookup"><span data-stu-id="1318e-127">The least recently used key.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="d19ad-128">Dies entspricht dem Verhalten der Entfernungsrichtlinie **allkeys-lru**.</span><span class="sxs-lookup"><span data-stu-id="d19ad-128">This is the behavior of the **allkeys-lru** eviction policy.</span></span>
-    - content: <span data-ttu-id="d19ad-129">Ein beliebiger Schlüssel.</span><span class="sxs-lookup"><span data-stu-id="d19ad-129">A random key.</span></span>
+      incorrectExplanation: <span data-ttu-id="1318e-128">Dies entspricht dem Verhalten der Entfernungsrichtlinie **allkeys-lru**.</span><span class="sxs-lookup"><span data-stu-id="1318e-128">This is the behavior of the **allkeys-lru** eviction policy.</span></span>
+    - content: <span data-ttu-id="1318e-129">Ein beliebiger Schlüssel.</span><span class="sxs-lookup"><span data-stu-id="1318e-129">A random key.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="d19ad-130">Dies entspricht dem Verhalten der Entfernungsrichtlinie **allkeys-random**.</span><span class="sxs-lookup"><span data-stu-id="d19ad-130">This is the behavior of the **alkeys-random** policy.</span></span>
-    - content: <span data-ttu-id="d19ad-131">Der Schlüssel, der als Nächstes abläuft.</span><span class="sxs-lookup"><span data-stu-id="d19ad-131">The key that would next expire.</span></span>
+      incorrectExplanation: <span data-ttu-id="1318e-130">Dies entspricht dem Verhalten der Entfernungsrichtlinie **allkeys-random**.</span><span class="sxs-lookup"><span data-stu-id="1318e-130">This is the behavior of the **alkeys-random** policy.</span></span>
+    - content: <span data-ttu-id="1318e-131">Der Schlüssel, der als Nächstes abläuft.</span><span class="sxs-lookup"><span data-stu-id="1318e-131">The key that would next expire.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="d19ad-132">**volatile-ttl** entfernt den Schlüssel mit der kürzesten Gültigkeitsdauer.</span><span class="sxs-lookup"><span data-stu-id="d19ad-132">**volatile-ttl** removes the key with the shortest time-to-live.</span></span>
-    - content: <span data-ttu-id="d19ad-133">Ein beliebiger Schlüssel mit konfiguriertem Ablauf.</span><span class="sxs-lookup"><span data-stu-id="d19ad-133">A random key, selected from keys that have been configured to expire.</span></span>
+      correctExplanation: <span data-ttu-id="1318e-132">**volatile-ttl** entfernt den Schlüssel mit der kürzesten Gültigkeitsdauer.</span><span class="sxs-lookup"><span data-stu-id="1318e-132">**volatile-ttl** removes the key with the shortest time-to-live.</span></span>
+    - content: <span data-ttu-id="1318e-133">Ein beliebiger Schlüssel mit konfiguriertem Ablauf.</span><span class="sxs-lookup"><span data-stu-id="1318e-133">A random key, selected from keys that have been configured to expire.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="d19ad-134">Dies entspricht dem Verhalten der Richtlinie **volatile-random**.</span><span class="sxs-lookup"><span data-stu-id="d19ad-134">This is the behavior of the **volatile-random** policy.</span></span>
+      incorrectExplanation: <span data-ttu-id="1318e-134">Dies entspricht dem Verhalten der Richtlinie **volatile-random**.</span><span class="sxs-lookup"><span data-stu-id="1318e-134">This is the behavior of the **volatile-random** policy.</span></span>

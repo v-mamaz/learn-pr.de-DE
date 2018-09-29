@@ -1,55 +1,55 @@
-<span data-ttu-id="4d6c3-101">Bevor Sie eine Verbindung der Datenbank mit Ihrer App herstellen, sollten Sie überprüfen, ob Sie eine Verbindung zu ihr herstellen, ihr eine einfache Tabelle hinzufügen und mit Beispieldaten arbeiten können.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-101">Before you connect the database to your app, you want to check that you can connect to it, add a basic table, and work with sample data.</span></span>
+<span data-ttu-id="0ebed-101">Bevor Sie eine Verbindung der Datenbank mit Ihrer App herstellen, sollten Sie überprüfen, ob Sie eine Verbindung zu ihr herstellen, ihr eine einfache Tabelle hinzufügen und mit Beispieldaten arbeiten können.</span><span class="sxs-lookup"><span data-stu-id="0ebed-101">Before you connect the database to your app, you want to check that you can connect to it, add a basic table, and work with sample data.</span></span>
 
-<span data-ttu-id="4d6c3-102">Wir verwalten die Infrastruktur, Softwareupdates und Patches für Ihre Azure SQL-Datenbank.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-102">We maintain the infrastructure, software updates, and patches for your Azure SQL database.</span></span> <span data-ttu-id="4d6c3-103">Darüber hinaus können Sie Ihre Azure SQL-Datenbank wie jede andere SQL Server-Installation behandeln.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-103">Beyond that, you can treat your Azure SQL database like you would any other SQL Server installation.</span></span> <span data-ttu-id="4d6c3-104">Sie können z.B. Visual Studio, SQL Server Management Studio, SQL Server Operations Studio oder andere Tools zum Verwalten von Azure SQL-Datenbank verwenden.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-104">For example, you can use Visual Studio, SQL Server Management Studio, SQL Server Operations Studio, or other tools to manage your Azure SQL database.</span></span>
+<span data-ttu-id="0ebed-102">Wir verwalten die Infrastruktur, Softwareupdates und Patches für Ihre Azure SQL-Datenbank.</span><span class="sxs-lookup"><span data-stu-id="0ebed-102">We maintain the infrastructure, software updates, and patches for your Azure SQL database.</span></span> <span data-ttu-id="0ebed-103">Darüber hinaus können Sie Ihre Azure SQL-Datenbank wie jede andere SQL Server-Installation behandeln.</span><span class="sxs-lookup"><span data-stu-id="0ebed-103">Beyond that, you can treat your Azure SQL database like you would any other SQL Server installation.</span></span> <span data-ttu-id="0ebed-104">Sie können z.B. Visual Studio, SQL Server Management Studio, SQL Server Operations Studio oder andere Tools zum Verwalten von Azure SQL-Datenbank verwenden.</span><span class="sxs-lookup"><span data-stu-id="0ebed-104">For example, you can use Visual Studio, SQL Server Management Studio, SQL Server Operations Studio, or other tools to manage your Azure SQL database.</span></span>
 
-<span data-ttu-id="4d6c3-105">Wie Sie auf die Datenbank zugreifen und die Verbindung zwischen ihr und Ihrer App herstellen, bleibt Ihnen überlassen.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-105">How you access your database and connect it to your app is up to you.</span></span> <span data-ttu-id="4d6c3-106">Aber um ein wenig Erfahrung in der Arbeit mit Ihrer Datenbank zu sammeln, stellen Sie hier direkt aus dem Portal eine Verbindung mit ihr her, erstellen eine Tabelle und führen einige grundlegende CRUD-Vorgänge aus.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-106">But to get some experience working with your database, here you'll connect to it directly from the portal, create a table, and run a few basic CRUD operations.</span></span> <span data-ttu-id="4d6c3-107">Sie lernen Folgendes:</span><span class="sxs-lookup"><span data-stu-id="4d6c3-107">You'll learn:</span></span>
+<span data-ttu-id="0ebed-105">Wie Sie auf die Datenbank zugreifen und die Verbindung zwischen ihr und Ihrer App herstellen, bleibt Ihnen überlassen.</span><span class="sxs-lookup"><span data-stu-id="0ebed-105">How you access your database and connect it to your app is up to you.</span></span> <span data-ttu-id="0ebed-106">Aber um ein wenig Erfahrung in der Arbeit mit Ihrer Datenbank zu sammeln, stellen Sie hier direkt aus dem Portal eine Verbindung mit ihr her, erstellen eine Tabelle und führen einige grundlegende CRUD-Vorgänge aus.</span><span class="sxs-lookup"><span data-stu-id="0ebed-106">But to get some experience working with your database, here you'll connect to it directly from the portal, create a table, and run a few basic CRUD operations.</span></span> <span data-ttu-id="0ebed-107">Sie lernen Folgendes:</span><span class="sxs-lookup"><span data-stu-id="0ebed-107">You'll learn:</span></span>
 
-- <span data-ttu-id="4d6c3-108">Was Cloud Shell ist und wie Sie über das Portal darauf zugreifen.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-108">What Cloud Shell is and how to access it from the portal.</span></span>
-- <span data-ttu-id="4d6c3-109">Wie Sie über Azure CLI auf Informationen zu Ihrer Datenbank zugreifen, einschließlich der Verbindungszeichenfolgen.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-109">How to access information about your database from the Azure CLI, including connection strings.</span></span>
-- <span data-ttu-id="4d6c3-110">Wie Sie mittels `sqlcmd` eine Verbindung mit Ihrer Datenbank herstellen.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-110">How to connect to your database using `sqlcmd`.</span></span>
-- <span data-ttu-id="4d6c3-111">Wie Sie die Datenbank mit einer grundlegenden Tabelle und einigen Beispieldaten initialisieren.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-111">How to initialize your database with a basic table and some sample data.</span></span>
+- <span data-ttu-id="0ebed-108">Was Cloud Shell ist und wie Sie über das Portal darauf zugreifen.</span><span class="sxs-lookup"><span data-stu-id="0ebed-108">What Cloud Shell is and how to access it from the portal.</span></span>
+- <span data-ttu-id="0ebed-109">Wie Sie über Azure CLI auf Informationen zu Ihrer Datenbank zugreifen, einschließlich der Verbindungszeichenfolgen.</span><span class="sxs-lookup"><span data-stu-id="0ebed-109">How to access information about your database from the Azure CLI, including connection strings.</span></span>
+- <span data-ttu-id="0ebed-110">Wie Sie mittels `sqlcmd` eine Verbindung mit Ihrer Datenbank herstellen.</span><span class="sxs-lookup"><span data-stu-id="0ebed-110">How to connect to your database using `sqlcmd`.</span></span>
+- <span data-ttu-id="0ebed-111">Wie Sie die Datenbank mit einer grundlegenden Tabelle und einigen Beispieldaten initialisieren.</span><span class="sxs-lookup"><span data-stu-id="0ebed-111">How to initialize your database with a basic table and some sample data.</span></span>
 
-## <a name="what-is-azure-cloud-shell"></a><span data-ttu-id="4d6c3-112">Was ist Azure Cloud Shell?</span><span class="sxs-lookup"><span data-stu-id="4d6c3-112">What is Azure Cloud Shell?</span></span>
+## <a name="what-is-azure-cloud-shell"></a><span data-ttu-id="0ebed-112">Was ist Azure Cloud Shell?</span><span class="sxs-lookup"><span data-stu-id="0ebed-112">What is Azure Cloud Shell?</span></span>
 
-<span data-ttu-id="4d6c3-113">Azure Cloud Shell ist eine browserbasierte Shell zum Verwalten und Entwickeln von Azure-Ressourcen.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-113">Azure Cloud Shell is a browser-based shell experience to manage and develop Azure resources.</span></span> <span data-ttu-id="4d6c3-114">Stellen Sie sich Cloud Shell als eine interaktive Konsole vor, die in der Cloud ausgeführt wird.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-114">Think of Cloud Shell as an interactive console that runs in the cloud.</span></span>
+<span data-ttu-id="0ebed-113">Azure Cloud Shell ist eine browserbasierte Shell zum Verwalten und Entwickeln von Azure-Ressourcen.</span><span class="sxs-lookup"><span data-stu-id="0ebed-113">Azure Cloud Shell is a browser-based shell experience to manage and develop Azure resources.</span></span> <span data-ttu-id="0ebed-114">Stellen Sie sich Cloud Shell als eine interaktive Konsole vor, die in der Cloud ausgeführt wird.</span><span class="sxs-lookup"><span data-stu-id="0ebed-114">Think of Cloud Shell as an interactive console that runs in the cloud.</span></span>
 
-<span data-ttu-id="4d6c3-115">Hinter den Kulissen wird Cloud Shell unter Linux ausgeführt.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-115">Behind the scenes, Cloud Shell runs on Linux.</span></span> <span data-ttu-id="4d6c3-116">Aber abhängig davon, ob Sie eine Linux- oder Windows-Umgebung bevorzugen, haben Sie zwei Oberflächen zur Auswahl: Bash und PowerShell.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-116">But depending on whether you prefer a Linux or Windows environment, you have two experiences to choose from: Bash and PowerShell.</span></span>
+<span data-ttu-id="0ebed-115">Hinter den Kulissen wird Cloud Shell unter Linux ausgeführt.</span><span class="sxs-lookup"><span data-stu-id="0ebed-115">Behind the scenes, Cloud Shell runs on Linux.</span></span> <span data-ttu-id="0ebed-116">Aber abhängig davon, ob Sie eine Linux- oder Windows-Umgebung bevorzugen, haben Sie zwei Oberflächen zur Auswahl: Bash und PowerShell.</span><span class="sxs-lookup"><span data-stu-id="0ebed-116">But depending on whether you prefer a Linux or Windows environment, you have two experiences to choose from: Bash and PowerShell.</span></span>
 
-<span data-ttu-id="4d6c3-117">Auf Cloud Shell können Sie von überall zugreifen.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-117">Cloud Shell is accessible from anywhere.</span></span> <span data-ttu-id="4d6c3-118">Neben dem Portal können Sie auch über [shell.azure.com](https://shell.azure.com/), über die mobile Azure-App oder über Visual Studio Code auf Cloud Shell zugreifen.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-118">Besides the portal, you can also access Cloud Shell from [shell.azure.com](https://shell.azure.com/), the Azure mobile app, or from Visual Studio Code.</span></span> <span data-ttu-id="4d6c3-119">Bei dem Bereich auf der rechten Seite handelt es sich um ein Cloud Shell-Terminal, das Sie im Rahmen dieser Übung verwenden können.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-119">The panel on the right is a Cloud Shell terminal for you to use during this exercise.</span></span>
+<span data-ttu-id="0ebed-117">Auf Cloud Shell können Sie von überall zugreifen.</span><span class="sxs-lookup"><span data-stu-id="0ebed-117">Cloud Shell is accessible from anywhere.</span></span> <span data-ttu-id="0ebed-118">Neben dem Portal können Sie auch über [shell.azure.com](https://shell.azure.com/), über die mobile Azure-App oder über Visual Studio Code auf Cloud Shell zugreifen.</span><span class="sxs-lookup"><span data-stu-id="0ebed-118">Besides the portal, you can also access Cloud Shell from [shell.azure.com](https://shell.azure.com/), the Azure mobile app, or from Visual Studio Code.</span></span> <span data-ttu-id="0ebed-119">Bei dem Bereich auf der rechten Seite handelt es sich um ein Cloud Shell-Terminal, das Sie im Rahmen dieser Übung verwenden können.</span><span class="sxs-lookup"><span data-stu-id="0ebed-119">The panel on the right is a Cloud Shell terminal for you to use during this exercise.</span></span>
 
-<span data-ttu-id="4d6c3-120">Cloud Shell umfasst beliebte Tools und Text-Editoren.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-120">Cloud Shell includes popular tools and text editors.</span></span> <span data-ttu-id="4d6c3-121">Hier lernen Sie kurz `az`, `jq` und `sqlcmd` kennen, drei Tools, die Sie für unsere aktuelle Aufgabe verwenden.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-121">Here's a brief look at `az`, `jq`, and `sqlcmd`, three tools you'll use for our current task.</span></span>
+<span data-ttu-id="0ebed-120">Cloud Shell umfasst beliebte Tools und Text-Editoren.</span><span class="sxs-lookup"><span data-stu-id="0ebed-120">Cloud Shell includes popular tools and text editors.</span></span> <span data-ttu-id="0ebed-121">Hier lernen Sie kurz `az`, `jq` und `sqlcmd` kennen, drei Tools, die Sie für unsere aktuelle Aufgabe verwenden.</span><span class="sxs-lookup"><span data-stu-id="0ebed-121">Here's a brief look at `az`, `jq`, and `sqlcmd`, three tools you'll use for our current task.</span></span>
 
-- <span data-ttu-id="4d6c3-122">`az` wird auch als Azure CLI bezeichnet.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-122">`az` is also known as the Azure CLI.</span></span> <span data-ttu-id="4d6c3-123">Dies ist die Befehlszeilenschnittstelle für die Arbeit mit Azure-Ressourcen.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-123">It's the command-line interface for working with Azure resources.</span></span> <span data-ttu-id="4d6c3-124">Sie verwenden sie, um Informationen zu Ihrer Datenbank einschließlich der Verbindungszeichenfolge zu erhalten.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-124">You'll use this to get information about your database, including the connection string.</span></span>
-- <span data-ttu-id="4d6c3-125">`jq` ist ein Befehlszeilen-JSON-Parser.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-125">`jq` is a command-line JSON parser.</span></span> <span data-ttu-id="4d6c3-126">Sie reichen die Ausgabe von `az`-Befehlen an dieses Tool weiter, um wichtige Felder aus der JSON-Ausgabe zu extrahieren.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-126">You'll pipe output from `az` commands to this tool to extract important fields from JSON output.</span></span>
-- <span data-ttu-id="4d6c3-127">Mit `sqlcmd` können Sie Anweisungen auf einer SQL Server-Instanz ausführen.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-127">`sqlcmd` enables you to execute statements on SQL Server.</span></span> <span data-ttu-id="4d6c3-128">Mit `sqlcmd` erstellen Sie eine interaktive Sitzung mit Ihrer Azure SQL-Datenbankinstanz.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-128">You'll use `sqlcmd` to create an interactive session with your Azure SQL database.</span></span>
+- <span data-ttu-id="0ebed-122">`az` wird auch als Azure CLI bezeichnet.</span><span class="sxs-lookup"><span data-stu-id="0ebed-122">`az` is also known as the Azure CLI.</span></span> <span data-ttu-id="0ebed-123">Dies ist die Befehlszeilenschnittstelle für die Arbeit mit Azure-Ressourcen.</span><span class="sxs-lookup"><span data-stu-id="0ebed-123">It's the command-line interface for working with Azure resources.</span></span> <span data-ttu-id="0ebed-124">Sie verwenden sie, um Informationen zu Ihrer Datenbank einschließlich der Verbindungszeichenfolge zu erhalten.</span><span class="sxs-lookup"><span data-stu-id="0ebed-124">You'll use this to get information about your database, including the connection string.</span></span>
+- <span data-ttu-id="0ebed-125">`jq` ist ein Befehlszeilen-JSON-Parser.</span><span class="sxs-lookup"><span data-stu-id="0ebed-125">`jq` is a command-line JSON parser.</span></span> <span data-ttu-id="0ebed-126">Sie reichen die Ausgabe von `az`-Befehlen an dieses Tool weiter, um wichtige Felder aus der JSON-Ausgabe zu extrahieren.</span><span class="sxs-lookup"><span data-stu-id="0ebed-126">You'll pipe output from `az` commands to this tool to extract important fields from JSON output.</span></span>
+- <span data-ttu-id="0ebed-127">Mit `sqlcmd` können Sie Anweisungen auf einer SQL Server-Instanz ausführen.</span><span class="sxs-lookup"><span data-stu-id="0ebed-127">`sqlcmd` enables you to execute statements on SQL Server.</span></span> <span data-ttu-id="0ebed-128">Mit `sqlcmd` erstellen Sie eine interaktive Sitzung mit Ihrer Azure SQL-Datenbankinstanz.</span><span class="sxs-lookup"><span data-stu-id="0ebed-128">You'll use `sqlcmd` to create an interactive session with your Azure SQL database.</span></span>
 
-## <a name="get-information-about-your-azure-sql-database"></a><span data-ttu-id="4d6c3-129">Abrufen von Informationen zu Ihrer Azure SQL-Datenbankinstanz</span><span class="sxs-lookup"><span data-stu-id="4d6c3-129">Get information about your Azure SQL database</span></span>
+## <a name="get-information-about-your-azure-sql-database"></a><span data-ttu-id="0ebed-129">Abrufen von Informationen zu Ihrer Azure SQL-Datenbankinstanz</span><span class="sxs-lookup"><span data-stu-id="0ebed-129">Get information about your Azure SQL database</span></span>
 
-<span data-ttu-id="4d6c3-130">Bevor Sie eine Verbindung mit Ihrer Datenbank herstellen, sollten Sie überprüfen, ob sie vorhanden und online ist.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-130">Before you connect to your database, it's a good idea to verify it exists and is online.</span></span>
+<span data-ttu-id="0ebed-130">Bevor Sie eine Verbindung mit Ihrer Datenbank herstellen, sollten Sie überprüfen, ob sie vorhanden und online ist.</span><span class="sxs-lookup"><span data-stu-id="0ebed-130">Before you connect to your database, it's a good idea to verify it exists and is online.</span></span>
 
-<span data-ttu-id="4d6c3-131">Hierzu listen Sie mithilfe des Hilfsprogramms `az` Ihre Datenbanken auf und zeigen Informationen zur Datenbank **Logistics** an (einschließlich maximaler Größe und Status).</span><span class="sxs-lookup"><span data-stu-id="4d6c3-131">Here, you use the `az` utility to list your databases and show some information about the **Logistics** database, including its maximum size and status.</span></span>
+<span data-ttu-id="0ebed-131">Hierzu listen Sie mithilfe des Hilfsprogramms `az` Ihre Datenbanken auf und zeigen Informationen zur Datenbank **Logistics** an (einschließlich maximaler Größe und Status).</span><span class="sxs-lookup"><span data-stu-id="0ebed-131">Here, you use the `az` utility to list your databases and show some information about the **Logistics** database, including its maximum size and status.</span></span>
 
-1. <span data-ttu-id="4d6c3-132">Die von Ihnen ausgeführten `az`-Befehle erfordern den Namen Ihrer Ressourcengruppe und den Namen Ihres logischen Azure SQL-Servers.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-132">The `az` commands you'll run require the name of your resource group and the name of your Azure SQL logical server.</span></span> <span data-ttu-id="4d6c3-133">Um sich das Eintippen zu ersparen, führen Sie diesen `azure configure`-Befehl aus, um sie als Standardwerte anzugeben.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-133">To save typing, run this `azure configure` command to specify them as default values.</span></span>
-    <span data-ttu-id="4d6c3-134">Ersetzen Sie `<server-name>` durch den Namen Ihres logischen Azure SQL-Servers.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-134">Replace `<server-name>` with the name of your Azure SQL logical server.</span></span> <span data-ttu-id="4d6c3-135">Abhängig von dem Blatt, auf dem Sie sich im Portal befinden, wird hierfür ggf. ein vollqualifizierter Domänenname (<Servername>.database.windows.net) angezeigt. Sie benötigen jedoch nur den logischen Namen ohne das Suffix „.database.windows.net“.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-135">Note that depending on the blade you are on in the portal this may show as a FQDN (servername.database.windows.net), but you only need the logical name without the .database.windows.net suffix.</span></span>
+1. <span data-ttu-id="0ebed-132">Die von Ihnen ausgeführten `az`-Befehle erfordern den Namen Ihrer Ressourcengruppe und den Namen Ihres logischen Azure SQL-Servers.</span><span class="sxs-lookup"><span data-stu-id="0ebed-132">The `az` commands you'll run require the name of your resource group and the name of your Azure SQL logical server.</span></span> <span data-ttu-id="0ebed-133">Um sich das Eintippen zu ersparen, führen Sie diesen `azure configure`-Befehl aus, um sie als Standardwerte anzugeben.</span><span class="sxs-lookup"><span data-stu-id="0ebed-133">To save typing, run this `azure configure` command to specify them as default values.</span></span>
+    <span data-ttu-id="0ebed-134">Ersetzen Sie `<server-name>` durch den Namen Ihres logischen Azure SQL-Servers.</span><span class="sxs-lookup"><span data-stu-id="0ebed-134">Replace `<server-name>` with the name of your Azure SQL logical server.</span></span> <span data-ttu-id="0ebed-135">Abhängig von dem Blatt, auf dem Sie sich im Portal befinden, wird hierfür ggf. ein vollqualifizierter Domänenname (<Servername>.database.windows.net) angezeigt. Sie benötigen jedoch nur den logischen Namen ohne das Suffix „.database.windows.net“.</span><span class="sxs-lookup"><span data-stu-id="0ebed-135">Note that depending on the blade you are on in the portal this may show as a FQDN (servername.database.windows.net), but you only need the logical name without the .database.windows.net suffix.</span></span>
 
     ```azurecli
     az configure --defaults group=<rgn>[sandbox resource group name]</rgn> sql-server=<server-name>
     ```
 
-1. <span data-ttu-id="4d6c3-136">Führen Sie `az sql db list` aus, um alle Datenbanken auf dem logischen Azure SQL-Server aufzulisten.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-136">Run `az sql db list` to list all databases on your Azure SQL logical server.</span></span>
+1. <span data-ttu-id="0ebed-136">Führen Sie `az sql db list` aus, um alle Datenbanken auf dem logischen Azure SQL-Server aufzulisten.</span><span class="sxs-lookup"><span data-stu-id="0ebed-136">Run `az sql db list` to list all databases on your Azure SQL logical server.</span></span>
 
     ```azurecli
     az sql db list
     ```
-    <span data-ttu-id="4d6c3-137">Sie sehen einen großen JSON-Block als Ausgabe.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-137">You see a large block of JSON as output.</span></span>
+    <span data-ttu-id="0ebed-137">Sie sehen einen großen JSON-Block als Ausgabe.</span><span class="sxs-lookup"><span data-stu-id="0ebed-137">You see a large block of JSON as output.</span></span>
 
-1. <span data-ttu-id="4d6c3-138">Da wir nur die Datenbanknamen benötigen, führen Sie den Befehl ein zweites Mal aus.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-138">Since we want just the database names, run the command a second time.</span></span> <span data-ttu-id="4d6c3-139">Übergeben Sie die Ausgabe diesmal an `jq`, um nur die Namensfelder auszugeben.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-139">This time, pipe the output to `jq` to print out only the name fields.</span></span>
+1. <span data-ttu-id="0ebed-138">Da wir nur die Datenbanknamen benötigen, führen Sie den Befehl ein zweites Mal aus.</span><span class="sxs-lookup"><span data-stu-id="0ebed-138">Since we want just the database names, run the command a second time.</span></span> <span data-ttu-id="0ebed-139">Übergeben Sie die Ausgabe diesmal an `jq`, um nur die Namensfelder auszugeben.</span><span class="sxs-lookup"><span data-stu-id="0ebed-139">This time, pipe the output to `jq` to print out only the name fields.</span></span>
    
      ```azurecli
     az sql db list | jq '[.[] | {name: .name}]'
     ```
     
-    <span data-ttu-id="4d6c3-140">Die Ausgabe sollte wie folgt aussehen.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-140">You should see this output.</span></span>
+    <span data-ttu-id="0ebed-140">Die Ausgabe sollte wie folgt aussehen.</span><span class="sxs-lookup"><span data-stu-id="0ebed-140">You should see this output.</span></span>
     
     ```json
     [
@@ -62,23 +62,23 @@
     ]
     ```
 
-    <span data-ttu-id="4d6c3-141">**Logistics** ist Ihre Datenbank.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-141">**Logistics** is your database.</span></span> <span data-ttu-id="4d6c3-142">Wie SQL Server enthält **master** Servermetadaten wie Anmeldekonten und Systemkonfigurationseinstellungen.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-142">Like SQL Server, **master** includes server metadata, such as sign-in accounts and system configuration settings.</span></span>
+    <span data-ttu-id="0ebed-141">**Logistics** ist Ihre Datenbank.</span><span class="sxs-lookup"><span data-stu-id="0ebed-141">**Logistics** is your database.</span></span> <span data-ttu-id="0ebed-142">Wie SQL Server enthält **master** Servermetadaten wie Anmeldekonten und Systemkonfigurationseinstellungen.</span><span class="sxs-lookup"><span data-stu-id="0ebed-142">Like SQL Server, **master** includes server metadata, such as sign-in accounts and system configuration settings.</span></span>
 
-1. <span data-ttu-id="4d6c3-143">Führen Sie diesen `az sql db show`-Befehl aus, um Details zur **Logistics**-Datenbank zu erhalten.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-143">Run this `az sql db show` command to get details about the **Logistics** database.</span></span>
+1. <span data-ttu-id="0ebed-143">Führen Sie diesen `az sql db show`-Befehl aus, um Details zur **Logistics**-Datenbank zu erhalten.</span><span class="sxs-lookup"><span data-stu-id="0ebed-143">Run this `az sql db show` command to get details about the **Logistics** database.</span></span>
 
     ```azurecli
     az sql db show --name Logistics
     ```
 
-    <span data-ttu-id="4d6c3-144">Wie bereits zuvor sehen Sie einen großen JSON-Block als Ausgabe.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-144">As before, you see a large block of JSON as output.</span></span>
+    <span data-ttu-id="0ebed-144">Wie bereits zuvor sehen Sie einen großen JSON-Block als Ausgabe.</span><span class="sxs-lookup"><span data-stu-id="0ebed-144">As before, you see a large block of JSON as output.</span></span>
 
-1. <span data-ttu-id="4d6c3-145">Führen Sie den Befehl ein zweites Mal aus.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-145">Run the command a second time.</span></span> <span data-ttu-id="4d6c3-146">Reichen Sie die Ausgabe diesmal an `jq` weiter, um die Ausgabe auf den Namen, die maximale Größe und den Status der **Logistics**-Datenbank zu beschränken.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-146">This time, pipe the output to `jq` to limit output to only the name, maximum size, and status of the **Logistics** database.</span></span>
+1. <span data-ttu-id="0ebed-145">Führen Sie den Befehl ein zweites Mal aus.</span><span class="sxs-lookup"><span data-stu-id="0ebed-145">Run the command a second time.</span></span> <span data-ttu-id="0ebed-146">Reichen Sie die Ausgabe diesmal an `jq` weiter, um die Ausgabe auf den Namen, die maximale Größe und den Status der **Logistics**-Datenbank zu beschränken.</span><span class="sxs-lookup"><span data-stu-id="0ebed-146">This time, pipe the output to `jq` to limit output to only the name, maximum size, and status of the **Logistics** database.</span></span>
 
     ```azurecli
     az sql db show --name Logistics | jq '{name: .name, maxSizeBytes: .maxSizeBytes, status: .status}'
     ```
 
-    <span data-ttu-id="4d6c3-147">Sie sehen, dass die Datenbank online ist und ca. 2 GB Daten enthalten kann.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-147">You see that the database is online and can hold around 2 GB of data.</span></span>
+    <span data-ttu-id="0ebed-147">Sie sehen, dass die Datenbank online ist und ca. 2 GB Daten enthalten kann.</span><span class="sxs-lookup"><span data-stu-id="0ebed-147">You see that the database is online and can hold around 2 GB of data.</span></span>
 
     ```json
     {
@@ -88,53 +88,53 @@
     }
     ```
 
-## <a name="connect-to-your-database"></a><span data-ttu-id="4d6c3-148">Herstellen einer Verbindung mit Ihrer Datenbank</span><span class="sxs-lookup"><span data-stu-id="4d6c3-148">Connect to your database</span></span>
+## <a name="connect-to-your-database"></a><span data-ttu-id="0ebed-148">Herstellen einer Verbindung mit Ihrer Datenbank</span><span class="sxs-lookup"><span data-stu-id="0ebed-148">Connect to your database</span></span>
 
-<span data-ttu-id="4d6c3-149">Da Sie nun etwas mit Ihrer Datenbank vertraut sind, lassen Sie uns eine Verbindung mit ihr unter Verwendung von `sqlcmd` herstellen, eine Tabelle erstellen, die Informationen über Transportfahrer enthält, und einige grundlegende CRUD-Vorgänge ausführen.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-149">Now that you understand a bit about your database, let's connect to it using `sqlcmd`, create a table that holds information about transportation drivers, and perform a few basic CRUD operations.</span></span>
+<span data-ttu-id="0ebed-149">Da Sie nun etwas mit Ihrer Datenbank vertraut sind, lassen Sie uns eine Verbindung mit ihr unter Verwendung von `sqlcmd` herstellen, eine Tabelle erstellen, die Informationen über Transportfahrer enthält, und einige grundlegende CRUD-Vorgänge ausführen.</span><span class="sxs-lookup"><span data-stu-id="0ebed-149">Now that you understand a bit about your database, let's connect to it using `sqlcmd`, create a table that holds information about transportation drivers, and perform a few basic CRUD operations.</span></span>
 
-<span data-ttu-id="4d6c3-150">Beachten Sie, dass CRUD für **Create (Erstellen)**, **Read (Lesen)**, **Update (Aktualisieren)** und **Delete (Löschen)** steht.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-150">Remember that CRUD stands for **create**, **read**, **update**, and **delete**.</span></span> <span data-ttu-id="4d6c3-151">Dies bezieht sich auf Vorgänge, die Sie an Tabellendaten ausführen, und diese vier grundlegenden Vorgänge benötigen Sie für Ihre App.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-151">These terms refer to operations you perform on table data and are the four basic operations you need for your app.</span></span> <span data-ttu-id="4d6c3-152">Jetzt ist ein guter Zeitpunkt, um zu überprüfen, ob Sie sie jeweils ausführen können.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-152">Now's a good time to verify you can perform each of them.</span></span>
+<span data-ttu-id="0ebed-150">Beachten Sie, dass CRUD für **Create (Erstellen)**, **Read (Lesen)**, **Update (Aktualisieren)** und **Delete (Löschen)** steht.</span><span class="sxs-lookup"><span data-stu-id="0ebed-150">Remember that CRUD stands for **create**, **read**, **update**, and **delete**.</span></span> <span data-ttu-id="0ebed-151">Dies bezieht sich auf Vorgänge, die Sie an Tabellendaten ausführen, und diese vier grundlegenden Vorgänge benötigen Sie für Ihre App.</span><span class="sxs-lookup"><span data-stu-id="0ebed-151">These terms refer to operations you perform on table data and are the four basic operations you need for your app.</span></span> <span data-ttu-id="0ebed-152">Jetzt ist ein guter Zeitpunkt, um zu überprüfen, ob Sie sie jeweils ausführen können.</span><span class="sxs-lookup"><span data-stu-id="0ebed-152">Now's a good time to verify you can perform each of them.</span></span>
 
-1. <span data-ttu-id="4d6c3-153">Führen Sie diesen `az sql db show-connection-string`-Befehl aus, um die Verbindungszeichenfolge zum Herstellen der Verbindung mit der **Logistics**-Datenbank in einem Format abzurufen, das `sqlcmd` verwenden kann.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-153">Run this `az sql db show-connection-string` command to get the connection string to the **Logistics** database in a format that `sqlcmd` can use.</span></span>
+1. <span data-ttu-id="0ebed-153">Führen Sie diesen `az sql db show-connection-string`-Befehl aus, um die Verbindungszeichenfolge zum Herstellen der Verbindung mit der **Logistics**-Datenbank in einem Format abzurufen, das `sqlcmd` verwenden kann.</span><span class="sxs-lookup"><span data-stu-id="0ebed-153">Run this `az sql db show-connection-string` command to get the connection string to the **Logistics** database in a format that `sqlcmd` can use.</span></span>
 
     ```azurecli
     az sql db show-connection-string --client sqlcmd --name Logistics
     ```
 
-    <span data-ttu-id="4d6c3-154">Die Ausgabe sieht ungefähr so aus.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-154">Your output resembles this.</span></span>
+    <span data-ttu-id="0ebed-154">Die Ausgabe sieht ungefähr so aus.</span><span class="sxs-lookup"><span data-stu-id="0ebed-154">Your output resembles this.</span></span>
 
     ```output
     "sqlcmd -S tcp:contoso-1.database.windows.net,1433 -d Logistics -U <username> -P <password> -N -l 30"
     ```
 
-1. <span data-ttu-id="4d6c3-155">Führen Sie die `sqlcmd`-Anweisung aus der Ausgabe des vorherigen Schritts aus, um eine interaktive Sitzung zu erstellen.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-155">Run the `sqlcmd` statement from the output of the previous step to create an interactive session.</span></span> <span data-ttu-id="4d6c3-156">Entfernen Sie die umgebenden Anführungszeichen, und ersetzen Sie `<username>` und `<password>` durch den Benutzernamen und das Kennwort, die Sie beim Erstellen der Datenbank angegeben haben.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-156">Remove the surrounding quotes and replace `<username>` and `<password>` with the username and password you specified when you created your database.</span></span> <span data-ttu-id="4d6c3-157">Hier sehen Sie ein Beispiel.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-157">Here's an example.</span></span>
+1. <span data-ttu-id="0ebed-155">Führen Sie die `sqlcmd`-Anweisung aus der Ausgabe des vorherigen Schritts aus, um eine interaktive Sitzung zu erstellen.</span><span class="sxs-lookup"><span data-stu-id="0ebed-155">Run the `sqlcmd` statement from the output of the previous step to create an interactive session.</span></span> <span data-ttu-id="0ebed-156">Entfernen Sie die umgebenden Anführungszeichen, und ersetzen Sie `<username>` und `<password>` durch den Benutzernamen und das Kennwort, die Sie beim Erstellen der Datenbank angegeben haben.</span><span class="sxs-lookup"><span data-stu-id="0ebed-156">Remove the surrounding quotes and replace `<username>` and `<password>` with the username and password you specified when you created your database.</span></span> <span data-ttu-id="0ebed-157">Hier sehen Sie ein Beispiel.</span><span class="sxs-lookup"><span data-stu-id="0ebed-157">Here's an example.</span></span>
 
     ```console
     sqlcmd -S tcp:contoso-1.database.windows.net,1433 -d Logistics -U martina -P "password1234$" -N -l 30
     ```
 
     > [!TIP]
-    > <span data-ttu-id="4d6c3-158">Setzen Sie Ihr Kennwort in Anführungszeichen, damit „&“ und andere Sonderzeichen nicht als Verarbeitungsanweisungen interpretiert werden.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-158">Place your password in quotes so that "&" and other special characters aren't interpreted as processing instructions.</span></span>
+    > <span data-ttu-id="0ebed-158">Setzen Sie Ihr Kennwort in Anführungszeichen, damit „&“ und andere Sonderzeichen nicht als Verarbeitungsanweisungen interpretiert werden.</span><span class="sxs-lookup"><span data-stu-id="0ebed-158">Place your password in quotes so that "&" and other special characters aren't interpreted as processing instructions.</span></span>
 
-1. <span data-ttu-id="4d6c3-159">Erstellen Sie von Ihrer `sqlcmd`-Sitzung aus eine Tabelle mit dem Namen `Drivers`.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-159">From your `sqlcmd` session, create a table named `Drivers`.</span></span>
+1. <span data-ttu-id="0ebed-159">Erstellen Sie von Ihrer `sqlcmd`-Sitzung aus eine Tabelle mit dem Namen `Drivers`.</span><span class="sxs-lookup"><span data-stu-id="0ebed-159">From your `sqlcmd` session, create a table named `Drivers`.</span></span>
 
     ```sql
     CREATE TABLE Drivers (DriverID int, LastName varchar(255), FirstName varchar(255), OriginCity varchar(255));
     GO
     ```
 
-    <span data-ttu-id="4d6c3-160">Die Tabelle enthält vier Spalten: einen eindeutigen Bezeichner, Nach- und Vorname des Fahrers und den Herkunftsort des Fahrers.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-160">The table contains four columns: a unique identifier, the driver's last and first name, and the driver's city of origin.</span></span>
+    <span data-ttu-id="0ebed-160">Die Tabelle enthält vier Spalten: einen eindeutigen Bezeichner, Nach- und Vorname des Fahrers und den Herkunftsort des Fahrers.</span><span class="sxs-lookup"><span data-stu-id="0ebed-160">The table contains four columns: a unique identifier, the driver's last and first name, and the driver's city of origin.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="4d6c3-161">Die hier gezeigte Sprache ist Transact-SQL, auch als T-SQL bezeichnet.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-161">The language you see here is Transact-SQL, or T-SQL.</span></span>
+    > <span data-ttu-id="0ebed-161">Die hier gezeigte Sprache ist Transact-SQL, auch als T-SQL bezeichnet.</span><span class="sxs-lookup"><span data-stu-id="0ebed-161">The language you see here is Transact-SQL, or T-SQL.</span></span>
 
-1. <span data-ttu-id="4d6c3-162">Überprüfen Sie, ob die Tabelle `Drivers` vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-162">Verify that the `Drivers` table exists.</span></span>
+1. <span data-ttu-id="0ebed-162">Überprüfen Sie, ob die Tabelle `Drivers` vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="0ebed-162">Verify that the `Drivers` table exists.</span></span>
 
     ```sql
     SELECT name FROM sys.tables;
     GO
     ```
 
-    <span data-ttu-id="4d6c3-163">Die Ausgabe sollte wie folgt aussehen.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-163">You should see this output.</span></span>
+    <span data-ttu-id="0ebed-163">Die Ausgabe sollte wie folgt aussehen.</span><span class="sxs-lookup"><span data-stu-id="0ebed-163">You should see this output.</span></span>
 
     ```output
     name
@@ -144,27 +144,27 @@
     (1 rows affected)
     ```
 
-1. <span data-ttu-id="4d6c3-164">Führen Sie diese `INSERT`-T-SQL-Anweisung aus, um der Tabelle eine Beispielzeile hinzuzufügen.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-164">Run this `INSERT` T-SQL statement to add a sample row to the table.</span></span> <span data-ttu-id="4d6c3-165">Dies ist der **Create**-Vorgang.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-165">This is the **create** operation.</span></span>
+1. <span data-ttu-id="0ebed-164">Führen Sie diese `INSERT`-T-SQL-Anweisung aus, um der Tabelle eine Beispielzeile hinzuzufügen.</span><span class="sxs-lookup"><span data-stu-id="0ebed-164">Run this `INSERT` T-SQL statement to add a sample row to the table.</span></span> <span data-ttu-id="0ebed-165">Dies ist der **Create**-Vorgang.</span><span class="sxs-lookup"><span data-stu-id="0ebed-165">This is the **create** operation.</span></span>
 
     ```sql
     INSERT INTO Drivers (DriverID, LastName, FirstName, OriginCity) VALUES (123, 'Zirne', 'Laura', 'Springfield');
     GO
     ```
 
-    <span data-ttu-id="4d6c3-166">Daran sehen Sie, dass der Vorgang erfolgreich war.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-166">You see this to indicate the operation succeeded.</span></span>
+    <span data-ttu-id="0ebed-166">Daran sehen Sie, dass der Vorgang erfolgreich war.</span><span class="sxs-lookup"><span data-stu-id="0ebed-166">You see this to indicate the operation succeeded.</span></span>
 
     ```output
     (1 rows affected)
     ```
 
-1. <span data-ttu-id="4d6c3-167">Führen Sie diese `SELECT`-T-SQL-Anweisung aus, um die Spalten `DriverID` und `OriginCity` aus allen Zeilen der Tabelle aufzulisten.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-167">Run this `SELECT` T-SQL statement to list the `DriverID` and `OriginCity` columns from all rows in the table.</span></span> <span data-ttu-id="4d6c3-168">Dies ist der **Read**-Vorgang.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-168">This is the **read** operation.</span></span>
+1. <span data-ttu-id="0ebed-167">Führen Sie diese `SELECT`-T-SQL-Anweisung aus, um die Spalten `DriverID` und `OriginCity` aus allen Zeilen der Tabelle aufzulisten.</span><span class="sxs-lookup"><span data-stu-id="0ebed-167">Run this `SELECT` T-SQL statement to list the `DriverID` and `OriginCity` columns from all rows in the table.</span></span> <span data-ttu-id="0ebed-168">Dies ist der **Read**-Vorgang.</span><span class="sxs-lookup"><span data-stu-id="0ebed-168">This is the **read** operation.</span></span>
 
     ```sql
     SELECT DriverID, OriginCity FROM Drivers;
     GO
     ```
 
-    <span data-ttu-id="4d6c3-169">Sie sehen ein Ergebnis mit `DriverID` und `OriginCity` für die Zeile, die Sie im vorherigen Schritt erstellt haben.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-169">You see one result with the `DriverID` and `OriginCity` for the row you created in the previous step.</span></span>
+    <span data-ttu-id="0ebed-169">Sie sehen ein Ergebnis mit `DriverID` und `OriginCity` für die Zeile, die Sie im vorherigen Schritt erstellt haben.</span><span class="sxs-lookup"><span data-stu-id="0ebed-169">You see one result with the `DriverID` and `OriginCity` for the row you created in the previous step.</span></span>
 
     ```output
     DriverID    OriginCity
@@ -174,7 +174,7 @@
     (1 rows affected)
     ```
 
-1. <span data-ttu-id="4d6c3-170">Führen Sie diese `UPDATE`-T-SQL-Anweisung aus, um den Herkunftsort für den Fahrer mit der `DriverID` „123“ von „Springfield“ in „Boston“ zu ändern.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-170">Run this `UPDATE` T-SQL statement to change the city of origin from "Springfield" to "Boston" for the driver with a `DriverID` of 123.</span></span> <span data-ttu-id="4d6c3-171">Dies ist der **Update**-Vorgang.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-171">This is the **update** operation.</span></span>
+1. <span data-ttu-id="0ebed-170">Führen Sie diese `UPDATE`-T-SQL-Anweisung aus, um den Herkunftsort für den Fahrer mit der `DriverID` „123“ von „Springfield“ in „Boston“ zu ändern.</span><span class="sxs-lookup"><span data-stu-id="0ebed-170">Run this `UPDATE` T-SQL statement to change the city of origin from "Springfield" to "Boston" for the driver with a `DriverID` of 123.</span></span> <span data-ttu-id="0ebed-171">Dies ist der **Update**-Vorgang.</span><span class="sxs-lookup"><span data-stu-id="0ebed-171">This is the **update** operation.</span></span>
 
     ```sql
     UPDATE Drivers SET OriginCity='Boston' WHERE DriverID=123;
@@ -183,7 +183,7 @@
     GO
     ```
 
-    <span data-ttu-id="4d6c3-172">Die folgende Ausgabe wird angezeigt.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-172">You should see the following output.</span></span> <span data-ttu-id="4d6c3-173">Beachten Sie, dass `OriginCity` die Aktualisierung zu „Boston“ widerspiegelt.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-173">Notice how the `OriginCity` reflects the update to Boston.</span></span>
+    <span data-ttu-id="0ebed-172">Die folgende Ausgabe wird angezeigt.</span><span class="sxs-lookup"><span data-stu-id="0ebed-172">You should see the following output.</span></span> <span data-ttu-id="0ebed-173">Beachten Sie, dass `OriginCity` die Aktualisierung zu „Boston“ widerspiegelt.</span><span class="sxs-lookup"><span data-stu-id="0ebed-173">Notice how the `OriginCity` reflects the update to Boston.</span></span>
 
     ```output
     DriverID    OriginCity
@@ -193,7 +193,7 @@
     (1 rows affected)
     ```
 
-1. <span data-ttu-id="4d6c3-174">Führen Sie diese `DELETE`-T-SQL-Anweisung aus, um den Datensatz zu löschen.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-174">Run this `DELETE` T-SQL statement to delete the record.</span></span> <span data-ttu-id="4d6c3-175">Dies ist der **Delete**-Vorgang.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-175">This is the **delete** operation.</span></span>
+1. <span data-ttu-id="0ebed-174">Führen Sie diese `DELETE`-T-SQL-Anweisung aus, um den Datensatz zu löschen.</span><span class="sxs-lookup"><span data-stu-id="0ebed-174">Run this `DELETE` T-SQL statement to delete the record.</span></span> <span data-ttu-id="0ebed-175">Dies ist der **Delete**-Vorgang.</span><span class="sxs-lookup"><span data-stu-id="0ebed-175">This is the **delete** operation.</span></span>
 
     ```sql
     DELETE FROM Drivers WHERE DriverID=123;
@@ -204,14 +204,14 @@
     (1 rows affected)
     ```
 
-1. <span data-ttu-id="4d6c3-176">Führen Sie diese `SELECT`-T-SQL-Anweisung aus, um zu überprüfen, ob die `Drivers`-Tabelle leer ist.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-176">Run this `SELECT` T-SQL statement to verify the `Drivers` table is empty.</span></span>
+1. <span data-ttu-id="0ebed-176">Führen Sie diese `SELECT`-T-SQL-Anweisung aus, um zu überprüfen, ob die `Drivers`-Tabelle leer ist.</span><span class="sxs-lookup"><span data-stu-id="0ebed-176">Run this `SELECT` T-SQL statement to verify the `Drivers` table is empty.</span></span>
 
     ```sql
     SELECT COUNT(*) FROM Drivers;
     GO
     ```
 
-    <span data-ttu-id="4d6c3-177">Sie sehen, dass die Tabelle keine Zeilen enthält.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-177">You see that the table contains no rows.</span></span>
+    <span data-ttu-id="0ebed-177">Sie sehen, dass die Tabelle keine Zeilen enthält.</span><span class="sxs-lookup"><span data-stu-id="0ebed-177">You see that the table contains no rows.</span></span>
 
     ```output
     -----------
@@ -220,10 +220,10 @@
     (1 rows affected)
     ```
 
-<span data-ttu-id="4d6c3-178">Da Sie nun wissen, wie Sie über Cloud Shell mit Azure SQL-Datenbank arbeiten, können Sie die Verbindungszeichenfolge für Ihr bevorzugtes SQL-Verwaltungstool abrufen (über SQL Server Management Studio, über Visual Studio oder über eine andere Lösung).</span><span class="sxs-lookup"><span data-stu-id="4d6c3-178">Now that you have the hang of working with Azure SQL Database from Cloud Shell, you can get the connection string for your favorite SQL management tool &ndash; whether that's from SQL Server Management Studio, Visual Studio, or something else.</span></span>
+<span data-ttu-id="0ebed-178">Da Sie nun wissen, wie Sie über Cloud Shell mit Azure SQL-Datenbank arbeiten, können Sie die Verbindungszeichenfolge für Ihr bevorzugtes SQL-Verwaltungstool abrufen (über SQL Server Management Studio, über Visual Studio oder über eine andere Lösung).</span><span class="sxs-lookup"><span data-stu-id="0ebed-178">Now that you have the hang of working with Azure SQL Database from Cloud Shell, you can get the connection string for your favorite SQL management tool &ndash; whether that's from SQL Server Management Studio, Visual Studio, or something else.</span></span>
 
-<span data-ttu-id="4d6c3-179">Cloud Shell erleichtert Ihnen den Zugriff auf Ihre Azure-Ressourcen und die Arbeit damit.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-179">Cloud Shell makes it easy to access and work with your Azure resources.</span></span> <span data-ttu-id="4d6c3-180">Da Cloud Shell browserbasiert ist, können Sie mit Windows, macOS oder Linux darauf zugreifen &ndash; im Wesentlichen mit jedem System, in dem ein Webbrowser zur Verfügung steht.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-180">Because Cloud Shell is browser-based, you can access it from Windows, macOS, or Linux &ndash; essentially any system with a web browser.</span></span>
+<span data-ttu-id="0ebed-179">Cloud Shell erleichtert Ihnen den Zugriff auf Ihre Azure-Ressourcen und die Arbeit damit.</span><span class="sxs-lookup"><span data-stu-id="0ebed-179">Cloud Shell makes it easy to access and work with your Azure resources.</span></span> <span data-ttu-id="0ebed-180">Da Cloud Shell browserbasiert ist, können Sie mit Windows, macOS oder Linux darauf zugreifen &ndash; im Wesentlichen mit jedem System, in dem ein Webbrowser zur Verfügung steht.</span><span class="sxs-lookup"><span data-stu-id="0ebed-180">Because Cloud Shell is browser-based, you can access it from Windows, macOS, or Linux &ndash; essentially any system with a web browser.</span></span>
 
-<span data-ttu-id="4d6c3-181">Sie gewannen einige praktische Erfahrungen mit der Ausführung von Azure CLI-Befehlen zum Abrufen von Informationen zu Ihrer SQL Azure-Datenbank.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-181">You gained some hands-on experience running Azure CLI commands to get information about your Azure SQL database.</span></span> <span data-ttu-id="4d6c3-182">Als Bonus übten Sie Ihre T-SQL-Fertigkeiten.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-182">As a bonus, you practiced your T-SQL skills.</span></span>
+<span data-ttu-id="0ebed-181">Sie gewannen einige praktische Erfahrungen mit der Ausführung von Azure CLI-Befehlen zum Abrufen von Informationen zu Ihrer SQL Azure-Datenbank.</span><span class="sxs-lookup"><span data-stu-id="0ebed-181">You gained some hands-on experience running Azure CLI commands to get information about your Azure SQL database.</span></span> <span data-ttu-id="0ebed-182">Als Bonus übten Sie Ihre T-SQL-Fertigkeiten.</span><span class="sxs-lookup"><span data-stu-id="0ebed-182">As a bonus, you practiced your T-SQL skills.</span></span>
 
-<span data-ttu-id="4d6c3-183">Jetzt kommen wir zum Ende und sehen, wie wir Ihre Datenbank entfernen können.</span><span class="sxs-lookup"><span data-stu-id="4d6c3-183">Finally, let's wrap up and see how to tear down your database.</span></span>
+<span data-ttu-id="0ebed-183">Jetzt kommen wir zum Ende und sehen, wie wir Ihre Datenbank entfernen können.</span><span class="sxs-lookup"><span data-stu-id="0ebed-183">Finally, let's wrap up and see how to tear down your database.</span></span>

@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-services-features.8-customize-the-dashboard
-title: <span data-ttu-id="4e322-101">Dashboards im Azure-Portal</span><span class="sxs-lookup"><span data-stu-id="4e322-101">Azure Portal dashboards</span></span>
+title: <span data-ttu-id="18037-101">Dashboards im Azure-Portal</span><span class="sxs-lookup"><span data-stu-id="18037-101">Azure Portal dashboards</span></span>
 durationInMinutes: 15
 metadata:
-  title: <span data-ttu-id="4e322-102">Dashboards im Azure-Portal</span><span class="sxs-lookup"><span data-stu-id="4e322-102">Azure Portal dashboards</span></span>
-  description: <span data-ttu-id="4e322-103">Dashboards im Azure-Portal</span><span class="sxs-lookup"><span data-stu-id="4e322-103">Azure Portal dashboards</span></span>
+  title: <span data-ttu-id="18037-102">Dashboards im Azure-Portal</span><span class="sxs-lookup"><span data-stu-id="18037-102">Azure Portal dashboards</span></span>
+  description: <span data-ttu-id="18037-103">Dashboards im Azure-Portal</span><span class="sxs-lookup"><span data-stu-id="18037-103">Azure Portal dashboards</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 1fff8eb1a35d9252dcf075b6fef01bc61f1be58d
-  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/22/2018
-  ms.locfileid: "46567278"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47125688"
 content: '[!include[](includes/8-customize-the-dashboard.md)]'

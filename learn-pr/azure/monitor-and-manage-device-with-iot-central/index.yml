@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 0721a558ff2b57a533930c93b838ae0f1c97fad7
-  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/22/2018
-  ms.locfileid: "46569970"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47125555"
 title: Überwachen und Verwalten Ihrer Kaffeemaschine mit Azure IoT Central
 summary: Erfahren Sie, wie Sie eine Azure IoT Central-Anwendung erstellen, mit der Sie ein IoT-Gerät überwachen und verwalten können.
 abstract: >

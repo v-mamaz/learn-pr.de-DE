@@ -1,2 +1,2 @@
 > [!NOTE]
-> <span data-ttu-id="2df12-101">Stellen Sie sicher, dass Sie die Sandbox aktiviert haben, bevor Sie mit diesen Anweisungen fortfahren.</span><span class="sxs-lookup"><span data-stu-id="2df12-101">Make sure you have activated the sandbox before proceeding with these instructions.</span></span>
+> <span data-ttu-id="0edcb-101">Stellen Sie sicher, dass Sie die Sandbox aktiviert haben, bevor Sie mit diesen Anweisungen fortfahren.</span><span class="sxs-lookup"><span data-stu-id="0edcb-101">Make sure you have activated the sandbox before proceeding with these instructions.</span></span>
