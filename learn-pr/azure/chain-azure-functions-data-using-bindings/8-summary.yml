@@ -1,67 +1,67 @@
 ### YamlMime:ModuleUnit
 uid: learn.chain-azure-functions-data-using-input-output-bindings.8-summary
-title: <span data-ttu-id="98e50-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="98e50-101">Summary</span></span>
+title: <span data-ttu-id="ba0b0-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="ba0b0-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="98e50-102">Was wir gelernt haben</span><span class="sxs-lookup"><span data-stu-id="98e50-102">What we've learned</span></span>
-  description: <span data-ttu-id="98e50-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="98e50-103">Summary</span></span>
+  title: <span data-ttu-id="ba0b0-102">Was wir gelernt haben</span><span class="sxs-lookup"><span data-stu-id="ba0b0-102">What we've learned</span></span>
+  description: <span data-ttu-id="ba0b0-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="ba0b0-103">Summary</span></span>
   ms.date: 09/24/2018
   author: andrewjbyrne
   ms.author: anbyrne
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 7f72a24bc1323b3adc1ab6844563c82fb7a54798
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46343637"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47129099"
 durationInMinutes: 5
 content: >
   [!include[](includes/8-summary.md)]
 quiz:
-  title: <span data-ttu-id="98e50-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="98e50-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="ba0b0-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="ba0b0-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="98e50-105">Welcher der folgenden Namen ist der richtige Name der Datei, die Funktionskonfigurationsdaten enthält?</span><span class="sxs-lookup"><span data-stu-id="98e50-105">Which of the following is the correct name for the file that contains function configuration data?</span></span>
+  - content: <span data-ttu-id="ba0b0-105">Welcher der folgenden Namen ist der richtige Name der Datei, die Funktionskonfigurationsdaten enthält?</span><span class="sxs-lookup"><span data-stu-id="ba0b0-105">Which of the following is the correct name for the file that contains function configuration data?</span></span>
     choices:
-    - content: <span data-ttu-id="98e50-106">config.txt</span><span class="sxs-lookup"><span data-stu-id="98e50-106">config.txt</span></span>
+    - content: <span data-ttu-id="ba0b0-106">config.txt</span><span class="sxs-lookup"><span data-stu-id="ba0b0-106">config.txt</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="98e50-107">Die Konfiguration wird im JSON-Format geschrieben.</span><span class="sxs-lookup"><span data-stu-id="98e50-107">The configuration is written in JSON.</span></span>
-    - content: <span data-ttu-id="98e50-108">config.json</span><span class="sxs-lookup"><span data-stu-id="98e50-108">config.json</span></span>
+      incorrectExplanation: <span data-ttu-id="ba0b0-107">Die Konfiguration wird im JSON-Format geschrieben.</span><span class="sxs-lookup"><span data-stu-id="ba0b0-107">The configuration is written in JSON.</span></span>
+    - content: <span data-ttu-id="ba0b0-108">config.json</span><span class="sxs-lookup"><span data-stu-id="ba0b0-108">config.json</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="98e50-109">Es ist eine JSON-Datei, aber dies ist nicht der richtige Name.</span><span class="sxs-lookup"><span data-stu-id="98e50-109">It is a JSON file, but this is not the correct name.</span></span>
-    - content: <span data-ttu-id="98e50-110">function.json</span><span class="sxs-lookup"><span data-stu-id="98e50-110">function.json</span></span>
+      incorrectExplanation: <span data-ttu-id="ba0b0-109">Es ist eine JSON-Datei, aber dies ist nicht der richtige Name.</span><span class="sxs-lookup"><span data-stu-id="ba0b0-109">It is a JSON file, but this is not the correct name.</span></span>
+    - content: <span data-ttu-id="ba0b0-110">function.json</span><span class="sxs-lookup"><span data-stu-id="ba0b0-110">function.json</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="98e50-111">Die Konfiguration heißt `function.json` und enthält JSON-Konfigurationsdaten wie z.B. Bindungsdeklarationen.</span><span class="sxs-lookup"><span data-stu-id="98e50-111">The configuration is named `function.json`, which contains JSON configuration data such as binding declarations.</span></span>
-  - content: <span data-ttu-id="98e50-112">Welcher der folgenden Eingabebindungstypen wird unterstützt?</span><span class="sxs-lookup"><span data-stu-id="98e50-112">Which of the following is a supported input binding type?</span></span>
+      correctExplanation: <span data-ttu-id="ba0b0-111">Die Konfiguration heißt `function.json` und enthält JSON-Konfigurationsdaten wie z.B. Bindungsdeklarationen.</span><span class="sxs-lookup"><span data-stu-id="ba0b0-111">The configuration is named `function.json`, which contains JSON configuration data such as binding declarations.</span></span>
+  - content: <span data-ttu-id="ba0b0-112">Welcher der folgenden Eingabebindungstypen wird unterstützt?</span><span class="sxs-lookup"><span data-stu-id="ba0b0-112">Which of the following is a supported input binding type?</span></span>
     choices:
-    - content: <span data-ttu-id="98e50-113">Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="98e50-113">Cosmos DB</span></span>
+    - content: <span data-ttu-id="ba0b0-113">Cosmos DB</span><span class="sxs-lookup"><span data-stu-id="ba0b0-113">Cosmos DB</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="98e50-114">Die Azure Cosmos DB-Eingabebindung verwendet die SQL-API, um mindestens ein Azure Cosmos DB-Dokument abzurufen und an den Eingabeparameter der Funktion zu übergeben.</span><span class="sxs-lookup"><span data-stu-id="98e50-114">The Azure Cosmos DB input binding uses the SQL API to retrieve one or more Azure Cosmos DB documents and passes them to the input parameter of the function.</span></span>
-    - content: <span data-ttu-id="98e50-115">SendGrid</span><span class="sxs-lookup"><span data-stu-id="98e50-115">SendGrid</span></span>
+      correctExplanation: <span data-ttu-id="ba0b0-114">Die Azure Cosmos DB-Eingabebindung verwendet die SQL-API, um mindestens ein Azure Cosmos DB-Dokument abzurufen und an den Eingabeparameter der Funktion zu übergeben.</span><span class="sxs-lookup"><span data-stu-id="ba0b0-114">The Azure Cosmos DB input binding uses the SQL API to retrieve one or more Azure Cosmos DB documents and passes them to the input parameter of the function.</span></span>
+    - content: <span data-ttu-id="ba0b0-115">SendGrid</span><span class="sxs-lookup"><span data-stu-id="ba0b0-115">SendGrid</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="98e50-116">SendGrid ist kein unterstützter Eingabebindungstyp.</span><span class="sxs-lookup"><span data-stu-id="98e50-116">SendGrid is not a supported input binding type.</span></span>
-    - content: <span data-ttu-id="98e50-117">Service Bus</span><span class="sxs-lookup"><span data-stu-id="98e50-117">Service Bus</span></span>
+      incorrectExplanation: <span data-ttu-id="ba0b0-116">SendGrid ist kein unterstützter Eingabebindungstyp.</span><span class="sxs-lookup"><span data-stu-id="ba0b0-116">SendGrid is not a supported input binding type.</span></span>
+    - content: <span data-ttu-id="ba0b0-117">Service Bus</span><span class="sxs-lookup"><span data-stu-id="ba0b0-117">Service Bus</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="98e50-118">Service Bus ist kein unterstützter Eingabebindungstyp.</span><span class="sxs-lookup"><span data-stu-id="98e50-118">Service Bus is not a supported input binding type.</span></span>
-  - content: <span data-ttu-id="98e50-119">Über wie viele Trigger muss eine Funktion verfügen?</span><span class="sxs-lookup"><span data-stu-id="98e50-119">How many triggers must a function have?</span></span>
+      incorrectExplanation: <span data-ttu-id="ba0b0-118">Service Bus ist kein unterstützter Eingabebindungstyp.</span><span class="sxs-lookup"><span data-stu-id="ba0b0-118">Service Bus is not a supported input binding type.</span></span>
+  - content: <span data-ttu-id="ba0b0-119">Über wie viele Trigger muss eine Funktion verfügen?</span><span class="sxs-lookup"><span data-stu-id="ba0b0-119">How many triggers must a function have?</span></span>
     choices:
-    - content: <span data-ttu-id="98e50-120">Null</span><span class="sxs-lookup"><span data-stu-id="98e50-120">zero</span></span>
+    - content: <span data-ttu-id="ba0b0-120">Null</span><span class="sxs-lookup"><span data-stu-id="ba0b0-120">zero</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="98e50-121">Eine Funktion darf nur genau einen Trigger haben.</span><span class="sxs-lookup"><span data-stu-id="98e50-121">A function must have exactly one trigger.</span></span>
-    - content: <span data-ttu-id="98e50-122">Einen</span><span class="sxs-lookup"><span data-stu-id="98e50-122">one</span></span>
+      incorrectExplanation: <span data-ttu-id="ba0b0-121">Eine Funktion darf nur genau einen Trigger haben.</span><span class="sxs-lookup"><span data-stu-id="ba0b0-121">A function must have exactly one trigger.</span></span>
+    - content: <span data-ttu-id="ba0b0-122">Einen</span><span class="sxs-lookup"><span data-stu-id="ba0b0-122">one</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="98e50-123">Eine Funktion darf nur genau einen Trigger haben.</span><span class="sxs-lookup"><span data-stu-id="98e50-123">A function must have exactly one trigger.</span></span>
-    - content: <span data-ttu-id="98e50-124">Zwei</span><span class="sxs-lookup"><span data-stu-id="98e50-124">two</span></span>
+      correctExplanation: <span data-ttu-id="ba0b0-123">Eine Funktion darf nur genau einen Trigger haben.</span><span class="sxs-lookup"><span data-stu-id="ba0b0-123">A function must have exactly one trigger.</span></span>
+    - content: <span data-ttu-id="ba0b0-124">Zwei</span><span class="sxs-lookup"><span data-stu-id="ba0b0-124">two</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="98e50-125">Eine Funktion darf nur genau einen Trigger haben.</span><span class="sxs-lookup"><span data-stu-id="98e50-125">A function must have exactly one trigger.</span></span>
-  - content: <span data-ttu-id="98e50-126">Welche der folgenden JavaScript-Zeilen schreibt „hello bindings“ mit einem Funktionsparameter namens **myQueueItem** in eine Azure Queue Storage-Warteschlange?</span><span class="sxs-lookup"><span data-stu-id="98e50-126">Which of the following lines of JavaScript writes "hello bindings" to an Azure Queue Storage queue using a function parameter called **myQueueItem**?</span></span>
+      incorrectExplanation: <span data-ttu-id="ba0b0-125">Eine Funktion darf nur genau einen Trigger haben.</span><span class="sxs-lookup"><span data-stu-id="ba0b0-125">A function must have exactly one trigger.</span></span>
+  - content: <span data-ttu-id="ba0b0-126">Welche der folgenden JavaScript-Zeilen schreibt „hello bindings“ mit einem Funktionsparameter namens **myQueueItem** in eine Azure Queue Storage-Warteschlange?</span><span class="sxs-lookup"><span data-stu-id="ba0b0-126">Which of the following lines of JavaScript writes "hello bindings" to an Azure Queue Storage queue using a function parameter called **myQueueItem**?</span></span>
     choices:
-    - content: <span data-ttu-id="98e50-127">context.myQueueItem = "hello bindings";</span><span class="sxs-lookup"><span data-stu-id="98e50-127">context.myQueueItem = "hello bindings";</span></span>
+    - content: <span data-ttu-id="ba0b0-127">context.myQueueItem = "hello bindings";</span><span class="sxs-lookup"><span data-stu-id="ba0b0-127">context.myQueueItem = "hello bindings";</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="98e50-128">Dies ist der richtige Parametername, allerdings muss der Zugriff über den Kontext des Objekts erfolgen.</span><span class="sxs-lookup"><span data-stu-id="98e50-128">This is the correct parameter name but it needs to be access through the context of the object.</span></span>
-    - content: <span data-ttu-id="98e50-129">context.bindings.myQueueItem = "hello bindings";</span><span class="sxs-lookup"><span data-stu-id="98e50-129">context.bindings.myQueueItem = "hello bindings";</span></span>
+      incorrectExplanation: <span data-ttu-id="ba0b0-128">Dies ist der richtige Parametername, allerdings muss der Zugriff über den Kontext des Objekts erfolgen.</span><span class="sxs-lookup"><span data-stu-id="ba0b0-128">This is the correct parameter name but it needs to be access through the context of the object.</span></span>
+    - content: <span data-ttu-id="ba0b0-129">context.bindings.myQueueItem = "hello bindings";</span><span class="sxs-lookup"><span data-stu-id="ba0b0-129">context.bindings.myQueueItem = "hello bindings";</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="98e50-130">context.bindings gibt ein benanntes Objekt zurück, das alle Eingabe- und Ausgabedaten enthält.</span><span class="sxs-lookup"><span data-stu-id="98e50-130">context.bindings returns a named object that contains all your input and output data.</span></span>
-    - content: <span data-ttu-id="98e50-131">myQueueItem = "hello bindings";</span><span class="sxs-lookup"><span data-stu-id="98e50-131">myQueueItem = "hello bindings";</span></span>
+      correctExplanation: <span data-ttu-id="ba0b0-130">context.bindings gibt ein benanntes Objekt zurück, das alle Eingabe- und Ausgabedaten enthält.</span><span class="sxs-lookup"><span data-stu-id="ba0b0-130">context.bindings returns a named object that contains all your input and output data.</span></span>
+    - content: <span data-ttu-id="ba0b0-131">myQueueItem = "hello bindings";</span><span class="sxs-lookup"><span data-stu-id="ba0b0-131">myQueueItem = "hello bindings";</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="98e50-132">Dies ist der richtige Parametername, allerdings muss der Zugriff über den Kontext des Objekts erfolgen.</span><span class="sxs-lookup"><span data-stu-id="98e50-132">This is the correct parameter name but it needs to be access through the context of the object.</span></span>
+      incorrectExplanation: <span data-ttu-id="ba0b0-132">Dies ist der richtige Parametername, allerdings muss der Zugriff über den Kontext des Objekts erfolgen.</span><span class="sxs-lookup"><span data-stu-id="ba0b0-132">This is the correct parameter name but it needs to be access through the context of the object.</span></span>

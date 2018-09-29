@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.automate-azure-tasks-with-powershell.3-install-azure-powershell
-title: <span data-ttu-id="e3c6d-101">Installieren von PowerShell</span><span class="sxs-lookup"><span data-stu-id="e3c6d-101">Install PowerShell</span></span>
+title: <span data-ttu-id="6faee-101">Installieren von PowerShell</span><span class="sxs-lookup"><span data-stu-id="6faee-101">Install PowerShell</span></span>
 metadata:
-  title: <span data-ttu-id="e3c6d-102">Installieren von PowerShell</span><span class="sxs-lookup"><span data-stu-id="e3c6d-102">Install PowerShell</span></span>
-  description: <span data-ttu-id="e3c6d-103">Installieren von PowerShell</span><span class="sxs-lookup"><span data-stu-id="e3c6d-103">Install PowerShell</span></span>
+  title: <span data-ttu-id="6faee-102">Installieren von PowerShell</span><span class="sxs-lookup"><span data-stu-id="6faee-102">Install PowerShell</span></span>
+  description: <span data-ttu-id="6faee-103">Installieren von PowerShell</span><span class="sxs-lookup"><span data-stu-id="6faee-103">Install PowerShell</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: fb3f9e6961207bdd53bc1086fb6a79144715bf79
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46340837"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47129278"
 durationInMinutes: 5
 content: '[!include[](includes/3-install-azure-powershell.md)]'

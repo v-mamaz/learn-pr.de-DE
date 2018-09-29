@@ -1,45 +1,45 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-azure-networking.2-deploy-to-azure
-title: <span data-ttu-id="2cbbc-101">Bereitstellen Ihrer Website in Azure</span><span class="sxs-lookup"><span data-stu-id="2cbbc-101">Deploy your site to Azure</span></span>
+title: <span data-ttu-id="b5021-101">Bereitstellen Ihrer Website in Azure</span><span class="sxs-lookup"><span data-stu-id="b5021-101">Deploy your site to Azure</span></span>
 metadata:
-  title: <span data-ttu-id="2cbbc-102">Bereitstellen Ihrer Website in Azure</span><span class="sxs-lookup"><span data-stu-id="2cbbc-102">Deploy your site to Azure</span></span>
-  description: <span data-ttu-id="2cbbc-103">Hier erfahren Sie, wie eine Anwendung mit drei Ebenen in Azure aussehen könnte.</span><span class="sxs-lookup"><span data-stu-id="2cbbc-103">See what a basic three-tier application might look like on Azure.</span></span>
+  title: <span data-ttu-id="b5021-102">Bereitstellen Ihrer Website in Azure</span><span class="sxs-lookup"><span data-stu-id="b5021-102">Deploy your site to Azure</span></span>
+  description: <span data-ttu-id="b5021-103">Hier erfahren Sie, wie eine Anwendung mit drei Ebenen in Azure aussehen könnte.</span><span class="sxs-lookup"><span data-stu-id="b5021-103">See what a basic three-tier application might look like on Azure.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 3227e19468766eb256fcffb540b78e59dfc554ae
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46344052"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47138087"
 durationInMinutes: 12
 content: >
   [!include[](includes/2-deploy-to-azure.md)]
 quiz:
-  title: <span data-ttu-id="2cbbc-104">Überprüfen Ihrer Kenntnisse</span><span class="sxs-lookup"><span data-stu-id="2cbbc-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="b5021-104">Überprüfen Ihrer Kenntnisse</span><span class="sxs-lookup"><span data-stu-id="b5021-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="2cbbc-105">Was ist eine Azure-_Region_?</span><span class="sxs-lookup"><span data-stu-id="2cbbc-105">What is an Azure _region_?</span></span>
+  - content: <span data-ttu-id="b5021-105">Was ist eine Azure-_Region_?</span><span class="sxs-lookup"><span data-stu-id="b5021-105">What is an Azure _region_?</span></span>
     choices:
-    - content: <span data-ttu-id="2cbbc-106">Ein Azure-Rechenzentrum an einem bestimmten geografischen Standort</span><span class="sxs-lookup"><span data-stu-id="2cbbc-106">An Azure data center within a specific geographic location.</span></span>
+    - content: <span data-ttu-id="b5021-106">Ein Azure-Rechenzentrum an einem bestimmten geografischen Standort</span><span class="sxs-lookup"><span data-stu-id="b5021-106">An Azure data center within a specific geographic location.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="2cbbc-107">Azure-Regionen unterstützen Sie beim Bereitstellen der Apps und Dienste, die den Benutzern am nächsten sind.</span><span class="sxs-lookup"><span data-stu-id="2cbbc-107">Azure regions help you deliver your apps and services closest to your users.</span></span> <span data-ttu-id="2cbbc-108">„USA, Westen“ und „Europa, Norden“ sind Beispiele.</span><span class="sxs-lookup"><span data-stu-id="2cbbc-108">West US and North Europe are examples.</span></span>
-    - content: <span data-ttu-id="2cbbc-109">Eine Möglichkeit, Netzwerke in kleinere Netzwerke zu unterteilen.</span><span class="sxs-lookup"><span data-stu-id="2cbbc-109">A way of breaking networks into smaller networks.</span></span>
+      correctExplanation: <span data-ttu-id="b5021-107">Azure-Regionen unterstützen Sie beim Bereitstellen der Apps und Dienste, die den Benutzern am nächsten sind.</span><span class="sxs-lookup"><span data-stu-id="b5021-107">Azure regions help you deliver your apps and services closest to your users.</span></span> <span data-ttu-id="b5021-108">„USA, Westen“ und „Europa, Norden“ sind Beispiele.</span><span class="sxs-lookup"><span data-stu-id="b5021-108">West US and North Europe are examples.</span></span>
+    - content: <span data-ttu-id="b5021-109">Eine Möglichkeit, Netzwerke in kleinere Netzwerke zu unterteilen.</span><span class="sxs-lookup"><span data-stu-id="b5021-109">A way of breaking networks into smaller networks.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="2cbbc-110">Azure-Regionen unterstützen Sie beim Bereitstellen der Apps und Dienste, die den Benutzern am nächsten sind.</span><span class="sxs-lookup"><span data-stu-id="2cbbc-110">Azure regions help you deliver your apps and services closest to your users.</span></span> <span data-ttu-id="2cbbc-111">Hierzu zählen beispielsweise „USA, Westen“ und „Europa, Norden“.</span><span class="sxs-lookup"><span data-stu-id="2cbbc-111">West US and North Europe are examples.</span></span>
-    - content: <span data-ttu-id="2cbbc-112">Firewallregeln, die den Datenverkehrsfluss in und aus Azure definieren.</span><span class="sxs-lookup"><span data-stu-id="2cbbc-112">Firewall rules which define the flow of traffic in and out of Azure.</span></span>
+      incorrectExplanation: <span data-ttu-id="b5021-110">Azure-Regionen unterstützen Sie beim Bereitstellen der Apps und Dienste, die den Benutzern am nächsten sind.</span><span class="sxs-lookup"><span data-stu-id="b5021-110">Azure regions help you deliver your apps and services closest to your users.</span></span> <span data-ttu-id="b5021-111">Hierzu zählen beispielsweise „USA, Westen“ und „Europa, Norden“.</span><span class="sxs-lookup"><span data-stu-id="b5021-111">West US and North Europe are examples.</span></span>
+    - content: <span data-ttu-id="b5021-112">Firewallregeln, die den Datenverkehrsfluss in und aus Azure definieren.</span><span class="sxs-lookup"><span data-stu-id="b5021-112">Firewall rules which define the flow of traffic in and out of Azure.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="2cbbc-113">Azure-Regionen unterstützen Sie beim Bereitstellen der Apps und Dienste, die den Benutzern am nächsten sind.</span><span class="sxs-lookup"><span data-stu-id="2cbbc-113">Azure regions help you deliver your apps and services closest to your users.</span></span> <span data-ttu-id="2cbbc-114">Hierzu zählen beispielsweise „USA, Westen“ und „Europa, Norden“.</span><span class="sxs-lookup"><span data-stu-id="2cbbc-114">West US and North Europe are examples.</span></span>
-  - content: <span data-ttu-id="2cbbc-115">Welche der folgenden Aussagen über virtuelle Netzwerke ist richtig?</span><span class="sxs-lookup"><span data-stu-id="2cbbc-115">Which of the following is true about virtual networks?</span></span>
+      incorrectExplanation: <span data-ttu-id="b5021-113">Azure-Regionen unterstützen Sie beim Bereitstellen der Apps und Dienste, die den Benutzern am nächsten sind.</span><span class="sxs-lookup"><span data-stu-id="b5021-113">Azure regions help you deliver your apps and services closest to your users.</span></span> <span data-ttu-id="b5021-114">Hierzu zählen beispielsweise „USA, Westen“ und „Europa, Norden“.</span><span class="sxs-lookup"><span data-stu-id="b5021-114">West US and North Europe are examples.</span></span>
+  - content: <span data-ttu-id="b5021-115">Welche der folgenden Aussagen über virtuelle Netzwerke ist richtig?</span><span class="sxs-lookup"><span data-stu-id="b5021-115">Which of the following is true about virtual networks?</span></span>
     choices:
-    - content: <span data-ttu-id="2cbbc-116">Sie konfigurieren virtuelle Netzwerke mithilfe von Software.</span><span class="sxs-lookup"><span data-stu-id="2cbbc-116">You configure virtual networks through software.</span></span>
+    - content: <span data-ttu-id="b5021-116">Sie konfigurieren virtuelle Netzwerke mithilfe von Software.</span><span class="sxs-lookup"><span data-stu-id="b5021-116">You configure virtual networks through software.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="2cbbc-117">Software ermöglich es Ihnen, virtuelle Netzwerke wie Ihre eigenen Netzwerke zu behandeln.</span><span class="sxs-lookup"><span data-stu-id="2cbbc-117">Software enables you to treat a virtual network just like your own network.</span></span> <span data-ttu-id="2cbbc-118">Azure verwaltet die physische Hardware für Sie.</span><span class="sxs-lookup"><span data-stu-id="2cbbc-118">Azure maintains the physical hardware for you.</span></span>
-    - content: <span data-ttu-id="2cbbc-119">Ein virtuelles Netzwerk akzeptiert Netzwerkdatenverkehr an allen Ports.</span><span class="sxs-lookup"><span data-stu-id="2cbbc-119">A virtual network accepts network traffic on all ports.</span></span> <span data-ttu-id="2cbbc-120">Sie konfigurieren die Firewall durch virtuelle Computer.</span><span class="sxs-lookup"><span data-stu-id="2cbbc-120">You configure the firewall through virtual machines.</span></span>
+      correctExplanation: <span data-ttu-id="b5021-117">Software ermöglich es Ihnen, virtuelle Netzwerke wie Ihre eigenen Netzwerke zu behandeln.</span><span class="sxs-lookup"><span data-stu-id="b5021-117">Software enables you to treat a virtual network just like your own network.</span></span> <span data-ttu-id="b5021-118">Azure verwaltet die physische Hardware für Sie.</span><span class="sxs-lookup"><span data-stu-id="b5021-118">Azure maintains the physical hardware for you.</span></span>
+    - content: <span data-ttu-id="b5021-119">Ein virtuelles Netzwerk akzeptiert Netzwerkdatenverkehr an allen Ports.</span><span class="sxs-lookup"><span data-stu-id="b5021-119">A virtual network accepts network traffic on all ports.</span></span> <span data-ttu-id="b5021-120">Sie konfigurieren die Firewall durch virtuelle Computer.</span><span class="sxs-lookup"><span data-stu-id="b5021-120">You configure the firewall through virtual machines.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="2cbbc-121">Software ermöglicht es Ihnen, virtuelle Netzwerke wie Ihre eigenen Netzwerke zu behandeln.</span><span class="sxs-lookup"><span data-stu-id="2cbbc-121">Software enables you to treat a virtual network just like your own network.</span></span> <span data-ttu-id="2cbbc-122">Azure verwaltet die physische Hardware für Sie.</span><span class="sxs-lookup"><span data-stu-id="2cbbc-122">Azure maintains the physical hardware for you.</span></span>
-    - content: <span data-ttu-id="2cbbc-123">Virtuelle Netzwerke sind über das Internet immer erreichbar.</span><span class="sxs-lookup"><span data-stu-id="2cbbc-123">Virtual networks are always reachable from the internet.</span></span>
+      incorrectExplanation: <span data-ttu-id="b5021-121">Software ermöglicht es Ihnen, virtuelle Netzwerke wie Ihre eigenen Netzwerke zu behandeln.</span><span class="sxs-lookup"><span data-stu-id="b5021-121">Software enables you to treat a virtual network just like your own network.</span></span> <span data-ttu-id="b5021-122">Azure verwaltet die physische Hardware für Sie.</span><span class="sxs-lookup"><span data-stu-id="b5021-122">Azure maintains the physical hardware for you.</span></span>
+    - content: <span data-ttu-id="b5021-123">Virtuelle Netzwerke sind über das Internet immer erreichbar.</span><span class="sxs-lookup"><span data-stu-id="b5021-123">Virtual networks are always reachable from the internet.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="2cbbc-124">Software ermöglicht es Ihnen, virtuelle Netzwerke wie Ihre eigenen Netzwerke zu behandeln.</span><span class="sxs-lookup"><span data-stu-id="2cbbc-124">Software enables you to treat a virtual network just like your own network.</span></span> <span data-ttu-id="2cbbc-125">Azure verwaltet die physische Hardware für Sie.</span><span class="sxs-lookup"><span data-stu-id="2cbbc-125">Azure maintains the physical hardware for you.</span></span>
+      incorrectExplanation: <span data-ttu-id="b5021-124">Software ermöglicht es Ihnen, virtuelle Netzwerke wie Ihre eigenen Netzwerke zu behandeln.</span><span class="sxs-lookup"><span data-stu-id="b5021-124">Software enables you to treat a virtual network just like your own network.</span></span> <span data-ttu-id="b5021-125">Azure verwaltet die physische Hardware für Sie.</span><span class="sxs-lookup"><span data-stu-id="b5021-125">Azure maintains the physical hardware for you.</span></span>

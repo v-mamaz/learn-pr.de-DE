@@ -1,45 +1,45 @@
 ### YamlMime:ModuleUnit
 uid: learn.interactive-deep-learning.7-summary-and-knowledge-check
-title: <span data-ttu-id="b1902-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="b1902-101">Summary</span></span>
+title: <span data-ttu-id="bb5c4-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="bb5c4-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="b1902-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="b1902-102">Summary</span></span>
-  description: <span data-ttu-id="b1902-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="b1902-103">Summary</span></span>
+  title: <span data-ttu-id="bb5c4-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="bb5c4-102">Summary</span></span>
+  description: <span data-ttu-id="bb5c4-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="bb5c4-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 2a6f770fc032421778d9b8865ddc2324b1b481e7
-  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/20/2018
-  ms.locfileid: "46484035"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47128715"
 durationInMinutes: 1
 content: >
   [!include[](includes/7-summary-and-knowledge-check.md)]
 quiz:
-  title: <span data-ttu-id="b1902-104">Überprüfen Sie Ihre Kenntnisse</span><span class="sxs-lookup"><span data-stu-id="b1902-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="bb5c4-104">Überprüfen Sie Ihre Kenntnisse</span><span class="sxs-lookup"><span data-stu-id="bb5c4-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="b1902-105">Welche der folgenden Antworten beschreibt die Herausforderungen in Bezug auf Abhängigkeiten, die sich bei Verwendung der DSVM für Deep Learning ergeben, am besten?</span><span class="sxs-lookup"><span data-stu-id="b1902-105">Which of the following best describes the dependency challenges faced when using the DSVM for deep learning?</span></span>
+  - content: <span data-ttu-id="bb5c4-105">Welche der folgenden Antworten beschreibt die Herausforderungen in Bezug auf Abhängigkeiten, die sich bei Verwendung der DSVM für Deep Learning ergeben, am besten?</span><span class="sxs-lookup"><span data-stu-id="bb5c4-105">Which of the following best describes the dependency challenges faced when using the DSVM for deep learning?</span></span>
     choices:
-    - content: <span data-ttu-id="b1902-106">Die DSVM wird in einer Sandbox ausgeführt und bietet keine direkte Unterstützung für das Installieren neuer Pakete.</span><span class="sxs-lookup"><span data-stu-id="b1902-106">The DSVM is sandboxed and doesn't provide direct support for installing new packages.</span></span>
+    - content: <span data-ttu-id="bb5c4-106">Die DSVM wird in einer Sandbox ausgeführt und bietet keine direkte Unterstützung für das Installieren neuer Pakete.</span><span class="sxs-lookup"><span data-stu-id="bb5c4-106">The DSVM is sandboxed and doesn't provide direct support for installing new packages.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="b1902-107">Die DSVM ist ein virtueller Computer.</span><span class="sxs-lookup"><span data-stu-id="b1902-107">The DSVM is a virtual machine.</span></span> <span data-ttu-id="b1902-108">Sie verfügt über viele vorinstallierte Softwarekomponenten zur Unterstützung der Data Science und des KI-Projekts, aber Sie können frei wählen, was Sie installieren.</span><span class="sxs-lookup"><span data-stu-id="b1902-108">It comes with lots of pre-installed software to help with data science and AI project, but you are free to install whatever you want.</span></span>
-    - content: <span data-ttu-id="b1902-109">Die DSVM unterstützt nur Abhängigkeiten von CNTK und Cognitive Services.</span><span class="sxs-lookup"><span data-stu-id="b1902-109">The DSVM only supports CNTK and Cognitive Service dependencies.</span></span>
-      incorrectExplanation: <span data-ttu-id="b1902-110">DSVMs bieten standardmäßig Unterstützung für viele beliebte Frameworks, wie PyTorch, Chainer und Tensorflow.</span><span class="sxs-lookup"><span data-stu-id="b1902-110">DSVMs provide out of the box support for many popular frameworks such as PyTorch, Chainer, and Tensorflow.</span></span>
+      incorrectExplanation: <span data-ttu-id="bb5c4-107">Die DSVM ist ein virtueller Computer.</span><span class="sxs-lookup"><span data-stu-id="bb5c4-107">The DSVM is a virtual machine.</span></span> <span data-ttu-id="bb5c4-108">Sie verfügt über viele vorinstallierte Softwarekomponenten zur Unterstützung der Data Science und des KI-Projekts, aber Sie können frei wählen, was Sie installieren.</span><span class="sxs-lookup"><span data-stu-id="bb5c4-108">It comes with lots of pre-installed software to help with data science and AI project, but you are free to install whatever you want.</span></span>
+    - content: <span data-ttu-id="bb5c4-109">Die DSVM unterstützt nur Abhängigkeiten von CNTK und Cognitive Services.</span><span class="sxs-lookup"><span data-stu-id="bb5c4-109">The DSVM only supports CNTK and Cognitive Service dependencies.</span></span>
+      incorrectExplanation: <span data-ttu-id="bb5c4-110">DSVMs bieten standardmäßig Unterstützung für viele beliebte Frameworks, wie PyTorch, Chainer und Tensorflow.</span><span class="sxs-lookup"><span data-stu-id="bb5c4-110">DSVMs provide out of the box support for many popular frameworks such as PyTorch, Chainer, and Tensorflow.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="b1902-111">Bestimmte Deep Learning-Frameworks und -Pakete erfordern verschiedene Umgebungen, GPU-Treiber und Binärdateipakete.</span><span class="sxs-lookup"><span data-stu-id="b1902-111">Certain deep learning frameworks and packages require different enviorments, GPU drivers and binary packages</span></span>
+    - content: <span data-ttu-id="bb5c4-111">Bestimmte Deep Learning-Frameworks und -Pakete erfordern verschiedene Umgebungen, GPU-Treiber und Binärdateipakete.</span><span class="sxs-lookup"><span data-stu-id="bb5c4-111">Certain deep learning frameworks and packages require different enviorments, GPU drivers and binary packages</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="b1902-112">Die Verwaltung der Abhängigkeiten zwischen allen Frameworks, die Sie für Deep Learning verwenden, kann eine ziemliche Herausforderung darstellen.</span><span class="sxs-lookup"><span data-stu-id="b1902-112">Managing the dependencies between all the frameworks you are using for deep learning can be a challenge.</span></span> <span data-ttu-id="b1902-113">Die Ausführung eines Docker-Containers, um diese Abhängigkeiten zu gruppieren und zu isolieren, kann hierbei eine Hilfe sein.</span><span class="sxs-lookup"><span data-stu-id="b1902-113">Running a Docker container to group and isolate these dependencies can help with this challenge.</span></span>
-  - content: <span data-ttu-id="b1902-114">Angenommen, Sie haben mit Deep Learning in einem Docker-Container experimentiert.</span><span class="sxs-lookup"><span data-stu-id="b1902-114">Suppose you've been experimenting with deep learning in a Docker container.</span></span> <span data-ttu-id="b1902-115">Ihre DSVM wird auf einem virtuellen Linux-Computer ausgeführt, der auch über GPUs verfügt.</span><span class="sxs-lookup"><span data-stu-id="b1902-115">Your DSVM is running on a Linux virtual machine that also has GPUs.</span></span> <span data-ttu-id="b1902-116">Welchen der folgenden Befehle führen Sie aus, um einen Container mit den erforderlichen Komponenten zur Ausführung von Code auf der GPU bereitzustellen?</span><span class="sxs-lookup"><span data-stu-id="b1902-116">Which of the followign commands to you run to provision a container with the necessary components to execute code on the GPU.</span></span>
+      correctExplanation: <span data-ttu-id="bb5c4-112">Die Verwaltung der Abhängigkeiten zwischen allen Frameworks, die Sie für Deep Learning verwenden, kann eine ziemliche Herausforderung darstellen.</span><span class="sxs-lookup"><span data-stu-id="bb5c4-112">Managing the dependencies between all the frameworks you are using for deep learning can be a challenge.</span></span> <span data-ttu-id="bb5c4-113">Die Ausführung eines Docker-Containers, um diese Abhängigkeiten zu gruppieren und zu isolieren, kann hierbei eine Hilfe sein.</span><span class="sxs-lookup"><span data-stu-id="bb5c4-113">Running a Docker container to group and isolate these dependencies can help with this challenge.</span></span>
+  - content: <span data-ttu-id="bb5c4-114">Angenommen, Sie haben mit Deep Learning in einem Docker-Container experimentiert.</span><span class="sxs-lookup"><span data-stu-id="bb5c4-114">Suppose you've been experimenting with deep learning in a Docker container.</span></span> <span data-ttu-id="bb5c4-115">Ihre DSVM wird auf einem virtuellen Linux-Computer ausgeführt, der auch über GPUs verfügt.</span><span class="sxs-lookup"><span data-stu-id="bb5c4-115">Your DSVM is running on a Linux virtual machine that also has GPUs.</span></span> <span data-ttu-id="bb5c4-116">Welchen der folgenden Befehle führen Sie aus, um einen Container mit den erforderlichen Komponenten zur Ausführung von Code auf der GPU bereitzustellen?</span><span class="sxs-lookup"><span data-stu-id="bb5c4-116">Which of the followign commands to you run to provision a container with the necessary components to execute code on the GPU.</span></span>
     choices:
-    - content: <span data-ttu-id="b1902-117">docker run --useGPU</span><span class="sxs-lookup"><span data-stu-id="b1902-117">docker run --useGPU</span></span>
+    - content: <span data-ttu-id="bb5c4-117">docker run --useGPU</span><span class="sxs-lookup"><span data-stu-id="bb5c4-117">docker run --useGPU</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="b1902-118">Der Befehl „docker run“ verfügt nicht über den Parameter „--useGPU“.</span><span class="sxs-lookup"><span data-stu-id="b1902-118">The docker run command does not have a parameter called --useGPU</span></span>
-    - content: <span data-ttu-id="b1902-119">nvidia-docker run</span><span class="sxs-lookup"><span data-stu-id="b1902-119">nvidia-docker run</span></span>
+      incorrectExplanation: <span data-ttu-id="bb5c4-118">Der Befehl „docker run“ verfügt nicht über den Parameter „--useGPU“.</span><span class="sxs-lookup"><span data-stu-id="bb5c4-118">The docker run command does not have a parameter called --useGPU</span></span>
+    - content: <span data-ttu-id="bb5c4-119">nvidia-docker run</span><span class="sxs-lookup"><span data-stu-id="bb5c4-119">nvidia-docker run</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="b1902-120">Dieser Befehl kann genutzt werden, um einen Container mit Verwendung von GPUs auszuführen.</span><span class="sxs-lookup"><span data-stu-id="b1902-120">This command can be used to execute a container that uses GPUs.</span></span>
-    - content: <span data-ttu-id="b1902-121">docker-nvidia run</span><span class="sxs-lookup"><span data-stu-id="b1902-121">docker-nvidia run</span></span>
+      correctExplanation: <span data-ttu-id="bb5c4-120">Dieser Befehl kann genutzt werden, um einen Container mit Verwendung von GPUs auszuführen.</span><span class="sxs-lookup"><span data-stu-id="bb5c4-120">This command can be used to execute a container that uses GPUs.</span></span>
+    - content: <span data-ttu-id="bb5c4-121">docker-nvidia run</span><span class="sxs-lookup"><span data-stu-id="bb5c4-121">docker-nvidia run</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="b1902-122">Dieser Befehl ist nicht vorhanden.</span><span class="sxs-lookup"><span data-stu-id="b1902-122">This command doesn't exist.</span></span>
+      incorrectExplanation: <span data-ttu-id="bb5c4-122">Dieser Befehl ist nicht vorhanden.</span><span class="sxs-lookup"><span data-stu-id="bb5c4-122">This command doesn't exist.</span></span>

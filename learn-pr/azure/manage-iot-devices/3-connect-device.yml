@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-iot-devices.3-connect-device
 metadata:
-  title: <span data-ttu-id="d838b-101">Einrichten von IoT Hub und Verbinden Ihres ersten Geräts</span><span class="sxs-lookup"><span data-stu-id="d838b-101">Setting up IoT Hub and connecting your first device</span></span>
-  description: <span data-ttu-id="d838b-102">Richten Sie IoT Hub ein, und verbinden Sie Ihr erstes Gerät.</span><span class="sxs-lookup"><span data-stu-id="d838b-102">Setting up IoT Hub and connecting your first device.</span></span>
+  title: <span data-ttu-id="a5c6e-101">Einrichten von IoT Hub und Verbinden Ihres ersten Geräts</span><span class="sxs-lookup"><span data-stu-id="a5c6e-101">Setting up IoT Hub and connecting your first device</span></span>
+  description: <span data-ttu-id="a5c6e-102">Richten Sie IoT Hub ein, und verbinden Sie Ihr erstes Gerät.</span><span class="sxs-lookup"><span data-stu-id="a5c6e-102">Setting up IoT Hub and connecting your first device.</span></span>
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 75482c0f41a444035f60308c5415786a6b106c62
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46340600"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137615"
 azureSandbox: true
-title: <span data-ttu-id="d838b-103">Einrichten von IoT Hub und Verbinden Ihres ersten Geräts</span><span class="sxs-lookup"><span data-stu-id="d838b-103">Setting up IoT Hub and connecting your first device</span></span>
+title: <span data-ttu-id="a5c6e-103">Einrichten von IoT Hub und Verbinden Ihres ersten Geräts</span><span class="sxs-lookup"><span data-stu-id="a5c6e-103">Setting up IoT Hub and connecting your first device</span></span>
 durationInMinutes: 20
 content: '[!include[](includes/3-connect-device.md)]'

@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-your-azure-virtual-machine-disks.3-encrypt-existing-vm-disks
-title: <span data-ttu-id="95bf2-101">Verschlüsseln vorhandener VM-Datenträger</span><span class="sxs-lookup"><span data-stu-id="95bf2-101">Encrypt existing VM disks</span></span>
+title: <span data-ttu-id="b4461-101">Verschlüsseln vorhandener VM-Datenträger</span><span class="sxs-lookup"><span data-stu-id="b4461-101">Encrypt existing VM disks</span></span>
 metadata:
-  title: <span data-ttu-id="95bf2-102">Verschlüsseln vorhandener VM-Datenträger</span><span class="sxs-lookup"><span data-stu-id="95bf2-102">Encrypt existing VM disks</span></span>
-  description: <span data-ttu-id="95bf2-103">Verschlüsseln vorhandener VM-Datenträger</span><span class="sxs-lookup"><span data-stu-id="95bf2-103">Encrypt existing VM disks</span></span>
+  title: <span data-ttu-id="b4461-102">Verschlüsseln vorhandener VM-Datenträger</span><span class="sxs-lookup"><span data-stu-id="b4461-102">Encrypt existing VM disks</span></span>
+  description: <span data-ttu-id="b4461-103">Verschlüsseln vorhandener VM-Datenträger</span><span class="sxs-lookup"><span data-stu-id="b4461-103">Encrypt existing VM disks</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: ddda32bf3576695c57d72358f4d09721dac7b8b5
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46511054"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137894"
 durationInMinutes: 10
 content: '[!include[](includes/3-encrypt-existing-vm-disks.md)]'
