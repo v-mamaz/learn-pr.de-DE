@@ -2,7 +2,7 @@ Nachdem Sie Ihren Event Hub erstellt und konfiguriert haben, müssen Sie Anwendu
 
 Eine Zahlungsabwicklungslösung verwendet beispielsweise eine Form von Absenderanwendung, um die Kreditkartendaten des Kunden zu erfassen, und eine Empfängeranwendung, um die Gültigkeit der Kreditkarte zu verifizieren.
 
-Obwohl es Unterschiede gibt, wie eine Java-Anwendung konfiguriert ist, gelten im Vergleich mit einer .NET-Anwendung allgemeine Grundsätze, gemäß denen Anwendungen die Verbindung mit einem Event Hub und das erfolgreiche Senden oder Empfangen von Nachrichten ermöglicht werden können. Obwohl sich die Bearbeitung von Java-Konfigurationstextdateien von der Vorbereitung einer.NET-Anwendung mit Visual Studio unterscheidet, sind die Grundsätze dieselben.
+Es gibt zwar Unterschiede, wie eine Java-Anwendung konfiguriert ist, aber im Vergleich mit einer .NET-Anwendung gelten allgemeine Grundsätze, gemäß denen für Anwendungen die Verbindungsherstellung mit einem Event Hub und das erfolgreiche Senden bzw. Empfangen von Nachrichten ermöglicht werden kann. Obwohl sich die Bearbeitung von Java-Konfigurationstextdateien von der Vorbereitung einer .NET-Anwendung mit Visual Studio unterscheidet, sind die Grundsätze dieselben.
 
 ## <a name="what-are-the-minimum-event-hub-application-requirements"></a>Was sind die Mindestanforderungen einer Event Hub-Anwendung?
 
@@ -10,14 +10,14 @@ Um eine Anwendung für das Senden von Nachrichten an einen Event Hub zu konfigur
 
 - Name des Event Hub-Namespace
 - Event Hub-Name
-- Name der freigegebenen Zugriffsrichtlinie
+- Name der SAS-Richtlinie
 - Primärer freigegebener Zugriffsschlüssel
 
-Um eine Anwendung für das Empfangen von Nachrichten von einen Event Hub zu konfigurieren, geben Sie die folgenden Informationen an, damit die Anwendung Anmeldeinformationen für die Verbindung erstellen kann:
+Um eine Anwendung für das Empfangen von Nachrichten von einem Event Hub zu konfigurieren, geben Sie die folgenden Informationen an, damit die Anwendung Anmeldeinformationen für die Verbindung erstellen kann:
 
 - Name des Event Hub-Namespace
 - Event Hub-Name
-- Name der freigegebenen Zugriffsrichtlinie
+- Name der SAS-Richtlinie
 - Primärer freigegebener Zugriffsschlüssel
 - Speicherkontoname
 - Verbindungszeichenfolge für das Speicherkonto
@@ -25,7 +25,7 @@ Um eine Anwendung für das Empfangen von Nachrichten von einen Event Hub zu konf
 
 Wenn Sie über eine Empfängeranwendung verfügen, die Nachrichten in Azure Blob Storage speichert, müssen Sie auch zunächst ein Speicherkonto einrichten.
 
-## <a name="azure-cli-commands-for-creating-a-general-purpose-standard-storage-account"></a>Azure CLI-Befehle zum Erstellen eines universellen Standardspeicherkontos
+## <a name="azure-cli-commands-for-creating-a-general-purpose-standard-storage-account"></a>Azure CLI-Befehle zum Erstellen eines allgemeinen Standardspeicherkontos
 
 Die Azure CLI verfügt über eine Reihe von Befehlen, die Sie zum Erstellen und Verwalten eines Speicherkontos verwenden können. Wir verwenden sie in der nächsten Einheit, aber hier ist eine grundlegende Zusammenfassung der Befehle angegeben. 
 
@@ -49,8 +49,8 @@ Wenn Sie eine Anwendung haben, die als Projekt in GitHub gehostet wird, können 
 
 Sie können einen der integrierten Editoren in Cloud Shell verwenden, um alle Dateien zu ändern, aus denen die Anwendung besteht. Außerdem können Sie Ihren Event Hub-Namespace, Event Hub-Namen, Namen der SAS-Richtlinie und Primärschlüssel hinzufügen. 
 
-Cloud Shell unterstützt **nano**, **vim** und **emacs** sowie einen Visual Studio Code-ähnlichen Editor mit dem Namen **code**. Geben Sie einfach den Namen des gewünschten Editors ein, um ihn in der Umgebung zu starten. Wir verwenden den Editor **code** in der nächsten Einheit.
+Cloud Shell unterstützt **nano**, **vim** und **emacs** sowie einen Visual Studio Code-ähnlichen Editor mit dem Namen **code**. Geben Sie einfach den Namen des gewünschten Editors ein, um ihn in der Umgebung zu starten. Wir verwenden in der nächsten Einheit den Editor **code**.
 
 ## <a name="summary"></a>Zusammenfassung
 
-Absender- und Empfängeranwendungen müssen mit spezifischen Informationen für die Event Hub-Umgebung konfiguriert werden. Sie legen ein Speicherkonto an, wenn Ihre Empfängeranwendung Nachrichten in Blob Storage speichert. Wenn Ihre Anwendung auf GitHub gehostet wird, müssen Sie sie in Ihr lokales Verzeichnis klonen. Texteditoren wie **nano** werden verwendet, um Ihren Namespace der Anwendung hinzuzufügen.
+Absender- und Empfängeranwendungen müssen mit spezifischen Informationen für die Event Hub-Umgebung konfiguriert werden. Sie legen ein Speicherkonto an, wenn Ihre Empfängeranwendung Nachrichten in Blob Storage speichert. Wenn Ihre Anwendung auf GitHub gehostet wird, müssen Sie sie in Ihrem lokalen Verzeichnis klonen. Texteditoren wie **nano** werden verwendet, um Ihren Namespace der Anwendung hinzuzufügen.

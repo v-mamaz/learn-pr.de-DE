@@ -8,11 +8,11 @@ In Visual Studio erstellte Bindungen für Azure Functions werden mithilfe von Pa
 
 Um SMS-Nachrichten über Twilio zu senden, wird eine Ausgabebindung benötigt, die mit der Abonnement-ID Ihres Kontos (SID) und dem Authentifizierungstoken konfiguriert wird.
 
-1. Beenden Sie die lokale Azure Functions-Runtime, falls diese in der letzten Einheit gestartet wurde und immer noch ausgeführt wird.
+1. Beenden Sie die lokale Azure Functions-Runtime, wenn diese noch von der vorherigen Einheit ausgeführt wird.
 
-1. Fügen Sie dem `ImHere.Functions`-Projekt das NuGet-Paket „Microsoft.Azure.WebJobs.Extensions.Twilio“ in der Version 3.0.0-rc1 hinzu. **Verwenden Sie genau diese Version und NICHT 3.0.0, da in der stabilen Version ein Fehler bei Twilio-Bindungen auftritt**. Dieses NuGet-Paket enthält die relevanten Klassen für die Bindung.
+2. Fügen Sie dem `ImHere.Functions`-Projekt das NuGet-Paket „Microsoft.Azure.WebJobs.Extensions.Twilio“ hinzu. Dieses NuGet-Paket enthält die relevanten Klassen für die Bindung.
 
-1. Fügen Sie der statischen `Run`-Methode in der statischen `SendLocation`-Klasse `messages` einen neuen Parameter hinzu. Dieser Parameter weist den Typ `ICollector<CreateMessageOptions>` auf. Sie müssen eine `using`-Anweisung für den `Twilio.Rest.Api.V2010.Account`-Namespace hinzufügen.
+3. Fügen Sie der statischen `Run`-Methode in der statischen `SendLocation`-Klasse `messages` einen neuen Parameter hinzu. Dieser Parameter weist den Typ `ICollector<CreateMessageOptions>` auf. Sie müssen eine `using`-Anweisung für den `Twilio.Rest.Api.V2010.Account`-Namespace hinzufügen.
 
     ```cs
     [FunctionName("SendLocation")]
@@ -21,7 +21,7 @@ Um SMS-Nachrichten über Twilio zu senden, wird eine Ausgabebindung benötigt, d
                                                 ILogger log)
     ```
 
-1. Ergänzen Sie den neuen `messages`-Parameter wie folgt um das `TwilioSms`-Attribut: 
+4. Ergänzen Sie den neuen `messages`-Parameter wie folgt um das `TwilioSms`-Attribut: 
 
       ```cs
     [TwilioSms(AccountSidSetting = "TwilioAccountSid",AuthTokenSetting = "TwilioAuthToken", From = "+1xxxxxxxxx")]ICollector<CreateMessageOptions> messages,
@@ -43,8 +43,7 @@ Um SMS-Nachrichten über Twilio zu senden, wird eine Ausgabebindung benötigt, d
     > [!IMPORTANT]
     > Stellen Sie sicher, dass die Telefonnummer keine Leerzeichen enthält.
 
-
-1. Einstellungen der Funktions-App können lokal in der `local.settings.json`-Datei konfiguriert werden. Fügen Sie die SID für Ihr Twilio-Konto und das Authentifizierungstoken mithilfe der an das `TwilioSMS`-Attribut übergebenen Einstellungsnamen dieser JSON-Datei hinzu.
+5. Einstellungen der Funktions-App können lokal in der `local.settings.json`-Datei konfiguriert werden. Fügen Sie die SID für Ihr Twilio-Konto und das Authentifizierungstoken mithilfe der an das `TwilioSMS`-Attribut übergebenen Einstellungsnamen dieser JSON-Datei hinzu.
 
     ```json
     {
@@ -63,9 +62,8 @@ Um SMS-Nachrichten über Twilio zu senden, wird eine Ausgabebindung benötigt, d
     > [!NOTE]
     > Diese lokalen Einstellungen gelten nur für die lokale Ausführung. In einer Produktions-App entsprechen diese Werte den Anmeldeinformationen für das lokale Entwicklungskonto oder das Testkonto. Nachdem die Azure-Funktion in Azure bereitgestellt wurde, können Sie die Produktionswerte konfigurieren.
 
-     > [!NOTE]
+    > [!NOTE]
     > Wenn Sie Ihren Code in die Quellcodeverwaltung einchecken, werden diese lokalen Werte für die Anwendungseinstellungen ebenfalls eingecheckt. Seien Sie deshalb vorsichtig, und checken Sie keine tatsächlichen Werte in diese Dateien ein, wenn es sich um Open Source-Code oder öffentlich zugänglichen Code handelt.
-    
 
 ## <a name="create-the-sms-messages"></a>Erstellen der SMS-Nachricht
 
