@@ -1,0 +1,54 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.8-knowledge-check
+title: <span data-ttu-id="fd7fd-101">Überprüfen Sie Ihre Kenntnisse</span><span class="sxs-lookup"><span data-stu-id="fd7fd-101">Check your knowledge</span></span>
+metadata:
+  title: <span data-ttu-id="fd7fd-102">Überprüfen Sie Ihre Kenntnisse</span><span class="sxs-lookup"><span data-stu-id="fd7fd-102">Check your knowledge</span></span>
+  description: <span data-ttu-id="fd7fd-103">Wissensbeurteilung für „Erstellen eines Chatbots mit dem Azure Bot Service“</span><span class="sxs-lookup"><span data-stu-id="fd7fd-103">Knowledge check for "Build a chat bot with the Azure Bot Service"</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 5b206ed0afc79f1f42efb0445f45bf7d8cbf9fa7
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47438653"
+durationInMinutes: 5
+quiz:
+  title: <span data-ttu-id="fd7fd-104">Wissensbeurteilung für „Erstellen eines Chatbots mit dem Azure Bot Service“</span><span class="sxs-lookup"><span data-stu-id="fd7fd-104">Knowledge check for "Build a chat bot with the Azure Bot Service"</span></span>
+  questions:
+  - content: '<span data-ttu-id="fd7fd-105">Richtig oder falsch: Mit der Vorlage *Web-App-Bot* werden eine *Web-App* und ein *Bot* erstellt.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-105">True or false: The *Web App Bot* template creates a *Web App* and a *Bot*.</span></span>'
+    choices:
+    - content: <span data-ttu-id="fd7fd-106">Richtig</span><span class="sxs-lookup"><span data-stu-id="fd7fd-106">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="fd7fd-107">Mit der Vorlage werden ein Bot und eine Azure-Web-App zum Hosten des Bots erstellt.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-107">The template creates a Bot and an Azure Web App to host the Bot.</span></span> <span data-ttu-id="fd7fd-108">Außerdem wird der Bot damit für die Verwendung einer QnA Maker-Wissensdatenbank konfiguriert.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-108">It also configures the Bot to use a QnA Maker knowledge base.</span></span> <span data-ttu-id="fd7fd-109">Sie müssen die Wissensdatenbank selbst erstellen und mit dem Bot verbinden.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-109">You will need to create the knowledge base yourself and connect it to the Bot.</span></span>
+    - content: <span data-ttu-id="fd7fd-110">Falsch</span><span class="sxs-lookup"><span data-stu-id="fd7fd-110">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fd7fd-111">Der Vorlagenname ist aussagekräftig, und damit werden eine Web-App und ein Bot erstellt.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-111">The template name is descriptive, it does create a Web App and a Bot.</span></span>
+  - content: <span data-ttu-id="fd7fd-112">Was wird mit QnA Maker erstellt?</span><span class="sxs-lookup"><span data-stu-id="fd7fd-112">What is QnA Maker used to create?</span></span>
+    choices:
+    - content: <span data-ttu-id="fd7fd-113">Eine Wissensdatenbank, die von einem Bot verwendet werden kann.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-113">A knowledge base that can be used by a bot.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="fd7fd-114">QnA Maker verwendet Fragen und Antworten und konvertiert sie in ein Format, das ein Bot zum Beantworten von Fragen nutzen kann.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-114">QnA Maker takes in questions and answers and processes them into a format a bot can use to answer questions.</span></span>
+    - content: <span data-ttu-id="fd7fd-115">Sie können Umfragen in Ihren Bot einbetten, um Benutzerfeedback zu erhalten.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-115">Surveys you can embed in your bot to get user feedback.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fd7fd-116">QnA Maker ist kein Dienst für Umfragen.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-116">QnA Maker is not a survey service.</span></span> <span data-ttu-id="fd7fd-117">Er dient zum Bereitstellen von Informationen für Benutzer, aber er versucht nicht, Daten daraus zu extrahieren.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-117">It helps provide information to users, it does not try to extract data from them.</span></span>
+    - content: <span data-ttu-id="fd7fd-118">Ein Bot</span><span class="sxs-lookup"><span data-stu-id="fd7fd-118">A bot</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fd7fd-119">QnA Maker kann mit einem Bot verknüpft werden, erstellt aber keinen.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-119">QnA Maker can be associated with a bot, but it doesn't create one.</span></span>
+  - content: <span data-ttu-id="fd7fd-120">Wie können Sie Ihre Daten in QnA Maker eingeben?</span><span class="sxs-lookup"><span data-stu-id="fd7fd-120">How can you input your data into QnA Maker?</span></span>
+    choices:
+    - content: <span data-ttu-id="fd7fd-121">Manuell.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-121">Manually.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fd7fd-122">Sie können die Wissensdatenbank manuell auffüllen, aber es gibt noch weitere Möglichkeiten.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-122">You can manually populate the knowledge base, but there are other ways.</span></span>
+    - content: <span data-ttu-id="fd7fd-123">Upload einer Textdatei.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-123">Upload a text file.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fd7fd-124">QnA Maker unterstützt Textdateien in vielen unterschiedlichen Formaten, z.B. Text mit Tabulatortrennung und Excel-Tabellen.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-124">QnA Maker supports text files in many different formats such as tab-separated-values and Excel spreadsheet.</span></span> <span data-ttu-id="fd7fd-125">Dies ist aber nicht die einzige Möglichkeit zum Auffüllen der Wissensdatenbank.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-125">However, this is not the only way to populate the knowledge base.</span></span>
+    - content: <span data-ttu-id="fd7fd-126">Angeben der URL einer FAQ-Seite.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-126">Provide the URL of a FAQ page.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fd7fd-127">Mit QnA Maker können Fragen und Antworten aus vielen unterschiedlichen Formaten von FAQ-Seiten extrahiert werden.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-127">QnA Maker can extract questions and answers from many different FAQ-page formats.</span></span> <span data-ttu-id="fd7fd-128">Eine FAQ-URL ist aber nicht die einzige Möglichkeit zum Auffüllen der Wissensdatenbank.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-128">However, a FAQ URL isn't the only way to populate the knowledge base.</span></span>
+    - content: <span data-ttu-id="fd7fd-129">Alle oben genannten Möglichkeiten.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-129">All of the above.</span></span>
+      isCorrect: true
+      correctExplanation: '<span data-ttu-id="fd7fd-130">QnA Maker ist flexibel genug, um Ihre Eingabedaten in vielen gängigen Formaten zu verarbeiten: Textdateien, FAQ-Seiten und sogar Produkthandbücher.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-130">QnA Maker is flexible enough to handle your input data in several of the most common formats: text files, FAQ pages, and even product manuals.</span></span> <span data-ttu-id="fd7fd-131">Das Ziel besteht darin, für Sie das Importieren Ihrer Daten ohne erneute Formatierung zu vereinfachen.</span><span class="sxs-lookup"><span data-stu-id="fd7fd-131">The goal is to make it convenient for you to import your data without reformatting.</span></span>'

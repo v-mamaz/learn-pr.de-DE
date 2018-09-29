@@ -1,0 +1,68 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-azure-resources-with-rbac.7-knowledge-check-rbac
+metadata:
+  title: '<span data-ttu-id="985a5-101">Wissensbeurteilung: Verwenden von RBAC</span><span class="sxs-lookup"><span data-stu-id="985a5-101">Knowledge check - Using RBAC</span></span>'
+  description: '<span data-ttu-id="985a5-102">Wissensbeurteilung: Verwenden von RBAC</span><span class="sxs-lookup"><span data-stu-id="985a5-102">Knowledge check - Using RBAC</span></span>'
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 94bc59b81d0dda1e57c9c8a7fc515a2527a05543
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47438928"
+title: '<span data-ttu-id="985a5-103">Wissensbeurteilung: Verwenden von RBAC</span><span class="sxs-lookup"><span data-stu-id="985a5-103">Knowledge check - Using RBAC</span></span>'
+durationInMinutes: 3
+quiz:
+  title: <span data-ttu-id="985a5-104">Überprüfen Sie Ihre Kenntnisse.</span><span class="sxs-lookup"><span data-stu-id="985a5-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="985a5-105">Wie lautet der Name des Blatts im Azure-Portal, über das Sie Zugriff gewähren?</span><span class="sxs-lookup"><span data-stu-id="985a5-105">What is the name of the blade in the Azure portal where you grant access?</span></span>
+    choices:
+    - content: <span data-ttu-id="985a5-106">Azure-Ressourcen</span><span class="sxs-lookup"><span data-stu-id="985a5-106">Azure resources</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="985a5-107">Dieses Blatt zeigt, welche Rollen Ihnen selbst oder dem ausgewählten Benutzer zugewiesen sind.</span><span class="sxs-lookup"><span data-stu-id="985a5-107">This blade shows you which roles are assigned to yourself or the selected user.</span></span>
+    - content: <span data-ttu-id="985a5-108">Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="985a5-108">Azure Active Directory</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="985a5-109">Über dieses Blatt können Sie auf die Azure Active Directory-Features zugreifen.</span><span class="sxs-lookup"><span data-stu-id="985a5-109">This blade lets you access the Azure Active Directory features.</span></span>
+    - content: <span data-ttu-id="985a5-110">Alle Benutzer</span><span class="sxs-lookup"><span data-stu-id="985a5-110">All users</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="985a5-111">Auf diesem Blatt werden alle Benutzer des ausgewählten Verzeichnisses aufgelistet.</span><span class="sxs-lookup"><span data-stu-id="985a5-111">This blade lists all the users for the selected directory.</span></span>
+    - content: <span data-ttu-id="985a5-112">Zugriffssteuerung (IAM)</span><span class="sxs-lookup"><span data-stu-id="985a5-112">Access control (IAM)</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="985a5-113">Auf dem Blatt „Zugriffssteuerung (IAM)“ können Sie Rollen zuweisen.</span><span class="sxs-lookup"><span data-stu-id="985a5-113">You assign roles on the Access control (IAM) blade.</span></span> <span data-ttu-id="985a5-114">Dieses Blatt wird in mehreren Bereichen des Portals angezeigt.</span><span class="sxs-lookup"><span data-stu-id="985a5-114">This blade appears in several areas in the portal.</span></span>
+  - content: '<span data-ttu-id="985a5-115">Richtig oder falsch: Wenn Sie einem Benutzer Zugriff auf Azure-Ressourcen gewähren möchten, müssen Sie eine Rollenzuweisung erstellen.</span><span class="sxs-lookup"><span data-stu-id="985a5-115">True or false: To grant a user access to Azure resources, you create a role assignment.</span></span>'
+    choices:
+    - content: <span data-ttu-id="985a5-116">Richtig</span><span class="sxs-lookup"><span data-stu-id="985a5-116">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="985a5-117">Die Rollenzuweisung dient dazu, eine Rolle an einen Sicherheitsprinzipal in einem bestimmten Bereich zu binden, um Zugriff zu gewähren.</span><span class="sxs-lookup"><span data-stu-id="985a5-117">A role assignment is the process of binding a role to a security principal at a particular scope for the purpose of granting access.</span></span>
+    - content: <span data-ttu-id="985a5-118">Falsch</span><span class="sxs-lookup"><span data-stu-id="985a5-118">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="985a5-119">Eine Rollenzuweisung ist der Prozess, in dem eine Rolle zum Zwecke der Zugriffserteilung in einem bestimmten Bereich an einen Sicherheitsprinzipal gebunden wird.</span><span class="sxs-lookup"><span data-stu-id="985a5-119">A role assignment is the process of binding a role to a security principal at a particular scope for the purpose of granting access.</span></span>
+  - content: <span data-ttu-id="985a5-120">Mit welcher Rolle kann anderen Benutzern Zugriff gewährt werden?</span><span class="sxs-lookup"><span data-stu-id="985a5-120">What role enables you to grant access to others?</span></span>
+    choices:
+    - content: <span data-ttu-id="985a5-121">Mitwirkender für virtuelle Computer</span><span class="sxs-lookup"><span data-stu-id="985a5-121">Virtual Machine Contributor</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="985a5-122">Mit dieser Rolle können Sie virtuelle Computer verwalten, aber anderen Benutzern keinen Zugriff gewähren.</span><span class="sxs-lookup"><span data-stu-id="985a5-122">This role allows you to manage virtual machines, but you can't grant access to others.</span></span>
+    - content: <span data-ttu-id="985a5-123">Benutzerzugriffsadministrator</span><span class="sxs-lookup"><span data-stu-id="985a5-123">User Access Administrator</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="985a5-124">Mit dieser Rolle und der Besitzerrolle können Sie anderen Benutzern Zugriff gewähren.</span><span class="sxs-lookup"><span data-stu-id="985a5-124">This role and the Owner role allow you to grant access to others.</span></span>
+    - content: <span data-ttu-id="985a5-125">Mitwirkender</span><span class="sxs-lookup"><span data-stu-id="985a5-125">Contributor</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="985a5-126">Mit dieser Rolle können Sie alle Ressourcen verwalten, aber anderen Benutzern keinen Zugriff gewähren.</span><span class="sxs-lookup"><span data-stu-id="985a5-126">This role allows you to manage all resources, but you can't grant access to others.</span></span>
+    - content: <span data-ttu-id="985a5-127">Leser</span><span class="sxs-lookup"><span data-stu-id="985a5-127">Reader</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="985a5-128">Mit dieser Rolle können Sie alle Ressourcen lesen, aber anderen Benutzern keinen Zugriff gewähren.</span><span class="sxs-lookup"><span data-stu-id="985a5-128">This role allows you to read all resources, but you can't grant access to others.</span></span>
+  - content: <span data-ttu-id="985a5-129">Angenommen, ein Entwickler benötigt Vollzugriff auf eine Ressourcengruppe.</span><span class="sxs-lookup"><span data-stu-id="985a5-129">Suppose a developer needs full access to a resource group.</span></span> <span data-ttu-id="985a5-130">Welchen Bereich sollten Sie angeben, wenn Sie den Best Practices für minimale Berechtigungen folgen?</span><span class="sxs-lookup"><span data-stu-id="985a5-130">If you are following least-privilege best practices, what scope should you specify?</span></span>
+    choices:
+    - content: <span data-ttu-id="985a5-131">Ressource</span><span class="sxs-lookup"><span data-stu-id="985a5-131">Resource</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="985a5-132">Ein Ressourcenbereich ist enger gefasst als nötig.</span><span class="sxs-lookup"><span data-stu-id="985a5-132">A resource scope is narrower than what is needed.</span></span>
+    - content: <span data-ttu-id="985a5-133">Ressourcengruppe</span><span class="sxs-lookup"><span data-stu-id="985a5-133">Resource group</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="985a5-134">Gemäß den Best Practices für minimale Berechtigungen gewähren Sie dem Benutzer nur den Zugriff, den er für seine Aufgaben benötigt.</span><span class="sxs-lookup"><span data-stu-id="985a5-134">Following least-privilege best practices, you grant only the access the user needs to do their job.</span></span> <span data-ttu-id="985a5-135">In diesem Fall sollten Sie den Bereich auf die Ressourcengruppe festlegen.</span><span class="sxs-lookup"><span data-stu-id="985a5-135">In this case, you should set the scope to the resource group.</span></span>
+    - content: <span data-ttu-id="985a5-136">Abonnement</span><span class="sxs-lookup"><span data-stu-id="985a5-136">Subscription</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="985a5-137">Ein Abonnementbereich ist weiter gefasst als nötig.</span><span class="sxs-lookup"><span data-stu-id="985a5-137">A subscription scope is broader than what is needed.</span></span>

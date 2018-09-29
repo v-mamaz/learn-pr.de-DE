@@ -1,45 +1,45 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.5-encryption
-title: <span data-ttu-id="994af-101">Verschlüsselung</span><span class="sxs-lookup"><span data-stu-id="994af-101">Encryption</span></span>
+title: <span data-ttu-id="c8258-101">Verschlüsselung</span><span class="sxs-lookup"><span data-stu-id="c8258-101">Encryption</span></span>
 metadata:
-  title: <span data-ttu-id="994af-102">Verschlüsselung</span><span class="sxs-lookup"><span data-stu-id="994af-102">Encryption</span></span>
-  description: <span data-ttu-id="994af-103">In dieser Einheit erörtern wir, wie Sie die Verschlüsselung verwenden, um Ihre Architektur zu schützen.</span><span class="sxs-lookup"><span data-stu-id="994af-103">In this unit we'll discuss how to use encryption to secure your architecture</span></span>
+  title: <span data-ttu-id="c8258-102">Verschlüsselung</span><span class="sxs-lookup"><span data-stu-id="c8258-102">Encryption</span></span>
+  description: <span data-ttu-id="c8258-103">In dieser Einheit erörtern wir, wie Sie die Verschlüsselung verwenden, um Ihre Architektur zu schützen.</span><span class="sxs-lookup"><span data-stu-id="c8258-103">In this unit we'll discuss how to use encryption to secure your architecture</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 41ffa78955aa8c93dfb26a840bcdc01c0c8d8b17
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46340957"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47139183"
 durationInMinutes: 10
 content: >
   [!include[](includes/5-encryption.md)]
 quiz:
-  title: <span data-ttu-id="994af-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="994af-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="c8258-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="c8258-104">Check your knowledge</span></span>
   questions:
-  - content: '<span data-ttu-id="994af-105">Wahr oder falsch: Nur virtuelle Windows-Computer können Azure Disk Encryption verwenden.</span><span class="sxs-lookup"><span data-stu-id="994af-105">True or false: only Windows virtual machines can use Azure Disk Encryption</span></span>'
+  - content: '<span data-ttu-id="c8258-105">Wahr oder falsch: Nur virtuelle Windows-Computer können Azure Disk Encryption verwenden.</span><span class="sxs-lookup"><span data-stu-id="c8258-105">True or false: only Windows virtual machines can use Azure Disk Encryption</span></span>'
     choices:
-    - content: <span data-ttu-id="994af-106">Wahr</span><span class="sxs-lookup"><span data-stu-id="994af-106">True</span></span>
+    - content: <span data-ttu-id="c8258-106">Wahr</span><span class="sxs-lookup"><span data-stu-id="c8258-106">True</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="994af-107">Azure Disk Encryption ist sowohl für virtuelle Windows- als auch Linux-Computer verfügbar.</span><span class="sxs-lookup"><span data-stu-id="994af-107">Azure Disk Encryption is available for both Windows and Linux virtual machines.</span></span>
-    - content: <span data-ttu-id="994af-108">FALSE</span><span class="sxs-lookup"><span data-stu-id="994af-108">False</span></span>
+      incorrectExplanation: <span data-ttu-id="c8258-107">Azure Disk Encryption ist sowohl für virtuelle Windows- als auch Linux-Computer verfügbar.</span><span class="sxs-lookup"><span data-stu-id="c8258-107">Azure Disk Encryption is available for both Windows and Linux virtual machines.</span></span>
+    - content: <span data-ttu-id="c8258-108">FALSE</span><span class="sxs-lookup"><span data-stu-id="c8258-108">False</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="994af-109">Azure Disk Encryption ist sowohl für virtuelle Windows- als auch Linux-Computer verfügbar.</span><span class="sxs-lookup"><span data-stu-id="994af-109">Azure Disk Encryption is available for both Windows and Linux virtual machines.</span></span>
-  - content: <span data-ttu-id="994af-110">Welcher der folgenden Faktoren spielt bei der Klassifizierung von Daten eine Rolle?</span><span class="sxs-lookup"><span data-stu-id="994af-110">When classifying data, which of the following is a factor?</span></span>
+      correctExplanation: <span data-ttu-id="c8258-109">Azure Disk Encryption ist sowohl für virtuelle Windows- als auch Linux-Computer verfügbar.</span><span class="sxs-lookup"><span data-stu-id="c8258-109">Azure Disk Encryption is available for both Windows and Linux virtual machines.</span></span>
+  - content: <span data-ttu-id="c8258-110">Welcher der folgenden Faktoren spielt bei der Klassifizierung von Daten eine Rolle?</span><span class="sxs-lookup"><span data-stu-id="c8258-110">When classifying data, which of the following is a factor?</span></span>
     choices:
-    - content: <span data-ttu-id="994af-111">Risikostufe für Kunden, wenn verfügbar gemacht</span><span class="sxs-lookup"><span data-stu-id="994af-111">Level of risk posed to customers if exposed</span></span>
+    - content: <span data-ttu-id="c8258-111">Risikostufe für Kunden, wenn verfügbar gemacht</span><span class="sxs-lookup"><span data-stu-id="c8258-111">Level of risk posed to customers if exposed</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="994af-112">Die Klassifizierung von Daten, die verschlüsselt werden sollen, basiert in der Regel auf den Auswirkungen, die sie auf Kunden haben können, wenn sie offengelegt werden.</span><span class="sxs-lookup"><span data-stu-id="994af-112">Classifying data that should be encrypted is commonly based on the impact it can have to customers if it is exposed.</span></span>
-    - content: <span data-ttu-id="994af-113">Datentransportmethode</span><span class="sxs-lookup"><span data-stu-id="994af-113">Method of data transport</span></span>
+      correctExplanation: <span data-ttu-id="c8258-112">Die Klassifizierung von Daten, die verschlüsselt werden sollen, basiert in der Regel auf den Auswirkungen, die sie auf Kunden haben können, wenn sie offengelegt werden.</span><span class="sxs-lookup"><span data-stu-id="c8258-112">Classifying data that should be encrypted is commonly based on the impact it can have to customers if it is exposed.</span></span>
+    - content: <span data-ttu-id="c8258-113">Datentransportmethode</span><span class="sxs-lookup"><span data-stu-id="c8258-113">Method of data transport</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="994af-114">Die Klassifizierung von Daten, die verschlüsselt werden sollen, basiert in der Regel auf den Auswirkungen, die sie auf Kunden haben können, wenn sie offengelegt werden.</span><span class="sxs-lookup"><span data-stu-id="994af-114">Classifying data that should be encrypted is commonly based on the impact it can have to customers if it is exposed.</span></span>
-    - content: <span data-ttu-id="994af-115">Ob die Daten auf einem virtuellen Computer oder in einer Datenbank gespeichert werden</span><span class="sxs-lookup"><span data-stu-id="994af-115">Whether the data is stored on virtual machines or in a database</span></span>
+      incorrectExplanation: <span data-ttu-id="c8258-114">Die Klassifizierung von Daten, die verschlüsselt werden sollen, basiert in der Regel auf den Auswirkungen, die sie auf Kunden haben können, wenn sie offengelegt werden.</span><span class="sxs-lookup"><span data-stu-id="c8258-114">Classifying data that should be encrypted is commonly based on the impact it can have to customers if it is exposed.</span></span>
+    - content: <span data-ttu-id="c8258-115">Ob die Daten auf einem virtuellen Computer oder in einer Datenbank gespeichert werden</span><span class="sxs-lookup"><span data-stu-id="c8258-115">Whether the data is stored on virtual machines or in a database</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="994af-116">Die Klassifizierung von Daten, die verschlüsselt werden sollen, basiert in der Regel auf den Auswirkungen, die sie auf Kunden haben können, wenn sie offengelegt werden.</span><span class="sxs-lookup"><span data-stu-id="994af-116">Classifying data that should be encrypted is commonly based on the impact it can have to customers if it is exposed.</span></span>
-    - content: <span data-ttu-id="994af-117">Menge der gespeicherten Daten</span><span class="sxs-lookup"><span data-stu-id="994af-117">The amount of data stored</span></span>
+      incorrectExplanation: <span data-ttu-id="c8258-116">Die Klassifizierung von Daten, die verschlüsselt werden sollen, basiert in der Regel auf den Auswirkungen, die sie auf Kunden haben können, wenn sie offengelegt werden.</span><span class="sxs-lookup"><span data-stu-id="c8258-116">Classifying data that should be encrypted is commonly based on the impact it can have to customers if it is exposed.</span></span>
+    - content: <span data-ttu-id="c8258-117">Menge der gespeicherten Daten</span><span class="sxs-lookup"><span data-stu-id="c8258-117">The amount of data stored</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="994af-118">Die Klassifizierung von Daten, die verschlüsselt werden sollen, basiert in der Regel auf den Auswirkungen, die sie auf Kunden haben können, wenn sie offengelegt werden.</span><span class="sxs-lookup"><span data-stu-id="994af-118">Classifying data that should be encrypted is commonly based on the impact it can have to customers if it is exposed.</span></span>
+      incorrectExplanation: <span data-ttu-id="c8258-118">Die Klassifizierung von Daten, die verschlüsselt werden sollen, basiert in der Regel auf den Auswirkungen, die sie auf Kunden haben können, wenn sie offengelegt werden.</span><span class="sxs-lookup"><span data-stu-id="c8258-118">Classifying data that should be encrypted is commonly based on the impact it can have to customers if it is exposed.</span></span>

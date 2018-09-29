@@ -1,51 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.prepare-azure-dev-environment.8-summary
-title: <span data-ttu-id="33406-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="33406-101">Summary</span></span>
+title: <span data-ttu-id="b3dba-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="b3dba-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="33406-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="33406-102">Summary</span></span>
-  description: <span data-ttu-id="33406-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="33406-103">Summary</span></span>
+  title: <span data-ttu-id="b3dba-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="b3dba-102">Summary</span></span>
+  description: <span data-ttu-id="b3dba-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="b3dba-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 49eda8027510861e39be1d5297a68850c9f9e6e2
-  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/22/2018
-  ms.locfileid: "46569919"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47139439"
 durationInMinutes: 5
 content: >
   [!include[](includes/8-summary.md)]
 quiz:
-  title: '<span data-ttu-id="33406-104">Wissensbeurteilung: Vorbereiten Ihrer Entwicklungsumgebung für Azure</span><span class="sxs-lookup"><span data-stu-id="33406-104">Knowledge check: Prepare your development environment for Azure</span></span>'
+  title: '<span data-ttu-id="b3dba-104">Wissensbeurteilung: Vorbereiten Ihrer Entwicklungsumgebung für Azure</span><span class="sxs-lookup"><span data-stu-id="b3dba-104">Knowledge check: Prepare your development environment for Azure</span></span>'
   questions:
-  - content: <span data-ttu-id="33406-105">Welches Betriebssystem wird von Visual Studio Code unterstützt?</span><span class="sxs-lookup"><span data-stu-id="33406-105">Visual Studio Code supports which operating system?</span></span>
+  - content: <span data-ttu-id="b3dba-105">Welches Betriebssystem wird von Visual Studio Code unterstützt?</span><span class="sxs-lookup"><span data-stu-id="b3dba-105">Visual Studio Code supports which operating system?</span></span>
     choices:
-    - content: <span data-ttu-id="33406-106">Linux</span><span class="sxs-lookup"><span data-stu-id="33406-106">Linux</span></span>
+    - content: <span data-ttu-id="b3dba-106">Linux</span><span class="sxs-lookup"><span data-stu-id="b3dba-106">Linux</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="33406-107">Visual Studio Code ist plattformübergreifend und unterstützt Linux, macOS und Windows.</span><span class="sxs-lookup"><span data-stu-id="33406-107">Visual Studio Code is cross-platform and supports Linux, macOS, and Windows.</span></span>
-    - content: <span data-ttu-id="33406-108">macOS</span><span class="sxs-lookup"><span data-stu-id="33406-108">macOS</span></span>
+      incorrectExplanation: <span data-ttu-id="b3dba-107">Visual Studio Code ist plattformübergreifend und unterstützt Linux, macOS und Windows.</span><span class="sxs-lookup"><span data-stu-id="b3dba-107">Visual Studio Code is cross-platform and supports Linux, macOS, and Windows.</span></span>
+    - content: <span data-ttu-id="b3dba-108">macOS</span><span class="sxs-lookup"><span data-stu-id="b3dba-108">macOS</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="33406-109">Visual Studio Code ist plattformübergreifend und unterstützt Linux, macOS und Windows.</span><span class="sxs-lookup"><span data-stu-id="33406-109">Visual Studio Code is cross-platform and supports Linux, macOS, and Windows.</span></span>
-    - content: <span data-ttu-id="33406-110">Windows</span><span class="sxs-lookup"><span data-stu-id="33406-110">Windows</span></span>
+      incorrectExplanation: <span data-ttu-id="b3dba-109">Visual Studio Code ist plattformübergreifend und unterstützt Linux, macOS und Windows.</span><span class="sxs-lookup"><span data-stu-id="b3dba-109">Visual Studio Code is cross-platform and supports Linux, macOS, and Windows.</span></span>
+    - content: <span data-ttu-id="b3dba-110">Windows</span><span class="sxs-lookup"><span data-stu-id="b3dba-110">Windows</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="33406-111">Visual Studio Code ist plattformübergreifend und unterstützt Linux, macOS und Windows.</span><span class="sxs-lookup"><span data-stu-id="33406-111">Visual Studio Code is cross-platform and supports Linux, macOS, and Windows.</span></span>
-    - content: <span data-ttu-id="33406-112">Alle oben genannten Möglichkeiten sind zutreffend.</span><span class="sxs-lookup"><span data-stu-id="33406-112">All of the above</span></span>
+      incorrectExplanation: <span data-ttu-id="b3dba-111">Visual Studio Code ist plattformübergreifend und unterstützt Linux, macOS und Windows.</span><span class="sxs-lookup"><span data-stu-id="b3dba-111">Visual Studio Code is cross-platform and supports Linux, macOS, and Windows.</span></span>
+    - content: <span data-ttu-id="b3dba-112">Alle oben genannten Möglichkeiten sind zutreffend.</span><span class="sxs-lookup"><span data-stu-id="b3dba-112">All of the above</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="33406-113">Visual Studio Code ist plattformübergreifend und unterstützt Linux, macOS und Windows.</span><span class="sxs-lookup"><span data-stu-id="33406-113">Visual Studio Code is cross-platform and supports Linux, macOS, and Windows.</span></span>
-  - content: <span data-ttu-id="33406-114">Für welche der folgenden Editoren/IDEs bietet Microsoft eine Azure-Erweiterung?</span><span class="sxs-lookup"><span data-stu-id="33406-114">Microsoft supplies an Azure extension for which of the following editor/IDE?</span></span>
+      correctExplanation: <span data-ttu-id="b3dba-113">Visual Studio Code ist plattformübergreifend und unterstützt Linux, macOS und Windows.</span><span class="sxs-lookup"><span data-stu-id="b3dba-113">Visual Studio Code is cross-platform and supports Linux, macOS, and Windows.</span></span>
+  - content: <span data-ttu-id="b3dba-114">Für welche der folgenden Editoren/IDEs bietet Microsoft eine Azure-Erweiterung?</span><span class="sxs-lookup"><span data-stu-id="b3dba-114">Microsoft supplies an Azure extension for which of the following editor/IDE?</span></span>
     choices:
-    - content: <span data-ttu-id="33406-115">Eclipse</span><span class="sxs-lookup"><span data-stu-id="33406-115">Eclipse</span></span>
+    - content: <span data-ttu-id="b3dba-115">Eclipse</span><span class="sxs-lookup"><span data-stu-id="b3dba-115">Eclipse</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="33406-116">Sie wählen, welches Tool Sie für die Azure-Entwicklung verwenden möchten, und Microsoft liefert die Azure-Integration für Eclipse, Visual Studio 2017, Visual Studio für Mac und Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="33406-116">You choose which tool you want to use for Azure development, Microsoft provides Azure integration for Eclipse, Visual Studio 2017, Visual Studio for Mac, and Visual Studio Code.</span></span>
-    - content: <span data-ttu-id="33406-117">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="33406-117">Visual Studio</span></span>
+      incorrectExplanation: <span data-ttu-id="b3dba-116">Sie wählen, welches Tool Sie für die Azure-Entwicklung verwenden möchten, und Microsoft liefert die Azure-Integration für Eclipse, Visual Studio 2017, Visual Studio für Mac und Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="b3dba-116">You choose which tool you want to use for Azure development, Microsoft provides Azure integration for Eclipse, Visual Studio 2017, Visual Studio for Mac, and Visual Studio Code.</span></span>
+    - content: <span data-ttu-id="b3dba-117">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="b3dba-117">Visual Studio</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="33406-118">Sie wählen, welches Tool Sie für die Azure-Entwicklung verwenden möchten, und Microsoft liefert die Azure-Integration für Eclipse, Visual Studio 2017, Visual Studio für Mac und Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="33406-118">You choose which tool you want to use for Azure development, Microsoft provides Azure integration for Eclipse, Visual Studio 2017, Visual Studio for Mac, and Visual Studio Code.</span></span>
-    - content: <span data-ttu-id="33406-119">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="33406-119">Visual Studio Code</span></span>
+      incorrectExplanation: <span data-ttu-id="b3dba-118">Sie wählen, welches Tool Sie für die Azure-Entwicklung verwenden möchten, und Microsoft liefert die Azure-Integration für Eclipse, Visual Studio 2017, Visual Studio für Mac und Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="b3dba-118">You choose which tool you want to use for Azure development, Microsoft provides Azure integration for Eclipse, Visual Studio 2017, Visual Studio for Mac, and Visual Studio Code.</span></span>
+    - content: <span data-ttu-id="b3dba-119">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="b3dba-119">Visual Studio Code</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="33406-120">Sie wählen, welches Tool Sie für die Azure-Entwicklung verwenden möchten, und Microsoft liefert die Azure-Integration für Eclipse, Visual Studio 2017, Visual Studio für Mac und Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="33406-120">You choose which tool you want to use for Azure development, Microsoft provides Azure integration for Eclipse, Visual Studio 2017, Visual Studio for Mac, and Visual Studio Code.</span></span>
-    - content: <span data-ttu-id="33406-121">Alle oben genannten Möglichkeiten sind zutreffend.</span><span class="sxs-lookup"><span data-stu-id="33406-121">All of the above</span></span>
+      incorrectExplanation: <span data-ttu-id="b3dba-120">Sie wählen, welches Tool Sie für die Azure-Entwicklung verwenden möchten, und Microsoft liefert die Azure-Integration für Eclipse, Visual Studio 2017, Visual Studio für Mac und Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="b3dba-120">You choose which tool you want to use for Azure development, Microsoft provides Azure integration for Eclipse, Visual Studio 2017, Visual Studio for Mac, and Visual Studio Code.</span></span>
+    - content: <span data-ttu-id="b3dba-121">Alle oben genannten Möglichkeiten sind zutreffend.</span><span class="sxs-lookup"><span data-stu-id="b3dba-121">All of the above</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="33406-122">Sie wählen, welches Tool Sie für die Azure-Entwicklung verwenden möchten, und Microsoft liefert die Azure-Integration für Eclipse, Visual Studio 2017, Visual Studio für Mac und Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="33406-122">You choose which tool you want to use for Azure development, Microsoft provides Azure integration for Eclipse, Visual Studio 2017, Visual Studio for Mac, and Visual Studio Code.</span></span>
+      correctExplanation: <span data-ttu-id="b3dba-122">Sie wählen, welches Tool Sie für die Azure-Entwicklung verwenden möchten, und Microsoft liefert die Azure-Integration für Eclipse, Visual Studio 2017, Visual Studio für Mac und Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="b3dba-122">You choose which tool you want to use for Azure development, Microsoft provides Azure integration for Eclipse, Visual Studio 2017, Visual Studio for Mac, and Visual Studio Code.</span></span>

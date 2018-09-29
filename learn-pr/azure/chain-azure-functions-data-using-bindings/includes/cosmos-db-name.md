@@ -1,1 +1,1 @@
-<span data-ttu-id="4cc9b-101">**func-io-learn-db**</span><span class="sxs-lookup"><span data-stu-id="4cc9b-101">**func-io-learn-db**</span></span>
+<span data-ttu-id="ba8c0-101">**func-io-learn-db**</span><span class="sxs-lookup"><span data-stu-id="ba8c0-101">**func-io-learn-db**</span></span>
