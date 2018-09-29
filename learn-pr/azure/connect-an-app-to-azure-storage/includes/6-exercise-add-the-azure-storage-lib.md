@@ -1,4 +1,6 @@
-::: zone pivot="csharp" Lassen Sie uns die Azure Storage-Clientbibliothek in Ihre .NET Core-Konsolenanwendung integrieren.
+::: zone pivot="csharp" 
+
+Lassen Sie uns die Azure Storage-Clientbibliothek in Ihre .NET Core-Konsolenanwendung integrieren.
 
 Die Azure Storage-Clientbibliothek für .NET wird mit NuGet verteilt. Nach Wunsch können Sie das Paket **WindowsAzure.Storage** Ihren .NET- oder .NET Core-Anwendungen hinzufügen.
 
