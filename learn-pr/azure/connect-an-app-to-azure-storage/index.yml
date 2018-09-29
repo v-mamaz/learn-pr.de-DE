@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 031ad75cc74aced06988ddc392886cf22e1f757e
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46511084"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47127819"
 title: Herstellen einer Verbindung zwischen einer App und Azure Storage
 summary: Erstellen Sie eine einfache Anwendung, und fügen Sie eine Konfiguration, Clientbibliotheksverweise und Code hinzu, um eine Verbindung mit Azure Storage herzustellen.
 abstract: >

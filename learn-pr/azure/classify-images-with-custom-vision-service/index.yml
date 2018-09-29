@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: e18c910278d54d4c63d1eebc2c4da2bac5af869e
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46513439"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47127958"
 title: Klassifizieren von Bildern mit dem Microsoft Custom Vision Service
 summary: Erstellen, trainieren und testen Sie benutzerdefinierte Modelle zur Klassifizierung von Bildern mit dem Custom Vision Service, um Bilder berühmter Künstler zuverlässig zu erkennen.
 abstract: "In diesem Modul wird Folgendes thematisiert:\n- Erstellen eines Custom Vision Service-Projekts\n- Trainieren eines Custom Vision Service-Modells mit gekennzeichneten Bildern\n- Testen eines Custom Vision Service-Modells\n- Abrufen des Vorhersageendpunkts Ihres benutzerdefinierten Modells über HTTP \n"

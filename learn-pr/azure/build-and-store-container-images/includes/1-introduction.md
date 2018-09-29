@@ -8,9 +8,9 @@ Neben dem Speichern von Containerimages können mit Azure Container Registry Tas
 
 In diesem Modul
 
-- stellen Sie eine Azure-Containerregistrierung bereit,
-- erstellen eines Containerimages mithilfe von Azure Container Registry Tasks,
-- stellen den Container für eine Azure-Containerinstanz bereit.
+- Bereitstellen einer Azure-Containerregistrierung
+- Erstellen eines Containerimage mithilfe von Azure Container Registry Tasks
+- Bereitstellen des Containers in einer Azure-Containerinstanz
 - Replizieren des Containerimage für mehrere Azure-Rechenzentren
 
 ## <a name="prerequisites"></a>Voraussetzungen  
