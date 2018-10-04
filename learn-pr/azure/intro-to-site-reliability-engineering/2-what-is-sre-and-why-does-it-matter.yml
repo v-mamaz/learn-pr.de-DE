@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.2-what-is-sre-and-why-does-it-matter
+title: Was ist SRE, und warum ist es wichtig?
+metadata:
+  title: Was ist SRE, und warum ist es wichtig?
+  description: Was ist SRE, und warum ist es wichtig?
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1e19e3256f43ac642814968c9b547e760aa09a64
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47438542"
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-what-is-sre-and-why-does-it-matter.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: Welche Dienst-, System- oder Produkteigenschaft steht im Fokus von SRE?
+    choices:
+    - content: Sicherheit
+      isCorrect: false
+      incorrectExplanation: Sicherheit ist ohne Frage ein wichtiger Aspekt von SRE, im Fokus dieses Ansatzes steht aber die Zuverlässigkeit.
+    - content: Kosten
+      isCorrect: false
+      incorrectExplanation: Ausgaben und Ressourcenverwendung sind ohne Frage wichtige Aspekte von SRE, im Fokus dieses Ansatzes steht aber die Zuverlässigkeit.
+    - content: Zuverlässigkeit
+      isCorrect: true
+      correctExplanation: Im Fokus von SRE steht tatsächlich die Zuverlässigkeit an erster Stelle.
+    - content: Wartbarkeit
+      isCorrect: false
+      incorrectExplanation: Die Entwicklung von wartbaren Diensten, Systemen oder Produkten ist ohne Frage ein wichtiger Aspekt von SRE. Im Fokus dieses Ansatzes steht aber die Zuverlässigkeit.
+  - content: Welche Zuverlässigkeitsstufe soll durch SRE für beinahe alle Dienste, Systeme und Produkte erreicht werden?
+    choices:
+    - content: 100 % sind das Ziel
+      isCorrect: false
+      incorrectExplanation: In den meisten Fällen kann eine Zuverlässigkeitsrate von 100 % nicht erreicht werden. Selbst wenn dies möglich wäre, wäre dies aus Finanz- und Ressourcengründen nicht zulässig (und eine Verschwendung von beidem).
+    - content: So zuverlässig wie möglich lautet die Devise
+      isCorrect: false
+      incorrectExplanation: Es ist wichtig, die angemessene Zuverlässigkeitsstufe für ein Ziel zu ermitteln, denn jeder Aufwand und Einsatz von Ressourcen darüber hinaus sind Verschwendung. Die Beschreibung „so zuverlässig wie möglich“ ist jedoch mehr wage als nützlich.
+    - content: Von den wichtigsten Beteiligten als angemessen beurteilte Stufe
+      isCorrect: true
+      correctExplanation: Ein Ziel für einen Dienst festzulegen, geschieht im Zusammenspiel von SRE, Entwicklungsressourcen und den geschäftlichen Entscheidungsträgern.

@@ -12,7 +12,7 @@ Hier konfigurieren Sie IIS remote aus Ihrer Cloud Shell-Sitzung mithilfe eines F
 
 ::: zone pivot="linux-cloud"
 
-Hier konfigurieren Sie Nginx remote aus Ihrer Cloud Shell-Sitzung mithilfe eines Features von Linux-basierten virtuellen Azure-Computern, das als benutzerdefinierte Skripterweiterung bezeichnet wird.
+Hier konfigurieren Sie nginx remote aus Ihrer Cloud Shell-Sitzung mithilfe eines Features von Linux-basierten virtuellen Azure-Computern, das als benutzerdefinierte Skripterweiterung bezeichnet wird.
 
 ::: zone-end
 
@@ -74,13 +74,9 @@ Da IIS nun eingerichtet ist, können wir die Ausführung überprüfen.
     ```
 
     > [!NOTE]
-    > Aufgrund des `--query`-Arguments ist dieser Befehl nicht ganz leicht nachzuvollziehen. Aber Sie werden schon bald ein Profi sein, wenn Sie sich einarbeiten und Azure kennenlernen.
+    > Aufgrund des `--query`-Arguments ist dieser Befehl nicht ganz leicht nachzuvollziehen. Sie werden jedoch schon bald ein Profi sein, wenn Sie sich einarbeiten und Azure kennenlernen.
 
-    Die öffentliche IP-Adresse Ihres virtuellen Computers wird angezeigt. Hier sehen Sie ein Beispiel.
-
-    ```output
-    104.211.9.245
-    ```
+    Die öffentliche IP-Adresse Ihres virtuellen Computers wird angezeigt, z.B. 104.211.9.245.
 
 1. Navigieren Sie auf einer neuen Browserregisterkarte zur IP-Adresse Ihres virtuellen Computers. Eine Begrüßungsnachricht und der Name Ihres virtuellen Computers werden angezeigt.
 
@@ -90,7 +86,7 @@ Da IIS nun eingerichtet ist, können wir die Ausführung überprüfen.
 
 ::: zone pivot="linux-cloud"
 
-## <a name="what-is-nginx"></a>Was ist Nginx?
+## <a name="what-is-nginx"></a>Was ist nginx?
 
 Nginx (ausgesprochen „Engine-x“) ist ein beliebter, kostenloser Open-Source-Webserver, der unter Unix, Linux, macOS und Windows ausgeführt werden kann. Hier verwenden Sie Nginx, um eine einfache Webseite bereitzustellen.
 
@@ -146,13 +142,9 @@ Da Nginx nun eingerichtet ist, können wir die Ausführung überprüfen.
     ```
 
     > [!NOTE]
-    > Aufgrund des `--query`-Arguments ist dieser Befehl nicht ganz leicht nachzuvollziehen. Aber Sie werden schon bald ein Profi sein, wenn Sie sich einarbeiten und Azure kennenlernen.
+    > Aufgrund des `--query`-Arguments ist dieser Befehl nicht ganz leicht nachzuvollziehen. Sie werden jedoch schon bald ein Profi sein, wenn Sie sich einarbeiten und Azure kennenlernen.
 
-    Die öffentliche IP-Adresse Ihres virtuellen Computers wird angezeigt. Hier sehen Sie ein Beispiel.
-
-    ```output
-    137.135.110.210
-    ```
+    Die öffentliche IP-Adresse Ihres virtuellen Computers wird angezeigt, z.B. 104.211.9.245.
 
 1. Navigieren Sie auf einer neuen Browserregisterkarte zur IP-Adresse Ihres virtuellen Computers. Eine Begrüßungsnachricht und der Name Ihres virtuellen Computers werden angezeigt.
 

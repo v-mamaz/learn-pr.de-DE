@@ -1,0 +1,58 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.5-key-principles-2-human-side-of-sre
+title: 'Wichtige SRE-Prinzipien und -Methoden: die menschliche Komponente bei SRE'
+metadata:
+  title: 'Wichtige SRE-Prinzipien und -Methoden: die menschliche Komponente bei SRE'
+  description: 'Wichtige SRE-Prinzipien und -Methoden: die menschliche Komponente bei SRE'
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 18fe4f197d8a58ad6e6f2fc27e9e5a5a8b86db96
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47438605"
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-key-principles-2-human-side-of-sre.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: 'Welches dieser Merkmale ist *kein* Merkmal des sogenannten „Toil“, des Arbeitsaufwandes (im SRE-Kontext)? '
+    choices:
+    - content: Die Arbeit ist repetitiv
+      isCorrect: false
+      incorrectExplanation: Arbeitsaufwand ist von Natur aus repetitiv.
+    - content: Die Arbeit wird in einem Ticketsystem nachverfolgt
+      isCorrect: true
+      correctExplanation: Das Nachverfolgen der Arbeit ist kein Merkmal des Arbeitsaufwandes. Arbeitsaufwand wird zwar oft mit Tickets nachverfolgt, aber ein Ticketsystem könnte auch für andere, produktivere Arbeiten verwendet werden.
+    - content: Die Arbeit hat keinen nachhaltigen Wert
+      isCorrect: false
+      incorrectExplanation: Arbeitsaufwand hat keinen langfristigen Wert.
+    - content: Die Arbeit erfolgt oft manuell und nicht automatisiert
+      isCorrect: false
+      incorrectExplanation: Arbeitsaufwand ist überwiegend manuelle Arbeit, die automatisiert werden könnte.
+  - content: In welchem Verhältnis steht SRE zu Arbeitsaufwand?
+    choices:
+    - content: Das primäre Ziel von SRE ist das Vermeiden von Arbeitsaufwand.
+      isCorrect: false
+      incorrectExplanation: Wenn möglich vermeiden SREs Arbeitsaufwand, wenn es keine anderen Aufgaben mit höherer Priorität gibt.
+    - content: SREs vermeiden Arbeitsaufwand so gut wie möglich.
+      isCorrect: false
+      incorrectExplanation: SREs vermeiden Arbeitsaufwand wenn möglich. Gut verwalteter Arbeitsaufwand ist immer noch Arbeitsaufwand.
+    - content: SREs vermeiden Arbeitsaufwand immer dort, wo es möglich und angemessen ist
+      isCorrect: true
+  - content: Wie sollte sich die Arbeit eines SRE anteilig zusammensetzen?
+    choices:
+    - content: 80 % reaktive Betriebsarbeit/20 % Projektarbeit
+      isCorrect: false
+      incorrectExplanation: Ein SRE muss ungestört an der Verbesserung der Zuverlässigkeit eines Systems arbeiten können und darf sich nicht nur mit den aktuell notwendigen Aufgaben befassen.
+    - content: 10 % reaktive Betriebsarbeit/90 % Projektarbeit
+      isCorrect: false
+      incorrectExplanation: Wir haben oft keine Wahl, was die erforderliche Betriebslast eines Systems angeht. Es kann sein, dass einige Systeme eine sehr geringe Betriebslast aufweisen, doch davon sollten wir nicht ausgehen.
+    - content: 50 % reaktive Betriebsarbeit/50 % Projektarbeit
+      isCorrect: true
+      correctExplanation: Normalerweise gehen SREs von diesem Verhältnis aus (50 % ist die Obergrenze für die Betriebslast, ein niedrigerer Wert ist wünschenswert).

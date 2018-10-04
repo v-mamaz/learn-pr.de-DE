@@ -1,1 +1,1 @@
-Lesen Sie sich die beiden Szenarien mit dem Astronomieteam durch, um Ihr Gedächtnis aufzufrischen, und beantworten Sie die dazugehörigen Fragen.
+Bitte gehen Sie die folgenden Fragen durch, um Ihr angeeignetes Wissen zu festigen.

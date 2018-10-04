@@ -17,24 +17,17 @@ Azure Functions unterstützt nicht nur Eingabebindungen für verschiedene Integr
 
 ## <a name="create-an-http-triggered-function"></a>Erstellen einer durch HTTP ausgelösten Funktion
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit dem gleichen Konto an, über das Sie die Sandbox aktiviert haben.
+1. Stellen Sie sicher, dass Sie beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit dem gleichen Konto angemeldet sind, über das Sie die Sandbox aktiviert haben.
 
 2. Navigieren Sie im Portal zu der Funktions-App, die Sie in diesem Modul erstellt haben.
 
-3. Erweitern Sie die Funktions-App, zeigen Sie auf die Funktionssammlung, und klicken Sie anschließend auf die Schaltfläche „Hinzufügen“ (**+**) neben **Funktionen**. Durch diese Aktion wird der Vorgang der Funktionserstellung gestartet. Die folgende Animation veranschaulicht diese Aktion.
-
-    ![Animation des Pluszeichens, das angezeigt wird, wenn der Benutzer mit der Maus auf das Menüelement „Funktionen“ zeigt](../media/3-func-app-plus-hover-small.gif)
-
-4. Auf der Seite werden alle aktuell unterstützten Trigger angezeigt. Wählen Sie **HTTP-Trigger** aus. Dies ist der erste Eintrag auf dem folgenden Screenshot.
-
-    ![Screenshot eines Teils der Benutzeroberfläche zur Auswahl der Triggervorlage, wobei der HTTP-Trigger zuerst angezeigt wird (oben links in der Abbildung)](../media/5-trigger-templates-small.PNG)
-
+3. Klicken Sie neben **Funktionen** auf die Schaltfläche „Hinzufügen“ (**+**). Durch diese Aktion wird der Vorgang der Funktionserstellung gestartet. 
+4. Auf der Seite werden alle aktuell unterstützten Trigger angezeigt. Wählen Sie **HTTP-Trigger** aus.
 
 5. Füllen Sie den Bereich **Neue Funktion**, der auf der rechten Seite angezeigt wird, mit den folgenden Werten aus:
 
     |Feld  |Wert  |
     |---------|---------|
-    |Sprache     | **JavaScript**        |
     |Name     |   [!INCLUDE [func-name-add](./func-name-add.md)]     |
     | Autorisierungsstufe | **Funktion** |
 

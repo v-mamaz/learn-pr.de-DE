@@ -24,12 +24,12 @@ In diesem Beispiel wird `az group deployment create` zum Bereitstellen des virtu
 
 In diesem Beispiel wird die VM mithilfe einer Azure Resource Manager-Vorlage erstellt. Die Vorlage definiert das DSVM-Image für Linux, das bereitgestellt werden soll. Sie müssen für die Vorlage einige Parameter angeben, z.B. die Größe der VM, die verwendet werden soll, den Namen des Administratorbenutzers und das zugehörige Kennwort sowie den Hostnamen. 
 
-1. Führen Sie in Azure Cloud Shell für diese Einheit den folgenden Befehl aus:
+1. Führen Sie in Azure Cloud Shell rechts von dieser Einheit den folgenden Befehl aus:
 
-    ```bash
-    code parameter_file.json
+    ```azurecli
+    code .
     ```
-    <!-- TODO add a link to official doc that explains the built-in editor when it becomes available --> Dieser Befehl öffnet im integrierten Editor eine leere Datei mit dem Namen `parameter_file.json`. 
+    <!-- TODO add a link to official doc that explains the built-in editor when it becomes available --> Mit diesem Befehl wird im integrierten Editor eine leere Datei geöffnet. 
 
 1. Fügen Sie den folgenden JSON-Ausschnitt in die leere Datei im Code-Editor ein.
 
@@ -53,12 +53,12 @@ In diesem Beispiel wird die VM mithilfe einer Azure Resource Manager-Vorlage ers
     |adminUsername     |  `<USERNAME>`       |    Wählen Sie einen Namen für den Administratorbenutzer dieses neuen Computers aus, z.B. *azuser*.     |
     |adminPassword     |  `<PASSWORD>`       |   Wählen Sie ein Kennwort für dieses Administratorbenutzerkonto aus. Weitere Informationen über Kennwortanforderungen finden Sie unter [Häufig gestellte Fragen zu virtuellen Linux-Computern](https://docs.microsoft.com/azure/virtual-machines/linux/faq?azure-portal=true).     |
     |vmName     |   `<HOSTNAME>`      |  Geben Sie einen Namen für den neuen virtuellen Computer ein. Der Name muss mit einem Buchstaben beginnen und darf nur Kleinbuchstaben und Zahlen enthalten. Versuchen Sie, einen eindeutigen Namen zu finden, der z.B. Ihre Initialen und Ihr Geburtsjahr enthält. |
-    |vmSize     |  Standard_DS2_v2       |  Die VM-Größe eignet sich gut für diese Übung. Sie können sie aber auch ändern. Eine Liste mit verfügbaren VM-Größen finden Sie unter [Größen für virtuelle Linux-Computer in Azure](https://docs.microsoft.com/azure/virtual-machines/linux/sizes?azure-portal=true).       |
+    |vmSize     |  Standard_DS2_v2       |  Die VM-Größe eignet sich gut für diese Übung. Sie können sie aber auch ändern. Eine Liste mit verfügbaren Größen für virtuelle Computer finden Sie unter [Größen für virtuelle Linux-Computer in Azure](https://docs.microsoft.com/azure/virtual-machines/linux/sizes?azure-portal=true)       |
 
-1. Speichern Sie Ihre Änderungen in `parameter_file.json`, und schließen Sie den Text-Editor.
+1. Klicken Sie oben rechts im Editor auf die drei Auslassungspunkte (**...** ) und anschließend im Menü auf die Option **Speichern**, um die Datei als `parameter_file.json` zu speichern und den Text-Editor zu schließen.
 
     > [!IMPORTANT]
-    > Merken Sie sich die Werte, die Sie für adminUsername, adminPassword und vmName angegeben haben. Sie werden Sie im Laufe dieser Übung noch einmal brauchen.
+    > Merken Sie sich die Werte, die Sie für „adminUsername“, „adminPassword“ und „vmName“ angegeben haben. Sie werden Sie im Laufe dieser Übung noch einmal brauchen.
 
 ## <a name="create-a-resource-group"></a>Erstellen einer Ressourcengruppe 
 
@@ -78,6 +78,8 @@ Sie verfügen jetzt über eine Ressourcengruppe und über definierte Parameter f
     --parameters parameter_file.json
     ```
 
+    [!include[](../../../includes/azure-cloudshell-copy-paste-tip.md)]
+
     Der Befehl verwendet die Resource Manager-Vorlage und unsere Parameter, um den virtuellen Computer in der Ressourcengruppe zu erstellen. 
 
 2. Die Bereitstellung des virtuellen Computers dauert einige Minuten. Die Konsole zeigt beinahe ausschließlich ` - Running ..` an, bis der Vorgang abgeschlossen ist. Wenn der Vorgang abgeschlossen ist, wird eine JSON-Antwortdatei an den Bildschirm ausgegeben. Scrollen Sie in der JSON-Datei nach unten, und prüfen Sie, ob das Feld **provisioningState** den Wert *Erfolgreich* aufweist.
@@ -88,14 +90,13 @@ Sie verfügen jetzt über eine Ressourcengruppe und über definierte Parameter f
 3. Führen Sie den folgenden Befehl aus, um Informationen zu der VM abzurufen. Dabei wird `<HOSTNAME>` durch den Hostnamen ersetzt, den Sie für Ihre VM definiert haben.
 
     ```azurecli
-    az vm get-instance-view \
+    az vm show -d \
     --name <HOSTNAME> \
     --resource-group <rgn>[sandbox resource group name]</rgn> \
-    --query instanceView.statuses[1] \
     --output table
     ```
 
-    Dieser Befehl zeigt den Status der VM an. Dieser sollte *Virtueller Computer wird ausgeführt* lauten.
+    Dieser Befehl zeigt den Status des virtuellen Computers an. Im Feld **PowerState** müsste *Virtueller Computer wird ausgeführt* angezeigt werden. Im Verlauf dieser Übung werden wir mithilfe der IP-Adresse im Feld **PublicIps** eine Verbindung mit dem virtuellen Computer herstellen. Wir könnten die Verbindung auch mithilfe des vollqualifizierten Domänennamens (Fully Qualified Domain Name, FQDN) herstellen, der hier im Feld **Fqdns** angezeigt wird.
 
 Herzlichen Glückwunsch! Sie haben jetzt einen virtuellen Linux-Computer erstellt und bereitgestellt, der auf dem DSVM-Image basiert.
 
@@ -103,7 +104,7 @@ Herzlichen Glückwunsch! Sie haben jetzt einen virtuellen Linux-Computer erstell
 
 Standardmäßig ist kein Port der VM geöffnet. Ziel ist es, eine Remoteverbindung herzustellen, einen Jupyter Notebook-Server zu starten und andere lokale Befehle auf dem Computer auszuführen. Damit über das Secure Shell-Protokoll (SSH) eine Remoteverbindung mit der VM hergestellt werden kann, muss ein Port geöffnet werden. Der Standardport für SSH lautet 22.  
 
-1. Führen Sie den folgenden Befehl in Azure Cloud Shell aus. Dabei wird `<HOSTNAME>` durch den Namen ersetzt, den Sie Ihrem virtuellen Computer unter DSVM beim Einrichten gegeben haben. 
+1. Führen Sie den folgenden Befehl in Azure Cloud Shell aus. Dabei wird `<HOSTNAME>` durch den Namen ersetzt, den Sie Ihrem virtuellen Computer beim Einrichten gegeben haben. 
 
     ```azurecli
     az vm open-port \

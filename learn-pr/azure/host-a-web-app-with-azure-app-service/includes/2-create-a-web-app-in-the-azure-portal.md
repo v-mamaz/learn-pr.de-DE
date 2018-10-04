@@ -16,9 +16,9 @@ Mit diesem PaaS-Angebot (Platform-as-a-Service) von Microsoft Azure können Sie 
 
 ## <a name="how-to-create-a-web-app"></a>Schritte zum Erstellen einer Web-App
 
-Wenn es an der Zeit ist, Ihre eigene App zu hosten, besuchen Sie das Azure-Portal und erstellen eine neue **Web-App**. Durch das Erstellen einer **Web App** im Azure-Portal erstellen Sie tatsächlich eine Reihe von Hostingressourcen in App Service, mit denen Sie jede webbasierte Anwendung hosten können, die von Azure unterstützt wird, unabhängig davon, ob es sich um ASP.NET Core, Node.js, PHP usw. handelt. Die folgende Abbildung zeigt, wie einfach es ist, das von der App verwendete Framework bzw. die Sprache zu konfigurieren.
+Wenn es an der Zeit ist, Ihre eigene App zu hosten, besuchen Sie das Azure-Portal und erstellen eine neue **Web-App**. Durch das Erstellen einer **Web App** im Azure-Portal erstellen Sie tatsächlich eine Reihe von Hostingressourcen in App Service, mit denen Sie jede webbasierte Anwendung hosten können, die von Azure unterstützt wird, unabhängig davon, ob es sich um ASP.NET Core, Node.js, PHP usw. handelt. Die folgende Abbildung zeigt, wie einfach es ist, das Framework bzw. die Sprache der App zu konfigurieren.
 
-![Web-App-Einstellungen](../media/2-web-app-settings.png)
+![Screenshot: Anwendungseinstellungen für die Konfiguration der Web-App](../media/2-web-app-settings.png)
 
 Das Azure-Portal bietet eine Vorlage zum Erstellen einer Web-App. Diese Vorlage weist die folgenden Pflichtfelder auf:
 
@@ -33,15 +33,15 @@ Das Azure-Portal gibt Ihnen durch die vielen verfügbaren Tools die Kontrolle ü
 
 ### <a name="deployment-slots"></a>Bereitstellungsslots
 
-Im Azure-Portal können Sie einer App Service-Web-App ganz einfach **Bereitstellungsslots** hinzufügen. Sie können z.B. einen Bereitstellungsslot für das **Staging** erstellen, in dem Sie Ihren zu testenden Code in Azure pushen können. Sobald Sie mit Ihrem Code zufrieden sind, können Sie ganz einfach den Bereitstellungsslot „Staging“ gegen den Bereitstellungsslot „Produktion“ **tauschen**. Dies erledigen Sie alles über ein paar einfache Mausklicks im Azure-Portal.
+Im Azure-Portal können Sie einer App Service-Web-App ganz einfach **Bereitstellungsslots** hinzufügen. Sie können z.B. einen Bereitstellungsslot für das **Staging** erstellen, in dem Sie Ihren zu testenden Code in Azure pushen können. Sobald Sie mit Ihrem Code zufrieden sind, können Sie ganz einfach den Bereitstellungsslot „Staging“ gegen den Bereitstellungsslot „Produktion“ **tauschen**. Dies erledigen Sie alles mit ein paar einfachen Mausklicks im Azure-Portal.
 
-![Bereitstellungsslots](../media/2-deployment-slots.png)
+![Screenshot: Staging-Bereitstellungsslot zum Testen der Bereitstellungen](../media/2-deployment-slots.png)
 
 ### <a name="continuous-integrationdeployment-support"></a>Unterstützung für Continuous Integration/Continuous Deployment
 
 Das Azure-Portal bietet standardmäßige Funktionen für Continuous Integration und Continuous Deployment mit Visual Studio Team Services, GitHub, Bitbucket, Dropbox, OneDrive oder einem lokalen Git-Repository auf Ihrem Entwicklungscomputer. Sie verbinden Ihre Web-App mit einer der oben genannten Quellen. App Service erledigt den Rest für Sie, indem der Code und alle künftigen Änderungen am Code automatisch mit der Web-App synchronisiert werden. Darüber hinaus können Sie mit Visual Studio Team Services Ihren eigenen Build- und Releaseprozess definieren, der am Ende dazu führt, dass Ihr Quellcode kompiliert, die Tests ausgeführt, ein Release erstellt und schließlich das Release jedes Mal, wenn Sie den Code committen, mithilfe von Push an eine Web-App übertragen wird. Das alles geschieht implizit, ohne dass Sie eingreifen müssen.
 
-![Konfigurieren von Continuous Integration](../media/2-continuous-integration.PNG)
+![Screenshot: Einrichten der Bereitstellungsoptionen und Auswählen der Quelle für den Bereitstellungsquellcode](../media/2-continuous-integration.PNG)
 
 ### <a name="integrated-visual-studio-publishing-and-ftp-publishing"></a>Integrierte Visual Studio- und FTP-Veröffentlichung
 

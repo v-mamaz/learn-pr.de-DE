@@ -39,14 +39,13 @@ Wenn eine Datenbank repliziert wird, werden auch der Durchsatz und der Speicher 
 
     Einstellung|Wert|Beschreibung
     ---|---|---
-    ID|*Ein eindeutiger Name*|Geben Sie einen eindeutigen Namen ein, der das Azure Cosmos DB-Konto identifiziert. Da *documents.azure.com* an die ID angefügt wird, die Sie bereitstellen, um Ihren URI zu erstellen, sollten Sie eine eindeutige, aber identifizierbare ID verwenden.<br><br>Die ID darf nur Kleinbuchstaben, Zahlen und einen Bindestrich (-) enthalten, und sie muss zwischen 3 und 50 Zeichen lang sein.
-    API|SQL|Die API bestimmt den Typ des zu erstellenden Kontos. Azure Cosmos DB stellt fünf APIs bereit, die Sie für Ihre Anwendung auswählen können: SQL (Dokumentdatenbank), Gremlin (Diagrammdatenbank), MongoDB (Dokumentdatenbank), Azure Table und Cassandra. Für jede ist derzeit ein separates Konto erforderlich. <br><br>Wählen Sie **SQL** aus, da Sie in diesem Modul eine Dokumentdatenbank erstellen, die mit SQL-Syntax abgefragt werden kann und für die SQL-API zugänglich ist.|
     Abonnement|*Concierge-Abonnement*|Wählen Sie Ihr Concierge-Abonnement aus. Wenn das Concierge-Abonnement nicht aufgelistet wird, haben Sie mehrere Mandanten in Ihrem Abonnement aktiviert und müssen die Mandanten wechseln. Hierzu melden Sie sich erneut über den folgenden Link beim Portal an: [Azure-Portal für die Sandbox](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true).
-    Ressourcengruppe|Vorhandene verwenden<br><br><rgn>[Name der Sandboxressourcengruppe]</rgn>|Klicken Sie auf **Vorhandene verwenden**, und geben Sie dann <rgn>[Name der Sandboxressourcengruppe]</rgn> ein.
+    Ressourcengruppe|Vorhandene verwenden<br><br><rgn>[Name der Sandboxressourcengruppe]</rgn>|Klicken Sie auf **Vorhandene verwenden**, und geben Sie anschließend <rgn>[Name der Sandboxressourcengruppe]</rgn> ein.
+    Kontoname|*Ein eindeutiger Name*|Geben Sie einen eindeutigen Namen ein, der das Azure Cosmos DB-Konto identifiziert. Da *documents.azure.com* an die von Ihnen bereitgestellte ID angefügt wird, um Ihren URI zu erstellen, sollten Sie eine eindeutige, aber identifizierbare ID verwenden.<br><br>Die ID darf nur Kleinbuchstaben, Zahlen und einen Bindestrich (-) enthalten, und sie muss zwischen 3 und 31 Zeichen lang sein.
+    API|SQL|Die API bestimmt den Typ des zu erstellenden Kontos. Azure Cosmos DB stellt fünf APIs bereit, die Sie für Ihre Anwendung auswählen können: SQL (Dokumentdatenbank), Gremlin (Diagrammdatenbank), MongoDB (Dokumentdatenbank), Azure Table und Cassandra. Für jede ist derzeit ein separates Konto erforderlich. <br><br>Wählen Sie **SQL** aus, da Sie in diesem Modul eine Dokumentdatenbank erstellen, die mit SQL-Syntax abgefragt werden kann und für die SQL-API zugänglich ist.|
     Standort|*Auswählen der am nächsten gelegenen Region*|Wählen Sie aus der obigen Liste der Regionen die Region aus, die Ihnen am nächsten liegt.
     Georedundanz| Deaktivieren | Durch diese Einstellung wird eine replizierte Version Ihrer Datenbank in einer zweiten (zugeordneten) Region erstellt. Lassen Sie diese Einstellung vorerst deaktiviert, da Sie die Datenbank später replizieren werden.
-    Multimaster | Aktivieren | Durch diese Einstellung können Sie in mehreren Regionen gleichzeitig schreiben. Diese Einstellung kann nur bei der Kontoerstellung konfiguriert werden.
-    Virtuelles Netzwerk|Nicht ausfüllen|Lassen Sie das Feld für virtuelle Netzwerke vorerst leer. Dies kann später konfiguriert werden.
+    Schreibvorgänge in mehreren Regionen | Aktivieren | Durch diese Einstellung können Sie in mehreren Regionen gleichzeitig schreiben. Diese Einstellung kann nur bei der Kontoerstellung konfiguriert werden.
 
 1. Klicken Sie auf **Überprüfen + erstellen**.
 

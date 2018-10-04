@@ -9,11 +9,45 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 4d91629775838b773937b42f3eb560a386276bb0
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: ba3042f85d59e09955c715f241f1620ceb22cfa5
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46340685"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437441"
 durationInMinutes: 3
-content: '[!include[](includes/9-summary.md)]'
+content: >
+  [!include[](includes/9-summary.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: 'Richtig oder falsch: Das Azure-Portal, die Azure CLI und Azure PowerShell bieten grundlegend verschiedene Dienste, weshalb es unwahrscheinlich ist, dass alle drei den für Sie erforderlichen Vorgang unterstützen.'
+    choices:
+    - content: Richtig
+      isCorrect: false
+      incorrectExplanation: Die drei Tools bieten fast genau die gleichen Dienste.
+    - content: Falsch
+      isCorrect: true
+      correctExplanation: Die drei Tools bieten fast die gleiche Zusammenstellung von Diensten. Im Allgemeinen ist dies kein Faktor bei der Entscheidung, welches Tool am besten für Ihre Aufgaben geeignet ist.
+  - content: Angenommen, Sie erstellen eine Anwendung für die Videobearbeitung, die Onlinespeicher für benutzergenerierte Videoinhalte bereitstellt. Sie speichern die Videos in Azure-Blobs, weshalb Sie ein Azure-Speicherkonto erstellen müssen, das die Blobs enthält. Sobald das Speicherkonto vorhanden ist, ist es unwahrscheinlich, dass Sie es entfernen und neu erstellen würden, da dadurch alle Benutzervideos gelöscht werden würden. Welches Tool bietet wohl die schnellste und einfachste Methode zum Erstellen des Speicherkontos?
+    choices:
+    - content: Das Azure-Portal
+      isCorrect: true
+      correctExplanation: Das Portal ist eine gute Wahl für einmalige Vorgänge wie das Erstellen eines langlebigen Speicherkontos. Das Portal bietet Ihnen eine grafische Benutzeroberfläche (GUI), die alle Eigenschaften von Speicherkonten enthält und QuickInfos bereitstellt, um Sie bei der Auswahl der richtigen Optionen für Ihre Anforderungen zu unterstützen.
+    - content: Die Azure CLI
+      isCorrect: false
+      incorrectExplanation: Für die Verwendung der CLI müssten Sie die nötigen Befehle recherchieren, die zum Erstellen eines Speicherkontos verwendet werden. Außerdem müssten Sie die CLI lokal installieren oder sich bei Cloud Shell anmelden. Für einen einmaligen Vorgang wie das Erstellen eines Speicherkontos beansprucht dies vermutlich mehr Zeit als die Verwendung des Azure-Portals.
+    - content: Azure PowerShell
+      isCorrect: false
+      incorrectExplanation: Für die Verwendung von Azure PowerShell müssten Sie die nötigen Befehle recherchieren, die zum Erstellen eines Speicherkontos verwendet werden. Außerdem müssten Sie PowerShell und Azure PowerShell lokal installieren oder sich bei Cloud Shell anmelden. Für einen einmaligen Vorgang wie das Erstellen eines Speicherkontos beansprucht dies vermutlich mehr Zeit als die Verwendung des Azure-Portals.
+  - content: Was muss auf Ihrem Computer installiert sein, damit Sie Azure PowerShell-Cmdlets lokal ausführen können?
+    choices:
+    - content: Azure Cloud Shell
+      isCorrect: false
+      incorrectExplanation: Cloud Shell ermöglicht Ihnen das Ausführen von Azure-Cmdlets. Allerdings geschieht dies im Browser, also führen Sie die Befehle nicht auf Ihrem lokalen Computer aus.
+    - content: Das grundlegende PowerShell-Produkt und das AzureRM-Modul
+      isCorrect: true
+      correctExplanation: Sowohl das grundlegende PowerShell-Produkt als auch das AzureRM-Modul sind erforderlich. Das grundlegende Produkt stellt Ihnen die Shell, einige wichtige Befehle und Programmierkonstrukte wie Schleifen, Variablen usw. bereit. Die AzureRM-Module fügen die Cmdlets hinzu, die Sie für die Arbeit mit Azure-Ressourcen benötigen.
+    - content: Die Azure CLI oder Azure PowerShell
+      isCorrect: false
+      incorrectExplanation: Die Azure CLI ist ein alternatives Befehlszeilen- und Skripterstellungstool. Sie ist nicht erforderlich, wenn Sie Azure PowerShell verwenden.

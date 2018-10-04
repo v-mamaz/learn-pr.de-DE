@@ -9,11 +9,51 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: dbbed9c336f6aa4063d3c4a3ab22447b8cc97293
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.openlocfilehash: b5705b646b41e63ffe0d2bc45fb3d4417136b10b
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46512785"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47436761"
 durationInMinutes: 2
-content: '[!include[](includes/9-summary.md)]'
+content: >
+  [!include[](includes/9-summary.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: 'Ein CRON-Ausdruck ist eine Zeichenfolge aus sechs Feldern, die eine Zeitangabe darstellen. Die Reihenfolge der sechs Felder in Azure ist: {Sekunde} {Minute} {Stunde} {Tag} {Monat} {Wochentag}. Angenommen, Sie benötigen einen CRON-Ausdruck, der angibt, dass jeder Tag ausgewählt werden soll. Welches Sonderzeichen fügen Sie in diesem Fall bei {Wochentag} ein?'
+    choices:
+    - content: „/“
+      isCorrect: false
+      incorrectExplanation: Ein Schrägstrich gibt ein Inkrement an. Wenn im Feld {Sekunde} „*/5“ angegeben wird, bedeutet das z.B. alle fünf Sekunden.
+    - content: „*“
+      isCorrect: true
+      correctExplanation: Ein Asterisk gibt an, dass jeder mögliche Wert ausgewählt werden soll. Wenn Sie einen Asterisk im Feld {Wochentag} einfügen, bedeutet das, dass jeder Tag ausgewählt wird.
+    - content: „,“
+      isCorrect: false
+      incorrectExplanation: Ein Komma trennt Elemente in einer Liste voneinander. Wenn Sie z.B. „1,2,3“ im Feld {Monat} eingeben, bedeutet das, dass Januar, Februar und März ausgewählt werden.
+    - content: „-“
+      isCorrect: false
+      incorrectExplanation: Ein Bindestrich gibt einen Bereich an. Wenn Sie z.B. „1-3“ im Feld {Monat} eingeben, bedeutet das, dass Januar, Februar und März ausgewählt werden.
+  - content: Angenommen, Ihre Azure-Funktion verfügt über einen Blobtrigger, und Sie möchten, dass die Funktion nur ausgeführt wird, wenn Bilder hochgeladen werden. Welchen der folgenden *Pfad*-Werte sollten Sie in diesem Fall für den Blobtrigger verwenden?
+    choices:
+    - content: samples-workitems/{name}
+      isCorrect: false
+      incorrectExplanation: Der Pfad gibt dem Blobtrigger an, an welcher Stelle er auf Änderungen prüfen soll und ob Filter angewendet wurden. Wenn Sie dem Pfad eine Dateierweiterung hinzufügen, gibt dies an, dass der Trigger die Funktion nur dann aufruft, wenn eine hochgeladene Datei diese Dateierweiterung aufweist.
+    - content: samples-workitems/{name}/png
+      isCorrect: false
+      incorrectExplanation: Der Pfad gibt dem Blobtrigger an, an welcher Stelle er auf Änderungen prüfen soll und ob Filter angewendet wurden. Wenn Sie dem Pfad eine Dateierweiterung hinzufügen, gibt dies an, dass der Trigger die Funktion nur dann aufruft, wenn eine hochgeladene Datei diese Dateierweiterung aufweist.
+    - content: samples-workitems/{name}?png
+      isCorrect: false
+      incorrectExplanation: Der Pfad gibt dem Blobtrigger an, an welcher Stelle er auf Änderungen prüfen soll und ob Filter angewendet wurden. Wenn Sie dem Pfad eine Dateierweiterung hinzufügen, gibt dies an, dass der Trigger die Funktion nur dann aufruft, wenn eine hochgeladene Datei diese Dateierweiterung aufweist.
+    - content: samples-workitems/{name}.png
+      isCorrect: true
+      correctExplanation: Der Pfad gibt dem Blobtrigger an, an welcher Stelle er auf Änderungen prüfen soll und ob Filter angewendet wurden. Wenn Sie dem Pfad eine Dateierweiterung hinzufügen, gibt dies an, dass der Trigger die Funktion nur dann aufruft, wenn eine hochgeladene Datei diese Dateierweiterung aufweist.
+  - content: 'Richtig oder falsch: Eine Azure-Funktion kann mehrere Trigger aufweisen.'
+    choices:
+    - content: Richtig
+      isCorrect: false
+      incorrectExplanation: Jeder Azure-Funktion muss genau ein Trigger zugeordnet sein. Wenn Sie mehrere Trigger verwenden möchten, müssen Sie mehrere Funktionen erstellen.
+    - content: Falsch
+      isCorrect: true
+      correctExplanation: Jeder Azure-Funktion muss genau ein Trigger zugeordnet sein. Wenn Sie mehrere Trigger verwenden möchten, müssen Sie mehrere Funktionen erstellen.

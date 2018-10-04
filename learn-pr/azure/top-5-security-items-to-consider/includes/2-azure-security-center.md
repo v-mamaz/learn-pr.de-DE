@@ -20,7 +20,7 @@ Azure Security Center bietet einheitliche Funktionen für die Sicherheitsverwalt
 Aufgrund der Vorteile von ASC hat das Sicherheitsteam Ihres Unternehmens die Entscheidung getroffen, den Dienst für alle genutzten Abonnements zu aktivieren. Sie haben heute Morgen eine E-Mail mit dem Hinweis erhalten, den Dienst für Ihre Anwendungen zu aktivieren. Wir sehen uns also an, wie Sie dies erreichen.
 
 > [!IMPORTANT]
-> Azure Security Center wird in der kostenlosen Azure-Sandbox nicht unterstützt. Sie können diese Schritte in Ihrem eigenen Abonnement ausführen oder einfach gedanklich verfolgen, um zu verstehen, wie Sie ASC aktivieren.
+> Azure Security Center wird in der kostenlosen Azure-Sandbox nicht unterstützt. Sie können diese Schritte in Ihrem eigenen Abonnement ausführen oder einfach nur den Erläuterungen folgen, um zu lernen, wie Sie ASC aktivieren.
 
 1. Öffnen Sie das [Azure-Portal](https://portal.azure.com?azure-portal=true), und wählen Sie im Menü auf der linken Seite die Option **Azure Security Center**. Wenn die Option nicht angezeigt wird, können Sie **Alle Dienste** auswählen und wie unten gezeigt im Sicherheitsabschnitt nach **Security Center** suchen.
 

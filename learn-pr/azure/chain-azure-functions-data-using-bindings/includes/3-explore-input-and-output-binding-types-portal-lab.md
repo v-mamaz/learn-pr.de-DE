@@ -22,10 +22,12 @@ Beginnen Sie mit der Erstellung einer Funktions-App, die Sie im gesamten Modul v
     | **Abonnement** | Ihr Abonnement | Das Abonnement, unter dem diese neue Funktions-App erstellt wird. |
     | **Ressourcengruppe**|  Klicken Sie auf **Vorhandene verwenden**, und wählen Sie _<rgn>[Name der Sandboxressourcengruppe]</rgn>_ aus. | Name der Ressourcengruppe, in der die Funktions-App erstellt werden soll. |
     | **Betriebssystem** | Windows | Das Betriebssystem, das die Funktions-App hostet.  |
-    | **Hosting** |   Verbrauchsplan | Der Hostingplan, der definiert, wie Ihre Ressourcen der Funktionen-App zugewiesen werden Im **Verbrauchstarif „Standard“** werden Ressourcen je nach Bedarf seitens der Funktionen dynamisch hinzugefügt. Beim serverlosen Hostingmodell zahlen Sie nur die Zeit, in der Ihre Funktionen ausgeführt werden.   |
-    | **Speicherkonto** |  Global eindeutiger Name |  Der Name des neuen Speicherkontos, das von Ihrer Funktions-App verwendet wird. Speicherkontonamen müssen zwischen 3 und 24 Zeichen lang sein und dürfen nur Zahlen und Kleinbuchstaben enthalten. In diesem Dialogfeld wird das Feld automatisch mit einem eindeutigen Namen gefüllt, der aus dem Namen abgeleitet wird, den Sie der App gegeben haben. Sie können aber auch einen anderen Namen oder sogar ein vorhandenes Konto verwenden. |
-    | **Standort** | Treffen Sie in der Liste ein Wahl. | Wählen Sie denjenigen aus, der den nachstehend aufgeführten Standorten am nächsten ist. |
+    | **Hostingplan** |   Verbrauchsplan | Der Hostingplan, der definiert, wie Ihre Ressourcen der Funktionen-App zugewiesen werden Im **Verbrauchstarif „Standard“** werden Ressourcen je nach Bedarf seitens der Funktionen dynamisch hinzugefügt. Bei diesem serverlosen Hostingmodell zahlen Sie nur für die Zeit, in der Ihre Funktionen ausgeführt werden.   |
+    | **Standort** | Treffen Sie eine Auswahl aus der Liste | Wählen Sie den nächstgelegenen Standort aus, der auch zu den aufgelisteten zulässigen *Sandbox-Regionen* gehört. |
+    | **Laufzeitstapel** | JavaScript | Der Beispielcode in diesem Modul ist in JavaScript geschrieben.  |
+    | **Speicher** |  Global eindeutiger Name |  Der Name des neuen Speicherkontos, das von Ihrer Funktions-App verwendet wird. Speicherkontonamen müssen zwischen 3 und 24 Zeichen lang sein und dürfen nur Zahlen und Kleinbuchstaben enthalten. In diesem Dialogfeld wird das Feld automatisch mit einem eindeutigen Namen gefüllt, der aus dem Namen abgeleitet wird, den Sie der App gegeben haben. Sie können aber auch einen anderen Namen oder sogar ein vorhandenes Konto verwenden. |
 
+    ### <a name="sandbox-regions"></a>Sandbox-Regionen
     [!include[](../../../includes/azure-sandbox-regions-first-mention-note-friendly.md)]
 
 1. Klicken Sie auf **Erstellen**, um die Funktions-App bereitzustellen.
@@ -47,17 +49,25 @@ Beginnen Sie mit der Erstellung einer Funktions-App, die Sie im gesamten Modul v
 
 Nun, da Sie über eine Funktions-App verfügen, ist es an der Zeit, eine Funktion zu erstellen. Eine Funktion wird durch einen Trigger aktiviert. In diesem Modul verwenden Sie einen HTTP-Trigger.
 
-1. Erweitern Sie die neue Funktions-App, zeigen Sie auf die Funktionssammlung, und klicken Sie dann auf die Schaltfläche „Hinzufügen“ (**+**) neben **Funktionen**. Durch diese Aktion wird der Vorgang der Funktionserstellung gestartet. Die folgende Animation veranschaulicht diese Aktion.
+<!-- Start temporary fix for issue #2498. -->
+> [!IMPORTANT]
+> Die Übungen in diesem Modul können derzeit mit Azure Functions V1 ausgeführt werden. Befolgen Sie diese Schritte sorgfältig, um sicherzustellen, dass Ihre Funktions-App die V1-Runtimeversion verwendet. 
 
-    ![Animation des Pluszeichens, das angezeigt wird, wenn der Benutzer mit der Maus auf das Menüelement „Funktionen“ zeigt.](../media/3-func-app-plus-hover-small.gif)
+1. Wählen Sie aus der Liste **Funktions-Apps** Ihre Funktions-App aus.
+1. Wählen Sie **Plattformfeatures** aus.
+1. Wählen Sie in der Anzeige **Plattformfeatures** unter **Allgemeine Einstellungen** die **Einstellungen für Funktions-Apps** aus.
+1. Wählen Sie in der **Runtimeversion** den Eintrag *~1* aus.
+1. Schließen Sie die **Einstellungen für Funktions-Apps**.
+
+Die Funktions-App ist nun für die Verwendung der Azure Functions V1-Runtime konfiguriert. Wir können nun mit der Erstellung unserer ersten Funktion fortfahren.
+<!-- End temporary fix for issue #2498. --> 
+1. Klicken Sie neben **Funktionen** auf die Schaltfläche „Hinzufügen“ (**+**). Durch diese Aktion wird der Vorgang der Funktionserstellung gestartet. 
 
 1. Wählen Sie auf der Seite **Schneller Einstieg** unter **Selbstständig einsteigen** den Eintrag **Benutzerdefinierte Funktion** aus.
 
-1. Hier sind alle Vorlagen aufgelistet. Wählen Sie die Vorlage **HTTP-Trigger** und JavaScript als Sprache aus.
+1. Dadurch werden alle Vorlagen aufgelistet. Wählen Sie aus der Liste die Vorlage **HTTP-Trigger** aus.
 
-    ![Screenshot des Felds zum Erstellen der HTTP-Funktion mit hervorgehobenem Link „JavaScript“](../media/3-http-function.png)
-
-1. Ändern Sie auf dem Blatt **Neue Funktion** nach Wunsch den Namen, belassen Sie für **Autorisierungsebene** die Einstellung _Funktion_, und klicken Sie auf **Erstellen**.
+1. Ändern Sie auf dem Blatt **Neue Funktion** bei Bedarf den Namen, belassen Sie für **Autorisierungsebene** die Einstellung _Funktion_, und klicken Sie auf **Erstellen**.
 
 1. Klicken Sie in Ihrer neuen Funktion rechts oben auf **</> Funktions-URL abrufen**. Wählen Sie **Standard (Funktionsschlüssel)** aus, und klicken Sie anschließend auf **Kopieren**.
 

@@ -26,29 +26,42 @@ Erstellen Sie zuerst eine Azure-Funktions-App im Portal.
 
 1. Wählen Sie als **Hostingplan** die Option **Verbrauchstarif**. Jede Ausführung der Funktion wird Ihnen in Rechnung gestellt. Ressourcen werden basierend auf dem Workload Ihrer Anwendung automatisch zugeordnet.
 
-1. Wählen Sie einen **Standort** aus der unten verfügbaren Liste aus.
+1. Wählen Sie aus der unten verfügbaren Liste einen **Standort** aus.
 
     [!include[](../../../includes/azure-sandbox-regions-first-mention-note-friendly.md)]
 
-1. Erstellen Sie ein neues **Speicherkonto**. Sie können den Namen des Kontos ändern, wenn Sie möchten. Standardmäßig wird eine Variation des App-Namens ausgewählt.
+1. Behalten Sie für **Laufzeitstapel** *.NET* als Standard bei. In dieser Sprache werden die Funktionsbeispiele in dieser Übung implementiert.
+
+1. Erstellen Sie ein neues **Speicherkonto**. Sie können den Namen des Kontos bei Bedarf ändern. Standardmäßig wird eine Variation des App-Namens ausgewählt.
 
 1. Wählen Sie **Erstellen** aus. Sobald die Funktions-App bereitgestellt ist, wechseln Sie im Portal zu **Alle Ressourcen**. Die Funktions-App wird mit dem Typ **App Service** aufgelistet und hat den Namen, den Sie ihr gegeben haben.
+ 
+<!-- Start temporary fix for issue #2498. -->
+> [!IMPORTANT]
+> Die Übungen in diesem Modul können derzeit mit Azure Functions V1 ausgeführt werden. Befolgen Sie diese Schritte sorgfältig, um sicherzustellen, dass Ihre Funktions-App die V1-Runtimeversion verwendet. 
 
-## <a name="create-a-timer-trigger"></a>Erstellen eines Timertriggers
+1. Wählen Sie nach dem Erstellen der Funktions-App im linken Navigationsbereich die Option **Alle Ressourcen** aus.
 
-Wir erstellen nun in unserer Funktion einen Timertrigger.
+1. Wählen Sie aus der Liste **Funktions-Apps** Ihre Funktions-App aus.
+1. Wählen Sie **Plattformfeatures** aus.
+1. Wählen Sie in der Anzeige **Plattformfeatures** unter **Allgemeine Einstellungen** die **Einstellungen für Funktions-Apps** aus.
+1. Wählen Sie in der **Runtimeversion** den Eintrag *~1* aus.
+1. Schließen Sie die **Einstellungen für Funktions-Apps**.
 
-1. Wenn die Funktion erstellt wurde, klicken Sie im linken Navigationsbereich auf **Alle Ressourcen**.
+Die Funktions-App ist nun für die Verwendung der Azure Functions V1-Runtime konfiguriert. Wir können nun mit der Erstellung unserer ersten Funktion fortfahren.
+<!-- End temporary fix for issue #2498. --> 
 
-1. Suchen Sie in der Liste nach der Funktions-App, und wählen Sie sie aus.
+## <a name="create-a-timer-trigger"></a>Erstellen eines Zeitgebertriggers
 
-1. Zeigen Sie auf dem neuen Blatt auf **Funktionen**, und klicken Sie auf das Pluszeichen (+).
+Wir erstellen nun in unserer Funktion einen Zeitgebertrigger.
+
+
+
+1. Zeigen Sie auf dem neuen Blatt mit dem Cursor auf **Funktionen**, und klicken Sie auf das Pluszeichen (+).
 
     ![Screenshot: Blatt „Funktions-App“ im Azure-Portal mit hervorgehobenem Pluszeichen (+) im Untermenü „Funktionen“](../media/4-hover-function.png)
 
-1. Klicken Sie auf **Zeitgeber**.
-
-1. Wählen Sie **CSharp** als Sprache aus.
+1. Wählen Sie **Zeitgeber** aus.
 
 1. Wählen Sie **Diese Funktion erstellen** aus.
 

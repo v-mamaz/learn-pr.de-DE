@@ -130,22 +130,15 @@ Sie verfügen nun über einige Einträge in Ihrer Lesezeichensammlung. Das Szena
 
 1. Navigieren Sie zu der Funktions-App, die Sie in der vorherigen Einheit erstellt haben.
 
-1. Erweitern Sie Ihre Funktions-App, bewegen Sie den Cursor über die Funktionssammlung, und klicken Sie anschließend auf die Schaltfläche **Hinzufügen** (**+**) neben **Funktionen**.
-   Durch diese Aktion wird der Vorgang der Funktionserstellung gestartet. Die folgende Animation veranschaulicht die Aktion:
+1. Klicken Sie neben **Funktionen** auf die Schaltfläche **Hinzufügen** (**+**), um den Funktionserstellungsprozess zu starten. 
+   Auf der Seite werden alle unterstützten Trigger angezeigt.
 
-   ![Animation des Pluszeichens, das angezeigt wird, wenn Sie den Cursor über das Menüelement „Funktionen“ bewegen](../media/3-func-app-plus-hover-small.gif)
-
-   Auf der Seite wird der vollständige Satz der unterstützten Trigger angezeigt.
-
-1. Wählen Sie **HTTP-Trigger** aus. Dies ist der erste Eintrag im folgenden Screenshot:
-
-    ![Screenshot eines Teils der Benutzeroberfläche zur Auswahl der Triggervorlage, wobei der HTTP-Trigger zuerst angezeigt wird (oben links in der Abbildung).](../media/5-trigger-templates-small.png)
+1. Wählen Sie **HTTP-Trigger** aus.
 
 1. Füllen Sie das auf der rechten Seite angezeigte Dialogfeld **Neue Funktion** mit den folgenden Werten aus.
 
     | Feld | Wert |
     |----------|--------|
-    | Sprache | **JavaScript** |
     | Name     | [!INCLUDE [func-name-find](./func-name-find.md)] |
     | Autorisierungsstufe | **Funktion** |
 

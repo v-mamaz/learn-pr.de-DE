@@ -9,29 +9,18 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: fb8021f1b3e30929c1ed44ed71123eb31d660d90
-  ms.sourcegitcommit: a8799fdd6ae2096cef12e66b142b138db8aba56d
+  ms.openlocfilehash: 94a82dfeded304354660591f8c48745b8cbfb308
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/23/2018
-  ms.locfileid: "46704155"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437702"
 durationInMinutes: 2
 content: >
   [!include[](includes/10-knowledge-check.md)]
 quiz:
-  title: Überprüfen Sie Ihr Wissen
+  title: Wissensbeurteilung
   questions:
-  - content: Welche Art von Azure Functions-Trigger erlaubt es, dass Ihre Funktion durch eine HTTP-Anforderung aufgerufen wird?
-    choices:
-    - content: HTTP-Trigger
-      isCorrect: true
-      correctExplanation: HTTP-Trigger werden zum Aufrufen von Funktionen aus HTTP-Anforderungen verwendet.
-    - content: Event Hub-Trigger
-      isCorrect: false
-      incorrectExplanation: HTTP-Trigger werden zum Aufrufen von Funktionen aus HTTP-Anforderungen verwendet.
-    - content: Warteschlangentrigger
-      isCorrect: false
-      incorrectExplanation: HTTP-Trigger werden zum Aufrufen von Funktionen aus HTTP-Anforderungen verwendet.
   - content: Wie binden Sie eine Funktion an Twilio, um SMS-Nachrichten zu senden?
     choices:
     - content: Durch Zurückgeben der SMS-Nachrichten als Rückgabewert der Funktion

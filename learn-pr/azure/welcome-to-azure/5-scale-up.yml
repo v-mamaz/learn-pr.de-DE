@@ -10,39 +10,25 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   zone_pivot_groups: platform-cloud
-  ms.openlocfilehash: 9f6ec458cb233fe0d035d73d99d46a5de91ce569
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 0eecdb25b1f7b3db879cf53658ef1ce5339d4e76
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46340693"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437305"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 4
 content: >
   [!include[](includes/5-scale-up.md)]
-quiz:
-  title: Überprüfen Sie Ihre Kenntnisse
-  questions:
-  - content: 'Azure ist:'
-    choices:
-    - content: Die Cloud Computing-Plattform von Microsoft, mit der Computeleistung, Speicher und Dienste über das Internet bereitgestellt werden, indem ein Modell mit nutzungsbasierter Bezahlung verwendet wird.
-      isCorrect: true
-      correctExplanation: Mit Azure erhalten Sie Zugriff auf reine Computeleistung und Speicher sowie auf Dienste, um neue Softwaremodelle zu erkunden, z.B. intelligente Bots und Mixed Reality.
-    - content: Ein einzelnes Rechenzentrum in Redmond, Washington.
-      isCorrect: false
-      incorrectExplanation: Azure besteht aus Rechenzentren, die auf der ganzen Welt verteilt sind.
-    - content: Nur ein „weiterer Ort zum Ausführen Ihrer virtuellen Computer“.
-      isCorrect: false
-      incorrectExplanation: Mit Azure wird nicht nur reine Computeleistung bereitgestellt, z.B. in Form von virtuellen Computern, sondern Sie erhalten auch Zugriff auf viele Dienste, mit denen Sie neue Softwaremodelle erkunden können, z.B. intelligente Bots und Mixed Reality.
-  - content: Wann ist es ratsam, Ihre Bereitstellung _horizontal hochzuskalieren_?
-    choices:
-    - content: Wenn eine Anwendung oder ein Dienst eine leistungsfähigere CPU oder mehr Arbeitsspeicher benötigt, um eine schnellere Ausführung zu ermöglichen.
-      isCorrect: false
-      incorrectExplanation: In diesem Fall können Sie _zentral hochskalieren_, indem Sie Ihre Anwendung oder Ihren Dienst auf leistungsstärkerer Hardware anordnen.
-    - content: Wenn Sie virtuelle Computer hinzufügen, um die Geschwindigkeit Ihrer Anwendung zu erhöhen.
-      isCorrect: true
-      correctExplanation: Beim horizontalen Hochskalieren werden zusätzliche Systeme hinzugefügt, z.B. virtuelle Computer. So können Sie beispielsweise viele virtuelle Computer erstellen, die auf genau die gleiche Weise konfiguriert sind, und einen Lastenausgleich verwenden, um die Arbeit darauf zu verteilen.
-    - content: Wenn Sie überschüssige Kapazität nutzen, die Sie nicht benötigen.
-      isCorrect: false
-      incorrectExplanation: In diesem Fall können Sie _horizontal herunterskalieren_, indem Sie Systeme herunterfahren, die Sie derzeit nicht benötigen.
+tasks:
+- action: exists
+  environment: azure
+  azure:
+    resource:
+      type: Microsoft.Compute/virtualMachines
+      name: myVM
+      properties:
+        hardwareProfile:
+          vmSize: Standard_DS3_v2
+  hint: Führen Sie den Befehl `az vm resize` wie angezeigt aus, um die Größe Ihres virtuellen Computers zu ändern.
