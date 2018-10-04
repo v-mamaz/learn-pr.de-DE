@@ -35,9 +35,9 @@ In dieser Einheit laden Sie Ihre ASP.NET Core-Anwendung in Azure App Service hoc
 
 1. Im Azure-Portal wird die Seite **Übersicht** des neu erstellten Bereitstellungsslots angezeigt.
 
-    ![Stagingbereitstellungsslot](../media/7-deployment-slot-staging.png)
+    ![Screenshot: Staging-Bereitstellungsslots](../media/7-deployment-slot-staging.png)
 
-    Beachten Sie die **URL** des Stagingbereitstellungsslots. Die URL unterscheidet sich von der zuvor angezeigten URL. Sie enthält den angefügten Slotnamen.
+    Beachten Sie die **URL** des Staging-Bereitstellungsslots. Die URL unterscheidet sich von der zuvor angezeigten URL. Sie enthält den angefügten Slotnamen.
 
     Ein Bereitstellungsslot wird Azure-intern als vollständige App Service-App behandelt. Allerdings handelt es sich um einen speziellen Typ, der ein untergeordnetes Element der ursprünglichen App ist und nicht gegen die ursprüngliche App ausgetauscht werden kann.
 

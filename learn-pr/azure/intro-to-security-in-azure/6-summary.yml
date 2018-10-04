@@ -9,11 +9,48 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9c20d9ad1268e27f22c1715e1897b92e5e291ae2
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: d5fc2c22e727a2f272fa31b50b232f9865a23a6a
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46344964"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437339"
 durationInMinutes: 3
-content: '[!include[](includes/6-summary.md)]'
+content: >
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: Für die Cloudsicherheit sind Sie und Ihr Cloudanbieter gemeinsam verantwortlich. Welche Kategorie der Clouddienste erfordert den größten Sicherheitsaufwand Ihrerseits?
+    choices:
+    - content: Infrastructure-as-a-Service (IaaS)
+      isCorrect: true
+      correctExplanation: In diesem Fall stellt der Cloudanbieter physische Sicherheit für Computeressourcen bereit. Sie sind jedoch weiterhin dafür verantwortlich, Ihre Betriebssysteme und Software zu patchen und zu schützen sowie Ihr Netzwerk so zu konfigurieren, dass es sicher ist.
+    - content: Platform-as-a-Service (PaaS)
+      isCorrect: false
+      incorrectExplanation: In diesem Fall kümmert sich der Cloudanbieter um mehr Sicherheitsrisiken als dies bei anderen Kategorien der Fall ist. Dies umfasst die Bereitstellung physischer Sicherheit, und dass Betriebssysteme gepatcht und auf dem neuesten Stand sind.
+    - content: Software-as-a-Service (SaaS)
+      isCorrect: false
+      incorrectExplanation: In diesem Fall kümmert sich der Cloudanbieter um die meisten Sicherheitsrisiken für Sie. Ihre Hauptverantwortung liegt bei der Bereitstellung von ordnungsgemäßem Zugriff auf die Software für die Benutzer Ihrer Organisation.
+  - content: Wie können Sie ein Konto am einfachsten deaktivieren, wenn ein Mitarbeiter Ihr Unternehmen verlässt?
+    choices:
+    - content: Erzwingen der mehrstufigen Authentifizierung (MFA)
+      isCorrect: false
+      incorrectExplanation: Obwohl die mehrstufige Authentifizierung (MFA) zusätzliche Sicherheit bietet, indem mindestens zwei Methoden für eine vollständige Authentifizierung benötigt werden, können Sie damit keine inaktiven Konten deaktivieren.
+    - content: Überwachen von Anmeldeversuchen
+      isCorrect: false
+      incorrectExplanation: Während die Überwachung Ihnen dabei helfen kann, unzulässige Zugriffsversuche auf einen Ihrer Dienste zu ermitteln, kann die Überwachung alleine Ihnen nicht bei der Deaktivierung inaktiver Konten helfen.
+    - content: Aktivieren von einmaligem Anmelden (Single Sign-On, SSO)
+      isCorrect: true
+      correctExplanation: SSO vereint die Benutzeridentität an einem Punkt, weshalb Sie ein inaktives Konto in nur einem Schritt deaktivieren können.
+  - content: Welche der folgenden Optionen ist die _effektivste_ zum Schützen vertraulicher Kundendaten?
+    choices:
+    - content: Verschlüsseln von Daten in Ihrer Datenbank
+      isCorrect: false
+      incorrectExplanation: Es ist wichtig, dass Ihre Daten in Ihrer Datenbank verschlüsselt sind (Verschlüsselung ruhender Daten). Ihre Daten können jedoch auch von Dritten gelesen werden, wenn sie systemübergreifend über das Netzwerk übertragen werden.
+    - content: Verschlüsseln von Daten bei der Übertragung über das Netzwerk
+      isCorrect: false
+      incorrectExplanation: Es ist wichtig, Ihre Daten bei der Übertragung über das Netzwerk zu verschlüsseln (Verschlüsselung während der Übertragung). Ihre Daten können jedoch auch anfällig sein, wenn sie sich in der Datenbank befinden.
+    - content: Verschlüsseln von Daten in Ihrer Datenbank und bei der Übertragung über das Netzwerk
+      isCorrect: true
+      correctExplanation: Durch das ständige Verschlüsseln Ihrer Daten in Ihrer Datenbank und bei Übertragung über das Netzwerk wird das Risiko, dass ein Angreifer auf Ihre Daten in Nur-Text zugreift, minimiert.

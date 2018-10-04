@@ -4,15 +4,13 @@ In dieser Übung erfahren Sie, wie Sie eine Azure-Funktion erstellen, die eine H
 
 Verwenden Sie Ihre vorhandene Azure Functions-Anwendung, und fügen Sie einen HTTP-Trigger hinzu.
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit dem Konto an, über das Sie die Sandbox aktiviert haben.
+1. Stellen Sie sicher, dass Sie beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit dem gleichen Konto angemeldet sind, über das Sie die Sandbox aktiviert haben.
 
-1. Navigieren Sie zum Bildschirm **Alle Ressourcen**, und wählen Sie Ihre Funktions-App aus.
+1. Navigieren Sie zur Anzeige **Alle Ressourcen**, und wählen Sie Ihre Funktions-App aus.
 
 1. Zeigen Sie auf **Funktionen**, und klicken Sie auf das Pluszeichen (+).
 
-1. Klicken Sie auf **HTTP-Trigger**.
-
-1. Wählen Sie **C#** als Sprache aus.
+1. Wählen Sie **HTTP-Trigger** aus.
 
 1. Behalten Sie für **Name** den Standardwert bei.
 

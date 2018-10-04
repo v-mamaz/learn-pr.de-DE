@@ -164,7 +164,7 @@ Suchen Sie nach dem 64-GB-Laufwerk, das wir erstellt haben. Hier sehen Sie, dass
 
 1. Im nächsten Schritt schreiben Sie jetzt mit dem Befehl `mkfs` ein Dateisystem auf die Partition. Wir müssen den Dateisystemtyp und den Gerätenamen angeben, den wir aus der Ausgabe `fdisk` erhalten haben:
     - Übergeben Sie `-t ext4`, um ein _ext4_-Dateisystem zu erstellen.
-    - Der Gerätename ist `/dev/sdc`.
+    - Der Gerätename lautet `/dev/sdc1`.
 
     ```bash
     sudo mkfs -t ext4 /dev/sdc1

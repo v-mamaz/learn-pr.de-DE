@@ -18,68 +18,81 @@ Wie in der vorherigen Einheit bereits erläutert wurde, verfügt Azure über Vor
 
 1. Daraufhin werden die Ressourcen für die Gruppe angezeigt. Klicken Sie auf den Namen der Funktions-App, die Sie in der vorherigen Übung erstellt haben, indem Sie das Element **escalator-functions-xxxxxxx** (auch durch das Blitzsymbol gekennzeichnet) auswählen.
 
-  ![Screenshot: Das hervorgehobene Blatt „Alle Ressourcen“ sowie die von Ihnen erstellten Funktions-App „escalator“ im Azure-Portal.](../media/5-access-function-app.png)
+    ![Screenshot: Das hervorgehobene Blatt „Alle Ressourcen“ sowie die erstellte App „escalator-functions“ im Azure-Portal.](../media/5-access-function-app.png)
 
-1. Im linken Menü wird der Name Ihrer Funktions-App und ein Untermenü mit den folgenden drei Elementen angezeigt: *Funktionen*, *Proxys* und *Slots*.  Klicken Sie auf **Funktionen**, und klicken Sie dann am oberen Rand der angezeigten Seite auf **Neue Funktion**.
+<!-- Start temporary fix for issue #2498. -->
+> [!IMPORTANT]
+> Die Übungen in diesem Modul können derzeit mit Azure Functions V1 ausgeführt werden. Befolgen Sie diese Schritte sorgfältig, um sicherzustellen, dass Ihre Funktions-App die V1-Runtimeversion verwendet. 
 
-  ![Screenshot: Funktionsliste für die Funktions-App im Azure-Portal, wobei das Menüelement „Funktionen“ und die Schaltfläche „Neue Funktion“ hervorgehoben sind.](../media/5-function-add-button.png)
+1. Wählen Sie aus der Liste **Funktions-Apps** Ihre Funktions-App aus.
+1. Wählen Sie **Plattformfeatures** aus.
+1. Wählen Sie in der Anzeige **Plattformfeatures** unter **Allgemeine Einstellungen** die **Einstellungen für Funktions-Apps** aus.
+1. Wählen Sie in der **Runtimeversion** den Eintrag *~1* aus.
+1. Schließen Sie die **Einstellungen für Funktions-Apps**.
+
+Die Funktions-App ist nun für die Verwendung der Azure Functions V1-Runtime konfiguriert. Wir können nun mit der Erstellung unserer ersten Funktion fortfahren.
+<!-- End temporary fix for issue #2498. --> 
+
+1. Im linken Menü werden der Name Ihrer Funktions-App und ein Untermenü mit den folgenden drei Elementen angezeigt: *Funktionen*, *Proxys* und *Slots*.  
+
+1. Klicken Sie auf **Funktionen**, und klicken Sie dann am oberen Rand der angezeigten Seite auf **Neue Funktion**.
+
+    ![Screenshot: Funktionsliste für die Funktions-App im Azure-Portal, wobei das Menüelement „Funktionen“ und die Schaltfläche „Neue Funktion“ hervorgehoben sind.](../media/5-function-add-button.png)
 
 1. Klicken Sie auf dem Bildschirm „Schnellstart“ im Abschnitt **Get started on your own** (Selbstständig einsteigen) auf den Link **Benutzerdefinierte Funktion** (wie im folgenden Screenshot). Wenn der Bildschirm „Schnellstart“ nicht angezeigt wird, klicken Sie am oberen Rand der Seite auf den Link **Go to the quickstart** (Zum Schnellstart wechseln).
 
-  ![Screenshot: Das Blatt „Schnellstart“ im Azure-Portal mit der hervorgehobenen Schaltfläche „Benutzerdefinierte Funktion“ im Abschnitt „Selbstständig einsteigen“.](../media/5-custom-function.png)
+    ![Screenshot: Das Blatt „Schnellstart“ im Azure-Portal mit der hervorgehobenen Schaltfläche „Benutzerdefinierte Funktion“ im Abschnitt „Erste Schritte“.](../media/5-custom-function.png)
 
-1. Wählen Sie wie im folgenden Screenshot gezeigt die **JavaScript**-Implementierung der Vorlage **HTTP-Trigger** aus der auf dem Bildschirm angezeigten Liste von Vorlagen aus.
+1. Wählen Sie, wie im folgenden Screenshot gezeigt, die Vorlage **HTTP-Trigger** aus der in der Anzeige dargestellten Liste mit Vorlagen aus.
 
-1. Geben Sie **DriveGearTemperatureService** in das Feld „Name“ des nun angezeigten Dialogfelds **Neue Funktion** ein. Belassen Sie die Autorisierungsstufe auf „Funktion“, und klicken Sie auf die Schaltfläche **Erstellen**, um die Funktion zu erstellen.
-
-  ![Screenshot: Das Azure-Portal mit den neuen Funktionsoptionen für HTTP-Trigger, das Feld für die Sprache ist auf JavaScript und der Name ist auf DriveGearTemperatureService festgelegt.](../media/5-create-httptrigger-form.png)
+1. Geben Sie im Dialogfeld **Neue Funktion**, das angezeigt wird, **DriveGearTemperatureService** in das Namensfeld ein. Belassen Sie die Autorisierungsstufe auf „Funktion“, und klicken Sie auf die Schaltfläche **Erstellen**, um die Funktion zu erstellen.
 
 1. Nach Abschluss der Funktionserstellung wird der Code-Editor mit dem Inhalt der Codedatei *index.js* geöffnet. Der Standardcode, den die Vorlage für uns generiert hat, wird im folgenden Codeausschnitt aufgeführt.
 
-```javascript
-module.exports = function (context, req) {
-    context.log('JavaScript HTTP trigger function processed a request.');
+    ```javascript
+    module.exports = function (context, req) {
+        context.log('JavaScript HTTP trigger function processed a request.');
+    
+        if (req.query.name || (req.body && req.body.name)) {
+            context.res = {
+                // status: 200, /* Defaults to 200 */
+                body: "Hello " + (req.query.name || req.body.name)
+            };
+        }
+        else {
+            context.res = {
+                status: 400,
+                body: "Please pass a name on the query string or in the request body"
+            };
+        }
+        context.done();
+    };
+    ```
 
-    if (req.query.name || (req.body && req.body.name)) {
-        context.res = {
-            // status: 200, /* Defaults to 200 */
-            body: "Hello " + (req.query.name || req.body.name)
-        };
-    }
-    else {
-        context.res = {
-            status: 400,
-            body: "Please pass a name on the query string or in the request body"
-        };
-    }
-    context.done();
-};
-```
+    Unsere-Funktion erwartet einen Namen, der entweder über die Abfragezeichenfolge der HTTP-Anforderung oder als Teil des Anforderungstexts übergeben wird. Die Funktion antwortet mit der Meldung **Hello, {Name}**, die den in der Anforderung gesendeten Namen wiedergibt.
 
-Unsere-Funktion erwartet einen Namen, der entweder über die Abfragezeichenfolge der HTTP-Anforderung oder als Teil des Anforderungstexts übergeben wird. Die Funktion antwortet mit der Meldung **Hello, {Name}**, die den in der Anforderung gesendeten Namen wiedergibt.
+    Auf der rechten Seite der Quellansicht sehen Sie zwei Registerkarten. Auf der Registerkarte **Datei anzeigen** werden der Code und die Konfigurationsdatei Ihrer Funktion aufgelistet.  Wählen Sie **function.json** aus, um die Konfiguration der Funktion anzuzeigen, die in etwa wie folgt aussehen sollte:
 
-Auf der rechten Seite der Quellansicht sehen Sie zwei Registerkarten. Auf der Registerkarte **Datei anzeigen** werden der Code und die Konfigurationsdatei Ihrer Funktion aufgelistet.  Wählen Sie **function.json** aus, um die Konfiguration der Funktion anzuzeigen, die in etwa wie folgt aussehen sollte:
-
-```javascript
-{
-    "disabled": false,
-    "bindings": [
+    ```javascript
     {
-        "authLevel": "function",
-        "type": "httpTrigger",
-        "direction": "in",
-        "name": "req"
-    },
-    {
-        "type": "http",
-        "direction": "out",
-        "name": "res"
+        "disabled": false,
+        "bindings": [
+        {
+            "authLevel": "function",
+            "type": "httpTrigger",
+            "direction": "in",
+            "name": "req"
+        },
+        {
+            "type": "http",
+            "direction": "out",
+            "name": "res"
+        }
+        ]
     }
-    ]
-}
-```
+    ```
 
-Diese Konfiguration deklariert, dass die Funktion ausgeführt wird, sobald sie eine HTTP-Anforderung empfängt. Die Ausgabebindung deklariert, dass die Antwort als HTTP-Antwort gesendet wird.
+    Diese Konfiguration deklariert, dass die Funktion ausgeführt wird, sobald sie eine HTTP-Anforderung empfängt. Die Ausgabebindung deklariert, dass die Antwort als HTTP-Antwort gesendet wird.    
 
 ## <a name="test-the-function"></a>Testen der Funktion
 
@@ -103,7 +116,7 @@ Funktions- und Masterschlüssel finden Sie im Abschnitt **Verwalten**, wenn die 
 
 1. Erweitern Sie Ihre Funktion, und wählen Sie den Abschnitt **Verwalten** aus. Zeigen Sie den Standardfunktionsschlüssel an, und kopieren Sie ihn in die Zwischenablage.
 
-  ![Screenshot des Blatts „Verwalten“ im Azure-Portal mit hervorgehobenem eingeblendeten Funktionsschlüssel.](../media/5-get-function-key.png)
+    ![Screenshot des Blatts „Verwalten“ im Azure-Portal mit hervorgehobenem eingeblendeten Funktionsschlüssel.](../media/5-get-function-key.png)
 
 1. Formatieren Sie als Nächstes über die Befehlszeile, in der Sie das **cURL**-Tool installiert haben, einen cURL-Befehl mit der URL für Ihre Funktion und den Funktionsschlüssel.
 
@@ -118,8 +131,11 @@ Funktions- und Masterschlüssel finden Sie im Abschnitt **Verwalten**, wenn die 
 
 Die Funktion antwortet mit dem Text `"Hello Azure Function"`.
 
+> [!CAUTION]
+> Wenn Sie Windows verwenden, führen Sie `cURL` über die Befehlszeile aus. PowerShell verfügt über einen *curl*-Befehl. Dies ist jedoch ein Alias für „Invoke-WebRequest“ und ist nicht mit `cURL` identisch.
+
 > [!NOTE]
-> Sie können auch über den Abschnitt mit der Registerkarte **Testen** der jeweiligen Funktion einen Test für eine ausgewählte Funktion durchführen, jedoch nicht überprüfen, ob das Funktionsschlüsselsystem funktioniert, da es in diesem Fall nicht erforderlich ist. Fügen Sie die entsprechenden Header- und Parameterwerte in die Testschnittstelle ein, und klicken Sie auf die Schaltfläche **Ausführen**, um die Testausgabe anzuzeigen.
+> Sie können auch über den Abschnitt mit der Registerkarte **Testen** der jeweiligen Funktion einen Test für eine ausgewählte Funktion durchführen. Allerdings können Sie nicht überprüfen, ob das Funktionsschlüsselsystem funktioniert, da es in diesem Fall nicht erforderlich ist. Fügen Sie die entsprechenden Header- und Parameterwerte in die Testschnittstelle ein, und klicken Sie auf die Schaltfläche **Ausführen**, um die Testausgabe anzuzeigen.
 
 ## <a name="add-business-logic-to-the-function"></a>Hinzufügen von Geschäftslogik zur Funktion
 
@@ -222,10 +238,10 @@ In diesem Fall verwenden wir den Bereich **Test** im Portal, um unsere Funktion 
 
 1. Klicken Sie auf **Ausführen**, und zeigen Sie die Antwort im Ausgabebereich an. Um Protokollmeldungen anzuzeigen, öffnen Sie die Registerkarte **Protokolle** im Flyoutmenü unten auf der Seite. Im folgenden Screenshot wird eine Beispielantwort im Ausgabebereich und Nachrichten im Bereich **Protokolle** angezeigt.
 
-![Screenshot: Blatt „Funktionen-Editor“ im Azure-Portal mit den angezeigten Registerkarten „Test“ und „Protokolle“. Eine Beispielantwort der Funktion wird im Ausgabebereich angezeigt.](../media/5-portal-testing.png)
+    ![Screenshot: Blatt „Funktionen-Editor“ im Azure-Portal mit den angezeigten Registerkarten „Test“ und „Protokolle“. Eine Beispielantwort der Funktion wird im Ausgabebereich angezeigt.](../media/5-portal-testing.png)
 
-Im Ausgabebereich sehen Sie, dass unser Statusfeld korrekt zu jedem Messwert hinzugefügt wurde.
+    Im Ausgabebereich sehen Sie, dass unser Statusfeld korrekt zu jedem Messwert hinzugefügt wurde.
 
-Sie können auch auf dem **Dashboard „Monitor“** prüfen, ob die Anforderung in Application Insights protokolliert wurde.
+    Sie können auch auf dem **Dashboard „Monitor“** prüfen, ob die Anforderung in Application Insights protokolliert wurde.
 
-![Screenshot: Die vorherigen Testergebnisse im Dashboard „Monitor“ im Azure-Portal.](../media/5-app-insights.png)
+    ![Screenshot: Die vorherigen Testergebnisse im Dashboard „Monitor“ im Azure-Portal.](../media/5-app-insights.png)

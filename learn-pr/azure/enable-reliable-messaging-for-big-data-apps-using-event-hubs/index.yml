@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 5c86b895b02f8cbbe4cabc69143c4502f890fcca
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46338485"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47138798"
 title: Aktivieren von zuverlässigem Messaging für Big Data-Anwendungen mithilfe von Azure Event Hubs
 summary: Indem Sie Anwendungen zum Empfangen und Senden von Nachrichten mit Event Hubs verbinden, können Sie auch extrem hohe Lasten verarbeiten, ohne dabei Daten zu verlieren.
 abstract: >

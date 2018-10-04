@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 17506fa1ee9b2aa01bd2cca12949975409f2babc
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46344117"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47128326"
 title: Erstellen eines Azure Database for PostgreSQL-Servers
 summary: Azure Database for PostgreSQL bietet eine vollständig verwaltete, unternehmensgerechte Community-PostgreSQL-Datenbank als Dienst. Erfahren Sie, wie dieser Dienst erstellt, bereitgestellt und mit Ihren Anwendungen verbunden wird.
 abstract: >

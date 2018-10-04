@@ -1,4 +1,4 @@
-Sie arbeiten seit Kurzem für ein Startup, das die Vitaminindustrie mithilfe von leicht anpassbaren Angeboten und kostengünstigen Monatsabonnements grundlegend verändert. Das Geschäft über die E-Commerce-Website läuft gut, doch in Ihrem Rechenzentrum treten erste Probleme aufgrund der steigenden Nachfrage durch die Benutzer auf. Ihr Dienst fällt aus, wenn zu viele Benutzer sich gleichzeitig anmelden. Darüber hinaus sind zu viele geplante und ungeplante Wartungsfenster erforderlich.
+Sie arbeiten seit Kurzem für ein Start-up, das die Vitaminindustrie mithilfe von leicht anpassbaren Angeboten und kostengünstigen Monatsabonnements grundlegend verändert. Das Geschäft über die E-Commerce-Website läuft gut, doch in Ihrem Rechenzentrum treten erste Probleme aufgrund der steigenden Nachfrage durch die Benutzer auf. Ihr Dienst fällt aus, wenn zu viele Benutzer sich gleichzeitig anmelden. Darüber hinaus sind zu viele geplante und ungeplante Wartungsfenster erforderlich.
 
 ![Überlasteter Server im Rechenzentrum](../media/1-heading.png)
 

@@ -1,4 +1,4 @@
-Sie haben bereits die Schlagworte &mdash; _Skalierung_, _Elastizität_ und _Microservices_ im Zusammenhang mit der Cloud gehört. Vielleicht haben Sie gesehen, wie viel Erfolg andere Unternehmen mit der Cloud haben. Vielleicht haben Sie sich auch schon gefragt, wie Sie selbst die Cloud dazu nutzen können, geschäftliche Herausforderungen zu meistern oder Ihre eigene Karriere voranzutreiben. Wussten Sie, dass 90 % der Fortune Global 500-Unternehmen Azure nutzen?
+Sie haben bereits die Schlagworte &mdash; _Skalierung_, _Elastizität_ und _Microservices_ im Zusammenhang mit der Cloud gehört. Vielleicht haben Sie gesehen, wie viel Erfolg andere Unternehmen mit der Cloud haben. Vielleicht haben Sie sich auch schon gefragt, wie Sie selbst die Cloud dazu nutzen können, geschäftliche Herausforderungen zu meistern oder Ihre eigene Karriere voranzutreiben. Wussten Sie, dass mehr als 90 % der Fortune 500-Unternehmen die Microsoft Cloud nutzen?
 
 ![Das Azure-Logo, das den Beginn Ihrer Fortbildung darstellt](../media/1-heading.png)
 

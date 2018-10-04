@@ -14,9 +14,10 @@
     | **Abonnement** | **Concierge-Abonnement** | Das Abonnement, unter dem diese neue Funktions-App erstellt wird. |
     | **Ressourcengruppe**|  **<rgn>[Name der Sandboxressourcengruppe]</rgn>** | Der Name der Ressourcengruppe, in der die Funktions-App erstellt wird.<br/><br/>Achten Sie darauf, die Option **Vorhandene verwenden** auszuwählen und die Ressourcengruppe aus der letzten Übung zu verwenden. Auf diese Weise bleiben alle Ressourcen zusammen, die in diesem Modul erstellt wurden. |
     | **Betriebssystem** | Windows | Das Betriebssystem, das die Funktions-App hostet.  |
-    | **Hosting** |   Verbrauchsplan | Der Hostingplan, der definiert, wie Ihre Ressourcen der Funktionen-App zugewiesen werden Im **Standard-Verbrauchstarif** werden Ressourcen je nach Bedarf der Funktionen dynamisch hinzugefügt. Beim [serverlosen Hosting](https://azure.microsoft.com/overview/serverless-computing/) bezahlen Sie nur die Zeit, in der Ihre Funktionen ausgeführt werden.   |
+    | **Hostingplan** |   Verbrauchsplan | Der Hostingplan, der definiert, wie Ihre Ressourcen der Funktionen-App zugewiesen werden Im **Standard-Verbrauchstarif** werden Ressourcen je nach Bedarf der Funktionen dynamisch hinzugefügt. Beim [serverlosen Hosting](https://azure.microsoft.com/overview/serverless-computing/) bezahlen Sie nur die Zeit, in der Ihre Funktionen ausgeführt werden.   |
     | **Speicherort** | Wählen Sie den gleichen Standort wie zuvor aus. | Wählen Sie eine Region in Ihrer Nähe oder in der Nähe von anderen Diensten aus, auf die Ihre Funktionen zugreifen.<br/><br/>Wählen Sie dieselbe Region aus, die Sie in der letzten Übung beim Erstellen des Textanalyse-API-Kontos verwendet haben. |
-    | **Speicherkonto** |  Global eindeutiger Name |  Der Name des neuen Speicherkontos, das von Ihrer Funktions-App verwendet wird. Speicherkontonamen müssen zwischen 3 und 24 Zeichen lang sein und dürfen nur Zahlen und Kleinbuchstaben enthalten. In diesem Dialogfeld wird das Feld automatisch mit einem eindeutigen Namen gefüllt, der aus dem Namen abgeleitet wird, den Sie der App gegeben haben. Sie können aber auch einen anderen Namen oder sogar ein vorhandenes Konto verwenden. |
+    | **Laufzeitstapel** | JavaScript | Der Beispielcode in diesem Modul ist in JavaScript geschrieben.  |
+    | **Speicher** |  Global eindeutiger Name |  Der Name des neuen Speicherkontos, das von Ihrer Funktions-App verwendet wird. Speicherkontonamen müssen zwischen 3 und 24 Zeichen lang sein und dürfen nur Zahlen und Kleinbuchstaben enthalten. In diesem Dialogfeld wird das Feld automatisch mit einem eindeutigen Namen gefüllt, der aus dem Namen abgeleitet wird, den Sie der App gegeben haben. Sie können aber auch einen anderen Namen oder sogar ein vorhandenes Konto verwenden. |
 
 1. Klicken Sie auf **Erstellen**, um die Funktions-App bereitzustellen.
 
@@ -35,19 +36,28 @@
 
 Da Sie nun über eine Funktions-App verfügen, ist es an der Zeit, eine Funktion zu erstellen. Eine Funktion wird durch einen Trigger aktiviert. In diesem Modul verwenden Sie einen Warteschlangentrigger. Die Runtime fragt eine Warteschlange ab und startet diese Funktion, um eine neue Nachricht zu verarbeiten.
 
-1. Erweitern Sie Ihre neue Funktions-App, und bewegen Sie den Mauszeiger dann auf die Sammlung **Funktionen**. Klicken Sie auf die Schaltfläche „Hinzufügen“ (__+__), wenn sie angezeigt wird, um die Erstellung der Funktion zu starten.
+<!-- Start temporary fix for issue #2498. -->
+> [!IMPORTANT]
+> Die Übungen in diesem Modul können derzeit mit Azure Functions V1 ausgeführt werden. Befolgen Sie diese Schritte sorgfältig, um sicherzustellen, dass Ihre Funktions-App die V1-Runtimeversion verwendet. 
 
-1. Klicken Sie auf der Seite **Get started quickly** (Schneller Einstieg), die angezeigt wird, unten auf die Option **Benutzerdefinierte Funktion**, mit der die Liste mit den verfügbaren Funktionsvorlagen geladen wird.
+1. Wählen Sie aus der Liste **Funktions-Apps** Ihre Funktions-App aus.
+1. Wählen Sie **Plattformfeatures** aus.
+1. Wählen Sie in der Anzeige **Plattformfeatures** unter **Allgemeine Einstellungen** die **Einstellungen für Funktions-Apps** aus.
+1. Wählen Sie in der **Runtimeversion** den Eintrag *~1* aus.
+1. Schließen Sie die **Einstellungen für Funktions-Apps**.
 
-1. Wählen Sie unter dem Eintrag **Warteschlangentrigger** der Vorlagenliste die Option **JavaScript** aus.
+Die Funktions-App ist nun für die Verwendung der Azure Functions V1-Runtime konfiguriert. Wir können nun mit der Erstellung unserer ersten Funktion fortfahren.
+<!-- End temporary fix for issue #2498. -->  
 
-    ![Screenshot: Azure Functions-Vorlagen mit Auswahl von JavaScript unter dem Eintrag „Warteschlangentrigger“](../media/quickstart-select-queue-trigger.png)
+1. Klicken Sie rechts neben **Funktionen** auf die Schaltfläche „Hinzufügen“ (__+__).
+ 1. Klicken Sie auf der Seite **Schneller Einstieg**, die nun angezeigt wird, unten auf die Option **Benutzerdefinierte Funktion**, mit der die Liste mit den verfügbaren Funktionsvorlagen geladen wird.
+
+1. Wählen Sie aus der Liste der Vorlagen den Eintrag **Warteschlangentrigger** aus.
 
 4. Geben Sie im angezeigten Dialogfeld **Neue Funktion** die folgenden Werte ein.
 
     |Eigenschaft  |Wert  |
     |---------|---------|
-    |Sprache     |   **JavaScript**      |
     |Name     |   **discover-sentiment-function**      |
     |Warteschlangenname     |   **new-feedback-q**      |
     |Speicherkontoverbindung        |  **AzureWebJobsDashboard**       |

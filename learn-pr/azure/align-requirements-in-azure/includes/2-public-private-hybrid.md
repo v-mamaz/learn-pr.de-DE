@@ -8,7 +8,7 @@ Für den Benutzer werden die Details der Dienste abstrahiert. Sie können Comput
 
 Es gibt drei Bereitstellungsmodelle für Cloud Computing: öffentliche Cloud, private Cloud und Hybrid Cloud. Die folgende Abbildung stellt eine Übersicht über diese Bereitstellungsmodelle dar.
 
-![Eine Abbildung, die eine allgemeine Übersicht über Cloudbereitstellungsmodelle darstellt.](../media/2-cloud-deployment.png)
+![Eine Abbildung, die eine allgemeine Übersicht über Cloudbereitstellungsmodelle gibt.](../media/2-cloud-deployment.png)
 
 #### <a name="public-versus-private-versus-hybrid"></a>Öffentliche Cloud, private Cloud und Hybrid Cloud im Vergleich
 

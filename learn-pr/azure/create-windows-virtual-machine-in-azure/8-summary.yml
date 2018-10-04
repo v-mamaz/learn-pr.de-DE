@@ -9,12 +9,49 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 76203955ef10f22d7150561d906e30b12c064321
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 452dcc7255f6522b8ad790700323e9ac5b11bf1a
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46342772"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437815"
 durationInMinutes: 3
 azureSandbox: true
-content: '[!include[](includes/8-summary.md)]'
+content: >
+  [!include[](includes/8-summary.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: Welchen Port würden Sie beim Erstellen einer Windows-VM mit Regeln für eingehende Ports öffnen, um den Remotedesktopzugriff zuzulassen?
+    choices:
+    - content: HTTPS
+      isCorrect: false
+      incorrectExplanation: Die Remotedesktopverbindung verwendet nicht das HTTPS-Protokoll.
+    - content: SSH (22)
+      isCorrect: false
+      incorrectExplanation: Die Remotedesktopverbindung verwendet nicht das SSH-Protokoll.
+    - content: RDP (3389)
+      isCorrect: true
+      correctExplanation: Das Remotedesktopprotokoll (RDP) verwendet standardmäßig Port 3389. Dieser ist also der Standardport, den Sie öffnen, wenn Sie einen RDP-Client verwenden möchten, um Ihre Windows-VM zu verwalten.
+  - content: Angenommen, Sie verfügen über eine Anwendung, die auf einer Windows-VM in Azure ausgeführt wird. An welcher Stelle sollte die App Datendateien speichern?
+    choices:
+    - content: Auf dem Betriebssystemdatenträger (C:)
+      isCorrect: false
+      incorrectExplanation: Sie können Datendateien auf dem Betriebssystemdatenträger speichern. Für eine hohe Leistung sollten Sie am besten einen Datenträger mit SSD Premium verwenden, was jedoch eine sehr kostspielige Option zum Speichern Ihrer Daten ist.
+    - content: Auf einem temporären Datenträger (D:)
+      isCorrect: false
+      incorrectExplanation: Der temporäre Datenträger ist nicht persistent. Sie sollten keine wichtigen Daten auf diesem Datenträger speichern.
+    - content: Auf einem angefügten Datenträger
+      isCorrect: true
+      correctExplanation: Dedizierte Datenträger sind allgemein die beste Option zum Speichern von Anwendungsdatendateien. Sie können größer als Betriebssystemdatenträger sein, und Sie können sie an die Kosten- und Leistungsanforderungen Ihrer Daten anpassen.
+  - content: Welche ist die letzte Regel, die in jeder Netzwerksicherheitsgruppe angewendet wird?
+    choices:
+    - content: Allow All (Alle zulassen)
+      isCorrect: false
+      incorrectExplanation: Diese Regel könnte dazu führen, dass unerwünschter Datenverkehr Zugriff erhält, wenn Ihre Regeln nicht ordnungsgemäß konfiguriert sind.
+    - content: Deny All (Alle ablehnen)
+      isCorrect: true
+      correctExplanation: Mit dieser Regel gehen Sie kein Risiko ein. Sie blockiert allen Datenverkehr, den Sie nicht explizit zugelassen haben.
+    - content: Sie konfigurieren die letzte Regel nach Ihren Anforderungen
+      isCorrect: false
+      incorrectExplanation: Die letzte Regel wird automatisch hinzugefügt, wenn die Sicherheitsgruppe erstellt wird, und Sie können sie nicht ändern.

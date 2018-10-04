@@ -9,11 +9,48 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: e5bd4a690b6c92d6d8c0ef54553db4c523e0f1ab
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 082f2ea2623a2ae161f0cc4ceee965a722a5fae1
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46341622"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437271"
 durationInMinutes: 5
-content: '[!include[](includes/5-summary.md)]'
+content: >
+  [!include[](includes/5-summary.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: Wer ist für das Durchführen von Softwareupdates in Ihren SQL-Datenbanken und dem zugrunde liegenden Betriebssystem zuständig?
+    choices:
+    - content: Sie sind selbst dafür zuständig. Sie müssen sich in regelmäßigen Abständen anmelden und die neuesten Sicherheitspatches und -updates installieren.
+      isCorrect: false
+      incorrectExplanation: Azure SQL-Datenbanken sind ein PaaS-Angebot (Platform-as-a-Service), d.h., der Verwaltungsaufwand ist sehr viel geringer für Sie.
+    - content: Microsoft Azure. Azure verwaltet Hardware, Softwareupdates und Betriebssystempatches für Sie.
+      isCorrect: true
+      correctExplanation: Azure SQL-Datenbanken sind ein PaaS-Angebot. Azure verwaltet Hardware, Softwareupdates und Betriebssystempatches für Sie.
+    - content: Niemand. Ihre Datenbank weist weiterhin ihre ursprünglichen Konfigurationen für Betriebssystem und Software auf.
+      isCorrect: false
+      incorrectExplanation: Azure SQL-Datenbanken sind ein PaaS-Angebot. Für gewöhnlich verwaltet und aktualisiert der Cloudanbieter PaaS-Dienste für Sie.
+  - content: Was ist ein _logischer Azure SQL-Server_?
+    choices:
+    - content: Ein administrativer Container für Ihre Datenbanken.
+      isCorrect: true
+      correctExplanation: Sie können Anmeldungen, Firewallregeln und Sicherheitsrichtlinien über den logischen Server steuern.
+    - content: Eine andere Bezeichnung für eine Instanz von Azure SQL-Datenbank.
+      isCorrect: false
+      incorrectExplanation: Denken Sie daran, dass Sie über mehrere Datenbankinstanzen verfügen können. Gibt es eine Möglichkeit, diese gemeinsam zu verwalten?
+    - content: Ein Server, der die logischen Regeln definiert, die Daten sortieren und vergleichen.
+      isCorrect: false
+      incorrectExplanation: _Sortierung_ bezieht sich auf die Regeln zum Sortieren und Vergleichen von Daten.
+  - content: Ihre Azure SQL-Datenbank bietet ausreichend Speicher- und Computeleistung. Sie stellen jedoch fest, dass Sie zusätzlichen E/A-Durchsatz benötigen. Welches Leistungsmodell ist dafür geeignet?
+    choices:
+    - content: DTU
+      isCorrect: false
+      incorrectExplanation: DTU, oder Datenbanktransaktionseinheit, bietet eine einfache, vorkonfigurierte Kaufoption. Um den E/A-Durchsatz zu erhöhen, müssten Sie zu einem höheren Tarif wechseln, der zudem Ihre Speicher- und Computeleistung erhöht, was nicht erforderlich ist.
+    - content: Virtueller Kern
+      isCorrect: true
+      correctExplanation: Ein V-Kern gibt Ihnen größere Kontrolle darüber, welche Compute- und Speicherressourcen Sie erstellen und bezahlen. Sie können den E/A-Durchsatz erhöhen, ohne Compute- oder Speicherressourcen verändern zu müssen.
+    - content: Pool für elastische SQL-Datenbanken
+      isCorrect: false
+      incorrectExplanation: Pools für elastische SQL-Datenbanken ermöglichen Ihnen, Compute- und Speicherressourcen zu kaufen, die von allen Datenbanken im Pool gemeinsam verwendet werden. Diese Option verbessert die E/A-Leistung nicht, da Sie lediglich mit einer Datenbank arbeiten.

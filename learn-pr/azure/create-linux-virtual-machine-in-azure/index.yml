@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: b81dd92ad5a4e0619c9129521bf2f275e3f30b01
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46338845"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47124457"
 title: Erstellen eines virtuellen Linux-Computers in Azure
 summary: In diesem Modul wird erörtert, wie Sie mithilfe des Azure-Portals einen virtuellen Linux-Computer erstellen.
 abstract: >

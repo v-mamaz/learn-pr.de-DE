@@ -12,11 +12,11 @@ dotnet add package WindowsAzure.Storage
 
 ## <a name="add-a-method-to-send-a-news-alert"></a>Hinzufügen einer Methode zum Senden neuer Benachrichtigungen
 
-Als Nächstes erstellen wir eine neue Methode, um eine Nachrichtenmeldung in eine Warteschlange zu stellen.
+Als Nächstes erstellen wir eine neue Methode, um eine Nachrichtenmeldung an eine Warteschlange zu senden.
 
 1. Öffnen Sie die Datei `Program.cs` in Ihrem Code-Editor.
 
-1. Fügen Sie am Anfang der Datei die folgenden Namespaces hinzu. Wir verwenden Typen von beiden Namespaces, um uns mit Azure Storage zu verbinden und dann mit Warteschlangen zu arbeiten.
+1. Fügen Sie am Anfang der Datei die folgenden Namespaces hinzu. Wir verwenden beide Namespacetypen, um eine Verbindung mit Azure Storage herzustellen und dann mit Warteschlangen zu arbeiten.
 
     - `System.Threading.Tasks`
     - `Microsoft.WindowsAzure.Storage`
@@ -44,7 +44,7 @@ Als Nächstes erstellen wir eine neue Methode, um eine Nachrichtenmeldung in ein
 
 1. Rufen Sie die `CreateCloudQueueClient()`-Methode für das Speicherkontenobjekt auf, um ein Clientobjekt abzurufen und es in einer Variablen zu speichern.
 
-1. Rufen Sie als Nächstes die `GetQueueReference`-Methode für das Clientobjekt auf, und übergeben Sie die Zeichenfolge „newsqueue“ als Warteschlangennamen. Dies gibt ein `CloudQueue`-Objekt zurück, das wir zum Arbeiten mit der Warteschlange verwenden können. Es ist in Ordnung, wenn die Warteschlange noch nicht vorhanden ist.
+1. Rufen Sie als Nächstes die `GetQueueReference`-Methode für das Clientobjekt auf, und übergeben Sie die Zeichenfolge „newsqueue“ als Warteschlangennamen. Es wird ein `CloudQueue`-Objekt zurückgegeben, das wir zum Arbeiten mit der Warteschlange verwenden können. Es ist in Ordnung, wenn die Warteschlange noch nicht vorhanden ist.
 
 1. Rufen Sie `CreateIfNotExistsAsync()` für das `CloudQueue`-Objekt auf, um sicherzustellen, dass die Warteschlange einsatzbereit ist. Dadurch wird die Warteschlange bei Bedarf erstellt.
     - Da es sich um eine asynchrone Methode handelt, verwenden Sie das C#-Schlüsselwort `await`, um sicherzustellen, dass wir ordnungsgemäß mit ihr arbeiten. Das bedeutet auch, dass Sie die _Methode_ mit dem Schlüsselwort `async` ergänzen müssen. 
@@ -132,7 +132,7 @@ Sie können beispielsweise Folgendes eingeben:
 dotnet run Send this message
 ```
 
-Dies sollte die Zeichenfolge `"Send this message"` der Warteschlange hinzufügen.
+Hiermit sollte die Zeichenfolge `"Send this message"` der Warteschlange hinzugefügt werden.
 
 ## <a name="check-your-results"></a>Überprüfen der Ergebnisse
 
@@ -167,7 +167,7 @@ Es gibt noch einige andere Befehle, die Sie mit den Tools ausprobieren können. 
 
 ## <a name="optional---use-the-async-versions-of-the-methods"></a>Optional – Verwenden der asynchronen Versionen der Methoden
 
-Wir haben `Wait()` für die obige Send-Methode verwendet, aber dies stellt keine effiziente Nutzung unserer Computingressourcen dar. Stattdessen sollten wir die C#-Methoden `async` und `await` verwenden. Wir müssen jedoch _mindestens_ C# 7.1 verwenden, um diese Schlüsselwörter auf unsere **Main**-Methode anwenden zu können.
+Wir haben `Wait()` für die obige Send-Methode verwendet, aber dies stellt keine effiziente Nutzung unserer Computingressourcen dar. Stattdessen sollten wir die C#-Methoden `async` und `await` verwenden. Wir müssen aber _mindestens_ C# 7.1 verwenden, um diese Schlüsselwörter auf unsere **Main**-Methode anwenden zu können.
 
 ### <a name="switch-to-c-71"></a>Umstellung auf C# 7.1
 
@@ -198,4 +198,4 @@ Als Nächstes wenden wir das `async`-Schlüsselwort auf die **Main**-Methode an.
 
 Versuchen Sie erneut, die App auszuführen. Sie sollte weiterhin wie zuvor funktionieren, aber jetzt kann der Code den Thread wieder für den .NET-Threadpool freigeben, während wir für die Nachricht auf das Einreihen in die Warteschlange warten.
 
-Nachdem wir nun eine Nachricht gesendet haben, ist der letzte Schritt, Unterstützung für das _Empfangen_ der Nachricht hinzuzufügen.
+Nachdem wir nun eine Nachricht gesendet haben, besteht der letzte Schritt darin, Unterstützung für das _Empfangen_ der Nachricht hinzuzufügen.

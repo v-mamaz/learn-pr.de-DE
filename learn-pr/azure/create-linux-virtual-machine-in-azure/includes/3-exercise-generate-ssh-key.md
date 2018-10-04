@@ -10,9 +10,9 @@ Secure Shell (SSH) ist ein Protokoll für verschlüsselte Verbindungen, das die 
 Es gibt zwei Ansätze, mit denen Sie eine SSH-Verbindung authentifizieren können: **Benutzername/Kennwort** oder ein **SSH-Schlüsselpaar**.
 
 > [!TIP]
-> SSH stellt bereits eine verschlüsselte Verbindung bereit. Bei Verwendung von Kennwörtern für SSH-Verbindungen ist der virtuelle Computer aber anfällig für Brute-Force-Angriffe auf Kennwörter. Die sicherere und bevorzugte Methode für die Verbindungsherstellung mit einem virtuellen Linux-Computer über SSH ist die Verwendung eines Paars aus einem öffentlichen und einem privaten Schlüssel, auch als SSH-Schlüssel bezeichnet.
+> SSH stellt bereits eine verschlüsselte Verbindung bereit. Bei Verwendung von Kennwörtern für SSH-Verbindungen ist der virtuelle Computer aber anfällig für Brute-Force-Angriffe auf Kennwörter. Die sicherere und bevorzugte Methode für die Verbindungsherstellung mit einem virtuellen Linux-Computer per SSH ist die Verwendung eines Paars aus einem öffentlichen und einem privaten Schlüssel (auch als SSH-Schlüssel bezeichnet).
 
-Mit einem SSH-Schlüsselpaar können Sie sich bei Linux-basierten virtuellen Azure-Computern ohne ein Kennwort anmelden. Dies ist ein sichererer Ansatz, wenn Sie sich nur von einigen wenigen Computern aus anmelden möchten. Wenn Sie von verschiedenen Standorten aus auf den virtuellen Linux-Computer zugreifen müssen, ist eine Kombination aus Benutzername und Kennwort vielleicht die bessere Lösung. Ein SSH-Schlüsselpaar besteht aus zwei Teilen: einem öffentlichen Schlüssel und einem privaten Schlüssel.
+Mit einem SSH-Schlüsselpaar können Sie sich bei Linux-basierten virtuellen Azure-Computern ohne Kennwort anmelden. Dies ist ein sichererer Ansatz, wenn Sie sich nur von einigen wenigen Computern aus anmelden möchten. Wenn Sie von verschiedenen Standorten aus auf den virtuellen Linux-Computer zugreifen müssen, ist eine Kombination aus Benutzername und Kennwort vielleicht die bessere Lösung. Ein SSH-Schlüsselpaar besteht aus zwei Teilen: einem öffentlichen Schlüssel und einem privaten Schlüssel.
 
 * Der öffentliche Schlüssel wird auf Ihrem virtuellen Linux-Computer oder in einem anderen Dienst gespeichert, den Sie für die Verschlüsselung mit einem öffentlichen Schlüssel verwenden möchten. Dieser Schlüssel kann für beliebige Personen freigegeben werden.
 
@@ -49,7 +49,7 @@ Sie können optional eine Passphrase angeben, während Sie Ihren privaten Schlü
 Wenn Sie Ihren SSH-Schlüssel mit einer Passphrase versehen, wird der private Schlüssel mit der 128-Bit-AES-Variante verschlüsselt, sodass er ohne die Passphrase nicht verwendet werden kann.
 
 > [!IMPORTANT]
-> Es wird **dringend** empfohlen, eine Passphrase hinzuzufügen. Falls ein Angreifer Ihren privaten Schlüssel entwendet und dafür keine Passphrase konfiguriert wurde, kann sich der Angreifer mithilfe des privaten Schlüssels bei jedem Server anmelden, der über den entsprechenden öffentlichen Schlüssel verfügt. Wenn mit einer Passphrase ein privater Schlüssel geschützt wird, kann er von diesem Angreifer nicht genutzt werden. Dies ist eine zusätzliche Sicherheitsebene für Ihre Infrastruktur in Azure dar.
+> Es wird **dringend** empfohlen, eine Passphrase hinzuzufügen. Falls ein Angreifer Ihren privaten Schlüssel entwendet und dafür keine Passphrase konfiguriert wurde, kann sich der Angreifer mithilfe des privaten Schlüssels bei jedem Server anmelden, der über den entsprechenden öffentlichen Schlüssel verfügt. Wenn mit einer Passphrase ein privater Schlüssel geschützt wird, kann er von diesem Angreifer nicht genutzt werden. Dies stellt eine zusätzliche Sicherheitsebene für Ihre Infrastruktur in Azure dar.
 
 Das folgende Beispiel zeigt, wie die Passphrase festgelegt wird. Die Ausführung dieses Befehls ist optional:
 
@@ -65,7 +65,7 @@ ssh-keygen -t rsa -b 4096 \
 | `-t` | Der Typ des zu erstellenden Schlüssels. Muss **rsa** sein. |
 | `-b` | Die Anzahl der Bits im Schlüssel. Die Mindestlänge beträgt 2.048 Bits, die Höchstlänge 4.096 Bits. |
 | `-C` | Ein optionaler Kommentar, der an den öffentlichen Schlüssel angefügt wird und verwendet werden kann, um ihn zu identifizieren. Normalerweise ist dies eine E-Mail-Adresse, aber es handelt sich um einfachen Text. Daher können Sie eine beliebige Identifikationsmethode verwenden, die Sie bevorzugen. |
-| `-f` | Der Speicherort und Dateiname der Datei mit dem privaten Schlüssel. Eine entsprechende Datei für den öffentlichen Schlüssel mit der Erweiterung **.pub** wird im gleichen Verzeichnis generiert. Das Verzeichnis muss vorhanden sein. |
+| `-f` | Der Speicherort und Dateiname der Datei mit dem privaten Schlüssel. Eine entsprechende Datei für den öffentlichen Schlüssel mit der Erweiterung **.pub** wird in demselben Verzeichnis generiert. Das Verzeichnis muss vorhanden sein. |
 | `-N` | Die Passphrase, die zum Verschlüsseln des privaten Schlüssels verwendet wird. |
 
 ## <a name="use-the-ssh-key-pair-with-an-azure-linux-vm"></a>Verwenden des SSH-Schlüsselpaars mit einem virtuellen Linux-Computer in Azure

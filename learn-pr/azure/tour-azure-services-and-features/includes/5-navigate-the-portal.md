@@ -87,7 +87,7 @@ In Azure können Sie mehrere Abonnements mit einem einzigen Verzeichnis verknüp
 Wenn Sie auf den Namen in der oberen rechten Ecke klicken, wird ein Menü mit einigen Optionen geöffnet:
 
 - Anmelden mit einem anderen Konto oder vollständige Abmeldung
-- Anzeigen Ihres Kontoprofils, in dem Sie das Kennwort ändern können
+- Anzeigen Ihres Kontoprofils, wo Sie das Kennwort ändern können
 - Überprüfen Ihrer Berechtigungen
 - Anzeigen Ihrer Rechnung (klicken Sie auf der rechten Seite auf die Auslassungspunkte „...“)
 - Aktualisieren Ihrer Kontaktdaten (klicken Sie auf der rechten Seite auf die Auslassungspunkte „...“)

@@ -1,0 +1,82 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.4-key-principles-1-virtuous-cycles
+title: 'Wichtige SRE-Prinzipien und -Methoden: positiver Kreislauf'
+metadata:
+  title: 'Wichtige SRE-Prinzipien und -Methoden: positiver Kreislauf'
+  description: 'Wichtige SRE-Prinzipien und -Methoden: positiver Kreislauf'
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 632ab6aeec2ad4c2cff90470b13008470de7ca99
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47438680"
+durationInMinutes: 10
+content: >
+  [!include[](includes/4-key-principles-1-virtuous-cycles.md)]
+quiz:
+  title: Überprüfen Sie Ihre Kenntnisse
+  questions:
+  - content: Wofür steht SLI (im Zusammenhang mit SRE)?
+    choices:
+    - content: 'Standard Level Indicator '
+      isCorrect: false
+      incorrectExplanation: SLI steht für „Service Level Indicator“.
+    - content: Service Level Indicator
+      isCorrect: true
+    - content: Safe Load Indicator
+      isCorrect: false
+      incorrectExplanation: SLI steht für „Service Level Indicator“.
+    - content: System Level Interface
+      isCorrect: false
+      incorrectExplanation: SLI steht für „Service Level Indicator“.
+  - content: Wofür steht SLO (im Zusammenhang mit SRE)?
+    choices:
+    - content: Service Level Outcome
+      isCorrect: false
+      incorrectExplanation: SLO steht für „Service Level Objective“.
+    - content: Standard Line Operations
+      isCorrect: false
+      incorrectExplanation: SLO steht für „Service Level Objective“.
+    - content: Service Load Objective
+      isCorrect: false
+      incorrectExplanation: SLO steht für „Service Level Objective“.
+    - content: Service Level Objective
+      isCorrect: true
+  - content: Was sollten Sie tun, wenn Ihr Fehlerbudget für einen Dienst aufgebraucht ist?
+    choices:
+    - content: Den beteiligten Dienst sofort neu starten, um die Compliance wiederherzustellen
+      isCorrect: false
+      incorrectExplanation: Mithilfe eines Fehlerbudgets wird die Gesamtzuverlässigkeit eines Diensts im Lauf der Zeit in Bezug auf Ihre Ziele verfolgt. Es ist essenziell, diese Methode mit einem gemeinsamen Verständnis dafür zu verknüpfen, wie die Organisation reagiert, wenn die zulässige Unzuverlässigkeit überschritten wird. Hierfür gibt es viele mögliche Ansätze. Sie müssen denjenigen auswählen und beibehalten, der für Ihre Situation am geeignetsten ist. Es gibt keine universelle Reaktion.
+    - content: Weitere Releases dieses Diensts zurückhalten, bis dieser wieder den vereinbarten Grad an Zuverlässigkeit erreicht hat
+      isCorrect: false
+      incorrectExplanation: Mithilfe eines Fehlerbudgets wird die Gesamtzuverlässigkeit eines Diensts im Lauf der Zeit in Bezug auf Ihre Ziele verfolgt. Es ist essenziell, diese Methode mit einem gemeinsamen Verständnis dafür zu verknüpfen, wie die Organisation reagiert, wenn die zulässige Unzuverlässigkeit überschritten wird. Hierfür gibt es viele mögliche Ansätze. Sie müssen denjenigen auswählen und beibehalten, der für Ihre Situation am geeignetsten ist. Es gibt keine universelle Reaktion.
+    - content: Technische Mitarbeiter, die an diesem Dienst arbeiten, von der Entwicklung von Features abziehen und sofort für die Behebung des Problems mit der Zuverlässigkeit einsetzen
+      isCorrect: false
+      incorrectExplanation: Mithilfe eines Fehlerbudgets wird die Gesamtzuverlässigkeit eines Diensts im Lauf der Zeit in Bezug auf Ihre Ziele verfolgt. Es ist essenziell, diese Methode mit einem gemeinsamen Verständnis dafür zu verknüpfen, wie die Organisation reagiert, wenn die zulässige Unzuverlässigkeit überschritten wird. Hierfür gibt es viele mögliche Ansätze. Sie müssen denjenigen auswählen und beibehalten, der für Ihre Situation am geeignetsten ist. Es gibt keine universelle Reaktion.
+    - content: Die Reaktion wählen, die dem Dienst oder der Organisation entspricht und zuvor beim Erstellen des Fehlerbudgets festgelegt wurde
+      isCorrect: true
+      correctExplanation: Wenn Sie ein Fehlerbudget für einen Dienst festlegen, ist es essenziell, zu entscheiden, wie die Organisation reagiert, wenn das Budget erschöpft ist (und die Vorgehensweise zu dokumentieren). Hierfür gibt es viele mögliche Ansätze. Sie müssen denjenigen auswählen und beibehalten, der für Ihre Situation am geeignetsten ist. Mithilfe eines Fehlerbudgets wird die Gesamtzuverlässigkeit eines Diensts im Lauf der Zeit verfolgt. Es ist essenziell, diese Methode mit einem gemeinsamen Verständnis dafür zu verknüpfen, wie die Organisation reagiert, wenn die zulässige Unzuverlässigkeit überschritten wird. Hierfür gibt es viele mögliche Ansätze. Sie müssen denjenigen auswählen und beibehalten, der für Ihre Situation am geeignetsten ist. Es gibt keine universelle Reaktion.
+  - content: Was sollten Sie tun, wenn Ihr Fehlerbudget für einen Dienst überschritten wurde?
+    choices:
+    - content: Den Releaserhythmus für diesen Dienst beschleunigen
+      isCorrect: false
+      incorrectExplanation: Dies kommt der richtigen Antwort nah, vernachlässigt jedoch einen wesentlichen Faktor. Wenn die Zuverlässigkeit des Diensts immer noch dem gewünschten Grad entspräche, wäre es auch dann, wenn Sie eine Aktion vornehmen möchten, die die Zuverlässigkeit senken würde, vernünftig, den vorhandenen Spielraum zu verbrauchen, indem Sie den Releaserhythmus erhöhen. Das ist jedoch nur eine mögliche Antwort. Die richtige Reaktion ist von den speziellen Umständen abhängig.
+    - content: Auf die Featureentwicklung für diesen Dienst konzentrieren und diese Features schneller bereitstellen
+      isCorrect: false
+      incorrectExplanation: Dies kommt der richtigen Antwort nah, vernachlässigt jedoch einen wesentlichen Faktor. Wenn die Zuverlässigkeit des Diensts immer noch dem gewünschten Grad entspräche, wäre es auch dann, wenn Sie eine Aktion vornehmen möchten, die die Zuverlässigkeit senken würde, vernünftig, den vorhandenen Spielraum zu verbrauchen, indem Sie die Featuregeschwindigkeit erhöhen. Das ist jedoch nur eine mögliche Antwort. Die richtige Reaktion ist von den speziellen Umständen abhängig.
+    - content: Das ist unterschiedlich.
+      isCorrect: true
+      correctExplanation: Es gibt viele Möglichkeiten, ein übermäßiges Fehlerbudget auszugeben. Sie können den Releaserhythmus oder die Featuregeschwindigkeit erhöhen, eine größere Anzahl von Betafeatures bereitstellen, die Anzahl der störenden Tests erhöhen usw. Es ist ebenfalls möglich (obwohl dadurch andere Probleme entstehen können), nicht zu handeln und mit erhöhter Zuverlässigkeit zu arbeiten. Diese Antworten sind auf bestimmte Situationen ausgelegt, und Sie sollten Ihrer Situation entsprechend reagieren.
+  - content: Sollten die beteiligten Personen sofort gekündigt werden, wenn ein Ausfall oder eine andere Störung auftritt?
+    choices:
+    - content: Ja, die Personen, die einen Fehler verursacht haben, müssen für ihre Handlungen die Verantwortung übernehmen und die Konsequenzen tragen.
+      isCorrect: false
+      incorrectExplanation: Es ist nicht möglich, die gewünschte Zuverlässigkeit durch Entlassungen zu erreichen. Wenn Sie sich in solchen Situationen auf Schuldzuweisungen konzentrieren, kann die Organisation nicht auf dem Vorfall lernen und die Vorgänge und Technologien verbessern, die diese verursacht haben. Ohne diese Feedbackschleife kann die Organisation weiterhin nur auf Vorfälle reagieren, anstatt deren Ursache zu beseitigen.
+    - content: Nein, nur unter außergewöhnlichen Umständen.
+      isCorrect: true
+      correctExplanation: Feedbackschleifen wie Post-mortem-Analysen ohne Schuldzuweisungen sind für eine kontinuierliche Verbesserung entscheidend. Wenn eine Organisation aus einem Vorfall lernt, anstatt die beteiligten Personen zu kündigen (die zudem am besten nachvollziehen können, was geschehen ist), kann aktiv an der Zuverlässigkeit der Dienste, Systeme und Produkte gearbeitet werden.

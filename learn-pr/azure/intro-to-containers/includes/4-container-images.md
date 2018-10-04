@@ -34,7 +34,7 @@ In dieser Einheit erstellen Sie ein Docker-Image, das eine einfache Python-Anwen
 
     Es dauert einen Moment, bis Docker das Image von Docker Hub heruntergeladen hat. Während der Wartezeit können Sie sich mit der Funktionsweise des Befehls vertraut machen.
 
-    * Das Argument `--name` gibt den Namen Ihres Containers an, nämlich „python-demo“.
+    * Das Argument `--name` gibt den Namen Ihres Containers an, „python-demo“.
     * Die Argumente `-i` und `-t` werden zu einem Argument, `-it`, kombiniert. Mit diesen Argumenten wird eine interaktive Sitzung mit dem ausgeführten Container erstellt.
       * `-i` erstellt eine interaktive Sitzung mit dem Container.
       * `-t` erstellt ein Pseudoterminal, das dauerhaft ausgeführt wird.
@@ -320,13 +320,13 @@ Sie benötigen ein Konto, um ein Image auf Docker Hub zu veröffentlichen. In di
     1. In diesem Beispiel wird das aktuelle Image von Docker Hub heruntergeladen.
 
         ```bash
-        docker pull my_docker_account/python-dockerfile
+        docker pull $docker_account/python-dockerfile
         ```
 
     1. In diesem Beispiel wird der Container ausgeführt.
 
         ```bash
-        docker run my_docker_account/python-dockerfile
+        docker run $docker_account/python-dockerfile
         ```
 
 1. Testen Sie Ihren Container.

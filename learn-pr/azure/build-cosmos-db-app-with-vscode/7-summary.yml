@@ -8,12 +8,49 @@ metadata:
   ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 656c5dad59bcf4ae8b969b140d54fa08e0e4115a
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: c68a68b3429b73a6831781a74c150d226d5bd659
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46340616"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437798"
 title: Zusammenfassung
 durationInMinutes: 3
-content: '[!include[](includes/7-summary.md)]'
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: Angenommen, Sie verwenden Visual Studio Code zum Entwickeln einer .NET Core-Anwendung, die auf Azure Cosmos DB zugreift. Sie müssen die Verbindungszeichenfolge für Ihre Datenbank in die Anwendungskonfiguration einfügen. Welche Methode eignet sich am besten zum Einfügen dieser Informationen in Ihr Projekt?
+    choices:
+    - content: Direkt über Visual Studio Code
+      isCorrect: true
+      correctExplanation: Mithilfe der Azure Cosmos DB-Erweiterung können Sie Azure Cosmos DB-Konten und -Datenbanken innerhalb von Visual Studio Code verwalten und erstellen.
+    - content: Über das Azure-Portal
+      isCorrect: false
+      incorrectExplanation: Das Azure-Portal stellt diese Informationen für Sie bereit, wenn Sie sich jedoch bereits in Visual Studio Code befinden, ist das Öffnen des Portals wahrscheinlich nicht die einfachste Möglichkeit.
+    - content: Verwenden der Azure CLI
+      isCorrect: false
+      incorrectExplanation: Obwohl dies eine gute Wahl ist, insbesondere, da Visual Studio Code über ein integriertes Terminal verfügt, sind zusätzliche Kenntnisse über die erforderlichen Befehle nötig. Dies kann sich als weniger praktisch als die Visual Studio Code-Erweiterung erweisen.
+  - content: Welche der folgenden Optionen kann bei der Arbeit mit der SQL-API von Azure Cosmos DB zum Durchführen von CRUD-Vorgängen verwendet werden?
+    choices:
+    - content: LINQ
+      isCorrect: true
+      correctExplanation: LINQ und SQL gehören zu den zwei gültigen Methoden zum Abfragen der SQL-API.
+    - content: Apache Cassandra-Clientbibliotheken
+      isCorrect: false
+      incorrectExplanation: Apache Cassandra-Bibliotheken können zwar mit der Cassandra-API von Azure Cosmos DB zusammenarbeiten, aber nicht mit der SQL-API.
+    - content: Azure Table Storage-Bibliotheken
+      isCorrect: false
+      incorrectExplanation: Azure Table Storage-Bibliotheken können zwar mit der Tabellen-API von Azure Cosmos DB zusammenarbeiten, aber nicht mit der SQL-API.
+  - content: Bei der Arbeit mit der DocumentClient-Klasse des Azure Cosmos DB-Client SDKs verwenden Sie ein NoSQL-Modell. Wie würden Sie diese Klasse verwenden, um das FirstName-Feld eines Personendokuments von „Ann“ in „Fran“ zu ändern?
+    choices:
+    - content: Aufrufen von UpdateDocumentAsync mit FirstName=Fran
+      isCorrect: false
+      incorrectExplanation: Die DocumentClient-Klasse verfügt über keine UpdateDocumentAsync-Methode. Das Aktualisieren eines einzelnen Felds entspricht nicht dem Dokumentstil des NoSQL-Ansatzes.
+    - content: Aufrufen von UpsertDocumentAsync mit einem aktualisierten Person-Objekt
+      isCorrect: false
+      incorrectExplanation: Dies würde zwar funktionieren, entspricht aber nicht dem mindestens erforderlichen Zugriff für unsere Anforderungen. Upsertvorgänge ersetzen ein Dokument, wenn der Schlüssel bereits vorhanden ist, oder fügen ein neues Dokument hinzu, wenn er nicht vorhanden ist. Es soll kein neues Dokument hinzugefügt werden. Mit dieser Methode wird also riskiert, dass geringfügige, schwer zu findende Fehler entstehen.
+    - content: Aufrufen von ReplaceDocumentAsync mit einem aktualisierten Person-Objekt
+      isCorrect: true
+      correctExplanation: ReplaceDocumentAsync ersetzt das vorhandene Dokument durch das neue. In diesem Fall sollte das neue Dokument abgesehen von FirstName dem alten Dokument entsprechen.

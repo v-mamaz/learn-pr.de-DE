@@ -1,0 +1,65 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.3-sre-in-context
+title: SRE im Kontext
+metadata:
+  title: SRE im Kontext
+  description: SRE im Kontext
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a2f23a77d0cc6b9cd6028ec5fbbfb781319afa42
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47438688"
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-sre-in-context.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: Welche Disziplin hatte die meisten Auswirkungen auf SRE, wenn Sie in Betracht ziehen, in welchem Zusammenhang dieses ursprünglich entwickelt wurde?
+    choices:
+    - content: Kundendienst
+      isCorrect: false
+      incorrectExplanation: Bei SRE ist ein kundenorientierter Ansatz essentiell, obwohl der Kundendienst ursprünglich kein Teil war.
+    - content: Mainframevorgänge
+      isCorrect: false
+      incorrectExplanation: Wir können zwar von anderen Betriebsbereichen lernen, aber SRE kommt ursprünglich nicht aus diesem Bereich.
+    - content: Softwareentwicklung
+      isCorrect: true
+      correctExplanation: SRE kommt ursprünglich aus dem Bereich der Softwareentwicklung.
+    - content: Architektur
+      isCorrect: false
+      incorrectExplanation: Die Architektur (besonders die Softwarearchitektur) ist eine Komponente der Arbeit von SRE, ist aber nicht Teil des Ursprungs.
+  - content: Was gab es zuerst, DevOps oder SRE?
+    choices:
+    - content: DevOps
+      isCorrect: false
+      incorrectExplanation: Sie sind ungefähr zeitgleich entstanden.
+    - content: SRE
+      isCorrect: false
+      incorrectExplanation: Sie sind ungefähr zeitgleich entstanden.
+    - content: Weder noch, sie sind ungefähr zeitgleich entstanden.
+      isCorrect: true
+  - content: Ist SRE die Weiterentwicklung von DevOps?
+    choices:
+    - content: Ja, SRE ist die Zukunft von DevOps. DevOps-Mitarbeiter sollten SREs werden wollen
+      isCorrect: false
+      incorrectExplanation: DevOps und SRE sind unterschiedliche Betriebsansätze, die auf ähnliche Herausforderungen eingehen.
+    - content: Nein, SRE und DevOps sind unterschiedliche Betriebsansätze
+      isCorrect: true
+      correctExplanation: DevOps und SRE unterscheiden sich in der Tat voneinander, gehen aber auf ähnliche Herausforderungen ein.
+  - content: Welche bewährten Methode sind sowohl bei DevOps als auch bei SRE wesentlich?
+    choices:
+    - content: Automatisierung und Überwachung/Transparenz
+      isCorrect: true
+    - content: Programmierung und Ticketsysteme
+      isCorrect: false
+      incorrectExplanation: Die Programmierung ist zwar wichtig (besonders bei SRE), aber Ticketsysteme sind kein wesentlicher Bestandteil von SRE.
+    - content: Helpdeskautomatisierung und Fehlernachverfolgung
+      isCorrect: false
+      correctExplanation: Helpdeskautomatisierung ist zwar nützlich, aber sie ist weder Bestandteil von DevOps noch von SRE.

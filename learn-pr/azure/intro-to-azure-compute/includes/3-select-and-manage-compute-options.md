@@ -4,9 +4,10 @@ Nachdem Sie sich nun mit den verfügbaren Azure-Computediensten vertraut gemacht
 
 :::row:::
   :::column:::
-    ![Bild eines virtuellen Azure-Computers](../media/3-azure-vms.png)
+    ![Bild: virtuelle Azure-Computer](../media/3-azure-vms.png)
   :::column-end:::
-  :::column span="3"::: Wenn die vollständige Kontrolle über das Betriebssystem und die Umgebung erforderlich ist, sind virtuelle Computer eine optimale Wahl. Sie können die Software auf dem virtuellen Computer genau wie bei einem physischen Computer anpassen. Diese Methode ist optimal, wenn Sie benutzerdefinierte Software oder benutzerdefinierte Hostingkonfigurationen ausführen.
+  :::column span="3":::
+Wenn die vollständige Kontrolle über das Betriebssystem und die Umgebung erforderlich ist, sind virtuelle Computer eine optimale Wahl. Sie können die Software auf dem virtuellen Computer genau wie bei einem physischen Computer anpassen. Diese Methode ist optimal, wenn Sie benutzerdefinierte Software oder benutzerdefinierte Hostingkonfigurationen ausführen.
   :::column-end:::
 :::row-end:::
 
@@ -28,21 +29,18 @@ In Azure sind außerdem erweiterte Dienste für virtuelle Computer verfügbar:
 
 :::row:::
   :::column:::
-    ![Bild von Azure-Containern](../media/3-azure-containers.png)
+    ![Bild: Azure-Container](../media/3-azure-containers.png)
   :::column-end:::
-  :::column span="3"::: Container eignen sich ausgezeichnet, wenn Sie mehrere Instanzen einer Anwendung auf einem einzelnen virtuellen Computer ausführen möchten. Der Containerorchestrator kann Anwendungsinstanzen nach Bedarf starten, beenden oder horizontal hochskalieren.
+  :::column span="3":::
+Container sind eine gute Wahl, wenn Sie mehrere Instanzen einer Anwendung auf einem einzelnen virtuellen Computer ausführen möchten. Der Containerorchestrator kann Anwendungsinstanzen nach Bedarf starten, beenden oder horizontal hochskalieren.
   :::column-end:::
 :::row-end:::
-
-#### <a name="what-are-containers"></a>Was sind Container?
-
-> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yMhY]
 
 #### <a name="vms-versus-containers"></a>Vergleich von virtuellen Computern und Containern
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yuaq]
 
-Container dienen aber üblicherweise dazu, Lösungen mithilfe einer Microservicearchitektur zu erstellen. Container werden häufig verwendet, um mithilfe einer Microservicearchitektur Lösungen zu erstellen, da sie das Unterteilen von Lösungen in kleinere Teile ermöglichen. Sie können eine Website beispielsweise in einen Container aufteilen, der Ihr Front-End hostet, einen weiteren, der Ihr Back-End hostet, und einen dritten für den Speicher. Dadurch können Sie einzelne Bestandteile Ihrer App in logische Abschnitte aufteilen, die unabhängig voneinander verwaltet, skaliert oder aktualisiert werden können.
+Container werden häufig verwendet, um mithilfe einer Microservicearchitektur Lösungen zu erstellen, da sie das Unterteilen von Lösungen in kleinere Teile ermöglichen. Sie können eine Website beispielsweise in einen Container aufteilen, der Ihr Front-End hostet, einen weiteren, der Ihr Back-End hostet, und einen dritten für den Speicher. Dadurch können Sie einzelne Bestandteile Ihrer App in logische Abschnitte aufteilen, die unabhängig voneinander verwaltet, skaliert oder aktualisiert werden können.
 
 #### <a name="what-is-a-microservice"></a>Was ist ein Microservice?
 
@@ -56,13 +54,14 @@ Wenn Ihr Team mit der Verwendung der Kubernetes-Containerorchestrierung vertraut
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEuX]
 
-## <a name="azure-functions"></a>Azure-Funktionen
+## <a name="azure-functions"></a>Azure Functions
 
 :::row:::
   :::column:::
-    ![Bild von Azure-Funktionen](../media/3-azure-functions.png)
+    ![Bild: Azure Functions](../media/3-azure-functions.png)
   :::column-end:::
-  :::column span="3"::: Azure-Funktionen sind optimal geeignet, wenn Sie nur den Code berücksichtigen müssen, der Ihren Dienst ausführt, nicht aber die zugrunde liegende Plattform oder Infrastruktur. Sie werden in der Regel verwendet, wenn Aufgaben als Reaktion auf ein Ereignis durchgeführt werden müssen, das häufig über eine REST-Anforderung, einen Timer oder eine Meldung von einem anderen Azure-Dienst ausgelöst wird, und wenn diese Aufgaben schnell (innerhalb von Sekunden oder noch schneller) ausgeführt werden können.
+  :::column span="3":::
+Azure Functions ist optimal geeignet, wenn Sie nur den Code berücksichtigen müssen, der Ihren Dienst ausführt, nicht aber die zugrunde liegende Plattform oder Infrastruktur. Sie werden üblicherweise verwendet, wenn Sie Aufgaben als Reaktion auf ein Ereignis durchführen müssen, das häufig über eine REST-Anforderung, einen Timer oder eine Meldung von einem anderen Azure-Dienst ausgelöst wird, und wenn diese Aufgaben schnell (innerhalb von Sekunden oder noch schneller) ausgeführt werden können.
   :::column-end:::
 :::row-end:::
 

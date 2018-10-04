@@ -10,7 +10,7 @@ Das Erstellen von auf Linux basierenden VMs in Azure ist einfach. Microsoft arbe
 
 ## <a name="creating-an-azure-vm"></a>Erstellen eines virtuellen Azure-Computers
 
-VMs können auf verschiedene Weisen in Azure definiert und bereitgestellt werden: Über das Azure-Portal, ein Skript (mithilfe der Azure CLI oder Azure PowerShell) oder über eine Azure Resource Manager-Vorlage. In allen Fällen müssen Sie verschiedene Arten von Informationen angeben, auf die wir später noch eingehen.
+VMs können auf verschiedene Weise in Azure definiert und bereitgestellt werden: Über das Azure-Portal, über ein Skript (mithilfe der Azure CLI oder Azure PowerShell) oder mit einer Azure Resource Manager-Vorlage. In allen Fällen müssen Sie verschiedene Arten von Informationen angeben, auf die wir später noch eingehen.
 
 Außerdem stellt der Azure Marketplace vorkonfigurierte Images mit Betriebssystem und Installationen beliebter Softwaretools für bestimmte Szenarien zur Verfügung.
 
@@ -43,9 +43,9 @@ Alle Komponenten, die auf einem Computer installiert werden können, können auc
 Ein virtueller Computer weist wie ein physischer Computer eine bestimmte Menge an Arbeitsspeicher und CPU-Leistung auf. Azure bietet eine Reihe von virtuellen Computern mit unterschiedlichen Größen zu unterschiedlichen Preisen an. Die gewählte Größe bestimmt die Verarbeitungsleistung, den Arbeitsspeicher und die maximale Speicherkapazität des virtuellen Computers.
 
 > [!WARNING]
-> Es gelten Kontingentgrenzwerte für die einzelnen Abonnements, die Einfluss auf die Erstellung des virtuellen Computers haben können. Wenn Sie diese Kontingentgrenzwerte erreichen, können Sie eine [online eine Kundensupportanfrage erstellen](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request), um eine Erhöhung Ihrer Grenzwerte anzufordern.
+> Es gelten Kontingentgrenzwerte für die einzelnen Abonnements, die Einfluss auf die Erstellung des virtuellen Computers haben können. Wenn Sie diese Kontingentgrenzwerte erreichen, können Sie [online eine Kundensupportanfrage erstellen](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request), um eine Erhöhung Ihrer Grenzwerte anzufordern.
 
-Die VM-Größen werden in Kategorien unterteilt, angefangen bei der B-Serie für grundlegende Tests, bis hin zur H-Serie für große Computingtasks. Wählen Sie die Größe der VM anhand der Workload aus, die Sie ausführen möchten. Es ist möglich, die Größe einer VM nach ihrer Erstellung zu ändern, aber hierfür muss die VM zuerst angehalten werden. Daher ist es am besten, die Größe nach Möglichkeit gleich richtig festzulegen.
+Die VM-Größen werden in Kategorien unterteilt, angefangen bei der B-Serie für grundlegende Tests, bis hin zur H-Serie für umfassende Computingaufgaben. Wählen Sie die Größe der VM anhand der Workload aus, die Sie abarbeiten möchten. Es ist möglich, die Größe einer VM nach ihrer Erstellung zu ändern, aber hierfür muss die VM zuerst angehalten werden. Daher ist es am besten, die Größe nach Möglichkeit gleich richtig festzulegen.
 
 #### <a name="here-are-some-guidelines-based-on-the-scenario-you-are-targeting"></a>Im Anschluss werden einige Richtlinien für verschiedene Szenarien aufgeführt.
 

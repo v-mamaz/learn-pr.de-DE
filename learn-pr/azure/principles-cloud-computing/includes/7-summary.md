@@ -1,6 +1,6 @@
 In diesem Modul haben wir gelernt, was Cloud Computing ist und wie alle Unternehmen, ob Start-Up oder Konzern, davon profitieren können. Sie sollten nun wissen, was Cloud Computing ist. Es wurde allerdings noch kein Cloudanbieter genannt.
 
-![Ein verbundener Stecker zur Darstellung der Bereitstellung von Elektrizität](../media/7-heading.png)
+![Ein verbundener Stecker, der die Übertragung von Elektrizität darstellt](../media/7-heading.png)
 
 ### <a name="microsoft-azure"></a>Microsoft Azure
 

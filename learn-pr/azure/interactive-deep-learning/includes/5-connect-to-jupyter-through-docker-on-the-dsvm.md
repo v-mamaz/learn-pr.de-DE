@@ -49,11 +49,18 @@ Stellen Sie sicher, dass Sie noch immer mit Ihrem virtuellen Computer über ssh 
 
 Sobald das Jupyter Notebook im Container ausgeführt wird, wird eine Meldung ähnlich der folgenden angezeigt. 
 
-> *Kopieren Sie bei der ersten Verbindungsherstellung die folgende URL, und fügen Sie sie in Ihren Browser ein, um sich mit einem Token anzumelden: http://(5b8783e7911d oder 127.0.0.1):8888/?token={Token}*
+> *Kopieren Sie bei der ersten Verbindungsherstellung die folgende URL, und fügen Sie sie in Ihren Browser ein, um sich mit einem Token anzumelden: http://(5b8783e7911d oder 127.0.0.1):8888/?token={sometoken}*
 
-1. Ersetzen Sie den Teil **http://(5b8783e7911d oder 127.0.0.1)** der URL durch `<HOSTNAME>.<REGION>.cloudapp.azure.com` oder die IP-Adresse des virtuellen Computers, und navigieren Sie auf einer neuen Registerkarte in Ihrem Browser zu der Adresse.
+1. Ersetzen Sie den Teil **http://(5b8783e7911d oder 127.0.0.1)** der URL durch den vollqualifizierten Domänennamen (Fully Qualified Domain Name, FQDN) oder die IP-Adresse des virtuellen Computers, und navigieren Sie auf einer neuen Registerkarte in Ihrem Browser zu der Adresse.
 
-    ![Screenshot des Jupyter Notebook-Dashboards ](../media/notebook-in-docker.png)
+    ![Screenshot: Jupyter Notebook-Dashboard ](../media/notebook-in-docker.png)
+
+    > [!TIP]
+    > Sie können den FQDN und die IP-Adresse Ihres virtuellen Computers mit folgendem Befehl abrufen:
+    > 
+    > `az vm show -d --name <HOSTNAME> --resource-group <rgn>[sandbox resource group name]</rgn> --output table`
+    >
+    > Denken Sie daran, `<HOSTNAME>` durch den Namen zu ersetzen, den Sie Ihrem virtuellen Computer zugewiesen haben. 
     
     Dieses Mal wird nur ein einzelnes Notebook angezeigt. Das liegt daran, dass wir uns in einem Container befinden und nur dieses Notebook kopiert haben. In der nächsten Übung experimentieren wir mit diesem Notebook. 
     

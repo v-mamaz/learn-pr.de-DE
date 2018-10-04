@@ -9,11 +9,48 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 284d0a687dc09aa1fc36a74e31b27738b90b8188
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 49a23603aa990e203720d71cdb4b6be0ad2d0d9f
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46342087"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437220"
 durationInMinutes: 3
-content: '[!include[](includes/11-summary.md)]'
+content: >
+  [!include[](includes/11-summary.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: In welchem Fall eignet sich MEAN gut für Ihren Entwicklungsstapel?
+    choices:
+    - content: Sie arbeiten mit stark strukturierten relationalen Daten.
+      isCorrect: false
+      incorrectExplanation: MongoDB, also das „M“ im MEAN-Stapel, ist eine NoSQL-Datenbank. Eine NoSQL-Datenbank ist nicht relational, das bedeutet, dass keine Daten benötigt werden, um sie wie SQL Server oder andere relationale Datenbanken zu strukturieren.
+    - content: MEAN-Apps werden schneller ausgeführt als Apps, die mit anderen Entwicklungsstapeln erstellt wurden.
+      isCorrect: false
+      incorrectExplanation: Es gibt viele Entwicklungsstapel. Kein Entwicklungsstapel ist unbedingt schneller oder besser als der andere. Jeder Stapel wurde unter Berücksichtigung einer bestimmten Art von App und Entwicklerfähigkeit erstellt.
+    - content: Jeder Entwickler in Ihrem Entwicklungsteam ist ein JavaScript-Experte.
+      isCorrect: true
+      correctExplanation: Der MEAN-Stapel basiert stark auf JavaScript. JavaScript wird sowohl auf der Clientseite als auch auf der Serverseite Ihrer Web-App angezeigt.
+  - content: Was ist eine NoSQL-Datenbank?
+    choices:
+    - content: Dieser Begriff beschreibt kostenlose Open Source-Datenbanksoftware.
+      isCorrect: false
+      incorrectExplanation: Zwar sind viele Datenbanken kostenlos und Open Source, NoSQL beschreibt jedoch zusätzlich, wie Daten strukturiert sind.
+    - content: Es handelt sich um eine Datenbank, die keine Daten benötigt, um in einer vordefinierten Weise strukturiert zu werden.
+      isCorrect: true
+      correctExplanation: MongoDB speichert z.B. Daten in JSON-ähnlichen Dokumenten, die keine starren Datenstrukturen erfordern, wie es bei MySQL oder anderen relationalen Datenbanken der Fall ist.
+    - content: Bei dieser Datenbank handelt es sich vielmehr um eine relationale Datenbank, die jedoch nicht die SQL-Sprache für den Zugriff auf Daten bzw. deren Bearbeitung verwendet.
+      isCorrect: false
+      incorrectExplanation: NoSQL-Datenbanken sind nicht relational, das bedeutet, dass es nicht erforderlich ist, Daten in einer vordefinierten Weise zu strukturieren.
+  - content: Welche Rolle hat AngularJS im MEAN-Stapel?
+    choices:
+    - content: AngularJS implementiert die Datenbindung für HTML und JavaScript. Sie können AngularJS z.B. verwenden, um Elemente von einer Datenbank abzurufen und diese dann auf der Benutzeroberfläche anzuzeigen.
+      isCorrect: true
+      correctExplanation: Mit der Datenbindung können Sie Ihren HTML-Code übersichtlich und minimal halten. AngularJS zeigt Benutzern Updates sofort an, sobald sich die zugrunde liegenden Daten ändern.
+    - content: Es ist ein Browser-Plug-In, das auf dem Computer Ihres Benutzers installiert wird.
+      isCorrect: false
+      incorrectExplanation: Genau genommen installieren Sie AngularJS nicht. Es handelt sich einfach um JavaScript-Code, den Sie über ein Skripttag auf Ihrer HTML-Seite abrufen.
+    - content: Es hilft Ihnen dabei, die Webanwendung von der Serverseite auszuführen.
+      isCorrect: false
+      incorrectExplanation: Eine MEAN-Web-App wird von der Serverseite von Node.js gehostet und nicht von AngularJS.

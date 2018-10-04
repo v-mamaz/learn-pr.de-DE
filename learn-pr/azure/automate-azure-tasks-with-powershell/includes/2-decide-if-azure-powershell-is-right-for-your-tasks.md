@@ -1,6 +1,6 @@
 Stellen Sie sich vor, Sie müssen ein Tool zur Verwaltung der Azure-Ressourcen auswählen, die Sie zum Testen Ihres CRM-Systems (Customer Relationship Management) verwenden. Sie müssen für Ihre Tests Ressourcengruppen erstellen und virtuelle Computer (VMs) bereitstellen.
 
-Sie benötigen ein Tool, das einerseits von Administratoren leicht erlernt werden kann, aber gleichzeitig leistungsstark genug ist, um die Installation und Einrichtung mehrerer VMs zu automatisieren oder eine komplette Anwendungsumgebung per Skript zu erstellen. Es stehen viele Tools zur Verfügung. Sie müssen das finden, das sich am besten für Ihre Mitarbeiter und Aufgaben eignet.
+Sie benötigen ein Tool, das einerseits von Administratoren leicht erlernt werden kann, aber gleichzeitig leistungsstark genug ist, um die Installation und Einrichtung mehrerer VMs zu automatisieren oder eine komplette Anwendungsumgebung per Skript zu erstellen. Es stehen viele Tools zur Verfügung. Sie müssen das Tool finden, das sich am besten für Ihre Mitarbeiter und Aufgaben eignet.
 
 ## <a name="what-tools-are-available"></a>Welche Tools sind verfügbar?
 Azure stellt drei Verwaltungstools zur Auswahl bereit:

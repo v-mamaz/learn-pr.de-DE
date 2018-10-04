@@ -66,9 +66,9 @@ Der Azure Advisor ermittelt, welche virtuellen Computer zu wenig ausgelastet sin
 
 #### <a name="implement-shutdown-schedules-for-virtual-machines"></a>Implementieren von Zeitplänen zum Abschalten virtueller Computer
 
-Wenn Sie über VM-Workloads verfügen, die nur gelegentlich verwendet, aber dauerhaft ausgeführt werden, verschwenden Sie Geld. Diese VMs können bei Nichtbenutzung abgeschaltet werden. So sparen Sie Computekosten, wenn die Zuordnung der VMs aufgehoben wird. Eine Entwicklungsumgebung ist beispielsweise ein guter Kandidat, da die Entwicklung normalerweise nur während der Geschäftszeiten durchgeführt wird.
+Wenn Sie über VM-Workloads verfügen, die nur gelegentlich verwendet, aber dauerhaft ausgeführt werden, verschwenden Sie Geld. Diese VMs können bei Nichtbenutzung abgeschaltet werden. So sparen Sie Computekosten, während die Zuordnung der VMs aufgehoben ist. Eine Entwicklungsumgebung ist beispielsweise ein guter Kandidat, da die Entwicklung normalerweise nur während der Geschäftszeiten durchgeführt wird.
 
-Sie haben mehrere Optionen, wie Sie die Zuordnung einer VM aufheben können. Sie können Azure Automation verwenden, um Ihre VMs nur während auszuführen, die für Ihre Workloads benötigt werden. Sie können das Feature zum automatischen Herunterfahren einer VM verwenden, um eine einmalige automatisierte Abschaltung zu planen. Darüber hinaus können Sie eine VM auch manuell im Azure-Portal beenden. Sie sollten immer die Azure-Steuerelemente verwenden, um Ihre VMs zu beenden. Wenn Sie das Betriebssystem über eine VM herunterfahren, wird die Zuordnung seiner Azure-Ressourcen nicht aufgehoben, sodass weiterhin Kosten anfallen.
+Sie haben mehrere Optionen, wie Sie die Zuordnung einer VM aufheben können. Sie können Azure Automation verwenden, um Ihre VMs nur während der Zeiten auszuführen, die für Ihre Workloads benötigt werden. Sie können das Feature zum automatischen Herunterfahren einer VM verwenden, um eine einmalige automatisierte Abschaltung zu planen. Darüber hinaus können Sie eine VM auch manuell im Azure-Portal beenden. Sie sollten immer die Azure-Steuerelemente verwenden, um Ihre VMs zu beenden. Wenn Sie das Betriebssystem über eine VM herunterfahren, wird die Zuordnung ihrer Azure-Ressourcen nicht aufgehoben, sodass weiterhin Kosten anfallen.
 
 #### <a name="apply-compute-cost-discounts"></a>Inanspruchnehmen von Rabatten für Computekosten
 
@@ -117,7 +117,7 @@ Für Lamna Healthcare bietet es sich also an, neue Bilder einen Monat lang der h
 
 ### <a name="leverage-consumption-pricing-models"></a>Verwenden des verbrauchsorientierten Preismodells
 
-Die Umstellung auf PaaS-Dienste kann auch bewirken, dass das Modell mit nutzungsbasierter Bezahlung noch mehr zu einem verbrauchsorientierten Modell wird. Für Dienste wie Azure Functions können beispielsweise _Verbrauchstarife_ verwendet werden. Bei Verwendung eines Verbrauchsplans werden Instanzen des Azure Functions-Hosts dynamisch, basierend auf der Anzahl der eingehenden Ereignisse hinzugefügt und entfernt. Dieser serverlose Plan wird automatisch skaliert, sodass Ihnen nur dann Computeressourcen berechnet werden, wenn Ihre Funktionen ausgeführt werden. In einem Verbrauchsplan tritt für eine Funktionsausführung nach einem konfigurierbaren Zeitraum ein Timeout auf.
+Die Umstellung auf PaaS-Dienste kann auch bewirken, dass das Modell mit nutzungsbasierter Bezahlung noch mehr zu einem verbrauchsorientierten Modell wird. Für Dienste wie Azure Functions können beispielsweise _Verbrauchstarife_ verwendet werden. Bei Verwendung eines Verbrauchsplans werden Instanzen des Azure Functions-Hosts basierend auf der Anzahl von eingehenden Ereignissen dynamisch hinzugefügt und entfernt. Dieser serverlose Plan wird automatisch skaliert, sodass Ihnen nur dann Computeressourcen berechnet werden, wenn Ihre Funktionen ausgeführt werden. In einem Verbrauchsplan tritt für eine Funktionsausführung nach einem konfigurierbaren Zeitraum ein Timeout auf.
 
 Die Abrechnung erfolgt auf der Grundlage der Anzahl von Ausführungen, der Ausführungszeit und des verwendeten Arbeitsspeichers. Die Abrechnung wird für alle Funktionen innerhalb einer Funktions-App aggregiert.
 

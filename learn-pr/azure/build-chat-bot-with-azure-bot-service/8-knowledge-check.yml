@@ -1,0 +1,54 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.8-knowledge-check
+title: Überprüfen Sie Ihre Kenntnisse
+metadata:
+  title: Überprüfen Sie Ihre Kenntnisse
+  description: Wissensbeurteilung für „Erstellen eines Chatbots mit dem Azure Bot Service“
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 5b206ed0afc79f1f42efb0445f45bf7d8cbf9fa7
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47438653"
+durationInMinutes: 5
+quiz:
+  title: Wissensbeurteilung für „Erstellen eines Chatbots mit dem Azure Bot Service“
+  questions:
+  - content: 'Richtig oder falsch: Mit der Vorlage *Web-App-Bot* werden eine *Web-App* und ein *Bot* erstellt.'
+    choices:
+    - content: Richtig
+      isCorrect: true
+      correctExplanation: Mit der Vorlage werden ein Bot und eine Azure-Web-App zum Hosten des Bots erstellt. Außerdem wird der Bot damit für die Verwendung einer QnA Maker-Wissensdatenbank konfiguriert. Sie müssen die Wissensdatenbank selbst erstellen und mit dem Bot verbinden.
+    - content: Falsch
+      isCorrect: false
+      incorrectExplanation: Der Vorlagenname ist aussagekräftig, und damit werden eine Web-App und ein Bot erstellt.
+  - content: Was wird mit QnA Maker erstellt?
+    choices:
+    - content: Eine Wissensdatenbank, die von einem Bot verwendet werden kann.
+      isCorrect: true
+      correctExplanation: QnA Maker verwendet Fragen und Antworten und konvertiert sie in ein Format, das ein Bot zum Beantworten von Fragen nutzen kann.
+    - content: Sie können Umfragen in Ihren Bot einbetten, um Benutzerfeedback zu erhalten.
+      isCorrect: false
+      incorrectExplanation: QnA Maker ist kein Dienst für Umfragen. Er dient zum Bereitstellen von Informationen für Benutzer, aber er versucht nicht, Daten daraus zu extrahieren.
+    - content: Ein Bot
+      isCorrect: false
+      incorrectExplanation: QnA Maker kann mit einem Bot verknüpft werden, erstellt aber keinen.
+  - content: Wie können Sie Ihre Daten in QnA Maker eingeben?
+    choices:
+    - content: Manuell.
+      isCorrect: false
+      incorrectExplanation: Sie können die Wissensdatenbank manuell auffüllen, aber es gibt noch weitere Möglichkeiten.
+    - content: Upload einer Textdatei.
+      isCorrect: false
+      incorrectExplanation: QnA Maker unterstützt Textdateien in vielen unterschiedlichen Formaten, z.B. Text mit Tabulatortrennung und Excel-Tabellen. Dies ist aber nicht die einzige Möglichkeit zum Auffüllen der Wissensdatenbank.
+    - content: Angeben der URL einer FAQ-Seite.
+      isCorrect: false
+      incorrectExplanation: Mit QnA Maker können Fragen und Antworten aus vielen unterschiedlichen Formaten von FAQ-Seiten extrahiert werden. Eine FAQ-URL ist aber nicht die einzige Möglichkeit zum Auffüllen der Wissensdatenbank.
+    - content: Alle oben genannten Möglichkeiten.
+      isCorrect: true
+      correctExplanation: 'QnA Maker ist flexibel genug, um Ihre Eingabedaten in vielen gängigen Formaten zu verarbeiten: Textdateien, FAQ-Seiten und sogar Produkthandbücher. Das Ziel besteht darin, für Sie das Importieren Ihrer Daten ohne erneute Formatierung zu vereinfachen.'

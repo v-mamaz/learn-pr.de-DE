@@ -3,17 +3,43 @@ uid: learn.welcome-to-azure.6-summary
 title: Zusammenfassung
 metadata:
   title: Zusammenfassung
-  description: Gehen Sie das Gelernte nochmal durch, und erfahren Sie, wie Sie Ihre Reise in die Cloud fortsetzen können.
+  description: Gehen Sie das Gelernte nochmal durch, und erfahren Sie, wie Sie Ihren Weg in die Cloud fortsetzen können.
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: b0f04ff135762fc48358375b3b2d69b594bc675a
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 11c2f56627006b6987a9a506ce2c6f1265ffc68d
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46338525"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437356"
 durationInMinutes: 1
-content: '[!include[](includes/6-summary.md)]'
+content: >
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: Was ist Azure?
+    choices:
+    - content: Die Cloud Computing-Plattform von Microsoft, mit der Computeleistung, Speicher und Dienste durch Verwendung eines Modells mit nutzungsbasierter Bezahlung über das Internet bereitgestellt werden.
+      isCorrect: true
+      correctExplanation: Azure bietet reine Computeleistung und Speicher sowie Dienste, mit denen Sie neue Softwaremodelle wie intelligente Bots und Mixed Reality erkunden können.
+    - content: Ein einzelnes Rechenzentrum in Redmond, Washington.
+      isCorrect: false
+      incorrectExplanation: Azure besteht aus Rechenzentren, die auf der ganzen Welt verteilt sind.
+    - content: Eine Hostingumgebung speziell für virtuelle Computer
+      isCorrect: false
+      incorrectExplanation: Mit Azure wird nicht nur reine Computeleistung bereitgestellt, z.B. in Form von virtuellen Computern, sondern Sie erhalten auch Zugriff auf viele Dienste, mit denen Sie neue Softwaremodelle wie intelligente Bots und Mixed Reality erkunden können.
+  - content: Wann sollten Sie Ihre Bereitstellung _horizontal hochskalieren_?
+    choices:
+    - content: Wenn Ihre Anwendung oder Ihr Dienst für eine schnellere Ausführung eine leistungsfähigere CPU oder mehr Arbeitsspeicher benötigt.
+      isCorrect: false
+      incorrectExplanation: In diesem Fall können Sie Ihre Bereitstellung möglicherweise _zentral hochskalieren_, indem Sie Ihre Anwendung oder Ihren Dienst auf leistungsstärkere Hardware verschieben.
+    - content: Wenn Sie virtuelle Computer hinzufügen müssen, um die Geschwindigkeit Ihrer Anwendung zu erhöhen.
+      isCorrect: true
+      correctExplanation: Beim horizontalen Hochskalieren werden zusätzliche Systeme wie z.B. virtuelle Computer hinzugefügt. So können Sie beispielsweise viele virtuelle Computer erstellen, die auf die gleiche Weise konfiguriert sind, und einen Lastenausgleich verwenden, um die Arbeit auf diese zu verteilen.
+    - content: Wenn Sie überschüssige Kapazität nutzen, die Sie nicht benötigen.
+      isCorrect: false
+      incorrectExplanation: In diesem Fall können Sie _horizontal herunterskalieren_, indem Sie Systeme herunterfahren, die Sie derzeit nicht benötigen.

@@ -1,0 +1,2 @@
+> [!IMPORTANT]
+> Für diese Einheit ist der Zugriff auf einen virtuellen Computer erforderlich. Wenn Sie bereits eine Verbindung mit einem virtuellen Computer aus einer vorherigen Einheit in diesem Modul hergestellt haben, können Sie loslegen. Wenn Sie noch keine Verbindung hergestellt haben, wählen Sie oben **Sign in to Launch VM mode** (Im Modus „Virtuellen Computer starten“ anmelden) aus.

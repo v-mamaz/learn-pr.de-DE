@@ -38,7 +38,7 @@ Eine Einstellung, die Sie beachten sollten, ist der **Pfad**. Der **Pfad** weist
 
 > samples-workitems/{Name}
 
-Wir unterteilen dieses Konzept in zwei Teile: *samples-workitems* und *{Name}*. Der erste Teil, *samples-workitems*, stellt den Blobcontainer dar, den der Trigger überwacht. Der zweite Teil, *{Name}, bedeutet, dass jeder Dateityp den Trigger veranlasst, die Funktion aufzurufen. Die Funktion wird aufgerufen, da kein Filter vorhanden ist. Beispielsweise lässt sich mithilfe der folgenden Syntax einstellen, dass der Trigger die Funktion nur aufruft, wenn eine PNG-Datei hinzugefügt wird:
+Wir unterteilen dieses Konzept in zwei Teile: *samples-workitems* und *{Name}*. Der erste Teil, *samples-workitems*, stellt den BLOB-Container dar, den der Trigger überwacht. Der zweite Teil, *{name}* bedeutet, dass jeder Dateityp den Trigger veranlasst, die Funktion aufzurufen. Die Funktion wird aufgerufen, da kein Filter vorhanden ist. Beispielsweise lässt sich mithilfe der folgenden Syntax einstellen, dass der Trigger die Funktion nur aufruft, wenn eine PNG-Datei hinzugefügt wird:
 
 > samples-workitems/{Name}.png
 

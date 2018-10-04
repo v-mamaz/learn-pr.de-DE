@@ -9,11 +9,42 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9b4e753dd959b77757eee376fa367513e9b62327
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 355fab15880ecc7d0d16f91e51f00a79531bb65d
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46342767"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437560"
 durationInMinutes: 3
-content: '[!include[](includes/9-summary.md)]'
+content: >
+  [!include[](includes/9-summary.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: 'Nehmen wir an, Sie arbeiten für eine Behörde, die eine langfristige Erweiterung des Autobahnnetzes plant. Die erhalten von Tausenden von Sensoren Netzwerkdatenverkehr, den Sie analysieren, um Empfehlungen zu geben. Die Menge der eingehenden Daten variiert im Laufe des Tage. Beispielsweise werden die Spitzen morgens und abends während der Pendelzeiten verzeichnet. Richtig oder falsch: Eine serverseitige Architektur, die aus einer Azure-Warteschlange besteht, die mit einer einzelnen VM verbunden ist, ist eine angemessene Wahl für diese Workload.'
+    choices:
+    - content: Richtig
+      isCorrect: true
+      correctExplanation: Die Warteschlange bewältigt Spitzen im Datenverkehr und stellt sicher, dass keine Daten verloren gehen. Wenn die VM nicht mit dem Datenverkehr der eingehenden Nachrichten hinterherkommt, verarbeitet sie den Nachrichtenrückstand zu Zeiten mit niedrigem Netzwerkdatenverkehr.
+    - content: Falsch
+      isCorrect: false
+      incorrectExplanation: Diese Daten werden für die langfristige Planung verwendet, deshalb muss die Verarbeitung nicht in Echtzeit erfolgen. Eine Warteschlange, die mit einer einzelnen VM verbunden ist, kann mit hoher Wahrscheinlichkeit die Workload verarbeiten und ist eine kosteneffiziente Lösung.
+  - content: Durch welche Informationen kann eine Warteschlange eindeutig identifiziert werden?
+    choices:
+    - content: Warteschlangenname
+      isCorrect: false
+      incorrectExplanation: Warteschlangennamen müssen nur innerhalb des Speicherkontos, das diese enthält, eindeutig sein. Sie müssen nicht global eindeutig sein.
+    - content: Kontoschlüssel
+      isCorrect: false
+      incorrectExplanation: Kontoschlüssel sind mit einem Speicherkonto und nicht mit einer Warteschlange verknüpft.
+    - content: Speicherkontoname und Warteschlangenname
+      isCorrect: true
+      correctExplanation: Namen von Speicherkonten müssen global eindeutig sein. Warteschlangennamen müssen innerhalb des Speicherkontos, in dem sie enthalten sind, eindeutig sein. Das bedeutet, dass die Kombination aus dem Speicherkontonamen und Warteschlangennamen die eindeutige Identifizierung einer Warteschlange ermöglicht.
+  - content: 'Richtig oder falsch: Wenn ein Client eine Nachricht programmgesteuert von einer Warteschlange abruft, wird die Nachricht automatisch aus der Warteschlange gelöscht.'
+    choices:
+    - content: Richtig
+      isCorrect: false
+      incorrectExplanation: Die Vorgänge 'get message' und 'delete message' sind voneinander unabhängig.
+    - content: Falsch
+      isCorrect: true
+      correctExplanation: Standardmäßig werden Nachrichten automatisch aus einer Warteschlange gelöscht, nachdem sie für die Verarbeitung abgerufen wurden. Somit wird sichergestellt, dass jede Nachricht vollständig verarbeitet wird. Wenn eine Consumeranwendung während der Verarbeitung abstürzt, ist die Nachricht noch immer für die Verarbeitung über eine andere Instanz der Consumer-App verfügbar.

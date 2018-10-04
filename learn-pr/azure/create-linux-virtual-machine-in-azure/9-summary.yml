@@ -9,12 +9,46 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: cf143961dad057732128d694543f4890f1bbefee
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 7e8f4e11d5652bcb4cf4ea95df8141eedbe8abea
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46345284"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437101"
 azureSandbox: true
 durationInMinutes: 3
-content: '[!include[](includes/9-summary.md)]'
+content: >
+  [!include[](includes/9-summary.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: 'Richtig oder falsch: Aus Sicherheitsgründen müssen Sie ein Image aus dem Azure Marketplace verwenden, wenn Sie eine neue VM erstellen.'
+    choices:
+    - content: Richtig
+      isCorrect: false
+      incorrectExplanation: Azure erlaubt Ihnen, Ihre VMs nach Ihren Wünschen zu konfigurieren. Dies beinhaltet die Unterstützung der Verwendung Ihrer eigenen VM-Images.
+    - content: Falsch
+      isCorrect: true
+      correctExplanation: Azure erlaubt Ihnen, Ihre VMs nach Ihren Wünschen zu konfigurieren. Dies beinhaltet die Unterstützung der Verwendung Ihrer eigenen VM-Images.
+  - content: Was ist die Auswirkung der Standardeinstellungen für die Netzwerksicherheit für eine neue VM?
+    choices:
+    - content: Es sind weder eingehende noch ausgehende Anforderung zulässig.
+      isCorrect: false
+      incorrectExplanation: Ausgehende Anforderungen werden als geringes Risiko angesehen, deshalb sind sie standardmäßig zulässig.
+    - content: Ausgehende Anforderung sind zulässig. Eingehender Netzwerkdatenverkehr ist nur von innerhalb des virtuellen Netzwerks zulässig.
+      isCorrect: true
+      correctExplanation: Ausgehende Anforderungen werden als geringes Risiko angesehen, deshalb sind sie standardmäßig zulässig. Eingehender Datenverkehr von innerhalb der VM ist zulässig. Durch Platzieren einer VM in einem virtuellen Netzwerk lässt der Besitzer der VM implizit Kommunikation zwischen den Ressourcen im virtuellen Netzwerk zu.
+    - content: 'Es gibt keine Einschränkungen: Alle ausgehenden und eingehenden Anforderungen sind zulässig.'
+      isCorrect: false
+      incorrectExplanation: Uneingeschränkter eingehender Datenverkehr birgt zu viele Risiken für das Standardverhalten.
+  - content: Angenommen, Sie verfügen über mehrere Linux-VMs, die unter Azure gehostet werden. Sie verwalten diese VMs remote über SSH von den drei dedizierten Computern im Hauptsitz Ihres Unternehmens aus. Welche der folgenden Authentifizierungsmethoden wird in der Regel als die bewährte Methode für diese Situation angesehen?
+    choices:
+    - content: Benutzername und Kennwort
+      isCorrect: false
+      incorrectExplanation: Kennwörter sind anfällig für Brute-Force-Angriffe. Diese Methode wird nur empfohlen, wenn Sie Remotezugriff von mehreren Standorten benötigen.
+    - content: Privater Schlüssel
+      isCorrect: false
+      incorrectExplanation: Der Zugriff über den privaten Schlüssel ist sicherer als ein Kennwort und eine gute Option, wenn Sie Zugriff von einer beschränkten Anzahl von Standorten benötigen. Wenn ein Angreifer jedoch in den Besitz Ihres privaten Schlüssel gelangt, kann er diesen verwenden, um auf Ihre VMs zuzugreifen.
+    - content: Privater Schlüssel mit Passphrase
+      isCorrect: true
+      correctExplanation: Der Zugriff über den privaten Schlüssel mit Passphrase ist die sicherste Methode. Auch wenn ein Angreifer in den Besitz Ihres privaten Schlüssel gelangt, kann diese Person den Schlüssel nur mit der Passphrase verwenden.
