@@ -1,19 +1,50 @@
 ### YamlMime:ModuleUnit
 uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.8-summary
-title: <span data-ttu-id="d6dcb-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="d6dcb-101">Summary</span></span>
+title: <span data-ttu-id="facc5-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="facc5-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="d6dcb-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="d6dcb-102">Summary</span></span>
-  description: <span data-ttu-id="d6dcb-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="d6dcb-103">Summary</span></span>
+  title: <span data-ttu-id="facc5-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="facc5-102">Summary</span></span>
+  description: <span data-ttu-id="facc5-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="facc5-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: bd38f364358426348e11ae5683b15c2000bb4e6c
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: fec6012f991510d8b3dc5e9bf4fb1dc08a1c1811
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46340213"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437526"
 durationInMinutes: 3
-content: '[!include[](includes/8-summary.md)]'
+content: >
+  [!include[](includes/8-summary.md)]
+quiz:
+  title: <span data-ttu-id="facc5-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="facc5-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="facc5-105">Anwendungen, die sehr häufig Nachrichten in Azure Event Hub veröffentlichen, erzielen mit dem Advanced Message Queuing Protocol (AMQP) die beste Leistung, da dieses einen persistenten Socket einrichtet.</span><span class="sxs-lookup"><span data-stu-id="facc5-105">Applications that publish messages to Azure Event Hub very frequently will get the best performance using Advanced Message Queuing Protocol (AMQP) because it establishes a persistent socket.</span></span>
+    choices:
+    - content: <span data-ttu-id="facc5-106">Richtig</span><span class="sxs-lookup"><span data-stu-id="facc5-106">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="facc5-107">Herausgeber können HTTPS oder AMQP verwenden.</span><span class="sxs-lookup"><span data-stu-id="facc5-107">Publishers can use either HTTPS or AMQP.</span></span> <span data-ttu-id="facc5-108">AMQP öffnet einen Socket und kann mehrere Nachrichten über diesen Socket senden.</span><span class="sxs-lookup"><span data-stu-id="facc5-108">AMQP opens a socket and can send multiple messages over that socket.</span></span>
+    - content: <span data-ttu-id="facc5-109">Falsch</span><span class="sxs-lookup"><span data-stu-id="facc5-109">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="facc5-110">Herausgeber können HTTPS oder AMQP verwenden.</span><span class="sxs-lookup"><span data-stu-id="facc5-110">Publishers can use either HTTPS or AMQP.</span></span> <span data-ttu-id="facc5-111">HTTP ist für regelmäßige Veröffentlichungen nicht ideal, da für jede Veröffentlichung eine neue Verbindung hergestellt wird.</span><span class="sxs-lookup"><span data-stu-id="facc5-111">HTTP is not ideal for frequent publishing because it establishes a new connection for each publication.</span></span>
+  - content: <span data-ttu-id="facc5-112">Wie viele Partitionen weist ein neuer Event Hub standardmäßig auf?</span><span class="sxs-lookup"><span data-stu-id="facc5-112">By default, how many partitions will a new Event Hub have?</span></span>
+    choices:
+    - content: <span data-ttu-id="facc5-113">1</span><span class="sxs-lookup"><span data-stu-id="facc5-113">1</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="facc5-114">Event Hubs verfügen standardmäßig über 4 Partitionen.</span><span class="sxs-lookup"><span data-stu-id="facc5-114">Event Hubs default to 4 partitions.</span></span> <span data-ttu-id="facc5-115">Partitionen sind die Buckets in einem Event Hub.</span><span class="sxs-lookup"><span data-stu-id="facc5-115">Partitions are the buckets within an Event Hub.</span></span> <span data-ttu-id="facc5-116">Die einzelnen Veröffentlichungen werden nur in einer Partition gespeichert.</span><span class="sxs-lookup"><span data-stu-id="facc5-116">Each publication will go into only one partition.</span></span> <span data-ttu-id="facc5-117">Jede Consumergruppe kann aus mindestens einer Partitionen lesen.</span><span class="sxs-lookup"><span data-stu-id="facc5-117">Each consumer group may read from one or more than one partition.</span></span>
+    - content: <span data-ttu-id="facc5-118">2</span><span class="sxs-lookup"><span data-stu-id="facc5-118">2</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="facc5-119">Event Hubs verfügen standardmäßig über 4 Partitionen.</span><span class="sxs-lookup"><span data-stu-id="facc5-119">Event Hubs default to 4 partitions.</span></span> <span data-ttu-id="facc5-120">Partitionen sind die Buckets in einem Event Hub.</span><span class="sxs-lookup"><span data-stu-id="facc5-120">Partitions are the buckets within an Event Hub.</span></span> <span data-ttu-id="facc5-121">Die einzelnen Veröffentlichungen werden nur in einer Partition gespeichert.</span><span class="sxs-lookup"><span data-stu-id="facc5-121">Each publication will go into only one partition.</span></span> <span data-ttu-id="facc5-122">Jede Consumergruppe kann aus mindestens einer Partitionen lesen.</span><span class="sxs-lookup"><span data-stu-id="facc5-122">Each consumer group may read from one or more than one partition.</span></span>
+    - content: <span data-ttu-id="facc5-123">4</span><span class="sxs-lookup"><span data-stu-id="facc5-123">4</span></span>
+      isCorrect: true
+      incorrectExplanation: <span data-ttu-id="facc5-124">Event Hubs verfügen standardmäßig über 4 Partitionen.</span><span class="sxs-lookup"><span data-stu-id="facc5-124">Event Hubs default to 4 partitions.</span></span> <span data-ttu-id="facc5-125">Partitionen sind die Buckets in einem Event Hub.</span><span class="sxs-lookup"><span data-stu-id="facc5-125">Partitions are the buckets within an Event Hub.</span></span> <span data-ttu-id="facc5-126">Die einzelnen Veröffentlichungen werden nur in einer Partition gespeichert.</span><span class="sxs-lookup"><span data-stu-id="facc5-126">Each publication will go into only one partition.</span></span> <span data-ttu-id="facc5-127">Jede Consumergruppe kann aus mindestens einer Partitionen lesen.</span><span class="sxs-lookup"><span data-stu-id="facc5-127">Each consumer group may read from one or more than one partition.</span></span>
+  - content: <span data-ttu-id="facc5-128">Wenn ein Event Hub offline geht, bevor eine Consumergruppe die darin enthaltenen Ereignisse verarbeiten kann, gehen diese Ereignisse verloren.</span><span class="sxs-lookup"><span data-stu-id="facc5-128">If an Event Hub goes offline before a consumer group can process the events it holds, those events will be lost.</span></span>
+    choices:
+    - content: <span data-ttu-id="facc5-129">Richtig</span><span class="sxs-lookup"><span data-stu-id="facc5-129">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="facc5-130">Ereignisse sind persistent.</span><span class="sxs-lookup"><span data-stu-id="facc5-130">Events are persistent.</span></span> <span data-ttu-id="facc5-131">Jede Consumergruppe verfügt über einen eigenen Cursor, der innerhalb der Partition seine Position behält.</span><span class="sxs-lookup"><span data-stu-id="facc5-131">Each consumer group has its own cursor maintaining its position within the partition.</span></span> <span data-ttu-id="facc5-132">Wenn der Event Hub wieder verfügbar ist, können die Consumergruppen die Verarbeitung an der jeweiligen Cursorposition fortsetzen.</span><span class="sxs-lookup"><span data-stu-id="facc5-132">The consumer groups can resume processing at their cursor position when the Event Hub is again available.</span></span>
+    - content: <span data-ttu-id="facc5-133">Falsch</span><span class="sxs-lookup"><span data-stu-id="facc5-133">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="facc5-134">Ereignisse sind persistent.</span><span class="sxs-lookup"><span data-stu-id="facc5-134">Events are persistent.</span></span> <span data-ttu-id="facc5-135">Jede Consumergruppe verfügt über einen eigenen Cursor, der innerhalb der Partition seine Position behält.</span><span class="sxs-lookup"><span data-stu-id="facc5-135">Each consumer group has its own cursor maintaining its position within the partition.</span></span> <span data-ttu-id="facc5-136">Wenn der Event Hub wieder verfügbar ist, können die Consumergruppen die Verarbeitung an der jeweiligen Cursorposition fortsetzen.</span><span class="sxs-lookup"><span data-stu-id="facc5-136">The consumer groups can resume processing at their cursor position when the Event Hub is again available.</span></span>

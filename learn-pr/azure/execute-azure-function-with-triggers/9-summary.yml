@@ -1,19 +1,59 @@
 ### YamlMime:ModuleUnit
 uid: learn.execute-azure-function-with-triggers.9-summary
-title: <span data-ttu-id="db22f-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="db22f-101">Summary</span></span>
+title: <span data-ttu-id="6267d-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="6267d-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="db22f-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="db22f-102">Summary</span></span>
-  description: <span data-ttu-id="db22f-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="db22f-103">Summary</span></span>
+  title: <span data-ttu-id="6267d-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="6267d-102">Summary</span></span>
+  description: <span data-ttu-id="6267d-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="6267d-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: dbbed9c336f6aa4063d3c4a3ab22447b8cc97293
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.openlocfilehash: b5705b646b41e63ffe0d2bc45fb3d4417136b10b
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46512785"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47436761"
 durationInMinutes: 2
-content: '[!include[](includes/9-summary.md)]'
+content: >
+  [!include[](includes/9-summary.md)]
+quiz:
+  title: <span data-ttu-id="6267d-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="6267d-104">Check your knowledge</span></span>
+  questions:
+  - content: '<span data-ttu-id="6267d-105">Ein CRON-Ausdruck ist eine Zeichenfolge aus sechs Feldern, die eine Zeitangabe darstellen.</span><span class="sxs-lookup"><span data-stu-id="6267d-105">A CRON expression is a string that consists of six fields that represent a set of times.</span></span> <span data-ttu-id="6267d-106">Die Reihenfolge der sechs Felder in Azure ist: {Sekunde} {Minute} {Stunde} {Tag} {Monat} {Wochentag}.</span><span class="sxs-lookup"><span data-stu-id="6267d-106">The order of the six fields in Azure is: {second} {minute} {hour} {day} {month} {day of the week}.</span></span> <span data-ttu-id="6267d-107">Angenommen, Sie benötigen einen CRON-Ausdruck, der angibt, dass jeder Tag ausgewählt werden soll. Welches Sonderzeichen fügen Sie in diesem Fall bei {Wochentag} ein?</span><span class="sxs-lookup"><span data-stu-id="6267d-107">Suppose you needed a CRON expression that meant "every day", what special character would you put in the {day of the week} position?</span></span>'
+    choices:
+    - content: <span data-ttu-id="6267d-108">„/“</span><span class="sxs-lookup"><span data-stu-id="6267d-108">'/'</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6267d-109">Ein Schrägstrich gibt ein Inkrement an.</span><span class="sxs-lookup"><span data-stu-id="6267d-109">A slash specifies an increment.</span></span> <span data-ttu-id="6267d-110">Wenn im Feld {Sekunde} „\*/5“ angegeben wird, bedeutet das z.B. alle fünf Sekunden.</span><span class="sxs-lookup"><span data-stu-id="6267d-110">For example, a \*/5 in the {seconds} field means every five seconds.</span></span>
+    - content: <span data-ttu-id="6267d-111">„\*“</span><span class="sxs-lookup"><span data-stu-id="6267d-111">'\*'</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="6267d-112">Ein Asterisk gibt an, dass jeder mögliche Wert ausgewählt werden soll.</span><span class="sxs-lookup"><span data-stu-id="6267d-112">An asterisk specifies that every possible value should be selected.</span></span> <span data-ttu-id="6267d-113">Wenn Sie einen Asterisk im Feld {Wochentag} einfügen, bedeutet das, dass jeder Tag ausgewählt wird.</span><span class="sxs-lookup"><span data-stu-id="6267d-113">Having an asterisk in the {day of the week} field means that every day should be selected.</span></span>
+    - content: <span data-ttu-id="6267d-114">„,“</span><span class="sxs-lookup"><span data-stu-id="6267d-114">','</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6267d-115">Ein Komma trennt Elemente in einer Liste voneinander.</span><span class="sxs-lookup"><span data-stu-id="6267d-115">A comma separates items in a list.</span></span> <span data-ttu-id="6267d-116">Wenn Sie z.B. „1,2,3“ im Feld {Monat} eingeben, bedeutet das, dass Januar, Februar und März ausgewählt werden.</span><span class="sxs-lookup"><span data-stu-id="6267d-116">For example, a 1,2,3 in the {month} field means select January, February, and March.</span></span>
+    - content: <span data-ttu-id="6267d-117">„-“</span><span class="sxs-lookup"><span data-stu-id="6267d-117">'-'</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6267d-118">Ein Bindestrich gibt einen Bereich an.</span><span class="sxs-lookup"><span data-stu-id="6267d-118">A hyphen specifies a range.</span></span> <span data-ttu-id="6267d-119">Wenn Sie z.B. „1-3“ im Feld {Monat} eingeben, bedeutet das, dass Januar, Februar und März ausgewählt werden.</span><span class="sxs-lookup"><span data-stu-id="6267d-119">For example, a 1-3 in the {month} field means select January, February, and March.</span></span>
+  - content: <span data-ttu-id="6267d-120">Angenommen, Ihre Azure-Funktion verfügt über einen Blobtrigger, und Sie möchten, dass die Funktion nur ausgeführt wird, wenn Bilder hochgeladen werden.</span><span class="sxs-lookup"><span data-stu-id="6267d-120">Suppose your Azure Function has a blob trigger associated with it and you want it to execute only when images are uploaded.</span></span> <span data-ttu-id="6267d-121">Welchen der folgenden *Pfad*-Werte sollten Sie in diesem Fall für den Blobtrigger verwenden?</span><span class="sxs-lookup"><span data-stu-id="6267d-121">Which of the following blob trigger *Path* values should you use?</span></span>
+    choices:
+    - content: <span data-ttu-id="6267d-122">samples-workitems/{name}</span><span class="sxs-lookup"><span data-stu-id="6267d-122">samples-workitems/{name}</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6267d-123">Der Pfad gibt dem Blobtrigger an, an welcher Stelle er auf Änderungen prüfen soll und ob Filter angewendet wurden.</span><span class="sxs-lookup"><span data-stu-id="6267d-123">The Path tells the blob trigger where it should monitor for changes, and if there are any filters applied.</span></span> <span data-ttu-id="6267d-124">Wenn Sie dem Pfad eine Dateierweiterung hinzufügen, gibt dies an, dass der Trigger die Funktion nur dann aufruft, wenn eine hochgeladene Datei diese Dateierweiterung aufweist.</span><span class="sxs-lookup"><span data-stu-id="6267d-124">Adding a file extension to the Path specifies that uploaded files must have that file extension in order for the trigger to invoke the function.</span></span>
+    - content: <span data-ttu-id="6267d-125">samples-workitems/{name}/png</span><span class="sxs-lookup"><span data-stu-id="6267d-125">samples-workitems/{name}/png</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6267d-126">Der Pfad gibt dem Blobtrigger an, an welcher Stelle er auf Änderungen prüfen soll und ob Filter angewendet wurden.</span><span class="sxs-lookup"><span data-stu-id="6267d-126">The Path tells the blob trigger where it should monitor for changes, and if there are any filters applied.</span></span> <span data-ttu-id="6267d-127">Wenn Sie dem Pfad eine Dateierweiterung hinzufügen, gibt dies an, dass der Trigger die Funktion nur dann aufruft, wenn eine hochgeladene Datei diese Dateierweiterung aufweist.</span><span class="sxs-lookup"><span data-stu-id="6267d-127">Adding a file extension to the Path specifies that uploaded files must have that file extension in order for the trigger to invoke the function.</span></span>
+    - content: <span data-ttu-id="6267d-128">samples-workitems/{name}?png</span><span class="sxs-lookup"><span data-stu-id="6267d-128">samples-workitems/{name}?png</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6267d-129">Der Pfad gibt dem Blobtrigger an, an welcher Stelle er auf Änderungen prüfen soll und ob Filter angewendet wurden.</span><span class="sxs-lookup"><span data-stu-id="6267d-129">The Path tells the blob trigger where it should monitor for changes, and if there are any filters applied.</span></span> <span data-ttu-id="6267d-130">Wenn Sie dem Pfad eine Dateierweiterung hinzufügen, gibt dies an, dass der Trigger die Funktion nur dann aufruft, wenn eine hochgeladene Datei diese Dateierweiterung aufweist.</span><span class="sxs-lookup"><span data-stu-id="6267d-130">Adding a file extension to the Path specifies that uploaded files must have that file extension in order for the trigger to invoke the function.</span></span>
+    - content: <span data-ttu-id="6267d-131">samples-workitems/{name}.png</span><span class="sxs-lookup"><span data-stu-id="6267d-131">samples-workitems/{name}.png</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="6267d-132">Der Pfad gibt dem Blobtrigger an, an welcher Stelle er auf Änderungen prüfen soll und ob Filter angewendet wurden.</span><span class="sxs-lookup"><span data-stu-id="6267d-132">The Path tells the blob trigger where it should monitor for changes, and if there are any filters applied.</span></span> <span data-ttu-id="6267d-133">Wenn Sie dem Pfad eine Dateierweiterung hinzufügen, gibt dies an, dass der Trigger die Funktion nur dann aufruft, wenn eine hochgeladene Datei diese Dateierweiterung aufweist.</span><span class="sxs-lookup"><span data-stu-id="6267d-133">Adding a file extension to the Path specifies that uploaded files must have that file extension in order for the trigger to invoke the function.</span></span>
+  - content: '<span data-ttu-id="6267d-134">Richtig oder falsch: Eine Azure-Funktion kann mehrere Trigger aufweisen.</span><span class="sxs-lookup"><span data-stu-id="6267d-134">True or false: an Azure Function can have multiple triggers associated with it?</span></span>'
+    choices:
+    - content: <span data-ttu-id="6267d-135">Richtig</span><span class="sxs-lookup"><span data-stu-id="6267d-135">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6267d-136">Jeder Azure-Funktion muss genau ein Trigger zugeordnet sein.</span><span class="sxs-lookup"><span data-stu-id="6267d-136">Every Azure Function must have exactly one trigger associated with it.</span></span> <span data-ttu-id="6267d-137">Wenn Sie mehrere Trigger verwenden möchten, müssen Sie mehrere Funktionen erstellen.</span><span class="sxs-lookup"><span data-stu-id="6267d-137">If you want to use multiple triggers, you must create multiple functions.</span></span>
+    - content: <span data-ttu-id="6267d-138">Falsch</span><span class="sxs-lookup"><span data-stu-id="6267d-138">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="6267d-139">Jeder Azure-Funktion muss genau ein Trigger zugeordnet sein.</span><span class="sxs-lookup"><span data-stu-id="6267d-139">Every Azure Function must have exactly one trigger associated with it.</span></span> <span data-ttu-id="6267d-140">Wenn Sie mehrere Trigger verwenden möchten, müssen Sie mehrere Funktionen erstellen.</span><span class="sxs-lookup"><span data-stu-id="6267d-140">If you want to use multiple triggers, you must create multiple functions.</span></span>

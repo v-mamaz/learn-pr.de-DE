@@ -1,20 +1,57 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-a-windows-vm-in-azure.8-summary
-title: <span data-ttu-id="d6f3f-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="d6f3f-101">Summary</span></span>
+title: <span data-ttu-id="415c5-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="415c5-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="d6f3f-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="d6f3f-102">Summary</span></span>
-  description: <span data-ttu-id="d6f3f-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="d6f3f-103">Summary</span></span>
+  title: <span data-ttu-id="415c5-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="415c5-102">Summary</span></span>
+  description: <span data-ttu-id="415c5-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="415c5-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 76203955ef10f22d7150561d906e30b12c064321
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 452dcc7255f6522b8ad790700323e9ac5b11bf1a
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46342772"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437815"
 durationInMinutes: 3
 azureSandbox: true
-content: '[!include[](includes/8-summary.md)]'
+content: >
+  [!include[](includes/8-summary.md)]
+quiz:
+  title: <span data-ttu-id="415c5-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="415c5-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="415c5-105">Welchen Port würden Sie beim Erstellen einer Windows-VM mit Regeln für eingehende Ports öffnen, um den Remotedesktopzugriff zuzulassen?</span><span class="sxs-lookup"><span data-stu-id="415c5-105">When creating a Windows virtual machine in Azure, which port would you open using the INBOUND PORT RULES in order to allow remote-desktop access?</span></span>
+    choices:
+    - content: <span data-ttu-id="415c5-106">HTTPS</span><span class="sxs-lookup"><span data-stu-id="415c5-106">HTTPS</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="415c5-107">Die Remotedesktopverbindung verwendet nicht das HTTPS-Protokoll.</span><span class="sxs-lookup"><span data-stu-id="415c5-107">The remote-desktop connection does not use the HTTPS protocol.</span></span>
+    - content: <span data-ttu-id="415c5-108">SSH (22)</span><span class="sxs-lookup"><span data-stu-id="415c5-108">SSH (22)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="415c5-109">Die Remotedesktopverbindung verwendet nicht das SSH-Protokoll.</span><span class="sxs-lookup"><span data-stu-id="415c5-109">The remote-desktop connection does not use SSH.</span></span>
+    - content: <span data-ttu-id="415c5-110">RDP (3389)</span><span class="sxs-lookup"><span data-stu-id="415c5-110">RDP (3389)</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="415c5-111">Das Remotedesktopprotokoll (RDP) verwendet standardmäßig Port 3389. Dieser ist also der Standardport, den Sie öffnen, wenn Sie einen RDP-Client verwenden möchten, um Ihre Windows-VM zu verwalten.</span><span class="sxs-lookup"><span data-stu-id="415c5-111">The Remote Desktop Protocol (RDP) uses port 3389 by default so this is the standard port you would open if you wanted to use an RDP client to administer your Windows virtual machines.</span></span>
+  - content: <span data-ttu-id="415c5-112">Angenommen, Sie verfügen über eine Anwendung, die auf einer Windows-VM in Azure ausgeführt wird.</span><span class="sxs-lookup"><span data-stu-id="415c5-112">Suppose you have an application running on a Windows virtual machine in Azure.</span></span> <span data-ttu-id="415c5-113">An welcher Stelle sollte die App Datendateien speichern?</span><span class="sxs-lookup"><span data-stu-id="415c5-113">What is the best-practice guidance on where the app should store data files?</span></span>
+    choices:
+    - content: <span data-ttu-id="415c5-114">Auf dem Betriebssystemdatenträger (C:)</span><span class="sxs-lookup"><span data-stu-id="415c5-114">The OS disk (C:)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="415c5-115">Sie können Datendateien auf dem Betriebssystemdatenträger speichern. Für eine hohe Leistung sollten Sie am besten einen Datenträger mit SSD Premium verwenden, was jedoch eine sehr kostspielige Option zum Speichern Ihrer Daten ist.</span><span class="sxs-lookup"><span data-stu-id="415c5-115">You can store data files on the OS disk; however, you may want to optimize that disk for OS performance by selecting a Premium SSD type which could be an expensive way to store your data.</span></span>
+    - content: <span data-ttu-id="415c5-116">Auf einem temporären Datenträger (D:)</span><span class="sxs-lookup"><span data-stu-id="415c5-116">The Temporary disk (D:)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="415c5-117">Der temporäre Datenträger ist nicht persistent.</span><span class="sxs-lookup"><span data-stu-id="415c5-117">The temporary disk is not persistent.</span></span> <span data-ttu-id="415c5-118">Sie sollten keine wichtigen Daten auf diesem Datenträger speichern.</span><span class="sxs-lookup"><span data-stu-id="415c5-118">You should not write important data to this disk.</span></span>
+    - content: <span data-ttu-id="415c5-119">Auf einem angefügten Datenträger</span><span class="sxs-lookup"><span data-stu-id="415c5-119">An attached data disk</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="415c5-120">Dedizierte Datenträger sind allgemein die beste Option zum Speichern von Anwendungsdatendateien.</span><span class="sxs-lookup"><span data-stu-id="415c5-120">Dedicated data disks are generally considered the best place to store application data files.</span></span> <span data-ttu-id="415c5-121">Sie können größer als Betriebssystemdatenträger sein, und Sie können sie an die Kosten- und Leistungsanforderungen Ihrer Daten anpassen.</span><span class="sxs-lookup"><span data-stu-id="415c5-121">They can be larger than OS disks and you can optimize them for the cost and performance characteristics appropriate for your data.</span></span>
+  - content: <span data-ttu-id="415c5-122">Welche ist die letzte Regel, die in jeder Netzwerksicherheitsgruppe angewendet wird?</span><span class="sxs-lookup"><span data-stu-id="415c5-122">What is the final rule that is applied in every Network Security Group?</span></span>
+    choices:
+    - content: <span data-ttu-id="415c5-123">Allow All (Alle zulassen)</span><span class="sxs-lookup"><span data-stu-id="415c5-123">Allow All</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="415c5-124">Diese Regel könnte dazu führen, dass unerwünschter Datenverkehr Zugriff erhält, wenn Ihre Regeln nicht ordnungsgemäß konfiguriert sind.</span><span class="sxs-lookup"><span data-stu-id="415c5-124">This could allow unwanted traffic to gain access if your rules are not configured correctly.</span></span>
+    - content: <span data-ttu-id="415c5-125">Deny All (Alle ablehnen)</span><span class="sxs-lookup"><span data-stu-id="415c5-125">Deny All</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="415c5-126">Mit dieser Regel gehen Sie kein Risiko ein.</span><span class="sxs-lookup"><span data-stu-id="415c5-126">This is a safe choice.</span></span> <span data-ttu-id="415c5-127">Sie blockiert allen Datenverkehr, den Sie nicht explizit zugelassen haben.</span><span class="sxs-lookup"><span data-stu-id="415c5-127">It will block all traffic that you don't specifically allow.</span></span>
+    - content: <span data-ttu-id="415c5-128">Sie konfigurieren die letzte Regel nach Ihren Anforderungen</span><span class="sxs-lookup"><span data-stu-id="415c5-128">You configure the final rule to your needs</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="415c5-129">Die letzte Regel wird automatisch hinzugefügt, wenn die Sicherheitsgruppe erstellt wird, und Sie können sie nicht ändern.</span><span class="sxs-lookup"><span data-stu-id="415c5-129">The final rule is added automatically when the security group is created, and you cannot change it.</span></span>

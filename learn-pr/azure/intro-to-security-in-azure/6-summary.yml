@@ -1,19 +1,56 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-security.6-summary
-title: <span data-ttu-id="4f1f8-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="4f1f8-101">Summary</span></span>
+title: <span data-ttu-id="e7d84-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="e7d84-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="4f1f8-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="4f1f8-102">Summary</span></span>
-  description: <span data-ttu-id="4f1f8-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="4f1f8-103">Summary</span></span>
+  title: <span data-ttu-id="e7d84-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="e7d84-102">Summary</span></span>
+  description: <span data-ttu-id="e7d84-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="e7d84-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9c20d9ad1268e27f22c1715e1897b92e5e291ae2
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: d5fc2c22e727a2f272fa31b50b232f9865a23a6a
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46344964"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437339"
 durationInMinutes: 3
-content: '[!include[](includes/6-summary.md)]'
+content: >
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: <span data-ttu-id="e7d84-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="e7d84-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="e7d84-105">Für die Cloudsicherheit sind Sie und Ihr Cloudanbieter gemeinsam verantwortlich.</span><span class="sxs-lookup"><span data-stu-id="e7d84-105">Cloud security is a shared responsibility between you and your cloud provider.</span></span> <span data-ttu-id="e7d84-106">Welche Kategorie der Clouddienste erfordert den größten Sicherheitsaufwand Ihrerseits?</span><span class="sxs-lookup"><span data-stu-id="e7d84-106">Which category of cloud services requires the greatest security effort on your part?</span></span>
+    choices:
+    - content: <span data-ttu-id="e7d84-107">Infrastructure-as-a-Service (IaaS)</span><span class="sxs-lookup"><span data-stu-id="e7d84-107">Infrastructure as a service (IaaS)</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e7d84-108">In diesem Fall stellt der Cloudanbieter physische Sicherheit für Computeressourcen bereit.</span><span class="sxs-lookup"><span data-stu-id="e7d84-108">At this level, the cloud provider provides physical security to compute resources.</span></span> <span data-ttu-id="e7d84-109">Sie sind jedoch weiterhin dafür verantwortlich, Ihre Betriebssysteme und Software zu patchen und zu schützen sowie Ihr Netzwerk so zu konfigurieren, dass es sicher ist.</span><span class="sxs-lookup"><span data-stu-id="e7d84-109">However, it's your responsibility to patch and secure your operating systems and software, as well as configure your network to be secure.</span></span>
+    - content: <span data-ttu-id="e7d84-110">Platform-as-a-Service (PaaS)</span><span class="sxs-lookup"><span data-stu-id="e7d84-110">Platform as a service (PaaS)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e7d84-111">In diesem Fall kümmert sich der Cloudanbieter um mehr Sicherheitsrisiken als dies bei anderen Kategorien der Fall ist.</span><span class="sxs-lookup"><span data-stu-id="e7d84-111">At this level, the cloud provider handles many security concerns, more than with other categories.</span></span> <span data-ttu-id="e7d84-112">Dies umfasst die Bereitstellung physischer Sicherheit, und dass Betriebssysteme gepatcht und auf dem neuesten Stand sind.</span><span class="sxs-lookup"><span data-stu-id="e7d84-112">This includes providing physical security and keeping operating systems patched and up to date.</span></span>
+    - content: <span data-ttu-id="e7d84-113">Software-as-a-Service (SaaS)</span><span class="sxs-lookup"><span data-stu-id="e7d84-113">Software as a service (SaaS)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e7d84-114">In diesem Fall kümmert sich der Cloudanbieter um die meisten Sicherheitsrisiken für Sie.</span><span class="sxs-lookup"><span data-stu-id="e7d84-114">At this level, the cloud provider handles most security concerns for you.</span></span> <span data-ttu-id="e7d84-115">Ihre Hauptverantwortung liegt bei der Bereitstellung von ordnungsgemäßem Zugriff auf die Software für die Benutzer Ihrer Organisation.</span><span class="sxs-lookup"><span data-stu-id="e7d84-115">Your main responsibility is to provide your organization's users with proper access to the software.</span></span>
+  - content: <span data-ttu-id="e7d84-116">Wie können Sie ein Konto am einfachsten deaktivieren, wenn ein Mitarbeiter Ihr Unternehmen verlässt?</span><span class="sxs-lookup"><span data-stu-id="e7d84-116">Which of these helps you most easily disable an account when an employee leaves your company?</span></span>
+    choices:
+    - content: <span data-ttu-id="e7d84-117">Erzwingen der mehrstufigen Authentifizierung (MFA)</span><span class="sxs-lookup"><span data-stu-id="e7d84-117">Enforce multi-factor authentication (MFA)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e7d84-118">Obwohl die mehrstufige Authentifizierung (MFA) zusätzliche Sicherheit bietet, indem mindestens zwei Methoden für eine vollständige Authentifizierung benötigt werden, können Sie damit keine inaktiven Konten deaktivieren.</span><span class="sxs-lookup"><span data-stu-id="e7d84-118">While MFA provides additional security by requiring two or more elements for full authentication, it doesn't help you disable inactive accounts.</span></span>
+    - content: <span data-ttu-id="e7d84-119">Überwachen von Anmeldeversuchen</span><span class="sxs-lookup"><span data-stu-id="e7d84-119">Monitor sign-on attempts</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e7d84-120">Während die Überwachung Ihnen dabei helfen kann, unzulässige Zugriffsversuche auf einen Ihrer Dienste zu ermitteln, kann die Überwachung alleine Ihnen nicht bei der Deaktivierung inaktiver Konten helfen.</span><span class="sxs-lookup"><span data-stu-id="e7d84-120">While monitoring can help you discover when someone attempts unauthorized access to one of your services, monitoring alone won't help you disable inactive accounts.</span></span>
+    - content: <span data-ttu-id="e7d84-121">Aktivieren von einmaligem Anmelden (Single Sign-On, SSO)</span><span class="sxs-lookup"><span data-stu-id="e7d84-121">Enable single sign-on (SSO)</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e7d84-122">SSO vereint die Benutzeridentität an einem Punkt, weshalb Sie ein inaktives Konto in nur einem Schritt deaktivieren können.</span><span class="sxs-lookup"><span data-stu-id="e7d84-122">SSO centralizes user identity, so you can disable an inactive account in a single step.</span></span>
+  - content: <span data-ttu-id="e7d84-123">Welche der folgenden Optionen ist die _effektivste_ zum Schützen vertraulicher Kundendaten?</span><span class="sxs-lookup"><span data-stu-id="e7d84-123">Which of these is the _strongest_ way to protect sensitive customer data?</span></span>
+    choices:
+    - content: <span data-ttu-id="e7d84-124">Verschlüsseln von Daten in Ihrer Datenbank</span><span class="sxs-lookup"><span data-stu-id="e7d84-124">Encrypt data as it sits in your database</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e7d84-125">Es ist wichtig, dass Ihre Daten in Ihrer Datenbank verschlüsselt sind (Verschlüsselung ruhender Daten). Ihre Daten können jedoch auch von Dritten gelesen werden, wenn sie systemübergreifend über das Netzwerk übertragen werden.</span><span class="sxs-lookup"><span data-stu-id="e7d84-125">While encrypting your data as it sits in your database (encryption at rest) is important, your data may be read by others as it travels over the network between systems.</span></span>
+    - content: <span data-ttu-id="e7d84-126">Verschlüsseln von Daten bei der Übertragung über das Netzwerk</span><span class="sxs-lookup"><span data-stu-id="e7d84-126">Encrypt data as it travels over the network</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="e7d84-127">Es ist wichtig, Ihre Daten bei der Übertragung über das Netzwerk zu verschlüsseln (Verschlüsselung während der Übertragung). Ihre Daten können jedoch auch anfällig sein, wenn sie sich in der Datenbank befinden.</span><span class="sxs-lookup"><span data-stu-id="e7d84-127">While encrypting your data as it travels over the network (encryption in transit) is important, your data may be vulnerable as it sits in your database.</span></span>
+    - content: <span data-ttu-id="e7d84-128">Verschlüsseln von Daten in Ihrer Datenbank und bei der Übertragung über das Netzwerk</span><span class="sxs-lookup"><span data-stu-id="e7d84-128">Encrypt data both as it sits in your database and as it travels over the network</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e7d84-129">Durch das ständige Verschlüsseln Ihrer Daten in Ihrer Datenbank und bei Übertragung über das Netzwerk wird das Risiko, dass ein Angreifer auf Ihre Daten in Nur-Text zugreift, minimiert.</span><span class="sxs-lookup"><span data-stu-id="e7d84-129">Encrypting your data at all times, both as it sits in your database and as it travels over the network, minimizes the opportunity for an attacker to access your data in plain text.</span></span>

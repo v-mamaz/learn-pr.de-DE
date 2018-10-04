@@ -1,52 +1,41 @@
 ### YamlMime:ModuleUnit
 uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.10-knowledge-check
-title: <span data-ttu-id="523c8-101">Wissensbeurteilung</span><span class="sxs-lookup"><span data-stu-id="523c8-101">Knowledge Check</span></span>
+title: <span data-ttu-id="6fa2e-101">Wissensbeurteilung</span><span class="sxs-lookup"><span data-stu-id="6fa2e-101">Knowledge check</span></span>
 metadata:
-  title: <span data-ttu-id="523c8-102">Zusammenfassung und Bereinigung</span><span class="sxs-lookup"><span data-stu-id="523c8-102">Summary and clean-up</span></span>
-  description: <span data-ttu-id="523c8-103">Wissensbeurteilung</span><span class="sxs-lookup"><span data-stu-id="523c8-103">Knowledge Check</span></span>
+  title: <span data-ttu-id="6fa2e-102">Zusammenfassung und Bereinigung</span><span class="sxs-lookup"><span data-stu-id="6fa2e-102">Summary and clean-up</span></span>
+  description: <span data-ttu-id="6fa2e-103">Wissensbeurteilung</span><span class="sxs-lookup"><span data-stu-id="6fa2e-103">Knowledge check</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: fb8021f1b3e30929c1ed44ed71123eb31d660d90
-  ms.sourcegitcommit: a8799fdd6ae2096cef12e66b142b138db8aba56d
+  ms.openlocfilehash: 94a82dfeded304354660591f8c48745b8cbfb308
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/23/2018
-  ms.locfileid: "46704155"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437702"
 durationInMinutes: 2
 content: >
   [!include[](includes/10-knowledge-check.md)]
 quiz:
-  title: <span data-ttu-id="523c8-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="523c8-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="6fa2e-104">Wissensbeurteilung</span><span class="sxs-lookup"><span data-stu-id="6fa2e-104">Knowledge check</span></span>
   questions:
-  - content: <span data-ttu-id="523c8-105">Welche Art von Azure Functions-Trigger erlaubt es, dass Ihre Funktion durch eine HTTP-Anforderung aufgerufen wird?</span><span class="sxs-lookup"><span data-stu-id="523c8-105">What type of Azure Functions trigger allows your function to be invoked by an HTTP request?</span></span>
+  - content: <span data-ttu-id="6fa2e-105">Wie binden Sie eine Funktion an Twilio, um SMS-Nachrichten zu senden?</span><span class="sxs-lookup"><span data-stu-id="6fa2e-105">How do you bind your function to Twilio to send SMS messages?</span></span>
     choices:
-    - content: <span data-ttu-id="523c8-106">HTTP-Trigger</span><span class="sxs-lookup"><span data-stu-id="523c8-106">HTTP Trigger</span></span>
+    - content: <span data-ttu-id="6fa2e-106">Durch Zurückgeben der SMS-Nachrichten als Rückgabewert der Funktion</span><span class="sxs-lookup"><span data-stu-id="6fa2e-106">By returning the SMS messages as the return value of the Function</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="6fa2e-107">Mithilfe eines Funktionsparameters</span><span class="sxs-lookup"><span data-stu-id="6fa2e-107">A function parameter</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="523c8-107">HTTP-Trigger werden zum Aufrufen von Funktionen aus HTTP-Anforderungen verwendet.</span><span class="sxs-lookup"><span data-stu-id="523c8-107">HTTP triggers are used to invoke functions from HTTP requests.</span></span>
-    - content: <span data-ttu-id="523c8-108">Event Hub-Trigger</span><span class="sxs-lookup"><span data-stu-id="523c8-108">Event Hub Trigger</span></span>
+      correctExplanation: <span data-ttu-id="6fa2e-108">SMS-Nachrichten werden zu einer Sammlung hinzugefügt, die an die Funktion als Parameter übergeben wird, der mit dem Attribut `[TwilioSms]` versehen ist.</span><span class="sxs-lookup"><span data-stu-id="6fa2e-108">SMS messages are added to a collection passed to the function as a parameter decorated with the `[TwilioSms]` attribute.</span></span> <span data-ttu-id="6fa2e-109">Die Runtime der Funktion sendet diese Nachrichten an Twilio, sobald die Funktion zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="6fa2e-109">The Function's runtime will send these messages to Twilio once the function returns.</span></span>
+    - content: <span data-ttu-id="6fa2e-110">Direkter Aufruf der Twilio-API</span><span class="sxs-lookup"><span data-stu-id="6fa2e-110">Direct call to the Twilio API</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="523c8-109">HTTP-Trigger werden zum Aufrufen von Funktionen aus HTTP-Anforderungen verwendet.</span><span class="sxs-lookup"><span data-stu-id="523c8-109">HTTP triggers are used to invoke functions from HTTP requests.</span></span>
-    - content: <span data-ttu-id="523c8-110">Warteschlangentrigger</span><span class="sxs-lookup"><span data-stu-id="523c8-110">Queue Trigger</span></span>
-      isCorrect: false
-      incorrectExplanation: <span data-ttu-id="523c8-111">HTTP-Trigger werden zum Aufrufen von Funktionen aus HTTP-Anforderungen verwendet.</span><span class="sxs-lookup"><span data-stu-id="523c8-111">HTTP triggers are used to invoke functions from HTTP requests.</span></span>
-  - content: <span data-ttu-id="523c8-112">Wie binden Sie eine Funktion an Twilio, um SMS-Nachrichten zu senden?</span><span class="sxs-lookup"><span data-stu-id="523c8-112">How do you bind your function to Twilio to send SMS messages?</span></span>
+  - content: <span data-ttu-id="6fa2e-111">Wo definieren Sie Ihre Twilio-Konto-SID und Ihr Authentifizierungstoken, wenn Sie Ihre Funktion lokal ausführen?</span><span class="sxs-lookup"><span data-stu-id="6fa2e-111">Where do you define your Twilio account SID and auth token when running your function locally?</span></span>
     choices:
-    - content: <span data-ttu-id="523c8-113">Durch Zurückgeben der SMS-Nachrichten als Rückgabewert der Funktion</span><span class="sxs-lookup"><span data-stu-id="523c8-113">By returning the SMS messages as the return value of the Function</span></span>
-      isCorrect: false
-    - content: <span data-ttu-id="523c8-114">Mithilfe eines Funktionsparameters</span><span class="sxs-lookup"><span data-stu-id="523c8-114">A function parameter</span></span>
+    - content: <span data-ttu-id="6fa2e-112">In der Datei `local.settings.json`.</span><span class="sxs-lookup"><span data-stu-id="6fa2e-112">In the `local.settings.json` file.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="523c8-115">SMS-Nachrichten werden zu einer Sammlung hinzugefügt, die an die Funktion als Parameter übergeben wird, der mit dem Attribut `[TwilioSms]` versehen ist.</span><span class="sxs-lookup"><span data-stu-id="523c8-115">SMS messages are added to a collection passed to the function as a parameter decorated with the `[TwilioSms]` attribute.</span></span> <span data-ttu-id="523c8-116">Die Runtime der Funktion sendet diese Nachrichten an Twilio, sobald die Funktion zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="523c8-116">The Function's runtime will send these messages to Twilio once the function returns.</span></span>
-    - content: <span data-ttu-id="523c8-117">Direkter Aufruf der Twilio-API</span><span class="sxs-lookup"><span data-stu-id="523c8-117">Direct call to the Twilio API</span></span>
+      correctExplanation: <span data-ttu-id="6fa2e-113">Die Datei `local.settings.json` dient zum Speichern lokaler Einstellungen, die nur bei lokaler Ausführung verwendet werden, nicht bei Veröffentlichung in Azure.</span><span class="sxs-lookup"><span data-stu-id="6fa2e-113">The `local.settings.json` file is used to store local settings that are only used when running locally, not when published to Azure.</span></span> <span data-ttu-id="6fa2e-114">Achten Sie darauf, diese nicht in die Quellcodeverwaltung einzuchecken, wenn sie private Schlüssel enthält und Ihr Repository öffentlich ist.</span><span class="sxs-lookup"><span data-stu-id="6fa2e-114">Be careful to not check this into source code control if it contains private keys and your repo is public.</span></span>
+    - content: <span data-ttu-id="6fa2e-115">Im Attribut `[TwilioSms]`.</span><span class="sxs-lookup"><span data-stu-id="6fa2e-115">In the `[TwilioSms]` attribute</span></span>
       isCorrect: false
-  - content: <span data-ttu-id="523c8-118">Wo definieren Sie Ihre Twilio-Konto-SID und Ihr Authentifizierungstoken, wenn Sie Ihre Funktion lokal ausführen?</span><span class="sxs-lookup"><span data-stu-id="523c8-118">Where do you define your Twilio Account SID and Auth token when running your function locally?</span></span>
-    choices:
-    - content: <span data-ttu-id="523c8-119">In der Datei `local.settings.json`.</span><span class="sxs-lookup"><span data-stu-id="523c8-119">In the `local.settings.json` file.</span></span>
-      isCorrect: true
-      correctExplanation: <span data-ttu-id="523c8-120">Die Datei `local.settings.json` dient zum Speichern lokaler Einstellungen, die nur bei lokaler Ausführung verwendet werden, nicht bei Veröffentlichung in Azure.</span><span class="sxs-lookup"><span data-stu-id="523c8-120">The `local.settings.json` file is used to store local settings that are only used when running locally, not when published to Azure.</span></span> <span data-ttu-id="523c8-121">Achten Sie darauf, diese nicht in die Quellcodeverwaltung einzuchecken, wenn sie private Schlüssel enthält und Ihr Repository öffentlich ist.</span><span class="sxs-lookup"><span data-stu-id="523c8-121">Be careful to not check this into source code control if it contains private keys and your repo is public.</span></span>
-    - content: <span data-ttu-id="523c8-122">Im Attribut `[TwilioSms]`.</span><span class="sxs-lookup"><span data-stu-id="523c8-122">In the `[TwilioSms]` attribute</span></span>
-      isCorrect: false
-    - content: <span data-ttu-id="523c8-123">In Azure veröffentlichte Anwendungseinstellungen</span><span class="sxs-lookup"><span data-stu-id="523c8-123">Application settings published to Azure</span></span>
+    - content: <span data-ttu-id="6fa2e-116">In Azure veröffentlichte Anwendungseinstellungen</span><span class="sxs-lookup"><span data-stu-id="6fa2e-116">Application settings published to Azure</span></span>
       isCorrect: false

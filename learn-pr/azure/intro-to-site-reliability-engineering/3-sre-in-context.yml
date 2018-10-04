@@ -1,0 +1,65 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.3-sre-in-context
+title: <span data-ttu-id="f8645-101">SRE im Kontext</span><span class="sxs-lookup"><span data-stu-id="f8645-101">SRE in context</span></span>
+metadata:
+  title: <span data-ttu-id="f8645-102">SRE im Kontext</span><span class="sxs-lookup"><span data-stu-id="f8645-102">SRE in context</span></span>
+  description: <span data-ttu-id="f8645-103">SRE im Kontext</span><span class="sxs-lookup"><span data-stu-id="f8645-103">SRE in context</span></span>
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a2f23a77d0cc6b9cd6028ec5fbbfb781319afa42
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47438688"
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-sre-in-context.md)]
+quiz:
+  title: <span data-ttu-id="f8645-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="f8645-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="f8645-105">Welche Disziplin hatte die meisten Auswirkungen auf SRE, wenn Sie in Betracht ziehen, in welchem Zusammenhang dieses ursprünglich entwickelt wurde?</span><span class="sxs-lookup"><span data-stu-id="f8645-105">Given the origin of SRE, which discipline has had the most impact on it?</span></span>
+    choices:
+    - content: <span data-ttu-id="f8645-106">Kundendienst</span><span class="sxs-lookup"><span data-stu-id="f8645-106">Customer service</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f8645-107">Bei SRE ist ein kundenorientierter Ansatz essentiell, obwohl der Kundendienst ursprünglich kein Teil war.</span><span class="sxs-lookup"><span data-stu-id="f8645-107">Approaching the work with a customer-centric mindset is crucial to SRE, but customer service was not part of its origin.</span></span>
+    - content: <span data-ttu-id="f8645-108">Mainframevorgänge</span><span class="sxs-lookup"><span data-stu-id="f8645-108">Mainframe operations</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f8645-109">Wir können zwar von anderen Betriebsbereichen lernen, aber SRE kommt ursprünglich nicht aus diesem Bereich.</span><span class="sxs-lookup"><span data-stu-id="f8645-109">Though we can learn from other operations specialties, SRE did not start with this one.</span></span>
+    - content: <span data-ttu-id="f8645-110">Softwareentwicklung</span><span class="sxs-lookup"><span data-stu-id="f8645-110">Software engineering</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="f8645-111">SRE kommt ursprünglich aus dem Bereich der Softwareentwicklung.</span><span class="sxs-lookup"><span data-stu-id="f8645-111">SRE was started with software engineering mindset.</span></span>
+    - content: <span data-ttu-id="f8645-112">Architektur</span><span class="sxs-lookup"><span data-stu-id="f8645-112">Architecture</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f8645-113">Die Architektur (besonders die Softwarearchitektur) ist eine Komponente der Arbeit von SRE, ist aber nicht Teil des Ursprungs.</span><span class="sxs-lookup"><span data-stu-id="f8645-113">Architecture (especially software architecture) is definitely a component of SRE work, but it was not part of its origin.</span></span>
+  - content: <span data-ttu-id="f8645-114">Was gab es zuerst, DevOps oder SRE?</span><span class="sxs-lookup"><span data-stu-id="f8645-114">Which came first, DevOps or SRE?</span></span>
+    choices:
+    - content: <span data-ttu-id="f8645-115">DevOps</span><span class="sxs-lookup"><span data-stu-id="f8645-115">DevOps</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f8645-116">Sie sind ungefähr zeitgleich entstanden.</span><span class="sxs-lookup"><span data-stu-id="f8645-116">They developed roughly in parallel.</span></span>
+    - content: <span data-ttu-id="f8645-117">SRE</span><span class="sxs-lookup"><span data-stu-id="f8645-117">SRE</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f8645-118">Sie sind ungefähr zeitgleich entstanden.</span><span class="sxs-lookup"><span data-stu-id="f8645-118">They developed roughly in parallel.</span></span>
+    - content: <span data-ttu-id="f8645-119">Weder noch, sie sind ungefähr zeitgleich entstanden.</span><span class="sxs-lookup"><span data-stu-id="f8645-119">Neither, they developed roughly in parallel.</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="f8645-120">Ist SRE die Weiterentwicklung von DevOps?</span><span class="sxs-lookup"><span data-stu-id="f8645-120">Is SRE the next evolutionary step from DevOps?</span></span>
+    choices:
+    - content: <span data-ttu-id="f8645-121">Ja, SRE ist die Zukunft von DevOps.</span><span class="sxs-lookup"><span data-stu-id="f8645-121">Yes, SRE is the future of DevOps.</span></span> <span data-ttu-id="f8645-122">DevOps-Mitarbeiter sollten SREs werden wollen</span><span class="sxs-lookup"><span data-stu-id="f8645-122">DevOps personnel should strive to become SREs</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f8645-123">DevOps und SRE sind unterschiedliche Betriebsansätze, die auf ähnliche Herausforderungen eingehen.</span><span class="sxs-lookup"><span data-stu-id="f8645-123">DevOps and SRE are separate operations practices that attempt to address similar challenges.</span></span>
+    - content: <span data-ttu-id="f8645-124">Nein, SRE und DevOps sind unterschiedliche Betriebsansätze</span><span class="sxs-lookup"><span data-stu-id="f8645-124">No, SRE and DevOps are separate operations practices</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="f8645-125">DevOps und SRE unterscheiden sich in der Tat voneinander, gehen aber auf ähnliche Herausforderungen ein.</span><span class="sxs-lookup"><span data-stu-id="f8645-125">DevOps and SRE are indeed separate even though they attempt to address similar challenges.</span></span>
+  - content: <span data-ttu-id="f8645-126">Welche bewährten Methode sind sowohl bei DevOps als auch bei SRE wesentlich?</span><span class="sxs-lookup"><span data-stu-id="f8645-126">What are two best practices that are central to both DevOps and SRE?</span></span>
+    choices:
+    - content: <span data-ttu-id="f8645-127">Automatisierung und Überwachung/Transparenz</span><span class="sxs-lookup"><span data-stu-id="f8645-127">Automation and monitoring/observability</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="f8645-128">Programmierung und Ticketsysteme</span><span class="sxs-lookup"><span data-stu-id="f8645-128">Coding and ticket systems</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f8645-129">Die Programmierung ist zwar wichtig (besonders bei SRE), aber Ticketsysteme sind kein wesentlicher Bestandteil von SRE.</span><span class="sxs-lookup"><span data-stu-id="f8645-129">While coding is important (more so in SRE), ticket systems are not central to SRE.</span></span>
+    - content: <span data-ttu-id="f8645-130">Helpdeskautomatisierung und Fehlernachverfolgung</span><span class="sxs-lookup"><span data-stu-id="f8645-130">Help desk automation and bug tracking</span></span>
+      isCorrect: false
+      correctExplanation: <span data-ttu-id="f8645-131">Helpdeskautomatisierung ist zwar nützlich, aber sie ist weder Bestandteil von DevOps noch von SRE.</span><span class="sxs-lookup"><span data-stu-id="f8645-131">Though useful, help desk automation is not core to either operations practice.</span></span>

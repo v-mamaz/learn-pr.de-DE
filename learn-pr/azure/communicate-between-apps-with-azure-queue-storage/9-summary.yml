@@ -1,19 +1,50 @@
 ### YamlMime:ModuleUnit
 uid: learn.communicate-between-applications-with-azure-queue-storage.9-summary
-title: <span data-ttu-id="ce499-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="ce499-101">Summary</span></span>
+title: <span data-ttu-id="37c6f-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="37c6f-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="ce499-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="ce499-102">Summary</span></span>
-  description: <span data-ttu-id="ce499-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="ce499-103">Summary</span></span>
+  title: <span data-ttu-id="37c6f-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="37c6f-102">Summary</span></span>
+  description: <span data-ttu-id="37c6f-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="37c6f-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9b4e753dd959b77757eee376fa367513e9b62327
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 355fab15880ecc7d0d16f91e51f00a79531bb65d
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46342767"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437560"
 durationInMinutes: 3
-content: '[!include[](includes/9-summary.md)]'
+content: >
+  [!include[](includes/9-summary.md)]
+quiz:
+  title: <span data-ttu-id="37c6f-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="37c6f-104">Check your knowledge</span></span>
+  questions:
+  - content: '<span data-ttu-id="37c6f-105">Nehmen wir an, Sie arbeiten für eine Behörde, die eine langfristige Erweiterung des Autobahnnetzes plant.</span><span class="sxs-lookup"><span data-stu-id="37c6f-105">Suppose you work for a government agency that plans the long-term expansion of the highway system.</span></span> <span data-ttu-id="37c6f-106">Die erhalten von Tausenden von Sensoren Netzwerkdatenverkehr, den Sie analysieren, um Empfehlungen zu geben.</span><span class="sxs-lookup"><span data-stu-id="37c6f-106">You receive traffic data from thousands of sensors and analyze it to make your recommendations.</span></span> <span data-ttu-id="37c6f-107">Die Menge der eingehenden Daten variiert im Laufe des Tage. Beispielsweise werden die Spitzen morgens und abends während der Pendelzeiten verzeichnet.</span><span class="sxs-lookup"><span data-stu-id="37c6f-107">The amount of incoming data varies throughout the day; for example, it spikes during the morning and evening commuting hours.</span></span> <span data-ttu-id="37c6f-108">Richtig oder falsch: Eine serverseitige Architektur, die aus einer Azure-Warteschlange besteht, die mit einer einzelnen VM verbunden ist, ist eine angemessene Wahl für diese Workload.</span><span class="sxs-lookup"><span data-stu-id="37c6f-108">True or false: a server-side architecture consisting of an Azure Queue connected to a single virtual machine is a reasonable choice for this workload?</span></span>'
+    choices:
+    - content: <span data-ttu-id="37c6f-109">Richtig</span><span class="sxs-lookup"><span data-stu-id="37c6f-109">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="37c6f-110">Die Warteschlange bewältigt Spitzen im Datenverkehr und stellt sicher, dass keine Daten verloren gehen.</span><span class="sxs-lookup"><span data-stu-id="37c6f-110">The queue will handle spikes in traffic and ensure no data is lost.</span></span> <span data-ttu-id="37c6f-111">Wenn die VM nicht mit dem Datenverkehr der eingehenden Nachrichten hinterherkommt, verarbeitet sie den Nachrichtenrückstand zu Zeiten mit niedrigem Netzwerkdatenverkehr.</span><span class="sxs-lookup"><span data-stu-id="37c6f-111">If the VM cannot keep up with the flow of incoming messages, it will process the message backlog during low-traffic times.</span></span>
+    - content: <span data-ttu-id="37c6f-112">Falsch</span><span class="sxs-lookup"><span data-stu-id="37c6f-112">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="37c6f-113">Diese Daten werden für die langfristige Planung verwendet, deshalb muss die Verarbeitung nicht in Echtzeit erfolgen.</span><span class="sxs-lookup"><span data-stu-id="37c6f-113">This data is used for long-term planning, so there is no need to process it in real time.</span></span> <span data-ttu-id="37c6f-114">Eine Warteschlange, die mit einer einzelnen VM verbunden ist, kann mit hoher Wahrscheinlichkeit die Workload verarbeiten und ist eine kosteneffiziente Lösung.</span><span class="sxs-lookup"><span data-stu-id="37c6f-114">A queue connected to a single VM is likely to handle the workload and be a cost-efficient solution.</span></span>
+  - content: <span data-ttu-id="37c6f-115">Durch welche Informationen kann eine Warteschlange eindeutig identifiziert werden?</span><span class="sxs-lookup"><span data-stu-id="37c6f-115">What information uniquely identifies a queue?</span></span>
+    choices:
+    - content: <span data-ttu-id="37c6f-116">Warteschlangenname</span><span class="sxs-lookup"><span data-stu-id="37c6f-116">Queue name</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="37c6f-117">Warteschlangennamen müssen nur innerhalb des Speicherkontos, das diese enthält, eindeutig sein. Sie müssen nicht global eindeutig sein.</span><span class="sxs-lookup"><span data-stu-id="37c6f-117">Queue names must only be unique within their containing storage account; they do not need to be globally unique.</span></span>
+    - content: <span data-ttu-id="37c6f-118">Kontoschlüssel</span><span class="sxs-lookup"><span data-stu-id="37c6f-118">Account key</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="37c6f-119">Kontoschlüssel sind mit einem Speicherkonto und nicht mit einer Warteschlange verknüpft.</span><span class="sxs-lookup"><span data-stu-id="37c6f-119">Account keys are associated with a storage account, not a queue.</span></span>
+    - content: <span data-ttu-id="37c6f-120">Speicherkontoname und Warteschlangenname</span><span class="sxs-lookup"><span data-stu-id="37c6f-120">Storage account name and queue name</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="37c6f-121">Namen von Speicherkonten müssen global eindeutig sein.</span><span class="sxs-lookup"><span data-stu-id="37c6f-121">Storage account names must be globally unique.</span></span> <span data-ttu-id="37c6f-122">Warteschlangennamen müssen innerhalb des Speicherkontos, in dem sie enthalten sind, eindeutig sein.</span><span class="sxs-lookup"><span data-stu-id="37c6f-122">Queue names must be unique within their containing storage account.</span></span> <span data-ttu-id="37c6f-123">Das bedeutet, dass die Kombination aus dem Speicherkontonamen und Warteschlangennamen die eindeutige Identifizierung einer Warteschlange ermöglicht.</span><span class="sxs-lookup"><span data-stu-id="37c6f-123">This means the combination of storage account name and queue name uniquely identifies a queue.</span></span>
+  - content: '<span data-ttu-id="37c6f-124">Richtig oder falsch: Wenn ein Client eine Nachricht programmgesteuert von einer Warteschlange abruft, wird die Nachricht automatisch aus der Warteschlange gelöscht.</span><span class="sxs-lookup"><span data-stu-id="37c6f-124">True or false: when a client programmatically retrieves a message from a queue, the message is automatically deleted from the queue?</span></span>'
+    choices:
+    - content: <span data-ttu-id="37c6f-125">Richtig</span><span class="sxs-lookup"><span data-stu-id="37c6f-125">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="37c6f-126">Die Vorgänge 'get message' und 'delete message' sind voneinander unabhängig.</span><span class="sxs-lookup"><span data-stu-id="37c6f-126">The operations 'get message' and 'delete message' are separate.</span></span>
+    - content: <span data-ttu-id="37c6f-127">Falsch</span><span class="sxs-lookup"><span data-stu-id="37c6f-127">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="37c6f-128">Standardmäßig werden Nachrichten automatisch aus einer Warteschlange gelöscht, nachdem sie für die Verarbeitung abgerufen wurden.</span><span class="sxs-lookup"><span data-stu-id="37c6f-128">By design, messages are not automatically deleted from a queue after they are retrieved for processing.</span></span> <span data-ttu-id="37c6f-129">Somit wird sichergestellt, dass jede Nachricht vollständig verarbeitet wird.</span><span class="sxs-lookup"><span data-stu-id="37c6f-129">This helps ensure that every message is processed to completion.</span></span> <span data-ttu-id="37c6f-130">Wenn eine Consumeranwendung während der Verarbeitung abstürzt, ist die Nachricht noch immer für die Verarbeitung über eine andere Instanz der Consumer-App verfügbar.</span><span class="sxs-lookup"><span data-stu-id="37c6f-130">If a consumer application crashes during processing, the message is still available to be processed by a different instance of the consumer app.</span></span>

@@ -1,0 +1,41 @@
+### YamlMime:Module
+uid: learn.intro-to-site-reliability-engineering
+metadata:
+  title: Einführung in Site Reliability Engineering (SRE)
+  description: Große und kleine Unternehmen haben erkannt, wie wichtig die Zuverlässigkeit von Systemen und Anwendungen für ihr Unternehmen ist. Sie haben auch gelernt, wie schwierig es ist, diese Zuverlässigkeit mit Iterationen in der vom Markt geforderten Geschwindigkeit beizubehalten. Site Reliability Engineering (SRE) ist ein bewährter Ansatz für diese Herausforderung.
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d8d65060da1f557776981cc0723f0d191ba1e504
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47438813"
+title: Einführung in Site Reliability Engineering (SRE)
+summary: Große und kleine Unternehmen haben erkannt, wie wichtig die Zuverlässigkeit von Systemen und Anwendungen für ihr Unternehmen ist. Sie haben auch gelernt, wie schwierig es ist, diese Zuverlässigkeit mit Iterationen in der vom Markt geforderten Geschwindigkeit beizubehalten. Site Reliability Engineering (SRE) ist ein bewährter Ansatz für diese Herausforderung.
+abstract: >
+  In diesem Modul wird Folgendes thematisiert:
+
+  - Gewinnen eines Grundverständnisses von Site Reliability Engineering (SRE)
+
+  - Erste Schritte mit dieser nützlichen Betriebsmethode
+iconUrl: /learn/achievements/intro-to-site-reliability-engineering-sre.svg
+levels:
+- beginner
+roles:
+- administrator
+products:
+- azure
+prerequisites: Keine
+units:
+- learn.intro-to-site-reliability-engineering.1-introduction
+- learn.intro-to-site-reliability-engineering.2-what-is-sre-and-why-does-it-matter
+- learn.intro-to-site-reliability-engineering.3-sre-in-context
+- learn.intro-to-site-reliability-engineering.4-key-principles-1-virtuous-cycles
+- learn.intro-to-site-reliability-engineering.5-key-principles-2-human-side-of-sre
+- learn.intro-to-site-reliability-engineering.6-getting-started
+- learn.intro-to-site-reliability-engineering.7-summary
+achievement: learn.intro-to-site-reliability-engineering.badge

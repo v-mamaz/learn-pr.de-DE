@@ -1,19 +1,56 @@
 ### YamlMime:ModuleUnit
 uid: learn.provision-azure-sql-db.5-summary
-title: <span data-ttu-id="69330-101">Zusammenfassung und Cleanup</span><span class="sxs-lookup"><span data-stu-id="69330-101">Summary and cleanup</span></span>
+title: <span data-ttu-id="21b09-101">Zusammenfassung und Cleanup</span><span class="sxs-lookup"><span data-stu-id="21b09-101">Summary and cleanup</span></span>
 metadata:
-  title: <span data-ttu-id="69330-102">Zusammenfassung und Cleanup</span><span class="sxs-lookup"><span data-stu-id="69330-102">Summary and cleanup</span></span>
-  description: <span data-ttu-id="69330-103">Zusammenfassung und Cleanup</span><span class="sxs-lookup"><span data-stu-id="69330-103">Summary and cleanup</span></span>
+  title: <span data-ttu-id="21b09-102">Zusammenfassung und Cleanup</span><span class="sxs-lookup"><span data-stu-id="21b09-102">Summary and cleanup</span></span>
+  description: <span data-ttu-id="21b09-103">Zusammenfassung und Cleanup</span><span class="sxs-lookup"><span data-stu-id="21b09-103">Summary and cleanup</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: e5bd4a690b6c92d6d8c0ef54553db4c523e0f1ab
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 082f2ea2623a2ae161f0cc4ceee965a722a5fae1
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46341622"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437271"
 durationInMinutes: 5
-content: '[!include[](includes/5-summary.md)]'
+content: >
+  [!include[](includes/5-summary.md)]
+quiz:
+  title: <span data-ttu-id="21b09-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="21b09-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="21b09-105">Wer ist für das Durchführen von Softwareupdates in Ihren SQL-Datenbanken und dem zugrunde liegenden Betriebssystem zuständig?</span><span class="sxs-lookup"><span data-stu-id="21b09-105">Who's responsible for performing software updates on your Azure SQL databases and the underlying OS?</span></span>
+    choices:
+    - content: <span data-ttu-id="21b09-106">Sie sind selbst dafür zuständig.</span><span class="sxs-lookup"><span data-stu-id="21b09-106">You are.</span></span> <span data-ttu-id="21b09-107">Sie müssen sich in regelmäßigen Abständen anmelden und die neuesten Sicherheitspatches und -updates installieren.</span><span class="sxs-lookup"><span data-stu-id="21b09-107">It's up to you to periodically log in and install the latest security patches and updates.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="21b09-108">Azure SQL-Datenbanken sind ein PaaS-Angebot (Platform-as-a-Service), d.h., der Verwaltungsaufwand ist sehr viel geringer für Sie.</span><span class="sxs-lookup"><span data-stu-id="21b09-108">Azure SQL databases are a Platform-as-a-Service (PaaS) offering, meaning much less maintenance to manage yourself.</span></span>
+    - content: <span data-ttu-id="21b09-109">Microsoft Azure.</span><span class="sxs-lookup"><span data-stu-id="21b09-109">Microsoft Azure.</span></span> <span data-ttu-id="21b09-110">Azure verwaltet Hardware, Softwareupdates und Betriebssystempatches für Sie.</span><span class="sxs-lookup"><span data-stu-id="21b09-110">Azure manages the hardware, software updates, and OS patches for you.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="21b09-111">Azure SQL-Datenbanken sind ein PaaS-Angebot.</span><span class="sxs-lookup"><span data-stu-id="21b09-111">Azure SQL databases are a Platform-as-a-Service (PaaS) offering.</span></span> <span data-ttu-id="21b09-112">Azure verwaltet Hardware, Softwareupdates und Betriebssystempatches für Sie.</span><span class="sxs-lookup"><span data-stu-id="21b09-112">Azure manages the hardware, software updates, and OS patches for you.</span></span>
+    - content: <span data-ttu-id="21b09-113">Niemand.</span><span class="sxs-lookup"><span data-stu-id="21b09-113">No one.</span></span> <span data-ttu-id="21b09-114">Ihre Datenbank weist weiterhin ihre ursprünglichen Konfigurationen für Betriebssystem und Software auf.</span><span class="sxs-lookup"><span data-stu-id="21b09-114">Your database stays with its original OS and software configuration.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="21b09-115">Azure SQL-Datenbanken sind ein PaaS-Angebot.</span><span class="sxs-lookup"><span data-stu-id="21b09-115">Azure SQL databases are a Platform-as-a-Service (PaaS) offering.</span></span> <span data-ttu-id="21b09-116">Für gewöhnlich verwaltet und aktualisiert der Cloudanbieter PaaS-Dienste für Sie.</span><span class="sxs-lookup"><span data-stu-id="21b09-116">The cloud provider typically manages and updates PaaS services for you.</span></span>
+  - content: <span data-ttu-id="21b09-117">Was ist ein _logischer Azure SQL-Server_?</span><span class="sxs-lookup"><span data-stu-id="21b09-117">What is an _Azure SQL logical server_?</span></span>
+    choices:
+    - content: <span data-ttu-id="21b09-118">Ein administrativer Container für Ihre Datenbanken.</span><span class="sxs-lookup"><span data-stu-id="21b09-118">An administrative container for your databases.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="21b09-119">Sie können Anmeldungen, Firewallregeln und Sicherheitsrichtlinien über den logischen Server steuern.</span><span class="sxs-lookup"><span data-stu-id="21b09-119">You can control logins, firewall rules, and security policies through the logical server.</span></span>
+    - content: <span data-ttu-id="21b09-120">Eine andere Bezeichnung für eine Instanz von Azure SQL-Datenbank.</span><span class="sxs-lookup"><span data-stu-id="21b09-120">Another name for an Azure SQL database instance.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="21b09-121">Denken Sie daran, dass Sie über mehrere Datenbankinstanzen verfügen können.</span><span class="sxs-lookup"><span data-stu-id="21b09-121">Remember that you can have multiple database instances.</span></span> <span data-ttu-id="21b09-122">Gibt es eine Möglichkeit, diese gemeinsam zu verwalten?</span><span class="sxs-lookup"><span data-stu-id="21b09-122">Is there a way to administer them collectively?</span></span>
+    - content: <span data-ttu-id="21b09-123">Ein Server, der die logischen Regeln definiert, die Daten sortieren und vergleichen.</span><span class="sxs-lookup"><span data-stu-id="21b09-123">A server that defines the logical rules that sort and compare data.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="21b09-124">_Sortierung_ bezieht sich auf die Regeln zum Sortieren und Vergleichen von Daten.</span><span class="sxs-lookup"><span data-stu-id="21b09-124">_Collation_ refers to the rules that sort and compare data.</span></span>
+  - content: <span data-ttu-id="21b09-125">Ihre Azure SQL-Datenbank bietet ausreichend Speicher- und Computeleistung.</span><span class="sxs-lookup"><span data-stu-id="21b09-125">Your Azure SQL database provides adequate storage and compute power.</span></span> <span data-ttu-id="21b09-126">Sie stellen jedoch fest, dass Sie zusätzlichen E/A-Durchsatz benötigen.</span><span class="sxs-lookup"><span data-stu-id="21b09-126">But you find that you need additional IO throughput.</span></span> <span data-ttu-id="21b09-127">Welches Leistungsmodell ist dafür geeignet?</span><span class="sxs-lookup"><span data-stu-id="21b09-127">Which performance model might you use?</span></span>
+    choices:
+    - content: <span data-ttu-id="21b09-128">DTU</span><span class="sxs-lookup"><span data-stu-id="21b09-128">DTU</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="21b09-129">DTU, oder Datenbanktransaktionseinheit, bietet eine einfache, vorkonfigurierte Kaufoption.</span><span class="sxs-lookup"><span data-stu-id="21b09-129">DTU, or Database Transaction Unit, provides a simple, preconfigured purchase option.</span></span> <span data-ttu-id="21b09-130">Um den E/A-Durchsatz zu erhöhen, müssten Sie zu einem höheren Tarif wechseln, der zudem Ihre Speicher- und Computeleistung erhöht, was nicht erforderlich ist.</span><span class="sxs-lookup"><span data-stu-id="21b09-130">To increase IO throughput, you would need to move to a higher tier that also increases your storage and compute power, things you don't need.</span></span>
+    - content: <span data-ttu-id="21b09-131">Virtueller Kern</span><span class="sxs-lookup"><span data-stu-id="21b09-131">vCore</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="21b09-132">Ein V-Kern gibt Ihnen größere Kontrolle darüber, welche Compute- und Speicherressourcen Sie erstellen und bezahlen.</span><span class="sxs-lookup"><span data-stu-id="21b09-132">vCore gives you greater control over what compute and storage resources you create and pay for.</span></span> <span data-ttu-id="21b09-133">Sie können den E/A-Durchsatz erhöhen, ohne Compute- oder Speicherressourcen verändern zu müssen.</span><span class="sxs-lookup"><span data-stu-id="21b09-133">You can increase IO throughput but keep the existing amount of compute and storage.</span></span>
+    - content: <span data-ttu-id="21b09-134">Pool für elastische SQL-Datenbanken</span><span class="sxs-lookup"><span data-stu-id="21b09-134">SQL elastic pool</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="21b09-135">Pools für elastische SQL-Datenbanken ermöglichen Ihnen, Compute- und Speicherressourcen zu kaufen, die von allen Datenbanken im Pool gemeinsam verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="21b09-135">SQL elastic pools enable you to buy a set of compute and storage resources that are shared among all the databases in the pool.</span></span> <span data-ttu-id="21b09-136">Diese Option verbessert die E/A-Leistung nicht, da Sie lediglich mit einer Datenbank arbeiten.</span><span class="sxs-lookup"><span data-stu-id="21b09-136">This option won't help with IO performance because you're working with just one database.</span></span>

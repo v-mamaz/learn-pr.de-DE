@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.2-what-is-sre-and-why-does-it-matter
+title: <span data-ttu-id="4afdf-101">Was ist SRE, und warum ist es wichtig?</span><span class="sxs-lookup"><span data-stu-id="4afdf-101">What is SRE and why does it matter?</span></span>
+metadata:
+  title: <span data-ttu-id="4afdf-102">Was ist SRE, und warum ist es wichtig?</span><span class="sxs-lookup"><span data-stu-id="4afdf-102">What is SRE and why does it matter?</span></span>
+  description: <span data-ttu-id="4afdf-103">Was ist SRE, und warum ist es wichtig?</span><span class="sxs-lookup"><span data-stu-id="4afdf-103">What is SRE and why does it matter?</span></span>
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1e19e3256f43ac642814968c9b547e760aa09a64
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47438542"
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-what-is-sre-and-why-does-it-matter.md)]
+quiz:
+  title: <span data-ttu-id="4afdf-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="4afdf-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="4afdf-105">Welche Dienst-, System- oder Produkteigenschaft steht im Fokus von SRE?</span><span class="sxs-lookup"><span data-stu-id="4afdf-105">Which property of a service, system or product does SRE primarily focus on?</span></span>
+    choices:
+    - content: <span data-ttu-id="4afdf-106">Sicherheit</span><span class="sxs-lookup"><span data-stu-id="4afdf-106">Security</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="4afdf-107">Sicherheit ist ohne Frage ein wichtiger Aspekt von SRE, im Fokus dieses Ansatzes steht aber die Zuverlässigkeit.</span><span class="sxs-lookup"><span data-stu-id="4afdf-107">Security is definitely important in SRE, but reliability is the primary focus of this engineering discipline.</span></span>
+    - content: <span data-ttu-id="4afdf-108">Kosten</span><span class="sxs-lookup"><span data-stu-id="4afdf-108">Cost to run</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="4afdf-109">Ausgaben und Ressourcenverwendung sind ohne Frage wichtige Aspekte von SRE, im Fokus dieses Ansatzes steht aber die Zuverlässigkeit.</span><span class="sxs-lookup"><span data-stu-id="4afdf-109">Expenses and resource usage are definitely important in SRE, but reliability is the primary focus of this engineering discipline.</span></span>
+    - content: <span data-ttu-id="4afdf-110">Zuverlässigkeit</span><span class="sxs-lookup"><span data-stu-id="4afdf-110">Reliability</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="4afdf-111">Im Fokus von SRE steht tatsächlich die Zuverlässigkeit an erster Stelle.</span><span class="sxs-lookup"><span data-stu-id="4afdf-111">SRE's primary focus is indeed on reliability.</span></span>
+    - content: <span data-ttu-id="4afdf-112">Wartbarkeit</span><span class="sxs-lookup"><span data-stu-id="4afdf-112">Maintainability</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="4afdf-113">Die Entwicklung von wartbaren Diensten, Systemen oder Produkten ist ohne Frage ein wichtiger Aspekt von SRE. Im Fokus dieses Ansatzes steht aber die Zuverlässigkeit.</span><span class="sxs-lookup"><span data-stu-id="4afdf-113">The creation of maintainable services, systems or products is definitely important in SRE, but reliability is the primary focus of this engineering discipline.</span></span>
+  - content: <span data-ttu-id="4afdf-114">Welche Zuverlässigkeitsstufe soll durch SRE für beinahe alle Dienste, Systeme und Produkte erreicht werden?</span><span class="sxs-lookup"><span data-stu-id="4afdf-114">For almost all services, systems and products, what level of reliability does an SRE strive for?</span></span>
+    choices:
+    - content: <span data-ttu-id="4afdf-115">100 % sind das Ziel</span><span class="sxs-lookup"><span data-stu-id="4afdf-115">100% is the goal</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="4afdf-116">In den meisten Fällen kann eine Zuverlässigkeitsrate von 100 % nicht erreicht werden.</span><span class="sxs-lookup"><span data-stu-id="4afdf-116">For most contexts, it is not possible to hit 100% reliable.</span></span> <span data-ttu-id="4afdf-117">Selbst wenn dies möglich wäre, wäre dies aus Finanz- und Ressourcengründen nicht zulässig (und eine Verschwendung von beidem).</span><span class="sxs-lookup"><span data-stu-id="4afdf-117">Even if it was, it would be cost and resource prohibitive (an as waste of both).</span></span>
+    - content: <span data-ttu-id="4afdf-118">So zuverlässig wie möglich lautet die Devise</span><span class="sxs-lookup"><span data-stu-id="4afdf-118">It should be as reliable as possible</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="4afdf-119">Es ist wichtig, die angemessene Zuverlässigkeitsstufe für ein Ziel zu ermitteln, denn jeder Aufwand und Einsatz von Ressourcen darüber hinaus sind Verschwendung.</span><span class="sxs-lookup"><span data-stu-id="4afdf-119">It is important to find the appropriate level of reliability for a goal since efforts and resources beyond that are a waste.</span></span> <span data-ttu-id="4afdf-120">Die Beschreibung „so zuverlässig wie möglich“ ist jedoch mehr wage als nützlich.</span><span class="sxs-lookup"><span data-stu-id="4afdf-120">Plus "as possible" is too vague to be useful.</span></span>
+    - content: <span data-ttu-id="4afdf-121">Von den wichtigsten Beteiligten als angemessen beurteilte Stufe</span><span class="sxs-lookup"><span data-stu-id="4afdf-121">A specific level indentified as appropriate by the key stakeholders</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="4afdf-122">Ein Ziel für einen Dienst festzulegen, geschieht im Zusammenspiel von SRE, Entwicklungsressourcen und den geschäftlichen Entscheidungsträgern.</span><span class="sxs-lookup"><span data-stu-id="4afdf-122">Setting a goal for a service is a collaborative effort between SRE, development resources and the business decision makers.</span></span>
