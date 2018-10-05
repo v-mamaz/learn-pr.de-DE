@@ -10,7 +10,8 @@ Cloud Computing lässt sich in drei Hauptkategorien untergliedern. Diese müssen
   :::column:::
     ![IaaS-Symbol](../media/5-iaas.png)
   :::column-end:::
-  :::column span="3"::: **Infrastructure-as-a-Service (IaaS)**
+  :::column span="3":::
+**Infrastructure-as-a-Service (IaaS)**
 
 IaaS ist die flexibelste Kategorie von Clouddiensten. Sie zielt darauf ab, Ihnen die komplette Kontrolle über die Hardware zu geben, die die Anwendung ausführt. Mit IaaS mieten Sie die Hardware, anstatt sie zu kaufen.
   :::column-end:::
@@ -20,7 +21,8 @@ IaaS ist die flexibelste Kategorie von Clouddiensten. Sie zielt darauf ab, Ihnen
   :::column:::
     ![PaaS-Symbol](../media/5-paas.png)
   :::column-end:::
-  :::column span="3"::: **Platform-as-a-Service (PaaS)**
+  :::column span="3":::
+**Platform-as-a-Service (PaaS)**
 
 PaaS bietet eine Umgebung zum Erstellen, Testen und Bereitstellen von Softwareanwendungen. Mit PaaS erstellen Sie Anwendungen in kurzer Zeit, ohne sich um die Verwaltung der zugrunde liegenden Infrastruktur kümmern zu müssen. Beim Bereitstellen einer Webanwendung mithilfe von PaaS müssen Sie beispielsweise kein Betriebssystem, keinen Webserver und auch keine Systemupdates installieren.
   :::column-end:::
@@ -30,7 +32,8 @@ PaaS bietet eine Umgebung zum Erstellen, Testen und Bereitstellen von Softwarean
   :::column:::
     ![SaaS-Symbol](../media/5-saas.png)
   :::column-end:::
-  :::column span="3"::: **Software-as-a-Service (SaaS)**
+  :::column span="3":::
+**Software-as-a-Service (SaaS)**
 
 Bei SaaS handelt es sich um Software, die zentral für den Endkunden gehostet und verwaltet wird. Sie basiert normalerweise auf Architektur, bei der eine Version der Anwendung für alle Kunden verwendet wird und die durch ein Monats- oder Jahresabonnement lizenziert wird. Office 365 ist ein perfektes Beispiel für SaaS-Software.
   :::column-end:::

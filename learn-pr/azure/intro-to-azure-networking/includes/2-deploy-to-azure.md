@@ -46,7 +46,8 @@ Im Folgenden erhalten Sie einen Überblick über die einzelnen Komponenten.
   :::column:::
     ![Mit Stecknadel gekennzeichneter Standort, der eine Azure-Region darstellt](../media/2-azure-region.png)
   :::column-end:::
-    :::column span="3"::: **Was ist eine Azure-Region?**
+    :::column span="3":::
+**Was ist eine Azure-Region?**
 
 Eine _Region_ ist ein Azure-Rechenzentrum an einem bestimmten geografischen Standort. Beispiele für Regionen sind „USA, Osten“, „USA, Westen“ und „Europa, Norden“. Wie Sie sehen, wird in diesem Fall die Anwendung in der Region „USA, Osten“ ausgeführt.
 
@@ -56,7 +57,8 @@ Eine _Region_ ist ein Azure-Rechenzentrum an einem bestimmten geografischen Stan
   :::column:::
     ![Zwei virtuelle Computer, die in einem virtuellen Netzwerk ausgeführt werden](../media/2-azure-vnet.png)
   :::column-end:::
-    :::column span="3"::: **Was ist ein virtuelles Netzwerk?**
+    :::column span="3":::
+**Was ist ein virtuelles Netzwerk?**
 
 Ein _virtuelles Netzwerk_ ist ein logisch isoliertes Netzwerk in Azure. Wenn Sie bereits Netzwerke in Hyper-V, VMware oder in anderen öffentlichen Clouds eingerichtet haben, sind Sie sicherlich mit virtuellen Azure-Netzwerken vertraut.
 
@@ -72,7 +74,8 @@ Die physische Hardware wird von Azure-Rechenzentren für Sie verwaltet. Die virt
   :::column:::
     ![Zwei virtuelle Computer mit einer gemeinsamen Netzwerksicherheitsgruppe](../media/2-azure-nsg.png)
   :::column-end:::
-    :::column span="3"::: **Was ist eine Netzwerksicherheitsgruppe?**
+    :::column span="3":::
+**Was ist eine Netzwerksicherheitsgruppe?**
 
 Eine _Netzwerksicherheitsgruppe_ (NSG) lässt eingehenden Netzwerkdatenverkehr für Ihre Azure-Ressourcen zu oder blockiert diesen. Eine Netzwerksicherheitsgruppe ist mit einer Firewall auf Cloudebene für Ihr Netzwerk vergleichbar.
 

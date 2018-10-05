@@ -8,7 +8,8 @@ Azure Storage bietet verschiedene Speicheroptionen für verschiedene Arten von A
   :::column:::
     ![Azure SQL-Datenbank](../media/3-azure-sql-db.png)
   :::column-end:::
-    :::column span="3"::: **Azure SQL-Datenbank**
+    :::column span="3":::
+**Azure SQL-Datenbank**
 
 **Azure SQL-Datenbank** ist eine stabile, vollständig verwaltete relationale Clouddatenbank. Sie können dieses Feature verwenden, um Daten zu speichern, auf die Sie häufig zugreifen und die Sie häufig aktualisieren, z.B. Informationen zu Schulungen für Ihre Mitarbeiter. Sie können auch Ihre vorhandenen SQL Server-Datenbanken migrieren, ohne Ihre Anwendungen ändern zu müssen. In der folgenden Abbildung werden die Datentypen aus dem Szenario für ein Onlinelernportal veranschaulicht, die in einer SQL-Datenbank von Azure gespeichert werden würden.
 
@@ -20,7 +21,8 @@ Azure Storage bietet verschiedene Speicheroptionen für verschiedene Arten von A
   :::column:::
     ![Azure Cosmos DB](../media/3-cosmos-db.png)
   :::column-end:::
-    :::column span="3"::: **Azure Cosmos DB**
+    :::column span="3":::
+**Azure Cosmos DB**
 
 Azure Cosmos DB ist ein global verteilter Datenbankdienst. Der Dienst unterstützt schemalose Daten, mit denen Sie extrem reaktionsschnelle **Always On**-Anwendungen erstellen können, um Daten zu unterstützen, die sich ständig ändern. Sie können dieses Feature verwenden, um Daten zu speichern, die von Benutzern auf der ganzen Welt aktualisiert und verwaltet werden. In der folgenden Abbildung wird eine Beispieldatenbank von Azure Cosmos DB gezeigt, die zum Speichern von Daten verwendet wird, auf die Personen aus der ganzen Welt zugreifen.
 
@@ -32,7 +34,8 @@ Azure Cosmos DB ist ein global verteilter Datenbankdienst. Der Dienst unterstüt
   :::column:::
     ![Azure Blob Storage](../media/3-azure-blob-storage.png)
   :::column-end:::
-    :::column span="3"::: **Azure Blob Storage**
+    :::column span="3":::
+**Azure Blob Storage**
 
 Azure Blob Storage bietet Ihnen die Möglichkeit, große Video- und Audiodateien von jedem Standort der Welt aus direkt in Browser von Benutzern zu streamen. Blobspeicher wird auch zum Speichern von Daten für die Sicherung und Wiederherstellung, die Notfallwiederherstellung sowie die Archivierung verwendet. Er kann bis zu 8 TB Daten für virtuelle Computer speichern. In der folgenden Abbildung wird ein Beispiel zur Verwendung von Azure Blob Storage veranschaulicht.
 
@@ -44,7 +47,8 @@ Azure Blob Storage bietet Ihnen die Möglichkeit, große Video- und Audiodateien
   :::column:::
     ![Azure Data Lake Storage Gen2](../media/3-azure-data-lake.png)
   :::column-end:::
-    :::column span="3"::: **Azure Data Lake Storage Gen2**
+    :::column span="3":::
+**Azure Data Lake Storage Gen2**
 
 Das Data Lake-Feature ermöglicht es Ihnen, Ihre Datennutzung zu analysieren und Berichte zu erstellen. Data Lake ist ein umfangreiches Repository, in dem sowohl strukturierte als auch unstrukturierte Daten gespeichert werden können.
 
@@ -58,7 +62,8 @@ Das Data Lake-Feature ermöglicht es Ihnen, Ihre Datennutzung zu analysieren und
   :::column:::
     ![Azure Files](../media/3-azure-files.png)
   :::column-end:::
-    :::column span="3"::: **Azure Files**
+    :::column span="3":::
+**Azure Files**
 
 Azure Files bietet vollständig verwaltete Dateifreigaben in der Cloud. Anwendungen, die in Azure ausgeführt werden, können problemlos Dateien zwischen virtuellen Computern freigeben. Sie können Azure-Dateifreigaben gleichzeitig für Cloud- und lokale Bereitstellungen von Windows, Linux und macOS verwenden. In der folgenden Abbildung wird die Verwendung von Azure Files zum Freigeben von Daten für zwei geografische Standorte veranschaulicht. Azure Files verwendet das SMB-Protokoll (Server Message Block). Es stellt sicher, dass Daten im Ruhezustand und während der Übertragung verschlüsselt sind.
 
@@ -70,7 +75,8 @@ Azure Files bietet vollständig verwaltete Dateifreigaben in der Cloud. Anwendun
   :::column:::
     ![Azure Queue](../media/3-azure-queue.png)
   :::column-end:::
-    :::column span="3"::: **Azure Queue**
+    :::column span="3":::
+**Azure Queue**
 
 Azure Queue ist ein Dienst zur Speicherung einer großen Anzahl von Nachrichten, auf die von überall auf der Welt aus zugegriffen werden kann. In Zahlen: Eine einzelne Warteschlangennachricht kann bis zu 64 KB groß sein, und eine Warteschlange kann Millionen von Nachrichten enthalten.
 
@@ -88,15 +94,16 @@ Sie können Queue Storage für die folgenden Aufgaben verwenden:
 :::row-end:::
 :::row:::
   :::column:::
-    ![Azure Storage Standard](../media/3-azure-standard-storage.png)
+    ![Azure-Standardspeicher](../media/3-azure-standard-storage.png)
   :::column-end:::
-    :::column span="3"::: **Azure Storage Standard**
+    :::column span="3":::
+**Azure Storage Standard**
 
 Virtuelle Computer in Azure verwenden Datenträger zum Speichern von Betriebssystemen, Anwendungen und Daten. Azure-Standardspeicher bieten zuverlässige, kostengünstige Datenträgerunterstützung für virtuelle Computer mit nicht geschäftskritischen Workloads. Bei Verwendung von Storage Standard werden die Daten auf Festplattenlaufwerken (Hard Disk Drives, HDDs) gespeichert.
 
 Wenn Sie mit virtuellen Computern arbeiten, können Sie standardmäßige SSD- und HDD-Datenträger für weniger kritische Workloads und Premium-SSD-Datenträger für unternehmenskritische Produktionsanwendungen verwenden. Azure-Datenträger stellen konsistent Dauerhaftigkeit auf Unternehmensniveau bereit, mit einer branchenweit führenden auf das Jahr umgerechneten Fehlerrate von NULL %. In der folgenden Abbildung wird gezeigt, wie ein virtueller Azure-Computer separate Datenträger nutzt, um unterschiedliche Daten zu speichern.
 
-![Eine Abbildung, die zwei Datenträger innerhalb eines virtuellen Computers zeigt. Auf einem Datenträger wird das Betriebssystem gespeichert und auf dem anderen die Daten.](../media/3-Azure_disks.png)
+![Eine Abbildung, die zwei Datenträger innerhalb einer VM zeigt, auf einem wird das Betriebssystem gespeichert und auf dem anderen die Daten.](../media/3-Azure_disks.png)
 
 :::column-end:::
 :::row-end:::
@@ -104,7 +111,8 @@ Wenn Sie mit virtuellen Computern arbeiten, können Sie standardmäßige SSD- un
   :::column:::
     ![Speicherebenen](../media/3-storage-tiers.png)
   :::column-end:::
-    :::column span="3"::: **Speicherebenen**
+    :::column span="3":::
+**Speicherebenen**
 
 Azure bietet drei Speicherebenen für Blobobjektspeicher.
 
@@ -120,7 +128,8 @@ Azure bietet drei Speicherebenen für Blobobjektspeicher.
   :::column:::
     ![Verschlüsselung und Replikation](../media/3-azure-storage-encryption.png)
   :::column-end:::
-    :::column span="3"::: **Verschlüsselung und Replikation**
+    :::column span="3":::
+**Verschlüsselung und Replikation**
 
 Azure bietet Verschlüsselungs- und Replikationsfeatures, um für die Sicherheit und Hochverfügbarkeit Ihrer Daten zu sorgen.
 
