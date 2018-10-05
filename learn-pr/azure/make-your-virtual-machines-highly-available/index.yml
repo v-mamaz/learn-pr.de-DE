@@ -4,16 +4,16 @@ metadata:
   title: Erreichen von Hochverfügbarkeit Ihrer VMs mit Azure Load Balancer
   description: Verwenden Sie Azure Load Balancer als öffentlichen Lastenausgleich, um öffentlichen eingehenden Datenverkehr auf mehrere Azure-VMs zu verteilen. Verstehen des Zwecks eines Lastenausgleichs Arbeiten Sie mit Azure Load Balancer im Portal, identifizieren Sie eine VM-Skalierungsgruppe, zu der Datenverkehr weitergeleitet werden kann, und überwachen Sie den Datenverkehr.
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: marktap
+  ms.author: matapar
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 5de95fb072eb09d9ba11abdbcb8ad92c53caa41f
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 515859f738fff301581e1877d3c227621e7e1673
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47126710"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48786660"
 title: Erreichen von Hochverfügbarkeit Ihrer VMs mit Azure Load Balancer
 summary: Verteilen Sie öffentlichen eingehenden Datenverkehr mit dem Lastenausgleich auf mehrere virtuelle Computer.
 abstract: >
