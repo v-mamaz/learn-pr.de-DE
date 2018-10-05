@@ -4,16 +4,17 @@ metadata:
   title: Hinzufügen und Ändern der Größe von Datenträgern auf virtuellen Azure-Computern
   description: Die Auswahl des richtigen Speichers für Ihre VMs ist wichtig. Sie müssen zwischen Standard- und Premium-Speicher, verwalteten und nicht verwalteten Datenträgern, Datenträgergrößen und anderen Parametern wählen. In diesem Modul werden wir unsere Optionen untersuchen und das Arbeiten mit Datenträgern (VHD-Dateien) üben.
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: AndrewJByrne
+  ms.author: anbyrne
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 7aac6c3c26e0e89c773a59604df138e4d98ff09a
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.learn-contact: anbyrne
+  ms.openlocfilehash: 12ff11ec76fa3b1a1fab08b1dbcabe20fc79a57a
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47125741"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48787388"
 title: Hinzufügen und Ändern der Größe von Datenträgern auf virtuellen Azure-Computern
 summary: Sie werden die verschiedenen Typen der für virtuelle Azure-Computer (VMs) verfügbaren Datenträgerspeicher kennenlernen und erstellen.
 abstract: >

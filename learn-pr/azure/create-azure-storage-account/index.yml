@@ -4,16 +4,16 @@ metadata:
   title: Erstellen eines Azure-Speicherkontos
   description: Azure-Speicherkonten bieten Ihnen eine leistungsstarke Möglichkeit zum Organisieren von Daten in der Cloud. Sie erstellen logische Gruppen von verwandten Daten und wenden auf alle Elemente in der Gruppe eine einzelne Richtlinie für die Abrechnung, den Zugriff, den Speicherort usw. an. Hier verwenden Sie Azure-Speicherkonten, um Ihre Azure-Blobs, -Dateien, -Warteschlangen und -Tabellen zu gruppieren und zu verwalten.
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: marktap
+  ms.author: matapar
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: d12eebc4b6d95c90a0b5c6a359e0c7efc15d85ba
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 2cf4e0cf8e17487a386cae27ce930ee17bd389f2
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47127686"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48787133"
 title: Erstellen eines Azure-Speicherkontos
 summary: Erstellen Sie ein Azure-Speicherkonto mit den richtigen Optionen für Ihre geschäftlichen Anforderungen.
 abstract: >
