@@ -1,19 +1,50 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-your-azure-virtual-machine-disks.7-summary
-title: <span data-ttu-id="71a16-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="71a16-101">Summary</span></span>
+title: <span data-ttu-id="8f248-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="8f248-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="71a16-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="71a16-102">Summary</span></span>
-  description: <span data-ttu-id="71a16-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="71a16-103">Summary</span></span>
+  title: <span data-ttu-id="8f248-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="8f248-102">Summary</span></span>
+  description: <span data-ttu-id="8f248-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="8f248-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 8655d009b831a4d0ae7341a43a1cdedda189c87a
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 44ed3b80fab9ac04bb407deab56fafadffe72103
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47126216"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48786946"
 durationInMinutes: 3
-content: '[!include[](includes/7-summary.md)]'
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: <span data-ttu-id="8f248-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="8f248-104">Check your knowledge</span></span>
+  questions:
+  - content: '<span data-ttu-id="8f248-105">Richtig oder falsch: Wenn Sie Azure Disk Encryption (ADE) auf einer Windows-VM aktivieren, wird DM-Crypt verwendet, um die Daten auf Ihrer virtuellen Festplatte zu verschlüsseln.</span><span class="sxs-lookup"><span data-stu-id="8f248-105">True or false: If you enable Azure Disk Encryption (ADE) on a Windows VM it will use DM-Crypt to encrypt the data on your Virtual Hard Disks.</span></span>'
+    choices:
+    - content: <span data-ttu-id="8f248-106">Richtig</span><span class="sxs-lookup"><span data-stu-id="8f248-106">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8f248-107">DM-Crypt wird auf virtuellen Linux-Computern verwendet.</span><span class="sxs-lookup"><span data-stu-id="8f248-107">DM-Crypt is used on Linux virtual machines.</span></span> <span data-ttu-id="8f248-108">Für Windows wird BitLocker verwendet.</span><span class="sxs-lookup"><span data-stu-id="8f248-108">Windows will instead use BitLocker.</span></span>
+    - content: <span data-ttu-id="8f248-109">Falsch</span><span class="sxs-lookup"><span data-stu-id="8f248-109">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="8f248-110">Windows-VMs werden mit BitLocker verschlüsselt.</span><span class="sxs-lookup"><span data-stu-id="8f248-110">Windows VMs are encrypted using BitLocker.</span></span> <span data-ttu-id="8f248-111">Für Linux-VMs wird DM-Crypt verwendet.</span><span class="sxs-lookup"><span data-stu-id="8f248-111">Linux VMs will use DM-Crypt.</span></span>
+  - content: '<span data-ttu-id="8f248-112">Richtig oder falsch: Wenn Sie den Azure Key Vault zum Schützen Ihrer Schlüssel für Azure Disk Encryption verwenden, müssen Sie sicherstellen, dass die Azure Key Vault-Zugriffsrichtlinien so konfiguriert sind, dass sie mindestens einen Sicherheitsprinzipal zulassen.</span><span class="sxs-lookup"><span data-stu-id="8f248-112">True or false: When using Azure Key Vault to secure keys used for Azure Disk Encryption (ADE) you must ensure the Azure Key Vault access policies are configured to permit at least one security principal.</span></span>'
+    choices:
+    - content: <span data-ttu-id="8f248-113">Richtig</span><span class="sxs-lookup"><span data-stu-id="8f248-113">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8f248-114">Sie müssen keinen Sicherheitsprinzipal für ADE konfigurieren. Wenn Sie die Datenträgerverschlüsselung für den Schlüsseltresor aktivieren, ist das ausreichend.</span><span class="sxs-lookup"><span data-stu-id="8f248-114">You do not need to configure a security principal for ADE, just enabling the key vault for disk encryption is enough.</span></span>
+    - content: <span data-ttu-id="8f248-115">Falsch</span><span class="sxs-lookup"><span data-stu-id="8f248-115">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="8f248-116">Sie müssen keinen Sicherheitsprinzipal für ADE konfigurieren. Wenn Sie die Datenträgerverschlüsselung für den Schlüsseltresor aktivieren, ist das ausreichend.</span><span class="sxs-lookup"><span data-stu-id="8f248-116">You do not need to configure a security principal for ADE, just enabling the key vault for disk encryption is enough.</span></span>
+  - content: <span data-ttu-id="8f248-117">Angenommen, Sie erstellen eine neue VM mit einem Betriebssystemdatenträger und einem Datenträger.</span><span class="sxs-lookup"><span data-stu-id="8f248-117">Suppose you create a new VM with a single OS disk and a single data disk.</span></span> <span data-ttu-id="8f248-118">Sie verwenden beim Erstellen der VM alle Standardoptionen, und Ihr Abonnement enthält keinen Azure Key Vault.</span><span class="sxs-lookup"><span data-stu-id="8f248-118">You use all the default options when creating the VM and you have no Azure Key Vault anywhere in your subscription.</span></span> <span data-ttu-id="8f248-119">Welche Aussage beschreibt den Verschlüsselungsstatus dieser Datenträger?</span><span class="sxs-lookup"><span data-stu-id="8f248-119">Which option most accurately describes the encryption state of those disks?</span></span>
+    choices:
+    - content: <span data-ttu-id="8f248-120">Beide Datenträger sind unverschlüsselt.</span><span class="sxs-lookup"><span data-stu-id="8f248-120">Both disks are unencrypted.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8f248-121">Die Speicherdienstverschlüsselung (SSE) ist standardmäßig für neue virtuelle Festplatten aktiviert.</span><span class="sxs-lookup"><span data-stu-id="8f248-121">Storage Service Encryption (SSE) is enabled by default for new virtual hard disks.</span></span> <span data-ttu-id="8f248-122">Azure verwaltet die Schlüssel mit der SSE und entschlüsselt Daten für alle Lesevorgänge automatisch, ohne dass die Leistung davon beeinträchtigt würde.</span><span class="sxs-lookup"><span data-stu-id="8f248-122">With SSE, Azure manages the keys and automatically decrypts data for any read operations without impact on performance.</span></span>
+    - content: <span data-ttu-id="8f248-123">Der Betriebssystemdatenträger wird mit der Speicherdienstverschlüsselung (SSE) verschlüsselt.</span><span class="sxs-lookup"><span data-stu-id="8f248-123">The OS disk is encrypted using Storage Service Encryption (SSE).</span></span> <span data-ttu-id="8f248-124">Der Datenträger ist unverschlüsselt.</span><span class="sxs-lookup"><span data-stu-id="8f248-124">The data disk is unencrypted.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8f248-125">Die Speicherdienstverschlüsselung (SSE) ist standardmäßig für neue virtuelle Festplatten aktiviert.</span><span class="sxs-lookup"><span data-stu-id="8f248-125">Storage Service Encryption (SSE) is enabled by default for new virtual hard disks.</span></span> <span data-ttu-id="8f248-126">Azure verwaltet die Schlüssel mit der SSE und entschlüsselt Daten für alle Lesevorgänge automatisch, ohne dass die Leistung davon beeinträchtigt würde.</span><span class="sxs-lookup"><span data-stu-id="8f248-126">With SSE, Azure manages the keys and automatically decrypts data for any read operations without impact on performance.</span></span>
+    - content: <span data-ttu-id="8f248-127">Beide Datenträger werden mit der SSE verschlüsselt.</span><span class="sxs-lookup"><span data-stu-id="8f248-127">Both disks are encrypted using Storage Service Encryption.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="8f248-128">Alle Datenträger werden standardmäßig mit der SSE verschlüsselt.</span><span class="sxs-lookup"><span data-stu-id="8f248-128">All disks are encrypted using SSE by default.</span></span> <span data-ttu-id="8f248-129">Azure verwaltet die Schlüssel mit der SSE und entschlüsselt Daten für alle Lesevorgänge automatisch, ohne dass die Leistung davon beeinträchtigt würde.</span><span class="sxs-lookup"><span data-stu-id="8f248-129">With SSE, Azure manages the keys and automatically decrypts data for any read operations without impact on performance.</span></span>

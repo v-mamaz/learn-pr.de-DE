@@ -1,19 +1,53 @@
 ### YamlMime:ModuleUnit
 uid: learn.control-azure-services-with-cli.6-summary
-title: <span data-ttu-id="b6f42-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="b6f42-101">Summary</span></span>
+title: <span data-ttu-id="aa508-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="aa508-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="b6f42-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="b6f42-102">Summary</span></span>
-  description: <span data-ttu-id="b6f42-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="b6f42-103">Summary</span></span>
+  title: <span data-ttu-id="aa508-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="aa508-102">Summary</span></span>
+  description: <span data-ttu-id="aa508-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="aa508-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 715c255243e1ba52449e5a6a6fbe4ce56f47152a
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 8366888da3167b4a58a5e89e2bb54daa9a123010
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47123636"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48787028"
 durationInMinutes: 3
-content: '[!include[](includes/6-summary.md)]'
+content: >
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: <span data-ttu-id="aa508-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="aa508-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="aa508-105">Was müssen Sie auf Ihrem Computer installieren, damit Sie Azure CLI-Befehle lokal ausführen können?</span><span class="sxs-lookup"><span data-stu-id="aa508-105">What do you need to install on your machine to let you execute Azure CLI commands locally?</span></span>
+    choices:
+    - content: <span data-ttu-id="aa508-106">Azure Cloud Shell</span><span class="sxs-lookup"><span data-stu-id="aa508-106">The Azure cloud shell</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="aa508-107">Cloud Shell ermöglicht Ihnen das Ausführen von Azure CLI-Befehlen. Allerdings geschieht dies im Browser, was bedeutet, dass Sie die Befehle nicht auf Ihrem lokalen Computer ausführen.</span><span class="sxs-lookup"><span data-stu-id="aa508-107">The cloud shell does let you execute Azure CLI commands; however, you use the Cloud Shell in a browser, so you are not running the commands on your local machine.</span></span>
+    - content: <span data-ttu-id="aa508-108">Die Azure CLI oder Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="aa508-108">The Azure CLI and Azure PowerShell</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="aa508-109">Sie können CLI-Befehle über eine PowerShell-Eingabeaufforderung ausführen. PowerShell ist zum lokalen Ausführen der CLI jedoch nicht erforderlich.</span><span class="sxs-lookup"><span data-stu-id="aa508-109">You can run CLI commands from a PowerShell prompt; however, PowerShell is not required to run the CLI locally.</span></span>
+    - content: <span data-ttu-id="aa508-110">Nur die Azure CLI</span><span class="sxs-lookup"><span data-stu-id="aa508-110">Only the Azure CLI</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="aa508-111">Sie müssen nur die Azure CLI installieren.</span><span class="sxs-lookup"><span data-stu-id="aa508-111">You only need to install the Azure CLI.</span></span> <span data-ttu-id="aa508-112">Dann verwenden Sie eine Shell zum Ausgeben von CLI-Befehlen. Jede Plattform verfügt über mindestens eine integrierte Shell.</span><span class="sxs-lookup"><span data-stu-id="aa508-112">You will use a shell to issue the CLI commands, but every platform has at least one built-in shell.</span></span>
+  - content: '<span data-ttu-id="aa508-113">Die Azure CLI kann unter Linux, macOS und Windows installiert werden.</span><span class="sxs-lookup"><span data-stu-id="aa508-113">The Azure CLI can be installed on Linux, macOS, and Windows.</span></span> <span data-ttu-id="aa508-114">Richtig oder falsch: Die CLI-Befehle, die Sie verwenden, sind auf allen Plattformen die gleichen.</span><span class="sxs-lookup"><span data-stu-id="aa508-114">True or false: the CLI commands you use are the same in all platforms.</span></span>'
+    choices:
+    - content: <span data-ttu-id="aa508-115">Richtig</span><span class="sxs-lookup"><span data-stu-id="aa508-115">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="aa508-116">Die CLI ist plattformübergreifend und kann unter Linux, macOS und Windows installiert werden.</span><span class="sxs-lookup"><span data-stu-id="aa508-116">The CLI is cross-platform and can be installed on Linux, macOS, and Windows.</span></span> <span data-ttu-id="aa508-117">Nach der Installation müssen die ausgeführten CLI-Befehle überall übereinstimmen.</span><span class="sxs-lookup"><span data-stu-id="aa508-117">After installation, the CLI commands that you run are the same everywhere.</span></span> <span data-ttu-id="aa508-118">Das heißt, dass Sie die Befehle nur einmal lernen müssen und sie dann für jede lokale Installation oder in der Azure Cloud Shell verwenden können.</span><span class="sxs-lookup"><span data-stu-id="aa508-118">This means you can learn the commands once and use them with any local installation or in the Azure Cloud Shell.</span></span>
+    - content: <span data-ttu-id="aa508-119">Falsch</span><span class="sxs-lookup"><span data-stu-id="aa508-119">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="aa508-120">Die CLI stellt überall die gleichen Befehle bereit.</span><span class="sxs-lookup"><span data-stu-id="aa508-120">The CLI provides the same set of commands everywhere it is available.</span></span>
+  - content: <span data-ttu-id="aa508-121">Welchen Parameter können Sie an die meisten CLI-Befehle anfügen, um eine präzise, formatierte Ausgabe zu erhalten?</span><span class="sxs-lookup"><span data-stu-id="aa508-121">Which parameter can you add to most CLI commands to get concise, formatted output?</span></span>
+    choices:
+    - content: <span data-ttu-id="aa508-122">list</span><span class="sxs-lookup"><span data-stu-id="aa508-122">list</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="aa508-123">Der Unterbefehl „list“ zeigt Details zu einer Ressource an. Er wirkt sich nicht auf das Ausgabeformat aus.</span><span class="sxs-lookup"><span data-stu-id="aa508-123">The list subcommand displays the details of a resource, it does not control output format.</span></span>
+    - content: <span data-ttu-id="aa508-124">table</span><span class="sxs-lookup"><span data-stu-id="aa508-124">table</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="aa508-125">Der Parameter „table“ formatiert die Ausgabe als Tabelle.</span><span class="sxs-lookup"><span data-stu-id="aa508-125">The table parameter formats the output as a table.</span></span> <span data-ttu-id="aa508-126">Dadurch sind Ausgabe deutlich lesbarer, insbesondere bei Befehlen, die große Ausgaben erzeugen.</span><span class="sxs-lookup"><span data-stu-id="aa508-126">This can make things much more readable for commands that produce a large amount of output.</span></span>
+    - content: <span data-ttu-id="aa508-127">group</span><span class="sxs-lookup"><span data-stu-id="aa508-127">group</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="aa508-128">Mit dem Befehl „group“ können Sie Ressourcengruppen gruppieren. Der Befehl wirkt sich nicht auf das Ausgabeformat aus.</span><span class="sxs-lookup"><span data-stu-id="aa508-128">The group command lets you control resource groups, it does not influence output format.</span></span>

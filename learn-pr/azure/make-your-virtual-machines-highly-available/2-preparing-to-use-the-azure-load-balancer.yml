@@ -1,49 +1,50 @@
 ### YamlMime:ModuleUnit
 uid: learn.make-your-virtual-machines-highly-available.2-preparing-to-use-the-azure-load-balancer
-title: <span data-ttu-id="dd105-101">Vorbereitung für die Verwendung von Azure Load Balancer</span><span class="sxs-lookup"><span data-stu-id="dd105-101">Preparing to use Azure Load Balancer</span></span>
+title: <span data-ttu-id="f6ddb-101">Vorbereitung für die Verwendung von Azure Load Balancer</span><span class="sxs-lookup"><span data-stu-id="f6ddb-101">Preparing to use Azure Load Balancer</span></span>
 metadata:
-  title: <span data-ttu-id="dd105-102">Vorbereitung auf die Verwendung von Azure Load Balancer</span><span class="sxs-lookup"><span data-stu-id="dd105-102">Preparing to use Azure Load Balancer</span></span>
-  description: <span data-ttu-id="dd105-103">Vorbereitung auf die Verwendung von Azure Load Balancer</span><span class="sxs-lookup"><span data-stu-id="dd105-103">Preparing to use Azure Load Balancer</span></span>
+  title: <span data-ttu-id="f6ddb-102">Vorbereitung auf die Verwendung von Azure Load Balancer</span><span class="sxs-lookup"><span data-stu-id="f6ddb-102">Preparing to use Azure Load Balancer</span></span>
+  description: <span data-ttu-id="f6ddb-103">Vorbereitung auf die Verwendung von Azure Load Balancer</span><span class="sxs-lookup"><span data-stu-id="f6ddb-103">Preparing to use Azure Load Balancer</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: d7aca1982234b34ec8ab8f293d5c15fb15e9c8d0
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 8aa7189c6d7344d146bfcf4f946b1d7d72ccf23d
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47128510"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48786980"
 durationInMinutes: 5
 content: >
   [!include[](includes/2-preparing-to-use-the-azure-load-balancer.md)]
 quiz:
-  title: <span data-ttu-id="dd105-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="dd105-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="f6ddb-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="f6ddb-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="dd105-105">Richtig oder falsch.</span><span class="sxs-lookup"><span data-stu-id="dd105-105">True or False.</span></span> <span data-ttu-id="dd105-106">Azure Load Balancer stellt sicher, dass alle Pakete von einem Client an dieselbe VM-Instanz im Back-End gesendet werden.</span><span class="sxs-lookup"><span data-stu-id="dd105-106">Azure Load Balancer ensures that all packets from a client are sent to the same backend VM instance.</span></span>
+  - content: '<span data-ttu-id="f6ddb-105">Richtig oder falsch: Azure Load Balancer kann entweder für öffentliche Dienste oder für interne Azure-Dienste verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="f6ddb-105">True or False: Azure Load Balancer can be used for either public-facing services or for internal Azure services?</span></span>'
     choices:
-    - content: <span data-ttu-id="dd105-107">Richtig</span><span class="sxs-lookup"><span data-stu-id="dd105-107">True</span></span>
+    - content: <span data-ttu-id="f6ddb-106">Richtig</span><span class="sxs-lookup"><span data-stu-id="f6ddb-106">True</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="dd105-108">Azure Load Balancer verwendet einen Hash zum Identifizieren des Clients aus der Quelle und der Ziel-IP-Adresse bzw. des Zielports.</span><span class="sxs-lookup"><span data-stu-id="dd105-108">Azure Load Balancer uses a hash to identify the client from the source and destination IP address and port.</span></span>
-    - content: <span data-ttu-id="dd105-109">Falsch</span><span class="sxs-lookup"><span data-stu-id="dd105-109">False</span></span>
+      correctExplanation: <span data-ttu-id="f6ddb-107">Azure stellt jeweils öffentliche und interne Load Balancer zur Verfügung.</span><span class="sxs-lookup"><span data-stu-id="f6ddb-107">Azure offers both public and internal load balancers.</span></span> <span data-ttu-id="f6ddb-108">Öffentliche Lastenausgleiche verarbeiten Clientanforderungen, die von außerhalb der Azure-Infrastruktur eingehen und über eine öffentliche IP-Adresse verfügen.</span><span class="sxs-lookup"><span data-stu-id="f6ddb-108">Public load balancers handle client requests from outside the Azure infrastructure and have a public IP address.</span></span> <span data-ttu-id="f6ddb-109">Internen Lastenausgleiche verarbeiten Anforderungen, die von innerhalb eines virtuellen Netzwerks gesendet werden.</span><span class="sxs-lookup"><span data-stu-id="f6ddb-109">Internal load balancers process requests from within a virtual network.</span></span>
+    - content: <span data-ttu-id="f6ddb-110">Falsch</span><span class="sxs-lookup"><span data-stu-id="f6ddb-110">False</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="dd105-110">Azure Load Balancer verwendet einen Hash zum Identifizieren des Clients aus der Quelle und der Ziel-IP-Adresse bzw. des Zielports.</span><span class="sxs-lookup"><span data-stu-id="dd105-110">Azure Load Balancer uses a hash to identify the client from the source and destination IP address and port.</span></span>
-  - content: <span data-ttu-id="dd105-111">Aus folgenden Gründen eignet sich die Standard-SKU besser als die Basic-SKU:</span><span class="sxs-lookup"><span data-stu-id="dd105-111">One reason to choose the Standard SKU over the Basic SKU is:</span></span>
+      incorrectExplanation: <span data-ttu-id="f6ddb-111">Azure stellt jeweils öffentliche und interne Load Balancer zur Verfügung.</span><span class="sxs-lookup"><span data-stu-id="f6ddb-111">Azure offers both public and internal load balancers.</span></span> <span data-ttu-id="f6ddb-112">Öffentliche Lastenausgleiche verarbeiten Clientanforderungen, die von außerhalb der Azure-Infrastruktur eingehen und über eine öffentliche IP-Adresse verfügen.</span><span class="sxs-lookup"><span data-stu-id="f6ddb-112">Public load balancers handle client requests from outside the Azure infrastructure and have a public IP address.</span></span> <span data-ttu-id="f6ddb-113">Internen Lastenausgleiche verarbeiten Anforderungen, die von innerhalb eines virtuellen Netzwerks gesendet werden.</span><span class="sxs-lookup"><span data-stu-id="f6ddb-113">Internal load balancers process requests from within a virtual network.</span></span>
+  - content: <span data-ttu-id="f6ddb-114">Welchen Dienst verwendet ein Lastenausgleich, um zu bestimmen, ob eine VM zur Verarbeitung von Anforderungen bereit ist?</span><span class="sxs-lookup"><span data-stu-id="f6ddb-114">Which service does a load balancer use to determine if a virtual machine is ready to handle requests?</span></span>
     choices:
-    - content: <span data-ttu-id="dd105-112">Die Standard-SKU kann Datenverkehr an eine VM-Verfügbarkeitsgruppe weiterleiten, die Basic-SKU hingegen nicht.</span><span class="sxs-lookup"><span data-stu-id="dd105-112">Standard SKU can direct traffic to a VM availability set, while Basic cannot.</span></span>
+    - content: <span data-ttu-id="f6ddb-115">Statusüberprüfung</span><span class="sxs-lookup"><span data-stu-id="f6ddb-115">Status checker</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="dd105-113">Sowohl die Basic-SKU als auch die Standard-SKU unterstützen das Weiterleiten von Datenverkehr an eine Verfügbarkeitsgruppe. Allerdings können Standard-SKUs mehr als eine Verfügbarkeitsgruppe verwenden.</span><span class="sxs-lookup"><span data-stu-id="dd105-113">Both Basic and Standard SKUs support directing traffic to an availability set - however Standard SKUs can use more than one.</span></span>
-    - content: <span data-ttu-id="dd105-114">Die Standard-SKU unterstützt sicheren Datenverkehr (HTTPS).</span><span class="sxs-lookup"><span data-stu-id="dd105-114">Standard SKU support secure traffic (HTTPS).</span></span>
+      incorrectExplanation: <span data-ttu-id="f6ddb-116">Lastenausgleiche verteilen den Netzwerkdatenverkehr nur auf einer VM, wenn ein Integritätstest bestimmt, dass die VM verfügbar und betriebsbereit ist.</span><span class="sxs-lookup"><span data-stu-id="f6ddb-116">Load balancers will distribute traffic to a virtual machine only if a health probe determines that the virtual machine is available and operational.</span></span>
+    - content: <span data-ttu-id="f6ddb-117">Verfügbarkeitsüberwachung</span><span class="sxs-lookup"><span data-stu-id="f6ddb-117">Availability monitor</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f6ddb-118">Lastenausgleiche verteilen den Netzwerkdatenverkehr nur auf einer VM, wenn ein Integritätstest bestimmt, dass die VM verfügbar und betriebsbereit ist.</span><span class="sxs-lookup"><span data-stu-id="f6ddb-118">Load balancers will distribute traffic to a virtual machine only if a health probe determines that the virtual machine is available and operational.</span></span>
+    - content: <span data-ttu-id="f6ddb-119">Integritätstest</span><span class="sxs-lookup"><span data-stu-id="f6ddb-119">Health probe</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="dd105-115">Die Basic-SKU kann nur TCP- und HTTP-Datenverkehr schützen, während die Standard-SKU zusätzlich HTTPS-Datenverkehr unterstützt.</span><span class="sxs-lookup"><span data-stu-id="dd105-115">Basic SKU can only protect TCP and HTTP traffic; Standard SKU adds HTTPS support.</span></span>
-    - content: <span data-ttu-id="dd105-116">Die Standard-SKU unterstützt die Überwachung von Integritätstests der VM-Server im Back-End, die Basic-SKU hingegen nicht.</span><span class="sxs-lookup"><span data-stu-id="dd105-116">Standard SKU supports health probe monitoring of the backend VM servers, Basic does not.</span></span>
-      isCorrect: false
-      incorrectExplanation: <span data-ttu-id="dd105-117">Integritätstests werden in beiden SKUs verwendet und sind eine Voraussetzung zum Einrichten von Azure Load Balancer.</span><span class="sxs-lookup"><span data-stu-id="dd105-117">Health probes are used in both SKUs and are a requirement to setup Azure Load Balancer.</span></span>
-  - content: <span data-ttu-id="dd105-118">Richtig oder falsch.</span><span class="sxs-lookup"><span data-stu-id="dd105-118">True or False.</span></span> <span data-ttu-id="dd105-119">Azure Load Balancer kann für öffentliche Dienste oder für interne Azure-Dienste verwendet werden, die Sie über ein VPN verwenden.</span><span class="sxs-lookup"><span data-stu-id="dd105-119">Azure Load Balancer can be used for public-facing services, or for internal Azure services you use over a VPN.</span></span>
+      correctExplanation: <span data-ttu-id="f6ddb-120">Lastenausgleiche verteilen den Netzwerkdatenverkehr nur auf einer VM, wenn ein Integritätstest bestimmt, dass die VM verfügbar und betriebsbereit ist.</span><span class="sxs-lookup"><span data-stu-id="f6ddb-120">Load balancers will distribute traffic to a virtual machine only if a health probe determines that the virtual machine is available and operational.</span></span>
+  - content: "<span data-ttu-id=\"f6ddb-121\">Angenommen, Sie verwenden Azure Load Balancer, um die Verteilung des Netzwerkdatenverkehrs zwischen drei VMs aufzuteilen.</span><span class=\"sxs-lookup\"><span data-stu-id=\"f6ddb-121\">Suppose you're using an Azure Load Balancer to manage the distribution of traffic between three virtual machines.</span></span> <span data-ttu-id=\"f6ddb-122\">Richtig oder falsch: Wenn ein Client mehrere Anforderungen mit unterschiedlichen Quellports durchführt, wird gewährleistet, dass die gleiche VM für die Verarbeitung von jeder Anforderung verwendet wird.</span><span class=\"sxs-lookup\"><span data-stu-id=\"f6ddb-122\">True or false: if a client makes multiple requests with different source ports, the same virtual machine is guaranteed to be used to handle each request?</span></span>"
     choices:
-    - content: <span data-ttu-id="dd105-120">Richtig</span><span class="sxs-lookup"><span data-stu-id="dd105-120">True</span></span>
-      isCorrect: true
-      incorrectExplanation: <span data-ttu-id="dd105-121">Azure Load Balancer unterstützt sowohl öffentliche als auch interne Konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="dd105-121">Azure Load Balancer supports both public and internal configurations.</span></span>
-    - content: <span data-ttu-id="dd105-122">Falsch</span><span class="sxs-lookup"><span data-stu-id="dd105-122">False</span></span>
+    - content: <span data-ttu-id="f6ddb-123">Richtig</span><span class="sxs-lookup"><span data-stu-id="f6ddb-123">True</span></span>
       isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f6ddb-124">Azure Load Balancer verwendet einen Hashbasierten Algorithmus, der auf Daten basiert, einschließlich dem Quellport der Anforderung des Clients.</span><span class="sxs-lookup"><span data-stu-id="f6ddb-124">Azure Load Balancer uses a hash-based algorithm based off data including the source port of the client's request.</span></span> <span data-ttu-id="f6ddb-125">Ein anderer Quellport würde einen neuen Hash generieren, und der Lastenausgleich sendet diesen Netzwerkdatenverkehr möglicherweise an eine beliebige VM der drei virtuellen Computer.</span><span class="sxs-lookup"><span data-stu-id="f6ddb-125">A different source port would generate a new hash and the load balancer may send this traffic to any of the three virtual machines.</span></span>
+    - content: <span data-ttu-id="f6ddb-126">Falsch</span><span class="sxs-lookup"><span data-stu-id="f6ddb-126">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="f6ddb-127">Azure Load Balancer verwendet einen Hashbasierten Algorithmus, der auf Daten basiert, einschließlich dem Quellport der Anforderung des Clients.</span><span class="sxs-lookup"><span data-stu-id="f6ddb-127">Azure Load Balancer uses a hash-based algorithm based off data including the source port of the client's request.</span></span> <span data-ttu-id="f6ddb-128">Ein anderer Quellport würde einen neuen Hash generieren, und der Lastenausgleich sendet diesen Netzwerkdatenverkehr möglicherweise an eine beliebige VM der drei virtuellen Computer.</span><span class="sxs-lookup"><span data-stu-id="f6ddb-128">A different source port would generate a new hash and the load balancer may send this traffic to any of the three virtual machines.</span></span>

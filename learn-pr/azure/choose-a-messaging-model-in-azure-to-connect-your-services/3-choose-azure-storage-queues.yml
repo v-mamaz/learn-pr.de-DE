@@ -1,19 +1,34 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-messaging-model.3-choose-azure-storage-queues
-title: <span data-ttu-id="646fb-101">Auswählen einer nachrichtenbasierten Zustellung mit Warteschlangen</span><span class="sxs-lookup"><span data-stu-id="646fb-101">Choose a message-based delivery with queues</span></span>
+title: <span data-ttu-id="42e94-101">Auswählen einer nachrichtenbasierten Zustellung mit Warteschlangen</span><span class="sxs-lookup"><span data-stu-id="42e94-101">Choose a message-based delivery with queues</span></span>
 metadata:
-  title: <span data-ttu-id="646fb-102">Auswählen einer nachrichtenbasierten Zustellung mit Warteschlangen</span><span class="sxs-lookup"><span data-stu-id="646fb-102">Choose a message-based delivery with queues</span></span>
-  description: <span data-ttu-id="646fb-103">Auswählen einer nachrichtenbasierten Zustellung mit Warteschlangen</span><span class="sxs-lookup"><span data-stu-id="646fb-103">Choose a message-based delivery with queues</span></span>
+  title: <span data-ttu-id="42e94-102">Auswählen einer nachrichtenbasierten Zustellung mit Warteschlangen</span><span class="sxs-lookup"><span data-stu-id="42e94-102">Choose a message-based delivery with queues</span></span>
+  description: <span data-ttu-id="42e94-103">Auswählen einer nachrichtenbasierten Zustellung mit Warteschlangen</span><span class="sxs-lookup"><span data-stu-id="42e94-103">Choose a message-based delivery with queues</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9cbd32d26c9dce0db8d048986479e62924e5f39c
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 6db681bdc49f0df2d813e278a807e485938e1cb0
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47127995"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48787463"
 durationInMinutes: 10
-content: '[!include[](includes/3-choose-azure-storage-queues.md)]'
+content: >
+  [!include[](includes/3-choose-azure-storage-queues.md)]
+quiz:
+  title: <span data-ttu-id="42e94-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="42e94-104">Check your knowledge</span></span>
+  questions:
+  - content: '<span data-ttu-id="42e94-105">Angenommen, Sie Erstellen eine Anwendung, um die Funktionen der Leistungsnachweisverwaltung von Studenten an der Universität zu automatisieren.</span><span class="sxs-lookup"><span data-stu-id="42e94-105">Suppose you are building an application to automate student record keeping functions at a university.</span></span> <span data-ttu-id="42e94-106">Eine der zu implementieren Geschäftsregeln lautet wie folgt: Wenn ein Student einen Kurs abschließt, muss die Note der Auflistung seiner Studienleistungen hinzugefügt werden. Zudem muss die Berechtigung für den Studierendenzuschuss überprüft werden, und der Student muss benachrichtigt werden.</span><span class="sxs-lookup"><span data-stu-id="42e94-106">One of the business rules you need to implement is the following: when a student completes a course, the grade must be added to their transcript, their financial aid eligibility must be reviewed, and the student must be notified.</span></span> <span data-ttu-id="42e94-107">Welcher Azure-Dienst ist demnach eine gute Wahl, um die Benachrichtigungen in diesem System zu speichern?</span><span class="sxs-lookup"><span data-stu-id="42e94-107">Which Azure service would be a good choice to store the messages in this system?</span></span>'
+    choices:
+    - content: <span data-ttu-id="42e94-108">Azure Queue Storage</span><span class="sxs-lookup"><span data-stu-id="42e94-108">Azure Queue Storage</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="42e94-109">Azure Queue Storage unterstützt nicht mehrere Abonnenten.</span><span class="sxs-lookup"><span data-stu-id="42e94-109">Azure Queue Storage does not support multiple subscribers.</span></span>
+    - content: <span data-ttu-id="42e94-110">Azure Service Bus-Warteschlangen</span><span class="sxs-lookup"><span data-stu-id="42e94-110">Azure Service Bus Queues</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="42e94-111">Azure Service Bus-Warteschlangen unterstützen nicht mehrere Abonnenten.</span><span class="sxs-lookup"><span data-stu-id="42e94-111">Azure Service Bus Queues do not support multiple subscribers.</span></span>
+    - content: <span data-ttu-id="42e94-112">Azure Service Bus-Themen</span><span class="sxs-lookup"><span data-stu-id="42e94-112">Azure Service Bus Topics</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="42e94-113">Die Anforderung, dass mehrere Abonnenten unterstützt werden müssen, machen Azure Service Bus-Themen zur besten Wahl für dieses System.</span><span class="sxs-lookup"><span data-stu-id="42e94-113">The requirement to support multiple subscribers makes Azure Service Bus Topics the best choice for this system.</span></span>

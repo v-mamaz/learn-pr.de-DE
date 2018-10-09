@@ -1,51 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.6-network-security
-title: <span data-ttu-id="92c0f-101">Netzwerksicherheit</span><span class="sxs-lookup"><span data-stu-id="92c0f-101">Network security</span></span>
+title: <span data-ttu-id="eb257-101">Netzwerksicherheit</span><span class="sxs-lookup"><span data-stu-id="eb257-101">Network security</span></span>
 metadata:
-  title: <span data-ttu-id="92c0f-102">Netzwerksicherheit</span><span class="sxs-lookup"><span data-stu-id="92c0f-102">Network security</span></span>
-  description: <span data-ttu-id="92c0f-103">In dieser Einheit wird erörtert, wie Sie Ihre Netzwerkinfrastruktur schützen.</span><span class="sxs-lookup"><span data-stu-id="92c0f-103">In this unit we'll discuss how to secure your network infrastructure</span></span>
+  title: <span data-ttu-id="eb257-102">Netzwerksicherheit</span><span class="sxs-lookup"><span data-stu-id="eb257-102">Network security</span></span>
+  description: <span data-ttu-id="eb257-103">In dieser Einheit wird erörtert, wie Sie Ihre Netzwerkinfrastruktur schützen.</span><span class="sxs-lookup"><span data-stu-id="eb257-103">In this unit we'll discuss how to secure your network infrastructure</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: cc35a096e064136f7d56fc05c4ce856fd1918641
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 9cd7f21680ad44848f6cf4240c1ae3289839ad2d
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47125772"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48786713"
 durationInMinutes: 10
 content: >
   [!include[](includes/6-network-security.md)]
 quiz:
-  title: <span data-ttu-id="92c0f-104">Überprüfen Sie Ihre Kenntnisse</span><span class="sxs-lookup"><span data-stu-id="92c0f-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="eb257-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="eb257-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="92c0f-105">Welche der folgenden Übertragungen können mit Azure-Netzwerksicherheitsgruppen abgesichert werden?</span><span class="sxs-lookup"><span data-stu-id="92c0f-105">Azure network security group can be used to secure communication between which of the following?</span></span>
+  - content: <span data-ttu-id="eb257-105">Welche der folgenden Arten der Kommunikation können mit Azure-Netzwerksicherheitsgruppen abgesichert werden?</span><span class="sxs-lookup"><span data-stu-id="eb257-105">Azure network security groups can be used to secure communication between which of the following?</span></span>
     choices:
-    - content: <span data-ttu-id="92c0f-106">VMs und das Internet</span><span class="sxs-lookup"><span data-stu-id="92c0f-106">Virtual machines and the internet</span></span>
+    - content: <span data-ttu-id="eb257-106">Kommunikation zwischen Azure-VMs und dem Internet</span><span class="sxs-lookup"><span data-stu-id="eb257-106">Communication between Azure virtual machines and the internet</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="92c0f-107">Netzwerksicherheitsgruppen sind vollständig anpassbar und bieten Ihnen die Möglichkeit, die Netzwerkkommunikation zu und von Ihren VMs vollständig zu sperren.</span><span class="sxs-lookup"><span data-stu-id="92c0f-107">Network security groups are fully customizable, and give you the ability to fully lock down network communication to and from your virtual machines.</span></span>
-    - content: <span data-ttu-id="92c0f-108">Virtuelle Computer in einem VNET</span><span class="sxs-lookup"><span data-stu-id="92c0f-108">Virtual machines within a VNet</span></span>
+      incorrectExplanation: <span data-ttu-id="eb257-107">Mit Netzwerksicherheitsgruppen kann diese Kommunikation zwar abgesichert werden, doch dies ist nicht die einzige richtige Antwortmöglichkeit.</span><span class="sxs-lookup"><span data-stu-id="eb257-107">Network security groups can be used to secure this communication flow, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="eb257-108">Kommunikation zwischen Azure-VMs innerhalb eines VNet</span><span class="sxs-lookup"><span data-stu-id="eb257-108">Communication between Azure virtual machines within a VNet</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="92c0f-109">Netzwerksicherheitsgruppen sind vollständig anpassbar und bieten Ihnen die Möglichkeit, die Netzwerkkommunikation zu und von Ihren VMs vollständig zu sperren.</span><span class="sxs-lookup"><span data-stu-id="92c0f-109">Network security groups are fully customizable, and give you the ability to fully lock down network communication to and from your virtual machines.</span></span>
-    - content: <span data-ttu-id="92c0f-110">Systeme in einem lokalen Netzwerk</span><span class="sxs-lookup"><span data-stu-id="92c0f-110">Systems in an on-premises network</span></span>
+      incorrectExplanation: <span data-ttu-id="eb257-109">Mit Netzwerksicherheitsgruppen kann diese Kommunikation zwar abgesichert werden, doch dies ist nicht die einzige richtige Antwortmöglichkeit.</span><span class="sxs-lookup"><span data-stu-id="eb257-109">Network security groups can be used to secure this communication flow, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="eb257-110">Kommunikation zwischen Azure-VMs und Systemen in einem lokalen Netzwerk</span><span class="sxs-lookup"><span data-stu-id="eb257-110">Communication between Azure virtual machines and systems in an on-premises network</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="92c0f-111">Netzwerksicherheitsgruppen sind vollständig anpassbar und bieten Ihnen die Möglichkeit, die Netzwerkkommunikation zu und von Ihren VMs vollständig zu sperren.</span><span class="sxs-lookup"><span data-stu-id="92c0f-111">Network security groups are fully customizable, and give you the ability to fully lock down network communication to and from your virtual machines.</span></span>
-    - content: <span data-ttu-id="92c0f-112">Alle oben genannten Möglichkeiten sind zutreffend.</span><span class="sxs-lookup"><span data-stu-id="92c0f-112">All of the above</span></span>
+      incorrectExplanation: <span data-ttu-id="eb257-111">Mit Netzwerksicherheitsgruppen kann diese Kommunikation zwar abgesichert werden, doch dies ist nicht die einzige richtige Antwortmöglichkeit.</span><span class="sxs-lookup"><span data-stu-id="eb257-111">Network security groups can be used to secure this communication flow, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="eb257-112">Alle oben genannten Möglichkeiten sind zutreffend.</span><span class="sxs-lookup"><span data-stu-id="eb257-112">All of the above</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="92c0f-113">Netzwerksicherheitsgruppen sind vollständig anpassbar und bieten Ihnen die Möglichkeit, die Netzwerkkommunikation zu und von Ihren VMs vollständig zu sperren.</span><span class="sxs-lookup"><span data-stu-id="92c0f-113">Network security groups are fully customizable, and give you the ability to fully lock down network communication to and from your virtual machines.</span></span>
-  - content: <span data-ttu-id="92c0f-114">Welche der folgenden möglichen Antworten ist keine Methode zum Schutz von Diensten mit Internetzugriff vor Netzwerkangriffen?</span><span class="sxs-lookup"><span data-stu-id="92c0f-114">Which of the following is not a method for protecting internet facing services from network attacks?</span></span>
+      correctExplanation: <span data-ttu-id="eb257-113">Netzwerksicherheitsgruppen sind vollständig anpassbar und bieten Ihnen die Möglichkeit, die Netzwerkkommunikation zu und von Ihren VMs vollständig zu sperren.</span><span class="sxs-lookup"><span data-stu-id="eb257-113">Network security groups are fully customizable, and give you the ability to fully lock down network communication to and from your virtual machines.</span></span>
+  - content: <span data-ttu-id="eb257-114">Welche der folgenden möglichen Antworten ist keine Methode zum Schutz von Diensten mit Internetzugriff vor Netzwerkangriffen?</span><span class="sxs-lookup"><span data-stu-id="eb257-114">Which of the following is not a method for protecting internet facing services from network attacks?</span></span>
     choices:
-    - content: <span data-ttu-id="92c0f-115">Azure DDoS</span><span class="sxs-lookup"><span data-stu-id="92c0f-115">Azure DDoS</span></span>
+    - content: <span data-ttu-id="eb257-115">Azure DDoS</span><span class="sxs-lookup"><span data-stu-id="eb257-115">Azure DDoS</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="92c0f-116">Mit Azure Disk Encryption werden die virtuellen Festplatten eines virtuellen Computers geschützt, falls diese ohne Berechtigung zugänglich gemacht werden. Der Dienst bietet aber keinen Schutz vor Netzwerkangriffen.</span><span class="sxs-lookup"><span data-stu-id="92c0f-116">Azure Disk Encryption protects your virtual machine virtual hard disks from exposure, but does not provide protection from network based attacks.</span></span>
-    - content: <span data-ttu-id="92c0f-117">Azure Application Gateway-WAF</span><span class="sxs-lookup"><span data-stu-id="92c0f-117">Azure Application Gateway WAF</span></span>
+      incorrectExplanation: '<span data-ttu-id="eb257-116">Mit Azure DDoS können mit dem Internet verbundene Dienste vor einem DoS-Angriff geschützt werden.</span><span class="sxs-lookup"><span data-stu-id="eb257-116">Azure DDoS can be used to protect your internet facing services from a DoS attack.</span></span> '
+    - content: <span data-ttu-id="eb257-117">Azure Application Gateway-WAF</span><span class="sxs-lookup"><span data-stu-id="eb257-117">Azure Application Gateway WAF</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="92c0f-118">Mit Azure Disk Encryption werden die virtuellen Festplatten eines virtuellen Computers geschützt, falls diese ohne Berechtigung zugänglich gemacht werden. Der Dienst bietet aber keinen Schutz vor Netzwerkangriffen.</span><span class="sxs-lookup"><span data-stu-id="92c0f-118">Azure Disk Encryption protects your virtual machine virtual hard disks from exposure, but does not provide protection from network based attacks.</span></span>
-    - content: <span data-ttu-id="92c0f-119">Azure Disk Encryption</span><span class="sxs-lookup"><span data-stu-id="92c0f-119">Azure Disk Encryption</span></span>
+      incorrectExplanation: <span data-ttu-id="eb257-118">Mit Application Gateway-WAF können mit dem Internet verbundene Dienste vor XSS-Angriffen und Einschleusung von SQL-Befehlen geschützt werden.</span><span class="sxs-lookup"><span data-stu-id="eb257-118">Application Gateway WAF can be used to protect your internet facing services from attacks such as XSS and SQL injection.</span></span>
+    - content: <span data-ttu-id="eb257-119">Azure Disk Encryption</span><span class="sxs-lookup"><span data-stu-id="eb257-119">Azure Disk Encryption</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="92c0f-120">Mit Azure Disk Encryption werden die virtuellen Festplatten eines virtuellen Computers geschützt, falls diese ohne Berechtigung zugänglich gemacht werden. Der Dienst bietet aber keinen Schutz vor Netzwerkangriffen.</span><span class="sxs-lookup"><span data-stu-id="92c0f-120">Azure Disk Encryption protects your virtual machine virtual hard disks from exposure, but does not provide protection from network based attacks.</span></span>
-    - content: <span data-ttu-id="92c0f-121">Virtuelles Netzwerkgerät</span><span class="sxs-lookup"><span data-stu-id="92c0f-121">A network virtual appliance</span></span>
+      correctExplanation: <span data-ttu-id="eb257-120">Mit Azure Disk Encryption werden die VHDs eines virtuellen Computers geschützt, falls diese ohne Berechtigung zugänglich gemacht werden. Der Dienst bietet aber keinen Schutz vor Netzwerkangriffen.</span><span class="sxs-lookup"><span data-stu-id="eb257-120">Azure Disk Encryption protects your virtual machine VHDs from exposure, but does not provide protection from network based attacks.</span></span>
+    - content: <span data-ttu-id="eb257-121">Virtuelles Netzwerkgerät</span><span class="sxs-lookup"><span data-stu-id="eb257-121">A network virtual appliance</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="92c0f-122">Mit Azure Disk Encryption werden die virtuellen Festplatten eines virtuellen Computers geschützt, falls diese ohne Berechtigung zugänglich gemacht werden. Der Dienst bietet aber keinen Schutz vor Netzwerkangriffen.</span><span class="sxs-lookup"><span data-stu-id="92c0f-122">Azure Disk Encryption protects your virtual machine virtual hard disks from exposure, but does not provide protection from network based attacks.</span></span>
+      incorrectExplanation: <span data-ttu-id="eb257-122">Virtuelle Netzwerkgeräte stellen anpassbaren Netzwerkzugriffsschutz für Ressourcen bereit, die mit dem Internet verbunden sind.</span><span class="sxs-lookup"><span data-stu-id="eb257-122">Network virtual appliances can provide customized network protection for your internet facing resources.</span></span>

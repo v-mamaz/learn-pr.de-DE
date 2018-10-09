@@ -1,21 +1,55 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-vms-with-azure-cli-data.9-cleanup
-title: <span data-ttu-id="88730-101">Zusammenfassung und Cleanup</span><span class="sxs-lookup"><span data-stu-id="88730-101">Summary and cleanup</span></span>
+title: <span data-ttu-id="3939b-101">Zusammenfassung und Cleanup</span><span class="sxs-lookup"><span data-stu-id="3939b-101">Summary and cleanup</span></span>
 metadata:
-  title: <span data-ttu-id="88730-102">Zusammenfassung und Cleanup</span><span class="sxs-lookup"><span data-stu-id="88730-102">Summary and cleanup</span></span>
-  description: <span data-ttu-id="88730-103">Cleanup der Ressourcen, die wir in diesem Modul verwendet haben</span><span class="sxs-lookup"><span data-stu-id="88730-103">Clean up the resources we used in this module</span></span>
+  title: <span data-ttu-id="3939b-102">Zusammenfassung und Cleanup</span><span class="sxs-lookup"><span data-stu-id="3939b-102">Summary and cleanup</span></span>
+  description: <span data-ttu-id="3939b-103">Cleanup der Ressourcen, die wir in diesem Modul verwendet haben</span><span class="sxs-lookup"><span data-stu-id="3939b-103">Clean up the resources we used in this module</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: abd31c3074e9fc37004a4541381671595b31f5c7
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: f8ae6aca05b6e09058c193332aae6293642f1f9e
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47123533"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48787405"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 2
-content: '[!include[](includes/9-cleanup.md)]'
+content: >
+  [!include[](includes/9-cleanup.md)]
+quiz:
+  title: <span data-ttu-id="3939b-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="3939b-104">Check your knowledge</span></span>
+  questions:
+  - content: "<span data-ttu-id=\"3939b-105\">Angenommen, Sie sind der Administrator mehrerer Azure-VMs.</span><span class=\"sxs-lookup\"><span data-stu-id=\"3939b-105\">Suppose you're an administrator of several Azure virtual machines.</span></span> <span data-ttu-id=\"3939b-106\">Sie erhalten eine SMS, die auf Probleme mit Ihren VMs hinweist.</span><span class=\"sxs-lookup\"><span data-stu-id=\"3939b-106\">You get a text message indicating some problems with your VMs.</span></span> <span data-ttu-id=\"3939b-107\">Sie sind gerade bei Freunden und haben nur Ihr Tablet dabei.</span><span class=\"sxs-lookup\"><span data-stu-id=\"3939b-107\">You are at a friend’s house and only have your tablet with you.</span></span> <span data-ttu-id=\"3939b-108\">Richtig oder falsch: Sie können mit dem Tablet auf die Azure CLI zugreifen, auch wenn Sie diese nicht auf dem Tablet installieren können.</span><span class=\"sxs-lookup\"><span data-stu-id=\"3939b-108\">True or false: you'll still be able to access the Azure CLI using the tablet, even though you can't install the CLI on it.</span></span>"
+    choices:
+    - content: <span data-ttu-id="3939b-109">Richtig</span><span class="sxs-lookup"><span data-stu-id="3939b-109">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="3939b-110">Azure Cloud Shell ist über einen Browser verfügbar und wird mit der vollständigen Azure CLI ausgeführt.</span><span class="sxs-lookup"><span data-stu-id="3939b-110">The Azure Cloud Shell is available in the browser and runs with the full Azure CLI.</span></span> <span data-ttu-id="3939b-111">Auch PowerShell ist in Azure Cloud Shell verfügbar, wenn Sie damit lieber arbeiten.</span><span class="sxs-lookup"><span data-stu-id="3939b-111">If you prefer Powershell, the Azure Cloud Shell has that as well.</span></span>
+    - content: <span data-ttu-id="3939b-112">Falsch</span><span class="sxs-lookup"><span data-stu-id="3939b-112">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3939b-113">Azure Cloud Shell ist über einen Browser verfügbar und wird mit der vollständigen Azure CLI ausgeführt. Deshalb ist das Installieren von Software nicht notwendig.</span><span class="sxs-lookup"><span data-stu-id="3939b-113">The Azure Cloud Shell is available in the browser and runs with the full Azure CLI, so you wouldn't need to install software.</span></span>
+  - content: <span data-ttu-id="3939b-114">Angenommen, Sie haben ein Skript, das mehrere VMs mit unterschiedlichen Images erstellt.</span><span class="sxs-lookup"><span data-stu-id="3939b-114">Suppose you have a script that creates several VMs with different images.</span></span> <span data-ttu-id="3939b-115">Wenn das Skript einen Befehl zum Erstellen der ersten VM ausstellt, möchten Sie das Skript nicht blockieren, während die VM erstellt wird. Stattdessen möchten Sie direkt mit dem nächsten Befehl fortfahren.</span><span class="sxs-lookup"><span data-stu-id="3939b-115">When the script issues the command to create the first VM you do not want to block the script while the VM is created, instead you want the script to immediately move on to the next command.</span></span> <span data-ttu-id="3939b-116">Wie geht das am einfachsten?</span><span class="sxs-lookup"><span data-stu-id="3939b-116">What is the best way to do this?</span></span>
+    choices:
+    - content: <span data-ttu-id="3939b-117">Fügen Sie Ihrem create-Befehl das Argument „--async“ hinzu.</span><span class="sxs-lookup"><span data-stu-id="3939b-117">Add the '--async' argument to your create command.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3939b-118">Es gibt kein „--async“-Argument für „azure vm create“.</span><span class="sxs-lookup"><span data-stu-id="3939b-118">There is no '--async' argument as part of 'azure VM create'.</span></span>
+    - content: <span data-ttu-id="3939b-119">Verwenden Sie das kaufmännische Und-Zeichen (&), um den Prozess im Hintergrund auszuführen.</span><span class="sxs-lookup"><span data-stu-id="3939b-119">Use the ampersand (&) to run the process in the background.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3939b-120">Auf einigen Plattformen erreichen Sie dadurch den gewünschten Effekt. Allerdings werden so mehr Systemressourcen verwendet als bei der empfohlenen Methode.</span><span class="sxs-lookup"><span data-stu-id="3939b-120">This may do what you intend on some platforms but likely will use more system resources than the supported method.</span></span>
+    - content: <span data-ttu-id="3939b-121">Fügen Sie Ihrem create-Befehl das Argument „--no-wait“ hinzu.</span><span class="sxs-lookup"><span data-stu-id="3939b-121">Add the '--no-wait' argument to your create command.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="3939b-122">Wenn Sie „--no-wait“ hinzufügen, kehrt „azure vm create“ direkt zurück, ohne auf das Erstellen der VM zu warten.</span><span class="sxs-lookup"><span data-stu-id="3939b-122">Adding '--no-wait' will cause 'azure VM create' to return immediately without waiting for the VM to actually be created.</span></span>
+  - content: <span data-ttu-id="3939b-123">Die meisten Azure-Befehle geben Ausgaben im JSON-Format zurück.</span><span class="sxs-lookup"><span data-stu-id="3939b-123">Most Azure commands return JSON by default.</span></span> <span data-ttu-id="3939b-124">Diese Datasets können sehr groß sein, wodurch sie schwer lesbar sind und es eine Herausforderung darstellen kann, das Ergebnis eines Befehls als Eingabe für einen anderen Befehl zu verwenden.</span><span class="sxs-lookup"><span data-stu-id="3939b-124">Sometimes this data set can be very large which makes it difficult to read and tricky to use the result of one command as input to another command.</span></span> <span data-ttu-id="3939b-125">Wie können Sie in der Azure CLI die Ergebnisse so filtern, dass Sie nur für Sie relevante Daten erhalten?</span><span class="sxs-lookup"><span data-stu-id="3939b-125">What can you use with Azure CLI to filter the results to get only the data that you need?</span></span>
+    choices:
+    - content: <span data-ttu-id="3939b-126">Indem Sie das Argument „--query“ verwenden</span><span class="sxs-lookup"><span data-stu-id="3939b-126">You can use the '--query' argument.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="3939b-127">Alle Azure-Befehle unterstützen das Argument „--query“, mit dem Sie die relevanten Daten in jeder Antwort eines Azure-Befehls auswählen können.</span><span class="sxs-lookup"><span data-stu-id="3939b-127">All Azure commands support the '--query' argument which lets you select the useful data in any Azure command response.</span></span>
+    - content: <span data-ttu-id="3939b-128">Indem Sie das Argument „--filter“ verwenden</span><span class="sxs-lookup"><span data-stu-id="3939b-128">You can use the '--filter' argument.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3939b-129">Es gibt kein „--filter“-Argument für die Azure CLI.</span><span class="sxs-lookup"><span data-stu-id="3939b-129">Azure CLI does not have a '--filter' argument.</span></span>
+    - content: <span data-ttu-id="3939b-130">Indem Sie die Ergebnisse an ein JSON-Analyseprogramm weiterreichen und diese dort filtern</span><span class="sxs-lookup"><span data-stu-id="3939b-130">You can pipe the results to a JSON parsing utility and use filtering capability there.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3939b-131">Dies kann zu den gewünschten Ergebnissen führen, ist aber komplizierter als das Verwenden der in die Azure CLI integrierten Unterstützung für „--query“.</span><span class="sxs-lookup"><span data-stu-id="3939b-131">This may work but is more complex than using the built-in query support of the Azure CLI.</span></span>

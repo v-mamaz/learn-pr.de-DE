@@ -1,57 +1,60 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-container-registry.knowledge-check
-title: <span data-ttu-id="ac53b-101">Wissensbeurteilung</span><span class="sxs-lookup"><span data-stu-id="ac53b-101">Knowledge check</span></span>
+title: <span data-ttu-id="1f0e3-101">Wissensbeurteilung</span><span class="sxs-lookup"><span data-stu-id="1f0e3-101">Knowledge check</span></span>
 metadata:
-  title: <span data-ttu-id="ac53b-102">Wissenstest</span><span class="sxs-lookup"><span data-stu-id="ac53b-102">Knowledge check</span></span>
-  description: <span data-ttu-id="ac53b-103">Wissenstest zu Azure Container Registry</span><span class="sxs-lookup"><span data-stu-id="ac53b-103">Azure Container Registry knowledge check.</span></span>
+  title: <span data-ttu-id="1f0e3-102">Wissenstest</span><span class="sxs-lookup"><span data-stu-id="1f0e3-102">Knowledge check</span></span>
+  description: <span data-ttu-id="1f0e3-103">Wissenstest zu Azure Container Registry</span><span class="sxs-lookup"><span data-stu-id="1f0e3-103">Azure Container Registry knowledge check.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 89fbd644018188c7f24fc6c5fbb5ee129559c6ad
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 0a50c0a9498e1ca4d5fcedec865e84945c8225e8
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47128454"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48787490"
 durationInMinutes: 5
 quiz:
-  title: <span data-ttu-id="ac53b-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="ac53b-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="1f0e3-104">Überprüfen Sie Ihr Wissen</span><span class="sxs-lookup"><span data-stu-id="1f0e3-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="ac53b-105">Welche der folgenden Aussagen beschreibt keinen Vorteil von Azure Container Registry?</span><span class="sxs-lookup"><span data-stu-id="ac53b-105">Which of the following is not a benefit of using Azure Container Registry?</span></span>
+  - content: <span data-ttu-id="1f0e3-105">Welche der folgenden Aussagen beschreibt keinen Vorteil von Azure Container Registry?</span><span class="sxs-lookup"><span data-stu-id="1f0e3-105">Which of the following is not a benefit of using Azure Container Registry?</span></span>
     choices:
-    - content: <span data-ttu-id="ac53b-106">Replizieren von Containerimages in vielen Azure-Rechenzentren.</span><span class="sxs-lookup"><span data-stu-id="ac53b-106">Replicate container images to many Azure datacenters.</span></span>
-      incorrectExplanation: <span data-ttu-id="ac53b-107">Dies ist mit der Georeplikationsfunktion von Azure Container Registry möglich.</span><span class="sxs-lookup"><span data-stu-id="ac53b-107">The Azure Container Registry geo-replication feature enables this.</span></span>
+    - content: <span data-ttu-id="1f0e3-106">Replizieren von Containerimages in mehreren Azure-Rechenzentren</span><span class="sxs-lookup"><span data-stu-id="1f0e3-106">Replicate container images to multiple Azure datacenters.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="ac53b-108">Abrufen von Containerimages aus Container Registry mithilfe einer beliebigen Docker-Containertechnologie.</span><span class="sxs-lookup"><span data-stu-id="ac53b-108">Pull container images from Container Registry using any Docker container-related technology.</span></span>
+      incorrectExplanation: <span data-ttu-id="1f0e3-107">Azure Container Registry bietet eine Georeplikationsfunktion.</span><span class="sxs-lookup"><span data-stu-id="1f0e3-107">The Azure Container Registry provides a geo-replication feature.</span></span>
+    - content: <span data-ttu-id="1f0e3-108">Pullen von Containerimages mithilfe einer beliebigen Docker-Containertechnologie</span><span class="sxs-lookup"><span data-stu-id="1f0e3-108">Pull container images using any Docker container-related technology.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="ac53b-109">Container Registry kann mit sämtlichen Docker-bezogenen Technologien verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="ac53b-109">Container Registry can be used with all Docker-related technology.</span></span>
-    - content: <span data-ttu-id="ac53b-110">Bereitstellen von Containerimages zur öffentlichen Verwendung für Pullvorgänge.</span><span class="sxs-lookup"><span data-stu-id="ac53b-110">Make container images publicly available for pull operations.</span></span>
+      incorrectExplanation: <span data-ttu-id="1f0e3-109">Azure Container Registry kann mit sämtlichen Docker-Technologien verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="1f0e3-109">The Azure Container Registry can be used with all Docker-related technology.</span></span>
+    - content: <span data-ttu-id="1f0e3-110">Zulassen des öffentlichen Zugriffs auf Containerimages für Pullvorgänge</span><span class="sxs-lookup"><span data-stu-id="1f0e3-110">Allow public access to container images for pull operations.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="ac53b-111">Container Registry ist eine private Registrierung.</span><span class="sxs-lookup"><span data-stu-id="ac53b-111">Container Registry is a private registry.</span></span> <span data-ttu-id="ac53b-112">In Container Registry gespeicherte Images sind nicht ohne Authentifizierung zugänglich.</span><span class="sxs-lookup"><span data-stu-id="ac53b-112">Images stored in Container Registry cannot be accessed without authentication.</span></span>
-    - content: <span data-ttu-id="ac53b-113">Erstellen von Containerimages ohne lokal installierte Docker-Tools.</span><span class="sxs-lookup"><span data-stu-id="ac53b-113">Build container images without the need for locally installed Docker tools.</span></span>
+      correctExplanation: <span data-ttu-id="1f0e3-111">Azure Container Registry ist eine private Registrierung.</span><span class="sxs-lookup"><span data-stu-id="1f0e3-111">Azure Container Registry is a private registry.</span></span> <span data-ttu-id="1f0e3-112">Der Zugriff auf Images ist nur mit Authentifizierung möglich.</span><span class="sxs-lookup"><span data-stu-id="1f0e3-112">Images cannot be accessed without authentication.</span></span>
+    - content: <span data-ttu-id="1f0e3-113">Erstellen von Containerimages ohne lokal installierte Docker-Tools</span><span class="sxs-lookup"><span data-stu-id="1f0e3-113">Build container images without the need for locally installed Docker tools.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="ac53b-114">Containerimages können in der Cloud mit Azure Container Registry Build erstellt werden.</span><span class="sxs-lookup"><span data-stu-id="ac53b-114">Container images can be built in the cloud using Azure Container Registry Build.</span></span>
-  - content: <span data-ttu-id="ac53b-115">Welche Authentifizierungsmethode wird für Azure Container Registry empfohlen?</span><span class="sxs-lookup"><span data-stu-id="ac53b-115">What is the recommended authentication method for Azure Container Registry?</span></span>
+      incorrectExplanation: <span data-ttu-id="1f0e3-114">Containerimages können in der Cloud mit Azure Container Registry Build erstellt werden.</span><span class="sxs-lookup"><span data-stu-id="1f0e3-114">Container images can be built in the cloud using Azure Container Registry Build.</span></span>
+  - content: <span data-ttu-id="1f0e3-115">Welche Authentifizierungsmethode wird für Azure Container Registry empfohlen?</span><span class="sxs-lookup"><span data-stu-id="1f0e3-115">What is the recommended authentication method for Azure Container Registry?</span></span>
     choices:
-    - content: <span data-ttu-id="ac53b-116">Administratorkonto</span><span class="sxs-lookup"><span data-stu-id="ac53b-116">Admin account.</span></span>
-      incorrectExplanation: <span data-ttu-id="ac53b-117">Es ist zwar möglich, für Azure Container Registry ein Administratorkonto zu erstellen, doch dies ist nicht die empfohlene Authentifizierungsmethode.</span><span class="sxs-lookup"><span data-stu-id="ac53b-117">Although an admin account can be created for Azure Container Registry, this is not the recommended authentication method.</span></span>
+    - content: <span data-ttu-id="1f0e3-116">Administratorkonto</span><span class="sxs-lookup"><span data-stu-id="1f0e3-116">Admin account</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="ac53b-118">Benutzername und Kennwort</span><span class="sxs-lookup"><span data-stu-id="ac53b-118">User name and password.</span></span>
-      incorrectExplanation: <span data-ttu-id="ac53b-119">Die Azure-Containerregistrierung kann mit einem Administratorkonto aktiviert werden, wodurch Benutzername und Kennwort vorhanden sind.</span><span class="sxs-lookup"><span data-stu-id="ac53b-119">An Azure container registry can be admin-account enabled, which provides a user name and password.</span></span> <span data-ttu-id="ac53b-120">Dabei handelt es sich jedoch nicht um die empfohlene Authentifizierungsmethode.</span><span class="sxs-lookup"><span data-stu-id="ac53b-120">However, this is not the recommended authentication method.</span></span>
+      incorrectExplanation: <span data-ttu-id="1f0e3-117">Es ist zwar möglich, für Azure Container Registry ein Administratorkonto zu erstellen, doch dies ist nicht die empfohlene Authentifizierungsmethode.</span><span class="sxs-lookup"><span data-stu-id="1f0e3-117">An admin account can be created for Azure Container Registry; however, this is not the recommended authentication method.</span></span>
+    - content: <span data-ttu-id="1f0e3-118">Benutzername und Kennwort</span><span class="sxs-lookup"><span data-stu-id="1f0e3-118">Username and password</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="ac53b-121">Azure-Dienstprinzipal</span><span class="sxs-lookup"><span data-stu-id="ac53b-121">Azure service principal.</span></span>
+      incorrectExplanation: <span data-ttu-id="1f0e3-119">Es ist zwar möglich, für Azure Container Registry ein Administratorkonto mit Benutzername und Kennwort zu aktivieren, doch dies ist nicht die empfohlene Authentifizierungsmethode.</span><span class="sxs-lookup"><span data-stu-id="1f0e3-119">An admin-account with username and password can be enabled for an Azure Container Registry; however, this is not the recommended authentication method.</span></span>
+    - content: <span data-ttu-id="1f0e3-120">Azure-Dienstprinzipal</span><span class="sxs-lookup"><span data-stu-id="1f0e3-120">Azure service principal</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="ac53b-122">Mit Azure-Dienstprinzipalen kann der Zugriff auf Containerimages in Azure Container Registry präzise gesteuert werden.</span><span class="sxs-lookup"><span data-stu-id="ac53b-122">Azure service principals provide granular access to container images in Azure Container Registry.</span></span> <span data-ttu-id="ac53b-123">Durch die Verwendung eines Dienstprinzipals können schreibgeschützter Zugriff und Vollzugriff auf die Containerregistrierung gewährt werden.</span><span class="sxs-lookup"><span data-stu-id="ac53b-123">Using a service principal, read-only and full access can be provided to the container registry.</span></span>
-    - content: <span data-ttu-id="ac53b-124">Keine Authentifizierung</span><span class="sxs-lookup"><span data-stu-id="ac53b-124">No authentication.</span></span>
-      incorrectExplanation: <span data-ttu-id="ac53b-125">Azure Container Registry ist eine private Registrierung, auf die ohne Authentifizierung nicht zugegriffen werden kann.</span><span class="sxs-lookup"><span data-stu-id="ac53b-125">Azure Container Registry is a private registry and cannot be accessed without authentication..</span></span>
+      correctExplanation: <span data-ttu-id="1f0e3-121">Azure-Dienstprinzipale sind die empfohlene Authentifizierungsmethode.</span><span class="sxs-lookup"><span data-stu-id="1f0e3-121">Azure service principals are the recommended authentication method.</span></span> <span data-ttu-id="1f0e3-122">Sie ermöglichen präzisen Zugriff auf Containerimages in Azure Container Registry. Sie können z.B. schreibgeschützten Zugriff oder Vollzugriff auf die Containerregistrierung gewähren.</span><span class="sxs-lookup"><span data-stu-id="1f0e3-122">They provide granular access to container images in Azure Container Registry; for example, you can specify read-only access or full access to the container registry.</span></span>
+    - content: <span data-ttu-id="1f0e3-123">Keine Authentifizierung</span><span class="sxs-lookup"><span data-stu-id="1f0e3-123">No authentication</span></span>
       isCorrect: false
-  - content: <span data-ttu-id="ac53b-126">Georeplikation ist in der Standard-SKU von Container Registry verfügbar.</span><span class="sxs-lookup"><span data-stu-id="ac53b-126">Geo-replication is available in the Container Registry Standard SKU.</span></span>
+      incorrectExplanation: <span data-ttu-id="1f0e3-124">Azure Container Registry ist eine private Registrierung, auf die ohne Authentifizierung nicht zugegriffen werden kann.</span><span class="sxs-lookup"><span data-stu-id="1f0e3-124">Azure Container Registry is a private registry and cannot be accessed without authentication.</span></span>
+  - content: <span data-ttu-id="1f0e3-125">Angenommen, Sie verwenden Containerimages, um Computeworkloads in mehreren Regionen weltweit auszuführen.</span><span class="sxs-lookup"><span data-stu-id="1f0e3-125">Suppose you use container images to run compute workloads in multiple regions throughout the world.</span></span> <span data-ttu-id="1f0e3-126">Sie möchten die Georeplikationsfunktion von Azure Container Registry aktivieren, um die erforderliche Zeit für die Bereitstellung einer Instanz zu senken.</span><span class="sxs-lookup"><span data-stu-id="1f0e3-126">You plan to enable the geo-replication feature of Azure Container Registry to decrease the time required to provision an instance.</span></span> <span data-ttu-id="1f0e3-127">Welche Regionen sollten Sie für die Georeplikation wählen, wenn Sie die Georeplikation konfigurieren?</span><span class="sxs-lookup"><span data-stu-id="1f0e3-127">Which regions should you choose for your replicas when configuring geo-replication?</span></span>
     choices:
-    - content: <span data-ttu-id="ac53b-127">Richtig.</span><span class="sxs-lookup"><span data-stu-id="ac53b-127">True.</span></span>
-      incorrectExplanation: <span data-ttu-id="ac53b-128">Georeplikation ist nur in der Premium-SKU verfügbar.</span><span class="sxs-lookup"><span data-stu-id="ac53b-128">Geo-replication is only available in the Premium SKU.</span></span>
+    - content: <span data-ttu-id="1f0e3-128">Platzieren Sie die Containerregistrierung in der Region, die Ihrem Entwicklungsteam am nächsten ist.</span><span class="sxs-lookup"><span data-stu-id="1f0e3-128">Place a container registry in the region closest to your development team.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="ac53b-129">Falsch.</span><span class="sxs-lookup"><span data-stu-id="ac53b-129">False.</span></span>
+      incorrectExplanation: <span data-ttu-id="1f0e3-129">Ziel ist es, die Registrierungen in der Nähe der Standorte zu platzieren, an denen sie ausgeführt werden, nicht in der Nähe des Entwicklungsteams.</span><span class="sxs-lookup"><span data-stu-id="1f0e3-129">The goal is to place the registries close to the execution locations, not near the development team.</span></span>
+    - content: <span data-ttu-id="1f0e3-130">Platzieren Sie eine Containerregistrierung in jeder Region, in der Images ausgeführt werden.</span><span class="sxs-lookup"><span data-stu-id="1f0e3-130">Place a container registry in each region where images are run.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="ac53b-130">Georeplikation ist nur in der Premium-SKU verfügbar.</span><span class="sxs-lookup"><span data-stu-id="ac53b-130">Geo-replication is only available in the Premium SKU.</span></span>
+      correctExplanation: <span data-ttu-id="1f0e3-131">Wenn Sie eine Registrierung in jeder Region platzieren, in der Images ausgeführt werden, wird netzwerknaher Registrierungszugriff überall dort gewährleistet, wo er notwendig ist.</span><span class="sxs-lookup"><span data-stu-id="1f0e3-131">Placing a registry in each region that runs the images will ensure network-close registry access everywhere it is needed.</span></span>
+    - content: <span data-ttu-id="1f0e3-132">Platzieren Sie eine Containerregistrierung in jede Azure-Region.</span><span class="sxs-lookup"><span data-stu-id="1f0e3-132">Place a container registry in every Azure region.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="1f0e3-133">Das erhöht die Kosten, verbessert aber nicht die Leistung.</span><span class="sxs-lookup"><span data-stu-id="1f0e3-133">This will increase costs but will not increase performance.</span></span>
