@@ -9,11 +9,45 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 0c28a963f94ffa14037872d6f8951621f28f4b5e
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 03e5fe305191ab69b35bc589d888d87eace66a68
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47126526"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48787796"
 durationInMinutes: 2
-content: '[!include[](includes/7-summary.md)]'
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: Angenommen, Sie speichern 400 MB Daten mit hohem Zugriff in Redis Cache. Wie organisieren Sie die Daten im Cache, um die hohe Leistung sicherzustellen?
+    choices:
+    - content: Daten mit einem einzelnen Schlüssel speichern
+      incorrectExplanation: Redis funktioniert am besten mit Daten, die eine Größe von 100 KB oder weniger haben. Das Teilen und Speichern von größeren Daten mit mehreren Schlüsseln reduziert die Netzwerklatenz und das Arbeitsspeicherproblem.
+      isCorrect: false
+    - content: Daten mit mehreren Schlüsseln teilen und speichern
+      isCorrect: true
+      correctExplanation: Redis funktioniert am besten mit Daten, die eine Größe von 100 KB oder weniger haben. Das Teilen und Speichern von größeren Daten mit mehreren Schlüsseln reduziert die Netzwerklatenz und das Arbeitsspeicherproblem.
+    - content: Speichern Sie die Daten nicht im Cache, da 400 MB zu groß sind.
+      isCorrect: false
+      incorrectExplanation: Redis funktioniert am besten mit Daten, die eine Größe von 100 KB oder weniger haben. Das Teilen und Speichern von größeren Daten mit mehreren Schlüsseln reduziert die Netzwerklatenz und das Arbeitsspeicherproblem.
+  - content: 'Richtig oder falsch: Die Länge eines Redis-Schlüssels wirkt sich auf die Leistung der Nachschlagedauer aus.'
+    choices:
+    - content: Richtig
+      isCorrect: true
+      correctExplanation: Längere Schlüssel beanspruchen mehr Arbeitsspeicher und benötigen eine längere Nachschlagedauer, da sie Byte für Byte verglichen werden.
+    - content: Falsch
+      isCorrect: false
+      incorrectExplanation: Längere Schlüssel beanspruchen mehr Arbeitsspeicher und benötigen eine längere Nachschlagedauer, da sie Byte für Byte verglichen werden.
+  - content: Welche der folgenden Lösungen ist kein gültiger Redis Cache-Speichercontainer?
+    choices:
+    - content: Knoten
+      incorrectExplanation: Daten werden in Redis mithilfe von Knoten und Clustern gespeichert. Ein Knoten ist ein einzelner Speicherort, und ein Cluster besteht aus mindestens drei Knoten.
+      isCorrect: false
+    - content: Sätze
+      isCorrect: true
+      correctExplanation: Daten werden in Redis mithilfe von Knoten und Clustern gespeichert. Ein Knoten ist ein einzelner Speicherort, und ein Cluster besteht aus mindestens drei Knoten.
+    - content: Cluster
+      isCorrect: false
+      incorrectExplanation: Daten werden in Redis mithilfe von Knoten und Clustern gespeichert. Ein Knoten ist ein einzelner Speicherort, und ein Cluster besteht aus mindestens drei Knoten.

@@ -9,11 +9,26 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9cbd32d26c9dce0db8d048986479e62924e5f39c
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 6db681bdc49f0df2d813e278a807e485938e1cb0
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47127995"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48787463"
 durationInMinutes: 10
-content: '[!include[](includes/3-choose-azure-storage-queues.md)]'
+content: >
+  [!include[](includes/3-choose-azure-storage-queues.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: 'Angenommen, Sie Erstellen eine Anwendung, um die Funktionen der Leistungsnachweisverwaltung von Studenten an der Universität zu automatisieren. Eine der zu implementieren Geschäftsregeln lautet wie folgt: Wenn ein Student einen Kurs abschließt, muss die Note der Auflistung seiner Studienleistungen hinzugefügt werden. Zudem muss die Berechtigung für den Studierendenzuschuss überprüft werden, und der Student muss benachrichtigt werden. Welcher Azure-Dienst ist demnach eine gute Wahl, um die Benachrichtigungen in diesem System zu speichern?'
+    choices:
+    - content: Azure Queue Storage
+      isCorrect: false
+      incorrectExplanation: Azure Queue Storage unterstützt nicht mehrere Abonnenten.
+    - content: Azure Service Bus-Warteschlangen
+      isCorrect: false
+      incorrectExplanation: Azure Service Bus-Warteschlangen unterstützen nicht mehrere Abonnenten.
+    - content: Azure Service Bus-Themen
+      isCorrect: true
+      correctExplanation: Die Anforderung, dass mehrere Abonnenten unterstützt werden müssen, machen Azure Service Bus-Themen zur besten Wahl für dieses System.

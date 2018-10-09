@@ -16,11 +16,9 @@ Gespeicherte Prozeduren stellen die einzige Möglichkeit dar, atomische Transakt
 
 Außerdem wird empfohlen, Batchvorgänge in gespeicherten Prozeduren auszuführen, da dann weniger separate Transaktionen erstellt werden müssen.
 
-<!--TODO: Ideally I'd like to list some cases where a stored procedure is not the best option.-->
-
 ## <a name="stored-procedure-example"></a>Beispiel für eine gespeicherte Prozedur
 
-Bei dem folgenden Beispiel handelt es sich um eine einfache gespeicherten HelloWorld-Prozedur, die den aktuellen Kontext abruft und eine Antwort sendet, die „Hello, World“ anzeigt. Beachten Sie, dass gespeicherte Prozeduren genauso wie Azure Cosmos DB-Dokumente einen ID-Wert aufweisen.
+Bei dem folgenden Beispiel handelt es sich um eine einfache gespeicherten HelloWorld-Prozedur, die den aktuellen Kontext abruft und eine Antwort sendet, die „Hello, World“ anzeigt.
 
 ```javascript
 function helloWorld() {

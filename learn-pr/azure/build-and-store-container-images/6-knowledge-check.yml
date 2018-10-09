@@ -9,49 +9,52 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 89fbd644018188c7f24fc6c5fbb5ee129559c6ad
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 0a50c0a9498e1ca4d5fcedec865e84945c8225e8
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47128454"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48787490"
 durationInMinutes: 5
 quiz:
   title: Überprüfen Sie Ihr Wissen
   questions:
   - content: Welche der folgenden Aussagen beschreibt keinen Vorteil von Azure Container Registry?
     choices:
-    - content: Replizieren von Containerimages in vielen Azure-Rechenzentren.
-      incorrectExplanation: Dies ist mit der Georeplikationsfunktion von Azure Container Registry möglich.
+    - content: Replizieren von Containerimages in mehreren Azure-Rechenzentren
       isCorrect: false
-    - content: Abrufen von Containerimages aus Container Registry mithilfe einer beliebigen Docker-Containertechnologie.
+      incorrectExplanation: Azure Container Registry bietet eine Georeplikationsfunktion.
+    - content: Pullen von Containerimages mithilfe einer beliebigen Docker-Containertechnologie
       isCorrect: false
-      incorrectExplanation: Container Registry kann mit sämtlichen Docker-bezogenen Technologien verwendet werden.
-    - content: Bereitstellen von Containerimages zur öffentlichen Verwendung für Pullvorgänge.
+      incorrectExplanation: Azure Container Registry kann mit sämtlichen Docker-Technologien verwendet werden.
+    - content: Zulassen des öffentlichen Zugriffs auf Containerimages für Pullvorgänge
       isCorrect: true
-      correctExplanation: Container Registry ist eine private Registrierung. In Container Registry gespeicherte Images sind nicht ohne Authentifizierung zugänglich.
-    - content: Erstellen von Containerimages ohne lokal installierte Docker-Tools.
+      correctExplanation: Azure Container Registry ist eine private Registrierung. Der Zugriff auf Images ist nur mit Authentifizierung möglich.
+    - content: Erstellen von Containerimages ohne lokal installierte Docker-Tools
       isCorrect: false
       incorrectExplanation: Containerimages können in der Cloud mit Azure Container Registry Build erstellt werden.
   - content: Welche Authentifizierungsmethode wird für Azure Container Registry empfohlen?
     choices:
     - content: Administratorkonto
+      isCorrect: false
       incorrectExplanation: Es ist zwar möglich, für Azure Container Registry ein Administratorkonto zu erstellen, doch dies ist nicht die empfohlene Authentifizierungsmethode.
-      isCorrect: false
     - content: Benutzername und Kennwort
-      incorrectExplanation: Die Azure-Containerregistrierung kann mit einem Administratorkonto aktiviert werden, wodurch Benutzername und Kennwort vorhanden sind. Dabei handelt es sich jedoch nicht um die empfohlene Authentifizierungsmethode.
       isCorrect: false
+      incorrectExplanation: Es ist zwar möglich, für Azure Container Registry ein Administratorkonto mit Benutzername und Kennwort zu aktivieren, doch dies ist nicht die empfohlene Authentifizierungsmethode.
     - content: Azure-Dienstprinzipal
       isCorrect: true
-      correctExplanation: Mit Azure-Dienstprinzipalen kann der Zugriff auf Containerimages in Azure Container Registry präzise gesteuert werden. Durch die Verwendung eines Dienstprinzipals können schreibgeschützter Zugriff und Vollzugriff auf die Containerregistrierung gewährt werden.
+      correctExplanation: Azure-Dienstprinzipale sind die empfohlene Authentifizierungsmethode. Sie ermöglichen präzisen Zugriff auf Containerimages in Azure Container Registry. Sie können z.B. schreibgeschützten Zugriff oder Vollzugriff auf die Containerregistrierung gewähren.
     - content: Keine Authentifizierung
+      isCorrect: false
       incorrectExplanation: Azure Container Registry ist eine private Registrierung, auf die ohne Authentifizierung nicht zugegriffen werden kann.
-      isCorrect: false
-  - content: Georeplikation ist in der Standard-SKU von Container Registry verfügbar.
+  - content: Angenommen, Sie verwenden Containerimages, um Computeworkloads in mehreren Regionen weltweit auszuführen. Sie möchten die Georeplikationsfunktion von Azure Container Registry aktivieren, um die erforderliche Zeit für die Bereitstellung einer Instanz zu senken. Welche Regionen sollten Sie für die Georeplikation wählen, wenn Sie die Georeplikation konfigurieren?
     choices:
-    - content: Richtig.
-      incorrectExplanation: Georeplikation ist nur in der Premium-SKU verfügbar.
+    - content: Platzieren Sie die Containerregistrierung in der Region, die Ihrem Entwicklungsteam am nächsten ist.
       isCorrect: false
-    - content: Falsch.
+      incorrectExplanation: Ziel ist es, die Registrierungen in der Nähe der Standorte zu platzieren, an denen sie ausgeführt werden, nicht in der Nähe des Entwicklungsteams.
+    - content: Platzieren Sie eine Containerregistrierung in jeder Region, in der Images ausgeführt werden.
       isCorrect: true
-      correctExplanation: Georeplikation ist nur in der Premium-SKU verfügbar.
+      correctExplanation: Wenn Sie eine Registrierung in jeder Region platzieren, in der Images ausgeführt werden, wird netzwerknaher Registrierungszugriff überall dort gewährleistet, wo er notwendig ist.
+    - content: Platzieren Sie eine Containerregistrierung in jede Azure-Region.
+      isCorrect: false
+      incorrectExplanation: Das erhöht die Kosten, verbessert aber nicht die Leistung.

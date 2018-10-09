@@ -161,24 +161,31 @@ Zum Lesen von Daten aus der Datenbank müssen Sie eine Eingabebindung definieren
 
 1. Klicken Sie im linken Bereich auf **Integrieren**, um die Registerkarte „Integration“ zu öffnen. Die von Ihnen verwendete Vorlage hat einen HTTP-Trigger und eine HTTP-Ausgabebindung für uns erstellt. Fügen Sie die neue Azure Cosmos DB-Eingabebindung nun hinzu.
 
-2. Wählen Sie in der Spalte **Eingaben** die Option **Neue Eingabe** aus.
+1. Wählen Sie in der Spalte **Eingaben** die Option **Neue Eingabe** aus.
    Eine Liste aller möglichen Eingabebindungstypen wird angezeigt.
 
-3. Wählen Sie in der Liste **Azure Cosmos DB** und anschließend **Auswählen** aus.
-   Durch diese Aktion wird die Azure Cosmos DB-Eingabekonfigurationsseite geöffnet. Im nächsten Schritt müssen Sie eine Verbindung mit Ihrer Datenbank einrichten.
+1. Wählen Sie in der Liste **Azure Cosmos DB** und anschließend **Auswählen** aus.
+   Durch diese Aktion wird die Azure Cosmos DB-Eingabekonfigurationsseite geöffnet. Im nächsten Schritt müssen Sie eine Verbindung mit Ihrer Datenbank herstellen.
 
-4. Klicken Sie neben dem Feld **Azure Cosmos DB-Kontoverbindung** auf **Neu**.
+1. Wenn eine Meldung auf der Benutzeroberfläche für die Konfiguration der **Azure Cosmos DB-Eingabe** angezeigt wird, dass Sie eine Erweiterung installieren müssen, klicken Sie auf **Installieren**. 
+
+    ![Die JavaScript-Standardimplementierung einer per HTTP ausgelösten Azure-Funktion](../media/extension-not-installed.png)
+
+    > [!NOTE]
+    > Die Installation einer Erweiterung kann einige Zeit in Anspruch nehmen. Warten Sie, bis die Installation abschlossen wurde, bevor Sie mit dem nächsten Schritt beginnen.
+
+1. Klicken Sie neben dem Feld **Azure Cosmos DB-Kontoverbindung** auf **Neu**.
    Durch diese Aktion wird das Fenster **Verbindung** geöffnet, in dem bereits das **Azure Cosmos DB-Konto** und Ihr Azure-Abonnement ausgewählt sind. Sie müssen nur noch eine Datenbankkonto-ID auswählen.
 
-5. Im Abschnitt „Datenbankkonto erstellen“ mussten Sie einen ID-Wert angeben. Suchen Sie in der Dropdownliste **Datenbankkonto** nach diesem Wert, und klicken Sie anschließend auf **Auswählen**.
+1. Im Abschnitt „Datenbankkonto erstellen“ mussten Sie einen ID-Wert angeben. Suchen Sie in der Dropdownliste **Datenbankkonto** nach diesem Wert, und klicken Sie anschließend auf **Auswählen**.
 
-6. Eine neue Verbindung mit der Datenbank wird konfiguriert und im Feld **Azure Cosmos DB-Kontoverbindung** angezeigt. Wenn Sie neugierig sind, was sich tatsächlich hinter diesem abstrakten Name verbirgt, klicken Sie auf *Wert anzeigen*, um die Verbindungszeichenfolge anzuzeigen.
+1. Eine neue Verbindung mit der Datenbank wird konfiguriert und im Feld **Azure Cosmos DB-Kontoverbindung** angezeigt. Wenn Sie neugierig sind, was sich tatsächlich hinter diesem abstrakten Name verbirgt, klicken Sie auf *Wert anzeigen*, um die Verbindungszeichenfolge anzuzeigen.
 
 Sie möchten nach einem Lesezeichen mit einer bestimmten ID suchen. Verknüpfen Sie die erhaltene ID also mit der Bindung.
 
-7. Geben Sie im Feld **Dokument-ID (optional)** die Angabe `{id}` ein. Diese Syntax wird als *Bindungsausdruck* bezeichnet. Die Funktion wird durch eine HTTP-Anforderung ausgelöst, die eine Abfragezeichenfolge verwendet, um die zu suchende ID anzugeben. Da IDs in der Sammlung eindeutig sind, gibt die Bindung 0 (nicht gefunden) oder 1 (gefunden) Dokument(e) zurück.
+1. Geben Sie im Feld **Dokument-ID (optional)** die Angabe `{id}` ein. Diese Syntax wird als *Bindungsausdruck* bezeichnet. Die Funktion wird durch eine HTTP-Anforderung ausgelöst, die eine Abfragezeichenfolge verwendet, um die zu suchende ID anzugeben. Da IDs in der Sammlung eindeutig sind, gibt die Bindung 0 (nicht gefunden) oder 1 (gefunden) Dokument(e) zurück.
 
-8. Füllen Sie die verbleibenden Felder auf dieser Seite sorgfältig mit den Werten in der folgenden Tabelle aus. Sie können jederzeit auf das Informationssymbol rechts neben dem jeweiligen Feldnamen klicken, um weitere Informationen zum Zweck der einzelnen Felder zu erhalten.
+1. Füllen Sie die verbleibenden Felder auf dieser Seite sorgfältig mit den Werten in der folgenden Tabelle aus. Sie können jederzeit auf das Informationssymbol rechts neben dem jeweiligen Feldnamen klicken, um weitere Informationen zum Zweck der einzelnen Felder zu erhalten.
 
     |Einstellung  |Wert  |Beschreibung  |
     |---------|---------|---------|

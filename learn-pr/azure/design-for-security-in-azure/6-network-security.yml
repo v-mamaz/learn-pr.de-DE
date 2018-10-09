@@ -9,29 +9,29 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: cc35a096e064136f7d56fc05c4ce856fd1918641
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 9cd7f21680ad44848f6cf4240c1ae3289839ad2d
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47125772"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48786713"
 durationInMinutes: 10
 content: >
   [!include[](includes/6-network-security.md)]
 quiz:
-  title: Überprüfen Sie Ihre Kenntnisse
+  title: Überprüfen Sie Ihr Wissen
   questions:
-  - content: Welche der folgenden Übertragungen können mit Azure-Netzwerksicherheitsgruppen abgesichert werden?
+  - content: Welche der folgenden Arten der Kommunikation können mit Azure-Netzwerksicherheitsgruppen abgesichert werden?
     choices:
-    - content: VMs und das Internet
+    - content: Kommunikation zwischen Azure-VMs und dem Internet
       isCorrect: false
-      incorrectExplanation: Netzwerksicherheitsgruppen sind vollständig anpassbar und bieten Ihnen die Möglichkeit, die Netzwerkkommunikation zu und von Ihren VMs vollständig zu sperren.
-    - content: Virtuelle Computer in einem VNET
+      incorrectExplanation: Mit Netzwerksicherheitsgruppen kann diese Kommunikation zwar abgesichert werden, doch dies ist nicht die einzige richtige Antwortmöglichkeit.
+    - content: Kommunikation zwischen Azure-VMs innerhalb eines VNet
       isCorrect: false
-      incorrectExplanation: Netzwerksicherheitsgruppen sind vollständig anpassbar und bieten Ihnen die Möglichkeit, die Netzwerkkommunikation zu und von Ihren VMs vollständig zu sperren.
-    - content: Systeme in einem lokalen Netzwerk
+      incorrectExplanation: Mit Netzwerksicherheitsgruppen kann diese Kommunikation zwar abgesichert werden, doch dies ist nicht die einzige richtige Antwortmöglichkeit.
+    - content: Kommunikation zwischen Azure-VMs und Systemen in einem lokalen Netzwerk
       isCorrect: false
-      incorrectExplanation: Netzwerksicherheitsgruppen sind vollständig anpassbar und bieten Ihnen die Möglichkeit, die Netzwerkkommunikation zu und von Ihren VMs vollständig zu sperren.
+      incorrectExplanation: Mit Netzwerksicherheitsgruppen kann diese Kommunikation zwar abgesichert werden, doch dies ist nicht die einzige richtige Antwortmöglichkeit.
     - content: Alle oben genannten Möglichkeiten sind zutreffend.
       isCorrect: true
       correctExplanation: Netzwerksicherheitsgruppen sind vollständig anpassbar und bieten Ihnen die Möglichkeit, die Netzwerkkommunikation zu und von Ihren VMs vollständig zu sperren.
@@ -39,13 +39,13 @@ quiz:
     choices:
     - content: Azure DDoS
       isCorrect: false
-      incorrectExplanation: Mit Azure Disk Encryption werden die virtuellen Festplatten eines virtuellen Computers geschützt, falls diese ohne Berechtigung zugänglich gemacht werden. Der Dienst bietet aber keinen Schutz vor Netzwerkangriffen.
+      incorrectExplanation: 'Mit Azure DDoS können mit dem Internet verbundene Dienste vor einem DoS-Angriff geschützt werden. '
     - content: Azure Application Gateway-WAF
       isCorrect: false
-      incorrectExplanation: Mit Azure Disk Encryption werden die virtuellen Festplatten eines virtuellen Computers geschützt, falls diese ohne Berechtigung zugänglich gemacht werden. Der Dienst bietet aber keinen Schutz vor Netzwerkangriffen.
+      incorrectExplanation: Mit Application Gateway-WAF können mit dem Internet verbundene Dienste vor XSS-Angriffen und Einschleusung von SQL-Befehlen geschützt werden.
     - content: Azure Disk Encryption
       isCorrect: true
-      correctExplanation: Mit Azure Disk Encryption werden die virtuellen Festplatten eines virtuellen Computers geschützt, falls diese ohne Berechtigung zugänglich gemacht werden. Der Dienst bietet aber keinen Schutz vor Netzwerkangriffen.
+      correctExplanation: Mit Azure Disk Encryption werden die VHDs eines virtuellen Computers geschützt, falls diese ohne Berechtigung zugänglich gemacht werden. Der Dienst bietet aber keinen Schutz vor Netzwerkangriffen.
     - content: Virtuelles Netzwerkgerät
       isCorrect: false
-      incorrectExplanation: Mit Azure Disk Encryption werden die virtuellen Festplatten eines virtuellen Computers geschützt, falls diese ohne Berechtigung zugänglich gemacht werden. Der Dienst bietet aber keinen Schutz vor Netzwerkangriffen.
+      incorrectExplanation: Virtuelle Netzwerkgeräte stellen anpassbaren Netzwerkzugriffsschutz für Ressourcen bereit, die mit dem Internet verbunden sind.

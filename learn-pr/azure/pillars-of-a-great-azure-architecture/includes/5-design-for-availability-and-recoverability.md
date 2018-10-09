@@ -21,7 +21,7 @@ Ermitteln Sie in Bezug auf die Verfügbarkeit die Vereinbarung zum Servicelevel 
 Führen Sie für die Wiederherstellbarkeit eine Analyse zur Untersuchung von Szenarien mit möglichen Datenverlusten und schwerwiegenden Ausfällen durch. Die Analyse sollte eine Untersuchung der Wiederherstellungsstrategien und das jeweilige Kosten-Nutzen-Verhältnis umfassen. Diese Übung liefert wichtige Erkenntnisse zu den Prioritäten Ihrer Organisation und verdeutlicht die Rolle Ihrer Anwendung. Die Ergebnisse sollten die RPO (Recovery Point Objective) und die RTO (Recovery Time Objective) der Anwendung umfassen.
 
 * **Recovery Point Objective:** Die maximale Dauer des akzeptablen Datenverlusts. Der RPO-Wert wird in Zeiteinheiten gemessen, nicht als Volumen (also „30 Minuten an Daten“, „vier Stunden an Daten“ usw.). Beim RPO-Wert geht es um die Beschränkung des *Verlusts* von Daten sowie um deren Wiederherstellung, nicht um den *Diebstahl* von Daten.
-* **Recovery Time Objective:** Die maximale Dauer der akzeptablen Ausfallzeit, wobei „Ausfallzeit“ gemäß Ihrer Spezifikation definiert werden muss. Wenn also beispielsweise die akzeptable Ausfallzeit in einem Notfall acht Stunden beträgt, hat Ihr RPO ebenfalls diesen Wert.
+* **Recovery Time Objective:** Die maximale Dauer der akzeptablen Ausfallzeit, wobei „Ausfallzeit“ gemäß Ihrer Spezifikation definiert werden muss. Wenn also beispielsweise die akzeptable Ausfallzeit in einem Notfall acht Stunden beträgt, hat Ihr RTO ebenfalls diesen Wert.
 
 Wenn der RPO- und der RTO-Wert definiert wurden, können Sie Sicherungs-, Wiederherstellungs- und Replikationsfunktionen für Ihre Architektur entwerfen, um diese Ziele zu erreichen.
 

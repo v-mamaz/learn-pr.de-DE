@@ -9,23 +9,31 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 048a3ce0646b3adf5d5124911c1c8093de2180d1
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: e15ae717727be4682fa37189ccf559daacdb54e7
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47128155"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48787371"
 durationInMinutes: 10
 content: >
   [!include[](includes/2-choose-whether-to-use-message-queues-or-events.md)]
 quiz:
   title: Überprüfen Sie Ihre Kenntnisse
   questions:
-  - content: 'Angenommen, Sie verwenden eine verteilte Anwendung mit einem Webdienst, der Benutzer authentifiziert. Wenn sich ein Benutzer anmeldet, kommuniziert der Webdienst mit allen Clientanwendungen, um den Status „Online“ anzuzeigen. Wahr oder falsch: Dies ist ein Beispiel einer Nachricht in einer verteilten Anwendung.'
+  - content: Angenommen, Sie verwenden eine verteilte Anwendung mit einem Webdienst, der Benutzer authentifiziert. Wenn sich ein Benutzer anmeldet, benachrichtigt der Webdienst alle Clientanwendungen, damit diese den Status des Benutzers als „Online“ anzeigen. Ist die Anmeldebenachrichtigung ein Beispiel für eine Meldung oder ein Ereignis?
     choices:
-    - content: Wahr
+    - content: Meldung
       isCorrect: false
-      incorrectExplanation: Nachrichten enthalten in der Regel die Rohdaten selbst, z.B. eine Mediendatei. In diesem Fall senden wir ein einfaches Datenelement, das den Status eines Benutzers darstellt. Außerdem senden wir die Daten als Reaktion auf eine Aktion, was ein perfekter Fall für die Verwendung eines Ereignisses ist.
-    - content: Falsch
-      correctExplanation: Nachrichten enthalten in der Regel die Rohdaten selbst, z.B. eine Mediendatei. In diesem Fall senden wir ein einfaches Datenelement, das den Status eines Benutzers darstellt. Außerdem senden wir die Daten als Reaktion auf eine Aktion, was ein perfekter Fall für die Verwendung eines Ereignisses ist.
+      incorrectExplanation: Die Anmeldebenachrichtigung ist ein Ereignis. Sie enthält nur ein einfaches Statusdatenelement, und der Authentifizierungsdienst erwartet nicht, dass die Clientanwendungen auf bestimmte Weise reagieren.
+    - content: Ereignis
       isCorrect: true
+      correctExplanation: Die Anmeldebenachrichtigung ist ein Ereignis. Sie enthält nur ein einfaches Statusdatenelement, und der Authentifizierungsdienst erwartet nicht, dass die Clientanwendungen auf bestimmte Weise reagieren.
+  - content: Angenommen, Sie verwenden eine verteilte Anwendung mit einem Webdienst, über den Benutzer ihr Konto verwalten können. Benutzer können sich anmelden, ihr Profil bearbeiten und ihr Konto löschen. Wenn ein Benutzer sein Konto löscht, benachrichtigt Ihr Webdienst die Datenschicht, damit die Daten des Benutzers aus der Datenbank entfernt werden. Ist die Benachrichtigung zum Löschen des Kontos ein Beispiel für eine Meldung oder ein Ereignis?
+    choices:
+    - content: Meldung
+      isCorrect: true
+      correctExplanation: 'Die Benachrichtigung zum Löschen des Kontos ist eine Meldung. Ausschlaggebend ist hier die Erwartung des Webdiensts, wie die Datenschicht die Meldung verarbeitet: Die Datenschicht muss die Daten des Benutzers aus der Datenbank entfernen, damit das System ordnungsgemäß funktioniert. Beachten Sie, dass die Meldung an sich nur einfache Informationen enthält. Dieser Teil der Kommunikation könnte als Ereignis angesehen werden. Da aber der Webdienst erwartet, dass die Datenschicht die Benachrichtigung auf bestimmte Weise verarbeitet, handelt es sich hierbei um eine Meldung.'
+    - content: Ereignis
+      isCorrect: false
+      incorrectExplanation: 'Die Benachrichtigung zum Löschen des Kontos ist eine Meldung. Ausschlaggebend ist hier die Erwartung des Webdiensts, wie die Datenschicht die Meldung verarbeitet: Die Datenschicht muss die Daten des Benutzers aus der Datenbank entfernen, damit das System ordnungsgemäß funktioniert. Beachten Sie, dass die Meldung an sich nur einfache Informationen enthält. Dieser Teil der Kommunikation könnte als Ereignis angesehen werden. Da aber der Webdienst erwartet, dass die Datenschicht die Benachrichtigung auf bestimmte Weise verarbeitet, handelt es sich hierbei um eine Meldung.'

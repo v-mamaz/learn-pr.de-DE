@@ -49,7 +49,7 @@ Zunächst müssen Sie die grundlegenden Parameter des virtuellen Computers für 
 
 1. Nutzen Sie die folgenden Werte auf der Registerkarte **Grundlagen**.
     - Das Abonnement sollte auf _Concierge-Abonnement_ festgelegt werden.
-    - Wählen Sie für die Region die Option **Vorhandene verwenden** und in der Dropdownliste dann <rgn>[Name der Sandboxressourcengruppe]</rgn> aus.
+    - Wählen Sie für die Region die Option **Vorhandene verwenden** aus, und wählen Sie dann in der Dropdownliste der Ressourcengruppe **Vorhandene verwenden** und <rgn>[Name der Sandboxressourcengruppe]</rgn> aus.
     - Geben Sie unter **Name** einen Namen für die VM ein. Verwenden Sie _test-wp1-eus-vm_.
     - Wählen Sie in der folgenden Liste eine **Region** aus, die in Ihrer Nähe liegt.
         [!include[](../../../includes/azure-sandbox-regions-note-friendly.md)]

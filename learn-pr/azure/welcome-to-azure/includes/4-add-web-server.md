@@ -42,13 +42,13 @@ Hier verwenden Sie die benutzerdefinierte Skripterweiterung, um IIS remote auf I
       --vm-name myVM \
       --name CustomScriptExtension \
       --publisher Microsoft.Compute \
-      --settings '{"fileUris":["https://gist.githubusercontent.com/tpetchel/26f9dab2628a80bf87a33caeed1b6ded/raw/69e5d9250b9dcd7e7eece4b0ea3c3a8cd1b4fcd7/configure-iis.ps1"]}' \
+      --settings '{"fileUris":["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-iis.ps1"]}' \
       --protected-settings '{"commandToExecute": "powershell -ExecutionPolicy Unrestricted -File configure-iis.ps1"}'
     ```
 
     Der Vorgang zum Konfigurieren von IIS, Festlegen von Inhalten auf der Startseite und Starten des Diensts dauert einige Minuten.
 
-    Wenn Sie möchten, können Sie sich in der Zwischenzeit auf einer separaten Browserregisterkarte [das PowerShell-Skript ansehen](https://gist.githubusercontent.com/tpetchel/26f9dab2628a80bf87a33caeed1b6ded/raw/69e5d9250b9dcd7e7eece4b0ea3c3a8cd1b4fcd7/configure-iis.ps1?azure-portal=true). Das Skript installiert IIS und konfiguriert die Startseite so, dass sie eine Begrüßungsnachricht zusammen mit dem Computernamen des virtuellen Computers „myVM“ anzeigt.
+    Wenn Sie möchten, können Sie sich in der Zwischenzeit [das PowerShell-Skript ansehen](https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-iis.ps1?azure-portal=true) (auf einer separaten Browserregisterkarte). Das Skript installiert IIS und konfiguriert die Startseite so, dass sie eine Begrüßungsnachricht zusammen mit dem Computernamen des virtuellen Computers „myVM“ anzeigt.
 
 1. Führen Sie den Befehl `az vm open-port` zum Öffnen von Port 80 (HTTP) über die Firewall aus.
 
@@ -110,13 +110,13 @@ Hier verwenden Sie die benutzerdefinierte Skripterweiterung, um Nginx remote auf
       --vm-name myVM \
       --name customScript \
       --publisher Microsoft.Azure.Extensions \
-      --settings '{"fileUris":["https://gist.githubusercontent.com/tpetchel/26f9dab2628a80bf87a33caeed1b6ded/raw/69e5d9250b9dcd7e7eece4b0ea3c3a8cd1b4fcd7/configure-nginx.sh"]}' \
+      --settings '{"fileUris":["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-nginx.sh"]}' \
       --protected-settings '{"commandToExecute": "./configure-nginx.sh"}'
     ```
 
     Der Vorgang zum Konfigurieren von nginx, Festlegen von Inhalten auf der Startseite und Starten des Diensts dauert einige Minuten.
 
-    Wenn Sie möchten, können Sie sich in der Zwischenzeit auf einer separaten Browserregisterkarte [das Bash-Skript ansehen](https://gist.githubusercontent.com/tpetchel/26f9dab2628a80bf87a33caeed1b6ded/raw/69e5d9250b9dcd7e7eece4b0ea3c3a8cd1b4fcd7/configure-nginx.sh?azure-portal=true). Das Skript installiert Nginx und konfiguriert die Startseite so, dass sie eine Begrüßungsnachricht zusammen mit dem Computernamen des virtuellen Computers „myVM“ anzeigt.
+    Wenn Sie möchten, können Sie sich in der Zwischenzeit [das Bash-Skript ansehen](https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-nginx.sh?azure-portal=true) (auf einer separaten Browserregisterkarte). Das Skript installiert Nginx und konfiguriert die Startseite so, dass sie eine Begrüßungsnachricht zusammen mit dem Computernamen des virtuellen Computers „myVM“ anzeigt.
 
 1. Führen Sie den Befehl `az vm open-port` zum Öffnen von Port 80 (HTTP) über die Firewall aus.
 

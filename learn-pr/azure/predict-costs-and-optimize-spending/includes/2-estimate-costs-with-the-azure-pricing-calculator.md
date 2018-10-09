@@ -33,7 +33,7 @@ Fügen Sie im Azure-Preisrechner auf der Registerkarte **Produkte** die folgende
 
 Die Details der einzelnen Elemente können auf der Registerkarte **Schätzungen** konfiguriert werden. Dadurch erhalten Sie eine solide Schätzung der Kosten. Verwenden Sie für alle Ressourcen die Region **USA, Westen**.
 
-* **Virtuelle Computer**: Da es sich um eine ASP.NET-Anwendung handelt, muss eine VM mit **Windows-Betriebssystem** eingesetzt werden. Diese Anwendung erfordert keine enorme Computeleistung, weshalb Sie als Instanzgröße **D2 v3** auswählen können. Es werden zwei virtuelle Computer benötigt, die durchgehend ausgeführt werden (730 Stunden pro Monat). Für diese VMs wird Storage Premium (SSD) verwendet, und für insgesamt zwei Datenträger ist nur ein Datenträger pro VM der Größe **E10** erforderlich.
+* **Virtuelle Computer**: Da es sich um eine ASP.NET-Anwendung handelt, muss eine VM mit **Windows-Betriebssystem** eingesetzt werden. Diese Anwendung erfordert keine enorme Computeleistung, weshalb Sie als Instanzgröße **D2 v3** auswählen können. Es werden zwei virtuelle Computer benötigt, die durchgehend ausgeführt werden (730 Stunden pro Monat). Für diese VMs wird Storage Standard (SSD) verwendet, und für insgesamt zwei Datenträger ist nur ein Datenträger pro VM der Größe **E10** erforderlich.
 
 * **SQL-Datenbank**: Für die Datenbank wird ein **Einzeldatenbanktyp** mithilfe des **Modells auf Basis von virtuellen Kernen** bereitgestellt. Eine Gen 5-Datenbank mit acht virtuellen Kernen soll im Tarif „Universell“ erstellt werden. Benötigt werden 32 GB Speicher.
 

@@ -2,7 +2,18 @@ Mit der kostenlosen Sandbox können Sie in einem Teil der globalen Azure-Regione
 
 :::row:::
     :::column:::
-        – USA, Westen 2 – USA, Westen-Mitte – USA, Süden-Mitte – USA, Mitte – USA, Osten – Europa, Westen :::column-end:::
+        - westus2  
+        - westcentralus  
+        - southcentralus  
+        - centralus  
+        - eastus  
+        - westeurope  
+    :::column-end:::
     :::column:::
-        – Asien-Pazifik, Südosten – Japan, Osten – Brasilien, Süden – Australien, Südosten – Indien, Mitte :::column-end:::
+        - southeastasia  
+        - japaneast  
+        - brazilsouth  
+        - australiasoutheast  
+        - centralindia  
+    :::column-end:::
 :::row-end:::

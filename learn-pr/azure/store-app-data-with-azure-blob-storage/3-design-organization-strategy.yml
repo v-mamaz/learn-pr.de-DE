@@ -9,43 +9,34 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 8da3a8080f571b71fee0dab03a0b1cf2ac26f443
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 54d50a945d516a80441334b822885ec15e56d332
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47125153"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48787212"
 durationInMinutes: 7
 content: >
   [!include[](includes/3-design-organization-strategy.md)]
 quiz:
-  title: Überprüfen Sie Ihre Kenntnisse
+  title: Überprüfen Sie Ihr Wissen
   questions:
-  - content: Welcher Blobtyp eignet sich für die meisten Speicherszenarien am besten?
+  - content: 'Angenommen, Sie müssen Profil- und Auftragsinformationen Ihrer Kunden speichern. Sie müssen die Daten abfragen, um Fragen wie „Wer sind meine 100 wichtigsten Kunden?“ und „Wie viele Kunden leben in einer bestimmten geografischen Region?“ zu beantworten. Richtig oder falsch: Blob Storage ist eine gute Wahl für diese Daten.'
     choices:
-    - content: Byteblobs
+    - content: Richtig
       isCorrect: false
-      incorrectExplanation: Blockblobs können aufgrund ihrer blockbasierten Struktur schnell hochgeladen und heruntergeladen werden.
-    - content: Seitenblobs
-      isCorrect: false
-      incorrectExplanation: Blockblobs können aufgrund ihrer blockbasierten Struktur schnell hochgeladen und heruntergeladen werden.
-    - content: Blockblobs
+      incorrectExplanation: Blobs sind nicht für strukturierte Daten geeignet, die regelmäßig abgefragt werden müssen. Sie weisen eine höhere Latenz auf als Arbeitsspeicher und lokale Datenträger und verfügen nicht über Indizierungsfunktionen, die Datenbanken effizienter beim Ausführen von Abfragen machen.
+    - content: Falsch
       isCorrect: true
-      correctExplanation: Blockblobs können aufgrund ihrer blockbasierten Struktur schnell hochgeladen und heruntergeladen werden.
-    - content: Anfügeblobs
-      isCorrect: false
-      incorrectExplanation: Blockblobs können aufgrund ihrer blockbasierten Struktur schnell hochgeladen und heruntergeladen werden.
+      correctExplanation: Blobs sind nicht für strukturierte Daten geeignet, die regelmäßig abgefragt werden müssen. Sie weisen eine höhere Latenz auf als Arbeitsspeicher und lokale Datenträger und verfügen nicht über Indizierungsfunktionen, die Datenbanken effizienter beim Ausführen von Abfragen machen.
   - content: Blobs ermöglichen das *unstrukturierte* Speichern von Daten. Was bedeutet *unstrukturiert*?
     choices:
-    - content: Blobs können weder organisiert noch benannt werden. Sie sind nur Sammlungen von Bytes.
+    - content: Blob können nicht organisiert oder benannt werden.
       isCorrect: false
       incorrectExplanation: Blobs verleihen Ihren Daten keine Struktur, sodass Ihre Anwendung jede Art von Daten in einem Blob speichern kann.
     - content: Es gibt keine Einschränkungen hinsichtlich der Datentypen, die in Blobs gespeichert werden können.
       isCorrect: true
       correctExplanation: Blobs verleihen Ihren Daten keine Struktur, sodass Ihre Anwendung jede Art von Daten in einem Blob speichern kann.
     - content: Blobs können keine strukturierten Daten, wie z.B. JSON oder XML, enthalten.
-      isCorrect: false
-      incorrectExplanation: Blobs verleihen Ihren Daten keine Struktur, sodass Ihre Anwendung jede Art von Daten in einem Blob speichern kann.
-    - content: Aus Blobs heruntergeladene Daten werden nach dem Zufallsprinzip organisiert und erfordern eine Clientbibliothek, um sie analysieren zu können.
       isCorrect: false
       incorrectExplanation: Blobs verleihen Ihren Daten keine Struktur, sodass Ihre Anwendung jede Art von Daten in einem Blob speichern kann.

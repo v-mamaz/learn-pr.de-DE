@@ -2,7 +2,7 @@ In der letzten Übung haben Sie das trainierte Modell mithilfe des Features **Sc
 
 [!include[](../../../includes/azure-sandbox-activate.md)]
 
-1. Wählen Sie anschließend in Ihrem *Artworks*-Projekt* im Custom Vision Service-Portal die Registerkarte **Leistung** aus.
+1. Wählen Sie anschließend in Ihrem *Artworks*\*-Projekt im Custom Vision Service-Portal die Registerkarte **Leistung** aus.
 
     ![Auswählen der Registerkarte „Leistung“](../media/5-performance-tab.png)
 

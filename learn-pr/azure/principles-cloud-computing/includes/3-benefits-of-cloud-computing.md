@@ -4,9 +4,10 @@ Hier erfahren Sie mehr über einige der wichtigsten Vorteile des Cloud Computing
 
 :::row:::
     :::column:::
-        ![Rechnung auf Papier und eine Cloud, die Kosteneffizienz darstellt](../media/3-cost-effective.png)
+        ![Paper bill and a cloud representing cost effectiveness](../media/3-cost-effective.png)
     :::column-end:::
-    :::column span="3"::: **Kosteneffizient**
+    :::column span="3":::  
+        **It’s cost effective**
 
 Cloud Computing bietet ein Preismodell mit **nutzungsbasierter Bezahlung**. Sie zahlen nicht im Voraus für eine vorab definierte Menge an Computeressourcen oder Hardware – Sie mieten die Hardware und bezahlen nur für die Ressourcen, die Sie tatsächlich nutzen.
 
@@ -16,9 +17,10 @@ Wenn Sie z.B. einen Blog betreiben und einen neuen Beitrag schreiben, möchten S
 :::row-end:::
 :::row:::
     :::column:::
-        ![Wachstumsdiagramm, das die Skalierbarkeit darstellt](../media/3-scalable.png)
+        ![Growth chart representing scalability](../media/3-scalable.png)
     :::column-end:::
-    :::column span="3"::: **Skalierbar**
+    :::column span="3":::  
+        **It's scalable**
 
 Cloud Computing unterstützt je nach Anforderungen sowohl die _vertikale_ als auch die _horizontale_ Skalierung.
 
@@ -30,9 +32,10 @@ Bei der **horizontalen Skalierung** werden weitere Server hinzugefügt, die zusa
 :::row-end:::
 :::row:::
     :::column:::
-        ![Punktdiagramm, das die Elastizität darstellt](../media/3-elastic.png)
+        ![Point graph representing elasticity](../media/3-elastic.png)
     :::column-end:::
-    :::column span="3"::: **Elastisch**
+    :::column span="3":::  
+        **It's elastic**
 
 Wenn sich Ihre Arbeitsauslastung aufgrund einer plötzlich steigenden oder sinkenden Nachfrage ändert, kann ein Cloud Computing-System automatisch Ressourcen hinzufügen oder entfernen, um diese Änderung zu kompensieren.
 
@@ -44,9 +47,10 @@ Ein weiteres Beispiel: Wenn Sie eine von Benutzern verwendete Anwendung ausführ
 :::row-end:::
 :::row:::
     :::column:::
-        ![Kalender, der die Aktualität darstellt](../media/3-current.png)
+        ![Calendar representing staying current](../media/3-current.png)
     :::column-end:::
-    :::column span="3"::: **Aktuell**
+    :::column span="3":::  
+        **It's current**
 
 Wenn Sie die Cloud verwenden, können Sie sich auf das konzentrieren, was wirklich zählt: das Erstellen und Bereitstellen von Anwendungen. Sie müssen sich nicht um Wartungsarbeiten wie Softwarepatches, das Einrichten von Hardware, das Durchführen von Upgrades oder andere IT-Verwaltungsaufgaben kümmern. All diese Aufgaben werden automatisch für Sie ausgeführt, um sicherzustellen, dass Sie die neuesten und besten Tools für Ihr Unternehmen verwenden.
 
@@ -56,9 +60,10 @@ Darüber hinaus wird die Hardware des Computers vom Cloudanbieter verwaltet und 
 :::row-end:::
 :::row:::
     :::column:::
-        ![Zertifikat, das die Zuverlässigkeit darstellt](../media/3-reliable.png)
+        ![Certificate representing reliability](../media/3-reliable.png)
     :::column-end:::
-    :::column span="3"::: **Zuverlässig**
+    :::column span="3":::  
+        **It's reliable**
 
 Als Unternehmen müssen Sie sicher sein, dass Ihre Daten nicht verloren gehen können. Cloud Computing-Anbieter bieten Dienste für Datensicherung, Notfallwiederherstellung und Datenreplikation an, mit denen sichergestellt wird, dass Ihre Daten jederzeit sicher sind.
 
@@ -66,9 +71,10 @@ Als Unternehmen müssen Sie sicher sein, dass Ihre Daten nicht verloren gehen k�
 :::row-end:::
 :::row:::
     :::column:::
-        ![Schloss, das die Sicherheit darstellt](../media/3-secure.png)
+        ![Lock representing security](../media/3-secure.png)
     :::column-end:::
-    :::column span="3"::: **Sicher**
+    :::column span="3":::  
+        **It's secure**
 
 Beim Absichern Ihres Rechenzentrums müssen unterschiedliche Arten von Sicherheit bedacht werden. Auf der Ebene der physischen Sicherheit geht es u.a. darum, wer Zugang zum Gebäude und den Serverracks hat. Auf der Ebene der digitalen Sicherheit geht es darum, wer sich über das Netzwerk mit Ihren Systemen verbinden und auf Daten zugreifen darf.
 

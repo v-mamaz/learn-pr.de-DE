@@ -9,11 +9,45 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 715c255243e1ba52449e5a6a6fbe4ce56f47152a
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 8366888da3167b4a58a5e89e2bb54daa9a123010
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47123636"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48787028"
 durationInMinutes: 3
-content: '[!include[](includes/6-summary.md)]'
+content: >
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: Was müssen Sie auf Ihrem Computer installieren, damit Sie Azure CLI-Befehle lokal ausführen können?
+    choices:
+    - content: Azure Cloud Shell
+      isCorrect: false
+      incorrectExplanation: Cloud Shell ermöglicht Ihnen das Ausführen von Azure CLI-Befehlen. Allerdings geschieht dies im Browser, was bedeutet, dass Sie die Befehle nicht auf Ihrem lokalen Computer ausführen.
+    - content: Die Azure CLI oder Azure PowerShell
+      isCorrect: false
+      incorrectExplanation: Sie können CLI-Befehle über eine PowerShell-Eingabeaufforderung ausführen. PowerShell ist zum lokalen Ausführen der CLI jedoch nicht erforderlich.
+    - content: Nur die Azure CLI
+      isCorrect: true
+      correctExplanation: Sie müssen nur die Azure CLI installieren. Dann verwenden Sie eine Shell zum Ausgeben von CLI-Befehlen. Jede Plattform verfügt über mindestens eine integrierte Shell.
+  - content: 'Die Azure CLI kann unter Linux, macOS und Windows installiert werden. Richtig oder falsch: Die CLI-Befehle, die Sie verwenden, sind auf allen Plattformen die gleichen.'
+    choices:
+    - content: Richtig
+      isCorrect: true
+      correctExplanation: Die CLI ist plattformübergreifend und kann unter Linux, macOS und Windows installiert werden. Nach der Installation müssen die ausgeführten CLI-Befehle überall übereinstimmen. Das heißt, dass Sie die Befehle nur einmal lernen müssen und sie dann für jede lokale Installation oder in der Azure Cloud Shell verwenden können.
+    - content: Falsch
+      isCorrect: false
+      incorrectExplanation: Die CLI stellt überall die gleichen Befehle bereit.
+  - content: Welchen Parameter können Sie an die meisten CLI-Befehle anfügen, um eine präzise, formatierte Ausgabe zu erhalten?
+    choices:
+    - content: list
+      isCorrect: false
+      incorrectExplanation: Der Unterbefehl „list“ zeigt Details zu einer Ressource an. Er wirkt sich nicht auf das Ausgabeformat aus.
+    - content: table
+      isCorrect: true
+      correctExplanation: Der Parameter „table“ formatiert die Ausgabe als Tabelle. Dadurch sind Ausgabe deutlich lesbarer, insbesondere bei Befehlen, die große Ausgaben erzeugen.
+    - content: group
+      isCorrect: false
+      incorrectExplanation: Mit dem Befehl „group“ können Sie Ressourcengruppen gruppieren. Der Befehl wirkt sich nicht auf das Ausgabeformat aus.

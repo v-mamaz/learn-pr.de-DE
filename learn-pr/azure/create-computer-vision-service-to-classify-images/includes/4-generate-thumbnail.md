@@ -57,7 +57,7 @@ Die Cloud Shell in Microsoft Learn bietet keine Möglichkeit, Dateien herunterzu
     ```
 1. Melden Sie sich am [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit demselben Konto an, über das Sie die Sandbox aktiviert haben.
 1. Wählen Sie im Bereich **Alle Ressourcen** des Portaldashboards das Speicherkonto aus, dessen Namen mit `cloudshell` beginnt.
-1. Wählen Sie im Speicherkontobereich **Storage-Explorer**, **DATEIFREIGABEN** und dann die Dateifreigabe in dieser Sammlung mit dem Namen aus, der mit **cloudshellfiles*** beginnt.
+1. Wählen Sie im Speicherkontobereich **Storage-Explorer**, **DATEIFREIGABEN** und dann die Dateifreigabe in dieser Sammlung mit dem Namen aus, der mit **cloudshellfiles** beginnt.
 1. Wählen Sie die Datei *thunbnail.jpg* und dann **Herunterladen** im oberen Menü aus, um das Bild anzuzeigen.
 
 Der `generateThumbnail`-Vorgang ist ein leistungsstarker Miniaturansichtengenerator, der in der Lage ist, den relevanten Bereich (Region Of Interest, ROI) eines Bildes in der Miniaturansicht beizubehalten.
