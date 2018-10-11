@@ -15,9 +15,10 @@ Sie benötige grundlegende Kenntnisse von einigen der bereitgestellten Dienste. 
 
 :::row:::
     :::column:::
-        ![Maßstab Computeleistung](../media/2-compute-power.png)
+        ![Compute power gauge](../media/2-compute-power.png)
     :::column-end:::
-    :::column span="3"::: **Computeleistung**
+    :::column span="3":::
+        **Compute power**
 
 Sie nutzen Computeleistung jeden Tag – ob Sie es wissen oder nicht. Wenn Sie eine E-Mail senden, auf einer Website surfen oder auf dem Mobilgerät nach dem Wetter sehen, verarbeitet im Hintergrund Hardware diese Vorgänge.
 
@@ -33,9 +34,10 @@ Das serverlose Computing ist ein weiterer angesagter Trend. Dank dem serverlosen
 :::row-end:::
  :::row:::
     :::column:::
-        ![Maßstab Speicher](../media/2-storage.png)
+        ![Storage gauge](../media/2-storage.png)
     :::column-end:::
-    :::column span="3"::: **Speicher**
+    :::column span="3":::
+        **Storage**
 
 Die meisten Geräte lesen und/oder schreiben Daten. Hier einige Beispiele:
 

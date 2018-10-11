@@ -17,7 +17,8 @@ Es gibt drei gängige Vorgehensweise zum Ausführen von Compute in Azure:
   :::column:::
     ![Bild, das einen virtuellen Computer darstellt](../media/2-vm.png)
   :::column-end:::
-    :::column span="3"::: **Virtuelle Computer in Azure**
+    :::column span="3":::
+**Virtuelle Computer in Azure**
 
 Virtuelle Computer können in Azure erstellt und gehostet werden. Neue virtuelle Computer können in der Regel innerhalb von Minuten erstellt und bereitgestellt werden, indem ein Image eines vorkonfigurierten virtuellen Computers ausgewählt wird.
 
@@ -60,7 +61,8 @@ Für die Infrastruktur sind Sie nicht verantwortlich. Skalierung und Leistungsan
   :::column:::
     ![Bild, das serverloses Computing darstellt](../media/2-serverless.png)
   :::column-end:::
-    :::column span="3"::: **Serverloses Computing in Azure**
+    :::column span="3":::
+**Serverloses Computing in Azure**
 
 Azure verfügt über zwei Implementierungen von serverlosem Computing:
 

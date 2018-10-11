@@ -8,7 +8,8 @@ Und was geschieht beispielsweise, wenn Sie wöchentliche Wartungsarbeiten durchf
   :::column:::
     ![Hochgeschwindigkeitszug, der Hochverfügbarkeit darstellt](../media/3-availability.png)
   :::column-end:::
-    :::column span="3"::: Unter _Verfügbarkeit_ wird der Zeitraum verstanden, in dem ein Dienst ohne Unterbrechung ausgeführt werden kann. Unter _Hochverfügbarkeit_ (oder als Adjektiv _hochverfügbar_) wird ein langer Zeitraum verstanden, in dem ein Dienst ohne Unterbrechung ausgeführt werden kann.
+    :::column span="3":::
+Unter _Verfügbarkeit_ wird der Zeitraum verstanden, in dem ein Dienst ohne Unterbrechung ausgeführt werden kann. Unter _Hochverfügbarkeit_ (oder als Adjektiv _hochverfügbar_) wird ein langer Zeitraum verstanden, in dem ein Dienst ohne Unterbrechung ausgeführt werden kann.
 
 Wenn Informationen nicht zugänglich sind, ist das frustrierend, wie Sie sicherlich selbst wissen. Gute Beispiele sind Plattformen für soziale Medien oder bestimmte Nachrichtenseiten, die Sie vermutlich jeden Tag nutzen. Können Sie jederzeit auf diese Websites zugreifen oder werden häufig Fehlermeldungen wie „503 Service Unavailable“ (503 – Dienst nicht verfügbar) angezeigt?
   :::column-end:::
@@ -22,7 +23,8 @@ Möglicherweise haben Sie schon einmal den englischen Ausdruck „Five Nines Ava
   :::column:::
     ![Diagramm mit Gesundheitsdaten, das Resilienz darstellt](../media/3-resiliency.png)
   :::column-end:::
-    :::column span="3"::: Unter _Resilienz_ wird die Fähigkeit eines Systems verstanden, auch bei anormalen Bedingungen weiterhin einsatzfähig zu sein.
+    :::column span="3":::
+Unter _Resilienz_ wird die Fähigkeit eines Systems verstanden, auch bei anormalen Bedingungen weiterhin einsatzfähig zu sein.
 
 Zu diesen Bedingungen zählen
 
@@ -41,7 +43,8 @@ Angenommen, Ihr Marketingteam möchte einen Blitzverkauf organisieren, um neue V
   :::column:::
     ![Waage, die einen Lastenausgleich darstellt](../media/3-lb.png)
   :::column-end:::
-    :::column span="3"::: Ein _Lastenausgleich_ verteilt den Datenverkehr gleichmäßig auf die einzelnen Systeme in einem Pool. Mit diesem können Sie leichter Hochverfügbarkeit und Resilienz gewährleisten.
+    :::column span="3":::
+Ein _Lastenausgleich_ verteilt den Datenverkehr gleichmäßig auf die einzelnen Systeme in einem Pool. Dadurch können Sie leichter Hochverfügbarkeit und Resilienz gewährleisten.
 
 Angenommen, Sie fügen allen Schichten zusätzliche, jeweils gleich konfigurierte virtuelle Computer hinzu. Die Idee besteht darin, über zusätzliche Systeme zu verfügen, falls eines ausfällt oder zu viele Benutzeranforderungen gleichzeitig verarbeitet werden müssen.
   :::column-end:::
@@ -79,7 +82,8 @@ Auf der folgenden Abbildung wird die Rolle von Azure-Lastenausgleichen in einer 
   :::column:::
     ![Karte mit Stecknadel, die DNS darstellt](../media/3-map-pin.png)
   :::column-end:::
-    :::column span="3"::: Mit DNS (Domain Name System) können Sie Anzeigenamen den zugehörigen IP-Adressen zuordnen. DNS lässt sich mit einem Telefonbuch für das Internet vergleichen.
+    :::column span="3":::
+Mit DNS (Domain Name System) können Sie Anzeigenamen den zugehörigen IP-Adressen zuordnen. DNS lässt sich mit einem Telefonbuch für das Internet vergleichen.
 
 Ein Domänenname wie contoso.com könnte beispielsweise der IP-Adresse 40.65.106.192 des Lastenausgleichs in der Webschicht zugeordnet werden.
 

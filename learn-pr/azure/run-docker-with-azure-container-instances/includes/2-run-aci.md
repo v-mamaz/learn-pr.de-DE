@@ -23,19 +23,18 @@ Um einen Container zu erstellen, müssen Sie einen Namen, ein Docker-Image und e
 
 :::row:::
     :::column:::
-        - USA, Westen 2 - USA, Mitte - USA, Osten - Europa, Westen - Asien, Südosten :::column-end:::
+        - westus2
+        - centralus
+        - eastus
+        - westeurope
+        - southeastasia
+    :::column-end:::
 :::row-end:::
 
 Führen Sie in Cloud Shell den folgenden Befehl aus, um eine Containerinstanz zu starten. Der Wert `--dns-name-label` muss innerhalb der Azure-Region, in der Sie die Instanz erstellen, eindeutig sein. Passen Sie `[dns-name]` also ggf. entsprechend an.
 
 ```azurecli
-az container create \
-    --resource-group <rgn>[sandbox resource group name]</rgn> \
-    --name mycontainer \
-    --image microsoft/aci-helloworld \
-    --ports 80 \
-    --dns-name-label [dns-name] \
-    --location eastus
+az container create --resource-group <rgn>[sandbox resource group name]</rgn> --name mycontainer --image microsoft/aci-helloworld --ports 80 --dns-name-label [dns-name] --location eastus
 ```
 
 Innerhalb weniger Sekunden erhalten Sie eine Antwort auf Ihre Anforderung. Der Container befindet sich zunächst im Zustand **Wird erstellt...**, wird aber innerhalb weniger Sekunden gestartet. Sie können den Status mit dem Befehl `az container show` überprüfen:

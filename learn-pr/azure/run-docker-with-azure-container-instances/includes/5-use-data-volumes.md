@@ -80,18 +80,22 @@ az container show \
 
 Zur Überprüfung können Sie zur Dateifreigabe im Azure-Portal navigieren und die Datei herunterladen.
 
-1. Abrufen des Dateinamens
+Abrufen des Dateinamens
 
-    ```azurecli
-    az storage file list -s aci-share-demo -o table
-    ```
+```azurecli
+az storage file list -s aci-share-demo -o table
+```
 
-1. Laden Sie sie herunter, und stellen Sie sicher, dass Sie die Datei `<filename>` unten ersetzen.
+Laden Sie die Datei in die Cloud Shell herunter. Stellen Sie sicher, dass Sie die Datei `<filename>` unten ersetzen.
 
-    ```azurecli
-    az storage file download -s aci-share-demo -n <filename>
-    ```
-    
-![Beispieltextdatei mit Inhalten – Demoanwendung](../media/5-sample-text.png)
+```azurecli
+az storage file download -s aci-share-demo -p <filename>
+```
+
+Zeigen Sie den Inhalt der Datei an.
+
+```azurecli
+cat <filename>
+```
 
 Wenn es sich bei den Inhalten, die in der Azure-Dateifreigabe gespeichert sind, um relevante Dateien und Daten handelt, kann diese Freigabe in einer neuen Containerinstanz erneut bereitgestellt werden, um zustandsbehaftete Daten verfügbar zu machen.

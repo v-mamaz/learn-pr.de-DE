@@ -37,10 +37,10 @@ Beide Werte können im Azure-Portal in Form einer vollständigen Verbindungszeic
     ```azurecli
     az servicebus namespace authorization-rule keys list \
         --resource-group <rgn>[sandbox resource group name]</rgn> \
-        --namespace-name <namespace-name> \
         --name RootManageSharedAccessKey \
         --query primaryConnectionString \
-        --output tsv
+        --output tsv \
+        --namespace-name <namespace-name>
     ```
 
     Da Sie diese Verbindungszeichenfolge in diesem Modul mehrfach benötigen, sollten Sie sie schnell zugänglich aufbewahren.
@@ -132,9 +132,9 @@ Führen Sie nach Abschluss des Vorgangs den folgenden Befehl aus, um die Anzahl 
 ```azurecli
 az servicebus queue show \
     --resource-group <rgn>[sandbox resource group name]</rgn> \
-    --namespace-name <namespace-name> \
     --name salesmessages \
-    --query messageCount
+    --query messageCount \
+    --namespace-name <namespace-name>
 ```
 
 ## <a name="write-code-that-receives-a-message-from-the-queue"></a>Schreiben von Code für den Empfang einer Nachricht aus der Warteschlange
@@ -152,7 +152,7 @@ az servicebus queue show \
 1. Ersetzen Sie diese Zeile durch den folgenden Code, um einen Warteschlangenclient zu erstellen:
 
     ```C#
-    queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
+    var queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
     ```
 
 1. Suchen Sie nach der `RegisterMessageHandler()`-Methode.
@@ -214,9 +214,9 @@ Wenn Sie sehen, dass die Nachricht empfangen wurde und in der Konsole angezeigt 
 ```azurecli
 az servicebus queue show \
     --resource-group <rgn>[sandbox resource group name]</rgn> \
-    --namespace-name <namespace-name> \
     --name salesmessages \
-    --query messageCount
+    --query messageCount \
+    --namespace-name <namespace-name>
 ```
 
 Es wird `0` angezeigt, wenn alle Nachrichten entfernt wurden.

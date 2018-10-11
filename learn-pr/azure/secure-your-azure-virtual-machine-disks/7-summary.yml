@@ -9,11 +9,42 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 8655d009b831a4d0ae7341a43a1cdedda189c87a
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 44ed3b80fab9ac04bb407deab56fafadffe72103
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47126216"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48786946"
 durationInMinutes: 3
-content: '[!include[](includes/7-summary.md)]'
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: 'Richtig oder falsch: Wenn Sie Azure Disk Encryption (ADE) auf einer Windows-VM aktivieren, wird DM-Crypt verwendet, um die Daten auf Ihrer virtuellen Festplatte zu verschlüsseln.'
+    choices:
+    - content: Richtig
+      isCorrect: false
+      incorrectExplanation: DM-Crypt wird auf virtuellen Linux-Computern verwendet. Für Windows wird BitLocker verwendet.
+    - content: Falsch
+      isCorrect: true
+      correctExplanation: Windows-VMs werden mit BitLocker verschlüsselt. Für Linux-VMs wird DM-Crypt verwendet.
+  - content: 'Richtig oder falsch: Wenn Sie den Azure Key Vault zum Schützen Ihrer Schlüssel für Azure Disk Encryption verwenden, müssen Sie sicherstellen, dass die Azure Key Vault-Zugriffsrichtlinien so konfiguriert sind, dass sie mindestens einen Sicherheitsprinzipal zulassen.'
+    choices:
+    - content: Richtig
+      isCorrect: false
+      incorrectExplanation: Sie müssen keinen Sicherheitsprinzipal für ADE konfigurieren. Wenn Sie die Datenträgerverschlüsselung für den Schlüsseltresor aktivieren, ist das ausreichend.
+    - content: Falsch
+      isCorrect: true
+      correctExplanation: Sie müssen keinen Sicherheitsprinzipal für ADE konfigurieren. Wenn Sie die Datenträgerverschlüsselung für den Schlüsseltresor aktivieren, ist das ausreichend.
+  - content: Angenommen, Sie erstellen eine neue VM mit einem Betriebssystemdatenträger und einem Datenträger. Sie verwenden beim Erstellen der VM alle Standardoptionen, und Ihr Abonnement enthält keinen Azure Key Vault. Welche Aussage beschreibt den Verschlüsselungsstatus dieser Datenträger?
+    choices:
+    - content: Beide Datenträger sind unverschlüsselt.
+      isCorrect: false
+      incorrectExplanation: Die Speicherdienstverschlüsselung (SSE) ist standardmäßig für neue virtuelle Festplatten aktiviert. Azure verwaltet die Schlüssel mit der SSE und entschlüsselt Daten für alle Lesevorgänge automatisch, ohne dass die Leistung davon beeinträchtigt würde.
+    - content: Der Betriebssystemdatenträger wird mit der Speicherdienstverschlüsselung (SSE) verschlüsselt. Der Datenträger ist unverschlüsselt.
+      isCorrect: false
+      incorrectExplanation: Die Speicherdienstverschlüsselung (SSE) ist standardmäßig für neue virtuelle Festplatten aktiviert. Azure verwaltet die Schlüssel mit der SSE und entschlüsselt Daten für alle Lesevorgänge automatisch, ohne dass die Leistung davon beeinträchtigt würde.
+    - content: Beide Datenträger werden mit der SSE verschlüsselt.
+      isCorrect: true
+      correctExplanation: Alle Datenträger werden standardmäßig mit der SSE verschlüsselt. Azure verwaltet die Schlüssel mit der SSE und entschlüsselt Daten für alle Lesevorgänge automatisch, ohne dass die Leistung davon beeinträchtigt würde.

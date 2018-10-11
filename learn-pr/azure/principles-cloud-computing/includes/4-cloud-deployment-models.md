@@ -8,9 +8,10 @@ Es gibt drei verschiedene Cloudbereitstellungsmodelle. Ein Cloudbereitstellungsm
 
 :::row:::
     :::column:::
-        ![Symbol für öffentliche Cloud](../media/4-public-cloud.png)
+        ![Public cloud icon](../media/4-public-cloud.png)
     :::column-end:::
-    :::column span="3"::: **Öffentliche Cloud**
+    :::column span="3":::  
+        **Public cloud**
 
 Dies ist das am häufigsten verwendete Bereitstellungsmodell. In diesem Fall verfügen Sie über keine lokale Hardware, die verwaltet oder auf dem neuesten Stand gehalten werden muss. Alles wird auf der Hardware Ihres Cloudanbieters ausgeführt. In einigen Fällen können Sie zusätzliche Kosten sparen, indem Sie Computingressourcen für andere Cloudbenutzer freigeben.
 
@@ -18,13 +19,15 @@ Folgende Vorteile ergeben sich aus der Nutzung der öffentlichen Cloud:
 
 - Hohe Skalierbarkeit: Sie müssen für die Skalierung keinen neuen Server kaufen.
 - Nutzungsbasierte Bezahlung: Sie zahlen nur für wirklich genutzte Ressourcen
-- Sie sind nicht für die Wartung oder Aktualisierung der Hardware verantwortlich. :::column-end:::
-  :::row-end:::
-:::row:::
-   :::column:::
-        ![Symbol für private Cloud](../media/4-private-cloud.png)
+- Sie sind nicht für die Wartung oder Aktualisierung der Hardware verantwortlich.
+        :::column-end:::
+:::row-end:::
+ :::row:::
+    :::column:::
+        ![Private cloud icon](../media/4-private-cloud.png)
     :::column-end:::
-    :::column span="3"::: **Private Cloud**
+    :::column span="3":::  
+        **Private cloud**
 
 Im Fall einer privaten Cloud erstellen Sie eine Cloudumgebung in Ihrem eigenen Rechenzentrum und stellen Self-Service-Zugriff auf Computeressourcen für Benutzer in Ihrer Organisation bereit. Für Ihre Benutzer entsteht der Eindruck, mit einer öffentlichen Cloud zu interagieren. Dabei sind Sie jedoch weiterhin für den Kauf und die Wartung von Hardware sowie für angebotene Softwaredienste verantwortlich.
 
@@ -36,9 +39,10 @@ Zu den Gründen, die gegen die private Cloud sprechen, gehören folgende:
 :::row-end:::
  :::row:::
     :::column:::
-        ![Symbol für Hybrid Cloud](../media/4-hybrid-cloud.png)
+        ![Hybrid cloud icon](../media/4-hybrid-cloud.png)
     :::column-end:::
-    :::column span="3"::: **Hybrid Cloud**
+    :::column span="3":::  
+        **Hybrid cloud**
 
 In einer Hybrid Cloud werden öffentliche und private Clouds kombiniert, wodurch Sie Anwendungen an den am besten geeigneten Standorten ausführen können. Beispielsweise haben Sie die Möglichkeit, eine in der öffentlichen Cloud gehostete Website mit einer hochsicheren Datenbank zu verbinden, die sich in Ihrer privaten Cloud (oder in einem lokalen Rechenzentrum) befindet.
 
@@ -52,8 +56,9 @@ Folgende Vorteile ergeben sich aus der Nutzung einer Hybrid Cloud gegenüber ein
 Folgende Punkte müssen jedoch bedacht werden:
 
 - Eine Hybrid Cloud kann teurer als ein einzelnes Bereitstellungsmodell sein.
-- Die Einrichtung und Verwaltung einer Hybrid Cloud kann komplizierter sein. :::column-end:::
-  :::row-end:::
+- Die Einrichtung und Verwaltung einer Hybrid Cloud kann komplizierter sein.
+    :::column-end:::
+:::row-end:::
 
 ## <a name="summary"></a>Zusammenfassung
 

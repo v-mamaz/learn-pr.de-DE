@@ -6,9 +6,9 @@ Das Azure-Portal stellt einige Features und Dienste zur Verfügung. Nachfolgend 
 
 1. Klicken Sie auf **Virtuelle Computer**. Das Blatt **Virtuelle Computer** wird geöffnet. Es wird derzeit nichts angezeigt, da Sie noch keine virtuellen Computer erstellt haben.
 
-1. Klicken Sie auf die Schaltfläche **+ Hinzufügen**. Wie in der vorherigen Übung wird das Blatt **Compute** angezeigt.
+1. Klicken Sie auf die Schaltfläche **+ Hinzufügen**. Wie in der vorherigen Übung wird das Blatt **Virtuellen Computer erstellen** angezeigt.
 
-1. Klicken Sie rechts oben auf das **X**, um das Blatt **Compute** zu schließen.
+1. Klicken Sie rechts oben auf das **X**, um das Blatt **Virtuellen Computer erstellen** zu schließen.
 
 1. Klicken Sie rechts oben auf das **X**, um das Blatt **Virtuelle Computer** zu schließen. Sie sollten sich nun wieder auf der Seite „Dashboard“ befinden.
 

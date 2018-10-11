@@ -20,32 +20,15 @@ Wie in der vorherigen Einheit bereits erläutert wurde, verfügt Azure über Vor
 
     ![Screenshot: Das hervorgehobene Blatt „Alle Ressourcen“ sowie die erstellte App „escalator-functions“ im Azure-Portal.](../media/5-access-function-app.png)
 
-<!-- Start temporary fix for issue #2498. -->
-> [!IMPORTANT]
-> Die Übungen in diesem Modul können derzeit mit Azure Functions V1 ausgeführt werden. Befolgen Sie diese Schritte sorgfältig, um sicherzustellen, dass Ihre Funktions-App die V1-Runtimeversion verwendet. 
+1. Klicken Sie neben **Funktionen** auf die Schaltfläche „Hinzufügen“ (**+**). Durch diese Aktion wird die Funktionserstellung gestartet.
 
-1. Wählen Sie aus der Liste **Funktions-Apps** Ihre Funktions-App aus.
-1. Wählen Sie **Plattformfeatures** aus.
-1. Wählen Sie in der Anzeige **Plattformfeatures** unter **Allgemeine Einstellungen** die **Einstellungen für Funktions-Apps** aus.
-1. Wählen Sie in der **Runtimeversion** den Eintrag *~1* aus.
-1. Schließen Sie die **Einstellungen für Funktions-Apps**.
+1. Wählen Sie auf der Seite **Azure Functions for JavaScript - getting started** (Erste Schritte mit Azure Functions für JavaScript) die Option **Im Portal** und anschließend **Weiter** aus.
 
-Die Funktions-App ist nun für die Verwendung der Azure Functions V1-Runtime konfiguriert. Wir können nun mit der Erstellung unserer ersten Funktion fortfahren.
-<!-- End temporary fix for issue #2498. --> 
+1. Klicken Sie im Schritt **Create a function** (Funktion erstellen) auf **More templates...** (Mehr Vorlagen...) und dann auf **Finish and view templates** (Fertig stellen und Vorlagen anzeigen).
 
-1. Im linken Menü werden der Name Ihrer Funktions-App und ein Untermenü mit den folgenden drei Elementen angezeigt: *Funktionen*, *Proxys* und *Slots*.  
+1. Wählen Sie aus der Liste aller für die Funktions-App verfügbaren Vorlagen **HTTP trigger** (HTTP-Trigger) aus.
 
-1. Klicken Sie auf **Funktionen**, und klicken Sie dann am oberen Rand der angezeigten Seite auf **Neue Funktion**.
-
-    ![Screenshot: Funktionsliste für die Funktions-App im Azure-Portal, wobei das Menüelement „Funktionen“ und die Schaltfläche „Neue Funktion“ hervorgehoben sind.](../media/5-function-add-button.png)
-
-1. Klicken Sie auf dem Bildschirm „Schnellstart“ im Abschnitt **Get started on your own** (Selbstständig einsteigen) auf den Link **Benutzerdefinierte Funktion** (wie im folgenden Screenshot). Wenn der Bildschirm „Schnellstart“ nicht angezeigt wird, klicken Sie am oberen Rand der Seite auf den Link **Go to the quickstart** (Zum Schnellstart wechseln).
-
-    ![Screenshot: Das Blatt „Schnellstart“ im Azure-Portal mit der hervorgehobenen Schaltfläche „Benutzerdefinierte Funktion“ im Abschnitt „Erste Schritte“.](../media/5-custom-function.png)
-
-1. Wählen Sie, wie im folgenden Screenshot gezeigt, die Vorlage **HTTP-Trigger** aus der in der Anzeige dargestellten Liste mit Vorlagen aus.
-
-1. Geben Sie im Dialogfeld **Neue Funktion**, das angezeigt wird, **DriveGearTemperatureService** in das Namensfeld ein. Belassen Sie die Autorisierungsstufe auf „Funktion“, und klicken Sie auf die Schaltfläche **Erstellen**, um die Funktion zu erstellen.
+1. Geben Sie im angezeigten Dialogfeld **Neue Funktion** **DriveGearTemperatureService** in das Namensfeld ein. Belassen Sie die Autorisierungsstufe auf „Funktion“, und klicken Sie auf die Schaltfläche **Erstellen**, um die Funktion zu erstellen.
 
 1. Nach Abschluss der Funktionserstellung wird der Code-Editor mit dem Inhalt der Codedatei *index.js* geöffnet. Der Standardcode, den die Vorlage für uns generiert hat, wird im folgenden Codeausschnitt aufgeführt.
 

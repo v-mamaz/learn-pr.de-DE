@@ -16,9 +16,10 @@ Das einmalige Anmelden (SSO) erfordert nur eine Identität und nur ein Kennwort.
   :::column:::
     ![Ein Fingerabdruck, der Azure Active Directory darstellt](../media/3-sso-with-azure-ad.png)
   :::column-end:::
-    :::column span="3"::: **Einmaliges Anmelden mit Azure Active Directory**
+    :::column span="3":::
+**Einmaliges Anmelden mit Azure Active Directory**
 
-Azure Active Directory (AAD) ist ein cloudbasierter Identitätsdienst. Er hat eine integrierte Unterstützung für die Synchronisierung mit Ihrem vorhandenen lokalen Active Directory-Verzeichnis oder kann einzeln verwendet werden. Das bedeutet, dass alle Ihre Anwendungen – ob lokal, in der Cloud (einschließlich Office 365) oder mobil – dieselben Anmeldeinformationen verwenden können. Administratoren und Entwickler können den Zugriff auf Daten und Anwendungen mithilfe zentralisierter Regeln und Richtlinien steuern, die in Azure AD konfiguriert sind.
+Azure Active Directory (AD) ist ein cloudbasierter Identitätsdienst. Er hat eine integrierte Unterstützung für die Synchronisierung mit Ihrem vorhandenen lokalen Active Directory-Verzeichnis oder kann einzeln verwendet werden. Das bedeutet, dass alle Ihre Anwendungen – ob lokal, in der Cloud (einschließlich Office 365) oder mobil – dieselben Anmeldeinformationen verwenden können. Administratoren und Entwickler können den Zugriff auf Daten und Anwendungen mithilfe zentralisierter Regeln und Richtlinien steuern, die in Azure AD konfiguriert sind.
 
 Durch die Nutzung von Azure AD für das einmalige Anmelden können Sie auch mehrere Datenquellen in Intelligent Security Graph kombinieren. Intelligent Security Graph ermöglicht es, Bedrohungsanalysen und Echtzeit-Identitätsschutz für alle Konten in Azure AD bereitzustellen, einschließlich der mit der lokalen AD-Instanz synchronisierten Konten. Durch die Verwendung eines zentralen Identitätsanbieters können Sie die Sicherheitskontrollen, die Berichterstellung, die Benachrichtigungen und die Verwaltung Ihrer Identitätsinfrastruktur zentralisieren.
 
@@ -52,7 +53,8 @@ Bei Azure AD wurde dieses Problem auf zwei Arten gelöst: mit Dienstprinzipalen 
   :::column:::
     ![Bild der verschiedenen Rollen](../media/3-service-principals.png)
   :::column-end:::
-    :::column span="3"::: **Dienstprinzipale**
+    :::column span="3":::
+**Dienstprinzipale**
 
 Zum Verständnis des Konzepts von Dienstprinzipalen müssen zunächst die Begriffe **Identität** und **Prinzipal** erläutert werden und wie diese in der Welt der Identitätsverwaltung verwendet werden.
 
@@ -68,7 +70,8 @@ Ein **Dienstprinzipal** trägt somit seinen Namen zurecht. Er stellt eine Identi
   :::column:::
     ![Bild der verwalteten Identitäten](../media/3-managed-service-identities.png)
   :::column-end:::
-    :::column span="3"::: **Verwaltete Identitäten für Azure-Dienste**
+    :::column span="3":::
+**Verwaltete Identitäten für Azure-Dienste**
 
 Die Erstellung von Dienstprinzipalen kann sehr aufwendig sein, und es gibt jede Menge Berührungspunkte, die die Verwaltung erschweren. Verwaltete Identitäten für Azure-Dienste sind viel einfacher und nehmen Ihnen einen Großteil der Arbeit ab. 
 
@@ -78,11 +81,13 @@ Eine verwaltete Identität kann sofort für jeden Azure-Dienst erstellt werden, 
 
 ## <a name="role-based-access-control"></a>Rollenbasierte Zugriffssteuerung
 
-Rollen sind bestimmte Berechtigungen (etwa „Schreibgeschützt“ oder „Mitwirkender“), die Benutzern für den Zugriff auf eine Azure-Dienstinstanz zugewiesen werden können. 
+Rollen sind bestimmte Berechtigungen (etwa „Schreibgeschützt“ oder „Mitwirkender“), die Benutzern für den Zugriff auf eine Azure-Dienstinstanz zugewiesen werden können.
 
 Identitäten werden Rollen direkt oder über eine Gruppenmitgliedschaft zugeordnet. Die Trennung von Sicherheitsprinzipalen, Zugriffsberechtigungen und Ressourcen ermöglicht eine einfache Verwaltung und eine differenzierte Steuerung. Administratoren können sicherstellen, dass nur die erforderlichen Mindestberechtigungen gewährt werden.
 
-Rollen können auf der jeweiligen Dienstinstanzebene zugewiesen werden, werden jedoch auch in der Azure Resource Manager-Hierarchie nach unten weitergegeben. Rollen, die auf einer höheren Ebene zugewiesen werden (etwa auf Abonnementebene), werden an untergeordnete Ebenen (etwa Dienstinstanzen) vererbt. 
+Rollen können auf der jeweiligen Dienstinstanzebene zugewiesen werden, werden jedoch auch in der Azure Resource Manager-Hierarchie nach unten weitergegeben.
+
+Mit dem folgenden Diagramm erhalten Sie einen Überblick über diese Beziehung. Rollen, die in einem höheren Bereich zugewiesen werden (etwa auf Abonnementebene), werden an untergeordnete Bereiche (etwa Dienstinstanzen) vererbt.
 
 ![Verwaltungsgruppen](../media/3-role-assignment-scope.png)
 
@@ -90,7 +95,8 @@ Rollen können auf der jeweiligen Dienstinstanzebene zugewiesen werden, werden j
   :::column:::
     ![Bild der Identitätsüberprüfung](../media/3-privileged-identity-management.png)
   :::column-end:::
-    :::column span="3"::: **Privileged Identity Management**
+    :::column span="3":::
+**Privileged Identity Management**
 
 Bei einem umfassenden Konzept zum Schutz der Infrastruktur sollte neben der Verwaltung des Zugriffs auf Azure-Ressourcen mittels rollenbasierter Zugriffssteuerung bei Änderungen in der Organisation und bei der Weiterentwicklung der Organisation die Einbindung einer laufenden Überwachung von Rollenmitgliedern in Betracht gezogen werden. Azure AD Privileged Identity Management (PIM) ist ein zusätzliches kostenpflichtiges Angebot, das einen Überblick über Rollenzuweisungen, die Aktivierung von Self-Service- und Just-In-Time-Rollen sowie die Überprüfung des Zugriffs auf Azure AD- und Azure-Ressourcen bietet.
 

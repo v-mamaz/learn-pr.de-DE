@@ -9,13 +9,47 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: abd31c3074e9fc37004a4541381671595b31f5c7
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: f8ae6aca05b6e09058c193332aae6293642f1f9e
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47123533"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48787405"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 2
-content: '[!include[](includes/9-cleanup.md)]'
+content: >
+  [!include[](includes/9-cleanup.md)]
+quiz:
+  title: Überprüfen Sie Ihr Wissen
+  questions:
+  - content: 'Angenommen, Sie sind der Administrator mehrerer Azure-VMs. Sie erhalten eine SMS, die auf Probleme mit Ihren VMs hinweist. Sie sind gerade bei Freunden und haben nur Ihr Tablet dabei. Richtig oder falsch: Sie können mit dem Tablet auf die Azure CLI zugreifen, auch wenn Sie diese nicht auf dem Tablet installieren können.'
+    choices:
+    - content: Richtig
+      isCorrect: true
+      correctExplanation: Azure Cloud Shell ist über einen Browser verfügbar und wird mit der vollständigen Azure CLI ausgeführt. Auch PowerShell ist in Azure Cloud Shell verfügbar, wenn Sie damit lieber arbeiten.
+    - content: Falsch
+      isCorrect: false
+      incorrectExplanation: Azure Cloud Shell ist über einen Browser verfügbar und wird mit der vollständigen Azure CLI ausgeführt. Deshalb ist das Installieren von Software nicht notwendig.
+  - content: Angenommen, Sie haben ein Skript, das mehrere VMs mit unterschiedlichen Images erstellt. Wenn das Skript einen Befehl zum Erstellen der ersten VM ausstellt, möchten Sie das Skript nicht blockieren, während die VM erstellt wird. Stattdessen möchten Sie direkt mit dem nächsten Befehl fortfahren. Wie geht das am einfachsten?
+    choices:
+    - content: Fügen Sie Ihrem create-Befehl das Argument „--async“ hinzu.
+      isCorrect: false
+      incorrectExplanation: Es gibt kein „--async“-Argument für „azure vm create“.
+    - content: Verwenden Sie das kaufmännische Und-Zeichen (&), um den Prozess im Hintergrund auszuführen.
+      isCorrect: false
+      incorrectExplanation: Auf einigen Plattformen erreichen Sie dadurch den gewünschten Effekt. Allerdings werden so mehr Systemressourcen verwendet als bei der empfohlenen Methode.
+    - content: Fügen Sie Ihrem create-Befehl das Argument „--no-wait“ hinzu.
+      isCorrect: true
+      correctExplanation: Wenn Sie „--no-wait“ hinzufügen, kehrt „azure vm create“ direkt zurück, ohne auf das Erstellen der VM zu warten.
+  - content: Die meisten Azure-Befehle geben Ausgaben im JSON-Format zurück. Diese Datasets können sehr groß sein, wodurch sie schwer lesbar sind und es eine Herausforderung darstellen kann, das Ergebnis eines Befehls als Eingabe für einen anderen Befehl zu verwenden. Wie können Sie in der Azure CLI die Ergebnisse so filtern, dass Sie nur für Sie relevante Daten erhalten?
+    choices:
+    - content: Indem Sie das Argument „--query“ verwenden
+      isCorrect: true
+      correctExplanation: Alle Azure-Befehle unterstützen das Argument „--query“, mit dem Sie die relevanten Daten in jeder Antwort eines Azure-Befehls auswählen können.
+    - content: Indem Sie das Argument „--filter“ verwenden
+      isCorrect: false
+      incorrectExplanation: Es gibt kein „--filter“-Argument für die Azure CLI.
+    - content: Indem Sie die Ergebnisse an ein JSON-Analyseprogramm weiterreichen und diese dort filtern
+      isCorrect: false
+      incorrectExplanation: Dies kann zu den gewünschten Ergebnissen führen, ist aber komplizierter als das Verwenden der in die Azure CLI integrierten Unterstützung für „--query“.

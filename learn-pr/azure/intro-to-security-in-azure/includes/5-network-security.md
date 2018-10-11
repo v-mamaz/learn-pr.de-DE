@@ -10,7 +10,8 @@ Sehen wir uns an, wie Azure Tools für einen mehrstufigen Ansatz zum Schutz Ihre
   :::column:::
     ![Bild, das ein sicheres Internet darstellt](../media/5-internet-protection.png)
   :::column-end:::
-    :::column span="3":::: **Internetschutz**
+    :::column span="3"::::
+**Internetschutz**
 
 Wenn wir im Umkreis des Netzwerks beginnen, konzentrieren wir uns darauf, Angriffe aus dem Internet einzuschränken und zu eliminieren. Es wird empfohlen, zunächst die Ressourcen auszuwerten, die mit dem Internet verbunden sind, und nur bei Bedarf eine eingehende und ausgehende Kommunikation zuzulassen. Stellen Sie sicher, dass Sie alle Ressourcen identifizieren, die eingehenden Netzwerkverkehr jeglicher Art zulassen, und stellen Sie dann sicher, dass diese nur auf die erforderlichen Ports und Protokolle beschränkt sind. Azure Security Center eignet sich hervorragend, um nach diesen Informationen zu suchen, da es Internetressourcen identifiziert, denen keine Netzwerksicherheitsgruppen (NSG) zugeordnet sind, sowie Ressourcen, die nicht hinter einer Firewall geschützt sind.
 
@@ -22,6 +23,8 @@ Es gibt mehrere Möglichkeiten, Schutz für eingehenden Datenverkehr im Umkreis 
 
 Für alle Ressourcen, die im Internet zur Verfügung stehen, besteht die Gefahr eines Denial-of-Service-Angriffs. Bei diesem Angriff wird eine Netzwerkressource überlastet, indem so viele Anforderungen gesendet werden, dass die Ressource langsam oder gar nicht mehr reagiert. Damit diese Angriffe abgewehrt werden können, bietet Azure DDoS Protection einen Basisschutz für alle Azure-Dienste und einen erweiterten Schutz für weitere Anpassungen Ihrer Ressourcen. Azure DDoS Protection sperrt Angriffsdatenverkehr und leitet den verbleibenden Datenverkehr an das vorgesehene Ziel weiter. Innerhalb weniger Minuten nach Angriffserkennung werden Sie mithilfe der Metriken von Azure Monitor benachrichtigt.
 
+In diesem Diagramm wird dargestellt, wie Netzwerkdatenverkehr von beiden Kunden und einem Angreifer bei Azure eingeht. Der Azure DDoS-Schutz identifiziert den Versuch des Angreifers, das Netzwerk zu überlasten, und hindert weiteren Datenverkehr daran, die Azure-Dienste zu erreichen. Legitimer Datenverkehr von Kunden geht noch immer ohne Unterbrechung des Diensts bei Azure ein.
+
 ![DDoS](../media/ddos.png)
 
  :::column-end:::
@@ -31,9 +34,10 @@ Für alle Ressourcen, die im Internet zur Verfügung stehen, besteht die Gefahr 
   :::column:::
     ![Bild, das ein sicheres virtuelles Netzwerk darstellt](../media/5-vnet-security.png)
   :::column-end:::
-    :::column span="3":::: **Sicherheit des virtuellen Netzwerks**
+    :::column span="3"::::
+**Sicherheit in virtuellen Netzwerken**
 
-Es ist wesentlich, in einem virtuellen Netzwerk (VNET) die Kommunikation zwischen den Ressourcen auf das erforderliche Maß zu beschränken.
+Es ist von entscheidender Bedeutung, in einem virtuellen Netzwerk (VNET) die Kommunikation zwischen den Ressourcen auf das erforderliche Maß zu beschränken.
 
 Bei der Kommunikation zwischen virtuellen Computern spielen Netzwerksicherheitsgruppen eine wichtige Rolle, um unnötige Kommunikation zu verhindern. Sie stellen eine Liste der zulässigen und verweigerten Kommunikation von und zu Netzwerkschnittstellen und Subnetzen bereit und können vollständig angepasst werden.
 
@@ -45,7 +49,8 @@ Sie können den öffentlichen Zugriff durch das Internet auf Ihre Dienste vollst
   :::column:::
     ![Bild, das ein sicheres Netzwerk darstellt](../media/5-network-integration.png)
   :::column-end:::
-    :::column span="3":::: **Netzwerkintegration**
+    :::column span="3"::::
+**Netzwerkintegration**
 
 Es ist üblich, dass eine vorhandene Netzwerkinfrastruktur integriert werden soll, um die Kommunikation aus lokalen Netzwerken zu ermöglichen, oder um eine verbesserte Kommunikation zwischen den Diensten in Azure zu ermöglichen. Es gibt einige grundlegende Methoden, diese Integration auszuführen, und die Sicherheit Ihres Netzwerks zu verbessern.
 

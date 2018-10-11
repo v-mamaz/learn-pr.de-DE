@@ -7,21 +7,18 @@ Das Azure-Portal ist die primäre grafische Benutzeroberfläche für die Steueru
 ![Das Azure-Portal](../media/5-portal.png)
 
 :::row:::
-
     :::column:::
-    ![The resources and favorites](../media/5-favorites.png)
+    ![Ressourcen und Favoriten](../media/5-favorites.png)
     :::column-end:::
-
     :::column span="3":::
-    **Resource Panel**
+    **Ressourcenbereich**
     
-    In the left-hand sidebar of the portal is the resource pane, which lists the main resource types. Note that Azure has more resource types than just those shown. The resources listed are part of your _favorites_. 
+    Auf der linken Randleiste des Portals befindet sich der Ressourcenbereich, in dem die wichtigsten Ressourcentypen aufgeführt werden. Beachten Sie, dass Azure über mehr Ressourcentypen verfügt als in dieser Liste angezeigt werden. Die aufgelisteten Ressourcen sind Teil Ihrer _Favoriten_. 
 
-    You can customize this with the specific resource types you tend to create or administer most often. 
+    Sie können diese Liste mit den bestimmten Ressourcentypen anpassen, die Sie am öftesten erstellen oder verwalten. 
 
-    You can also collapse this pane; with the **<<** caret. This will minimize it to just icons which can be convenient if you are working with limited screen real-estate.
+    Sie können diesen Bereich auch mit dem Caretzeichen **<<** zuklappen. Dadurch wird der Bereich nur auf die Symbole minimiert. Dies ist praktisch, wenn Sie den gesamten verfügbaren Platz auf dem Bildschirm nutzen.
     :::column-end:::
-
 :::row-end:::
 
 Die restliche Portalansicht ist für die jeweiligen Elemente bestimmt, mit denen Sie arbeiten. Die Standardseite (Hauptseite) ist das _Dashboard_. Darauf gehen wir später noch näher ein. Aber soviel schon jetzt: Es stellt eine anpassbare Übersicht über Ihre Ressourcen dar. Sie können es verwenden, um zu bestimmten Ressourcen zu gelangen, die Sie verwalten möchten, oder um mit dem Eintrag **Alle Ressourcen** im Ressourcenbereich nach Ressourcen zu suchen. Wenn Sie eine Ressource (etwa einen virtuellen Computer oder eine Web-App) verwalten möchten, arbeiten Sie mit einem _Blatt_, auf dem spezifische Informationen zu der Ressource angezeigt werden.

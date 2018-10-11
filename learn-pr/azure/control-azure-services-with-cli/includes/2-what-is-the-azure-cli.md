@@ -4,11 +4,11 @@ Die Azure CLI ist ein Befehlszeilenprogramm, über das Sie eine Verbindung mit A
  az vm restart -g MyResourceGroup -n MyVm
  ```
 
-Die Azure CLI bietet plattformübergreifende Befehlszeilentools zum Verwalten von Azure-Ressourcen. Sie kann lokal auf Linux-, Mac- und Windows-Computern installiert werden. Die Azure CLI kann mit Azure Cloud Shell auch über Browser verwendet werden. In beiden Fällen kann sie interaktiv oder mit Skripts verwendet werden. Bei der interaktiven Nutzung starten Sie zunächst eine Shell wie cmd.exe unter Windows oder Bash unter Linux oder macOS, und geben Sie dann den Befehl bei der Eingabeaufforderung der Shell ein. Um sich wiederholende Aufgaben zu automatisieren, stellen Sie die CLI-Befehle mit der Syntax Ihrer ausgewählten Shell in einem Shellskript zusammen und führen dieses Skript dann aus.
+Die Azure CLI bietet plattformübergreifende Befehlszeilentools zum Verwalten von Azure-Ressourcen. Sie kann lokal auf Linux-, Mac- und Windows-Computern installiert werden. Die Azure CLI kann mit Azure Cloud Shell auch über Browser verwendet werden. In beiden Fällen kann sie interaktiv oder mit Skripts verwendet werden. Bei der interaktiven Nutzung starten Sie zunächst eine Shell wie cmd.exe unter Windows oder Bash unter Linux oder macOS, und geben Sie dann den Befehl bei der Eingabeaufforderung der Shell ein. Um sich wiederholende Aufgaben zu automatisieren, stellen Sie die CLI-Befehle mit der Syntax Ihrer ausgewählten Shell in einem Shellskript zusammen, und führen Sie dieses Skript dann aus.
 
-## <a name="how-to-install-azure-cli"></a>Installieren der Azure CLI
+## <a name="how-to-install-the-azure-cli"></a>Installieren der Azure-Befehlszeilenschnittstelle
 
-Verwenden Sie unter Linux und macOS einen Paket-Manager, um PowerShell Core zu installieren. Der empfohlene Paket-Manager unterscheidet sich je nach Betriebssystem und Distribution:
+Verwenden Sie unter Linux und macOS einen Paket-Manager, um die Azure CLI zu installieren. Der empfohlene Paket-Manager unterscheidet sich je nach Betriebssystem und Distribution:
 
 - Linux: **apt-get** unter Ubuntu, **yum** unter Red Hat und **zypper** unter OpenSUSE
 - Mac: **Homebrew**

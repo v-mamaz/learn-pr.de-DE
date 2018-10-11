@@ -4,9 +4,9 @@
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) mit dem Konto an, über das Sie die Sandbox aktiviert haben.
 
-1. Klicken Sie in der linken oberen Ecke des Azure-Portals auf die Schaltfläche **Ressource erstellen** und dann auf **Compute** > **Funktions-App**.
+1. Klicken Sie in der linken oberen Ecke des Azure-Portals auf die Schaltfläche **Ressource erstellen** und dann auf **Compute** > **Serverlose Funktions-App**.
 
-1. Geben Sie die Einstellungen für die Funktions-App in die folgende Tabelle ein.
+1. Geben Sie die Einstellungen für die Funktions-App wie in der folgenden Tabelle angegeben ein.
 
     | Einstellung      | Wert  | Beschreibung                                        |
     | ------------ |  ------- | -------------------------------------------------- |
@@ -34,35 +34,27 @@
 
 ## <a name="create-a-function-to-execute-our-logic"></a>Erstellen einer Funktion zum Ausführen der Logik
 
-Da Sie nun über eine Funktions-App verfügen, ist es an der Zeit, eine Funktion zu erstellen. Eine Funktion wird durch einen Trigger aktiviert. In diesem Modul verwenden Sie einen Warteschlangentrigger. Die Runtime fragt eine Warteschlange ab und startet diese Funktion, um eine neue Nachricht zu verarbeiten.
+Da Sie nun über eine Funktions-App verfügen, ist es an der Zeit, eine Funktion zu erstellen. Eine Funktion wird durch einen Trigger aktiviert. In diesem Modul verwenden Sie einen Warteschlangentrigger. Die Runtime fragt eine Warteschlange ab und startet diese Funktion, um eine neue Meldung zu verarbeiten.
 
-<!-- Start temporary fix for issue #2498. -->
-> [!IMPORTANT]
-> Die Übungen in diesem Modul können derzeit mit Azure Functions V1 ausgeführt werden. Befolgen Sie diese Schritte sorgfältig, um sicherzustellen, dass Ihre Funktions-App die V1-Runtimeversion verwendet. 
+1. Klicken Sie neben **Funktionen** auf die Schaltfläche „Hinzufügen“ (**+**). Durch diese Aktion wird die Funktionserstellung gestartet.
 
-1. Wählen Sie aus der Liste **Funktions-Apps** Ihre Funktions-App aus.
-1. Wählen Sie **Plattformfeatures** aus.
-1. Wählen Sie in der Anzeige **Plattformfeatures** unter **Allgemeine Einstellungen** die **Einstellungen für Funktions-Apps** aus.
-1. Wählen Sie in der **Runtimeversion** den Eintrag *~1* aus.
-1. Schließen Sie die **Einstellungen für Funktions-Apps**.
+1. Wählen Sie auf der Seite **Azure Functions for JavaScript - getting started** (Erste Schritte mit Azure Functions für JavaScript) die Option **Im Portal** und anschließend **Weiter** aus.
 
-Die Funktions-App ist nun für die Verwendung der Azure Functions V1-Runtime konfiguriert. Wir können nun mit der Erstellung unserer ersten Funktion fortfahren.
-<!-- End temporary fix for issue #2498. -->  
+1. Klicken Sie im Schritt **Create a function** (Funktion erstellen) auf **More templates...** (Mehr Vorlagen...) und dann auf **Finish and view templates** (Fertig stellen und Vorlagen anzeigen).
 
-1. Klicken Sie rechts neben **Funktionen** auf die Schaltfläche „Hinzufügen“ (__+__).
- 1. Klicken Sie auf der Seite **Schneller Einstieg**, die nun angezeigt wird, unten auf die Option **Benutzerdefinierte Funktion**, mit der die Liste mit den verfügbaren Funktionsvorlagen geladen wird.
+1. Wählen Sie aus der Liste aller für die Funktions-App verfügbaren Vorlagen **Queue trigger** (Warteschlangentrigger) aus.
 
-1. Wählen Sie aus der Liste der Vorlagen den Eintrag **Warteschlangentrigger** aus.
+1. Sollte die Meldung **Erweiterungen nicht installiert.** angezeigt werden, klicken Sie auf **Installieren**. Abhängigkeitsinstallationen können einige Minuten in Anspruch nehmen. Warten Sie, bis die Installation abgeschlossen wurde, bevor Sie fortfahren.
 
-4. Geben Sie im angezeigten Dialogfeld **Neue Funktion** die folgenden Werte ein.
+1. Geben Sie im angezeigten Dialogfeld **Neue Funktion** die folgenden Werte ein.
 
     |Eigenschaft  |Wert  |
     |---------|---------|
     |Name     |   **discover-sentiment-function**      |
     |Warteschlangenname     |   **new-feedback-q**      |
-    |Speicherkontoverbindung        |  **AzureWebJobsDashboard**       |
+    |Speicherkontoverbindung        |  **AzureWebJobsStorage**       |
 
-5. Klicken Sie auf **Erstellen**, um mit dem Prozess zum Erstellen von Funktionen zu beginnen.
+1. Klicken Sie auf **Erstellen**, um mit dem Erstellen von Funktionen zu beginnen.
 
 1. Mit der Warteschlangentrigger-Funktionsvorlage wird eine Funktion in der ausgewählten Sprache erstellt. In diesem Modul implementieren wir die Funktion in JavaScript, aber Sie können in jeder [unterstützten Sprache](https://docs.microsoft.com/azure/azure-functions/supported-languages) eine Funktion erstellen.
 
