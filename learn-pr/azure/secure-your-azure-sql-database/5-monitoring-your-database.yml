@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-your-azure-sql-database.5-monitoring-your-database
+metadata:
+  title: Überwachen Ihrer Datenbank
+  description: Informationen zum Überwachen von Vorgängen in Ihrer Datenbank und Verwenden dieser Informationen mit Advanced Threat Monitoring, um Sicherheitsrisiken und Bedrohungen zu berichten.
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 768dd477df5b2ca3fa5f96e784dd0eaad91158ba
+  ms.sourcegitcommit: 749ef607a5759d500e6f20530536827aa97499fe
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 10/11/2018
+  ms.locfileid: "49099228"
+title: Überwachen Ihrer Datenbank
+durationInMinutes: 8
+content: '[!include[](includes/5-monitoring-your-database.md)]'

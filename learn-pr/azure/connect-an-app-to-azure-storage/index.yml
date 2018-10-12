@@ -8,13 +8,12 @@ metadata:
   ms.author: jediet
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.learn-contact: jediet
-  ms.openlocfilehash: 7e9fca8ad49b90dc992be35655d62bd0e70e240c
-  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
+  ms.openlocfilehash: 0437b52c27fe5c649ca788cc99ebd6020481ec06
+  ms.sourcegitcommit: 749ef607a5759d500e6f20530536827aa97499fe
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 10/04/2018
-  ms.locfileid: "48786915"
+  ms.lasthandoff: 10/11/2018
+  ms.locfileid: "49095838"
 title: Herstellen einer Verbindung zwischen einer App und Azure Storage
 summary: Erstellen Sie eine einfache Anwendung, und fügen Sie eine Konfiguration, Clientbibliotheksverweise und Code hinzu, um eine Verbindung mit Azure Storage herzustellen.
 abstract: >

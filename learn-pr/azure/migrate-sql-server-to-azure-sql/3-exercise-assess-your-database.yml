@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.migrate-sql-server-relational-data.3-exercise-assess-your-database
+title: Zugreifen auf die Datenbank
+metadata:
+  title: Zugreifen auf die Datenbank
+  description: Zugreifen auf die Datenbank
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 7549838e13434b57ba8d1c27bd20479a657e9ea0
+  ms.sourcegitcommit: 749ef607a5759d500e6f20530536827aa97499fe
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 10/11/2018
+  ms.locfileid: "49099495"
+durationInMinutes: 10
+content: '[!include[](includes/3-exercise-assess-your-database.md)]'

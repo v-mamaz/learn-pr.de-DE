@@ -8,12 +8,12 @@ metadata:
   ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: b45ee8db884a8fb2414206464e65610f0753c148
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 03fac26c641540dc9b19c04ad63a2a8f341ff5a2
+  ms.sourcegitcommit: 749ef607a5759d500e6f20530536827aa97499fe
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47126215"
+  ms.lasthandoff: 10/11/2018
+  ms.locfileid: "49096824"
 title: Globales Verteilen Ihrer Daten mit Azure Cosmos DB
 summary: Erfahren Sie, wie Sie Ihre Daten mit Azure Cosmos DB global verteilen.
 abstract: >

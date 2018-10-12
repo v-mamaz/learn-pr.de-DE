@@ -4,16 +4,16 @@ metadata:
   title: Einführung in Azure Compute
   description: Lernen Sie die Azure Compute-Dienste kennen, und erfahren Sie, wie sie zum Erfüllen gängiger Geschäftsanforderungen beitragen.
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: adrianstevens
+  ms.author: adsteven
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: fc33e57bb890b3158f4de7bd131cd2f60fb859c7
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 3ea003e287bab92a8c6946663e1a29f4e18308a0
+  ms.sourcegitcommit: 749ef607a5759d500e6f20530536827aa97499fe
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47125507"
+  ms.lasthandoff: 10/11/2018
+  ms.locfileid: "49097844"
 title: Einführung in Azure Compute
 summary: Lernen Sie die Azure Compute-Dienste kennen, und erfahren Sie, wie sie zum Erfüllen gängiger Geschäftsanforderungen beitragen.
 abstract: >

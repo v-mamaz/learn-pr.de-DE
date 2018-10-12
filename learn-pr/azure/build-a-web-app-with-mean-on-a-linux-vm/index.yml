@@ -8,19 +8,18 @@ metadata:
   ms.author: adpatrid
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.learn-contact: adpatrid
-  ms.openlocfilehash: ea02a1e9e2c5addd67b1b552acd44879183bc275
-  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
+  ms.openlocfilehash: c5cc689d039d33477a017cfb59dafb011f1057bc
+  ms.sourcegitcommit: 749ef607a5759d500e6f20530536827aa97499fe
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 10/04/2018
-  ms.locfileid: "48787099"
+  ms.lasthandoff: 10/11/2018
+  ms.locfileid: "49096586"
 title: Erstellen und Ausführen einer Webanwendung mit dem MEAN-Stapel auf einem virtuellen Linux-Computer in Azure
 summary: Erfahren Sie, wie Sie eine MEAN-basierte Webanwendung auf einem neuen virtuellen Linux-Computer in Azure einrichten.
 abstract: >
-  In diesem Modul wird Folgendes thematisiert:
+  In diesem Modul lernen Sie Folgendes:
 
-  - entscheiden Sie, ob der MEAN-Webstapel die richtige Lösung für Sie ist,
+  - Entscheiden Sie, ob der MEAN-Webstapel die richtige Lösung für Sie ist
 
   - erstellen Sie eine Ubuntu Linux-VM zum Hosten der Web-App
 

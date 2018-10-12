@@ -4,16 +4,16 @@ metadata:
   title: Einführung in Azure Storage
   description: In diesem Modul lernen Sie die Vorteile von Azure Storage-Diensten im Vergleich zu lokalem Speicher kennen.
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: sowmyasubramaniam
+  ms.author: sosubra
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 27abc78fcecfb6a8aa79cbb25da0021949ff862c
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: fb9568d317ff3c94850243306f6b30d8099ac20a
+  ms.sourcegitcommit: 749ef607a5759d500e6f20530536827aa97499fe
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47123905"
+  ms.lasthandoff: 10/11/2018
+  ms.locfileid: "49097793"
 title: Einführung in Azure Storage
 summary: In diesem Modul lernen Sie die Vorteile des Azure-Datenspeichers im Vergleich zu lokalem Speicher kennen.
 abstract: >
