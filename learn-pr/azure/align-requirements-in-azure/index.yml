@@ -4,20 +4,20 @@ metadata:
   title: Auswählen von Cloudtypen und Dienstmodellen in Azure auf Grundlage Ihrer Anforderungen
   description: 'Azure unterstützt drei Ansätze zur Bereitstellung von Cloudressourcen: die öffentliche Cloud, die private Cloud und die Hybrid Cloud. Durch die Auswahl eines Ansatzes ändern sich für die in Azure bereitgestellten Dienste mehrere Faktoren wie z.B. die anfallenden Kosten, Wartungsanforderungen und Sicherheitsaspekte. In diesem Modul werden alle Optionen vorgestellt. Dadurch können Sie sich unter Berücksichtigung aller relevanten Aspekte für einen bestimmten Ansatz für Ihre Dienste entscheiden. Zusätzlich erhalten Sie eine Übersicht über die von Azure unterstützten Dienstmodelle, mit denen Sie die Dienste ermitteln können, die bei der Planung einer Azure-Bereitstellung als Erstes berücksichtigt werden sollten.'
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: PatAltimore
+  ms.author: patricka
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: b0b4a1951f2dbcfa12ffd0c726e9e8930b44259f
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: b18ec92f4bc3c4daebb570269cc5d8ca54e08770
+  ms.sourcegitcommit: 749ef607a5759d500e6f20530536827aa97499fe
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47123827"
+  ms.lasthandoff: 10/11/2018
+  ms.locfileid: "49096382"
 title: Auswählen von Cloudtypen und Dienstmodellen in Azure auf Grundlage Ihrer Anforderungen
 summary: 'Azure unterstützt drei Ansätze zur Bereitstellung von Cloudressourcen: die öffentliche Cloud, die private Cloud und die Hybrid Cloud. Durch die Auswahl eines Ansatzes ändern sich für die in Azure bereitgestellten Dienste mehrere Faktoren wie z.B. die anfallenden Kosten, Wartungsanforderungen und Sicherheitsaspekte. In diesem Modul werden alle Optionen vorgestellt. Dadurch können Sie sich unter Berücksichtigung aller relevanten Aspekte für einen bestimmten Ansatz für Ihre Dienste entscheiden. Zusätzlich erhalten Sie eine Übersicht über die von Azure unterstützten Dienstmodelle, mit denen Sie die Dienste ermitteln können, die bei der Planung einer Azure-Bereitstellung als Erstes berücksichtigt werden sollten.'
 abstract: >
-  Dieses Modul umfasst Folgendes:
+  In diesem Modul wird Folgendes thematisiert:
 
   - Vergleichen von Cloud Computing-Bereitstellungsmodellen (öffentlich, privat und hybrid)
 

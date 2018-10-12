@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-your-azure-sql-database.4-application-level-security
+metadata:
+  title: <span data-ttu-id="c1996-101">Sicherheit auf Anwendungsebene</span><span class="sxs-lookup"><span data-stu-id="c1996-101">Application-level security</span></span>
+  description: <span data-ttu-id="c1996-102">Lernen Sie Verfahren kennen, um Ihre vertraulichen Informationen zu schützen und Probleme beim Schreiben von Anwendungscode, der auf Ihre Datenbank zugreift, zu vermeiden.</span><span class="sxs-lookup"><span data-stu-id="c1996-102">Learn techniques to secure your sensitive information, and learn issues to avoid while writing application code that accesses your database.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: f63cf17a36d8b40bd6f2fd0a43ff84254b81c122
+  ms.sourcegitcommit: 749ef607a5759d500e6f20530536827aa97499fe
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 10/11/2018
+  ms.locfileid: "49099218"
+title: <span data-ttu-id="c1996-103">Sicherheit auf Anwendungsebene</span><span class="sxs-lookup"><span data-stu-id="c1996-103">Application-level security</span></span>
+durationInMinutes: 8
+content: '[!include[](includes/4-application-level-security.md)]'

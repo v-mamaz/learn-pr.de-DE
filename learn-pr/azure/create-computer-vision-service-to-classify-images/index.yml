@@ -4,16 +4,16 @@ metadata:
   title: Verarbeiten von Bildern mit dem Maschinelles Sehen-Dienst
   description: Verwenden Sie die Maschinelles Sehen-API zum Analysieren von Bildern für Erkenntnisse, Extrahieren von Text aus Bildern und Generieren von hochauflösenden Miniaturansichten.
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: MaximRouiller
+  ms.author: marouill
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 764c30034b5ff2f01c2c0650efc984204e2711c6
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: da08941fc20ef6ba55cbdd6619b872e5f8fb286d
+  ms.sourcegitcommit: 749ef607a5759d500e6f20530536827aa97499fe
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47123984"
+  ms.lasthandoff: 10/11/2018
+  ms.locfileid: "49098286"
 title: Verarbeiten von Bildern mit dem Maschinelles Sehen-Dienst
 summary: Verwenden Sie die Maschinelles Sehen-API zum Analysieren von Bildern für Erkenntnisse, Extrahieren von Text aus Bildern und Generieren von hochauflösenden Miniaturansichten.
 abstract: >

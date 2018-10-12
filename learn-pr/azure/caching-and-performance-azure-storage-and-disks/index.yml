@@ -8,13 +8,12 @@ metadata:
   ms.author: anbyrne
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.learn-contact: anbyrne
-  ms.openlocfilehash: edde756cb85661cb28818ba565c02d2177154f55
-  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
+  ms.openlocfilehash: f0a00941fc2cf8633922ea670f12a7c95383c090
+  ms.sourcegitcommit: 749ef607a5759d500e6f20530536827aa97499fe
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 10/04/2018
-  ms.locfileid: "48787269"
+  ms.lasthandoff: 10/11/2018
+  ms.locfileid: "49096671"
 title: Zwischenspeicherung und Leistung bei Azure-Speicherdatenträgern
 summary: Daten so schnell wie möglich zu verschieben, ist gut für das Unternehmen. Erfahren Sie mehr über die Datenträgerleistung in Azure, wie das Zwischenspeichern dazu beitragen kann, den Lese- und Schreibzugriff auf den Speicher zu optimieren, und wie Sie das Zwischenspeichern aktivieren können, um die Leistung von Azure VM-Datenträgern zu optimieren.
 abstract: >

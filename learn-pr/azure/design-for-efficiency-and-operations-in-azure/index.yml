@@ -4,16 +4,16 @@ metadata:
   title: Entwurf für Effizienz und Vorgänge in Azure
   description: Erfahren Sie, wie Sie eine Azure-Architektur entwerfen, die Effizienz bei Kosten und Vorgängen garantiert, unnötigen Aufwand vermeidet und Ihnen vollständigen Einblick in die Abläufe in Ihrer Umgebung bietet.
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: tvuylsteke
+  ms.author: thovuy
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 21c66977bd96e0c7d4674ed2144ee53b6f44db31
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: c0fd5bf547d92df3889a54456f61176c40f2c91d
+  ms.sourcegitcommit: 749ef607a5759d500e6f20530536827aa97499fe
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47139255"
+  ms.lasthandoff: 10/11/2018
+  ms.locfileid: "49098055"
 title: Entwurf für Effizienz und Vorgänge in Azure
 summary: Erfahren Sie, wie Sie eine Azure-Architektur entwerfen, die Effizienz bei Kosten und Vorgängen garantiert, unnötigen Aufwand vermeidet und Ihnen vollständigen Einblick in die Abläufe in Ihrer Umgebung bietet.
 abstract: >

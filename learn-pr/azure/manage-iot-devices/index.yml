@@ -3,21 +3,21 @@ uid: learn.manage-iot-devices
 metadata:
   title: Erfahren Sie, wie Sie IoT-Geräte als IT-Administrator verwalten.
   description: Erfahren Sie angesichts der zunehmenden Verbreitung von IoT, welche Tools Microsoft für Betriebsteams bietet, um ebenjene Vielzahl von Geräten zu verwalten und zu schützen.
-  author: lnyswonger
+  author: WirelessLife
   ms.date: 09/24/2018
-  ms.author: luken
+  ms.author: abartolo
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 833fbb8a52a3daf35a64e95d077d070687f39a16
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 8167fa887e996ce30142a74a5fc437d4d891a372
+  ms.sourcegitcommit: 749ef607a5759d500e6f20530536827aa97499fe
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47129870"
+  ms.lasthandoff: 10/11/2018
+  ms.locfileid: "49095373"
 title: Erfahren Sie, wie Sie IoT-Geräte als IT-Administrator verwalten.
 summary: Erfahren Sie angesichts der zunehmenden Verbreitung von IoT, welche Tools Microsoft für Betriebsteams bietet, um ebenjene Vielzahl von Geräten zu verwalten und zu schützen.
 abstract: >
-  In diesem Modul lernen Sie Folgendes:
+  In diesem Modul wird Folgendes thematisiert:
    - Einführung in IoT
    - Interagieren mit einem Raspberry Pi-Simulator
    - Konfigurieren von Azure IoT Hub zur Datenerfassung

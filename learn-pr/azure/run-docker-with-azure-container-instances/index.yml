@@ -4,16 +4,16 @@ metadata:
   title: Ausführen von Docker-Containern mit Azure Container Instances
   description: Informationen zum Ausführen von Container-Apps mithilfe von Docker-Containern mit Azure Container Instances (ACI)
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: neilpeterson
+  ms.author: nepeters
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: f0f2849df3fef67f949c1aaa768fce912e87209b
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 62aadd761adc3c3d3b24768eecf397aa4703f6e5
+  ms.sourcegitcommit: 749ef607a5759d500e6f20530536827aa97499fe
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47123630"
+  ms.lasthandoff: 10/11/2018
+  ms.locfileid: "49096790"
 title: Ausführen von Docker-Containern mit Azure Container Instances
 summary: Informationen zum Ausführen von Container-Apps mithilfe von Docker-Containern mit Azure Container Instances (ACI)
 abstract: >

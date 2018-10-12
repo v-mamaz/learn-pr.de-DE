@@ -4,16 +4,16 @@ metadata:
   title: Entwurf für Leistung und Skalierbarkeit in Azure
   description: Wichtige Maßnahmen für ein optimales Benutzererlebnis sind hierbei das Skalieren des Systems zur Bewältigung der Last, das Identifizieren von Netzwerkengpässen sowie das Optimieren der Speicherleistung. In diesem Modul erhalten Sie Informationen darüber, wie Sie Ihre Anwendung optimal ausführen.
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: christianreddington
+  ms.author: chredd
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 695f7f5ea4b568a2234ea5ec282d689dfc07f51c
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 37ebbde2e3989b9932817e3de5d9fa738f263a22
+  ms.sourcegitcommit: 749ef607a5759d500e6f20530536827aa97499fe
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47138543"
+  ms.lasthandoff: 10/11/2018
+  ms.locfileid: "49096110"
 title: Entwurf für Leistung und Skalierbarkeit in Azure
 summary: Wichtige Maßnahmen für ein optimales Benutzererlebnis sind hierbei das Skalieren des Systems zur Bewältigung der Last, das Identifizieren von Netzwerkengpässen sowie das Optimieren der Speicherleistung. Erfahren Sie, wie Sie Ihre Anwendung optimal ausführen.
 abstract: >

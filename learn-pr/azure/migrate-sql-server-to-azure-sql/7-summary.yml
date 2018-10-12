@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.migrate-sql-server-relational-data.7-summary
+title: <span data-ttu-id="ff5ca-101">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="ff5ca-101">Summary</span></span>
+metadata:
+  title: <span data-ttu-id="ff5ca-102">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="ff5ca-102">Summary</span></span>
+  description: <span data-ttu-id="ff5ca-103">Zusammenfassung</span><span class="sxs-lookup"><span data-stu-id="ff5ca-103">Summary</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 581997815348d76ed110674cfb83d542465e6099
+  ms.sourcegitcommit: 749ef607a5759d500e6f20530536827aa97499fe
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 10/11/2018
+  ms.locfileid: "49099158"
+durationInMinutes: 3
+content: '[!include[](includes/7-summary.md)]'
